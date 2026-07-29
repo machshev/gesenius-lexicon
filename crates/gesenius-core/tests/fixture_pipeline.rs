@@ -124,6 +124,64 @@ fn fixture_entries() -> Vec<gesenius_core::CorpusEntry> {
     ]
 }
 
+#[test]
+fn leading_non_margin_content_is_retained_in_a_headless_entry() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="header" HPOS="50" VPOS="10" WIDTH="900" HEIGHT="25">
+      <TextLine ID="header-line" HPOS="50" VPOS="10" WIDTH="900" HEIGHT="25">
+        <String CONTENT="LEXICON" WC="0.99" HPOS="400" VPOS="10" WIDTH="200" HEIGHT="25"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="column-1" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="1000">
+      <TextLine ID="introduction" HPOS="50" VPOS="100" WIDTH="400" HEIGHT="45">
+        <String CONTENT="The" WC="0.98" HPOS="50" VPOS="100" WIDTH="45" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="name" WC="0.98" HPOS="103" VPOS="100" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="Aleph." WC="0.98" HPOS="171" VPOS="100" WIDTH="75" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="entry" HPOS="50" VPOS="155" WIDTH="400" HEIGHT="45">
+        <String CONTENT="אָב" WC="0.96" HPOS="50" VPOS="155" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="father." WC="0.98" HPOS="118" VPOS="155" WIDTH="90" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 2);
+    assert!(parsed.entries[0].headword.is_none());
+    assert_eq!(
+        parsed.entries[0].blocks[0].spans[0].diplomatic,
+        "The name Aleph."
+    );
+    assert_eq!(
+        parsed.entries[1]
+            .headword
+            .as_ref()
+            .map(|headword| headword.diplomatic.as_str()),
+        Some("אָב")
+    );
+    assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
+        line == "header-line" && matches!(assignment, LineAssignment::Unparsed)
+    }));
+    assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
+        line == "introduction" && matches!(assignment, LineAssignment::Entry(_))
+    }));
+}
+
 fn fixture_manifest() -> CorpusManifest {
     CorpusManifest {
         corpus_version: "fixture-1".to_owned(),

@@ -24,7 +24,7 @@ Every span has a BCP 47 language when known, an ISO 15924 script, and `ltr`, `rt
 
 ## Structure and fallback
 
-The parser opens a new entry only when a non-margin line begins with Hebrew. It carries the last entry to an immediately consecutive page and otherwise assigns unmatched lines to `unparsed`. Content first enters ordered `unclassified` blocks; later parsers or reviewers can identify forms, grammar, definitions, etymology, citations, cross-references, and senses without losing order.
+The parser opens a new entry when a non-margin line begins with Hebrew. It carries the last entry to an immediately consecutive page. When no continuation exists, leading non-margin content opens a headless fallback entry so section introductions and page continuations are retained; only margin lines remain `unparsed`. Content first enters ordered `unclassified` blocks; later parsers or reviewers can identify forms, grammar, definitions, etymology, citations, cross-references, and senses without losing order.
 
 Stable IDs derive from edition, the printed page on which the entry begins, and its one-based ordinal. Merges and splits retain displaced IDs as aliases.
 

@@ -8,7 +8,7 @@ use gesenius_core::export::{
     ExportOptions,
 };
 use gesenius_core::model::AccuracyMetrics;
-use gesenius_core::pipeline::{parse_page_spec, run, RunOptions};
+use gesenius_core::pipeline::{parse_page_spec, run_with_progress, RunOptions, RunProgress};
 use gesenius_core::report::{compare_editions, write_report};
 use gesenius_core::review::{serve, ReviewServerOptions, ReviewStore};
 use gesenius_core::source::{
@@ -231,16 +231,30 @@ fn source_command(catalogue_path: &Path, cache: &Path, command: &SourceCommands)
 fn run_command(cli: &Cli, arguments: &RunArguments) -> Result<()> {
     let pages = parse_page_spec(&arguments.pages)?;
     let commit = pipeline_commit();
-    let result = run(&RunOptions {
-        edition: &arguments.edition,
-        pages: &pages,
-        catalogue_path: &cli.catalogue,
-        settings_path: &cli.pipeline_config,
-        cache_root: &cli.cache,
-        corpus_root: &cli.corpus,
-        pipeline_commit: &commit,
-    })?;
+    let result = run_with_progress(
+        &RunOptions {
+            edition: &arguments.edition,
+            pages: &pages,
+            catalogue_path: &cli.catalogue,
+            settings_path: &cli.pipeline_config,
+            cache_root: &cli.cache,
+            corpus_root: &cli.corpus,
+            pipeline_commit: &commit,
+        },
+        print_run_progress,
+    )?;
     print_json(&result)
+}
+
+fn print_run_progress(progress: RunProgress) {
+    if let Some(page_number) = progress.page_number {
+        eprintln!(
+            "[page {}/{}, PDF {page_number}] {}",
+            progress.page_index, progress.page_count, progress.message
+        );
+    } else {
+        eprintln!("[run] {}", progress.message);
+    }
 }
 
 fn train_command(cli: &Cli, arguments: &TrainArguments) -> Result<()> {

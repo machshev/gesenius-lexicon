@@ -39,6 +39,10 @@ cargo run -- run --edition robinson-1854 --pages 17-20,45
 cargo run -- validate
 ```
 
+The run command writes phase and per-page progress to stderr while reserving
+stdout for its final machine-readable JSON result. Resumed stages are still
+reported as the pipeline checks and reuses their receipts.
+
 The initial configuration runs Tesseract only. The English-primary and multilingual ALTO outputs remain separate and are aligned by geometry. The multilingual output labels words by strong Unicode script, isolated script glitches are smoothed within a foreign phrase, and each foreign word receives a single-language recognition pass before the line is conservatively fused. The untouched page hypotheses and a per-word decision manifest remain attached or retained for audit. After reviewed pilot ground truth produces a checksummed Kraken model, set `kraken.enabled = true`, `model_path`, and `model_sha256` in `pipeline.toml`. Kraken then becomes primary while all complete hypotheses remain attached to every spatially matching span.
 
 ## Stable CLI

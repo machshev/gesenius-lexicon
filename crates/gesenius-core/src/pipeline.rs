@@ -176,6 +176,19 @@ pub struct RunResult {
     pub run_path: PathBuf,
 }
 
+/// A human-readable status update emitted while a pipeline run is in progress.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct RunProgress {
+    /// One-based position of the current page, or zero during run-wide setup.
+    pub page_index: usize,
+    /// Number of pages requested by the run.
+    pub page_count: usize,
+    /// PDF page currently being processed, when the update is page-specific.
+    pub page_number: Option<u32>,
+    /// Short description of the work about to be performed or just completed.
+    pub message: String,
+}
+
 /// Exact preprocessing operations used on a page.
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TransformManifest {
@@ -234,15 +247,38 @@ struct StageReceipt {
 
 /// Runs selected pages through every stage and atomically merges their entries.
 pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
+    run_with_progress(options, |_| {})
+}
+
+/// Runs selected pages and reports status without coupling the core to a logger.
+pub fn run_with_progress(
+    options: &RunOptions<'_>,
+    mut report: impl FnMut(RunProgress),
+) -> Result<RunResult> {
     if options.pages.is_empty() {
         bail!("page selection is empty");
     }
+    let page_count = options.pages.len();
+    report_progress(
+        &mut report,
+        0,
+        page_count,
+        None,
+        "loading configuration and verifying source",
+    );
     let settings = PipelineSettings::load(options.settings_path)?;
     let catalogue = SourceCatalogue::load(options.catalogue_path)?;
     let source = catalogue.edition(options.edition)?;
     let verified = verify_source(source, options.cache_root)?;
     verify_model(&settings.kraken)?;
 
+    report_progress(
+        &mut report,
+        0,
+        page_count,
+        None,
+        "checking OCR engines and model identities",
+    );
     let tesseract_version = command_version("tesseract")?;
     let primary_tesseract_models_sha256 =
         tesseract_model_hash(&settings.tesseract.primary_languages)?;
@@ -303,7 +339,17 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
     let mut parsed_pages = Vec::new();
     let mut previous_page_number = None;
     let mut continuation = None;
-    for page_number in options.pages {
+    for (page_offset, page_number) in options.pages.iter().enumerate() {
+        let page_index = page_offset + 1;
+        let mut report_page = |message: &str| {
+            report_progress(
+                &mut report,
+                page_index,
+                page_count,
+                Some(*page_number),
+                message,
+            );
+        };
         if *page_number == 0 {
             bail!("PDF page numbers are one-based");
         }
@@ -318,6 +364,7 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         }
         let page_path = run_path.join(format!("page-{page_number:04}"));
         fs::create_dir_all(&page_path)?;
+        report_page("rasterizing PDF page");
         let original = rasterize(
             &verified.path,
             *page_number,
@@ -325,8 +372,10 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
             &page_path,
             &run_id,
         )?;
+        report_page("preprocessing page image");
         let (processed, transform_id) =
             preprocess(&original, &page_path, &settings.preprocessing, &run_id)?;
+        report_page("running primary Tesseract OCR");
         let primary_tesseract_alto = recognize_tesseract(
             &processed,
             &page_path,
@@ -336,6 +385,7 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
             settings.raster_dpi,
             &run_id,
         )?;
+        report_page("running multilingual Tesseract OCR");
         let multilingual_tesseract_alto = recognize_tesseract(
             &processed,
             &page_path,
@@ -352,6 +402,7 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
             &multilingual_tesseract_page,
             &settings.tesseract.multilingual_languages,
         );
+        report_page("refining detected foreign-script words");
         let word_tesseract_page = recognize_tesseract_words(
             &processed,
             &page_path,
@@ -367,11 +418,13 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
             write_alto(&fused_tesseract_page, &relative_or_absolute(&processed)),
         )?;
         let kraken_page = if kraken_identity.is_some() {
+            report_page("running Kraken OCR");
             let kraken_alto = recognize_kraken(&processed, &page_path, &settings.kraken, &run_id)?;
             Some(parse_alto(&fs::read_to_string(&kraken_alto)?)?)
         } else {
             None
         };
+        report_page("parsing OCR into lexicon entries");
         let canonical_page = kraken_page.as_ref().unwrap_or(&fused_tesseract_page);
         let mut hypotheses = Vec::new();
         if let (Some(page), Some(identity)) = (kraken_page.as_ref(), kraken_identity.as_ref()) {
@@ -413,8 +466,16 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         continuation = parsed.entries.last().cloned();
         previous_page_number = Some(*page_number);
         parsed_pages.push(parsed);
+        report_page("page complete");
     }
 
+    report_progress(
+        &mut report,
+        0,
+        page_count,
+        None,
+        "merging parsed entries into the machine corpus",
+    );
     let corpus_path = options
         .corpus_root
         .join(format!("{}.jsonl", options.edition));
@@ -444,6 +505,7 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         .flat_map(|page| page.assignments.iter())
         .filter(|(_, _, assignment)| matches!(assignment, LineAssignment::Unparsed))
         .count();
+    report_progress(&mut report, 0, page_count, None, "run complete");
     Ok(RunResult {
         run_id,
         pages: options.pages.to_vec(),
@@ -452,6 +514,21 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         corpus_path,
         run_path,
     })
+}
+
+fn report_progress(
+    report: &mut impl FnMut(RunProgress),
+    page_index: usize,
+    page_count: usize,
+    page_number: Option<u32>,
+    message: &str,
+) {
+    report(RunProgress {
+        page_index,
+        page_count,
+        page_number,
+        message: message.to_owned(),
+    });
 }
 
 /// Parses `1,3-5,9` into a sorted, de-duplicated one-based page list.

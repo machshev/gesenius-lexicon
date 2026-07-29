@@ -281,9 +281,10 @@ pub fn write_alto(page: &AltoPage, source_image: &str) -> String {
 
 /// Parses conservative entry boundaries while retaining both engine hypotheses.
 ///
-/// A line beginning with a Hebrew-script word starts an entry. Lines before the
-/// first detected entry are explicitly `unparsed`; known front matter is never
-/// coerced into lexical entries.
+/// A line beginning with a Hebrew-script word starts an entry. Leading
+/// non-margin content opens a headless fallback entry so section introductions
+/// and page continuations are not discarded when no preceding page was
+/// supplied. Known front matter is never coerced into lexical entries.
 pub fn parse_entries(
     primary: (&AltoPage, &EngineIdentity),
     secondary: Option<(&AltoPage, &EngineIdentity)>,
@@ -348,16 +349,15 @@ pub fn parse_entries_with_hypotheses_continuing(
         }
 
         let starts_entry = begins_with_hebrew(&line.text);
-        if starts_entry {
+        if starts_entry || entries.is_empty() {
             page_entry_count += 1;
             let ordinal = u32::try_from(page_entry_count).unwrap_or(u32::MAX);
             let entry_id = stable_entry_id(context.edition, context.printed_page, ordinal);
             entries.push(new_entry(&entry_id, ordinal, context));
         }
-        let Some(entry) = entries.last_mut() else {
-            assignments.push((region.id.clone(), line.id.clone(), LineAssignment::Unparsed));
-            continue;
-        };
+        let entry = entries
+            .last_mut()
+            .expect("a non-margin lexical line always has an entry");
 
         let line_hypotheses = hypotheses
             .iter()
