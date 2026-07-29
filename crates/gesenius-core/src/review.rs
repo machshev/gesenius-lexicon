@@ -563,8 +563,9 @@ section{background:white;border:1px solid #d0cbc0;border-radius:.4rem;padding:.8
 #scan svg{width:100%;height:auto;background:#ddd}.overlay{fill:rgba(238,171,48,.18);stroke:#cf6a16;stroke-width:3}
 pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}button,select,input{font:inherit;padding:.35rem}
 .tabs{display:flex;gap:.35rem;margin-bottom:.7rem}.tabs button[aria-selected="true"]{background:#313a35;color:white}
-.entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;unicode-bidi:plaintext}
-.entry-text h3{margin:1.25rem 0 .6rem;text-align:center;font-size:1.18rem;line-height:1.35;letter-spacing:.025em;unicode-bidi:plaintext}
+.entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;direction:ltr;unicode-bidi:isolate}
+.entry-headword{margin:.15rem 0 1rem;text-align:center;font:1.6rem/1.35 "Noto Sans Hebrew",sans-serif;direction:rtl;unicode-bidi:isolate}
+.entry-text h3{margin:1.25rem 0 .6rem;text-align:center;font-size:1.18rem;line-height:1.35;letter-spacing:.025em;direction:ltr;unicode-bidi:isolate}
 .structural-block{margin:.65rem 0;padding-left:.65rem;border-left:.2rem solid #d7d0c2}.block-kind{color:#6d685e;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .page-break{margin:1rem 0 .25rem;color:#6d685e;font-size:.82rem;font-weight:600}.hidden{display:none}
 .page-toolbar{display:flex;gap:.5rem;align-items:center;margin-bottom:.7rem}.page-toolbar select{min-width:0;flex:1}.page-canvas{min-height:0}.page-detail .page-canvas{display:grid;grid-template-rows:minmax(0,1fr) auto}
@@ -600,9 +601,9 @@ document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.
 async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeURIComponent(id))).json();await render();}
 function cps(text){return [...text].map(c=>`${c} U+${c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')}`).join(' · ')}
 function imageSize(src){return new Promise((resolve,reject)=>{let image=new Image();image.onload=()=>resolve({width:image.naturalWidth,height:image.naturalHeight});image.onerror=reject;image.src=src;});}
-function renderStructuredText(blocks){let html='',currentPage=null;
+function renderStructuredText(headword,blocks){let html=`<h2 class="entry-headword" dir="rtl">${esc(headword)}</h2>`,currentPage=null;
 const renderPart=(kind,text)=>{if(!text.length)return '';let content=esc(text.join(' '));if(kind==='heading')return `<h3 dir="ltr">${content}</h3>`;if(kind==='paragraph')return `<p dir="ltr">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="ltr">${content}</p></div>`;};
-for(let block of blocks){let partPage=null,text=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,text);text=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;text.push(span.normalized);}html+=renderPart(block.kind,text);}return html||'<p class="muted">No parsed text.</p>';}
+for(let block of blocks){let partPage=null,text=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,text);text=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;text.push(span.normalized);}html+=renderPart(block.kind,text);}return html;}
 async function scanForPage(spans,page){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl);
 return `<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>
 ${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<polygon class="overlay" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.id)}</title></polygon>`)).join('')}</svg>`;}
@@ -612,10 +613,10 @@ let scan=pages.length?await scanForPage(spans,pages[0]):'No scan coordinate';
 let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%</span><br>
 ${s.hypotheses.map(h=>`<code>${esc(h.engine)}:</code> ${esc(h.text)} (${Math.round(h.confidence*100)}%)`).join('<br>')}
 <br><span class="muted">${esc(cps(s.diplomatic))}</span>${s.warnings.map(w=>`<br><span class="warn">${esc(w.code)}: ${esc(w.message)}</span>`).join('')}</p>`).join('');
-$('#detail').innerHTML=`<h2><span class="hebrew">${esc(current.headword?.normalized||current.id)}</span></h2><div class="grid">
+$('#detail').innerHTML=`<div class="grid">
 <div><section id="scan">${pages.length>1?`<label>Scan page <select id="scanPage">${pages.map((page,index)=>`<option value="${index}">printed ${esc(page.printed)} · PDF ${page.source}</option>`).join('')}</select></label>`:''}<div id="scanCanvas">${scan}</div></section><section><h3>Hypotheses and Unicode</h3>${hypotheses}</section></div>
 <section><div class="tabs" role="tablist"><button id="textTab" role="tab" aria-selected="true">Text</button><button id="jsonTab" role="tab" aria-selected="false">Structured JSON</button></div>
-<div id="textPanel" role="tabpanel"><div class="entry-text">${renderStructuredText(current.blocks)}</div></div>
+<div id="textPanel" role="tabpanel"><div class="entry-text">${renderStructuredText(current.headword?.normalized||current.id,current.blocks)}</div></div>
 <div id="jsonPanel" class="hidden" role="tabpanel"><textarea id="editor" spellcheck="false">${esc(JSON.stringify(current,null,2))}</textarea></div>
 <p><input id="reviewer" placeholder="Reviewer" autocomplete="name"> <select id="reviewState"><option>corrected</option><option>verified</option></select>
 <button id="save">Save revision ${current.revision+1}</button> <button id="viewPage">View on page</button></p><p id="message"></p></section></div>`;
@@ -651,11 +652,18 @@ mod tests {
 
     #[test]
     fn review_ui_renders_parsed_block_structure() {
-        assert!(REVIEW_UI.contains("renderStructuredText(current.blocks)"));
+        assert!(REVIEW_UI.contains(
+            "renderStructuredText(current.headword?.normalized||current.id,current.blocks)"
+        ));
+        assert!(REVIEW_UI.contains(r#"<h2 class="entry-headword" dir="rtl">"#));
         assert!(REVIEW_UI.contains("kind==='heading'"));
         assert!(REVIEW_UI.contains("kind==='paragraph'"));
         assert!(REVIEW_UI.contains(r#"<p dir="ltr">"#));
+        assert!(
+            REVIEW_UI.contains(".entry-text p{margin:.5rem 0;direction:ltr;unicode-bidi:isolate}")
+        );
         assert!(!REVIEW_UI.contains(r#"<p dir="auto">"#));
+        assert!(!REVIEW_UI.contains("unicode-bidi:plaintext"));
         assert!(!REVIEW_UI.contains("renderParagraphs(spans)"));
     }
 }
