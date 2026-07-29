@@ -43,7 +43,7 @@ The run command writes phase and per-page progress to stderr while reserving
 stdout for its final machine-readable JSON result. Resumed stages are still
 reported as the pipeline checks and reuses their receipts.
 
-The initial configuration runs Tesseract only. The English-primary and multilingual ALTO outputs remain separate and are aligned by geometry. The multilingual output labels words by strong Unicode script, isolated script glitches are smoothed within a foreign phrase, and each foreign word receives a single-language recognition pass before the line is conservatively fused. The untouched page hypotheses and a per-word decision manifest remain attached or retained for audit. After reviewed pilot ground truth produces a checksummed Kraken model, set `kraken.enabled = true`, `model_path`, and `model_sha256` in `pipeline.toml`. Kraken then becomes primary while all complete hypotheses remain attached to every spatially matching span.
+The initial configuration runs Tesseract only. Its English pass first supplies page layout, then each multi-line layout block is cropped and re-read as a single block so language-model context stays within one column. The English-primary and multilingual ALTO outputs remain separate and are aligned by geometry. The multilingual output labels words by strong Unicode script, printed labels such as `Heb.` provide deterministic hints for otherwise garbled tokens, isolated script glitches are smoothed within a foreign phrase, and each foreign word receives a single-language recognition pass before the line is conservatively fused. The untouched page hypotheses, block-refinement manifest, and per-word decision manifest remain attached or retained for audit. After pilot ground truth produces a checksummed Kraken model, set `kraken.enabled = true`, `model_path`, and `model_sha256` in `pipeline.toml`. Kraken then becomes primary while all complete hypotheses remain attached to every spatially matching span.
 
 ## Stable CLI
 
@@ -75,6 +75,17 @@ verified PDF
 ```
 
 Large PDFs, rasters, OCR intermediates, and run receipts live below `.cache/gesenius/` and are ignored by Git. Original rasters and exact transform commands are retained. `tesseract-word-recognitions.json` records each crop, detected and selected language, both texts and confidences, and which text was used. ALTO preserves regions, lines, reading order, polygons, and confidence. A recognized line is always assigned to an entry, `front_matter`, or `unparsed`.
+
+Immutable human- or frontier-transcribed gold fixtures under `benchmarks/gold/`
+measure OCR without becoming corpus corrections:
+
+```bash
+cargo run -- benchmark \
+  --gold benchmarks/gold/robinson-1854-p001-e0001.json \
+  --alto .cache/gesenius/runs/<run>/robinson-1854/page-0017/tesseract-fused.alto.xml
+```
+
+The command reports overall CER/WER, per-script CER, and missing gold line IDs.
 
 Entries continuing onto a consecutive page retain the stable ID of the page on which they began. Headers and footers are kept out of continuations. Printed hyphenation remains diplomatic until a reviewer makes an explicit structural correction.
 

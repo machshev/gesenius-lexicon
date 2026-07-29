@@ -2,11 +2,12 @@
 
 use crate::alto::{
     classify_word_languages, detected_word_language, fuse_multilingual_words, parse_alto,
-    parse_entries_with_hypotheses_continuing, word_matches_language, write_alto, AltoPage,
-    AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage,
+    parse_entries_with_hypotheses_continuing, word_matches_language, write_alto, AltoLine,
+    AltoPage, AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::normalized_disagreement;
+use crate::model::Point;
 use crate::source::{sha256_file, verify_source, SourceCatalogue, SourceRecord};
 use anyhow::{bail, Context, Result};
 use chrono::{DateTime, Utc};
@@ -16,6 +17,7 @@ use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::{Command, Output};
+use unicode_normalization::char::canonical_combining_class;
 
 /// Default pipeline configuration.
 pub const DEFAULT_PIPELINE_CONFIG: &str = "pipeline.toml";
@@ -67,6 +69,12 @@ impl PipelineSettings {
         if !(1..=13).contains(&self.tesseract.word_page_segmentation_mode) {
             bail!("word_page_segmentation_mode must be between 1 and 13");
         }
+        if !(1..=13).contains(&self.tesseract.block_page_segmentation_mode) {
+            bail!("block_page_segmentation_mode must be between 1 and 13");
+        }
+        if self.tesseract.block_padding_pixels > 100 {
+            bail!("block_padding_pixels must not exceed 100");
+        }
         if !(100..=400).contains(&self.tesseract.word_scale_percent) {
             bail!("word_scale_percent must be between 100 and 400");
         }
@@ -102,6 +110,15 @@ pub struct TesseractSettings {
     pub multilingual_languages: Vec<String>,
     /// Page segmentation mode.
     pub page_segmentation_mode: u8,
+    /// Re-recognize each multi-line layout block independently.
+    #[serde(default = "default_block_refinement_enabled")]
+    pub block_refinement_enabled: bool,
+    /// Segmentation mode used for one cropped layout block.
+    #[serde(default = "default_block_page_segmentation_mode")]
+    pub block_page_segmentation_mode: u8,
+    /// Source-image padding retained around a layout block.
+    #[serde(default = "default_block_padding_pixels")]
+    pub block_padding_pixels: u32,
     /// Segmentation mode used after cropping one detected foreign word.
     #[serde(default = "default_word_page_segmentation_mode")]
     pub word_page_segmentation_mode: u8,
@@ -117,6 +134,18 @@ pub struct TesseractSettings {
 
 const fn default_word_page_segmentation_mode() -> u8 {
     10
+}
+
+const fn default_block_refinement_enabled() -> bool {
+    true
+}
+
+const fn default_block_page_segmentation_mode() -> u8 {
+    6
+}
+
+const fn default_block_padding_pixels() -> u32 {
+    8
 }
 
 const fn default_word_scale_percent() -> u16 {
@@ -309,9 +338,21 @@ pub fn run_with_progress(
         engine: "tesseract".to_owned(),
         version: tesseract_version.clone(),
         model: format!(
-            "{}:{}",
+            "{}:{}:page-psm{}",
             settings.tesseract.model_identity,
-            settings.tesseract.primary_languages.join("+")
+            settings.tesseract.primary_languages.join("+"),
+            settings.tesseract.page_segmentation_mode,
+        ),
+        model_hash: primary_tesseract_models_sha256.clone(),
+    };
+    let block_tesseract_identity = EngineIdentity {
+        engine: "tesseract".to_owned(),
+        version: tesseract_version.clone(),
+        model: format!(
+            "{}:{}:block-psm{}",
+            settings.tesseract.model_identity,
+            settings.tesseract.primary_languages.join("+"),
+            settings.tesseract.block_page_segmentation_mode,
         ),
         model_hash: primary_tesseract_models_sha256,
     };
@@ -395,7 +436,20 @@ pub fn run_with_progress(
             settings.raster_dpi,
             &run_id,
         )?;
-        let primary_tesseract_page = parse_alto(&fs::read_to_string(&primary_tesseract_alto)?)?;
+        let primary_layout_page = parse_alto(&fs::read_to_string(&primary_tesseract_alto)?)?;
+        let primary_tesseract_page = if settings.tesseract.block_refinement_enabled {
+            report_page("re-reading primary OCR layout blocks");
+            recognize_tesseract_blocks(
+                &processed,
+                &page_path,
+                &settings.tesseract,
+                &primary_layout_page,
+                settings.raster_dpi,
+                &run_id,
+            )?
+        } else {
+            primary_layout_page.clone()
+        };
         let multilingual_tesseract_page =
             parse_alto(&fs::read_to_string(&multilingual_tesseract_alto)?)?;
         let classified_tesseract_page = classify_word_languages(
@@ -431,7 +485,8 @@ pub fn run_with_progress(
             hypotheses.push((page, identity));
         }
         hypotheses.extend([
-            (&primary_tesseract_page, &primary_tesseract_identity),
+            (&primary_tesseract_page, &block_tesseract_identity),
+            (&primary_layout_page, &primary_tesseract_identity),
             (
                 &multilingual_tesseract_page,
                 &multilingual_tesseract_identity,
@@ -713,6 +768,249 @@ fn recognize_tesseract(
 }
 
 #[derive(Debug, Serialize)]
+struct BlockRefinement {
+    region_id: String,
+    crop: String,
+    source_lines: usize,
+    recognized_lines: usize,
+    replaced_lines: usize,
+}
+
+fn recognize_tesseract_blocks(
+    input: &Path,
+    page_path: &Path,
+    settings: &TesseractSettings,
+    layout: &AltoPage,
+    raster_dpi: u32,
+    run_id: &str,
+) -> Result<AltoPage> {
+    let output_path = page_path.join("tesseract-block-refined.alto.xml");
+    let manifest_path = page_path.join("tesseract-block-refinements.json");
+    let receipt_path = page_path.join("tesseract-blocks.stage.json");
+    let input_hash = content_hash(&[
+        run_id,
+        &serde_json::to_string(settings)?,
+        &serde_json::to_string(layout)?,
+        "block-recognition-v1",
+    ]);
+    let outputs = [output_path.clone(), manifest_path.clone()];
+    if stage_is_current(&receipt_path, &input_hash, &outputs)? {
+        return parse_alto(&fs::read_to_string(output_path)?);
+    }
+
+    let blocks_path = page_path.join("blocks");
+    fs::create_dir_all(&blocks_path)?;
+    let mut refined = layout.clone();
+    let mut records = Vec::new();
+    for (region_index, region) in refined.regions.iter_mut().enumerate() {
+        if region.lines.len() < 2 {
+            continue;
+        }
+        let Some((x, y, width, height)) = padded_polygon_bounds(
+            &region.polygon,
+            layout.width,
+            layout.height,
+            settings.block_padding_pixels,
+        ) else {
+            continue;
+        };
+        let stem = format!("block-{region_index:04}");
+        let crop_path = blocks_path.join(format!("{stem}.png"));
+        let crop_arguments = vec![
+            input.display().to_string(),
+            "-crop".to_owned(),
+            format!("{width}x{height}+{x}+{y}"),
+            "+repage".to_owned(),
+            crop_path.display().to_string(),
+        ];
+        run_resumable_command(
+            &format!("crop-{stem}"),
+            &content_hash(&[
+                &input_hash,
+                &serde_json::to_string(&region.polygon)?,
+                &settings.block_padding_pixels.to_string(),
+            ]),
+            "magick",
+            &crop_arguments,
+            std::slice::from_ref(&crop_path),
+            &blocks_path.join(format!("{stem}.crop.stage.json")),
+        )?;
+
+        let alto_path = blocks_path.join(format!("{stem}.xml"));
+        let alto_stem = blocks_path.join(&stem);
+        let tesseract_arguments = vec![
+            crop_path.display().to_string(),
+            alto_stem.display().to_string(),
+            "--dpi".to_owned(),
+            raster_dpi.to_string(),
+            "-l".to_owned(),
+            settings.primary_languages.join("+"),
+            "--psm".to_owned(),
+            settings.block_page_segmentation_mode.to_string(),
+            "alto".to_owned(),
+        ];
+        run_resumable_command(
+            &format!("recognize-{stem}"),
+            &content_hash(&[
+                &input_hash,
+                &sha256_file(&crop_path)?,
+                &settings.primary_languages.join("+"),
+                &settings.block_page_segmentation_mode.to_string(),
+            ]),
+            "tesseract",
+            &tesseract_arguments,
+            std::slice::from_ref(&alto_path),
+            &blocks_path.join(format!("{stem}.tesseract.stage.json")),
+        )?;
+        let candidate = parse_alto(&fs::read_to_string(&alto_path)?)?;
+        let candidate_line_count = candidate
+            .regions
+            .iter()
+            .map(|candidate_region| candidate_region.lines.len())
+            .sum();
+        let source_line_count = region.lines.len();
+        let replaced_lines = replace_block_lines(&mut region.lines, &candidate, x, y);
+        records.push(BlockRefinement {
+            region_id: region.id.clone(),
+            crop: relative_or_absolute(&crop_path),
+            source_lines: source_line_count,
+            recognized_lines: candidate_line_count,
+            replaced_lines,
+        });
+    }
+
+    fs::write(
+        &output_path,
+        write_alto(&refined, &relative_or_absolute(input)),
+    )?;
+    fs::write(&manifest_path, serde_json::to_vec_pretty(&records)?)?;
+    write_receipt(
+        &receipt_path,
+        "tesseract-block-refinement",
+        &input_hash,
+        "tesseract",
+        &[
+            "layout block crops".to_owned(),
+            format!("--psm {}", settings.block_page_segmentation_mode),
+            format!("--padding {}", settings.block_padding_pixels),
+        ],
+        &outputs,
+    )?;
+    Ok(refined)
+}
+
+fn replace_block_lines(
+    source: &mut [AltoLine],
+    candidate: &AltoPage,
+    offset_x: u32,
+    offset_y: u32,
+) -> usize {
+    let mut candidates: Vec<_> = candidate
+        .regions
+        .iter()
+        .flat_map(|region| region.lines.iter().cloned())
+        .collect();
+    for line in &mut candidates {
+        translate_points(&mut line.polygon, offset_x, offset_y);
+        for word in &mut line.words {
+            translate_points(&mut word.polygon, offset_x, offset_y);
+        }
+    }
+    let mut used = BTreeSet::new();
+    let mut replaced = 0;
+    for line in source {
+        let Some((candidate_index, _)) = candidates
+            .iter()
+            .enumerate()
+            .filter(|(index, _)| !used.contains(index))
+            .filter_map(|(index, candidate)| {
+                let distance = vertical_center_distance(&line.polygon, &candidate.polygon)?;
+                let tolerance =
+                    polygon_height(&line.polygon)?.max(polygon_height(&candidate.polygon)?) * 1.5;
+                (distance <= tolerance).then_some((index, distance))
+            })
+            .min_by(|left, right| left.1.total_cmp(&right.1))
+        else {
+            continue;
+        };
+        used.insert(candidate_index);
+        let candidate = &candidates[candidate_index];
+        line.text.clone_from(&candidate.text);
+        line.confidence = candidate.confidence;
+        line.words = candidate.words.clone();
+        for (word_index, word) in line.words.iter_mut().enumerate() {
+            word.id = format!("{}-block-word-{:04}", line.id, word_index + 1);
+        }
+        replaced += 1;
+    }
+    replaced
+}
+
+fn translate_points(points: &mut [Point], offset_x: u32, offset_y: u32) {
+    for point in points {
+        point.x += offset_x as f32;
+        point.y += offset_y as f32;
+    }
+}
+
+fn vertical_center_distance(left: &[Point], right: &[Point]) -> Option<f32> {
+    let left_center = polygon_vertical_center(left)?;
+    let right_center = polygon_vertical_center(right)?;
+    Some((left_center - right_center).abs())
+}
+
+fn polygon_vertical_center(points: &[Point]) -> Option<f32> {
+    let minimum = points.iter().map(|point| point.y).reduce(f32::min)?;
+    let maximum = points.iter().map(|point| point.y).reduce(f32::max)?;
+    Some((minimum + maximum) / 2.0)
+}
+
+fn polygon_height(points: &[Point]) -> Option<f32> {
+    let minimum = points.iter().map(|point| point.y).reduce(f32::min)?;
+    let maximum = points.iter().map(|point| point.y).reduce(f32::max)?;
+    Some(maximum - minimum)
+}
+
+fn padded_polygon_bounds(
+    polygon: &[Point],
+    page_width: u32,
+    page_height: u32,
+    padding: u32,
+) -> Option<(u32, u32, u32, u32)> {
+    let min_x = polygon
+        .iter()
+        .map(|point| point.x)
+        .reduce(f32::min)?
+        .floor()
+        .max(0.0) as u32;
+    let min_y = polygon
+        .iter()
+        .map(|point| point.y)
+        .reduce(f32::min)?
+        .floor()
+        .max(0.0) as u32;
+    let max_x = polygon
+        .iter()
+        .map(|point| point.x)
+        .reduce(f32::max)?
+        .ceil()
+        .max(0.0) as u32;
+    let max_y = polygon
+        .iter()
+        .map(|point| point.y)
+        .reduce(f32::max)?
+        .ceil()
+        .max(0.0) as u32;
+    let x = min_x.saturating_sub(padding);
+    let y = min_y.saturating_sub(padding);
+    let right = max_x.saturating_add(padding).min(page_width);
+    let bottom = max_y.saturating_add(padding).min(page_height);
+    let width = right.saturating_sub(x);
+    let height = bottom.saturating_sub(y);
+    (width > 0 && height > 0).then_some((x, y, width, height))
+}
+
+#[derive(Debug, Serialize)]
 struct IsolatedWordRecognition {
     line_id: String,
     word_id: String,
@@ -833,7 +1131,18 @@ fn recognize_tesseract_words(
                     &words_path.join(format!("{stem}.tesseract.stage.json")),
                 )?;
 
-                let candidate = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?;
+                let mut candidate = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?;
+                if detected_language.is_none() && !detected_text.chars().any(char::is_alphabetic) {
+                    if let Some(candidate) = &mut candidate {
+                        candidate.text = candidate
+                            .text
+                            .trim_matches(|character: char| {
+                                !character.is_alphabetic()
+                                    && canonical_combining_class(character) == 0
+                            })
+                            .to_owned();
+                    }
+                }
                 let use_isolated = candidate.as_ref().is_some_and(|candidate| {
                     should_use_isolated_word(
                         &detected_text,

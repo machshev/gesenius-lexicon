@@ -421,7 +421,14 @@ fn pipeline_commit() -> String {
         .map(|output| output.stdout)
         .unwrap_or_default();
     let untracked = Command::new("git")
-        .args(["ls-files", "--others", "--exclude-standard"])
+        .args([
+            "ls-files",
+            "--others",
+            "--exclude-standard",
+            "--",
+            ".",
+            ":(exclude)corpus/machine/*.jsonl",
+        ])
         .output()
         .ok()
         .filter(|output| output.status.success())

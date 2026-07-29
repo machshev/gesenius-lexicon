@@ -15,11 +15,17 @@ deskew_degrees = 0.0
 primary_languages = ["eng"]
 multilingual_languages = ["eng", "heb", "ara", "syr", "grc", "lat"]
 page_segmentation_mode = 3
+# Re-read each multi-line Tesseract layout block as one text block. This keeps
+# language-model context within a column without allowing the two columns to
+# become interleaved.
+block_refinement_enabled = true
+block_page_segmentation_mode = 6
+block_padding_pixels = 8
 # Foreign words detected by the multilingual pass are cropped, enlarged, and
 # read again with exactly one script-appropriate model before lines are joined.
 word_page_segmentation_mode = 10
 word_scale_percent = 200
-word_padding_pixels = 4
+word_padding_pixels = 8
 model_identity = "nixpkgs-tesseract-tessdata-pinned-by-flake.lock"
 
 [kraken]

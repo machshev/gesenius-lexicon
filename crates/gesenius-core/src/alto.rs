@@ -438,10 +438,66 @@ pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) 
                     })
                     .map(ToOwned::to_owned);
             }
+            apply_language_context_hints(&mut line.words, supported_languages);
             smooth_foreign_language_runs(&mut line.words);
         }
     }
     classified
+}
+
+fn apply_language_context_hints(words: &mut [AltoWord], supported_languages: &[String]) {
+    for index in 0..words.len() {
+        let hinted = match words[index]
+            .text
+            .trim_matches(|character: char| !character.is_alphabetic())
+            .to_ascii_lowercase()
+            .as_str()
+        {
+            "heb" | "hebr" => Some("heb"),
+            "arab" | "arabic" => Some("ara"),
+            "syr" | "syriac" => Some("syr"),
+            "gr" | "greek" => Some("grc"),
+            _ => None,
+        };
+        let Some(language) = hinted.filter(|language| {
+            supported_languages
+                .iter()
+                .any(|supported| supported == language)
+        }) else {
+            continue;
+        };
+        if let Some(candidate) = words.get_mut(index + 1).filter(|candidate| {
+            candidate.language.is_none()
+                && (candidate.confidence < 0.75 || suspicious_script_placeholder(&candidate.text))
+        }) {
+            candidate.language = Some(language.to_owned());
+        }
+    }
+
+    for index in 0..words.len().saturating_sub(2) {
+        let Some(language) = words[index].language.clone() else {
+            continue;
+        };
+        if words[index + 1].text.eq_ignore_ascii_case("and")
+            && words[index + 2].language.is_none()
+            && (words[index + 2].confidence < 0.75
+                || suspicious_script_placeholder(&words[index + 2].text))
+        {
+            words[index + 2].language = Some(language);
+        }
+    }
+}
+
+fn suspicious_script_placeholder(text: &str) -> bool {
+    let alphabetic = text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .count();
+    let digits_or_symbols = text
+        .chars()
+        .filter(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
+        .count();
+    alphabetic == 0 && digits_or_symbols > 0
 }
 
 /// Maps a recognized word's strong script to its single-language Tesseract
@@ -1125,6 +1181,27 @@ mod tests {
             .words
             .iter()
             .all(|word| word.language.as_deref() == Some("heb")));
+    }
+
+    #[test]
+    fn uses_printed_language_labels_and_enumeration_context() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        line.words[0].text = "Heb.".to_owned();
+        line.words[1].text = "75%".to_owned();
+        line.words[1].confidence = 0.0;
+        let mut third = line.words[1].clone();
+        third.text = "and".to_owned();
+        third.confidence = 0.9;
+        let mut fourth = line.words[1].clone();
+        fourth.text = "2".to_owned();
+        fourth.confidence = 0.4;
+        line.words.extend([third, fourth]);
+
+        let classified = classify_word_languages(&page, &["eng".to_owned(), "heb".to_owned()]);
+        let words = &classified.regions[0].lines[0].words;
+        assert_eq!(words[1].language.as_deref(), Some("heb"));
+        assert_eq!(words[3].language.as_deref(), Some("heb"));
     }
 
     #[test]
