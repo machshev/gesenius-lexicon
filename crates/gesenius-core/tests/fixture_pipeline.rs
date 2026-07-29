@@ -393,6 +393,30 @@ fn grammar_labeled_headwords_start_entries_without_block_relative_indentation() 
         <SP WIDTH="10"/>
         <String CONTENT="Pa." WC="0.98" HPOS="445" VPOS="220" WIDTH="40" HEIGHT="45"/>
       </TextLine>
+      <TextLine ID="language-prose" HPOS="50" VPOS="275" WIDTH="540" HEIGHT="45">
+        <String CONTENT="Arab." WC="0.98" HPOS="50" VPOS="275" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="and" WC="0.98" HPOS="120" VPOS="275" WIDTH="40" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="Heb." WC="0.98" HPOS="170" VPOS="275" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="it" WC="0.98" HPOS="230" VPOS="275" WIDTH="20" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="continues." WC="0.98" HPOS="260" VPOS="275" WIDTH="120" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="proper-name-block" HPOS="90" VPOS="340" WIDTH="500" HEIGHT="100">
+      <TextLine ID="proper-name" HPOS="90" VPOS="340" WIDTH="500" HEIGHT="45">
+        <String CONTENT="RN" WC="0.60" HPOS="90" VPOS="340" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="Abagtha," WC="0.98" HPOS="150" VPOS="340" WIDTH="100" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="Pers." WC="0.98" HPOS="260" VPOS="340" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="pr." WC="0.98" HPOS="325" VPOS="340" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="n." WC="0.98" HPOS="370" VPOS="340" WIDTH="25" HEIGHT="45"/>
+      </TextLine>
     </TextBlock>
   </PrintSpace></Page></Layout>
 </alto>"#,
@@ -410,10 +434,14 @@ fn grammar_labeled_headwords_start_entries_without_block_relative_indentation() 
         ),
     );
 
-    assert_eq!(parsed.entries.len(), 2);
+    assert_eq!(parsed.entries.len(), 3);
     assert_eq!(
         parsed.entries[1].headword.as_ref().unwrap().normalized,
         "אָבֶב"
+    );
+    assert_eq!(
+        parsed.entries[2].headword.as_ref().unwrap().normalized,
+        "RN"
     );
 }
 

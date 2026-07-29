@@ -388,7 +388,11 @@ pub fn parse_entries_with_hypotheses_continuing(
         let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
         if starts_entry && entry.headword.is_none() {
-            entry.headword = extract_headword(&span);
+            entry.headword = extract_headword(&span).or_else(|| {
+                grammar_labeled_headword
+                    .then(|| extract_candidate_headword(&span, line))
+                    .flatten()
+            });
         }
         let continues_block = !starts_entry
             && entry
@@ -592,8 +596,6 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
                 | "proper"
                 | "pers"
                 | "chald"
-                | "hebr"
-                | "heb"
                 | "pil"
                 | "piel"
                 | "pual"
@@ -873,28 +875,19 @@ fn make_span(
 }
 
 fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
-    let mut started = false;
-    let headword: String = line_span
+    let mut characters = line_span
         .diplomatic
         .chars()
-        .skip_while(|character| {
-            !matches!(
-                character.script(),
-                unicode_script::Script::Hebrew
-                    | unicode_script::Script::Inherited
-                    | unicode_script::Script::Common
-            )
-        })
+        .skip_while(|character| character.script() != unicode_script::Script::Hebrew);
+    let headword: String = characters
+        .by_ref()
         .take_while(|character| {
             let script = character.script();
-            let keep = matches!(
+            matches!(
                 script,
                 unicode_script::Script::Hebrew | unicode_script::Script::Inherited
-            ) || (started && (*character == '-' || *character == '־'));
-            if matches!(script, unicode_script::Script::Hebrew) {
-                started = true;
-            }
-            keep
+            ) || *character == '-'
+                || *character == '־'
         })
         .collect();
     if headword.is_empty() {
@@ -907,6 +900,33 @@ fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
     span.script = "Hebr".to_owned();
     span.direction = Direction::Rtl;
     span.warnings = unicode_warnings(&headword);
+    Some(span)
+}
+
+fn extract_candidate_headword(line_span: &TextSpan, line: &AltoLine) -> Option<TextSpan> {
+    let candidate_index = line
+        .words
+        .first()
+        .filter(|word| {
+            word.text
+                .chars()
+                .all(|character| !character.is_alphanumeric())
+        })
+        .map_or(0, |_| 1);
+    let candidate = line.words.get(candidate_index)?;
+    let headword = candidate
+        .text
+        .trim_matches(|character: char| !character.is_alphanumeric());
+    if headword.is_empty() {
+        return None;
+    }
+    let mut span = line_span.clone();
+    span.id = format!("{}:headword", line_span.id.trim_end_matches(":span:0001"));
+    span.diplomatic = headword.to_owned();
+    span.normalized = normalize_nfc(headword);
+    span.script = classify_script(headword);
+    span.direction = infer_direction(headword);
+    span.warnings = unicode_warnings(headword);
     Some(span)
 }
 
