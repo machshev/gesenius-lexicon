@@ -504,7 +504,11 @@ pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> A
 pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) -> AltoPage {
     let mut classified = page.clone();
     for region in &mut classified.regions {
+        let (region_x, _, _, _) = polygon_bounds(&region.polygon);
         for line in &mut region.lines {
+            let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
+            let is_indented =
+                line_x.saturating_sub(region_x) as f32 >= line_height.max(1) as f32 * 0.5;
             for word in &mut line.words {
                 word.language = detected_word_language(&word.text)
                     .filter(|language| {
@@ -516,10 +520,85 @@ pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) 
             }
             apply_language_context_hints(&mut line.words, supported_languages);
             smooth_foreign_language_runs(&mut line.words);
+            apply_headword_grammar_hint(&mut line.words, supported_languages, is_indented);
         }
     }
     apply_starred_headword_hints(&mut classified, supported_languages);
     classified
+}
+
+fn apply_headword_grammar_hint(
+    words: &mut [AltoWord],
+    supported_languages: &[String],
+    is_indented: bool,
+) {
+    if !supported_languages.iter().any(|language| language == "heb") {
+        return;
+    }
+    let candidate_index = words
+        .first()
+        .filter(|word| {
+            word.text
+                .chars()
+                .all(|character| !character.is_alphanumeric())
+        })
+        .map_or(0, |_| 1);
+    if !is_indented && candidate_index == 0 {
+        return;
+    }
+    let Some(candidate) = words.get(candidate_index) else {
+        return;
+    };
+    let candidate_text = candidate
+        .text
+        .trim_matches(|character: char| !character.is_alphanumeric());
+    if candidate_text.is_empty()
+        || candidate_text.chars().count() > 6
+        || (candidate_text
+            .chars()
+            .all(|character| character.is_numeric())
+            && candidate
+                .text
+                .chars()
+                .any(|character| !character.is_alphanumeric()))
+    {
+        return;
+    }
+    if is_grammar_labeled_headword(words, candidate_index) {
+        words[candidate_index].language = Some("heb".to_owned());
+    }
+}
+
+fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bool {
+    let following: Vec<_> = words
+        .iter()
+        .skip(candidate_index + 1)
+        .take(3)
+        .map(|word| {
+            word.text
+                .trim_matches(|character: char| !character.is_alphabetic())
+                .to_ascii_lowercase()
+        })
+        .collect();
+    following.iter().any(|word| {
+        matches!(
+            word.as_str(),
+            "m" | "f"
+                | "n"
+                | "chald"
+                | "hebr"
+                | "heb"
+                | "pil"
+                | "piel"
+                | "pual"
+                | "hithp"
+                | "hiph"
+                | "hophal"
+        )
+    }) || matches!(
+        following.as_slice(),
+        [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
+    )
 }
 
 fn apply_starred_headword_hints(page: &mut AltoPage, supported_languages: &[String]) {
@@ -933,14 +1012,20 @@ fn add_replacement(
     let primary_confidence = word_confidence(&primary.words[primary_start..=primary_end]);
     let secondary_confidence =
         word_confidence(&multilingual.words[secondary_start..=secondary_end]);
-    if primary_confidence >= 0.70
+    let is_headword = secondary_start == secondary_end
+        && is_grammar_labeled_headword(&multilingual.words, secondary_start);
+    if !is_headword
+        && primary_confidence >= 0.70
         && primary.words[primary_start..=primary_end]
             .iter()
             .all(|word| is_plausible_english_word(&word.text))
     {
         return;
     }
-    if primary_confidence >= 0.86 && secondary_confidence < primary_confidence + 0.05 {
+    if !is_headword
+        && primary_confidence >= 0.86
+        && secondary_confidence < primary_confidence + 0.05
+    {
         return;
     }
     replacements.push(WordReplacement {
@@ -1285,6 +1370,21 @@ mod tests {
     }
 
     #[test]
+    fn grammar_labeled_headwords_override_plausible_latin_ocr_shapes() {
+        let mut primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        primary.regions[0].lines[0].words[0].confidence = 0.99;
+        let mut multilingual = parse_alto(MULTILINGUAL_REORDERED).unwrap();
+        let line = &mut multilingual.regions[0].lines[1];
+        line.words[0].text = "אֶ".to_owned();
+        line.words[0].confidence = 0.65;
+        line.words[1].text = "m.".to_owned();
+
+        let fused = fuse_multilingual_words(&primary, &multilingual);
+
+        assert_eq!(fused.regions[0].lines[0].words[0].text, "אֶ");
+    }
+
+    #[test]
     fn classifies_each_foreign_word_and_smooths_an_isolated_script_error() {
         let mut page = parse_alto(MULTILINGUAL_REORDERED).unwrap();
         page.regions[0].lines[1].words = vec![
@@ -1328,6 +1428,41 @@ mod tests {
         let words = &classified.regions[0].lines[0].words;
         assert_eq!(words[1].language.as_deref(), Some("heb"));
         assert_eq!(words[3].language.as_deref(), Some("heb"));
+    }
+
+    #[test]
+    fn treats_short_leading_ocr_shapes_before_grammar_labels_as_hebrew() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        line.words.truncate(2);
+        line.words[0].text = "2".to_owned();
+        line.words[1].text = "Chald.".to_owned();
+        for point in &mut line.polygon {
+            point.x += 50.0;
+        }
+
+        let classified = classify_word_languages(&page, &["eng".to_owned(), "heb".to_owned()]);
+
+        assert_eq!(
+            classified.regions[0].lines[0].words[0].language.as_deref(),
+            Some("heb")
+        );
+    }
+
+    #[test]
+    fn does_not_treat_numbered_senses_as_hebrew_headwords() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        line.words.truncate(2);
+        line.words[0].text = "2.".to_owned();
+        line.words[1].text = "m.".to_owned();
+        for point in &mut line.polygon {
+            point.x += 50.0;
+        }
+
+        let classified = classify_word_languages(&page, &["eng".to_owned(), "heb".to_owned()]);
+
+        assert_eq!(classified.regions[0].lines[0].words[0].language, None);
     }
 
     #[test]

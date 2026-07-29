@@ -133,7 +133,7 @@ pub struct TesseractSettings {
 }
 
 const fn default_word_page_segmentation_mode() -> u8 {
-    10
+    8
 }
 
 const fn default_block_refinement_enabled() -> bool {
