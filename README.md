@@ -127,6 +127,8 @@ cargo run -- review serve --bind 127.0.0.1:8787
 
 The UI shows the source page and ALTO overlays, complete competing hypotheses, Unicode code points, script warnings, confidence, and editable structured JSON. Saves require the revision the reviewer observed; stale edits receive HTTP 409 rather than silently overwriting newer work.
 
+During a multipage `run`, each completed page is atomically published to the machine corpus. Use **Reload** in an already-running review UI to browse and review that page while OCR continues on later pages.
+
 Reviews append complete replacements to `corpus/review/patches.jsonl`. Machine JSONL is not rewritten, and generated TEI/SQLite files are never edited. Materialization replays the strictly monotonic patch chain.
 
 `pilot.toml` fixes 24 printed-page labels per edition and records why each page was selected. Once corrected or verified pilot spans exist:

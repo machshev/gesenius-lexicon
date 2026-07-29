@@ -7,7 +7,7 @@ use crate::alto::{
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::normalized_disagreement;
-use crate::model::Point;
+use crate::model::{CorpusEntry, Point};
 use crate::source::{sha256_file, verify_source, SourceCatalogue, SourceRecord};
 use anyhow::{bail, Context, Result};
 use chrono::{DateTime, Utc};
@@ -377,6 +377,14 @@ pub fn run_with_progress(
         None
     };
 
+    let corpus_path = options
+        .corpus_root
+        .join(format!("{}.jsonl", options.edition));
+    let base_entries = if corpus_path.exists() {
+        load_entries(&corpus_path)?
+    } else {
+        Vec::new()
+    };
     let mut parsed_pages = Vec::new();
     let mut previous_page_number = None;
     let mut continuation = None;
@@ -521,6 +529,9 @@ pub fn run_with_progress(
         continuation = parsed.entries.last().cloned();
         previous_page_number = Some(*page_number);
         parsed_pages.push(parsed);
+        let completed_pages = options.pages[..page_index].iter().copied().collect();
+        let entries = merge_parsed_pages(&base_entries, &completed_pages, &parsed_pages);
+        write_entries(&corpus_path, &entries)?;
         report_page("page complete");
     }
 
@@ -531,28 +542,8 @@ pub fn run_with_progress(
         None,
         "merging parsed entries into the machine corpus",
     );
-    let corpus_path = options
-        .corpus_root
-        .join(format!("{}.jsonl", options.edition));
     let selected_pages: BTreeSet<u32> = options.pages.iter().copied().collect();
-    let mut entries = if corpus_path.exists() {
-        load_entries(&corpus_path)?
-    } else {
-        Vec::new()
-    };
-    entries.retain(|entry| {
-        !entry
-            .spans()
-            .flat_map(|span| span.coordinates.iter())
-            .any(|coordinate| selected_pages.contains(&coordinate.source_page))
-    });
-    for parsed_entry in parsed_pages
-        .iter()
-        .flat_map(|page| page.entries.iter().cloned())
-    {
-        entries.retain(|entry| entry.id != parsed_entry.id);
-        entries.push(parsed_entry);
-    }
+    let entries = merge_parsed_pages(&base_entries, &selected_pages, &parsed_pages);
     write_entries(&corpus_path, &entries)?;
 
     let unparsed_lines = parsed_pages
@@ -569,6 +560,28 @@ pub fn run_with_progress(
         corpus_path,
         run_path,
     })
+}
+
+fn merge_parsed_pages(
+    base_entries: &[CorpusEntry],
+    selected_pages: &BTreeSet<u32>,
+    parsed_pages: &[ParsedPage],
+) -> Vec<CorpusEntry> {
+    let mut entries = base_entries.to_vec();
+    entries.retain(|entry| {
+        !entry
+            .spans()
+            .flat_map(|span| span.coordinates.iter())
+            .any(|coordinate| selected_pages.contains(&coordinate.source_page))
+    });
+    for parsed_entry in parsed_pages
+        .iter()
+        .flat_map(|page| page.entries.iter().cloned())
+    {
+        entries.retain(|entry| entry.id != parsed_entry.id);
+        entries.push(parsed_entry);
+    }
+    entries
 }
 
 fn report_progress(
