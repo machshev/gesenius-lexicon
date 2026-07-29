@@ -6,7 +6,7 @@ use crate::alto::{
     AltoPage, AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage,
 };
 use crate::corpus_io::{load_entries, write_entries};
-use crate::metrics::normalized_disagreement;
+use crate::metrics::{normalized_disagreement, polygon_iou};
 use crate::model::{CorpusEntry, Point};
 use crate::source::{sha256_file, verify_source, SourceCatalogue, SourceRecord};
 use anyhow::{bail, Context, Result};
@@ -890,6 +890,7 @@ fn recognize_tesseract_blocks(
             .sum();
         let source_line_count = region.lines.len();
         let replaced_lines = replace_block_lines(&mut region.lines, &candidate, x, y);
+        deduplicate_overlapping_lines(&mut region.lines);
         records.push(BlockRefinement {
             region_id: region.id.clone(),
             crop: relative_or_absolute(&crop_path),
@@ -957,6 +958,7 @@ fn replace_block_lines(
         let candidate = &candidates[candidate_index];
         line.text.clone_from(&candidate.text);
         line.confidence = candidate.confidence;
+        line.polygon.clone_from(&candidate.polygon);
         line.words = candidate.words.clone();
         for (word_index, word) in line.words.iter_mut().enumerate() {
             word.id = format!("{}-block-word-{:04}", line.id, word_index + 1);
@@ -964,6 +966,23 @@ fn replace_block_lines(
         replaced += 1;
     }
     replaced
+}
+
+fn deduplicate_overlapping_lines(lines: &mut Vec<AltoLine>) {
+    let mut retained: Vec<AltoLine> = Vec::with_capacity(lines.len());
+    for line in lines.drain(..) {
+        if let Some(existing) = retained
+            .iter_mut()
+            .find(|existing| polygon_iou(&existing.polygon, &line.polygon) >= 0.8)
+        {
+            if line.confidence > existing.confidence {
+                *existing = line;
+            }
+        } else {
+            retained.push(line);
+        }
+    }
+    *lines = retained;
 }
 
 fn translate_points(points: &mut [Point], offset_x: u32, offset_y: u32) {
@@ -1568,9 +1587,10 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 #[cfg(test)]
 mod tests {
     use super::{
-        entry_source_page, parse_page_spec, should_replace_entry, should_use_isolated_word,
-        WordCandidate,
+        deduplicate_overlapping_lines, entry_source_page, parse_page_spec, should_replace_entry,
+        should_use_isolated_word, WordCandidate,
     };
+    use crate::alto::parse_alto;
     use crate::model::CorpusEntry;
     use std::collections::BTreeSet;
 
@@ -1687,5 +1707,33 @@ mod tests {
         assert_eq!(entry_source_page(&entry), Some(17));
         assert!(!should_replace_entry(&entry, &BTreeSet::from([19])));
         assert!(should_replace_entry(&entry, &BTreeSet::from([17])));
+    }
+
+    #[test]
+    fn block_refinement_drops_a_lower_confidence_duplicate_line() {
+        let mut page = parse_alto(
+            r#"<?xml version="1.0"?>
+            <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+              <Layout><Page WIDTH="1000" HEIGHT="1000"><PrintSpace>
+                <TextBlock ID="body" HPOS="100" VPOS="100" WIDTH="800" HEIGHT="100">
+                  <TextLine ID="artifact" HPOS="100" VPOS="100" WIDTH="800" HEIGHT="50">
+                    <String CONTENT="37-5 m. constr." WC="0.40"
+                      HPOS="100" VPOS="100" WIDTH="800" HEIGHT="50"/>
+                  </TextLine>
+                  <TextLine ID="headword" HPOS="100" VPOS="100" WIDTH="800" HEIGHT="50">
+                    <String CONTENT="אב m. constr." WC="0.90"
+                      HPOS="100" VPOS="100" WIDTH="800" HEIGHT="50"/>
+                  </TextLine>
+                </TextBlock>
+              </PrintSpace></Page></Layout>
+            </alto>"#,
+        )
+        .unwrap();
+        let lines = &mut page.regions[0].lines;
+
+        deduplicate_overlapping_lines(lines);
+
+        assert_eq!(lines.len(), 1);
+        assert_eq!(lines[0].id, "headword");
     }
 }

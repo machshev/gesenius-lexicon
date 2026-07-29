@@ -560,6 +560,9 @@ fn apply_headword_grammar_hint(
         .trim_matches(|character: char| !character.is_alphanumeric());
     if candidate_text.is_empty()
         || candidate_text.chars().count() > 6
+        || candidate_text
+            .chars()
+            .all(|character| character.is_ascii_lowercase())
         || (candidate_text
             .chars()
             .all(|character| character.is_numeric())
@@ -624,6 +627,9 @@ fn line_has_grammar_labeled_headword(line: &AltoLine) -> bool {
             .trim_matches(|character: char| !character.is_alphanumeric());
         !candidate_text.is_empty()
             && candidate_text.chars().count() <= 6
+            && !candidate_text
+                .chars()
+                .all(|character| character.is_ascii_lowercase())
             && !(candidate_text
                 .chars()
                 .all(|character| character.is_numeric())
@@ -1531,6 +1537,24 @@ mod tests {
         line.words.truncate(2);
         line.words[0].text = "2.".to_owned();
         line.words[1].text = "m.".to_owned();
+        for point in &mut line.polygon {
+            point.x += 50.0;
+        }
+
+        let classified = classify_word_languages(&page, &["eng".to_owned(), "heb".to_owned()]);
+
+        assert_eq!(classified.regions[0].lines[0].words[0].language, None);
+    }
+
+    #[test]
+    fn does_not_treat_wrapped_lowercase_prose_as_a_headword() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        line.words[0].text = "han,".to_owned();
+        line.words[1].text = "1".to_owned();
+        let mut person = line.words[1].clone();
+        person.text = "pers.".to_owned();
+        line.words.push(person);
         for point in &mut line.polygon {
             point.x += 50.0;
         }
