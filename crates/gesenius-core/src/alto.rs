@@ -355,8 +355,11 @@ pub fn parse_entries_with_hypotheses_continuing(
             continue;
         }
 
-        let starts_entry = begins_with_hebrew(&line.text)
-            && (entries.is_empty() || is_indented_paragraph_start(line, region));
+        let grammar_labeled_headword = line_has_grammar_labeled_headword(line);
+        let starts_entry = (begins_with_hebrew(&line.text) || grammar_labeled_headword)
+            && (entries.is_empty()
+                || is_indented_paragraph_start(line, region)
+                || grammar_labeled_headword);
         let block_kind = if is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {
@@ -585,6 +588,9 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
             word.as_str(),
             "m" | "f"
                 | "n"
+                | "pr"
+                | "proper"
+                | "pers"
                 | "chald"
                 | "hebr"
                 | "heb"
@@ -599,6 +605,33 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
         following.as_slice(),
         [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
     )
+}
+
+fn line_has_grammar_labeled_headword(line: &AltoLine) -> bool {
+    let candidate_index = line
+        .words
+        .first()
+        .filter(|word| {
+            word.text
+                .chars()
+                .all(|character| !character.is_alphanumeric())
+        })
+        .map_or(0, |_| 1);
+    line.words.get(candidate_index).is_some_and(|candidate| {
+        let candidate_text = candidate
+            .text
+            .trim_matches(|character: char| !character.is_alphanumeric());
+        !candidate_text.is_empty()
+            && candidate_text.chars().count() <= 6
+            && !(candidate_text
+                .chars()
+                .all(|character| character.is_numeric())
+                && candidate
+                    .text
+                    .chars()
+                    .any(|character| !character.is_alphanumeric()))
+            && is_grammar_labeled_headword(&line.words, candidate_index)
+    })
 }
 
 fn apply_starred_headword_hints(page: &mut AltoPage, supported_languages: &[String]) {
@@ -1437,6 +1470,29 @@ mod tests {
         line.words.truncate(2);
         line.words[0].text = "2".to_owned();
         line.words[1].text = "Chald.".to_owned();
+        for point in &mut line.polygon {
+            point.x += 50.0;
+        }
+
+        let classified = classify_word_languages(&page, &["eng".to_owned(), "heb".to_owned()]);
+
+        assert_eq!(
+            classified.regions[0].lines[0].words[0].language.as_deref(),
+            Some("heb")
+        );
+    }
+
+    #[test]
+    fn treats_short_leading_ocr_shapes_before_proper_name_labels_as_hebrew() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        line.words[0].text = "RN".to_owned();
+        line.words[1].text = "Abagtha,".to_owned();
+        let mut pers = line.words[1].clone();
+        pers.text = "Pers.".to_owned();
+        let mut proper = line.words[1].clone();
+        proper.text = "pr.".to_owned();
+        line.words.extend([pers, proper]);
         for point in &mut line.polygon {
             point.x += 50.0;
         }

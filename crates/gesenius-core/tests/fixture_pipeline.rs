@@ -363,6 +363,61 @@ fn flush_hebrew_example_does_not_cut_an_entry_mid_paragraph() {
 }
 
 #[test]
+fn grammar_labeled_headwords_start_entries_without_block_relative_indentation() {
+    let page = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="first-entry" HPOS="90" VPOS="100" WIDTH="500" HEIGHT="100">
+      <TextLine ID="first-headword" HPOS="90" VPOS="100" WIDTH="500" HEIGHT="45">
+        <String CONTENT="אָב" WC="0.98" HPOS="90" VPOS="100" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="m." WC="0.98" HPOS="160" VPOS="100" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="father" WC="0.98" HPOS="200" VPOS="100" WIDTH="100" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="flush-headword-block" HPOS="50" VPOS="220" WIDTH="540" HEIGHT="100">
+      <TextLine ID="flush-headword" HPOS="50" VPOS="220" WIDTH="540" HEIGHT="45">
+        <String CONTENT="אָבֶב" WC="0.98" HPOS="50" VPOS="220" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="in" WC="0.98" HPOS="140" VPOS="220" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="Heb." WC="0.98" HPOS="180" VPOS="220" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="not" WC="0.98" HPOS="240" VPOS="220" WIDTH="45" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="used;" WC="0.98" HPOS="295" VPOS="220" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="Chald." WC="0.98" HPOS="365" VPOS="220" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="10"/>
+        <String CONTENT="Pa." WC="0.98" HPOS="445" VPOS="220" WIDTH="40" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+
+    let parsed = parse_entries(
+        (&page, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "3",
+            19,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 2);
+    assert_eq!(
+        parsed.entries[1].headword.as_ref().unwrap().normalized,
+        "אָבֶב"
+    );
+}
+
+#[test]
 fn isolated_numeric_artifact_is_ignored_but_starred_headword_is_retained() {
     let multilingual = parse_alto(
         r#"<?xml version="1.0"?>
