@@ -2,8 +2,8 @@
 
 use chrono::{DateTime, Utc};
 use gesenius_core::alto::{
-    parse_alto, parse_entries, parse_entries_continuing, EngineIdentity, LineAssignment,
-    ParseContext,
+    classify_word_languages, parse_alto, parse_entries, parse_entries_continuing, EngineIdentity,
+    LineAssignment, ParseContext,
 };
 use gesenius_core::corpus_io::{load_entries, write_entries};
 use gesenius_core::export::{
@@ -359,6 +359,58 @@ fn flush_hebrew_example_does_not_cut_an_entry_mid_paragraph() {
                 assignment,
                 LineAssignment::Entry(entry) if entry == "robinson-1854:p1:e0001"
             )
+    }));
+}
+
+#[test]
+fn isolated_numeric_artifact_is_ignored_but_starred_headword_is_retained() {
+    let multilingual = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="2000" HEIGHT="3400"><PrintSpace>
+    <TextBlock ID="body" HPOS="100" VPOS="2800" WIDTH="800" HEIGHT="100">
+      <TextLine ID="body-line" HPOS="100" VPOS="2800" WIDTH="800" HEIGHT="50">
+        <String CONTENT="continuing prose" WC="0.98" HPOS="100" VPOS="2800" WIDTH="300" HEIGHT="50"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="star" HPOS="1030" VPOS="2900" WIDTH="20" HEIGHT="25">
+      <TextLine ID="star-line" HPOS="1030" VPOS="2900" WIDTH="20" HEIGHT="25">
+        <String CONTENT="*" WC="0.95" HPOS="1030" VPOS="2900" WIDTH="20" HEIGHT="25"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="headword" HPOS="1070" VPOS="2898" WIDTH="700" HEIGHT="60">
+      <TextLine ID="headword-line" HPOS="1070" VPOS="2898" WIDTH="700" HEIGHT="60">
+        <String CONTENT="ܢ" WC="0.67" HPOS="1070" VPOS="2898" WIDTH="70" HEIGHT="60"/>
+        <SP WIDTH="20"/><String CONTENT="m." WC="0.92" HPOS="1160" VPOS="2920" WIDTH="50" HEIGHT="25"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="artifact" HPOS="690" VPOS="3240" WIDTH="20" HEIGHT="35">
+      <TextLine ID="artifact-line" HPOS="690" VPOS="3240" WIDTH="20" HEIGHT="35">
+        <String CONTENT="1" WC="0.94" HPOS="690" VPOS="3240" WIDTH="20" HEIGHT="35"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let classified = classify_word_languages(&multilingual, &["heb".to_owned(), "syr".to_owned()]);
+    assert_eq!(
+        classified.regions[2].lines[0].words[0].language.as_deref(),
+        Some("heb")
+    );
+
+    let parsed = parse_entries(
+        (&classified, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+    assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
+        line == "artifact-line" && matches!(assignment, LineAssignment::Unparsed)
     }));
 }
 

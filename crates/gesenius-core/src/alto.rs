@@ -347,7 +347,9 @@ pub fn parse_entries_with_hypotheses_continuing(
             ));
             continue;
         }
-        if is_margin_line(line, canonical.height) {
+        if is_margin_line(line, canonical.height)
+            || is_isolated_numeric_artifact(line, region, canonical)
+        {
             assignments.push((region.id.clone(), line.id.clone(), LineAssignment::Unparsed));
             previous_line = None;
             continue;
@@ -516,7 +518,42 @@ pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) 
             smooth_foreign_language_runs(&mut line.words);
         }
     }
+    apply_starred_headword_hints(&mut classified, supported_languages);
     classified
+}
+
+fn apply_starred_headword_hints(page: &mut AltoPage, supported_languages: &[String]) {
+    if !supported_languages.iter().any(|language| language == "heb") {
+        return;
+    }
+    let stars: Vec<_> = page
+        .regions
+        .iter()
+        .flat_map(|region| &region.lines)
+        .filter(|line| line.text.trim() == "*")
+        .map(|line| polygon_bounds(&line.polygon))
+        .collect();
+    for line in page.regions.iter_mut().flat_map(|region| &mut region.lines) {
+        let (line_x, line_y, _, line_height) = polygon_bounds(&line.polygon);
+        let vertically_aligned = stars
+            .iter()
+            .any(|(star_x, star_y, star_width, star_height)| {
+                let star_bottom = star_y.saturating_add(*star_height);
+                let line_bottom = line_y.saturating_add(line_height);
+                line_x >= star_x.saturating_add(*star_width)
+                    && line_y < star_bottom
+                    && *star_y < line_bottom
+            });
+        if vertically_aligned {
+            if let Some(word) = line
+                .words
+                .first_mut()
+                .filter(|word| word.language.is_some())
+            {
+                word.language = Some("heb".to_owned());
+            }
+        }
+    }
 }
 
 fn apply_language_context_hints(words: &mut [AltoWord], supported_languages: &[String]) {
@@ -1048,6 +1085,21 @@ fn is_margin_line(line: &AltoLine, page_height: u32) -> bool {
         .map(|point| point.y)
         .fold(f32::MIN, f32::max);
     minimum_y < page_height as f32 * 0.05 || maximum_y > page_height as f32 * 0.975
+}
+
+fn is_isolated_numeric_artifact(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
+    let (_, _, width, height) = polygon_bounds(&line.polygon);
+    region.lines.len() == 1
+        && line
+            .text
+            .chars()
+            .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
+        && line
+            .text
+            .chars()
+            .any(|character| character.is_ascii_digit())
+        && width as f32 <= page.width as f32 * 0.02
+        && height as f32 <= page.height as f32 * 0.02
 }
 
 fn integer_attribute(node: Node<'_, '_>, attribute: &str) -> Result<u32> {
