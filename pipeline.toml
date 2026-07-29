@@ -1,0 +1,23 @@
+raster_dpi = 400
+review_confidence_threshold = 0.80
+disagreement_threshold = 0.15
+
+[preprocessing]
+grayscale = true
+contrast_stretch = "0.5%x0.5%"
+# Keep zero until a page or scan-specific angle has been measured. Explicit
+# angles and crops are recorded in transform.json and become part of the run ID.
+deskew_degrees = 0.0
+
+[tesseract]
+languages = ["eng", "heb", "ara", "syr", "grc", "lat"]
+page_segmentation_mode = 3
+model_identity = "nixpkgs-tesseract-tessdata-pinned-by-flake.lock"
+
+[kraken]
+# Enable after `gesenius train` has produced and checksummed the first pilot
+# model. Tesseract remains the initial baseline when this is false.
+enabled = false
+model_path = "models/gesenius-pilot.mlmodel"
+model_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+segmentation_model = "default"

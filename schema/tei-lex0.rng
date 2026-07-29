@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Pinned project profile for the TEI Lex-0 structures emitted by gesenius.
+  The profile fixes TEI/header/body/entry structure while allowing the inline
+  TEI Lex-0 vocabulary needed for forms, senses, citations, cross-references,
+  etymology, and OCR provenance notes.
+-->
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+         ns="http://www.tei-c.org/ns/1.0">
+  <start>
+    <element name="TEI">
+      <element name="teiHeader"><ref name="any-content"/></element>
+      <element name="text">
+        <element name="body">
+          <zeroOrMore><ref name="entry"/></zeroOrMore>
+        </element>
+      </element>
+    </element>
+  </start>
+
+  <define name="entry">
+    <element name="entry">
+      <attribute name="id" ns="http://www.w3.org/XML/1998/namespace"><text/></attribute>
+      <attribute name="n"><text/></attribute>
+      <attribute name="type"><choice><value>machine</value><value>corrected</value><value>verified</value></choice></attribute>
+      <attribute name="source"><text/></attribute>
+      <zeroOrMore><ref name="tei-child"/></zeroOrMore>
+    </element>
+  </define>
+
+  <define name="tei-child">
+    <element>
+      <choice>
+        <name>form</name><name>orth</name><name>num</name><name>gram</name>
+        <name>sense</name><name>cit</name><name>quote</name><name>xr</name>
+        <name>ref</name><name>etym</name><name>note</name><name>seg</name>
+        <name>choice</name><name>orig</name><name>reg</name>
+      </choice>
+      <zeroOrMore>
+        <choice>
+          <attribute><anyName/><text/></attribute>
+          <text/>
+          <ref name="tei-child"/>
+        </choice>
+      </zeroOrMore>
+    </element>
+  </define>
+
+  <define name="any-content">
+    <zeroOrMore>
+      <choice>
+        <attribute><anyName/><text/></attribute>
+        <text/>
+        <element>
+          <anyName/>
+          <ref name="any-content"/>
+        </element>
+      </choice>
+    </zeroOrMore>
+  </define>
+</grammar>

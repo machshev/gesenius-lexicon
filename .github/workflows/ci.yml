@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: DeterminateSystems/determinate-nix-action@v3
+      - uses: DeterminateSystems/magic-nix-cache-action@v14
+      - name: Flake checks
+        run: nix flake check --print-build-logs
+      - name: Rust tests and lints
+        run: nix develop --command bash -euo pipefail -c 'cargo fmt --all --check && cargo clippy --workspace --all-targets -- -D warnings && cargo test --workspace'
+      - name: Small fixture export pipeline
+        run: nix develop --command bash -euo pipefail -c './tool/test-fixture-pipeline.sh'

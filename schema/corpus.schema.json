@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://haqor.dev/schemas/gesenius-corpus-1.0.0.json",
+  "title": "Gesenius canonical JSONL entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "aliases", "edition", "printed_page", "entry_ordinal", "blocks",
+    "provenance", "confidence", "review_state", "revision"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "aliases": { "type": "array", "items": { "type": "string" }, "uniqueItems": true },
+    "edition": { "type": "string", "minLength": 1 },
+    "printed_page": { "type": "string", "minLength": 1 },
+    "entry_ordinal": { "type": "integer", "minimum": 1 },
+    "headword": { "oneOf": [{ "$ref": "#/$defs/span" }, { "type": "null" }] },
+    "homograph": { "oneOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }] },
+    "grammatical_labels": { "type": "array", "items": { "$ref": "#/$defs/span" } },
+    "blocks": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/block" } },
+    "senses": { "type": "array" },
+    "citations": { "type": "array" },
+    "cross_references": { "type": "array" },
+    "etymology": { "type": "array", "items": { "$ref": "#/$defs/block" } },
+    "provenance": {
+      "type": "object",
+      "required": ["edition", "source_sha256", "scan_id", "pipeline_run"],
+      "properties": {
+        "edition": { "type": "string" },
+        "source_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "scan_id": { "type": "string", "minLength": 1 },
+        "pipeline_run": { "type": "string", "minLength": 1 }
+      }
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "review_state": { "enum": ["machine", "corrected", "verified"] },
+    "revision": { "type": "integer", "minimum": 0 }
+  },
+  "$defs": {
+    "block": {
+      "type": "object",
+      "required": ["id", "kind", "spans"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": {
+          "enum": ["form", "grammar", "definition", "etymology", "citation", "cross_reference", "unclassified"]
+        },
+        "spans": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/span" } }
+      }
+    },
+    "span": {
+      "type": "object",
+      "required": [
+        "id", "diplomatic", "normalized", "script", "direction", "confidence",
+        "review_state", "hypotheses", "coordinates", "warnings"
+      ],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "diplomatic": { "type": "string" },
+        "normalized": { "type": "string" },
+        "language": { "type": ["string", "null"] },
+        "script": { "type": "string", "pattern": "^[A-Z][a-z]{3}$" },
+        "direction": { "enum": ["ltr", "rtl", "mixed"] },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "review_state": { "enum": ["machine", "corrected", "verified"] },
+        "hypotheses": { "type": "array" },
+        "coordinates": { "type": "array", "minItems": 1 },
+        "warnings": { "type": "array" }
+      }
+    }
+  }
+}

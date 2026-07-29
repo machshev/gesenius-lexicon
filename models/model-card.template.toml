@@ -1,0 +1,41 @@
+model_card_version = 1
+name = ""
+version = ""
+sha256 = ""
+artifact_url = ""
+license = ""
+base_model = ""
+base_model_url = ""
+base_model_license = ""
+pipeline_commit = ""
+kraken_version = "7.0.2"
+training_command = ""
+trained_at = ""
+
+[data]
+editions = ["robinson-1854", "tregelles-1857"]
+pilot_definition = "pilot.toml"
+train_pages = []
+validation_pages = []
+test_pages = []
+rights = "Public-domain source scans; corrections released under the repository licence."
+
+[metrics]
+cer = 0.0
+wer = 0.0
+layout_accuracy = 0.0
+entry_boundary_precision = 0.0
+entry_boundary_recall = 0.0
+
+[metrics.cer_by_script]
+Hebr = 0.0
+Arab = 0.0
+Syrc = 0.0
+Grek = 0.0
+Latn = 0.0
+
+[limitations]
+summary = ""
+known_scan_failures = []
+known_script_failures = []
+recommended_review_threshold = 0.8
