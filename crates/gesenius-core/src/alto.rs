@@ -281,7 +281,9 @@ pub fn write_alto(page: &AltoPage, source_image: &str) -> String {
 
 /// Parses conservative entry boundaries while retaining both engine hypotheses.
 ///
-/// A line beginning with a Hebrew-script word starts an entry. Leading
+/// An indented line beginning with a Hebrew-script word starts an entry. The
+/// indentation check prevents an embedded Hebrew example at the start of a
+/// continuation line from cutting the surrounding paragraph in two. Leading
 /// non-margin content opens a headless fallback entry so section introductions
 /// and page continuations are not discarded when no preceding page was
 /// supplied. Known front matter is never coerced into lexical entries.
@@ -351,7 +353,8 @@ pub fn parse_entries_with_hypotheses_continuing(
             continue;
         }
 
-        let starts_entry = begins_with_hebrew(&line.text);
+        let starts_entry = begins_with_hebrew(&line.text)
+            && (entries.is_empty() || is_indented_paragraph_start(line, region));
         let block_kind = if is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {

@@ -147,9 +147,9 @@ fn leading_non_margin_content_is_retained_in_a_headless_entry() {
         <SP WIDTH="8"/><String CONTENT="name" WC="0.98" HPOS="103" VPOS="100" WIDTH="60" HEIGHT="45"/>
         <SP WIDTH="8"/><String CONTENT="Aleph." WC="0.98" HPOS="171" VPOS="100" WIDTH="75" HEIGHT="45"/>
       </TextLine>
-      <TextLine ID="entry" HPOS="50" VPOS="155" WIDTH="400" HEIGHT="45">
-        <String CONTENT="אָב" WC="0.96" HPOS="50" VPOS="155" WIDTH="60" HEIGHT="45"/>
-        <SP WIDTH="8"/><String CONTENT="father." WC="0.98" HPOS="118" VPOS="155" WIDTH="90" HEIGHT="45"/>
+      <TextLine ID="entry" HPOS="90" VPOS="155" WIDTH="360" HEIGHT="45">
+        <String CONTENT="אָב" WC="0.96" HPOS="90" VPOS="155" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="father." WC="0.98" HPOS="158" VPOS="155" WIDTH="90" HEIGHT="45"/>
       </TextLine>
     </TextBlock>
   </PrintSpace></Page></Layout>
@@ -302,6 +302,63 @@ fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
     assert_eq!(parsed.entries[0].blocks[1].spans.len(), 2);
     assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
         line == "running-head-line" && matches!(assignment, LineAssignment::Unparsed)
+    }));
+}
+
+#[test]
+fn flush_hebrew_example_does_not_cut_an_entry_mid_paragraph() {
+    let page = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="250">
+      <TextLine ID="opening" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45">
+        <String CONTENT="אָב a displayed headword" WC="0.98" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="prose" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45">
+        <String CONTENT="the explanation continues with" WC="0.98" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="example" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45">
+        <String CONTENT="אָבִיו, an example within the sentence," WC="0.98" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="continued-prose" HPOS="50" VPOS="250" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and the same paragraph continues." WC="0.98" HPOS="50" VPOS="250" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="next-entry" HPOS="90" VPOS="300" WIDTH="380" HEIGHT="45">
+        <String CONTENT="אֵם the next displayed headword" WC="0.98" HPOS="90" VPOS="300" WIDTH="380" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&page, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 2);
+    assert_eq!(
+        parsed.entries[0].headword.as_ref().unwrap().normalized,
+        "אָב"
+    );
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 4);
+    assert_eq!(
+        parsed.entries[1].headword.as_ref().unwrap().normalized,
+        "אֵם"
+    );
+    assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
+        line == "example"
+            && matches!(
+                assignment,
+                LineAssignment::Entry(entry) if entry == "robinson-1854:p1:e0001"
+            )
     }));
 }
 
