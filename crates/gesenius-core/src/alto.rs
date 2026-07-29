@@ -77,6 +77,9 @@ pub struct AltoWord {
     pub text: String,
     /// OCR engine confidence in the inclusive range 0 through 1.
     pub confidence: f32,
+    /// Tesseract language selected for isolated word recognition.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub language: Option<String>,
 }
 
 /// Assignment proving that every recognized line was accounted for.
@@ -180,6 +183,7 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
                         polygon: node_polygon(child)?,
                         text: content.to_owned(),
                         confidence,
+                        language: None,
                     });
                 } else if child.has_tag_name("SP") && !text.ends_with(' ') {
                     text.push(' ');
@@ -417,6 +421,119 @@ pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> A
     fused
 }
 
+/// Classifies each explicitly foreign-script word into a single Tesseract
+/// language. Adjacent foreign words are smoothed when one script is a lone
+/// outlier in an otherwise consistent run.
+#[must_use]
+pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) -> AltoPage {
+    let mut classified = page.clone();
+    for region in &mut classified.regions {
+        for line in &mut region.lines {
+            for word in &mut line.words {
+                word.language = detected_word_language(&word.text)
+                    .filter(|language| {
+                        supported_languages
+                            .iter()
+                            .any(|supported| supported == language)
+                    })
+                    .map(ToOwned::to_owned);
+            }
+            smooth_foreign_language_runs(&mut line.words);
+        }
+    }
+    classified
+}
+
+/// Maps a recognized word's strong script to its single-language Tesseract
+/// model. Latin remains with the English-primary pass because a single word is
+/// insufficient to distinguish English from Latin reliably.
+#[must_use]
+pub fn detected_word_language(text: &str) -> Option<&'static str> {
+    use unicode_script::Script;
+    let mut counts = [0_usize; 4];
+    for character in text.chars() {
+        match character.script() {
+            Script::Hebrew => counts[0] += 1,
+            Script::Arabic => counts[1] += 1,
+            Script::Syriac => counts[2] += 1,
+            Script::Greek => counts[3] += 1,
+            _ => {}
+        }
+    }
+    counts
+        .into_iter()
+        .enumerate()
+        .filter(|(_, count)| *count > 0)
+        .max_by_key(|(_, count)| *count)
+        .and_then(|(index, _)| match index {
+            0 => Some("heb"),
+            1 => Some("ara"),
+            2 => Some("syr"),
+            3 => Some("grc"),
+            _ => None,
+        })
+}
+
+/// Whether the alphabetic content agrees with the selected OCR language.
+#[must_use]
+pub fn word_matches_language(text: &str, language: &str) -> bool {
+    use unicode_script::Script;
+    let expected = match language {
+        "heb" => Script::Hebrew,
+        "ara" => Script::Arabic,
+        "syr" => Script::Syriac,
+        "grc" => Script::Greek,
+        _ => return false,
+    };
+    let (matching, alphabetic) = text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .fold((0_usize, 0_usize), |(matching, alphabetic), character| {
+            (
+                matching + usize::from(character.script() == expected),
+                alphabetic + 1,
+            )
+        });
+    alphabetic > 0 && matching * 3 >= alphabetic * 2
+}
+
+fn smooth_foreign_language_runs(words: &mut [AltoWord]) {
+    let mut start = 0_usize;
+    while start < words.len() {
+        if words[start].language.is_none() {
+            start += 1;
+            continue;
+        }
+        let mut end = start + 1;
+        while end < words.len() && words[end].language.is_some() {
+            end += 1;
+        }
+        let run = &mut words[start..end];
+        if run.len() >= 3
+            && run.iter().all(|word| {
+                word.text
+                    .chars()
+                    .filter(|character| character.is_alphabetic())
+                    .count()
+                    >= 2
+            })
+        {
+            let mut counts = std::collections::BTreeMap::new();
+            for language in run.iter().filter_map(|word| word.language.as_deref()) {
+                *counts.entry(language.to_owned()).or_insert(0_usize) += 1;
+            }
+            if let Some((language, count)) = counts.into_iter().max_by_key(|(_, count)| *count) {
+                if count * 3 >= run.len() * 2 {
+                    for word in run {
+                        word.language = Some(language.clone());
+                    }
+                }
+            }
+        }
+        start = end;
+    }
+}
+
 fn new_entry(id: &str, ordinal: u32, context: &ParseContext<'_>) -> CorpusEntry {
     CorpusEntry {
         id: id.to_owned(),
@@ -649,10 +766,10 @@ fn add_replacement(
     let primary_confidence = word_confidence(&primary.words[primary_start..=primary_end]);
     let secondary_confidence =
         word_confidence(&multilingual.words[secondary_start..=secondary_end]);
-    if primary_confidence >= 0.65
+    if primary_confidence >= 0.70
         && primary.words[primary_start..=primary_end]
             .iter()
-            .all(|word| is_common_english_word(&word.text))
+            .all(|word| is_plausible_english_word(&word.text))
     {
         return;
     }
@@ -677,44 +794,48 @@ fn contains_foreign_script(text: &str) -> bool {
     })
 }
 
-fn is_common_english_word(text: &str) -> bool {
+fn is_plausible_english_word(text: &str) -> bool {
     let word = text
         .trim_matches(|character: char| !character.is_ascii_alphabetic())
         .to_ascii_lowercase();
-    matches!(
-        word.as_str(),
-        "a" | "an"
-            | "and"
-            | "as"
-            | "at"
-            | "be"
-            | "by"
-            | "for"
-            | "from"
-            | "has"
-            | "he"
-            | "in"
-            | "into"
-            | "is"
-            | "it"
-            | "its"
-            | "no"
-            | "not"
-            | "of"
-            | "on"
-            | "or"
-            | "that"
-            | "the"
-            | "their"
-            | "there"
-            | "these"
-            | "this"
-            | "to"
-            | "was"
-            | "were"
-            | "which"
-            | "with"
-    )
+    (word.len() >= 2
+        && word
+            .chars()
+            .all(|character| character.is_ascii_alphabetic()))
+        || matches!(
+            word.as_str(),
+            "a" | "an"
+                | "and"
+                | "as"
+                | "at"
+                | "be"
+                | "by"
+                | "for"
+                | "from"
+                | "has"
+                | "he"
+                | "in"
+                | "into"
+                | "is"
+                | "it"
+                | "its"
+                | "no"
+                | "not"
+                | "of"
+                | "on"
+                | "or"
+                | "that"
+                | "the"
+                | "their"
+                | "there"
+                | "these"
+                | "this"
+                | "to"
+                | "was"
+                | "were"
+                | "which"
+                | "with"
+        )
 }
 
 fn word_confidence(words: &[AltoWord]) -> f32 {
@@ -881,7 +1002,10 @@ fn xml_escape(value: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::{align_lines, fuse_multilingual_words, parse_alto, write_alto};
+    use super::{
+        align_lines, classify_word_languages, fuse_multilingual_words, parse_alto,
+        word_matches_language, write_alto,
+    };
 
     const ALTO: &str = r#"<?xml version="1.0"?>
 <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
@@ -976,5 +1100,38 @@ mod tests {
         );
         assert_eq!(fused.regions[0].lines[1].text, "with");
         assert_eq!(fused.regions[0].lines[1].words[0].id, "primary-word-3");
+    }
+
+    #[test]
+    fn classifies_each_foreign_word_and_smooths_an_isolated_script_error() {
+        let mut page = parse_alto(MULTILINGUAL_REORDERED).unwrap();
+        page.regions[0].lines[1].words = vec![
+            page.regions[0].lines[1].words[0].clone(),
+            page.regions[0].lines[1].words[0].clone(),
+            page.regions[0].lines[0].words[0].clone(),
+        ];
+        page.regions[0].lines[1].words[0].text = "אָבִיךָ".to_owned();
+        page.regions[0].lines[1].words[1].text = "הָרִאשׁוֹן".to_owned();
+        page.regions[0].lines[1].words[2].text = "وو".to_owned();
+
+        let classified = classify_word_languages(
+            &page,
+            &["eng", "heb", "ara", "syr", "grc", "lat"]
+                .into_iter()
+                .map(ToOwned::to_owned)
+                .collect::<Vec<_>>(),
+        );
+        assert!(classified.regions[0].lines[1]
+            .words
+            .iter()
+            .all(|word| word.language.as_deref() == Some("heb")));
+    }
+
+    #[test]
+    fn verifies_that_isolated_recognition_uses_the_selected_script() {
+        assert!(word_matches_language("חָטָא", "heb"));
+        assert!(word_matches_language("ܐܒܐ", "syr"));
+        assert!(!word_matches_language("ܐܒܐ", "heb"));
+        assert!(!word_matches_language("father", "heb"));
     }
 }

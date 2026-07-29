@@ -1,10 +1,12 @@
 //! Resumable content-addressed raster, preprocessing, OCR, and parsing pipeline.
 
 use crate::alto::{
-    fuse_multilingual_words, parse_alto, parse_entries_with_hypotheses_continuing, write_alto,
-    EngineIdentity, LineAssignment, ParseContext, ParsedPage,
+    classify_word_languages, detected_word_language, fuse_multilingual_words, parse_alto,
+    parse_entries_with_hypotheses_continuing, word_matches_language, write_alto, AltoPage,
+    AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage,
 };
 use crate::corpus_io::{load_entries, write_entries};
+use crate::metrics::normalized_disagreement;
 use crate::source::{sha256_file, verify_source, SourceCatalogue, SourceRecord};
 use anyhow::{bail, Context, Result};
 use chrono::{DateTime, Utc};
@@ -62,6 +64,15 @@ impl PipelineSettings {
         if self.tesseract.multilingual_languages.is_empty() {
             bail!("at least one multilingual Tesseract language is required");
         }
+        if !(1..=13).contains(&self.tesseract.word_page_segmentation_mode) {
+            bail!("word_page_segmentation_mode must be between 1 and 13");
+        }
+        if !(100..=400).contains(&self.tesseract.word_scale_percent) {
+            bail!("word_scale_percent must be between 100 and 400");
+        }
+        if self.tesseract.word_padding_pixels > 100 {
+            bail!("word_padding_pixels must not exceed 100");
+        }
         Ok(())
     }
 }
@@ -91,8 +102,29 @@ pub struct TesseractSettings {
     pub multilingual_languages: Vec<String>,
     /// Page segmentation mode.
     pub page_segmentation_mode: u8,
+    /// Segmentation mode used after cropping one detected foreign word.
+    #[serde(default = "default_word_page_segmentation_mode")]
+    pub word_page_segmentation_mode: u8,
+    /// Percentage enlargement applied to isolated word crops.
+    #[serde(default = "default_word_scale_percent")]
+    pub word_scale_percent: u16,
+    /// Source-image padding retained around each detected word box.
+    #[serde(default = "default_word_padding_pixels")]
+    pub word_padding_pixels: u32,
     /// Immutable Nix/tessdata model identity recorded in provenance.
     pub model_identity: String,
+}
+
+const fn default_word_page_segmentation_mode() -> u8 {
+    10
+}
+
+const fn default_word_scale_percent() -> u16 {
+    200
+}
+
+const fn default_word_padding_pixels() -> u32 {
+    4
 }
 
 /// Kraken invocation and trainable model.
@@ -316,8 +348,20 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         let primary_tesseract_page = parse_alto(&fs::read_to_string(&primary_tesseract_alto)?)?;
         let multilingual_tesseract_page =
             parse_alto(&fs::read_to_string(&multilingual_tesseract_alto)?)?;
+        let classified_tesseract_page = classify_word_languages(
+            &multilingual_tesseract_page,
+            &settings.tesseract.multilingual_languages,
+        );
+        let word_tesseract_page = recognize_tesseract_words(
+            &processed,
+            &page_path,
+            &settings.tesseract,
+            &classified_tesseract_page,
+            settings.raster_dpi,
+            &run_id,
+        )?;
         let fused_tesseract_page =
-            fuse_multilingual_words(&primary_tesseract_page, &multilingual_tesseract_page);
+            fuse_multilingual_words(&primary_tesseract_page, &word_tesseract_page);
         fs::write(
             page_path.join("tesseract-fused.alto.xml"),
             write_alto(&fused_tesseract_page, &relative_or_absolute(&processed)),
@@ -591,6 +635,281 @@ fn recognize_tesseract(
     Ok(output_path)
 }
 
+#[derive(Debug, Serialize)]
+struct IsolatedWordRecognition {
+    line_id: String,
+    word_id: String,
+    crop: String,
+    detected_text: String,
+    detected_language: Option<String>,
+    selected_language: String,
+    detected_confidence: f32,
+    isolated_text: Option<String>,
+    isolated_confidence: Option<f32>,
+    used_isolated_text: bool,
+}
+
+struct WordCandidate {
+    text: String,
+    confidence: f32,
+}
+
+fn recognize_tesseract_words(
+    input: &Path,
+    page_path: &Path,
+    settings: &TesseractSettings,
+    classified: &AltoPage,
+    raster_dpi: u32,
+    run_id: &str,
+) -> Result<AltoPage> {
+    let output_path = page_path.join("tesseract-word-recognized.alto.xml");
+    let manifest_path = page_path.join("tesseract-word-recognitions.json");
+    let receipt_path = page_path.join("tesseract-words.stage.json");
+    let input_hash = content_hash(&[
+        run_id,
+        &serde_json::to_string(settings)?,
+        &serde_json::to_string(classified)?,
+        "isolated-word-recognition-v1",
+    ]);
+    let outputs = [output_path.clone(), manifest_path.clone()];
+    if stage_is_current(&receipt_path, &input_hash, &outputs)? {
+        return parse_alto(&fs::read_to_string(output_path)?);
+    }
+
+    let words_path = page_path.join("words");
+    fs::create_dir_all(&words_path)?;
+    let mut refined = classified.clone();
+    let mut records = Vec::new();
+    let mut ordinal = 0_usize;
+    for region in &mut refined.regions {
+        for line in &mut region.lines {
+            for word in &mut line.words {
+                let Some(language) = word.language.clone() else {
+                    continue;
+                };
+                ordinal += 1;
+                let detected_text = word.text.clone();
+                let detected_confidence = word.confidence;
+                let detected_language =
+                    detected_word_language(&detected_text).map(ToOwned::to_owned);
+                let stem = format!("word-{ordinal:05}-{language}");
+                let crop_path = words_path.join(format!("{stem}.png"));
+                let (x, y, width, height) = padded_word_bounds(
+                    word,
+                    classified.width,
+                    classified.height,
+                    settings.word_padding_pixels,
+                )
+                .with_context(|| format!("word {} has empty geometry", word.id))?;
+                let crop_arguments = vec![
+                    input.display().to_string(),
+                    "-crop".to_owned(),
+                    format!("{width}x{height}+{x}+{y}"),
+                    "+repage".to_owned(),
+                    "-bordercolor".to_owned(),
+                    "white".to_owned(),
+                    "-border".to_owned(),
+                    "8".to_owned(),
+                    "-resize".to_owned(),
+                    format!("{}%", settings.word_scale_percent),
+                    crop_path.display().to_string(),
+                ];
+                run_resumable_command(
+                    &format!("crop-{stem}"),
+                    &content_hash(&[
+                        &input_hash,
+                        &serde_json::to_string(&word.polygon)?,
+                        &language,
+                    ]),
+                    "magick",
+                    &crop_arguments,
+                    std::slice::from_ref(&crop_path),
+                    &words_path.join(format!("{stem}.crop.stage.json")),
+                )?;
+
+                let tsv_stem = words_path.join(&stem);
+                let tsv_path = words_path.join(format!("{stem}.tsv"));
+                let scaled_dpi =
+                    raster_dpi.saturating_mul(u32::from(settings.word_scale_percent)) / 100;
+                let tesseract_arguments = vec![
+                    crop_path.display().to_string(),
+                    tsv_stem.display().to_string(),
+                    "--dpi".to_owned(),
+                    scaled_dpi.to_string(),
+                    "-l".to_owned(),
+                    language.clone(),
+                    "--psm".to_owned(),
+                    settings.word_page_segmentation_mode.to_string(),
+                    "tsv".to_owned(),
+                ];
+                run_resumable_command(
+                    &format!("recognize-{stem}"),
+                    &content_hash(&[
+                        &input_hash,
+                        &sha256_file(&crop_path)?,
+                        &language,
+                        &settings.word_page_segmentation_mode.to_string(),
+                    ]),
+                    "tesseract",
+                    &tesseract_arguments,
+                    std::slice::from_ref(&tsv_path),
+                    &words_path.join(format!("{stem}.tesseract.stage.json")),
+                )?;
+
+                let candidate = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?;
+                let use_isolated = candidate.as_ref().is_some_and(|candidate| {
+                    should_use_isolated_word(
+                        &detected_text,
+                        detected_language.as_deref(),
+                        detected_confidence,
+                        &language,
+                        candidate,
+                    )
+                });
+                if let Some(candidate) = candidate.as_ref().filter(|_| use_isolated) {
+                    word.text.clone_from(&candidate.text);
+                    word.confidence = candidate.confidence;
+                }
+                records.push(IsolatedWordRecognition {
+                    line_id: line.id.clone(),
+                    word_id: word.id.clone(),
+                    crop: relative_or_absolute(&crop_path),
+                    detected_text,
+                    detected_language,
+                    selected_language: language,
+                    detected_confidence,
+                    isolated_text: candidate.as_ref().map(|candidate| candidate.text.clone()),
+                    isolated_confidence: candidate.as_ref().map(|candidate| candidate.confidence),
+                    used_isolated_text: use_isolated,
+                });
+            }
+        }
+    }
+
+    fs::write(
+        &output_path,
+        write_alto(&refined, &relative_or_absolute(input)),
+    )?;
+    fs::write(&manifest_path, serde_json::to_vec_pretty(&records)?)?;
+    write_receipt(
+        &receipt_path,
+        "tesseract-isolated-words",
+        &input_hash,
+        "tesseract",
+        &[
+            "single-language word crops".to_owned(),
+            format!("--psm {}", settings.word_page_segmentation_mode),
+            format!("--scale {}%", settings.word_scale_percent),
+        ],
+        &outputs,
+    )?;
+    Ok(refined)
+}
+
+fn padded_word_bounds(
+    word: &AltoWord,
+    page_width: u32,
+    page_height: u32,
+    padding: u32,
+) -> Option<(u32, u32, u32, u32)> {
+    let min_x = word
+        .polygon
+        .iter()
+        .map(|point| point.x)
+        .reduce(f32::min)?
+        .floor()
+        .max(0.0) as u32;
+    let min_y = word
+        .polygon
+        .iter()
+        .map(|point| point.y)
+        .reduce(f32::min)?
+        .floor()
+        .max(0.0) as u32;
+    let max_x = word
+        .polygon
+        .iter()
+        .map(|point| point.x)
+        .reduce(f32::max)?
+        .ceil()
+        .max(0.0) as u32;
+    let max_y = word
+        .polygon
+        .iter()
+        .map(|point| point.y)
+        .reduce(f32::max)?
+        .ceil()
+        .max(0.0) as u32;
+    let x = min_x.saturating_sub(padding);
+    let y = min_y.saturating_sub(padding);
+    let right = max_x.saturating_add(padding).min(page_width);
+    let bottom = max_y.saturating_add(padding).min(page_height);
+    let width = right.saturating_sub(x);
+    let height = bottom.saturating_sub(y);
+    (width > 0 && height > 0).then_some((x, y, width, height))
+}
+
+fn parse_tesseract_word_tsv(tsv: &str) -> Result<Option<WordCandidate>> {
+    let mut words = Vec::new();
+    for line in tsv.lines().skip(1) {
+        let columns: Vec<_> = line.split('\t').collect();
+        if columns.len() < 12 || columns[0] != "5" || columns[11].trim().is_empty() {
+            continue;
+        }
+        let confidence = columns[10]
+            .parse::<f32>()
+            .with_context(|| format!("invalid Tesseract word confidence `{}`", columns[10]))?
+            .clamp(0.0, 100.0)
+            / 100.0;
+        words.push((columns[11].trim().to_owned(), confidence));
+    }
+    if words.is_empty() {
+        return Ok(None);
+    }
+    let (weighted, characters) =
+        words
+            .iter()
+            .fold((0.0_f32, 0_usize), |(weighted, characters), word| {
+                let length = word.0.chars().count().max(1);
+                (weighted + word.1 * length as f32, characters + length)
+            });
+    Ok(Some(WordCandidate {
+        text: words
+            .iter()
+            .map(|(text, _)| text.as_str())
+            .collect::<Vec<_>>()
+            .join(" "),
+        confidence: weighted / characters as f32,
+    }))
+}
+
+fn should_use_isolated_word(
+    detected_text: &str,
+    detected_language: Option<&str>,
+    detected_confidence: f32,
+    selected_language: &str,
+    candidate: &WordCandidate,
+) -> bool {
+    if !word_matches_language(&candidate.text, selected_language) {
+        return false;
+    }
+    if detected_language != Some(selected_language) {
+        return true;
+    }
+    let detected_letters = detected_text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .count();
+    let candidate_letters = candidate
+        .text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .count();
+    candidate.confidence >= detected_confidence + 0.05
+        && candidate_letters.saturating_mul(2) >= detected_letters
+        && normalized_disagreement(detected_text, &candidate.text) <= 0.34
+}
+
 fn recognize_kraken(
     input: &Path,
     page_path: &Path,
@@ -842,7 +1161,7 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 
 #[cfg(test)]
 mod tests {
-    use super::parse_page_spec;
+    use super::{parse_page_spec, should_use_isolated_word, WordCandidate};
 
     #[test]
     fn page_specs_are_sorted_and_deduplicated() {
@@ -853,5 +1172,39 @@ mod tests {
     fn page_specs_reject_zero_and_backwards_ranges() {
         assert!(parse_page_spec("0").is_err());
         assert!(parse_page_spec("9-2").is_err());
+    }
+
+    #[test]
+    fn isolated_word_selection_corrects_script_changes_but_rejects_drift() {
+        assert!(should_use_isolated_word(
+            "وو",
+            Some("ara"),
+            0.56,
+            "heb",
+            &WordCandidate {
+                text: "חְטָא".to_owned(),
+                confidence: 0.73,
+            },
+        ));
+        assert!(!should_use_isolated_word(
+            "ابي",
+            Some("ara"),
+            0.57,
+            "ara",
+            &WordCandidate {
+                text: "دابى".to_owned(),
+                confidence: 0.67,
+            },
+        ));
+        assert!(should_use_isolated_word(
+            "אבות",
+            Some("heb"),
+            0.70,
+            "heb",
+            &WordCandidate {
+                text: "אָבות".to_owned(),
+                confidence: 0.80,
+            },
+        ));
     }
 }

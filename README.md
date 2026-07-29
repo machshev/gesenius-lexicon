@@ -2,7 +2,7 @@
 
 This repository is a reproducible, local-first OCR pipeline for the public-domain Gesenius Hebrew lexicon. It preserves the Robinson 1854 and Tregelles 1857 editions separately, turns page scans into reviewable Unicode entries, and exports authoritative JSONL, a TEI Lex-0 profile, and schema-versioned SQLite.
 
-Rust owns orchestration, source verification, ALTO parsing, corpus modelling, validation, review, metrics, and exports. Tesseract 5 runs an English-primary layout pass plus a separate multilingual pass for embedded Hebrew, Arabic, Syriac, Ancient Greek, and Latin. Kraken 7 is the trainable recognizer and remains an isolated subprocess. Scans never leave the local machine.
+Rust owns orchestration, source verification, ALTO parsing, corpus modelling, validation, review, metrics, and exports. Tesseract 5 runs an English-primary layout pass plus a multilingual word-language detector. Each detected Hebrew, Arabic, Syriac, or Ancient Greek word is then cropped, enlarged, read with one script-appropriate model, and joined back into its line. Kraken 7 is the trainable recognizer and remains an isolated subprocess. Scans never leave the local machine.
 
 The implementation is usable now, but the corpus is explicitly an OCR draft: the full books have not been processed or human-verified, the Tregelles scan still needs an owner-selected registration, and the candidate pilot pages must be visually confirmed after that scan is selected.
 
@@ -39,7 +39,7 @@ cargo run -- run --edition robinson-1854 --pages 17-20,45
 cargo run -- validate
 ```
 
-The initial configuration runs Tesseract only. The English-primary and multilingual ALTO outputs remain separate and are aligned by geometry; foreign-script word runs are conservatively fused into canonical machine text while both untouched hypotheses remain attached. After reviewed pilot ground truth produces a checksummed Kraken model, set `kraken.enabled = true`, `model_path`, and `model_sha256` in `pipeline.toml`. Kraken then becomes primary while all complete hypotheses remain attached to every spatially matching span.
+The initial configuration runs Tesseract only. The English-primary and multilingual ALTO outputs remain separate and are aligned by geometry. The multilingual output labels words by strong Unicode script, isolated script glitches are smoothed within a foreign phrase, and each foreign word receives a single-language recognition pass before the line is conservatively fused. The untouched page hypotheses and a per-word decision manifest remain attached or retained for audit. After reviewed pilot ground truth produces a checksummed Kraken model, set `kraken.enabled = true`, `model_path`, and `model_sha256` in `pipeline.toml`. Kraken then becomes primary while all complete hypotheses remain attached to every spatially matching span.
 
 ## Stable CLI
 
@@ -64,12 +64,13 @@ verified PDF
   -> lossless 400 DPI raster (original.png)
   -> recorded photometric/geometric transform (processed.png + transform.json)
   -> English-primary Tesseract ALTO + multilingual Tesseract ALTO
+  -> isolated single-language word OCR + reconstructed ALTO
   -> conservative word-level script fusion + optional Kraken ALTO
   -> conservative entry boundaries + explicit line assignments
   -> corpus/machine/<edition>.jsonl
 ```
 
-Large PDFs, rasters, OCR intermediates, and run receipts live below `.cache/gesenius/` and are ignored by Git. Original rasters and exact transform commands are retained. ALTO preserves regions, lines, reading order, polygons, and confidence. A recognized line is always assigned to an entry, `front_matter`, or `unparsed`.
+Large PDFs, rasters, OCR intermediates, and run receipts live below `.cache/gesenius/` and are ignored by Git. Original rasters and exact transform commands are retained. `tesseract-word-recognitions.json` records each crop, detected and selected language, both texts and confidences, and which text was used. ALTO preserves regions, lines, reading order, polygons, and confidence. A recognized line is always assigned to an entry, `front_matter`, or `unparsed`.
 
 Entries continuing onto a consecutive page retain the stable ID of the page on which they began. Headers and footers are kept out of continuations. Printed hyphenation remains diplomatic until a reviewer makes an explicit structural correction.
 
