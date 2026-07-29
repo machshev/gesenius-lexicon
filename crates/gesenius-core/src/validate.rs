@@ -275,12 +275,12 @@ fn validate_span(entry: &CorpusEntry, span: &TextSpan, issues: &mut Vec<Validati
     if span
         .hypotheses
         .windows(2)
-        .any(|pair| pair[0].engine == pair[1].engine)
+        .any(|pair| pair[0].engine == pair[1].engine && pair[0].model == pair[1].model)
     {
         issues.push(warning(
-            "duplicate_ocr_engine",
+            "duplicate_ocr_model",
             &location,
-            "adjacent hypotheses name the same OCR engine",
+            "adjacent hypotheses name the same OCR engine and model",
         ));
     }
 }

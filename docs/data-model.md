@@ -38,7 +38,7 @@ Every span cites one or more source coordinates:
 - content-addressed page image;
 - transform identity.
 
-The run directory keeps `original.png`, `processed.png`, the exact ImageMagick arguments, input/output dimensions, and ordered transform operations. Raw Tesseract and Kraken ALTO files remain separate.
+The run directory keeps `original.png`, `processed.png`, the exact ImageMagick arguments, input/output dimensions, and ordered transform operations. Raw English-primary Tesseract, multilingual Tesseract, and Kraken ALTO files remain separate. ALTO word boxes and confidences are retained in the intermediate model so embedded foreign-script runs can be aligned geometrically without treating a mixed line as one recognition decision.
 
 ## SQLite
 

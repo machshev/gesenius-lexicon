@@ -1,5 +1,6 @@
 //! Minimal ALTO 4 reader/writer and conservative entry boundary parser.
 
+use crate::metrics::polygon_iou;
 use crate::model::{
     stable_entry_id, BlockKind, CorpusEntry, Direction, EntryBlock, EntryProvenance, OcrHypothesis,
     Point, ReviewState, SourceCoordinate, TextSpan,
@@ -56,9 +57,25 @@ pub struct AltoLine {
     pub id: String,
     /// Line polygon.
     pub polygon: Vec<Point>,
+    /// Recognized words in the engine's logical order.
+    #[serde(default)]
+    pub words: Vec<AltoWord>,
     /// Logical-order line content.
     pub text: String,
     /// Character-weighted word confidence.
+    pub confidence: f32,
+}
+
+/// Recognized ALTO word with its original geometry and confidence.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct AltoWord {
+    /// Word identifier when supplied by the OCR engine.
+    pub id: String,
+    /// Word polygon in image coordinates.
+    pub polygon: Vec<Point>,
+    /// Unmodified recognized content.
+    pub text: String,
+    /// OCR engine confidence in the inclusive range 0 through 1.
     pub confidence: f32,
 }
 
@@ -137,6 +154,7 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
             );
             let polygon = node_polygon(line_node)?;
             let mut text = String::new();
+            let mut words = Vec::new();
             let mut weighted_confidence = 0.0_f32;
             let mut confidence_characters = 0_usize;
             for child in line_node.descendants().filter(|node| node.is_element()) {
@@ -154,6 +172,15 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
                         .clamp(0.0, 1.0);
                     weighted_confidence += confidence * length as f32;
                     confidence_characters += length;
+                    words.push(AltoWord {
+                        id: child.attribute("ID").map_or_else(
+                            || format!("{id}-word-{:04}", words.len() + 1),
+                            ToOwned::to_owned,
+                        ),
+                        polygon: node_polygon(child)?,
+                        text: content.to_owned(),
+                        confidence,
+                    });
                 } else if child.has_tag_name("SP") && !text.ends_with(' ') {
                     text.push(' ');
                 } else if child.has_tag_name("HYP") {
@@ -171,6 +198,7 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
             lines.push(AltoLine {
                 id,
                 polygon,
+                words,
                 text: text.trim().to_owned(),
                 confidence,
             });
@@ -217,13 +245,29 @@ pub fn write_alto(page: &AltoPage, source_image: &str) -> String {
             let (x, y, width, height) = polygon_bounds(&line.polygon);
             let _ = write!(
                 output,
-                "<TextLine ID=\"{}\" HPOS=\"{x}\" VPOS=\"{y}\" WIDTH=\"{width}\" HEIGHT=\"{height}\">\
-                 <String CONTENT=\"{}\" WC=\"{:.8}\" HPOS=\"{x}\" VPOS=\"{y}\" WIDTH=\"{width}\" HEIGHT=\"{height}\"/>\
-                 </TextLine>",
-                xml_escape(&line.id),
-                xml_escape(&line.text),
-                line.confidence
+                "<TextLine ID=\"{}\" HPOS=\"{x}\" VPOS=\"{y}\" WIDTH=\"{width}\" HEIGHT=\"{height}\">",
+                xml_escape(&line.id)
             );
+            if line.words.is_empty() {
+                let _ = write!(
+                    output,
+                    "<String CONTENT=\"{}\" WC=\"{:.8}\" HPOS=\"{x}\" VPOS=\"{y}\" WIDTH=\"{width}\" HEIGHT=\"{height}\"/>",
+                    xml_escape(&line.text),
+                    line.confidence
+                );
+            } else {
+                for word in &line.words {
+                    let (word_x, word_y, word_width, word_height) = polygon_bounds(&word.polygon);
+                    let _ = write!(
+                        output,
+                        "<String ID=\"{}\" CONTENT=\"{}\" WC=\"{:.8}\" HPOS=\"{word_x}\" VPOS=\"{word_y}\" WIDTH=\"{word_width}\" HEIGHT=\"{word_height}\"/>",
+                        xml_escape(&word.id),
+                        xml_escape(&word.text),
+                        word.confidence
+                    );
+                }
+            }
+            output.push_str("</TextLine>");
         }
         output.push_str("</TextBlock>");
     }
@@ -255,14 +299,37 @@ pub fn parse_entries_continuing(
     context: &ParseContext<'_>,
     continuation: Option<CorpusEntry>,
 ) -> ParsedPage {
-    let secondary_lines: Vec<&AltoLine> = secondary
-        .map(|(page, _)| flatten_lines(page).map(|(_, line)| line).collect())
-        .unwrap_or_default();
+    let mut hypotheses = vec![primary];
+    hypotheses.extend(secondary);
+    parse_entries_with_hypotheses_continuing(primary.0, &hypotheses, context, continuation)
+}
+
+/// Parses entries from derived canonical text while attaching every engine's
+/// untouched, spatially aligned line hypothesis.
+pub fn parse_entries_with_hypotheses(
+    canonical: &AltoPage,
+    hypotheses: &[(&AltoPage, &EngineIdentity)],
+    context: &ParseContext<'_>,
+) -> ParsedPage {
+    parse_entries_with_hypotheses_continuing(canonical, hypotheses, context, None)
+}
+
+/// Parses entries with optional continuation and geometry-aligned hypotheses.
+pub fn parse_entries_with_hypotheses_continuing(
+    canonical: &AltoPage,
+    hypotheses: &[(&AltoPage, &EngineIdentity)],
+    context: &ParseContext<'_>,
+    continuation: Option<CorpusEntry>,
+) -> ParsedPage {
+    let aligned_hypotheses: Vec<_> = hypotheses
+        .iter()
+        .map(|(page, _)| align_lines(canonical, page))
+        .collect();
     let mut entries: Vec<CorpusEntry> = continuation.into_iter().collect();
     let mut assignments = Vec::new();
     let mut page_entry_count = 0_usize;
 
-    for (line_index, (region, line)) in flatten_lines(primary.0).enumerate() {
+    for (line_index, (region, line)) in flatten_lines(canonical).enumerate() {
         if context.front_matter {
             assignments.push((
                 region.id.clone(),
@@ -271,7 +338,7 @@ pub fn parse_entries_continuing(
             ));
             continue;
         }
-        if is_margin_line(line, primary.0.height) {
+        if is_margin_line(line, canonical.height) {
             assignments.push((region.id.clone(), line.id.clone(), LineAssignment::Unparsed));
             continue;
         }
@@ -288,13 +355,24 @@ pub fn parse_entries_continuing(
             continue;
         };
 
-        let hypotheses = make_hypotheses(
+        let line_hypotheses = hypotheses
+            .iter()
+            .zip(&aligned_hypotheses)
+            .filter_map(|((_, identity), aligned)| {
+                aligned
+                    .get(line_index)
+                    .and_then(Option::as_ref)
+                    .map(|line| hypothesis(line, identity))
+            })
+            .collect();
+        let span = make_span(
+            entry,
             line,
-            primary.1,
-            secondary_lines.get(line_index).copied(),
-            secondary.map(|(_, identity)| identity),
+            region,
+            line_hypotheses,
+            context,
+            entry.blocks.len(),
         );
-        let span = make_span(entry, line, region, hypotheses, context, entry.blocks.len());
         if starts_entry && entry.headword.is_none() {
             entry.headword = extract_headword(&span);
         }
@@ -316,6 +394,27 @@ pub fn parse_entries_continuing(
         entries,
         assignments,
     }
+}
+
+/// Combines an English-primary page with foreign-script word runs from a
+/// multilingual pass. Both original pages must still be retained as hypotheses.
+#[must_use]
+pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> AltoPage {
+    let aligned: Vec<Option<AltoLine>> = align_lines(primary, multilingual)
+        .into_iter()
+        .map(|line| line.cloned())
+        .collect();
+    let mut fused = primary.clone();
+    let mut line_index = 0_usize;
+    for region in &mut fused.regions {
+        for line in &mut region.lines {
+            if let Some(multilingual_line) = aligned.get(line_index).and_then(Option::as_ref) {
+                *line = fuse_line_words(line, multilingual_line);
+            }
+            line_index += 1;
+        }
+    }
+    fused
 }
 
 fn new_entry(id: &str, ordinal: u32, context: &ParseContext<'_>) -> CorpusEntry {
@@ -415,19 +514,6 @@ fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
     Some(span)
 }
 
-fn make_hypotheses(
-    primary: &AltoLine,
-    primary_identity: &EngineIdentity,
-    secondary: Option<&AltoLine>,
-    secondary_identity: Option<&EngineIdentity>,
-) -> Vec<OcrHypothesis> {
-    let mut result = vec![hypothesis(primary, primary_identity)];
-    if let (Some(line), Some(identity)) = (secondary, secondary_identity) {
-        result.push(hypothesis(line, identity));
-    }
-    result
-}
-
 fn hypothesis(line: &AltoLine, identity: &EngineIdentity) -> OcrHypothesis {
     OcrHypothesis {
         engine: identity.engine.clone(),
@@ -443,6 +529,250 @@ fn flatten_lines(page: &AltoPage) -> impl Iterator<Item = (&AltoRegion, &AltoLin
     page.regions
         .iter()
         .flat_map(|region| region.lines.iter().map(move |line| (region, line)))
+}
+
+fn align_lines<'a>(canonical: &AltoPage, hypothesis: &'a AltoPage) -> Vec<Option<&'a AltoLine>> {
+    let canonical_lines: Vec<_> = flatten_lines(canonical).map(|(_, line)| line).collect();
+    let hypothesis_lines: Vec<_> = flatten_lines(hypothesis).map(|(_, line)| line).collect();
+    let mut candidates = Vec::new();
+    for (canonical_index, canonical_line) in canonical_lines.iter().enumerate() {
+        for (hypothesis_index, hypothesis_line) in hypothesis_lines.iter().enumerate() {
+            let overlap = polygon_iou(&canonical_line.polygon, &hypothesis_line.polygon);
+            if overlap >= 0.15 {
+                candidates.push((overlap, canonical_index, hypothesis_index));
+            }
+        }
+    }
+    candidates.sort_by(|left, right| {
+        right
+            .0
+            .partial_cmp(&left.0)
+            .unwrap_or(std::cmp::Ordering::Equal)
+    });
+    let mut result = vec![None; canonical_lines.len()];
+    let mut claimed = vec![false; hypothesis_lines.len()];
+    for (_, canonical_index, hypothesis_index) in candidates {
+        if result[canonical_index].is_none() && !claimed[hypothesis_index] {
+            result[canonical_index] = Some(hypothesis_lines[hypothesis_index]);
+            claimed[hypothesis_index] = true;
+        }
+    }
+    result
+}
+
+fn fuse_line_words(primary: &AltoLine, multilingual: &AltoLine) -> AltoLine {
+    if primary.words.is_empty() || multilingual.words.is_empty() {
+        return primary.clone();
+    }
+    let mut replacements = Vec::new();
+    let mut run_start = None;
+    let mut last_foreign = None;
+    for (index, word) in multilingual.words.iter().enumerate() {
+        if contains_foreign_script(&word.text) {
+            run_start.get_or_insert(index);
+            last_foreign = Some(index);
+        } else if word.text.chars().any(char::is_alphabetic) {
+            if let (Some(start), Some(end)) = (run_start.take(), last_foreign.take()) {
+                add_replacement(primary, multilingual, start, end, &mut replacements);
+            }
+        }
+    }
+    if let (Some(start), Some(end)) = (run_start, last_foreign) {
+        add_replacement(primary, multilingual, start, end, &mut replacements);
+    }
+    if replacements.is_empty() {
+        return primary.clone();
+    }
+
+    replacements.sort_by_key(|replacement| std::cmp::Reverse(replacement.primary_start));
+    let mut words = primary.words.clone();
+    for replacement in replacements {
+        words.splice(
+            replacement.primary_start..=replacement.primary_end,
+            multilingual.words[replacement.secondary_start..=replacement.secondary_end]
+                .iter()
+                .cloned(),
+        );
+    }
+    for (index, word) in words.iter_mut().enumerate() {
+        word.id = format!("{}-fused-word-{:04}", primary.id, index + 1);
+    }
+    let text = join_words(&words);
+    AltoLine {
+        id: primary.id.clone(),
+        polygon: primary.polygon.clone(),
+        confidence: word_confidence(&words),
+        words,
+        text,
+    }
+}
+
+struct WordReplacement {
+    primary_start: usize,
+    primary_end: usize,
+    secondary_start: usize,
+    secondary_end: usize,
+}
+
+fn add_replacement(
+    primary: &AltoLine,
+    multilingual: &AltoLine,
+    secondary_start: usize,
+    secondary_end: usize,
+    replacements: &mut Vec<WordReplacement>,
+) {
+    let secondary_bounds = combined_bounds(
+        multilingual.words[secondary_start..=secondary_end]
+            .iter()
+            .flat_map(|word| word.polygon.iter()),
+    );
+    let Some(secondary_bounds) = secondary_bounds else {
+        return;
+    };
+    let overlapping: Vec<_> = primary
+        .words
+        .iter()
+        .enumerate()
+        .filter(|(_, word)| bounds_overlap_fraction(word_bounds(word), secondary_bounds) >= 0.35)
+        .map(|(index, _)| index)
+        .collect();
+    let (Some(primary_start), Some(primary_end)) =
+        (overlapping.first().copied(), overlapping.last().copied())
+    else {
+        return;
+    };
+    if replacements.iter().any(|replacement| {
+        primary_start <= replacement.primary_end && primary_end >= replacement.primary_start
+    }) {
+        return;
+    }
+    let primary_confidence = word_confidence(&primary.words[primary_start..=primary_end]);
+    let secondary_confidence =
+        word_confidence(&multilingual.words[secondary_start..=secondary_end]);
+    if primary_confidence >= 0.65
+        && primary.words[primary_start..=primary_end]
+            .iter()
+            .all(|word| is_common_english_word(&word.text))
+    {
+        return;
+    }
+    if primary_confidence >= 0.86 && secondary_confidence < primary_confidence + 0.05 {
+        return;
+    }
+    replacements.push(WordReplacement {
+        primary_start,
+        primary_end,
+        secondary_start,
+        secondary_end,
+    });
+}
+
+fn contains_foreign_script(text: &str) -> bool {
+    use unicode_script::Script;
+    text.chars().any(|character| {
+        matches!(
+            character.script(),
+            Script::Hebrew | Script::Arabic | Script::Syriac | Script::Greek
+        )
+    })
+}
+
+fn is_common_english_word(text: &str) -> bool {
+    let word = text
+        .trim_matches(|character: char| !character.is_ascii_alphabetic())
+        .to_ascii_lowercase();
+    matches!(
+        word.as_str(),
+        "a" | "an"
+            | "and"
+            | "as"
+            | "at"
+            | "be"
+            | "by"
+            | "for"
+            | "from"
+            | "has"
+            | "he"
+            | "in"
+            | "into"
+            | "is"
+            | "it"
+            | "its"
+            | "no"
+            | "not"
+            | "of"
+            | "on"
+            | "or"
+            | "that"
+            | "the"
+            | "their"
+            | "there"
+            | "these"
+            | "this"
+            | "to"
+            | "was"
+            | "were"
+            | "which"
+            | "with"
+    )
+}
+
+fn word_confidence(words: &[AltoWord]) -> f32 {
+    let (weighted, characters) = words.iter().fold((0.0_f32, 0_usize), |acc, word| {
+        let length = word.text.chars().count().max(1);
+        (acc.0 + word.confidence * length as f32, acc.1 + length)
+    });
+    if characters == 0 {
+        0.0
+    } else {
+        weighted / characters as f32
+    }
+}
+
+fn join_words(words: &[AltoWord]) -> String {
+    let mut text = String::new();
+    for word in words {
+        if !text.is_empty() {
+            text.push(' ');
+        }
+        text.push_str(&word.text);
+    }
+    text
+}
+
+type Bounds = (f32, f32, f32, f32);
+
+fn word_bounds(word: &AltoWord) -> Option<Bounds> {
+    combined_bounds(word.polygon.iter())
+}
+
+fn combined_bounds<'a>(points: impl Iterator<Item = &'a Point>) -> Option<Bounds> {
+    points.fold(None, |bounds, point| match bounds {
+        None => Some((point.x, point.y, point.x, point.y)),
+        Some((min_x, min_y, max_x, max_y)) => Some((
+            min_x.min(point.x),
+            min_y.min(point.y),
+            max_x.max(point.x),
+            max_y.max(point.y),
+        )),
+    })
+}
+
+fn bounds_overlap_fraction(left: Option<Bounds>, right: Bounds) -> f32 {
+    let Some((left_x1, left_y1, left_x2, left_y2)) = left else {
+        return 0.0;
+    };
+    let (right_x1, right_y1, right_x2, right_y2) = right;
+    let intersection_width = (left_x2.min(right_x2) - left_x1.max(right_x1)).max(0.0);
+    let intersection_height = (left_y2.min(right_y2) - left_y1.max(right_y1)).max(0.0);
+    let intersection = intersection_width * intersection_height;
+    let smallest_area = ((left_x2 - left_x1) * (left_y2 - left_y1))
+        .min((right_x2 - right_x1) * (right_y2 - right_y1));
+    if smallest_area <= f32::EPSILON {
+        0.0
+    } else {
+        intersection / smallest_area
+    }
 }
 
 fn begins_with_hebrew(text: &str) -> bool {
@@ -551,7 +881,7 @@ fn xml_escape(value: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::{parse_alto, write_alto};
+    use super::{align_lines, fuse_multilingual_words, parse_alto, write_alto};
 
     const ALTO: &str = r#"<?xml version="1.0"?>
 <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
@@ -562,11 +892,40 @@ mod tests {
 <SP WIDTH="5"/><String CONTENT="father" WC="0.99" HPOS="70" VPOS="20" WIDTH="100" HEIGHT="40"/>
 </TextLine></TextBlock></PrintSpace></Page></Layout></alto>"#;
 
+    const ENGLISH_PRIMARY: &str = r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+<Layout><Page WIDTH="500" HEIGHT="500"><PrintSpace>
+<TextBlock ID="primary" HPOS="10" VPOS="100" WIDTH="400" HEIGHT="140">
+<TextLine ID="primary-top" HPOS="10" VPOS="100" WIDTH="300" HEIGHT="40">
+<String ID="primary-word-1" CONTENT="AB" WC="0.50" HPOS="10" VPOS="100" WIDTH="50" HEIGHT="40"/>
+<String ID="primary-word-2" CONTENT="father" WC="0.98" HPOS="70" VPOS="100" WIDTH="100" HEIGHT="40"/>
+</TextLine>
+<TextLine ID="primary-bottom" HPOS="10" VPOS="200" WIDTH="300" HEIGHT="40">
+<String ID="primary-word-3" CONTENT="with" WC="0.84" HPOS="10" VPOS="200" WIDTH="70" HEIGHT="40"/>
+</TextLine>
+</TextBlock></PrintSpace></Page></Layout></alto>"#;
+
+    const MULTILINGUAL_REORDERED: &str = r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+<Layout><Page WIDTH="500" HEIGHT="500"><PrintSpace>
+<TextBlock ID="multilingual" HPOS="10" VPOS="100" WIDTH="400" HEIGHT="140">
+<TextLine ID="multilingual-bottom" HPOS="10" VPOS="200" WIDTH="300" HEIGHT="40">
+<String ID="multilingual-word-3" CONTENT="מוושו" WC="0.80" HPOS="10" VPOS="200" WIDTH="70" HEIGHT="40"/>
+</TextLine>
+<TextLine ID="multilingual-top" HPOS="10" VPOS="100" WIDTH="300" HEIGHT="40">
+<String ID="multilingual-word-1" CONTENT="אָב" WC="0.91" HPOS="10" VPOS="100" WIDTH="50" HEIGHT="40"/>
+<String ID="multilingual-word-2" CONTENT="father" WC="0.97" HPOS="70" VPOS="100" WIDTH="100" HEIGHT="40"/>
+</TextLine>
+</TextBlock></PrintSpace></Page></Layout></alto>"#;
+
     #[test]
     fn reads_geometry_text_and_confidence() {
         let page = parse_alto(ALTO).unwrap();
         assert_eq!(page.width, 1200);
         assert_eq!(page.regions[0].lines[0].text, "אָב father");
+        assert_eq!(page.regions[0].lines[0].words.len(), 2);
+        assert_eq!(page.regions[0].lines[0].words[0].text, "אָב");
+        assert_eq!(page.regions[0].lines[0].words[1].polygon[0].x, 70.0);
         assert!(page.regions[0].lines[0].confidence > 0.95);
     }
 
@@ -582,9 +941,40 @@ mod tests {
             reparsed.regions[0].lines[0].text,
             page.regions[0].lines[0].text
         );
+        assert_eq!(
+            reparsed.regions[0].lines[0].words,
+            page.regions[0].lines[0].words
+        );
         assert!(
             (reparsed.regions[0].lines[0].confidence - page.regions[0].lines[0].confidence).abs()
                 < 0.000_001
         );
+    }
+
+    #[test]
+    fn aligns_reordered_hypotheses_by_geometry() {
+        let primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let multilingual = parse_alto(MULTILINGUAL_REORDERED).unwrap();
+        let aligned = align_lines(&primary, &multilingual);
+        assert_eq!(aligned[0].unwrap().id, "multilingual-top");
+        assert_eq!(aligned[1].unwrap().id, "multilingual-bottom");
+    }
+
+    #[test]
+    fn fuses_low_confidence_foreign_words_but_keeps_confident_english() {
+        let primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let multilingual = parse_alto(MULTILINGUAL_REORDERED).unwrap();
+        let fused = fuse_multilingual_words(&primary, &multilingual);
+        assert_eq!(fused.regions[0].lines[0].text, "אָב father");
+        assert_eq!(
+            fused.regions[0].lines[0].words[0].id,
+            "primary-top-fused-word-0001"
+        );
+        assert_eq!(
+            fused.regions[0].lines[0].words[0].polygon,
+            multilingual.regions[0].lines[1].words[0].polygon
+        );
+        assert_eq!(fused.regions[0].lines[1].text, "with");
+        assert_eq!(fused.regions[0].lines[1].words[0].id, "primary-word-3");
     }
 }

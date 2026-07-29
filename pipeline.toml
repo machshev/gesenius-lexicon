@@ -10,7 +10,10 @@ contrast_stretch = "0.5%x0.5%"
 deskew_degrees = 0.0
 
 [tesseract]
-languages = ["eng", "heb", "ara", "syr", "grc", "lat"]
+# English owns layout and the dominant text. A separate multilingual pass
+# supplies spatially aligned candidates for embedded foreign-script runs.
+primary_languages = ["eng"]
+multilingual_languages = ["eng", "heb", "ara", "syr", "grc", "lat"]
 page_segmentation_mode = 3
 model_identity = "nixpkgs-tesseract-tessdata-pinned-by-flake.lock"
 

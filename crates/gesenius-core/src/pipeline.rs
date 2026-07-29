@@ -1,7 +1,8 @@
 //! Resumable content-addressed raster, preprocessing, OCR, and parsing pipeline.
 
 use crate::alto::{
-    parse_alto, parse_entries_continuing, EngineIdentity, LineAssignment, ParseContext, ParsedPage,
+    fuse_multilingual_words, parse_alto, parse_entries_with_hypotheses_continuing, write_alto,
+    EngineIdentity, LineAssignment, ParseContext, ParsedPage,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::source::{sha256_file, verify_source, SourceCatalogue, SourceRecord};
@@ -55,8 +56,11 @@ impl PipelineSettings {
         {
             bail!("review thresholds must be between 0 and 1");
         }
-        if self.tesseract.languages.is_empty() {
-            bail!("at least one Tesseract language is required");
+        if self.tesseract.primary_languages.is_empty() {
+            bail!("at least one primary Tesseract language is required");
+        }
+        if self.tesseract.multilingual_languages.is_empty() {
+            bail!("at least one multilingual Tesseract language is required");
         }
         Ok(())
     }
@@ -81,8 +85,10 @@ pub struct PreprocessingSettings {
 #[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(deny_unknown_fields)]
 pub struct TesseractSettings {
-    /// Tesseract language codes in recognition order.
-    pub languages: Vec<String>,
+    /// Dominant-language models used for layout and English recognition.
+    pub primary_languages: Vec<String>,
+    /// Models used in a separate pass to recover embedded foreign scripts.
+    pub multilingual_languages: Vec<String>,
     /// Page segmentation mode.
     pub page_segmentation_mode: u8,
     /// Immutable Nix/tessdata model identity recorded in provenance.
@@ -206,7 +212,10 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
     verify_model(&settings.kraken)?;
 
     let tesseract_version = command_version("tesseract")?;
-    let tesseract_models_sha256 = tesseract_model_hash(&settings.tesseract.languages)?;
+    let primary_tesseract_models_sha256 =
+        tesseract_model_hash(&settings.tesseract.primary_languages)?;
+    let multilingual_tesseract_models_sha256 =
+        tesseract_model_hash(&settings.tesseract.multilingual_languages)?;
     let kraken_version = if settings.kraken.enabled {
         Some(command_version("kraken")?)
     } else {
@@ -217,7 +226,8 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         &fs::read_to_string(options.settings_path)?,
         options.pipeline_commit,
         &tesseract_version,
-        &tesseract_models_sha256,
+        &primary_tesseract_models_sha256,
+        &multilingual_tesseract_models_sha256,
         kraken_version.as_deref().unwrap_or("kraken-disabled"),
     ]);
     let run_path = options
@@ -227,15 +237,25 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         .join(options.edition);
     fs::create_dir_all(&run_path)?;
 
-    let tesseract_identity = EngineIdentity {
+    let primary_tesseract_identity = EngineIdentity {
+        engine: "tesseract".to_owned(),
+        version: tesseract_version.clone(),
+        model: format!(
+            "{}:{}",
+            settings.tesseract.model_identity,
+            settings.tesseract.primary_languages.join("+")
+        ),
+        model_hash: primary_tesseract_models_sha256,
+    };
+    let multilingual_tesseract_identity = EngineIdentity {
         engine: "tesseract".to_owned(),
         version: tesseract_version,
         model: format!(
             "{}:{}",
             settings.tesseract.model_identity,
-            settings.tesseract.languages.join("+")
+            settings.tesseract.multilingual_languages.join("+")
         ),
-        model_hash: tesseract_models_sha256,
+        model_hash: multilingual_tesseract_models_sha256,
     };
     let kraken_identity = if settings.kraken.enabled {
         Some(EngineIdentity {
@@ -275,27 +295,51 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
         )?;
         let (processed, transform_id) =
             preprocess(&original, &page_path, &settings.preprocessing, &run_id)?;
-        let tesseract_alto = recognize_tesseract(
+        let primary_tesseract_alto = recognize_tesseract(
             &processed,
             &page_path,
             &settings.tesseract,
+            &settings.tesseract.primary_languages,
+            "primary",
             settings.raster_dpi,
             &run_id,
         )?;
-        let tesseract_page = parse_alto(&fs::read_to_string(&tesseract_alto)?)?;
-        let (primary_page, primary_identity, secondary) = if let Some(identity) =
-            kraken_identity.as_ref()
-        {
+        let multilingual_tesseract_alto = recognize_tesseract(
+            &processed,
+            &page_path,
+            &settings.tesseract,
+            &settings.tesseract.multilingual_languages,
+            "multilingual",
+            settings.raster_dpi,
+            &run_id,
+        )?;
+        let primary_tesseract_page = parse_alto(&fs::read_to_string(&primary_tesseract_alto)?)?;
+        let multilingual_tesseract_page =
+            parse_alto(&fs::read_to_string(&multilingual_tesseract_alto)?)?;
+        let fused_tesseract_page =
+            fuse_multilingual_words(&primary_tesseract_page, &multilingual_tesseract_page);
+        fs::write(
+            page_path.join("tesseract-fused.alto.xml"),
+            write_alto(&fused_tesseract_page, &relative_or_absolute(&processed)),
+        )?;
+        let kraken_page = if kraken_identity.is_some() {
             let kraken_alto = recognize_kraken(&processed, &page_path, &settings.kraken, &run_id)?;
-            let kraken_page = parse_alto(&fs::read_to_string(&kraken_alto)?)?;
-            (
-                kraken_page,
-                identity,
-                Some((tesseract_page, &tesseract_identity)),
-            )
+            Some(parse_alto(&fs::read_to_string(&kraken_alto)?)?)
         } else {
-            (tesseract_page, &tesseract_identity, None)
+            None
         };
+        let canonical_page = kraken_page.as_ref().unwrap_or(&fused_tesseract_page);
+        let mut hypotheses = Vec::new();
+        if let (Some(page), Some(identity)) = (kraken_page.as_ref(), kraken_identity.as_ref()) {
+            hypotheses.push((page, identity));
+        }
+        hypotheses.extend([
+            (&primary_tesseract_page, &primary_tesseract_identity),
+            (
+                &multilingual_tesseract_page,
+                &multilingual_tesseract_identity,
+            ),
+        ]);
         let (printed_page, front_matter) = printed_page(source, *page_number);
         let page_image = relative_or_absolute(&processed);
         let context = ParseContext {
@@ -315,21 +359,12 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
             } else {
                 None
             };
-        let parsed = if let Some((secondary_page, secondary_identity)) = secondary.as_ref() {
-            parse_entries_continuing(
-                (&primary_page, primary_identity),
-                Some((secondary_page, secondary_identity)),
-                &context,
-                continued_entry,
-            )
-        } else {
-            parse_entries_continuing(
-                (&primary_page, primary_identity),
-                None,
-                &context,
-                continued_entry,
-            )
-        };
+        let parsed = parse_entries_with_hypotheses_continuing(
+            canonical_page,
+            &hypotheses,
+            &context,
+            continued_entry,
+        );
         write_page_parse(&page_path, &parsed)?;
         continuation = parsed.entries.last().cloned();
         previous_page_number = Some(*page_number);
@@ -513,17 +548,19 @@ fn recognize_tesseract(
     input: &Path,
     page_path: &Path,
     settings: &TesseractSettings,
+    languages: &[String],
+    pass: &str,
     raster_dpi: u32,
     run_id: &str,
 ) -> Result<PathBuf> {
-    let output_path = page_path.join("tesseract.alto.xml");
+    let output_path = page_path.join(format!("tesseract-{pass}.alto.xml"));
     let arguments = vec![
         input.display().to_string(),
         "stdout".to_owned(),
         "--dpi".to_owned(),
         raster_dpi.to_string(),
         "-l".to_owned(),
-        settings.languages.join("+"),
+        languages.join("+"),
         "--psm".to_owned(),
         settings.page_segmentation_mode.to_string(),
         "alto".to_owned(),
@@ -531,9 +568,11 @@ fn recognize_tesseract(
     let input_hash = content_hash(&[
         run_id,
         &serde_json::to_string(settings)?,
+        pass,
+        &languages.join("+"),
         &raster_dpi.to_string(),
     ]);
-    let receipt = page_path.join("tesseract.stage.json");
+    let receipt = page_path.join(format!("tesseract-{pass}.stage.json"));
     if !stage_is_current(&receipt, &input_hash, std::slice::from_ref(&output_path))? {
         let command_output = execute("tesseract", &arguments)?;
         if command_output.stdout.is_empty() {
@@ -542,7 +581,7 @@ fn recognize_tesseract(
         fs::write(&output_path, command_output.stdout)?;
         write_receipt(
             &receipt,
-            "tesseract",
+            &format!("tesseract-{pass}"),
             &input_hash,
             "tesseract",
             &arguments,
