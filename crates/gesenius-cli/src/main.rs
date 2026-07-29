@@ -2,6 +2,8 @@
 
 use anyhow::{bail, Context, Result};
 use clap::{Args, Parser, Subcommand, ValueEnum};
+use gesenius_core::alto::parse_alto;
+use gesenius_core::benchmark::{evaluate_alto, GoldBenchmark};
 use gesenius_core::corpus_io::load_entries;
 use gesenius_core::export::{
     export, manifest_from_entries, validate_sqlite, validate_tei_schema, ExportFormat,
@@ -51,6 +53,8 @@ enum Commands {
     },
     /// Run selected PDF pages through rasterization, OCR, and parsing.
     Run(RunArguments),
+    /// Measure an ALTO hypothesis against immutable human/frontier gold lines.
+    Benchmark(BenchmarkArguments),
     /// Prepare pilot ground truth and optionally fine-tune Kraken.
     Train(TrainArguments),
     /// Validate corpus, Unicode, provenance, and run assignments.
@@ -99,6 +103,16 @@ struct RunArguments {
     /// One-based PDF pages, for example `17-20,45`.
     #[arg(long)]
     pages: String,
+}
+
+#[derive(Args)]
+struct BenchmarkArguments {
+    /// Human- or frontier-transcribed gold fixture.
+    #[arg(long)]
+    gold: PathBuf,
+    /// ALTO hypothesis to evaluate.
+    #[arg(long)]
+    alto: PathBuf,
 }
 
 #[derive(Args)]
@@ -191,12 +205,20 @@ fn main() -> Result<()> {
     match &cli.command {
         Commands::Source { command } => source_command(&cli.catalogue, &cli.cache, command),
         Commands::Run(arguments) => run_command(&cli, arguments),
+        Commands::Benchmark(arguments) => benchmark_command(arguments),
         Commands::Train(arguments) => train_command(&cli, arguments),
         Commands::Validate(arguments) => validate_command(&cli, arguments),
         Commands::Review { command } => review_command(&cli, command),
         Commands::Export(arguments) => export_command(&cli, arguments),
         Commands::Report(arguments) => report_command(&cli, arguments),
     }
+}
+
+fn benchmark_command(arguments: &BenchmarkArguments) -> Result<()> {
+    let benchmark = GoldBenchmark::load(&arguments.gold)?;
+    let alto = fs::read_to_string(&arguments.alto)
+        .with_context(|| format!("failed to read ALTO {}", arguments.alto.display()))?;
+    print_json(&evaluate_alto(&benchmark, &parse_alto(&alto)?))
 }
 
 fn source_command(catalogue_path: &Path, cache: &Path, command: &SourceCommands) -> Result<()> {
