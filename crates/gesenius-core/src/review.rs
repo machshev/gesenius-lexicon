@@ -2,7 +2,7 @@
 
 use crate::corpus_io::load_entries;
 use crate::metrics::normalized_disagreement;
-use crate::model::{CorpusEntry, ReviewState};
+use crate::model::{CorpusEntry, Point, ReviewState};
 use crate::unicode::{aggregate_confidence, refresh_span};
 use crate::validate::validate_entry;
 use anyhow::{bail, Context, Result};
@@ -57,6 +57,23 @@ struct EntrySummary {
     warnings: usize,
     disagreement: f64,
     queued: bool,
+}
+
+#[derive(Debug, Serialize)]
+struct PageEntrySummary {
+    id: String,
+    headword: Option<String>,
+    review_state: ReviewState,
+    polygons: Vec<Vec<Point>>,
+}
+
+#[derive(Debug, Serialize)]
+struct PageSummary {
+    edition: String,
+    source_page: u32,
+    printed_page: Option<String>,
+    page_image: String,
+    entries: Vec<PageEntrySummary>,
 }
 
 /// On-disk base corpus plus append-only patches.
@@ -240,6 +257,10 @@ fn handle_request(
                 .collect();
             respond_json(request, StatusCode(200), &summaries)
         }
+        (&Method::Get, "/api/pages") => {
+            let pages = summarize_pages(&store.materialized_entries()?);
+            respond_json(request, StatusCode(200), &pages)
+        }
         (&Method::Get, _) if path.starts_with("/api/entries/") => {
             let id = percent_decode(&path["/api/entries/".len()..])?;
             let entry = store
@@ -298,6 +319,49 @@ fn handle_request(
         }
         _ => respond_error(request, StatusCode(404), "not found"),
     }
+}
+
+fn summarize_pages(entries: &[CorpusEntry]) -> Vec<PageSummary> {
+    type PageKey = (String, u32, Option<String>, String);
+    let mut pages: BTreeMap<PageKey, BTreeMap<String, PageEntrySummary>> = BTreeMap::new();
+    for entry in entries {
+        for span in entry.spans() {
+            for coordinate in &span.coordinates {
+                let key = (
+                    entry.edition.clone(),
+                    coordinate.source_page,
+                    coordinate.printed_page.clone(),
+                    coordinate.page_image.clone(),
+                );
+                let page_entry = pages
+                    .entry(key)
+                    .or_default()
+                    .entry(entry.id.clone())
+                    .or_insert_with(|| PageEntrySummary {
+                        id: entry.id.clone(),
+                        headword: entry
+                            .headword
+                            .as_ref()
+                            .map(|headword| headword.normalized.clone()),
+                        review_state: entry.review_state,
+                        polygons: Vec::new(),
+                    });
+                page_entry.polygons.push(coordinate.polygon.clone());
+            }
+        }
+    }
+    pages
+        .into_iter()
+        .map(
+            |((edition, source_page, printed_page, page_image), entries)| PageSummary {
+                edition,
+                source_page,
+                printed_page,
+                page_image,
+                entries: entries.into_values().collect(),
+            },
+        )
+        .collect()
 }
 
 fn summarize(
@@ -433,7 +497,10 @@ fn security_header() -> Header {
 fn query_parameter(url: &str, name: &str) -> Option<String> {
     url.split_once('?')?.1.split('&').find_map(|pair| {
         let (key, value) = pair.split_once('=').unwrap_or((pair, ""));
-        (key == name).then(|| percent_decode(value).ok()).flatten()
+        (key == name)
+            .then(|| percent_decode(value).ok())
+            .flatten()
+            .filter(|value| !value.is_empty())
     })
 }
 
@@ -491,50 +558,89 @@ main{display:grid;grid-template-columns:minmax(17rem,25rem) 1fr;height:calc(100v
 #list{overflow:auto;border-right:1px solid #aaa;background:#faf8f2}.item{padding:.7rem;border-bottom:1px solid #ddd;cursor:pointer}
 .item:hover,.item.active{background:#e3eee8}.hebrew{font:1.35rem "Noto Sans Hebrew",sans-serif;direction:rtl}
 #detail{overflow:auto;padding:1rem}.grid{display:grid;grid-template-columns:minmax(20rem,1fr) minmax(22rem,1fr);gap:1rem}
+#detail.page-detail{display:grid;grid-template-rows:auto minmax(0,1fr);overflow:hidden}
 section{background:white;border:1px solid #d0cbc0;border-radius:.4rem;padding:.8rem}textarea{width:100%;height:28rem;font:13px monospace}
 #scan svg{width:100%;height:auto;background:#ddd}.overlay{fill:rgba(238,171,48,.18);stroke:#cf6a16;stroke-width:3}
 pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}button,select,input{font:inherit;padding:.35rem}
-@media(max-width:850px){main{display:block;height:auto}.grid{grid-template-columns:1fr}#list{max-height:35vh}}
+.tabs{display:flex;gap:.35rem;margin-bottom:.7rem}.tabs button[aria-selected="true"]{background:#313a35;color:white}
+.entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;unicode-bidi:plaintext}.page-break{margin:1rem 0 .25rem;color:#6d685e;font-size:.82rem;font-weight:600}.hidden{display:none}
+.page-toolbar{display:flex;gap:.5rem;align-items:center;margin-bottom:.7rem}.page-toolbar select{min-width:0;flex:1}.page-canvas{min-height:0}.page-detail .page-canvas{display:grid;grid-template-rows:minmax(0,1fr) auto}
+.page-canvas svg{display:block;width:100%;height:100%;min-height:0;background:#ddd}
+.page-overlay{cursor:pointer;stroke-width:4}.page-overlay:hover{fill-opacity:.42}
+.legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem;max-height:6rem;overflow:auto}.legend button{border-left:.65rem solid var(--entry-color)}
+@media(max-width:850px){main{display:block;height:auto}.grid{grid-template-columns:1fr}#list{max-height:35vh}#detail.page-detail{box-sizing:border-box;height:100dvh}}
 </style></head>
 <body><header><strong>Gesenius review</strong>
-<label>State <select id="state"><option value="">all</option><option>machine</option><option>corrected</option><option>verified</option></select></label>
-<label><input id="queue" type="checkbox" checked> review queue</label><button id="reload">Reload</button></header>
+<button id="entryMode">Entries</button><button id="pageMode">Pages</button>
+<span id="entryFilters"><label>State <select id="state"><option value="">all</option><option>machine</option><option>corrected</option><option>verified</option></select></label>
+<label><input id="queue" type="checkbox" checked> review queue</label></span><button id="reload">Reload</button></header>
 <main><div id="list"></div><div id="detail"><p>Select an entry.</p></div></main>
 <script>
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let current=null;
+let current=null,mode='entries',pages=[];
+const entryColor=(index,total)=>`hsl(${Math.round(index*360/Math.max(1,total))} 70% 38%)`;
+function setMode(next){mode=next;$('#detail').classList.toggle('page-detail',mode==='pages');$('#entryFilters').classList.toggle('hidden',mode==='pages');$('#entryMode').disabled=mode==='entries';$('#pageMode').disabled=mode==='pages';}
 async function loadList(){let q=new URLSearchParams({state:$('#state').value,queue:$('#queue').checked});let rows=await (await fetch('/api/entries?'+q)).json();
 $('#list').innerHTML=rows.map(r=>`<div class="item" data-id="${esc(r.id)}"><span class="hebrew">${esc(r.headword||'—')}</span><br><b>${esc(r.edition)}</b> p. ${esc(r.printed_page)}
 <div class="muted">${Math.round(r.confidence*100)}% · ${r.review_state} · ${r.warnings} warnings · Δ ${r.disagreement.toFixed(2)}</div></div>`).join('');
 document.querySelectorAll('.item').forEach(x=>x.onclick=()=>loadEntry(x.dataset.id));}
-async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeURIComponent(id))).json();render();}
+async function openEntry(id){setMode('entries');await loadList();await loadEntry(id);}
+async function loadPages(selectedImage){pages=await (await fetch('/api/pages')).json();$('#list').innerHTML=pages.map((page,index)=>`<div class="item" data-page="${index}"><b>${esc(page.edition)}</b><br>printed ${esc(page.printed_page||'—')} · PDF ${page.source_page}<div class="muted">${page.entries.length} entries</div></div>`).join('');
+document.querySelectorAll('[data-page]').forEach(x=>x.onclick=()=>renderPage(Number(x.dataset.page)));let index=Math.max(0,pages.findIndex(page=>page.page_image===selectedImage));if(pages.length)await renderPage(index);else $('#detail').innerHTML='<p>No pages available.</p>';}
+async function renderPage(index){let page=pages[index],imageUrl='/api/image?path='+encodeURIComponent(page.page_image),dimensions=await imageSize(imageUrl);
+let polygons=page.entries.flatMap((entry,entryIndex)=>entry.polygons.map(points=>`<polygon class="page-overlay" data-id="${esc(entry.id)}" style="fill:${entryColor(entryIndex,page.entries.length)};fill-opacity:.18;stroke:${entryColor(entryIndex,page.entries.length)}" points="${points.map(point=>point.x+','+point.y).join(' ')}"><title>${esc(entry.headword||entry.id)}</title></polygon>`)).join('');
+$('#detail').innerHTML=`<div class="page-toolbar"><button id="previousPage" ${index===0?'disabled':''}>← Previous</button><select id="pageSelect">${pages.map((candidate,i)=>`<option value="${i}" ${i===index?'selected':''}>${esc(candidate.edition)} · printed ${esc(candidate.printed_page||'—')} · PDF ${candidate.source_page}</option>`).join('')}</select><button id="nextPage" ${index===pages.length-1?'disabled':''}>Next →</button></div>
+<section class="page-canvas"><svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>${polygons}</svg>
+<div class="legend">${page.entries.map((entry,entryIndex)=>`<button data-entry="${esc(entry.id)}" style="--entry-color:${entryColor(entryIndex,page.entries.length)}">${esc(entry.headword||entry.id)} · ${entry.review_state}</button>`).join('')}</div></section>`;
+$('#previousPage').onclick=()=>renderPage(index-1);$('#nextPage').onclick=()=>renderPage(index+1);$('#pageSelect').onchange=event=>renderPage(Number(event.target.value));
+document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.dataset.id));document.querySelectorAll('[data-entry]').forEach(x=>x.onclick=()=>openEntry(x.dataset.entry));}
+async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeURIComponent(id))).json();await render();}
 function cps(text){return [...text].map(c=>`${c} U+${c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')}`).join(' · ')}
-function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
-let first=spans.find(s=>s.coordinates.length)?.coordinates[0], points=spans.flatMap(s=>s.coordinates).flatMap(c=>c.polygon);
-let maxX=Math.max(1,...points.map(p=>p.x)),maxY=Math.max(1,...points.map(p=>p.y));
-let scan=first?`<svg viewBox="0 0 ${maxX} ${maxY}"><image href="/api/image?path=${encodeURIComponent(first.page_image)}" width="${maxX}" height="${maxY}"/>
-${spans.flatMap(s=>s.coordinates.map(c=>`<polygon class="overlay" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.id)}</title></polygon>`)).join('')}</svg>`:'No scan coordinate';
+function imageSize(src){return new Promise((resolve,reject)=>{let image=new Image();image.onload=()=>resolve({width:image.naturalWidth,height:image.naturalHeight});image.onerror=reject;image.src=src;});}
+function renderParagraphs(spans){let groups=[];for(let span of spans){if(!span.normalized)continue;let page=span.coordinates[0]?.printed_page||null,last=groups.at(-1);if(!last||last.page!==page)groups.push({page,text:[]});groups.at(-1).text.push(span.normalized);}return groups.map(group=>`${group.page?`<div class="page-break">Page ${esc(group.page)}</div>`:''}<p dir="auto">${esc(group.text.join(' '))}</p>`).join('');}
+async function scanForPage(spans,page){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl);
+return `<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>
+${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<polygon class="overlay" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.id)}</title></polygon>`)).join('')}</svg>`;}
+async function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
+let pages=[];for(let span of spans)for(let coordinate of span.coordinates)if(!pages.some(page=>page.image===coordinate.page_image))pages.push({image:coordinate.page_image,source:coordinate.source_page,printed:coordinate.printed_page});
+let scan=pages.length?await scanForPage(spans,pages[0]):'No scan coordinate';
 let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%</span><br>
 ${s.hypotheses.map(h=>`<code>${esc(h.engine)}:</code> ${esc(h.text)} (${Math.round(h.confidence*100)}%)`).join('<br>')}
 <br><span class="muted">${esc(cps(s.diplomatic))}</span>${s.warnings.map(w=>`<br><span class="warn">${esc(w.code)}: ${esc(w.message)}</span>`).join('')}</p>`).join('');
 $('#detail').innerHTML=`<h2><span class="hebrew">${esc(current.headword?.normalized||current.id)}</span></h2><div class="grid">
-<div><section id="scan">${scan}</section><section><h3>Hypotheses and Unicode</h3>${hypotheses}</section></div>
-<section><h3>Structured JSON</h3><textarea id="editor" spellcheck="false">${esc(JSON.stringify(current,null,2))}</textarea>
+<div><section id="scan">${pages.length>1?`<label>Scan page <select id="scanPage">${pages.map((page,index)=>`<option value="${index}">printed ${esc(page.printed)} · PDF ${page.source}</option>`).join('')}</select></label>`:''}<div id="scanCanvas">${scan}</div></section><section><h3>Hypotheses and Unicode</h3>${hypotheses}</section></div>
+<section><div class="tabs" role="tablist"><button id="textTab" role="tab" aria-selected="true">Text</button><button id="jsonTab" role="tab" aria-selected="false">Structured JSON</button></div>
+<div id="textPanel" role="tabpanel"><div class="entry-text">${renderParagraphs(spans)}</div></div>
+<div id="jsonPanel" class="hidden" role="tabpanel"><textarea id="editor" spellcheck="false">${esc(JSON.stringify(current,null,2))}</textarea></div>
 <p><input id="reviewer" placeholder="Reviewer" autocomplete="name"> <select id="reviewState"><option>corrected</option><option>verified</option></select>
-<button id="save">Save revision ${current.revision+1}</button></p><p id="message"></p></section></div>`;
+<button id="save">Save revision ${current.revision+1}</button> <button id="viewPage">View on page</button></p><p id="message"></p></section></div>`;
+const showPanel=json=>{$('#textPanel').classList.toggle('hidden',json);$('#jsonPanel').classList.toggle('hidden',!json);$('#textTab').setAttribute('aria-selected',!json);$('#jsonTab').setAttribute('aria-selected',json);};
+$('#textTab').onclick=()=>showPanel(false);$('#jsonTab').onclick=()=>showPanel(true);
+let selectedPage=0;if(pages.length>1)$('#scanPage').onchange=async event=>{selectedPage=Number(event.target.value);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage]);};
+$('#viewPage').onclick=async()=>{setMode('pages');await loadPages(pages[selectedPage].image);};
 $('#save').onclick=save;}
 async function save(){let message=$('#message');try{let entry=JSON.parse($('#editor').value);let response=await fetch('/api/entries/'+encodeURIComponent(current.id),{method:'PATCH',headers:{'Content-Type':'application/json'},
 body:JSON.stringify({base_revision:current.revision,reviewer:$('#reviewer').value,review_state:$('#reviewState').value,entry})});
-let result=await response.json();if(!response.ok)throw Error(result.error);current=result.replacement;message.textContent='Saved.';await loadList();render();}catch(e){message.className='warn';message.textContent=e.message;}}
-$('#reload').onclick=loadList;$('#state').onchange=loadList;$('#queue').onchange=loadList;loadList();
+let result=await response.json();if(!response.ok)throw Error(result.error);current=result.replacement;message.textContent='Saved.';await loadList();await render();}catch(e){message.className='warn';message.textContent=e.message;}}
+$('#entryMode').onclick=async()=>{setMode('entries');await loadList();$('#detail').innerHTML='<p>Select an entry.</p>';};
+$('#pageMode').onclick=async()=>{setMode('pages');await loadPages();};$('#reload').onclick=()=>mode==='entries'?loadList():loadPages();
+$('#state').onchange=loadList;$('#queue').onchange=loadList;if(location.hash==='#page-view-smoke-test'){setMode('pages');loadPages().then(()=>{if(innerWidth<=850)$('#detail').scrollIntoView();});}else{setMode('entries');loadList();}
 </script></body></html>"#;
 
 #[cfg(test)]
 mod tests {
-    use super::percent_decode;
+    use super::{percent_decode, query_parameter};
 
     #[test]
     fn decodes_url_components() {
         assert_eq!(percent_decode("a%3Ab+c").unwrap(), "a:b c");
+    }
+
+    #[test]
+    fn empty_query_parameter_can_represent_no_filter() {
+        assert_eq!(
+            query_parameter("/api/entries?state=&queue=false", "state"),
+            None
+        );
     }
 }
