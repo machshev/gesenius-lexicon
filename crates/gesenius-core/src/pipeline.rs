@@ -568,12 +568,7 @@ fn merge_parsed_pages(
     parsed_pages: &[ParsedPage],
 ) -> Vec<CorpusEntry> {
     let mut entries = base_entries.to_vec();
-    entries.retain(|entry| {
-        !entry
-            .spans()
-            .flat_map(|span| span.coordinates.iter())
-            .any(|coordinate| selected_pages.contains(&coordinate.source_page))
-    });
+    entries.retain(|entry| !should_replace_entry(entry, selected_pages));
     for parsed_entry in parsed_pages
         .iter()
         .flat_map(|page| page.entries.iter().cloned())
@@ -582,6 +577,18 @@ fn merge_parsed_pages(
         entries.push(parsed_entry);
     }
     entries
+}
+
+fn should_replace_entry(entry: &CorpusEntry, selected_pages: &BTreeSet<u32>) -> bool {
+    entry_source_page(entry).is_some_and(|source_page| selected_pages.contains(&source_page))
+}
+
+fn entry_source_page(entry: &CorpusEntry) -> Option<u32> {
+    entry
+        .spans()
+        .flat_map(|span| span.coordinates.iter())
+        .map(|coordinate| coordinate.source_page)
+        .min()
 }
 
 fn report_progress(
@@ -1560,7 +1567,12 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 
 #[cfg(test)]
 mod tests {
-    use super::{parse_page_spec, should_use_isolated_word, WordCandidate};
+    use super::{
+        entry_source_page, parse_page_spec, should_replace_entry, should_use_isolated_word,
+        WordCandidate,
+    };
+    use crate::model::CorpusEntry;
+    use std::collections::BTreeSet;
 
     #[test]
     fn page_specs_are_sorted_and_deduplicated() {
@@ -1605,5 +1617,75 @@ mod tests {
                 confidence: 0.80,
             },
         ));
+    }
+
+    #[test]
+    fn entry_source_page_uses_the_page_where_a_continuation_began() {
+        let entry: CorpusEntry = serde_json::from_str(
+            r#"{
+                "id":"test:p1:e0001",
+                "aliases":[],
+                "edition":"test",
+                "printed_page":"1",
+                "entry_ordinal":1,
+                "headword":null,
+                "homograph":null,
+                "grammatical_labels":[],
+                "blocks":[{
+                    "id":"block",
+                    "kind":"paragraph",
+                    "spans":[{
+                        "id":"span",
+                        "diplomatic":"continued definition",
+                        "normalized":"continued definition",
+                        "language":"en",
+                        "script":"Latn",
+                        "direction":"ltr",
+                        "confidence":0.9,
+                        "review_state":"machine",
+                        "hypotheses":[],
+                        "coordinates":[
+                            {
+                                "source_page":19,
+                                "printed_page":"3",
+                                "region_id":"r2",
+                                "line_id":"l2",
+                                "polygon":[],
+                                "transform_id":"t",
+                                "page_image":"p19.png"
+                            },
+                            {
+                                "source_page":17,
+                                "printed_page":"1",
+                                "region_id":"r1",
+                                "line_id":"l1",
+                                "polygon":[],
+                                "transform_id":"t",
+                                "page_image":"p17.png"
+                            }
+                        ],
+                        "warnings":[]
+                    }]
+                }],
+                "senses":[],
+                "citations":[],
+                "cross_references":[],
+                "etymology":[],
+                "provenance":{
+                    "edition":"test",
+                    "source_sha256":"hash",
+                    "scan_id":"scan",
+                    "pipeline_run":"run"
+                },
+                "confidence":0.9,
+                "review_state":"machine",
+                "revision":0
+            }"#,
+        )
+        .unwrap();
+
+        assert_eq!(entry_source_page(&entry), Some(17));
+        assert!(!should_replace_entry(&entry, &BTreeSet::from([19])));
+        assert!(should_replace_entry(&entry, &BTreeSet::from([17])));
     }
 }
