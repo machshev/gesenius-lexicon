@@ -98,9 +98,9 @@ fn fixture_entries() -> Vec<gesenius_core::CorpusEntry> {
         page_one.entries.last().cloned(),
     );
     assert_eq!(page_two.entries.len(), 2);
-    assert_eq!(page_two.entries[0].blocks.len(), 2);
+    assert_eq!(page_two.entries[0].blocks.len(), 1);
     assert_eq!(page_two.entries[0].blocks[0].kind, BlockKind::Paragraph);
-    assert_eq!(page_two.entries[0].blocks[0].spans.len(), 2);
+    assert_eq!(page_two.entries[0].blocks[0].spans.len(), 3);
     assert!(page_two.entries[0]
         .blocks
         .iter()
@@ -231,6 +231,78 @@ fn displayed_headings_and_multiline_paragraphs_are_structured() {
         parsed.entries[0].blocks[1].spans[0].id,
         parsed.entries[0].blocks[1].spans[1].id
     );
+}
+
+#[test]
+fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
+    let page_one = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="1200" WIDTH="420" HEIGHT="50">
+      <TextLine ID="previous-line" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45">
+        <String CONTENT="the paragraph begins here" WC="0.98" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let first = parse_entries(
+        (&page_one, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+    let page_two = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="running-head" HPOS="470" VPOS="50" WIDTH="60" HEIGHT="30">
+      <TextLine ID="running-head-line" HPOS="470" VPOS="50" WIDTH="60" HEIGHT="30">
+        <String CONTENT="אָב" WC="0.99" HPOS="470" VPOS="50" WIDTH="60" HEIGHT="30"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="continued-body" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="100">
+      <TextLine ID="continued-line" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45">
+        <String CONTENT="and continues on this page." WC="0.98" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="new-paragraph" HPOS="550" VPOS="220" WIDTH="400" HEIGHT="100">
+      <TextLine ID="indented-line" HPOS="590" VPOS="220" WIDTH="360" HEIGHT="45">
+        <String CONTENT="A new paragraph." WC="0.98" HPOS="590" VPOS="220" WIDTH="360" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="new-paragraph-line-2" HPOS="550" VPOS="270" WIDTH="400" HEIGHT="45">
+        <String CONTENT="continues flush left." WC="0.98" HPOS="550" VPOS="270" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries_continuing(
+        (&page_two, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "2",
+            18,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+        first.entries.last().cloned(),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks.len(), 2);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 2);
+    assert_eq!(parsed.entries[0].blocks[1].spans.len(), 2);
+    assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
+        line == "running-head-line" && matches!(assignment, LineAssignment::Unparsed)
+    }));
 }
 
 fn fixture_manifest() -> CorpusManifest {

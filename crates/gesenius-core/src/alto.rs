@@ -330,6 +330,7 @@ pub fn parse_entries_with_hypotheses_continuing(
         .iter()
         .map(|(page, _)| align_lines(canonical, page))
         .collect();
+    let has_continuation = continuation.is_some();
     let mut entries: Vec<CorpusEntry> = continuation.into_iter().collect();
     let mut assignments = Vec::new();
     let mut page_entry_count = 0_usize;
@@ -386,9 +387,12 @@ pub fn parse_entries_with_hypotheses_continuing(
                 .blocks
                 .last()
                 .is_some_and(|block| block.kind == block_kind)
-            && previous_line.is_some_and(|(previous_region, previous)| {
+            && (previous_line.is_some_and(|(previous_region, previous)| {
                 same_structural_block(previous_region, previous, region, line, block_kind)
-            });
+            }) || (has_continuation
+                && previous_line.is_none()
+                && block_kind == BlockKind::Paragraph
+                && !is_indented_paragraph_start(line, region)));
         if continues_block {
             entry
                 .blocks
@@ -450,18 +454,21 @@ fn same_structural_block(
     line: &AltoLine,
     kind: BlockKind,
 ) -> bool {
-    if previous_region != region.id {
-        return false;
-    }
     let (_, previous_y, _, previous_height) = polygon_bounds(&previous.polygon);
     let (_, y, _, height) = polygon_bounds(&line.polygon);
     let gap = y.saturating_sub(previous_y.saturating_add(previous_height)) as f32;
     let typical_height = previous_height.max(height).max(1) as f32;
     match kind {
-        BlockKind::Heading => gap <= typical_height,
-        BlockKind::Paragraph => gap <= typical_height * 0.9,
+        BlockKind::Heading => previous_region == region.id && gap <= typical_height,
+        BlockKind::Paragraph => !is_indented_paragraph_start(line, region),
         _ => false,
     }
+}
+
+fn is_indented_paragraph_start(line: &AltoLine, region: &AltoRegion) -> bool {
+    let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
+    let (region_x, _, _, _) = polygon_bounds(&region.polygon);
+    line_x.saturating_sub(region_x) as f32 >= line_height.max(1) as f32 * 0.5
 }
 
 /// Combines an English-primary page with foreign-script word runs from a
@@ -1037,7 +1044,7 @@ fn is_margin_line(line: &AltoLine, page_height: u32) -> bool {
         .iter()
         .map(|point| point.y)
         .fold(f32::MIN, f32::max);
-    minimum_y < page_height as f32 * 0.025 || maximum_y > page_height as f32 * 0.975
+    minimum_y < page_height as f32 * 0.05 || maximum_y > page_height as f32 * 0.975
 }
 
 fn integer_attribute(node: Node<'_, '_>, attribute: &str) -> Result<u32> {
