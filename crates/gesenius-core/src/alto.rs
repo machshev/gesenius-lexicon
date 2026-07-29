@@ -388,11 +388,10 @@ pub fn parse_entries_with_hypotheses_continuing(
         let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
         if starts_entry && entry.headword.is_none() {
-            entry.headword = extract_headword(&span).or_else(|| {
-                grammar_labeled_headword
-                    .then(|| extract_candidate_headword(&span, line))
-                    .flatten()
-            });
+            entry.headword = grammar_labeled_headword
+                .then(|| extract_candidate_headword(&span, line))
+                .flatten()
+                .or_else(|| extract_headword(&span));
         }
         let continues_block = !starts_entry
             && entry
