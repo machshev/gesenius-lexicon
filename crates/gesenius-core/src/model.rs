@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 
 /// Version of the JSON corpus schema implemented by this crate.
-pub const CORPUS_SCHEMA_VERSION: &str = "1.0.0";
+pub const CORPUS_SCHEMA_VERSION: &str = "1.1.0";
 
 /// Version of the generated SQLite schema.
 pub const SQLITE_SCHEMA_VERSION: u32 = 1;
@@ -136,6 +136,10 @@ pub struct TextSpan {
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "snake_case")]
 pub enum BlockKind {
+    /// A displayed title or section heading.
+    Heading,
+    /// One continuous prose paragraph.
+    Paragraph,
     /// Headword and form material.
     Form,
     /// Grammatical information.

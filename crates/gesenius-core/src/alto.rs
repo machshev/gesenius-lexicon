@@ -1,4 +1,4 @@
-//! Minimal ALTO 4 reader/writer and conservative entry boundary parser.
+//! Minimal ALTO 4 reader/writer and layout-aware structural parser.
 
 use crate::metrics::polygon_iou;
 use crate::model::{
@@ -334,6 +334,7 @@ pub fn parse_entries_with_hypotheses_continuing(
     let mut assignments = Vec::new();
     let mut page_entry_count = 0_usize;
 
+    let mut previous_line: Option<(&str, &AltoLine)> = None;
     for (line_index, (region, line)) in flatten_lines(canonical).enumerate() {
         if context.front_matter {
             assignments.push((
@@ -345,10 +346,16 @@ pub fn parse_entries_with_hypotheses_continuing(
         }
         if is_margin_line(line, canonical.height) {
             assignments.push((region.id.clone(), line.id.clone(), LineAssignment::Unparsed));
+            previous_line = None;
             continue;
         }
 
         let starts_entry = begins_with_hebrew(&line.text);
+        let block_kind = if is_heading_line(line, region, canonical) {
+            BlockKind::Heading
+        } else {
+            BlockKind::Paragraph
+        };
         if starts_entry || entries.is_empty() {
             page_entry_count += 1;
             let ordinal = u32::try_from(page_entry_count).unwrap_or(u32::MAX);
@@ -369,22 +376,33 @@ pub fn parse_entries_with_hypotheses_continuing(
                     .map(|line| hypothesis(line, identity))
             })
             .collect();
-        let span = make_span(
-            entry,
-            line,
-            region,
-            line_hypotheses,
-            context,
-            entry.blocks.len(),
-        );
+        let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
+        let span = make_span(entry, line, region, line_hypotheses, context, span_index);
         if starts_entry && entry.headword.is_none() {
             entry.headword = extract_headword(&span);
         }
-        entry.blocks.push(EntryBlock {
-            id: format!("{}:block:{:04}", entry.id, entry.blocks.len() + 1),
-            kind: BlockKind::Unclassified,
-            spans: vec![span],
-        });
+        let continues_block = !starts_entry
+            && entry
+                .blocks
+                .last()
+                .is_some_and(|block| block.kind == block_kind)
+            && previous_line.is_some_and(|(previous_region, previous)| {
+                same_structural_block(previous_region, previous, region, line, block_kind)
+            });
+        if continues_block {
+            entry
+                .blocks
+                .last_mut()
+                .expect("continuing block exists")
+                .spans
+                .push(span);
+        } else {
+            entry.blocks.push(EntryBlock {
+                id: format!("{}:block:{:04}", entry.id, entry.blocks.len() + 1),
+                kind: block_kind,
+                spans: vec![span],
+            });
+        }
         entry.confidence =
             aggregate_confidence(entry.blocks.iter().flat_map(|block| block.spans.iter()));
         assignments.push((
@@ -392,11 +410,57 @@ pub fn parse_entries_with_hypotheses_continuing(
             line.id.clone(),
             LineAssignment::Entry(entry.id.clone()),
         ));
+        previous_line = Some((&region.id, line));
     }
 
     ParsedPage {
         entries,
         assignments,
+    }
+}
+
+fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
+    let (x, _, width, _) = polygon_bounds(&line.polygon);
+    let page_width = page.width as f32;
+    let line_center = x as f32 + width as f32 / 2.0;
+    let centered = (line_center - page_width / 2.0).abs() <= page_width * 0.08;
+    let compact = width as f32 <= page_width * 0.65
+        && line.text.chars().count() <= 100
+        && line.text.split_whitespace().count() <= 12;
+    let letters: Vec<_> = line
+        .text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .collect();
+    let uppercase = !letters.is_empty()
+        && letters
+            .iter()
+            .filter(|character| character.is_uppercase())
+            .count()
+            * 5
+            >= letters.len() * 4;
+    let displayed = region.lines.len() <= 3 && (centered || uppercase);
+    compact && displayed
+}
+
+fn same_structural_block(
+    previous_region: &str,
+    previous: &AltoLine,
+    region: &AltoRegion,
+    line: &AltoLine,
+    kind: BlockKind,
+) -> bool {
+    if previous_region != region.id {
+        return false;
+    }
+    let (_, previous_y, _, previous_height) = polygon_bounds(&previous.polygon);
+    let (_, y, _, height) = polygon_bounds(&line.polygon);
+    let gap = y.saturating_sub(previous_y.saturating_add(previous_height)) as f32;
+    let typical_height = previous_height.max(height).max(1) as f32;
+    match kind {
+        BlockKind::Heading => gap <= typical_height,
+        BlockKind::Paragraph => gap <= typical_height * 0.9,
+        _ => false,
     }
 }
 

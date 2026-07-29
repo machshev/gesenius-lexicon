@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://haqor.dev/schemas/gesenius-corpus-1.0.0.json",
+  "$id": "https://haqor.dev/schemas/gesenius-corpus-1.1.0.json",
   "title": "Gesenius canonical JSONL entry",
   "type": "object",
   "additionalProperties": false,
@@ -43,7 +43,7 @@
       "properties": {
         "id": { "type": "string" },
         "kind": {
-          "enum": ["form", "grammar", "definition", "etymology", "citation", "cross_reference", "unclassified"]
+          "enum": ["heading", "paragraph", "form", "grammar", "definition", "etymology", "citation", "cross_reference", "unclassified"]
         },
         "spans": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/span" } }
       }

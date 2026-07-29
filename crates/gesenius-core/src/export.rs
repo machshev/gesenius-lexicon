@@ -685,6 +685,8 @@ const fn direction(value: Direction) -> &'static str {
 
 const fn block_kind(value: BlockKind) -> &'static str {
     match value {
+        BlockKind::Heading => "heading",
+        BlockKind::Paragraph => "paragraph",
         BlockKind::Form => "form",
         BlockKind::Grammar => "grammar",
         BlockKind::Definition => "definition",

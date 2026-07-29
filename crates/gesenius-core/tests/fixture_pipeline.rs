@@ -9,7 +9,9 @@ use gesenius_core::corpus_io::{load_entries, write_entries};
 use gesenius_core::export::{
     export, validate_sqlite, validate_tei_schema, ExportFormat, ExportOptions,
 };
-use gesenius_core::model::{AccuracyMetrics, CorpusManifest, ReviewState, CORPUS_SCHEMA_VERSION};
+use gesenius_core::model::{
+    AccuracyMetrics, BlockKind, CorpusManifest, ReviewState, CORPUS_SCHEMA_VERSION,
+};
 use gesenius_core::pipeline::PipelineSettings;
 use gesenius_core::review::ReviewStore;
 use gesenius_core::source::SourceCatalogue;
@@ -96,10 +98,14 @@ fn fixture_entries() -> Vec<gesenius_core::CorpusEntry> {
         page_one.entries.last().cloned(),
     );
     assert_eq!(page_two.entries.len(), 2);
-    assert_eq!(page_two.entries[0].blocks.len(), 3);
-    assert!(page_two.entries[0].blocks[1].spans[0]
-        .diplomatic
-        .ends_with("page."));
+    assert_eq!(page_two.entries[0].blocks.len(), 2);
+    assert_eq!(page_two.entries[0].blocks[0].kind, BlockKind::Paragraph);
+    assert_eq!(page_two.entries[0].blocks[0].spans.len(), 2);
+    assert!(page_two.entries[0]
+        .blocks
+        .iter()
+        .flat_map(|block| &block.spans)
+        .any(|span| span.diplomatic.ends_with("page.")));
 
     let tregelles_alto = parse_alto(include_str!(
         "../../../fixtures/alto/tregelles-p001.kraken.xml"
@@ -180,6 +186,51 @@ fn leading_non_margin_content_is_retained_in_a_headless_entry() {
     assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
         line == "introduction" && matches!(assignment, LineAssignment::Entry(_))
     }));
+}
+
+#[test]
+fn displayed_headings_and_multiline_paragraphs_are_structured() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="title" HPOS="300" VPOS="120" WIDTH="400" HEIGHT="50">
+      <TextLine ID="title-line" HPOS="350" VPOS="120" WIDTH="300" HEIGHT="50">
+        <String CONTENT="LEXICON." WC="0.99" HPOS="350" VPOS="120" WIDTH="300" HEIGHT="50"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="body" HPOS="50" VPOS="240" WIDTH="420" HEIGHT="110">
+      <TextLine ID="body-1" HPOS="90" VPOS="240" WIDTH="360" HEIGHT="45">
+        <String CONTENT="The first line of a paragraph" WC="0.98" HPOS="90" VPOS="240" WIDTH="360" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="body-2" HPOS="50" VPOS="290" WIDTH="400" HEIGHT="45">
+        <String CONTENT="continues on the next line." WC="0.98" HPOS="50" VPOS="290" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks.len(), 2);
+    assert_eq!(parsed.entries[0].blocks[0].kind, BlockKind::Heading);
+    assert_eq!(parsed.entries[0].blocks[1].kind, BlockKind::Paragraph);
+    assert_eq!(parsed.entries[0].blocks[1].spans.len(), 2);
+    assert_ne!(
+        parsed.entries[0].blocks[1].spans[0].id,
+        parsed.entries[0].blocks[1].spans[1].id
+    );
 }
 
 fn fixture_manifest() -> CorpusManifest {
