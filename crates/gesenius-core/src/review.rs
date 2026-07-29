@@ -601,7 +601,7 @@ async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeUR
 function cps(text){return [...text].map(c=>`${c} U+${c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')}`).join(' · ')}
 function imageSize(src){return new Promise((resolve,reject)=>{let image=new Image();image.onload=()=>resolve({width:image.naturalWidth,height:image.naturalHeight});image.onerror=reject;image.src=src;});}
 function renderStructuredText(blocks){let html='',currentPage=null;
-const renderPart=(kind,text)=>{if(!text.length)return '';let content=esc(text.join(' '));if(kind==='heading')return `<h3 dir="auto">${content}</h3>`;if(kind==='paragraph')return `<p dir="auto">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="auto">${content}</p></div>`;};
+const renderPart=(kind,text)=>{if(!text.length)return '';let content=esc(text.join(' '));if(kind==='heading')return `<h3 dir="ltr">${content}</h3>`;if(kind==='paragraph')return `<p dir="ltr">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="ltr">${content}</p></div>`;};
 for(let block of blocks){let partPage=null,text=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,text);text=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;text.push(span.normalized);}html+=renderPart(block.kind,text);}return html||'<p class="muted">No parsed text.</p>';}
 async function scanForPage(spans,page){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl);
 return `<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>
@@ -654,6 +654,8 @@ mod tests {
         assert!(REVIEW_UI.contains("renderStructuredText(current.blocks)"));
         assert!(REVIEW_UI.contains("kind==='heading'"));
         assert!(REVIEW_UI.contains("kind==='paragraph'"));
+        assert!(REVIEW_UI.contains(r#"<p dir="ltr">"#));
+        assert!(!REVIEW_UI.contains(r#"<p dir="auto">"#));
         assert!(!REVIEW_UI.contains("renderParagraphs(spans)"));
     }
 }
