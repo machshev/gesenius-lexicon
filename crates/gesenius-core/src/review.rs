@@ -566,6 +566,9 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 .entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;direction:ltr;unicode-bidi:isolate}
 .entry-headword{margin:.15rem 0 1rem;text-align:center;font:1.6rem/1.35 "Noto Sans Hebrew",sans-serif;direction:rtl;unicode-bidi:isolate}
 .entry-text h3{margin:1.25rem 0 .6rem;text-align:center;font-size:1.18rem;line-height:1.35;letter-spacing:.025em;direction:ltr;unicode-bidi:isolate}
+.text-line,.text-word{border-radius:.18rem;cursor:pointer}.text-line.selected{background:#fde9a9;box-shadow:0 0 0 .12rem #d97706}
+.text-word:hover{background:#f7d77a}.text-word.selected{background:#f59e0b;color:#231700}
+.overlay{cursor:pointer}.overlay.selected{fill:rgba(245,158,11,.5);stroke:#9a3412;stroke-width:7}
 .structural-block{margin:.65rem 0;padding-left:.65rem;border-left:.2rem solid #d7d0c2}.block-kind{color:#6d685e;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .page-break{margin:1rem 0 .25rem;color:#6d685e;font-size:.82rem;font-weight:600}.hidden{display:none}
 .page-toolbar{display:flex;gap:.5rem;align-items:center;margin-bottom:.7rem}.page-toolbar select{min-width:0;flex:1}.page-canvas{min-height:0}.page-detail .page-canvas{display:grid;grid-template-rows:minmax(0,1fr) auto}
@@ -601,28 +604,34 @@ document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.
 async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeURIComponent(id))).json();await render();}
 function cps(text){return [...text].map(c=>`${c} U+${c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')}`).join(' · ')}
 function imageSize(src){return new Promise((resolve,reject)=>{let image=new Image();image.onload=()=>resolve({width:image.naturalWidth,height:image.naturalHeight});image.onerror=reject;image.src=src;});}
-function renderStructuredText(headword,blocks){let html=`<h2 class="entry-headword" dir="rtl">${esc(headword)}</h2>`,currentPage=null;
-const renderPart=(kind,text)=>{if(!text.length)return '';let content=esc(text.join(' '));if(kind==='heading')return `<h3 dir="ltr">${content}</h3>`;if(kind==='paragraph')return `<p dir="ltr">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="ltr">${content}</p></div>`;};
-for(let block of blocks){let partPage=null,text=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,text);text=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;text.push(span.normalized);}html+=renderPart(block.kind,text);}return html;}
-async function scanForPage(spans,page){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl);
+function renderTextSpan(span){let word=0,content=span.normalized.split(/(\s+)/).map(part=>/^\s+$/.test(part)?esc(part):`<span class="text-word" data-word="${word++}">${esc(part)}</span>`).join('');return `<span class="text-line" data-span="${esc(span.id)}">${content}</span>`;}
+function renderStructuredText(headword,blocks){let html=headword?`<h2 class="entry-headword" dir="rtl">${renderTextSpan(headword)}</h2>`:`<h2 class="entry-headword" dir="ltr">${esc(current.id)}</h2>`,currentPage=null;
+const renderPart=(kind,spans)=>{if(!spans.length)return '';let content=spans.map(renderTextSpan).join(' ');if(kind==='heading')return `<h3 dir="ltr">${content}</h3>`;if(kind==='paragraph')return `<p dir="ltr">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="ltr">${content}</p></div>`;};
+for(let block of blocks){let partPage=null,partSpans=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,partSpans);partSpans=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;partSpans.push(span);}html+=renderPart(block.kind,partSpans);}return html;}
+async function scanForPage(spans,page,selectedSpan){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl);
 return `<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>
-${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<polygon class="overlay" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.id)}</title></polygon>`)).join('')}</svg>`;}
+${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<polygon class="overlay${s.id===selectedSpan?' selected':''}" data-span="${esc(s.id)}" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.normalized)}</title></polygon>`)).join('')}</svg>`;}
 async function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
 let pages=[];for(let span of spans)for(let coordinate of span.coordinates)if(!pages.some(page=>page.image===coordinate.page_image))pages.push({image:coordinate.page_image,source:coordinate.source_page,printed:coordinate.printed_page});
-let scan=pages.length?await scanForPage(spans,pages[0]):'No scan coordinate';
+let selectedSpan=null,selectedPage=0,scan=pages.length?await scanForPage(spans,pages[0],selectedSpan):'No scan coordinate';
 let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%</span><br>
 ${s.hypotheses.map(h=>`<code>${esc(h.engine)}:</code> ${esc(h.text)} (${Math.round(h.confidence*100)}%)`).join('<br>')}
 <br><span class="muted">${esc(cps(s.diplomatic))}</span>${s.warnings.map(w=>`<br><span class="warn">${esc(w.code)}: ${esc(w.message)}</span>`).join('')}</p>`).join('');
 $('#detail').innerHTML=`<div class="grid">
 <div><section id="scan">${pages.length>1?`<label>Scan page <select id="scanPage">${pages.map((page,index)=>`<option value="${index}">printed ${esc(page.printed)} · PDF ${page.source}</option>`).join('')}</select></label>`:''}<div id="scanCanvas">${scan}</div></section><section><h3>Hypotheses and Unicode</h3>${hypotheses}</section></div>
 <section><div class="tabs" role="tablist"><button id="textTab" role="tab" aria-selected="true">Text</button><button id="jsonTab" role="tab" aria-selected="false">Structured JSON</button></div>
-<div id="textPanel" role="tabpanel"><div class="entry-text">${renderStructuredText(current.headword?.normalized||current.id,current.blocks)}</div></div>
+<div id="textPanel" role="tabpanel"><div class="entry-text">${renderStructuredText(current.headword,current.blocks)}</div></div>
 <div id="jsonPanel" class="hidden" role="tabpanel"><textarea id="editor" spellcheck="false">${esc(JSON.stringify(current,null,2))}</textarea></div>
 <p><input id="reviewer" placeholder="Reviewer" autocomplete="name"> <select id="reviewState"><option>corrected</option><option>verified</option></select>
 <button id="save">Save revision ${current.revision+1}</button> <button id="viewPage">View on page</button></p><p id="message"></p></section></div>`;
 const showPanel=json=>{$('#textPanel').classList.toggle('hidden',json);$('#jsonPanel').classList.toggle('hidden',!json);$('#textTab').setAttribute('aria-selected',!json);$('#jsonTab').setAttribute('aria-selected',json);};
 $('#textTab').onclick=()=>showPanel(false);$('#jsonTab').onclick=()=>showPanel(true);
-let selectedPage=0;if(pages.length>1)$('#scanPage').onchange=async event=>{selectedPage=Number(event.target.value);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage]);};
+const textLines=()=>[...document.querySelectorAll('.text-line[data-span]')];
+const markSelection=(spanId,wordElement)=>{textLines().forEach(line=>line.classList.toggle('selected',line.dataset.span===spanId));document.querySelectorAll('.text-word.selected').forEach(word=>word.classList.remove('selected'));if(wordElement)wordElement.classList.add('selected');document.querySelectorAll('.overlay').forEach(polygon=>polygon.classList.toggle('selected',polygon.dataset.span===spanId));};
+const bindScan=()=>document.querySelectorAll('.overlay[data-span]').forEach(polygon=>polygon.onclick=()=>{selectedSpan=polygon.dataset.span;markSelection(selectedSpan);let line=textLines().find(candidate=>candidate.dataset.span===selectedSpan);line?.scrollIntoView({block:'center',behavior:'smooth'});});
+const selectText=async(event,line)=>{selectedSpan=line.dataset.span;let span=spans.find(candidate=>candidate.id===selectedSpan),image=span?.coordinates[0]?.page_image,pageIndex=pages.findIndex(page=>page.image===image);if(pageIndex>=0&&pageIndex!==selectedPage){selectedPage=pageIndex;if($('#scanPage'))$('#scanPage').value=String(selectedPage);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();}markSelection(selectedSpan,event.target.closest('.text-word'));};
+textLines().forEach(line=>line.onclick=event=>selectText(event,line));bindScan();
+if(pages.length>1)$('#scanPage').onchange=async event=>{selectedPage=Number(event.target.value);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();};
 $('#viewPage').onclick=async()=>{setMode('pages');await loadPages(pages[selectedPage].image);};
 $('#save').onclick=save;}
 async function save(){let message=$('#message');try{let entry=JSON.parse($('#editor').value);let response=await fetch('/api/entries/'+encodeURIComponent(current.id),{method:'PATCH',headers:{'Content-Type':'application/json'},
@@ -652,10 +661,8 @@ mod tests {
 
     #[test]
     fn review_ui_renders_parsed_block_structure() {
-        assert!(REVIEW_UI.contains(
-            "renderStructuredText(current.headword?.normalized||current.id,current.blocks)"
-        ));
-        assert!(REVIEW_UI.contains(r#"<h2 class="entry-headword" dir="rtl">"#));
+        assert!(REVIEW_UI.contains("renderStructuredText(current.headword,current.blocks)"));
+        assert!(REVIEW_UI.contains(r#"`<h2 class="entry-headword" dir="rtl">"#));
         assert!(REVIEW_UI.contains("kind==='heading'"));
         assert!(REVIEW_UI.contains("kind==='paragraph'"));
         assert!(REVIEW_UI.contains(r#"<p dir="ltr">"#));
@@ -665,5 +672,15 @@ mod tests {
         assert!(!REVIEW_UI.contains(r#"<p dir="auto">"#));
         assert!(!REVIEW_UI.contains("unicode-bidi:plaintext"));
         assert!(!REVIEW_UI.contains("renderParagraphs(spans)"));
+    }
+
+    #[test]
+    fn review_ui_links_text_lines_and_scan_polygons() {
+        assert!(REVIEW_UI.contains(r#"class="text-line" data-span=""#));
+        assert!(REVIEW_UI.contains(r#"class="text-word" data-word=""#));
+        assert!(REVIEW_UI.contains(r#"data-span="${esc(s.id)}""#));
+        assert!(REVIEW_UI.contains("const selectText=async(event,line)=>"));
+        assert!(REVIEW_UI.contains("const bindScan=()=>"));
+        assert!(REVIEW_UI.contains("line?.scrollIntoView"));
     }
 }
