@@ -566,7 +566,7 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 .entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;direction:ltr;unicode-bidi:isolate}
 .entry-headword{margin:.15rem 0 1rem;text-align:center;font:1.6rem/1.35 "Noto Sans Hebrew",sans-serif;direction:rtl;unicode-bidi:isolate}
 .entry-text h3{margin:1.25rem 0 .6rem;text-align:center;font-size:1.18rem;line-height:1.35;letter-spacing:.025em;direction:ltr;unicode-bidi:isolate}
-.text-line,.text-word{border-radius:.18rem;cursor:pointer}.text-line.selected{background:#fde9a9;box-shadow:0 0 0 .12rem #d97706}
+.text-line,.text-word{border-radius:.18rem;cursor:pointer}.text-word{unicode-bidi:isolate}.text-line.selected{background:#fde9a9;box-shadow:0 0 0 .12rem #d97706}
 .text-word:hover{background:#f7d77a}.text-word.selected{background:#f59e0b;color:#231700}
 .overlay{cursor:pointer}.overlay.selected{fill:rgba(245,158,11,.5);stroke:#9a3412;stroke-width:7}
 .structural-block{margin:.65rem 0;padding-left:.65rem;border-left:.2rem solid #d7d0c2}.block-kind{color:#6d685e;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
@@ -604,7 +604,7 @@ document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.
 async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeURIComponent(id))).json();await render();}
 function cps(text){return [...text].map(c=>`${c} U+${c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')}`).join(' · ')}
 function imageSize(src){return new Promise((resolve,reject)=>{let image=new Image();image.onload=()=>resolve({width:image.naturalWidth,height:image.naturalHeight});image.onerror=reject;image.src=src;});}
-function renderTextSpan(span){let word=0,content=span.normalized.split(/(\s+)/).map(part=>/^\s+$/.test(part)?esc(part):`<span class="text-word" data-word="${word++}">${esc(part)}</span>`).join('');return `<span class="text-line" data-span="${esc(span.id)}">${content}</span>`;}
+function renderTextSpan(span){let word=0,content=span.normalized.split(/(\s+)/).map(part=>/^\s+$/.test(part)?esc(part):`<span class="text-word" dir="auto" data-word="${word++}">${esc(part)}</span>`).join('');return `<span class="text-line" data-span="${esc(span.id)}">${content}</span>`;}
 function renderStructuredText(headword,blocks){let html=headword?`<h2 class="entry-headword" dir="rtl">${renderTextSpan(headword)}</h2>`:`<h2 class="entry-headword" dir="ltr">${esc(current.id)}</h2>`,currentPage=null;
 const renderPart=(kind,spans)=>{if(!spans.length)return '';let content=spans.map(renderTextSpan).join(' ');if(kind==='heading')return `<h3 dir="ltr">${content}</h3>`;if(kind==='paragraph')return `<p dir="ltr">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="ltr">${content}</p></div>`;};
 for(let block of blocks){let partPage=null,partSpans=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,partSpans);partSpans=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;partSpans.push(span);}html+=renderPart(block.kind,partSpans);}return html;}
@@ -677,7 +677,8 @@ mod tests {
     #[test]
     fn review_ui_links_text_lines_and_scan_polygons() {
         assert!(REVIEW_UI.contains(r#"class="text-line" data-span=""#));
-        assert!(REVIEW_UI.contains(r#"class="text-word" data-word=""#));
+        assert!(REVIEW_UI.contains(r#"class="text-word" dir="auto" data-word=""#));
+        assert!(REVIEW_UI.contains(".text-word{unicode-bidi:isolate}"));
         assert!(REVIEW_UI.contains(r#"data-span="${esc(s.id)}""#));
         assert!(REVIEW_UI.contains("const selectText=async(event,line)=>"));
         assert!(REVIEW_UI.contains("const bindScan=()=>"));
