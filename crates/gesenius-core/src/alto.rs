@@ -471,7 +471,9 @@ fn same_structural_block(
     let typical_height = previous_height.max(height).max(1) as f32;
     match kind {
         BlockKind::Heading => previous_region == region.id && gap <= typical_height,
-        BlockKind::Paragraph => !is_indented_paragraph_start(line, region),
+        BlockKind::Paragraph => {
+            !is_indented_paragraph_start(line, region) || gap < typical_height * 0.5
+        }
         _ => false,
     }
 }

@@ -234,6 +234,48 @@ fn displayed_headings_and_multiline_paragraphs_are_structured() {
 }
 
 #[test]
+fn indented_line_at_normal_spacing_does_not_split_a_paragraph() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body-1" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="100">
+      <TextLine ID="opening" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45">
+        <String CONTENT="The paragraph begins here" WC="0.98" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="continuation" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and continues without a break." WC="0.98" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="body-2" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="100">
+      <TextLine ID="inset-continuation" HPOS="90" VPOS="200" WIDTH="380" HEIGHT="45">
+        <String CONTENT="This inset is still normally spaced" WC="0.98" HPOS="90" VPOS="200" WIDTH="380" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="final-line" HPOS="50" VPOS="250" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and belongs to the same paragraph." WC="0.98" HPOS="50" VPOS="250" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks.len(), 1);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 4);
+}
+
+#[test]
 fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
     let page_one = parse_alto(
         r#"<?xml version="1.0"?>
