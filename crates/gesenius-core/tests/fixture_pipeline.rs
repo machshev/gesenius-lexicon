@@ -234,6 +234,42 @@ fn displayed_headings_and_multiline_paragraphs_are_structured() {
 }
 
 #[test]
+fn short_citation_near_the_column_gutter_is_not_a_heading() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="right-column" HPOS="510" VPOS="100" WIDTH="400" HEIGHT="100">
+      <TextLine ID="sense-opening" HPOS="550" VPOS="100" WIDTH="360" HEIGHT="45">
+        <String CONTENT="2. A numbered sense starts here" WC="0.98" HPOS="550" VPOS="100" WIDTH="360" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="short-citation" HPOS="510" VPOS="150" WIDTH="130" HEIGHT="45">
+      <TextLine ID="citation-line" HPOS="510" VPOS="150" WIDTH="130" HEIGHT="45">
+        <String CONTENT="Jer. 23, 1." WC="0.98" HPOS="510" VPOS="150" WIDTH="130" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "3",
+            19,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries[0].blocks.len(), 1);
+    assert_eq!(parsed.entries[0].blocks[0].kind, BlockKind::Paragraph);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 2);
+}
+
+#[test]
 fn indented_line_at_normal_spacing_does_not_split_a_paragraph() {
     let alto = parse_alto(
         r#"<?xml version="1.0"?>
@@ -343,6 +379,12 @@ fn ocr_tokens_with_digits_are_not_grammar_labels() {
         <SP WIDTH="8"/><String CONTENT="and" WC="0.98" HPOS="108" VPOS="200" WIDTH="45" HEIGHT="45"/>
         <SP WIDTH="8"/><String CONTENT="M72" WC="0.30" HPOS="161" VPOS="200" WIDTH="50" HEIGHT="45"/>
       </TextLine>
+      <TextLine ID="ordinary-in-hebrew-prose" HPOS="50" VPOS="250" WIDTH="420" HEIGHT="45">
+        <String CONTENT="So" WC="0.98" HPOS="50" VPOS="250" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="in" WC="0.98" HPOS="93" VPOS="250" WIDTH="25" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="Heb." WC="0.98" HPOS="126" VPOS="250" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="only" WC="0.98" HPOS="184" VPOS="250" WIDTH="50" HEIGHT="45"/>
+      </TextLine>
     </TextBlock>
   </PrintSpace></Page></Layout>
 </alto>"#,
@@ -360,7 +402,7 @@ fn ocr_tokens_with_digits_are_not_grammar_labels() {
     );
 
     assert_eq!(parsed.entries.len(), 1);
-    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 3);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 4);
 }
 
 #[test]
@@ -441,7 +483,7 @@ fn stem_label_hypothesis_keeps_an_indented_sense_in_its_entry() {
 }
 
 #[test]
-fn isolated_folio_does_not_break_a_paragraph_across_columns() {
+fn isolated_scan_mark_does_not_break_a_paragraph_across_columns() {
     let alto = parse_alto(
         r#"<?xml version="1.0"?>
 <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
@@ -451,9 +493,9 @@ fn isolated_folio_does_not_break_a_paragraph_across_columns() {
         <String CONTENT="the paragraph ends its left column here" WC="0.98" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45"/>
       </TextLine>
     </TextBlock>
-    <TextBlock ID="folio" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
-      <TextLine ID="folio-line" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
-        <String CONTENT="1" WC="0.98" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20"/>
+    <TextBlock ID="scan-mark" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
+      <TextLine ID="scan-mark-line" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
+        <String CONTENT="=" WC="0.98" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20"/>
       </TextLine>
     </TextBlock>
     <TextBlock ID="right-column" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45">
@@ -480,7 +522,7 @@ fn isolated_folio_does_not_break_a_paragraph_across_columns() {
     assert_eq!(parsed.entries[0].blocks.len(), 1);
     assert_eq!(parsed.entries[0].blocks[0].spans.len(), 2);
     assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
-        line == "folio-line" && matches!(assignment, LineAssignment::Unparsed)
+        line == "scan-mark-line" && matches!(assignment, LineAssignment::Unparsed)
     }));
 }
 
@@ -518,17 +560,23 @@ fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
         <String CONTENT="אָב" WC="0.99" HPOS="470" VPOS="50" WIDTH="60" HEIGHT="30"/>
       </TextLine>
     </TextBlock>
-    <TextBlock ID="continued-body" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="100">
-      <TextLine ID="continued-line" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45">
-        <String CONTENT="and continues on this page." WC="0.98" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45"/>
+    <TextBlock ID="continued-body" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="150">
+      <TextLine ID="continued-line" HPOS="570" VPOS="100" WIDTH="380" HEIGHT="40">
+        <String CONTENT="and continues slightly inset on this page" WC="0.98" HPOS="570" VPOS="100" WIDTH="380" HEIGHT="40"/>
+      </TextLine>
+      <TextLine ID="continued-line-2" HPOS="550" VPOS="150" WIDTH="400" HEIGHT="45">
+        <String CONTENT="before returning to the column margin" WC="0.98" HPOS="550" VPOS="150" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="continued-line-3" HPOS="550" VPOS="200" WIDTH="400" HEIGHT="45">
+        <String CONTENT="for one more continuation line." WC="0.98" HPOS="550" VPOS="200" WIDTH="400" HEIGHT="45"/>
       </TextLine>
     </TextBlock>
-    <TextBlock ID="new-paragraph" HPOS="550" VPOS="220" WIDTH="400" HEIGHT="100">
-      <TextLine ID="indented-line" HPOS="590" VPOS="220" WIDTH="360" HEIGHT="45">
-        <String CONTENT="A new paragraph." WC="0.98" HPOS="590" VPOS="220" WIDTH="360" HEIGHT="45"/>
+    <TextBlock ID="new-paragraph" HPOS="550" VPOS="270" WIDTH="400" HEIGHT="100">
+      <TextLine ID="indented-line" HPOS="590" VPOS="270" WIDTH="360" HEIGHT="45">
+        <String CONTENT="A new paragraph." WC="0.98" HPOS="590" VPOS="270" WIDTH="360" HEIGHT="45"/>
       </TextLine>
-      <TextLine ID="new-paragraph-line-2" HPOS="550" VPOS="270" WIDTH="400" HEIGHT="45">
-        <String CONTENT="continues flush left." WC="0.98" HPOS="550" VPOS="270" WIDTH="400" HEIGHT="45"/>
+      <TextLine ID="new-paragraph-line-2" HPOS="550" VPOS="320" WIDTH="400" HEIGHT="45">
+        <String CONTENT="continues flush left." WC="0.98" HPOS="550" VPOS="320" WIDTH="400" HEIGHT="45"/>
       </TextLine>
     </TextBlock>
   </PrintSpace></Page></Layout>
@@ -549,7 +597,7 @@ fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
 
     assert_eq!(parsed.entries.len(), 1);
     assert_eq!(parsed.entries[0].blocks.len(), 2);
-    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 2);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 4);
     assert_eq!(parsed.entries[0].blocks[1].spans.len(), 2);
     assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
         line == "running-head-line" && matches!(assignment, LineAssignment::Unparsed)

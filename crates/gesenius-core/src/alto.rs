@@ -349,7 +349,7 @@ pub fn parse_entries_with_hypotheses_continuing(
             continue;
         }
         if is_margin_line(line, canonical.height)
-            || is_isolated_numeric_artifact(line, region, canonical)
+            || is_isolated_page_artifact(line, region, canonical)
         {
             assignments.push((region.id.clone(), line.id.clone(), LineAssignment::Unparsed));
             if is_margin_line(line, canonical.height) {
@@ -449,8 +449,8 @@ pub fn parse_entries_with_hypotheses_continuing(
 fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
     let (x, _, width, _) = polygon_bounds(&line.polygon);
     let page_width = page.width as f32;
-    let line_center = x as f32 + width as f32 / 2.0;
-    let centered = (line_center - page_width / 2.0).abs() <= page_width * 0.08;
+    let spans_page_center =
+        x as f32 <= page_width / 2.0 && x.saturating_add(width) as f32 >= page_width / 2.0;
     let compact = width as f32 <= page_width * 0.65
         && line.text.chars().count() <= 100
         && line.text.split_whitespace().count() <= 12;
@@ -466,7 +466,7 @@ fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> boo
             .count()
             * 5
             >= letters.len() * 4;
-    let displayed = region.lines.len() <= 3 && (centered || uppercase);
+    let displayed = region.lines.len() <= 3 && (spans_page_center || uppercase);
     compact && displayed
 }
 
@@ -500,7 +500,7 @@ impl PageLayout {
         for (region, line) in flatten_lines(page) {
             let (_, _, width, _) = polygon_bounds(&line.polygon);
             if is_margin_line(line, page.height)
-                || is_isolated_numeric_artifact(line, region, page)
+                || is_isolated_page_artifact(line, region, page)
                 || is_heading_line(line, region, page)
                 || width as f32 <= page.width as f32 * 0.2
             {
@@ -522,7 +522,7 @@ impl PageLayout {
     fn is_indented(&self, line: &AltoLine) -> bool {
         let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
         self.column_starts[line_column(line, self.page_width)].is_some_and(|column_start| {
-            line_x.saturating_sub(column_start) as f32 >= line_height.max(1) as f32 * 0.5
+            line_x.saturating_sub(column_start) as f32 >= line_height.max(1) as f32 * 0.7
         })
     }
 }
@@ -539,7 +539,7 @@ fn is_indented_within_region(line: &AltoLine, region: &AltoRegion) -> bool {
 
 fn is_indented_from(line: &AltoLine, baseline_x: u32) -> bool {
     let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
-    line_x.saturating_sub(baseline_x) as f32 >= line_height.max(1) as f32 * 0.5
+    line_x.saturating_sub(baseline_x) as f32 >= line_height.max(1) as f32 * 0.7
 }
 
 fn line_has_stem_heading(
@@ -681,10 +681,11 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
                 | "hiph"
                 | "hophal"
         )
-    }) || matches!(
-        following.as_slice(),
-        [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
-    )
+    }) || (begins_with_hebrew(&words[candidate_index].text)
+        && matches!(
+            following.as_slice(),
+            [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
+        ))
 }
 
 fn normalized_word(word: &str) -> Option<String> {
@@ -1317,17 +1318,13 @@ fn is_margin_line(line: &AltoLine, page_height: u32) -> bool {
     minimum_y < page_height as f32 * 0.05 || maximum_y > page_height as f32 * 0.975
 }
 
-fn is_isolated_numeric_artifact(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
+fn is_isolated_page_artifact(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
     let (_, _, width, height) = polygon_bounds(&line.polygon);
     region.lines.len() == 1
         && line
             .text
             .chars()
             .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
-        && line
-            .text
-            .chars()
-            .any(|character| character.is_ascii_digit())
         && width as f32 <= page.width as f32 * 0.02
         && height as f32 <= page.height as f32 * 0.02
 }
