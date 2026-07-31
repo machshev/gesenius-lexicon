@@ -328,6 +328,7 @@ pub fn parse_entries_with_hypotheses_continuing(
     context: &ParseContext<'_>,
     continuation: Option<CorpusEntry>,
 ) -> ParsedPage {
+    let layout = PageLayout::from_page(canonical);
     let aligned_hypotheses: Vec<_> = hypotheses
         .iter()
         .map(|(page, _)| align_lines(canonical, page))
@@ -351,15 +352,19 @@ pub fn parse_entries_with_hypotheses_continuing(
             || is_isolated_numeric_artifact(line, region, canonical)
         {
             assignments.push((region.id.clone(), line.id.clone(), LineAssignment::Unparsed));
-            previous_line = None;
+            if is_margin_line(line, canonical.height) {
+                previous_line = None;
+            }
             continue;
         }
 
         let grammar_labeled_headword = line_has_grammar_labeled_headword(line);
+        let stem_heading = line_has_stem_heading(line, line_index, &aligned_hypotheses);
+        let indented = layout.is_indented(line);
+        let entry_indented = indented || is_indented_within_region(line, region);
         let starts_entry = (begins_with_hebrew(&line.text) || grammar_labeled_headword)
-            && (entries.is_empty()
-                || is_indented_paragraph_start(line, region)
-                || grammar_labeled_headword);
+            && !stem_heading
+            && (entries.is_empty() || entry_indented || grammar_labeled_headword);
         let block_kind = if is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {
@@ -399,11 +404,18 @@ pub fn parse_entries_with_hypotheses_continuing(
                 .last()
                 .is_some_and(|block| block.kind == block_kind)
             && (previous_line.is_some_and(|(previous_region, previous)| {
-                same_structural_block(previous_region, previous, region, line, block_kind)
+                same_structural_block(
+                    previous_region,
+                    previous,
+                    region,
+                    line,
+                    block_kind,
+                    indented,
+                )
             }) || (has_continuation
                 && previous_line.is_none()
                 && block_kind == BlockKind::Paragraph
-                && !is_indented_paragraph_start(line, region)));
+                && !indented));
         if continues_block {
             entry
                 .blocks
@@ -464,6 +476,7 @@ fn same_structural_block(
     region: &AltoRegion,
     line: &AltoLine,
     kind: BlockKind,
+    indented: bool,
 ) -> bool {
     let (_, previous_y, _, previous_height) = polygon_bounds(&previous.polygon);
     let (_, y, _, height) = polygon_bounds(&line.polygon);
@@ -471,17 +484,98 @@ fn same_structural_block(
     let typical_height = previous_height.max(height).max(1) as f32;
     match kind {
         BlockKind::Heading => previous_region == region.id && gap <= typical_height,
-        BlockKind::Paragraph => {
-            !is_indented_paragraph_start(line, region) || gap < typical_height * 0.5
-        }
+        BlockKind::Paragraph => !indented,
         _ => false,
     }
 }
 
-fn is_indented_paragraph_start(line: &AltoLine, region: &AltoRegion) -> bool {
-    let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
+struct PageLayout {
+    page_width: u32,
+    column_starts: [Option<u32>; 2],
+}
+
+impl PageLayout {
+    fn from_page(page: &AltoPage) -> Self {
+        let mut line_starts = [Vec::new(), Vec::new()];
+        for (region, line) in flatten_lines(page) {
+            let (_, _, width, _) = polygon_bounds(&line.polygon);
+            if is_margin_line(line, page.height)
+                || is_isolated_numeric_artifact(line, region, page)
+                || is_heading_line(line, region, page)
+                || width as f32 <= page.width as f32 * 0.2
+            {
+                continue;
+            }
+            let (x, _, _, _) = polygon_bounds(&line.polygon);
+            line_starts[line_column(line, page.width)].push(x);
+        }
+        let column_starts = line_starts.map(|mut starts| {
+            starts.sort_unstable();
+            starts.get(starts.len() / 2).copied()
+        });
+        Self {
+            page_width: page.width,
+            column_starts,
+        }
+    }
+
+    fn is_indented(&self, line: &AltoLine) -> bool {
+        let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
+        self.column_starts[line_column(line, self.page_width)].is_some_and(|column_start| {
+            line_x.saturating_sub(column_start) as f32 >= line_height.max(1) as f32 * 0.5
+        })
+    }
+}
+
+fn line_column(line: &AltoLine, page_width: u32) -> usize {
+    let (x, _, width, _) = polygon_bounds(&line.polygon);
+    usize::from(x.saturating_add(width / 2) >= page_width / 2)
+}
+
+fn is_indented_within_region(line: &AltoLine, region: &AltoRegion) -> bool {
     let (region_x, _, _, _) = polygon_bounds(&region.polygon);
-    line_x.saturating_sub(region_x) as f32 >= line_height.max(1) as f32 * 0.5
+    is_indented_from(line, region_x)
+}
+
+fn is_indented_from(line: &AltoLine, baseline_x: u32) -> bool {
+    let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
+    line_x.saturating_sub(baseline_x) as f32 >= line_height.max(1) as f32 * 0.5
+}
+
+fn line_has_stem_heading(
+    canonical: &AltoLine,
+    line_index: usize,
+    aligned_hypotheses: &[Vec<Option<&AltoLine>>],
+) -> bool {
+    std::iter::once(canonical)
+        .chain(
+            aligned_hypotheses
+                .iter()
+                .filter_map(|aligned| aligned.get(line_index).and_then(|line| *line)),
+        )
+        .any(|line| {
+            line.text
+                .split_whitespace()
+                .next()
+                .and_then(normalized_word)
+                .is_some_and(|word| {
+                    matches!(
+                        word.as_str(),
+                        "qal"
+                            | "niph"
+                            | "niphal"
+                            | "piel"
+                            | "pil"
+                            | "pual"
+                            | "hiph"
+                            | "hiphil"
+                            | "hipu"
+                            | "hophal"
+                            | "hithp"
+                            | "hithpael"
+                    )
+                })
+        })
 }
 
 /// Combines an English-primary page with foreign-script word runs from a
@@ -510,13 +604,12 @@ pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> A
 /// outlier in an otherwise consistent run.
 #[must_use]
 pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) -> AltoPage {
+    let layout = PageLayout::from_page(page);
     let mut classified = page.clone();
     for region in &mut classified.regions {
         let (region_x, _, _, _) = polygon_bounds(&region.polygon);
         for line in &mut region.lines {
-            let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
-            let is_indented =
-                line_x.saturating_sub(region_x) as f32 >= line_height.max(1) as f32 * 0.5;
+            let is_indented = layout.is_indented(line) || is_indented_from(line, region_x);
             for word in &mut line.words {
                 word.language = detected_word_language(&word.text)
                     .filter(|language| {
@@ -557,22 +650,7 @@ fn apply_headword_grammar_hint(
     let Some(candidate) = words.get(candidate_index) else {
         return;
     };
-    let candidate_text = candidate
-        .text
-        .trim_matches(|character: char| !character.is_alphanumeric());
-    if candidate_text.is_empty()
-        || candidate_text.chars().count() > 6
-        || candidate_text
-            .chars()
-            .all(|character| character.is_ascii_lowercase())
-        || (candidate_text
-            .chars()
-            .all(|character| character.is_numeric())
-            && candidate
-                .text
-                .chars()
-                .any(|character| !character.is_alphanumeric()))
-    {
+    if !is_headword_candidate(candidate) {
         return;
     }
     if is_grammar_labeled_headword(words, candidate_index) {
@@ -585,11 +663,7 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
         .iter()
         .skip(candidate_index + 1)
         .take(3)
-        .map(|word| {
-            word.text
-                .trim_matches(|character: char| !character.is_alphabetic())
-                .to_ascii_lowercase()
-        })
+        .map(|word| normalized_word(&word.text).unwrap_or_default())
         .collect();
     following.iter().any(|word| {
         matches!(
@@ -613,6 +687,31 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
     )
 }
 
+fn normalized_word(word: &str) -> Option<String> {
+    if word.chars().any(char::is_numeric) {
+        return None;
+    }
+    let word = word.trim_matches(|character: char| !character.is_alphabetic());
+    (!word.is_empty()).then(|| word.to_ascii_lowercase())
+}
+
+fn is_headword_candidate(candidate: &AltoWord) -> bool {
+    let candidate_text = candidate
+        .text
+        .trim_matches(|character: char| !character.is_alphanumeric());
+    let punctuated_number = candidate_text.chars().all(char::is_numeric)
+        && candidate
+            .text
+            .chars()
+            .any(|character| !character.is_alphanumeric());
+    !candidate_text.is_empty()
+        && candidate_text.chars().count() <= 6
+        && !candidate_text
+            .chars()
+            .all(|character| character.is_ascii_lowercase())
+        && !punctuated_number
+}
+
 fn line_has_grammar_labeled_headword(line: &AltoLine) -> bool {
     let candidate_index = line
         .words
@@ -624,21 +723,7 @@ fn line_has_grammar_labeled_headword(line: &AltoLine) -> bool {
         })
         .map_or(0, |_| 1);
     line.words.get(candidate_index).is_some_and(|candidate| {
-        let candidate_text = candidate
-            .text
-            .trim_matches(|character: char| !character.is_alphanumeric());
-        !candidate_text.is_empty()
-            && candidate_text.chars().count() <= 6
-            && !candidate_text
-                .chars()
-                .all(|character| character.is_ascii_lowercase())
-            && !(candidate_text
-                .chars()
-                .all(|character| character.is_numeric())
-                && candidate
-                    .text
-                    .chars()
-                    .any(|character| !character.is_alphanumeric()))
+        is_headword_candidate(candidate)
             && is_grammar_labeled_headword(&line.words, candidate_index)
     })
 }

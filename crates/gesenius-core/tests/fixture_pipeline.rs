@@ -276,6 +276,215 @@ fn indented_line_at_normal_spacing_does_not_split_a_paragraph() {
 }
 
 #[test]
+fn page_column_margin_recovers_indentation_from_tightly_cropped_regions() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="first-paragraph" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="150">
+      <TextLine ID="first-opening" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45">
+        <String CONTENT="The first paragraph begins here" WC="0.98" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="first-continuation" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and continues at the column margin" WC="0.98" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="first-final" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45">
+        <String CONTENT="for another normally spaced line." WC="0.98" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="tightly-cropped-second" HPOS="90" VPOS="250" WIDTH="380" HEIGHT="45">
+      <TextLine ID="second-opening" HPOS="90" VPOS="250" WIDTH="380" HEIGHT="45">
+        <String CONTENT="The second paragraph is indented" WC="0.98" HPOS="90" VPOS="250" WIDTH="380" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="second-continuation" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45">
+      <TextLine ID="second-final" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and continues at the column margin." WC="0.98" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks.len(), 2);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 3);
+    assert_eq!(parsed.entries[0].blocks[1].spans.len(), 2);
+}
+
+#[test]
+fn ocr_tokens_with_digits_are_not_grammar_labels() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="150">
+      <TextLine ID="headword" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45">
+        <String CONTENT="אָב" WC="0.98" HPOS="90" VPOS="100" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="158" VPOS="100" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="father" WC="0.98" HPOS="196" VPOS="100" WIDTH="100" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="continuation" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45">
+        <String CONTENT="the explanation continues with examples" WC="0.98" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="ocr-shaped-continuation" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45">
+        <String CONTENT="P82" WC="0.30" HPOS="50" VPOS="200" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="and" WC="0.98" HPOS="108" VPOS="200" WIDTH="45" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="M72" WC="0.30" HPOS="161" VPOS="200" WIDTH="50" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 3);
+}
+
+#[test]
+fn stem_label_hypothesis_keeps_an_indented_sense_in_its_entry() {
+    let canonical = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="250">
+      <TextLine ID="headword" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45">
+        <String CONTENT="אָבַד" WC="0.98" HPOS="90" VPOS="100" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="fut." WC="0.98" HPOS="178" VPOS="100" WIDTH="50" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="headword-continuation" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45">
+        <String CONTENT="the entry introduction continues" WC="0.98" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="headword-final" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45">
+        <String CONTENT="at the normal column margin." WC="0.98" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="piel-sense" HPOS="90" VPOS="250" WIDTH="380" HEIGHT="45">
+        <String CONTENT="אִבֵּד" WC="0.70" HPOS="90" VPOS="250" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="1." WC="0.98" HPOS="178" VPOS="250" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to" WC="0.98" HPOS="216" VPOS="250" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="lose" WC="0.98" HPOS="254" VPOS="250" WIDTH="60" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="piel-continuation" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and the Piel sense continues." WC="0.98" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let english = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="100" WIDTH="420" HEIGHT="250">
+      <TextLine ID="headword" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="45">
+        <String CONTENT="ABAD" WC="0.70" HPOS="90" VPOS="100" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="fut." WC="0.98" HPOS="178" VPOS="100" WIDTH="50" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="headword-continuation" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45">
+        <String CONTENT="the entry introduction continues" WC="0.98" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="headword-final" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45">
+        <String CONTENT="at the normal column margin." WC="0.98" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="piel-sense" HPOS="90" VPOS="250" WIDTH="380" HEIGHT="45">
+        <String CONTENT="PIEL" WC="0.90" HPOS="90" VPOS="250" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="ABED" WC="0.70" HPOS="178" VPOS="250" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="1." WC="0.98" HPOS="266" VPOS="250" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to" WC="0.98" HPOS="304" VPOS="250" WIDTH="30" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="piel-continuation" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45">
+        <String CONTENT="and the Piel sense continues." WC="0.98" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&canonical, &engine("fused")),
+        Some((&english, &engine("tesseract"))),
+        &context(
+            "robinson-1854",
+            "3",
+            19,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks.len(), 2);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 3);
+    assert_eq!(parsed.entries[0].blocks[1].spans.len(), 2);
+}
+
+#[test]
+fn isolated_folio_does_not_break_a_paragraph_across_columns() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="left-column" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45">
+      <TextLine ID="left-final" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45">
+        <String CONTENT="the paragraph ends its left column here" WC="0.98" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="folio" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
+      <TextLine ID="folio-line" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
+        <String CONTENT="1" WC="0.98" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="right-column" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45">
+      <TextLine ID="right-opening" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45">
+        <String CONTENT="and continues atop the right column." WC="0.98" HPOS="550" VPOS="100" WIDTH="400" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+    assert_eq!(parsed.entries[0].blocks.len(), 1);
+    assert_eq!(parsed.entries[0].blocks[0].spans.len(), 2);
+    assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
+        line == "folio-line" && matches!(assignment, LineAssignment::Unparsed)
+    }));
+}
+
+#[test]
 fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
     let page_one = parse_alto(
         r#"<?xml version="1.0"?>
