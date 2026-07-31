@@ -339,6 +339,9 @@ fn validate_assignment_artifacts(root: &Path, report: &mut ValidationReport) {
                             .flat_map(|block| block.spans.iter())
                             .flat_map(|span| span.coordinates.iter())
                         {
+                            if page.source_page != 0 && coordinate.source_page != page.source_page {
+                                continue;
+                            }
                             if !lines.contains(&(&coordinate.region_id, &coordinate.line_id)) {
                                 report.issues.push(error(
                                     "unassigned_recognized_line",

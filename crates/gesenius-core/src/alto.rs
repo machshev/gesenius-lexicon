@@ -97,6 +97,9 @@ pub enum LineAssignment {
 /// Parsing result for one page.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct ParsedPage {
+    /// One-based source PDF page represented by the assignments.
+    #[serde(default)]
+    pub source_page: u32,
     /// Parsed entries.
     pub entries: Vec<CorpusEntry>,
     /// Region/line to entry or fallback assignment.
@@ -441,6 +444,7 @@ pub fn parse_entries_with_hypotheses_continuing(
     }
 
     ParsedPage {
+        source_page: context.source_page,
         entries,
         assignments,
     }

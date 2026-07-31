@@ -600,6 +600,15 @@ fn running_head_is_ignored_and_flush_text_continues_previous_paragraph() {
     assert!(parsed.assignments.iter().any(|(_, line, assignment)| {
         line == "running-head-line" && matches!(assignment, LineAssignment::Unparsed)
     }));
+
+    let temporary = tempfile::tempdir().unwrap();
+    fs::write(
+        temporary.path().join("parsed.json"),
+        serde_json::to_vec_pretty(&parsed).unwrap(),
+    )
+    .unwrap();
+    let report = validate_corpus(&parsed.entries, Some(temporary.path()));
+    assert_eq!(report.errors(), 0, "{:#?}", report.issues);
 }
 
 #[test]
