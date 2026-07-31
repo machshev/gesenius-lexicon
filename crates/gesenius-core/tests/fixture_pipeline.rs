@@ -488,12 +488,10 @@ fn isolated_scan_mark_does_not_break_a_paragraph_across_columns() {
         r#"<?xml version="1.0"?>
 <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
   <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
-    <TextBlock ID="left-column" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45">
+    <TextBlock ID="left-column" HPOS="50" VPOS="1200" WIDTH="455" HEIGHT="150">
       <TextLine ID="left-final" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45">
         <String CONTENT="the paragraph ends its left column here" WC="0.98" HPOS="50" VPOS="1200" WIDTH="400" HEIGHT="45"/>
       </TextLine>
-    </TextBlock>
-    <TextBlock ID="scan-mark" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
       <TextLine ID="scan-mark-line" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20">
         <String CONTENT="=" WC="0.98" HPOS="495" VPOS="1330" WIDTH="10" HEIGHT="20"/>
       </TextLine>

@@ -449,8 +449,9 @@ pub fn parse_entries_with_hypotheses_continuing(
 fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
     let (x, _, width, _) = polygon_bounds(&line.polygon);
     let page_width = page.width as f32;
-    let spans_page_center =
-        x as f32 <= page_width / 2.0 && x.saturating_add(width) as f32 >= page_width / 2.0;
+    let center_margin = page_width * 0.05;
+    let spans_page_center = x as f32 <= page_width / 2.0 - center_margin
+        && x.saturating_add(width) as f32 >= page_width / 2.0 + center_margin;
     let compact = width as f32 <= page_width * 0.65
         && line.text.chars().count() <= 100
         && line.text.split_whitespace().count() <= 12;
@@ -681,7 +682,11 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
                 | "hiph"
                 | "hophal"
         )
-    }) || (begins_with_hebrew(&words[candidate_index].text)
+    }) || ((begins_with_hebrew(&words[candidate_index].text)
+        || !words[candidate_index]
+            .text
+            .chars()
+            .any(|character| character.is_ascii_lowercase()))
         && matches!(
             following.as_slice(),
             [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
@@ -1318,13 +1323,11 @@ fn is_margin_line(line: &AltoLine, page_height: u32) -> bool {
     minimum_y < page_height as f32 * 0.05 || maximum_y > page_height as f32 * 0.975
 }
 
-fn is_isolated_page_artifact(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
+fn is_isolated_page_artifact(line: &AltoLine, _region: &AltoRegion, page: &AltoPage) -> bool {
     let (_, _, width, height) = polygon_bounds(&line.polygon);
-    region.lines.len() == 1
-        && line
-            .text
-            .chars()
-            .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
+    line.text
+        .chars()
+        .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
         && width as f32 <= page.width as f32 * 0.02
         && height as f32 <= page.height as f32 * 0.02
 }
@@ -1579,6 +1582,28 @@ mod tests {
         line.words.truncate(2);
         line.words[0].text = "2".to_owned();
         line.words[1].text = "Chald.".to_owned();
+        for point in &mut line.polygon {
+            point.x += 50.0;
+        }
+
+        let classified = classify_word_languages(&page, &["eng".to_owned(), "heb".to_owned()]);
+
+        assert_eq!(
+            classified.regions[0].lines[0].words[0].language.as_deref(),
+            Some("heb")
+        );
+    }
+
+    #[test]
+    fn treats_numeric_ocr_shape_before_in_hebrew_label_as_hebrew() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        line.words.truncate(2);
+        line.words[0].text = "22".to_owned();
+        line.words[1].text = "in".to_owned();
+        let mut language = line.words[1].clone();
+        language.text = "Heb.".to_owned();
+        line.words.push(language);
         for point in &mut line.polygon {
             point.x += 50.0;
         }
