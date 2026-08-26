@@ -361,7 +361,16 @@ pub fn parse_entries_with_hypotheses_continuing(
             continue;
         }
 
-        let grammar_labeled_headword = line_has_grammar_labeled_headword(line);
+        let canonical_grammar_candidate = grammar_labeled_headword_candidate(line);
+        let hypothesis_grammar_candidate = aligned_hypotheses
+            .iter()
+            .filter_map(|aligned| aligned.get(line_index).and_then(|line| *line))
+            .find_map(|hypothesis| {
+                grammar_labeled_headword_candidate(hypothesis)
+                    .map(|candidate_index| (hypothesis, candidate_index))
+            });
+        let grammar_labeled_headword =
+            canonical_grammar_candidate.is_some() || hypothesis_grammar_candidate.is_some();
         let stem_heading = line_has_stem_heading(line, line_index, &aligned_hypotheses);
         let indented = layout.is_indented(line);
         let entry_indented = indented || is_indented_within_region(line, region);
@@ -396,9 +405,19 @@ pub fn parse_entries_with_hypotheses_continuing(
         let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
         if starts_entry && entry.headword.is_none() {
-            entry.headword = grammar_labeled_headword
-                .then(|| extract_candidate_headword(&span, line))
-                .flatten()
+            entry.headword = canonical_grammar_candidate
+                .and_then(|candidate_index| {
+                    extract_candidate_headword_at(&span, line, candidate_index)
+                })
+                .or_else(|| {
+                    hypothesis_grammar_candidate.and_then(|(hypothesis, candidate_index)| {
+                        aligned_candidate_index(line, &hypothesis.words[candidate_index]).and_then(
+                            |canonical_index| {
+                                extract_candidate_headword_at(&span, line, canonical_index)
+                            },
+                        )
+                    })
+                })
                 .or_else(|| extract_headword(&span));
         }
         let continues_block = !starts_entry
@@ -686,15 +705,19 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
                 | "hiph"
                 | "hophal"
         )
-    }) || ((begins_with_hebrew(&words[candidate_index].text)
-        || !words[candidate_index]
-            .text
-            .chars()
-            .any(|character| character.is_ascii_lowercase()))
-        && matches!(
-            following.as_slice(),
-            [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
-        ))
+    }) || following
+        .iter()
+        .find(|word| !word.is_empty())
+        .is_some_and(|word| word == "constr")
+        || ((begins_with_hebrew(&words[candidate_index].text)
+            || !words[candidate_index]
+                .text
+                .chars()
+                .any(|character| character.is_ascii_lowercase()))
+            && matches!(
+                following.as_slice(),
+                [first, second, ..] if first == "in" && matches!(second.as_str(), "heb" | "hebr")
+            ))
 }
 
 fn normalized_word(word: &str) -> Option<String> {
@@ -722,7 +745,7 @@ fn is_headword_candidate(candidate: &AltoWord) -> bool {
         && !punctuated_number
 }
 
-fn line_has_grammar_labeled_headword(line: &AltoLine) -> bool {
+fn grammar_labeled_headword_candidate(line: &AltoLine) -> Option<usize> {
     let candidate_index = line
         .words
         .first()
@@ -732,10 +755,13 @@ fn line_has_grammar_labeled_headword(line: &AltoLine) -> bool {
                 .all(|character| !character.is_alphanumeric())
         })
         .map_or(0, |_| 1);
-    line.words.get(candidate_index).is_some_and(|candidate| {
-        is_headword_candidate(candidate)
-            && is_grammar_labeled_headword(&line.words, candidate_index)
-    })
+    line.words
+        .get(candidate_index)
+        .is_some_and(|candidate| {
+            is_headword_candidate(candidate)
+                && is_grammar_labeled_headword(&line.words, candidate_index)
+        })
+        .then_some(candidate_index)
 }
 
 fn apply_starred_headword_hints(page: &mut AltoPage, supported_languages: &[String]) {
@@ -1005,16 +1031,11 @@ fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
     Some(span)
 }
 
-fn extract_candidate_headword(line_span: &TextSpan, line: &AltoLine) -> Option<TextSpan> {
-    let candidate_index = line
-        .words
-        .first()
-        .filter(|word| {
-            word.text
-                .chars()
-                .all(|character| !character.is_alphanumeric())
-        })
-        .map_or(0, |_| 1);
+fn extract_candidate_headword_at(
+    line_span: &TextSpan,
+    line: &AltoLine,
+    candidate_index: usize,
+) -> Option<TextSpan> {
     let candidate = line.words.get(candidate_index)?;
     let headword = candidate
         .text
@@ -1030,6 +1051,24 @@ fn extract_candidate_headword(line_span: &TextSpan, line: &AltoLine) -> Option<T
     span.direction = infer_direction(headword);
     span.warnings = unicode_warnings(headword);
     Some(span)
+}
+
+fn aligned_candidate_index(canonical: &AltoLine, hypothesis: &AltoWord) -> Option<usize> {
+    canonical
+        .words
+        .iter()
+        .enumerate()
+        .filter(|(_, word)| is_headword_candidate(word))
+        .filter_map(|(index, word)| {
+            let overlap = polygon_iou(&word.polygon, &hypothesis.polygon);
+            (overlap >= 0.35).then_some((index, overlap))
+        })
+        .max_by(|left, right| {
+            left.1
+                .partial_cmp(&right.1)
+                .unwrap_or(std::cmp::Ordering::Equal)
+        })
+        .map(|(index, _)| index)
 }
 
 fn hypothesis(line: &AltoLine, identity: &EngineIdentity) -> OcrHypothesis {

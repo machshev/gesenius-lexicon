@@ -752,6 +752,97 @@ fn grammar_labeled_headwords_start_entries_without_block_relative_indentation() 
 }
 
 #[test]
+fn grammar_label_hypotheses_and_construct_labels_recover_entry_boundaries() {
+    let canonical = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="320">
+      <TextLine ID="first-headword" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="אָבַד" WC="0.98" HPOS="90" VPOS="100" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="168" VPOS="100" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to perish" WC="0.98" HPOS="206" VPOS="100" WIDTH="120" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="first-continuation" HPOS="50" VPOS="155" WIDTH="500" HEIGHT="45">
+        <String CONTENT="the explanation continues" WC="0.98" HPOS="50" VPOS="155" WIDTH="260" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="reordered-headword" HPOS="90" VPOS="230" WIDTH="460" HEIGHT="45">
+        <String CONTENT="ܙܡ" WC="0.50" HPOS="170" VPOS="230" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="אֹבֵד" WC="0.80" HPOS="90" VPOS="230" WIDTH="72" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="one wretched" WC="0.98" HPOS="215" VPOS="230" WIDTH="150" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="construct-headword" HPOS="90" VPOS="305" WIDTH="460" HEIGHT="45">
+        <String CONTENT="1728" WC="0.40" HPOS="90" VPOS="305" WIDTH="72" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="constr." WC="0.98" HPOS="170" VPOS="305" WIDTH="72" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="destruction" WC="0.98" HPOS="250" VPOS="305" WIDTH="110" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="wrapped-construct" HPOS="50" VPOS="360" WIDTH="500" HEIGHT="45">
+        <String CONTENT="pax," WC="0.50" HPOS="50" VPOS="360" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="whence" WC="0.98" HPOS="118" VPOS="360" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="constr." WC="0.98" HPOS="196" VPOS="360" WIDTH="72" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="the form" WC="0.98" HPOS="276" VPOS="360" WIDTH="90" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let english = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="body" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="320">
+      <TextLine ID="first-headword" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="ABAD" WC="0.70" HPOS="90" VPOS="100" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="168" VPOS="100" WIDTH="30" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="first-continuation" HPOS="50" VPOS="155" WIDTH="500" HEIGHT="45">
+        <String CONTENT="the explanation continues" WC="0.98" HPOS="50" VPOS="155" WIDTH="260" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="reordered-headword" HPOS="90" VPOS="230" WIDTH="460" HEIGHT="45">
+        <String CONTENT="2R" WC="0.40" HPOS="90" VPOS="230" WIDTH="72" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="170" VPOS="230" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="one wretched" WC="0.98" HPOS="215" VPOS="230" WIDTH="150" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="construct-headword" HPOS="90" VPOS="305" WIDTH="460" HEIGHT="45">
+        <String CONTENT="1728" WC="0.40" HPOS="90" VPOS="305" WIDTH="72" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="constr." WC="0.98" HPOS="170" VPOS="305" WIDTH="72" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="wrapped-construct" HPOS="50" VPOS="360" WIDTH="500" HEIGHT="45">
+        <String CONTENT="555" WC="0.40" HPOS="50" VPOS="360" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="," WC="0.98" HPOS="118" VPOS="360" WIDTH="10" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="whence" WC="0.98" HPOS="136" VPOS="360" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="constr." WC="0.98" HPOS="214" VPOS="360" WIDTH="72" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+
+    let parsed = parse_entries(
+        (&canonical, &engine("fused")),
+        Some((&english, &engine("tesseract"))),
+        &context(
+            "robinson-1854",
+            "4",
+            20,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 3);
+    assert_eq!(
+        parsed.entries[1].headword.as_ref().unwrap().normalized,
+        "אֹבֵד"
+    );
+    assert_eq!(
+        parsed.entries[2].headword.as_ref().unwrap().normalized,
+        "1728"
+    );
+}
+
+#[test]
 fn isolated_numeric_artifact_is_ignored_but_starred_headword_is_retained() {
     let multilingual = parse_alto(
         r#"<?xml version="1.0"?>
