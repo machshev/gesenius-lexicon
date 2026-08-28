@@ -962,15 +962,16 @@ fn is_headword_candidate(candidate: &AltoWord) -> bool {
             .text
             .chars()
             .any(|character| !character.is_alphanumeric());
+    let lowercase_candidate = candidate_text
+        .chars()
+        .any(|character| character.is_alphabetic())
+        && candidate_text
+            .chars()
+            .filter(|character| character.is_alphabetic())
+            .all(|character| character.is_ascii_lowercase());
     !candidate_text.is_empty()
         && candidate_text.chars().count() <= 6
-        && !(candidate_text
-            .chars()
-            .any(|character| character.is_alphabetic())
-            && candidate_text
-                .chars()
-                .filter(|character| character.is_alphabetic())
-                .all(|character| character.is_ascii_lowercase()))
+        && !lowercase_candidate
         && !is_candidate_stop_word(candidate_text)
         && !punctuated_number
 }
