@@ -843,6 +843,209 @@ fn grammar_label_hypotheses_and_construct_labels_recover_entry_boundaries() {
 }
 
 #[test]
+fn structural_blocks_recover_damaged_headwords_without_splitting_wrapped_prose() {
+    let page = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="opening" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="155">
+      <TextLine ID="opening-headword" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="אָבַד" WC="0.98" HPOS="90" VPOS="100" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to perish" WC="0.98" HPOS="168" VPOS="100" WIDTH="120" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="wrapped-grammar" HPOS="50" VPOS="155" WIDTH="500" HEIGHT="45">
+        <String CONTENT="M3z" WC="0.55" HPOS="50" VPOS="155" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to" WC="0.98" HPOS="108" VPOS="155" WIDTH="25" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="cook)" WC="0.98" HPOS="141" VPOS="155" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="204" VPOS="155" WIDTH="25" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="plur." WC="0.98" HPOS="237" VPOS="155" WIDTH="45" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="wrapped-construct" HPOS="50" VPOS="210" WIDTH="500" HEIGHT="45">
+        <String CONTENT="אַבָנִים" WC="0.90" HPOS="50" VPOS="210" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="constr." WC="0.98" HPOS="138" VPOS="210" WIDTH="65" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="language" HPOS="50" VPOS="275" WIDTH="500" HEIGHT="45">
+      <TextLine ID="language-prose" HPOS="50" VPOS="275" WIDTH="500" HEIGHT="45">
+        <String CONTENT="Arab." WC="0.98" HPOS="50" VPOS="275" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="6" WC="0.50" HPOS="113" VPOS="275" WIDTH="20" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="Chald." WC="0.98" HPOS="141" VPOS="275" WIDTH="65" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="proper" HPOS="50" VPOS="340" WIDTH="500" HEIGHT="100">
+      <TextLine ID="proper-headword" HPOS="90" VPOS="340" WIDTH="460" HEIGHT="45">
+        <String CONTENT="7I259™38" WC="0.55" HPOS="90" VPOS="340" WIDTH="100" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="(father" WC="0.98" HPOS="198" VPOS="340" WIDTH="70" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="proper-label" HPOS="50" VPOS="395" WIDTH="500" HEIGHT="45">
+        <String CONTENT="Abialbon," WC="0.98" HPOS="50" VPOS="395" WIDTH="95" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="pr." WC="0.98" HPOS="153" VPOS="395" WIDTH="28" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="n." WC="0.98" HPOS="189" VPOS="395" WIDTH="22" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="fragment" HPOS="90" VPOS="460" WIDTH="460" HEIGHT="45">
+      <TextLine ID="foreign-fragment" HPOS="90" VPOS="460" WIDTH="460" HEIGHT="45">
+        <String CONTENT="כ" WC="0.55" HPOS="90" VPOS="460" WIDTH="20" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="by transp." WC="0.98" HPOS="118" VPOS="460" WIDTH="100" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="root" HPOS="50" VPOS="525" WIDTH="500" HEIGHT="100">
+      <TextLine ID="root-headword" HPOS="90" VPOS="525" WIDTH="460" HEIGHT="45">
+        <String CONTENT="=X" WC="0.55" HPOS="90" VPOS="525" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="prob." WC="0.98" HPOS="133" VPOS="525" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to" WC="0.98" HPOS="191" VPOS="525" WIDTH="25" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="roll" WC="0.98" HPOS="224" VPOS="525" WIDTH="40" HEIGHT="45"/>
+      </TextLine>
+      <TextLine ID="etymology" HPOS="50" VPOS="580" WIDTH="500" HEIGHT="45">
+        <String CONTENT="Atalik" WC="0.98" HPOS="50" VPOS="580" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="(father," WC="0.98" HPOS="118" VPOS="580" WIDTH="65" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="pr." WC="0.98" HPOS="191" VPOS="580" WIDTH="28" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="paternity)" WC="0.98" HPOS="227" VPOS="580" WIDTH="80" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="inflection" HPOS="50" VPOS="645" WIDTH="500" HEIGHT="45">
+      <TextLine ID="inflected-headword" HPOS="90" VPOS="645" WIDTH="460" HEIGHT="45">
+        <String CONTENT="12¥" WC="0.55" HPOS="90" VPOS="645" WIDTH="45" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="in" WC="0.98" HPOS="143" VPOS="645" WIDTH="20" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="pause," WC="0.98" HPOS="171" VPOS="645" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="plur." WC="0.98" HPOS="234" VPOS="645" WIDTH="45" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="hebrew" HPOS="50" VPOS="710" WIDTH="500" HEIGHT="45">
+      <TextLine ID="flush-hebrew-headword" HPOS="50" VPOS="710" WIDTH="500" HEIGHT="45">
+        <String CONTENT="אברך" WC="0.80" HPOS="50" VPOS="710" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="a herald" WC="0.98" HPOS="128" VPOS="710" WIDTH="80" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="cross-reference" HPOS="50" VPOS="775" WIDTH="500" HEIGHT="45">
+      <TextLine ID="cross-reference-headword" HPOS="90" VPOS="775" WIDTH="460" HEIGHT="45">
+        <String CONTENT="22" WC="0.55" HPOS="90" VPOS="775" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="see" WC="0.98" HPOS="178" VPOS="775" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="אָב" WC="0.90" HPOS="221" VPOS="775" WIDTH="45" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="wrapped-root-prose" HPOS="50" VPOS="840" WIDTH="500" HEIGHT="45">
+      <TextLine ID="wrapped-root-prose-line" HPOS="90" VPOS="840" WIDTH="460" HEIGHT="45">
+        <String CONTENT=".prob." WC="0.98" HPOS="90" VPOS="840" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to" WC="0.98" HPOS="153" VPOS="840" WIDTH="25" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="stamp" WC="0.98" HPOS="186" VPOS="840" WIDTH="55" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="ocr-stem" HPOS="50" VPOS="905" WIDTH="500" HEIGHT="45">
+      <TextLine ID="ocr-stem-line" HPOS="90" VPOS="905" WIDTH="460" HEIGHT="45">
+        <String CONTENT="Nirr." WC="0.55" HPOS="90" VPOS="905" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="the explanation continues" WC="0.98" HPOS="153" VPOS="905" WIDTH="220" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="derivation-cross-reference" HPOS="50" VPOS="970" WIDTH="500" HEIGHT="45">
+      <TextLine ID="derivation-cross-reference-line" HPOS="90" VPOS="970" WIDTH="460" HEIGHT="45">
+        <String CONTENT="Deriv." WC="0.98" HPOS="90" VPOS="970" WIDTH="60" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="see" WC="0.98" HPOS="158" VPOS="970" WIDTH="35" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="866" WC="0.55" HPOS="201" VPOS="970" WIDTH="40" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="uppercase-prose" HPOS="50" VPOS="1035" WIDTH="500" HEIGHT="45">
+      <TextLine ID="uppercase-prose-line" HPOS="90" VPOS="1035" WIDTH="460" HEIGHT="45">
+        <String CONTENT="APH" WC="0.55" HPOS="90" VPOS="1035" WIDTH="50" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="7277," WC="0.55" HPOS="148" VPOS="1035" WIDTH="55" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="fat." WC="0.55" HPOS="211" VPOS="1035" WIDTH="35" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+
+    let parsed = parse_entries(
+        (&page, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "5",
+            21,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 6);
+    assert_eq!(
+        parsed
+            .entries
+            .iter()
+            .map(|entry| entry
+                .headword
+                .as_ref()
+                .map(|headword| headword.normalized.as_str()))
+            .collect::<Vec<_>>(),
+        vec![
+            Some("אָבַד"),
+            Some("7I259™38"),
+            Some("X"),
+            Some("12"),
+            Some("אברך"),
+            Some("אָב"),
+        ]
+    );
+}
+
+#[test]
+fn a_stem_heading_in_an_aligned_hypothesis_does_not_start_an_entry() {
+    let canonical = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="entry" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="45">
+      <TextLine ID="entry-line" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="אָבַל" WC="0.98" HPOS="90" VPOS="100" WIDTH="70" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="stem" HPOS="50" VPOS="200" WIDTH="500" HEIGHT="45">
+      <TextLine ID="stem-line" HPOS="90" VPOS="200" WIDTH="460" HEIGHT="45">
+        <String CONTENT="תחייז" WC="0.55" HPOS="90" VPOS="200" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="pr." WC="0.98" HPOS="168" VPOS="200" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to show oneself" WC="0.98" HPOS="206" VPOS="200" WIDTH="130" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let english = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="entry" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="45">
+      <TextLine ID="entry-line" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="ABAL" WC="0.70" HPOS="90" VPOS="100" WIDTH="70" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+    <TextBlock ID="stem" HPOS="50" VPOS="200" WIDTH="500" HEIGHT="45">
+      <TextLine ID="stem-line" HPOS="90" VPOS="200" WIDTH="460" HEIGHT="45">
+        <String CONTENT="Hitap." WC="0.98" HPOS="90" VPOS="200" WIDTH="70" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="pr." WC="0.98" HPOS="168" VPOS="200" WIDTH="30" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="to show oneself" WC="0.98" HPOS="206" VPOS="200" WIDTH="130" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+
+    let parsed = parse_entries(
+        (&canonical, &engine("fused")),
+        Some((&english, &engine("tesseract"))),
+        &context(
+            "robinson-1854",
+            "7",
+            23,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+
+    assert_eq!(parsed.entries.len(), 1);
+}
+
+#[test]
 fn isolated_numeric_artifact_is_ignored_but_starred_headword_is_retained() {
     let multilingual = parse_alto(
         r#"<?xml version="1.0"?>

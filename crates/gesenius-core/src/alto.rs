@@ -361,6 +361,10 @@ pub fn parse_entries_with_hypotheses_continuing(
             continue;
         }
 
+        let first_line_in_region = region
+            .lines
+            .first()
+            .is_some_and(|first_line| first_line.id == line.id);
         let canonical_grammar_candidate = grammar_labeled_headword_candidate(line);
         let hypothesis_grammar_candidate = aligned_hypotheses
             .iter()
@@ -374,9 +378,43 @@ pub fn parse_entries_with_hypotheses_continuing(
         let stem_heading = line_has_stem_heading(line, line_index, &aligned_hypotheses);
         let indented = layout.is_indented(line);
         let entry_indented = indented || is_indented_within_region(line, region);
-        let starts_entry = (begins_with_hebrew(&line.text) || grammar_labeled_headword)
-            && !stem_heading
-            && (entries.is_empty() || entry_indented || grammar_labeled_headword);
+        let grammar_indented = entry_indented
+            || layout.is_indented_by(line, 0.6)
+            || is_indented_within_region_by(line, region, 0.6);
+        let grammar_boundary = grammar_labeled_headword && grammar_indented;
+        let explicit_root_cue = line_has_explicit_root_cue(line, line_index, &aligned_hypotheses);
+        let star_cue = line_has_star_cue(line, line_index, &aligned_hypotheses);
+        let proper_name_cue = line_has_proper_name_cue(line, line_index, &aligned_hypotheses);
+        let cross_reference_cue =
+            line_has_cross_reference_cue(line, line_index, &aligned_hypotheses);
+        let strong_region_cue = region_has_proper_name_cue(region);
+        let allow_short_candidate = explicit_root_cue || star_cue || proper_name_cue;
+        let canonical_structural_candidate =
+            structural_headword_candidate(line, allow_short_candidate);
+        let hypothesis_structural_candidate = aligned_hypotheses
+            .iter()
+            .filter_map(|aligned| aligned.get(line_index).and_then(|line| *line))
+            .find_map(|hypothesis| {
+                structural_headword_candidate(hypothesis, allow_short_candidate)
+                    .map(|candidate_index| (hypothesis, candidate_index))
+            });
+        let structural_candidate =
+            canonical_structural_candidate.is_some() || hypothesis_structural_candidate.is_some();
+        let canonical_ocr_shape = canonical_structural_candidate
+            .is_some_and(|index| candidate_has_ocr_shape(&line.words[index]));
+        let (_, _, line_width, _) = polygon_bounds(&line.polygon);
+        let short_line = line_width as f32 <= canonical.width as f32 * 0.2;
+        let structural_boundary = structural_candidate
+            && (explicit_root_cue
+                || (star_cue && (first_line_in_region || entry_indented))
+                || (first_line_in_region
+                    && (strong_region_cue
+                        || (entry_indented && canonical_ocr_shape && !short_line)))
+                || (entry_indented && (proper_name_cue || cross_reference_cue)));
+        let hebrew_boundary =
+            begins_with_hebrew_headword(&line.text) && (first_line_in_region || entry_indented);
+        let starts_entry = !stem_heading
+            && (entries.is_empty() || grammar_boundary || structural_boundary || hebrew_boundary);
         let block_kind = if is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {
@@ -405,20 +443,33 @@ pub fn parse_entries_with_hypotheses_continuing(
         let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
         if starts_entry && entry.headword.is_none() {
-            entry.headword = canonical_grammar_candidate
-                .and_then(|candidate_index| {
-                    extract_candidate_headword_at(&span, line, candidate_index)
-                })
-                .or_else(|| {
-                    hypothesis_grammar_candidate.and_then(|(hypothesis, candidate_index)| {
-                        aligned_candidate_index(line, &hypothesis.words[candidate_index]).and_then(
-                            |canonical_index| {
-                                extract_candidate_headword_at(&span, line, canonical_index)
-                            },
-                        )
+            entry.headword =
+                canonical_grammar_candidate
+                    .and_then(|candidate_index| {
+                        extract_candidate_headword_at(&span, line, candidate_index)
                     })
-                })
-                .or_else(|| extract_headword(&span));
+                    .or_else(|| {
+                        hypothesis_grammar_candidate.and_then(|(hypothesis, candidate_index)| {
+                            aligned_candidate_index(line, &hypothesis.words[candidate_index])
+                                .and_then(|canonical_index| {
+                                    extract_candidate_headword_at(&span, line, canonical_index)
+                                })
+                        })
+                    })
+                    .or_else(|| extract_headword(&span))
+                    .or_else(|| {
+                        canonical_structural_candidate.and_then(|candidate_index| {
+                            extract_candidate_headword_at(&span, line, candidate_index)
+                        })
+                    })
+                    .or_else(|| {
+                        hypothesis_structural_candidate.and_then(|(hypothesis, candidate_index)| {
+                            aligned_candidate_index(line, &hypothesis.words[candidate_index])
+                                .and_then(|canonical_index| {
+                                    extract_candidate_headword_at(&span, line, canonical_index)
+                                })
+                        })
+                    });
         }
         let continues_block = !starts_entry
             && entry
@@ -544,9 +595,14 @@ impl PageLayout {
     }
 
     fn is_indented(&self, line: &AltoLine) -> bool {
+        self.is_indented_by(line, 0.7)
+    }
+
+    fn is_indented_by(&self, line: &AltoLine, line_height_fraction: f32) -> bool {
         let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
         self.column_starts[line_column(line, self.page_width)].is_some_and(|column_start| {
-            line_x.saturating_sub(column_start) as f32 >= line_height.max(1) as f32 * 0.7
+            line_x.saturating_sub(column_start) as f32
+                >= line_height.max(1) as f32 * line_height_fraction
         })
     }
 }
@@ -557,13 +613,25 @@ fn line_column(line: &AltoLine, page_width: u32) -> usize {
 }
 
 fn is_indented_within_region(line: &AltoLine, region: &AltoRegion) -> bool {
+    is_indented_within_region_by(line, region, 0.7)
+}
+
+fn is_indented_within_region_by(
+    line: &AltoLine,
+    region: &AltoRegion,
+    line_height_fraction: f32,
+) -> bool {
     let (region_x, _, _, _) = polygon_bounds(&region.polygon);
-    is_indented_from(line, region_x)
+    is_indented_from_by(line, region_x, line_height_fraction)
 }
 
 fn is_indented_from(line: &AltoLine, baseline_x: u32) -> bool {
+    is_indented_from_by(line, baseline_x, 0.7)
+}
+
+fn is_indented_from_by(line: &AltoLine, baseline_x: u32, line_height_fraction: f32) -> bool {
     let (line_x, _, _, line_height) = polygon_bounds(&line.polygon);
-    line_x.saturating_sub(baseline_x) as f32 >= line_height.max(1) as f32 * 0.7
+    line_x.saturating_sub(baseline_x) as f32 >= line_height.max(1) as f32 * line_height_fraction
 }
 
 fn line_has_stem_heading(
@@ -588,6 +656,8 @@ fn line_has_stem_heading(
                         "qal"
                             | "niph"
                             | "niphal"
+                            | "nirr"
+                            | "wiph"
                             | "piel"
                             | "pil"
                             | "pual"
@@ -596,10 +666,96 @@ fn line_has_stem_heading(
                             | "hipu"
                             | "hophal"
                             | "hithp"
+                            | "hitap"
                             | "hithpael"
                     )
                 })
         })
+}
+
+fn aligned_line_variants<'a>(
+    canonical: &'a AltoLine,
+    line_index: usize,
+    aligned_hypotheses: &'a [Vec<Option<&'a AltoLine>>],
+) -> impl Iterator<Item = &'a AltoLine> {
+    std::iter::once(canonical).chain(
+        aligned_hypotheses
+            .iter()
+            .filter_map(move |aligned| aligned.get(line_index).and_then(|line| *line)),
+    )
+}
+
+fn line_has_explicit_root_cue(
+    canonical: &AltoLine,
+    line_index: usize,
+    aligned_hypotheses: &[Vec<Option<&AltoLine>>],
+) -> bool {
+    aligned_line_variants(canonical, line_index, aligned_hypotheses).any(has_explicit_root_cue)
+}
+
+fn has_explicit_root_cue(line: &AltoLine) -> bool {
+    let words: Vec<_> = line
+        .words
+        .iter()
+        .map(|word| compact_word(&word.text))
+        .collect();
+    words.iter().any(|word| word == "root")
+        || words
+            .windows(2)
+            .any(|pair| matches!(pair, [first, second] if first == "not" && second == "used"))
+        || (words.first().is_some_and(|word| word != "prob")
+            && words
+                .windows(2)
+                .any(|pair| matches!(pair, [first, second] if first == "prob" && second == "to")))
+}
+
+fn line_has_star_cue(
+    canonical: &AltoLine,
+    line_index: usize,
+    aligned_hypotheses: &[Vec<Option<&AltoLine>>],
+) -> bool {
+    aligned_line_variants(canonical, line_index, aligned_hypotheses)
+        .any(|line| line.text.trim_start().starts_with('*'))
+}
+
+fn line_has_proper_name_cue(
+    canonical: &AltoLine,
+    line_index: usize,
+    aligned_hypotheses: &[Vec<Option<&AltoLine>>],
+) -> bool {
+    aligned_line_variants(canonical, line_index, aligned_hypotheses).any(has_proper_name_cue)
+}
+
+fn has_proper_name_cue(line: &AltoLine) -> bool {
+    let words: Vec<_> = line
+        .words
+        .iter()
+        .map(|word| compact_word(&word.text))
+        .collect();
+    words
+        .windows(2)
+        .any(|pair| matches!(pair, [first, second] if first == "pr" && second == "n"))
+        || words.iter().any(|word| word.starts_with("prn"))
+        || words
+            .windows(2)
+            .any(|pair| matches!(pair, [first, second] if first == "gentile" && second == "n"))
+}
+
+fn region_has_proper_name_cue(region: &AltoRegion) -> bool {
+    region.lines.iter().any(has_proper_name_cue)
+}
+
+fn line_has_cross_reference_cue(
+    canonical: &AltoLine,
+    line_index: usize,
+    aligned_hypotheses: &[Vec<Option<&AltoLine>>],
+) -> bool {
+    aligned_line_variants(canonical, line_index, aligned_hypotheses).any(|line| {
+        line.words
+            .iter()
+            .take(4)
+            .any(|word| compact_word(&word.text) == "see")
+    })
 }
 
 /// Combines an English-primary page with foreign-script word runs from a
@@ -686,29 +842,23 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
     let following: Vec<_> = words
         .iter()
         .skip(candidate_index + 1)
-        .take(3)
-        .map(|word| normalized_word(&word.text).unwrap_or_default())
+        .map(|word| compact_word(&word.text))
         .collect();
-    following.iter().any(|word| {
-        matches!(
-            word.as_str(),
-            "m" | "f"
-                | "n"
-                | "pr"
-                | "proper"
-                | "pers"
-                | "chald"
-                | "pil"
-                | "piel"
-                | "pual"
-                | "hithp"
-                | "hiph"
-                | "hophal"
-        )
-    }) || following
-        .iter()
-        .find(|word| !word.is_empty())
-        .is_some_and(|word| word == "constr")
+    let first = following.iter().find(|word| !word.is_empty());
+    first.is_some_and(|word| is_direct_grammar_label(word))
+        || words
+            .get(candidate_index + 1)
+            .is_some_and(|word| word.text.trim() == "£")
+        || following
+            .windows(2)
+            .any(|pair| pair[0] == "pr" && pair[1] == "n")
+        || following
+            .windows(2)
+            .any(|pair| pair[0] == "pers" && pair[1] == "pr")
+        || following.iter().any(|word| word.starts_with("prn"))
+        || following
+            .windows(2)
+            .any(|pair| pair[0] == "gentile" && pair[1] == "n")
         || ((begins_with_hebrew(&words[candidate_index].text)
             || !words[candidate_index]
                 .text
@@ -720,12 +870,87 @@ fn is_grammar_labeled_headword(words: &[AltoWord], candidate_index: usize) -> bo
             ))
 }
 
+fn is_direct_grammar_label(word: &str) -> bool {
+    matches!(
+        word,
+        "m" | "f"
+            | "n"
+            | "adj"
+            | "adv"
+            | "chald"
+            | "constr"
+            | "fut"
+            | "plur"
+            | "pil"
+            | "piel"
+            | "pual"
+            | "hithp"
+            | "hiph"
+            | "hophal"
+    )
+}
+
 fn normalized_word(word: &str) -> Option<String> {
     if word.chars().any(char::is_numeric) {
         return None;
     }
     let word = word.trim_matches(|character: char| !character.is_alphabetic());
     (!word.is_empty()).then(|| word.to_ascii_lowercase())
+}
+
+fn compact_word(word: &str) -> String {
+    word.chars()
+        .filter(|character| character.is_alphabetic())
+        .flat_map(char::to_lowercase)
+        .collect()
+}
+
+fn is_candidate_stop_word(candidate: &str) -> bool {
+    !candidate.chars().any(char::is_numeric)
+        && matches!(
+            compact_word(candidate).as_str(),
+            "arab"
+                | "arabic"
+                | "chald"
+                | "chaldee"
+                | "syr"
+                | "syriac"
+                | "greek"
+                | "gr"
+                | "heb"
+                | "hebr"
+                | "pers"
+                | "persian"
+                | "talmud"
+                | "note"
+                | "deriv"
+                | "hence"
+                | "comp"
+                | "pr"
+                | "prn"
+                | "m"
+                | "f"
+                | "n"
+                | "adj"
+                | "adv"
+                | "plur"
+                | "constr"
+                | "qal"
+                | "niph"
+                | "niphal"
+                | "nirr"
+                | "wiph"
+                | "piel"
+                | "pil"
+                | "pual"
+                | "hiph"
+                | "hiphil"
+                | "hipu"
+                | "hophal"
+                | "hithp"
+                | "hitap"
+                | "hithpael"
+        )
 }
 
 fn is_headword_candidate(candidate: &AltoWord) -> bool {
@@ -739,10 +964,119 @@ fn is_headword_candidate(candidate: &AltoWord) -> bool {
             .any(|character| !character.is_alphanumeric());
     !candidate_text.is_empty()
         && candidate_text.chars().count() <= 6
-        && !candidate_text
+        && !(candidate_text
             .chars()
-            .all(|character| character.is_ascii_lowercase())
+            .any(|character| character.is_alphabetic())
+            && candidate_text
+                .chars()
+                .filter(|character| character.is_alphabetic())
+                .all(|character| character.is_ascii_lowercase()))
+        && !is_candidate_stop_word(candidate_text)
         && !punctuated_number
+}
+
+fn is_structural_headword_candidate(candidate: &AltoWord, allow_short: bool) -> bool {
+    use unicode_script::Script;
+
+    let candidate_text = candidate
+        .text
+        .trim_matches(|character: char| !character.is_alphanumeric());
+    let alphanumeric_count = candidate_text
+        .chars()
+        .filter(|character| character.is_alphanumeric())
+        .count();
+    let alphabetic: Vec<_> = candidate_text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .collect();
+    let numeric_count = candidate_text
+        .chars()
+        .filter(|character| character.is_numeric())
+        .count();
+    let foreign_script = alphabetic.iter().any(|character| {
+        matches!(
+            character.script(),
+            Script::Hebrew | Script::Arabic | Script::Syriac | Script::Greek
+        )
+    });
+    let ascii_titlecase = alphabetic.len() >= 2
+        && alphabetic[0].is_ascii_uppercase()
+        && alphabetic[1..]
+            .iter()
+            .all(|character| character.is_ascii_lowercase());
+    let lowercase_ascii = !alphabetic.is_empty()
+        && alphabetic
+            .iter()
+            .all(|character| character.is_ascii_lowercase());
+    let starts_with_ascii_lowercase = alphabetic
+        .first()
+        .is_some_and(|character| character.is_ascii_lowercase());
+    let mixed_single_letter_number = numeric_count > 0 && alphabetic.len() == 1 && foreign_script;
+
+    !candidate_text.is_empty()
+        && alphanumeric_count <= 16
+        && (allow_short || alphanumeric_count >= 2)
+        && !is_candidate_stop_word(candidate_text)
+        && !ascii_titlecase
+        && (!lowercase_ascii || foreign_script)
+        && (!starts_with_ascii_lowercase || foreign_script)
+        && (!mixed_single_letter_number || allow_short)
+}
+
+fn candidate_has_ocr_shape(candidate: &AltoWord) -> bool {
+    candidate
+        .text
+        .chars()
+        .any(|character| character.is_numeric() || !character.is_alphanumeric())
+        || detected_word_language(&candidate.text).is_some()
+}
+
+fn structural_headword_candidate(line: &AltoLine, allow_short: bool) -> Option<usize> {
+    let first_candidate = line.words.iter().enumerate().find(|(_, candidate)| {
+        candidate
+            .text
+            .chars()
+            .any(|character| character.is_alphanumeric())
+    });
+    if !allow_short {
+        let candidate = first_candidate
+            .filter(|(_, candidate)| is_structural_headword_candidate(candidate, false))
+            .map(|(index, _)| index);
+        if candidate.is_some() {
+            return candidate;
+        }
+        let leading_single_digit = first_candidate.is_some_and(|(_, candidate)| {
+            candidate.text.chars().count() == 1 && candidate.text.chars().all(char::is_numeric)
+        });
+        return leading_single_digit
+            .then(|| {
+                line.words
+                    .iter()
+                    .enumerate()
+                    .skip(1)
+                    .take(1)
+                    .find(|(_, candidate)| {
+                        is_structural_headword_candidate(candidate, false)
+                            || (detected_word_language(&candidate.text).is_some()
+                                && is_structural_headword_candidate(candidate, true))
+                    })
+                    .map(|(index, _)| index)
+            })
+            .flatten();
+    }
+
+    let candidates: Vec<_> = line
+        .words
+        .iter()
+        .take(3)
+        .enumerate()
+        .filter(|(_, candidate)| is_structural_headword_candidate(candidate, true))
+        .collect();
+    candidates
+        .iter()
+        .find(|(_, candidate)| detected_word_language(&candidate.text).is_some())
+        .or_else(|| candidates.first())
+        .map(|(index, _)| *index)
 }
 
 fn grammar_labeled_headword_candidate(line: &AltoLine) -> Option<usize> {
@@ -1347,6 +1681,25 @@ fn begins_with_hebrew(text: &str) -> bool {
     text.chars()
         .find(|character| character.is_alphanumeric())
         .is_some_and(|character| character.script() == Script::Hebrew)
+}
+
+fn begins_with_hebrew_headword(text: &str) -> bool {
+    use unicode_script::Script;
+    let mut characters = text
+        .chars()
+        .skip_while(|character| !character.is_alphanumeric());
+    let Some(first) = characters.next() else {
+        return false;
+    };
+    first.script() == Script::Hebrew
+        && std::iter::once(first)
+            .chain(characters)
+            .take_while(|character| {
+                matches!(character.script(), Script::Hebrew | Script::Inherited)
+            })
+            .filter(|character| character.script() == Script::Hebrew)
+            .count()
+            >= 2
 }
 
 fn is_margin_line(line: &AltoLine, page_height: u32) -> bool {
