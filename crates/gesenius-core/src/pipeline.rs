@@ -1,9 +1,10 @@
 //! Resumable content-addressed raster, preprocessing, OCR, and parsing pipeline.
 
 use crate::alto::{
-    classify_word_languages, detected_word_language, fuse_multilingual_words, parse_alto,
-    parse_entries_with_hypotheses_continuing, word_matches_language, write_alto, AltoLine,
-    AltoPage, AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage,
+    announced_line_languages, classify_word_languages, detected_word_language,
+    fuse_multilingual_words, join_words, parse_alto, parse_entries_with_hypotheses_continuing,
+    printed_label_languages, select_script_trial, word_confidence, write_alto, AltoLine, AltoPage,
+    AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage, ScriptTrial,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::{normalized_disagreement, polygon_iou};
@@ -460,8 +461,18 @@ pub fn run_with_progress(
         };
         let multilingual_tesseract_page =
             parse_alto(&fs::read_to_string(&multilingual_tesseract_alto)?)?;
+        // Fusion first: the English-primary pass owns the layout and supplies
+        // the geometry of every word, including the ones it could only read as
+        // Latin rubbish. Arbitrating scripts on the fused page therefore also
+        // reaches words the multilingual pass never recognized as foreign.
+        let fused_tesseract_page =
+            fuse_multilingual_words(&primary_tesseract_page, &multilingual_tesseract_page);
+        fs::write(
+            page_path.join("tesseract-fused.alto.xml"),
+            write_alto(&fused_tesseract_page, &relative_or_absolute(&processed)),
+        )?;
         let classified_tesseract_page = classify_word_languages(
-            &multilingual_tesseract_page,
+            &fused_tesseract_page,
             &settings.tesseract.multilingual_languages,
         );
         report_page("refining detected foreign-script words");
@@ -473,12 +484,6 @@ pub fn run_with_progress(
             settings.raster_dpi,
             &run_id,
         )?;
-        let fused_tesseract_page =
-            fuse_multilingual_words(&primary_tesseract_page, &word_tesseract_page);
-        fs::write(
-            page_path.join("tesseract-fused.alto.xml"),
-            write_alto(&fused_tesseract_page, &relative_or_absolute(&processed)),
-        )?;
         let kraken_page = if kraken_identity.is_some() {
             report_page("running Kraken OCR");
             let kraken_alto = recognize_kraken(&processed, &page_path, &settings.kraken, &run_id)?;
@@ -487,7 +492,7 @@ pub fn run_with_progress(
             None
         };
         report_page("parsing OCR into lexicon entries");
-        let canonical_page = kraken_page.as_ref().unwrap_or(&fused_tesseract_page);
+        let canonical_page = kraken_page.as_ref().unwrap_or(&word_tesseract_page);
         let mut hypotheses = Vec::new();
         if let (Some(page), Some(identity)) = (kraken_page.as_ref(), kraken_identity.as_ref()) {
             hypotheses.push((page, identity));
@@ -1056,12 +1061,21 @@ struct IsolatedWordRecognition {
     crop: String,
     detected_text: String,
     detected_language: Option<String>,
-    selected_language: String,
+    label_language: Option<String>,
+    announced_languages: Vec<String>,
+    routed_language: String,
     detected_confidence: f32,
+    trials: Vec<ScriptTrial>,
+    selected_language: Option<String>,
     isolated_text: Option<String>,
     isolated_confidence: Option<f32>,
     used_isolated_text: bool,
 }
+
+/// Tesseract models that read exactly one script, so a crop can be arbitrated
+/// between them. `eng` and `lat` share the Latin script and are left to the
+/// English-primary pass.
+const SINGLE_SCRIPT_LANGUAGES: &[&str] = &["heb", "ara", "syr", "grc"];
 
 struct WordCandidate {
     text: String,
@@ -1083,7 +1097,7 @@ fn recognize_tesseract_words(
         run_id,
         &serde_json::to_string(settings)?,
         &serde_json::to_string(classified)?,
-        "isolated-word-recognition-v1",
+        "isolated-word-recognition-v2",
     ]);
     let outputs = [output_path.clone(), manifest_path.clone()];
     if stage_is_current(&receipt_path, &input_hash, &outputs)? {
@@ -1092,13 +1106,21 @@ fn recognize_tesseract_words(
 
     let words_path = page_path.join("words");
     fs::create_dir_all(&words_path)?;
+    let trial_languages: Vec<String> = settings
+        .multilingual_languages
+        .iter()
+        .filter(|language| SINGLE_SCRIPT_LANGUAGES.contains(&language.as_str()))
+        .cloned()
+        .collect();
     let mut refined = classified.clone();
     let mut records = Vec::new();
     let mut ordinal = 0_usize;
     for region in &mut refined.regions {
         for line in &mut region.lines {
-            for word in &mut line.words {
-                let Some(language) = word.language.clone() else {
+            let announced = announced_line_languages(line, &settings.multilingual_languages);
+            let labels = printed_label_languages(&line.words);
+            for (index, word) in line.words.iter_mut().enumerate() {
+                let Some(routed_language) = word.language.clone() else {
                     continue;
                 };
                 ordinal += 1;
@@ -1106,7 +1128,8 @@ fn recognize_tesseract_words(
                 let detected_confidence = word.confidence;
                 let detected_language =
                     detected_word_language(&detected_text).map(ToOwned::to_owned);
-                let stem = format!("word-{ordinal:05}-{language}");
+                let label_language = labels[index].map(ToOwned::to_owned);
+                let stem = format!("word-{ordinal:05}");
                 let crop_path = words_path.join(format!("{stem}.png"));
                 let (x, y, width, height) = padded_word_bounds(
                     word,
@@ -1130,70 +1153,93 @@ fn recognize_tesseract_words(
                 ];
                 run_resumable_command(
                     &format!("crop-{stem}"),
-                    &content_hash(&[
-                        &input_hash,
-                        &serde_json::to_string(&word.polygon)?,
-                        &language,
-                    ]),
+                    &content_hash(&[&input_hash, &serde_json::to_string(&word.polygon)?]),
                     "magick",
                     &crop_arguments,
                     std::slice::from_ref(&crop_path),
                     &words_path.join(format!("{stem}.crop.stage.json")),
                 )?;
 
-                let tsv_stem = words_path.join(&stem);
-                let tsv_path = words_path.join(format!("{stem}.tsv"));
+                // Read the one crop with every single-script model the edition
+                // needs. A word the multilingual pass mis-scripted can then be
+                // recovered instead of being locked to its first reading.
                 let scaled_dpi =
                     raster_dpi.saturating_mul(u32::from(settings.word_scale_percent)) / 100;
-                let tesseract_arguments = vec![
-                    crop_path.display().to_string(),
-                    tsv_stem.display().to_string(),
-                    "--dpi".to_owned(),
-                    scaled_dpi.to_string(),
-                    "-l".to_owned(),
-                    language.clone(),
-                    "--psm".to_owned(),
-                    settings.word_page_segmentation_mode.to_string(),
-                    "tsv".to_owned(),
-                ];
-                run_resumable_command(
-                    &format!("recognize-{stem}"),
-                    &content_hash(&[
-                        &input_hash,
-                        &sha256_file(&crop_path)?,
-                        &language,
-                        &settings.word_page_segmentation_mode.to_string(),
-                    ]),
-                    "tesseract",
-                    &tesseract_arguments,
-                    std::slice::from_ref(&tsv_path),
-                    &words_path.join(format!("{stem}.tesseract.stage.json")),
-                )?;
-
-                let mut candidate = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?;
-                if detected_language.is_none() && !detected_text.chars().any(char::is_alphabetic) {
-                    if let Some(candidate) = &mut candidate {
-                        candidate.text = candidate
+                let crop_hash = sha256_file(&crop_path)?;
+                let mut trials = Vec::new();
+                for language in &trial_languages {
+                    let tsv_stem = words_path.join(format!("{stem}-{language}"));
+                    let tsv_path = words_path.join(format!("{stem}-{language}.tsv"));
+                    let tesseract_arguments = vec![
+                        crop_path.display().to_string(),
+                        tsv_stem.display().to_string(),
+                        "--dpi".to_owned(),
+                        scaled_dpi.to_string(),
+                        "-l".to_owned(),
+                        language.clone(),
+                        "--psm".to_owned(),
+                        settings.word_page_segmentation_mode.to_string(),
+                        "tsv".to_owned(),
+                    ];
+                    run_resumable_command(
+                        &format!("recognize-{stem}-{language}"),
+                        &content_hash(&[
+                            &input_hash,
+                            &crop_hash,
+                            language,
+                            &settings.word_page_segmentation_mode.to_string(),
+                        ]),
+                        "tesseract",
+                        &tesseract_arguments,
+                        std::slice::from_ref(&tsv_path),
+                        &words_path.join(format!("{stem}-{language}.tesseract.stage.json")),
+                    )?;
+                    let Some(candidate) =
+                        parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?
+                    else {
+                        continue;
+                    };
+                    // When the multilingual pass saw only punctuation there is
+                    // nothing for the isolated reading's edge marks to
+                    // correspond to, so they are dropped as noise.
+                    let text = if detected_text.chars().any(char::is_alphabetic) {
+                        candidate.text
+                    } else {
+                        candidate
                             .text
                             .trim_matches(|character: char| {
                                 !character.is_alphabetic()
                                     && canonical_combining_class(character) == 0
                             })
-                            .to_owned();
-                    }
+                            .to_owned()
+                    };
+                    trials.push(ScriptTrial {
+                        language: language.clone(),
+                        text,
+                        confidence: candidate.confidence,
+                    });
                 }
-                let use_isolated = candidate.as_ref().is_some_and(|candidate| {
+
+                let selected = select_script_trial(
+                    &trials,
+                    detected_language.as_deref(),
+                    detected_confidence,
+                    label_language.as_deref(),
+                    &announced,
+                )
+                .cloned();
+                let use_isolated = selected.as_ref().is_some_and(|selected| {
                     should_use_isolated_word(
                         &detected_text,
                         detected_language.as_deref(),
                         detected_confidence,
-                        &language,
-                        candidate,
+                        selected,
                     )
                 });
-                if let Some(candidate) = candidate.as_ref().filter(|_| use_isolated) {
-                    word.text.clone_from(&candidate.text);
-                    word.confidence = candidate.confidence;
+                if let Some(selected) = selected.as_ref().filter(|_| use_isolated) {
+                    word.text.clone_from(&selected.text);
+                    word.confidence = selected.confidence;
+                    word.language = Some(selected.language.clone());
                 }
                 records.push(IsolatedWordRecognition {
                     line_id: line.id.clone(),
@@ -1201,12 +1247,22 @@ fn recognize_tesseract_words(
                     crop: relative_or_absolute(&crop_path),
                     detected_text,
                     detected_language,
-                    selected_language: language,
+                    label_language,
+                    announced_languages: announced.clone(),
+                    routed_language,
                     detected_confidence,
-                    isolated_text: candidate.as_ref().map(|candidate| candidate.text.clone()),
-                    isolated_confidence: candidate.as_ref().map(|candidate| candidate.confidence),
+                    trials,
+                    selected_language: selected.as_ref().map(|selected| selected.language.clone()),
+                    isolated_text: selected.as_ref().map(|selected| selected.text.clone()),
+                    isolated_confidence: selected.as_ref().map(|selected| selected.confidence),
                     used_isolated_text: use_isolated,
                 });
+            }
+            // Word text is the line's only source of truth downstream, so the
+            // line has to be rebuilt from the arbitrated words.
+            if !line.words.is_empty() {
+                line.text = join_words(&line.words);
+                line.confidence = word_confidence(&line.words);
             }
         }
     }
@@ -1308,31 +1364,34 @@ fn parse_tesseract_word_tsv(tsv: &str) -> Result<Option<WordCandidate>> {
     }))
 }
 
+/// Whether an arbitrated single-script reading should replace the word.
+///
+/// A word the multilingual pass read in a different script, or read as
+/// implausible Latin, is replaced outright: the arbitration has already
+/// established that the selected script explains the crop. A word already read
+/// in the selected script is replaced only by a clearly more confident reading
+/// of comparable length, so isolated recognition cannot silently truncate it.
 fn should_use_isolated_word(
     detected_text: &str,
     detected_language: Option<&str>,
     detected_confidence: f32,
-    selected_language: &str,
-    candidate: &WordCandidate,
+    selected: &ScriptTrial,
 ) -> bool {
-    if !word_matches_language(&candidate.text, selected_language) {
-        return false;
-    }
-    if detected_language != Some(selected_language) {
+    if detected_language != Some(selected.language.as_str()) {
         return true;
     }
     let detected_letters = detected_text
         .chars()
         .filter(|character| character.is_alphabetic())
         .count();
-    let candidate_letters = candidate
+    let candidate_letters = selected
         .text
         .chars()
         .filter(|character| character.is_alphabetic())
         .count();
-    candidate.confidence >= detected_confidence + 0.05
+    selected.confidence >= detected_confidence + 0.05
         && candidate_letters.saturating_mul(2) >= detected_letters
-        && normalized_disagreement(detected_text, &candidate.text) <= 0.34
+        && normalized_disagreement(detected_text, &selected.text) <= 0.34
 }
 
 fn recognize_kraken(
@@ -1588,9 +1647,9 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 mod tests {
     use super::{
         deduplicate_overlapping_lines, entry_source_page, parse_page_spec, should_replace_entry,
-        should_use_isolated_word, WordCandidate,
+        should_use_isolated_word,
     };
-    use crate::alto::parse_alto;
+    use crate::alto::{parse_alto, ScriptTrial};
     use crate::model::CorpusEntry;
     use std::collections::BTreeSet;
 
@@ -1607,35 +1666,28 @@ mod tests {
 
     #[test]
     fn isolated_word_selection_corrects_script_changes_but_rejects_drift() {
+        let trial = |language: &str, text: &str, confidence: f32| ScriptTrial {
+            language: language.to_owned(),
+            text: text.to_owned(),
+            confidence,
+        };
         assert!(should_use_isolated_word(
             "وو",
             Some("ara"),
             0.56,
-            "heb",
-            &WordCandidate {
-                text: "חְטָא".to_owned(),
-                confidence: 0.73,
-            },
+            &trial("heb", "חְטָא", 0.73),
         ));
         assert!(!should_use_isolated_word(
             "ابي",
             Some("ara"),
             0.57,
-            "ara",
-            &WordCandidate {
-                text: "دابى".to_owned(),
-                confidence: 0.67,
-            },
+            &trial("ara", "دابى", 0.67),
         ));
         assert!(should_use_isolated_word(
             "אבות",
             Some("heb"),
             0.70,
-            "heb",
-            &WordCandidate {
-                text: "אָבות".to_owned(),
-                confidence: 0.80,
-            },
+            &trial("heb", "אָבות", 0.80),
         ));
     }
 

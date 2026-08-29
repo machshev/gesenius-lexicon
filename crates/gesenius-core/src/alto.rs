@@ -801,10 +801,50 @@ pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> A
     fused
 }
 
-/// Classifies each explicitly foreign-script word into a single Tesseract
-/// language. Printed language labels can recover otherwise unreadable words,
-/// but explicit Unicode script evidence is never replaced by neighbouring
-/// words from another script.
+/// Tesseract model for the script the edition prints its lemmas in. Hebrew is
+/// the dominant foreign script of the lexicon, so a word that is foreign but
+/// otherwise unexplained is read as Hebrew before any other script.
+pub const DOMINANT_WORD_LANGUAGE: &str = "heb";
+
+/// Minimum score for a script the page explicitly announced, by printed label
+/// or by recognized code points.
+const MIN_ATTESTED_TRIAL_SCORE: f32 = 0.30;
+
+/// Minimum score for a script that is only plausible from elsewhere on the
+/// same line.
+const MIN_CONTEXTUAL_TRIAL_SCORE: f32 = 0.45;
+
+/// How far a non-dominant script must beat Hebrew before it is preferred.
+const NON_DOMINANT_TRIAL_MARGIN: f32 = 0.10;
+
+/// Smallest share of a reading that must be letters or their marks. Readings
+/// below it are mostly stray punctuation from a noisy crop.
+const MIN_TRIAL_CLEANLINESS: f32 = 0.60;
+
+/// Confidence at which the multilingual pass's own script counts as evidence
+/// strong enough to keep, rather than a guess to be re-arbitrated.
+const CONFIDENT_DETECTION: f32 = 0.60;
+
+/// One single-script recognition of an isolated word crop.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct ScriptTrial {
+    /// Tesseract model that produced the reading.
+    pub language: String,
+    /// Recognized text.
+    pub text: String,
+    /// Character-weighted confidence in the inclusive range 0 through 1.
+    pub confidence: f32,
+}
+
+/// Classifies each foreign-script word into a single Tesseract language.
+///
+/// Words the multilingual pass already recognized in a distinctive script keep
+/// that script as their route. Words it read as implausible Latin are routed to
+/// the edition's dominant script instead of being abandoned as English; the
+/// isolated recognition stage then re-reads them in every announced script and
+/// arbitrates. Printed language labels can recover otherwise unreadable words,
+/// but explicit Unicode script evidence is never replaced by neighbouring words
+/// from another script.
 #[must_use]
 pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) -> AltoPage {
     let layout = PageLayout::from_page(page);
@@ -824,10 +864,254 @@ pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) 
             }
             apply_language_context_hints(&mut line.words, supported_languages);
             apply_headword_grammar_hint(&mut line.words, supported_languages, is_indented);
+            apply_dominant_script_fallback(&mut line.words, supported_languages);
         }
     }
     apply_starred_headword_hints(&mut classified, supported_languages);
     classified
+}
+
+/// Routes words that were read as implausible Latin to the dominant script.
+fn apply_dominant_script_fallback(words: &mut [AltoWord], supported_languages: &[String]) {
+    if !supported_languages
+        .iter()
+        .any(|language| language == DOMINANT_WORD_LANGUAGE)
+    {
+        return;
+    }
+    for word in words {
+        if word.language.is_none() && is_foreign_script_candidate(&word.text, word.confidence) {
+            word.language = Some(DOMINANT_WORD_LANGUAGE.to_owned());
+        }
+    }
+}
+
+/// Whether a Latin-script reading is more plausibly a misrecognized
+/// foreign-script word than real English.
+///
+/// The English pass has no Hebrew letters available, so pointed square Hebrew
+/// comes back as Latin rubbish such as `R738` or `b%3`. Such readings mix
+/// letters with digits, capitalize inside the word, reach for accented letters,
+/// or contain no vowel at all, and the engine's own confidence in them is low.
+/// Confident readings are left to the English pass, which keeps abbreviations
+/// such as `Chr.` and roman numerals out of the foreign-script route.
+#[must_use]
+pub fn is_foreign_script_candidate(text: &str, confidence: f32) -> bool {
+    if confidence >= 0.75 || contains_foreign_script(text) {
+        return false;
+    }
+    let core = text.trim_matches(|character: char| !character.is_alphanumeric());
+    let letters: Vec<char> = core
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .collect();
+    if letters.is_empty() {
+        return false;
+    }
+    let interior_capital = core
+        .chars()
+        .skip(1)
+        .any(|character| character.is_uppercase());
+    let mixes_digits = core.chars().any(|character| character.is_ascii_digit());
+    let accented = letters
+        .iter()
+        .any(|character| !character.is_ascii_alphabetic());
+    let voiceless = letters.len() >= 3
+        && !letters
+            .iter()
+            .any(|character| "aeiouyAEIOUY".contains(*character));
+    interior_capital || mixes_digits || accented || voiceless
+}
+
+/// Chooses the script that best explains an isolated word crop.
+///
+/// Every trial is scored by its own confidence weighted by how much of its text
+/// belongs to the script it was read with, so a model that answered with
+/// digits or stray Latin cannot win, and readings that are mostly punctuation
+/// from a noisy crop are discarded outright. A printed label decides the
+/// script, and so does a confident reading in a distinctive script from the
+/// multilingual pass. Failing both, the edition's dominant script is preferred
+/// unless another beats it by a clear margin, and a script the page never
+/// announced is never introduced on confidence alone.
+#[must_use]
+pub fn select_script_trial<'a>(
+    trials: &'a [ScriptTrial],
+    detected_language: Option<&str>,
+    detected_confidence: f32,
+    label_language: Option<&str>,
+    announced_languages: &[String],
+) -> Option<&'a ScriptTrial> {
+    let attested = |language: &str| {
+        language == DOMINANT_WORD_LANGUAGE
+            || detected_language == Some(language)
+            || label_language == Some(language)
+    };
+    let viable: Vec<(&ScriptTrial, f32)> = trials
+        .iter()
+        .filter(|trial| {
+            word_matches_language(&trial.text, &trial.language)
+                && trial_cleanliness(&trial.text) >= MIN_TRIAL_CLEANLINESS
+        })
+        .map(|trial| (trial, trial_score(trial)))
+        .filter(|(trial, score)| {
+            let admissible =
+                attested(&trial.language) || announced_languages.contains(&trial.language);
+            let floor = if attested(&trial.language) {
+                MIN_ATTESTED_TRIAL_SCORE
+            } else {
+                MIN_CONTEXTUAL_TRIAL_SCORE
+            };
+            admissible && *score >= floor
+        })
+        .collect();
+    if let Some(label) = label_language {
+        if let Some((trial, _)) = viable.iter().find(|(trial, _)| trial.language == label) {
+            return Some(trial);
+        }
+    }
+    if let Some(detected) = detected_language.filter(|_| detected_confidence >= CONFIDENT_DETECTION)
+    {
+        if let Some((trial, _)) = viable.iter().find(|(trial, _)| trial.language == detected) {
+            return Some(trial);
+        }
+    }
+    let (best, best_score) = viable
+        .iter()
+        .copied()
+        .max_by(|left, right| left.1.total_cmp(&right.1))?;
+    if best.language != DOMINANT_WORD_LANGUAGE {
+        if let Some((dominant, dominant_score)) = viable
+            .iter()
+            .find(|(trial, _)| trial.language == DOMINANT_WORD_LANGUAGE)
+        {
+            if best_score < dominant_score + NON_DOMINANT_TRIAL_MARGIN {
+                return Some(dominant);
+            }
+        }
+    }
+    Some(best)
+}
+
+/// Confidence weighted by how much of the reading belongs to its own script.
+fn trial_score(trial: &ScriptTrial) -> f32 {
+    trial.confidence * script_agreement(&trial.text, &trial.language)
+}
+
+/// Share of a reading that is letters or the marks belonging to them.
+fn trial_cleanliness(text: &str) -> f32 {
+    let (linguistic, total) = text
+        .chars()
+        .filter(|character| !character.is_whitespace())
+        .fold((0_usize, 0_usize), |(linguistic, total), character| {
+            let counted = character.is_alphabetic()
+                || unicode_normalization::char::canonical_combining_class(character) != 0;
+            (linguistic + usize::from(counted), total + 1)
+        });
+    if total == 0 {
+        0.0
+    } else {
+        linguistic as f32 / total as f32
+    }
+}
+
+fn script_agreement(text: &str, language: &str) -> f32 {
+    use unicode_script::Script;
+    let expected = match language {
+        "heb" => Script::Hebrew,
+        "ara" => Script::Arabic,
+        "syr" => Script::Syriac,
+        "grc" => Script::Greek,
+        _ => return 0.0,
+    };
+    let (matching, alphabetic) = text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .fold((0_usize, 0_usize), |(matching, alphabetic), character| {
+            (
+                matching + usize::from(character.script() == expected),
+                alphabetic + 1,
+            )
+        });
+    if alphabetic == 0 {
+        0.0
+    } else {
+        matching as f32 / alphabetic as f32
+    }
+}
+
+/// Scripts a line explicitly announces, by printed label or by code points the
+/// multilingual pass already recognized.
+#[must_use]
+pub fn announced_line_languages(line: &AltoLine, supported_languages: &[String]) -> Vec<String> {
+    let mut announced: Vec<String> = Vec::new();
+    let labels = printed_label_languages(&line.words);
+    for (index, word) in line.words.iter().enumerate() {
+        for language in detected_word_language(&word.text)
+            .into_iter()
+            .chain(labels[index])
+        {
+            if supported_languages
+                .iter()
+                .any(|supported| supported == language)
+                && !announced.iter().any(|existing| existing == language)
+            {
+                announced.push(language.to_owned());
+            }
+        }
+    }
+    announced
+}
+
+/// Tesseract model each word inherits from a printed language label.
+///
+/// A label governs the printed enumeration that follows it, so its scope
+/// crosses list punctuation and the conjunctions the edition uses inside a
+/// list, and ends at the first ordinary English word.
+#[must_use]
+pub fn printed_label_languages(words: &[AltoWord]) -> Vec<Option<&'static str>> {
+    let mut governing: Vec<Option<&'static str>> = vec![None; words.len()];
+    let mut active: Option<&'static str> = None;
+    for (index, word) in words.iter().enumerate() {
+        if let Some(language) =
+            profile_for_label(&word.text).and_then(|profile| ocr_language_for_tag(profile.tag))
+        {
+            active = Some(language);
+            continue;
+        }
+        if !word.text.chars().any(char::is_alphabetic) {
+            continue;
+        }
+        if contains_foreign_script(&word.text) || !is_plausible_english_word(&word.text) {
+            governing[index] = active;
+            continue;
+        }
+        if !is_list_conjunction(&word.text) {
+            active = None;
+        }
+    }
+    governing
+}
+
+fn is_list_conjunction(text: &str) -> bool {
+    let word: String = text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .flat_map(char::to_lowercase)
+        .collect();
+    matches!(word.as_str(), "and" | "or")
+}
+
+/// Maps a semantic language to the single-script Tesseract model that reads the
+/// type the edition sets it in. Chaldee is printed in square Hebrew and Persian
+/// in Arabic type, so both share a model with another language.
+fn ocr_language_for_tag(tag: &str) -> Option<&'static str> {
+    match tag {
+        "he" | "arc" => Some("heb"),
+        "ar" | "fa" => Some("ara"),
+        "syr" => Some("syr"),
+        "grc" => Some("grc"),
+        _ => None,
+    }
 }
 
 fn apply_headword_grammar_hint(
@@ -1645,7 +1929,7 @@ fn is_plausible_english_word(text: &str) -> bool {
         )
 }
 
-fn word_confidence(words: &[AltoWord]) -> f32 {
+pub(crate) fn word_confidence(words: &[AltoWord]) -> f32 {
     let (weighted, characters) = words.iter().fold((0.0_f32, 0_usize), |acc, word| {
         let length = word.text.chars().count().max(1);
         (acc.0 + word.confidence * length as f32, acc.1 + length)
@@ -1657,7 +1941,7 @@ fn word_confidence(words: &[AltoWord]) -> f32 {
     }
 }
 
-fn join_words(words: &[AltoWord]) -> String {
+pub(crate) fn join_words(words: &[AltoWord]) -> String {
     let mut text = String::new();
     for word in words {
         if !text.is_empty() {
@@ -1838,8 +2122,8 @@ fn xml_escape(value: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::{
-        align_lines, classify_word_languages, fuse_multilingual_words, parse_alto,
-        word_matches_language, write_alto,
+        align_lines, classify_word_languages, fuse_multilingual_words, is_foreign_script_candidate,
+        parse_alto, select_script_trial, word_matches_language, write_alto, ScriptTrial,
     };
 
     const ALTO: &str = r#"<?xml version="1.0"?>
@@ -1992,6 +2276,76 @@ mod tests {
         let fused = fuse_multilingual_words(&primary, &multilingual);
 
         assert_eq!(fused.regions[0].lines[0].words[0].text, "אֶ");
+    }
+
+    #[test]
+    fn latin_rubbish_is_routed_to_the_dominant_script_but_english_is_not() {
+        for rubbish in ["R738", "b%3", "BXNE", "n\u{a5}13928,", "P82"] {
+            assert!(
+                is_foreign_script_candidate(rubbish, 0.30),
+                "`{rubbish}` should be routed to a foreign script"
+            );
+        }
+        for english in ["father", "the", "Comp.", "grape", "i.", "e."] {
+            assert!(
+                !is_foreign_script_candidate(english, 0.30),
+                "`{english}` should stay with the English pass"
+            );
+        }
+        // Confident readings are left alone, which keeps abbreviations and
+        // roman numerals such as `Chr.`, `IX.` and `LEXICON.` out of the route.
+        assert!(!is_foreign_script_candidate("IX.", 0.84));
+        assert!(!is_foreign_script_candidate("LEXICON.", 0.85));
+    }
+
+    #[test]
+    fn script_arbitration_prefers_the_dominant_script_without_ignoring_evidence() {
+        let trial = |language: &str, text: &str, confidence: f32| ScriptTrial {
+            language: language.to_owned(),
+            text: text.to_owned(),
+            confidence,
+        };
+        let announced = vec![
+            "heb".to_owned(),
+            "ara".to_owned(),
+            "syr".to_owned(),
+            "grc".to_owned(),
+        ];
+
+        // Pointed Hebrew read as Latin rubbish by the English pass: Hebrew is
+        // chosen even though another script scored slightly higher.
+        let trials = vec![
+            trial("heb", "אחד", 0.89),
+            trial("ara", "و75", 0.55),
+            trial("syr", "ܨܡ", 0.51),
+        ];
+        assert_eq!(
+            select_script_trial(&trials, None, 0.0, None, &announced).map(|trial| &trial.language),
+            Some(&"heb".to_owned())
+        );
+
+        // A clearly better non-dominant reading still wins.
+        let trials = vec![trial("heb", "ווס", 0.59), trial("grc", "διὰ", 0.91)];
+        assert_eq!(
+            select_script_trial(&trials, None, 0.0, None, &announced).map(|trial| &trial.language),
+            Some(&"grc".to_owned())
+        );
+
+        // A printed label decides outright.
+        let trials = vec![trial("heb", "אחד", 0.89), trial("syr", "ܐܒܐ", 0.62)];
+        assert_eq!(
+            select_script_trial(&trials, None, 0.0, Some("syr"), &announced)
+                .map(|trial| &trial.language),
+            Some(&"syr".to_owned())
+        );
+
+        // A script the line never announced is not introduced on confidence
+        // alone, and readings that disagree with their own model are discarded.
+        let trials = vec![trial("syr", "ܫܗ", 0.82), trial("heb", "20", 0.53)];
+        assert_eq!(
+            select_script_trial(&trials, None, 0.0, None, &["heb".to_owned()]),
+            None
+        );
     }
 
     #[test]
