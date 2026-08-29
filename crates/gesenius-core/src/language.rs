@@ -45,6 +45,7 @@ pub const ROBINSON_1854_LANGUAGES: &[LanguageProfile] = &[
         &["Ethi", "Latn"],
         &["ethiop", "ethiopic", "aethiop", "aethiopic"],
     ),
+    profile("am", "Amharic", &["Ethi", "Latn"], &["amhar", "amharic"]),
     profile(
         "sam",
         "Samaritan Aramaic",
@@ -143,6 +144,11 @@ const fn profile(
 /// wrong script's code points; the run's `script` continues to record those
 /// visible code points. Latin-script comparative forms are relabelled only
 /// after an abbreviated printed label, avoiding prose such as "the French h".
+///
+/// A label governs a whole printed enumeration, so its scope crosses commas
+/// and the conjunctions the edition uses inside such lists. It stops at the
+/// first ordinary English word, which is where the citation ends and the
+/// surrounding prose resumes.
 #[must_use]
 pub fn identify_languages(
     text: &str,
@@ -153,32 +159,33 @@ pub fn identify_languages(
         let Some(profile) = profile_for_label(&tokens[index].text) else {
             continue;
         };
-        if let Some(previous) = index.checked_sub(1).and_then(|index| tokens.get_mut(index)) {
-            if previous.has_letters
-                && is_native_script(&previous.script)
-                && previous.evidence != LanguageEvidence::PrintedLabel
-            {
-                previous.language = profile.tag;
-                previous.evidence = LanguageEvidence::PrintedLabel;
-            }
-        }
         let abbreviated = tokens[index].text.contains('.');
         let next_index = (index + 1..tokens.len())
             .take(3)
             .find(|candidate| tokens[*candidate].has_letters);
+        let follows_native_text =
+            next_index.is_some_and(|next_index| is_native_script(&tokens[next_index].script));
+        // A postposed label such as "אָב Chald." identifies the citation that
+        // precedes it. A preposed one already owns the text that follows, so
+        // looking backwards there would steal the previous label's citation.
+        if !follows_native_text {
+            for preceding in preceding_list_scope(&tokens, index) {
+                if tokens[preceding].evidence == LanguageEvidence::PrintedLabel {
+                    continue;
+                }
+                tokens[preceding].language = profile.tag;
+                tokens[preceding].evidence = LanguageEvidence::PrintedLabel;
+            }
+        }
         if let Some(next_index) = next_index {
-            let native_script = is_native_script(&tokens[next_index].script);
+            let native_script = follows_native_text;
             let labelled_latin = abbreviated
                 && latin_comparison_language(profile.tag)
                 && latin_citation_candidate(&tokens[next_index].text);
             if native_script {
-                for next in tokens
-                    .iter_mut()
-                    .skip(next_index)
-                    .take_while(|token| token.has_letters && is_native_script(&token.script))
-                {
-                    next.language = profile.tag;
-                    next.evidence = LanguageEvidence::PrintedLabel;
+                for following in following_list_scope(&tokens, next_index) {
+                    tokens[following].language = profile.tag;
+                    tokens[following].evidence = LanguageEvidence::PrintedLabel;
                 }
             } else if labelled_latin
                 && profile
@@ -222,6 +229,48 @@ pub fn identify_languages(
     (language, runs)
 }
 
+/// Native-script tokens a printed label governs after it.
+///
+/// The edition prints comparanda as enumerations, so the scope crosses list
+/// punctuation and the conjunctions used inside a list. Ordinary English prose
+/// ends the citation and therefore the label's scope.
+fn following_list_scope(tokens: &[Token], start: usize) -> Vec<usize> {
+    let mut scope = Vec::new();
+    for (index, token) in tokens.iter().enumerate().skip(start) {
+        if !token.has_letters {
+            continue;
+        }
+        if is_native_script(&token.script) {
+            scope.push(index);
+        } else if !is_list_conjunction(&token.text) {
+            break;
+        }
+    }
+    scope
+}
+
+/// Native-script tokens a printed label governs before it.
+fn preceding_list_scope(tokens: &[Token], label: usize) -> Vec<usize> {
+    let mut scope = Vec::new();
+    for index in (0..label).rev() {
+        let token = &tokens[index];
+        if !token.has_letters {
+            continue;
+        }
+        if is_native_script(&token.script) {
+            scope.push(index);
+        } else if !is_list_conjunction(&token.text) {
+            break;
+        }
+    }
+    scope
+}
+
+/// Words the edition prints between items of one comparative enumeration.
+fn is_list_conjunction(text: &str) -> bool {
+    matches!(normalized_label(text).as_str(), "and" | "or")
+}
+
 fn is_native_script(script: &str) -> bool {
     !matches!(script, "Latn" | "Zyyy")
 }
@@ -230,13 +279,7 @@ fn is_native_script(script: &str) -> bool {
 #[must_use]
 pub fn profile_for_label(text: &str) -> Option<&'static LanguageProfile> {
     let label = normalized_label(text);
-    if ambiguous_lowercase_abbreviation(&label)
-        && text.contains('.')
-        && !text
-            .chars()
-            .find(|character| character.is_alphabetic())
-            .is_some_and(char::is_uppercase)
-    {
+    if ambiguous_lowercase_abbreviation(&label) && !is_capitalized_abbreviation(text) {
         return None;
     }
     ROBINSON_1854_LANGUAGES
@@ -386,8 +429,24 @@ fn latin_citation_candidate(text: &str) -> bool {
         )
 }
 
+/// Short labels that are also ordinary English words or grammatical
+/// abbreviations. The edition only ever prints these as capitalized
+/// abbreviations, so anything else is prose such as "the arm" or "1 pers."
 fn ambiguous_lowercase_abbreviation(label: &str) -> bool {
-    matches!(label, "arm" | "fr" | "gr" | "pers")
+    matches!(
+        label,
+        "arab" | "arm" | "egypt" | "fr" | "goth" | "gr" | "lat" | "pers" | "span"
+    )
+}
+
+/// Whether the printed token is an abbreviation written with a capital, which
+/// is how the edition sets every language label.
+fn is_capitalized_abbreviation(text: &str) -> bool {
+    text.contains('.')
+        && text
+            .chars()
+            .find(|character| character.is_alphabetic())
+            .is_some_and(char::is_uppercase)
 }
 
 fn normalized_label(text: &str) -> String {
@@ -487,6 +546,70 @@ mod tests {
 
         let (_, grammar) = identify_languages("1 pers. suffix; Pers. pr. n.", "en");
         assert!(grammar.iter().all(|run| run.language == "en"));
+    }
+
+    #[test]
+    fn printed_labels_govern_comma_separated_comparative_lists() {
+        let (_, runs) = identify_languages("Comp. Chald. אב, אבא and אבהת father.", "en");
+        assert_eq!(
+            runs.iter()
+                .map(|run| (run.language.as_str(), run.evidence))
+                .collect::<Vec<_>>(),
+            vec![
+                ("en", LanguageEvidence::EditionDefault),
+                ("arc", LanguageEvidence::PrintedLabel),
+                ("en", LanguageEvidence::EditionDefault),
+                ("arc", LanguageEvidence::PrintedLabel),
+                ("en", LanguageEvidence::EditionDefault),
+            ]
+        );
+    }
+
+    #[test]
+    fn each_label_in_a_mixed_list_keeps_its_own_citation() {
+        let (_, runs) = identify_languages("Heb. אב, Gr. πατήρ, Syr. ܐܒܐ, Eth. አብ.", "en");
+        assert_eq!(
+            runs.iter()
+                .map(|run| (run.language.as_str(), run.script.as_str()))
+                .collect::<Vec<_>>(),
+            vec![
+                ("en", "Latn"),
+                ("he", "Hebr"),
+                ("en", "Latn"),
+                ("grc", "Grek"),
+                ("en", "Latn"),
+                ("syr", "Syrc"),
+                ("en", "Latn"),
+                ("gez", "Ethi"),
+            ]
+        );
+    }
+
+    #[test]
+    fn postposed_labels_never_claim_an_earlier_labels_citation() {
+        let (_, runs) = identify_languages("as אשכל Aram. סגול grape", "en");
+        assert_eq!(
+            runs.iter()
+                .map(|run| run.language.as_str())
+                .collect::<Vec<_>>(),
+            vec!["en", "he", "en", "arc", "en"]
+        );
+    }
+
+    #[test]
+    fn ordinary_english_words_are_never_read_as_language_labels() {
+        for prose in ["the arm; אשכל", "a span of אמה", "the Arab tribes אהל"] {
+            let (_, runs) = identify_languages(prose, "en");
+            assert!(
+                runs.iter()
+                    .all(|run| run.evidence != LanguageEvidence::PrintedLabel),
+                "prose `{prose}` was read as a printed label: {runs:?}"
+            );
+        }
+        assert_eq!(
+            profile_for_label("Arm.").map(|profile| profile.tag),
+            Some("hy")
+        );
     }
 
     #[test]

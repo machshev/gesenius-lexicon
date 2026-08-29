@@ -31,6 +31,7 @@ Unicode script or a sufficiently local printed label.
 | `ar` | Arabic | `Arab`, transliterated `Latn` | script; `Arab.` label |
 | `syr` | Syriac | `Syrc`, transliterated `Latn` | script; `Syr.` label |
 | `gez` | Ge'ez/Ethiopic | `Ethi`, transliterated `Latn` | script; Ethiopic label |
+| `am` | Amharic | `Ethi`, transliterated `Latn` | `Amhar.` label only; Ethiopic script alone remains `gez` |
 | `sam` | Samaritan Aramaic | `Samr`, sometimes comparative `Hebr`/`Latn` | script; unambiguous Samaritan label |
 | `phn` | Phoenician | `Phnx`, comparative `Hebr`/`Latn` | script; Phoenician label |
 | `grc` | Ancient Greek | `Grek`, transliterated `Latn` | script; `Gr.` label |
@@ -87,6 +88,22 @@ one of:
   OCR-confused script;
 - `edition_default` for otherwise ambiguous dominant English prose or the
   Hebrew-language structural role of a lexicon headword.
+
+A printed label governs a whole printed enumeration. The edition sets its
+comparanda as comma-separated lists that mix English glosses with native-script
+citations, so a label's scope crosses list punctuation and the conjunctions
+`and` and `or`, and ends at the first ordinary English word. Each label in a
+mixed list therefore owns only its own citation: in `Heb. אב, Gr. πατήρ, Syr.
+ܐܒܐ` the three citations receive three different tags. A label printed *after*
+its citation, as in `אָב Chald. m.`, identifies the words before it, but only
+when no native-script text follows it, so a preposed label never has its
+citation stolen by the next label in the list.
+
+Short labels that are also ordinary English words or grammatical abbreviations
+— `Arab.`, `Arm.`, `Egypt.`, `Fr.`, `Goth.`, `Gr.`, `Lat.`, `Pers.`, `Span.` —
+are recognized only when printed as the edition prints them, capitalized and
+with the abbreviating period. This keeps prose such as "the arm", "a span of",
+"1 pers." from being read as a language label.
 
 A line containing more than one language is summarized as `mul`; text with no
 linguistic content is `zxx`. Validation checks run bounds, concrete catalogue
