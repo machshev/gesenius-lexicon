@@ -4,6 +4,7 @@ pub mod alto;
 pub mod benchmark;
 pub mod corpus_io;
 pub mod export;
+pub mod language;
 pub mod metrics;
 pub mod model;
 pub mod pipeline;

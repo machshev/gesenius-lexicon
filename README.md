@@ -2,7 +2,7 @@
 
 This repository is a reproducible, local-first OCR pipeline for the public-domain Gesenius Hebrew lexicon. It preserves the Robinson 1854 and Tregelles 1857 editions separately, turns page scans into reviewable Unicode entries, and exports authoritative JSONL, a TEI Lex-0 profile, and schema-versioned SQLite.
 
-Rust owns orchestration, source verification, ALTO parsing, corpus modelling, validation, review, metrics, and exports. Tesseract 5 runs an English-primary layout pass plus a multilingual word-language detector. Each detected Hebrew, Arabic, Syriac, or Ancient Greek word is then cropped, enlarged, read with one script-appropriate model, and joined back into its line. Kraken 7 is the trainable recognizer and remains an isolated subprocess. Scans never leave the local machine.
+Rust owns orchestration, source verification, ALTO parsing, corpus modelling, validation, review, metrics, and exports. Tesseract 5 runs an English-primary layout pass plus a multilingual word-script detector. Each detected Hebrew, Arabic, Syriac, or Ancient Greek word is then cropped, enlarged, read with one script-appropriate model, and joined back into its line. Semantic BCP 47 language identification remains separate from OCR routing and records exact language runs with evidence. Kraken 7 is the trainable recognizer and remains an isolated subprocess. Scans never leave the local machine.
 
 The implementation is usable now, but the corpus is explicitly an OCR draft: the full books have not been processed or human-verified, the Tregelles scan still needs an owner-selected registration, and the candidate pilot pages must be visually confirmed after that scan is selected.
 
@@ -103,7 +103,7 @@ An entry contains:
 - a headword, homograph, grammar labels, senses, citations, cross-references, and etymology where confidently parsed;
 - ordered blocks and `unclassified` fallback content;
 - diplomatic and NFC-normalized text;
-- BCP 47 language, ISO 15924 script, and direction metadata;
+- BCP 47 language summaries and exact language runs, ISO 15924 scripts, evidence, and direction metadata;
 - source page, region, line, polygon, transform, and page image for every span;
 - untouched engine/model hypotheses, confidence, Unicode warnings, and review state.
 
@@ -113,7 +113,8 @@ The schema files are:
 
 - `schema/corpus.schema.json` — JSON entry interchange contract;
 - `schema/tei-lex0.rng` — pinned project TEI Lex-0 profile;
-- `schema/sqlite-v1.sql` — application-independent SQLite schema.
+- `schema/sqlite-v2.sql` — application-independent SQLite schema.
+- `docs/languages.md` — edition language inventory, BCP 47 policy, and OCR coverage.
 
 See [docs/data-model.md](docs/data-model.md) for review and export details.
 

@@ -1,6 +1,7 @@
 //! Corpus schema, Unicode, provenance, and assignment validation.
 
 use crate::alto::{LineAssignment, ParsedPage};
+use crate::language::profile_for_tag;
 use crate::model::{stable_entry_id, CorpusEntry, Direction, ReviewState, TextSpan};
 use crate::unicode::{classify_script, infer_direction, is_bidi_control, normalize_nfc};
 use serde::{Deserialize, Serialize};
@@ -194,6 +195,7 @@ fn validate_span(entry: &CorpusEntry, span: &TextSpan, issues: &mut Vec<Validati
             "ISO 15924 script does not match text",
         ));
     }
+    validate_languages(span, &location, issues);
     let inferred = infer_direction(&span.normalized);
     if span.direction != inferred
         && !(span.direction == Direction::Mixed && inferred != Direction::Mixed)
@@ -281,6 +283,71 @@ fn validate_span(entry: &CorpusEntry, span: &TextSpan, issues: &mut Vec<Validati
             "duplicate_ocr_model",
             &location,
             "adjacent hypotheses name the same OCR engine and model",
+        ));
+    }
+}
+
+fn validate_languages(span: &TextSpan, location: &str, issues: &mut Vec<ValidationIssue>) {
+    let known_tag = |language: &str| {
+        matches!(language, "mul" | "und" | "zxx") || profile_for_tag(language).is_some()
+    };
+    if let Some(language) = &span.language {
+        if !known_tag(language) {
+            issues.push(error(
+                "unknown_language_tag",
+                location,
+                &format!("language `{language}` is not in the edition catalogue"),
+            ));
+        }
+    } else if span.normalized.chars().any(char::is_alphabetic) {
+        issues.push(warning(
+            "missing_language_metadata",
+            location,
+            "linguistic text has no BCP 47 language metadata",
+        ));
+    }
+
+    let characters = span.normalized.chars().collect::<Vec<_>>();
+    let mut previous_end = 0_usize;
+    let mut languages = BTreeSet::new();
+    for run in &span.language_runs {
+        if run.start < previous_end || run.start >= run.end || run.end > characters.len() {
+            issues.push(error(
+                "invalid_language_run",
+                location,
+                "language runs must be ordered, non-overlapping, and within the normalized text",
+            ));
+            continue;
+        }
+        previous_end = run.end;
+        if !known_tag(&run.language) || matches!(run.language.as_str(), "mul" | "zxx") {
+            issues.push(error(
+                "invalid_language_run_tag",
+                location,
+                &format!("language run has invalid concrete tag `{}`", run.language),
+            ));
+        }
+        let text = characters[run.start..run.end].iter().collect::<String>();
+        if classify_script(&text) != run.script {
+            issues.push(error(
+                "language_run_script_mismatch",
+                location,
+                "language run script does not match its normalized text range",
+            ));
+        }
+        languages.insert(run.language.as_str());
+    }
+    let expected = match languages.len() {
+        0 if span.normalized.chars().any(char::is_alphabetic) => None,
+        0 => Some("zxx"),
+        1 => languages.first().copied(),
+        _ => Some("mul"),
+    };
+    if !span.language_runs.is_empty() && span.language.as_deref() != expected {
+        issues.push(error(
+            "language_summary_mismatch",
+            location,
+            "span language must summarize its concrete language runs",
         ));
     }
 }

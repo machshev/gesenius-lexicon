@@ -5,10 +5,10 @@ use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 
 /// Version of the JSON corpus schema implemented by this crate.
-pub const CORPUS_SCHEMA_VERSION: &str = "1.1.0";
+pub const CORPUS_SCHEMA_VERSION: &str = "1.2.0";
 
 /// Version of the generated SQLite schema.
-pub const SQLITE_SCHEMA_VERSION: u32 = 1;
+pub const SQLITE_SCHEMA_VERSION: u32 = 2;
 
 /// Review state for machine- or human-produced text.
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Serialize, Deserialize)]
@@ -105,6 +105,45 @@ pub struct UnicodeWarning {
     pub message: String,
 }
 
+/// Evidence used to assign a language to a character range.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum LanguageEvidence {
+    /// The text contains characters unique to the language's usual script.
+    UnicodeScript,
+    /// A nearby printed abbreviation or name identifies the language.
+    PrintedLabel,
+    /// The edition's dominant prose language supplies the otherwise ambiguous tag.
+    EditionDefault,
+}
+
+impl LanguageEvidence {
+    /// Returns the stable serialized representation.
+    #[must_use]
+    pub const fn as_str(self) -> &'static str {
+        match self {
+            Self::UnicodeScript => "unicode_script",
+            Self::PrintedLabel => "printed_label",
+            Self::EditionDefault => "edition_default",
+        }
+    }
+}
+
+/// A semantically identified language range within a reviewable line span.
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct LanguageRun {
+    /// Inclusive Unicode-scalar offset in the normalized span text.
+    pub start: usize,
+    /// Exclusive Unicode-scalar offset in the normalized span text.
+    pub end: usize,
+    /// BCP 47 language tag.
+    pub language: String,
+    /// ISO 15924 script code for the identified text.
+    pub script: String,
+    /// Evidence supporting the assignment.
+    pub evidence: LanguageEvidence,
+}
+
 /// Smallest reviewable text unit.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct TextSpan {
@@ -116,6 +155,9 @@ pub struct TextSpan {
     pub normalized: String,
     /// BCP 47 language tag when known.
     pub language: Option<String>,
+    /// Character-level language assignments for mixed-language text.
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub language_runs: Vec<LanguageRun>,
     /// ISO 15924 script code.
     pub script: String,
     /// Semantic text direction.

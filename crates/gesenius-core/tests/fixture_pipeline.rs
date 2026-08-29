@@ -81,6 +81,26 @@ fn fixture_entries() -> Vec<gesenius_core::CorpusEntry> {
         .iter()
         .any(|(_, _, assignment)| matches!(assignment, LineAssignment::Unparsed)));
     assert_eq!(page_one.entries[0].blocks[0].spans[0].hypotheses.len(), 2);
+    assert_eq!(
+        page_one.entries[0]
+            .headword
+            .as_ref()
+            .and_then(|headword| headword.language.as_deref()),
+        Some("he")
+    );
+    let comparison = page_one.entries[0]
+        .spans()
+        .find(|span| span.diplomatic.starts_with("Arab."))
+        .unwrap();
+    assert_eq!(comparison.language.as_deref(), Some("mul"));
+    assert_eq!(
+        comparison
+            .language_runs
+            .iter()
+            .map(|run| run.language.as_str())
+            .collect::<Vec<_>>(),
+        vec!["en", "ar", "en", "syr", "en", "grc"]
+    );
 
     let page_two_alto = parse_alto(include_str!(
         "../../../fixtures/alto/robinson-p002.kraken.xml"
@@ -128,6 +148,43 @@ fn fixture_entries() -> Vec<gesenius_core::CorpusEntry> {
         page_two.entries[1].clone(),
         tregelles.entries[0].clone(),
     ]
+}
+
+#[test]
+fn chaldee_headwords_use_aramaic_language_metadata_with_hebrew_ocr_script() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="entry" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="45">
+      <TextLine ID="entry-line" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="אַבָּא" WC="0.96" HPOS="90" VPOS="100" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="Chald." WC="0.98" HPOS="178" VPOS="100" WIDTH="65" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="251" VPOS="100" WIDTH="25" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+    let headword = parsed.entries[0].headword.as_ref().unwrap();
+    assert_eq!(headword.language.as_deref(), Some("arc"));
+    assert_eq!(headword.script, "Hebr");
+    assert_eq!(headword.language_runs[0].language, "arc");
+    assert_eq!(
+        headword.language_runs[0].evidence,
+        gesenius_core::model::LanguageEvidence::PrintedLabel
+    );
 }
 
 #[test]
@@ -1146,6 +1203,13 @@ fn fixture_pipeline_validates_and_exports_deterministically() {
             fs::read(first_result.artifact).unwrap(),
             fs::read(second_result.artifact).unwrap()
         );
+        if format == ExportFormat::Tei {
+            let tei = fs::read_to_string(first_directory.join("corpus.tei.xml")).unwrap();
+            assert!(tei.contains("xml:lang=\"mul\""));
+            assert!(tei.contains(
+                "xml:lang=\"ar\" type=\"language-run script:Arab evidence:printed_label\""
+            ));
+        }
         if format == ExportFormat::Tei
             && std::env::var("GESENIUS_VALIDATE_TEI_EXTERNAL").as_deref() == Ok("1")
         {
@@ -1176,6 +1240,13 @@ fn fixture_pipeline_validates_and_exports_deterministically() {
             )
             .unwrap(),
         2
+    );
+    assert!(
+        connection
+            .query_row("SELECT count(*) FROM language_runs", [], |row| row
+                .get::<_, i64>(0))
+            .unwrap()
+            > 0
     );
 }
 

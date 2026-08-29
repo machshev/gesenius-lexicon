@@ -614,7 +614,7 @@ ${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<p
 async function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
 let pages=[];for(let span of spans)for(let coordinate of span.coordinates)if(!pages.some(page=>page.image===coordinate.page_image))pages.push({image:coordinate.page_image,source:coordinate.source_page,printed:coordinate.printed_page});
 let selectedSpan=null,selectedPage=0,scan=pages.length?await scanForPage(spans,pages[0],selectedSpan):'No scan coordinate';
-let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%</span><br>
+let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.language||'und')} · ${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%${s.language_runs?.length?' · '+s.language_runs.map(run=>esc(run.language)+' '+esc(run.script)+' '+esc(run.evidence)).join(', '):''}</span><br>
 ${s.hypotheses.map(h=>`<code>${esc(h.engine)}:</code> ${esc(h.text)} (${Math.round(h.confidence*100)}%)`).join('<br>')}
 <br><span class="muted">${esc(cps(s.diplomatic))}</span>${s.warnings.map(w=>`<br><span class="warn">${esc(w.code)}: ${esc(w.message)}</span>`).join('')}</p>`).join('');
 $('#detail').innerHTML=`<div class="grid">

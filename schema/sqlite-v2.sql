@@ -1,4 +1,4 @@
-PRAGMA user_version=1;
+PRAGMA user_version=2;
 CREATE TABLE metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL) WITHOUT ROWID;
 CREATE TABLE editions (
   id TEXT PRIMARY KEY,
@@ -53,6 +53,17 @@ CREATE TABLE spans (
   review_state TEXT NOT NULL CHECK(review_state IN ('machine','corrected','verified'))
 ) WITHOUT ROWID;
 CREATE INDEX spans_normalized ON spans(normalized);
+CREATE TABLE language_runs (
+  span_id TEXT NOT NULL REFERENCES spans(id) ON DELETE CASCADE,
+  ordinal INTEGER NOT NULL,
+  start_offset INTEGER NOT NULL CHECK(start_offset >= 0),
+  end_offset INTEGER NOT NULL CHECK(end_offset > start_offset),
+  language TEXT NOT NULL,
+  script TEXT NOT NULL,
+  evidence TEXT NOT NULL CHECK(evidence IN ('unicode_script','printed_label','edition_default')),
+  PRIMARY KEY(span_id, ordinal)
+) WITHOUT ROWID;
+CREATE INDEX language_runs_language ON language_runs(language);
 CREATE TABLE ocr_hypotheses (
   span_id TEXT NOT NULL REFERENCES spans(id) ON DELETE CASCADE,
   ordinal INTEGER NOT NULL,

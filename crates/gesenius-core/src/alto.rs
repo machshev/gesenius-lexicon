@@ -1,5 +1,6 @@
 //! Minimal ALTO 4 reader/writer and layout-aware structural parser.
 
+use crate::language::{identify_languages, profile_for_label};
 use crate::metrics::polygon_iou;
 use crate::model::{
     stable_entry_id, BlockKind, CorpusEntry, Direction, EntryBlock, EntryProvenance, OcrHypothesis,
@@ -1277,13 +1278,18 @@ fn make_span(
     index: usize,
 ) -> TextSpan {
     let diplomatic = without_bidi_controls(&line.text);
+    let normalized = normalize_nfc(&diplomatic);
+    let (language, language_runs) = identify_languages(&normalized, "en");
+    let script = classify_script(&normalized);
+    let direction = infer_direction(&normalized);
     TextSpan {
         id: format!("{}:span:{:04}", entry.id, index + 1),
-        normalized: normalize_nfc(&diplomatic),
+        normalized,
         diplomatic: diplomatic.clone(),
-        language: None,
-        script: classify_script(&diplomatic),
-        direction: infer_direction(&diplomatic),
+        language,
+        language_runs,
+        script,
+        direction,
         confidence: line.confidence,
         review_state: ReviewState::Machine,
         hypotheses,
@@ -1323,6 +1329,8 @@ fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
     span.id = format!("{}:headword", line_span.id.trim_end_matches(":span:0001"));
     span.diplomatic.clone_from(&headword);
     span.normalized = normalize_nfc(&headword);
+    let default_language = headword_default_language(&headword, None);
+    (span.language, span.language_runs) = identify_languages(&span.normalized, default_language);
     span.script = "Hebr".to_owned();
     span.direction = Direction::Rtl;
     span.warnings = unicode_warnings(&headword);
@@ -1345,10 +1353,40 @@ fn extract_candidate_headword_at(
     span.id = format!("{}:headword", line_span.id.trim_end_matches(":span:0001"));
     span.diplomatic = headword.to_owned();
     span.normalized = normalize_nfc(headword);
+    let label = line
+        .words
+        .iter()
+        .skip(candidate_index + 1)
+        .take(3)
+        .find_map(|word| {
+            profile_for_label(&word.text)
+                .filter(|profile| matches!(profile.tag, "he" | "arc"))
+                .map(|profile| profile.tag)
+        });
+    let default_language = headword_default_language(headword, label);
+    (span.language, span.language_runs) = identify_languages(&span.normalized, default_language);
+    if label.is_some() {
+        for run in &mut span.language_runs {
+            run.evidence = crate::model::LanguageEvidence::PrintedLabel;
+        }
+    }
     span.script = classify_script(headword);
     span.direction = infer_direction(headword);
     span.warnings = unicode_warnings(headword);
     Some(span)
+}
+
+fn headword_default_language<'a>(headword: &str, printed_label: Option<&'a str>) -> &'a str {
+    printed_label.unwrap_or_else(|| {
+        if headword
+            .chars()
+            .any(|character| character.script() == unicode_script::Script::Hebrew)
+        {
+            "he"
+        } else {
+            "en"
+        }
+    })
 }
 
 fn aligned_candidate_index(canonical: &AltoLine, hypothesis: &AltoWord) -> Option<usize> {

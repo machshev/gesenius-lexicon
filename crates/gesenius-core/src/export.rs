@@ -323,14 +323,42 @@ fn write_span(output: &mut String, element: &str, span: &TextSpan) {
 
 fn write_span_content(output: &mut String, span: &TextSpan) {
     if span.diplomatic == span.normalized {
-        output.push_str(&xml_escape(&span.normalized));
+        write_language_runs(output, span);
     } else {
         let _ = write!(
             output,
-            "<choice><orig>{}</orig><reg>{}</reg></choice>",
-            xml_escape(&span.diplomatic),
-            xml_escape(&span.normalized)
+            "<choice><orig>{}</orig><reg>",
+            xml_escape(&span.diplomatic)
         );
+        write_language_runs(output, span);
+        output.push_str("</reg></choice>");
+    }
+}
+
+fn write_language_runs(output: &mut String, span: &TextSpan) {
+    let characters = span.normalized.chars().collect::<Vec<_>>();
+    let mut offset = 0_usize;
+    for run in &span.language_runs {
+        if run.start > offset {
+            output.push_str(&xml_escape(
+                &characters[offset..run.start].iter().collect::<String>(),
+            ));
+        }
+        let text = characters[run.start..run.end].iter().collect::<String>();
+        let _ = write!(
+            output,
+            "<seg xml:lang=\"{}\" type=\"language-run script:{} evidence:{}\">{}</seg>",
+            xml_escape(&run.language),
+            xml_escape(&run.script),
+            run.evidence.as_str(),
+            xml_escape(&text)
+        );
+        offset = run.end;
+    }
+    if offset < characters.len() {
+        output.push_str(&xml_escape(
+            &characters[offset..].iter().collect::<String>(),
+        ));
     }
 }
 
@@ -361,7 +389,7 @@ fn write_sqlite(path: &Path, entries: &[CorpusEntry], manifest: &CorpusManifest)
 }
 
 fn create_schema(transaction: &Transaction<'_>) -> Result<()> {
-    transaction.execute_batch(include_str!("../../../schema/sqlite-v1.sql"))?;
+    transaction.execute_batch(include_str!("../../../schema/sqlite-v2.sql"))?;
     Ok(())
 }
 
@@ -611,6 +639,22 @@ fn insert_span(
             span.review_state.as_str()
         ],
     )?;
+    for (run_ordinal, run) in span.language_runs.iter().enumerate() {
+        transaction.execute(
+            "INSERT INTO language_runs(
+               span_id,ordinal,start_offset,end_offset,language,script,evidence
+             ) VALUES (?1,?2,?3,?4,?5,?6,?7)",
+            params![
+                span.id,
+                run_ordinal,
+                run.start,
+                run.end,
+                run.language,
+                run.script,
+                run.evidence.as_str()
+            ],
+        )?;
+    }
     for (hypothesis_ordinal, hypothesis) in span.hypotheses.iter().enumerate() {
         transaction.execute(
             "INSERT INTO ocr_hypotheses(

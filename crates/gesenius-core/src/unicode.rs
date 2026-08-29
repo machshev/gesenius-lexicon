@@ -1,5 +1,6 @@
 //! Unicode normalization, script classification, and mixed-direction checks.
 
+use crate::language::identify_languages;
 use crate::model::{Direction, TextSpan, UnicodeWarning};
 use unicode_normalization::char::canonical_combining_class;
 use unicode_normalization::UnicodeNormalization;
@@ -61,9 +62,15 @@ pub fn infer_direction(text: &str) -> Direction {
     let mut has_rtl = false;
     for script in text.chars().map(|character| character.script()) {
         match script {
-            Script::Hebrew | Script::Arabic | Script::Syriac => has_rtl = true,
-            Script::Latin | Script::Greek | Script::Cyrillic => has_ltr = true,
-            _ => {}
+            Script::Common | Script::Inherited | Script::Unknown => {}
+            Script::Hebrew
+            | Script::Arabic
+            | Script::Syriac
+            | Script::Samaritan
+            | Script::Phoenician
+            | Script::Imperial_Aramaic
+            | Script::Avestan => has_rtl = true,
+            _ => has_ltr = true,
         }
     }
     match (has_ltr, has_rtl) {
@@ -126,6 +133,25 @@ pub fn refresh_span(span: &mut TextSpan) {
     span.normalized = normalize_nfc(&span.diplomatic);
     span.script = classify_script(&span.normalized);
     span.direction = infer_direction(&span.normalized);
+    let previous_language = span.language.clone();
+    let previous_runs = span.language_runs.clone();
+    let default_language = span
+        .language
+        .as_deref()
+        .filter(|language| !matches!(*language, "mul" | "zxx" | "und"))
+        .unwrap_or("en");
+    (span.language, span.language_runs) = identify_languages(&span.normalized, default_language);
+    if span.language == previous_language {
+        for run in &mut span.language_runs {
+            if previous_runs.iter().any(|previous| {
+                previous.language == run.language
+                    && previous.script == run.script
+                    && previous.evidence == crate::model::LanguageEvidence::PrintedLabel
+            }) {
+                run.evidence = crate::model::LanguageEvidence::PrintedLabel;
+            }
+        }
+    }
     span.warnings = unicode_warnings(&span.diplomatic);
 }
 
@@ -145,18 +171,10 @@ pub fn aggregate_confidence<'a>(spans: impl IntoIterator<Item = &'a TextSpan>) -
     }
 }
 
-const fn script_code(script: Script) -> &'static str {
+fn script_code(script: Script) -> &'static str {
     match script {
-        Script::Hebrew => "Hebr",
-        Script::Arabic => "Arab",
-        Script::Syriac => "Syrc",
-        Script::Greek => "Grek",
-        Script::Latin => "Latn",
-        Script::Cyrillic => "Cyrl",
-        Script::Armenian => "Armn",
-        Script::Georgian => "Geor",
-        Script::Ethiopic => "Ethi",
-        _ => "Zyyy",
+        Script::Common | Script::Inherited | Script::Unknown => "Zyyy",
+        _ => script.short_name(),
     }
 }
 
@@ -186,6 +204,16 @@ mod tests {
     fn mixed_logical_order_is_explicit() {
         assert_eq!(infer_direction("אב Gen 1:1"), Direction::Mixed);
         assert_eq!(classify_script("אב Gen"), "Zyyy");
+    }
+
+    #[test]
+    fn less_common_edition_scripts_keep_their_iso_15924_identity() {
+        assert_eq!(classify_script("𐤀"), "Phnx");
+        assert_eq!(classify_script("ࠀ"), "Samr");
+        assert_eq!(classify_script("अ"), "Deva");
+        assert_eq!(classify_script("𐬀"), "Avst");
+        assert_eq!(classify_script("Ⲁ"), "Copt");
+        assert_eq!(classify_script("𐌰"), "Goth");
     }
 
     #[test]

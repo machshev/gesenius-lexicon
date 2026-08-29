@@ -18,7 +18,7 @@ Generated TEI and SQLite are disposable views. They must never become correction
 
 `diplomatic` records the corpus transcription; `normalized` is exactly its NFC form. Compatibility normalization is prohibited because it can erase meaningful historical glyph distinctions. The untouched OCR text remains in `hypotheses`, even when an engine inserted bidi controls that are excluded from canonical text.
 
-Every span has a BCP 47 language when known, an ISO 15924 script, and `ltr`, `rtl`, or `mixed` direction. Text is in logical order. Direction is presentation metadata, not an embedded formatting character.
+Every span has a BCP 47 language summary, an ISO 15924 script, and `ltr`, `rtl`, or `mixed` direction. Mixed-language lines use `mul` and retain exact Unicode-scalar ranges in `language_runs`, including each run's concrete BCP 47 language, ISO 15924 script, and identification evidence. Non-linguistic text uses `zxx`; legacy unclassified text remains nullable and produces a validation warning. Semantic language tags, writing systems, and OCR model identifiers are separate data. Text is in logical order. Direction is presentation metadata, not an embedded formatting character. See [language coverage and identification](languages.md).
 
 `machine`, `corrected`, and `verified` apply both to entries and spans. A draft may publish machine text, but provenance, confidence, warnings, and review state remain visible.
 
