@@ -5,6 +5,7 @@ use crate::alto::{
     fuse_multilingual_words, join_words, parse_alto, parse_entries_with_hypotheses_continuing,
     printed_label_languages, select_script_trial, word_confidence, write_alto, AltoLine, AltoPage,
     AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage, ScriptTrial,
+    WordScriptContext,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::{normalized_disagreement, polygon_iou};
@@ -1138,7 +1139,14 @@ fn recognize_tesseract_words(
                 let detected_confidence = word.confidence;
                 let detected_language =
                     detected_word_language(&detected_text).map(ToOwned::to_owned);
-                let label_language = labels[index].map(ToOwned::to_owned);
+                // A structural route is as decisive as a printed label: the
+                // edition sets its lemmas in square Hebrew whatever the
+                // multilingual pass made of them.
+                let label_language = if word.structural_language {
+                    Some(routed_language.clone())
+                } else {
+                    labels[index].map(ToOwned::to_owned)
+                };
                 let stem = format!("word-{ordinal:05}");
                 let crop_path = words_path.join(format!("{stem}.png"));
                 let (x, y, width, height) = padded_word_bounds(
@@ -1239,10 +1247,13 @@ fn recognize_tesseract_words(
 
                 let selected = select_script_trial(
                     &trials,
-                    detected_language.as_deref(),
-                    detected_confidence,
-                    label_language.as_deref(),
-                    &announced,
+                    WordScriptContext {
+                        routed: &routed_language,
+                        detected: detected_language.as_deref(),
+                        detected_confidence,
+                        label: label_language.as_deref(),
+                        announced: &announced,
+                    },
                 )
                 .cloned();
                 let use_isolated = selected.as_ref().is_some_and(|selected| {

@@ -81,6 +81,11 @@ pub struct AltoWord {
     /// Tesseract language selected for isolated word recognition.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub language: Option<String>,
+    /// Whether that language comes from the word's structural role rather than
+    /// from what was recognized. A lexicon headword is square Hebrew whatever
+    /// the multilingual pass made of it.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub structural_language: bool,
 }
 
 /// Assignment proving that every recognized line was accounted for.
@@ -188,6 +193,7 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
                         text: content.to_owned(),
                         confidence,
                         language: None,
+                        structural_language: false,
                     });
                 } else if child.has_tag_name("SP") && !text.ends_with(' ') {
                     text.push(' ');
@@ -817,6 +823,10 @@ const MIN_CONTEXTUAL_TRIAL_SCORE: f32 = 0.45;
 /// How far a non-dominant script must beat Hebrew before it is preferred.
 const NON_DOMINANT_TRIAL_MARGIN: f32 = 0.10;
 
+/// The same margin for a script that is only announced elsewhere on the line,
+/// which says nothing about this particular word.
+const ANNOUNCED_TRIAL_MARGIN: f32 = 0.25;
+
 /// Smallest share of a reading that must be letters or their marks. Readings
 /// below it are mostly stray punctuation from a noisy crop.
 const MIN_TRIAL_CLEANLINESS: f32 = 0.60;
@@ -945,73 +955,115 @@ pub fn is_foreign_script_candidate(text: &str, confidence: f32) -> bool {
     interior_capital || mixes_digits || accented || voiceless
 }
 
+/// What the pipeline already knows about a word before its crop is arbitrated.
+#[derive(Debug, Clone, Copy)]
+pub struct WordScriptContext<'a> {
+    /// Script the word was routed to before any isolated reading.
+    pub routed: &'a str,
+    /// Distinctive script the multilingual pass recognized, if any.
+    pub detected: Option<&'a str>,
+    /// That pass's confidence in its own reading.
+    pub detected_confidence: f32,
+    /// Script a printed label governs the word with, if any.
+    pub label: Option<&'a str>,
+    /// Scripts the line announced, by label or by recognized code points.
+    pub announced: &'a [String],
+}
+
 /// Chooses the script that best explains an isolated word crop.
 ///
-/// Every trial is scored by its own confidence weighted by how much of its text
-/// belongs to the script it was read with, so a model that answered with
-/// digits or stray Latin cannot win, and readings that are mostly punctuation
-/// from a noisy crop are discarded outright. A printed label decides the
-/// script, and so does a confident reading in a distinctive script from the
-/// multilingual pass. Failing both, the edition's dominant script is preferred
-/// unless another beats it by a clear margin, and a script the page never
-/// announced is never introduced on confidence alone.
+/// A reading is admissible only if it agrees with the model that produced it,
+/// is not mostly punctuation from a noisy crop, and is in a script the page
+/// announced — by printed label, by recognized code points on the line, or by
+/// being the script the edition sets its lemmas in. Among admissible readings a
+/// printed label decides outright, and so does a confident reading in a
+/// distinctive script from the multilingual pass. Otherwise the best
+/// agreement-weighted confidence wins, with the dominant script preferred
+/// unless another beats it by a clear margin.
+///
+/// The score floors govern that competition between scripts. They are not a
+/// quality bar on the text: the word has already been established as foreign,
+/// so when no reading clears its floor the routed script's own reading is still
+/// preferred to the Latin rubbish it would otherwise keep. Tesseract's
+/// confidence in pointed display Hebrew is routinely near zero even when the
+/// reading is exactly right, and the recorded confidence keeps such a word
+/// below the review threshold either way.
 #[must_use]
 pub fn select_script_trial<'a>(
     trials: &'a [ScriptTrial],
-    detected_language: Option<&str>,
-    detected_confidence: f32,
-    label_language: Option<&str>,
-    announced_languages: &[String],
+    context: WordScriptContext<'_>,
 ) -> Option<&'a ScriptTrial> {
     let attested = |language: &str| {
         language == DOMINANT_WORD_LANGUAGE
-            || detected_language == Some(language)
-            || label_language == Some(language)
+            || context.detected == Some(language)
+            || context.label == Some(language)
     };
-    let viable: Vec<(&ScriptTrial, f32)> = trials
+    let admissible: Vec<(&ScriptTrial, f32)> = trials
         .iter()
         .filter(|trial| {
             word_matches_language(&trial.text, &trial.language)
                 && trial_cleanliness(&trial.text) >= MIN_TRIAL_CLEANLINESS
+                && (attested(&trial.language) || context.announced.contains(&trial.language))
         })
         .map(|trial| (trial, trial_score(trial)))
+        .collect();
+    if let Some(label) = context.label {
+        if let Some((trial, _)) = admissible.iter().find(|(trial, _)| trial.language == label) {
+            return Some(trial);
+        }
+    }
+    if let Some(detected) = context
+        .detected
+        .filter(|_| context.detected_confidence >= CONFIDENT_DETECTION)
+    {
+        if let Some((trial, _)) = admissible
+            .iter()
+            .find(|(trial, _)| trial.language == detected)
+        {
+            return Some(trial);
+        }
+    }
+    let competing: Vec<(&ScriptTrial, f32)> = admissible
+        .iter()
+        .copied()
         .filter(|(trial, score)| {
-            let admissible =
-                attested(&trial.language) || announced_languages.contains(&trial.language);
             let floor = if attested(&trial.language) {
                 MIN_ATTESTED_TRIAL_SCORE
             } else {
                 MIN_CONTEXTUAL_TRIAL_SCORE
             };
-            admissible && *score >= floor
+            *score >= floor
         })
         .collect();
-    if let Some(label) = label_language {
-        if let Some((trial, _)) = viable.iter().find(|(trial, _)| trial.language == label) {
-            return Some(trial);
-        }
-    }
-    if let Some(detected) = detected_language.filter(|_| detected_confidence >= CONFIDENT_DETECTION)
-    {
-        if let Some((trial, _)) = viable.iter().find(|(trial, _)| trial.language == detected) {
-            return Some(trial);
-        }
-    }
-    let (best, best_score) = viable
+    let dominant = admissible
+        .iter()
+        .find(|(trial, _)| trial.language == DOMINANT_WORD_LANGUAGE);
+    if let Some((best, best_score)) = competing
         .iter()
         .copied()
-        .max_by(|left, right| left.1.total_cmp(&right.1))?;
-    if best.language != DOMINANT_WORD_LANGUAGE {
-        if let Some((dominant, dominant_score)) = viable
-            .iter()
-            .find(|(trial, _)| trial.language == DOMINANT_WORD_LANGUAGE)
-        {
-            if best_score < dominant_score + NON_DOMINANT_TRIAL_MARGIN {
-                return Some(dominant);
+        .max_by(|left, right| left.1.total_cmp(&right.1))
+    {
+        if best.language != DOMINANT_WORD_LANGUAGE {
+            if let Some((dominant, dominant_score)) = dominant {
+                // Being announced elsewhere on the line says nothing about
+                // this word, so such a script needs a wider margin than one a
+                // label or the word's own code points name.
+                let margin = if attested(&best.language) {
+                    NON_DOMINANT_TRIAL_MARGIN
+                } else {
+                    ANNOUNCED_TRIAL_MARGIN
+                };
+                if best_score < dominant_score + margin {
+                    return Some(dominant);
+                }
             }
         }
+        return Some(best);
     }
-    Some(best)
+    admissible
+        .iter()
+        .find(|(trial, _)| trial.language == context.routed)
+        .map(|(trial, _)| *trial)
 }
 
 /// Confidence weighted by how much of the reading belongs to its own script.
@@ -1163,6 +1215,7 @@ fn apply_headword_grammar_hint(
     }
     if is_grammar_labeled_headword(words, candidate_index) {
         words[candidate_index].language = Some("heb".to_owned());
+        words[candidate_index].structural_language = true;
     }
 }
 
@@ -1456,6 +1509,7 @@ fn apply_starred_headword_hints(page: &mut AltoPage, supported_languages: &[Stri
                 .filter(|word| word.language.is_some())
             {
                 word.language = Some("heb".to_owned());
+                word.structural_language = true;
             }
         }
     }
@@ -2146,6 +2200,7 @@ mod tests {
     use super::{
         align_lines, classify_word_languages, fuse_multilingual_words, is_foreign_script_candidate,
         parse_alto, select_script_trial, word_matches_language, write_alto, ScriptTrial,
+        WordScriptContext,
     };
 
     const ALTO: &str = r#"<?xml version="1.0"?>
@@ -2333,6 +2388,16 @@ mod tests {
             "syr".to_owned(),
             "grc".to_owned(),
         ];
+        let dominant_only = vec!["heb".to_owned()];
+        fn context(announced: &[String]) -> WordScriptContext<'_> {
+            WordScriptContext {
+                routed: "heb",
+                detected: None,
+                detected_confidence: 0.0,
+                label: None,
+                announced,
+            }
+        }
 
         // Pointed Hebrew read as Latin rubbish by the English pass: Hebrew is
         // chosen even though another script scored slightly higher.
@@ -2342,31 +2407,62 @@ mod tests {
             trial("syr", "ܨܡ", 0.51),
         ];
         assert_eq!(
-            select_script_trial(&trials, None, 0.0, None, &announced).map(|trial| &trial.language),
+            select_script_trial(&trials, context(&announced)).map(|trial| &trial.language),
             Some(&"heb".to_owned())
         );
 
         // A clearly better non-dominant reading still wins.
         let trials = vec![trial("heb", "ווס", 0.59), trial("grc", "διὰ", 0.91)];
         assert_eq!(
-            select_script_trial(&trials, None, 0.0, None, &announced).map(|trial| &trial.language),
+            select_script_trial(&trials, context(&announced)).map(|trial| &trial.language),
             Some(&"grc".to_owned())
         );
 
         // A printed label decides outright.
         let trials = vec![trial("heb", "אחד", 0.89), trial("syr", "ܐܒܐ", 0.62)];
         assert_eq!(
-            select_script_trial(&trials, None, 0.0, Some("syr"), &announced)
-                .map(|trial| &trial.language),
+            select_script_trial(
+                &trials,
+                WordScriptContext {
+                    label: Some("syr"),
+                    ..context(&announced)
+                }
+            )
+            .map(|trial| &trial.language),
             Some(&"syr".to_owned())
         );
 
-        // A script the line never announced is not introduced on confidence
-        // alone, and readings that disagree with their own model are discarded.
+        // A script the line never announced is not introduced, and readings
+        // that disagree with their own model are discarded, so nothing is left.
         let trials = vec![trial("syr", "ܫܗ", 0.82), trial("heb", "20", 0.53)];
+        assert_eq!(select_script_trial(&trials, context(&dominant_only)), None);
+
+        // A lexicon headword is square Hebrew whatever else the line announced,
+        // so its structural route decides the script like a printed label.
+        let trials = vec![trial("heb", "אָבֶר", 0.26), trial("syr", "ܡ", 0.62)];
         assert_eq!(
-            select_script_trial(&trials, None, 0.0, None, &["heb".to_owned()]),
-            None
+            select_script_trial(
+                &trials,
+                WordScriptContext {
+                    label: Some("heb"),
+                    ..context(&announced)
+                }
+            )
+            .map(|trial| &trial.text),
+            Some(&"אָבֶר".to_owned())
+        );
+
+        // Tesseract reports near-zero confidence for pointed display Hebrew
+        // even when the reading is right. Nothing clears the competition floor,
+        // so the routed script's reading is kept rather than Latin rubbish.
+        let trials = vec![
+            trial("heb", "אְבְיון", 0.0),
+            trial("ara", "11", 0.61),
+            trial("syr", "¡”5", 0.24),
+        ];
+        assert_eq!(
+            select_script_trial(&trials, context(&dominant_only)).map(|trial| &trial.text),
+            Some(&"אְבְיון".to_owned())
         );
     }
 
