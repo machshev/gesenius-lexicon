@@ -165,6 +165,24 @@ pub fn validate_entry(entry: &CorpusEntry) -> Vec<ValidationIssue> {
         ));
     }
 
+    if let Some(headword) = &entry.headword {
+        if let Some(language) = headword.language.as_deref() {
+            let printed = profile_for_tag(language)
+                .is_some_and(|profile| profile.scripts.contains(&headword.script.as_str()));
+            if !printed {
+                issues.push(warning(
+                    "headword_script_disagrees_with_language",
+                    &format!("{}#{}", entry.id, headword.id),
+                    &format!(
+                        "headword is tagged `{language}` from its structural role but was \
+                         recognized in `{}`, which the edition never prints it in",
+                        headword.script
+                    ),
+                ));
+            }
+        }
+    }
+
     let mut span_ids = BTreeSet::new();
     for span in entry.spans() {
         if !span_ids.insert(span.id.clone()) {

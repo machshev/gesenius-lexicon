@@ -47,7 +47,7 @@ Every span cites one or more source coordinates:
 - content-addressed page image;
 - transform identity.
 
-The run directory keeps `original.png`, `processed.png`, the exact ImageMagick arguments, input/output dimensions, and ordered transform operations. Raw English-primary Tesseract, multilingual Tesseract, reconstructed word-level Tesseract, and Kraken ALTO files remain separate. `tesseract-word-recognitions.json` records the detected and selected language, isolated crop, candidate text and confidence, and selection result for each foreign word. ALTO word boxes and confidences are retained in the intermediate model so embedded foreign-script runs can be aligned geometrically without treating a mixed line as one recognition decision.
+The run directory keeps `original.png`, `processed.png`, the exact ImageMagick arguments, input/output dimensions, and ordered transform operations. Raw English-primary Tesseract, multilingual Tesseract, reconstructed word-level Tesseract, and Kraken ALTO files remain separate. `tesseract-word-recognitions.json` records, for each word routed to a foreign script, the crop, the script the multilingual pass detected, the script a printed label governs, the scripts the line announced, the reading every single-script model produced for that one crop, and which of them the arbitration selected. Because every trial is kept, a rejected script is as auditable as the chosen one. ALTO word boxes and confidences are retained in the intermediate model so embedded foreign-script runs can be aligned geometrically without treating a mixed line as one recognition decision.
 
 ## SQLite
 

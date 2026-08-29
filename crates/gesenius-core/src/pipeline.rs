@@ -70,6 +70,9 @@ impl PipelineSettings {
         if !(1..=13).contains(&self.tesseract.word_page_segmentation_mode) {
             bail!("word_page_segmentation_mode must be between 1 and 13");
         }
+        if !(1..=13).contains(&self.tesseract.word_fallback_page_segmentation_mode) {
+            bail!("word_fallback_page_segmentation_mode must be between 1 and 13");
+        }
         if !(1..=13).contains(&self.tesseract.block_page_segmentation_mode) {
             bail!("block_page_segmentation_mode must be between 1 and 13");
         }
@@ -123,6 +126,9 @@ pub struct TesseractSettings {
     /// Segmentation mode used after cropping one detected foreign word.
     #[serde(default = "default_word_page_segmentation_mode")]
     pub word_page_segmentation_mode: u8,
+    /// Segmentation mode retried when the primary mode reads a crop as empty.
+    #[serde(default = "default_word_fallback_page_segmentation_mode")]
+    pub word_fallback_page_segmentation_mode: u8,
     /// Percentage enlargement applied to isolated word crops.
     #[serde(default = "default_word_scale_percent")]
     pub word_scale_percent: u16,
@@ -134,6 +140,10 @@ pub struct TesseractSettings {
 }
 
 const fn default_word_page_segmentation_mode() -> u8 {
+    8
+}
+
+const fn default_word_fallback_page_segmentation_mode() -> u8 {
     8
 }
 
@@ -1168,35 +1178,42 @@ fn recognize_tesseract_words(
                 let crop_hash = sha256_file(&crop_path)?;
                 let mut trials = Vec::new();
                 for language in &trial_languages {
-                    let tsv_stem = words_path.join(format!("{stem}-{language}"));
-                    let tsv_path = words_path.join(format!("{stem}-{language}.tsv"));
-                    let tesseract_arguments = vec![
-                        crop_path.display().to_string(),
-                        tsv_stem.display().to_string(),
-                        "--dpi".to_owned(),
-                        scaled_dpi.to_string(),
-                        "-l".to_owned(),
-                        language.clone(),
-                        "--psm".to_owned(),
-                        settings.word_page_segmentation_mode.to_string(),
-                        "tsv".to_owned(),
+                    // The line mode reads some tight crops as empty. Those are
+                    // retried as a single word rather than left unread.
+                    let modes = [
+                        settings.word_page_segmentation_mode,
+                        settings.word_fallback_page_segmentation_mode,
                     ];
-                    run_resumable_command(
-                        &format!("recognize-{stem}-{language}"),
-                        &content_hash(&[
-                            &input_hash,
-                            &crop_hash,
-                            language,
-                            &settings.word_page_segmentation_mode.to_string(),
-                        ]),
-                        "tesseract",
-                        &tesseract_arguments,
-                        std::slice::from_ref(&tsv_path),
-                        &words_path.join(format!("{stem}-{language}.tesseract.stage.json")),
-                    )?;
-                    let Some(candidate) =
-                        parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?
-                    else {
+                    let mut candidate = None;
+                    for mode in modes {
+                        let stem = format!("{stem}-{language}-psm{mode}");
+                        let tsv_stem = words_path.join(&stem);
+                        let tsv_path = words_path.join(format!("{stem}.tsv"));
+                        let tesseract_arguments = vec![
+                            crop_path.display().to_string(),
+                            tsv_stem.display().to_string(),
+                            "--dpi".to_owned(),
+                            scaled_dpi.to_string(),
+                            "-l".to_owned(),
+                            language.clone(),
+                            "--psm".to_owned(),
+                            mode.to_string(),
+                            "tsv".to_owned(),
+                        ];
+                        run_resumable_command(
+                            &format!("recognize-{stem}"),
+                            &content_hash(&[&input_hash, &crop_hash, language, &mode.to_string()]),
+                            "tesseract",
+                            &tesseract_arguments,
+                            std::slice::from_ref(&tsv_path),
+                            &words_path.join(format!("{stem}.tesseract.stage.json")),
+                        )?;
+                        candidate = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?;
+                        if candidate.is_some() {
+                            break;
+                        }
+                    }
+                    let Some(candidate) = candidate else {
                         continue;
                     };
                     // When the multilingual pass saw only punctuation there is

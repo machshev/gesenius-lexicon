@@ -864,11 +864,33 @@ pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) 
             }
             apply_language_context_hints(&mut line.words, supported_languages);
             apply_headword_grammar_hint(&mut line.words, supported_languages, is_indented);
+            apply_printed_label_route(&mut line.words, supported_languages);
             apply_dominant_script_fallback(&mut line.words, supported_languages);
         }
     }
     apply_starred_headword_hints(&mut classified, supported_languages);
     classified
+}
+
+/// Routes words a printed label governs to that label's model.
+///
+/// The English pass reads some Hebrew as digits and symbols rather than as
+/// letters, so `Heb. 75%.` leaves nothing for script detection to work with. A
+/// printed label is explicit enough to license re-reading such a word.
+fn apply_printed_label_route(words: &mut [AltoWord], supported_languages: &[String]) {
+    let labels = printed_label_languages(words);
+    for (index, word) in words.iter_mut().enumerate() {
+        if word.language.is_some() || !word.text.chars().any(char::is_alphanumeric) {
+            continue;
+        }
+        if let Some(language) = labels[index].filter(|language| {
+            supported_languages
+                .iter()
+                .any(|supported| supported == language)
+        }) {
+            word.language = Some(language.to_owned());
+        }
+    }
 }
 
 /// Routes words that were read as implausible Latin to the dominant script.
@@ -1078,7 +1100,7 @@ pub fn printed_label_languages(words: &[AltoWord]) -> Vec<Option<&'static str>> 
             active = Some(language);
             continue;
         }
-        if !word.text.chars().any(char::is_alphabetic) {
+        if !word.text.chars().any(char::is_alphanumeric) {
             continue;
         }
         if contains_foreign_script(&word.text) || !is_plausible_english_word(&word.text) {
@@ -2394,6 +2416,53 @@ mod tests {
         let words = &classified.regions[0].lines[0].words;
         assert_eq!(words[1].language.as_deref(), Some("heb"));
         assert_eq!(words[3].language.as_deref(), Some("heb"));
+    }
+
+    #[test]
+    fn a_printed_label_governs_its_whole_list_and_ends_at_english_prose() {
+        let mut page = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut page.regions[0].lines[0];
+        let template = line.words[1].clone();
+        line.words.clear();
+        for (text, confidence) in [
+            ("Comp.", 0.95),
+            ("Syr.", 0.94),
+            ("I.D'_*éo:", 0.49),
+            (",", 0.90),
+            ("321", 0.24),
+            ("and", 0.93),
+            ("2y", 0.30),
+            ("flower", 0.96),
+            ("75%.", 0.00),
+        ] {
+            let mut word = template.clone();
+            word.text = text.to_owned();
+            word.confidence = confidence;
+            line.words.push(word);
+        }
+        let supported = ["eng".to_owned(), "heb".to_owned(), "syr".to_owned()];
+        let classified = classify_word_languages(&page, &supported);
+        let words = &classified.regions[0].lines[0].words;
+        let routed: Vec<_> = words.iter().map(|word| word.language.as_deref()).collect();
+        assert_eq!(
+            routed,
+            vec![
+                None,
+                None,
+                // The label governs its citation, the digits the English pass
+                // could not read as letters, and the rest of the list.
+                Some("syr"),
+                None,
+                Some("syr"),
+                None,
+                Some("syr"),
+                // English prose ends the citation. Without a label there is
+                // nothing to distinguish a word the English pass read as digits
+                // from a verse reference, so it keeps the English reading.
+                None,
+                None,
+            ]
+        );
     }
 
     #[test]

@@ -73,7 +73,23 @@ French citation.
 
 The pinned initial OCR environment provides `eng`, `heb`, `ara`, `syr`, `grc`,
 and `lat`. These models cover the dominant scripts and remain deliberately
-separate from semantic language metadata. Languages without an exact model are
+separate from semantic language metadata.
+
+Which of them reads a given word is decided by arbitration, not by whichever
+model happened to answer first. Every word that the multilingual pass read in a
+distinctive script, and every word the English pass could only read as
+implausible Latin, is cropped and read again with each single-script model.
+Readings are compared by confidence weighted by how much of the reading belongs
+to the model's own script, and readings that are mostly punctuation are
+discarded. A printed label decides the model outright — `Chald.` selects the
+Hebrew model because the edition prints Chaldee in square Hebrew, and `Pers.`
+selects the Arabic one — as does a confident reading in a distinctive script.
+Otherwise Hebrew, the script the edition sets its lemmas in, is preferred unless
+another model beats it clearly, and a script that neither a label nor recognized
+code points announced on that line is never introduced on confidence alone.
+
+This is an OCR routing decision and remains separate from the semantic tag: a
+word routed to the `heb` model beside a `Chald.` label is still `arc`. Languages without an exact model are
 still identified and retained; they are not silently relabelled as the fallback
 model's language. Adding a model requires a gold fixture showing an improvement
 for that language/script before it joins the default pass.
