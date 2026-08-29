@@ -188,6 +188,42 @@ fn chaldee_headwords_use_aramaic_language_metadata_with_hebrew_ocr_script() {
 }
 
 #[test]
+fn lexicon_structure_identifies_ocr_confused_headwords_as_hebrew() {
+    let alto = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="entry" HPOS="50" VPOS="100" WIDTH="500" HEIGHT="45">
+      <TextLine ID="entry-line" HPOS="90" VPOS="100" WIDTH="460" HEIGHT="45">
+        <String CONTENT="ܐܒ" WC="0.55" HPOS="90" VPOS="100" WIDTH="80" HEIGHT="45"/>
+        <SP WIDTH="8"/><String CONTENT="m." WC="0.98" HPOS="178" VPOS="100" WIDTH="25" HEIGHT="45"/>
+      </TextLine>
+    </TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let parsed = parse_entries(
+        (&alto, &engine("tesseract")),
+        None,
+        &context(
+            "robinson-1854",
+            "1",
+            17,
+            "fixtures/pages/robinson-damaged.pgm",
+        ),
+    );
+    let headword = parsed.entries[0].headword.as_ref().unwrap();
+    assert_eq!(headword.language.as_deref(), Some("he"));
+    assert_eq!(headword.script, "Syrc");
+    assert_eq!(headword.language_runs[0].language, "he");
+    assert_eq!(
+        headword.language_runs[0].evidence,
+        gesenius_core::model::LanguageEvidence::EditionDefault
+    );
+}
+
+#[test]
 fn leading_non_margin_content_is_retained_in_a_headless_entry() {
     let alto = parse_alto(
         r#"<?xml version="1.0"?>
@@ -280,6 +316,7 @@ fn displayed_headings_and_multiline_paragraphs_are_structured() {
     );
 
     assert_eq!(parsed.entries.len(), 1);
+    assert!(parsed.entries[0].headword.is_none());
     assert_eq!(parsed.entries[0].blocks.len(), 2);
     assert_eq!(parsed.entries[0].blocks[0].kind, BlockKind::Heading);
     assert_eq!(parsed.entries[0].blocks[1].kind, BlockKind::Paragraph);

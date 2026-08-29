@@ -10,6 +10,9 @@ For example, Biblical Aramaic is `arc` even when printed in square Hebrew
 (`Hebr`) and recognized with Tesseract's `heb` model. Persian is `fa` when an
 adjacent `Pers.` label identifies Arabic-script text; the visible script alone
 would only justify an Arabic-script OCR route, not the Arabic language tag.
+Likewise, if a printed `Arab.` label precedes characters that OCR encoded as
+Syriac, the semantic tag is `ar`, the script remains `Syrc`, and the evidence is
+`printed_label`. This records the disagreement instead of silently rewriting it.
 
 ## Robinson 1854 inventory
 
@@ -80,8 +83,10 @@ Each `language_run` uses Unicode-scalar offsets into normalized text and records
 one of:
 
 - `unicode_script` for a distinctive native script;
-- `printed_label` for a local edition label that resolves a shared script;
-- `edition_default` for otherwise ambiguous dominant English prose.
+- `printed_label` for a local edition label that resolves a shared or
+  OCR-confused script;
+- `edition_default` for otherwise ambiguous dominant English prose or the
+  Hebrew-language structural role of a lexicon headword.
 
 A line containing more than one language is summarized as `mul`; text with no
 linguistic content is `zxx`. Validation checks run bounds, concrete catalogue

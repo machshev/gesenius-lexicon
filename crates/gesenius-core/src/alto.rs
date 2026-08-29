@@ -443,34 +443,40 @@ pub fn parse_entries_with_hypotheses_continuing(
             .collect();
         let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
-        if starts_entry && entry.headword.is_none() {
-            entry.headword =
-                canonical_grammar_candidate
-                    .and_then(|candidate_index| {
-                        extract_candidate_headword_at(&span, line, candidate_index)
+        if starts_entry && entry.headword.is_none() && !is_nonlexical_title(line, block_kind) {
+            entry.headword = canonical_grammar_candidate
+                .and_then(|candidate_index| {
+                    extract_candidate_headword_at(&span, line, candidate_index)
+                })
+                .or_else(|| {
+                    hypothesis_grammar_candidate.and_then(|(hypothesis, candidate_index)| {
+                        aligned_candidate_index(line, &hypothesis.words[candidate_index]).and_then(
+                            |canonical_index| {
+                                extract_candidate_headword_at(&span, line, canonical_index)
+                            },
+                        )
                     })
-                    .or_else(|| {
-                        hypothesis_grammar_candidate.and_then(|(hypothesis, candidate_index)| {
-                            aligned_candidate_index(line, &hypothesis.words[candidate_index])
-                                .and_then(|canonical_index| {
-                                    extract_candidate_headword_at(&span, line, canonical_index)
-                                })
-                        })
-                    })
-                    .or_else(|| extract_headword(&span))
-                    .or_else(|| {
-                        canonical_structural_candidate.and_then(|candidate_index| {
+                })
+                .or_else(|| extract_headword(&span))
+                .or_else(|| {
+                    (structural_boundary || grammar_boundary || hebrew_boundary)
+                        .then_some(canonical_structural_candidate)
+                        .flatten()
+                        .and_then(|candidate_index| {
                             extract_candidate_headword_at(&span, line, candidate_index)
                         })
-                    })
-                    .or_else(|| {
-                        hypothesis_structural_candidate.and_then(|(hypothesis, candidate_index)| {
+                })
+                .or_else(|| {
+                    (structural_boundary || grammar_boundary || hebrew_boundary)
+                        .then_some(hypothesis_structural_candidate)
+                        .flatten()
+                        .and_then(|(hypothesis, candidate_index)| {
                             aligned_candidate_index(line, &hypothesis.words[candidate_index])
                                 .and_then(|canonical_index| {
                                     extract_candidate_headword_at(&span, line, canonical_index)
                                 })
                         })
-                    });
+                });
         }
         let continues_block = !starts_entry
             && entry
@@ -544,6 +550,21 @@ fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> boo
             >= letters.len() * 4;
     let displayed = region.lines.len() <= 3 && (spans_page_center || uppercase);
     compact && displayed
+}
+
+fn is_nonlexical_title(line: &AltoLine, kind: BlockKind) -> bool {
+    if kind != BlockKind::Heading {
+        return false;
+    }
+    let letters = line
+        .text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .collect::<Vec<_>>();
+    letters.len() >= 4
+        && letters
+            .iter()
+            .all(|character| character.is_ascii_uppercase())
 }
 
 fn same_structural_block(
@@ -1365,10 +1386,17 @@ fn extract_candidate_headword_at(
         });
     let default_language = headword_default_language(headword, label);
     (span.language, span.language_runs) = identify_languages(&span.normalized, default_language);
-    if label.is_some() {
+    if label.is_some() || span.language.as_deref() != Some(default_language) {
         for run in &mut span.language_runs {
+            run.language = default_language.to_owned();
             run.evidence = crate::model::LanguageEvidence::PrintedLabel;
         }
+        if label.is_none() {
+            for run in &mut span.language_runs {
+                run.evidence = crate::model::LanguageEvidence::EditionDefault;
+            }
+        }
+        span.language = (!span.language_runs.is_empty()).then(|| default_language.to_owned());
     }
     span.script = classify_script(headword);
     span.direction = infer_direction(headword);
@@ -1376,17 +1404,8 @@ fn extract_candidate_headword_at(
     Some(span)
 }
 
-fn headword_default_language<'a>(headword: &str, printed_label: Option<&'a str>) -> &'a str {
-    printed_label.unwrap_or_else(|| {
-        if headword
-            .chars()
-            .any(|character| character.script() == unicode_script::Script::Hebrew)
-        {
-            "he"
-        } else {
-            "en"
-        }
-    })
+fn headword_default_language<'a>(_headword: &str, printed_label: Option<&'a str>) -> &'a str {
+    printed_label.unwrap_or("he")
 }
 
 fn aligned_candidate_index(canonical: &AltoLine, hypothesis: &AltoWord) -> Option<usize> {
@@ -1542,7 +1561,13 @@ fn add_replacement(
     let primary_confidence = word_confidence(&primary.words[primary_start..=primary_end]);
     let secondary_confidence =
         word_confidence(&multilingual.words[secondary_start..=secondary_end]);
+    let first_alphanumeric = multilingual.words.iter().position(|word| {
+        word.text
+            .chars()
+            .any(|character| character.is_alphanumeric())
+    });
     let is_headword = secondary_start == secondary_end
+        && first_alphanumeric == Some(secondary_start)
         && is_grammar_labeled_headword(&multilingual.words, secondary_start);
     if !is_headword
         && primary_confidence >= 0.70
@@ -1910,6 +1935,48 @@ mod tests {
         );
         assert_eq!(fused.regions[0].lines[1].text, "with");
         assert_eq!(fused.regions[0].lines[1].words[0].id, "primary-word-3");
+    }
+
+    #[test]
+    fn grammar_labels_do_not_turn_midline_english_into_foreign_headwords() {
+        let mut primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let primary_line = &mut primary.regions[0].lines[0];
+        let template = primary_line.words[0].clone();
+        primary_line.words = [
+            ("Very", 10.0, 50.0, 0.91),
+            ("frequent", 70.0, 100.0, 0.91),
+            ("in", 180.0, 30.0, 0.91),
+            ("Plur.", 220.0, 60.0, 0.76),
+        ]
+        .into_iter()
+        .enumerate()
+        .map(|(index, (text, x, width, confidence))| {
+            let mut word = template.clone();
+            word.id = format!("primary-{index}");
+            word.text = text.to_owned();
+            word.confidence = confidence;
+            word.polygon = vec![
+                crate::model::Point { x, y: 100.0 },
+                crate::model::Point {
+                    x: x + width,
+                    y: 100.0,
+                },
+                crate::model::Point {
+                    x: x + width,
+                    y: 140.0,
+                },
+                crate::model::Point { x, y: 140.0 },
+            ];
+            word
+        })
+        .collect();
+
+        let mut multilingual = primary.clone();
+        multilingual.regions[0].lines[0].words[2].text = "מ1".to_owned();
+        multilingual.regions[0].lines[0].words[2].confidence = 0.67;
+
+        let fused = fuse_multilingual_words(&primary, &multilingual);
+        assert_eq!(fused.regions[0].lines[0].words[2].text, "in");
     }
 
     #[test]

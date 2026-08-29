@@ -138,10 +138,11 @@ const fn profile(
 /// Identifies semantic languages and exact character ranges in text.
 ///
 /// `default_language` is used only for ambiguous scripts such as Latin and
-/// square Hebrew; unique native scripts always take precedence. Printed labels
-/// can refine a compatible neighbouring native-script form. Latin-script
-/// comparative forms are relabelled only after an abbreviated printed label,
-/// avoiding prose such as "the French h".
+/// square Hebrew; unique native scripts normally take precedence. Printed
+/// labels identify neighbouring native-script forms even when OCR emitted the
+/// wrong script's code points; the run's `script` continues to record those
+/// visible code points. Latin-script comparative forms are relabelled only
+/// after an abbreviated printed label, avoiding prose such as "the French h".
 #[must_use]
 pub fn identify_languages(
     text: &str,
@@ -153,21 +154,39 @@ pub fn identify_languages(
             continue;
         };
         if let Some(previous) = index.checked_sub(1).and_then(|index| tokens.get_mut(index)) {
-            if previous.script != "Latn" && profile.scripts.contains(&previous.script.as_str()) {
+            if previous.has_letters
+                && is_native_script(&previous.script)
+                && previous.evidence != LanguageEvidence::PrintedLabel
+            {
                 previous.language = profile.tag;
                 previous.evidence = LanguageEvidence::PrintedLabel;
             }
         }
         let abbreviated = tokens[index].text.contains('.');
-        if let Some(next) = tokens.get_mut(index + 1) {
-            let native_script = next.script != "Latn" && next.script != "Zyyy";
+        let next_index = (index + 1..tokens.len())
+            .take(3)
+            .find(|candidate| tokens[*candidate].has_letters);
+        if let Some(next_index) = next_index {
+            let native_script = is_native_script(&tokens[next_index].script);
             let labelled_latin = abbreviated
                 && latin_comparison_language(profile.tag)
-                && latin_citation_candidate(&next.text);
-            if profile.scripts.contains(&next.script.as_str()) && (native_script || labelled_latin)
+                && latin_citation_candidate(&tokens[next_index].text);
+            if native_script {
+                for next in tokens
+                    .iter_mut()
+                    .skip(next_index)
+                    .take_while(|token| token.has_letters && is_native_script(&token.script))
+                {
+                    next.language = profile.tag;
+                    next.evidence = LanguageEvidence::PrintedLabel;
+                }
+            } else if labelled_latin
+                && profile
+                    .scripts
+                    .contains(&tokens[next_index].script.as_str())
             {
-                next.language = profile.tag;
-                next.evidence = LanguageEvidence::PrintedLabel;
+                tokens[next_index].language = profile.tag;
+                tokens[next_index].evidence = LanguageEvidence::PrintedLabel;
             }
         }
     }
@@ -201,6 +220,10 @@ pub fn identify_languages(
         _ => Some("mul".to_owned()),
     };
     (language, runs)
+}
+
+fn is_native_script(script: &str) -> bool {
+    !matches!(script, "Latn" | "Zyyy")
 }
 
 /// Finds an explicit printed language label.
@@ -426,6 +449,27 @@ mod tests {
         let (_, persian) = identify_languages("Pers. بند", "en");
         assert_eq!(persian[1].language, "fa");
         assert_eq!(persian[1].script, "Arab");
+    }
+
+    #[test]
+    fn printed_labels_override_ocr_script_confusion_without_hiding_it() {
+        let (_, arabic) = identify_languages("Arab. ܘ أجل", "en");
+        assert_eq!(
+            arabic
+                .iter()
+                .map(|run| (run.language.as_str(), run.script.as_str(), run.evidence))
+                .collect::<Vec<_>>(),
+            vec![
+                ("en", "Latn", LanguageEvidence::EditionDefault),
+                ("ar", "Syrc", LanguageEvidence::PrintedLabel),
+                ("ar", "Arab", LanguageEvidence::PrintedLabel),
+            ]
+        );
+
+        let (_, syriac) = identify_languages("Syr. 2 وحص to blossom", "en");
+        assert_eq!(syriac[1].language, "syr");
+        assert_eq!(syriac[1].script, "Arab");
+        assert_eq!(syriac[1].evidence, LanguageEvidence::PrintedLabel);
     }
 
     #[test]
