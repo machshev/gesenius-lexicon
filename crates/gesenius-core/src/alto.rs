@@ -780,8 +780,9 @@ pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> A
 }
 
 /// Classifies each explicitly foreign-script word into a single Tesseract
-/// language. Adjacent foreign words are smoothed when one script is a lone
-/// outlier in an otherwise consistent run.
+/// language. Printed language labels can recover otherwise unreadable words,
+/// but explicit Unicode script evidence is never replaced by neighbouring
+/// words from another script.
 #[must_use]
 pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) -> AltoPage {
     let layout = PageLayout::from_page(page);
@@ -800,7 +801,6 @@ pub fn classify_word_languages(page: &AltoPage, supported_languages: &[String]) 
                     .map(ToOwned::to_owned);
             }
             apply_language_context_hints(&mut line.words, supported_languages);
-            smooth_foreign_language_runs(&mut line.words);
             apply_headword_grammar_hint(&mut line.words, supported_languages, is_indented);
         }
     }
@@ -1239,43 +1239,6 @@ pub fn word_matches_language(text: &str, language: &str) -> bool {
             )
         });
     alphabetic > 0 && matching * 3 >= alphabetic * 2
-}
-
-fn smooth_foreign_language_runs(words: &mut [AltoWord]) {
-    let mut start = 0_usize;
-    while start < words.len() {
-        if words[start].language.is_none() {
-            start += 1;
-            continue;
-        }
-        let mut end = start + 1;
-        while end < words.len() && words[end].language.is_some() {
-            end += 1;
-        }
-        let run = &mut words[start..end];
-        if run.len() >= 3
-            && run.iter().all(|word| {
-                word.text
-                    .chars()
-                    .filter(|character| character.is_alphabetic())
-                    .count()
-                    >= 2
-            })
-        {
-            let mut counts = std::collections::BTreeMap::new();
-            for language in run.iter().filter_map(|word| word.language.as_deref()) {
-                *counts.entry(language.to_owned()).or_insert(0_usize) += 1;
-            }
-            if let Some((language, count)) = counts.into_iter().max_by_key(|(_, count)| *count) {
-                if count * 3 >= run.len() * 2 {
-                    for word in run {
-                        word.language = Some(language.clone());
-                    }
-                }
-            }
-        }
-        start = end;
-    }
 }
 
 fn new_entry(id: &str, ordinal: u32, context: &ParseContext<'_>) -> CorpusEntry {
@@ -1927,7 +1890,7 @@ mod tests {
     }
 
     #[test]
-    fn classifies_each_foreign_word_and_smooths_an_isolated_script_error() {
+    fn classifies_each_foreign_word_without_overriding_explicit_script_evidence() {
         let mut page = parse_alto(MULTILINGUAL_REORDERED).unwrap();
         page.regions[0].lines[1].words = vec![
             page.regions[0].lines[1].words[0].clone(),
@@ -1945,10 +1908,12 @@ mod tests {
                 .map(ToOwned::to_owned)
                 .collect::<Vec<_>>(),
         );
-        assert!(classified.regions[0].lines[1]
+        let languages = classified.regions[0].lines[1]
             .words
             .iter()
-            .all(|word| word.language.as_deref() == Some("heb")));
+            .map(|word| word.language.as_deref())
+            .collect::<Vec<_>>();
+        assert_eq!(languages, vec![Some("heb"), Some("heb"), Some("ara")]);
     }
 
     #[test]
