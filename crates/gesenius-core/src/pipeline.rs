@@ -1417,9 +1417,16 @@ fn should_use_isolated_word(
         .chars()
         .filter(|character| character.is_alphabetic())
         .count();
-    selected.confidence >= detected_confidence + 0.05
-        && candidate_letters.saturating_mul(2) >= detected_letters
-        && normalized_disagreement(detected_text, &selected.text) <= 0.34
+    let comparable = candidate_letters.saturating_mul(2) >= detected_letters
+        && normalized_disagreement(detected_text, &selected.text) <= 0.34;
+    let clearly_more_confident = selected.confidence >= detected_confidence + 0.05;
+    // An isolated crop removes the neighbouring type that confuses a page
+    // model. Accept a strong same-script reading when it is within ten points
+    // of the page confidence as well as when it wins outright; this recovers
+    // small one-character errors without admitting weak or truncated crops.
+    let strong_isolated =
+        selected.confidence >= 0.70 && selected.confidence + 0.10 >= detected_confidence;
+    comparable && (clearly_more_confident || strong_isolated)
 }
 
 fn recognize_kraken(
@@ -1716,6 +1723,18 @@ mod tests {
             Some("heb"),
             0.70,
             &trial("heb", "אָבות", 0.80),
+        ));
+        assert!(should_use_isolated_word(
+            "παλεῖν",
+            Some("grc"),
+            0.79,
+            &trial("grc", "καλεῖν", 0.74),
+        ));
+        assert!(!should_use_isolated_word(
+            "אבות",
+            Some("heb"),
+            0.90,
+            &trial("heb", "אָב", 0.72),
         ));
     }
 

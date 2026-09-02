@@ -1929,6 +1929,28 @@ fn add_replacement(
     let is_headword = secondary_start == secondary_end
         && first_alphanumeric == Some(secondary_start)
         && is_grammar_labeled_headword(&multilingual.words, secondary_start);
+    let labels = printed_label_languages(&multilingual.words);
+    let explicitly_labelled = labels[secondary_start..=secondary_end]
+        .iter()
+        .any(Option::is_some);
+    let isolated_plausible_latin = primary_start == primary_end
+        && secondary_start == secondary_end
+        && !explicitly_labelled
+        && is_plausible_english_word(&primary.words[primary_start].text)
+        && !is_foreign_script_candidate(
+            &primary.words[primary_start].text,
+            primary.words[primary_start].confidence,
+        );
+    // A multilingual page model can occasionally turn an ordinary low-
+    // confidence Latin word into a confident word in another script. Keep the
+    // layout pass's reading when the proposed replacement is an isolated,
+    // unlabelled word and the Latin reading has none of the digit, symbol,
+    // capitalization, or vowel defects that normally expose disguised Hebrew.
+    // Multiword foreign runs and explicitly labelled citations remain eligible
+    // for fusion.
+    if !is_headword && isolated_plausible_latin {
+        return;
+    }
     if !is_headword
         && primary_confidence >= 0.70
         && primary.words[primary_start..=primary_end]
@@ -2296,6 +2318,26 @@ mod tests {
         );
         assert_eq!(fused.regions[0].lines[1].text, "with");
         assert_eq!(fused.regions[0].lines[1].words[0].id, "primary-word-3");
+    }
+
+    #[test]
+    fn fusion_keeps_an_isolated_unlabelled_latin_word() {
+        let mut primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let primary_line = &mut primary.regions[0].lines[0];
+        primary_line.words.truncate(1);
+        primary_line.words[0].text = "Quest.".to_owned();
+        primary_line.words[0].confidence = 0.50;
+        primary_line.text = "Quest.".to_owned();
+
+        let mut multilingual = primary.clone();
+        let multilingual_word = &mut multilingual.regions[0].lines[0].words[0];
+        multilingual_word.text = "اوعدي".to_owned();
+        multilingual_word.confidence = 0.75;
+        multilingual.regions[0].lines[0].text = "اوعدي".to_owned();
+
+        let fused = fuse_multilingual_words(&primary, &multilingual);
+
+        assert_eq!(fused.regions[0].lines[0].text, "Quest.");
     }
 
     #[test]
