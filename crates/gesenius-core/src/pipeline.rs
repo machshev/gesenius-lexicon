@@ -3,9 +3,9 @@
 use crate::alto::{
     announced_line_languages, classify_word_languages, detected_word_language,
     fuse_multilingual_words, join_words, parse_alto, parse_entries_with_hypotheses_continuing,
-    printed_label_languages, select_script_trial, word_confidence, write_alto, AltoLine, AltoPage,
-    AltoWord, EngineIdentity, LineAssignment, ParseContext, ParsedPage, ScriptTrial,
-    WordScriptContext,
+    printed_label_languages, select_script_trial, word_confidence, word_matches_language,
+    write_alto, AltoLine, AltoPage, AltoWord, EngineIdentity, LineAssignment, ParseContext,
+    ParsedPage, ScriptTrial, WordScriptContext,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::{normalized_disagreement, polygon_iou};
@@ -74,6 +74,14 @@ impl PipelineSettings {
         if !(1..=13).contains(&self.tesseract.word_fallback_page_segmentation_mode) {
             bail!("word_fallback_page_segmentation_mode must be between 1 and 13");
         }
+        if self
+            .tesseract
+            .word_additional_page_segmentation_modes
+            .iter()
+            .any(|mode| !(1..=13).contains(mode))
+        {
+            bail!("word_additional_page_segmentation_modes must be between 1 and 13");
+        }
         if !(1..=13).contains(&self.tesseract.block_page_segmentation_mode) {
             bail!("block_page_segmentation_mode must be between 1 and 13");
         }
@@ -130,6 +138,9 @@ pub struct TesseractSettings {
     /// Segmentation mode retried when the primary mode reads a crop as empty.
     #[serde(default = "default_word_fallback_page_segmentation_mode")]
     pub word_fallback_page_segmentation_mode: u8,
+    /// Further segmentation modes compared for isolated word crops.
+    #[serde(default)]
+    pub word_additional_page_segmentation_modes: Vec<u8>,
     /// Percentage enlargement applied to isolated word crops.
     #[serde(default = "default_word_scale_percent")]
     pub word_scale_percent: u16,
@@ -1093,6 +1104,104 @@ struct WordCandidate {
     confidence: f32,
 }
 
+fn word_recognition_modes(settings: &TesseractSettings) -> Vec<u8> {
+    let mut modes = Vec::new();
+    for mode in [
+        settings.word_page_segmentation_mode,
+        settings.word_fallback_page_segmentation_mode,
+    ]
+    .into_iter()
+    .chain(
+        settings
+            .word_additional_page_segmentation_modes
+            .iter()
+            .copied(),
+    ) {
+        if !modes.contains(&mode) {
+            modes.push(mode);
+        }
+    }
+    modes
+}
+
+/// Restores punctuation that Tesseract emits as a separate visual-order token
+/// before a right-to-left word. The TSV order `. אלֶף` represents the printed
+/// logical word `אלֶף.` rather than two tokens.
+fn normalize_word_candidate(text: &str, language: &str) -> String {
+    let words: Vec<&str> = text.split_whitespace().collect();
+    if !matches!(language, "heb" | "ara" | "syr") || words.len() < 2 {
+        return words.join(" ");
+    }
+    let leading_marks = words
+        .iter()
+        .take_while(|word| {
+            !word
+                .chars()
+                .any(|character| character.is_alphabetic() || character.is_numeric())
+        })
+        .count();
+    if leading_marks == 0 || leading_marks == words.len() {
+        return words.join(" ");
+    }
+    format!(
+        "{}{}",
+        words[leading_marks..].join(" "),
+        words[..leading_marks].join("")
+    )
+}
+
+/// Drops crop-edge noise without discarding punctuation independently visible
+/// in the page reading. OCR may mistake a foreign word for digits while still
+/// locating its final full stop correctly; that full stop belongs to the
+/// source even though the letters themselves are replaced.
+fn trim_unattested_edge_punctuation(detected: &str, candidate: &str) -> String {
+    let is_edge_mark =
+        |character: char| !character.is_alphanumeric() && canonical_combining_class(character) == 0;
+    let detected_leading: Vec<char> = detected.chars().take_while(|c| is_edge_mark(*c)).collect();
+    let detected_trailing: Vec<char> = detected
+        .chars()
+        .rev()
+        .take_while(|c| is_edge_mark(*c))
+        .collect();
+    candidate
+        .trim_matches(|character| {
+            is_edge_mark(character)
+                && !detected_leading.contains(&character)
+                && !detected_trailing.contains(&character)
+        })
+        .to_owned()
+}
+
+/// Selects the crop reading with the greatest amount of confidence-backed
+/// evidence in the requested script. Confidence alone favors short fragments:
+/// a clear single Aleph can outscore a slightly less certain complete pointed
+/// word. Scaling confidence by the square root of linguistic characters keeps
+/// that fragment from winning without letting a long, weak hallucination take
+/// over.
+fn select_word_candidate(candidates: Vec<WordCandidate>, language: &str) -> Option<WordCandidate> {
+    let evidence = |candidate: &WordCandidate| {
+        if !word_matches_language(&candidate.text, language) {
+            return 0.0;
+        }
+        let linguistic = candidate
+            .text
+            .chars()
+            .filter(|character| {
+                character.is_alphabetic() || canonical_combining_class(*character) != 0
+            })
+            .count();
+        candidate.confidence * (linguistic as f32).sqrt()
+    };
+    candidates
+        .into_iter()
+        .filter(|candidate| evidence(candidate) > 0.0)
+        .max_by(|left, right| {
+            evidence(left)
+                .total_cmp(&evidence(right))
+                .then_with(|| left.confidence.total_cmp(&right.confidence))
+        })
+}
+
 fn recognize_tesseract_words(
     input: &Path,
     page_path: &Path,
@@ -1108,7 +1217,7 @@ fn recognize_tesseract_words(
         run_id,
         &serde_json::to_string(settings)?,
         &serde_json::to_string(classified)?,
-        "isolated-word-recognition-v2",
+        "isolated-word-recognition-v4",
     ]);
     let outputs = [output_path.clone(), manifest_path.clone()];
     if stage_is_current(&receipt_path, &input_hash, &outputs)? {
@@ -1186,14 +1295,13 @@ fn recognize_tesseract_words(
                 let crop_hash = sha256_file(&crop_path)?;
                 let mut trials = Vec::new();
                 for language in &trial_languages {
-                    // The line mode reads some tight crops as empty. Those are
-                    // retried as a single word rather than left unread.
-                    let modes = [
-                        settings.word_page_segmentation_mode,
-                        settings.word_fallback_page_segmentation_mode,
-                    ];
-                    let mut candidate = None;
-                    for mode in modes {
+                    // A line, word, and sparse crop can produce materially
+                    // different readings of pointed type. Compare every
+                    // configured mode instead of accepting the first nonempty
+                    // result, which commonly truncates a whole Hebrew word to
+                    // its most prominent letter.
+                    let mut candidates = Vec::new();
+                    for mode in word_recognition_modes(settings) {
                         let stem = format!("{stem}-{language}-psm{mode}");
                         let tsv_stem = words_path.join(&stem);
                         let tsv_path = words_path.join(format!("{stem}.tsv"));
@@ -1216,12 +1324,14 @@ fn recognize_tesseract_words(
                             std::slice::from_ref(&tsv_path),
                             &words_path.join(format!("{stem}.tesseract.stage.json")),
                         )?;
-                        candidate = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?;
-                        if candidate.is_some() {
-                            break;
+                        if let Some(mut candidate) =
+                            parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?
+                        {
+                            candidate.text = normalize_word_candidate(&candidate.text, language);
+                            candidates.push(candidate);
                         }
                     }
-                    let Some(candidate) = candidate else {
+                    let Some(candidate) = select_word_candidate(candidates, language) else {
                         continue;
                     };
                     // When the multilingual pass saw only punctuation there is
@@ -1230,13 +1340,7 @@ fn recognize_tesseract_words(
                     let text = if detected_text.chars().any(char::is_alphabetic) {
                         candidate.text
                     } else {
-                        candidate
-                            .text
-                            .trim_matches(|character: char| {
-                                !character.is_alphabetic()
-                                    && canonical_combining_class(character) == 0
-                            })
-                            .to_owned()
+                        trim_unattested_edge_punctuation(&detected_text, &candidate.text)
                     };
                     trials.push(ScriptTrial {
                         language: language.clone(),
@@ -1307,7 +1411,7 @@ fn recognize_tesseract_words(
         "tesseract",
         &[
             "single-language word crops".to_owned(),
-            format!("--psm {}", settings.word_page_segmentation_mode),
+            format!("--psm {:?}", word_recognition_modes(settings)),
             format!("--scale {}%", settings.word_scale_percent),
         ],
         &outputs,
@@ -1681,8 +1785,9 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 #[cfg(test)]
 mod tests {
     use super::{
-        deduplicate_overlapping_lines, entry_source_page, parse_page_spec, should_replace_entry,
-        should_use_isolated_word,
+        deduplicate_overlapping_lines, entry_source_page, normalize_word_candidate,
+        parse_page_spec, select_word_candidate, should_replace_entry, should_use_isolated_word,
+        trim_unattested_edge_punctuation, WordCandidate,
     };
     use crate::alto::{parse_alto, ScriptTrial};
     use crate::model::CorpusEntry;
@@ -1736,6 +1841,37 @@ mod tests {
             0.90,
             &trial("heb", "אָב", 0.72),
         ));
+    }
+
+    #[test]
+    fn right_to_left_word_recognition_restores_trailing_punctuation() {
+        assert_eq!(normalize_word_candidate(". אלֶף", "heb"), "אלֶף.");
+        assert_eq!(normalize_word_candidate("word .", "eng"), "word .");
+        assert_eq!(trim_unattested_edge_punctuation("75%.", "אלֶף."), "אלֶף.");
+        assert_eq!(trim_unattested_edge_punctuation("&", ":אלֶף;"), "אלֶף");
+    }
+
+    #[test]
+    fn crop_mode_arbitration_prefers_complete_script_evidence() {
+        let selected = select_word_candidate(
+            vec![
+                WordCandidate {
+                    text: "א".to_owned(),
+                    confidence: 0.31,
+                },
+                WordCandidate {
+                    text: "אלֶף".to_owned(),
+                    confidence: 0.29,
+                },
+                WordCandidate {
+                    text: "אבגדהוזחטי".to_owned(),
+                    confidence: 0.05,
+                },
+            ],
+            "heb",
+        )
+        .expect("one Hebrew reading");
+        assert_eq!(selected.text, "אלֶף");
     }
 
     #[test]
