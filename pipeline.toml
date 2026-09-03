@@ -40,6 +40,9 @@ word_fallback_page_segmentation_mode = 8
 word_additional_page_segmentation_modes = [10]
 word_scale_percent = 200
 word_padding_pixels = 8
+# A tight crop excludes marks from neighbouring Roman words and can preserve
+# fine Hebrew points that the context-padded reading drops.
+word_additional_padding_pixels = [0]
 # Roman words are only revisited when this image pass can arbitrate a
 # disagreement with the independent embedded PDF text layer.
 roman_word_refinement_confidence = 0.85

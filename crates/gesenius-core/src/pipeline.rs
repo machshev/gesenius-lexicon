@@ -97,6 +97,14 @@ impl PipelineSettings {
         if self.tesseract.word_padding_pixels > 100 {
             bail!("word_padding_pixels must not exceed 100");
         }
+        if self
+            .tesseract
+            .word_additional_padding_pixels
+            .iter()
+            .any(|padding| *padding > 100)
+        {
+            bail!("word_additional_padding_pixels must not exceed 100");
+        }
         if !(0.0..=1.0).contains(&self.tesseract.roman_word_refinement_confidence) {
             bail!("roman_word_refinement_confidence must be between 0 and 1");
         }
@@ -181,6 +189,9 @@ pub struct TesseractSettings {
     /// Source-image padding retained around each detected word box.
     #[serde(default = "default_word_padding_pixels")]
     pub word_padding_pixels: u32,
+    /// Further source-image paddings compared for isolated foreign words.
+    #[serde(default)]
+    pub word_additional_padding_pixels: Vec<u32>,
     /// Re-read Roman tokens below this confidence when the PDF layer differs.
     #[serde(default = "default_roman_word_refinement_confidence")]
     pub roman_word_refinement_confidence: f32,
@@ -1342,6 +1353,7 @@ struct IsolatedWordRecognition {
     line_id: String,
     word_id: String,
     crop: String,
+    crops: Vec<String>,
     detected_text: String,
     detected_language: Option<String>,
     label_language: Option<String>,
@@ -1384,6 +1396,16 @@ fn word_recognition_modes(settings: &TesseractSettings) -> Vec<u8> {
         }
     }
     modes
+}
+
+fn word_recognition_paddings(settings: &TesseractSettings) -> Vec<u32> {
+    let mut paddings = vec![settings.word_padding_pixels];
+    for padding in &settings.word_additional_padding_pixels {
+        if !paddings.contains(padding) {
+            paddings.push(*padding);
+        }
+    }
+    paddings
 }
 
 /// Restores punctuation that Tesseract emits as a separate visual-order token
@@ -1620,7 +1642,7 @@ fn recognize_tesseract_words(
         &serde_json::to_string(settings)?,
         &serde_json::to_string(classified)?,
         &serde_json::to_string(&pdf_text_page)?,
-        "isolated-word-recognition-v6",
+        "isolated-word-recognition-v7",
     ]);
     let outputs = [output_path.clone(), manifest_path.clone()];
     if stage_is_current(&receipt_path, &input_hash, &outputs)? {
@@ -1680,40 +1702,55 @@ fn recognize_tesseract_words(
                     labels[index].map(ToOwned::to_owned)
                 };
                 let stem = format!("word-{ordinal:05}");
-                let crop_path = words_path.join(format!("{stem}.png"));
-                let (x, y, width, height) = padded_word_bounds(
-                    word,
-                    classified.width,
-                    classified.height,
-                    settings.word_padding_pixels,
-                )
-                .with_context(|| format!("word {} has empty geometry", word.id))?;
                 let scale_percent = if roman_refinement {
                     settings.roman_word_scale_percent
                 } else {
                     settings.word_scale_percent
                 };
-                let crop_arguments = vec![
-                    input.display().to_string(),
-                    "-crop".to_owned(),
-                    format!("{width}x{height}+{x}+{y}"),
-                    "+repage".to_owned(),
-                    "-bordercolor".to_owned(),
-                    "white".to_owned(),
-                    "-border".to_owned(),
-                    "8".to_owned(),
-                    "-resize".to_owned(),
-                    format!("{scale_percent}%"),
-                    crop_path.display().to_string(),
-                ];
-                run_resumable_command(
-                    &format!("crop-{stem}"),
-                    &content_hash(&[&input_hash, &serde_json::to_string(&word.polygon)?]),
-                    "magick",
-                    &crop_arguments,
-                    std::slice::from_ref(&crop_path),
-                    &words_path.join(format!("{stem}.crop.stage.json")),
-                )?;
+                let paddings = if roman_refinement {
+                    vec![settings.word_padding_pixels]
+                } else {
+                    word_recognition_paddings(settings)
+                };
+                let mut crops = Vec::new();
+                for padding in paddings {
+                    let crop_stem = if padding == settings.word_padding_pixels {
+                        stem.clone()
+                    } else {
+                        format!("{stem}-padding-{padding}")
+                    };
+                    let crop_path = words_path.join(format!("{crop_stem}.png"));
+                    let (x, y, width, height) =
+                        padded_word_bounds(word, classified.width, classified.height, padding)
+                            .with_context(|| format!("word {} has empty geometry", word.id))?;
+                    let crop_arguments = vec![
+                        input.display().to_string(),
+                        "-crop".to_owned(),
+                        format!("{width}x{height}+{x}+{y}"),
+                        "+repage".to_owned(),
+                        "-bordercolor".to_owned(),
+                        "white".to_owned(),
+                        "-border".to_owned(),
+                        "8".to_owned(),
+                        "-resize".to_owned(),
+                        format!("{scale_percent}%"),
+                        crop_path.display().to_string(),
+                    ];
+                    run_resumable_command(
+                        &format!("crop-{crop_stem}"),
+                        &content_hash(&[
+                            &input_hash,
+                            &serde_json::to_string(&word.polygon)?,
+                            &padding.to_string(),
+                        ]),
+                        "magick",
+                        &crop_arguments,
+                        std::slice::from_ref(&crop_path),
+                        &words_path.join(format!("{crop_stem}.crop.stage.json")),
+                    )?;
+                    crops.push((crop_stem, crop_path));
+                }
+                let crop_path = &crops[0].1;
 
                 let threshold_crop_path = roman_refinement.then(|| {
                     words_path.join(format!(
@@ -1732,7 +1769,7 @@ fn recognize_tesseract_words(
                         &format!("threshold-{stem}"),
                         &content_hash(&[
                             &input_hash,
-                            &sha256_file(&crop_path)?,
+                            &sha256_file(crop_path)?,
                             &settings.roman_word_threshold_percent.to_string(),
                         ]),
                         "magick",
@@ -1751,7 +1788,7 @@ fn recognize_tesseract_words(
                     let mut candidates = recognize_crop_candidates(
                         &words_path,
                         &format!("{stem}-plain"),
-                        &crop_path,
+                        crop_path,
                         "eng",
                         &settings.roman_word_page_segmentation_modes,
                         scaled_dpi,
@@ -1785,15 +1822,18 @@ fn recognize_tesseract_words(
                         // different readings of pointed type. Compare every
                         // configured mode instead of accepting the first
                         // nonempty result.
-                        let candidates = recognize_crop_candidates(
-                            &words_path,
-                            &stem,
-                            &crop_path,
-                            language,
-                            &word_recognition_modes(settings),
-                            scaled_dpi,
-                            &input_hash,
-                        )?;
+                        let mut candidates = Vec::new();
+                        for (crop_stem, crop_path) in &crops {
+                            candidates.extend(recognize_crop_candidates(
+                                &words_path,
+                                crop_stem,
+                                crop_path,
+                                language,
+                                &word_recognition_modes(settings),
+                                scaled_dpi,
+                                &input_hash,
+                            )?);
+                        }
                         let Some(candidate) = select_word_candidate(candidates, language) else {
                             continue;
                         };
@@ -1841,7 +1881,11 @@ fn recognize_tesseract_words(
                 records.push(IsolatedWordRecognition {
                     line_id: line.id.clone(),
                     word_id: word.id.clone(),
-                    crop: relative_or_absolute(&crop_path),
+                    crop: relative_or_absolute(crop_path),
+                    crops: crops
+                        .iter()
+                        .map(|(_, path)| relative_or_absolute(path))
+                        .collect(),
                     detected_text,
                     detected_language,
                     label_language,
@@ -1878,6 +1922,7 @@ fn recognize_tesseract_words(
         &[
             "single-language word crops".to_owned(),
             format!("--psm {:?}", word_recognition_modes(settings)),
+            format!("--padding {:?}", word_recognition_paddings(settings)),
             format!("--scale {}%", settings.word_scale_percent),
         ],
         &outputs,
@@ -2334,8 +2379,8 @@ mod tests {
                     confidence: 0.31,
                 },
                 WordCandidate {
-                    text: "אלֶף".to_owned(),
-                    confidence: 0.29,
+                    text: "אֶלֶף".to_owned(),
+                    confidence: 0.32,
                 },
                 WordCandidate {
                     text: "אבגדהוזחטי".to_owned(),
@@ -2345,7 +2390,7 @@ mod tests {
             "heb",
         )
         .expect("one Hebrew reading");
-        assert_eq!(selected.text, "אלֶף");
+        assert_eq!(selected.text, "אֶלֶף");
     }
 
     #[test]
