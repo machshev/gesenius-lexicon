@@ -2,10 +2,10 @@
 
 use crate::alto::{
     announced_line_languages, classify_word_languages, detected_word_language,
-    fuse_multilingual_words, join_words, parse_alto, parse_entries_with_hypotheses_continuing,
-    printed_label_languages, select_script_trial, word_confidence, word_matches_language,
-    write_alto, AltoLine, AltoPage, AltoRegion, AltoWord, EngineIdentity, LineAssignment,
-    ParseContext, ParsedPage, ScriptTrial, WordScriptContext,
+    fuse_high_confidence_roman_words, fuse_multilingual_words, join_words, parse_alto,
+    parse_entries_with_hypotheses_continuing, printed_label_languages, select_script_trial,
+    word_confidence, word_matches_language, write_alto, AltoLine, AltoPage, AltoRegion, AltoWord,
+    EngineIdentity, LineAssignment, ParseContext, ParsedPage, ScriptTrial, WordScriptContext,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::{normalized_disagreement, polygon_iou};
@@ -247,6 +247,9 @@ fn default_roman_word_page_segmentation_modes() -> Vec<u8> {
 pub struct KrakenSettings {
     /// Run Kraken and require a model.
     pub enabled: bool,
+    /// Use Kraken only to refine weak Roman words in the Tesseract layout.
+    #[serde(default)]
+    pub line_refinement_only: bool,
     /// Local model path.
     pub model_path: PathBuf,
     /// Exact model SHA-256.
@@ -601,8 +604,25 @@ pub fn run_with_progress(
         } else {
             None
         };
+        let kraken_refined_page = if settings.kraken.line_refinement_only {
+            kraken_page
+                .as_ref()
+                .map(|page| fuse_high_confidence_roman_words(&word_tesseract_page, page))
+        } else {
+            None
+        };
+        if let Some(page) = kraken_refined_page.as_ref() {
+            fs::write(
+                page_path.join("kraken-refined.alto.xml"),
+                write_alto(page, &relative_or_absolute(&processed)),
+            )?;
+        }
         report_page("parsing OCR into lexicon entries");
-        let canonical_page = kraken_page.as_ref().unwrap_or(&word_tesseract_page);
+        let canonical_page = if let Some(page) = kraken_refined_page.as_ref() {
+            page
+        } else {
+            kraken_page.as_ref().unwrap_or(&word_tesseract_page)
+        };
         let mut hypotheses = Vec::new();
         if let (Some(page), Some(identity)) = (kraken_page.as_ref(), kraken_identity.as_ref()) {
             hypotheses.push((page, identity));
@@ -1999,6 +2019,9 @@ fn recognize_kraken(
     }
     arguments.extend([
         "ocr".to_owned(),
+        "--reorder".to_owned(),
+        "--base-dir".to_owned(),
+        "auto".to_owned(),
         "-m".to_owned(),
         settings.model_path.display().to_string(),
     ]);

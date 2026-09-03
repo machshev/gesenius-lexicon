@@ -49,9 +49,11 @@ roman_word_page_segmentation_modes = [6, 8]
 model_identity = "nixpkgs-tesseract-tessdata-pinned-by-flake.lock"
 
 [kraken]
-# Enable after `gesenius train` has produced and checksummed the first pilot
-# model. Tesseract remains the initial baseline when this is false.
-enabled = false
-model_path = "models/gesenius-pilot.mlmodel"
-model_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+# PP-OCRv6 medium is an independent, multilingual line witness. It only
+# replaces weak Roman tokens on pure Roman lines; script-specific Tesseract
+# crops remain canonical on lines containing Hebrew, Greek, Arabic, or Syriac.
+enabled = true
+line_refinement_only = true
+model_path = "models/ppocrv6-medium.safetensors"
+model_sha256 = "15313b51ace64cbfa81f8f6ef25ad64f04e5a6fb7f7823e67b107527bc081ac9"
 segmentation_model = "default"

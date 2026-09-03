@@ -1,7 +1,7 @@
 //! Minimal ALTO 4 reader/writer and layout-aware structural parser.
 
 use crate::language::{identify_languages, profile_for_label};
-use crate::metrics::polygon_iou;
+use crate::metrics::{normalized_disagreement, polygon_iou};
 use crate::model::{
     stable_entry_id, BlockKind, CorpusEntry, Direction, EntryBlock, EntryProvenance, OcrHypothesis,
     Point, ReviewState, SourceCoordinate, TextSpan,
@@ -805,6 +805,91 @@ pub fn fuse_multilingual_words(primary: &AltoPage, multilingual: &AltoPage) -> A
         }
     }
     fused
+}
+
+/// Replaces weak Roman OCR tokens with a high-confidence, geometrically
+/// matching reading from an independent recognizer.
+///
+/// The comparison is deliberately limited to lines without a distinctive
+/// non-Roman script. General multilingual models can read the surrounding
+/// English in mixed Hebrew or Syriac lines well while silently dropping vowel
+/// points from the embedded word. Keeping those lines out of this stage makes
+/// script-specific word recognition solely responsible for their contents.
+#[must_use]
+pub fn fuse_high_confidence_roman_words(primary: &AltoPage, secondary: &AltoPage) -> AltoPage {
+    let aligned: Vec<Option<AltoLine>> = align_lines(primary, secondary)
+        .into_iter()
+        .map(|line| line.cloned())
+        .collect();
+    let mut fused = primary.clone();
+    let mut line_index = 0_usize;
+    for region in &mut fused.regions {
+        for line in &mut region.lines {
+            let Some(secondary_line) = aligned.get(line_index).and_then(Option::as_ref) else {
+                line_index += 1;
+                continue;
+            };
+            line_index += 1;
+            if contains_foreign_script(&line.text) || contains_foreign_script(&secondary_line.text)
+            {
+                continue;
+            }
+            let mut changed = false;
+            for word in &mut line.words {
+                if word.confidence > 0.75 || !is_roman_word(&word.text) {
+                    continue;
+                }
+                let Some((candidate, _overlap)) = secondary_line
+                    .words
+                    .iter()
+                    .filter(|candidate| is_roman_word(&candidate.text))
+                    .filter_map(|candidate| {
+                        let overlap = polygon_iou(&word.polygon, &candidate.polygon);
+                        (overlap >= 0.30).then_some((candidate, overlap))
+                    })
+                    .max_by(|left, right| {
+                        left.1
+                            .partial_cmp(&right.1)
+                            .unwrap_or(std::cmp::Ordering::Equal)
+                    })
+                else {
+                    continue;
+                };
+                let Some(primary_bounds) = word_bounds(word) else {
+                    continue;
+                };
+                let Some(candidate_bounds) = word_bounds(candidate) else {
+                    continue;
+                };
+                let primary_width = primary_bounds.2 - primary_bounds.0;
+                let candidate_width = candidate_bounds.2 - candidate_bounds.0;
+                let width_ratio = candidate_width / primary_width.max(f32::EPSILON);
+                let comparable = (0.80..=1.25).contains(&width_ratio)
+                    && normalized_disagreement(&word.text, &candidate.text) <= 0.34;
+                if candidate.confidence >= 0.95 && comparable {
+                    word.text.clone_from(&candidate.text);
+                    word.confidence = candidate.confidence;
+                    changed = true;
+                }
+            }
+            if changed {
+                line.text = join_words(&line.words);
+                line.confidence = word_confidence(&line.words);
+            }
+        }
+    }
+    fused
+}
+
+fn is_roman_word(text: &str) -> bool {
+    let alphabetic = text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .collect::<Vec<_>>();
+    !alphabetic.is_empty()
+        && alphabetic
+            .iter()
+            .all(|character| character.script() == unicode_script::Script::Latin)
 }
 
 /// Tesseract model for the script the edition prints its lemmas in. Hebrew is
@@ -2220,9 +2305,9 @@ fn xml_escape(value: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::{
-        align_lines, classify_word_languages, fuse_multilingual_words, is_foreign_script_candidate,
-        parse_alto, select_script_trial, word_matches_language, write_alto, ScriptTrial,
-        WordScriptContext,
+        align_lines, classify_word_languages, fuse_high_confidence_roman_words,
+        fuse_multilingual_words, is_foreign_script_candidate, join_words, parse_alto,
+        select_script_trial, word_matches_language, write_alto, ScriptTrial, WordScriptContext,
     };
 
     const ALTO: &str = r#"<?xml version="1.0"?>
@@ -2338,6 +2423,68 @@ mod tests {
         let fused = fuse_multilingual_words(&primary, &multilingual);
 
         assert_eq!(fused.regions[0].lines[0].text, "Quest.");
+    }
+
+    #[test]
+    fn high_confidence_roman_fusion_corrects_only_comparable_weak_words() {
+        let mut primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut primary.regions[0].lines[0];
+        line.words[0].text = "Quest.".to_owned();
+        line.words[0].confidence = 0.50;
+        line.text = join_words(&line.words);
+
+        let mut secondary = primary.clone();
+        let line = &mut secondary.regions[0].lines[0];
+        line.words[0].text = "Quæst.".to_owned();
+        line.words[0].confidence = 0.99;
+        line.text = join_words(&line.words);
+
+        let fused = fuse_high_confidence_roman_words(&primary, &secondary);
+
+        assert_eq!(fused.regions[0].lines[0].text, "Quæst. father");
+        assert_eq!(fused.regions[0].lines[0].words[0].confidence, 0.99);
+    }
+
+    #[test]
+    fn high_confidence_roman_fusion_keeps_mixed_script_lines() {
+        let mut primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut primary.regions[0].lines[0];
+        line.words[0].text = "Quest.".to_owned();
+        line.words[0].confidence = 0.50;
+        line.words[1].text = "אֶלֶף".to_owned();
+        line.text = join_words(&line.words);
+
+        let mut secondary = primary.clone();
+        let line = &mut secondary.regions[0].lines[0];
+        line.words[0].text = "Quæst.".to_owned();
+        line.words[0].confidence = 0.99;
+        line.words[1].text = "אלף".to_owned();
+        line.text = join_words(&line.words);
+
+        let fused = fuse_high_confidence_roman_words(&primary, &secondary);
+
+        assert_eq!(fused.regions[0].lines[0].text, "Quest. אֶלֶף");
+    }
+
+    #[test]
+    fn high_confidence_roman_fusion_rejects_partial_word_geometry() {
+        let mut primary = parse_alto(ENGLISH_PRIMARY).unwrap();
+        let line = &mut primary.regions[0].lines[0];
+        line.words[0].text = "Inrespect".to_owned();
+        line.words[0].confidence = 0.50;
+        line.text = join_words(&line.words);
+
+        let mut secondary = primary.clone();
+        let word = &mut secondary.regions[0].lines[0].words[0];
+        word.text = "respect".to_owned();
+        word.confidence = 0.99;
+        word.polygon[1].x = word.polygon[0].x + 30.0;
+        word.polygon[2].x = word.polygon[0].x + 30.0;
+        secondary.regions[0].lines[0].text = join_words(&secondary.regions[0].lines[0].words);
+
+        let fused = fuse_high_confidence_roman_words(&primary, &secondary);
+
+        assert_eq!(fused.regions[0].lines[0].words[0].text, "Inrespect");
     }
 
     #[test]
