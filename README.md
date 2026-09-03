@@ -15,7 +15,7 @@ nix develop path:.
 cargo run -- --help
 ```
 
-The shell contains Rust, Clippy, rustfmt, Poppler, ImageMagick, SQLite, `xmllint`, Jing, Tesseract with English/Hebrew/Arabic/Syriac/Ancient Greek/Latin data, Noto fonts, and a CPU-only Kraken 7.0.2 environment built from `ocr/uv.lock`.
+The shell contains Rust, Clippy, rustfmt, Poppler, ImageMagick, SQLite, `xmllint`, Jing, Tesseract with English/Hebrew/Arabic/Syriac/Ancient Greek/Latin data, Noto fonts, and a CPU-only Kraken 7.1 environment built from `ocr/uv.lock`.
 
 The Robinson 1854 catalogue record points at the Library of Congress scan mirrored by Internet Archive. Its exact SHA-256 is checked in:
 
