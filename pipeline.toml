@@ -9,6 +9,12 @@ contrast_stretch = "0.5%x0.5%"
 # angles and crops are recorded in transform.json and become part of the run ID.
 deskew_degrees = 0.0
 
+[pdf_text]
+# The registered source contains positioned hidden OCR. Keep it as an
+# independent witness and require agreement with a fresh image crop before it
+# can change Roman text.
+enabled = true
+
 [tesseract]
 # English owns layout and the dominant text. These are Tesseract model codes,
 # not semantic BCP 47 language tags. A separate multilingual pass supplies
@@ -34,6 +40,12 @@ word_fallback_page_segmentation_mode = 8
 word_additional_page_segmentation_modes = [10]
 word_scale_percent = 200
 word_padding_pixels = 8
+# Roman words are only revisited when this image pass can arbitrate a
+# disagreement with the independent embedded PDF text layer.
+roman_word_refinement_confidence = 0.85
+roman_word_scale_percent = 400
+roman_word_threshold_percent = 72
+roman_word_page_segmentation_modes = [6, 8]
 model_identity = "nixpkgs-tesseract-tessdata-pinned-by-flake.lock"
 
 [kraken]

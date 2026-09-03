@@ -414,7 +414,14 @@ fn pipeline_commit() -> String {
         .map(|output| String::from_utf8_lossy(&output.stdout).trim().to_owned())
         .unwrap_or_else(|| "unknown".to_owned());
     let diff = Command::new("git")
-        .args(["diff", "--binary", "HEAD"])
+        .args([
+            "diff",
+            "--binary",
+            "HEAD",
+            "--",
+            ".",
+            ":(exclude)corpus/machine/*.jsonl",
+        ])
         .output()
         .ok()
         .filter(|output| output.status.success())

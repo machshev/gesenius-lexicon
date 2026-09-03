@@ -4,8 +4,8 @@ use crate::alto::{
     announced_line_languages, classify_word_languages, detected_word_language,
     fuse_multilingual_words, join_words, parse_alto, parse_entries_with_hypotheses_continuing,
     printed_label_languages, select_script_trial, word_confidence, word_matches_language,
-    write_alto, AltoLine, AltoPage, AltoWord, EngineIdentity, LineAssignment, ParseContext,
-    ParsedPage, ScriptTrial, WordScriptContext,
+    write_alto, AltoLine, AltoPage, AltoRegion, AltoWord, EngineIdentity, LineAssignment,
+    ParseContext, ParsedPage, ScriptTrial, WordScriptContext,
 };
 use crate::corpus_io::{load_entries, write_entries};
 use crate::metrics::{normalized_disagreement, polygon_iou};
@@ -34,6 +34,9 @@ pub struct PipelineSettings {
     pub preprocessing: PreprocessingSettings,
     /// Tesseract baseline settings.
     pub tesseract: TesseractSettings,
+    /// Embedded PDF text-layer settings.
+    #[serde(default)]
+    pub pdf_text: PdfTextSettings,
     /// Kraken primary recognizer settings.
     pub kraken: KrakenSettings,
     /// Confidence below which spans enter the review queue.
@@ -94,8 +97,39 @@ impl PipelineSettings {
         if self.tesseract.word_padding_pixels > 100 {
             bail!("word_padding_pixels must not exceed 100");
         }
+        if !(0.0..=1.0).contains(&self.tesseract.roman_word_refinement_confidence) {
+            bail!("roman_word_refinement_confidence must be between 0 and 1");
+        }
+        if !(100..=800).contains(&self.tesseract.roman_word_scale_percent) {
+            bail!("roman_word_scale_percent must be between 100 and 800");
+        }
+        if !(1..=99).contains(&self.tesseract.roman_word_threshold_percent) {
+            bail!("roman_word_threshold_percent must be between 1 and 99");
+        }
+        if self.tesseract.roman_word_page_segmentation_modes.is_empty()
+            || self
+                .tesseract
+                .roman_word_page_segmentation_modes
+                .iter()
+                .any(|mode| !(1..=13).contains(mode))
+        {
+            bail!("roman_word_page_segmentation_modes must contain modes between 1 and 13");
+        }
+        if self.pdf_text.enabled
+            && (self.preprocessing.crop.is_some() || self.preprocessing.deskew_degrees != 0.0)
+        {
+            bail!("pdf_text requires geometry-preserving preprocessing");
+        }
         Ok(())
     }
+}
+
+/// Use an embedded, word-positioned PDF text layer as an OCR witness.
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
+#[serde(deny_unknown_fields)]
+pub struct PdfTextSettings {
+    /// Extract and align the source PDF's hidden text layer.
+    pub enabled: bool,
 }
 
 /// Photometric and explicit geometric transform settings.
@@ -147,6 +181,18 @@ pub struct TesseractSettings {
     /// Source-image padding retained around each detected word box.
     #[serde(default = "default_word_padding_pixels")]
     pub word_padding_pixels: u32,
+    /// Re-read Roman tokens below this confidence when the PDF layer differs.
+    #[serde(default = "default_roman_word_refinement_confidence")]
+    pub roman_word_refinement_confidence: f32,
+    /// Percentage enlargement applied to isolated Roman word crops.
+    #[serde(default = "default_roman_word_scale_percent")]
+    pub roman_word_scale_percent: u16,
+    /// Global threshold used as a second Roman crop view.
+    #[serde(default = "default_roman_word_threshold_percent")]
+    pub roman_word_threshold_percent: u8,
+    /// Segmentation modes compared for isolated Roman word crops.
+    #[serde(default = "default_roman_word_page_segmentation_modes")]
+    pub roman_word_page_segmentation_modes: Vec<u8>,
     /// Immutable Nix/tessdata model identity recorded in provenance.
     pub model_identity: String,
 }
@@ -177,6 +223,22 @@ const fn default_word_scale_percent() -> u16 {
 
 const fn default_word_padding_pixels() -> u32 {
     4
+}
+
+const fn default_roman_word_refinement_confidence() -> f32 {
+    0.85
+}
+
+const fn default_roman_word_scale_percent() -> u16 {
+    400
+}
+
+const fn default_roman_word_threshold_percent() -> u8 {
+    72
+}
+
+fn default_roman_word_page_segmentation_modes() -> Vec<u8> {
+    vec![6, 8]
 }
 
 /// Kraken invocation and trainable model.
@@ -336,6 +398,11 @@ pub fn run_with_progress(
         tesseract_model_hash(&settings.tesseract.primary_languages)?;
     let multilingual_tesseract_models_sha256 =
         tesseract_model_hash(&settings.tesseract.multilingual_languages)?;
+    let pdf_text_version = settings
+        .pdf_text
+        .enabled
+        .then(|| command_version_with_flag("pdftotext", "-v"))
+        .transpose()?;
     let kraken_version = if settings.kraken.enabled {
         Some(command_version("kraken")?)
     } else {
@@ -348,6 +415,7 @@ pub fn run_with_progress(
         &tesseract_version,
         &primary_tesseract_models_sha256,
         &multilingual_tesseract_models_sha256,
+        pdf_text_version.as_deref().unwrap_or("pdf-text-disabled"),
         kraken_version.as_deref().unwrap_or("kraken-disabled"),
     ]);
     let run_path = options
@@ -389,6 +457,12 @@ pub fn run_with_progress(
         ),
         model_hash: multilingual_tesseract_models_sha256,
     };
+    let pdf_text_identity = pdf_text_version.map(|version| EngineIdentity {
+        engine: "pdftotext".to_owned(),
+        version,
+        model: "embedded-pdf-text-layer".to_owned(),
+        model_hash: verified.sha256.clone(),
+    });
     let kraken_identity = if settings.kraken.enabled {
         Some(EngineIdentity {
             engine: "kraken".to_owned(),
@@ -468,6 +542,19 @@ pub fn run_with_progress(
             &run_id,
         )?;
         let primary_layout_page = parse_alto(&fs::read_to_string(&primary_tesseract_alto)?)?;
+        let pdf_text_page = if settings.pdf_text.enabled {
+            report_page("extracting embedded PDF text layer");
+            Some(extract_pdf_text_layer(
+                &verified.path,
+                *page_number,
+                &page_path,
+                primary_layout_page.width,
+                primary_layout_page.height,
+                &run_id,
+            )?)
+        } else {
+            None
+        };
         let primary_tesseract_page = if settings.tesseract.block_refinement_enabled {
             report_page("re-reading primary OCR layout blocks");
             recognize_tesseract_blocks(
@@ -497,7 +584,7 @@ pub fn run_with_progress(
             &fused_tesseract_page,
             &settings.tesseract.multilingual_languages,
         );
-        report_page("refining detected foreign-script words");
+        report_page("refining detected word crops");
         let word_tesseract_page = recognize_tesseract_words(
             &processed,
             &page_path,
@@ -505,6 +592,7 @@ pub fn run_with_progress(
             &classified_tesseract_page,
             settings.raster_dpi,
             &run_id,
+            pdf_text_page.as_ref(),
         )?;
         let kraken_page = if kraken_identity.is_some() {
             report_page("running Kraken OCR");
@@ -527,6 +615,9 @@ pub fn run_with_progress(
                 &multilingual_tesseract_identity,
             ),
         ]);
+        if let (Some(page), Some(identity)) = (pdf_text_page.as_ref(), pdf_text_identity.as_ref()) {
+            hypotheses.push((page, identity));
+        }
         let (printed_page, front_matter) = printed_page(source, *page_number);
         let page_image = relative_or_absolute(&processed);
         let context = ParseContext {
@@ -688,6 +779,151 @@ fn rasterize(
         &page_path.join("rasterize.stage.json"),
     )?;
     Ok(output)
+}
+
+fn extract_pdf_text_layer(
+    pdf: &Path,
+    pdf_page: u32,
+    page_path: &Path,
+    width: u32,
+    height: u32,
+    run_id: &str,
+) -> Result<AltoPage> {
+    let xhtml_path = page_path.join("pdf-text-layer.xhtml");
+    let alto_path = page_path.join("pdf-text-layer.alto.xml");
+    let receipt_path = page_path.join("pdf-text-layer.stage.json");
+    let input_hash = content_hash(&[
+        run_id,
+        &pdf_page.to_string(),
+        &width.to_string(),
+        &height.to_string(),
+        "pdf-text-layer-v1",
+    ]);
+    let outputs = [xhtml_path.clone(), alto_path.clone()];
+    if stage_is_current(&receipt_path, &input_hash, &outputs)? {
+        return parse_alto(&fs::read_to_string(alto_path)?);
+    }
+    let arguments = vec![
+        "-f".to_owned(),
+        pdf_page.to_string(),
+        "-l".to_owned(),
+        pdf_page.to_string(),
+        "-bbox-layout".to_owned(),
+        pdf.display().to_string(),
+        xhtml_path.display().to_string(),
+    ];
+    execute("pdftotext", &arguments)?;
+    if !xhtml_path.is_file() {
+        bail!("pdftotext succeeded without producing positioned XHTML");
+    }
+    let page = parse_pdf_text_layer(&fs::read_to_string(&xhtml_path)?, width, height)?;
+    fs::write(&alto_path, write_alto(&page, &relative_or_absolute(pdf)))?;
+    write_receipt(
+        &receipt_path,
+        "pdf-text-layer",
+        &input_hash,
+        "pdftotext",
+        &arguments,
+        &outputs,
+    )?;
+    Ok(page)
+}
+
+fn parse_pdf_text_layer(xhtml: &str, width: u32, height: u32) -> Result<AltoPage> {
+    let document = roxmltree::Document::parse_with_options(
+        xhtml,
+        roxmltree::ParsingOptions {
+            allow_dtd: true,
+            ..roxmltree::ParsingOptions::default()
+        },
+    )
+    .context("invalid pdftotext XHTML")?;
+    let page = document
+        .descendants()
+        .find(|node| node.has_tag_name("page"))
+        .context("pdftotext XHTML has no page")?;
+    let source_width = pdf_text_coordinate(&page, "width")?;
+    let source_height = pdf_text_coordinate(&page, "height")?;
+    if source_width <= 0.0 || source_height <= 0.0 {
+        bail!("pdftotext XHTML has invalid page dimensions");
+    }
+    let scale_x = width as f32 / source_width;
+    let scale_y = height as f32 / source_height;
+    let rectangle = |node: &roxmltree::Node<'_, '_>| -> Result<Vec<Point>> {
+        let x_min = pdf_text_coordinate(node, "xMin")? * scale_x;
+        let y_min = pdf_text_coordinate(node, "yMin")? * scale_y;
+        let x_max = pdf_text_coordinate(node, "xMax")? * scale_x;
+        let y_max = pdf_text_coordinate(node, "yMax")? * scale_y;
+        Ok(vec![
+            Point { x: x_min, y: y_min },
+            Point { x: x_max, y: y_min },
+            Point { x: x_max, y: y_max },
+            Point { x: x_min, y: y_max },
+        ])
+    };
+    let mut regions = Vec::new();
+    for (region_index, block) in page
+        .descendants()
+        .filter(|node| node.has_tag_name("block"))
+        .enumerate()
+    {
+        let mut lines = Vec::new();
+        for (line_index, line) in block
+            .children()
+            .filter(|node| node.has_tag_name("line"))
+            .enumerate()
+        {
+            let mut words = Vec::new();
+            for (word_index, word) in line
+                .children()
+                .filter(|node| node.has_tag_name("word"))
+                .enumerate()
+            {
+                let text = word.text().unwrap_or_default().trim();
+                if text.is_empty() {
+                    continue;
+                }
+                words.push(AltoWord {
+                    id: format!("pdf-{region_index:04}-{line_index:04}-{word_index:04}"),
+                    polygon: rectangle(&word)?,
+                    text: text.to_owned(),
+                    confidence: 0.0,
+                    language: None,
+                    structural_language: false,
+                });
+            }
+            if words.is_empty() {
+                continue;
+            }
+            lines.push(AltoLine {
+                id: format!("pdf-{region_index:04}-{line_index:04}"),
+                polygon: rectangle(&line)?,
+                text: join_words(&words),
+                confidence: 0.0,
+                words,
+            });
+        }
+        if lines.is_empty() {
+            continue;
+        }
+        regions.push(AltoRegion {
+            id: format!("pdf-{region_index:04}"),
+            polygon: rectangle(&block)?,
+            lines,
+        });
+    }
+    Ok(AltoPage {
+        width,
+        height,
+        regions,
+    })
+}
+
+fn pdf_text_coordinate(node: &roxmltree::Node<'_, '_>, name: &str) -> Result<f32> {
+    node.attribute(name)
+        .with_context(|| format!("pdftotext XHTML node has no {name}"))?
+        .parse()
+        .with_context(|| format!("invalid pdftotext XHTML coordinate {name}"))
 }
 
 fn preprocess(
@@ -1086,6 +1322,7 @@ struct IsolatedWordRecognition {
     label_language: Option<String>,
     announced_languages: Vec<String>,
     routed_language: String,
+    pdf_text: Option<String>,
     detected_confidence: f32,
     trials: Vec<ScriptTrial>,
     selected_language: Option<String>,
@@ -1202,6 +1439,145 @@ fn select_word_candidate(candidates: Vec<WordCandidate>, language: &str) -> Opti
         })
 }
 
+fn recognize_crop_candidates(
+    words_path: &Path,
+    stem: &str,
+    crop_path: &Path,
+    language: &str,
+    modes: &[u8],
+    scaled_dpi: u32,
+    input_hash: &str,
+) -> Result<Vec<WordCandidate>> {
+    let crop_hash = sha256_file(crop_path)?;
+    let mut candidates = Vec::new();
+    for mode in modes {
+        let trial_stem = format!("{stem}-{language}-psm{mode}");
+        let tsv_stem = words_path.join(&trial_stem);
+        let tsv_path = words_path.join(format!("{trial_stem}.tsv"));
+        let arguments = vec![
+            crop_path.display().to_string(),
+            tsv_stem.display().to_string(),
+            "--dpi".to_owned(),
+            scaled_dpi.to_string(),
+            "-l".to_owned(),
+            language.to_owned(),
+            "--psm".to_owned(),
+            mode.to_string(),
+            "tsv".to_owned(),
+        ];
+        run_resumable_command(
+            &format!("recognize-{trial_stem}"),
+            &content_hash(&[input_hash, &crop_hash, language, &mode.to_string()]),
+            "tesseract",
+            &arguments,
+            std::slice::from_ref(&tsv_path),
+            &words_path.join(format!("{trial_stem}.tesseract.stage.json")),
+        )?;
+        if let Some(mut candidate) = parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)? {
+            candidate.text = normalize_word_candidate(&candidate.text, language);
+            candidates.push(candidate);
+        }
+    }
+    Ok(candidates)
+}
+
+fn roman_token_key(text: &str) -> String {
+    text.trim_matches(|character: char| {
+        !character.is_alphanumeric() && canonical_combining_class(character) == 0
+    })
+    .split_whitespace()
+    .collect::<Vec<_>>()
+    .join(" ")
+    .to_lowercase()
+}
+
+fn is_roman_text(text: &str) -> bool {
+    use unicode_script::{Script, UnicodeScript};
+    let letters: Vec<char> = text
+        .chars()
+        .filter(|character| character.is_alphabetic())
+        .collect();
+    !letters.is_empty()
+        && letters
+            .iter()
+            .all(|character| character.script() == Script::Latin)
+}
+
+fn should_refine_roman_word(
+    word: &AltoWord,
+    pdf_text: Option<&str>,
+    confidence_threshold: f32,
+) -> bool {
+    let Some(pdf_text) = pdf_text.filter(|text| is_roman_text(text)) else {
+        return false;
+    };
+    if roman_token_key(&word.text) == roman_token_key(pdf_text) {
+        return false;
+    }
+    let detected_has_letters = word.text.chars().any(char::is_alphabetic);
+    !detected_has_letters || (is_roman_text(&word.text) && word.confidence < confidence_threshold)
+}
+
+fn select_roman_consensus_candidate(
+    candidates: Vec<WordCandidate>,
+    pdf_text: &str,
+    detected_confidence: f32,
+) -> Option<WordCandidate> {
+    let expected = roman_token_key(pdf_text);
+    candidates
+        .into_iter()
+        .filter(|candidate| {
+            candidate.confidence >= 0.50
+                && candidate.confidence + 0.02 >= detected_confidence
+                && is_roman_text(&candidate.text)
+                && roman_token_key(&candidate.text) == expected
+        })
+        .max_by(|left, right| left.confidence.total_cmp(&right.confidence))
+}
+
+fn aligned_pdf_word<'a>(page: &'a AltoPage, target: &AltoWord) -> Option<&'a AltoWord> {
+    page.regions
+        .iter()
+        .flat_map(|region| &region.lines)
+        .flat_map(|line| &line.words)
+        .filter_map(|candidate| {
+            let overlap = polygon_intersection_over_smaller(&target.polygon, &candidate.polygon);
+            (overlap >= 0.45).then_some((candidate, overlap))
+        })
+        .max_by(|left, right| left.1.total_cmp(&right.1))
+        .map(|(candidate, _)| candidate)
+}
+
+fn polygon_intersection_over_smaller(left: &[Point], right: &[Point]) -> f32 {
+    let bounds = |polygon: &[Point]| {
+        let min_x = polygon.iter().map(|point| point.x).reduce(f32::min)?;
+        let min_y = polygon.iter().map(|point| point.y).reduce(f32::min)?;
+        let max_x = polygon.iter().map(|point| point.x).reduce(f32::max)?;
+        let max_y = polygon.iter().map(|point| point.y).reduce(f32::max)?;
+        Some((min_x, min_y, max_x, max_y))
+    };
+    let (
+        Some((left_x1, left_y1, left_x2, left_y2)),
+        Some((right_x1, right_y1, right_x2, right_y2)),
+    ) = (bounds(left), bounds(right))
+    else {
+        return 0.0;
+    };
+    let intersection_width = left_x2.min(right_x2) - left_x1.max(right_x1);
+    let intersection_height = left_y2.min(right_y2) - left_y1.max(right_y1);
+    if intersection_width <= 0.0 || intersection_height <= 0.0 {
+        return 0.0;
+    }
+    let left_area = (left_x2 - left_x1) * (left_y2 - left_y1);
+    let right_area = (right_x2 - right_x1) * (right_y2 - right_y1);
+    let smaller = left_area.min(right_area);
+    if smaller <= 0.0 {
+        0.0
+    } else {
+        intersection_width * intersection_height / smaller
+    }
+}
+
 fn recognize_tesseract_words(
     input: &Path,
     page_path: &Path,
@@ -1209,6 +1585,7 @@ fn recognize_tesseract_words(
     classified: &AltoPage,
     raster_dpi: u32,
     run_id: &str,
+    pdf_text_page: Option<&AltoPage>,
 ) -> Result<AltoPage> {
     let output_path = page_path.join("tesseract-word-recognized.alto.xml");
     let manifest_path = page_path.join("tesseract-word-recognitions.json");
@@ -1217,7 +1594,8 @@ fn recognize_tesseract_words(
         run_id,
         &serde_json::to_string(settings)?,
         &serde_json::to_string(classified)?,
-        "isolated-word-recognition-v4",
+        &serde_json::to_string(&pdf_text_page)?,
+        "isolated-word-recognition-v6",
     ]);
     let outputs = [output_path.clone(), manifest_path.clone()];
     if stage_is_current(&receipt_path, &input_hash, &outputs)? {
@@ -1239,8 +1617,28 @@ fn recognize_tesseract_words(
         for line in &mut region.lines {
             let announced = announced_line_languages(line, &settings.multilingual_languages);
             let labels = printed_label_languages(&line.words);
+            let pdf_texts: Vec<Option<String>> = line
+                .words
+                .iter()
+                .map(|word| {
+                    pdf_text_page
+                        .and_then(|page| aligned_pdf_word(page, word))
+                        .map(|candidate| candidate.text.clone())
+                })
+                .collect();
             for (index, word) in line.words.iter_mut().enumerate() {
-                let Some(routed_language) = word.language.clone() else {
+                let pdf_text = pdf_texts[index].clone();
+                let roman_refinement = word.language.is_none()
+                    && should_refine_roman_word(
+                        word,
+                        pdf_text.as_deref(),
+                        settings.roman_word_refinement_confidence,
+                    );
+                let Some(routed_language) = word
+                    .language
+                    .clone()
+                    .or_else(|| roman_refinement.then(|| "eng".to_owned()))
+                else {
                     continue;
                 };
                 ordinal += 1;
@@ -1265,6 +1663,11 @@ fn recognize_tesseract_words(
                     settings.word_padding_pixels,
                 )
                 .with_context(|| format!("word {} has empty geometry", word.id))?;
+                let scale_percent = if roman_refinement {
+                    settings.roman_word_scale_percent
+                } else {
+                    settings.word_scale_percent
+                };
                 let crop_arguments = vec![
                     input.display().to_string(),
                     "-crop".to_owned(),
@@ -1275,7 +1678,7 @@ fn recognize_tesseract_words(
                     "-border".to_owned(),
                     "8".to_owned(),
                     "-resize".to_owned(),
-                    format!("{}%", settings.word_scale_percent),
+                    format!("{scale_percent}%"),
                     crop_path.display().to_string(),
                 ];
                 run_resumable_command(
@@ -1287,87 +1690,124 @@ fn recognize_tesseract_words(
                     &words_path.join(format!("{stem}.crop.stage.json")),
                 )?;
 
+                let threshold_crop_path = roman_refinement.then(|| {
+                    words_path.join(format!(
+                        "{stem}-threshold-{}.png",
+                        settings.roman_word_threshold_percent
+                    ))
+                });
+                if let Some(threshold_crop_path) = threshold_crop_path.as_ref() {
+                    let arguments = vec![
+                        crop_path.display().to_string(),
+                        "-threshold".to_owned(),
+                        format!("{}%", settings.roman_word_threshold_percent),
+                        threshold_crop_path.display().to_string(),
+                    ];
+                    run_resumable_command(
+                        &format!("threshold-{stem}"),
+                        &content_hash(&[
+                            &input_hash,
+                            &sha256_file(&crop_path)?,
+                            &settings.roman_word_threshold_percent.to_string(),
+                        ]),
+                        "magick",
+                        &arguments,
+                        std::slice::from_ref(threshold_crop_path),
+                        &words_path.join(format!("{stem}.threshold.stage.json")),
+                    )?;
+                }
+
                 // Read the one crop with every single-script model the edition
                 // needs. A word the multilingual pass mis-scripted can then be
                 // recovered instead of being locked to its first reading.
-                let scaled_dpi =
-                    raster_dpi.saturating_mul(u32::from(settings.word_scale_percent)) / 100;
-                let crop_hash = sha256_file(&crop_path)?;
-                let mut trials = Vec::new();
-                for language in &trial_languages {
-                    // A line, word, and sparse crop can produce materially
-                    // different readings of pointed type. Compare every
-                    // configured mode instead of accepting the first nonempty
-                    // result, which commonly truncates a whole Hebrew word to
-                    // its most prominent letter.
-                    let mut candidates = Vec::new();
-                    for mode in word_recognition_modes(settings) {
-                        let stem = format!("{stem}-{language}-psm{mode}");
-                        let tsv_stem = words_path.join(&stem);
-                        let tsv_path = words_path.join(format!("{stem}.tsv"));
-                        let tesseract_arguments = vec![
-                            crop_path.display().to_string(),
-                            tsv_stem.display().to_string(),
-                            "--dpi".to_owned(),
-                            scaled_dpi.to_string(),
-                            "-l".to_owned(),
-                            language.clone(),
-                            "--psm".to_owned(),
-                            mode.to_string(),
-                            "tsv".to_owned(),
-                        ];
-                        run_resumable_command(
-                            &format!("recognize-{stem}"),
-                            &content_hash(&[&input_hash, &crop_hash, language, &mode.to_string()]),
-                            "tesseract",
-                            &tesseract_arguments,
-                            std::slice::from_ref(&tsv_path),
-                            &words_path.join(format!("{stem}.tesseract.stage.json")),
-                        )?;
-                        if let Some(mut candidate) =
-                            parse_tesseract_word_tsv(&fs::read_to_string(&tsv_path)?)?
-                        {
-                            candidate.text = normalize_word_candidate(&candidate.text, language);
-                            candidates.push(candidate);
-                        }
+                let scaled_dpi = raster_dpi.saturating_mul(u32::from(scale_percent)) / 100;
+                let (trials, selected, use_isolated) = if roman_refinement {
+                    let pdf_text = pdf_text.as_deref().context("missing PDF text witness")?;
+                    let mut candidates = recognize_crop_candidates(
+                        &words_path,
+                        &format!("{stem}-plain"),
+                        &crop_path,
+                        "eng",
+                        &settings.roman_word_page_segmentation_modes,
+                        scaled_dpi,
+                        &input_hash,
+                    )?;
+                    if let Some(threshold_crop_path) = threshold_crop_path.as_ref() {
+                        candidates.extend(recognize_crop_candidates(
+                            &words_path,
+                            &format!("{stem}-threshold"),
+                            threshold_crop_path,
+                            "eng",
+                            &settings.roman_word_page_segmentation_modes,
+                            scaled_dpi,
+                            &input_hash,
+                        )?);
                     }
-                    let Some(candidate) = select_word_candidate(candidates, language) else {
-                        continue;
-                    };
-                    // When the multilingual pass saw only punctuation there is
-                    // nothing for the isolated reading's edge marks to
-                    // correspond to, so they are dropped as noise.
-                    let text = if detected_text.chars().any(char::is_alphabetic) {
-                        candidate.text
-                    } else {
-                        trim_unattested_edge_punctuation(&detected_text, &candidate.text)
-                    };
-                    trials.push(ScriptTrial {
-                        language: language.clone(),
-                        text,
+                    let candidate =
+                        select_roman_consensus_candidate(candidates, pdf_text, detected_confidence);
+                    let selected = candidate.map(|candidate| ScriptTrial {
+                        language: "eng".to_owned(),
+                        text: pdf_text.to_owned(),
                         confidence: candidate.confidence,
                     });
-                }
+                    let trials = selected.iter().cloned().collect();
+                    let use_isolated = selected.is_some();
+                    (trials, selected, use_isolated)
+                } else {
+                    let mut trials = Vec::new();
+                    for language in &trial_languages {
+                        // A line, word, and sparse crop can produce materially
+                        // different readings of pointed type. Compare every
+                        // configured mode instead of accepting the first
+                        // nonempty result.
+                        let candidates = recognize_crop_candidates(
+                            &words_path,
+                            &stem,
+                            &crop_path,
+                            language,
+                            &word_recognition_modes(settings),
+                            scaled_dpi,
+                            &input_hash,
+                        )?;
+                        let Some(candidate) = select_word_candidate(candidates, language) else {
+                            continue;
+                        };
+                        // When the multilingual pass saw only punctuation
+                        // there is nothing for unsupported crop-edge marks to
+                        // correspond to, so they are dropped as noise.
+                        let text = if detected_text.chars().any(char::is_alphabetic) {
+                            candidate.text
+                        } else {
+                            trim_unattested_edge_punctuation(&detected_text, &candidate.text)
+                        };
+                        trials.push(ScriptTrial {
+                            language: language.clone(),
+                            text,
+                            confidence: candidate.confidence,
+                        });
+                    }
 
-                let selected = select_script_trial(
-                    &trials,
-                    WordScriptContext {
-                        routed: &routed_language,
-                        detected: detected_language.as_deref(),
-                        detected_confidence,
-                        label: label_language.as_deref(),
-                        announced: &announced,
-                    },
-                )
-                .cloned();
-                let use_isolated = selected.as_ref().is_some_and(|selected| {
-                    should_use_isolated_word(
-                        &detected_text,
-                        detected_language.as_deref(),
-                        detected_confidence,
-                        selected,
+                    let selected = select_script_trial(
+                        &trials,
+                        WordScriptContext {
+                            routed: &routed_language,
+                            detected: detected_language.as_deref(),
+                            detected_confidence,
+                            label: label_language.as_deref(),
+                            announced: &announced,
+                        },
                     )
-                });
+                    .cloned();
+                    let use_isolated = selected.as_ref().is_some_and(|selected| {
+                        should_use_isolated_word(
+                            &detected_text,
+                            detected_language.as_deref(),
+                            detected_confidence,
+                            selected,
+                        )
+                    });
+                    (trials, selected, use_isolated)
+                };
                 if let Some(selected) = selected.as_ref().filter(|_| use_isolated) {
                     word.text.clone_from(&selected.text);
                     word.confidence = selected.confidence;
@@ -1382,6 +1822,7 @@ fn recognize_tesseract_words(
                     label_language,
                     announced_languages: announced.clone(),
                     routed_language,
+                    pdf_text,
                     detected_confidence,
                     trials,
                     selected_language: selected.as_ref().map(|selected| selected.language.clone()),
@@ -1646,12 +2087,16 @@ fn stage_is_current(path: &Path, input_hash: &str, outputs: &[PathBuf]) -> Resul
 }
 
 fn command_version(program: &str) -> Result<String> {
+    command_version_with_flag(program, "--version")
+}
+
+fn command_version_with_flag(program: &str, flag: &str) -> Result<String> {
     let output = Command::new(program)
-        .arg("--version")
+        .arg(flag)
         .output()
         .with_context(|| format!("failed to execute `{program}`; enter `nix develop`"))?;
     if !output.status.success() {
-        bail!("`{program} --version` failed");
+        bail!("`{program} {flag}` failed");
     }
     let text = if output.stdout.is_empty() {
         &output.stderr
@@ -1786,11 +2231,12 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 mod tests {
     use super::{
         deduplicate_overlapping_lines, entry_source_page, normalize_word_candidate,
-        parse_page_spec, select_word_candidate, should_replace_entry, should_use_isolated_word,
-        trim_unattested_edge_punctuation, WordCandidate,
+        parse_page_spec, parse_pdf_text_layer, select_roman_consensus_candidate,
+        select_word_candidate, should_refine_roman_word, should_replace_entry,
+        should_use_isolated_word, trim_unattested_edge_punctuation, WordCandidate,
     };
-    use crate::alto::{parse_alto, ScriptTrial};
-    use crate::model::CorpusEntry;
+    use crate::alto::{parse_alto, AltoWord, ScriptTrial};
+    use crate::model::{CorpusEntry, Point};
     use std::collections::BTreeSet;
 
     #[test]
@@ -1872,6 +2318,67 @@ mod tests {
         )
         .expect("one Hebrew reading");
         assert_eq!(selected.text, "אלֶף");
+    }
+
+    #[test]
+    fn positioned_pdf_text_is_scaled_into_alto_geometry() {
+        let page = parse_pdf_text_layer(
+            r#"<html xmlns="http://www.w3.org/1999/xhtml"><body><doc>
+                <page width="100" height="200"><flow>
+                  <block xMin="10" yMin="20" xMax="40" yMax="30">
+                    <line xMin="10" yMin="20" xMax="40" yMax="30">
+                      <word xMin="10" yMin="20" xMax="20" yMax="30">ox,</word>
+                    </line>
+                  </block>
+                </flow></page>
+            </doc></body></html>"#,
+            200,
+            400,
+        )
+        .expect("positioned text");
+        let word = &page.regions[0].lines[0].words[0];
+        assert_eq!(word.text, "ox,");
+        assert_eq!(word.polygon[0], Point { x: 20.0, y: 40.0 });
+        assert_eq!(word.polygon[2], Point { x: 40.0, y: 60.0 });
+    }
+
+    #[test]
+    fn roman_refinement_requires_pdf_and_image_consensus() {
+        let word = AltoWord {
+            id: "word".to_owned(),
+            polygon: Vec::new(),
+            text: "oz,".to_owned(),
+            confidence: 0.78,
+            language: None,
+            structural_language: false,
+        };
+        assert!(should_refine_roman_word(&word, Some("ox,"), 0.85));
+        assert!(!should_refine_roman_word(&word, Some("oz,"), 0.85));
+        let selected = select_roman_consensus_candidate(
+            vec![
+                WordCandidate {
+                    text: "oz,".to_owned(),
+                    confidence: 0.90,
+                },
+                WordCandidate {
+                    text: "ox,".to_owned(),
+                    confidence: 0.77,
+                },
+            ],
+            "ox,",
+            0.78,
+        )
+        .expect("independent readings agree");
+        assert_eq!(selected.text, "ox,");
+        assert!(select_roman_consensus_candidate(
+            vec![WordCandidate {
+                text: "pronuhciation".to_owned(),
+                confidence: 0.56,
+            }],
+            "pronuhciation",
+            0.74,
+        )
+        .is_none());
     }
 
     #[test]
