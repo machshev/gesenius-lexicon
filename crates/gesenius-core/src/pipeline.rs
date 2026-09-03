@@ -817,7 +817,8 @@ fn extract_pdf_text_layer(
         bail!("pdftotext succeeded without producing positioned XHTML");
     }
     let page = parse_pdf_text_layer(&fs::read_to_string(&xhtml_path)?, width, height)?;
-    fs::write(&alto_path, write_alto(&page, &relative_or_absolute(pdf)))?;
+    let alto = write_alto(&page, &relative_or_absolute(pdf));
+    fs::write(&alto_path, &alto)?;
     write_receipt(
         &receipt_path,
         "pdf-text-layer",
@@ -826,7 +827,11 @@ fn extract_pdf_text_layer(
         &arguments,
         &outputs,
     )?;
-    Ok(page)
+    // Return the serialized form used by subsequent cache hits. ALTO rounds
+    // floating-point coordinates, so returning the pre-serialization page on
+    // the first run would give the word stage a different input hash on its
+    // second run even though the source and run ID had not changed.
+    parse_alto(&alto)
 }
 
 fn parse_pdf_text_layer(xhtml: &str, width: u32, height: u32) -> Result<AltoPage> {
