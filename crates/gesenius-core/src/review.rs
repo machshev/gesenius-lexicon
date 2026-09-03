@@ -155,9 +155,14 @@ impl ReviewStore {
             }
             replacement.revision = base_revision + 1;
             replacement.review_state = review_state;
+            let has_explicit_span_review = replacement
+                .spans()
+                .any(|span| span.review_state != ReviewState::Machine);
             replacement.for_each_span_mut(|span| {
                 refresh_span(span);
-                span.review_state = review_state;
+                if !has_explicit_span_review {
+                    span.review_state = review_state;
+                }
             });
             replacement.confidence = aggregate_confidence(replacement.spans());
             let issues = validate_entry(&replacement);

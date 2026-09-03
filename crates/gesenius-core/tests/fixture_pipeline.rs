@@ -1388,6 +1388,38 @@ fn review_patches_preserve_source_checked_language_runs() {
 }
 
 #[test]
+fn review_patches_preserve_explicit_incremental_span_states() {
+    let entries = fixture_entries();
+    let temporary = tempfile::tempdir().unwrap();
+    let corpus_root = temporary.path().join("machine");
+    fs::create_dir_all(&corpus_root).unwrap();
+    write_entries(&corpus_root.join("fixtures.jsonl"), &entries).unwrap();
+    let store =
+        ReviewStore::open(&corpus_root, &temporary.path().join("review/patches.jsonl")).unwrap();
+    let mut replacement = entries[0].clone();
+    replacement.blocks[0].spans[0].review_state = ReviewState::Corrected;
+
+    let patch = store
+        .apply(
+            0,
+            "fixture-reviewer",
+            Some("first span checked against source".to_owned()),
+            ReviewState::Corrected,
+            replacement,
+        )
+        .unwrap();
+
+    assert_eq!(
+        patch.replacement.blocks[0].spans[0].review_state,
+        ReviewState::Corrected
+    );
+    assert_eq!(
+        patch.replacement.blocks[0].spans[1].review_state,
+        ReviewState::Machine
+    );
+}
+
+#[test]
 fn checked_in_page_crops_are_real_images() {
     let workspace = Path::new(env!("CARGO_MANIFEST_DIR")).join("../..");
     for path in [
