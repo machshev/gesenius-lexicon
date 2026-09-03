@@ -130,6 +130,11 @@ pub fn unicode_warnings(text: &str) -> Vec<UnicodeWarning> {
 
 /// Refreshes derived Unicode fields after a review edit.
 pub fn refresh_span(span: &mut TextSpan) {
+    let reviewed_language = span.language.clone();
+    let reviewed_runs = span.language_runs.clone();
+    let preserve_reviewed_languages = reviewed_runs
+        .iter()
+        .any(|run| run.evidence == crate::model::LanguageEvidence::Reviewer);
     span.normalized = normalize_nfc(&span.diplomatic);
     span.script = classify_script(&span.normalized);
     span.direction = infer_direction(&span.normalized);
@@ -141,6 +146,10 @@ pub fn refresh_span(span: &mut TextSpan) {
         .filter(|language| !matches!(*language, "mul" | "zxx" | "und"))
         .unwrap_or("en");
     (span.language, span.language_runs) = identify_languages(&span.normalized, default_language);
+    if preserve_reviewed_languages {
+        span.language = reviewed_language;
+        span.language_runs = reviewed_runs;
+    }
     if span.language == previous_language {
         for run in &mut span.language_runs {
             if previous_runs.iter().any(|previous| {

@@ -104,6 +104,8 @@ one of:
   OCR-confused script;
 - `edition_default` for otherwise ambiguous dominant English prose or the
   Hebrew-language structural role of a lexicon headword.
+- `reviewer` for a source-checked human assignment that must survive derived
+  metadata refresh during patch application.
 
 A printed label governs a whole printed enumeration. The edition sets its
 comparanda as comma-separated lists that mix English glosses with native-script

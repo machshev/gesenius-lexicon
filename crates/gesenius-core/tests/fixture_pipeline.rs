@@ -10,7 +10,8 @@ use gesenius_core::export::{
     export, validate_sqlite, validate_tei_schema, ExportFormat, ExportOptions,
 };
 use gesenius_core::model::{
-    AccuracyMetrics, BlockKind, CorpusManifest, ReviewState, CORPUS_SCHEMA_VERSION,
+    AccuracyMetrics, BlockKind, CorpusManifest, LanguageEvidence, LanguageRun, ReviewState,
+    CORPUS_SCHEMA_VERSION,
 };
 use gesenius_core::pipeline::PipelineSettings;
 use gesenius_core::review::ReviewStore;
@@ -1337,6 +1338,53 @@ fn review_patches_use_optimistic_revisions_and_preserve_the_base() {
         1
     );
     assert_eq!(load_entries(&base_path).unwrap()[0].revision, 0);
+}
+
+#[test]
+fn review_patches_preserve_source_checked_language_runs() {
+    let entries = fixture_entries();
+    let temporary = tempfile::tempdir().unwrap();
+    let corpus_root = temporary.path().join("machine");
+    fs::create_dir_all(&corpus_root).unwrap();
+    write_entries(&corpus_root.join("fixtures.jsonl"), &entries).unwrap();
+    let store =
+        ReviewStore::open(&corpus_root, &temporary.path().join("review/patches.jsonl")).unwrap();
+    let mut replacement = entries[0].clone();
+    let span = &mut replacement.blocks[0].spans[0];
+    span.diplomatic = "Aram. אַב".to_owned();
+    span.language = Some("mul".to_owned());
+    span.language_runs = vec![
+        LanguageRun {
+            start: 0,
+            end: 5,
+            language: "en".to_owned(),
+            script: "Latn".to_owned(),
+            evidence: LanguageEvidence::Reviewer,
+        },
+        LanguageRun {
+            start: 6,
+            end: 9,
+            language: "arc".to_owned(),
+            script: "Hebr".to_owned(),
+            evidence: LanguageEvidence::Reviewer,
+        },
+    ];
+
+    let patch = store
+        .apply(
+            0,
+            "fixture-reviewer",
+            Some("source-checked language identity".to_owned()),
+            ReviewState::Verified,
+            replacement,
+        )
+        .unwrap();
+
+    let span = &patch.replacement.blocks[0].spans[0];
+    assert_eq!(span.normalized, "Aram. אַב");
+    assert_eq!(span.language_runs[1].language, "arc");
+    assert_eq!(span.language_runs[1].script, "Hebr");
+    assert_eq!(span.language_runs[1].evidence, LanguageEvidence::Reviewer);
 }
 
 #[test]

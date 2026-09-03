@@ -115,6 +115,8 @@ pub enum LanguageEvidence {
     PrintedLabel,
     /// The edition's dominant prose language supplies the otherwise ambiguous tag.
     EditionDefault,
+    /// A human reviewer identified the language from the source and its context.
+    Reviewer,
 }
 
 impl LanguageEvidence {
@@ -125,6 +127,7 @@ impl LanguageEvidence {
             Self::UnicodeScript => "unicode_script",
             Self::PrintedLabel => "printed_label",
             Self::EditionDefault => "edition_default",
+            Self::Reviewer => "reviewer",
         }
     }
 }

@@ -60,7 +60,7 @@ CREATE TABLE language_runs (
   end_offset INTEGER NOT NULL CHECK(end_offset > start_offset),
   language TEXT NOT NULL,
   script TEXT NOT NULL,
-  evidence TEXT NOT NULL CHECK(evidence IN ('unicode_script','printed_label','edition_default')),
+  evidence TEXT NOT NULL CHECK(evidence IN ('unicode_script','printed_label','edition_default','reviewer')),
   PRIMARY KEY(span_id, ordinal)
 ) WITHOUT ROWID;
 CREATE INDEX language_runs_language ON language_runs(language);
