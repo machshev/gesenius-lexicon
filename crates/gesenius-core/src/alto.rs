@@ -2236,18 +2236,37 @@ fn node_polygon(node: Node<'_, '_>) -> Result<Vec<Point>> {
         .and_then(|shape| shape.children().find(|child| child.has_tag_name("Polygon")))
         .and_then(|polygon| polygon.attribute("POINTS"))
     {
-        let points = shape
-            .split_whitespace()
-            .map(|pair| {
-                let (x, y) = pair
-                    .split_once(',')
-                    .with_context(|| format!("invalid ALTO polygon point `{pair}`"))?;
-                Ok(Point {
-                    x: x.parse()?,
-                    y: y.parse()?,
+        let coordinates = shape.split_whitespace().collect::<Vec<_>>();
+        let points = if coordinates
+            .iter()
+            .all(|coordinate| coordinate.contains(','))
+        {
+            coordinates
+                .into_iter()
+                .map(|pair| {
+                    let (x, y) = pair
+                        .split_once(',')
+                        .with_context(|| format!("invalid ALTO polygon point `{pair}`"))?;
+                    Ok(Point {
+                        x: x.parse()?,
+                        y: y.parse()?,
+                    })
                 })
-            })
-            .collect::<Result<Vec<_>>>()?;
+                .collect::<Result<Vec<_>>>()?
+        } else {
+            if !coordinates.len().is_multiple_of(2) {
+                bail!("invalid ALTO polygon coordinate list `{shape}`");
+            }
+            coordinates
+                .chunks_exact(2)
+                .map(|pair| {
+                    Ok(Point {
+                        x: pair[0].parse()?,
+                        y: pair[1].parse()?,
+                    })
+                })
+                .collect::<Result<Vec<_>>>()?
+        };
         if !points.is_empty() {
             return Ok(points);
         }
@@ -2354,6 +2373,26 @@ mod tests {
         assert_eq!(page.regions[0].lines[0].words[0].text, "אָב");
         assert_eq!(page.regions[0].lines[0].words[1].polygon[0].x, 70.0);
         assert!(page.regions[0].lines[0].confidence > 0.95);
+    }
+
+    #[test]
+    fn reads_whitespace_separated_kraken_polygons() {
+        let alto = ALTO.replace(
+            "<TextLine ID=\"l1\" HPOS=\"10\" VPOS=\"20\" WIDTH=\"500\" HEIGHT=\"40\">",
+            "<TextLine ID=\"l1\" HPOS=\"10\" VPOS=\"20\" WIDTH=\"500\" HEIGHT=\"40\"><Shape><Polygon POINTS=\"10 20 510 20 510 60 10 60\"/></Shape>",
+        );
+
+        let page = parse_alto(&alto).unwrap();
+
+        assert_eq!(
+            page.regions[0].lines[0].polygon,
+            vec![
+                crate::model::Point { x: 10.0, y: 20.0 },
+                crate::model::Point { x: 510.0, y: 20.0 },
+                crate::model::Point { x: 510.0, y: 60.0 },
+                crate::model::Point { x: 10.0, y: 60.0 },
+            ]
+        );
     }
 
     #[test]
