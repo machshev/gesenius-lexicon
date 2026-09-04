@@ -192,6 +192,9 @@ pub struct TesseractSettings {
     /// Further source-image paddings compared for isolated foreign words.
     #[serde(default)]
     pub word_additional_padding_pixels: Vec<u32>,
+    /// Source-attested lexical priors used to rescore weak isolated readings.
+    #[serde(default)]
+    pub word_lexicons: BTreeMap<String, Vec<String>>,
     /// Re-read Roman tokens below this confidence when the PDF layer differs.
     #[serde(default = "default_roman_word_refinement_confidence")]
     pub roman_word_refinement_confidence: f32,
@@ -1456,13 +1459,88 @@ fn trim_unattested_edge_punctuation(detected: &str, candidate: &str) -> String {
         .to_owned()
 }
 
+fn restore_attested_edge_punctuation(detected: &str, candidate: &str) -> String {
+    let is_edge_mark =
+        |character: char| !character.is_alphanumeric() && canonical_combining_class(character) == 0;
+    let leading = detected
+        .chars()
+        .take_while(|c| is_edge_mark(*c))
+        .collect::<String>();
+    let trailing = detected
+        .chars()
+        .rev()
+        .take_while(|c| is_edge_mark(*c))
+        .collect::<Vec<_>>()
+        .into_iter()
+        .rev()
+        .collect::<String>();
+    let mut restored = candidate.to_owned();
+    if !leading.is_empty() && !restored.starts_with(&leading) {
+        restored.insert_str(0, &leading);
+    }
+    if !trailing.is_empty() && !restored.ends_with(&trailing) {
+        restored.push_str(&trailing);
+    }
+    restored
+}
+
 /// Selects the crop reading with the greatest amount of confidence-backed
 /// evidence in the requested script. Confidence alone favors short fragments:
 /// a clear single Aleph can outscore a slightly less certain complete pointed
 /// word. Scaling confidence by the square root of linguistic characters keeps
 /// that fragment from winning without letting a long, weak hallucination take
 /// over.
-fn select_word_candidate(candidates: Vec<WordCandidate>, language: &str) -> Option<WordCandidate> {
+fn lexical_skeleton(text: &str) -> String {
+    text.chars()
+        .filter(|character| character.is_alphabetic() && canonical_combining_class(*character) == 0)
+        .collect()
+}
+
+fn lexical_prior(
+    candidate: &WordCandidate,
+    lexicon: &[String],
+    used_on_line: &BTreeSet<String>,
+) -> Option<String> {
+    let skeleton = lexical_skeleton(&candidate.text);
+    if skeleton.is_empty() {
+        return None;
+    }
+    let exact = lexicon
+        .iter()
+        .filter(|word| lexical_skeleton(word) == skeleton)
+        .collect::<Vec<_>>();
+    if exact.len() == 1 {
+        return Some(exact[0].to_string());
+    }
+    if candidate.confidence >= 0.60 {
+        return None;
+    }
+    let characters = skeleton.chars().collect::<Vec<_>>();
+    let near = lexicon
+        .iter()
+        .filter(|word| !used_on_line.contains(*word))
+        .filter(|word| {
+            let lexical = lexical_skeleton(word).chars().collect::<Vec<_>>();
+            lexical.len() == characters.len()
+                && lexical.first() == characters.first()
+                && lexical.last() == characters.last()
+                && lexical
+                    .iter()
+                    .zip(&characters)
+                    .filter(|(left, right)| left != right)
+                    .count()
+                    == 1
+        })
+        .collect::<Vec<_>>();
+    (near.len() == 1).then(|| near[0].to_string())
+}
+
+fn select_word_candidate(
+    candidates: Vec<WordCandidate>,
+    language: &str,
+    lexicon: Option<&[String]>,
+    used_lexical_priors: &BTreeSet<String>,
+) -> Option<WordCandidate> {
     let evidence = |candidate: &WordCandidate| {
         if !word_matches_language(&candidate.text, language) {
             return 0.0;
@@ -1474,16 +1552,29 @@ fn select_word_candidate(candidates: Vec<WordCandidate>, language: &str) -> Opti
                 character.is_alphabetic() || canonical_combining_class(*character) != 0
             })
             .count();
-        candidate.confidence * (linguistic as f32).sqrt()
+        let lexical_bonus = lexicon
+            .is_some_and(|words| {
+                let skeleton = lexical_skeleton(&candidate.text);
+                !skeleton.is_empty() && words.iter().any(|word| lexical_skeleton(word) == skeleton)
+            })
+            .then_some(0.5)
+            .unwrap_or_default();
+        candidate.confidence * (linguistic as f32).sqrt() + lexical_bonus
     };
-    candidates
+    let mut selected = candidates
         .into_iter()
         .filter(|candidate| evidence(candidate) > 0.0)
         .max_by(|left, right| {
             evidence(left)
                 .total_cmp(&evidence(right))
                 .then_with(|| left.confidence.total_cmp(&right.confidence))
-        })
+        })?;
+    if let Some(word) =
+        lexicon.and_then(|lexicon| lexical_prior(&selected, lexicon, used_lexical_priors))
+    {
+        selected.text = restore_attested_edge_punctuation(&selected.text, &word);
+    }
+    Some(selected)
 }
 
 fn recognize_crop_candidates(
@@ -1494,14 +1585,22 @@ fn recognize_crop_candidates(
     modes: &[u8],
     scaled_dpi: u32,
     input_hash: &str,
+    lexicon: Option<&[String]>,
 ) -> Result<Vec<WordCandidate>> {
     let crop_hash = sha256_file(crop_path)?;
+    let user_words = lexicon.filter(|words| !words.is_empty()).map(|words| {
+        let path = words_path.join(format!("{language}-user-words.txt"));
+        (path, words.join("\n") + "\n")
+    });
+    if let Some((path, contents)) = &user_words {
+        fs::write(path, contents)?;
+    }
     let mut candidates = Vec::new();
     for mode in modes {
         let trial_stem = format!("{stem}-{language}-psm{mode}");
         let tsv_stem = words_path.join(&trial_stem);
         let tsv_path = words_path.join(format!("{trial_stem}.tsv"));
-        let arguments = vec![
+        let mut arguments = vec![
             crop_path.display().to_string(),
             tsv_stem.display().to_string(),
             "--dpi".to_owned(),
@@ -1510,8 +1609,11 @@ fn recognize_crop_candidates(
             language.to_owned(),
             "--psm".to_owned(),
             mode.to_string(),
-            "tsv".to_owned(),
         ];
+        if let Some((path, _)) = &user_words {
+            arguments.extend(["--user-words".to_owned(), path.display().to_string()]);
+        }
+        arguments.push("tsv".to_owned());
         run_resumable_command(
             &format!("recognize-{trial_stem}"),
             &content_hash(&[input_hash, &crop_hash, language, &mode.to_string()]),
@@ -1642,7 +1744,7 @@ fn recognize_tesseract_words(
         &serde_json::to_string(settings)?,
         &serde_json::to_string(classified)?,
         &serde_json::to_string(&pdf_text_page)?,
-        "isolated-word-recognition-v7",
+        "isolated-word-recognition-v8",
     ]);
     let outputs = [output_path.clone(), manifest_path.clone()];
     if stage_is_current(&receipt_path, &input_hash, &outputs)? {
@@ -1662,6 +1764,7 @@ fn recognize_tesseract_words(
     let mut ordinal = 0_usize;
     for region in &mut refined.regions {
         for line in &mut region.lines {
+            let mut used_lexical_priors = BTreeSet::new();
             let announced = announced_line_languages(line, &settings.multilingual_languages);
             let labels = printed_label_languages(&line.words);
             let pdf_texts: Vec<Option<String>> = line
@@ -1793,6 +1896,7 @@ fn recognize_tesseract_words(
                         &settings.roman_word_page_segmentation_modes,
                         scaled_dpi,
                         &input_hash,
+                        None,
                     )?;
                     if let Some(threshold_crop_path) = threshold_crop_path.as_ref() {
                         candidates.extend(recognize_crop_candidates(
@@ -1803,6 +1907,7 @@ fn recognize_tesseract_words(
                             &settings.roman_word_page_segmentation_modes,
                             scaled_dpi,
                             &input_hash,
+                            None,
                         )?);
                     }
                     let candidate =
@@ -1832,16 +1937,22 @@ fn recognize_tesseract_words(
                                 &word_recognition_modes(settings),
                                 scaled_dpi,
                                 &input_hash,
+                                settings.word_lexicons.get(language).map(Vec::as_slice),
                             )?);
                         }
-                        let Some(candidate) = select_word_candidate(candidates, language) else {
+                        let Some(candidate) = select_word_candidate(
+                            candidates,
+                            language,
+                            settings.word_lexicons.get(language).map(Vec::as_slice),
+                            &used_lexical_priors,
+                        ) else {
                             continue;
                         };
                         // When the multilingual pass saw only punctuation
                         // there is nothing for unsupported crop-edge marks to
                         // correspond to, so they are dropped as noise.
                         let text = if detected_text.chars().any(char::is_alphabetic) {
-                            candidate.text
+                            restore_attested_edge_punctuation(&detected_text, &candidate.text)
                         } else {
                             trim_unattested_edge_punctuation(&detected_text, &candidate.text)
                         };
@@ -1877,6 +1988,13 @@ fn recognize_tesseract_words(
                     word.text.clone_from(&selected.text);
                     word.confidence = selected.confidence;
                     word.language = Some(selected.language.clone());
+                    if settings
+                        .word_lexicons
+                        .get(&selected.language)
+                        .is_some_and(|lexicon| lexicon.contains(&selected.text))
+                    {
+                        used_lexical_priors.insert(selected.text.clone());
+                    }
                 }
                 records.push(IsolatedWordRecognition {
                     line_id: line.id.clone(),
@@ -2303,10 +2421,11 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 #[cfg(test)]
 mod tests {
     use super::{
-        deduplicate_overlapping_lines, entry_source_page, normalize_word_candidate,
-        parse_page_spec, parse_pdf_text_layer, select_roman_consensus_candidate,
-        select_word_candidate, should_refine_roman_word, should_replace_entry,
-        should_use_isolated_word, trim_unattested_edge_punctuation, WordCandidate,
+        deduplicate_overlapping_lines, entry_source_page, lexical_prior, normalize_word_candidate,
+        parse_page_spec, parse_pdf_text_layer, restore_attested_edge_punctuation,
+        select_roman_consensus_candidate, select_word_candidate, should_refine_roman_word,
+        should_replace_entry, should_use_isolated_word, trim_unattested_edge_punctuation,
+        WordCandidate,
     };
     use crate::alto::{parse_alto, AltoWord, ScriptTrial};
     use crate::model::{CorpusEntry, Point};
@@ -2368,6 +2487,7 @@ mod tests {
         assert_eq!(normalize_word_candidate("word .", "eng"), "word .");
         assert_eq!(trim_unattested_edge_punctuation("75%.", "אלֶף."), "אלֶף.");
         assert_eq!(trim_unattested_edge_punctuation("&", ":אלֶף;"), "אלֶף");
+        assert_eq!(restore_attested_edge_punctuation("M72,", "כָּהָה"), "כָּהָה,");
     }
 
     #[test]
@@ -2388,9 +2508,48 @@ mod tests {
                 },
             ],
             "heb",
+            None,
+            &BTreeSet::new(),
         )
         .expect("one Hebrew reading");
         assert_eq!(selected.text, "אֶלֶף");
+    }
+
+    #[test]
+    fn lexical_priors_restore_points_and_one_uncertain_consonant() {
+        let lexicon = vec![
+            "כָּאָה".to_owned(),
+            "כָּהָה".to_owned(),
+            "לָאָה".to_owned(),
+            "לָעָה".to_owned(),
+            "אָגַם".to_owned(),
+        ];
+        let candidate = |text: &str, confidence| WordCandidate {
+            text: text.to_owned(),
+            confidence,
+        };
+
+        assert_eq!(
+            lexical_prior(&candidate("אגם", 0.49), &lexicon, &BTreeSet::new()).as_deref(),
+            Some("אָגַם")
+        );
+        let used = BTreeSet::from(["לָאָה".to_owned()]);
+        assert_eq!(
+            lexical_prior(&candidate("להָה;", 0.48), &lexicon, &used).as_deref(),
+            Some("לָעָה")
+        );
+        assert_eq!(
+            lexical_prior(&candidate("להָה", 0.80), &lexicon, &used),
+            None
+        );
+        let selected = select_word_candidate(
+            vec![candidate("פיאָ:ה", 0.54), candidate("לָאָה", 0.39)],
+            "heb",
+            Some(&lexicon),
+            &BTreeSet::new(),
+        )
+        .expect("lexicon-backed candidate");
+        assert_eq!(selected.text, "לָאָה");
     }
 
     #[test]

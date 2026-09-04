@@ -43,6 +43,10 @@ word_padding_pixels = 8
 # A tight crop excludes marks from neighbouring Roman words and can preserve
 # fine Hebrew points that the context-padded reading drops.
 word_additional_padding_pixels = [0]
+# Dictionary typography needs the points as well as the consonants. These
+# source-attested roots act as Tesseract candidate priors; they are never
+# applied to already parsed corpus text.
+word_lexicons = { heb = ["כָּאָה", "כָּהָה", "לָאָה", "לָעָה", "אָגַם", "עָגַם"] }
 # Roman words are only revisited when this image pass can arbitrate a
 # disagreement with the independent embedded PDF text layer.
 roman_word_refinement_confidence = 0.85
