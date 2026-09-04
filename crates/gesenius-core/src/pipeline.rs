@@ -1552,13 +1552,14 @@ fn select_word_candidate(
                 character.is_alphabetic() || canonical_combining_class(*character) != 0
             })
             .count();
-        let lexical_bonus = lexicon
-            .is_some_and(|words| {
-                let skeleton = lexical_skeleton(&candidate.text);
-                !skeleton.is_empty() && words.iter().any(|word| lexical_skeleton(word) == skeleton)
-            })
-            .then_some(0.5)
-            .unwrap_or_default();
+        let lexical_bonus = if lexicon.is_some_and(|words| {
+            let skeleton = lexical_skeleton(&candidate.text);
+            !skeleton.is_empty() && words.iter().any(|word| lexical_skeleton(word) == skeleton)
+        }) {
+            0.5
+        } else {
+            0.0
+        };
         candidate.confidence * (linguistic as f32).sqrt() + lexical_bonus
     };
     let mut selected = candidates
@@ -1577,21 +1578,28 @@ fn select_word_candidate(
     Some(selected)
 }
 
+struct CropRecognitionOptions<'a> {
+    scaled_dpi: u32,
+    input_hash: &'a str,
+    lexicon: Option<&'a [String]>,
+}
+
 fn recognize_crop_candidates(
     words_path: &Path,
     stem: &str,
     crop_path: &Path,
     language: &str,
     modes: &[u8],
-    scaled_dpi: u32,
-    input_hash: &str,
-    lexicon: Option<&[String]>,
+    options: CropRecognitionOptions<'_>,
 ) -> Result<Vec<WordCandidate>> {
     let crop_hash = sha256_file(crop_path)?;
-    let user_words = lexicon.filter(|words| !words.is_empty()).map(|words| {
-        let path = words_path.join(format!("{language}-user-words.txt"));
-        (path, words.join("\n") + "\n")
-    });
+    let user_words = options
+        .lexicon
+        .filter(|words| !words.is_empty())
+        .map(|words| {
+            let path = words_path.join(format!("{language}-user-words.txt"));
+            (path, words.join("\n") + "\n")
+        });
     if let Some((path, contents)) = &user_words {
         fs::write(path, contents)?;
     }
@@ -1604,7 +1612,7 @@ fn recognize_crop_candidates(
             crop_path.display().to_string(),
             tsv_stem.display().to_string(),
             "--dpi".to_owned(),
-            scaled_dpi.to_string(),
+            options.scaled_dpi.to_string(),
             "-l".to_owned(),
             language.to_owned(),
             "--psm".to_owned(),
@@ -1616,7 +1624,7 @@ fn recognize_crop_candidates(
         arguments.push("tsv".to_owned());
         run_resumable_command(
             &format!("recognize-{trial_stem}"),
-            &content_hash(&[input_hash, &crop_hash, language, &mode.to_string()]),
+            &content_hash(&[options.input_hash, &crop_hash, language, &mode.to_string()]),
             "tesseract",
             &arguments,
             std::slice::from_ref(&tsv_path),
@@ -1894,9 +1902,11 @@ fn recognize_tesseract_words(
                         crop_path,
                         "eng",
                         &settings.roman_word_page_segmentation_modes,
-                        scaled_dpi,
-                        &input_hash,
-                        None,
+                        CropRecognitionOptions {
+                            scaled_dpi,
+                            input_hash: &input_hash,
+                            lexicon: None,
+                        },
                     )?;
                     if let Some(threshold_crop_path) = threshold_crop_path.as_ref() {
                         candidates.extend(recognize_crop_candidates(
@@ -1905,9 +1915,11 @@ fn recognize_tesseract_words(
                             threshold_crop_path,
                             "eng",
                             &settings.roman_word_page_segmentation_modes,
-                            scaled_dpi,
-                            &input_hash,
-                            None,
+                            CropRecognitionOptions {
+                                scaled_dpi,
+                                input_hash: &input_hash,
+                                lexicon: None,
+                            },
                         )?);
                     }
                     let candidate =
@@ -1935,9 +1947,14 @@ fn recognize_tesseract_words(
                                 crop_path,
                                 language,
                                 &word_recognition_modes(settings),
-                                scaled_dpi,
-                                &input_hash,
-                                settings.word_lexicons.get(language).map(Vec::as_slice),
+                                CropRecognitionOptions {
+                                    scaled_dpi,
+                                    input_hash: &input_hash,
+                                    lexicon: settings
+                                        .word_lexicons
+                                        .get(language)
+                                        .map(Vec::as_slice),
+                                },
                             )?);
                         }
                         let Some(candidate) = select_word_candidate(
