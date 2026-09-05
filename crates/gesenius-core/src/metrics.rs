@@ -1,5 +1,10 @@
 //! OCR, layout, and entry-boundary evaluation metrics.
 
+mod aligned;
+mod alignment;
+
+pub use aligned::{AlignedDiagnostics, ForeignWordMetrics, ScriptCounts, WordCounts};
+
 use crate::model::Point;
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
@@ -9,6 +14,12 @@ use unicode_script::{Script, UnicodeScript};
 /// OCR error rates overall and per supported script.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct RecognitionMetrics {
+    /// Separately reported canonical-equivalence scores; absent in older reports.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub canonical_equivalence: Option<CanonicalEquivalenceMetrics>,
+    /// Full-stream script and foreign-token alignment; absent in older reports.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub aligned: Option<AlignedDiagnostics>,
     /// Character edit distance divided by reference characters.
     pub cer: f64,
     /// Word edit distance divided by reference words.
@@ -35,6 +46,21 @@ pub struct RecognitionMetrics {
     ///
     /// This is diagnostic and does not replace the exact-scalar `cer`.
     pub combining_mark_cer: f64,
+}
+
+/// NFC-only equivalence diagnostic, preserving diplomatic exact scores separately.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct CanonicalEquivalenceMetrics {
+    /// Normalization identifier; currently always `nfc` (never compatibility folding).
+    pub normalization: String,
+    /// CER after independently normalizing both streams to NFC.
+    pub cer: f64,
+    /// Whitespace-token WER after independently normalizing both streams to NFC.
+    pub wer: f64,
+    /// Reference Unicode scalars after NFC, the canonical CER denominator.
+    pub reference_characters: usize,
+    /// Reference whitespace tokens after NFC, the canonical WER denominator.
+    pub reference_words: usize,
 }
 
 /// Precision/recall pair.
@@ -90,7 +116,31 @@ pub fn recognition_metrics(reference: &str, hypothesis: &str) -> RecognitionMetr
         .map(|cluster| cluster.marks.len())
         .sum();
 
+    let canonical_reference: String = reference.nfc().collect();
+    let canonical_hypothesis: String = hypothesis.nfc().collect();
+    let canonical_reference_characters: Vec<_> = canonical_reference.chars().collect();
+    let canonical_hypothesis_characters: Vec<_> = canonical_hypothesis.chars().collect();
+    let canonical_reference_words: Vec<_> = canonical_reference.split_whitespace().collect();
+    let canonical_hypothesis_words: Vec<_> = canonical_hypothesis.split_whitespace().collect();
+
     RecognitionMetrics {
+        canonical_equivalence: Some(CanonicalEquivalenceMetrics {
+            normalization: "nfc".to_owned(),
+            cer: rate(
+                edit_distance(
+                    &canonical_reference_characters,
+                    &canonical_hypothesis_characters,
+                ),
+                canonical_reference_characters.len(),
+            ),
+            wer: rate(
+                edit_distance(&canonical_reference_words, &canonical_hypothesis_words),
+                canonical_reference_words.len(),
+            ),
+            reference_characters: canonical_reference_characters.len(),
+            reference_words: canonical_reference_words.len(),
+        }),
+        aligned: Some(aligned::diagnostics(reference, hypothesis)),
         cer: rate(
             edit_distance(&reference_characters, &hypothesis_characters),
             reference_characters.len(),
@@ -368,6 +418,38 @@ mod tests {
         assert_eq!(metrics.reference_characters_by_script["Grek"], 1);
         assert_eq!(metrics.cer_by_script["Phnx"], 1.0);
         assert_eq!(metrics.cer_by_script["Grek"], 1.0);
+    }
+
+    #[test]
+    fn canonical_scores_are_separate_and_do_not_fold_historical_or_compatibility_glyphs() {
+        let composed = recognition_metrics("ἄ", "α\u{313}\u{301}");
+        assert!(composed.cer > 0.0);
+        assert!(composed.wer > 0.0);
+        let canonical = composed.canonical_equivalence.unwrap();
+        assert_eq!(canonical.cer, 0.0);
+        assert_eq!(canonical.wer, 0.0);
+        assert_eq!(canonical.reference_characters, 1);
+        for (reference, hypothesis) in [("𐤀", "א"), ("ﬀ", "ff"), ("אֶ", "א"), ("A", "a")] {
+            assert!(
+                recognition_metrics(reference, hypothesis)
+                    .canonical_equivalence
+                    .unwrap()
+                    .cer
+                    > 0.0
+            );
+        }
+    }
+
+    #[test]
+    fn missing_new_diagnostics_deserialize_as_unmeasured_not_perfect() {
+        let current = recognition_metrics("α", "a");
+        let mut old = serde_json::to_value(&current).unwrap();
+        old.as_object_mut().unwrap().remove("aligned");
+        old.as_object_mut().unwrap().remove("canonical_equivalence");
+        let loaded: super::RecognitionMetrics = serde_json::from_value(old).unwrap();
+        assert!(loaded.aligned.is_none());
+        assert!(loaded.canonical_equivalence.is_none());
+        assert_eq!(loaded.cer, current.cer);
     }
 
     #[test]

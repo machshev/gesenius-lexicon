@@ -86,10 +86,10 @@ handling, and `benchmarks/gold/`.
 - [x] Add stable source-coordinate anchors or explicit alignment so comparisons
   remain meaningful when an engine splits, merges, or renumbers lines. Check
   source/page identity instead of trusting matching engine-generated line IDs.
-- [ ] Retain overall CER/WER; add aligned script confusions, base-letter accuracy,
+- [x] Retain overall CER/WER; add aligned script confusions, base-letter accuracy,
   pointing/accent accuracy, exact foreign-word accuracy, and script sample counts.
   Associate combining marks with their grapheme/base, including inherited marks.
-- [ ] Define Unicode normalization and historical-glyph scoring policies. Preserve
+- [x] Define Unicode normalization and historical-glyph scoring policies. Preserve
   diplomatic text; report any equivalence-aware score separately from exact score.
 - [ ] Score segmentation and entry boundaries separately from transcription;
   include missing and extra text in designated fully transcribed regions.
@@ -383,3 +383,37 @@ and audit files are committed; this plan update records the remaining work.
   reviewed and no corpus/gold file changed. Test processes stopped.
 - Next action remains independent source review through the form, followed by
   audited gold promotion and the broader representative measurement work.
+
+### 2026-09-05: aligned scoring and Unicode policy
+
+- Continued scoring independently while the user completes page-50 source review.
+  At session start, the first line was resolved at revision 2 and matched the
+  current draft/source digest. The live `transcription-reviews.jsonl` is user work;
+  it remains untouched and excluded from these implementation commits.
+- Completed the script/foreign-token diagnostic and normalization-policy items
+  in B. Added full-stream minimum-edit script confusion counts and exact
+  foreign-containing whitespace-token accuracy/precision, retaining punctuation,
+  pointing, introduced scripts and explicit zero-support counts. Existing
+  base-letter/mark CER remain diagnostics with their documented limits; they are
+  not calibrated probabilities of correct recognition.
+- Added separate NFC CER/WER with normalized denominators; diplomatic CER/WER
+  remain unchanged. Documented historical-glyph exclusions and the legacy Aleph
+  mapping limitation. Defined initial numeric no-regression tolerances (0 increase)
+  before tuning; missing sample coverage still prevents adoption claims.
+- Implemented deterministic Hirschberg alignment with linear working storage;
+  tested minimum cost and index conservation exhaustively on short strings,
+  asymmetric inputs, wrong-script swaps, absent/introduced scripts, rare scripts,
+  moved/missing marks, punctuation, canonical equivalence, compatibility glyphs,
+  and old-report deserialization. Checks passed: 84 core tests, 23 fixture tests
+  with external TEI validation, warning-denied workspace/all-target Clippy,
+  formatting, XML schema/SQLite checks, and locked build in pinned Nix.
+- Source-built CLI re-evaluation of cached page-17 fused ALTO reproduced exact
+  CER 0.14707750952986023 and WER 0.22163120567375885 with no missing line IDs.
+  The new strict foreign-token diagnostic finds 7 exact matches / 93 reference
+  tokens; this is an old, legacy-line-ID, unverified-source benchmark comparison,
+  not representative accuracy or a new OCR run. A separate provenance report
+  records the diagnostic snapshot after the implementation commit.
+- No OCR generator, corpus change, gold promotion or final-test evaluation ran.
+  Next independent scoring tasks: segmentation/entry-boundary measures, comparable
+  stage reports, and oracle-candidate scoring. Representative sampling and baseline
+  work remain open while source reviews continue.

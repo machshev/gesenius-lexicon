@@ -85,8 +85,11 @@ cargo run -- benchmark \
   --alto .cache/gesenius/runs/<run>/robinson-1854/page-0017/tesseract-fused.alto.xml
 ```
 
-The command reports overall CER/WER, script diagnostics and sample counts, missing
-gold lines, and alignment/provenance status. Existing fixtures use legacy line IDs
+The command reports exact CER/WER, a separate NFC-equivalence score, aligned
+script substitutions and sample counts, exact foreign-containing token
+accuracy/precision, missing gold lines, and alignment/provenance status. Base and
+pointing diagnostics remain separate from exact text scores; absent foreign-token
+support reports null accuracy rather than a perfect result. Existing fixtures use legacy line IDs
 and are explicitly unverified without a source identity. To check an asserted
 identity against the gold fixture, add `--hypothesis-identity identity.json` with:
 
