@@ -1,6 +1,6 @@
 # Multilingual OCR accuracy implementation plan
 
-Status: planned; implementation has not started.
+Status: in progress; initial sample audit, cached baseline, and scoring foundations verified.
 Created: 2026-09-05.
 
 ## Objective
@@ -65,13 +65,13 @@ Aleph; make that transcription policy explicit in future scoring.
 - [ ] Visually audit candidate pages in `pilot.toml`; replace unsupported category
   or script claims with source-verified selections. Do not infer printed script
   from semantic language, such as assuming Aramaic requires `Armi`.
-- [ ] Create a sample inventory recording edition, PDF and printed page, source
+- [x] Create a sample inventory recording edition, PDF and printed page, source
   hash, crop coordinates, actual scripts, typography, damage, and selection reason.
 - [ ] Begin with roughly 150–300 verified lines across 8–12 Robinson pages,
   adjusting the sample to obtain real coverage rather than filling a quota.
   Include ordinary prose, dense comparisons, headwords, mixed-direction lines,
   Arabic/Syriac connections, pointing, Greek accents, and rare glyphs.
-- [ ] Separate development, training/validation, and final test pages. Verify
+- [x] Separate development, training/validation, and final test pages. Verify
   rare-script coverage in each usable partition; record coverage gaps explicitly.
 - [ ] Record transcription authority and unresolved glyphs. Model-assisted
   transcription needs source checking before it becomes gold.
@@ -83,7 +83,7 @@ Aleph; make that transcription policy explicit in future scoring.
 Primary files: `crates/gesenius-core/src/{benchmark,metrics}.rs`, CLI benchmark
 handling, and `benchmarks/gold/`.
 
-- [ ] Add stable source-coordinate anchors or explicit alignment so comparisons
+- [x] Add stable source-coordinate anchors or explicit alignment so comparisons
   remain meaningful when an engine splits, merges, or renumbers lines. Check
   source/page identity instead of trusting matching engine-generated line IDs.
 - [ ] Retain overall CER/WER; add aligned script confusions, base-letter accuracy,
@@ -251,6 +251,53 @@ Blockers or missing sample coverage:
 Exact next action:
 ```
 
-Initial next action: inspect the current source and cached baseline, then visually
-verify a small spread of candidate Robinson pages to establish the sample inventory
-and split policy for milestone A.
+### 2026-09-05: first measurement milestone
+
+- Coordinator delegated source auditing to Sol, scoring implementation to Terra,
+  and cached baseline provenance to Luna. Builds and verification are serialized.
+- Audited ten source pages, corrected pilot script assertions, and froze page
+  partitions in `benchmarks/sample-inventory/robinson-1854-splits.toml`.
+  Inventory and reproducible raster identities are in the adjacent audit document.
+  Commits: `2ebf89a`, `8a7e2cf`.
+- No new verified gold lines yet. Broad candidate regions are not line anchors.
+  Validation lacks Ethiopic; historical Aleph glyphs have no held-out sample.
+  Unaudited pilot pages remain explicitly unverified. Milestone A stays open.
+- Clean source build at `9eb6ad3` reproduced the existing cached fused result:
+  CER 0.14707750952986023, WER 0.22163120567375885. This evaluates old OCR
+  artifacts, not a fresh OCR run or a representative baseline. Report commit:
+  `a8614fa`, under `benchmarks/baselines/`. Cached stages
+  with incompatible line IDs cannot be compared as transcription accuracy.
+- Fixed the fixture runner's obsolete SQLite schema path in `de6d32a`; loading
+  the current v2 schema succeeded in the pinned Nix environment.
+
+Next sampling action: transcribe and independently source-check exact lines from
+the frozen development and validation pages, add coordinate anchors and resolve
+uncertain marks. Record numeric acceptance tolerances before recognition tuning.
+
+Scoring implementation verified and committed as `c8906ee`:
+
+- Added optional same-page source rectangles, matching asserted source/coordinate
+  frame identities, image-dimension checks, and explicit line-boundary text policy.
+  Split/merged hypotheses are scored once in declared ALTO reading order. Legacy
+  line-ID fixtures remain explicitly identified; old exact CER/WER are unchanged.
+- Added dynamic reference-script counts (including Phnx), alphabetic base and
+  base-aligned mark diagnostics with linear working memory. Filtered per-script
+  CER is still diagnostic; aligned script confusions, exact foreign-word scores,
+  separate segmentation/entry metrics, and oracle-candidate scoring remain open.
+- Checks: `nix develop path:. --command cargo fmt --all --check`;
+  `nix develop path:. --command bash -euo pipefail -c
+  './tool/test-fixture-pipeline.sh && cargo build --locked'`.
+  Passed 72 core unit tests, 23 fixture tests with external TEI validation,
+  warning-denied workspace/all-target Clippy, XML schema and SQLite v2 checks.
+  CLI smoke reproduced legacy exact CER/WER, accepted matching asserted identity,
+  and rejected an incorrect PDF page without emitting metrics.
+- Initial integration exposed compile errors and review found line-boundary,
+  coordinate-frame, mark-association and memory-cost issues; these were corrected
+  before the final passing checks. The scoring agent reached its usage limit
+  after handoff, so the coordinator completed integration and final regressions.
+- No OCR generator or corpus mutation ran. Candidate-source inventory is not gold;
+  no recognition-accuracy improvement or release readiness is claimed. The next
+  milestone must source-check line transcription and add real anchored fixtures.
+
+Handoff: no unfinished processes or generated corpus changes. All implementation
+and audit files are committed; this plan update records the remaining work.
