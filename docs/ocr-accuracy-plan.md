@@ -330,3 +330,32 @@ and audit files are committed; this plan update records the remaining work.
   page 700 rare-script region and validation page 175 using the same evidence
   format. The representative sample target, scoring policy and numeric acceptance
   tolerances remain open. No unfinished processes.
+
+### 2026-09-05: transcription review form
+
+- Added **Transcription review** to `cargo run -- review serve`, available at
+  `/transcriptions`. The form loads the twelve page-50 drafts, shows source crops
+  with zoom, and saves an independent reading before exposing draft text or
+  uncertainty notes. Reviewers then record a resolved/unresolved decision.
+- Added a separate append-only `transcription-reviews.jsonl` beside the configured
+  corpus patch file. Records preserve source identity, reviewer, timestamp,
+  immutable first reading, final text, notes and optimistic revision. Crop hashes
+  are verified; changed source/draft metadata invalidates previous review state.
+  Only development/validation-labelled samples are offered. Gold promotion
+  remains a separate audited action; no real review or corpus mutation occurred.
+- Verification: pinned Nix formatting, 75 core unit tests, 23 fixture tests with
+  external TEI validation, warning-denied workspace/all-target Clippy, XML schema
+  and SQLite checks, and locked build passed. New regressions exercise source-first
+  gating, immutable readings, stale saves, persistence, source changes, crop
+  tampering, reviewer consistency, unresolved notes and held-out sample exclusion.
+- Local HTTP checks passed for hidden drafts, crop bytes, save/reveal, stale 409,
+  resolution and journal history. Firefox control-level checks passed for loading
+  the crop, entering an independent reading, revealing comparison, resolving and
+  restoring progress after reload. Inspected the rendered form. Initial browser
+  harness attempts needed an existing profile directory and explicit waits for
+  asynchronous data/image loading; final checks passed. JavaScript syntax passed
+  Node's parser. Test journals/profiles were isolated in temporary directories;
+  test servers and browsers stopped.
+- Next action: use the form for actual independent review of page 50; resolve
+  flagged readings, then promote accepted lines with their review evidence. The
+  broader sample, scoring policy and acceptance-tolerance work remains open.

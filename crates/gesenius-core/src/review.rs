@@ -1,5 +1,7 @@
 //! Append-only correction patches and a local optimistic-lock review service.
 
+mod transcription;
+
 use crate::corpus_io::load_entries;
 use crate::metrics::normalized_disagreement;
 use crate::model::{CorpusEntry, Point, ReviewState};
@@ -207,6 +209,8 @@ pub struct ReviewServerOptions<'a> {
     pub corpus_root: &'a Path,
     /// Append-only patch JSONL path.
     pub patch_path: &'a Path,
+    /// Source transcription draft directory.
+    pub transcription_drafts: &'a Path,
     /// Roots from which page images may be served.
     pub asset_roots: &'a [PathBuf],
     /// Queue threshold.
@@ -218,14 +222,31 @@ pub struct ReviewServerOptions<'a> {
 /// Serves the local review UI until interrupted.
 pub fn serve(options: &ReviewServerOptions<'_>) -> Result<()> {
     let store = ReviewStore::open(options.corpus_root, options.patch_path)?;
+    let transcriptions = transcription::TranscriptionStore {
+        root: options.transcription_drafts.to_owned(),
+        journal: options
+            .patch_path
+            .with_file_name("transcription-reviews.jsonl"),
+    };
+    let mut asset_roots = options.asset_roots.to_vec();
+    asset_roots.push(options.transcription_drafts.to_owned());
     let server = Server::http(options.bind)
         .map_err(|error| anyhow::anyhow!("failed to bind {}: {error}", options.bind))?;
     eprintln!("Gesenius review UI: http://{}", options.bind);
     for request in server.incoming_requests() {
+        if matches!(
+            request.url().split('?').next(),
+            Some("/transcriptions" | "/api/transcriptions")
+        ) {
+            if let Err(error) = transcription::handle(request, &transcriptions) {
+                eprintln!("transcription request failed: {error:#}");
+            }
+            continue;
+        }
         if let Err(error) = handle_request(
             request,
             &store,
-            options.asset_roots,
+            &asset_roots,
             options.confidence_threshold,
             options.disagreement_threshold,
         ) {
@@ -583,6 +604,7 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 @media(max-width:850px){main{display:block;height:auto}.grid{grid-template-columns:1fr}#list{max-height:35vh}#detail.page-detail{box-sizing:border-box;height:100dvh}}
 </style></head>
 <body><header><strong>Gesenius review</strong>
+<a href="/transcriptions" style="color:white">Transcription review</a>
 <button id="entryMode">Entries</button><button id="pageMode">Pages</button>
 <span id="entryFilters"><label>State <select id="state"><option value="">all</option><option>machine</option><option>corrected</option><option>verified</option></select></label>
 <label><input id="queue" type="checkbox" checked> review queue</label></span><button id="reload">Reload</button></header>

@@ -145,6 +145,23 @@ cargo run -- review serve --bind 127.0.0.1:8787
 
 The UI shows the source page and ALTO overlays, complete competing hypotheses, Unicode code points, script warnings, confidence, and editable structured JSON. Saves require the revision the reviewer observed; stale edits receive HTTP 409 rather than silently overwriting newer work.
 
+Choose **Transcription review** in the header (or open `/transcriptions`) to
+review the source-anchored benchmark drafts. Select a line, enter your reviewer
+name, and transcribe its crop. **Save independent reading and compare** records
+your first reading before revealing the draft and its uncertainties. Then check
+the source again and save a **Resolved** or **Unresolved** decision with notes.
+Zoom controls and an original-crop link help inspect small points and accents.
+
+Transcription reviews append to `corpus/review/transcription-reviews.jsonl`
+(beside the configured `--patches` file). The first reading stays immutable;
+subsequent decisions preserve history and require the same reviewer name.
+Changed source/draft metadata or crop hashes cannot silently reuse an old review.
+These decisions do not automatically promote text into gold or alter corpus
+entries. Reloading the page restores saved progress. Drafts default to
+`benchmarks/transcription-drafts`; override with `review serve
+--transcription-drafts PATH`. Only samples labelled development or validation
+are offered. This is a local review workflow, not authenticated reviewer identity.
+
 During a multipage `run`, each completed page is atomically published to the machine corpus. Use **Reload** in an already-running review UI to browse and review that page while OCR continues on later pages.
 
 Reviews append complete replacements to `corpus/review/patches.jsonl`. Machine JSONL is not rewritten, and generated TEI/SQLite files are never edited. Materialization replays the strictly monotonic patch chain.

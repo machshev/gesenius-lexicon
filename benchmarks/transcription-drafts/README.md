@@ -46,8 +46,22 @@ date, disagreements and resolutions. Verify every line, including those without
 an explicit uncertainty. Preserve the draft/review history. Promote only resolved
 lines to gold, recording the accepted authority and retaining the exact source
 anchors. Keep any unresolved lines here and report their exclusion. No second
-review has occurred in this session; accepted gold count remains zero.
+review has occurred during draft preparation; accepted gold count remains zero.
 
 Next sample: the development page 700 Ethiopic/Syriac comparison region specified
 in the sample inventory, followed by validation page 175. Preserve the frozen
 final-test pages. Numeric acceptance tolerances must be recorded before tuning.
+
+### Review in the local web interface
+
+Run `cargo run -- review serve` and choose **Transcription review** in the header.
+The form saves your independent transcription before showing the draft and the
+uncertainty list. Check the crop again, adjust your final reading, and record a
+resolved or unresolved decision. Saved records include reviewer, timestamp,
+source digest, original reading, final reading, notes and revision; they append
+to `corpus/review/transcription-reviews.jsonl`. No JSON editing is needed.
+
+Resolved records remain review evidence until a separate promotion checks the
+current source digest, accepted authority and outstanding uncertainties. The
+original draft and manifest remain unchanged. The form supports one independent
+reviewer per line/source version; subsequent edits retain that reviewer identity.

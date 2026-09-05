@@ -154,6 +154,9 @@ enum ReviewCommands {
         /// Loopback bind address.
         #[arg(long, default_value = "127.0.0.1:8787")]
         bind: String,
+        /// Source-anchored transcription drafts to review.
+        #[arg(long, default_value = "benchmarks/transcription-drafts")]
+        transcription_drafts: PathBuf,
     },
 }
 
@@ -341,8 +344,12 @@ fn validate_command(cli: &Cli, arguments: &ValidateArguments) -> Result<()> {
 
 fn review_command(cli: &Cli, command: &ReviewCommands) -> Result<()> {
     match command {
-        ReviewCommands::Serve { bind } => serve(&ReviewServerOptions {
+        ReviewCommands::Serve {
             bind,
+            transcription_drafts,
+        } => serve(&ReviewServerOptions {
+            bind,
+            transcription_drafts,
             corpus_root: &cli.corpus,
             patch_path: &cli.patches,
             asset_roots: &[cli.cache.clone(), std::env::current_dir()?],
