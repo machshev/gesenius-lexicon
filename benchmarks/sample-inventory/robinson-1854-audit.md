@@ -61,6 +61,18 @@ The audit deliberately sampled complete page context before choosing candidate
 regions. Coordinates are broad enough to preserve labels and reading-order
 evidence; line-level gold work must add exact rectangles and stable anchors.
 
+Priority tight regions for the next transcription pass use the same 180 dpi
+coordinate space:
+
+- Printed 700 / PDF 716, `[70,575,370,250]`: the left-column cluster beginning
+  with the `Eth.` comparison, followed by a Syriac form and an `Aram.`-labelled
+  square-Hebrew form. Preserve the labels in the crop so visible script and
+  semantic language can be recorded separately.
+- Printed 775 / PDF 791, `[450,615,395,230]`: the right-column Chaldee paragraph
+  containing square Hebrew, a connected Syriac form, polytonic Greek, and an
+  Ethiopic form. The Syriac identification remains provisional pending a
+  character-level crop review.
+
 ## Coverage gaps before a representative benchmark exists
 
 - No line in this inventory has yet been diplomatically transcribed or independently
@@ -77,6 +89,10 @@ evidence; line-level gold work must add exact rectangles and stable anchors.
 - Typography still needing an explicit scoring policy includes historical
   Phoenician forms, small-cap language labels, italic transliteration, combining
   points, polytonic Greek accents, and mixed RTL/LTR punctuation.
+- Historical Aleph shapes were observed only on excluded printed page 1. The
+  six-script partition union therefore does not provide held-out coverage of
+  those glyphs; freeze a separate unseen historical-glyph page before claiming
+  final-test coverage for them.
 
 ## Next sampling gate
 
