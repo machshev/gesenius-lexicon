@@ -1,0 +1,249 @@
+{
+  "report_kind": "cached_fused_alto_scoring_diagnostics",
+  "generated_at": "2026-09-05T19:52:16.777682+00:00",
+  "scope": "Robinson 1854 PDF page 17 / printed page 1 / existing legacy gold entry e0001",
+  "implementation_commit": "41191bc09a2e394ec534ff742aa963613060bd0d",
+  "binary": {
+    "path": "target/debug/gesenius",
+    "sha256": "4b77425b293636963fa27b4402275a60d02ccf93ab7b421cde4a54e319c63501",
+    "profile": "debug",
+    "build_command": "nix develop path:. --command cargo build --locked",
+    "cargo_lock_sha256": "b16f20ac87fa763e4545780eba8d9e908f9da7b5f569998d3b857401d74599b8"
+  },
+  "prior_baseline": {
+    "path": "benchmarks/baselines/ocr-baseline-page17-2026-09-05.json",
+    "sha256": "bc62d4b8f3f64fe4a715a3167b71424fc254bfcd64181f98a1053988ee23aefa"
+  },
+  "source": {
+    "edition": "robinson-1854",
+    "scan_id": "loc-gdcmassbookdig.hebrewenglishlex00gese",
+    "source_pdf_sha256": "466b061e770f212cb7d888d8dadc2a54575fb115bf6de9cdb24b0c280461ccaa",
+    "source_pdf_path": ".cache/gesenius/sources/466b061e770f212cb7d888d8dadc2a54575fb115bf6de9cdb24b0c280461ccaa/source.pdf",
+    "pdf_page": 17,
+    "printed_page": "1"
+  },
+  "cached_run": {
+    "run_id": "360d1913632707d21584c6affccc1934848a4ded6cc583535be2ea5b1aecdc15",
+    "page_directory": ".cache/gesenius/runs/360d1913632707d21584c6affccc1934848a4ded6cc583535be2ea5b1aecdc15/robinson-1854/page-0017",
+    "parsed_sha256": "3dfbe003978d1cf17a6e9934d9bc61d1c2cc4b1264bf69dd5ec61edf638a0ba3",
+    "source_run_commit": null,
+    "source_run_commit_status": "missing from cached receipts"
+  },
+  "gold": {
+    "path": "benchmarks/gold/robinson-1854-p001-e0001.json",
+    "sha256": "7600120a3fe44ca807ca1bd91c6e7c9ef6483e7b9698f115241f6a458451c8ea",
+    "authority": "Frontier transcription checked visually against the Robinson 1854 page 1 scan; historical Aleph glyph variants are represented by the Unicode Phoenician Aleph."
+  },
+  "hypothesis": {
+    "path": ".cache/gesenius/runs/360d1913632707d21584c6affccc1934848a4ded6cc583535be2ea5b1aecdc15/robinson-1854/page-0017/tesseract-fused.alto.xml",
+    "sha256": "8c9fa597623a19679f9283b12cdbd86122a41b2aa01530d7841a701f76507178"
+  },
+  "command": [
+    "target/debug/gesenius",
+    "benchmark",
+    "--gold",
+    "benchmarks/gold/robinson-1854-p001-e0001.json",
+    "--alto",
+    ".cache/gesenius/runs/360d1913632707d21584c6affccc1934848a4ded6cc583535be2ea5b1aecdc15/robinson-1854/page-0017/tesseract-fused.alto.xml"
+  ],
+  "elapsed_seconds": 3.002000750042498,
+  "checks": {
+    "gold_and_alto_hashes_match_prior_baseline": true,
+    "exact_cer_unchanged": true,
+    "exact_wer_unchanged": true,
+    "missing_gold_line_ids": 0
+  },
+  "limitations": [
+    "No OCR stage, corpus regeneration or held-out evaluation ran.",
+    "Legacy engine line IDs are used; source_identity remains unverified in the CLI result.",
+    "The existing gold maps distinct historical Aleph drawings to Phoenician Aleph; this cannot measure drawing-level fidelity.",
+    "Foreign-token exactness includes punctuation and whitespace segmentation; it is not dictionary-word accuracy.",
+    "This single development-era sample is not a representative whole-book baseline.",
+    "Elapsed time measures only this debug-build scoring invocation, not OCR or comparative runtime."
+  ],
+  "result": {
+    "benchmark_id": "robinson-1854:p1:e0001",
+    "metrics": {
+      "canonical_equivalence": {
+        "normalization": "nfc",
+        "cer": 0.14707750952986023,
+        "wer": 0.22163120567375885,
+        "reference_characters": 3148,
+        "reference_words": 564
+      },
+      "aligned": {
+        "alignment_policy": "levenshtein_hirschberg_v1",
+        "characters_by_script": {
+          "Arab": {
+            "reference_characters": 22,
+            "hypothesis_characters": 18,
+            "matches": 3,
+            "substitutions": 15,
+            "deletions": 4,
+            "insertions": 0
+          },
+          "Grek": {
+            "reference_characters": 41,
+            "hypothesis_characters": 38,
+            "matches": 36,
+            "substitutions": 4,
+            "deletions": 1,
+            "insertions": 0
+          },
+          "Hebr": {
+            "reference_characters": 421,
+            "hypothesis_characters": 90,
+            "matches": 71,
+            "substitutions": 163,
+            "deletions": 187,
+            "insertions": 0
+          },
+          "Latn": {
+            "reference_characters": 1882,
+            "hypothesis_characters": 1901,
+            "matches": 1857,
+            "substitutions": 10,
+            "deletions": 15,
+            "insertions": 2
+          },
+          "Phnx": {
+            "reference_characters": 3,
+            "hypothesis_characters": 0,
+            "matches": 0,
+            "substitutions": 2,
+            "deletions": 1,
+            "insertions": 0
+          },
+          "Syrc": {
+            "reference_characters": 6,
+            "hypothesis_characters": 8,
+            "matches": 0,
+            "substitutions": 6,
+            "deletions": 0,
+            "insertions": 0
+          },
+          "Zyyy": {
+            "reference_characters": 773,
+            "hypothesis_characters": 901,
+            "matches": 747,
+            "substitutions": 13,
+            "deletions": 13,
+            "insertions": 27
+          }
+        },
+        "substitutions_by_script": {
+          "Arab": {
+            "Arab": 5,
+            "Hebr": 4,
+            "Zyyy": 6
+          },
+          "Grek": {
+            "Grek": 1,
+            "Latn": 1,
+            "Zyyy": 2
+          },
+          "Hebr": {
+            "Arab": 9,
+            "Hebr": 14,
+            "Latn": 27,
+            "Syrc": 8,
+            "Zyyy": 105
+          },
+          "Latn": {
+            "Grek": 1,
+            "Hebr": 1,
+            "Latn": 6,
+            "Zyyy": 2
+          },
+          "Phnx": {
+            "Latn": 1,
+            "Zyyy": 1
+          },
+          "Syrc": {
+            "Latn": 5,
+            "Zyyy": 1
+          },
+          "Zyyy": {
+            "Arab": 1,
+            "Latn": 2,
+            "Zyyy": 10
+          }
+        },
+        "foreign_words": {
+          "overall": {
+            "reference_words": 93,
+            "hypothesis_words": 47,
+            "exact_matches": 7,
+            "accuracy": 0.07526881720430108,
+            "precision": 0.14893617021276595
+          },
+          "by_script": {
+            "Arab": {
+              "reference_words": 3,
+              "hypothesis_words": 5,
+              "exact_matches": 0,
+              "accuracy": 0.0,
+              "precision": 0.0
+            },
+            "Grek": {
+              "reference_words": 9,
+              "hypothesis_words": 9,
+              "exact_matches": 7,
+              "accuracy": 0.7777777777777778,
+              "precision": 0.7777777777777778
+            },
+            "Hebr": {
+              "reference_words": 76,
+              "hypothesis_words": 27,
+              "exact_matches": 0,
+              "accuracy": 0.0,
+              "precision": 0.0
+            },
+            "Phnx": {
+              "reference_words": 3,
+              "hypothesis_words": 0,
+              "exact_matches": 0,
+              "accuracy": 0.0,
+              "precision": null
+            },
+            "Syrc": {
+              "reference_words": 2,
+              "hypothesis_words": 6,
+              "exact_matches": 0,
+              "accuracy": 0.0,
+              "precision": 0.0
+            }
+          }
+        }
+      },
+      "cer": 0.14707750952986023,
+      "wer": 0.22163120567375885,
+      "cer_by_script": {
+        "Arab": 0.9545454545454546,
+        "Grek": 0.12195121951219512,
+        "Hebr": 0.8242280285035629,
+        "Latn": 0.032412327311370885,
+        "Phnx": 1.0,
+        "Syrc": 1.1666666666666667
+      },
+      "reference_characters_by_script": {
+        "Arab": 22,
+        "Grek": 41,
+        "Hebr": 421,
+        "Latn": 1882,
+        "Phnx": 3,
+        "Syrc": 6
+      },
+      "reference_characters": 3148,
+      "reference_words": 564,
+      "reference_base_letters": 2188,
+      "reference_combining_marks": 199,
+      "base_letter_cer": 0.10191956124314443,
+      "combining_mark_cer": 0.9447236180904522
+    },
+    "missing_lines": [],
+    "source_identity": "unverified",
+    "alignment": "legacy_line_ids",
+    "text_boundary_policy": "exact_line_breaks"
+  }
+}

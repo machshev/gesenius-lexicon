@@ -417,3 +417,9 @@ and audit files are committed; this plan update records the remaining work.
   Next independent scoring tasks: segmentation/entry-boundary measures, comparable
   stage reports, and oracle-candidate scoring. Representative sampling and baseline
   work remain open while source reviews continue.
+
+Scoring milestone commits: implementation/policy `41191bc`; cached diagnostic
+snapshot is recorded under `benchmarks/baselines/ocr-diagnostics-page17-2026-09-05.*`.
+The snapshot verifies input hashes against the previous baseline and records the
+new binary hash and full diagnostic output. The live user review journal remains
+outside these commits; do not remove or overwrite it at the next session start.
