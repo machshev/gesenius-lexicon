@@ -301,3 +301,32 @@ Scoring implementation verified and committed as `c8906ee`:
 
 Handoff: no unfinished processes or generated corpus changes. All implementation
 and audit files are committed; this plan update records the remaining work.
+
+### 2026-09-05: first anchored transcription draft
+
+- Continued the sampling gate with twelve consecutive right-column lines from
+  printed page 50 / PDF 66, a frozen development page. Added benchmark-shaped
+  coordinate drafts, twelve exact source crops and a per-line review manifest
+  under `benchmarks/transcription-drafts/robinson-1854-p050/`.
+- Recomputed the source PDF and existing 180 dpi page hashes; both match the
+  inventory. Direct Poppler 25.10.0 rendering at 360 dpi produced a 1855 × 3139
+  raster, SHA-256 `14c4a651784c5ef7ac01fe7ab5b3f14cbfa21aedfa71564c9eb4f78c299f057e`.
+  Exact commands, frame identity, crop bounds and crop hashes are retained.
+- Inspected full-page context, native higher-resolution region, enlarged view,
+  and the assembled individual crops. Drafted directly from the scan without OCR
+  or dictionary proposals. Coverage: 12 Latn lines, 5 also Hebr, 1 also Grek.
+  Recorded six lines needing particular point/accent/spelling checks, including
+  apparent defective Hebrew plurals; all twelve still require second review.
+- These are explicitly drafts outside the gold directory. No independent second
+  reviewer was available in this session. Accepted new gold count remains zero;
+  no measurement checkbox is marked complete. No final-test OCR was inspected.
+- Verification: source/raster hashes matched; JSON, frozen development membership,
+  twelve unique ordered in-bounds non-overlapping anchors, matching crop dimensions
+  and hashes, and absence of Unicode directional controls checked. `git diff
+  --check` passed. This is a data/documentation change; no Cargo rebuild, generator,
+  corpus mutation or recognition-accuracy measurement ran.
+- Exact next action: obtain independent source review of these twelve lines and
+  resolve the recorded uncertainties before promotion; prepare the development
+  page 700 rare-script region and validation page 175 using the same evidence
+  format. The representative sample target, scoring policy and numeric acceptance
+  tolerances remain open. No unfinished processes.
