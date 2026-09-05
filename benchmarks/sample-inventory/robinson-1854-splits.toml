@@ -1,0 +1,35 @@
+manifest_version = 1
+edition = "robinson-1854"
+source_sha256 = "466b061e770f212cb7d888d8dadc2a54575fb115bf6de9cdb24b0c280461ccaa"
+status = "frozen-before-line-transcription"
+frozen_at = "2026-09-05T11:54:58+01:00"
+unit = "printed-page"
+
+# Pages 1-10 have already informed parser/OCR work and may not enter final test.
+excluded_from_final_test = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+
+# Development is available for dictionaries, thresholds, crop design, and tuning.
+development = ["50", "100", "325", "700"]
+
+# Validation is available for model/configuration selection, but not fitting.
+validation = ["175", "475", "925"]
+
+# Inspect OCR output only once policy and configuration are fixed. If these pages
+# are used for tuning after evaluation, retire them to development and freeze new
+# unseen pages for the next final report.
+final_test = ["250", "775"]
+
+[policy]
+page_isolation = true
+entry_crossing_page_boundary_follows = "all involved pages must share a non-test partition; otherwise omit the entry"
+dictionary_fitting = "development only"
+threshold_and_crop_selection = "development, then validation once per candidate policy"
+model_selection = "validation only"
+final_test_use = "one evaluation after transcription policy, recognizer, routing, and selection are fixed"
+gold_authority = "source-checked diplomatic transcription with unresolved glyphs explicitly marked"
+
+[known_gaps]
+development = []
+validation = ["Ethi"]
+final_test = []
+overall = ["no verified gold lines yet", "front matter and index not represented", "damage candidates not verified"]
