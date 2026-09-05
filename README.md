@@ -85,7 +85,24 @@ cargo run -- benchmark \
   --alto .cache/gesenius/runs/<run>/robinson-1854/page-0017/tesseract-fused.alto.xml
 ```
 
-The command reports overall CER/WER, per-script CER, and missing gold line IDs.
+The command reports overall CER/WER, script diagnostics and sample counts, missing
+gold lines, and alignment/provenance status. Existing fixtures use legacy line IDs
+and are explicitly unverified without a source identity. To check an asserted
+identity against the gold fixture, add `--hypothesis-identity identity.json` with:
+
+```json
+{"edition":"robinson-1854","source_page":17,"source_sha256":"466b061e770f212cb7d888d8dadc2a54575fb115bf6de9cdb24b0c280461ccaa"}
+```
+
+Resolve that identity from the hypothesis's source receipts; copying the gold
+identity alone does not establish provenance. Coordinate-aligned fixtures also
+require source image dimensions, rectangular anchors, and matching asserted
+`coordinate_frame` values identifying the image and transforms. Their reported
+text policy joins line boundaries with spaces. See the
+[metric policy](docs/ocr-metric-policy.md),
+[sample inventory](benchmarks/sample-inventory/robinson-1854-audit.md), and
+[cached baseline](benchmarks/baselines/ocr-baseline-page17-2026-09-05.md) for
+scoring limits and the current measurement work.
 
 Entries continuing onto a consecutive page retain the stable ID of the page on which they began. Headers and footers are kept out of continuations. Printed hyphenation remains diplomatic until a reviewer makes an explicit structural correction.
 

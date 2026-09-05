@@ -3,7 +3,7 @@
 use anyhow::{bail, Context, Result};
 use clap::{Args, Parser, Subcommand, ValueEnum};
 use gesenius_core::alto::parse_alto;
-use gesenius_core::benchmark::{evaluate_alto, GoldBenchmark};
+use gesenius_core::benchmark::{evaluate_alto_with_identity, GoldBenchmark, SourceIdentity};
 use gesenius_core::corpus_io::load_entries;
 use gesenius_core::export::{
     export, manifest_from_entries, validate_sqlite, validate_tei_schema, ExportFormat,
@@ -113,6 +113,9 @@ struct BenchmarkArguments {
     /// ALTO hypothesis to evaluate.
     #[arg(long)]
     alto: PathBuf,
+    /// JSON source identity asserted for this ALTO (edition, source_page, source_sha256).
+    #[arg(long)]
+    hypothesis_identity: Option<PathBuf>,
 }
 
 #[derive(Args)]
@@ -218,7 +221,21 @@ fn benchmark_command(arguments: &BenchmarkArguments) -> Result<()> {
     let benchmark = GoldBenchmark::load(&arguments.gold)?;
     let alto = fs::read_to_string(&arguments.alto)
         .with_context(|| format!("failed to read ALTO {}", arguments.alto.display()))?;
-    print_json(&evaluate_alto(&benchmark, &parse_alto(&alto)?))
+    let identity: Option<SourceIdentity> = arguments
+        .hypothesis_identity
+        .as_ref()
+        .map(|path| {
+            let input = fs::read_to_string(path)
+                .with_context(|| format!("failed to read source identity {}", path.display()))?;
+            serde_json::from_str(&input)
+                .with_context(|| format!("invalid source identity {}", path.display()))
+        })
+        .transpose()?;
+    print_json(&evaluate_alto_with_identity(
+        &benchmark,
+        &parse_alto(&alto)?,
+        identity.as_ref(),
+    )?)
 }
 
 fn source_command(catalogue_path: &Path, cache: &Path, command: &SourceCommands) -> Result<()> {
