@@ -236,7 +236,7 @@ pub fn serve(options: &ReviewServerOptions<'_>) -> Result<()> {
     for request in server.incoming_requests() {
         if matches!(
             request.url().split('?').next(),
-            Some("/transcriptions" | "/api/transcriptions")
+            Some("/transcriptions" | "/api/transcriptions" | "/transcription-keyboard.js")
         ) {
             if let Err(error) = transcription::handle(request, &transcriptions) {
                 eprintln!("transcription request failed: {error:#}");

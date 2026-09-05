@@ -65,3 +65,11 @@ Resolved records remain review evidence until a separate promotion checks the
 current source digest, accepted authority and outstanding uncertainties. The
 original draft and manifest remain unchanged. The form supports one independent
 reviewer per line/source version; subsequent edits retain that reviewer identity.
+
+The form's **Unicode keyboard** supplies script-specific letters and pointing.
+Type a base letter before its marks, or select one existing letter to add a mark.
+Use the language/script selector, character groups and Unicode-name search for
+rarer glyphs. The palette also types into the review notes when that field was
+last focused. Combining marks remain literal Unicode; no dictionary spelling or
+normalization is applied. Keyboard editing regressions can be run with
+`node --test tool/test-transcription-keyboard.cjs`.

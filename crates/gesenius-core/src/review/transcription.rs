@@ -1,6 +1,6 @@
 //! Source-first transcription review, separate from corpus correction patches.
 
-use super::{respond_error, respond_html, respond_json};
+use super::{content_type_header, respond_error, respond_html, respond_json, security_header};
 use crate::benchmark::GoldBenchmark;
 use anyhow::{bail, Context, Result};
 use chrono::{DateTime, Utc};
@@ -10,7 +10,7 @@ use sha2::{Digest, Sha256};
 use std::fs::{self, File, OpenOptions};
 use std::io::{BufRead, BufReader, Read, Write};
 use std::path::PathBuf;
-use tiny_http::{Method, Request, StatusCode};
+use tiny_http::{Method, Request, Response, StatusCode};
 
 #[derive(Deserialize)]
 struct Manifest {
@@ -256,6 +256,14 @@ impl TranscriptionStore {
 
 pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result<()> {
     let path = request.url().split('?').next().unwrap_or("/").to_owned();
+    if request.method() == &Method::Get && path == "/transcription-keyboard.js" {
+        request.respond(
+            Response::from_string(include_str!("transcription-keyboard.js"))
+                .with_header(content_type_header("text/javascript; charset=utf-8"))
+                .with_header(security_header()),
+        )?;
+        return Ok(());
+    }
     if request.method() == &Method::Get && path == "/transcriptions" {
         return respond_html(request, include_str!("transcription.html"));
     }

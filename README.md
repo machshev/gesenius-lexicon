@@ -152,6 +152,16 @@ your first reading before revealing the draft and its uncertainties. Then check
 the source again and save a **Resolved** or **Unresolved** decision with notes.
 Zoom controls and an original-crop link help inspect small points and accents.
 
+The transcription form includes an offline **Unicode keyboard** with Hebrew /
+Aramaic, Arabic / Persian, Syriac, polytonic Greek, Ethiopic, Phoenician and Latin
+transliteration palettes. Choose **Language / script**, click a letter, then its
+pointing keys. Points attach to the preceding letter (or a selected letter);
+the dotted-circle preview is not inserted. Search by Unicode name, glyph or code
+point, or use **Insert code point** for another character. Backspace removes one
+mark or character; **Undo keyboard edit** restores the last palette edit. Click
+the transcription or review-notes field to choose where keys type. Switching
+palettes does not alter language metadata or normalize existing text.
+
 Transcription reviews append to `corpus/review/transcription-reviews.jsonl`
 (beside the configured `--patches` file). The first reading stays immutable;
 subsequent decisions preserve history and require the same reviewer name.

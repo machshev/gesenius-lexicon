@@ -3,6 +3,7 @@
 <title>Gesenius transcription review</title>
 <style>
 :root{font-family:"Noto Sans",sans-serif;color:#25231f;background:#eee9df}body{margin:0}header{padding:1rem;background:#313a35;color:white;display:flex;gap:1rem;align-items:center}header a{color:white}main{max-width:1100px;margin:auto;padding:1rem}section{background:white;padding:1rem;border-radius:.4rem;margin:1rem 0}label{display:block;margin:.7rem 0}button,input,select,textarea{font:inherit;padding:.5rem}textarea{box-sizing:border-box;width:100%;min-height:7rem;font-size:1.4rem;line-height:1.7}button{cursor:pointer}button:disabled{cursor:default}#cropView{overflow:auto;background:#f4ecd5}#crop{display:block;width:100%;max-width:none}pre{white-space:pre-wrap;font:1.4rem/1.7 "Noto Sans",sans-serif;unicode-bidi:plaintext}#message{white-space:pre-wrap}#message.error{color:#9a3412}.controls{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}[hidden]{display:none!important}input{max-width:90%}
+#unicodeKeyboard{margin:1rem 0;border:1px solid #d0cbc0;border-radius:.4rem;padding:.8rem;background:#faf8f2}#unicodeKeyboard summary{cursor:pointer;font-weight:bold}#unicodeKeyboard label{margin:.35rem 0}.unicode-keys{display:flex;flex-wrap:wrap;gap:.25rem;max-height:16rem;overflow:auto;padding:.4rem 0}.unicode-keys button{min-width:2.4rem;min-height:2.6rem;font-size:1.45rem;line-height:1.5;font-family:"Noto Sans Hebrew","Noto Sans Arabic","Noto Sans Syriac","Noto Sans Ethiopic","Noto Sans Phoenician","Noto Sans",sans-serif;background:white;border:1px solid #bbb;border-radius:.25rem}.unicode-keys button:hover,.unicode-keys button:focus-visible{background:#e3eee8;outline:2px solid #476452}#keyboardStatus{min-height:1.3em}#keyboardStatus.error{color:#9a3412}#keyboardSearch{width:17rem}#keyboardTarget,#keyboardCount{color:#555;font-size:.9rem}
 </style></head><body>
 <header><a href="/">Corpus review</a><strong>Source transcription review</strong></header>
 <main><p>Read the crop first. Save your own transcription to reveal the draft and its review notes. A resolved review is saved for later gold promotion.</p>
@@ -11,6 +12,16 @@
 <form id="reviewForm" hidden>
 <section><h1 id="title"></h1><p id="identity"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to transcribe"></div></section>
 <section><label>Reviewer name <input id="reviewer" required autocomplete="name"></label><p id="instruction">Transcribe what is printed, preserving spelling and points. If a glyph is unclear, give your tentative reading and describe the uncertainty.</p><label for="text">Your transcription</label><textarea id="text" dir="ltr" required spellcheck="false"></textarea>
+<details id="unicodeKeyboard" open><summary>Unicode keyboard</summary>
+<p id="keyboardTarget">Typing into: Your transcription</p>
+<div class="controls"><label>Language / script <select id="keyboardLanguage"></select></label><label>Character group <select id="keyboardGroup"></select></label><label>Find character <input id="keyboardSearch" type="search" placeholder="Name, glyph or U+05B0" autocomplete="off"></label></div>
+<div id="keyboardKeys" class="unicode-keys" role="group" aria-label="Unicode characters"></div>
+<div id="keyboardMarksArea"><strong>Points and accents</strong><div id="keyboardMarks" class="unicode-keys" role="group" aria-label="Combining points and accents"></div></div>
+<p id="keyboardCount"></p><p>Type a letter, then its points. The dotted circle is only a preview. Keys insert at your cursor; selecting a single letter lets you add a point to it. Keyboard choice does not change language metadata.</p>
+<div class="controls"><button id="keyboardSpace" type="button">Space</button><button id="keyboardBackspace" type="button">Backspace (one mark or character)</button><button id="keyboardUndo" type="button">Undo keyboard edit</button></div>
+<div class="controls"><label>Other Unicode character <input id="keyboardCodepoint" placeholder="U+10900" autocomplete="off" maxlength="8"></label><button id="insertCodepoint" type="button">Insert code point</button></div>
+<p id="keyboardStatus" role="status" aria-live="polite"></p>
+</details>
 <div id="comparison" hidden><h2>Saved independent reading</h2><pre id="independent" dir="ltr"></pre><h2>Draft reading</h2><pre id="draft" dir="ltr"></pre><h3>Points to check</h3><ul id="uncertainties"></ul><label>Decision <select id="decision"><option value="unresolved">Unresolved — needs another look</option><option value="resolved">Resolved — checked against the source</option></select></label><label><input type="checkbox" id="checked"> I checked the complete line and resolved the listed uncertainties.</label></div>
 <label for="comment">Review notes / uncertain glyphs</label><textarea id="comment" style="font-size:1rem;min-height:4rem"></textarea><button id="save" type="submit">Save independent reading and compare</button><button id="next" type="button">Next line</button></section>
 </form></main>
@@ -27,6 +38,7 @@ $('reviewer').value=r?.reviewer||localStorage.getItem('transcription-reviewer')|
 $('text').value=r?.text||'';$('comment').value=r?.comment||'';$('comparison').hidden=!r;$('independent').textContent=r?.independent_reading||'';$('draft').textContent=current.draft||'';
 $('uncertainties').replaceChildren(...current.uncertainties.map(note=>{const li=document.createElement('li');li.textContent=note;return li;}));
 $('decision').value=r?.state==='resolved'?'resolved':'unresolved';$('checked').checked=false;
+document.dispatchEvent(new Event('transcription-rendered'));
 $('save').textContent=r?'Save review decision':'Save independent reading and compare';$('next').disabled=index===lines.length-1;
 $('instruction').textContent=r?'Compare your saved reading with the draft, then check the crop again. Edit your transcription if needed and record your decision.':'Transcribe the crop before seeing the draft. Preserve printed spelling and points; describe any uncertainty below.';
 }
@@ -43,4 +55,4 @@ $('reviewForm').onsubmit=async event=>{event.preventDefault();if(busy)return;con
 busy=true;$('save').disabled=true;$('line').disabled=true;$('reload').disabled=true;$('next').disabled=true;
 try{const key=current.sample+' / '+current.line_id;await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sample:current.sample,line_id:current.line_id,source_digest:current.source_digest,base_revision:current.review?.revision||0,reviewer:$('reviewer').value,text:$('text').value,state,comment:$('comment').value})});localStorage.setItem('transcription-reviewer',$('reviewer').value.trim());dirty=false;await load(key);message(state==='reading'?'Independent reading saved. The draft is now available for comparison.':'Review decision saved. Gold promotion remains a separate step.');}catch(e){message(e.message,true);}finally{busy=false;$('save').disabled=false;$('line').disabled=false;$('reload').disabled=false;$('next').disabled=lines.indexOf(current)===lines.length-1;}};
 load().catch(e=>message(e.message,true));
-</script></body></html>
+</script><script src="/transcription-keyboard.js"></script></body></html>

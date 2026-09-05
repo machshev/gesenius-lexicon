@@ -359,3 +359,27 @@ and audit files are committed; this plan update records the remaining work.
 - Next action: use the form for actual independent review of page 50; resolve
   flagged readings, then promote accepted lines with their review evidence. The
   broader sample, scoring policy and acceptance-tolerance work remains open.
+
+### 2026-09-05: Unicode transcription keyboard
+
+- Added an offline on-screen keyboard to the transcription form, with seven
+  language/script palettes and 807 named Unicode keys: Hebrew/Aramaic square
+  script, Arabic/Persian, Syriac, polytonic Greek, Ethiopic, Phoenician, and Latin
+  transliteration. Hebrew cantillation and script punctuation are selectable;
+  vowel points remain visible beside the letter palette.
+- Keys insert at the active transcription/notes caret. Combining marks attach to
+  the preceding or selected letter without inserting the dotted-circle preview.
+  Added name/glyph/code-point search, scalar code-point entry, one-code-point
+  backspace and keyboard undo. Surrogate pairs remain intact; keyboard switching
+  does not change semantic language or normalize diplomatic text.
+- Verification: five JavaScript regression groups passed, covering mark placement,
+  literal multi-script sequences, selections, astral glyphs, invalid code points,
+  and palette contents. Pinned Nix formatting, 75 core tests, 23 fixture tests,
+  external TEI validation, strict Clippy, XML/SQLite checks and locked build passed.
+  Firefox real-click tests passed for Hebrew points, Greek accents, Arabic/Syriac
+  vowels, Phoenician deletion/undo, notes targeting, search, code-point insertion,
+  mixed-script save/reveal/resolution and reload persistence. Inspected the
+  rendered keyboard. Browser tests used temporary review data; no real draft was
+  reviewed and no corpus/gold file changed. Test processes stopped.
+- Next action remains independent source review through the form, followed by
+  audited gold promotion and the broader representative measurement work.
