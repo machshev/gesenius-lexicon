@@ -423,3 +423,28 @@ snapshot is recorded under `benchmarks/baselines/ocr-diagnostics-page17-2026-09-
 The snapshot verifies input hashes against the previous baseline and records the
 new binary hash and full diagnostic output. The live user review journal remains
 outside these commits; do not remove or overwrite it at the next session start.
+
+### 2026-09-06: geometry-only line segmentation diagnostics
+
+- Continued B independently of the user's live transcription reviews. Coordinate
+  benchmarks now report `line_segmentation`: one-to-one line correspondences,
+  missing anchors, split/duplicate candidates, merge candidates, and the complete
+  source/OCR overlap graph. Flattened OCR indices disambiguate repeated line IDs.
+- Reused the existing positive bounding-box overlap rule and text selection;
+  no threshold tuning or CER/WER behavior change. OCR outside all source anchors
+  remains unassessed, not a false-positive line. Legacy fixtures report null
+  segmentation rather than an invented perfect score. These are geometric
+  candidates, not independently established segmentation errors.
+- Added regressions separating text accuracy from geometry, true merges with
+  perfect text, splits, many-to-many overlaps, duplicate engine IDs, boundary-only
+  contact, missing OCR and absent legacy measurements. An initial test wrongly
+  treated a fixture height as its bottom coordinate; corrected the test's outside
+  rectangle to touch the actual boundary. Final checks passed in pinned Nix:
+  formatting, 87 core tests, 23 fixture tests with external TEI validation,
+  warning-denied workspace/all-target Clippy, XML/SQLite checks and locked build.
+- No OCR generator, corpus mutation, gold promotion or final-test evaluation ran.
+  The live review journal remains untouched and excluded from the commit. The
+  segmentation checkbox remains open: fully transcribed evaluation regions are
+  still needed to measure extra-line precision, and entry-boundary scoring remains
+  separate unfinished work. Next independent milestones are those region/boundary
+  contracts, comparable stage reporting, and oracle-candidate diagnostics.

@@ -189,6 +189,44 @@ pub enum TextBoundaryPolicy {
     CoordinateWhitespaceNormalized,
 }
 
+/// Geometry-only line segmentation diagnostics for source-anchored fixtures.
+///
+/// Positive bounding-box overlap is correspondence evidence, not a claim that
+/// either polygon is an accurate line segmentation. Unselected page lines are
+/// unassessed, since the fixture need not transcribe the whole page.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct LineSegmentationDiagnostics {
+    /// Correspondence rule used by both text selection and these diagnostics.
+    pub overlap_policy: String,
+    /// Number of source line anchors in the fixture.
+    pub gold_lines: usize,
+    /// Number of OCR lines touching one or more source anchors.
+    pub selected_hypothesis_lines: usize,
+    /// OCR lines touching no anchor; these are not automatically false positives.
+    pub unassessed_hypothesis_lines: usize,
+    /// Source anchors with no corresponding OCR line.
+    pub missing_gold_lines: usize,
+    /// Source lines with exactly one OCR line which touches no other source line.
+    pub one_to_one_lines: usize,
+    /// Source line IDs touched by more than one OCR line (split/duplicate candidates).
+    pub split_candidates: Vec<String>,
+    /// Reading-order OCR indices touching more than one source line.
+    pub merge_candidates: Vec<usize>,
+    /// Full correspondence graph, including unassessed OCR lines.
+    pub hypotheses: Vec<HypothesisLineOverlap>,
+}
+
+/// Source-line overlaps for one OCR line, independent of its recognized text.
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+pub struct HypothesisLineOverlap {
+    /// Zero-based index in flattened ALTO region/line order; disambiguates repeated IDs.
+    pub index: usize,
+    /// Original engine line identifier for inspection.
+    pub line_id: String,
+    /// Gold line IDs whose source rectangles overlap this OCR line.
+    pub gold_line_ids: Vec<String>,
+}
+
 /// Recognition accuracy for one ALTO hypothesis against immutable gold lines.
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct BenchmarkResult {
@@ -196,6 +234,9 @@ pub struct BenchmarkResult {
     pub benchmark_id: String,
     /// Aggregate metrics in fixture line order.
     pub metrics: RecognitionMetrics,
+    /// Geometry-only segmentation evidence, or null for legacy/unmeasured results.
+    #[serde(default)]
+    pub line_segmentation: Option<LineSegmentationDiagnostics>,
     /// Gold line IDs absent from the hypothesis.
     pub missing_lines: Vec<String>,
     /// Whether the caller supplied matching asserted edition, page, and source PDF identity.
@@ -339,6 +380,7 @@ fn evaluate_with_line_ids(
         metrics: recognition_metrics(&reference, &hypothesis),
         missing_lines,
         source_identity,
+        line_segmentation: None,
         alignment: AlignmentMethod::LegacyLineIds,
         text_boundary_policy: TextBoundaryPolicy::ExactLineBreaks,
     }
@@ -367,21 +409,66 @@ fn evaluate_with_coordinates(
         .iter()
         .flat_map(|region| region.lines.iter())
         .collect();
+    let mut overlaps: Vec<_> = hypotheses
+        .iter()
+        .enumerate()
+        .map(|(index, line)| HypothesisLineOverlap {
+            index,
+            line_id: line.id.clone(),
+            gold_line_ids: Vec::new(),
+        })
+        .collect();
+    let mut gold_degrees = Vec::with_capacity(benchmark.lines.len());
     let mut selected = vec![false; hypotheses.len()];
     let mut missing_lines = Vec::new();
     for gold in &benchmark.lines {
         let anchor = gold.source.as_ref().expect("all sources checked above");
-        let mut overlaps_anchor = false;
+        let mut degree = 0;
         for (index, hypothesis) in hypotheses.iter().enumerate() {
             if polygon_iou(&anchor_polygon(anchor), &hypothesis.polygon) > 0.0 {
                 selected[index] = true;
-                overlaps_anchor = true;
+                overlaps[index].gold_line_ids.push(gold.line_id.clone());
+                degree += 1;
             }
         }
-        if !overlaps_anchor {
+        gold_degrees.push(degree);
+        if degree == 0 {
             missing_lines.push(gold.line_id.clone());
         }
     }
+    let selected_count = selected.iter().filter(|&&value| value).count();
+    let one_to_one_lines = overlaps
+        .iter()
+        .filter(|overlap| {
+            overlap.gold_line_ids.len() == 1
+                && benchmark
+                    .lines
+                    .iter()
+                    .zip(&gold_degrees)
+                    .any(|(gold, &degree)| gold.line_id == overlap.gold_line_ids[0] && degree == 1)
+        })
+        .count();
+    let line_segmentation = LineSegmentationDiagnostics {
+        overlap_policy: "positive_axis_aligned_bounding_box_iou_v1".to_owned(),
+        gold_lines: benchmark.lines.len(),
+        selected_hypothesis_lines: selected_count,
+        unassessed_hypothesis_lines: hypotheses.len() - selected_count,
+        missing_gold_lines: missing_lines.len(),
+        one_to_one_lines,
+        split_candidates: benchmark
+            .lines
+            .iter()
+            .zip(&gold_degrees)
+            .filter(|(_, degree)| **degree > 1)
+            .map(|(gold, _)| gold.line_id.clone())
+            .collect(),
+        merge_candidates: overlaps
+            .iter()
+            .filter(|overlap| overlap.gold_line_ids.len() > 1)
+            .map(|overlap| overlap.index)
+            .collect(),
+        hypotheses: overlaps,
+    };
     let reference = join_coordinate_lines(benchmark.lines.iter().map(|line| line.text.as_str()));
     let hypothesis = join_coordinate_lines(
         hypotheses
@@ -394,6 +481,7 @@ fn evaluate_with_coordinates(
         metrics: recognition_metrics(&reference, &hypothesis),
         missing_lines,
         source_identity,
+        line_segmentation: Some(line_segmentation),
         alignment: AlignmentMethod::SourceCoordinates,
         text_boundary_policy: TextBoundaryPolicy::CoordinateWhitespaceNormalized,
     })
@@ -490,6 +578,11 @@ mod tests {
         let result = evaluate_alto_with_identity(&benchmark, &page, Some(&identity)).unwrap();
 
         assert_eq!(result.metrics.cer, 0.0);
+        let segmentation = result.line_segmentation.as_ref().unwrap();
+        assert_eq!(segmentation.split_candidates, vec!["old-1"]);
+        assert!(segmentation.merge_candidates.is_empty());
+        assert_eq!(segmentation.one_to_one_lines, 1);
+        assert_eq!(segmentation.selected_hypothesis_lines, 3);
         assert!(result.missing_lines.is_empty());
         assert_eq!(result.source_identity, SourceIdentityVerification::Verified);
         assert_eq!(result.alignment, AlignmentMethod::SourceCoordinates);
@@ -538,7 +631,69 @@ mod tests {
             evaluate_alto_with_identity(&benchmark, &page, Some(&fixture_identity())).unwrap();
         assert_eq!(result.metrics.cer, 0.0);
         assert_eq!(result.metrics.wer, 0.0);
+        let segmentation = result.line_segmentation.as_ref().unwrap();
+        assert_eq!(segmentation.merge_candidates, vec![0]);
+        assert!(segmentation.split_candidates.is_empty());
+        assert_eq!(segmentation.one_to_one_lines, 0);
+        assert_eq!(
+            segmentation.hypotheses[0].gold_line_ids,
+            vec!["old-1", "old-2"]
+        );
         assert!(result.missing_lines.is_empty());
+    }
+
+    #[test]
+    fn segmentation_separates_bad_text_from_geometry_and_leaves_other_regions_unassessed() {
+        let page = page_with_lines(vec![
+            alto_line("repeated-id", "wrong", 0.0, 0.0, 100.0, 10.0),
+            alto_line("repeated-id", "also wrong", 0.0, 10.0, 100.0, 30.0),
+            alto_line("outside", "not transcribed", 0.0, 30.0, 100.0, 40.0),
+        ]);
+        let result =
+            evaluate_alto_with_identity(&coordinate_benchmark(), &page, Some(&fixture_identity()))
+                .unwrap();
+        assert!(result.metrics.cer > 0.0);
+        let segmentation = result.line_segmentation.unwrap();
+        assert_eq!(segmentation.one_to_one_lines, 2);
+        assert_eq!(segmentation.unassessed_hypothesis_lines, 1);
+        assert!(segmentation.split_candidates.is_empty());
+        assert!(segmentation.merge_candidates.is_empty());
+        assert_eq!(segmentation.hypotheses[1].index, 1);
+        assert!(segmentation.hypotheses[2].gold_line_ids.is_empty());
+    }
+
+    #[test]
+    fn segmentation_reports_many_to_many_overlaps_without_calling_them_one_to_one() {
+        let page = page_with_lines(vec![
+            alto_line("a", "first", 0.0, 0.0, 50.0, 20.0),
+            alto_line("b", "line", 50.0, 0.0, 100.0, 20.0),
+        ]);
+        let result =
+            evaluate_alto_with_identity(&coordinate_benchmark(), &page, Some(&fixture_identity()))
+                .unwrap();
+        let segmentation = result.line_segmentation.unwrap();
+        assert_eq!(segmentation.one_to_one_lines, 0);
+        assert_eq!(segmentation.split_candidates, vec!["old-1", "old-2"]);
+        assert_eq!(segmentation.merge_candidates, vec![0, 1]);
+        assert_eq!(segmentation.selected_hypothesis_lines, 2);
+    }
+
+    #[test]
+    fn segmentation_distinguishes_no_ocr_from_unmeasured_legacy_reports() {
+        let benchmark = coordinate_benchmark();
+        let page = page_with_lines(Vec::new());
+        let result =
+            evaluate_alto_with_identity(&benchmark, &page, Some(&fixture_identity())).unwrap();
+        let segmentation = result.line_segmentation.unwrap();
+        assert_eq!(segmentation.missing_gold_lines, 2);
+        assert_eq!(segmentation.one_to_one_lines, 0);
+        assert_eq!(segmentation.selected_hypothesis_lines, 0);
+        let legacy = evaluate_alto(&benchmark, &page);
+        assert!(legacy.line_segmentation.is_none());
+        let mut old = serde_json::to_value(legacy).unwrap();
+        old.as_object_mut().unwrap().remove("line_segmentation");
+        let loaded: super::BenchmarkResult = serde_json::from_value(old).unwrap();
+        assert!(loaded.line_segmentation.is_none());
     }
 
     #[test]

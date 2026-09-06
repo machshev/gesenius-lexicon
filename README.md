@@ -101,7 +101,10 @@ Resolve that identity from the hypothesis's source receipts; copying the gold
 identity alone does not establish provenance. Coordinate-aligned fixtures also
 require source image dimensions, rectangular anchors, and matching asserted
 `coordinate_frame` values identifying the image and transforms. Their reported
-text policy joins line boundaries with spaces. See the
+text policy joins line boundaries with spaces. Coordinate results also report
+one-to-one line correspondences, split/merge candidates and missing lines
+separately from transcription error. OCR outside the gold anchors remains
+unassessed; legacy fixtures have no measured segmentation result. See the
 [metric policy](docs/ocr-metric-policy.md),
 [sample inventory](benchmarks/sample-inventory/robinson-1854-audit.md), and
 [cached baseline](benchmarks/baselines/ocr-baseline-page17-2026-09-05.md) for

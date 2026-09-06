@@ -20,8 +20,9 @@ distance, breaking ties in substitution/deletion/insertion order, then compares
 the marks attached to those bases. Marks on substituted bases can match: read this
 diagnostic alongside `base_letter_cer`, not as complete word accuracy. Orphan marks
 and marks attached to digits or punctuation are excluded from this diagnostic;
-exact CER still counts them. Alignment uses linear working memory. Independent
-segmentation, entry-boundary and oracle-candidate evaluation remain future work.
+exact CER still counts them. Alignment uses linear working memory. Geometry-only
+line diagnostics are described below; fully transcribed-region precision,
+entry-boundary and oracle-candidate evaluation remain future work.
 
 ## Canonical equivalence and historical glyphs
 
@@ -151,3 +152,32 @@ extends into untranscribed neighbouring material, it can appear as an extra-text
 error; do not use such a partial region for a headline accuracy result. Missing
 anchor coverage, missing source identity, or an old line-ID-only fixture remains
 visible in the result rather than being treated as verified accuracy.
+
+## Line segmentation diagnostics
+
+Coordinate-aligned results also report `line_segmentation`, using the same
+positive axis-aligned bounding-box overlap rule as text selection. This adds no
+new tuned threshold and does not change CER/WER selection. It records:
+
+- Source-anchor count, selected OCR-line count and missing source-line count.
+- One-to-one correspondences: exactly one OCR line touches a source line, and
+  that OCR line touches no other source line.
+- Split candidates: multiple OCR lines touch one source line.
+- Merge candidates: one OCR line touches multiple source lines.
+- The full overlap graph, with flattened reading-order indices to distinguish
+  repeated engine line IDs.
+
+Split candidates may also be duplicate OCR lines; merge candidates may be overly
+large bounding boxes. Both labels describe geometry evidence rather than an
+independently verified segmentation mistake. Many-to-many overlaps appear in both
+candidate lists, never as one-to-one. Mere edge contact is not positive overlap.
+A perfectly transcribed merged line can have zero CER/WER and still appear as a
+merge candidate; conversely, one-to-one geometry does not imply correct text.
+
+OCR lines outside every anchor are counted as `unassessed_hypothesis_lines` and
+retained in the graph with no source-line matches. They are not automatically
+false positives: gold line anchors do not declare that intervening or surrounding
+page areas are fully transcribed. Measuring extra-line precision requires explicit
+fully transcribed evaluation regions, which remain future work along with
+entry-boundary scoring. Legacy line-ID results report `line_segmentation: null`;
+missing geometry is not a perfect segmentation score.
