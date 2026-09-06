@@ -153,12 +153,15 @@ The UI shows the source page and ALTO overlays, complete competing hypotheses, U
 
 Choose **Transcription review** in the header (or open `/transcriptions`) to
 review the source-anchored benchmark drafts. Select a line, enter your reviewer
-name, and transcribe its crop. **Save independent reading and compare** records
-your first reading before revealing the draft and its uncertainties. Then check
-the source again and save a **Resolved** or **Unresolved** decision with notes.
-Zoom controls and an original-crop link help inspect small points and accents.
+name, and compare the prefilled draft with its crop. **Approve & next** saves an
+unchanged reading and advances; after editing, **Save corrections & next** records
+your corrected text. **Needs fixes / uncertain** saves an unresolved review with
+a required note and keeps the current line open. Source-check notes are visible
+immediately. Zoom controls and an original-crop link help inspect fine marks.
 
-The transcription form includes an offline **Unicode keyboard** with Hebrew /
+The transcription form places its offline **Unicode keyboard** to the right of
+the crop and transcription on desktop. The keyboard stays alongside the editor
+and scrolls independently; narrow screens stack the panels. It includes Hebrew /
 Aramaic, Arabic / Persian, Syriac, polytonic Greek, Ethiopic, Phoenician and Latin
 transliteration palettes. Choose **Language / script**, click a letter, then its
 pointing keys. Points attach to the preceding letter (or a selected letter);
@@ -169,8 +172,11 @@ the transcription or review-notes field to choose where keys type. Switching
 palettes does not alter language metadata or normalize existing text.
 
 Transcription reviews append to `corpus/review/transcription-reviews.jsonl`
-(beside the configured `--patches` file). The first reading stays immutable;
-subsequent decisions preserve history and require the same reviewer name.
+(beside the configured `--patches` file). New decisions record
+`review_method: draft_assisted` and the displayed draft, so they are not presented
+as blind transcriptions. Existing independent readings and journal records remain
+intact; new reviews have no invented independent reading. Subsequent decisions
+preserve history and require the same reviewer name.
 Changed source/draft metadata or crop hashes cannot silently reuse an old review.
 These decisions do not automatically promote text into gold or alter corpus
 entries. Reloading the page restores saved progress. Drafts default to

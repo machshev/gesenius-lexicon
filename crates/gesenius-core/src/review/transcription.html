@@ -1,58 +1,60 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
-<title>Gesenius transcription review</title>
-<style>
+<title>Gesenius transcription review</title><style>
 :root{font-family:"Noto Sans",sans-serif;color:#25231f;background:#eee9df}body{margin:0}header{padding:1rem;background:#313a35;color:white;display:flex;gap:1rem;align-items:center}header a{color:white}main{max-width:1100px;margin:auto;padding:1rem}section{background:white;padding:1rem;border-radius:.4rem;margin:1rem 0}label{display:block;margin:.7rem 0}button,input,select,textarea{font:inherit;padding:.5rem}textarea{box-sizing:border-box;width:100%;min-height:7rem;font-size:1.4rem;line-height:1.7}button{cursor:pointer}button:disabled{cursor:default}#cropView{overflow:auto;background:#f4ecd5}#crop{display:block;width:100%;max-width:none}pre{white-space:pre-wrap;font:1.4rem/1.7 "Noto Sans",sans-serif;unicode-bidi:plaintext}#message{white-space:pre-wrap}#message.error{color:#9a3412}.controls{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}[hidden]{display:none!important}input{max-width:90%}
 #unicodeKeyboard{margin:1rem 0;border:1px solid #d0cbc0;border-radius:.4rem;padding:.8rem;background:#faf8f2}#unicodeKeyboard summary{cursor:pointer;font-weight:bold}#unicodeKeyboard label{margin:.35rem 0}.unicode-keys{display:flex;flex-wrap:wrap;gap:.25rem;max-height:16rem;overflow:auto;padding:.4rem 0}.unicode-keys button{min-width:2.4rem;min-height:2.6rem;font-size:1.45rem;line-height:1.5;font-family:"Noto Sans Hebrew","Noto Sans Arabic","Noto Sans Syriac","Noto Sans Ethiopic","Noto Sans Phoenician","Noto Sans",sans-serif;background:white;border:1px solid #bbb;border-radius:.25rem}.unicode-keys button:hover,.unicode-keys button:focus-visible{background:#e3eee8;outline:2px solid #476452}#keyboardStatus{min-height:1.3em}#keyboardStatus.error{color:#9a3412}#keyboardSearch{width:17rem}#keyboardTarget,#keyboardCount{color:#555;font-size:.9rem}
+
+main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}#reviewForm{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(350px,.85fr);gap:1rem;align-items:start}.review-column{min-width:0}section{margin:0 0 1rem}.source-panel{position:sticky;top:0;z-index:1;border-bottom:1px solid #d0cbc0}#identity{margin:.35rem 0}.keyboard-panel{position:sticky;top:1rem;max-height:calc(100vh - 2rem);overflow:auto;min-width:0}#unicodeKeyboard{margin:0}#unicodeKeyboard select{max-width:100%}#unicodeKeyboard label{max-width:100%}#text{min-height:8rem}.hint{font-size:.9rem;color:#555}.actions{margin:.6rem 0}#save{background:#313a35;color:white;border:1px solid #313a35;border-radius:.25rem}#uncertaintyPanel ul{padding-left:1.2rem}#uncertainties{font-size:.9rem}#comment{font-size:1rem;min-height:4rem}.unicode-keys{max-height:13rem}.unicode-keys button{min-width:2.2rem;min-height:2.4rem;padding:.25rem}.keyboard-panel .controls{gap:.3rem}#keyboardStatus{font-size:.9rem}#keyboardCount{margin:.3rem 0}
+@media(max-width:850px){#reviewForm{grid-template-columns:minmax(0,1fr)}.keyboard-panel{position:static;max-height:none}.source-panel{position:static}main{padding:.6rem}}
 </style></head><body>
 <header><a href="/">Corpus review</a><strong>Source transcription review</strong></header>
-<main><p>Read the crop first. Save your own transcription to reveal the draft and its review notes. A resolved review is saved for later gold promotion.</p>
+<main><p>Check the draft against the image. Approve it as shown, edit corrections, or leave a note for anything still uncertain.</p>
 <div class="controls"><label>Line <select id="line" aria-label="Source line"></select></label><button id="reload">Reload</button><span id="progress"></span></div>
 <p id="message" role="status" aria-live="polite"></p>
-<form id="reviewForm" hidden>
-<section><h1 id="title"></h1><p id="identity"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to transcribe"></div></section>
-<section><label>Reviewer name <input id="reviewer" required autocomplete="name"></label><p id="instruction">Transcribe what is printed, preserving spelling and points. If a glyph is unclear, give your tentative reading and describe the uncertainty.</p><label for="text">Your transcription</label><textarea id="text" dir="ltr" required spellcheck="false"></textarea>
-<details id="unicodeKeyboard" open><summary>Unicode keyboard</summary>
+<form id="reviewForm" hidden><div class="review-column">
+<section class="source-panel"><h1 id="title"></h1><p id="identity" class="hint"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to review"></div></section>
+<section><label>Reviewer name <input id="reviewer" required autocomplete="name"></label>
+<label for="text">Transcription — edit any corrections</label><textarea id="text" dir="ltr" required spellcheck="false"></textarea>
+<div id="uncertaintyPanel"><h3>Points to check</h3><ul id="uncertainties"></ul></div>
+<div class="controls actions"><button id="save" type="submit" value="resolved">Approve &amp; next</button><button id="uncertain" type="submit" value="unresolved">Needs fixes / uncertain</button><button id="next" type="button">Next line</button></div>
+<label for="comment">Review notes / uncertain glyphs</label><textarea id="comment"></textarea>
+<details id="comparison"><summary>Original draft and earlier reading</summary><h3>Original draft</h3><pre id="draft" dir="ltr"></pre><div id="independentPanel" hidden><h3>Earlier independent reading</h3><pre id="independent" dir="ltr"></pre></div></details>
+</section></div><aside class="keyboard-panel" aria-label="Unicode keyboard"><details id="unicodeKeyboard" open><summary>Unicode keyboard</summary>
 <p id="keyboardTarget">Typing into: Your transcription</p>
 <div class="controls"><label>Language / script <select id="keyboardLanguage"></select></label><label>Character group <select id="keyboardGroup"></select></label><label>Find character <input id="keyboardSearch" type="search" placeholder="Name, glyph or U+05B0" autocomplete="off"></label></div>
 <div id="keyboardKeys" class="unicode-keys" role="group" aria-label="Unicode characters"></div>
 <div id="keyboardMarksArea"><strong>Points and accents</strong><div id="keyboardMarks" class="unicode-keys" role="group" aria-label="Combining points and accents"></div></div>
-<p id="keyboardCount"></p><p>Type a letter, then its points. The dotted circle is only a preview. Keys insert at your cursor; selecting a single letter lets you add a point to it. Keyboard choice does not change language metadata.</p>
+<p id="keyboardCount"></p><p class="hint">Click a letter, then its points. Keys type at your cursor.</p>
 <div class="controls"><button id="keyboardSpace" type="button">Space</button><button id="keyboardBackspace" type="button">Backspace (one mark or character)</button><button id="keyboardUndo" type="button">Undo keyboard edit</button></div>
 <div class="controls"><label>Other Unicode character <input id="keyboardCodepoint" placeholder="U+10900" autocomplete="off" maxlength="8"></label><button id="insertCodepoint" type="button">Insert code point</button></div>
 <p id="keyboardStatus" role="status" aria-live="polite"></p>
-</details>
-<div id="comparison" hidden><h2>Saved independent reading</h2><pre id="independent" dir="ltr"></pre><h2>Draft reading</h2><pre id="draft" dir="ltr"></pre><h3>Points to check</h3><ul id="uncertainties"></ul><label>Decision <select id="decision"><option value="unresolved">Unresolved — needs another look</option><option value="resolved">Resolved — checked against the source</option></select></label><label><input type="checkbox" id="checked"> I checked the complete line and resolved the listed uncertainties.</label></div>
-<label for="comment">Review notes / uncertain glyphs</label><textarea id="comment" style="font-size:1rem;min-height:4rem"></textarea><button id="save" type="submit">Save independent reading and compare</button><button id="next" type="button">Next line</button></section>
-</form></main>
+</details></aside></form></main>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 let lines=[],current=null,dirty=false,busy=false;
 const message=(text,error=false)=>{$('message').textContent=text;$('message').classList.toggle('error',error);};
 async function api(options){const response=await fetch('/api/transcriptions',options);const data=await response.json();if(!response.ok)throw Error(data.error||'Request failed');return data;}
+function updateSaveLabel(){const changed=$('text').value!==current?.draft;$('save').textContent=(changed?'Save corrections':'Approve')+(lines.indexOf(current)<lines.length-1?' & next':'');}
 function render(index){current=lines[index];$('reviewForm').hidden=!current;if(!current)return;dirty=false;$('line').value=String(index);const r=current.review;
-$('title').textContent=`Page ${current.printed_page} · ${current.line_id}`;$('identity').textContent=`PDF page ${current.source_page} · ${current.partition} · ${r?r.state.replaceAll('_',' '):'awaiting independent reading'}`;
+$('title').textContent=`Page ${current.printed_page} · ${current.line_id}`;$('identity').textContent=`PDF page ${current.source_page} · ${current.partition} · ${r?r.state.replaceAll('_',' '):'awaiting review'}`;
 const url='/api/image?path='+encodeURIComponent(current.crop);$('crop').src=url;$('openCrop').href=url;
 $('reviewer').value=r?.reviewer||localStorage.getItem('transcription-reviewer')||'';$('reviewer').readOnly=!!r;
-$('text').value=r?.text||'';$('comment').value=r?.comment||'';$('comparison').hidden=!r;$('independent').textContent=r?.independent_reading||'';$('draft').textContent=current.draft||'';
-$('uncertainties').replaceChildren(...current.uncertainties.map(note=>{const li=document.createElement('li');li.textContent=note;return li;}));
-$('decision').value=r?.state==='resolved'?'resolved':'unresolved';$('checked').checked=false;
-document.dispatchEvent(new Event('transcription-rendered'));
-$('save').textContent=r?'Save review decision':'Save independent reading and compare';$('next').disabled=index===lines.length-1;
-$('instruction').textContent=r?'Compare your saved reading with the draft, then check the crop again. Edit your transcription if needed and record your decision.':'Transcribe the crop before seeing the draft. Preserve printed spelling and points; describe any uncertainty below.';
+$('text').value=r?.text??current.draft??'';$('comment').value=r?.comment||'';$('comparison').open=false;$('independentPanel').hidden=!r?.independent_reading;$('independent').textContent=r?.independent_reading||'';$('draft').textContent=current.draft||'';
+$('uncertainties').replaceChildren(...current.uncertainties.map(note=>{const li=document.createElement('li');li.textContent=note;return li;}));$('uncertaintyPanel').hidden=!current.uncertainties.length;
+document.dispatchEvent(new Event('transcription-rendered'));updateSaveLabel();$('next').disabled=index===lines.length-1;
 }
-async function load(key){lines=await api();$('line').replaceChildren(...lines.map((line,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${line.line_id} — ${line.review?.state||'unread'}`;return o;}));$('progress').textContent=`${lines.filter(l=>l.review?.state==='resolved').length} / ${lines.length} resolved`;
+async function load(key){lines=await api();$('line').replaceChildren(...lines.map((line,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${line.line_id} — ${line.review?.state||'unreviewed'}`;return o;}));$('progress').textContent=`${lines.filter(l=>l.review?.state==='resolved').length} / ${lines.length} resolved`;
 render(Math.max(0,lines.findIndex(l=>l.sample+' / '+l.line_id===key)));if(!lines.length)message('No development or validation transcription drafts are available.');}
 function mayLeave(){return !dirty||confirm('Discard unsaved edits to this line?');}
 $('line').onchange=()=>{if(mayLeave()){render(Number($('line').value));message('');}else $('line').value=String(lines.indexOf(current));};
 $('next').onclick=()=>{if(mayLeave()){render(lines.indexOf(current)+1);message('');}};
 $('reload').onclick=()=>{if(mayLeave())load(current&&current.sample+' / '+current.line_id).then(()=>message('Reloaded.')).catch(e=>message(e.message,true));};
 $('zoom').onchange=()=>{$('crop').style.width=$('zoom').value+'%';};
-$('reviewForm').oninput=()=>{dirty=true;};
+$('reviewForm').oninput=event=>{if(['text','comment','reviewer'].includes(event.target.id)){dirty=true;updateSaveLabel();}};
 window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});
-$('reviewForm').onsubmit=async event=>{event.preventDefault();if(busy)return;const state=current.review?$('decision').value:'reading';if(state==='resolved'&&!$('checked').checked){message('Confirm that you checked the complete line and resolved its uncertainties.',true);return;}if(state==='unresolved'&&!$('comment').value.trim()){message('Describe the uncertainty in the review notes.',true);return;}
-busy=true;$('save').disabled=true;$('line').disabled=true;$('reload').disabled=true;$('next').disabled=true;
-try{const key=current.sample+' / '+current.line_id;await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sample:current.sample,line_id:current.line_id,source_digest:current.source_digest,base_revision:current.review?.revision||0,reviewer:$('reviewer').value,text:$('text').value,state,comment:$('comment').value})});localStorage.setItem('transcription-reviewer',$('reviewer').value.trim());dirty=false;await load(key);message(state==='reading'?'Independent reading saved. The draft is now available for comparison.':'Review decision saved. Gold promotion remains a separate step.');}catch(e){message(e.message,true);}finally{busy=false;$('save').disabled=false;$('line').disabled=false;$('reload').disabled=false;$('next').disabled=lines.indexOf(current)===lines.length-1;}};
+$('reviewForm').onsubmit=async event=>{event.preventDefault();if(busy)return;const state=event.submitter?.value||'resolved';if(state==='unresolved'&&!$('comment').value.trim()){message('Describe the needed fix or uncertainty in the review notes.',true);$('comment').focus();return;}
+busy=true;for(const id of ['save','uncertain','line','reload','next'])$(id).disabled=true;
+try{const savedLine=current;const next=state==='resolved'?lines[lines.indexOf(current)+1]:null;const key=(next||current).sample+' / '+(next||current).line_id;await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sample:current.sample,line_id:current.line_id,source_digest:current.source_digest,base_revision:current.review?.revision||0,reviewer:$('reviewer').value,text:$('text').value,state,comment:$('comment').value})});localStorage.setItem('transcription-reviewer',$('reviewer').value.trim());dirty=false;await load(key);message(`${savedLine.line_id}: ${state==='resolved'?'approved':'saved as needing review'}.`);}catch(e){message(e.message,true);}finally{busy=false;for(const id of ['save','uncertain','line','reload'])$(id).disabled=false;$('next').disabled=lines.indexOf(current)===lines.length-1;}};
 load().catch(e=>message(e.message,true));
 </script><script src="/transcription-keyboard.js"></script></body></html>

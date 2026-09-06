@@ -448,3 +448,28 @@ outside these commits; do not remove or overwrite it at the next session start.
   still needed to measure extra-line precision, and entry-boundary scoring remains
   separate unfinished work. Next independent milestones are those region/boundary
   contracts, comparable stage reporting, and oracle-candidate diagnostics.
+
+### 2026-09-06: draft-prefilled approval and adjacent keyboard
+
+- At the user's request, changed transcription review from mandatory blind entry
+  to immediate draft display. The form prefills unreviewed lines, shows source-check
+  notes immediately, and offers Approve & next, Save corrections & next, or Needs
+  fixes / uncertain (with a required note). Saved reviews retain their current text.
+- Moved the Unicode keyboard into a right-hand desktop panel beside the crop and
+  transcription, with sticky positioning and independent scrolling. Narrow screens
+  stack the panels. The source crop also remains visible during desktop scrolling.
+- New records explicitly store `review_method: draft_assisted` and `displayed_draft`.
+  They do not fabricate an independent reading. Existing source-first journal
+  records remain byte-for-byte unchanged, and any earlier independent reading is
+  carried forward when a later assisted decision is appended. Source digests,
+  optimistic revisions and reviewer consistency checks remain in place. This
+  supersedes the earlier form workflow; gold promotion must retain the actual
+  review method rather than describe assisted review as blind transcription.
+- Verification: 89 core tests, 23 fixture tests with external TEI validation,
+  warning-denied workspace/all-target Clippy, formatting, XML/SQLite checks and
+  locked build passed. Five keyboard regression groups and JavaScript syntax
+  passed. Firefox real-control checks passed for prefill, visible uncertainties,
+  one-step approval/advance, keyboard correction/advance, unresolved note gating,
+  persistence, desktop panel geometry and narrow-screen stacking without horizontal
+  overflow. Inspected the rendered desktop form. All browser writes used temporary
+  journals; the user's live journal and draft/source identities were not modified.

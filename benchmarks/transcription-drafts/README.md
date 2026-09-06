@@ -33,16 +33,18 @@ This sample has no Arabic, Syriac, Ethiopic or historical-glyph coverage.
   caps remain visible in the crop; `Plur.` represents the printed small-cap label.
 - Represent base letters and observed points with Unicode. No dictionary-based
   repair, accent removal, compatibility normalization or historical-glyph
-  substitution has been applied. A final Unicode/equivalence scoring policy is
-  still open in the accuracy plan.
+  substitution has been applied. Exact and NFC-equivalence scoring are defined
+  in `docs/ocr-metric-policy.md`.
 - The proposed text in an unresolved line is a review candidate, not an assertion
   that the glyph is settled. Consult `review.json` before promotion.
 
 ### Review and promotion
 
-A second reviewer should transcribe from the crops first, then compare the draft,
-inspect the full source page where necessary, and record reviewer identity,
-date, disagreements and resolutions. Verify every line, including those without
+A reviewer should compare the visible draft with the source crop, inspect the
+full source page where necessary, and record reviewer identity, date, corrections
+and unresolved readings. At the user's request, the form now supports review of
+a prefilled draft instead of requiring a blind initial transcription. Record this
+as draft-assisted source checking, not independent transcription. Verify every line, including those without
 an explicit uncertainty. Preserve the draft/review history. Promote only resolved
 lines to gold, recording the accepted authority and retaining the exact source
 anchors. Keep any unresolved lines here and report their exclusion. No second
@@ -55,18 +57,20 @@ final-test pages. Numeric acceptance tolerances must be recorded before tuning.
 ### Review in the local web interface
 
 Run `cargo run -- review serve` and choose **Transcription review** in the header.
-The form saves your independent transcription before showing the draft and the
-uncertainty list. Check the crop again, adjust your final reading, and record a
-resolved or unresolved decision. Saved records include reviewer, timestamp,
-source digest, original reading, final reading, notes and revision; they append
-to `corpus/review/transcription-reviews.jsonl`. No JSON editing is needed.
+The form shows the draft and uncertainty list immediately. Compare it with the
+crop and choose **Approve & next**, or edit it and **Save corrections & next**.
+Use **Needs fixes / uncertain** with a note when a reading remains unresolved.
+Saved records include reviewer, timestamp, source digest, displayed draft, final
+reading, notes, revision and `review_method: draft_assisted`; they append to
+`corpus/review/transcription-reviews.jsonl`. No JSON editing is needed. Existing
+independent readings remain preserved; a new assisted review does not invent one.
 
 Resolved records remain review evidence until a separate promotion checks the
 current source digest, accepted authority and outstanding uncertainties. The
-original draft and manifest remain unchanged. The form supports one independent
+original draft and manifest remain unchanged. The form supports one
 reviewer per line/source version; subsequent edits retain that reviewer identity.
 
-The form's **Unicode keyboard** supplies script-specific letters and pointing.
+The form's **Unicode keyboard**, beside the transcription on desktop, supplies script-specific letters and pointing.
 Type a base letter before its marks, or select one existing letter to add a mark.
 Use the language/script selector, character groups and Unicode-name search for
 rarer glyphs. The palette also types into the review notes when that field was

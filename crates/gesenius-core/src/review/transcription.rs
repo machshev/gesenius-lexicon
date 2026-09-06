@@ -1,4 +1,4 @@
-//! Source-first transcription review, separate from corpus correction patches.
+//! Source-checked draft review, separate from corpus correction patches.
 
 use super::{content_type_header, respond_error, respond_html, respond_json, security_header};
 use crate::benchmark::GoldBenchmark;
@@ -41,6 +41,15 @@ enum State {
     Unresolved,
 }
 
+#[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+enum ReviewMethod {
+    // Records written before draft-prefilled review used the source-first workflow.
+    #[default]
+    LegacySourceFirst,
+    DraftAssisted,
+}
+
 #[derive(Clone, Debug, Deserialize, Serialize)]
 struct Record {
     sample: String,
@@ -48,7 +57,12 @@ struct Record {
     source_digest: String,
     revision: u64,
     reviewer: String,
-    independent_reading: String,
+    #[serde(default)]
+    independent_reading: Option<String>,
+    #[serde(default)]
+    review_method: ReviewMethod,
+    #[serde(default)]
+    displayed_draft: Option<String>,
     text: String,
     state: State,
     comment: String,
@@ -76,7 +90,7 @@ struct Line {
     partition: String,
     source_digest: String,
     crop: String,
-    // Omit both suggestions and uncertainty notes until the first reading is saved.
+    // Draft and source-check notes are visible from the first visit.
     draft: Option<String>,
     uncertainties: Vec<String>,
     review: Option<Record>,
@@ -106,7 +120,7 @@ impl TranscriptionStore {
             .collect()
     }
 
-    fn lines(&self, reveal: bool) -> Result<Vec<Line>> {
+    fn lines(&self) -> Result<Vec<Line>> {
         if !self.root.exists() {
             return Ok(Vec::new());
         }
@@ -164,7 +178,6 @@ impl TranscriptionStore {
                             && record.source_digest == source_digest
                     })
                     .cloned();
-                let show = reveal || review.is_some();
                 result.push(Line {
                     sample: sample.clone(),
                     line_id: gold.line_id.clone(),
@@ -173,17 +186,13 @@ impl TranscriptionStore {
                     partition: manifest.partition.clone(),
                     source_digest: source_digest.clone(),
                     crop: crop_path.to_string_lossy().into_owned(),
-                    draft: show.then_some(gold.text),
-                    uncertainties: if show {
-                        manifest
-                            .unresolved
-                            .iter()
-                            .filter(|item| item.line_id == gold.line_id)
-                            .map(|item| item.detail.clone())
-                            .collect()
-                    } else {
-                        Vec::new()
-                    },
+                    draft: Some(gold.text),
+                    uncertainties: manifest
+                        .unresolved
+                        .iter()
+                        .filter(|item| item.line_id == gold.line_id)
+                        .map(|item| item.detail.clone())
+                        .collect(),
                     review,
                 });
             }
@@ -194,6 +203,9 @@ impl TranscriptionStore {
     fn apply(&self, update: Update) -> Result<Record> {
         if update.reviewer.trim().is_empty() || update.text.trim().is_empty() {
             bail!("reviewer and transcription are required");
+        }
+        if update.state == State::Reading {
+            bail!("the draft is now visible; reload and save a resolved or unresolved review");
         }
         if update.state == State::Unresolved && update.comment.trim().is_empty() {
             bail!("describe the uncertainty before saving an unresolved line");
@@ -208,7 +220,7 @@ impl TranscriptionStore {
             .open(&self.journal)?;
         file.lock_exclusive()?;
         let result = (|| {
-            let lines = self.lines(true)?;
+            let lines = self.lines()?;
             let line = lines
                 .iter()
                 .find(|line| line.sample == update.sample && line.line_id == update.line_id)
@@ -221,13 +233,8 @@ impl TranscriptionStore {
             }
             if let Some(previous) = &line.review {
                 if previous.reviewer != update.reviewer.trim() {
-                    bail!("continue with the reviewer who saved the independent reading");
+                    bail!("continue with the reviewer who started this line review");
                 }
-                if update.state == State::Reading {
-                    bail!("the independent reading is immutable; save a review decision");
-                }
-            } else if update.state != State::Reading {
-                bail!("save an independent reading before comparing the draft");
             }
             let record = Record {
                 sample: update.sample,
@@ -235,10 +242,12 @@ impl TranscriptionStore {
                 source_digest: update.source_digest,
                 revision: current_revision + 1,
                 reviewer: update.reviewer.trim().to_owned(),
-                independent_reading: line.review.as_ref().map_or_else(
-                    || update.text.clone(),
-                    |record| record.independent_reading.clone(),
-                ),
+                independent_reading: line
+                    .review
+                    .as_ref()
+                    .and_then(|record| record.independent_reading.clone()),
+                review_method: ReviewMethod::DraftAssisted,
+                displayed_draft: line.draft.clone(),
                 text: update.text,
                 state: update.state,
                 comment: update.comment,
@@ -268,7 +277,7 @@ pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result
         return respond_html(request, include_str!("transcription.html"));
     }
     if request.method() == &Method::Get && path == "/api/transcriptions" {
-        return match store.lines(false) {
+        return match store.lines() {
             Ok(lines) => respond_json(request, StatusCode(200), &lines),
             Err(error) => respond_error(request, StatusCode(422), &format!("{error:#}")),
         };
@@ -340,29 +349,32 @@ mod tests {
     }
 
     #[test]
-    fn source_first_review_preserves_reading_and_rejects_stale_writes() {
+    fn draft_review_approves_directly_and_rejects_stale_writes() {
         let (_temp, store) = fixture();
-        let lines = store.lines(false).unwrap();
+        let lines = store.lines().unwrap();
         assert_eq!(lines.len(), 12);
-        assert!(lines
-            .iter()
-            .all(|line| line.draft.is_none() && line.uncertainties.is_empty()));
-        assert!(store.apply(update(&lines[0], State::Resolved)).is_err());
-        let first = store.apply(update(&lines[0], State::Reading)).unwrap();
+        assert!(lines.iter().all(|line| line.draft.is_some()));
+        assert!(!lines[0].uncertainties.is_empty());
+        assert!(store.apply(update(&lines[0], State::Reading)).is_err());
+        let first = store.apply(update(&lines[0], State::Resolved)).unwrap();
+        assert_eq!(first.review_method, ReviewMethod::DraftAssisted);
+        assert!(first.independent_reading.is_none());
+        assert_eq!(first.displayed_draft, lines[0].draft);
         assert_eq!(first.revision, 1);
         assert!(store
-            .apply(update(&lines[0], State::Reading))
+            .apply(update(&lines[0], State::Resolved))
             .unwrap_err()
             .to_string()
             .contains("revision conflict"));
-        let compared = store.lines(false).unwrap();
+        let compared = store.lines().unwrap();
         assert!(compared[0].draft.is_some());
         assert!(!compared[0].uncertainties.is_empty());
-        assert!(compared[1].draft.is_none());
+        assert!(compared[1].draft.is_some());
         let mut correction = update(&compared[0], State::Resolved);
         correction.text = "Corrected source reading".to_owned();
         let second = store.apply(correction).unwrap();
-        assert_eq!(second.independent_reading, first.text);
+        assert!(second.independent_reading.is_none());
+        assert_eq!(second.displayed_draft, first.displayed_draft);
         assert_ne!(second.text, first.text);
         assert_eq!(second.revision, 2);
         assert_eq!(store.records().unwrap().len(), 2);
@@ -371,32 +383,69 @@ mod tests {
             journal: store.journal.clone(),
         };
         assert_eq!(
-            reopened.lines(false).unwrap()[0]
-                .review
-                .as_ref()
-                .unwrap()
-                .state,
+            reopened.lines().unwrap()[0].review.as_ref().unwrap().state,
             State::Resolved
         );
-        let mut wrong_reviewer = update(&reopened.lines(false).unwrap()[0], State::Resolved);
+        let mut wrong_reviewer = update(&reopened.lines().unwrap()[0], State::Resolved);
         wrong_reviewer.reviewer = "Different reviewer".to_owned();
         assert!(store.apply(wrong_reviewer).is_err());
     }
 
     #[test]
+    fn legacy_independent_reading_survives_draft_assisted_updates() {
+        let (_temp, store) = fixture();
+        let line = store.lines().unwrap().remove(0);
+        let legacy = serde_json::json!({
+            "sample": line.sample, "line_id": line.line_id,
+            "source_digest": line.source_digest, "revision": 1,
+            "reviewer": "Test reviewer", "independent_reading": "Original blind reading",
+            "text": "Original blind reading", "state": "reading", "comment": "",
+            "reviewed_at": "2026-09-05T20:00:00Z"
+        });
+        let original = format!("{}\n", serde_json::to_string(&legacy).unwrap());
+        fs::write(&store.journal, &original).unwrap();
+        let line = store.lines().unwrap().remove(0);
+        assert_eq!(
+            line.review.as_ref().unwrap().review_method,
+            ReviewMethod::LegacySourceFirst
+        );
+        let saved = store.apply(update(&line, State::Resolved)).unwrap();
+        assert_eq!(
+            saved.independent_reading.as_deref(),
+            Some("Original blind reading")
+        );
+        assert_eq!(saved.review_method, ReviewMethod::DraftAssisted);
+        assert!(fs::read_to_string(&store.journal)
+            .unwrap()
+            .starts_with(&original));
+    }
+
+    #[test]
+    fn initial_uncertain_review_requires_a_note_and_is_not_resolved() {
+        let (_temp, store) = fixture();
+        let line = store.lines().unwrap().remove(0);
+        let mut uncertain = update(&line, State::Unresolved);
+        uncertain.comment.clear();
+        assert!(store.apply(uncertain).is_err());
+        let saved = store.apply(update(&line, State::Unresolved)).unwrap();
+        assert_eq!(saved.state, State::Unresolved);
+        assert!(saved.independent_reading.is_none());
+    }
+
+    #[test]
     fn changed_source_cannot_reuse_old_review_and_crops_are_verified() {
         let (_temp, store) = fixture();
-        let initial = store.lines(false).unwrap();
-        store.apply(update(&initial[0], State::Reading)).unwrap();
-        let compared = store.lines(false).unwrap();
+        let initial = store.lines().unwrap();
+        store.apply(update(&initial[0], State::Resolved)).unwrap();
+        let compared = store.lines().unwrap();
         let path = store.root.join("sample/draft.json");
         let mut draft: serde_json::Value =
             serde_json::from_slice(&fs::read(&path).unwrap()).unwrap();
         draft["lines"][0]["text"] = "changed draft".into();
         fs::write(&path, serde_json::to_vec(&draft).unwrap()).unwrap();
-        let changed = store.lines(false).unwrap();
+        let changed = store.lines().unwrap();
         assert!(changed[0].review.is_none());
-        assert!(changed[0].draft.is_none());
+        assert_eq!(changed[0].draft.as_deref(), Some("changed draft"));
         assert!(store
             .apply(update(&compared[0], State::Resolved))
             .unwrap_err()
@@ -404,7 +453,7 @@ mod tests {
             .contains("revision conflict"));
         fs::write(&changed[0].crop, b"tampered crop").unwrap();
         assert!(store
-            .lines(false)
+            .lines()
             .unwrap_err()
             .to_string()
             .contains("crop hash mismatch"));
@@ -413,12 +462,12 @@ mod tests {
     #[test]
     fn held_out_samples_and_invalid_decisions_are_not_accepted() {
         let (_temp, store) = fixture();
-        let line = store.lines(false).unwrap().remove(0);
+        let line = store.lines().unwrap().remove(0);
         let mut blank = update(&line, State::Reading);
         blank.reviewer.clear();
         assert!(store.apply(blank).is_err());
-        store.apply(update(&line, State::Reading)).unwrap();
-        let line = store.lines(false).unwrap().remove(0);
+        store.apply(update(&line, State::Resolved)).unwrap();
+        let line = store.lines().unwrap().remove(0);
         let mut unresolved = update(&line, State::Unresolved);
         unresolved.comment.clear();
         assert!(store.apply(unresolved).is_err());
@@ -428,6 +477,6 @@ mod tests {
             serde_json::from_slice(&fs::read(&path).unwrap()).unwrap();
         manifest["partition"] = "final-test".into();
         fs::write(path, serde_json::to_vec(&manifest).unwrap()).unwrap();
-        assert!(store.lines(false).unwrap().is_empty());
+        assert!(store.lines().unwrap().is_empty());
     }
 }
