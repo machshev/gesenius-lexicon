@@ -1,7 +1,20 @@
 // Run with: node --test tool/test-transcription-keyboard.cjs
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { edit, backspace, fromCodePoint, layouts } = require('../crates/gesenius-core/src/review/transcription-keyboard.js');
+const { edit, backspace, fromCodePoint, layouts, ethiopicRows } = require('../crates/gesenius-core/src/review/transcription-keyboard.js');
+
+test('Ethiopic table preserves every key and vowel columns across incomplete series', () => {
+    const keys = layouts.find(layout => layout[0] === 'ethiopic')[3].flatMap(group => group[1]);
+    const { rows, extras } = ethiopicRows(keys);
+    assert.deepEqual(rows[0].map(key => key?.[0]), [...'ሀሁሂሃሄህሆሇ']);
+    const qw = rows.find(row => row[0][0] === 'ቈ');
+    assert.deepEqual(qw.map(key => key?.[0]), ['ቈ', undefined, 'ቊ', 'ቋ', 'ቌ', 'ቍ', undefined, undefined]);
+    assert.ok(extras.some(key => key[0] === 'ፘ'));
+    assert.ok(extras.some(key => key[0] === '፡'));
+    const actual = [...rows.flat().filter(Boolean), ...extras].map(key => key[0]);
+    assert.deepEqual(actual.sort(), keys.map(key => key[0]).sort());
+    assert.equal(new Set(actual).size, keys.length);
+});
 
 test('Hebrew points attach without replacing a selected letter or inserting dotted circles', () => {
     assert.deepEqual(edit('abc א xyz', 5, 5, '\u05b6'), {value: 'abc אֶ xyz', cursor: 6});

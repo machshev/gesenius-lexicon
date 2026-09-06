@@ -546,3 +546,21 @@ outside these commits; do not remove or overwrite it at the next session start.
 - Next action: source-review page 700 in the form and resolve its flagged marks;
   prepare validation page 175 with the same evidence format. The broader sample
   and outstanding stage/boundary/oracle diagnostics remain unfinished.
+
+### 2026-09-06: Geʿez keyboard table
+
+- At the user's request, replaced Ethiopic's three syllable dropdown groups in
+  the displayed palette with one scrollable base-letter/vowel-order table.
+  Sticky row/column headings preserve orientation. Incomplete labialized series
+  keep empty cells, and nonuniform eighth-slot forms have an Other column.
+  Additional forms, punctuation and numbers remain in the same scroll box.
+  Search still spans the entire palette; other scripts retain their selectors.
+- Verified all existing Ethiopic keys appear exactly once and incomplete series
+  retain their vowel alignment, using the Unicode Ethiopic chart as reference.
+  Six keyboard and four run-editor regression groups, JavaScript syntax and the
+  pinned Nix locked build passed. User review journal edits remain outside this
+  implementation milestone.
+- Firefox real-click checks passed for insertion into the focused run, exact
+  search and table restoration, switching back to Hebrew, hidden Ethiopic group
+  selector, and scroll containment at 700px. Browser edits used a temporary
+  journal and were not saved as source reviews.

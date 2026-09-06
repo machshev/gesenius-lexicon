@@ -92,6 +92,11 @@ original draft and manifest remain unchanged. The form supports one
 reviewer per line/source version; subsequent edits retain that reviewer identity.
 
 The form's **Unicode keyboard**, beside the transcription on desktop, supplies script-specific letters and pointing.
+The Ethiopic (Geʿez) palette shows all syllables in one scrollable table: base
+letters down the left and the seven vowel orders across the top. Headings stay
+visible while scrolling. Incomplete series retain empty cells; additional forms
+are in the Other column or below the table with punctuation and numbers. Search
+still finds any character by glyph, Unicode name or code point.
 Type a base letter before its marks, or select one existing letter to add a mark.
 Use the language/script selector, character groups and Unicode-name search for
 rarer glyphs. The palette also types into the review notes when that field was

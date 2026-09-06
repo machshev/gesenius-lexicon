@@ -7,6 +7,22 @@ const layouts = [["hebrew","Hebrew / Aramaic (square script)",true,[["Letters",[
 const isMark = text => /^\p{M}+$/u.test(text);
 const codePoint = text => 'U+' + text.codePointAt(0).toString(16).toUpperCase().padStart(4, '0');
 
+// Ethiopic's seven orders occupy slots 0–6 in each eight-code-point series.
+// Preserve holes in labialized series; slot 7 is not a uniform vowel order.
+// Reference: https://www.unicode.org/charts/PDF/U1200.pdf
+function ethiopicRows(keys) {
+    const rows = new Map();
+    const extras = [];
+    for (const key of keys) {
+        const cp = key[0].codePointAt(0);
+        if (cp < 0x1200 || cp > 0x1357) { extras.push(key); continue; }
+        const base = cp - cp % 8;
+        if (!rows.has(base)) rows.set(base, Array(8).fill(null));
+        rows.get(base)[cp % 8] = key;
+    }
+    return { rows: [...rows.values()], extras };
+}
+
 // Textarea offsets are UTF-16. Expand a selection that falls inside a surrogate pair.
 function selection(value, start, end) {
     const inside = offset => offset > 0 && offset < value.length &&
@@ -47,7 +63,7 @@ function fromCodePoint(input) {
     return text;
 }
 // Pure editing functions are also exercised without a browser.
-if (typeof module !== 'undefined') module.exports = { edit, backspace, fromCodePoint, layouts };
+if (typeof module !== 'undefined') module.exports = { edit, backspace, fromCodePoint, layouts, ethiopicRows };
 if (typeof document === 'undefined') return;
 const el = id => document.getElementById(id);
 const defaultTarget = () => document.querySelector('[data-run-text]') || el('text');
@@ -88,7 +104,8 @@ function renderKeys() {
     const layout = layouts.find(layout => layout[0] === el('keyboardLanguage').value);
     const groupIndex = Number(el('keyboardGroup').value);
     const query = el('keyboardSearch').value.trim().toUpperCase();
-    const groups = query ? layout[3] : [layout[3][groupIndex]];
+    const ethiopic = layout[0] === 'ethiopic';
+    const groups = query || ethiopic ? layout[3] : [layout[3][groupIndex]];
     const keys = groups.flatMap(group => group[1]).filter(([text, name]) =>
         !query || name.includes(query) || text === el('keyboardSearch').value.trim() || codePoint(text).includes(query));
     el('keyboardKeys').dir = layout[2] ? 'rtl' : 'ltr';
@@ -101,7 +118,36 @@ function renderKeys() {
         bindButton(button, () => insert(text));
         return button;
     };
-    el('keyboardKeys').replaceChildren(...keys.map(makeKey));
+    el('keyboardKeys').classList.toggle('ethiopic-scroll', ethiopic && !query);
+    if (ethiopic && !query) {
+        const table = document.createElement('table');
+        table.className = 'ethiopic-table';
+        const caption = table.createCaption();
+        caption.textContent = 'Base letters × vowel forms';
+        const header = table.createTHead().insertRow();
+        for (const label of ['Base', '1 · ä', '2 · u', '3 · i', '4 · a', '5 · ē', '6 · ə', '7 · o', 'Other']) {
+            const cell = document.createElement('th');
+            cell.scope = 'col'; cell.textContent = label; header.append(cell);
+        }
+        const body = table.createTBody();
+        const { rows, extras } = ethiopicRows(keys);
+        for (const keys of rows) {
+            const row = body.insertRow();
+            const label = document.createElement('th');
+            label.scope = 'row'; label.textContent = keys[0][0];
+            label.title = keys[0][1]; row.append(label);
+            for (const key of keys) {
+                const cell = row.insertCell();
+                if (key) cell.append(makeKey(key));
+                else { cell.textContent = '—'; cell.setAttribute('aria-label', 'No character'); }
+            }
+        }
+        const extraRow = body.insertRow();
+        const extraCell = extraRow.insertCell(); extraCell.colSpan = 9;
+        const label = document.createElement('p'); label.textContent = 'Additional forms, punctuation and numbers';
+        extraCell.append(label, ...extras.map(makeKey));
+        el('keyboardKeys').replaceChildren(table);
+    } else el('keyboardKeys').replaceChildren(...keys.map(makeKey));
     const marks = layout[3].find(([name]) => /^(Vowel points|Accents and breathings|Combining marks)$/.test(name));
     el('keyboardMarksArea').hidden = !!query || !marks || marks === groups[0];
     el('keyboardMarks').replaceChildren(...(marks?.[1] || []).map(makeKey));
@@ -109,6 +155,7 @@ function renderKeys() {
 }
 function changeLanguage() {
     const layout = layouts.find(layout => layout[0] === el('keyboardLanguage').value);
+    el('keyboardGroup').closest('label').hidden = layout[0] === 'ethiopic';
     el('keyboardGroup').replaceChildren(...layout[3].map(([name], i) => new Option(name, i)));
     el('keyboardSearch').value = '';
     renderKeys();
