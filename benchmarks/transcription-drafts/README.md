@@ -1,9 +1,10 @@
 # Source transcription drafts
 
-These samples are **not accepted gold**. Keep them outside `benchmarks/gold/`
-until a second reviewer has checked the source crops and resolved every listed
-uncertainty. Do not report their scores as recognition accuracy or count them
-as independently verified lines.
+These directories preserve draft and review evidence. A sample remains outside
+`benchmarks/gold/` until its source review has resolved every listed uncertainty.
+Printed page 50 has now been promoted as
+`benchmarks/gold/robinson-1854-p050-right-top.json`; its immutable draft and
+review manifest remain here as provenance.
 
 ## Printed page 50, right-column opening
 
@@ -48,7 +49,10 @@ as draft-assisted source checking, not independent transcription. Verify every l
 an explicit uncertainty. Preserve the draft/review history. Promote only resolved
 lines to gold, recording the accepted authority and retaining the exact source
 anchors. Keep any unresolved lines here and report their exclusion. No second
-review has occurred during draft preparation; accepted gold count remains zero.
+review occurred during draft preparation. James subsequently checked all twelve
+lines against their crops and resolved them in the append-only journal. The
+promoted fixture records which readings were independent and which were
+draft-assisted.
 
 Next sample: the development page 700 Ethiopic/Syriac comparison region specified
 in the sample inventory, followed by validation page 175. Preserve the frozen

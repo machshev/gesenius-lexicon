@@ -505,6 +505,7 @@ mod tests {
     };
     use crate::alto::{AltoLine, AltoPage, AltoRegion};
     use crate::model::Point;
+    use std::{fs, path::Path};
 
     #[test]
     fn evaluates_only_named_gold_lines() {
@@ -774,6 +775,30 @@ mod tests {
             .unwrap_err()
             .to_string();
         assert!(anchor_error.contains("finite, non-degenerate"));
+    }
+
+    #[test]
+    fn checked_in_gold_fixtures_are_structurally_valid() {
+        let gold_dir = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../benchmarks/gold");
+        let mut fixture_paths = fs::read_dir(&gold_dir)
+            .expect("read checked-in gold directory")
+            .map(|entry| entry.expect("read gold directory entry").path())
+            .filter(|path| {
+                path.extension()
+                    .is_some_and(|extension| extension == "json")
+            })
+            .collect::<Vec<_>>();
+        fixture_paths.sort();
+
+        assert!(
+            !fixture_paths.is_empty(),
+            "expected checked-in gold fixtures"
+        );
+        for path in fixture_paths {
+            GoldBenchmark::load(&path).unwrap_or_else(|error| {
+                panic!("invalid gold fixture {}: {error:#}", path.display())
+            });
+        }
     }
 
     fn coordinate_benchmark() -> GoldBenchmark {

@@ -497,3 +497,25 @@ outside these commits; do not remove or overwrite it at the next session start.
   absence of bidi controls, and selection of a phrase into a new run. Browser
   corrections were synthetic tests in a temporary journal, not source approvals.
   The user still needs to review/fix line 4 against its crop.
+
+### 2026-09-06: first coordinate-anchored gold sample
+
+- Promoted the twelve resolved right-column lines from printed page 50 / PDF 66
+  to `benchmarks/gold/robinson-1854-p050-right-top.json`. The fixture uses the
+  accepted latest journal revision for each line and retains the exact 360 dpi
+  source coordinate frame and source-PDF identity.
+- Authority records the actual review history: lines 1-3 have independent initial
+  readings, while all twelve accepted readings were confirmed with the draft
+  visible. The source digest links the fixture to the append-only review evidence;
+  draft-assisted checks are not represented as independent transcription.
+- Line 1 adopts the reviewer's corrected logical Hebrew word order and punctuation.
+  Line 6 records the reviewer-confirmed “of” after checking its continuation on
+  line 7. Every latest journal state is resolved; no draft uncertainty was silently
+  discarded. The original draft and review manifest remain unchanged.
+- This adds 12 accepted, source-anchored development lines (Latn throughout, Hebr
+  on five lines, Grek on one). It does not complete the representative sample or
+  provide Arabic, Syriac, Ethiopic, historical-glyph, validation, or test coverage.
+  No OCR run, accuracy comparison, corpus mutation, or final-test inspection ran.
+- Next sampling action: prepare and source-check the frozen development page 700
+  rare-script region, followed by validation page 175, using the same evidence
+  and review workflow.
