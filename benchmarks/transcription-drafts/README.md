@@ -77,3 +77,18 @@ rarer glyphs. The palette also types into the review notes when that field was
 last focused. Combining marks remain literal Unicode; no dictionary spelling or
 normalization is applied. Keyboard editing regressions can be run with
 `node --test tool/test-transcription-keyboard.cjs`.
+
+### Mixed-direction language runs
+
+The editor now separates a line into ordered editable runs, each with a language
+and explicit LTR/RTL direction. The combined preview isolates those runs inside
+an LTR line. Automatic initial splits use visible script only: foreign material
+is labelled Unspecified until the reviewer chooses its language. Select text or
+place a cursor, choose New run language, and use Create run at cursor / selection.
+Join next run retains the first run's language/direction and supports full phrases.
+The keyboard follows the focused run. Spaces and punctuation remain literal text;
+no normalization or hidden direction controls are inserted.
+
+Run metadata is saved beside the exact plain transcription in the review journal,
+with a checked concatenation contract. Older reviews without runs load unchanged.
+Run-editor regressions: `node tool/test-transcription-runs.cjs`.

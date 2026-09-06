@@ -159,6 +159,22 @@ your corrected text. **Needs fixes / uncertain** saves an unresolved review with
 a required note and keeps the current line open. Source-check notes are visible
 immediately. Zoom controls and an original-crop link help inspect fine marks.
 
+Transcriptions are edited as ordered **language runs**. Each run has its own
+language and left-to-right/right-to-left direction; the combined preview isolates
+RTL text within the surrounding English. Existing plain text is split into
+script-based editing runs without changing any characters. Foreign-script runs
+start as **Unspecified** until you choose their semantic language (for example,
+Hebrew versus Aramaic). For `p0050-right-004`, the Hebrew form is edited separately
+from `Plur.` and the following numbered English gloss.
+
+Choose **New run language**, select text or place the cursor within a run, then
+click **Create run at cursor / selection**. **Join next run** combines adjacent
+pieces using the first run's language and direction, allowing entire RTL phrases
+or sentences. The keyboard types into the last focused run or review notes.
+Saved `runs` retain language, direction and text; their exact concatenation must
+match the plain transcription. Direction is stored as metadata, not invisible
+bidi controls. Existing reviews remain readable and are not rewritten.
+
 The transcription form places its offline **Unicode keyboard** to the right of
 the crop and transcription on desktop. The keyboard stays alongside the editor
 and scrolls independently; narrow screens stack the panels. It includes Hebrew /

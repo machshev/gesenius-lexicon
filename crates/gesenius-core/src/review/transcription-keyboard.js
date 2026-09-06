@@ -50,18 +50,20 @@ function fromCodePoint(input) {
 if (typeof module !== 'undefined') module.exports = { edit, backspace, fromCodePoint, layouts };
 if (typeof document === 'undefined') return;
 const el = id => document.getElementById(id);
-const fields = [el('text'), el('comment')];
-let target = fields[0];
+const defaultTarget = () => document.querySelector('[data-run-text]') || el('text');
+let target = defaultTarget();
 let history = [];
 const status = (text, error = false) => {
     el('keyboardStatus').textContent = text;
     el('keyboardStatus').classList.toggle('error', error);
 };
-const updateTarget = () => { el('keyboardTarget').textContent = target.id === 'text' ? 'Typing into: Your transcription' : 'Typing into: Review notes'; };
-for (const field of fields) {
-    field.addEventListener('focus', () => { target = field; updateTarget(); });
-    field.addEventListener('input', event => { if (event.isTrusted) history = []; });
-}
+const updateTarget = () => { el('keyboardTarget').textContent = target.id === 'comment' ? 'Typing into: Review notes' : target.hasAttribute('data-run-text') ? `Typing into: Run ${Number(target.dataset.runText)+1} (${target.dataset.languageLabel})` : 'Typing into: Your transcription'; };
+document.addEventListener('focusin', event => {
+    if (event.target.matches('[data-run-text], #text, #comment')) { target = event.target; updateTarget(); }
+});
+document.addEventListener('input', event => {
+    if (event.isTrusted && event.target.matches('[data-run-text], #text, #comment')) history = [];
+});
 function apply(operation) {
     if (el('save').disabled) return;
     try {
@@ -72,7 +74,7 @@ function apply(operation) {
         target.focus({ preventScroll: true });
         target.setSelectionRange(after.cursor, after.cursor);
         target.dispatchEvent(new Event('input', { bubbles: true }));
-        status('Inserted into ' + (target.id === 'text' ? 'your transcription.' : 'review notes.'));
+        status(target.id === 'comment' ? 'Review notes updated.' : 'Transcription updated.');
     } catch (error) { status(error.message, true); }
 }
 function insert(text) { apply((value, start, end) => edit(value, start, end, text)); }
@@ -138,7 +140,7 @@ bindButton(el('keyboardUndo'), () => {
     status('Keyboard edit undone.');
 });
 // New line loads and completed saves establish a new editing context.
-document.addEventListener('transcription-rendered', () => { history = []; target = fields[0]; updateTarget(); status(''); });
+for (const event of ['transcription-rendered', 'transcription-runs-rendered']) document.addEventListener(event, () => { history = []; target = defaultTarget(); updateTarget(); status(''); });
 changeLanguage();
 updateTarget();
 })();

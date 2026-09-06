@@ -50,6 +50,42 @@ enum ReviewMethod {
     DraftAssisted,
 }
 
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
+#[serde(rename_all = "lowercase")]
+enum Direction {
+    Ltr,
+    Rtl,
+}
+
+#[derive(Clone, Debug, Deserialize, Serialize)]
+struct TextRun {
+    language: String,
+    direction: Direction,
+    text: String,
+}
+
+fn validate_runs(runs: &[TextRun], text: &str) -> Result<()> {
+    if runs.is_empty() || runs.len() > 256 {
+        bail!("a transcription must have between 1 and 256 text runs");
+    }
+    for run in runs {
+        if ![
+            "en", "he", "arc", "ar", "fa", "syc", "grc", "la", "gez", "phn", "und",
+        ]
+        .contains(&run.language.as_str())
+        {
+            bail!("unsupported text-run language");
+        }
+        if run.text.chars().any(|c| matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}' | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')) {
+            bail!("remove hidden bidi controls; use text-run direction instead");
+        }
+    }
+    if runs.iter().map(|run| run.text.as_str()).collect::<String>() != text {
+        bail!("text runs must concatenate exactly to the transcription");
+    }
+    Ok(())
+}
+
 #[derive(Clone, Debug, Deserialize, Serialize)]
 struct Record {
     sample: String,
@@ -64,6 +100,8 @@ struct Record {
     #[serde(default)]
     displayed_draft: Option<String>,
     text: String,
+    #[serde(default)]
+    runs: Option<Vec<TextRun>>,
     state: State,
     comment: String,
     reviewed_at: DateTime<Utc>,
@@ -77,6 +115,8 @@ struct Update {
     base_revision: u64,
     reviewer: String,
     text: String,
+    #[serde(default)]
+    runs: Option<Vec<TextRun>>,
     state: State,
     comment: String,
 }
@@ -204,6 +244,9 @@ impl TranscriptionStore {
         if update.reviewer.trim().is_empty() || update.text.trim().is_empty() {
             bail!("reviewer and transcription are required");
         }
+        if let Some(runs) = &update.runs {
+            validate_runs(runs, &update.text)?;
+        }
         if update.state == State::Reading {
             bail!("the draft is now visible; reload and save a resolved or unresolved review");
         }
@@ -249,6 +292,7 @@ impl TranscriptionStore {
                 review_method: ReviewMethod::DraftAssisted,
                 displayed_draft: line.draft.clone(),
                 text: update.text,
+                runs: update.runs,
                 state: update.state,
                 comment: update.comment,
                 reviewed_at: Utc::now(),
@@ -265,11 +309,20 @@ impl TranscriptionStore {
 
 pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result<()> {
     let path = request.url().split('?').next().unwrap_or("/").to_owned();
-    if request.method() == &Method::Get && path == "/transcription-keyboard.js" {
+    if request.method() == &Method::Get
+        && matches!(
+            path.as_str(),
+            "/transcription-keyboard.js" | "/transcription-runs.js"
+        )
+    {
         request.respond(
-            Response::from_string(include_str!("transcription-keyboard.js"))
-                .with_header(content_type_header("text/javascript; charset=utf-8"))
-                .with_header(security_header()),
+            Response::from_string(if path == "/transcription-runs.js" {
+                include_str!("transcription-runs.js")
+            } else {
+                include_str!("transcription-keyboard.js")
+            })
+            .with_header(content_type_header("text/javascript; charset=utf-8"))
+            .with_header(security_header()),
         )?;
         return Ok(());
     }
@@ -343,6 +396,7 @@ mod tests {
             base_revision: line.review.as_ref().map_or(0, |record| record.revision),
             reviewer: "Test reviewer".to_owned(),
             text: "Independent source reading אֵל".to_owned(),
+            runs: None,
             state,
             comment: "Source checked".to_owned(),
         }
@@ -430,6 +484,65 @@ mod tests {
         let saved = store.apply(update(&line, State::Unresolved)).unwrap();
         assert_eq!(saved.state, State::Unresolved);
         assert!(saved.independent_reading.is_none());
+    }
+
+    #[test]
+    fn language_runs_preserve_exact_text_and_reject_hidden_direction_controls() {
+        let (_temp, store) = fixture();
+        let line = store.lines().unwrap().remove(0);
+        let mut change = update(&line, State::Resolved);
+        change.text = "Plur. אֵלִם 1. mighty ones, heroes;".to_owned();
+        change.runs = Some(vec![
+            TextRun {
+                language: "en".to_owned(),
+                direction: Direction::Ltr,
+                text: "Plur. ".to_owned(),
+            },
+            TextRun {
+                language: "he".to_owned(),
+                direction: Direction::Rtl,
+                text: "אֵלִם".to_owned(),
+            },
+            TextRun {
+                language: "en".to_owned(),
+                direction: Direction::Ltr,
+                text: " 1. mighty ones, heroes;".to_owned(),
+            },
+        ]);
+        let saved = store.apply(change).unwrap();
+        let runs = saved.runs.unwrap();
+        assert_eq!(runs[1].language, "he");
+        assert_eq!(runs[1].direction, Direction::Rtl);
+        assert_eq!(
+            store.lines().unwrap()[0]
+                .review
+                .as_ref()
+                .unwrap()
+                .runs
+                .as_ref()
+                .unwrap()[1]
+                .text,
+            "אֵלִם"
+        );
+        assert!(validate_runs(&runs, "different text").is_err());
+        assert!(validate_runs(
+            &[TextRun {
+                language: "he".to_owned(),
+                direction: Direction::Rtl,
+                text: "\u{202e}א".to_owned()
+            }],
+            "\u{202e}א"
+        )
+        .is_err());
+        assert!(validate_runs(
+            &[TextRun {
+                language: "unknown".to_owned(),
+                direction: Direction::Ltr,
+                text: "a".to_owned()
+            }],
+            "a"
+        )
+        .is_err());
     }
 
     #[test]

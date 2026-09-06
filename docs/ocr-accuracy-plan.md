@@ -473,3 +473,27 @@ outside these commits; do not remove or overwrite it at the next session start.
   persistence, desktop panel geometry and narrow-screen stacking without horizontal
   overflow. Inspected the rendered desktop form. All browser writes used temporary
   journals; the user's live journal and draft/source identities were not modified.
+
+### 2026-09-06: explicit language runs for mixed-direction transcription
+
+- Addressed the reported bidi editing failure on `p0050-right-004` by adding
+  ordered language runs with explicit LTR/RTL direction, isolated combined preview,
+  per-run editing, selection/cursor-based run creation and adjacent-run joining.
+  The existing English–Hebrew–English text initially separates into three runs
+  without changing its characters. Foreign-script segments are labelled unspecified
+  until the reviewer identifies semantic language; Hebrew and Aramaic are distinct
+  options. Whole phrases/sentences can share a single RTL run.
+- The keyboard follows the focused run and retains pointing, cursor selection and
+  undo. Runs are stored alongside plain text in new append-only review records;
+  the server requires their exact concatenation to equal the transcription and
+  rejects hidden bidi controls in run text. Older records without runs still load;
+  no live review journal, source crop or draft identity was changed.
+- Verification: 90 core tests, 23 fixture tests with external TEI validation,
+  warning-denied Clippy, formatting, XML/SQLite checks and locked build passed.
+  Four run-editor and five keyboard regression groups passed. Final direction
+  styling was rebuilt and verified in Firefox on the exact line-4 draft: three
+  initial directional runs, isolated preview order, Hebrew-point insertion/undo,
+  keyboard edits confined to the selected run, persisted language/direction/text,
+  absence of bidi controls, and selection of a phrase into a new run. Browser
+  corrections were synthetic tests in a temporary journal, not source approvals.
+  The user still needs to review/fix line 4 against its crop.

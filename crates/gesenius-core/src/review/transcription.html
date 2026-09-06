@@ -6,6 +6,7 @@
 
 main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}#reviewForm{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(350px,.85fr);gap:1rem;align-items:start}.review-column{min-width:0}section{margin:0 0 1rem}.source-panel{position:sticky;top:0;z-index:1;border-bottom:1px solid #d0cbc0}#identity{margin:.35rem 0}.keyboard-panel{position:sticky;top:1rem;max-height:calc(100vh - 2rem);overflow:auto;min-width:0}#unicodeKeyboard{margin:0}#unicodeKeyboard select{max-width:100%}#unicodeKeyboard label{max-width:100%}#text{min-height:8rem}.hint{font-size:.9rem;color:#555}.actions{margin:.6rem 0}#save{background:#313a35;color:white;border:1px solid #313a35;border-radius:.25rem}#uncertaintyPanel ul{padding-left:1.2rem}#uncertainties{font-size:.9rem}#comment{font-size:1rem;min-height:4rem}.unicode-keys{max-height:13rem}.unicode-keys button{min-width:2.2rem;min-height:2.4rem;padding:.25rem}.keyboard-panel .controls{gap:.3rem}#keyboardStatus{font-size:.9rem}#keyboardCount{margin:.3rem 0}
 @media(max-width:850px){#reviewForm{grid-template-columns:minmax(0,1fr)}.keyboard-panel{position:static;max-height:none}.source-panel{position:static}main{padding:.6rem}}
+#runPreview{white-space:pre-wrap;font-size:1.4rem;line-height:1.8;padding:.7rem;background:#faf8f2;border:1px solid #d0cbc0;border-radius:.3rem;overflow-wrap:anywhere}#runPreview bdi{unicode-bidi:isolate}.text-run{border:1px solid #d0cbc0;border-radius:.3rem;padding:.5rem;margin:.5rem 0}.text-run textarea{min-height:4rem;font-size:1.35rem;line-height:1.7;unicode-bidi:isolate;text-align:start}.text-run label{margin:.25rem 0}.run-actions button{font-size:.8rem;padding:.25rem}.run-actions{margin-top:.25rem}
 </style></head><body>
 <header><a href="/">Corpus review</a><strong>Source transcription review</strong></header>
 <main><p>Check the draft against the image. Approve it as shown, edit corrections, or leave a note for anything still uncertain.</p>
@@ -14,7 +15,10 @@ main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}
 <form id="reviewForm" hidden><div class="review-column">
 <section class="source-panel"><h1 id="title"></h1><p id="identity" class="hint"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to review"></div></section>
 <section><label>Reviewer name <input id="reviewer" required autocomplete="name"></label>
-<label for="text">Transcription — edit any corrections</label><textarea id="text" dir="ltr" required spellcheck="false"></textarea>
+<h2>Transcription</h2><div id="runPreview" dir="ltr" aria-label="Combined transcription preview"></div>
+<p class="hint">Edit each language run in its own direction. The combined line reads left to right. Foreign-script runs initially have an unspecified language; choose the correct language below.</p>
+<label>New run language <select id="newRunLanguage"></select></label>
+<div id="runEditors"></div><textarea id="text" hidden aria-hidden="true"></textarea>
 <div id="uncertaintyPanel"><h3>Points to check</h3><ul id="uncertainties"></ul></div>
 <div class="controls actions"><button id="save" type="submit" value="resolved">Approve &amp; next</button><button id="uncertain" type="submit" value="unresolved">Needs fixes / uncertain</button><button id="next" type="button">Next line</button></div>
 <label for="comment">Review notes / uncertain glyphs</label><textarea id="comment"></textarea>
@@ -29,6 +33,7 @@ main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}
 <div class="controls"><label>Other Unicode character <input id="keyboardCodepoint" placeholder="U+10900" autocomplete="off" maxlength="8"></label><button id="insertCodepoint" type="button">Insert code point</button></div>
 <p id="keyboardStatus" role="status" aria-live="polite"></p>
 </details></aside></form></main>
+<script src="/transcription-runs.js"></script>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
@@ -42,7 +47,7 @@ const url='/api/image?path='+encodeURIComponent(current.crop);$('crop').src=url;
 $('reviewer').value=r?.reviewer||localStorage.getItem('transcription-reviewer')||'';$('reviewer').readOnly=!!r;
 $('text').value=r?.text??current.draft??'';$('comment').value=r?.comment||'';$('comparison').open=false;$('independentPanel').hidden=!r?.independent_reading;$('independent').textContent=r?.independent_reading||'';$('draft').textContent=current.draft||'';
 $('uncertainties').replaceChildren(...current.uncertainties.map(note=>{const li=document.createElement('li');li.textContent=note;return li;}));$('uncertaintyPanel').hidden=!current.uncertainties.length;
-document.dispatchEvent(new Event('transcription-rendered'));updateSaveLabel();$('next').disabled=index===lines.length-1;
+window.TranscriptionRuns.load($('text').value,r?.runs);document.dispatchEvent(new Event('transcription-rendered'));updateSaveLabel();$('next').disabled=index===lines.length-1;
 }
 async function load(key){lines=await api();$('line').replaceChildren(...lines.map((line,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${line.line_id} — ${line.review?.state||'unreviewed'}`;return o;}));$('progress').textContent=`${lines.filter(l=>l.review?.state==='resolved').length} / ${lines.length} resolved`;
 render(Math.max(0,lines.findIndex(l=>l.sample+' / '+l.line_id===key)));if(!lines.length)message('No development or validation transcription drafts are available.');}
@@ -53,8 +58,8 @@ $('reload').onclick=()=>{if(mayLeave())load(current&&current.sample+' / '+curren
 $('zoom').onchange=()=>{$('crop').style.width=$('zoom').value+'%';};
 $('reviewForm').oninput=event=>{if(['text','comment','reviewer'].includes(event.target.id)){dirty=true;updateSaveLabel();}};
 window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});
-$('reviewForm').onsubmit=async event=>{event.preventDefault();if(busy)return;const state=event.submitter?.value||'resolved';if(state==='unresolved'&&!$('comment').value.trim()){message('Describe the needed fix or uncertainty in the review notes.',true);$('comment').focus();return;}
+$('reviewForm').onsubmit=async event=>{event.preventDefault();if(busy)return;const state=event.submitter?.value||'resolved';if(!$('text').value.trim()){message('Enter a transcription before saving.',true);return;}if(state==='unresolved'&&!$('comment').value.trim()){message('Describe the needed fix or uncertainty in the review notes.',true);$('comment').focus();return;}
 busy=true;for(const id of ['save','uncertain','line','reload','next'])$(id).disabled=true;
-try{const savedLine=current;const next=state==='resolved'?lines[lines.indexOf(current)+1]:null;const key=(next||current).sample+' / '+(next||current).line_id;await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sample:current.sample,line_id:current.line_id,source_digest:current.source_digest,base_revision:current.review?.revision||0,reviewer:$('reviewer').value,text:$('text').value,state,comment:$('comment').value})});localStorage.setItem('transcription-reviewer',$('reviewer').value.trim());dirty=false;await load(key);message(`${savedLine.line_id}: ${state==='resolved'?'approved':'saved as needing review'}.`);}catch(e){message(e.message,true);}finally{busy=false;for(const id of ['save','uncertain','line','reload'])$(id).disabled=false;$('next').disabled=lines.indexOf(current)===lines.length-1;}};
+try{const savedLine=current;const next=state==='resolved'?lines[lines.indexOf(current)+1]:null;const key=(next||current).sample+' / '+(next||current).line_id;await api({method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({sample:current.sample,line_id:current.line_id,source_digest:current.source_digest,base_revision:current.review?.revision||0,reviewer:$('reviewer').value,text:$('text').value,runs:window.TranscriptionRuns.values(),state,comment:$('comment').value})});localStorage.setItem('transcription-reviewer',$('reviewer').value.trim());dirty=false;await load(key);message(`${savedLine.line_id}: ${state==='resolved'?'approved':'saved as needing review'}.`);}catch(e){message(e.message,true);}finally{busy=false;for(const id of ['save','uncertain','line','reload'])$(id).disabled=false;$('next').disabled=lines.indexOf(current)===lines.length-1;}};
 load().catch(e=>message(e.message,true));
 </script><script src="/transcription-keyboard.js"></script></body></html>
