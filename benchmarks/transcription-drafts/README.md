@@ -54,9 +54,26 @@ lines against their crops and resolved them in the append-only journal. The
 promoted fixture records which readings were independent and which were
 draft-assisted.
 
-Next sample: the development page 700 Ethiopic/Syriac comparison region specified
-in the sample inventory, followed by validation page 175. Preserve the frozen
-final-test pages. Numeric acceptance tolerances must be recorded before tuning.
+## Printed page 700, left-column comparisons
+
+`robinson-1854-p700/` contains nine consecutive complete lines from PDF page 716,
+including an Ethiopic comparison, two Syriac forms and an Aramaic form printed
+in square Hebrew script. These are drafts awaiting source approval in the same
+review form. Three lines have explicit Unicode/pointing uncertainties. The
+`Syr.` label on line 3 introduces the form on line 4; it is not Syriac glyph
+coverage on line 3 itself.
+
+The source PDF and existing 180 dpi raster hashes were recomputed and matched
+the inventory. The direct 360 dpi raster is 1855 × 3139; its identity and exact
+crop recipe are in `review.json`. The nine PNGs are unmodified pixel crops.
+The coordinator inspected the page, native/enlarged region and individual crops;
+a separate Sol agent read the image without a supplied proposed transcription.
+This model source check does not constitute reviewer acceptance. No OCR or
+dictionary was consulted. Follow the diplomatic conventions above and resolve
+the Syriac above-mark mapping and square-script pointing before promotion.
+
+Next sample after page 700 review: validation page 175. Preserve the frozen
+final-test pages. Numeric acceptance tolerances are in `docs/ocr-metric-policy.md`.
 
 ### Review in the local web interface
 

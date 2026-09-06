@@ -1,0 +1,122 @@
+{
+  "status": "draft-not-gold",
+  "partition": "development",
+  "printed_page": "700",
+  "source_page": 716,
+  "source_raster_sha256": "578117c77194b8f4ca40cc7d4b3265a0a41b0b05bf2346f6a760f358c4f78281",
+  "source_raster_dimensions": [
+    1855,
+    3139
+  ],
+  "raster_command": "pdftoppm -f 716 -l 716 -singlefile -r 360 -png SOURCE_PDF /tmp/p716-360",
+  "crop_command": "magick /tmp/p716-360.png -crop WIDTHxHEIGHT+X+Y +repage OUTPUT.png",
+  "ocr_consulted": false,
+  "independent_review_completed": false,
+  "accepted_gold_lines": 0,
+  "model_source_check": {
+    "model": "gpt-5.6-sol",
+    "method": "Separate image reading without a proposed transcription; coordinator compared reading with native crop, enlarged crop and page context.",
+    "limitations": "Not a human approval or completed independent source review; all lines await reviewer acceptance."
+  },
+  "lines": [
+    {
+      "line_id": "p0700-left-001",
+      "crop": "crops/p0700-left-001.png",
+      "crop_sha256": "a816152b4c93e2dcbd68d49b878f6356ad765a8f5c30d091de91064f38ca8f7a",
+      "visible_scripts": [
+        "Latn"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-002",
+      "crop": "crops/p0700-left-002.png",
+      "crop_sha256": "2ca0f815269c0ffdce43deacc72e95524e85ed3c137fd09e9c42b9386efde6d0",
+      "visible_scripts": [
+        "Latn"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-003",
+      "crop": "crops/p0700-left-003.png",
+      "crop_sha256": "b26d375dc908f3b1d0b8ce559ac7aacec374dc2ae6e04e795613867d3139102f",
+      "visible_scripts": [
+        "Latn",
+        "Ethi"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-004",
+      "crop": "crops/p0700-left-004.png",
+      "crop_sha256": "37a01c2368d64daebd88bfb0294834f12e791da2c55ebe2affa8df37ecf411ab",
+      "visible_scripts": [
+        "Latn",
+        "Syrc"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-005",
+      "crop": "crops/p0700-left-005.png",
+      "crop_sha256": "11bc62474b057b7fb00f238de5d7e9f488d5293b995e99eaec8cbe40d2c2c888",
+      "visible_scripts": [
+        "Latn"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-006",
+      "crop": "crops/p0700-left-006.png",
+      "crop_sha256": "70da801614b82ff2f7061b74725c0d4b6809670e8da5784accca859c641ebb47",
+      "visible_scripts": [
+        "Latn"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-007",
+      "crop": "crops/p0700-left-007.png",
+      "crop_sha256": "f8f34c6150317c38f7ea87d2ee73c77beb99d6aa4b4510e8f68430da20a41470",
+      "visible_scripts": [
+        "Latn"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-008",
+      "crop": "crops/p0700-left-008.png",
+      "crop_sha256": "8ffc4e6346211c6eb6b3dc5f15cdae27e8017d8c79abe188226a0b680785660d",
+      "visible_scripts": [
+        "Latn"
+      ],
+      "status": "draft-awaiting-source-review"
+    },
+    {
+      "line_id": "p0700-left-009",
+      "crop": "crops/p0700-left-009.png",
+      "crop_sha256": "dbb4098b222f1ab340509be415addf7a14efca2e7dcae7a7d940fb47cea8ecec",
+      "visible_scripts": [
+        "Latn",
+        "Hebr",
+        "Syrc"
+      ],
+      "status": "draft-awaiting-source-review"
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "p0700-left-003",
+      "detail": "Confirm Ethiopic Unicode syllable mapping ነከሰ directly against the three printed glyphs. The Syr. label introduces the next line, not Syriac glyphs on this line."
+    },
+    {
+      "line_id": "p0700-left-004",
+      "detail": "Base reading ܢܟܬ is provisional; confirm the triangular-looking mark above the middle letter is U+0730 SYRIAC PTHAHA ABOVE, and its attachment. Do not omit the mark or infer it from a dictionary."
+    },
+    {
+      "line_id": "p0700-left-009",
+      "detail": "Confirm Aramaic square-script נְכַת, especially sheva/patah placement, and the repeated Syriac form and above-mark mapping. Keep Aramaic semantic language distinct from Hebrew visible script."
+    }
+  ]
+}

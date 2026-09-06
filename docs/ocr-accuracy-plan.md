@@ -519,3 +519,30 @@ outside these commits; do not remove or overwrite it at the next session start.
 - Next sampling action: prepare and source-check the frozen development page 700
   rare-script region, followed by validation page 175, using the same evidence
   and review workflow.
+
+### 2026-09-06: page 700 rare-script review draft
+
+- Prepared nine consecutive complete left-column lines from development printed
+  page 700 / PDF 716, with exact 360 dpi anchors, crop hashes and provenance in
+  `benchmarks/transcription-drafts/robinson-1854-p700/`. Recomputed source PDF
+  and 180 dpi raster hashes match the inventory. The new 1855 × 3139 raster hash
+  is `578117c77194b8f4ca40cc7d4b3265a0a41b0b05bf2346f6a760f358c4f78281`.
+- At the user's request, delegated schema/partition verification to Luna and a
+  separate image reading to Sol. The coordinator inspected full-page context,
+  the native and enlarged region, and all individual crops. No OCR hypotheses
+  or dictionaries were consulted. Model source checking is explicitly separate
+  from reviewer acceptance; all nine lines remain drafts.
+- Coverage: Latn throughout, Ethi on one line, Syrc on two, Hebr on one (an
+  Aramaic-labelled form). Recorded three lines requiring particular syllable,
+  Syriac above-mark or square-script pointing checks. Accepted gold stays at
+  twelve new development lines; no representative accuracy claim is made.
+- Verification: six focused transcription tests passed in pinned Nix (Luna).
+  Existing debug binary's real review endpoint loaded all nine drafts with their
+  uncertainty notes and null review state, validating benchmark structures and
+  crop hashes. Crop dimensions match the ordered, contiguous in-bounds anchors;
+  inspected the crop montage. Source hashes and `git diff --check` passed.
+  The loopback check required sandbox escalation; the temporary server stopped.
+  No live journal changes, OCR generation, gold promotion or corpus changes.
+- Next action: source-review page 700 in the form and resolve its flagged marks;
+  prepare validation page 175 with the same evidence format. The broader sample
+  and outstanding stage/boundary/oracle diagnostics remain unfinished.
