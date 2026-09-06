@@ -564,3 +564,22 @@ outside these commits; do not remove or overwrite it at the next session start.
   search and table restoration, switching back to Hebrew, hidden Ethiopic group
   selector, and scroll containment at 700px. Browser edits used a temporary
   journal and were not saved as source reviews.
+
+### 2026-09-06: Syriac keyboard typefaces
+
+- Added a Syriac-only typeface selector for Estrangela, Serto (West Syriac), and
+  East Syriac. The selected face applies to letters and pointing keys; switching
+  faces leaves transcription characters and language metadata unchanged.
+- Bundled the three unmodified Noto Syriac variable fonts and their SIL OFL
+  license, with checksums and upstream mappings in `review/fonts/README.md`.
+  Fonts and license are embedded in the review binary and served on fixed local
+  routes, so browser rendering does not depend on installed fonts or a CDN.
+- Pinned Nix formatting, locked build and six transcription tests passed, as
+  did all six keyboard regression groups and JavaScript syntax. The user's live
+  review journal remains outside the implementation commit.
+- Warning-denied workspace/all-target Clippy passed. Firefox verified all three
+  font downloads and loaded faces, matching computed fonts for letter/mark keys,
+  Syriac-only selector visibility, unchanged run text after switching style, and
+  identical real-click insertion of `ܐܰ` in all three styles. Inspected screenshots
+  of the actual Serto and Estrangela keyboards. Temporary browser/server stopped;
+  no test source approvals were written to the user's journal.

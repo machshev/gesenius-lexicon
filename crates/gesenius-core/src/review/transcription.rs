@@ -309,6 +309,28 @@ impl TranscriptionStore {
 
 pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result<()> {
     let path = request.url().split('?').next().unwrap_or("/").to_owned();
+    if request.method() == &Method::Get && path == "/transcription-fonts/OFL.txt" {
+        request.respond(
+            Response::from_string(include_str!("fonts/OFL.txt"))
+                .with_header(content_type_header("text/plain; charset=utf-8"))
+                .with_header(security_header()),
+        )?;
+        return Ok(());
+    }
+    let font: Option<&[u8]> = match path.as_str() {
+        "/transcription-fonts/estrangela.ttf" => Some(include_bytes!("fonts/estrangela.ttf")),
+        "/transcription-fonts/serto.ttf" => Some(include_bytes!("fonts/serto.ttf")),
+        "/transcription-fonts/eastern.ttf" => Some(include_bytes!("fonts/eastern.ttf")),
+        _ => None,
+    };
+    if let (true, Some(bytes)) = (request.method() == &Method::Get, font) {
+        request.respond(
+            Response::from_data(bytes)
+                .with_header(content_type_header("font/ttf"))
+                .with_header(security_header()),
+        )?;
+        return Ok(());
+    }
     if request.method() == &Method::Get
         && matches!(
             path.as_str(),

@@ -241,6 +241,10 @@ pub fn serve(options: &ReviewServerOptions<'_>) -> Result<()> {
                     | "/api/transcriptions"
                     | "/transcription-keyboard.js"
                     | "/transcription-runs.js"
+                    | "/transcription-fonts/estrangela.ttf"
+                    | "/transcription-fonts/serto.ttf"
+                    | "/transcription-fonts/eastern.ttf"
+                    | "/transcription-fonts/OFL.txt"
             )
         ) {
             if let Err(error) = transcription::handle(request, &transcriptions) {

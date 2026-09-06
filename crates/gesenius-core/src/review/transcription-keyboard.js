@@ -156,6 +156,8 @@ function renderKeys() {
 function changeLanguage() {
     const layout = layouts.find(layout => layout[0] === el('keyboardLanguage').value);
     el('keyboardGroup').closest('label').hidden = layout[0] === 'ethiopic';
+    el('syriacFontControl').hidden = layout[0] !== 'syriac';
+    el('unicodeKeyboard').classList.toggle('syriac-keyboard', layout[0] === 'syriac');
     el('keyboardGroup').replaceChildren(...layout[3].map(([name], i) => new Option(name, i)));
     el('keyboardSearch').value = '';
     renderKeys();
@@ -164,6 +166,11 @@ el('keyboardLanguage').replaceChildren(...layouts.map(([id, name]) => new Option
 el('keyboardLanguage').onchange = changeLanguage;
 el('keyboardGroup').onchange = renderKeys;
 el('keyboardSearch').oninput = renderKeys;
+el('syriacFont').onchange = () => {
+    const families = { estrangela: 'Review Syriac Estrangela', serto: 'Review Syriac Serto', eastern: 'Review Syriac Eastern' };
+    el('unicodeKeyboard').style.setProperty('--syriac-font', '"' + families[el('syriacFont').value] + '"');
+};
+el('syriacFont').onchange();
 // Palette controls are not transcription edits and must not trigger unsaved-review prompts.
 el('unicodeKeyboard').addEventListener('input', event => event.stopPropagation());
 el('keyboardCodepoint').addEventListener('keydown', event => {
