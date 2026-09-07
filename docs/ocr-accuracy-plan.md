@@ -583,3 +583,24 @@ outside these commits; do not remove or overwrite it at the next session start.
   identical real-click insertion of `ܐܰ` in all three styles. Inspected screenshots
   of the actual Serto and Estrangela keyboards. Temporary browser/server stopped;
   no test source approvals were written to the user's journal.
+
+### 2026-09-07: shared Syriac run styles and positional forms
+
+- Added a shared letter-style selector to Syriac run boxes, including runs with
+  Syriac script whose semantic language remains unspecified. Changing a run or
+  keyboard selector synchronizes all Syriac textareas, combined preview and
+  keyboard keys without changing text or stored language metadata. Run controls
+  preserve the editing caret and do not emit transcription-change events.
+- Added isolated, initial, medial (intermediate) and final keyboard previews.
+  Joiners provide display context only; key clicks insert the original scalar.
+  Actual connected run text shapes naturally. Documented that not all letters
+  have four distinct shapes and generic final previews do not cover every
+  contextual Alaph variant, following the Unicode Syriac shaping rules.
+- Seven keyboard and four run-editor regression groups passed; the locked Nix
+  build passed. Firefox verified shared selectors and textarea/preview fonts,
+  unchanged text/caret after style changes, all four display contexts, real-click
+  scalar-only insertion with points, and no test journal saves. Inspected the
+  run/keyboard screenshot on page 700 line 4. A temporary browser permission
+  review timed out; the permitted retry succeeded. Test browser/server stopped.
+- Implementation and documentation only; the user's ongoing review journal
+  remains untouched and excluded from this commit.

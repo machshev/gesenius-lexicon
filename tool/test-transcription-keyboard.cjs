@@ -1,7 +1,16 @@
 // Run with: node --test tool/test-transcription-keyboard.cjs
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { edit, backspace, fromCodePoint, layouts, ethiopicRows } = require('../crates/gesenius-core/src/review/transcription-keyboard.js');
+const { edit, backspace, fromCodePoint, layouts, ethiopicRows, syriacKeyForm } = require('../crates/gesenius-core/src/review/transcription-keyboard.js');
+
+test('Syriac positional previews use joining context only for letters', () => {
+    assert.equal(syriacKeyForm('ܒ', 'isolated'), 'ܒ');
+    assert.equal(syriacKeyForm('ܒ', 'initial'), 'ܒ\u200d');
+    assert.equal(syriacKeyForm('ܒ', 'medial'), '\u200dܒ\u200d');
+    assert.equal(syriacKeyForm('ܒ', 'final'), '\u200dܒ');
+    assert.equal(syriacKeyForm('ܰ', 'medial'), 'ܰ');
+    assert.equal(syriacKeyForm('א', 'final'), 'א');
+});
 
 test('Ethiopic table preserves every key and vowel columns across incomplete series', () => {
     const keys = layouts.find(layout => layout[0] === 'ethiopic')[3].flatMap(group => group[1]);

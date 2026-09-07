@@ -33,9 +33,23 @@ function splitRun(run,start,end,language) {
 if(typeof module!=='undefined')module.exports={initialRuns,splitRun};
 if(typeof document==='undefined')return;
 const $=id=>document.getElementById(id);
+const syriacStyles = [['estrangela','Estrangela (ʾEsṭrangēlā)','Review Syriac Estrangela'],['serto','Serto (West Syriac)','Review Syriac Serto'],['eastern','East Syriac','Review Syriac Eastern']];
+let syriacStyle='estrangela';
+const isSyriac=run=>run.language==='syc'||/\p{Script=Syriac}/u.test(run.text);
+window.SyriacStyle={
+    get(){return syriacStyle;},
+    set(value){
+        const style=syriacStyles.find(style=>style[0]===value);
+        if(!style)return;
+        syriacStyle=value;
+        document.documentElement.style.setProperty('--syriac-font','"'+style[2]+'"');
+        document.querySelectorAll('[data-run-syriac-style], #syriacFont').forEach(select=>{select.value=value;});
+    }
+};
+window.SyriacStyle.set(syriacStyle);
 let runs=[];
 function preview() {
-    $('runPreview').replaceChildren(...runs.map(run=>{const span=document.createElement('bdi');span.dir=run.direction;span.lang=run.language;span.textContent=run.text;return span;}));
+    $('runPreview').replaceChildren(...runs.map(run=>{const span=document.createElement('bdi');span.dir=run.direction;span.lang=run.language;span.textContent=run.text;span.classList.toggle('syriac-run',isSyriac(run));return span;}));
 }
 function sync() {
     $('text').value=runs.map(run=>run.text).join('');
@@ -59,8 +73,16 @@ function render() {
         direction.append(new Option('Left to right','ltr'),new Option('Right to left','rtl'));direction.value=run.direction;dirLabel.append(direction);
         const field=document.createElement('textarea');field.dataset.runText=String(index);field.dataset.languageLabel=languages.find(item=>item[0]===run.language)?.[1]||run.language;
         field.setAttribute('aria-label',`Run ${index+1} text`);field.dir=run.direction;field.lang=run.language;field.value=run.text;field.spellcheck=false;field.rows=2;
+        const styleLabel=document.createElement('label');styleLabel.textContent='Syriac letter style ';
+        const style=document.createElement('select');style.dataset.runSyriacStyle=String(index);style.setAttribute('aria-label',`Run ${index+1} Syriac letter style`);
+        style.replaceChildren(...syriacStyles.map(([value,name])=>new Option(name,value)));style.value=syriacStyle;styleLabel.append(style);
+        const updateStyle=()=>{styleLabel.hidden=!isSyriac(run);field.classList.toggle('syriac-run',isSyriac(run));};
+        updateStyle();
+        for(const event of ['input','change'])style.addEventListener(event,event=>event.stopPropagation());
+        style.onchange=()=>{window.SyriacStyle.set(style.value);focusRun(index);};
         field.addEventListener('input',()=>{run.text=field.value;sync();});
-        language.onchange=()=>{run.language=language.value;run.direction=languages.find(item=>item[0]===run.language)[2];direction.value=run.direction;field.dir=run.direction;field.lang=run.language;field.dataset.languageLabel=languages.find(item=>item[0]===run.language)[1];sync();focusRun(index);};
+        field.addEventListener('input',updateStyle);
+        language.onchange=()=>{run.language=language.value;run.direction=languages.find(item=>item[0]===run.language)[2];direction.value=run.direction;field.dir=run.direction;field.lang=run.language;field.dataset.languageLabel=languages.find(item=>item[0]===run.language)[1];updateStyle();sync();focusRun(index);};
         direction.onchange=()=>{run.direction=direction.value;field.dir=run.direction;sync();focusRun(index);};
         const split=document.createElement('button');split.type='button';split.textContent='Create run at cursor / selection';split.onpointerdown=e=>e.preventDefault();
         split.onclick=()=>{if($('save').disabled)return;const parts=splitRun(run,field.selectionStart,field.selectionEnd,$('newRunLanguage').value);runs.splice(index,1,...parts.runs);render();sync();focusRun(index+parts.index);};
@@ -69,7 +91,7 @@ function render() {
         const remove=document.createElement('button');remove.type='button';remove.textContent='Remove empty run';remove.disabled=run.text.length>0||runs.length===1;
         field.addEventListener('input',()=>{remove.disabled=run.text.length>0||runs.length===1;});
         remove.onclick=()=>{if($('save').disabled)return;runs.splice(index,1);render();sync();focusRun(Math.min(index,runs.length-1));};
-        controls.append(label,dirLabel);const actions=document.createElement('div');actions.className='controls run-actions';actions.append(split,merge,remove);
+        controls.append(label,dirLabel,styleLabel);const actions=document.createElement('div');actions.className='controls run-actions';actions.append(split,merge,remove);
         box.append(controls,field,actions);return box;
     }));
     preview();

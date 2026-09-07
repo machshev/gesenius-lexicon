@@ -98,9 +98,18 @@ visible while scrolling. Incomplete series retain empty cells; additional forms
 are in the Other column or below the table with punctuation and numbers. Search
 still finds any character by glyph, Unicode name or code point.
 For Syriac, **Syriac letter style** selects Estrangela, Serto (West Syriac), or
-East Syriac for both letter and pointing keys. The bundled Noto fonts work
-offline. Switching the style changes only the keyboard display; inserted text
-and review language metadata remain the same.
+East Syriac for both letter and pointing keys. The same selector appears in
+Syriac runs (including unspecified-language runs containing Syriac letters).
+Changing either selector synchronizes all Syriac runs, their combined preview,
+and the keyboard. The bundled Noto fonts work offline; style changes do not
+change transcription text or review language metadata.
+
+The Syriac **Letter form** selector previews isolated, initial, medial and final
+joining contexts. Keys always insert the original letter, without the preview's
+joiners. The run editor shapes connected text automatically. Not every letter
+has four distinct shapes; contextual Alaph variants depend on neighbouring
+letters and are not all represented by a generic final preview. See the
+[Unicode Syriac shaping rules](https://unicode.org/versions/Unicode17.0.0/core-spec/chapter-9/).
 Type a base letter before its marks, or select one existing letter to add a mark.
 Use the language/script selector, character groups and Unicode-name search for
 rarer glyphs. The palette also types into the review notes when that field was
