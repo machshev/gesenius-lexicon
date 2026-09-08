@@ -4,7 +4,9 @@ These directories preserve draft and review evidence. A sample remains outside
 `benchmarks/gold/` until its source review has resolved every listed uncertainty.
 Printed page 50 has now been promoted as
 `benchmarks/gold/robinson-1854-p050-right-top.json`; its immutable draft and
-review manifest remain here as provenance.
+review manifest remain here as provenance. Printed page 700 has also been
+promoted as `benchmarks/gold/robinson-1854-p700-left-comparisons.json` after all
+nine lines were resolved; its original draft and review manifest remain immutable.
 
 ## Printed page 50, right-column opening
 
@@ -58,8 +60,9 @@ draft-assisted.
 
 `robinson-1854-p700/` contains nine consecutive complete lines from PDF page 716,
 including an Ethiopic comparison, two Syriac forms and an Aramaic form printed
-in square Hebrew script. These are drafts awaiting source approval in the same
-review form. Three lines have explicit Unicode/pointing uncertainties. The
+in square Hebrew script. All nine lines now have resolved, draft-assisted user
+reviews and have been promoted to gold. The original manifest preserves the three
+Unicode/pointing uncertainties raised during preparation. The
 `Syr.` label on line 3 introduces the form on line 4; it is not Syriac glyph
 coverage on line 3 itself.
 
@@ -68,11 +71,14 @@ the inventory. The direct 360 dpi raster is 1855 × 3139; its identity and exact
 crop recipe are in `review.json`. The nine PNGs are unmodified pixel crops.
 The coordinator inspected the page, native/enlarged region and individual crops;
 a separate Sol agent read the image without a supplied proposed transcription.
-This model source check does not constitute reviewer acceptance. No OCR or
-dictionary was consulted. Follow the diplomatic conventions above and resolve
-the Syriac above-mark mapping and square-script pointing before promotion.
+This model source check did not constitute reviewer acceptance. No OCR or
+dictionary was consulted during preparation. The subsequent user reviews corrected
+line 3 to `ነሰከ` and accepted the Syriac above-mark mapping and square-script
+pointing on lines 4 and 9. The gold authority records accepted revisions and the
+actual draft-assisted method. Line 9's journal run uses `he` despite the printed
+`Aram.` label; the text-only gold does not adopt that semantic annotation.
 
-Next sample after page 700 review: validation page 175. Preserve the frozen
+Next sample: validation page 175. Preserve the frozen
 final-test pages. Numeric acceptance tolerances are in `docs/ocr-metric-policy.md`.
 
 ### Review in the local web interface

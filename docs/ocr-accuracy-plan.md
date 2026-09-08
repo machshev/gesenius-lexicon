@@ -638,3 +638,32 @@ outside these commits; do not remove or overwrite it at the next session start.
   Next independent scoring work: fully transcribed-region/entry-boundary contracts
   and oracle-candidate diagnostics. Next sampling work: restore the registered scan
   and prepare validation page 175; page 700 source review remains with the user.
+
+### 2026-09-08: completed page 700 source review and gold promotion
+
+- The user completed page 700 review. All 21 latest decisions across pages 50
+  and 700 are resolved and match the current draft/manifest source digests.
+  Verified every committed crop hash and dimension, revision continuity, displayed
+  draft and exact run concatenation. Existing page-50 gold still matches all
+  twelve latest accepted readings.
+- Promoted all nine page-700 lines to
+  `benchmarks/gold/robinson-1854-p700-left-comparisons.json`, preserving source
+  anchors, image dimensions/frame and exact accepted text. Authority records the
+  source digest, accepted revisions, reviewer names as stored and draft-assisted
+  method. Inspected the three originally flagged source crops; the accepted
+  Ethiopic correction is retained and the Syriac/square-script marks were accepted
+  unchanged. Original draft, manifest and journal records were not rewritten.
+- Line 9's journal labels its square-script run `he` despite printed `Aram.`.
+  Recorded this semantic metadata discrepancy in the authority/documentation;
+  it does not change the accepted Unicode text and is not imported as a gold
+  language assertion. No reviewer decision was fabricated or revised.
+- Accepted coordinate gold now totals 21 development lines: Latn throughout,
+  Hebr on six lines, Grek on one, Ethi on one and Syrc on two. Arabic, validation,
+  final-test and historical-glyph coverage remain absent from these new fixtures.
+  No OCR run or accuracy-improvement claim accompanies this promotion.
+- Next sampling action remains restoring the registered scan and preparing
+  validation page 175. Source review of the currently offered drafts is complete.
+- Validation: pinned Nix gold-fixture structural test passed; promotion audit
+  confirmed exact accepted text and unchanged source geometry, and verified that
+  the seven new journal records only append to the committed history.
+  `git diff --check` passed. No cached ALTO was available for an OCR comparison.
