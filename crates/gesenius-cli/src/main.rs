@@ -1,6 +1,7 @@
 //! Command-line interface for the reproducible Gesenius corpus pipeline.
 
 use anyhow::{bail, Context, Result};
+use chrono::Local;
 use clap::{Args, Parser, Subcommand, ValueEnum};
 use gesenius_core::alto::parse_alto;
 use gesenius_core::benchmark::comparison::compare_manifest;
@@ -432,13 +433,14 @@ fn run_command(cli: &Cli, arguments: &RunArguments) -> Result<()> {
 }
 
 fn print_run_progress(progress: RunProgress) {
+    let timestamp = Local::now().format("%Y-%m-%d %H:%M:%S%:z");
     if let Some(page_number) = progress.page_number {
         eprintln!(
-            "[page {}/{}, PDF {page_number}] {}",
+            "[{timestamp}] [page {}/{}, PDF {page_number}] {}",
             progress.page_index, progress.page_count, progress.message
         );
     } else {
-        eprintln!("[run] {}", progress.message);
+        eprintln!("[{timestamp}] [run] {}", progress.message);
     }
 }
 
