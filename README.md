@@ -168,6 +168,27 @@ See [docs/data-model.md](docs/data-model.md) for review and export details.
 
 ## Review and training
 
+### Entry index
+
+Build a lightweight index of the currently processed entries, applying saved
+corpus corrections first:
+
+```console
+cargo run -- index --edition robinson-1854 --output artifacts/index.json
+```
+
+The versioned JSON contains headwords (diplomatic and NFC), IDs and aliases,
+homographs, source polygons and page images, corpus revisions, and provenance.
+Entries without a detected headword remain present for review. Cross-page entries
+retain all their source regions. `pages_with_entry_regions` reports represented
+pages, not proof that every entry on those pages was detected.
+
+This is an initial index of existing OCR, not a verified full-document index.
+Boundary review is always `unreviewed`: existing transcription approval does not
+establish correct entry divisions. The next indexing work is whole-document
+candidate generation and a dedicated split/merge and headword review workflow.
+Definition correction and Bible vocabulary/frequency matching can follow later.
+
 Start the loopback-only review service:
 
 ```console

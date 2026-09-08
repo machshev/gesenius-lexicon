@@ -76,6 +76,13 @@ enum Commands {
     Export(ExportArguments),
     /// Compare edition coverage, quality, and editorial content.
     Report(ReportArguments),
+    /// Export a draft headword and source-region index for one edition.
+    Index {
+        #[arg(long)]
+        edition: String,
+        #[arg(long, default_value = "artifacts/index.json")]
+        output: PathBuf,
+    },
 }
 
 #[derive(Args)]
@@ -248,6 +255,18 @@ fn main() -> Result<()> {
         Commands::Review { command } => review_command(&cli, command),
         Commands::Export(arguments) => export_command(&cli, arguments),
         Commands::Report(arguments) => report_command(&cli, arguments),
+        Commands::Index { edition, output } => {
+            let catalogue = SourceCatalogue::load(&cli.catalogue)?;
+            let index = gesenius_core::index::build_index(
+                &materialized_entries(&cli)?,
+                catalogue.edition(edition)?,
+            )?;
+            if let Some(parent) = output.parent().filter(|p| !p.as_os_str().is_empty()) {
+                fs::create_dir_all(parent)?;
+            }
+            fs::write(output, serde_json::to_vec_pretty(&index)?)?;
+            print_json(&json!({"output": output, "coverage": index["coverage"]}))
+        }
     }
 }
 

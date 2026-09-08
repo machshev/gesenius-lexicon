@@ -36,6 +36,44 @@ fn engine(name: &str) -> EngineIdentity {
     }
 }
 
+#[test]
+fn entry_index_preserves_continuations_and_does_not_claim_boundary_review() {
+    let mut entries = fixture_entries();
+    let catalogue = SourceCatalogue::load(Path::new("../../sources.toml")).unwrap();
+    let mut source = catalogue.edition("robinson-1854").unwrap().clone();
+    source.sha256 = "a".repeat(64);
+    let first = entries
+        .iter_mut()
+        .find(|e| e.edition == source.edition)
+        .unwrap();
+    first.headword = None;
+    first.review_state = ReviewState::Verified;
+    let index = gesenius_core::index::build_index(&entries, &source).unwrap();
+    assert_eq!(index["coverage"]["complete_document_verified"], false);
+    assert!(
+        index["coverage"]["missing_headword_count"]
+            .as_u64()
+            .unwrap()
+            > 0
+    );
+    let rows = index["entries"].as_array().unwrap();
+    assert!(rows
+        .iter()
+        .all(|row| row["boundary_review_state"] == "unreviewed"));
+    assert!(rows.iter().any(|row| {
+        row["source_regions"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .map(|region| region["source_page"].as_u64().unwrap())
+            .collect::<std::collections::BTreeSet<_>>()
+            .len()
+            > 1
+    }));
+    source.sha256 = "f".repeat(64);
+    assert!(gesenius_core::index::build_index(&entries, &source).is_err());
+}
+
 fn context<'a>(
     edition: &'a str,
     printed_page: &'a str,
