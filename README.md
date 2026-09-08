@@ -177,16 +177,33 @@ corpus corrections first:
 cargo run -- index --edition robinson-1854 --output artifacts/index.json
 ```
 
+To generate index candidates directly from scans with headword-focused OCR:
+
+```console
+cargo run -- index --edition robinson-1854 --pages 17-57 --output artifacts/index-fast.json
+```
+
+This mode keeps rasterization, preprocessing, English layout OCR, and an
+English/Hebrew page pass. Crop recognition is restricted to candidate headwords
+and uses the Hebrew model. Definition words are not refined; block re-reading,
+PDF-text correction, and Kraken are skipped. Headword accuracy still requires
+source review, especially where the page pass misses a candidate entirely.
+Draft records are saved after every completed page under
+`.cache/gesenius/index-candidates/`, separately from the full machine corpus and
+its review patches. Repeating the same page range resumes cached stages. Include
+consecutive pages in one invocation to preserve entry continuations. The output
+includes all accumulated candidate records for that edition.
+
 The versioned JSON contains headwords (diplomatic and NFC), IDs and aliases,
 homographs, source polygons and page images, corpus revisions, and provenance.
 Entries without a detected headword remain present for review. Cross-page entries
 retain all their source regions. `pages_with_entry_regions` reports represented
 pages, not proof that every entry on those pages was detected.
 
-This is an initial index of existing OCR, not a verified full-document index.
+This is a candidate index, not a verified full-document index.
 Boundary review is always `unreviewed`: existing transcription approval does not
-establish correct entry divisions. The next indexing work is whole-document
-candidate generation and a dedicated split/merge and headword review workflow.
+establish correct entry divisions. A dedicated split/merge and headword review
+workflow is still needed to verify the generated candidates.
 Definition correction and Bible vocabulary/frequency matching can follow later.
 
 Start the loopback-only review service:

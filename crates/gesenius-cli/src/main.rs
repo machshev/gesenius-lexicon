@@ -80,6 +80,9 @@ enum Commands {
     Index {
         #[arg(long)]
         edition: String,
+        /// Generate candidates with fast page OCR; omit to export the full corpus.
+        #[arg(long)]
+        pages: Option<String>,
         #[arg(long, default_value = "artifacts/index.json")]
         output: PathBuf,
     },
@@ -255,12 +258,32 @@ fn main() -> Result<()> {
         Commands::Review { command } => review_command(&cli, command),
         Commands::Export(arguments) => export_command(&cli, arguments),
         Commands::Report(arguments) => report_command(&cli, arguments),
-        Commands::Index { edition, output } => {
+        Commands::Index {
+            edition,
+            output,
+            pages,
+        } => {
             let catalogue = SourceCatalogue::load(&cli.catalogue)?;
-            let index = gesenius_core::index::build_index(
-                &materialized_entries(&cli)?,
-                catalogue.edition(edition)?,
-            )?;
+            let entries = if let Some(pages) = pages {
+                let pages = parse_page_spec(pages)?;
+                let corpus_root = cli.cache.join("index-candidates");
+                gesenius_core::pipeline::run_index_with_progress(
+                    &RunOptions {
+                        edition,
+                        pages: &pages,
+                        catalogue_path: &cli.catalogue,
+                        settings_path: &cli.pipeline_config,
+                        cache_root: &cli.cache,
+                        corpus_root: &corpus_root,
+                        pipeline_commit: &pipeline_commit(),
+                    },
+                    print_run_progress,
+                )?;
+                load_entries(&corpus_root.join(format!("{edition}.jsonl")))?
+            } else {
+                materialized_entries(&cli)?
+            };
+            let index = gesenius_core::index::build_index(&entries, catalogue.edition(edition)?)?;
             if let Some(parent) = output.parent().filter(|p| !p.as_os_str().is_empty()) {
                 fs::create_dir_all(parent)?;
             }

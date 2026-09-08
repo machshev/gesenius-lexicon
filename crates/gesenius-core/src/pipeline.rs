@@ -387,6 +387,23 @@ pub fn run(options: &RunOptions<'_>) -> Result<RunResult> {
 /// Runs selected pages and reports status without coupling the core to a logger.
 pub fn run_with_progress(
     options: &RunOptions<'_>,
+    report: impl FnMut(RunProgress),
+) -> Result<RunResult> {
+    run_mode(options, false, report)
+}
+
+/// Generates index candidates using only page OCR and geometry. Callers must
+/// supply a separate corpus root to keep these drafts out of the full corpus.
+pub fn run_index_with_progress(
+    options: &RunOptions<'_>,
+    report: impl FnMut(RunProgress),
+) -> Result<RunResult> {
+    run_mode(options, true, report)
+}
+
+fn run_mode(
+    options: &RunOptions<'_>,
+    index_only: bool,
     mut report: impl FnMut(RunProgress),
 ) -> Result<RunResult> {
     if options.pages.is_empty() {
@@ -400,7 +417,13 @@ pub fn run_with_progress(
         None,
         "loading configuration and verifying source",
     );
-    let settings = PipelineSettings::load(options.settings_path)?;
+    let mut settings = PipelineSettings::load(options.settings_path)?;
+    if index_only {
+        settings.kraken.enabled = false;
+        settings.pdf_text.enabled = false;
+        settings.tesseract.block_refinement_enabled = false;
+        settings.tesseract.multilingual_languages = vec!["eng".into(), "heb".into()];
+    }
     let catalogue = SourceCatalogue::load(options.catalogue_path)?;
     let source = catalogue.edition(options.edition)?;
     let verified = verify_source(source, options.cache_root)?;
@@ -428,9 +451,14 @@ pub fn run_with_progress(
     } else {
         None
     };
+    let settings_identity = if index_only {
+        format!("index-candidates-v1:{}", serde_json::to_string(&settings)?)
+    } else {
+        fs::read_to_string(options.settings_path)?
+    };
     let run_id = content_hash(&[
         &verified.sha256,
-        &fs::read_to_string(options.settings_path)?,
+        &settings_identity,
         options.pipeline_commit,
         &tesseract_version,
         &primary_tesseract_models_sha256,
@@ -604,16 +632,30 @@ pub fn run_with_progress(
             &fused_tesseract_page,
             &settings.tesseract.multilingual_languages,
         );
-        report_page("refining detected word crops");
-        let word_tesseract_page = recognize_tesseract_words(
-            &processed,
-            &page_path,
-            &settings.tesseract,
-            &classified_tesseract_page,
-            settings.raster_dpi,
-            &run_id,
-            pdf_text_page.as_ref(),
-        )?;
+        let word_tesseract_page = if index_only {
+            report_page("refining candidate Hebrew headwords");
+            let candidates = headword_crop_candidates(&classified_tesseract_page);
+            recognize_tesseract_words(
+                &processed,
+                &page_path,
+                &settings.tesseract,
+                &candidates,
+                settings.raster_dpi,
+                &run_id,
+                None,
+            )?
+        } else {
+            report_page("refining detected word crops");
+            recognize_tesseract_words(
+                &processed,
+                &page_path,
+                &settings.tesseract,
+                &classified_tesseract_page,
+                settings.raster_dpi,
+                &run_id,
+                pdf_text_page.as_ref(),
+            )?
+        };
         let kraken_page = if kraken_identity.is_some() {
             report_page("running Kraken OCR");
             let kraken_alto = recognize_kraken(&processed, &page_path, &settings.kraken, &run_id)?;
@@ -1738,6 +1780,35 @@ fn polygon_intersection_over_smaller(left: &[Point], right: &[Point]) -> f32 {
     }
 }
 
+// Keep the complete page geometry and text, but route only potential headwords
+// to crop OCR. Leading Hebrew is deliberately a candidate, not an assertion
+// that the line starts an entry; boundary review must resolve false positives.
+fn headword_crop_candidates(page: &AltoPage) -> AltoPage {
+    let mut candidates = page.clone();
+    for line in candidates
+        .regions
+        .iter_mut()
+        .flat_map(|region| &mut region.lines)
+    {
+        let mut leading = true;
+        for word in &mut line.words {
+            let punctuation = word.text.chars().all(|c| !c.is_alphanumeric());
+            let candidate =
+                word.structural_language || (leading && word.language.as_deref() == Some("heb"));
+            if candidate {
+                word.language = Some("heb".into());
+                word.structural_language = true;
+            } else {
+                word.language = None;
+            }
+            if !punctuation && !candidate {
+                leading = false;
+            }
+        }
+    }
+    candidates
+}
+
 fn recognize_tesseract_words(
     input: &Path,
     page_path: &Path,
@@ -2450,6 +2521,47 @@ mod tests {
     use crate::alto::{parse_alto, AltoWord, ScriptTrial};
     use crate::model::{CorpusEntry, Point};
     use std::collections::BTreeSet;
+
+    #[test]
+    fn index_crop_routing_leaves_definition_words_unmodified() {
+        let mut page = parse_alto(include_str!(
+            "../../../fixtures/alto/robinson-p001.tesseract.xml"
+        ))
+        .unwrap();
+        let (region_index, line_index) = page
+            .regions
+            .iter()
+            .enumerate()
+            .find_map(|(r, region)| {
+                region
+                    .lines
+                    .iter()
+                    .position(|line| line.words.len() >= 2)
+                    .map(|l| (r, l))
+            })
+            .unwrap();
+        let line = &mut page.regions[region_index].lines[line_index];
+        for word in &mut line.words {
+            word.language = Some("ara".into());
+            word.structural_language = false;
+        }
+        line.words[0].language = Some("heb".into());
+        let candidates = super::headword_crop_candidates(&page);
+        let original = &page.regions[region_index].lines[line_index];
+        let routed = &candidates.regions[region_index].lines[line_index];
+        assert_eq!(routed.text, original.text);
+        assert_eq!(routed.polygon, original.polygon);
+        assert_eq!(routed.words[0].language.as_deref(), Some("heb"));
+        assert!(routed
+            .words
+            .iter()
+            .skip(1)
+            .all(|word| word.language.is_none()));
+        for (before, after) in original.words.iter().zip(&routed.words) {
+            assert_eq!(before.text, after.text);
+            assert_eq!(before.polygon, after.polygon);
+        }
+    }
 
     #[test]
     fn page_specs_are_sorted_and_deduplicated() {
