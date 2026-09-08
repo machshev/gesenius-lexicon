@@ -17,6 +17,17 @@ cargo run -- --help
 
 The shell contains Rust, Clippy, rustfmt, Poppler, ImageMagick, SQLite, `xmllint`, Jing, Tesseract with English/Hebrew/Arabic/Syriac/Ancient Greek/Latin data, Noto fonts, and a CPU-only Kraken 7.1 environment built from `ocr/uv.lock`.
 
+Check the OCR environment and install the configured Kraken model with:
+
+```console
+cargo run -- setup
+```
+
+Use `cargo run -- setup --check-only` in CI or before a run when downloads are
+not allowed. Missing system tools are installed by entering the pinned shell
+with `nix develop path:.`; the setup command downloads only the ignored model
+weight and verifies its configured SHA-256.
+
 The Robinson 1854 catalogue record points at the Library of Congress scan mirrored by Internet Archive. Its exact SHA-256 is checked in:
 
 ```console

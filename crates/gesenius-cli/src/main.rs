@@ -11,11 +11,13 @@ use gesenius_core::export::{
     ExportOptions,
 };
 use gesenius_core::model::AccuracyMetrics;
-use gesenius_core::pipeline::{parse_page_spec, run_with_progress, RunOptions, RunProgress};
+use gesenius_core::pipeline::{
+    parse_page_spec, run_with_progress, PipelineSettings, RunOptions, RunProgress,
+};
 use gesenius_core::report::{compare_editions, write_report};
 use gesenius_core::review::{serve, ReviewServerOptions, ReviewStore};
 use gesenius_core::source::{
-    fetch_source, import_source, verify_source, SourceCatalogue, DEFAULT_CATALOGUE,
+    fetch_source, import_source, sha256_file, verify_source, SourceCatalogue, DEFAULT_CATALOGUE,
 };
 use gesenius_core::training::{execute_kraken_training, prepare, PilotCatalogue};
 use gesenius_core::validate::validate_corpus;
@@ -47,6 +49,8 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Commands {
+    /// Check the OCR environment and install the configured model if missing.
+    Setup(SetupArguments),
     /// Fetch, import, or verify immutable source PDFs.
     Source {
         #[command(subcommand)]
@@ -71,6 +75,13 @@ enum Commands {
     Export(ExportArguments),
     /// Compare edition coverage, quality, and editorial content.
     Report(ReportArguments),
+}
+
+#[derive(Args)]
+struct SetupArguments {
+    /// Only check dependencies; do not download a missing model.
+    #[arg(long)]
+    check_only: bool,
 }
 
 #[derive(Subcommand)]
@@ -219,6 +230,7 @@ struct ReportArguments {
 fn main() -> Result<()> {
     let cli = Cli::parse();
     match &cli.command {
+        Commands::Setup(arguments) => setup_command(&cli, arguments),
         Commands::Source { command } => source_command(&cli.catalogue, &cli.cache, command),
         Commands::Run(arguments) => run_command(&cli, arguments),
         Commands::Benchmark(arguments) => benchmark_command(arguments),
@@ -236,6 +248,119 @@ fn main() -> Result<()> {
         Commands::Export(arguments) => export_command(&cli, arguments),
         Commands::Report(arguments) => report_command(&cli, arguments),
     }
+}
+
+fn setup_command(cli: &Cli, arguments: &SetupArguments) -> Result<()> {
+    let settings = PipelineSettings::load(&cli.pipeline_config)?;
+    let mut missing = Vec::new();
+    let mut checked = Vec::new();
+    for program in ["tesseract", "magick"] {
+        check_program(program, &mut checked, &mut missing);
+    }
+    if settings.pdf_text.enabled {
+        check_program("pdftotext", &mut checked, &mut missing);
+    }
+    if settings.kraken.enabled {
+        check_program("kraken", &mut checked, &mut missing);
+    }
+    for program in &checked {
+        println!("[ok] {program}");
+    }
+    for program in &missing {
+        println!("[missing] {program}");
+    }
+
+    let model_path = &settings.kraken.model_path;
+    if !settings.kraken.enabled {
+        println!("[skip] Kraken is disabled");
+    } else if model_path.exists() {
+        verify_model_file(&settings.kraken.model_path, &settings.kraken.model_sha256)?;
+        println!("[ok] Kraken model {}", model_path.display());
+    } else if arguments.check_only {
+        println!("[missing] Kraken model {}", model_path.display());
+        bail!(
+            "missing Kraken model {}; run `cargo run -- setup` to install it",
+            model_path.display()
+        );
+    } else {
+        let url = settings
+            .kraken
+            .model_url
+            .as_deref()
+            .context("Kraken model is missing and pipeline.toml has no kraken.model_url")?;
+        download_model(url, model_path, &settings.kraken.model_sha256)?;
+        println!("[installed] Kraken model {}", model_path.display());
+    }
+
+    if !missing.is_empty() {
+        bail!(
+            "missing OCR tools: {}; enter `nix develop path:.` and run setup again",
+            missing.join(", ")
+        );
+    }
+    Ok(())
+}
+
+fn check_program(program: &str, checked: &mut Vec<String>, missing: &mut Vec<String>) {
+    let available = Command::new("sh")
+        .args(["-c", "command -v \"$1\" >/dev/null 2>&1", "setup", program])
+        .status()
+        .is_ok_and(|status| status.success());
+    if available {
+        checked.push(program.to_owned());
+    } else {
+        missing.push(program.to_owned());
+    }
+}
+
+fn verify_model_file(path: &Path, expected: &str) -> Result<()> {
+    let actual =
+        sha256_file(path).with_context(|| format!("failed to hash model {}", path.display()))?;
+    if actual != expected {
+        bail!(
+            "Kraken model hash mismatch for {}: expected {}, got {actual}",
+            path.display(),
+            expected
+        );
+    }
+    Ok(())
+}
+
+fn download_model(url: &str, destination: &Path, expected: &str) -> Result<()> {
+    let parent = destination
+        .parent()
+        .context("Kraken model path has no parent directory")?;
+    fs::create_dir_all(parent)?;
+    let temporary = destination.with_extension("safetensors.download");
+    let status = Command::new("curl")
+        .args([
+            "--fail",
+            "--location",
+            "--retry",
+            "3",
+            "--retry-delay",
+            "2",
+            url,
+            "--output",
+        ])
+        .arg(&temporary)
+        .status()
+        .context("failed to start curl; enter `nix develop path:.`")?;
+    if !status.success() {
+        let _ = fs::remove_file(&temporary);
+        bail!("model download failed from {url}");
+    }
+    if let Err(error) = verify_model_file(&temporary, expected) {
+        let _ = fs::remove_file(&temporary);
+        return Err(error);
+    }
+    fs::rename(&temporary, destination).with_context(|| {
+        format!(
+            "failed to install downloaded model as {}",
+            destination.display()
+        )
+    })?;
+    Ok(())
 }
 
 fn benchmark_command(arguments: &BenchmarkArguments) -> Result<()> {

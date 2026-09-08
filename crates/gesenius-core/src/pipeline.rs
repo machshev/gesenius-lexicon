@@ -266,6 +266,9 @@ pub struct KrakenSettings {
     pub line_refinement_only: bool,
     /// Local model path.
     pub model_path: PathBuf,
+    /// Public URL used by `gesenius setup` to fetch the model.
+    #[serde(default)]
+    pub model_url: Option<String>,
     /// Exact model SHA-256.
     pub model_sha256: String,
     /// Segmentation model or `default`.
