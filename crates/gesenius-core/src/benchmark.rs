@@ -1,5 +1,7 @@
 //! Immutable OCR gold fixtures and reproducible recognition evaluation.
 
+pub mod comparison;
+
 use crate::alto::AltoPage;
 use crate::metrics::{polygon_iou, recognition_metrics, RecognitionMetrics};
 use anyhow::{bail, Context, Result};

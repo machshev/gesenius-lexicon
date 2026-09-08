@@ -110,6 +110,20 @@ unassessed; legacy fixtures have no measured segmentation result. See the
 [cached baseline](benchmarks/baselines/ocr-baseline-page17-2026-09-05.md) for
 scoring limits and the current measurement work.
 
+Compare retained OCR stages on one gold sample with:
+
+```console
+cargo run -- benchmark-stages --manifest experiment/stages.json > experiment/comparison.json
+```
+
+The manifest names the gold fixture, baseline stage, and each stage's ALTO and
+source-identity file. Paths resolve relative to the manifest. The report preserves
+full scores, support and segmentation evidence, adds signed changes against the
+baseline and preceding stage, and fingerprints every input and the CLI executable.
+See the [stage comparison contract](docs/ocr-metric-policy.md#stage-comparison-reports)
+for the manifest format and interpretation. This command evaluates existing ALTO;
+it does not run OCR or infer source identity from filenames.
+
 Entries continuing onto a consecutive page retain the stable ID of the page on which they began. Headers and footers are kept out of continuations. Printed hyphenation remains diplomatic until a reviewer makes an explicit structural correction.
 
 ## Corpus contract

@@ -95,6 +95,8 @@ handling, and `benchmarks/gold/`.
   include missing and extra text in designated fully transcribed regions.
 - [ ] Compare page OCR, block refinement, isolated recognition, lexical changes,
   and final fusion on the same regions. Report gains and regressions by script.
+  Stage-comparison tooling is implemented; representative artifact evaluation and
+  separately retained lexical before/after evidence remain outstanding.
 - [ ] Add an oracle-candidate diagnostic: how often is the correct transcription
   already among retained alternatives but rejected by selection?
 
@@ -604,3 +606,35 @@ outside these commits; do not remove or overwrite it at the next session start.
   review timed out; the permitted retry succeeded. Test browser/server stopped.
 - Implementation and documentation only; the user's ongoing review journal
   remains untouched and excluded from this commit.
+
+### 2026-09-08: reproducible stage-comparison tooling
+
+- Continued the independent scoring work while the user cannot source-review.
+  The committed page-700 journal currently resolves lines 1-3, including James's
+  corrected Ethiopic reading on line 3; lines 4-9 still await review. No additional
+  line was approved or promoted. The local source/raster cache is absent in this
+  workspace, so page-175 preparation and a real cached-stage comparison did not run.
+- Added `benchmark-stages --manifest PATH` for two or more named ALTO artifacts
+  against one unchanged gold fixture. Manifest-relative paths, unique names and
+  an explicit baseline define the experiment. Every stage must supply a matching
+  asserted source identity; coordinate gold also enforces image frame/dimensions.
+  Any invalid/missing stage fails the command without partial report output.
+- Reports retain full stage scores, source assertions and gold authority; hash
+  the exact parsed manifest/gold/ALTO/identity bytes; and fingerprint the CLI
+  executable. Signed differences against both baseline and preceding stage show
+  diplomatic/NFC/base/mark changes, missing lines, missed foreign tokens and aligned
+  per-script errors/wrong-script substitutions. Hypothesis-only scripts keep zero
+  reference support. No aggregate adoption decision or representative claim is made.
+- Verification passed in pinned Nix: 97 core tests (six new comparison tests),
+  23 fixture tests with external TEI validation, warning-denied workspace/all-target
+  Clippy, XML/SQLite checks, locked workspace build and formatting. A synthetic CLI
+  smoke check verified deterministic output, executable hash, parity with the
+  existing single-stage benchmark, manifest-relative paths and no stdout on an
+  invalid later stage. `git diff --check` passed.
+- No OCR generator, recognition-policy change, real-source accuracy evaluation,
+  live journal edit, corpus mutation, gold promotion or final-test evaluation ran.
+  The stage-comparison plan item remains open until representative artifacts are
+  scored; a lexical-only comparison still needs retained before/after evidence.
+  Next independent scoring work: fully transcribed-region/entry-boundary contracts
+  and oracle-candidate diagnostics. Next sampling work: restore the registered scan
+  and prepare validation page 175; page 700 source review remains with the user.

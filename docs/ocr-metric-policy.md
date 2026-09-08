@@ -153,6 +153,64 @@ error; do not use such a partial region for a headline accuracy result. Missing
 anchor coverage, missing source identity, or an old line-ID-only fixture remains
 visible in the result rather than being treated as verified accuracy.
 
+## Stage comparison reports
+
+`gesenius benchmark-stages --manifest experiment/stages.json` evaluates two or
+more named ALTO artifacts against the exact same gold fixture. For example:
+
+```json
+{
+  "gold": "../benchmarks/gold/sample.json",
+  "baseline": "page",
+  "stages": [
+    {"name": "page", "alto": "page.alto.xml", "hypothesis_identity": "page-identity.json"},
+    {"name": "block", "alto": "block.alto.xml", "hypothesis_identity": "block-identity.json"},
+    {"name": "fusion", "alto": "fusion.alto.xml", "hypothesis_identity": "fusion-identity.json"}
+  ]
+}
+```
+
+Paths are relative to the manifest directory unless absolute. Names must be
+nonempty and unique, and the baseline must name a listed stage. Manifest order
+defines the preceding stage; the baseline need not come first. Unknown manifest
+fields, absent inputs, malformed ALTO or a mismatched identity fail the entire
+command, without printing a partial comparison. Every stage requires a source
+identity file, including legacy comparisons. Resolve the assertion from source
+receipts, with the coordinate frame where applicable; copying gold metadata does
+not prove artifact provenance. The existing coordinate/dimension checks apply.
+
+The JSON contains `evaluator_sha256` for the running CLI and `comparison` with
+schema version 1, library version, gold authority, baseline name and ordered stage
+results. Manifest, gold, ALTO and identity fingerprints hash the exact bytes read
+and parsed. Each stage retains its asserted identity and full `BenchmarkResult`,
+including reference counts, absent-coverage diagnostics and segmentation evidence.
+File hashes identify the inputs; they do not establish how OCR was generated.
+Retain generation receipts, configuration and model identities with experiments.
+
+`against_baseline` and `against_previous` report **current minus comparison**:
+negative error changes indicate improvements, positive changes regressions. The
+first stage has no previous-stage comparison; the baseline's own baseline delta
+is zero. Differences cover diplomatic CER/WER, base/mark diagnostics, separate NFC
+CER/WER, missed exact foreign tokens and missing gold lines. Per-script differences
+include aligned character errors, wrong-script substitutions charged to the
+reference script, and missed exact foreign tokens. Reference character/token
+support accompanies each script. The union includes scripts introduced only by
+OCR; zero reference support never becomes measured accuracy. Mixed-script foreign
+token counts remain nonadditive across scripts, as described above.
+
+No rates are averaged across samples and no pass/adopt decision is inferred. A
+single sample cannot establish representative accuracy, and an aggregate gain can
+coexist with script regressions. Legacy gold still uses engine line IDs and reports
+unmeasured segmentation; prefer coordinate gold when stages change segmentation.
+Read these reports using the unchanged acceptance tolerances and sampling limits.
+Recognition selection, normalization and gold data are not modified by comparison.
+
+Stage names are caller labels, not evidence that a particular operation occurred.
+Existing page, block, isolated-word and fusion ALTO can be compared when they
+share the asserted source frame. Separating lexical reconstruction from isolated
+recognition requires independently retained before/after artifacts; this command
+does not reconstruct discarded candidates or invent a lexical-only stage.
+
 ## Line segmentation diagnostics
 
 Coordinate-aligned results also report `line_segmentation`, using the same

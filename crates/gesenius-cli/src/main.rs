@@ -3,6 +3,7 @@
 use anyhow::{bail, Context, Result};
 use clap::{Args, Parser, Subcommand, ValueEnum};
 use gesenius_core::alto::parse_alto;
+use gesenius_core::benchmark::comparison::compare_manifest;
 use gesenius_core::benchmark::{evaluate_alto_with_identity, GoldBenchmark, SourceIdentity};
 use gesenius_core::corpus_io::load_entries;
 use gesenius_core::export::{
@@ -55,6 +56,8 @@ enum Commands {
     Run(RunArguments),
     /// Measure an ALTO hypothesis against immutable human/frontier gold lines.
     Benchmark(BenchmarkArguments),
+    /// Compare named ALTO stages on one immutable gold sample.
+    BenchmarkStages(BenchmarkStagesArguments),
     /// Prepare pilot ground truth and optionally fine-tune Kraken.
     Train(TrainArguments),
     /// Validate corpus, Unicode, provenance, and run assignments.
@@ -116,6 +119,13 @@ struct BenchmarkArguments {
     /// JSON source identity asserted for this ALTO (edition, source_page, source_sha256).
     #[arg(long)]
     hypothesis_identity: Option<PathBuf>,
+}
+
+#[derive(Args)]
+struct BenchmarkStagesArguments {
+    /// JSON manifest; input paths are relative to this file.
+    #[arg(long)]
+    manifest: PathBuf,
 }
 
 #[derive(Args)]
@@ -212,6 +222,14 @@ fn main() -> Result<()> {
         Commands::Source { command } => source_command(&cli.catalogue, &cli.cache, command),
         Commands::Run(arguments) => run_command(&cli, arguments),
         Commands::Benchmark(arguments) => benchmark_command(arguments),
+        Commands::BenchmarkStages(arguments) => {
+            let comparison = compare_manifest(&arguments.manifest)?;
+            let executable = std::env::current_exe().context("locate evaluator executable")?;
+            print_json(&json!({
+                "evaluator_sha256": gesenius_core::source::sha256_file(&executable)?,
+                "comparison": comparison,
+            }))
+        }
         Commands::Train(arguments) => train_command(&cli, arguments),
         Commands::Validate(arguments) => validate_command(&cli, arguments),
         Commands::Review { command } => review_command(&cli, command),
