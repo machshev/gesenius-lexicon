@@ -336,8 +336,13 @@ fn handle_request(
             }
         }
         (&Method::Get, "/api/image") => {
-            let requested = query_parameter(&url, "path").context("missing image path")?;
-            let path = resolve_asset(&requested, asset_roots)?;
+            let Some(requested) = query_parameter(&url, "path") else {
+                return respond_error(request, StatusCode(400), "missing image path");
+            };
+            let path = match resolve_asset(&requested, asset_roots) {
+                Ok(path) => path,
+                Err(error) => return respond_error(request, StatusCode(404), &error.to_string()),
+            };
             let data = fs::read(&path)?;
             let content_type = match path.extension().and_then(|value| value.to_str()) {
                 Some("png") => "image/png",
@@ -630,10 +635,10 @@ document.querySelectorAll('.item').forEach(x=>x.onclick=()=>loadEntry(x.dataset.
 async function openEntry(id){setMode('entries');await loadList();await loadEntry(id);}
 async function loadPages(selectedImage){pages=await (await fetch('/api/pages')).json();$('#list').innerHTML=pages.map((page,index)=>`<div class="item" data-page="${index}"><b>${esc(page.edition)}</b><br>printed ${esc(page.printed_page||'—')} · PDF ${page.source_page}<div class="muted">${page.entries.length} entries</div></div>`).join('');
 document.querySelectorAll('[data-page]').forEach(x=>x.onclick=()=>renderPage(Number(x.dataset.page)));let index=Math.max(0,pages.findIndex(page=>page.page_image===selectedImage));if(pages.length)await renderPage(index);else $('#detail').innerHTML='<p>No pages available.</p>';}
-async function renderPage(index){let page=pages[index],imageUrl='/api/image?path='+encodeURIComponent(page.page_image),dimensions=await imageSize(imageUrl);
+async function renderPage(index){let page=pages[index],imageUrl='/api/image?path='+encodeURIComponent(page.page_image),dimensions=await imageSize(imageUrl).catch(()=>null);
 let polygons=page.entries.flatMap((entry,entryIndex)=>entry.polygons.map(points=>`<polygon class="page-overlay" data-id="${esc(entry.id)}" style="fill:${entryColor(entryIndex,page.entries.length)};fill-opacity:.18;stroke:${entryColor(entryIndex,page.entries.length)}" points="${points.map(point=>point.x+','+point.y).join(' ')}"><title>${esc(entry.headword||entry.id)}</title></polygon>`)).join('');
 $('#detail').innerHTML=`<div class="page-toolbar"><button id="previousPage" ${index===0?'disabled':''}>← Previous</button><select id="pageSelect">${pages.map((candidate,i)=>`<option value="${i}" ${i===index?'selected':''}>${esc(candidate.edition)} · printed ${esc(candidate.printed_page||'—')} · PDF ${candidate.source_page}</option>`).join('')}</select><button id="nextPage" ${index===pages.length-1?'disabled':''}>Next →</button></div>
-<section class="page-canvas"><svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>${polygons}</svg>
+<section class="page-canvas">${dimensions?`<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>${polygons}</svg>`:missingScan(page.page_image)}
 <div class="legend">${page.entries.map((entry,entryIndex)=>`<button data-entry="${esc(entry.id)}" style="--entry-color:${entryColor(entryIndex,page.entries.length)}">${esc(entry.headword||entry.id)} · ${entry.review_state}</button>`).join('')}</div></section>`;
 $('#previousPage').onclick=()=>renderPage(index-1);$('#nextPage').onclick=()=>renderPage(index+1);$('#pageSelect').onchange=event=>renderPage(Number(event.target.value));
 document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.dataset.id));document.querySelectorAll('[data-entry]').forEach(x=>x.onclick=()=>openEntry(x.dataset.entry));}
@@ -644,7 +649,9 @@ function renderTextSpan(span){let word=0,content=span.normalized.split(/(\s+)/).
 function renderStructuredText(headword,blocks){let html=headword?`<h2 class="entry-headword" dir="rtl">${renderTextSpan(headword)}</h2>`:`<h2 class="entry-headword" dir="ltr">${esc(current.id)}</h2>`,currentPage=null;
 const renderPart=(kind,spans)=>{if(!spans.length)return '';let content=spans.map(renderTextSpan).join(' ');if(kind==='heading')return `<h3 dir="ltr">${content}</h3>`;if(kind==='paragraph')return `<p dir="ltr">${content}</p>`;return `<div class="structural-block"><div class="block-kind">${esc(kind.replaceAll('_',' '))}</div><p dir="ltr">${content}</p></div>`;};
 for(let block of blocks){let partPage=null,partSpans=[];for(let span of block.spans){if(!span.normalized)continue;let spanPage=span.coordinates[0]?.printed_page||null;if(partPage!==null&&spanPage!==partPage){html+=renderPart(block.kind,partSpans);partSpans=[];}if(spanPage!==currentPage){if(spanPage)html+=`<div class="page-break">Page ${esc(spanPage)}</div>`;currentPage=spanPage;}partPage=spanPage;partSpans.push(span);}html+=renderPart(block.kind,partSpans);}return html;}
-async function scanForPage(spans,page,selectedSpan){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl);
+function missingScan(path){return `<p class="warn">Scan unavailable: <code>${esc(path)}</code></p><p>Restore the generated page image in the local cache, then reload. Entry text and review controls remain available.</p>`;}
+async function scanForPage(spans,page,selectedSpan){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl).catch(()=>null);
+if(!dimensions)return missingScan(page.image);
 return `<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>
 ${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<polygon class="overlay${s.id===selectedSpan?' selected':''}" data-span="${esc(s.id)}" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.normalized)}</title></polygon>`)).join('')}</svg>`;}
 async function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
