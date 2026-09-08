@@ -78,8 +78,35 @@ pointing on lines 4 and 9. The gold authority records accepted revisions and the
 actual draft-assisted method. Line 9's journal run uses `he` despite the printed
 `Aram.` label; the text-only gold does not adopt that semantic annotation.
 
-Next sample: validation page 175. Preserve the frozen
-final-test pages. Numeric acceptance tolerances are in `docs/ocr-metric-policy.md`.
+Validation page 175 is now prepared below. Preserve the frozen final-test pages.
+Numeric acceptance tolerances are in `docs/ocr-metric-policy.md`.
+
+## Printed page 175, left-column ending
+
+`robinson-1854-p175/` contains twelve complete consecutive lines from PDF page
+191, in the frozen **validation** partition. The region contains Latin prose,
+four lines with pointed square Hebrew script, one connected Syriac comparison
+and one pointed Arabic comparison. It has no Greek, Ethiopic or historical-glyph
+coverage. All twelve lines remain drafts; six have explicit source-check notes.
+
+The registered PDF was restored and its SHA-256 verified. The re-rendered 180 dpi
+image matches the earlier inventory exactly. The direct 360 dpi raster is
+1837 × 3139, with SHA-256
+`d0044d1feb65ecdc353daf5075a361fb28959820dfd7c93cf49690d0fc08bbf0`.
+The source frame, crop recipe and individual hashes are recorded in `review.json`.
+Crops preserve original pixels. Lines 5/6 overlap by four rows to retain low Hebrew
+points and the following slanted Latin ascenders; tiny neighbouring fragments
+should not be transcribed twice. Printed `eye-`/`brow` and `coun-`/`try` line
+breaks remain diplomatic.
+
+The assistant inspected the page context, native/enlarged region and individual
+crops without consulting OCR or dictionaries. The
+[Unicode Syriac chart](https://www.unicode.org/charts/PDF/U0700.pdf) was consulted
+for character/mark mapping only; this is one model reading, not independent
+source review. Hebrew pointing, the Talmudic letter sequence, Syriac bases and
+above-mark attachment, and Arabic dots/vowels need reviewer checking. Semantic
+language is not inferred solely from square script or the `Talm.` source label.
+No text was promoted to gold or used to tune recognition.
 
 ### Review in the local web interface
 

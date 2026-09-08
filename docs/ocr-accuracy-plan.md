@@ -667,3 +667,37 @@ outside these commits; do not remove or overwrite it at the next session start.
   confirmed exact accepted text and unchanged source geometry, and verified that
   the seven new journal records only append to the committed history.
   `git diff --check` passed. No cached ALTO was available for an OCR comparison.
+
+### 2026-09-08: first validation review sample, printed page 175
+
+- Restored the registered Robinson scan (156,566,332 bytes) through `source fetch`;
+  recomputed SHA-256 matches the catalogue. Sandbox DNS blocked the initial attempt;
+  the approved network retry succeeded. Re-rendered only PDF page 191 using pinned
+  Poppler 25.10.0. The 180 dpi raster matches the inventory hash exactly, and the
+  direct 360 dpi raster is 1837 × 3139 with SHA-256
+  `d0044d1feb65ecdc353daf5075a361fb28959820dfd7c93cf49690d0fc08bbf0`.
+- Prepared twelve complete left-column ending lines in
+  `benchmarks/transcription-drafts/robinson-1854-p175/`, retaining the frozen
+  validation partition, source anchors, crop hashes and diplomatic line breaks.
+  Latn occurs throughout; Hebr on four lines, Syrc on one and Arab on one.
+  This region does not supply the page's Greek coverage or any Ethi/historical
+  glyphs. Gold remains at 21 accepted coordinate development lines.
+- Inspected page context, native/enlarged region and every line crop. Six lines
+  carry explicit uncertainty notes for Hebrew pointing/letter sequence, Syriac
+  bases/above-mark mapping and attachment, or Arabic dots/vowels. Consulted only
+  the Unicode Syriac chart for code-point mapping, with no OCR or dictionary
+  readings. No delegated or independent second reading is claimed. Four-row
+  overlap between lines 5/6 preserves closely set marks/ascenders and is documented.
+- Verified source/raster/crop hashes, crop dimensions and in-bounds anchors. A
+  temporary loopback review server loaded all twelve new drafts with six uncertainty
+  notes and null review states, exercising the actual benchmark/manifest loader.
+  The temporary server stopped, and the live review journal is byte-for-byte
+  unchanged. Socket binding required sandbox escalation.
+- All six focused transcription-review regressions passed in pinned Nix. Final
+  sample audit checked crop hashes/dimensions, anchors, absence of hidden bidi
+  controls and unchanged live journal; `git diff --check` passed.
+- Next sampling action: source-review these validation drafts, then extend the
+  representative sample with remaining development/validation pages. Restored
+  source availability also permits bounded OCR-stage experiments once comparable
+  coordinate frames and artifacts are prepared. No OCR generation, recognition
+  tuning, gold promotion, corpus mutation or final-test inspection ran.
