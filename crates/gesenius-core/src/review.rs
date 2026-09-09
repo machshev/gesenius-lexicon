@@ -919,9 +919,9 @@ const REVIEW_UI: &str = r#"<!doctype html>
 <style>
 :root{font-family:"Noto Sans",sans-serif;color:#25231f;background:#eee9df}
 body{margin:0} header{padding:.7rem 1rem;background:#313a35;color:white;display:flex;gap:1rem;align-items:center}
-main{display:grid;grid-template-columns:minmax(17rem,25rem) 1fr;height:calc(100vh - 3.2rem)}
+main{display:grid;grid-template-columns:minmax(11rem,17rem) 1fr;height:calc(100vh - 3.2rem)}
 main.page-mode{display:block;height:calc(100vh - 3.2rem)}main.page-mode #list{display:none}main.page-mode #detail{box-sizing:border-box;height:100%}
-#list{overflow:auto;border-right:1px solid #aaa;background:#faf8f2}.item{padding:.7rem;border-bottom:1px solid #ddd;cursor:pointer}
+#list{overflow:auto;border-right:1px solid #aaa;background:#faf8f2}.item{padding:.4rem .55rem;border-bottom:1px solid #ddd;cursor:pointer;display:flex;gap:.5rem;align-items:baseline;justify-content:space-between}
 .item:hover,.item.active{background:#e3eee8}.hebrew{font:1.35rem "Noto Sans Hebrew",sans-serif;direction:rtl}
 #detail{overflow:auto;padding:1rem}.grid{display:grid;grid-template-columns:minmax(20rem,1fr) minmax(22rem,1fr);gap:1rem}
 #detail.page-detail{display:block;overflow:auto}
@@ -930,6 +930,7 @@ section{background:white;border:1px solid #d0cbc0;border-radius:.4rem;padding:.8
 pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}button,select,input{font:inherit;padding:.35rem}
 .site-nav{display:flex;gap:.25rem}.site-nav a{color:white;padding:.35rem .55rem;border-radius:.25rem;text-decoration:none}.site-nav a[aria-current="page"]{background:#f4f0e8;color:#25231f}
 .tabs{display:flex;gap:.35rem;margin-bottom:.7rem}.tabs button[aria-selected="true"]{background:#313a35;color:white}
+.entry-meta{margin:0 0 .8rem;padding:.65rem .75rem;background:#f5f2eb;border-radius:.3rem}.entry-meta p{margin:.25rem 0}.entry-meta strong{font-weight:650}
 .entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;direction:ltr;unicode-bidi:isolate}
 .entry-headword{margin:.15rem 0 1rem;text-align:center;font:1.6rem/1.35 "Noto Sans Hebrew",sans-serif;direction:rtl;unicode-bidi:isolate}
 .entry-text h3{margin:1.25rem 0 .6rem;text-align:center;font-size:1.18rem;line-height:1.35;letter-spacing:.025em;direction:ltr;unicode-bidi:isolate}
@@ -954,14 +955,15 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 <script>
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let current=null,mode=location.pathname==='/entries'?'entries':'pages',pages=[],pageRanges=[];
+const hebrewCollator=new Intl.Collator('he',{usage:'sort',sensitivity:'base'});
 const entryColor=(index,total)=>`hsl(${Math.round(index*360/Math.max(1,total))} 70% 38%)`;
 function destination(path,values={}){let query=new URLSearchParams(values);return path+(query.size?'?'+query:'');}
 function syncNavigation(){let edition=$('#edition').value;$('#pagesLink').href=destination('/pages',{edition});$('#entriesLink').href=destination('/entries',{edition});}
 function setMode(next){mode=next;$('main').classList.toggle('page-mode',mode==='pages');$('#detail').classList.toggle('page-detail',mode==='pages');$('#entryFilters').classList.toggle('hidden',mode==='pages');$('#pagesLink').setAttribute('aria-current',mode==='pages'?'page':'false');$('#entriesLink').setAttribute('aria-current',mode==='entries'?'page':'false');}
 async function loadEditions(){let editions=await (await fetch('/api/editions')).json(),requested=new URLSearchParams(location.search).get('edition');$('#edition').innerHTML=editions.length?editions.map(edition=>`<option>${esc(edition)}</option>`).join(''):'<option value="">No editions</option>';if(requested&&editions.includes(requested))$('#edition').value=requested;syncNavigation();return editions.length>0;}
 async function loadList(){let edition=$('#edition').value;if(!edition){$('#list').innerHTML='<p class="item muted">Choose an edition.</p>';return;}let q=new URLSearchParams({edition,state:$('#state').value,queue:$('#queue').checked});let rows=await (await fetch('/api/entries?'+q)).json();
-$('#list').innerHTML=rows.map(r=>`<div class="item" data-id="${esc(r.id)}"><span class="hebrew">${esc(r.headword||'—')}</span><br><b>${esc(r.edition)}</b> p. ${esc(r.printed_page)}
-<div class="muted">${Math.round(r.confidence*100)}% · ${r.review_state} · ${r.warnings} warnings · Δ ${r.disagreement.toFixed(2)}</div></div>`).join('');
+rows.sort((a,b)=>(a.headword?0:1)-(b.headword?0:1)||hebrewCollator.compare(a.headword||'',b.headword||'')||a.printed_page.localeCompare(b.printed_page,undefined,{numeric:true}));
+$('#list').innerHTML=rows.map(r=>`<div class="item" data-id="${esc(r.id)}"><span class="hebrew">${esc(r.headword||'—')}</span><span class="muted">p. ${esc(r.printed_page)}</span></div>`).join('');
 document.querySelectorAll('.item').forEach(x=>x.onclick=()=>selectEntry(x.dataset.id));}
 function openEntry(id){location.href=destination('/entries',{edition:$('#edition').value,entry:id});}
 function selectEntry(id){history.pushState(null,'',destination('/entries',{edition:$('#edition').value,entry:id}));loadEntry(id);}
@@ -988,12 +990,14 @@ ${spans.flatMap(s=>s.coordinates.filter(c=>c.source_page===page.source).map(c=>`
 async function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
 let pages=[];for(let span of spans)for(let coordinate of span.coordinates)if(!pages.some(page=>page.source===coordinate.source_page))pages.push({image:coordinate.page_image,source:coordinate.source_page,printed:coordinate.printed_page});
 let selectedSpan=null,selectedPage=0,scan=pages.length?await scanForPage(spans,pages[0],selectedSpan):'No scan coordinate';
+let warningCount=spans.reduce((count,span)=>count+span.warnings.length,0),stateLabel=current.review_state==='machine'?'Machine-generated, not yet reviewed':current.review_state==='corrected'?'Human-corrected, awaiting verification':'Human-verified';
 let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.language||'und')} · ${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%${s.language_runs?.length?' · '+s.language_runs.map(run=>esc(run.language)+' '+esc(run.script)+' '+esc(run.evidence)).join(', '):''}</span><br>
 ${s.hypotheses.map(h=>`<code>${esc(h.engine)}:</code> ${esc(h.text)} (${Math.round(h.confidence*100)}%)`).join('<br>')}
 <br><span class="muted">${esc(cps(s.diplomatic))}</span>${s.warnings.map(w=>`<br><span class="warn">${esc(w.code)}: ${esc(w.message)}</span>`).join('')}</p>`).join('');
 $('#detail').innerHTML=`<div class="grid">
 <div><section id="scan">${pages.length>1?`<label>Scan page <select id="scanPage">${pages.map((page,index)=>`<option value="${index}">printed ${esc(page.printed)} · PDF ${page.source}</option>`).join('')}</select></label>`:''}<div id="scanCanvas">${scan}</div></section><section><h3>Hypotheses and Unicode</h3>${hypotheses}</section></div>
 <section><div class="tabs" role="tablist"><button id="textTab" role="tab" aria-selected="true">Text</button><button id="jsonTab" role="tab" aria-selected="false">Structured JSON</button></div>
+<div class="entry-meta"><p><strong>Review status:</strong> ${esc(stateLabel)}</p><p><strong>OCR confidence:</strong> ${Math.round(current.confidence*100)}% — the recognizer's estimated certainty for this entry.</p><p><strong>Automated checks:</strong> ${warningCount?`${warningCount} warning${warningCount===1?'':'s'}; details appear under “Hypotheses and Unicode”.`:'No warnings.'}</p></div>
 <div id="textPanel" role="tabpanel"><div class="entry-text">${renderStructuredText(current.headword,current.blocks)}</div></div>
 <div id="jsonPanel" class="hidden" role="tabpanel"><textarea id="editor" spellcheck="false">${esc(JSON.stringify(current,null,2))}</textarea></div>
 <p><input id="reviewer" placeholder="Reviewer" autocomplete="name"> <select id="reviewState"><option>corrected</option><option>verified</option></select>
@@ -1151,6 +1155,22 @@ mod tests {
         let detail = startup.find("await loadEntry(entry)").unwrap();
         let list = startup.find("await loadList()").unwrap();
         assert!(detail < list);
+    }
+
+    #[test]
+    fn entry_sidebar_is_compact_and_hebrew_sorted() {
+        assert!(REVIEW_UI.contains("new Intl.Collator('he'"));
+        assert!(REVIEW_UI.contains("hebrewCollator.compare(a.headword||'',b.headword||'')"));
+        assert!(REVIEW_UI.contains(r#"<span class="muted">p. ${esc(r.printed_page)}</span>"#));
+        assert!(!REVIEW_UI.contains("<b>${esc(r.edition)}</b>"));
+        assert!(!REVIEW_UI.contains("Δ ${r.disagreement.toFixed(2)}"));
+    }
+
+    #[test]
+    fn entry_detail_explains_review_metadata() {
+        assert!(REVIEW_UI.contains("Machine-generated, not yet reviewed"));
+        assert!(REVIEW_UI.contains("the recognizer's estimated certainty"));
+        assert!(REVIEW_UI.contains("details appear under “Hypotheses and Unicode”"));
     }
 
     #[test]
