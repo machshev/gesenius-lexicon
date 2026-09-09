@@ -8,8 +8,10 @@ function reviewContext() {
     const source = fs.readFileSync('crates/gesenius-core/src/review.rs', 'utf8');
     const script = source.split('<script>')[1].split('</script>')[0];
     const elements = new Map();
+    const history = { url: '', replaceState(_state, _title, url) { this.url = url; } };
     const context = vm.createContext({
         location: { pathname: '/pages', search: '', hash: '', href: '' },
+        history,
         URLSearchParams,
         document: {
             body: null,
@@ -24,7 +26,7 @@ function reviewContext() {
     });
     // Skip startup, which fetches the queue; exercise the real rendering functions.
     vm.runInContext(script.slice(0, script.indexOf("$('#reload').onclick=")), context);
-    return { context, elements };
+    return { context, elements, history };
 }
 
 test('missing entry scans produce an escaped message without rejecting rendering', async () => {
@@ -36,13 +38,14 @@ test('missing entry scans produce an escaped message without rejecting rendering
 });
 
 test('page review retains navigation while streaming page detail', async () => {
-    const { context, elements } = reviewContext();
+    const { context, elements, history } = reviewContext();
     await vm.runInContext(`pages=[{edition:'test',source_page:17,printed_page_offset:-16}];renderPage(0)`, context);
     const html = elements.get('#detail').innerHTML;
     assert.match(html, /id="pageSelect"/);
     assert.match(html, /hx-get="\/fragments\/page\?edition=test&amp;source_page=17"/);
     assert.match(html, /Loading page/);
     assert.equal(typeof elements.get('#pageSelect').onchange, 'function');
+    assert.equal(history.url, '/pages?edition=test&source_page=17');
 });
 
 test('entry text and save controls render when the image cannot load', async () => {
@@ -61,4 +64,13 @@ test('entry text and save controls render when the image cannot load', async () 
     assert.match(html, /Visible/);
     assert.match(html, /id="save"/);
     assert.equal(typeof elements.get('#save').onclick, 'function');
+});
+
+test('loading an entry exposes its edition and id in the URL', async () => {
+    const { context, history } = reviewContext();
+    context.fetch = async () => ({ json: async () => ({
+        id: 'entry-1', edition: 'test edition', revision: 0, headword: null, blocks: [],
+    }) });
+    await vm.runInContext("loadEntry('entry-1')", context);
+    assert.equal(history.url, '/entries?edition=test+edition&entry=entry-1');
 });
