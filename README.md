@@ -224,13 +224,14 @@ when the same stable entry ID exists in both sources.
 
 The UI shows the source page and ALTO overlays, complete competing hypotheses, Unicode code points, script warnings, confidence, and editable structured JSON. Saves require the revision the reviewer observed; stale edits receive HTTP 409 rather than silently overwriting newer work.
 
-The review UI initially loads only an edition selector; it does not parse the
-corpus until an edition is chosen. Entry and page indexes then load only that
-edition. The **Pages** index is compressed into contiguous PDF-page ranges with
-the constant printed-page offset, and HTMX requests overlays and the right-hand
-entry key only for the selected page. Full page images retain their aspect ratio
-and scroll vertically. Materialized editions are cached in memory and refreshed
-automatically when their corpus JSONL or the review patches change.
+The review UI defaults to **Pages** and the first available edition. Entry and
+page data load only for the selected edition. The page catalogue is compressed
+into contiguous PDF-page ranges with the constant printed-page offset; the page
+selector expands these ranges locally, without a redundant sidebar. HTMX
+requests overlays and the right-hand entry key only for the selected page. Full
+page images retain their aspect ratio and scroll vertically. Materialized
+editions are cached in memory and refreshed automatically when their corpus
+JSONL or the review patches change.
 
 Choose **Transcription review** in the header (or open `/transcriptions`) to
 review the source-anchored benchmark drafts. Select a line, enter your reviewer

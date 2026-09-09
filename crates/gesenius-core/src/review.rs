@@ -862,6 +862,7 @@ const REVIEW_UI: &str = r#"<!doctype html>
 :root{font-family:"Noto Sans",sans-serif;color:#25231f;background:#eee9df}
 body{margin:0} header{padding:.7rem 1rem;background:#313a35;color:white;display:flex;gap:1rem;align-items:center}
 main{display:grid;grid-template-columns:minmax(17rem,25rem) 1fr;height:calc(100vh - 3.2rem)}
+main.page-mode{display:block;height:calc(100vh - 3.2rem)}main.page-mode #list{display:none}main.page-mode #detail{box-sizing:border-box;height:100%}
 #list{overflow:auto;border-right:1px solid #aaa;background:#faf8f2}.item{padding:.7rem;border-bottom:1px solid #ddd;cursor:pointer}
 .item:hover,.item.active{background:#e3eee8}.hebrew{font:1.35rem "Noto Sans Hebrew",sans-serif;direction:rtl}
 #detail{overflow:auto;padding:1rem}.grid{display:grid;grid-template-columns:minmax(20rem,1fr) minmax(22rem,1fr);gap:1rem}
@@ -887,7 +888,7 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 <body><header><strong>Gesenius review</strong>
 <a href="/transcriptions" style="color:white">Transcription review</a>
 <label>Edition <select id="edition"><option value="">Choose edition…</option></select></label>
-<button id="entryMode">Entries</button><button id="pageMode">Pages</button>
+<button id="pageMode">Pages</button><button id="entryMode">Entries</button>
 <span id="entryFilters"><label>State <select id="state"><option value="">all</option><option>machine</option><option>corrected</option><option>verified</option></select></label>
 <label><input id="queue" type="checkbox" checked> review queue</label></span><button id="reload">Reload</button></header>
 <main><div id="list"></div><div id="detail"><p>Select an entry.</p></div></main>
@@ -895,8 +896,8 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let current=null,mode='entries',pages=[],pageRanges=[];
 const entryColor=(index,total)=>`hsl(${Math.round(index*360/Math.max(1,total))} 70% 38%)`;
-function setMode(next){mode=next;$('#detail').classList.toggle('page-detail',mode==='pages');$('#entryFilters').classList.toggle('hidden',mode==='pages');$('#entryMode').disabled=mode==='entries';$('#pageMode').disabled=mode==='pages';}
-async function loadEditions(){let editions=await (await fetch('/api/editions')).json();$('#edition').innerHTML='<option value="">Choose edition…</option>'+editions.map(edition=>`<option>${esc(edition)}</option>`).join('');}
+function setMode(next){mode=next;$('main').classList.toggle('page-mode',mode==='pages');$('#detail').classList.toggle('page-detail',mode==='pages');$('#entryFilters').classList.toggle('hidden',mode==='pages');$('#entryMode').disabled=mode==='entries';$('#pageMode').disabled=mode==='pages';}
+async function loadEditions(){let editions=await (await fetch('/api/editions')).json();$('#edition').innerHTML=editions.length?editions.map(edition=>`<option>${esc(edition)}</option>`).join(''):'<option value="">No editions</option>';return editions.length>0;}
 async function loadList(){let edition=$('#edition').value;if(!edition){$('#list').innerHTML='<p class="item muted">Choose an edition.</p>';return;}let q=new URLSearchParams({edition,state:$('#state').value,queue:$('#queue').checked});let rows=await (await fetch('/api/entries?'+q)).json();
 $('#list').innerHTML=rows.map(r=>`<div class="item" data-id="${esc(r.id)}"><span class="hebrew">${esc(r.headword||'—')}</span><br><b>${esc(r.edition)}</b> p. ${esc(r.printed_page)}
 <div class="muted">${Math.round(r.confidence*100)}% · ${r.review_state} · ${r.warnings} warnings · Δ ${r.disagreement.toFixed(2)}</div></div>`).join('');
@@ -904,7 +905,7 @@ document.querySelectorAll('.item').forEach(x=>x.onclick=()=>loadEntry(x.dataset.
 async function openEntry(id){setMode('entries');await loadList();await loadEntry(id);}
 const printedPage=page=>page.printed_page_offset===null?'—':String(page.source_page+page.printed_page_offset);
 async function loadPages(selectedSource){let edition=$('#edition').value;if(!edition){$('#list').innerHTML='<p class="item muted">Choose an edition.</p>';$('#detail').innerHTML='<p>Choose an edition to browse its pages.</p>';return;}pageRanges=await (await fetch('/api/pages?edition='+encodeURIComponent(edition))).json();pages=pageRanges.flatMap(range=>Array.from({length:range.source_end-range.source_start+1},(_,offset)=>({edition,source_page:range.source_start+offset,printed_page_offset:range.printed_page_offset})));
-$('#list').innerHTML=pageRanges.map((range,index)=>`<div class="item" data-range="${index}"><b>printed ${range.printed_page_offset===null?'—':range.source_start+range.printed_page_offset}${range.source_end===range.source_start?'':'–'+(range.printed_page_offset===null?'—':range.source_end+range.printed_page_offset)}</b><br><span class="muted">PDF ${range.source_start}${range.source_end===range.source_start?'':'–'+range.source_end}</span></div>`).join('');document.querySelectorAll('[data-range]').forEach(x=>x.onclick=()=>renderPage(pages.findIndex(page=>page.source_page===pageRanges[Number(x.dataset.range)].source_start)));let index=Math.max(0,pages.findIndex(page=>page.source_page===selectedSource));if(pages.length)await renderPage(index);else $('#detail').innerHTML='<p>No pages available.</p>';}
+let index=Math.max(0,pages.findIndex(page=>page.source_page===selectedSource));if(pages.length)await renderPage(index);else $('#detail').innerHTML='<p>No pages available.</p>';}
 async function renderPage(index){let page=pages[index],url='/fragments/page?edition='+encodeURIComponent(page.edition)+'&source_page='+page.source_page;
 $('#detail').innerHTML=`<div class="page-toolbar"><button id="previousPage" ${index===0?'disabled':''}>← Previous</button><select id="pageSelect">${pages.map((candidate,i)=>`<option value="${i}" ${i===index?'selected':''}>printed ${printedPage(candidate)} · PDF ${candidate.source_page}</option>`).join('')}</select><button id="nextPage" ${index===pages.length-1?'disabled':''}>Next →</button></div><div id="pageContent" hx-get="${esc(url)}" hx-trigger="load" hx-swap="innerHTML"><p class="muted">Loading page…</p></div>`;
 $('#previousPage').onclick=()=>renderPage(index-1);$('#nextPage').onclick=()=>renderPage(index+1);$('#pageSelect').onchange=event=>renderPage(Number(event.target.value));htmx.process($('#pageContent'));}
@@ -949,7 +950,7 @@ body:JSON.stringify({base_revision:current.revision,reviewer:$('#reviewer').valu
 let result=await response.json();if(!response.ok)throw Error(result.error);current=result.replacement;message.textContent='Saved.';await loadList();await render();}catch(e){message.className='warn';message.textContent=e.message;}}
 $('#entryMode').onclick=async()=>{setMode('entries');await loadList();$('#detail').innerHTML='<p>Select an entry.</p>';};
 $('#pageMode').onclick=async()=>{setMode('pages');await loadPages();};$('#reload').onclick=()=>mode==='entries'?loadList():loadPages();
-$('#edition').onchange=()=>mode==='entries'?loadList():loadPages();$('#state').onchange=loadList;$('#queue').onchange=loadList;loadEditions().then(()=>{setMode(location.hash==='#page-view-smoke-test'?'pages':'entries');$('#list').innerHTML='<p class="item muted">Choose an edition.</p>';$('#detail').innerHTML='<p>Choose an edition to begin.</p>';});
+$('#edition').onchange=()=>mode==='entries'?loadList():loadPages();$('#state').onchange=loadList;$('#queue').onchange=loadList;loadEditions().then(hasEditions=>{setMode('pages');if(hasEditions)loadPages().then(()=>{if(location.hash==='#page-view-smoke-test'&&innerWidth<=850)$('#detail').scrollIntoView();});else $('#detail').innerHTML='<p>No editions available.</p>';});
 </script></body></html>"#;
 
 #[cfg(test)]
