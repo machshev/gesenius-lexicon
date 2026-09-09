@@ -1013,7 +1013,7 @@ body:JSON.stringify({base_revision:current.revision,reviewer:$('#reviewer').valu
 let result=await response.json();if(!response.ok)throw Error(result.error);current=result.replacement;message.textContent='Saved.';await loadList();await render();}catch(e){message.className='warn';message.textContent=e.message;}}
 $('#reload').onclick=()=>mode==='entries'?loadList():loadPages();
 $('#edition').onchange=()=>{history.replaceState(null,'',destination(mode==='entries'?'/entries':'/pages',{edition:$('#edition').value}));syncNavigation();mode==='entries'?loadList():loadPages();};$('#state').onchange=loadList;$('#queue').onchange=loadList;
-setMode(mode);loadEditions().then(async hasEditions=>{if(!hasEditions){$('#detail').innerHTML='<p>No editions available.</p>';return;}let query=new URLSearchParams(location.search);if(mode==='pages'){await loadPages(Number(query.get('source_page'))||undefined);if(location.hash==='#page-view-smoke-test'&&innerWidth<=850)$('#detail').scrollIntoView();}else{await loadList();let entry=query.get('entry');if(entry)await loadEntry(entry);}});
+setMode(mode);loadEditions().then(async hasEditions=>{if(!hasEditions){$('#detail').innerHTML='<p>No editions available.</p>';return;}let query=new URLSearchParams(location.search);if(mode==='pages'){await loadPages(Number(query.get('source_page'))||undefined);if(location.hash==='#page-view-smoke-test'&&innerWidth<=850)$('#detail').scrollIntoView();}else{let entry=query.get('entry');if(entry)await loadEntry(entry);await loadList();}});
 </script></body></html>"#;
 
 #[cfg(test)]
@@ -1140,6 +1140,17 @@ mod tests {
         assert!(REVIEW_UI.contains("/fragments/page?edition="));
         assert!(REVIEW_UI.contains("Choose edition…"));
         assert!(REVIEW_UI.contains("pageRanges.flatMap"));
+    }
+
+    #[test]
+    fn entry_deep_link_loads_detail_before_full_sidebar() {
+        let startup = REVIEW_UI
+            .split("setMode(mode);")
+            .nth(1)
+            .expect("review UI startup script");
+        let detail = startup.find("await loadEntry(entry)").unwrap();
+        let list = startup.find("await loadList()").unwrap();
+        assert!(detail < list);
     }
 
     #[test]
