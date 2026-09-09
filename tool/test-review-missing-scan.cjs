@@ -10,12 +10,14 @@ function reviewContext() {
     const elements = new Map();
     const context = vm.createContext({
         document: {
+            body: null,
             querySelector(selector) {
                 if (!elements.has(selector)) elements.set(selector, { innerHTML: '' });
                 return elements.get(selector);
             },
             querySelectorAll: () => [],
         },
+        htmx: { process() {} },
         Image: class { set src(value) { this.onerror(new Error('missing')); } },
     });
     // Skip startup, which fetches the queue; exercise the real rendering functions.
@@ -31,13 +33,13 @@ test('missing entry scans produce an escaped message without rejecting rendering
     assert.doesNotMatch(html, /<svg/);
 });
 
-test('missing page scans retain navigation and entry links', async () => {
+test('page review retains navigation while streaming page detail', async () => {
     const { context, elements } = reviewContext();
-    await vm.runInContext(`pages=[{edition:'test',source_page:17,printed_page:'1',page_image:'missing.png',entries:[{id:'entry-1',headword:'Example',review_state:'machine',polygons:[]}]}];renderPage(0)`, context);
+    await vm.runInContext(`pages=[{edition:'test',source_page:17,printed_page:'1',page_image:'missing.png',entry_count:1}];renderPage(0)`, context);
     const html = elements.get('#detail').innerHTML;
-    assert.match(html, /Scan unavailable/);
     assert.match(html, /id="pageSelect"/);
-    assert.match(html, /data-entry="entry-1"/);
+    assert.match(html, /hx-get="\/fragments\/page\?edition=test&amp;source_page=17"/);
+    assert.match(html, /Loading page/);
     assert.equal(typeof elements.get('#pageSelect').onchange, 'function');
 });
 

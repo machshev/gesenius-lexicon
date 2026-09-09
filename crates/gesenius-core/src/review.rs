@@ -15,6 +15,7 @@ use std::collections::BTreeMap;
 use std::fs::{self, File, OpenOptions};
 use std::io::{BufRead, BufReader, Read, Seek, SeekFrom, Write};
 use std::path::{Path, PathBuf};
+use std::sync::{Arc, Mutex};
 use tiny_http::{Header, Method, Request, Response, Server, StatusCode};
 
 /// One canonical, append-only review change.
@@ -78,6 +79,15 @@ struct PageSummary {
     entries: Vec<PageEntrySummary>,
 }
 
+#[derive(Debug, Serialize)]
+struct PageCatalogEntry {
+    edition: String,
+    source_page: u32,
+    printed_page: Option<String>,
+    page_image: String,
+    entry_count: usize,
+}
+
 /// On-disk base corpus plus append-only patches.
 #[derive(Debug, Clone)]
 pub struct ReviewStore {
@@ -85,6 +95,13 @@ pub struct ReviewStore {
     /// earlier entries with the same stable ID.
     corpus_roots: Vec<PathBuf>,
     patch_path: PathBuf,
+    cache: Arc<Mutex<Option<CachedCorpus>>>,
+}
+
+#[derive(Debug)]
+struct CachedCorpus {
+    fingerprint: Vec<(PathBuf, u64, Option<std::time::SystemTime>)>,
+    entries: Arc<Vec<CorpusEntry>>,
 }
 
 impl ReviewStore {
@@ -99,6 +116,7 @@ impl ReviewStore {
         Ok(Self {
             corpus_roots: vec![corpus_root.to_owned()],
             patch_path: patch_path.to_owned(),
+            cache: Arc::new(Mutex::new(None)),
         })
     }
 
@@ -116,11 +134,54 @@ impl ReviewStore {
 
     /// Loads base JSONL files and applies patches in append order.
     pub fn materialized_entries(&self) -> Result<Vec<CorpusEntry>> {
+        Ok(self.cached_materialized_entries()?.as_ref().clone())
+    }
+
+    fn cached_materialized_entries(&self) -> Result<Arc<Vec<CorpusEntry>>> {
+        let fingerprint = self.fingerprint()?;
+        if let Some(cached) = self.cache.lock().expect("review cache poisoned").as_ref() {
+            if cached.fingerprint == fingerprint {
+                return Ok(Arc::clone(&cached.entries));
+            }
+        }
         let mut entries = load_layered_entries(&self.corpus_roots)?;
         let patches = load_patches(&self.patch_path)?;
         apply_patch_sequence(&mut entries, &patches)?;
         entries.sort_by(|left, right| left.id.cmp(&right.id));
+        let entries = Arc::new(entries);
+        *self.cache.lock().expect("review cache poisoned") = Some(CachedCorpus {
+            fingerprint,
+            entries: Arc::clone(&entries),
+        });
         Ok(entries)
+    }
+
+    fn fingerprint(&self) -> Result<Vec<(PathBuf, u64, Option<std::time::SystemTime>)>> {
+        let mut paths = Vec::new();
+        for root in &self.corpus_roots {
+            paths.extend(
+                fs::read_dir(root)?
+                    .filter_map(std::result::Result::ok)
+                    .map(|entry| entry.path())
+                    .filter(|path| {
+                        path.extension()
+                            .is_some_and(|extension| extension == "jsonl")
+                    }),
+            );
+        }
+        paths.push(self.patch_path.clone());
+        paths.sort();
+        paths
+            .into_iter()
+            .map(|path| {
+                let metadata = fs::metadata(&path).ok();
+                Ok((
+                    path,
+                    metadata.as_ref().map_or(0, fs::Metadata::len),
+                    metadata.and_then(|value| value.modified().ok()),
+                ))
+            })
+            .collect()
     }
 
     /// Appends a validated optimistic revision while holding an OS file lock.
@@ -208,6 +269,7 @@ impl ReviewStore {
             serde_json::to_writer(&mut patch_file, &patch)?;
             patch_file.write_all(b"\n")?;
             patch_file.sync_all()?;
+            *self.cache.lock().expect("review cache poisoned") = None;
             Ok(patch)
         })();
         let _ = FileExt::unlock(&patch_file);
@@ -299,7 +361,7 @@ fn handle_request(
             let state_filter = query_parameter(&url, "state");
             let queue_only = query_parameter(&url, "queue").as_deref() == Some("true");
             let summaries: Vec<_> = store
-                .materialized_entries()?
+                .cached_materialized_entries()?
                 .iter()
                 .map(|entry| summarize(entry, confidence_threshold, disagreement_threshold))
                 .filter(|summary| {
@@ -312,15 +374,26 @@ fn handle_request(
             respond_json(request, StatusCode(200), &summaries)
         }
         (&Method::Get, "/api/pages") => {
-            let pages = summarize_pages(&store.materialized_entries()?);
-            respond_json(request, StatusCode(200), &pages)
+            let catalog = summarize_page_catalog(&store.cached_materialized_entries()?);
+            respond_json(request, StatusCode(200), &catalog)
+        }
+        (&Method::Get, "/fragments/page") => {
+            let edition = query_parameter(&url, "edition").context("missing page edition")?;
+            let source_page = query_parameter(&url, "source_page")
+                .context("missing source page")?
+                .parse::<u32>()
+                .context("invalid source page")?;
+            let page = summarize_page(&store.cached_materialized_entries()?, &edition, source_page)
+                .with_context(|| format!("unknown page `{edition}` PDF {source_page}"))?;
+            respond_html(request, &render_page_fragment(&page))
         }
         (&Method::Get, _) if path.starts_with("/api/entries/") => {
             let id = percent_decode(&path["/api/entries/".len()..])?;
             let entry = store
-                .materialized_entries()?
-                .into_iter()
+                .cached_materialized_entries()?
+                .iter()
                 .find(|entry| entry.id == id)
+                .cloned()
                 .with_context(|| format!("unknown entry `{id}`"))?;
             respond_json(request, StatusCode(200), &entry)
         }
@@ -380,48 +453,111 @@ fn handle_request(
     }
 }
 
-fn summarize_pages(entries: &[CorpusEntry]) -> Vec<PageSummary> {
+fn summarize_page_catalog(entries: &[CorpusEntry]) -> Vec<PageCatalogEntry> {
     type PageKey = (String, u32);
-    let mut pages: BTreeMap<PageKey, PageSummary> = BTreeMap::new();
+    let mut pages: BTreeMap<PageKey, (Option<String>, String, std::collections::BTreeSet<String>)> =
+        BTreeMap::new();
     for entry in entries {
-        for span in entry.spans() {
-            for coordinate in &span.coordinates {
-                let page = pages
-                    .entry((entry.edition.clone(), coordinate.source_page))
-                    .or_insert_with(|| PageSummary {
-                        edition: entry.edition.clone(),
-                        source_page: coordinate.source_page,
-                        printed_page: coordinate.printed_page.clone(),
-                        page_image: coordinate.page_image.clone(),
-                        entries: Vec::new(),
+        for coordinate in entry.spans().flat_map(|span| &span.coordinates) {
+            let page = pages
+                .entry((entry.edition.clone(), coordinate.source_page))
+                .or_insert_with(|| {
+                    (
+                        coordinate.printed_page.clone(),
+                        coordinate.page_image.clone(),
+                        std::collections::BTreeSet::new(),
+                    )
+                });
+            if page.0.is_none() {
+                page.0.clone_from(&coordinate.printed_page);
+            }
+            page.2.insert(entry.id.clone());
+        }
+    }
+    pages
+        .into_iter()
+        .map(
+            |((edition, source_page), (printed_page, page_image, entry_ids))| PageCatalogEntry {
+                edition,
+                source_page,
+                printed_page,
+                page_image,
+                entry_count: entry_ids.len(),
+            },
+        )
+        .collect()
+}
+
+fn summarize_page(entries: &[CorpusEntry], edition: &str, source_page: u32) -> Option<PageSummary> {
+    let mut page: Option<PageSummary> = None;
+    for entry in entries.iter().filter(|entry| entry.edition == edition) {
+        for coordinate in entry
+            .spans()
+            .flat_map(|span| &span.coordinates)
+            .filter(|coordinate| coordinate.source_page == source_page)
+        {
+            let page = page.get_or_insert_with(|| PageSummary {
+                edition: edition.to_owned(),
+                source_page,
+                printed_page: coordinate.printed_page.clone(),
+                page_image: coordinate.page_image.clone(),
+                entries: Vec::new(),
+            });
+            let entry_index = page
+                .entries
+                .iter()
+                .position(|summary| summary.id == entry.id)
+                .unwrap_or_else(|| {
+                    page.entries.push(PageEntrySummary {
+                        id: entry.id.clone(),
+                        headword: entry
+                            .headword
+                            .as_ref()
+                            .map(|headword| headword.normalized.clone()),
+                        review_state: entry.review_state,
+                        polygons: Vec::new(),
                     });
-                if page.printed_page.is_none() {
-                    page.printed_page.clone_from(&coordinate.printed_page);
-                }
-                let entry_index = page
-                    .entries
-                    .iter()
-                    .position(|summary| summary.id == entry.id)
-                    .unwrap_or_else(|| {
-                        page.entries.push(PageEntrySummary {
-                            id: entry.id.clone(),
-                            headword: entry
-                                .headword
-                                .as_ref()
-                                .map(|headword| headword.normalized.clone()),
-                            review_state: entry.review_state,
-                            polygons: Vec::new(),
-                        });
-                        page.entries.len() - 1
-                    });
-                let page_entry = &mut page.entries[entry_index];
-                if !page_entry.polygons.contains(&coordinate.polygon) {
-                    page_entry.polygons.push(coordinate.polygon.clone());
-                }
+                    page.entries.len() - 1
+                });
+            let page_entry = &mut page.entries[entry_index];
+            if !page_entry.polygons.contains(&coordinate.polygon) {
+                page_entry.polygons.push(coordinate.polygon.clone());
             }
         }
     }
-    pages.into_values().collect()
+    page
+}
+
+fn render_page_fragment(page: &PageSummary) -> String {
+    let image_url = format!("/api/image?path={}", percent_encode(&page.page_image));
+    let mut polygons = String::new();
+    let mut legend = String::new();
+    for (entry_index, entry) in page.entries.iter().enumerate() {
+        let hue = entry_index * 360 / page.entries.len().max(1);
+        let color = format!("hsl({hue} 70% 38%)");
+        let label = html_escape(entry.headword.as_deref().unwrap_or(&entry.id));
+        for points in &entry.polygons {
+            let points = points
+                .iter()
+                .map(|point| format!("{},{}", point.x, point.y))
+                .collect::<Vec<_>>()
+                .join(" ");
+            polygons.push_str(&format!(
+                r#"<polygon class="page-overlay" data-id="{}" style="fill:{color};fill-opacity:.18;stroke:{color}" points="{points}"><title>{label}</title></polygon>"#,
+                html_escape(&entry.id),
+            ));
+        }
+        legend.push_str(&format!(
+            r#"<button data-entry="{}" style="--entry-color:{color}">{label} · {}</button>"#,
+            html_escape(&entry.id),
+            entry.review_state.as_str(),
+        ));
+    }
+    format!(
+        r#"<section class="page-canvas"><svg data-page-image="{}"><image href="{}"/>{polygons}</svg><div class="legend">{legend}</div></section>"#,
+        html_escape(&image_url),
+        html_escape(&image_url),
+    )
 }
 
 fn summarize(
@@ -607,6 +743,26 @@ fn percent_decode(value: &str) -> Result<String> {
     String::from_utf8(bytes).context("URL is not UTF-8")
 }
 
+fn percent_encode(value: &str) -> String {
+    value.bytes().fold(String::new(), |mut encoded, byte| {
+        if byte.is_ascii_alphanumeric() || matches!(byte, b'-' | b'_' | b'.' | b'~') {
+            encoded.push(char::from(byte));
+        } else {
+            encoded.push_str(&format!("%{byte:02X}"));
+        }
+        encoded
+    })
+}
+
+fn html_escape(value: &str) -> String {
+    value
+        .replace('&', "&amp;")
+        .replace('<', "&lt;")
+        .replace('>', "&gt;")
+        .replace('"', "&quot;")
+        .replace('\'', "&#39;")
+}
+
 fn resolve_asset(requested: &str, roots: &[PathBuf]) -> Result<PathBuf> {
     let requested_path = Path::new(requested);
     let candidate = if requested_path.is_absolute() {
@@ -651,11 +807,11 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 .structural-block{margin:.65rem 0;padding-left:.65rem;border-left:.2rem solid #d7d0c2}.block-kind{color:#6d685e;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
 .page-break{margin:1rem 0 .25rem;color:#6d685e;font-size:.82rem;font-weight:600}.hidden{display:none}
 .page-toolbar{display:flex;gap:.5rem;align-items:center;margin-bottom:.7rem}.page-toolbar select{min-width:0;flex:1}.page-canvas{min-height:0}.page-detail .page-canvas{display:grid;grid-template-rows:minmax(0,1fr) auto}
-.page-canvas svg{display:block;width:100%;height:100%;min-height:0;background:#ddd}
+#pageContent{min-height:0}.page-canvas svg{display:block;width:100%;height:100%;min-height:0;background:#ddd}
 .page-overlay{cursor:pointer;stroke-width:4}.page-overlay:hover{fill-opacity:.42}
 .legend{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem;max-height:6rem;overflow:auto}.legend button{border-left:.65rem solid var(--entry-color)}
 @media(max-width:850px){main{display:block;height:auto}.grid{grid-template-columns:1fr}#list{max-height:35vh}#detail.page-detail{box-sizing:border-box;height:100dvh}}
-</style></head>
+</style><script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V" crossorigin="anonymous"></script></head>
 <body><header><strong>Gesenius review</strong>
 <a href="/transcriptions" style="color:white">Transcription review</a>
 <button id="entryMode">Entries</button><button id="pageMode">Pages</button>
@@ -672,15 +828,12 @@ $('#list').innerHTML=rows.map(r=>`<div class="item" data-id="${esc(r.id)}"><span
 <div class="muted">${Math.round(r.confidence*100)}% · ${r.review_state} · ${r.warnings} warnings · Δ ${r.disagreement.toFixed(2)}</div></div>`).join('');
 document.querySelectorAll('.item').forEach(x=>x.onclick=()=>loadEntry(x.dataset.id));}
 async function openEntry(id){setMode('entries');await loadList();await loadEntry(id);}
-async function loadPages(selectedImage){pages=await (await fetch('/api/pages')).json();$('#list').innerHTML=pages.map((page,index)=>`<div class="item" data-page="${index}"><b>${esc(page.edition)}</b><br>printed ${esc(page.printed_page||'—')} · PDF ${page.source_page}<div class="muted">${page.entries.length} entries</div></div>`).join('');
+async function loadPages(selectedImage){pages=await (await fetch('/api/pages')).json();$('#list').innerHTML=pages.map((page,index)=>`<div class="item" data-page="${index}"><b>${esc(page.edition)}</b><br>printed ${esc(page.printed_page||'—')} · PDF ${page.source_page}<div class="muted">${page.entry_count} entries</div></div>`).join('');
 document.querySelectorAll('[data-page]').forEach(x=>x.onclick=()=>renderPage(Number(x.dataset.page)));let index=Math.max(0,pages.findIndex(page=>page.page_image===selectedImage));if(pages.length)await renderPage(index);else $('#detail').innerHTML='<p>No pages available.</p>';}
-async function renderPage(index){let page=pages[index],imageUrl='/api/image?path='+encodeURIComponent(page.page_image),dimensions=await imageSize(imageUrl).catch(()=>null);
-let polygons=page.entries.flatMap((entry,entryIndex)=>entry.polygons.map(points=>`<polygon class="page-overlay" data-id="${esc(entry.id)}" style="fill:${entryColor(entryIndex,page.entries.length)};fill-opacity:.18;stroke:${entryColor(entryIndex,page.entries.length)}" points="${points.map(point=>point.x+','+point.y).join(' ')}"><title>${esc(entry.headword||entry.id)}</title></polygon>`)).join('');
-$('#detail').innerHTML=`<div class="page-toolbar"><button id="previousPage" ${index===0?'disabled':''}>← Previous</button><select id="pageSelect">${pages.map((candidate,i)=>`<option value="${i}" ${i===index?'selected':''}>${esc(candidate.edition)} · printed ${esc(candidate.printed_page||'—')} · PDF ${candidate.source_page}</option>`).join('')}</select><button id="nextPage" ${index===pages.length-1?'disabled':''}>Next →</button></div>
-<section class="page-canvas">${dimensions?`<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>${polygons}</svg>`:missingScan(page.page_image)}
-<div class="legend">${page.entries.map((entry,entryIndex)=>`<button data-entry="${esc(entry.id)}" style="--entry-color:${entryColor(entryIndex,page.entries.length)}">${esc(entry.headword||entry.id)} · ${entry.review_state}</button>`).join('')}</div></section>`;
-$('#previousPage').onclick=()=>renderPage(index-1);$('#nextPage').onclick=()=>renderPage(index+1);$('#pageSelect').onchange=event=>renderPage(Number(event.target.value));
-document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.dataset.id));document.querySelectorAll('[data-entry]').forEach(x=>x.onclick=()=>openEntry(x.dataset.entry));}
+async function renderPage(index){let page=pages[index],url='/fragments/page?edition='+encodeURIComponent(page.edition)+'&source_page='+page.source_page;
+$('#detail').innerHTML=`<div class="page-toolbar"><button id="previousPage" ${index===0?'disabled':''}>← Previous</button><select id="pageSelect">${pages.map((candidate,i)=>`<option value="${i}" ${i===index?'selected':''}>${esc(candidate.edition)} · printed ${esc(candidate.printed_page||'—')} · PDF ${candidate.source_page}</option>`).join('')}</select><button id="nextPage" ${index===pages.length-1?'disabled':''}>Next →</button></div><div id="pageContent" hx-get="${esc(url)}" hx-trigger="load" hx-swap="innerHTML"><p class="muted">Loading page…</p></div>`;
+$('#previousPage').onclick=()=>renderPage(index-1);$('#nextPage').onclick=()=>renderPage(index+1);$('#pageSelect').onchange=event=>renderPage(Number(event.target.value));htmx.process($('#pageContent'));}
+document.body?.addEventListener('htmx:afterSwap',async event=>{if(event.detail.target.id!=='pageContent')return;let svg=event.detail.target.querySelector('svg[data-page-image]');if(svg){let dimensions=await imageSize(svg.dataset.pageImage).catch(()=>null);if(dimensions){svg.setAttribute('viewBox',`0 0 ${dimensions.width} ${dimensions.height}`);let image=svg.querySelector('image');image.setAttribute('width',dimensions.width);image.setAttribute('height',dimensions.height);}else event.detail.target.innerHTML=missingScan(pages[Number($('#pageSelect').value)].page_image);}document.querySelectorAll('.page-overlay').forEach(x=>x.onclick=()=>openEntry(x.dataset.id));document.querySelectorAll('[data-entry]').forEach(x=>x.onclick=()=>openEntry(x.dataset.entry));});
 async function loadEntry(id){current=await (await fetch('/api/entries/'+encodeURIComponent(id))).json();await render();}
 function cps(text){return [...text].map(c=>`${c} U+${c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')}`).join(' · ')}
 function imageSize(src){return new Promise((resolve,reject)=>{let image=new Image();image.onload=()=>resolve({width:image.naturalWidth,height:image.naturalHeight});image.onerror=reject;image.src=src;});}
@@ -726,7 +879,7 @@ $('#state').onchange=loadList;$('#queue').onchange=loadList;if(location.hash==='
 
 #[cfg(test)]
 mod tests {
-    use super::{percent_decode, query_parameter, REVIEW_UI};
+    use super::{html_escape, percent_decode, percent_encode, query_parameter, REVIEW_UI};
 
     #[test]
     fn decodes_url_components() {
@@ -739,6 +892,23 @@ mod tests {
             query_parameter("/api/entries?state=&queue=false", "state"),
             None
         );
+    }
+
+    #[test]
+    fn page_fragment_values_are_safe_for_urls_and_html() {
+        assert_eq!(percent_encode("cache/a b&c.png"), "cache%2Fa%20b%26c.png");
+        assert_eq!(
+            html_escape("<Aleph & \"Beth\">"),
+            "&lt;Aleph &amp; &quot;Beth&quot;&gt;"
+        );
+    }
+
+    #[test]
+    fn page_review_loads_selected_detail_with_htmx() {
+        assert!(REVIEW_UI.contains("htmx.org@2.0.10"));
+        assert!(REVIEW_UI.contains(r#"hx-get="${esc(url)}""#));
+        assert!(REVIEW_UI.contains("/fragments/page?edition="));
+        assert!(REVIEW_UI.contains("${page.entry_count} entries"));
     }
 
     #[test]
