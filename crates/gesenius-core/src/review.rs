@@ -11,7 +11,7 @@ use anyhow::{bail, Context, Result};
 use chrono::{DateTime, Utc};
 use fs2::FileExt;
 use serde::{Deserialize, Serialize};
-use std::collections::BTreeMap;
+use std::collections::{BTreeMap, BTreeSet};
 use std::fs::{self, File, OpenOptions};
 use std::io::{BufRead, BufReader, Read, Seek, SeekFrom, Write};
 use std::path::{Path, PathBuf};
@@ -659,11 +659,11 @@ fn load_base_entries(root: &Path) -> Result<Vec<CorpusEntry>> {
 }
 
 fn load_layered_entries(roots: &[PathBuf]) -> Result<Vec<CorpusEntry>> {
-    let mut entries = BTreeMap::new();
+    let mut entries = Vec::new();
     for root in roots {
         let root_entries = load_base_entries(root)?;
-        let mut root_ids = std::collections::BTreeSet::new();
-        for entry in root_entries {
+        let mut root_ids = BTreeSet::new();
+        for entry in &root_entries {
             if !root_ids.insert(entry.id.clone()) {
                 bail!(
                     "duplicate base entry ID `{}` in {}",
@@ -671,21 +671,22 @@ fn load_layered_entries(roots: &[PathBuf]) -> Result<Vec<CorpusEntry>> {
                     root.display()
                 );
             }
-            entries.insert(entry.id.clone(), entry);
         }
+        overlay_entries(&mut entries, root_entries);
     }
-    Ok(entries.into_values().collect())
+    Ok(entries)
 }
 
 fn load_layered_edition_entries(roots: &[PathBuf], edition: &str) -> Result<Vec<CorpusEntry>> {
-    let mut entries = BTreeMap::new();
+    let mut entries = Vec::new();
     for root in roots {
         let path = root.join(format!("{edition}.jsonl"));
         if !path.is_file() {
             continue;
         }
-        let mut root_ids = std::collections::BTreeSet::new();
-        for entry in load_entries(&path)? {
+        let root_entries = load_entries(&path)?;
+        let mut root_ids = BTreeSet::new();
+        for entry in &root_entries {
             if !root_ids.insert(entry.id.clone()) {
                 bail!(
                     "duplicate base entry ID `{}` in {}",
@@ -693,10 +694,67 @@ fn load_layered_edition_entries(roots: &[PathBuf], edition: &str) -> Result<Vec<
                     root.display()
                 );
             }
-            entries.insert(entry.id.clone(), entry);
         }
+        overlay_entries(&mut entries, root_entries);
     }
-    Ok(entries.into_values().collect())
+    Ok(entries)
+}
+
+/// Places one more-authoritative corpus layer over the accumulated entries.
+///
+/// Entry ordinals are derived from OCR boundaries and can change between the
+/// fast index pass and the full pipeline. Consequently, matching fallback and
+/// authoritative entries by ID alone can leave two entries covering the same
+/// source lines. Source-page ownership is stable, so fallback content is kept
+/// only on pages absent from the more-authoritative layer.
+fn overlay_entries(entries: &mut Vec<CorpusEntry>, overlay: Vec<CorpusEntry>) {
+    let covered_pages: BTreeSet<_> = overlay
+        .iter()
+        .flat_map(|entry| {
+            entry
+                .spans()
+                .flat_map(|span| &span.coordinates)
+                .map(|coordinate| (entry.edition.clone(), coordinate.source_page))
+        })
+        .collect();
+    let overlay_ids: BTreeSet<_> = overlay.iter().map(|entry| entry.id.as_str()).collect();
+
+    entries.retain(|entry| !overlay_ids.contains(entry.id.as_str()));
+    for entry in entries.iter_mut() {
+        retain_entry_pages(entry, &covered_pages);
+    }
+    entries.retain(|entry| entry.spans().next().is_some());
+    entries.extend(overlay);
+}
+
+fn retain_entry_pages(entry: &mut CorpusEntry, covered_pages: &BTreeSet<(String, u32)>) {
+    let edition = entry.edition.clone();
+    entry.for_each_span_mut(|span| {
+        span.coordinates.retain(|coordinate| {
+            !covered_pages.contains(&(edition.clone(), coordinate.source_page))
+        });
+    });
+    entry.headword.take_if(|span| span.coordinates.is_empty());
+    entry
+        .grammatical_labels
+        .retain(|span| !span.coordinates.is_empty());
+    entry.blocks.retain_mut(retain_block_spans);
+    entry.senses.retain_mut(|sense| {
+        sense.blocks.retain_mut(retain_block_spans);
+        !sense.blocks.is_empty()
+    });
+    entry
+        .citations
+        .retain(|citation| !citation.text.coordinates.is_empty());
+    entry
+        .cross_references
+        .retain(|reference| !reference.text.coordinates.is_empty());
+    entry.etymology.retain_mut(retain_block_spans);
+}
+
+fn retain_block_spans(block: &mut crate::model::EntryBlock) -> bool {
+    block.spans.retain(|span| !span.coordinates.is_empty());
+    !block.spans.is_empty()
 }
 
 fn load_patches(path: &Path) -> Result<Vec<ReviewPatch>> {
@@ -955,7 +1013,69 @@ $('#edition').onchange=()=>mode==='entries'?loadList():loadPages();$('#state').o
 
 #[cfg(test)]
 mod tests {
-    use super::{html_escape, percent_decode, percent_encode, query_parameter, REVIEW_UI};
+    use super::{
+        html_escape, overlay_entries, percent_decode, percent_encode, query_parameter, REVIEW_UI,
+    };
+    use crate::model::{
+        BlockKind, CorpusEntry, Direction, EntryBlock, EntryProvenance, Point, ReviewState,
+        SourceCoordinate, TextSpan,
+    };
+
+    fn entry(id: &str, pages: &[u32]) -> CorpusEntry {
+        let spans = pages
+            .iter()
+            .map(|page| TextSpan {
+                id: format!("{id}:span:{page}"),
+                diplomatic: page.to_string(),
+                normalized: page.to_string(),
+                language: Some("en".to_owned()),
+                language_runs: Vec::new(),
+                script: "Latn".to_owned(),
+                direction: Direction::Ltr,
+                confidence: 1.0,
+                review_state: ReviewState::Machine,
+                hypotheses: Vec::new(),
+                coordinates: vec![SourceCoordinate {
+                    source_page: *page,
+                    printed_page: Some(page.to_string()),
+                    region_id: "region".to_owned(),
+                    line_id: format!("line-{page}"),
+                    polygon: vec![Point { x: 0.0, y: 0.0 }],
+                    transform_id: "transform".to_owned(),
+                    page_image: format!("page-{page}.png"),
+                }],
+                warnings: Vec::new(),
+            })
+            .collect();
+        CorpusEntry {
+            id: id.to_owned(),
+            aliases: Vec::new(),
+            edition: "edition".to_owned(),
+            printed_page: pages[0].to_string(),
+            entry_ordinal: 1,
+            headword: None,
+            homograph: None,
+            grammatical_labels: Vec::new(),
+            blocks: vec![EntryBlock {
+                id: format!("{id}:block"),
+                kind: BlockKind::Paragraph,
+                spans,
+            }],
+            senses: Vec::new(),
+            citations: Vec::new(),
+            cross_references: Vec::new(),
+            etymology: Vec::new(),
+            provenance: EntryProvenance {
+                edition: "edition".to_owned(),
+                source_sha256: "source".to_owned(),
+                scan_id: "scan".to_owned(),
+                pipeline_run: "run".to_owned(),
+            },
+            confidence: 1.0,
+            review_state: ReviewState::Machine,
+            revision: 0,
+        }
+    }
 
     #[test]
     fn decodes_url_components() {
@@ -967,6 +1087,31 @@ mod tests {
         assert_eq!(
             query_parameter("/api/entries?state=&queue=false", "state"),
             None
+        );
+    }
+
+    #[test]
+    fn authoritative_pages_exclude_overlapping_fallback_boundaries() {
+        let mut entries = vec![entry("fallback", &[1, 2])];
+        overlay_entries(&mut entries, vec![entry("authoritative", &[1])]);
+
+        let fallback = entries.iter().find(|entry| entry.id == "fallback").unwrap();
+        assert_eq!(
+            fallback
+                .spans()
+                .flat_map(|span| &span.coordinates)
+                .map(|coordinate| coordinate.source_page)
+                .collect::<Vec<_>>(),
+            vec![2]
+        );
+        assert_eq!(
+            entries
+                .iter()
+                .flat_map(CorpusEntry::spans)
+                .flat_map(|span| &span.coordinates)
+                .filter(|coordinate| coordinate.source_page == 1)
+                .count(),
+            1
         );
     }
 
