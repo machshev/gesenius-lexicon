@@ -9,6 +9,8 @@ function reviewContext() {
     const script = source.split('<script>')[1].split('</script>')[0];
     const elements = new Map();
     const context = vm.createContext({
+        location: { pathname: '/pages', search: '', hash: '', href: '' },
+        URLSearchParams,
         document: {
             body: null,
             querySelector(selector) {
@@ -21,7 +23,7 @@ function reviewContext() {
         Image: class { set src(value) { this.onerror(new Error('missing')); } },
     });
     // Skip startup, which fetches the queue; exercise the real rendering functions.
-    vm.runInContext(script.slice(0, script.indexOf("$('#entryMode').onclick=")), context);
+    vm.runInContext(script.slice(0, script.indexOf("$('#reload').onclick=")), context);
     return { context, elements };
 }
 

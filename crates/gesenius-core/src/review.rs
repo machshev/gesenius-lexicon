@@ -397,7 +397,7 @@ fn handle_request(
     let url = request.url().to_owned();
     let path = url.split('?').next().unwrap_or("/");
     match (request.method(), path) {
-        (&Method::Get, "/") => respond_html(request, REVIEW_UI),
+        (&Method::Get, "/" | "/pages" | "/entries") => respond_html(request, REVIEW_UI),
         (&Method::Get, "/api/editions") => {
             respond_json(request, StatusCode(200), &store.editions()?)
         }
@@ -928,6 +928,7 @@ main.page-mode{display:block;height:calc(100vh - 3.2rem)}main.page-mode #list{di
 section{background:white;border:1px solid #d0cbc0;border-radius:.4rem;padding:.8rem}textarea{width:100%;height:28rem;font:13px monospace}
 #scan svg{width:100%;height:auto;background:#ddd}.overlay{fill:rgba(238,171,48,.18);stroke:#cf6a16;stroke-width:3}
 pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}button,select,input{font:inherit;padding:.35rem}
+.site-nav{display:flex;gap:.25rem}.site-nav a{color:white;padding:.35rem .55rem;border-radius:.25rem;text-decoration:none}.site-nav a[aria-current="page"]{background:#f4f0e8;color:#25231f}
 .tabs{display:flex;gap:.35rem;margin-bottom:.7rem}.tabs button[aria-selected="true"]{background:#313a35;color:white}
 .entry-text{font:1rem/1.65 "Noto Sans",sans-serif}.entry-text p{margin:.5rem 0;direction:ltr;unicode-bidi:isolate}
 .entry-headword{margin:.15rem 0 1rem;text-align:center;font:1.6rem/1.35 "Noto Sans Hebrew",sans-serif;direction:rtl;unicode-bidi:isolate}
@@ -944,23 +945,26 @@ pre{white-space:pre-wrap}.warn{color:#9a3412}.muted{color:#666;font-size:.85rem}
 @media(max-width:850px){main{display:block;height:auto}.grid,.page-canvas{grid-template-columns:1fr}#list{max-height:35vh}#detail.page-detail{box-sizing:border-box}.legend{position:static;max-height:none}}
 </style><script defer src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.10/dist/htmx.min.js" integrity="sha384-H5SrcfygHmAuTDZphMHqBJLc3FhssKjG7w/CeCpFReSfwBWDTKpkzPP8c+cLsK+V" crossorigin="anonymous"></script></head>
 <body><header><strong>Gesenius review</strong>
+<nav class="site-nav" aria-label="Corpus review"><a id="pagesLink" href="/pages">Pages</a><a id="entriesLink" href="/entries">Entries</a></nav>
 <a href="/transcriptions" style="color:white">Transcription review</a>
 <label>Edition <select id="edition"><option value="">Choose edition…</option></select></label>
-<button id="pageMode">Pages</button><button id="entryMode">Entries</button>
 <span id="entryFilters"><label>State <select id="state"><option value="">all</option><option>machine</option><option>corrected</option><option>verified</option></select></label>
 <label><input id="queue" type="checkbox" checked> review queue</label></span><button id="reload">Reload</button></header>
 <main><div id="list"></div><div id="detail"><p>Select an entry.</p></div></main>
 <script>
 const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let current=null,mode='entries',pages=[],pageRanges=[];
+let current=null,mode=location.pathname==='/entries'?'entries':'pages',pages=[],pageRanges=[];
 const entryColor=(index,total)=>`hsl(${Math.round(index*360/Math.max(1,total))} 70% 38%)`;
-function setMode(next){mode=next;$('main').classList.toggle('page-mode',mode==='pages');$('#detail').classList.toggle('page-detail',mode==='pages');$('#entryFilters').classList.toggle('hidden',mode==='pages');$('#entryMode').disabled=mode==='entries';$('#pageMode').disabled=mode==='pages';}
-async function loadEditions(){let editions=await (await fetch('/api/editions')).json();$('#edition').innerHTML=editions.length?editions.map(edition=>`<option>${esc(edition)}</option>`).join(''):'<option value="">No editions</option>';return editions.length>0;}
+function destination(path,values={}){let query=new URLSearchParams(values);return path+(query.size?'?'+query:'');}
+function syncNavigation(){let edition=$('#edition').value;$('#pagesLink').href=destination('/pages',{edition});$('#entriesLink').href=destination('/entries',{edition});}
+function setMode(next){mode=next;$('main').classList.toggle('page-mode',mode==='pages');$('#detail').classList.toggle('page-detail',mode==='pages');$('#entryFilters').classList.toggle('hidden',mode==='pages');$('#pagesLink').setAttribute('aria-current',mode==='pages'?'page':'false');$('#entriesLink').setAttribute('aria-current',mode==='entries'?'page':'false');}
+async function loadEditions(){let editions=await (await fetch('/api/editions')).json(),requested=new URLSearchParams(location.search).get('edition');$('#edition').innerHTML=editions.length?editions.map(edition=>`<option>${esc(edition)}</option>`).join(''):'<option value="">No editions</option>';if(requested&&editions.includes(requested))$('#edition').value=requested;syncNavigation();return editions.length>0;}
 async function loadList(){let edition=$('#edition').value;if(!edition){$('#list').innerHTML='<p class="item muted">Choose an edition.</p>';return;}let q=new URLSearchParams({edition,state:$('#state').value,queue:$('#queue').checked});let rows=await (await fetch('/api/entries?'+q)).json();
 $('#list').innerHTML=rows.map(r=>`<div class="item" data-id="${esc(r.id)}"><span class="hebrew">${esc(r.headword||'—')}</span><br><b>${esc(r.edition)}</b> p. ${esc(r.printed_page)}
 <div class="muted">${Math.round(r.confidence*100)}% · ${r.review_state} · ${r.warnings} warnings · Δ ${r.disagreement.toFixed(2)}</div></div>`).join('');
-document.querySelectorAll('.item').forEach(x=>x.onclick=()=>loadEntry(x.dataset.id));}
-async function openEntry(id){setMode('entries');await loadList();await loadEntry(id);}
+document.querySelectorAll('.item').forEach(x=>x.onclick=()=>selectEntry(x.dataset.id));}
+function openEntry(id){location.href=destination('/entries',{edition:$('#edition').value,entry:id});}
+function selectEntry(id){history.pushState(null,'',destination('/entries',{edition:$('#edition').value,entry:id}));loadEntry(id);}
 const printedPage=page=>page.printed_page_offset===null?'—':String(page.source_page+page.printed_page_offset);
 async function loadPages(selectedSource){let edition=$('#edition').value;if(!edition){$('#list').innerHTML='<p class="item muted">Choose an edition.</p>';$('#detail').innerHTML='<p>Choose an edition to browse its pages.</p>';return;}pageRanges=await (await fetch('/api/pages?edition='+encodeURIComponent(edition))).json();pages=pageRanges.flatMap(range=>Array.from({length:range.source_end-range.source_start+1},(_,offset)=>({edition,source_page:range.source_start+offset,printed_page_offset:range.printed_page_offset})));
 let index=Math.max(0,pages.findIndex(page=>page.source_page===selectedSource));if(pages.length)await renderPage(index);else $('#detail').innerHTML='<p>No pages available.</p>';}
@@ -1001,14 +1005,14 @@ const bindScan=()=>document.querySelectorAll('.overlay[data-span]').forEach(poly
 const selectText=async(event,line)=>{selectedSpan=line.dataset.span;let span=spans.find(candidate=>candidate.id===selectedSpan),source=span?.coordinates[0]?.source_page,pageIndex=pages.findIndex(page=>page.source===source);if(pageIndex>=0&&pageIndex!==selectedPage){selectedPage=pageIndex;if($('#scanPage'))$('#scanPage').value=String(selectedPage);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();}markSelection(selectedSpan,event.target.closest('.text-word'));};
 textLines().forEach(line=>line.onclick=event=>selectText(event,line));bindScan();
 if(pages.length>1)$('#scanPage').onchange=async event=>{selectedPage=Number(event.target.value);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();};
-$('#viewPage').onclick=async()=>{$('#edition').value=current.edition;setMode('pages');await loadPages(pages[selectedPage].source);};
+$('#viewPage').onclick=()=>{location.href=destination('/pages',{edition:current.edition,source_page:pages[selectedPage].source});};
 $('#save').onclick=save;}
 async function save(){let message=$('#message');try{let entry=JSON.parse($('#editor').value);let response=await fetch('/api/entries/'+encodeURIComponent(current.id),{method:'PATCH',headers:{'Content-Type':'application/json'},
 body:JSON.stringify({base_revision:current.revision,reviewer:$('#reviewer').value,review_state:$('#reviewState').value,entry})});
 let result=await response.json();if(!response.ok)throw Error(result.error);current=result.replacement;message.textContent='Saved.';await loadList();await render();}catch(e){message.className='warn';message.textContent=e.message;}}
-$('#entryMode').onclick=async()=>{setMode('entries');await loadList();$('#detail').innerHTML='<p>Select an entry.</p>';};
-$('#pageMode').onclick=async()=>{setMode('pages');await loadPages();};$('#reload').onclick=()=>mode==='entries'?loadList():loadPages();
-$('#edition').onchange=()=>mode==='entries'?loadList():loadPages();$('#state').onchange=loadList;$('#queue').onchange=loadList;loadEditions().then(hasEditions=>{setMode('pages');if(hasEditions)loadPages().then(()=>{if(location.hash==='#page-view-smoke-test'&&innerWidth<=850)$('#detail').scrollIntoView();});else $('#detail').innerHTML='<p>No editions available.</p>';});
+$('#reload').onclick=()=>mode==='entries'?loadList():loadPages();
+$('#edition').onchange=()=>{history.replaceState(null,'',destination(mode==='entries'?'/entries':'/pages',{edition:$('#edition').value}));syncNavigation();mode==='entries'?loadList():loadPages();};$('#state').onchange=loadList;$('#queue').onchange=loadList;
+setMode(mode);loadEditions().then(async hasEditions=>{if(!hasEditions){$('#detail').innerHTML='<p>No editions available.</p>';return;}let query=new URLSearchParams(location.search);if(mode==='pages'){await loadPages(Number(query.get('source_page'))||undefined);if(location.hash==='#page-view-smoke-test'&&innerWidth<=850)$('#detail').scrollIntoView();}else{await loadList();let entry=query.get('entry');if(entry)await loadEntry(entry);}});
 </script></body></html>"#;
 
 #[cfg(test)]
@@ -1127,6 +1131,10 @@ mod tests {
     #[test]
     fn page_review_loads_selected_detail_with_htmx() {
         assert!(REVIEW_UI.contains("htmx.org@2.0.10"));
+        assert!(REVIEW_UI.contains(r#"href="/pages">Pages</a>"#));
+        assert!(REVIEW_UI.contains(r#"href="/entries">Entries</a>"#));
+        assert!(!REVIEW_UI.contains(r#"id="pageMode""#));
+        assert!(!REVIEW_UI.contains(r#"id="entryMode""#));
         assert!(REVIEW_UI.contains(r#"hx-get="${esc(url)}""#));
         assert!(REVIEW_UI.contains("/fragments/page?edition="));
         assert!(REVIEW_UI.contains("Choose edition…"));
