@@ -2,8 +2,8 @@
 
 use chrono::{DateTime, Utc};
 use gesenius_core::alto::{
-    classify_word_languages, parse_alto, parse_entries, parse_entries_continuing, EngineIdentity,
-    LineAssignment, ParseContext,
+    classify_word_languages, parse_alto, parse_entries, parse_entries_continuing,
+    parse_index_entries_with_hypotheses_continuing, EngineIdentity, LineAssignment, ParseContext,
 };
 use gesenius_core::corpus_io::{load_entries, write_entries};
 use gesenius_core::export::{
@@ -799,6 +799,59 @@ fn flush_hebrew_example_does_not_cut_an_entry_mid_paragraph() {
                 LineAssignment::Entry(entry) if entry == "robinson-1854:p1:e0001"
             )
     }));
+}
+
+#[test]
+fn fast_index_requires_indented_hebrew_headwords_for_new_boundaries() {
+    let page = parse_alto(
+        r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+  <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
+    <TextBlock ID="headword" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="40"><TextLine ID="opening" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="40">
+      <String CONTENT="אָב" WC="0.98" HPOS="90" VPOS="100" WIDTH="55" HEIGHT="40"/><SP WIDTH="8"/>
+      <String CONTENT="m. father" WC="0.98" HPOS="153" VPOS="100" WIDTH="200" HEIGHT="40"/>
+    </TextLine></TextBlock>
+    <TextBlock ID="inflection" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="40"><TextLine ID="false-boundary" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="40">
+      <String CONTENT="אָבִיכם" WC="0.98" HPOS="50" VPOS="150" WIDTH="80" HEIGHT="40"/><SP WIDTH="8"/>
+      <String CONTENT="1 pers. plural" WC="0.98" HPOS="138" VPOS="150" WIDTH="180" HEIGHT="40"/>
+    </TextLine></TextBlock>
+    <TextBlock ID="prose" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="140"><TextLine ID="prose-1" HPOS="50" VPOS="200" WIDTH="420" HEIGHT="40"><String CONTENT="the definition continues" WC="0.98" HPOS="50" VPOS="200" WIDTH="250" HEIGHT="40"/></TextLine>
+      <TextLine ID="prose-2" HPOS="50" VPOS="250" WIDTH="420" HEIGHT="40"><String CONTENT="on further lines" WC="0.98" HPOS="50" VPOS="250" WIDTH="190" HEIGHT="40"/></TextLine>
+      <TextLine ID="prose-3" HPOS="50" VPOS="300" WIDTH="420" HEIGHT="40"><String CONTENT="and remains one entry" WC="0.98" HPOS="50" VPOS="300" WIDTH="230" HEIGHT="40"/></TextLine>
+    </TextBlock>
+    <TextBlock ID="next" HPOS="90" VPOS="350" WIDTH="380" HEIGHT="40"><TextLine ID="next-headword" HPOS="90" VPOS="350" WIDTH="380" HEIGHT="40">
+      <String CONTENT="אֵם" WC="0.98" HPOS="90" VPOS="350" WIDTH="55" HEIGHT="40"/><SP WIDTH="8"/>
+      <String CONTENT="f. mother" WC="0.98" HPOS="153" VPOS="350" WIDTH="160" HEIGHT="40"/>
+    </TextLine></TextBlock>
+  </PrintSpace></Page></Layout>
+</alto>"#,
+    )
+    .unwrap();
+    let identity = engine("headword-crop");
+    let parsed = parse_index_entries_with_hypotheses_continuing(
+        &page,
+        &[(&page, &identity)],
+        &context("robinson-1854", "1", 17, "page.png"),
+        None,
+    );
+
+    assert_eq!(parsed.entries.len(), 2);
+    assert_eq!(
+        parsed.entries[0].headword.as_ref().unwrap().normalized,
+        "אָב"
+    );
+    assert_eq!(
+        parsed.entries[0]
+            .blocks
+            .iter()
+            .flat_map(|block| &block.spans)
+            .count(),
+        5
+    );
+    assert_eq!(
+        parsed.entries[1].headword.as_ref().unwrap().normalized,
+        "אֵם"
+    );
 }
 
 #[test]

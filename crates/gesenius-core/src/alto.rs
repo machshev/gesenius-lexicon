@@ -335,6 +335,40 @@ pub fn parse_entries_with_hypotheses_continuing(
     context: &ParseContext<'_>,
     continuation: Option<CorpusEntry>,
 ) -> ParsedPage {
+    parse_entries_with_hypotheses_continuing_mode(
+        canonical,
+        hypotheses,
+        context,
+        continuation,
+        false,
+    )
+}
+
+/// Parses fast-index pages conservatively: a new boundary must be supported by
+/// an indented, successfully recognized Hebrew headword. Layout and grammar
+/// cues may nominate OCR crops, but cannot create entries by themselves.
+pub fn parse_index_entries_with_hypotheses_continuing(
+    canonical: &AltoPage,
+    hypotheses: &[(&AltoPage, &EngineIdentity)],
+    context: &ParseContext<'_>,
+    continuation: Option<CorpusEntry>,
+) -> ParsedPage {
+    parse_entries_with_hypotheses_continuing_mode(
+        canonical,
+        hypotheses,
+        context,
+        continuation,
+        true,
+    )
+}
+
+fn parse_entries_with_hypotheses_continuing_mode(
+    canonical: &AltoPage,
+    hypotheses: &[(&AltoPage, &EngineIdentity)],
+    context: &ParseContext<'_>,
+    continuation: Option<CorpusEntry>,
+    require_valid_hebrew_boundary: bool,
+) -> ParsedPage {
     let layout = PageLayout::from_page(canonical);
     let aligned_hypotheses: Vec<_> = hypotheses
         .iter()
@@ -417,8 +451,28 @@ pub fn parse_entries_with_hypotheses_continuing(
                 || (entry_indented && (proper_name_cue || cross_reference_cue)));
         let hebrew_boundary =
             begins_with_hebrew_headword(&line.text) && (first_line_in_region || entry_indented);
+        let valid_hebrew_candidate = canonical_grammar_candidate
+            .or(canonical_structural_candidate)
+            .and_then(|index| line.words.get(index))
+            .is_some_and(|word| begins_with_hebrew_headword(&word.text))
+            || hypothesis_grammar_candidate
+                .map(|(hypothesis, index)| &hypothesis.words[index])
+                .or_else(|| {
+                    hypothesis_structural_candidate
+                        .map(|(hypothesis, index)| &hypothesis.words[index])
+                })
+                .is_some_and(|word| begins_with_hebrew_headword(&word.text));
+        let detected_boundary = grammar_boundary || structural_boundary || hebrew_boundary;
         let starts_entry = !stem_heading
-            && (entries.is_empty() || grammar_boundary || structural_boundary || hebrew_boundary);
+            && (entries.is_empty()
+                || if require_valid_hebrew_boundary {
+                    // Page OCR often makes every physical line its own ALTO
+                    // region. Do not mistake that incidental region boundary
+                    // for lexicon indentation.
+                    indented && detected_boundary && valid_hebrew_candidate
+                } else {
+                    detected_boundary
+                });
         let block_kind = if is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {

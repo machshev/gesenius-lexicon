@@ -731,12 +731,21 @@ fn run_mode(
             } else {
                 None
             };
-        let parsed = parse_entries_with_hypotheses_continuing(
-            canonical_page,
-            &hypotheses,
-            &context,
-            continued_entry,
-        );
+        let parsed = if index_only {
+            crate::alto::parse_index_entries_with_hypotheses_continuing(
+                canonical_page,
+                &hypotheses,
+                &context,
+                continued_entry,
+            )
+        } else {
+            parse_entries_with_hypotheses_continuing(
+                canonical_page,
+                &hypotheses,
+                &context,
+                continued_entry,
+            )
+        };
         write_page_parse(&page_path, &parsed)?;
         continuation = parsed.entries.last().cloned();
         previous_page_number = Some(*page_number);
