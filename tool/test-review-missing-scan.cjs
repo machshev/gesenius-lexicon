@@ -35,7 +35,7 @@ test('missing entry scans produce an escaped message without rejecting rendering
 
 test('page review retains navigation while streaming page detail', async () => {
     const { context, elements } = reviewContext();
-    await vm.runInContext(`pages=[{edition:'test',source_page:17,printed_page:'1',page_image:'missing.png',entry_count:1}];renderPage(0)`, context);
+    await vm.runInContext(`pages=[{edition:'test',source_page:17,printed_page_offset:-16}];renderPage(0)`, context);
     const html = elements.get('#detail').innerHTML;
     assert.match(html, /id="pageSelect"/);
     assert.match(html, /hx-get="\/fragments\/page\?edition=test&amp;source_page=17"/);
