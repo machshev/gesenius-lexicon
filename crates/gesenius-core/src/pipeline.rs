@@ -436,11 +436,10 @@ fn run_mode(
     } else {
         BTreeSet::new()
     };
-    let pages = if index_only {
-        expand_page_selection(options.pages, &completed_pages)
-    } else {
-        options.pages.to_vec()
-    };
+    // This is an explicit work boundary. A bounded request such as `17-20`
+    // must not grow to every adjacent cached page. Open-ended ranges have
+    // already been deliberately expanded by `parse_page_spec`.
+    let pages = options.pages.to_vec();
     let page_count = pages.len();
     report_progress(
         &mut report,
@@ -843,24 +842,6 @@ fn write_completed_pages(path: &Path, pages: &BTreeSet<u32>) -> Result<()> {
         .map_err(|error| error.error)
         .with_context(|| format!("failed to persist {}", path.display()))?;
     Ok(())
-}
-
-fn expand_page_selection(requested: &[u32], completed: &BTreeSet<u32>) -> Vec<u32> {
-    let requested: BTreeSet<u32> = requested.iter().copied().collect();
-    let available: BTreeSet<u32> = completed.union(&requested).copied().collect();
-    let mut expanded = BTreeSet::new();
-    for page in &requested {
-        let mut start = *page;
-        while start > 1 && available.contains(&(start - 1)) {
-            start -= 1;
-        }
-        let mut end = *page;
-        while end < u32::MAX && available.contains(&(end + 1)) {
-            end += 1;
-        }
-        expanded.extend(start..=end);
-    }
-    expanded.into_iter().collect()
 }
 
 fn report_progress(
@@ -2601,11 +2582,10 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 #[cfg(test)]
 mod tests {
     use super::{
-        deduplicate_overlapping_lines, expand_page_selection, lexical_prior,
-        normalize_word_candidate, parse_page_spec, parse_pdf_text_layer,
-        restore_attested_edge_punctuation, select_roman_consensus_candidate, select_word_candidate,
-        should_refine_roman_word, should_replace_entry, should_use_isolated_word,
-        trim_unattested_edge_punctuation, WordCandidate,
+        deduplicate_overlapping_lines, lexical_prior, normalize_word_candidate, parse_page_spec,
+        parse_pdf_text_layer, restore_attested_edge_punctuation, select_roman_consensus_candidate,
+        select_word_candidate, should_refine_roman_word, should_replace_entry,
+        should_use_isolated_word, trim_unattested_edge_punctuation, WordCandidate,
     };
     use crate::alto::{parse_alto, AltoWord, ScriptTrial};
     use crate::model::{CorpusEntry, Point};
@@ -2664,14 +2644,6 @@ mod tests {
     fn open_ended_page_specs_use_registered_page_count() {
         assert_eq!(parse_page_spec("3-", Some(5)).unwrap(), vec![3, 4, 5]);
         assert!(parse_page_spec("3-", None).is_err());
-    }
-
-    #[test]
-    fn adding_a_gap_reprocesses_its_contiguous_index_neighbors() {
-        let completed = BTreeSet::from([1, 3, 7, 8]);
-        assert_eq!(expand_page_selection(&[2], &completed), vec![1, 2, 3]);
-        assert_eq!(expand_page_selection(&[6], &completed), vec![6, 7, 8]);
-        assert_eq!(expand_page_selection(&[5], &completed), vec![5]);
     }
 
     #[test]
