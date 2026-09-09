@@ -125,7 +125,7 @@ struct RunArguments {
     /// Registered edition ID.
     #[arg(long)]
     edition: String,
-    /// One-based PDF pages, for example `17-20,45`.
+    /// One-based PDF pages, for example `17-20,45` or `17-` through the end.
     #[arg(long)]
     pages: String,
 }
@@ -265,7 +265,8 @@ fn main() -> Result<()> {
         } => {
             let catalogue = SourceCatalogue::load(&cli.catalogue)?;
             let entries = if let Some(pages) = pages {
-                let pages = parse_page_spec(pages)?;
+                let page_count = catalogue.edition(edition)?.page_count;
+                let pages = parse_page_spec(pages, page_count)?;
                 let corpus_root = cli.cache.join("index-candidates");
                 gesenius_core::pipeline::run_index_with_progress(
                     &RunOptions {
@@ -457,7 +458,9 @@ fn source_command(catalogue_path: &Path, cache: &Path, command: &SourceCommands)
 }
 
 fn run_command(cli: &Cli, arguments: &RunArguments) -> Result<()> {
-    let pages = parse_page_spec(&arguments.pages)?;
+    let catalogue = SourceCatalogue::load(&cli.catalogue)?;
+    let page_count = catalogue.edition(&arguments.edition)?.page_count;
+    let pages = parse_page_spec(&arguments.pages, page_count)?;
     let commit = pipeline_commit();
     let result = run_with_progress(
         &RunOptions {

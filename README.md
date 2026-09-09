@@ -50,6 +50,9 @@ cargo run -- run --edition robinson-1854 --pages 17-20,45
 cargo run -- validate
 ```
 
+Use an open-ended range such as `17-` to process page 17 through the
+registered end of the PDF.
+
 The run command writes phase and per-page progress to stderr while reserving
 stdout for its final machine-readable JSON result. Resumed stages are still
 reported as the pipeline checks and reuses their receipts.

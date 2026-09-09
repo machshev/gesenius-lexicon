@@ -804,7 +804,10 @@ fn report_progress(
 }
 
 /// Parses `1,3-5,9` into a sorted, de-duplicated one-based page list.
-pub fn parse_page_spec(specification: &str) -> Result<Vec<u32>> {
+///
+/// A range with an omitted end, such as `17-`, uses the registered PDF page
+/// count. An open-ended range therefore requires a known page count.
+pub fn parse_page_spec(specification: &str, page_count: Option<u32>) -> Result<Vec<u32>> {
     let mut pages = BTreeSet::new();
     for component in specification.split(',').map(str::trim) {
         if component.is_empty() {
@@ -812,7 +815,11 @@ pub fn parse_page_spec(specification: &str) -> Result<Vec<u32>> {
         }
         if let Some((start, end)) = component.split_once('-') {
             let start = start.parse::<u32>().context("invalid page range start")?;
-            let end = end.parse::<u32>().context("invalid page range end")?;
+            let end = if end.is_empty() {
+                page_count.context("open-ended page ranges require a registered page count")?
+            } else {
+                end.parse::<u32>().context("invalid page range end")?
+            };
             if start == 0 || start > end {
                 bail!("invalid page range `{component}`");
             }
@@ -2565,13 +2572,22 @@ mod tests {
 
     #[test]
     fn page_specs_are_sorted_and_deduplicated() {
-        assert_eq!(parse_page_spec("5,1-3,3").unwrap(), vec![1, 2, 3, 5]);
+        assert_eq!(
+            parse_page_spec("5,1-3,3", Some(10)).unwrap(),
+            vec![1, 2, 3, 5]
+        );
+    }
+
+    #[test]
+    fn open_ended_page_specs_use_registered_page_count() {
+        assert_eq!(parse_page_spec("3-", Some(5)).unwrap(), vec![3, 4, 5]);
+        assert!(parse_page_spec("3-", None).is_err());
     }
 
     #[test]
     fn page_specs_reject_zero_and_backwards_ranges() {
-        assert!(parse_page_spec("0").is_err());
-        assert!(parse_page_spec("9-2").is_err());
+        assert!(parse_page_spec("0", Some(10)).is_err());
+        assert!(parse_page_spec("9-2", Some(10)).is_err());
     }
 
     #[test]
