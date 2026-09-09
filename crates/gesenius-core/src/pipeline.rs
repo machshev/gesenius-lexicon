@@ -728,7 +728,9 @@ fn run_mode(
             if previous_page_number.is_some_and(|previous| previous + 1 == *page_number) {
                 continuation.take()
             } else {
-                None
+                page_number.checked_sub(1).and_then(|previous| {
+                    entry_ending_on_page(&base_entries, options.edition, previous)
+                })
             };
         let parsed = if index_only {
             crate::alto::parse_index_entries_with_hypotheses_continuing(
@@ -808,6 +810,26 @@ fn should_replace_entry(entry: &CorpusEntry, selected_pages: &BTreeSet<u32>) -> 
         .spans()
         .flat_map(|span| span.coordinates.iter())
         .any(|coordinate| selected_pages.contains(&coordinate.source_page))
+}
+
+fn entry_ending_on_page(
+    entries: &[CorpusEntry],
+    edition: &str,
+    source_page: u32,
+) -> Option<CorpusEntry> {
+    entries
+        .iter()
+        .rev()
+        .find(|entry| {
+            entry.edition == edition
+                && entry
+                    .spans()
+                    .flat_map(|span| span.coordinates.iter())
+                    .map(|coordinate| coordinate.source_page)
+                    .max()
+                    == Some(source_page)
+        })
+        .cloned()
 }
 
 fn load_completed_pages(path: &Path, entries: &[CorpusEntry]) -> Result<BTreeSet<u32>> {
@@ -2582,10 +2604,11 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 #[cfg(test)]
 mod tests {
     use super::{
-        deduplicate_overlapping_lines, lexical_prior, normalize_word_candidate, parse_page_spec,
-        parse_pdf_text_layer, restore_attested_edge_punctuation, select_roman_consensus_candidate,
-        select_word_candidate, should_refine_roman_word, should_replace_entry,
-        should_use_isolated_word, trim_unattested_edge_punctuation, WordCandidate,
+        deduplicate_overlapping_lines, entry_ending_on_page, lexical_prior,
+        normalize_word_candidate, parse_page_spec, parse_pdf_text_layer,
+        restore_attested_edge_punctuation, select_roman_consensus_candidate, select_word_candidate,
+        should_refine_roman_word, should_replace_entry, should_use_isolated_word,
+        trim_unattested_edge_punctuation, WordCandidate,
     };
     use crate::alto::{parse_alto, AltoWord, ScriptTrial};
     use crate::model::{CorpusEntry, Point};
@@ -2890,6 +2913,14 @@ mod tests {
 
         assert!(should_replace_entry(&entry, &BTreeSet::from([19])));
         assert!(should_replace_entry(&entry, &BTreeSet::from([17])));
+        assert_eq!(
+            entry_ending_on_page(std::slice::from_ref(&entry), "test", 19)
+                .expect("entry ends on page 19")
+                .id,
+            entry.id
+        );
+        assert!(entry_ending_on_page(std::slice::from_ref(&entry), "test", 17).is_none());
+        assert!(entry_ending_on_page(std::slice::from_ref(&entry), "other", 19).is_none());
     }
 
     #[test]
