@@ -514,7 +514,7 @@ fn parse_entries_with_hypotheses_continuing_mode(
                         )
                     })
                 })
-                .or_else(|| extract_headword(&span))
+                .or_else(|| extract_headword(&span, line))
                 .or_else(|| {
                     (structural_boundary || grammar_boundary || hebrew_boundary)
                         .then_some(canonical_structural_candidate)
@@ -1823,7 +1823,7 @@ fn make_span(
     }
 }
 
-fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
+fn extract_headword(line_span: &TextSpan, line: &AltoLine) -> Option<TextSpan> {
     let mut characters = line_span
         .diplomatic
         .chars()
@@ -1846,6 +1846,15 @@ fn extract_headword(line_span: &TextSpan) -> Option<TextSpan> {
     span.id = format!("{}:headword", line_span.id.trim_end_matches(":span:0001"));
     span.diplomatic.clone_from(&headword);
     span.normalized = normalize_nfc(&headword);
+    if let Some(candidate) = line
+        .words
+        .iter()
+        .find(|candidate| trim_headword_edges(&candidate.text) == headword)
+    {
+        for coordinate in &mut span.coordinates {
+            coordinate.polygon.clone_from(&candidate.polygon);
+        }
+    }
     let default_language = headword_default_language(&headword, None);
     (span.language, span.language_runs) = identify_languages(&span.normalized, default_language);
     span.script = "Hebr".to_owned();
@@ -1860,9 +1869,7 @@ fn extract_candidate_headword_at(
     candidate_index: usize,
 ) -> Option<TextSpan> {
     let candidate = line.words.get(candidate_index)?;
-    let headword = candidate
-        .text
-        .trim_matches(|character: char| !character.is_alphanumeric());
+    let headword = trim_headword_edges(&candidate.text);
     if headword.is_empty() {
         return None;
     }
@@ -1870,6 +1877,14 @@ fn extract_candidate_headword_at(
     span.id = format!("{}:headword", line_span.id.trim_end_matches(":span:0001"));
     span.diplomatic = headword.to_owned();
     span.normalized = normalize_nfc(headword);
+    // A headword is a word-level transcription, so its training geometry must
+    // be word-level too. Keeping the parent line polygon here produced
+    // mismatched Kraken samples: a whole mixed-language line paired with only
+    // the lemma text. Retain the source identity but narrow every witness to
+    // the candidate that supplied the headword.
+    for coordinate in &mut span.coordinates {
+        coordinate.polygon.clone_from(&candidate.polygon);
+    }
     let label = line
         .words
         .iter()
@@ -1898,6 +1913,13 @@ fn extract_candidate_headword_at(
     span.direction = infer_direction(headword);
     span.warnings = unicode_warnings(headword);
     Some(span)
+}
+
+fn trim_headword_edges(text: &str) -> &str {
+    text.trim_matches(|character: char| {
+        !character.is_alphanumeric()
+            && unicode_normalization::char::canonical_combining_class(character) == 0
+    })
 }
 
 fn headword_default_language<'a>(_headword: &str, printed_label: Option<&'a str>) -> &'a str {

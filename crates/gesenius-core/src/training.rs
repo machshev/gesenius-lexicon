@@ -148,7 +148,7 @@ pub fn prepare(
                 .map(move |page| (edition.edition.clone(), page.printed_page.clone()))
         })
         .collect();
-    let mut seen_lines = BTreeSet::new();
+    let mut seen_samples = BTreeSet::new();
     let mut records = Vec::new();
     let mut benchmark = BTreeMap::<String, (String, String)>::new();
 
@@ -156,25 +156,32 @@ pub fn prepare(
         if !selected.contains(&(entry.edition.clone(), entry.printed_page.clone())) {
             continue;
         }
-        for span in entry.blocks.iter().flat_map(|block| block.spans.iter()) {
+        for (sample_kind, span) in entry.headword.iter().map(|span| ("headword", span)).chain(
+            entry
+                .blocks
+                .iter()
+                .flat_map(|block| block.spans.iter())
+                .map(|span| ("line", span)),
+        ) {
             if span.review_state == ReviewState::Machine {
                 continue;
             }
             let Some(coordinate) = span.coordinates.first() else {
                 continue;
             };
-            let line_key = (
+            let sample_key = (
                 entry.edition.clone(),
                 coordinate.source_page,
                 coordinate.line_id.clone(),
+                sample_kind,
             );
-            if !seen_lines.insert(line_key) {
+            if !seen_samples.insert(sample_key) {
                 continue;
             }
             let split = page_split(&entry.edition, coordinate.source_page);
             let name = safe_name(&format!(
-                "{}-p{:04}-{}",
-                entry.edition, coordinate.source_page, coordinate.line_id
+                "{}-p{:04}-{}-{}",
+                entry.edition, coordinate.source_page, coordinate.line_id, sample_kind
             ));
             let directory = output_root.join(split.as_str());
             fs::create_dir_all(&directory)?;

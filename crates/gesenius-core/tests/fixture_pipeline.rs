@@ -808,7 +808,7 @@ fn fast_index_requires_indented_hebrew_headwords_for_new_boundaries() {
 <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
   <Layout><Page WIDTH="1000" HEIGHT="1400"><PrintSpace>
     <TextBlock ID="headword" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="40"><TextLine ID="opening" HPOS="90" VPOS="100" WIDTH="380" HEIGHT="40">
-      <String CONTENT="אָב" WC="0.98" HPOS="90" VPOS="100" WIDTH="55" HEIGHT="40"/><SP WIDTH="8"/>
+      <String CONTENT="אָבָ" WC="0.98" HPOS="90" VPOS="100" WIDTH="55" HEIGHT="40"/><SP WIDTH="8"/>
       <String CONTENT="m. father" WC="0.98" HPOS="153" VPOS="100" WIDTH="200" HEIGHT="40"/>
     </TextLine></TextBlock>
     <TextBlock ID="inflection" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="40"><TextLine ID="false-boundary" HPOS="50" VPOS="150" WIDTH="420" HEIGHT="40">
@@ -838,7 +838,7 @@ fn fast_index_requires_indented_hebrew_headwords_for_new_boundaries() {
     assert_eq!(parsed.entries.len(), 2);
     assert_eq!(
         parsed.entries[0].headword.as_ref().unwrap().normalized,
-        "אָב"
+        "אָבָ"
     );
     assert_eq!(
         parsed.entries[0]
@@ -847,6 +847,11 @@ fn fast_index_requires_indented_hebrew_headwords_for_new_boundaries() {
             .flat_map(|block| &block.spans)
             .count(),
         5
+    );
+    assert_eq!(
+        parsed.entries[0].headword.as_ref().unwrap().coordinates[0].polygon,
+        page.regions[0].lines[0].words[0].polygon,
+        "headword ground truth must crop the word, not its mixed-language line"
     );
     assert_eq!(
         parsed.entries[1].headword.as_ref().unwrap().normalized,

@@ -299,6 +299,12 @@ cargo run -- train --pilot pilot.toml --output training \
   --base-model models/base.mlmodel
 ```
 
+Reviewed headwords are emitted as dedicated word-crop training samples, in
+addition to reviewed entry lines. This lets corrections to fine vowel points
+feed the recognizer without pairing a short lemma transcription with the whole
+mixed-language source line. Headword and line samples stay in the same
+page-level train/validation/test partition.
+
 Splits are deterministic by edition and source page, so lines from one page cannot leak across train, validation, and test. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation.
 
 Model binaries are ignored. Publish them as separately checksummed release artifacts with a completed [model card template](models/model-card.template.toml).
