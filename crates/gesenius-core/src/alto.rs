@@ -1930,25 +1930,24 @@ fn headword_polygon(candidate: &AltoWord, line: &AltoLine) -> Vec<Point> {
         return candidate.polygon.clone();
     };
     // OCR boxes are fitted principally to letter bodies and regularly clip
-    // Hebrew points just outside the detected line. Keep the headword crop
-    // word-width, but give its vertical extent enough line-relative margin to
-    // retain vowel points and accents for overlays and training samples.
+    // Hebrew points just outside the detected word and line. Give the
+    // headword enough line-relative margin on every side to retain vowel
+    // points and accents for overlays and training samples.
     let top = word_y1.min(line_y1);
     let bottom = word_y2.max(line_y2);
     let padding = (bottom - top) * 0.2;
     let top = (top - padding).max(0.0);
     let bottom = bottom + padding;
+    let left = (word_x1 - padding).max(0.0);
+    let right = word_x2 + padding;
     vec![
-        Point { x: word_x1, y: top },
-        Point { x: word_x2, y: top },
+        Point { x: left, y: top },
+        Point { x: right, y: top },
         Point {
-            x: word_x2,
+            x: right,
             y: bottom,
         },
-        Point {
-            x: word_x1,
-            y: bottom,
-        },
+        Point { x: left, y: bottom },
     ]
 }
 

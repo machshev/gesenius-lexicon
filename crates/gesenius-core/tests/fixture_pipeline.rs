@@ -851,12 +851,12 @@ fn fast_index_requires_indented_hebrew_headwords_for_new_boundaries() {
     assert_eq!(
         parsed.entries[0].headword.as_ref().unwrap().coordinates[0].polygon,
         vec![
-            Point { x: 90.0, y: 92.0 },
-            Point { x: 145.0, y: 92.0 },
-            Point { x: 145.0, y: 148.0 },
-            Point { x: 90.0, y: 148.0 },
+            Point { x: 82.0, y: 92.0 },
+            Point { x: 153.0, y: 92.0 },
+            Point { x: 153.0, y: 148.0 },
+            Point { x: 82.0, y: 148.0 },
         ],
-        "headword ground truth must retain word width and pad line height for pointing"
+        "headword ground truth must pad around the word for pointing"
     );
     assert_eq!(
         parsed.entries[1].headword.as_ref().unwrap().normalized,
