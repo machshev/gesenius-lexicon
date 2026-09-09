@@ -193,9 +193,12 @@ PDF-text correction, and Kraken are skipped. Headword accuracy still requires
 source review, especially where the page pass misses a candidate entirely.
 Draft records are saved after every completed page under
 `.cache/gesenius/index-candidates/`, separately from the full machine corpus and
-its review patches. Repeating the same page range resumes cached stages. Include
-consecutive pages in one invocation to preserve entry continuations. The output
-includes all accumulated candidate records for that edition.
+its review patches. Per-page parses and the completed-page ledger are written
+atomically before a page is reported complete. Repeating the same page range
+resumes cached stages. When a newly requested page touches pages already in the
+candidate index, the entire contiguous group is re-analysed to preserve entry
+continuations: adding page 2 after pages 1 and 3 reprocesses pages 1–3. The
+output includes all accumulated candidate records for that edition.
 
 The versioned JSON contains headwords (diplomatic and NFC), IDs and aliases,
 homographs, source polygons and page images, corpus revisions, and provenance.

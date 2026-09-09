@@ -298,7 +298,7 @@ pub struct RunOptions<'a> {
 pub struct RunResult {
     /// Content-addressed run ID.
     pub run_id: String,
-    /// Pages requested.
+    /// Pages processed, including contiguous indexed neighbors re-analysed for boundaries.
     pub pages: Vec<u32>,
     /// Total entries emitted for those pages.
     pub entries: usize,
@@ -409,14 +409,6 @@ fn run_mode(
     if options.pages.is_empty() {
         bail!("page selection is empty");
     }
-    let page_count = options.pages.len();
-    report_progress(
-        &mut report,
-        0,
-        page_count,
-        None,
-        "loading configuration and verifying source",
-    );
     let mut settings = PipelineSettings::load(options.settings_path)?;
     if index_only {
         settings.kraken.enabled = false;
@@ -426,6 +418,37 @@ fn run_mode(
     }
     let catalogue = SourceCatalogue::load(options.catalogue_path)?;
     let source = catalogue.edition(options.edition)?;
+    let corpus_path = options
+        .corpus_root
+        .join(format!("{}.jsonl", options.edition));
+    let base_entries = if corpus_path.exists() {
+        load_entries(&corpus_path)?
+    } else {
+        Vec::new()
+    };
+    let completed_pages_path = index_only.then(|| {
+        options
+            .corpus_root
+            .join(format!("{}.completed-pages.json", options.edition))
+    });
+    let mut completed_pages = if let Some(path) = completed_pages_path.as_deref() {
+        load_completed_pages(path, &base_entries)?
+    } else {
+        BTreeSet::new()
+    };
+    let pages = if index_only {
+        expand_page_selection(options.pages, &completed_pages)
+    } else {
+        options.pages.to_vec()
+    };
+    let page_count = pages.len();
+    report_progress(
+        &mut report,
+        0,
+        page_count,
+        None,
+        "loading configuration and verifying source",
+    );
     let verified = verify_source(source, options.cache_root)?;
     verify_model(&settings.kraken)?;
 
@@ -522,18 +545,10 @@ fn run_mode(
         None
     };
 
-    let corpus_path = options
-        .corpus_root
-        .join(format!("{}.jsonl", options.edition));
-    let base_entries = if corpus_path.exists() {
-        load_entries(&corpus_path)?
-    } else {
-        Vec::new()
-    };
     let mut parsed_pages = Vec::new();
     let mut previous_page_number = None;
     let mut continuation = None;
-    for (page_offset, page_number) in options.pages.iter().enumerate() {
+    for (page_offset, page_number) in pages.iter().enumerate() {
         let page_index = page_offset + 1;
         let mut report_page = |message: &str| {
             report_progress(
@@ -726,9 +741,13 @@ fn run_mode(
         continuation = parsed.entries.last().cloned();
         previous_page_number = Some(*page_number);
         parsed_pages.push(parsed);
-        let completed_pages = options.pages[..page_index].iter().copied().collect();
-        let entries = merge_parsed_pages(&base_entries, &completed_pages, &parsed_pages);
+        let selected_so_far = pages[..page_index].iter().copied().collect();
+        let entries = merge_parsed_pages(&base_entries, &selected_so_far, &parsed_pages);
         write_entries(&corpus_path, &entries)?;
+        if let Some(path) = completed_pages_path.as_deref() {
+            completed_pages.insert(*page_number);
+            write_completed_pages(path, &completed_pages)?;
+        }
         report_page("page complete");
     }
 
@@ -739,7 +758,7 @@ fn run_mode(
         None,
         "merging parsed entries into the machine corpus",
     );
-    let selected_pages: BTreeSet<u32> = options.pages.iter().copied().collect();
+    let selected_pages: BTreeSet<u32> = pages.iter().copied().collect();
     let entries = merge_parsed_pages(&base_entries, &selected_pages, &parsed_pages);
     write_entries(&corpus_path, &entries)?;
 
@@ -751,7 +770,7 @@ fn run_mode(
     report_progress(&mut report, 0, page_count, None, "run complete");
     Ok(RunResult {
         run_id,
-        pages: options.pages.to_vec(),
+        pages,
         entries: parsed_pages.iter().map(|page| page.entries.len()).sum(),
         unparsed_lines,
         corpus_path,
@@ -777,15 +796,62 @@ fn merge_parsed_pages(
 }
 
 fn should_replace_entry(entry: &CorpusEntry, selected_pages: &BTreeSet<u32>) -> bool {
-    entry_source_page(entry).is_some_and(|source_page| selected_pages.contains(&source_page))
-}
-
-fn entry_source_page(entry: &CorpusEntry) -> Option<u32> {
     entry
         .spans()
         .flat_map(|span| span.coordinates.iter())
-        .map(|coordinate| coordinate.source_page)
-        .min()
+        .any(|coordinate| selected_pages.contains(&coordinate.source_page))
+}
+
+fn load_completed_pages(path: &Path, entries: &[CorpusEntry]) -> Result<BTreeSet<u32>> {
+    let mut pages = if path.exists() {
+        serde_json::from_slice(&fs::read(path)?)
+            .with_context(|| format!("invalid completed-page ledger {}", path.display()))?
+    } else {
+        BTreeSet::new()
+    };
+    pages.extend(
+        entries
+            .iter()
+            .flat_map(CorpusEntry::spans)
+            .flat_map(|span| span.coordinates.iter())
+            .map(|coordinate| coordinate.source_page),
+    );
+    Ok(pages)
+}
+
+fn write_completed_pages(path: &Path, pages: &BTreeSet<u32>) -> Result<()> {
+    let parent = path
+        .parent()
+        .with_context(|| format!("path has no parent: {}", path.display()))?;
+    fs::create_dir_all(parent)?;
+    let mut json = serde_json::to_vec_pretty(pages)?;
+    json.push(b'\n');
+    let mut temporary = tempfile::NamedTempFile::new_in(parent)?;
+    std::io::Write::write_all(&mut temporary, &json)?;
+    temporary.as_file().sync_all()?;
+    temporary
+        .persist(path)
+        .map_err(|error| error.error)
+        .with_context(|| format!("failed to persist {}", path.display()))?;
+    Ok(())
+}
+
+fn expand_page_selection(requested: &[u32], completed: &BTreeSet<u32>) -> Vec<u32> {
+    let requested: BTreeSet<u32> = requested.iter().copied().collect();
+    let available: BTreeSet<u32> = completed.union(&requested).copied().collect();
+    let mut expanded = BTreeSet::new();
+    for page in &requested {
+        let mut start = *page;
+        while start > 1 && available.contains(&(start - 1)) {
+            start -= 1;
+        }
+        let mut end = *page;
+        while end < u32::MAX && available.contains(&(end + 1)) {
+            end += 1;
+        }
+        expanded.extend(start..=end);
+    }
+    expanded.into_iter().collect()
 }
 
 fn report_progress(
@@ -2300,7 +2366,14 @@ fn recognize_kraken(
 fn write_page_parse(page_path: &Path, parsed: &ParsedPage) -> Result<()> {
     let mut json = serde_json::to_vec_pretty(parsed)?;
     json.push(b'\n');
-    fs::write(page_path.join("parsed.json"), json)?;
+    let output = page_path.join("parsed.json");
+    let mut temporary = tempfile::NamedTempFile::new_in(page_path)?;
+    std::io::Write::write_all(&mut temporary, &json)?;
+    temporary.as_file().sync_all()?;
+    temporary
+        .persist(&output)
+        .map_err(|error| error.error)
+        .with_context(|| format!("failed to persist {}", output.display()))?;
     Ok(())
 }
 
@@ -2519,11 +2592,11 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 #[cfg(test)]
 mod tests {
     use super::{
-        deduplicate_overlapping_lines, entry_source_page, lexical_prior, normalize_word_candidate,
-        parse_page_spec, parse_pdf_text_layer, restore_attested_edge_punctuation,
-        select_roman_consensus_candidate, select_word_candidate, should_refine_roman_word,
-        should_replace_entry, should_use_isolated_word, trim_unattested_edge_punctuation,
-        WordCandidate,
+        deduplicate_overlapping_lines, expand_page_selection, lexical_prior,
+        normalize_word_candidate, parse_page_spec, parse_pdf_text_layer,
+        restore_attested_edge_punctuation, select_roman_consensus_candidate, select_word_candidate,
+        should_refine_roman_word, should_replace_entry, should_use_isolated_word,
+        trim_unattested_edge_punctuation, WordCandidate,
     };
     use crate::alto::{parse_alto, AltoWord, ScriptTrial};
     use crate::model::{CorpusEntry, Point};
@@ -2582,6 +2655,14 @@ mod tests {
     fn open_ended_page_specs_use_registered_page_count() {
         assert_eq!(parse_page_spec("3-", Some(5)).unwrap(), vec![3, 4, 5]);
         assert!(parse_page_spec("3-", None).is_err());
+    }
+
+    #[test]
+    fn adding_a_gap_reprocesses_its_contiguous_index_neighbors() {
+        let completed = BTreeSet::from([1, 3, 7, 8]);
+        assert_eq!(expand_page_selection(&[2], &completed), vec![1, 2, 3]);
+        assert_eq!(expand_page_selection(&[6], &completed), vec![6, 7, 8]);
+        assert_eq!(expand_page_selection(&[5], &completed), vec![5]);
     }
 
     #[test]
@@ -2762,7 +2843,7 @@ mod tests {
     }
 
     #[test]
-    fn entry_source_page_uses_the_page_where_a_continuation_began() {
+    fn replacing_any_page_removes_an_entry_that_spans_it() {
         let entry: CorpusEntry = serde_json::from_str(
             r#"{
                 "id":"test:p1:e0001",
@@ -2826,8 +2907,7 @@ mod tests {
         )
         .unwrap();
 
-        assert_eq!(entry_source_page(&entry), Some(17));
-        assert!(!should_replace_entry(&entry, &BTreeSet::from([19])));
+        assert!(should_replace_entry(&entry, &BTreeSet::from([19])));
         assert!(should_replace_entry(&entry, &BTreeSet::from([17])));
     }
 
