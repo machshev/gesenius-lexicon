@@ -1852,7 +1852,7 @@ fn extract_headword(line_span: &TextSpan, line: &AltoLine) -> Option<TextSpan> {
         .find(|candidate| trim_headword_edges(&candidate.text) == headword)
     {
         for coordinate in &mut span.coordinates {
-            coordinate.polygon.clone_from(&candidate.polygon);
+            coordinate.polygon = headword_polygon(candidate, line);
         }
     }
     let default_language = headword_default_language(&headword, None);
@@ -1883,7 +1883,7 @@ fn extract_candidate_headword_at(
     // the lemma text. Retain the source identity but narrow every witness to
     // the candidate that supplied the headword.
     for coordinate in &mut span.coordinates {
-        coordinate.polygon.clone_from(&candidate.polygon);
+        coordinate.polygon = headword_polygon(candidate, line);
     }
     let label = line
         .words
@@ -1920,6 +1920,36 @@ fn trim_headword_edges(text: &str) -> &str {
         !character.is_alphanumeric()
             && unicode_normalization::char::canonical_combining_class(character) == 0
     })
+}
+
+fn headword_polygon(candidate: &AltoWord, line: &AltoLine) -> Vec<Point> {
+    let Some((word_x1, word_y1, word_x2, word_y2)) = word_bounds(candidate) else {
+        return candidate.polygon.clone();
+    };
+    let Some((_, line_y1, _, line_y2)) = combined_bounds(line.polygon.iter()) else {
+        return candidate.polygon.clone();
+    };
+    // OCR boxes are fitted principally to letter bodies and regularly clip
+    // Hebrew points just outside the detected line. Keep the headword crop
+    // word-width, but give its vertical extent enough line-relative margin to
+    // retain vowel points and accents for overlays and training samples.
+    let top = word_y1.min(line_y1);
+    let bottom = word_y2.max(line_y2);
+    let padding = (bottom - top) * 0.2;
+    let top = (top - padding).max(0.0);
+    let bottom = bottom + padding;
+    vec![
+        Point { x: word_x1, y: top },
+        Point { x: word_x2, y: top },
+        Point {
+            x: word_x2,
+            y: bottom,
+        },
+        Point {
+            x: word_x1,
+            y: bottom,
+        },
+    ]
 }
 
 fn headword_default_language<'a>(_headword: &str, printed_label: Option<&'a str>) -> &'a str {
