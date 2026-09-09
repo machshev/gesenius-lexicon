@@ -1911,7 +1911,7 @@ fn recognize_tesseract_words(
         &serde_json::to_string(settings)?,
         &serde_json::to_string(classified)?,
         &serde_json::to_string(&pdf_text_page)?,
-        "isolated-word-recognition-v8",
+        "isolated-word-recognition-v9",
     ]);
     let outputs = [output_path.clone(), manifest_path.clone()];
     if stage_is_current(&receipt_path, &input_hash, &outputs)? {
@@ -1931,6 +1931,7 @@ fn recognize_tesseract_words(
     let mut ordinal = 0_usize;
     for region in &mut refined.regions {
         for line in &mut region.lines {
+            let line_polygon = line.polygon.clone();
             let mut used_lexical_priors = BTreeSet::new();
             let announced = announced_line_languages(line, &settings.multilingual_languages);
             let labels = printed_label_languages(&line.words);
@@ -1990,9 +1991,14 @@ fn recognize_tesseract_words(
                         format!("{stem}-padding-{padding}")
                     };
                     let crop_path = words_path.join(format!("{crop_stem}.png"));
-                    let (x, y, width, height) =
-                        padded_word_bounds(word, classified.width, classified.height, padding)
-                            .with_context(|| format!("word {} has empty geometry", word.id))?;
+                    let (x, y, width, height) = padded_word_bounds(
+                        word,
+                        &line_polygon,
+                        classified.width,
+                        classified.height,
+                        padding,
+                    )
+                    .with_context(|| format!("word {} has empty geometry", word.id))?;
                     let crop_arguments = vec![
                         input.display().to_string(),
                         "-crop".to_owned(),
@@ -2226,6 +2232,7 @@ fn recognize_tesseract_words(
 
 fn padded_word_bounds(
     word: &AltoWord,
+    line_polygon: &[Point],
     page_width: u32,
     page_height: u32,
     padding: u32,
@@ -2237,9 +2244,14 @@ fn padded_word_bounds(
         .reduce(f32::min)?
         .floor()
         .max(0.0) as u32;
+    // Word segmentation often bounds only the consonant bodies. Hebrew vowel
+    // points can sit below that box even though they remain within the parent
+    // line. Use the line's vertical cell for recognition without admitting
+    // horizontally adjacent words into the crop.
     let min_y = word
         .polygon
         .iter()
+        .chain(line_polygon)
         .map(|point| point.y)
         .reduce(f32::min)?
         .floor()
@@ -2254,6 +2266,7 @@ fn padded_word_bounds(
     let max_y = word
         .polygon
         .iter()
+        .chain(line_polygon)
         .map(|point| point.y)
         .reduce(f32::max)?
         .ceil()
@@ -2605,7 +2618,7 @@ pub fn assignment_counts(parsed_pages: &[ParsedPage]) -> BTreeMap<&'static str, 
 mod tests {
     use super::{
         deduplicate_overlapping_lines, entry_ending_on_page, lexical_prior,
-        normalize_word_candidate, parse_page_spec, parse_pdf_text_layer,
+        normalize_word_candidate, padded_word_bounds, parse_page_spec, parse_pdf_text_layer,
         restore_attested_edge_punctuation, select_roman_consensus_candidate, select_word_candidate,
         should_refine_roman_word, should_replace_entry, should_use_isolated_word,
         trim_unattested_edge_punctuation, WordCandidate,
@@ -2805,6 +2818,35 @@ mod tests {
         assert_eq!(word.text, "ox,");
         assert_eq!(word.polygon[0], Point { x: 20.0, y: 40.0 });
         assert_eq!(word.polygon[2], Point { x: 40.0, y: 60.0 });
+    }
+
+    #[test]
+    fn isolated_word_crop_keeps_marks_in_the_parent_line_cell() {
+        let word = AltoWord {
+            id: "headword".to_owned(),
+            polygon: vec![
+                Point { x: 100.0, y: 110.0 },
+                Point { x: 140.0, y: 110.0 },
+                Point { x: 140.0, y: 140.0 },
+                Point { x: 100.0, y: 140.0 },
+            ],
+            text: "אב".to_owned(),
+            confidence: 0.66,
+            language: Some("heb".to_owned()),
+            structural_language: true,
+        };
+        let line = vec![
+            Point { x: 90.0, y: 100.0 },
+            Point { x: 500.0, y: 100.0 },
+            Point { x: 500.0, y: 160.0 },
+            Point { x: 90.0, y: 160.0 },
+        ];
+
+        assert_eq!(
+            padded_word_bounds(&word, &line, 1000, 1000, 8),
+            Some((92, 92, 56, 76)),
+            "crop must keep word width but include pointing below its OCR box"
+        );
     }
 
     #[test]
