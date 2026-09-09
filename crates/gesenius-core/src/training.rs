@@ -271,6 +271,16 @@ pub fn execute_kraken_training(
     if training.is_empty() || validation.is_empty() {
         bail!("training and validation partitions must both contain reviewed lines");
     }
+    let training_list = output_root.join("training-paths.txt");
+    fs::write(
+        &training_list,
+        training
+            .iter()
+            .map(|path| path.to_string_lossy())
+            .collect::<Vec<_>>()
+            .join("\n")
+            + "\n",
+    )?;
     let validation_list = output_root.join("validation-paths.txt");
     fs::write(
         &validation_list,
@@ -288,14 +298,17 @@ pub fn execute_kraken_training(
     }
     command.args([
         "--resize",
-        "add",
+        "union",
         "--normalization",
         "NFC",
-        "--no-reorder",
+        "--reorder",
+        "--base-dir",
+        "auto",
         "--format-type",
         "path",
+        "--training-data",
     ]);
-    command.args(&training);
+    command.arg(&training_list);
     command.arg("--evaluation-data").arg(validation_list);
     let output = command
         .output()

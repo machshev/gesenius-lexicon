@@ -307,6 +307,13 @@ page-level train/validation/test partition.
 
 Splits are deterministic by edition and source page, so lines from one page cannot leak across train, validation, and test. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation.
 
+Preparation also writes `training-paths.txt` and `validation-paths.txt`; the
+execution path passes these manifests to Kraken 7.1 with
+`--training-data`/`--evaluation-data` and expands a loaded codec with
+`--resize union`. The Hebrew mark range U+0591–U+05C7 is learnable only for
+code points represented by real reviewed image examples, so inspect the
+emitted alphabet before launching a run.
+
 Model binaries are ignored. Publish them as separately checksummed release artifacts with a completed [model card template](models/model-card.template.toml).
 
 ## Exports and reports
