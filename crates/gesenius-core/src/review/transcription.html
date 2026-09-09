@@ -47,7 +47,7 @@ const message=(text,error=false)=>{$('message').textContent=text;$('message').cl
 async function api(options){const response=await fetch('/api/transcriptions',options);const data=await response.json();if(!response.ok)throw Error(data.error||'Request failed');return data;}
 function updateSaveLabel(){const changed=$('text').value!==current?.draft;$('save').textContent=(changed?'Save corrections':'Approve')+(lines.indexOf(current)<lines.length-1?' & next':'');}
 function render(index){current=lines[index];$('reviewForm').hidden=!current;if(!current)return;dirty=false;$('line').value=String(index);const r=current.review;
-$('title').textContent=`Page ${current.printed_page} · ${current.line_id}`;$('identity').textContent=`PDF page ${current.source_page} · ${current.partition} · ${r?r.state.replaceAll('_',' '):'awaiting review'}`;
+$('title').textContent=`${current.kind==='headword'?'Headword':'Line'} · Page ${current.printed_page} · ${current.line_id}`;$('identity').textContent=`PDF page ${current.source_page} · ${current.partition} · ${r?r.state.replaceAll('_',' '):'awaiting review'}`;
 const url='/api/image?path='+encodeURIComponent(current.crop);$('crop').src=url;$('openCrop').href=url;
 $('reviewer').value=r?.reviewer||localStorage.getItem('transcription-reviewer')||'';$('reviewer').readOnly=!!r;
 $('text').value=r?.text??current.draft??'';$('comment').value=r?.comment||'';$('comparison').open=false;$('independentPanel').hidden=!r?.independent_reading;$('independent').textContent=r?.independent_reading||'';$('draft').textContent=current.draft||'';

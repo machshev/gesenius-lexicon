@@ -15,6 +15,8 @@ use tiny_http::{Method, Request, Response, StatusCode};
 #[derive(Deserialize)]
 struct Manifest {
     partition: String,
+    #[serde(default)]
+    kind: Option<String>,
     printed_page: String,
     lines: Vec<Crop>,
     unresolved: Vec<Uncertainty>,
@@ -123,6 +125,7 @@ struct Update {
 
 #[derive(Debug, Serialize)]
 struct Line {
+    kind: String,
     sample: String,
     line_id: String,
     printed_page: String,
@@ -219,6 +222,7 @@ impl TranscriptionStore {
                     })
                     .cloned();
                 result.push(Line {
+                    kind: manifest.kind.clone().unwrap_or_else(|| "line".to_owned()),
                     sample: sample.clone(),
                     line_id: gold.line_id.clone(),
                     printed_page: manifest.printed_page.clone(),
