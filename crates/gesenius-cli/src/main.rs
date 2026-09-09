@@ -537,15 +537,19 @@ fn review_command(cli: &Cli, command: &ReviewCommands) -> Result<()> {
         ReviewCommands::Serve {
             bind,
             transcription_drafts,
-        } => serve(&ReviewServerOptions {
-            bind,
-            transcription_drafts,
-            corpus_root: &cli.corpus,
-            patch_path: &cli.patches,
-            asset_roots: &[cli.cache.clone(), std::env::current_dir()?],
-            confidence_threshold: 0.8,
-            disagreement_threshold: 0.15,
-        }),
+        } => {
+            let index_candidate_root = cli.cache.join("index-candidates");
+            serve(&ReviewServerOptions {
+                bind,
+                transcription_drafts,
+                corpus_root: &cli.corpus,
+                index_candidate_root: Some(&index_candidate_root),
+                patch_path: &cli.patches,
+                asset_roots: &[cli.cache.clone(), std::env::current_dir()?],
+                confidence_threshold: 0.8,
+                disagreement_threshold: 0.15,
+            })
+        }
     }
 }
 

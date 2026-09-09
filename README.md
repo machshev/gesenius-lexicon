@@ -218,6 +218,10 @@ Start the loopback-only review service:
 cargo run -- review serve --bind 127.0.0.1:8787
 ```
 
+When index candidates exist in `.cache/gesenius/index-candidates`, the review
+server includes them automatically. Machine-corpus entries take precedence
+when the same stable entry ID exists in both sources.
+
 The UI shows the source page and ALTO overlays, complete competing hypotheses, Unicode code points, script warnings, confidence, and editable structured JSON. Saves require the revision the reviewer observed; stale edits receive HTTP 409 rather than silently overwriting newer work.
 
 Choose **Transcription review** in the header (or open `/transcriptions`) to

@@ -81,7 +81,9 @@ struct PageSummary {
 /// On-disk base corpus plus append-only patches.
 #[derive(Debug, Clone)]
 pub struct ReviewStore {
-    corpus_root: PathBuf,
+    /// Base roots from least to most authoritative. Later entries replace
+    /// earlier entries with the same stable ID.
+    corpus_roots: Vec<PathBuf>,
     patch_path: PathBuf,
 }
 
@@ -95,14 +97,26 @@ impl ReviewStore {
             fs::create_dir_all(parent)?;
         }
         Ok(Self {
-            corpus_root: corpus_root.to_owned(),
+            corpus_roots: vec![corpus_root.to_owned()],
             patch_path: patch_path.to_owned(),
         })
     }
 
+    /// Adds a lower-priority corpus whose entries fill gaps in the base corpus.
+    pub fn with_fallback_corpus(mut self, corpus_root: &Path) -> Result<Self> {
+        if !corpus_root.is_dir() {
+            bail!(
+                "fallback corpus root does not exist: {}",
+                corpus_root.display()
+            );
+        }
+        self.corpus_roots.insert(0, corpus_root.to_owned());
+        Ok(self)
+    }
+
     /// Loads base JSONL files and applies patches in append order.
     pub fn materialized_entries(&self) -> Result<Vec<CorpusEntry>> {
-        let mut entries = load_base_entries(&self.corpus_root)?;
+        let mut entries = load_layered_entries(&self.corpus_roots)?;
         let patches = load_patches(&self.patch_path)?;
         apply_patch_sequence(&mut entries, &patches)?;
         entries.sort_by(|left, right| left.id.cmp(&right.id));
@@ -132,7 +146,7 @@ impl ReviewStore {
         patch_file.lock_exclusive()?;
 
         let result = (|| {
-            let mut entries = load_base_entries(&self.corpus_root)?;
+            let mut entries = load_layered_entries(&self.corpus_roots)?;
             patch_file.seek(SeekFrom::Start(0))?;
             let patches = read_patches(&patch_file)?;
             apply_patch_sequence(&mut entries, &patches)?;
@@ -207,6 +221,8 @@ pub struct ReviewServerOptions<'a> {
     pub bind: &'a str,
     /// Base machine corpus directory.
     pub corpus_root: &'a Path,
+    /// Optional lower-priority index-candidate corpus directory.
+    pub index_candidate_root: Option<&'a Path>,
     /// Append-only patch JSONL path.
     pub patch_path: &'a Path,
     /// Source transcription draft directory.
@@ -221,7 +237,10 @@ pub struct ReviewServerOptions<'a> {
 
 /// Serves the local review UI until interrupted.
 pub fn serve(options: &ReviewServerOptions<'_>) -> Result<()> {
-    let store = ReviewStore::open(options.corpus_root, options.patch_path)?;
+    let mut store = ReviewStore::open(options.corpus_root, options.patch_path)?;
+    if let Some(root) = options.index_candidate_root.filter(|root| root.is_dir()) {
+        store = store.with_fallback_corpus(root)?;
+    }
     let transcriptions = transcription::TranscriptionStore {
         root: options.transcription_drafts.to_owned(),
         journal: options
@@ -362,46 +381,47 @@ fn handle_request(
 }
 
 fn summarize_pages(entries: &[CorpusEntry]) -> Vec<PageSummary> {
-    type PageKey = (String, u32, Option<String>, String);
-    let mut pages: BTreeMap<PageKey, BTreeMap<String, PageEntrySummary>> = BTreeMap::new();
+    type PageKey = (String, u32);
+    let mut pages: BTreeMap<PageKey, PageSummary> = BTreeMap::new();
     for entry in entries {
         for span in entry.spans() {
             for coordinate in &span.coordinates {
-                let key = (
-                    entry.edition.clone(),
-                    coordinate.source_page,
-                    coordinate.printed_page.clone(),
-                    coordinate.page_image.clone(),
-                );
-                let page_entry = pages
-                    .entry(key)
-                    .or_default()
-                    .entry(entry.id.clone())
-                    .or_insert_with(|| PageEntrySummary {
-                        id: entry.id.clone(),
-                        headword: entry
-                            .headword
-                            .as_ref()
-                            .map(|headword| headword.normalized.clone()),
-                        review_state: entry.review_state,
-                        polygons: Vec::new(),
+                let page = pages
+                    .entry((entry.edition.clone(), coordinate.source_page))
+                    .or_insert_with(|| PageSummary {
+                        edition: entry.edition.clone(),
+                        source_page: coordinate.source_page,
+                        printed_page: coordinate.printed_page.clone(),
+                        page_image: coordinate.page_image.clone(),
+                        entries: Vec::new(),
                     });
-                page_entry.polygons.push(coordinate.polygon.clone());
+                if page.printed_page.is_none() {
+                    page.printed_page.clone_from(&coordinate.printed_page);
+                }
+                let entry_index = page
+                    .entries
+                    .iter()
+                    .position(|summary| summary.id == entry.id)
+                    .unwrap_or_else(|| {
+                        page.entries.push(PageEntrySummary {
+                            id: entry.id.clone(),
+                            headword: entry
+                                .headword
+                                .as_ref()
+                                .map(|headword| headword.normalized.clone()),
+                            review_state: entry.review_state,
+                            polygons: Vec::new(),
+                        });
+                        page.entries.len() - 1
+                    });
+                let page_entry = &mut page.entries[entry_index];
+                if !page_entry.polygons.contains(&coordinate.polygon) {
+                    page_entry.polygons.push(coordinate.polygon.clone());
+                }
             }
         }
     }
-    pages
-        .into_iter()
-        .map(
-            |((edition, source_page, printed_page, page_image), entries)| PageSummary {
-                edition,
-                source_page,
-                printed_page,
-                page_image,
-                entries: entries.into_values().collect(),
-            },
-        )
-        .collect()
+    pages.into_values().collect()
 }
 
 fn summarize(
@@ -450,6 +470,25 @@ fn load_base_entries(root: &Path) -> Result<Vec<CorpusEntry>> {
         entries.extend(load_entries(&path)?);
     }
     Ok(entries)
+}
+
+fn load_layered_entries(roots: &[PathBuf]) -> Result<Vec<CorpusEntry>> {
+    let mut entries = BTreeMap::new();
+    for root in roots {
+        let root_entries = load_base_entries(root)?;
+        let mut root_ids = std::collections::BTreeSet::new();
+        for entry in root_entries {
+            if !root_ids.insert(entry.id.clone()) {
+                bail!(
+                    "duplicate base entry ID `{}` in {}",
+                    entry.id,
+                    root.display()
+                );
+            }
+            entries.insert(entry.id.clone(), entry);
+        }
+    }
+    Ok(entries.into_values().collect())
 }
 
 fn load_patches(path: &Path) -> Result<Vec<ReviewPatch>> {
@@ -653,9 +692,9 @@ function missingScan(path){return `<p class="warn">Scan unavailable: <code>${esc
 async function scanForPage(spans,page,selectedSpan){let imageUrl='/api/image?path='+encodeURIComponent(page.image),dimensions=await imageSize(imageUrl).catch(()=>null);
 if(!dimensions)return missingScan(page.image);
 return `<svg viewBox="0 0 ${dimensions.width} ${dimensions.height}"><image href="${esc(imageUrl)}" width="${dimensions.width}" height="${dimensions.height}"/>
-${spans.flatMap(s=>s.coordinates.filter(c=>c.page_image===page.image).map(c=>`<polygon class="overlay${s.id===selectedSpan?' selected':''}" data-span="${esc(s.id)}" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.normalized)}</title></polygon>`)).join('')}</svg>`;}
+${spans.flatMap(s=>s.coordinates.filter(c=>c.source_page===page.source).map(c=>`<polygon class="overlay${s.id===selectedSpan?' selected':''}" data-span="${esc(s.id)}" points="${c.polygon.map(p=>p.x+','+p.y).join(' ')}"><title>${esc(s.normalized)}</title></polygon>`)).join('')}</svg>`;}
 async function render(){let spans=[...(current.headword?[current.headword]:[]),...current.blocks.flatMap(b=>b.spans)];
-let pages=[];for(let span of spans)for(let coordinate of span.coordinates)if(!pages.some(page=>page.image===coordinate.page_image))pages.push({image:coordinate.page_image,source:coordinate.source_page,printed:coordinate.printed_page});
+let pages=[];for(let span of spans)for(let coordinate of span.coordinates)if(!pages.some(page=>page.source===coordinate.source_page))pages.push({image:coordinate.page_image,source:coordinate.source_page,printed:coordinate.printed_page});
 let selectedSpan=null,selectedPage=0,scan=pages.length?await scanForPage(spans,pages[0],selectedSpan):'No scan coordinate';
 let hypotheses=spans.map(s=>`<p><b>${esc(s.id)}</b> <span class="muted">${esc(s.language||'und')} · ${esc(s.script)} ${esc(s.direction)} ${Math.round(s.confidence*100)}%${s.language_runs?.length?' · '+s.language_runs.map(run=>esc(run.language)+' '+esc(run.script)+' '+esc(run.evidence)).join(', '):''}</span><br>
 ${s.hypotheses.map(h=>`<code>${esc(h.engine)}:</code> ${esc(h.text)} (${Math.round(h.confidence*100)}%)`).join('<br>')}
@@ -672,7 +711,7 @@ $('#textTab').onclick=()=>showPanel(false);$('#jsonTab').onclick=()=>showPanel(t
 const textLines=()=>[...document.querySelectorAll('.text-line[data-span]')];
 const markSelection=(spanId,wordElement)=>{textLines().forEach(line=>line.classList.toggle('selected',line.dataset.span===spanId));document.querySelectorAll('.text-word.selected').forEach(word=>word.classList.remove('selected'));if(wordElement)wordElement.classList.add('selected');document.querySelectorAll('.overlay').forEach(polygon=>polygon.classList.toggle('selected',polygon.dataset.span===spanId));};
 const bindScan=()=>document.querySelectorAll('.overlay[data-span]').forEach(polygon=>polygon.onclick=()=>{selectedSpan=polygon.dataset.span;markSelection(selectedSpan);let line=textLines().find(candidate=>candidate.dataset.span===selectedSpan);line?.scrollIntoView({block:'center',behavior:'smooth'});});
-const selectText=async(event,line)=>{selectedSpan=line.dataset.span;let span=spans.find(candidate=>candidate.id===selectedSpan),image=span?.coordinates[0]?.page_image,pageIndex=pages.findIndex(page=>page.image===image);if(pageIndex>=0&&pageIndex!==selectedPage){selectedPage=pageIndex;if($('#scanPage'))$('#scanPage').value=String(selectedPage);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();}markSelection(selectedSpan,event.target.closest('.text-word'));};
+const selectText=async(event,line)=>{selectedSpan=line.dataset.span;let span=spans.find(candidate=>candidate.id===selectedSpan),source=span?.coordinates[0]?.source_page,pageIndex=pages.findIndex(page=>page.source===source);if(pageIndex>=0&&pageIndex!==selectedPage){selectedPage=pageIndex;if($('#scanPage'))$('#scanPage').value=String(selectedPage);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();}markSelection(selectedSpan,event.target.closest('.text-word'));};
 textLines().forEach(line=>line.onclick=event=>selectText(event,line));bindScan();
 if(pages.length>1)$('#scanPage').onchange=async event=>{selectedPage=Number(event.target.value);$('#scanCanvas').innerHTML=await scanForPage(spans,pages[selectedPage],selectedSpan);bindScan();};
 $('#viewPage').onclick=async()=>{setMode('pages');await loadPages(pages[selectedPage].image);};
@@ -726,5 +765,7 @@ mod tests {
         assert!(REVIEW_UI.contains("const selectText=async(event,line)=>"));
         assert!(REVIEW_UI.contains("const bindScan=()=>"));
         assert!(REVIEW_UI.contains("line?.scrollIntoView"));
+        assert!(REVIEW_UI.contains("page.source===coordinate.source_page"));
+        assert!(REVIEW_UI.contains("c.source_page===page.source"));
     }
 }
