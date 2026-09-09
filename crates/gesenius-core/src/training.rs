@@ -129,6 +129,22 @@ pub struct TrainingResult {
     pub manifest_path: PathBuf,
     /// Baseline benchmark metrics keyed by OCR engine.
     pub metrics_path: PathBuf,
+    /// Observed and missing code points for the requested Hebrew alphabet.
+    pub alphabet_path: PathBuf,
+}
+
+/// Code-point coverage in the prepared ground truth. Hebrew marks are kept as
+/// individual code points so a missing mark cannot be hidden by normalization.
+#[derive(Debug, Clone, Serialize)]
+pub struct AlphabetAudit {
+    /// Frequency of each code point in prepared transcriptions.
+    pub observed: BTreeMap<u32, usize>,
+    /// Requested Hebrew marks/letters absent from prepared transcriptions.
+    pub missing_hebrew: Vec<u32>,
+}
+
+fn hebrew_target_alphabet() -> impl Iterator<Item = u32> {
+    (0x0591..=0x05c7).chain(0x05d0..=0x05ea)
 }
 
 /// Prepares reviewed line crops and `.gt.txt` files for Kraken.
@@ -151,6 +167,7 @@ pub fn prepare(
     let mut seen_samples = BTreeSet::new();
     let mut records = Vec::new();
     let mut benchmark = BTreeMap::<String, (String, String)>::new();
+    let mut observed = BTreeMap::<u32, usize>::new();
 
     for entry in entries {
         if !selected.contains(&(entry.edition.clone(), entry.printed_page.clone())) {
@@ -193,6 +210,9 @@ pub fn prepare(
                 &coordinate.polygon,
             )?;
             fs::write(&ground_truth, format!("{}\n", span.diplomatic))?;
+            for codepoint in span.diplomatic.chars().map(u32::from) {
+                *observed.entry(codepoint).or_insert(0) += 1;
+            }
             for hypothesis in &span.hypotheses {
                 let pair = benchmark
                     .entry(hypothesis.engine.clone())
@@ -237,6 +257,20 @@ pub fn prepare(
         &metrics_path,
         format!("{}\n", serde_json::to_string_pretty(&benchmark_metrics)?),
     )?;
+    let missing_hebrew = hebrew_target_alphabet()
+        .filter(|codepoint| !observed.contains_key(codepoint))
+        .collect();
+    let alphabet_path = output_root.join("alphabet-audit.json");
+    fs::write(
+        &alphabet_path,
+        format!(
+            "{}\n",
+            serde_json::to_string_pretty(&AlphabetAudit {
+                observed,
+                missing_hebrew,
+            })?
+        ),
+    )?;
     let mut split_counts = BTreeMap::new();
     for record in &records {
         *split_counts
@@ -248,6 +282,7 @@ pub fn prepare(
         split_counts,
         manifest_path,
         metrics_path,
+        alphabet_path,
     })
 }
 
@@ -394,7 +429,7 @@ fn safe_name(value: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::{page_split, Split};
+    use super::{hebrew_target_alphabet, page_split, Split};
 
     #[test]
     fn page_split_is_deterministic_and_page_level() {
@@ -406,5 +441,18 @@ mod tests {
             page_split("robinson-1854", 17),
             Split::Train | Split::Validation | Split::Test
         ));
+    }
+
+    #[test]
+    fn hebrew_target_alphabet_covers_marks_and_letters() {
+        let alphabet: Vec<_> = hebrew_target_alphabet().collect();
+        assert_eq!(alphabet.first(), Some(&0x0591));
+        assert_eq!(alphabet.last(), Some(&0x05ea));
+        assert!(alphabet.contains(&0x05b8));
+        assert!(alphabet.contains(&0x05d0));
+        assert_eq!(
+            alphabet.len(),
+            (0x05c7 - 0x0591 + 1) + (0x05ea - 0x05d0 + 1)
+        );
     }
 }

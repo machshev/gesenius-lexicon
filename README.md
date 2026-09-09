@@ -312,7 +312,8 @@ execution path passes these manifests to Kraken 7.1 with
 `--training-data`/`--evaluation-data` and expands a loaded codec with
 `--resize union`. The Hebrew mark range U+0591–U+05C7 is learnable only for
 code points represented by real reviewed image examples, so inspect the
-emitted alphabet before launching a run.
+emitted `alphabet-audit.json` before launching a run; it lists observed
+frequencies and missing Hebrew marks/letters.
 
 Model binaries are ignored. Publish them as separately checksummed release artifacts with a completed [model card template](models/model-card.template.toml).
 
