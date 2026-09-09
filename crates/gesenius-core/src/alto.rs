@@ -223,9 +223,6 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
             lines,
         });
     }
-    if regions.is_empty() {
-        bail!("ALTO page contains no TextBlock regions");
-    }
     Ok(AltoPage {
         width,
         height,
@@ -2351,6 +2348,10 @@ mod tests {
 </TextLine>
 </TextBlock></PrintSpace></Page></Layout></alto>"#;
 
+    const EMPTY_ALTO: &str = r#"<?xml version="1.0"?>
+<alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
+<Layout><Page WIDTH="1200" HEIGHT="1800"><PrintSpace/></Page></Layout></alto>"#;
+
     const MULTILINGUAL_REORDERED: &str = r#"<?xml version="1.0"?>
 <alto xmlns="http://www.loc.gov/standards/alto/ns-v4#">
 <Layout><Page WIDTH="500" HEIGHT="500"><PrintSpace>
@@ -2373,6 +2374,14 @@ mod tests {
         assert_eq!(page.regions[0].lines[0].words[0].text, "אָב");
         assert_eq!(page.regions[0].lines[0].words[1].polygon[0].x, 70.0);
         assert!(page.regions[0].lines[0].confidence > 0.95);
+    }
+
+    #[test]
+    fn accepts_empty_pages_emitted_by_ocr() {
+        let page = parse_alto(EMPTY_ALTO).unwrap();
+        assert_eq!(page.width, 1200);
+        assert_eq!(page.height, 1800);
+        assert!(page.regions.is_empty());
     }
 
     #[test]
