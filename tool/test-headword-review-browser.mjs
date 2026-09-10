@@ -55,6 +55,19 @@ try {
     assert.equal(await evaluate(`document.querySelector('#text').value`), 'אָב');
     assert.deepEqual(await evaluate('window.TranscriptionRuns.values()'), [{language:'he',direction:'rtl',text:'אָב'}]);
     assert.equal(await evaluate(`document.querySelector('#scalarText').textContent`), 'U+05D0 U+05B8 U+05D1');
+    assert.equal(await evaluate(`document.querySelector('#notHeadword').textContent`), 'Not a headword');
+    const reviewedOutcomes = await evaluate(`allLines.filter(line => line.kind === 'headword').map(line => ({
+        key:line.sample + '/' + line.line_id, state:line.review?.state,
+        crop:line.crop, width:line.sample.includes('p075')&&line.line_id==='headword-0007'?180:
+            line.sample.includes('p200')&&line.line_id==='headword-0003'?105:null
+    })).filter(item => item.state === 'not_headword' || item.width)`);
+    assert.equal(reviewedOutcomes.filter(item => item.state === 'not_headword').length, 3);
+    for (const item of reviewedOutcomes.filter(item => item.width)) {
+        const dimensions = await evaluate(`new Promise((resolve,reject)=>{const image=new Image();
+            image.onload=()=>resolve([image.naturalWidth,image.naturalHeight]);image.onerror=reject;
+            image.src='/api/image?path='+encodeURIComponent(${JSON.stringify(item.crop)});})`);
+        assert.equal(dimensions[0], item.width);
+    }
     await call('Emulation.setDeviceMetricsOverride', {width:390,height:844,deviceScaleFactor:1,mobile:true});
     await evaluate(`document.querySelector('[data-run-text]').scrollIntoView({block:'center'})`);
     assert.equal(await evaluate(`(() => {const f=document.querySelector('[data-run-text]');const r=f.getBoundingClientRect();return document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)===f;})()`), true);

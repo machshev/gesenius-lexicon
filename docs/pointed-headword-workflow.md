@@ -106,6 +106,9 @@ queue-seeding command. Training samples use the same `draft.json` / `review.json
 - A human checks every crop, edits logical-order Hebrew with the pointing
   keyboard, and resolves or leaves it uncertain. The scalar display exposes the
   stored order and combining points. Hidden bidi controls are rejected.
+- Use **Not a headword** for a false entry start. It remains in the review audit
+  but is omitted from training export. Use **Wrong crop / unreadable** when a
+  real headword needs geometry repair or cannot yet be read.
 - Transcribe printed points without dictionary inference. Include printed
   vowels, dagesh/mappiq, shin/sin dots and other visible Hebrew marks. Exclude
   adjacent asterisks, grammar labels and homograph numbers. Truly unpointed
@@ -145,6 +148,13 @@ hashes, split hash, diplomatic text and NFC separately, and a hash of the exact
 and validation counts, without claiming absent code points need manufactured
 examples. The authoritative split file is copied alongside the data. Absolute
 image/text paths bind the manifest to its output directory; re-export if moved.
+
+Reviewed crop repairs may be recorded in
+`corpus/review/headword-candidate-corrections.json` and applied with
+`python3 tool/apply-headword-candidate-corrections.py`. The tool validates the
+exact unresolved review text and comment, retains the previous geometry and
+hashes, and binds the corrected crop to the full-line context the reviewer
+inspected. Repeated execution is byte-for-byte stable.
 
 ## Train only after review and the smoke experiment
 

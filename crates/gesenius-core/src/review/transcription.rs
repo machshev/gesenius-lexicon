@@ -47,6 +47,7 @@ enum State {
     Reading,
     Resolved,
     Unresolved,
+    NotHeadword,
 }
 
 #[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
@@ -56,6 +57,8 @@ enum ReviewMethod {
     #[default]
     LegacySourceFirst,
     DraftAssisted,
+    CropCorrectedFromReviewedContext,
+    SourceManifestMigration,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
@@ -113,6 +116,10 @@ struct Record {
     state: State,
     comment: String,
     reviewed_at: DateTime<Utc>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    supersedes_source_digest: Option<String>,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    reviewed_context_sha256: Option<String>,
 }
 
 #[derive(Deserialize)]
@@ -275,8 +282,10 @@ impl TranscriptionStore {
     }
 
     fn apply(&self, update: Update) -> Result<Record> {
-        if update.reviewer.trim().is_empty() || update.text.trim().is_empty() {
-            bail!("reviewer and transcription are required");
+        if update.reviewer.trim().is_empty()
+            || (update.state != State::NotHeadword && update.text.trim().is_empty())
+        {
+            bail!("reviewer is required, and transcription is required for a headword");
         }
         if update.text.chars().any(|c| matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}' | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')) {
             bail!("remove hidden bidi controls; use text-run direction instead");
@@ -287,7 +296,9 @@ impl TranscriptionStore {
         if update.state == State::Reading {
             bail!("the draft is now visible; reload and save a resolved or unresolved review");
         }
-        if update.state == State::Unresolved && update.comment.trim().is_empty() {
+        if matches!(update.state, State::Unresolved | State::NotHeadword)
+            && update.comment.trim().is_empty()
+        {
             bail!("describe the uncertainty before saving an unresolved line");
         }
         if let Some(parent) = self.journal.parent() {
@@ -337,6 +348,8 @@ impl TranscriptionStore {
                 state: update.state,
                 comment: update.comment,
                 reviewed_at: Utc::now(),
+                supersedes_source_digest: None,
+                reviewed_context_sha256: None,
             };
             serde_json::to_writer(&mut file, &record)?;
             file.write_all(b"\n")?;
@@ -468,6 +481,9 @@ pub fn export_headwords(
             .rev()
             .find(|r| r.sample == line.sample && r.line_id == line.line_id)
             .context("headword has no human review")?;
+        if review.source_digest == line.source_digest && review.state == State::NotHeadword {
+            continue;
+        }
         if review.source_digest != line.source_digest
             || review.state != State::Resolved
             || review.reviewer.trim().is_empty()
@@ -679,6 +695,26 @@ mod tests {
             &temp.path().join("stale")
         )
         .is_err());
+    }
+
+    #[test]
+    fn rejected_headword_candidate_is_audited_and_not_exported() {
+        let (temp, store, splits) = headword_fixture("training", "11");
+        let line = store.lines().unwrap().remove(0);
+        let mut rejected = update(&line, State::NotHeadword);
+        rejected.text.clear();
+        rejected.comment = "This crop is body text".to_owned();
+        let saved = store.apply(rejected).unwrap();
+        assert_eq!(saved.state, State::NotHeadword);
+        assert_eq!(saved.comment, "This crop is body text");
+        let error = export_headwords(
+            &store.root,
+            &store.journal,
+            &splits,
+            &temp.path().join("export"),
+        )
+        .unwrap_err();
+        assert!(error.to_string().contains("no resolved"));
     }
 
     #[test]
