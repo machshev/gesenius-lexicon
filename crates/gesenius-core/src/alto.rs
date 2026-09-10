@@ -172,6 +172,13 @@ pub fn parse_alto(xml: &str) -> Result<AltoPage> {
             for child in line_node.descendants().filter(|node| node.is_element()) {
                 if child.has_tag_name("String") {
                     let content = child.attribute("CONTENT").unwrap_or_default();
+                    // Kraken 7.1 can emit a geometry-free empty String for a
+                    // segmented line on which recognition found no text. It
+                    // carries neither text nor a word location, so ignore it
+                    // while retaining the enclosing line geometry.
+                    if content.is_empty() {
+                        continue;
+                    }
                     if !text.is_empty() && !text.ends_with(char::is_whitespace) {
                         text.push(' ');
                     }
@@ -2487,6 +2494,19 @@ mod tests {
         assert_eq!(page.width, 1200);
         assert_eq!(page.height, 1800);
         assert!(page.regions.is_empty());
+    }
+
+    #[test]
+    fn ignores_geometry_free_empty_kraken_strings() {
+        let alto = ALTO.replace(
+            "<String CONTENT=\"אָב\" WC=\"0.91\" HPOS=\"10\" VPOS=\"20\" WIDTH=\"50\" HEIGHT=\"40\"/>",
+            "<String CONTENT=\"\"/>",
+        );
+
+        let page = parse_alto(&alto).unwrap();
+
+        assert_eq!(page.regions[0].lines[0].text, "father");
+        assert_eq!(page.regions[0].lines[0].words.len(), 1);
     }
 
     #[test]
