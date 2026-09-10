@@ -1,8 +1,8 @@
 // Start Chromium with --headless --remote-debugging-port=9223, then run with Node 22+.
 // Uses only local CDP and never submits a review to the live journal.
 import assert from 'node:assert/strict';
-const tabs = await (await fetch('http://127.0.0.1:9223/json/list')).json();
-const socket = new WebSocket(tabs.find(tab => tab.type === 'page').webSocketDebuggerUrl);
+const tab = await (await fetch('http://127.0.0.1:9223/json/new?about:blank', {method:'PUT'})).json();
+const socket = new WebSocket(tab.webSocketDebuggerUrl);
 await new Promise(resolve => socket.addEventListener('open', resolve, {once:true}));
 let id = 0;
 const pending = new Map();
@@ -61,5 +61,6 @@ try {
     assert.deepEqual(errors, []);
     console.log(`Passed: ${state.samples} headword candidates; visible desktop editor; Hebrew typing, scalars and mobile hit testing. No review submitted.`);
 } finally {
+    await call('Target.closeTarget', {targetId:tab.id});
     socket.close();
 }
