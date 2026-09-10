@@ -64,7 +64,7 @@ The English Tesseract pass first supplies page layout, then each multi-line layo
 ```text
 gesenius source fetch|import|verify
 gesenius run --edition EDITION --pages PAGES
-gesenius train [--execute]
+gesenius train --splits PATH [--headwords-only] [--execute]
 gesenius validate
 gesenius review serve
 gesenius export --format jsonl|tei|sqlite --output DIRECTORY
@@ -283,7 +283,7 @@ Changed source/draft metadata or crop hashes cannot silently reuse an old review
 These decisions do not automatically promote text into gold or alter corpus
 entries. Reloading the page restores saved progress. Drafts default to
 `benchmarks/transcription-drafts`; override with `review serve
---transcription-drafts PATH`. Only samples labelled development or validation
+--transcription-drafts PATH`. Only samples labelled training, development or validation
 are offered. This is a local review workflow, not authenticated reviewer identity.
 
 During a multipage `run`, each completed page is atomically published to the machine corpus. Use **Reload** in an already-running review UI to browse and review that page while OCR continues on later pages.
@@ -293,8 +293,8 @@ Reviews append complete replacements to `corpus/review/patches.jsonl`. Machine J
 `pilot.toml` fixes 24 printed-page labels per edition and records why each page was selected. Once corrected or verified pilot spans exist:
 
 ```console
-cargo run -- train --pilot pilot.toml --output training
-cargo run -- train --pilot pilot.toml --output training \
+cargo run -- train --pilot pilot.toml --splits PATH --output training
+cargo run -- train --pilot pilot.toml --splits PATH --output training \
   --execute --output-model training/checkpoints \
   --base-model models/base.mlmodel
 ```
@@ -303,17 +303,24 @@ Reviewed headwords are emitted as dedicated word-crop training samples, in
 addition to reviewed entry lines. This lets corrections to fine vowel points
 feed the recognizer without pairing a short lemma transcription with the whole
 mixed-language source line. Headword and line samples stay in the same
-page-level train/validation/test partition.
+explicit page-level partition. Add `--headwords-only` to exclude entry lines.
 
-Splits are deterministic by edition and source page, so lines from one page cannot leak across train, validation, and test. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation.
+Supply an authoritative printed-page split manifest with `--splits PATH`; unlisted reviewed pages are rejected, and development/final-test pages are excluded from preparation. The hash-based split fallback has been removed. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation.
 
-Preparation also writes `training-paths.txt` and `validation-paths.txt`; the
+The execution step writes `training-paths.txt` and `validation-paths.txt`; the
 execution path passes these manifests to Kraken 7.1 with
 `--training-data`/`--evaluation-data` and expands a loaded codec with
 `--resize union`. The Hebrew mark range U+0591–U+05C7 is learnable only for
 code points represented by real reviewed image examples, so inspect the
-emitted `alphabet-audit.json` before launching a run; it lists observed
-frequencies and missing Hebrew marks/letters.
+emitted `alphabet-audit.json` before launching a run; corpus preparation lists
+training-only observed frequencies and missing Hebrew marks/letters. Missing
+code points are not a requirement to manufacture labels.
+
+For the pointed-headword benchmark and deliberate human review export, see the
+[headword workflow](docs/pointed-headword-workflow.md). `export-headword-training`
+creates auditable headword-only pairs; `train-prepared` validates and trains an
+existing export. Training and model rollout still require reviewed data and
+the bounded recognition experiment.
 
 Model binaries are ignored. Publish them as separately checksummed release artifacts with a completed [model card template](models/model-card.template.toml).
 

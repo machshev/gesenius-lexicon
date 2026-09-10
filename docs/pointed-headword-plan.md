@@ -1,7 +1,7 @@
 # Accurate pointed Hebrew headwords
 
-Status: proposed implementation plan, 2026-09-10. No training or corpus changes
-were performed for this plan. Complements `ocr-accuracy-plan.md`, with Robinson
+Status: first-milestone tooling implemented, 2026-09-10. No training or reviewed
+corpus changes were performed. See [implementation and remaining gates](pointed-headword-workflow.md). Complements `ocr-accuracy-plan.md`, with Robinson
 1854 headwords as the first bounded target; assess Tregelles separately.
 
 ## Recommendation and observed failure
@@ -46,7 +46,7 @@ Important integration constraints found in current source:
 
 ## 1. Establish a reproducible headword benchmark
 
-- [ ] Preserve the page-17 example as a development regression with image/source
+- [x] Preserve the page-17 example as a development regression with image/source
   identity, rectangle, raw candidates, expected scalars, and final output.
 - [ ] Audit 100–200 headwords initially across multiple pages and alphabet
   sections. Inventory every true headword on selected pages, including missed
@@ -173,7 +173,8 @@ do not automatically promote an entire machine corpus to verified.
   reproducible baseline for rollback. Commit implementation and reviewed corpus
   changes as separate milestones; model weights remain external artifacts.
 
-First implementation milestone: page-17 regression evidence, a headword benchmark
-and review-to-training export with a unified split policy. Then collect the first
+First implementation milestone tooling is implemented: page-17 regression evidence,
+a headword benchmark evaluator and review-to-training export with a unified split
+policy. The representative inventory and human-reviewed batch are still pending. Then collect the first
 reviewed batch and train the specialist. A full-book OCR rerun is unnecessary
 until this bounded experiment demonstrates improvement.

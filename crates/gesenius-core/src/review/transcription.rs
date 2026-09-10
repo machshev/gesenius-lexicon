@@ -328,6 +328,7 @@ impl TranscriptionStore {
                 independent_reading: line
                     .review
                     .as_ref()
+                    .filter(|record| record.reviewer == update.reviewer.trim())
                     .and_then(|record| record.independent_reading.clone()),
                 review_method: ReviewMethod::DraftAssisted,
                 displayed_draft: line.draft.clone(),
@@ -687,10 +688,17 @@ mod tests {
         store.apply(update(&line, State::Resolved)).unwrap();
         let output = temp.path().join("export");
         assert!(export_headwords(&store.root, &store.journal, &splits, &output).is_err());
+        let mut previous = store.records().unwrap().remove(0);
+        previous.independent_reading = Some(previous.text.clone());
+        fs::write(
+            &store.journal,
+            format!("{}\n", serde_json::to_string(&previous).unwrap()),
+        )
+        .unwrap();
         let line = store.lines().unwrap().remove(0);
         let mut second = update(&line, State::Resolved);
         second.reviewer = "Second test reviewer".into();
-        store.apply(second).unwrap();
+        assert!(store.apply(second).unwrap().independent_reading.is_none());
         assert_eq!(
             export_headwords(&store.root, &store.journal, &splits, &output).unwrap(),
             1
