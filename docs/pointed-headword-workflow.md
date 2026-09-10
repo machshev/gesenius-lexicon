@@ -148,10 +148,11 @@ Export deliberately fails if any included fitting/validation headword is
 unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
-The checked-in reviews currently export 16 fitting and six validation headwords.
-Another 27 fitting candidates are queued on printed pages 300, 400, 550, 650,
-and 850. Printed page 25 produced no detected candidate in the bounded fast run;
-the complete-page inventory must determine whether this is a detection miss.
+The checked-in reviews currently export 39 fitting and six validation headwords.
+Reviewed boundary corrections remove adjacent labels, punctuation, and stars;
+one source-segmentation-clipped crop is explicitly excluded as unusable. Printed
+page 25 produced no detected candidate in the bounded fast run; the complete-page
+inventory must determine whether this is a detection miss.
 
 The new output directory is published only after validation and writing finish;
 existing directories cannot be overwritten. `ground-truth.jsonl` records
@@ -194,8 +195,8 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-initial batch has 16 exportable fitting crops and six validation crops; 27 more
-fitting candidates await review. Expand validation and resolve ambiguous marks.
+initial batch has 39 exportable fitting crops and six validation crops. Expand
+the reviewed training and validation sets and resolve ambiguous marks.
 Then compare crop/preprocessing variants
 and base models, smoke-test Kraken 7.1, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to
