@@ -117,8 +117,9 @@ python3 tool/prepare-headword-review.py \
   keyboard, and resolves or leaves it uncertain. The scalar display exposes the
   stored order and combining points. Hidden bidi controls are rejected.
 - Use **Not a headword** for a false entry start. It remains in the review audit
-  but is omitted from training export. Use **Wrong crop / unreadable** when a
-  real headword needs geometry repair or cannot yet be read.
+  but is omitted from training export. Use **Needs crop repair** when a real
+  headword can be recovered from its context. Use **Exclude unusable crop** only
+  when the pixels required for a trustworthy label are absent or unreadable.
 - Transcribe printed points without dictionary inference. Include printed
   vowels, dagesh/mappiq, shin/sin dots and other visible Hebrew marks. Exclude
   adjacent asterisks, grammar labels and homograph numbers. Truly unpointed
@@ -131,8 +132,9 @@ python3 tool/prepare-headword-review.py \
 Crop adjustment currently means replacing the crop and updating its geometry,
 commands and hashes in the draft manifest. This invalidates prior reviews;
 review the new crop before export. A drag-to-adjust crop editor is still pending.
-Uncertain/unreadable headwords remain unresolved with a note; they cannot be
-exported. Do not fill unreadable glyphs with guessed vowels.
+Unrepaired headwords remain unresolved and block export. Explicitly excluded
+unusable crops remain in the audit but are omitted from export. Do not fill
+unreadable glyphs with guessed vowels.
 
 ```console
 cargo run -- export-headword-training \

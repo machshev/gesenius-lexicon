@@ -56,6 +56,7 @@ try {
     assert.deepEqual(await evaluate('window.TranscriptionRuns.values()'), [{language:'he',direction:'rtl',text:'אָב'}]);
     assert.equal(await evaluate(`document.querySelector('#scalarText').textContent`), 'U+05D0 U+05B8 U+05D1');
     assert.equal(await evaluate(`document.querySelector('#notHeadword').textContent`), 'Not a headword');
+    assert.equal(await evaluate(`document.querySelector('#excluded').textContent`), 'Exclude unusable crop');
     const reviewedOutcomes = await evaluate(`allLines.filter(line => line.kind === 'headword').map(line => ({
         key:line.sample + '/' + line.line_id, state:line.review?.state,
         crop:line.crop, width:line.sample.includes('p075')&&line.line_id==='headword-0007'?180:

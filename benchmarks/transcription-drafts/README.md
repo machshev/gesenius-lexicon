@@ -113,7 +113,9 @@ No text was promoted to gold or used to tune recognition.
 Run `cargo run -- review serve` and choose **Transcription review** in the header.
 The form shows the draft and uncertainty list immediately. Compare it with the
 crop and choose **Approve & next**, or edit it and **Save corrections & next**.
-Use **Needs fixes / uncertain** with a note when a reading remains unresolved.
+Use **Needs crop repair** with a note when geometry can be corrected. Use
+**Exclude unusable crop** when required pixels are absent or unreadable; this
+keeps the decision in the audit while omitting the crop from training export.
 Saved records include reviewer, timestamp, source digest, displayed draft, final
 reading, notes, revision and `review_method: draft_assisted`; they append to
 `corpus/review/transcription-reviews.jsonl`. No JSON editing is needed. Existing

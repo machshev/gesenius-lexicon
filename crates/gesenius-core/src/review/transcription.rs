@@ -48,6 +48,7 @@ enum State {
     Resolved,
     Unresolved,
     NotHeadword,
+    Excluded,
 }
 
 #[derive(Clone, Debug, Default, Deserialize, Serialize, PartialEq, Eq)]
@@ -283,7 +284,8 @@ impl TranscriptionStore {
 
     fn apply(&self, update: Update) -> Result<Record> {
         if update.reviewer.trim().is_empty()
-            || (update.state != State::NotHeadword && update.text.trim().is_empty())
+            || (!matches!(update.state, State::NotHeadword | State::Excluded)
+                && update.text.trim().is_empty())
         {
             bail!("reviewer is required, and transcription is required for a headword");
         }
@@ -296,8 +298,10 @@ impl TranscriptionStore {
         if update.state == State::Reading {
             bail!("the draft is now visible; reload and save a resolved or unresolved review");
         }
-        if matches!(update.state, State::Unresolved | State::NotHeadword)
-            && update.comment.trim().is_empty()
+        if matches!(
+            update.state,
+            State::Unresolved | State::NotHeadword | State::Excluded
+        ) && update.comment.trim().is_empty()
         {
             bail!("describe the uncertainty before saving an unresolved line");
         }
@@ -481,7 +485,9 @@ pub fn export_headwords(
             .rev()
             .find(|r| r.sample == line.sample && r.line_id == line.line_id)
             .context("headword has no human review")?;
-        if review.source_digest == line.source_digest && review.state == State::NotHeadword {
+        if review.source_digest == line.source_digest
+            && matches!(review.state, State::NotHeadword | State::Excluded)
+        {
             continue;
         }
         if review.source_digest != line.source_digest
@@ -704,6 +710,26 @@ mod tests {
         let saved = store.apply(rejected).unwrap();
         assert_eq!(saved.state, State::NotHeadword);
         assert_eq!(saved.comment, "This crop is body text");
+        let error = export_headwords(
+            &store.root,
+            &store.journal,
+            &splits,
+            &temp.path().join("export"),
+        )
+        .unwrap_err();
+        assert!(error.to_string().contains("no resolved"));
+    }
+
+    #[test]
+    fn unusable_headword_crop_is_audited_and_not_exported() {
+        let (temp, store, splits) = headword_fixture("training", "11");
+        let line = store.lines().unwrap().remove(0);
+        let mut excluded = update(&line, State::Excluded);
+        excluded.text.clear();
+        excluded.runs = None;
+        excluded.comment = "Source segmentation clips the final letter".to_owned();
+        let saved = store.apply(excluded).unwrap();
+        assert_eq!(saved.state, State::Excluded);
         let error = export_headwords(
             &store.root,
             &store.journal,
