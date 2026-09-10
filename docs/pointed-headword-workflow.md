@@ -77,8 +77,25 @@ The transcription queue and review export do not expose final-test material.
 
 ## Collect and export headword reviews
 
-The development regression is also a draft in the existing `/transcriptions`
-review UI. Training samples use the same `draft.json` / `review.json` layout:
+The `/transcriptions` review UI opens the headword queue by default, with a
+compact crop and a labelled Hebrew input. The sample-type selector also exposes
+line reviews. The seeded queue contains the development regression plus 20
+unreviewed machine candidates across printed pages 11, 75, 100, 125 and 200.
+These are detected candidates, not a complete inventory of those pages.
+
+To add candidates from another cached per-edition run:
+
+```console
+python3 tool/prepare-headword-review.py \
+  --run-root .cache/gesenius/runs/RUN/robinson-1854 \
+  --splits benchmarks/sample-inventory/robinson-1854-splits.toml
+```
+
+The generator reads only assigned training/development pages, leaves existing
+sample directories alone, excludes headwords propagated from prior pages, and
+records original crops, full-line context, hashes and OCR suggestions. It never
+creates review decisions. Validation and final-test pages are not opened by this
+queue-seeding command. Training samples use the same `draft.json` / `review.json` layout:
 
 - Set `kind` to `headword`, `partition` to `training` or `validation`, and the
   authoritative `printed_page`. The draft carries edition, PDF page and PDF hash.
