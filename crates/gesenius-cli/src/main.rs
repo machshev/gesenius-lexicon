@@ -73,6 +73,9 @@ enum Commands {
         output_model: PathBuf,
         #[arg(long)]
         base_model: Option<PathBuf>,
+        /// Stop after exactly this many epochs (recommended for smoke tests).
+        #[arg(long)]
+        epochs: Option<usize>,
     },
     /// Evaluate frozen headword predictions with exact and base-aligned mark metrics.
     BenchmarkHeadwords {
@@ -295,7 +298,8 @@ fn main() -> Result<()> {
             prepared,
             output_model,
             base_model,
-        } => execute_kraken_training(prepared, output_model, base_model.as_deref()),
+            epochs,
+        } => execute_kraken_training(prepared, output_model, base_model.as_deref(), *epochs),
         Commands::BenchmarkHeadwords {
             manifest,
             predictions,
@@ -573,6 +577,7 @@ fn train_command(cli: &Cli, arguments: &TrainArguments) -> Result<()> {
             &arguments.output,
             output_model,
             arguments.base_model.as_deref(),
+            None,
         )?;
     }
     print_json(&result)

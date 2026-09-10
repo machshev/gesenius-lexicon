@@ -337,6 +337,7 @@ pub fn execute_kraken_training(
     output_root: &Path,
     output_model: &Path,
     base_model: Option<&Path>,
+    epochs: Option<usize>,
 ) -> Result<()> {
     let records = read_ground_truth(&output_root.join("ground-truth.jsonl"))?;
     validate_training_records(
@@ -381,6 +382,14 @@ pub fn execute_kraken_training(
     if let Some(base_model) = base_model {
         command.arg("--load").arg(base_model);
     }
+    if let Some(epochs) = epochs {
+        if epochs == 0 {
+            bail!("training epochs must be greater than zero");
+        }
+        command
+            .args(["--quit", "fixed", "--epochs"])
+            .arg(epochs.to_string());
+    }
     command.args([
         "--resize",
         "union",
@@ -395,14 +404,11 @@ pub fn execute_kraken_training(
     ]);
     command.arg(&training_list);
     command.arg("--evaluation-data").arg(validation_list);
-    let output = command
-        .output()
+    let status = command
+        .status()
         .context("failed to execute ketos; enter `nix develop`")?;
-    if !output.status.success() {
-        bail!(
-            "Kraken training failed:\n{}",
-            String::from_utf8_lossy(&output.stderr).trim()
-        );
+    if !status.success() {
+        bail!("Kraken training failed with status {status}");
     }
     Ok(())
 }

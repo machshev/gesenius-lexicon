@@ -1,10 +1,12 @@
 # Accurate pointed Hebrew headwords
 
-Status: first-milestone tooling and an initial reviewed batch of 39 training and
-6 validation samples implemented, 2026-09-10. A further 3 training and 24
-validation candidates are queued for human review. One unusable crop and six false
-detections are audit-only exclusions; no
-training was performed. See [implementation and remaining gates](pointed-headword-workflow.md). Complements `ocr-accuracy-plan.md`, with Robinson
+Status: first-milestone tooling and reviewed training data implemented,
+2026-09-10. A clean bounded export currently contains 34 training and 6
+validation samples; additional reviewed crop edits are stale until re-reviewed,
+and page 925 remains queued. A bounded Kraken 7.1 smoke attempt initialized the
+pinned PP-OCRv6 medium model but was killed before completing an epoch, so no
+checkpoint or training result exists. See [implementation and remaining
+gates](pointed-headword-workflow.md). Complements `ocr-accuracy-plan.md`, with Robinson
 1854 headwords as the first bounded target; assess Tregelles separately.
 
 ## Recommendation and observed failure

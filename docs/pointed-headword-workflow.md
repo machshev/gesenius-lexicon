@@ -155,9 +155,10 @@ Export deliberately fails if any included fitting/validation headword is
 unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
-The checked-in reviews currently export 39 fitting and six validation headwords.
-The newly queued fitting and validation candidates do not change those totals
-until they receive source-checked human decisions.
+Because the full queue includes unfinished and stale crop revisions, use the
+exporter's named diagnostics to finish those decisions before the next complete
+export. The clean subset used by the first smoke attempt exported 34 fitting and
+six validation headwords.
 Reviewed boundary corrections remove adjacent labels, punctuation, and stars;
 one source-segmentation-clipped crop is explicitly excluded as unusable. A later
 complete cached run supplied three page-25 candidates; a complete-page inventory
@@ -186,6 +187,20 @@ cargo run -- train-prepared --prepared training/headwords-v1 \
   --output-model training/checkpoints --base-model models/base.mlmodel
 ```
 
+For a bounded mechanics check, add `--epochs 1`. This selects Kraken's fixed
+stop condition and streams its progress to the terminal. Omit the option for
+validation-based early stopping in a substantive run.
+
+On 2026-09-10 a clean bounded export of the current reviews produced 34 fitting
+and six validation pairs. A one-epoch smoke run with Kraken 7.1 and the pinned
+PP-OCRv6 medium weights passed split/hash validation, loaded the weights,
+expanded the codec, and initialized training. The 34.7M-parameter training
+network was then terminated by `SIGKILL` before completing the epoch, so it
+produced no checkpoint. Kraken also warned that the base weights were trained
+with baseline geometry while path-mode crop input is treated as bounding-box
+geometry. Treat both resource sizing and the geometry mismatch as unresolved;
+this is not a successful training result.
+
 Before invoking Kraken, the command rechecks page assignments, image/text
 hashes, duplicate crops, and the presence of train and validation data. This
 uses the repository's existing Kraken invocation; pinned 7.1 command support,
@@ -204,11 +219,13 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-initial batch has 39 exportable fitting crops and six validation crops; another
-three fitting and 24 validation candidates are queued but unreviewed. Expand the
-reviewed training set and resolve the queued validation material and ambiguous marks.
-Then compare crop/preprocessing variants
-and base models, smoke-test Kraken 7.1, run learning curves, and choose a model
+clean smoke subset has 34 exportable fitting crops and six validation crops.
+Expand the reviewed training set and resolve the queued validation material and
+ambiguous marks.
+The latest crop edits also need fresh decisions for stale items on pages 475,
+550, and 650; page 925 remains unreviewed. Then compare crop/preprocessing variants
+and base models, resolve the Kraken geometry/resource issue, complete the Kraken
+7.1 smoke test, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to
 fast/full parsing with auditable word-level selection and uncertainty routing.
 Human correction replay, bounded regenerated-page comparisons, final-test
