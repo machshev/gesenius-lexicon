@@ -68,6 +68,15 @@ try {
     })()`);
     assert.equal(unreviewedFilter.actual, unreviewedFilter.expected);
     assert.equal(unreviewedFilter.allVisible, true);
+    const cropEditor = await evaluate(`(() => {
+        const zoom=document.querySelector('#cropEditorZoom');zoom.value='300';zoom.dispatchEvent(new Event('change'));
+        document.querySelector('#cropDrawMode').click();
+        return {zoom:document.querySelector('#cropEditorStage').style.width,
+            mode:document.querySelector('#cropEditorStage').classList.contains('draw-mode'),
+            drawPressed:document.querySelector('#cropDrawMode').getAttribute('aria-pressed'),
+            panPressed:document.querySelector('#cropPanMode').getAttribute('aria-pressed')};
+    })()`);
+    assert.deepEqual(cropEditor, {zoom:'300%',mode:true,drawPressed:'true',panPressed:'false'});
     const reviewedOutcomes = await evaluate(`allLines.filter(line => line.kind === 'headword').map(line => ({
         key:line.sample + '/' + line.line_id, state:line.review?.state,
         crop:line.crop, width:line.sample.includes('p075')&&line.line_id==='headword-0007'?180:

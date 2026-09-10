@@ -133,10 +133,12 @@ python3 tool/prepare-headword-review.py \
   second reviewer is not required. This remains a local, unauthenticated review
   workflow.
 
-For source-backed headword candidates, expand **Edit crop from source page** and
-drag a new rectangle over the processed page. Saving creates versioned processed
-and original crops, updates geometry, replay commands and hashes, and invalidates
-any prior review; review the new crop before export. Unrepaired headwords remain
+For source-backed headword candidates, expand **Edit crop from source page**. The
+editor starts at 200% centered on the current crop; use **Pan**, zoom between
+100–500%, then choose **Draw crop** and drag a new rectangle over the processed
+page. Saving creates versioned processed and original crops, updates geometry,
+replay commands and hashes, and invalidates any prior review; review the new crop
+before export. Unrepaired headwords remain
 unresolved and block export. Explicitly excluded
 unusable crops remain in the audit but are omitted from export. Do not fill
 unreadable glyphs with guessed vowels.
