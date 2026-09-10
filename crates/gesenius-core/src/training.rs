@@ -2,13 +2,14 @@
 
 use crate::metrics::{recognition_metrics, RecognitionMetrics};
 use crate::model::{CorpusEntry, Point, ReviewState};
+use crate::page_splits::{PageSplits, Partition};
 use anyhow::{bail, Context, Result};
 use serde::{Deserialize, Serialize};
-use sha2::{Digest, Sha256};
 use std::collections::{BTreeMap, BTreeSet};
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;
+use unicode_normalization::UnicodeNormalization;
 
 /// Fixed pilot specification.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -116,6 +117,10 @@ pub struct GroundTruthRecord {
     pub ground_truth: PathBuf,
     /// Entry and span that supplied the correction.
     pub source_span: String,
+    /// SHA-256 of the exact cropped PNG.
+    pub crop_sha256: String,
+    /// SHA-256 of the UTF-8 ground-truth file, including its final newline.
+    pub ground_truth_sha256: String,
 }
 
 /// Training preparation output.
@@ -152,6 +157,8 @@ pub fn prepare(
     entries: &[CorpusEntry],
     pilot: &PilotCatalogue,
     output_root: &Path,
+    splits: &PageSplits,
+    headwords_only: bool,
 ) -> Result<TrainingResult> {
     fs::create_dir_all(output_root)?;
     let selected: BTreeSet<_> = pilot
@@ -180,25 +187,52 @@ pub fn prepare(
                 .flat_map(|block| block.spans.iter())
                 .map(|span| ("line", span)),
         ) {
-            if span.review_state == ReviewState::Machine {
+            if (headwords_only && sample_kind != "headword")
+                || span.review_state == ReviewState::Machine
+            {
                 continue;
             }
+            if entry.provenance.source_sha256 != splits.source_sha256 {
+                bail!("entry source does not match split manifest");
+            }
+            let split = match splits.partition(&entry.edition, &entry.printed_page)? {
+                Partition::Training => Split::Train,
+                Partition::Validation => Split::Validation,
+                Partition::FinalTest => continue,
+                Partition::Development => continue,
+            };
+
             let Some(coordinate) = span.coordinates.first() else {
                 continue;
             };
             let sample_key = (
                 entry.edition.clone(),
                 coordinate.source_page,
-                coordinate.line_id.clone(),
+                if sample_kind == "headword" {
+                    span.id.clone()
+                } else {
+                    coordinate.line_id.clone()
+                },
                 sample_kind,
             );
             if !seen_samples.insert(sample_key) {
                 continue;
             }
-            let split = page_split(&entry.edition, coordinate.source_page);
+            if span.coordinates.len() != 1
+                || coordinate.printed_page.as_deref() != Some(entry.printed_page.as_str())
+            {
+                bail!("training sample must belong to exactly one source page");
+            }
             let name = safe_name(&format!(
                 "{}-p{:04}-{}-{}",
-                entry.edition, coordinate.source_page, coordinate.line_id, sample_kind
+                entry.edition,
+                coordinate.source_page,
+                if sample_kind == "headword" {
+                    span.id.as_str()
+                } else {
+                    coordinate.line_id.as_str()
+                },
+                sample_kind
             ));
             let directory = output_root.join(split.as_str());
             fs::create_dir_all(&directory)?;
@@ -209,9 +243,14 @@ pub fn prepare(
                 &image,
                 &coordinate.polygon,
             )?;
-            fs::write(&ground_truth, format!("{}\n", span.diplomatic))?;
-            for codepoint in span.diplomatic.chars().map(u32::from) {
-                *observed.entry(codepoint).or_insert(0) += 1;
+            fs::write(
+                &ground_truth,
+                format!("{}\n", span.diplomatic.nfc().collect::<String>()),
+            )?;
+            if split == Split::Train {
+                for codepoint in span.diplomatic.nfc().map(u32::from) {
+                    *observed.entry(codepoint).or_insert(0) += 1;
+                }
             }
             for hypothesis in &span.hypotheses {
                 let pair = benchmark
@@ -228,15 +267,18 @@ pub fn prepare(
                 source_page: coordinate.source_page,
                 line_id: coordinate.line_id.clone(),
                 split,
-                image,
-                ground_truth,
+                image: image.clone(),
+                ground_truth: ground_truth.clone(),
                 source_span: format!("{}#{}", entry.id, span.id),
+                crop_sha256: crate::headwords::digest(&fs::read(&image)?),
+                ground_truth_sha256: crate::headwords::digest(&fs::read(&ground_truth)?),
             });
         }
     }
     if records.is_empty() {
         bail!("no corrected or verified pilot lines are available for training");
     }
+    validate_training_records(&records, splits)?;
     records.sort_by(|left, right| left.image.cmp(&right.image));
     let manifest_path = output_root.join("ground-truth.jsonl");
     let mut manifest = String::new();
@@ -245,6 +287,10 @@ pub fn prepare(
         manifest.push('\n');
     }
     fs::write(&manifest_path, manifest)?;
+    fs::write(
+        output_root.join("page-splits.toml"),
+        toml::to_string_pretty(splits)?,
+    )?;
 
     let benchmark_metrics: BTreeMap<String, RecognitionMetrics> = benchmark
         .into_iter()
@@ -293,6 +339,10 @@ pub fn execute_kraken_training(
     base_model: Option<&Path>,
 ) -> Result<()> {
     let records = read_ground_truth(&output_root.join("ground-truth.jsonl"))?;
+    validate_training_records(
+        &records,
+        &PageSplits::load(&output_root.join("page-splits.toml"))?,
+    )?;
     let training: Vec<_> = records
         .iter()
         .filter(|record| record.split == Split::Train)
@@ -357,6 +407,39 @@ pub fn execute_kraken_training(
     Ok(())
 }
 
+fn validate_training_records(records: &[GroundTruthRecord], splits: &PageSplits) -> Result<()> {
+    let mut crops = BTreeSet::new();
+    let mut pages = BTreeMap::new();
+    for record in records {
+        let expected = match splits.partition(&record.edition, &record.printed_page)? {
+            Partition::Training => Split::Train,
+            Partition::Validation => Split::Validation,
+            Partition::FinalTest => Split::Test,
+            Partition::Development => bail!("development samples cannot enter training manifests"),
+        };
+        if record.split != expected {
+            bail!("training record violates frozen page split");
+        }
+        let key = (&record.edition, record.source_page);
+        if pages
+            .insert(key, record.split)
+            .is_some_and(|previous| previous != record.split)
+        {
+            bail!("PDF page occurs in more than one partition");
+        }
+        if crate::headwords::digest(&fs::read(&record.image)?) != record.crop_sha256
+            || crate::headwords::digest(&fs::read(&record.ground_truth)?)
+                != record.ground_truth_sha256
+        {
+            bail!("stale image/text pair: {}", record.source_span);
+        }
+        if !crops.insert(&record.crop_sha256) {
+            bail!("duplicated crop in training manifest");
+        }
+    }
+    Ok(())
+}
+
 fn read_ground_truth(path: &Path) -> Result<Vec<GroundTruthRecord>> {
     fs::read_to_string(path)?
         .lines()
@@ -403,17 +486,6 @@ fn polygon_bounds(points: &[Point]) -> Option<(u32, u32, u32, u32)> {
     ))
 }
 
-fn page_split(edition: &str, source_page: u32) -> Split {
-    let mut hasher = Sha256::new();
-    hasher.update(edition.as_bytes());
-    hasher.update(source_page.to_le_bytes());
-    match hasher.finalize()[0] % 10 {
-        0..=6 => Split::Train,
-        7..=8 => Split::Validation,
-        _ => Split::Test,
-    }
-}
-
 fn safe_name(value: &str) -> String {
     value
         .chars()
@@ -429,18 +501,39 @@ fn safe_name(value: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use super::{hebrew_target_alphabet, page_split, Split};
+    use super::*;
 
     #[test]
-    fn page_split_is_deterministic_and_page_level() {
-        assert_eq!(
-            page_split("robinson-1854", 17),
-            page_split("robinson-1854", 17)
-        );
-        assert!(matches!(
-            page_split("robinson-1854", 17),
-            Split::Train | Split::Validation | Split::Test
-        ));
+    fn training_rejects_tampering_and_duplicate_crops_before_execution() {
+        let temp = tempfile::tempdir().unwrap();
+        let image = temp.path().join("crop.png");
+        let ground_truth = temp.path().join("crop.gt.txt");
+        fs::write(&image, b"test crop").unwrap();
+        fs::write(&ground_truth, "אָב\n").unwrap();
+        let splits = PageSplits::load(
+            &Path::new(env!("CARGO_MANIFEST_DIR"))
+                .join("../../benchmarks/sample-inventory/robinson-1854-splits.toml"),
+        )
+        .unwrap();
+        let record = GroundTruthRecord {
+            edition: "robinson-1854".into(),
+            printed_page: "11".into(),
+            source_page: 27,
+            line_id: "word".into(),
+            split: Split::Train,
+            image,
+            ground_truth: ground_truth.clone(),
+            source_span: "test".into(),
+            crop_sha256: crate::headwords::digest(b"test crop"),
+            ground_truth_sha256: crate::headwords::digest("אָב\n".as_bytes()),
+        };
+        validate_training_records(std::slice::from_ref(&record), &splits).unwrap();
+        assert!(validate_training_records(&[record.clone(), record.clone()], &splits).is_err());
+        let mut reserved = record.clone();
+        reserved.printed_page = "175".into();
+        assert!(validate_training_records(&[reserved], &splits).is_err());
+        fs::write(ground_truth, "אב\n").unwrap();
+        assert!(validate_training_records(&[record], &splits).is_err());
     }
 
     #[test]

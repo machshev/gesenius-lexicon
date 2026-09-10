@@ -65,6 +65,37 @@ enum Commands {
     BenchmarkStages(BenchmarkStagesArguments),
     /// Prepare pilot ground truth and optionally fine-tune Kraken.
     Train(TrainArguments),
+    /// Train from an existing reviewed export after validating its split and file hashes.
+    TrainPrepared {
+        #[arg(long)]
+        prepared: PathBuf,
+        #[arg(long)]
+        output_model: PathBuf,
+        #[arg(long)]
+        base_model: Option<PathBuf>,
+    },
+    /// Evaluate frozen headword predictions with exact and base-aligned mark metrics.
+    BenchmarkHeadwords {
+        #[arg(long)]
+        manifest: PathBuf,
+        #[arg(long)]
+        predictions: PathBuf,
+        #[arg(long)]
+        splits: PathBuf,
+        #[arg(long)]
+        allow_final_test: bool,
+    },
+    /// Promote resolved human headword reviews into versioned training pairs.
+    ExportHeadwordTraining {
+        #[arg(long, default_value = "benchmarks/transcription-drafts")]
+        root: PathBuf,
+        #[arg(long, default_value = "corpus/review/transcription-reviews.jsonl")]
+        journal: PathBuf,
+        #[arg(long)]
+        splits: PathBuf,
+        #[arg(long)]
+        output: PathBuf,
+    },
     /// Validate corpus, Unicode, provenance, and run assignments.
     Validate(ValidateArguments),
     /// Start local review services.
@@ -152,6 +183,12 @@ struct BenchmarkStagesArguments {
 
 #[derive(Args)]
 struct TrainArguments {
+    /// Authoritative printed-page split manifest; unlisted pages are rejected.
+    #[arg(long)]
+    splits: PathBuf,
+    /// Export only reviewed headwords, excluding body lines.
+    #[arg(long)]
+    headwords_only: bool,
     /// Fixed 24-page-per-edition pilot definition.
     #[arg(long, default_value = "pilot.toml")]
     pilot: PathBuf,
@@ -254,6 +291,33 @@ fn main() -> Result<()> {
             }))
         }
         Commands::Train(arguments) => train_command(&cli, arguments),
+        Commands::TrainPrepared {
+            prepared,
+            output_model,
+            base_model,
+        } => execute_kraken_training(prepared, output_model, base_model.as_deref()),
+        Commands::BenchmarkHeadwords {
+            manifest,
+            predictions,
+            splits,
+            allow_final_test,
+        } => {
+            let splits = gesenius_core::page_splits::PageSplits::load(splits)?;
+            print_json(&gesenius_core::headwords::evaluate(
+                manifest,
+                predictions,
+                &splits,
+                *allow_final_test,
+            )?)
+        }
+        Commands::ExportHeadwordTraining {
+            root,
+            journal,
+            splits,
+            output,
+        } => print_json(
+            &json!({"headwords": gesenius_core::review::export_headwords(root, journal, splits, output)?}),
+        ),
         Commands::Validate(arguments) => validate_command(&cli, arguments),
         Commands::Review { command } => review_command(&cli, command),
         Commands::Export(arguments) => export_command(&cli, arguments),
@@ -492,7 +556,14 @@ fn print_run_progress(progress: RunProgress) {
 fn train_command(cli: &Cli, arguments: &TrainArguments) -> Result<()> {
     let entries = materialized_entries(cli)?;
     let pilot = PilotCatalogue::load(&arguments.pilot)?;
-    let result = prepare(&entries, &pilot, &arguments.output)?;
+    let splits = gesenius_core::page_splits::PageSplits::load(&arguments.splits)?;
+    let result = prepare(
+        &entries,
+        &pilot,
+        &arguments.output,
+        &splits,
+        arguments.headwords_only,
+    )?;
     if arguments.execute {
         let output_model = arguments
             .output_model

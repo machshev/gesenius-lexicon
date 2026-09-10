@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "benchmark_sha256": "fee53e4058ff8a9c992867138af8f2432769f4c3e2a05ee349961af96115fb38",
+  "provenance": {
+    "pipeline_run": "d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5",
+    "failure_stage": "recognition",
+    "expected_scalars": [
+      "U+05D0",
+      "U+05B8",
+      "U+05D1"
+    ],
+    "word_hypotheses": {
+      "line_id": "line_81",
+      "word_id": "line_81-fused-word-0001",
+      "crop": ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012.png",
+      "crops": [
+        ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012.png",
+        ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012-padding-0.png"
+      ],
+      "detected_text": "אב‎",
+      "detected_language": "heb",
+      "label_language": "heb",
+      "announced_languages": [
+        "heb"
+      ],
+      "routed_language": "heb",
+      "pdf_text": null,
+      "detected_confidence": 0.66,
+      "trials": [
+        {
+          "language": "heb",
+          "text": "אב‎",
+          "confidence": 0.92256594
+        }
+      ],
+      "selected_language": "heb",
+      "isolated_text": "אב‎",
+      "isolated_confidence": 0.92256594,
+      "used_isolated_text": true
+    },
+    "final_headword": {
+      "id": "robinson-1854:p1:e0002:headword",
+      "diplomatic": "אב",
+      "normalized": "אב",
+      "language": "he",
+      "language_runs": [
+        {
+          "start": 0,
+          "end": 2,
+          "language": "he",
+          "script": "Hebr",
+          "evidence": "unicode_script"
+        }
+      ],
+      "script": "Hebr",
+      "direction": "rtl",
+      "confidence": 0.7285413,
+      "review_state": "machine",
+      "hypotheses": [
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng:block-psm6",
+          "model_hash": "8755b8042e59354170cae28144838ce822ecb6668bdd76d904b94529dd8e1565",
+          "text": ":R m. constr. \"3y, c. suff. M3y,",
+          "confidence": 0.70769227
+        },
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng:page-psm3",
+          "model_hash": "8755b8042e59354170cae28144838ce822ecb6668bdd76d904b94529dd8e1565",
+          "text": ":R m. constr. \"3y, c. suff. M3y,",
+          "confidence": 0.70769227
+        },
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng+heb",
+          "model_hash": "8b6dc3c4459dfd6a225a72527016e820942568cb3646453ed30f7fe7f6f4266f",
+          "text": "אב‎ m. constr. ,אָבר‎ 0. suff. M3y,",
+          "confidence": 0.68620694
+        }
+      ],
+      "coordinates": [
+        {
+          "source_page": 17,
+          "printed_page": "1",
+          "region_id": "block_7",
+          "line_id": "line_81",
+          "polygon": [
+            {
+              "x": 1061.0,
+              "y": 2886.0
+            },
+            {
+              "x": 1152.0,
+              "y": 2886.0
+            },
+            {
+              "x": 1152.0,
+              "y": 2970.0
+            },
+            {
+              "x": 1061.0,
+              "y": 2970.0
+            }
+          ],
+          "transform_id": "06c8663ab651bb6ed7fa4982d358e1ad1bd7ab93590e5c34bd5cd306b5b72fdb",
+          "page_image": ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/processed.png"
+        }
+      ],
+      "warnings": []
+    },
+    "source_images": {
+      "original.png": "88dbecb093e574f2471947428363f238331521344a8fc2008903d2199521c71f",
+      "processed.png": "de73e6ebec8276aecaf8773c04457e70de633a860437df050b4eb402248d5b6e"
+    },
+    "crop_commands": [
+      {
+        "stage": "crop-word-00012",
+        "input_hash": "1e9d3aa25bafdc015893b95e61fd30fcc677040a93c0023a18d5a09fce25d491",
+        "command": [
+          "magick",
+          ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/processed.png",
+          "-crop",
+          "83x76+1065+2890",
+          "+repage",
+          "-bordercolor",
+          "white",
+          "-border",
+          "8",
+          "-resize",
+          "200%",
+          ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012.png"
+        ],
+        "outputs": [
+          ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012.png"
+        ],
+        "completed_at": "2026-09-09T22:57:11.022931300Z"
+      },
+      {
+        "stage": "crop-word-00012-padding-0",
+        "input_hash": "bcd90f833a811d2f674292760446a926b3be5fe87418991deb4891d32c0555aa",
+        "command": [
+          "magick",
+          ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/processed.png",
+          "-crop",
+          "67x60+1073+2898",
+          "+repage",
+          "-bordercolor",
+          "white",
+          "-border",
+          "8",
+          "-resize",
+          "200%",
+          ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012-padding-0.png"
+        ],
+        "outputs": [
+          ".cache/gesenius/runs/d345bc9e6ec9ef1fcd6e37843839872dde1a401d8fca3a7b07163c45de34aeb5/robinson-1854/page-0017/words/word-00012-padding-0.png"
+        ],
+        "completed_at": "2026-09-09T22:57:11.180704378Z"
+      }
+    ],
+    "recognition_stage": null,
+    "saved_artifacts": {
+      "crops/context.png": "3602dc334ab3d5d441cbf1c2be534fc7a27a2019a8b797cf787c78440e837048",
+      "crops/original.png": "c950f09935db8fc78da9f8117df96c2faa0841b0392aa1725526c93fe2ae32fa",
+      "crops/word-00012-padding-0.png": "5fe5b0547796fe72f78345d18c52f082b941b1282f4281f74be906e925635584",
+      "crops/word-00012.png": "befd79aee29e6e81ad2107df3038174fa4a826c4d2316ae989a391bb48e2ef9d"
+    },
+    "evaluation_policy": "NFC only; no bidi stripping or dictionary vocalization; exact final extracted headword",
+    "baseline_code_identity": "cached pipeline content hash; original git commit not recorded",
+    "current_inputs": {
+      "pipeline.toml": "4d11dc0451ccd6180186b4ed70e2b6656341cbb9e4fb0a3a4a64b7690f805c59",
+      "flake.lock": "da6dd33d74e560f24d750353bc318365a846a993a4d609f5ed7e20dddcc23255"
+    }
+  },
+  "predictions": [
+    {
+      "gold_id": "robinson-1854:p1:e0002",
+      "printed_page": "1",
+      "text": "אב"
+    }
+  ]
+}

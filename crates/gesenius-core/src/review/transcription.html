@@ -16,12 +16,13 @@ main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}
 <div class="controls"><label>Line <select id="line" aria-label="Source line"></select></label><button id="reload">Reload</button><span id="progress"></span></div>
 <p id="message" role="status" aria-live="polite"></p>
 <form id="reviewForm" hidden><div class="review-column">
-<section class="source-panel"><h1 id="title"></h1><p id="identity" class="hint"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to review"></div></section>
+<section class="source-panel"><h1 id="title"></h1><p id="identity" class="hint"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to review"></div><details id="contextPanel" hidden><summary>Full line context</summary><img id="contextCrop" style="width:100%" alt="Full source line"></details></section>
 <section><label>Reviewer name <input id="reviewer" required autocomplete="name"></label>
 <h2>Transcription</h2><div id="runPreview" dir="ltr" aria-label="Combined transcription preview"></div>
 <p class="hint">Edit each language run in its own direction. The combined line reads left to right. Foreign-script runs initially have an unspecified language; choose the correct language below.</p>
 <label>New run language <select id="newRunLanguage"></select></label>
 <div id="runEditors"></div><textarea id="text" hidden aria-hidden="true"></textarea>
+<details id="scalars"><summary>Unicode scalars (logical order)</summary><pre id="scalarText"></pre></details>
 <div id="uncertaintyPanel"><h3>Points to check</h3><ul id="uncertainties"></ul></div>
 <div class="controls actions"><button id="save" type="submit" value="resolved">Approve &amp; next</button><button id="uncertain" type="submit" value="unresolved">Needs fixes / uncertain</button><button id="next" type="button">Next line</button></div>
 <label for="comment">Review notes / uncertain glyphs</label><textarea id="comment"></textarea>
@@ -48,6 +49,7 @@ async function api(options){const response=await fetch('/api/transcriptions',opt
 function updateSaveLabel(){const changed=$('text').value!==current?.draft;$('save').textContent=(changed?'Save corrections':'Approve')+(lines.indexOf(current)<lines.length-1?' & next':'');}
 function render(index){current=lines[index];$('reviewForm').hidden=!current;if(!current)return;dirty=false;$('line').value=String(index);const r=current.review;
 $('title').textContent=`${current.kind==='headword'?'Headword':'Line'} · Page ${current.printed_page} · ${current.line_id}`;$('identity').textContent=`PDF page ${current.source_page} · ${current.partition} · ${r?r.state.replaceAll('_',' '):'awaiting review'}`;
+$('contextPanel').hidden=!current.context;if(current.context)$('contextCrop').src='/api/image?path='+encodeURIComponent(current.context);
 const url='/api/image?path='+encodeURIComponent(current.crop);$('crop').src=url;$('openCrop').href=url;
 $('reviewer').value=r?.reviewer||localStorage.getItem('transcription-reviewer')||'';$('reviewer').readOnly=!!r;
 $('text').value=r?.text??current.draft??'';$('comment').value=r?.comment||'';$('comparison').open=false;$('independentPanel').hidden=!r?.independent_reading;$('independent').textContent=r?.independent_reading||'';$('draft').textContent=current.draft||'';
@@ -55,11 +57,13 @@ $('uncertainties').replaceChildren(...current.uncertainties.map(note=>{const li=
 window.TranscriptionRuns.load($('text').value,r?.runs);document.dispatchEvent(new Event('transcription-rendered'));updateSaveLabel();$('next').disabled=index===lines.length-1;
 }
 async function load(key){lines=await api();$('line').replaceChildren(...lines.map((line,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`${line.line_id} — ${line.review?.state||'unreviewed'}`;return o;}));$('progress').textContent=`${lines.filter(l=>l.review?.state==='resolved').length} / ${lines.length} resolved`;
-render(Math.max(0,lines.findIndex(l=>l.sample+' / '+l.line_id===key)));if(!lines.length)message('No development or validation transcription drafts are available.');}
+render(Math.max(0,lines.findIndex(l=>l.sample+' / '+l.line_id===key)));if(!lines.length)message('No training, development or validation transcription drafts are available.');}
 function mayLeave(){return !dirty||confirm('Discard unsaved edits to this line?');}
 $('line').onchange=()=>{if(mayLeave()){render(Number($('line').value));message('');}else $('line').value=String(lines.indexOf(current));};
 $('next').onclick=()=>{if(mayLeave()){render(lines.indexOf(current)+1);message('');}};
 $('reload').onclick=()=>{if(mayLeave())load(current&&current.sample+' / '+current.line_id).then(()=>message('Reloaded.')).catch(e=>message(e.message,true));};
+function showScalars(){$('scalarText').textContent=Array.from($('text').value,c=>'U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')).join(' ');}
+$('scalars').ontoggle=showScalars;$('text').addEventListener('input',showScalars);
 $('zoom').onchange=()=>{$('crop').style.width=$('zoom').value+'%';};
 $('reviewForm').oninput=event=>{if(['text','comment','reviewer'].includes(event.target.id)){dirty=true;updateSaveLabel();}};
 window.addEventListener('beforeunload',event=>{if(dirty){event.preventDefault();event.returnValue='';}});

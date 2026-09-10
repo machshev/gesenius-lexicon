@@ -1,7 +1,7 @@
 //! OCR, layout, and entry-boundary evaluation metrics.
 
 mod aligned;
-mod alignment;
+pub(crate) mod alignment;
 
 pub use aligned::{AlignedDiagnostics, ForeignWordMetrics, ScriptCounts, WordCounts};
 

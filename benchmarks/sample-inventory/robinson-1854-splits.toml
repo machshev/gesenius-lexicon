@@ -4,12 +4,17 @@ source_sha256 = "466b061e770f212cb7d888d8dadc2a54575fb115bf6de9cdb24b0c280461cca
 status = "frozen-before-line-transcription"
 frozen_at = "2026-09-05T11:54:58+01:00"
 unit = "printed-page"
+headword_extension_at = "2026-09-10"
+headword_extension_note = "Add explicit fitting candidates and page-1 development regression; existing validation/test assignments unchanged. Training pages await inventory and human review."
 
 # Pages 1-10 have already informed parser/OCR work and may not enter final test.
 excluded_from_final_test = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 # Development is available for dictionaries, thresholds, crop design, and tuning.
-development = ["50", "100", "325", "700"]
+development = ["1", "50", "100", "325", "700"]
+
+# Explicit fitting pages; labels still require human crop review.
+training = ["11", "25", "75", "125", "200", "300", "400", "550", "650", "850"]
 
 # Validation is available for model/configuration selection, but not fitting.
 validation = ["175", "475", "925"]

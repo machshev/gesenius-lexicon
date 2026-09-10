@@ -1,6 +1,7 @@
 //! Append-only correction patches and a local optimistic-lock review service.
 
 mod transcription;
+pub use transcription::export_headwords;
 
 use crate::corpus_io::load_entries;
 use crate::metrics::normalized_disagreement;

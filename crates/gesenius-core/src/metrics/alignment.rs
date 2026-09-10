@@ -1,9 +1,9 @@
 //! Deterministic minimum-edit alignment with linear working memory.
 
 /// Paired original indices; `None` represents an insertion or deletion.
-pub(super) type Pair = (Option<usize>, Option<usize>);
+pub(crate) type Pair = (Option<usize>, Option<usize>);
 
-pub(super) fn align<T: PartialEq>(reference: &[T], hypothesis: &[T]) -> Vec<Pair> {
+pub(crate) fn align<T: PartialEq>(reference: &[T], hypothesis: &[T]) -> Vec<Pair> {
     let mut pairs = Vec::with_capacity(reference.len() + hypothesis.len());
     divide(reference, hypothesis, 0, 0, &mut pairs);
     pairs

@@ -2,6 +2,7 @@
 
 use super::{content_type_header, respond_error, respond_html, respond_json, security_header};
 use crate::benchmark::GoldBenchmark;
+use crate::page_splits::{PageSplits, Partition};
 use anyhow::{bail, Context, Result};
 use chrono::{DateTime, Utc};
 use fs2::FileExt;
@@ -9,8 +10,9 @@ use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::fs::{self, File, OpenOptions};
 use std::io::{BufRead, BufReader, Read, Write};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use tiny_http::{Method, Request, Response, StatusCode};
+use unicode_normalization::UnicodeNormalization;
 
 #[derive(Deserialize)]
 struct Manifest {
@@ -24,6 +26,10 @@ struct Manifest {
 
 #[derive(Deserialize)]
 struct Crop {
+    #[serde(default)]
+    context: Option<String>,
+    #[serde(default)]
+    context_sha256: Option<String>,
     line_id: String,
     crop: String,
     crop_sha256: String,
@@ -125,6 +131,10 @@ struct Update {
 
 #[derive(Debug, Serialize)]
 struct Line {
+    context: Option<String>,
+    edition: String,
+    source_sha256: String,
+    crop_sha256: String,
     kind: String,
     sample: String,
     line_id: String,
@@ -191,7 +201,10 @@ impl TranscriptionStore {
             let benchmark = GoldBenchmark::load(&draft_path)?;
             let manifest_bytes = fs::read(directory.join("review.json"))?;
             let manifest: Manifest = serde_json::from_slice(&manifest_bytes)?;
-            if !matches!(manifest.partition.as_str(), "development" | "validation") {
+            if !matches!(
+                manifest.partition.as_str(),
+                "training" | "development" | "validation"
+            ) {
                 continue;
             }
             let mut identity = fs::read(&draft_path)?;
@@ -212,6 +225,19 @@ impl TranscriptionStore {
                 if digest(&fs::read(&crop_path)?) != crop.crop_sha256 {
                     bail!("crop hash mismatch for {}", gold.line_id);
                 }
+                let context = if let Some(context) = &crop.context {
+                    let path = directory.join(context).canonicalize()?;
+                    if !path.starts_with(&directory)
+                        || path.extension().is_none_or(|e| e != "png")
+                        || crop.context_sha256.as_deref()
+                            != Some(digest(&fs::read(&path)?).as_str())
+                    {
+                        bail!("invalid or stale context crop");
+                    }
+                    Some(path.to_string_lossy().into_owned())
+                } else {
+                    None
+                };
                 let review = records
                     .iter()
                     .rev()
@@ -222,6 +248,10 @@ impl TranscriptionStore {
                     })
                     .cloned();
                 result.push(Line {
+                    context,
+                    edition: benchmark.edition.clone(),
+                    source_sha256: benchmark.source_sha256.clone(),
+                    crop_sha256: crop.crop_sha256.clone(),
                     kind: manifest.kind.clone().unwrap_or_else(|| "line".to_owned()),
                     sample: sample.clone(),
                     line_id: gold.line_id.clone(),
@@ -247,6 +277,9 @@ impl TranscriptionStore {
     fn apply(&self, update: Update) -> Result<Record> {
         if update.reviewer.trim().is_empty() || update.text.trim().is_empty() {
             bail!("reviewer and transcription are required");
+        }
+        if update.text.chars().any(|c| matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}' | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')) {
+            bail!("remove hidden bidi controls; use text-run direction instead");
         }
         if let Some(runs) = &update.runs {
             validate_runs(runs, &update.text)?;
@@ -278,10 +311,13 @@ impl TranscriptionStore {
             {
                 bail!("revision conflict: source or review changed; reload before saving");
             }
-            if let Some(previous) = &line.review {
-                if previous.reviewer != update.reviewer.trim() {
-                    bail!("continue with the reviewer who started this line review");
-                }
+            if line.kind != "headword"
+                && line
+                    .review
+                    .as_ref()
+                    .is_some_and(|previous| previous.reviewer != update.reviewer.trim())
+            {
+                bail!("continue with the reviewer who started this line review");
             }
             let record = Record {
                 sample: update.sample,
@@ -389,6 +425,148 @@ pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result
     respond_error(request, StatusCode(404), "not found")
 }
 
+/// Deliberately promotes resolved headword reviews into auditable Kraken pairs.
+/// Development and final-test samples never enter fitting manifests.
+pub fn export_headwords(
+    root: &Path,
+    journal: &Path,
+    splits_path: &Path,
+    output: &Path,
+) -> Result<usize> {
+    let splits = PageSplits::load(splits_path)?;
+    let store = TranscriptionStore {
+        root: root.into(),
+        journal: journal.into(),
+    };
+    // Keep one journal snapshot for the whole export.
+    let lock = OpenOptions::new().read(true).open(journal)?;
+    lock.lock_shared()?;
+    let records = store.records()?;
+    let lines = store.lines()?;
+    let mut selected = Vec::new();
+    let mut crops = std::collections::BTreeSet::new();
+    for line in lines.iter().filter(|l| l.kind == "headword") {
+        let partition = splits.partition(&line.edition, &line.printed_page)?;
+        let split = match partition {
+            Partition::Training => "train",
+            Partition::Validation => "validation",
+            Partition::Development | Partition::FinalTest => continue,
+        };
+        if line.partition
+            != (if split == "train" {
+                "training"
+            } else {
+                "validation"
+            })
+            || line.source_sha256 != splits.source_sha256
+        {
+            bail!("review source/partition mismatch");
+        }
+        let review = records
+            .iter()
+            .rev()
+            .find(|r| r.sample == line.sample && r.line_id == line.line_id)
+            .context("headword has no human review")?;
+        if review.source_digest != line.source_digest
+            || review.state != State::Resolved
+            || review.reviewer.trim().is_empty()
+            || review.text.trim().is_empty()
+            || review.revision == 0
+        {
+            bail!("stale or unresolved headword review: {}", line.line_id);
+        }
+        if review.text.chars().any(|c| c.is_control() || matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}' | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')) {
+            bail!("headword contains controls");
+        }
+        let mut reviewers = std::collections::BTreeSet::new();
+        let second = records
+            .iter()
+            .rev()
+            .filter(|r| {
+                r.sample == line.sample
+                    && r.line_id == line.line_id
+                    && r.source_digest == review.source_digest
+                    && reviewers.insert(&r.reviewer)
+            })
+            .find(|r| {
+                r.state == State::Resolved
+                    && r.reviewer != review.reviewer
+                    && !r.reviewer.trim().is_empty()
+                    && r.text.nfc().eq(review.text.nfc())
+            });
+        if partition == Partition::Validation && second.is_none() {
+            bail!("validation headword needs an agreeing source check by a second reviewer");
+        }
+        if !crops.insert(&line.crop_sha256) {
+            bail!("duplicate headword crop, including across splits");
+        }
+        selected.push((line, review, second, split));
+    }
+    if selected.is_empty() {
+        bail!("no resolved training/validation headword reviews; collect human labels first");
+    }
+    if output.exists() {
+        bail!("export destination already exists; use a new versioned directory");
+    }
+    let parent = output
+        .parent()
+        .filter(|p| !p.as_os_str().is_empty())
+        .unwrap_or(Path::new("."));
+    fs::create_dir_all(parent)?;
+    let temporary = tempfile::tempdir_in(parent)?;
+    let final_root = parent.canonicalize()?.join(
+        output
+            .file_name()
+            .context("output needs a directory name")?,
+    );
+    let mut manifest = String::new();
+    let mut alphabet =
+        std::collections::BTreeMap::<String, std::collections::BTreeMap<String, usize>>::new();
+    for (index, (line, review, second, split)) in selected.iter().enumerate() {
+        let name = format!("{split}/headword-{index:06}");
+        fs::create_dir_all(temporary.path().join(split))?;
+        let bytes = fs::read(&line.crop)?;
+        if digest(&bytes) != line.crop_sha256 {
+            bail!("crop changed during export");
+        }
+        let nfc: String = review.text.nfc().collect();
+        fs::write(temporary.path().join(format!("{name}.png")), bytes)?;
+        fs::write(
+            temporary.path().join(format!("{name}.gt.txt")),
+            format!("{nfc}\n"),
+        )?;
+        for c in nfc.chars() {
+            *alphabet
+                .entry((*split).into())
+                .or_default()
+                .entry(format!("U+{:04X}", c as u32))
+                .or_default() += 1;
+        }
+        let value = serde_json::json!({
+            "edition": line.edition, "printed_page": line.printed_page, "source_page": line.source_page,
+            "line_id": line.line_id, "split": split, "sample_kind": "headword",
+            "image": final_root.join(format!("{name}.png")),
+            "ground_truth": final_root.join(format!("{name}.gt.txt")),
+            "source_span": format!("{}#{}", line.sample, line.line_id),
+            "source_sha256": line.source_sha256, "crop_sha256": line.crop_sha256,
+            "ground_truth_sha256": digest(format!("{nfc}\n").as_bytes()),
+            "diplomatic": review.text, "nfc": nfc, "review": review,
+            "second_review": second, "split_sha256": digest(&fs::read(splits_path)?),
+            "normalization": "NFC; logical order; no bidi controls"
+        });
+        manifest.push_str(&serde_json::to_string(&value)?);
+        manifest.push('\n');
+    }
+    fs::write(temporary.path().join("ground-truth.jsonl"), manifest)?;
+    fs::write(
+        temporary.path().join("alphabet-audit.json"),
+        serde_json::to_vec_pretty(&alphabet)?,
+    )?;
+    fs::copy(splits_path, temporary.path().join("page-splits.toml"))?;
+    fs::rename(temporary.path(), &final_root)?;
+    Ok(selected.len())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -426,6 +604,97 @@ mod tests {
             state,
             comment: "Source checked".to_owned(),
         }
+    }
+
+    fn headword_fixture(
+        partition: &str,
+        page: &str,
+    ) -> (tempfile::TempDir, TranscriptionStore, PathBuf) {
+        let (temp, store) = fixture();
+        let sample = store.root.join("sample");
+        let mut draft: serde_json::Value =
+            serde_json::from_slice(&fs::read(sample.join("draft.json")).unwrap()).unwrap();
+        draft["lines"].as_array_mut().unwrap().truncate(1);
+        fs::write(
+            sample.join("draft.json"),
+            serde_json::to_vec(&draft).unwrap(),
+        )
+        .unwrap();
+        let mut review: serde_json::Value =
+            serde_json::from_slice(&fs::read(sample.join("review.json")).unwrap()).unwrap();
+        review["kind"] = "headword".into();
+        review["partition"] = partition.into();
+        review["printed_page"] = page.into();
+        review["lines"].as_array_mut().unwrap().truncate(1);
+        fs::write(
+            sample.join("review.json"),
+            serde_json::to_vec(&review).unwrap(),
+        )
+        .unwrap();
+        let splits = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+            .join("../../benchmarks/sample-inventory/robinson-1854-splits.toml");
+        (temp, store, splits)
+    }
+
+    #[test]
+    fn headword_export_preserves_audit_and_rejects_stale_or_unresolved_labels() {
+        let (temp, store, splits) = headword_fixture("training", "11");
+        let line = store.lines().unwrap().remove(0);
+        let mut change = update(&line, State::Unresolved);
+        change.text = "אָב".into();
+        store.apply(change).unwrap();
+        let output = temp.path().join("export");
+        assert!(export_headwords(&store.root, &store.journal, &splits, &output).is_err());
+        assert!(!output.exists());
+        let line = store.lines().unwrap().remove(0);
+        let mut change = update(&line, State::Resolved);
+        change.text = "אָב".into();
+        store.apply(change).unwrap();
+        assert_eq!(
+            export_headwords(&store.root, &store.journal, &splits, &output).unwrap(),
+            1
+        );
+        let manifest: serde_json::Value = serde_json::from_str(
+            fs::read_to_string(output.join("ground-truth.jsonl"))
+                .unwrap()
+                .trim(),
+        )
+        .unwrap();
+        assert_eq!(manifest["diplomatic"], "אָב");
+        assert_eq!(manifest["review"]["revision"], 2);
+        assert_eq!(manifest["split"], "train");
+        assert_eq!(
+            fs::read_to_string(manifest["ground_truth"].as_str().unwrap()).unwrap(),
+            "אָב\n"
+        );
+        assert!(export_headwords(&store.root, &store.journal, &splits, &output).is_err());
+        let draft = store.root.join("sample/draft.json");
+        let bytes = fs::read_to_string(&draft).unwrap();
+        fs::write(draft, format!("{bytes}\n")).unwrap();
+        assert!(export_headwords(
+            &store.root,
+            &store.journal,
+            &splits,
+            &temp.path().join("stale")
+        )
+        .is_err());
+    }
+
+    #[test]
+    fn validation_headwords_require_two_agreeing_reviewers() {
+        let (temp, store, splits) = headword_fixture("validation", "175");
+        let line = store.lines().unwrap().remove(0);
+        store.apply(update(&line, State::Resolved)).unwrap();
+        let output = temp.path().join("export");
+        assert!(export_headwords(&store.root, &store.journal, &splits, &output).is_err());
+        let line = store.lines().unwrap().remove(0);
+        let mut second = update(&line, State::Resolved);
+        second.reviewer = "Second test reviewer".into();
+        store.apply(second).unwrap();
+        assert_eq!(
+            export_headwords(&store.root, &store.journal, &splits, &output).unwrap(),
+            1
+        );
     }
 
     #[test]
