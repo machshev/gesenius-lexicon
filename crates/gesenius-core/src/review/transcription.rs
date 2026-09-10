@@ -665,7 +665,11 @@ pub fn export_headwords(
             || review.text.trim().is_empty()
             || review.revision == 0
         {
-            bail!("stale or unresolved headword review: {}", line.line_id);
+            bail!(
+                "stale or unresolved headword review: {}/{}",
+                line.sample,
+                line.line_id
+            );
         }
         if review.text.chars().any(|c| c.is_control() || matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}' | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')) {
             bail!("headword contains controls");
