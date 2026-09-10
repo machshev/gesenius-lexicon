@@ -362,6 +362,7 @@ pub fn serve(options: &ReviewServerOptions<'_>) -> Result<()> {
             Some(
                 "/transcriptions"
                     | "/api/transcriptions"
+                    | "/api/transcription-crop"
                     | "/transcription-keyboard.js"
                     | "/transcription-runs.js"
                     | "/transcription-fonts/estrangela.ttf"

@@ -1,7 +1,9 @@
 // Start Chromium with --headless --remote-debugging-port=9223, then run with Node 22+.
 // Uses only local CDP and never submits a review to the live journal.
 import assert from 'node:assert/strict';
-const tab = await (await fetch('http://127.0.0.1:9223/json/new?about:blank', {method:'PUT'})).json();
+const reviewBase = process.env.REVIEW_BASE_URL || 'http://127.0.0.1:8787';
+const debuggerBase = process.env.CHROME_DEBUG_URL || 'http://127.0.0.1:9223';
+const tab = await (await fetch(debuggerBase + '/json/new?about:blank', {method:'PUT'})).json();
 const socket = new WebSocket(tab.webSocketDebuggerUrl);
 await new Promise(resolve => socket.addEventListener('open', resolve, {once:true}));
 let id = 0;
@@ -32,7 +34,7 @@ try {
     await call('Runtime.enable');
     await call('Page.enable');
     await call('Emulation.setDeviceMetricsOverride', {width:1280,height:900,deviceScaleFactor:1,mobile:false});
-    await call('Page.navigate', {url:'http://127.0.0.1:8787/transcriptions'});
+    await call('Page.navigate', {url:reviewBase + '/transcriptions'});
     for (let attempt = 0; attempt < 100; attempt++) {
         if (await evaluate('!!document.querySelector("[data-run-text]") && !!window.UnicodeKeyboard')) break;
         if (attempt === 99 && !await evaluate('!!document.querySelector("[data-run-text]")')) throw Error('Editor did not load');
@@ -57,6 +59,15 @@ try {
     assert.equal(await evaluate(`document.querySelector('#scalarText').textContent`), 'U+05D0 U+05B8 U+05D1');
     assert.equal(await evaluate(`document.querySelector('#notHeadword').textContent`), 'Not a headword');
     assert.equal(await evaluate(`document.querySelector('#excluded').textContent`), 'Exclude unusable crop');
+    const unreviewedFilter = await evaluate(`(() => {
+        const expected=allLines.filter(line=>line.kind==='headword'&&!line.review).length;
+        const checkbox=document.querySelector('#unreviewedOnly');checkbox.click();
+        const actual=document.querySelector('#line').options.length;
+        const allVisible=lines.every(line=>line.kind==='headword'&&!line.review);
+        checkbox.click();return {expected,actual,allVisible};
+    })()`);
+    assert.equal(unreviewedFilter.actual, unreviewedFilter.expected);
+    assert.equal(unreviewedFilter.allVisible, true);
     const reviewedOutcomes = await evaluate(`allLines.filter(line => line.kind === 'headword').map(line => ({
         key:line.sample + '/' + line.line_id, state:line.review?.state,
         crop:line.crop, width:line.sample.includes('p075')&&line.line_id==='headword-0007'?180:

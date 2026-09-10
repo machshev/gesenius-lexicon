@@ -79,7 +79,10 @@ The transcription queue and review export do not expose final-test material.
 
 The `/transcriptions` review UI opens the headword queue by default, with a
 compact crop and a labelled Hebrew input. The sample-type selector also exposes
-line reviews. The latest queue expansion adds three unreviewed fitting candidates
+line reviews. Use **Only unreviewed** to hide every candidate with a saved review;
+resolved, crop-repair, unusable, and false-candidate decisions remain available
+when the filter is cleared. Saving any outcome advances to the next visible
+candidate. The latest queue expansion adds three unreviewed fitting candidates
 on printed page 25, 24 unreviewed validation candidates on pages 475 and 925, and
 21 development candidates on pages 50, 325 and 700. These are detected review
 inputs, not gold or complete page inventories.
@@ -130,10 +133,11 @@ python3 tool/prepare-headword-review.py \
   second reviewer is not required. This remains a local, unauthenticated review
   workflow.
 
-Crop adjustment currently means replacing the crop and updating its geometry,
-commands and hashes in the draft manifest. This invalidates prior reviews;
-review the new crop before export. A drag-to-adjust crop editor is still pending.
-Unrepaired headwords remain unresolved and block export. Explicitly excluded
+For source-backed headword candidates, expand **Edit crop from source page** and
+drag a new rectangle over the processed page. Saving creates versioned processed
+and original crops, updates geometry, replay commands and hashes, and invalidates
+any prior review; review the new crop before export. Unrepaired headwords remain
+unresolved and block export. Explicitly excluded
 unusable crops remain in the audit but are omitted from export. Do not fill
 unreadable glyphs with guessed vowels.
 

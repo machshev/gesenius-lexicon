@@ -9,7 +9,7 @@ use fs2::FileExt;
 use serde::{Deserialize, Serialize};
 use sha2::{Digest, Sha256};
 use std::fs::{self, File, OpenOptions};
-use std::io::{BufRead, BufReader, Read, Write};
+use std::io::{BufRead, BufReader, Read, Seek, Write};
 use std::path::{Path, PathBuf};
 use tiny_http::{Method, Request, Response, StatusCode};
 use unicode_normalization::UnicodeNormalization;
@@ -33,6 +33,10 @@ struct Crop {
     line_id: String,
     crop: String,
     crop_sha256: String,
+    #[serde(default)]
+    rectangle: Option<[u32; 4]>,
+    #[serde(default)]
+    crop_commands: Vec<Vec<String>>,
 }
 
 #[derive(Deserialize)]
@@ -137,6 +141,14 @@ struct Update {
     comment: String,
 }
 
+#[derive(Deserialize)]
+struct CropUpdate {
+    sample: String,
+    line_id: String,
+    source_digest: String,
+    rectangle: [u32; 4],
+}
+
 #[derive(Debug, Serialize)]
 struct Line {
     context: Option<String>,
@@ -151,6 +163,8 @@ struct Line {
     partition: String,
     source_digest: String,
     crop: String,
+    source_image: Option<String>,
+    rectangle: Option<[u32; 4]>,
     // Draft and source-check notes are visible from the first visit.
     draft: Option<String>,
     uncertainties: Vec<String>,
@@ -268,6 +282,13 @@ impl TranscriptionStore {
                     partition: manifest.partition.clone(),
                     source_digest: source_digest.clone(),
                     crop: crop_path.to_string_lossy().into_owned(),
+                    source_image: crop
+                        .crop_commands
+                        .first()
+                        .and_then(|command| command.get(1))
+                        .and_then(|path| fs::canonicalize(path).ok())
+                        .map(|path| path.to_string_lossy().into_owned()),
+                    rectangle: crop.rectangle,
                     draft: Some(gold.text),
                     uncertainties: manifest
                         .unresolved
@@ -363,6 +384,133 @@ impl TranscriptionStore {
         let _ = FileExt::unlock(&file);
         result
     }
+
+    fn adjust_crop(&self, update: CropUpdate) -> Result<()> {
+        let [x, y, width, height] = update.rectangle;
+        if width < 2 || height < 2 || width > 5000 || height > 5000 {
+            bail!("crop dimensions are invalid");
+        }
+        let current = self
+            .lines()?
+            .into_iter()
+            .find(|line| line.sample == update.sample && line.line_id == update.line_id)
+            .context("unknown transcription line")?;
+        if current.kind != "headword" || current.source_digest != update.source_digest {
+            bail!("revision conflict: source or review changed; reload before editing the crop");
+        }
+        let sample = self.root.canonicalize()?.join(&update.sample);
+        if !sample.starts_with(self.root.canonicalize()?) {
+            bail!("sample escapes transcription root");
+        }
+        let review_path = sample.join("review.json");
+        let mut file = OpenOptions::new()
+            .read(true)
+            .write(true)
+            .open(&review_path)?;
+        file.lock_exclusive()?;
+        let result = (|| {
+            let mut manifest_bytes = Vec::new();
+            file.read_to_end(&mut manifest_bytes)?;
+            let mut identity = fs::read(sample.join("draft.json"))?;
+            identity.extend_from_slice(&manifest_bytes);
+            if digest(&identity) != update.source_digest {
+                bail!(
+                    "revision conflict: source or review changed; reload before editing the crop"
+                );
+            }
+            let mut manifest: serde_json::Value = serde_json::from_slice(&manifest_bytes)?;
+            let line = manifest["lines"]
+                .as_array_mut()
+                .context("review lines must be an array")?
+                .iter_mut()
+                .find(|line| line["line_id"] == update.line_id)
+                .context("crop line is missing from review manifest")?;
+            let commands = line["crop_commands"]
+                .as_array()
+                .context("crop commands are required for source-based editing")?
+                .clone();
+            let processed = commands
+                .first()
+                .and_then(|command| command.get(1))
+                .and_then(|path| path.as_str())
+                .context("processed source command is missing")?;
+            let original = commands
+                .get(2)
+                .and_then(|command| command.get(1))
+                .and_then(|path| path.as_str());
+            let processed =
+                fs::canonicalize(processed).context("processed source raster is unavailable")?;
+            let original = original
+                .map(fs::canonicalize)
+                .transpose()
+                .context("original source raster is unavailable")?;
+            let suffix = format!("{}-{}x{}+{}+{}", update.line_id, width, height, x, y);
+            let crop_relative = format!("crops/{suffix}.png");
+            let original_relative = format!("crops/{suffix}-original.png");
+            let crop_output = sample.join(&crop_relative);
+            let original_output = sample.join(&original_relative);
+            run_crop(&processed, &crop_output, update.rectangle)?;
+            if let Some(original) = &original {
+                if let Err(error) = run_crop(original, &original_output, update.rectangle) {
+                    let _ = fs::remove_file(&crop_output);
+                    return Err(error);
+                }
+            }
+            line["crop"] = crop_relative.clone().into();
+            line["crop_sha256"] = digest(&fs::read(&crop_output)?).into();
+            line["rectangle"] = serde_json::to_value(update.rectangle)?;
+            if original.is_some() {
+                line["original_crop"] = original_relative.clone().into();
+                line["original_crop_sha256"] = digest(&fs::read(&original_output)?).into();
+            }
+            let geometry = format!("{width}x{height}+{x}+{y}");
+            let mut new_commands = commands;
+            new_commands[0] = serde_json::json!([
+                "magick",
+                processed,
+                "-crop",
+                geometry,
+                "+repage",
+                sample.join(&crop_relative)
+            ]);
+            if let (Some(source), Some(command)) = (&original, new_commands.get_mut(2)) {
+                *command = serde_json::json!([
+                    "magick",
+                    source,
+                    "-crop",
+                    geometry,
+                    "+repage",
+                    sample.join(&original_relative)
+                ]);
+            }
+            line["crop_commands"] = new_commands.into();
+            let bytes = serde_json::to_vec_pretty(&manifest)?;
+            file.set_len(0)?;
+            file.rewind()?;
+            file.write_all(&bytes)?;
+            file.write_all(b"\n")?;
+            file.sync_all()?;
+            Ok(())
+        })();
+        let _ = FileExt::unlock(&file);
+        result
+    }
+}
+
+fn run_crop(source: &Path, output: &Path, [x, y, width, height]: [u32; 4]) -> Result<()> {
+    let geometry = format!("{width}x{height}+{x}+{y}");
+    let status = std::process::Command::new("magick")
+        .arg(source)
+        .arg("-crop")
+        .arg(geometry)
+        .arg("+repage")
+        .arg(output)
+        .status()
+        .context("failed to start ImageMagick")?;
+    if !status.success() {
+        bail!("ImageMagick failed to create the adjusted crop");
+    }
+    Ok(())
 }
 
 pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result<()> {
@@ -438,6 +586,27 @@ pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result
                 }),
                 &format!("{error:#}"),
             ),
+        };
+    }
+    if request.method() == &Method::Post && path == "/api/transcription-crop" {
+        let result = (|| {
+            let mut body = String::new();
+            request
+                .as_reader()
+                .take(64 * 1024 + 1)
+                .read_to_string(&mut body)?;
+            if body.len() > 64 * 1024 {
+                bail!("crop request too large");
+            }
+            store.adjust_crop(serde_json::from_str(&body).context("invalid crop JSON")?)
+        })();
+        return match result {
+            Ok(()) => respond_json(
+                request,
+                StatusCode(200),
+                &serde_json::json!({"updated": true}),
+            ),
+            Err(error) => respond_error(request, StatusCode(422), &format!("{error:#}")),
         };
     }
     respond_error(request, StatusCode(404), "not found")
@@ -738,6 +907,66 @@ mod tests {
         )
         .unwrap_err();
         assert!(error.to_string().contains("no resolved"));
+    }
+
+    #[test]
+    fn adjusted_crop_is_versioned_and_invalidates_the_previous_review() {
+        let (_temp, store, _splits) = headword_fixture("training", "11");
+        let review_path = store.root.join("sample/review.json");
+        let mut manifest: serde_json::Value =
+            serde_json::from_slice(&fs::read(&review_path).unwrap()).unwrap();
+        let source = store
+            .root
+            .join("sample")
+            .join(manifest["lines"][0]["crop"].as_str().unwrap());
+        manifest["lines"][0]["rectangle"] = serde_json::json!([0, 0, 3, 3]);
+        manifest["lines"][0]["crop_commands"] = serde_json::json!([
+            ["magick", source, "-crop", "3x3+0+0", "+repage", "unused"],
+            [
+                "magick",
+                source,
+                "-crop",
+                "3x3+0+0",
+                "+repage",
+                "unused-context"
+            ],
+            [
+                "magick",
+                source,
+                "-crop",
+                "3x3+0+0",
+                "+repage",
+                "unused-original"
+            ]
+        ]);
+        fs::write(&review_path, serde_json::to_vec_pretty(&manifest).unwrap()).unwrap();
+
+        let line = store.lines().unwrap().remove(0);
+        store.apply(update(&line, State::Resolved)).unwrap();
+        let line = store.lines().unwrap().remove(0);
+        store
+            .adjust_crop(CropUpdate {
+                sample: line.sample,
+                line_id: line.line_id,
+                source_digest: line.source_digest,
+                rectangle: [0, 0, 2, 2],
+            })
+            .unwrap();
+
+        let adjusted = store.lines().unwrap().remove(0);
+        assert_eq!(adjusted.rectangle, Some([0, 0, 2, 2]));
+        assert!(adjusted.crop.ends_with("p0050-right-001-2x2+0+0.png"));
+        assert!(Path::new(&adjusted.crop).is_file());
+        assert!(adjusted.review.is_none());
+        let manifest: serde_json::Value =
+            serde_json::from_slice(&fs::read(review_path).unwrap()).unwrap();
+        assert_eq!(
+            manifest["lines"][0]["crop_commands"]
+                .as_array()
+                .unwrap()
+                .len(),
+            3
+        );
     }
 
     #[test]
