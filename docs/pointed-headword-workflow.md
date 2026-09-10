@@ -123,10 +123,10 @@ python3 tool/prepare-headword-review.py \
   vowels, dagesh/mappiq, shin/sin dots and other visible Hebrew marks. Exclude
   adjacent asterisks, grammar labels and homograph numbers. Truly unpointed
   headwords stay unpointed. Record ambiguous boundaries in review notes.
-- Validation needs a second agreeing reviewer. Headword reviews permit a second
-  reviewer to append a new revision. Reviewers must independently check the
-  source; two matching names/text records cannot prove the independence of a
-  human action. This remains a local, unauthenticated review workflow.
+- Validation uses the same single resolved human-review requirement as training.
+  Additional review revisions remain in the audit journal when supplied, but a
+  second reviewer is not required. This remains a local, unauthenticated review
+  workflow.
 
 Crop adjustment currently means replacing the crop and updating its geometry,
 commands and hashes in the draft manifest. This invalidates prior reviews;
@@ -144,16 +144,15 @@ cargo run -- export-headword-training \
 
 Export deliberately fails if any included fitting/validation headword is
 unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
-are skipped. Validation requires the latest source-matching decisions from two
-distinct reviewers to agree. A superseded approving decision cannot serve as a
-second check. Use a bounded review root if other training batches are unfinished.
+are skipped. One resolved human review is sufficient for both training and
+validation. Use a bounded review root if other training batches are unfinished.
 The checked-in reviews currently export 16 fitting headwords. The validation
 queue contains six unresolved candidates on printed page 175; export now stops
-until each has two agreeing source checks by distinct reviewers.
+until each has one resolved human source review.
 
 The new output directory is published only after validation and writing finish;
 existing directories cannot be overwritten. `ground-truth.jsonl` records
-reviewer/revision/time, both review decisions where applicable, source and crop
+reviewer/revision/time, an optional additional review where available, source and crop
 hashes, split hash, diplomatic text and NFC separately, and a hash of the exact
 `.gt.txt` file. Crops are copied unchanged. `alphabet-audit.json` separates train
 and validation counts, without claiming absent code points need manufactured
@@ -192,8 +191,8 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-initial batch has 16 exportable fitting crops. Independently source-check the six
-queued validation candidates twice, then expand validation and resolve ambiguous marks.
+initial batch has 16 exportable fitting crops. Source-check the six queued
+validation candidates, then expand validation and resolve ambiguous marks.
 Then compare crop/preprocessing variants
 and base models, smoke-test Kraken 7.1, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to

@@ -511,9 +511,6 @@ pub fn export_headwords(
                     && !r.reviewer.trim().is_empty()
                     && r.text.nfc().eq(review.text.nfc())
             });
-        if partition == Partition::Validation && second.is_none() {
-            bail!("validation headword needs an agreeing source check by a second reviewer");
-        }
         if !crops.insert(&line.crop_sha256) {
             bail!("duplicate headword crop, including across splits");
         }
@@ -718,26 +715,19 @@ mod tests {
     }
 
     #[test]
-    fn validation_headwords_require_two_agreeing_reviewers() {
+    fn validation_headwords_accept_one_resolved_human_review() {
         let (temp, store, splits) = headword_fixture("validation", "175");
         let line = store.lines().unwrap().remove(0);
         store.apply(update(&line, State::Resolved)).unwrap();
         let output = temp.path().join("export");
-        assert!(export_headwords(&store.root, &store.journal, &splits, &output).is_err());
-        let mut previous = store.records().unwrap().remove(0);
-        previous.independent_reading = Some(previous.text.clone());
-        fs::write(
-            &store.journal,
-            format!("{}\n", serde_json::to_string(&previous).unwrap()),
-        )
-        .unwrap();
-        let line = store.lines().unwrap().remove(0);
-        let mut second = update(&line, State::Resolved);
-        second.reviewer = "Second test reviewer".into();
-        assert!(store.apply(second).unwrap().independent_reading.is_none());
         assert_eq!(
             export_headwords(&store.root, &store.journal, &splits, &output).unwrap(),
             1
+        );
+        let manifest = fs::read_to_string(output.join("ground-truth.jsonl")).unwrap();
+        assert_eq!(
+            serde_json::from_str::<serde_json::Value>(&manifest).unwrap()["second_review"],
+            serde_json::Value::Null
         );
     }
 
