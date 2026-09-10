@@ -38,7 +38,8 @@ def crop(source, output, rectangle):
     return command
 
 
-def prepare(run_root, splits_path, catalogue_path, output):
+def prepare(run_root, splits_path, catalogue_path, output,
+            selected_partitions=('training', 'development')):
     splits = tomllib.loads(splits_path.read_text())
     source = next(s for s in tomllib.loads(catalogue_path.read_text())['sources'] if s['edition'] == splits['edition'])
     if source['sha256'] != splits['source_sha256']:
@@ -49,15 +50,21 @@ def prepare(run_root, splits_path, catalogue_path, output):
             if page in partitions:
                 raise ValueError(f'Overlapping split page {page}')
             partitions[page] = partition
-    # Seed a fitting/development queue. Validation collection is deliberate and
-    # separate; final-test pages are never opened by this generator.
+    selected_partitions = tuple(selected_partitions)
+    allowed_partitions = {'training', 'development', 'validation'}
+    invalid_partitions = set(selected_partitions) - allowed_partitions
+    if invalid_partitions:
+        raise ValueError(
+            'Unsupported review partition(s): ' + ', '.join(sorted(invalid_partitions)))
+    # Validation collection must be explicitly requested so it remains separate
+    # from ordinary fitting work. Final-test pages are never opened here.
     output.mkdir(parents=True, exist_ok=True)
     count = 0
     for parsed in sorted(run_root.glob('page-*/parsed.json')):
         source_page = int(parsed.parent.name.removeprefix('page-'))
         printed_page = str(source_page + source['printed_page_offset'])
         partition = partitions.get(printed_page)
-        if partition not in ('training', 'development'):
+        if partition not in selected_partitions:
             continue
         data = json.loads(parsed.read_text())
         candidates = []
@@ -149,5 +156,8 @@ if __name__ == '__main__':
     parser.add_argument('--splits', type=Path, required=True)
     parser.add_argument('--catalogue', type=Path, default=Path('sources.toml'))
     parser.add_argument('--output', type=Path, default=Path('benchmarks/transcription-drafts'))
+    parser.add_argument('--partition', action='append', choices=['training', 'development', 'validation'],
+                        dest='partitions', help='Partition to seed (repeatable; default: training and development)')
     args = parser.parse_args()
-    print(f'Added {prepare(args.run_root, args.splits, args.catalogue, args.output)} headword candidates; no reviews created.')
+    selected = args.partitions or ('training', 'development')
+    print(f'Added {prepare(args.run_root, args.splits, args.catalogue, args.output, selected)} headword candidates; no reviews created.')

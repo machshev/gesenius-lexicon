@@ -37,6 +37,8 @@ class PreparationTests(unittest.TestCase):
                 'diplomatic': 'אָב', 'coordinates': [{'source_page': 17}]}}]}))
             self.assertEqual(module.prepare(root, splits, catalogue, root / 'drafts'), 0)
             self.assertEqual(list((root / 'drafts').iterdir()), [])
+            with self.assertRaisesRegex(ValueError, 'Unsupported review partition'):
+                module.prepare(root, splits, catalogue, root / 'drafts', ('final_test',))
             splits.write_text(splits.read_text().replace('validation=["175"]', 'validation=["11"]'))
             with self.assertRaisesRegex(ValueError, 'Overlapping'):
                 module.prepare(root, splits, catalogue, root / 'drafts')

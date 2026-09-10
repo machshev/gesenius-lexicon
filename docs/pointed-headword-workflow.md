@@ -91,11 +91,21 @@ python3 tool/prepare-headword-review.py \
   --splits benchmarks/sample-inventory/robinson-1854-splits.toml
 ```
 
-The generator reads only assigned training/development pages, leaves existing
+By default the generator reads only assigned training/development pages, leaves existing
 sample directories alone, excludes headwords propagated from prior pages, and
 records original crops, full-line context, hashes and OCR suggestions. It never
-creates review decisions. Validation and final-test pages are not opened by this
-queue-seeding command. Training samples use the same `draft.json` / `review.json` layout:
+creates review decisions. Validation pages require the explicit option below;
+final-test pages cannot be opened by this command. Training samples use the same
+`draft.json` / `review.json` layout:
+
+Seed validation separately and deliberately; final-test pages cannot be selected:
+
+```console
+python3 tool/prepare-headword-review.py \
+  --run-root .cache/gesenius/runs/RUN/robinson-1854 \
+  --splits benchmarks/sample-inventory/robinson-1854-splits.toml \
+  --partition validation
+```
 
 - Set `kind` to `headword`, `partition` to `training` or `validation`, and the
   authoritative `printed_page`. The draft carries edition, PDF page and PDF hash.
@@ -137,8 +147,9 @@ unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. Validation requires the latest source-matching decisions from two
 distinct reviewers to agree. A superseded approving decision cannot serve as a
 second check. Use a bounded review root if other training batches are unfinished.
-The checked-in drafts currently have no eligible reviewed headword batch, so
-this command intentionally reports that labels must be collected first.
+The checked-in reviews currently export 16 fitting headwords. The validation
+queue contains six unresolved candidates on printed page 175; export now stops
+until each has two agreeing source checks by distinct reviewers.
 
 The new output directory is published only after validation and writing finish;
 existing directories cannot be overwritten. `ground-truth.jsonl` records
@@ -179,9 +190,11 @@ still do not mutate corpus entries or become corpus correction patches.
 
 ## Remaining gates
 
-Human inventory of the first 100–200 headwords and collection of approximately
-500–1,000 reviewed fitting crops are still required. Independently source-check
-validation labels and ambiguous marks. Then compare crop/preprocessing variants
+Human inventory of the first 100–200 headwords and collection of the remainder
+of the approximately 500–1,000 reviewed fitting crops are still required. The
+initial batch has 16 exportable fitting crops. Independently source-check the six
+queued validation candidates twice, then expand validation and resolve ambiguous marks.
+Then compare crop/preprocessing variants
 and base models, smoke-test Kraken 7.1, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to
 fast/full parsing with auditable word-level selection and uncertainty routing.
