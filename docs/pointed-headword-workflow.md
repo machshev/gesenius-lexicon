@@ -79,9 +79,10 @@ The transcription queue and review export do not expose final-test material.
 
 The `/transcriptions` review UI opens the headword queue by default, with a
 compact crop and a labelled Hebrew input. The sample-type selector also exposes
-line reviews. The seeded queue contains the development regression plus 20
-unreviewed machine candidates across printed pages 11, 75, 100, 125 and 200.
-These are detected candidates, not a complete inventory of those pages.
+line reviews. The latest queue expansion adds three unreviewed fitting candidates
+on printed page 25, 24 unreviewed validation candidates on pages 475 and 925, and
+21 development candidates on pages 50, 325 and 700. These are detected review
+inputs, not gold or complete page inventories.
 
 To add candidates from another cached per-edition run:
 
@@ -149,10 +150,12 @@ unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
 The checked-in reviews currently export 39 fitting and six validation headwords.
+The newly queued fitting and validation candidates do not change those totals
+until they receive source-checked human decisions.
 Reviewed boundary corrections remove adjacent labels, punctuation, and stars;
-one source-segmentation-clipped crop is explicitly excluded as unusable. Printed
-page 25 produced no detected candidate in the bounded fast run; the complete-page
-inventory must determine whether this is a detection miss.
+one source-segmentation-clipped crop is explicitly excluded as unusable. A later
+complete cached run supplied three page-25 candidates; a complete-page inventory
+must still establish whether there are additional detection misses.
 
 The new output directory is published only after validation and writing finish;
 existing directories cannot be overwritten. `ground-truth.jsonl` records
@@ -195,8 +198,9 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-initial batch has 39 exportable fitting crops and six validation crops. Expand
-the reviewed training and validation sets and resolve ambiguous marks.
+initial batch has 39 exportable fitting crops and six validation crops; another
+three fitting and 24 validation candidates are queued but unreviewed. Expand the
+reviewed training set and resolve the queued validation material and ambiguous marks.
 Then compare crop/preprocessing variants
 and base models, smoke-test Kraken 7.1, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to
