@@ -1,7 +1,8 @@
 # Accurate pointed Hebrew headwords
 
-Status: first-milestone tooling and an initial 16-sample reviewed training batch
-implemented, 2026-09-10. Validation still awaits human review; no
+Status: first-milestone tooling and an initial reviewed batch of 16 training and
+6 validation samples implemented, 2026-09-10. Another 27 fitting candidates are
+queued for review; no
 training was performed. See [implementation and remaining gates](pointed-headword-workflow.md). Complements `ocr-accuracy-plan.md`, with Robinson
 1854 headwords as the first bounded target; assess Tregelles separately.
 
@@ -176,7 +177,7 @@ do not automatically promote an entire machine corpus to verified.
 
 First implementation milestone tooling is implemented: page-17 regression evidence,
 a headword benchmark evaluator and review-to-training export with a unified split
-policy. The first 16 reviewed fitting samples are available, and a six-candidate
-validation queue is ready for human review. The representative inventory
+policy. The first 16 reviewed fitting and six reviewed validation samples are
+available, with another 27 fitting candidates queued across five pages. The representative inventory
 and the remaining reviewed batch are still pending. Then train the specialist. A full-book OCR rerun is unnecessary
 until this bounded experiment demonstrates improvement.
