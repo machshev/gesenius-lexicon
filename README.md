@@ -186,6 +186,11 @@ To generate index candidates directly from scans with headword-focused OCR:
 cargo run -- index --edition robinson-1854 --pages 17-57 --output artifacts/index-fast.json
 ```
 
+The independent primary and multilingual full-page OCR passes run concurrently,
+allowing both index generation and the full pipeline to use multiple CPU cores.
+Page parsing remains ordered so entries that continue across page boundaries are
+reconstructed deterministically.
+
 This mode keeps rasterization, preprocessing, English layout OCR, and an
 English/Hebrew page pass. It separately bounds candidate headword words and
 re-reads only those crops with the higher-accuracy isolated Hebrew pass.

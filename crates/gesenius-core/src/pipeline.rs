@@ -583,26 +583,38 @@ fn run_mode(
         report_page("preprocessing page image");
         let (processed, transform_id) =
             preprocess(&original, &page_path, &settings.preprocessing, &run_id)?;
-        report_page("running primary Tesseract OCR");
-        let primary_tesseract_alto = recognize_tesseract(
-            &processed,
-            &page_path,
-            &settings.tesseract,
-            &settings.tesseract.primary_languages,
-            "primary",
-            settings.raster_dpi,
-            &run_id,
-        )?;
-        report_page("running multilingual Tesseract OCR");
-        let multilingual_tesseract_alto = recognize_tesseract(
-            &processed,
-            &page_path,
-            &settings.tesseract,
-            &settings.tesseract.multilingual_languages,
-            "multilingual",
-            settings.raster_dpi,
-            &run_id,
-        )?;
+        report_page("running primary and multilingual Tesseract OCR in parallel");
+        let (primary_tesseract_alto, multilingual_tesseract_alto) = std::thread::scope(|scope| {
+            let primary = scope.spawn(|| {
+                recognize_tesseract(
+                    &processed,
+                    &page_path,
+                    &settings.tesseract,
+                    &settings.tesseract.primary_languages,
+                    "primary",
+                    settings.raster_dpi,
+                    &run_id,
+                )
+            });
+            let multilingual = scope.spawn(|| {
+                recognize_tesseract(
+                    &processed,
+                    &page_path,
+                    &settings.tesseract,
+                    &settings.tesseract.multilingual_languages,
+                    "multilingual",
+                    settings.raster_dpi,
+                    &run_id,
+                )
+            });
+            let primary = primary
+                .join()
+                .map_err(|_| anyhow::anyhow!("primary Tesseract worker panicked"))??;
+            let multilingual = multilingual
+                .join()
+                .map_err(|_| anyhow::anyhow!("multilingual Tesseract worker panicked"))??;
+            Ok::<_, anyhow::Error>((primary, multilingual))
+        })?;
         let primary_layout_page = parse_alto(&fs::read_to_string(&primary_tesseract_alto)?)?;
         let pdf_text_page = if settings.pdf_text.enabled {
             report_page("extracting embedded PDF text layer");
