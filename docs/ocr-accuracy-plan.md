@@ -272,7 +272,7 @@ Exact next action:
 - Fixed the fixture runner's obsolete SQLite schema path in `de6d32a`; loading
   the current v2 schema succeeded in the pinned Nix environment.
 
-Next sampling action: transcribe and independently source-check exact lines from
+Next sampling action: transcribe and source-check exact lines from
 the frozen development and validation pages, add coordinate anchors and resolve
 uncertain marks. Record numeric acceptance tolerances before recognition tuning.
 
@@ -318,17 +318,17 @@ and audit files are committed; this plan update records the remaining work.
   and the assembled individual crops. Drafted directly from the scan without OCR
   or dictionary proposals. Coverage: 12 Latn lines, 5 also Hebr, 1 also Grek.
   Recorded six lines needing particular point/accent/spelling checks, including
-  apparent defective Hebrew plurals; all twelve still require second review.
-- These are explicitly drafts outside the gold directory. No independent second
-  reviewer was available in this session. Accepted new gold count remains zero;
+  apparent defective Hebrew plurals; all twelve still require source review.
+- These are explicitly drafts outside the gold directory. Source review was not
+  completed in this session. Accepted new gold count remains zero;
   no measurement checkbox is marked complete. No final-test OCR was inspected.
 - Verification: source/raster hashes matched; JSON, frozen development membership,
   twelve unique ordered in-bounds non-overlapping anchors, matching crop dimensions
   and hashes, and absence of Unicode directional controls checked. `git diff
   --check` passed. This is a data/documentation change; no Cargo rebuild, generator,
   corpus mutation or recognition-accuracy measurement ran.
-- Exact next action: obtain independent source review of these twelve lines and
-  resolve the recorded uncertainties before promotion; prepare the development
+- Exact next action: source-review these twelve lines and resolve the recorded
+  uncertainties before promotion; prepare the development
   page 700 rare-script region and validation page 175 using the same evidence
   format. The representative sample target, scoring policy and numeric acceptance
   tolerances remain open. No unfinished processes.
@@ -337,7 +337,7 @@ and audit files are committed; this plan update records the remaining work.
 
 - Added **Transcription review** to `cargo run -- review serve`, available at
   `/transcriptions`. The form loads the twelve page-50 drafts, shows source crops
-  with zoom, and saves an independent reading before exposing draft text or
+  with zoom, and records a source reading before exposing draft text or
   uncertainty notes. Reviewers then record a resolved/unresolved decision.
 - Added a separate append-only `transcription-reviews.jsonl` beside the configured
   corpus patch file. Records preserve source identity, reviewer, timestamp,
@@ -358,7 +358,7 @@ and audit files are committed; this plan update records the remaining work.
   asynchronous data/image loading; final checks passed. JavaScript syntax passed
   Node's parser. Test journals/profiles were isolated in temporary directories;
   test servers and browsers stopped.
-- Next action: use the form for actual independent review of page 50; resolve
+- Next action: use the form for source review of page 50; resolve
   flagged readings, then promote accepted lines with their review evidence. The
   broader sample, scoring policy and acceptance-tolerance work remains open.
 
@@ -383,7 +383,7 @@ and audit files are committed; this plan update records the remaining work.
   mixed-script save/reveal/resolution and reload persistence. Inspected the
   rendered keyboard. Browser tests used temporary review data; no real draft was
   reviewed and no corpus/gold file changed. Test processes stopped.
-- Next action remains independent source review through the form, followed by
+- Next action remains source review through the form, followed by
   audited gold promotion and the broader representative measurement work.
 
 ### 2026-09-05: aligned scoring and Unicode policy

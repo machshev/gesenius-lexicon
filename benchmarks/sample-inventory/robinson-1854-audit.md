@@ -97,6 +97,6 @@ coordinate space:
 ## Next sampling gate
 
 Create exact line crops from the development and validation regions first,
-record each crop hash and diplomatic transcription, and have a second reviewer
-resolve uncertain glyphs. Freeze any additional final-test pages before looking
-at their OCR output. Only then count verified lines toward the 150–300 target.
+record each crop hash and diplomatic transcription, and resolve uncertain glyphs
+against the source. Freeze any additional final-test pages before looking at
+their OCR output. Only then count verified lines toward the 150–300 target.

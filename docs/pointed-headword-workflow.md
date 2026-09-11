@@ -128,10 +128,9 @@ python3 tool/prepare-headword-review.py \
   vowels, dagesh/mappiq, shin/sin dots and other visible Hebrew marks. Exclude
   adjacent asterisks, grammar labels and homograph numbers. Truly unpointed
   headwords stay unpointed. Record ambiguous boundaries in review notes.
-- Validation uses the same single resolved human-review requirement as training.
-  Additional review revisions remain in the audit journal when supplied, but a
-  second reviewer is not required. This remains a local, unauthenticated review
-  workflow.
+- Validation and training each require one resolved human review. Additional
+  review revisions remain in the audit journal when supplied. This remains a
+  local, unauthenticated review workflow.
 
 For source-backed headword candidates, expand **Edit crop from source page**. The
 editor starts at 200% centered on the current crop; use **Pan**, zoom between
