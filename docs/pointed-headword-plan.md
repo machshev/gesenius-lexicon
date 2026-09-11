@@ -1,13 +1,14 @@
 # Accurate pointed Hebrew headwords
 
-Status: first-milestone tooling and reviewed training data implemented,
-2026-09-10. A clean bounded export currently contains 34 training and 6
-validation samples; additional reviewed crop edits are stale until re-reviewed,
-and page 925 remains queued. A bounded Kraken 7.1 smoke attempt initialized the
-pinned PP-OCRv6 medium model but was killed before completing an epoch, so no
-checkpoint or training result exists. See [implementation and remaining
-gates](pointed-headword-workflow.md). Complements `ocr-accuracy-plan.md`, with Robinson
-1854 headwords as the first bounded target; assess Tregelles separately.
+Status: first-milestone tooling and reviewed training data implemented. As of
+2026-09-11 all 102 headword candidates have current decisions: 101 resolved and
+one marked not a headword. The frozen split exports 47 fitting and 30 validation
+pairs; 24 development reviews remain outside fitting. A resource-safe Kraken
+VGSL experiment completed but reached only 19.05% independently measured
+character accuracy and 0% exact-word accuracy. See
+[implementation and remaining gates](pointed-headword-workflow.md). Complements
+`ocr-accuracy-plan.md`, with Robinson 1854 headwords as the first bounded target;
+assess Tregelles separately.
 
 ## Recommendation and observed failure
 
@@ -178,10 +179,10 @@ do not automatically promote an entire machine corpus to verified.
   reproducible baseline for rollback. Commit implementation and reviewed corpus
   changes as separate milestones; model weights remain external artifacts.
 
-First implementation milestone tooling is implemented: page-17 regression evidence,
-a headword benchmark evaluator and review-to-training export with a unified split
-policy. The first 39 reviewed fitting and six reviewed validation samples are
-available across multiple alphabet sections, with another 27 fitting/validation
-candidates queued but not approved. The representative inventory and the remaining
-reviewed batch are still pending. Then train the specialist. A full-book OCR rerun is unnecessary
-until this bounded experiment demonstrates improvement.
+First implementation milestone tooling is implemented: page-17 regression
+evidence, a headword benchmark evaluator, and review-to-training export with a
+unified split policy. All current queued candidates have decisions, yielding 47
+fitting and 30 validation pairs across multiple alphabet sections. The
+representative inventory and a substantially larger, alphabet-complete fitting
+batch are still pending. A full-book OCR rerun is unnecessary until a bounded
+experiment demonstrates improvement.

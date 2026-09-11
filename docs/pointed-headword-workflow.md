@@ -154,10 +154,8 @@ Export deliberately fails if any included fitting/validation headword is
 unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
-Because the full queue includes unfinished and stale crop revisions, use the
-exporter's named diagnostics to finish those decisions before the next complete
-export. The clean subset used by the first smoke attempt exported 34 fitting and
-six validation headwords.
+The complete current queue exports 47 fitting and 30 validation headwords; 24
+development reviews are deliberately excluded from fitting and evaluation.
 Reviewed boundary corrections remove adjacent labels, punctuation, and stars;
 one source-segmentation-clipped crop is explicitly excluded as unusable. A later
 complete cached run supplied three page-25 candidates; a complete-page inventory
@@ -200,12 +198,13 @@ with baseline geometry while path-mode crop input is treated as bounding-box
 geometry. Treat both resource sizing and the geometry mismatch as unresolved;
 this is not a successful training result.
 
-On 2026-09-11 a fresh 4.0-million-parameter VGSL model completed both a
-one-epoch smoke run and validation-based early stopping without exhausting
-memory. The selected checkpoint scored only 2.33% character accuracy and 0%
-exact-word accuracy on the six validation crops. The mechanics now work with
-the smaller architecture, but the safe export still has only 34 fitting pairs
-and is insufficient for a useful recognizer. See the
+On 2026-09-11 a fresh 4.0-million-parameter VGSL model completed
+validation-based early stopping without exhausting memory. After all saved
+review commits were present, the authoritative export contained 47 fitting and
+30 validation pairs. An independent test of the selected checkpoint scored
+19.05% character accuracy and 0% exact-word accuracy. The mechanics now work
+with the smaller architecture, but the fitting set is insufficient and lacks
+three letters present in validation. See the
 [experiment report](kraken-headword-experiment-2026-09-11.md) for the reviewed
 data audit, hashes, commands, and error counts.
 
@@ -227,13 +226,11 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-clean smoke subset has 34 exportable fitting crops and six validation crops.
-Expand the reviewed training set and resolve the queued validation material and
-ambiguous marks.
-The latest crop edits also need fresh decisions for stale items on pages 475,
-550, and 650; page 925 remains unreviewed. Then compare crop/preprocessing variants
-and base models, resolve the Kraken geometry/resource issue, complete the Kraken
-7.1 smoke test, run learning curves, and choose a model
+current queue has decisions for 101 real headwords plus one false candidate,
+but only 47 belong to the frozen fitting partition. Expand the reviewed fitting
+set until it covers the validation alphabet and representative ambiguity classes.
+Then compare crop/preprocessing variants and base models, resolve the Kraken
+geometry issue, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to
 fast/full parsing with auditable word-level selection and uncertainty routing.
 Human correction replay, bounded regenerated-page comparisons, final-test
