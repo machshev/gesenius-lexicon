@@ -76,6 +76,12 @@ enum Commands {
         /// Stop after exactly this many epochs (recommended for smoke tests).
         #[arg(long)]
         epochs: Option<usize>,
+        /// Seed NumPy and PyTorch random number generators.
+        #[arg(long)]
+        seed: Option<u64>,
+        /// Request deterministic training operations.
+        #[arg(long)]
+        deterministic: bool,
     },
     /// Evaluate frozen headword predictions with exact and base-aligned mark metrics.
     BenchmarkHeadwords {
@@ -207,6 +213,12 @@ struct TrainArguments {
     /// Optional Kraken recognition model to fine-tune.
     #[arg(long)]
     base_model: Option<PathBuf>,
+    /// Seed NumPy and PyTorch random number generators during execution.
+    #[arg(long)]
+    seed: Option<u64>,
+    /// Request deterministic training operations during execution.
+    #[arg(long)]
+    deterministic: bool,
 }
 
 #[derive(Args)]
@@ -299,7 +311,16 @@ fn main() -> Result<()> {
             output_model,
             base_model,
             epochs,
-        } => execute_kraken_training(prepared, output_model, base_model.as_deref(), *epochs),
+            seed,
+            deterministic,
+        } => execute_kraken_training(
+            prepared,
+            output_model,
+            base_model.as_deref(),
+            *epochs,
+            *seed,
+            *deterministic,
+        ),
         Commands::BenchmarkHeadwords {
             manifest,
             predictions,
@@ -578,6 +599,8 @@ fn train_command(cli: &Cli, arguments: &TrainArguments) -> Result<()> {
             output_model,
             arguments.base_model.as_deref(),
             None,
+            arguments.seed,
+            arguments.deterministic,
         )?;
     }
     print_json(&result)

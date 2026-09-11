@@ -182,8 +182,13 @@ inspected. Repeated execution is byte-for-byte stable.
 
 ```console
 cargo run -- train-prepared --prepared training/headwords-v1 \
-  --output-model training/checkpoints --base-model models/base.mlmodel
+  --output-model training/checkpoints --base-model models/base.mlmodel \
+  --seed 42 --deterministic
 ```
+
+Use an explicit seed together with `--deterministic` for comparable accuracy
+experiments. The seed controls NumPy and PyTorch; deterministic mode requests
+deterministic training operations from Kraken/PyTorch.
 
 For a bounded mechanics check, add `--epochs 1`. This selects Kraken's fixed
 stop condition and streams its progress to the terminal. Omit the option for

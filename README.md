@@ -301,7 +301,7 @@ Reviews append complete replacements to `corpus/review/patches.jsonl`. Machine J
 cargo run -- train --pilot pilot.toml --splits PATH --output training
 cargo run -- train --pilot pilot.toml --splits PATH --output training \
   --execute --output-model training/checkpoints \
-  --base-model models/base.mlmodel
+  --base-model models/base.mlmodel --seed 42 --deterministic
 ```
 
 Reviewed headwords are emitted as dedicated word-crop training samples, in
@@ -310,7 +310,7 @@ feed the recognizer without pairing a short lemma transcription with the whole
 mixed-language source line. Headword and line samples stay in the same
 explicit page-level partition. Add `--headwords-only` to exclude entry lines.
 
-Supply an authoritative printed-page split manifest with `--splits PATH`; unlisted reviewed pages are rejected, and development/final-test pages are excluded from preparation. The hash-based split fallback has been removed. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation.
+Supply an authoritative printed-page split manifest with `--splits PATH`; unlisted reviewed pages are rejected, and development/final-test pages are excluded from preparation. The hash-based split fallback has been removed. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation. Use an explicit `--seed` with `--deterministic` for comparable training runs.
 
 The execution step writes `training-paths.txt` and `validation-paths.txt`; the
 execution path passes these manifests to Kraken 7.1 with

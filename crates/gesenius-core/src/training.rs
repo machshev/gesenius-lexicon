@@ -338,6 +338,8 @@ pub fn execute_kraken_training(
     output_model: &Path,
     base_model: Option<&Path>,
     epochs: Option<usize>,
+    seed: Option<u64>,
+    deterministic: bool,
 ) -> Result<()> {
     let records = read_ground_truth(&output_root.join("ground-truth.jsonl"))?;
     validate_training_records(
@@ -377,15 +379,48 @@ pub fn execute_kraken_training(
             .join("\n")
             + "\n",
     )?;
+    let mut command = kraken_training_command(
+        output_model,
+        base_model,
+        epochs,
+        seed,
+        deterministic,
+        &training_list,
+        &validation_list,
+    )?;
+    let status = command
+        .status()
+        .context("failed to execute ketos; enter `nix develop`")?;
+    if !status.success() {
+        bail!("Kraken training failed with status {status}");
+    }
+    Ok(())
+}
+
+fn kraken_training_command(
+    output_model: &Path,
+    base_model: Option<&Path>,
+    epochs: Option<usize>,
+    seed: Option<u64>,
+    deterministic: bool,
+    training_list: &Path,
+    validation_list: &Path,
+) -> Result<Command> {
+    if epochs == Some(0) {
+        bail!("training epochs must be greater than zero");
+    }
     let mut command = Command::new("ketos");
+    if let Some(seed) = seed {
+        command.arg("--seed").arg(seed.to_string());
+    }
+    if deterministic {
+        command.arg("--deterministic");
+    }
     command.arg("train").args(["--output"]).arg(output_model);
     if let Some(base_model) = base_model {
         command.arg("--load").arg(base_model);
     }
     if let Some(epochs) = epochs {
-        if epochs == 0 {
-            bail!("training epochs must be greater than zero");
-        }
         command
             .args(["--quit", "fixed", "--epochs"])
             .arg(epochs.to_string());
@@ -402,15 +437,9 @@ pub fn execute_kraken_training(
         "path",
         "--training-data",
     ]);
-    command.arg(&training_list);
+    command.arg(training_list);
     command.arg("--evaluation-data").arg(validation_list);
-    let status = command
-        .status()
-        .context("failed to execute ketos; enter `nix develop`")?;
-    if !status.success() {
-        bail!("Kraken training failed with status {status}");
-    }
-    Ok(())
+    Ok(command)
 }
 
 fn validate_training_records(records: &[GroundTruthRecord], splits: &PageSplits) -> Result<()> {
@@ -552,6 +581,28 @@ mod tests {
         assert_eq!(
             alphabet.len(),
             (0x05c7 - 0x0591 + 1) + (0x05ea - 0x05d0 + 1)
+        );
+    }
+
+    #[test]
+    fn kraken_training_command_places_reproducibility_options_before_subcommand() {
+        let command = kraken_training_command(
+            Path::new("checkpoints"),
+            None,
+            None,
+            Some(42),
+            true,
+            Path::new("train.txt"),
+            Path::new("validation.txt"),
+        )
+        .unwrap();
+        let arguments: Vec<_> = command
+            .get_args()
+            .map(|argument| argument.to_string_lossy().into_owned())
+            .collect();
+        assert_eq!(
+            &arguments[..4],
+            &["--seed", "42", "--deterministic", "train"]
         );
     }
 }
