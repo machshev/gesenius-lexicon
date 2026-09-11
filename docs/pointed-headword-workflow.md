@@ -200,6 +200,15 @@ with baseline geometry while path-mode crop input is treated as bounding-box
 geometry. Treat both resource sizing and the geometry mismatch as unresolved;
 this is not a successful training result.
 
+On 2026-09-11 a fresh 4.0-million-parameter VGSL model completed both a
+one-epoch smoke run and validation-based early stopping without exhausting
+memory. The selected checkpoint scored only 2.33% character accuracy and 0%
+exact-word accuracy on the six validation crops. The mechanics now work with
+the smaller architecture, but the safe export still has only 34 fitting pairs
+and is insufficient for a useful recognizer. See the
+[experiment report](kraken-headword-experiment-2026-09-11.md) for the reviewed
+data audit, hashes, commands, and error counts.
+
 Before invoking Kraken, the command rechecks page assignments, image/text
 hashes, duplicate crops, and the presence of train and validation data. This
 uses the repository's existing Kraken invocation; pinned 7.1 command support,
