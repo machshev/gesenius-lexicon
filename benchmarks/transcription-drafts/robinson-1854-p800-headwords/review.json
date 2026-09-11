@@ -1,0 +1,97 @@
+{
+  "status": "draft-not-gold",
+  "kind": "headword",
+  "partition": "training",
+  "printed_page": "800",
+  "source_page": 816,
+  "source_raster_sha256": "619c4fc9ada19b0705fdccea0ad5df5b50e085b5d04dda08d39761018b9fdb14",
+  "original_raster_sha256": "012b86c735b600d5857fc06b2da876ab3cbc36035cca8bb9f5909ec616cf821c",
+  "parsed_sha256": "e93759ba7b8211bd7eef188d118502445ddab81e084221ed900c2c63ed9bcf32",
+  "split_sha256": "c504d8edc9a9050c2e7c13d79a27f26e97c316fbb16ef335a5ebb79b5bce0dab",
+  "pipeline_run": "ec30e49c3843da8270e6b6748437611d241ed9b8c2846c4dfd5d6a0aa034bdc6",
+  "complete_page_inventory": false,
+  "lines": [
+    {
+      "line_id": "headword-0001",
+      "crop": "crops/headword-0001.png",
+      "crop_sha256": "c109cbe33e49d535971a227815af18e831cf3ce2b4481ad30aa4473e8043474f",
+      "context": "crops/headword-0001-context.png",
+      "context_sha256": "e96cd5897ab93a361da32f660cc8ad2351131f7e27fdde0a766153bc59be2cfb",
+      "original_crop": "crops/headword-0001-original.png",
+      "original_crop_sha256": "56f5b7828e277132bb1a9f570938572018ca08dceff3963c45ea239f2872e66a",
+      "rectangle": [
+        1558,
+        1624,
+        112,
+        70
+      ],
+      "context_rectangle": [
+        1141,
+        1634,
+        771,
+        50
+      ],
+      "source_span": "robinson-1854:p800:e0002:headword",
+      "entry_id": "robinson-1854:p800:e0002",
+      "source_line_id": "line_83",
+      "hypotheses": [
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng:block-psm6",
+          "model_hash": "8755b8042e59354170cae28144838ce822ecb6668bdd76d904b94529dd8e1565",
+          "text": "Deriv. m32, 22, ¥, and pr. n.",
+          "confidence": 0.58043486
+        },
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng:page-psm3",
+          "model_hash": "8755b8042e59354170cae28144838ce822ecb6668bdd76d904b94529dd8e1565",
+          "text": "Deriv. m32, 22, ¥, and pr. n.",
+          "confidence": 0.58043486
+        },
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng+heb",
+          "model_hash": "8b6dc3c4459dfd6a225a72527016e820942568cb3646453ed30f7fe7f6f4266f",
+          "text": "Deriv. m32, ,יען ,מען‎ and pr. .ם‎",
+          "confidence": 0.69964284
+        }
+      ],
+      "crop_commands": [
+        [
+          "magick",
+          ".cache/gesenius/runs/ec30e49c3843da8270e6b6748437611d241ed9b8c2846c4dfd5d6a0aa034bdc6/robinson-1854/page-0816/processed.png",
+          "-crop",
+          "112x70+1558+1624",
+          "+repage",
+          "benchmarks/transcription-drafts/robinson-1854-p800-headwords/crops/headword-0001.png"
+        ],
+        [
+          "magick",
+          ".cache/gesenius/runs/ec30e49c3843da8270e6b6748437611d241ed9b8c2846c4dfd5d6a0aa034bdc6/robinson-1854/page-0816/processed.png",
+          "-crop",
+          "771x50+1141+1634",
+          "+repage",
+          "benchmarks/transcription-drafts/robinson-1854-p800-headwords/crops/headword-0001-context.png"
+        ],
+        [
+          "magick",
+          ".cache/gesenius/runs/ec30e49c3843da8270e6b6748437611d241ed9b8c2846c4dfd5d6a0aa034bdc6/robinson-1854/page-0816/original.png",
+          "-crop",
+          "112x70+1558+1624",
+          "+repage",
+          "benchmarks/transcription-drafts/robinson-1854-p800-headwords/crops/headword-0001-original.png"
+        ]
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "headword-0001",
+      "detail": "Machine suggestion: check every letter and point against the crop and full line. If this is not a true headword or the crop is damaged, leave it unresolved with a note."
+    }
+  ]
+}

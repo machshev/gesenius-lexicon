@@ -82,10 +82,11 @@ compact crop and a labelled Hebrew input. The sample-type selector also exposes
 line reviews. Use **Only unreviewed** to hide every candidate with a saved review;
 resolved, crop-repair, unusable, and false-candidate decisions remain available
 when the filter is cleared. Saving any outcome advances to the next visible
-candidate. The latest queue expansion adds three unreviewed fitting candidates
-on printed page 25, 24 unreviewed validation candidates on pages 475 and 925, and
-21 development candidates on pages 50, 325 and 700. These are detected review
-inputs, not gold or complete page inventories.
+candidate. An earlier queue expansion added three fitting candidates on printed
+page 25, 24 validation candidates on pages 475 and 925, and 21 development
+candidates on pages 50, 325 and 700; those now have current review decisions.
+The latest expansion adds 74 unreviewed fitting candidates on 15 more pages.
+These are detected review inputs, not gold or complete page inventories.
 
 To add candidates from another cached per-edition run:
 
@@ -154,8 +155,12 @@ Export deliberately fails if any included fitting/validation headword is
 unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
-The complete current queue exports 47 fitting and 30 validation headwords; 24
-development reviews are deliberately excluded from fitting and evaluation.
+The reviewed subset exports 47 fitting and 30 validation headwords; 24
+development reviews are deliberately excluded from fitting and evaluation. The
+2026-09-11 expansion adds 74 unreviewed fitting candidates across 15 additional
+pages. A full-root export now correctly blocks until those crops receive human
+source review; if every candidate is confirmed, the fitting set will grow to
+121 headwords.
 Reviewed boundary corrections remove adjacent labels, punctuation, and stars;
 one source-segmentation-clipped crop is explicitly excluded as unusable. A later
 complete cached run supplied three page-25 candidates; a complete-page inventory
@@ -226,9 +231,13 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-current queue has decisions for 101 real headwords plus one false candidate,
-but only 47 belong to the frozen fitting partition. Expand the reviewed fitting
-set until it covers the validation alphabet and representative ambiguity classes.
+original queue has decisions for 101 real headwords plus one false candidate,
+but only 47 belong to the fitting partition. The expanded queue contains 74
+additional fitting candidates awaiting review. Their machine suggestions include
+the three validation letters previously absent from fitting (`ט`, `ק`, and `ץ`),
+but only source-reviewed labels can establish actual alphabet coverage. Expand
+the reviewed fitting set until it covers the validation alphabet and
+representative ambiguity classes.
 Then compare crop/preprocessing variants and base models, resolve the Kraken
 geometry issue, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to

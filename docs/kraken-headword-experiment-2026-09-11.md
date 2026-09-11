@@ -66,6 +66,11 @@ cannot be learned by a model trained from scratch. This split is useful for
 page-level isolation but too small and alphabetically separated for recognizer
 training. Do not integrate this checkpoint into OCR routing.
 
+After this experiment, the fitting queue was expanded with 74 source-anchored
+candidates from 15 additional pages. Their unreviewed machine suggestions contain
+all three missing validation letters. They are not included in the experiment
+counts or checkpoint and cannot enter a new export until human source review.
+
 ## Next gate
 
 Collect substantially more fitting headwords across the alphabet, ensuring

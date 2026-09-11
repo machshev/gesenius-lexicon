@@ -1,11 +1,13 @@
 # Accurate pointed Hebrew headwords
 
 Status: first-milestone tooling and reviewed training data implemented. As of
-2026-09-11 all 102 headword candidates have current decisions: 101 resolved and
-one marked not a headword. The frozen split exports 47 fitting and 30 validation
-pairs; 24 development reviews remain outside fitting. A resource-safe Kraken
-VGSL experiment completed but reached only 19.05% independently measured
-character accuracy and 0% exact-word accuracy. See
+2026-09-11 the original 102 headword candidates have current decisions: 101
+resolved and one marked not a headword. The reviewed subset exports 47 fitting
+and 30 validation pairs; 24 development reviews remain outside fitting. A new
+15-page fitting expansion adds 74 source-anchored candidates awaiting human
+review, for up to 121 fitting pairs if every new candidate is confirmed. A
+resource-safe Kraken VGSL experiment completed but reached only 19.05%
+independently measured character accuracy and 0% exact-word accuracy. See
 [implementation and remaining gates](pointed-headword-workflow.md). Complements
 `ocr-accuracy-plan.md`, with Robinson 1854 headwords as the first bounded target;
 assess Tregelles separately.
@@ -59,7 +61,7 @@ Important integration constraints found in current source:
   detections and false entry starts, rather than sampling only detected words.
 - [ ] Label failure stage: detection, crop damage, recognition, candidate
   selection, extraction, or rendering. Keep original and processed crops.
-- [ ] Extend the frozen inventory with explicit training pages. Preserve existing
+- [x] Extend the frozen inventory with explicit training pages. Preserve existing
   validation/test restrictions and exclude printed pages 1–10 from final test.
   Make training and evaluation consume one authoritative page split; reject
   overlapping pages and duplicated crops. Do not silently rehash reserved pages.
