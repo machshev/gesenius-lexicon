@@ -84,9 +84,9 @@ resolved, crop-repair, unusable, and false-candidate decisions remain available
 when the filter is cleared. Saving any outcome advances to the next visible
 candidate. An earlier queue expansion added three fitting candidates on printed
 page 25, 24 validation candidates on pages 475 and 925, and 21 development
-candidates on pages 50, 325 and 700; those now have current review decisions.
-The latest expansion adds 74 unreviewed fitting candidates on 15 more pages.
-These are detected review inputs, not gold or complete page inventories.
+candidates on pages 50, 325 and 700. The latest expansion added 74 fitting
+candidates on 15 more pages. All now have current review decisions. These are
+detected review inputs, not gold or complete page inventories.
 
 To add candidates from another cached per-edition run:
 
@@ -155,12 +155,8 @@ Export deliberately fails if any included fitting/validation headword is
 unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
-The reviewed subset exports 47 fitting and 30 validation headwords; 24
-development reviews are deliberately excluded from fitting and evaluation. The
-2026-09-11 expansion adds 74 unreviewed fitting candidates across 15 additional
-pages. A full-root export now correctly blocks until those crops receive human
-source review; if every candidate is confirmed, the fitting set will grow to
-121 headwords.
+The complete expanded queue exports 121 fitting and 30 validation headwords; 24
+development reviews are deliberately excluded from fitting and evaluation.
 Reviewed boundary corrections remove adjacent labels, punctuation, and stars;
 one source-segmentation-clipped crop is explicitly excluded as unusable. A later
 complete cached run supplied three page-25 candidates; a complete-page inventory
@@ -213,6 +209,13 @@ three letters present in validation. See the
 [experiment report](kraken-headword-experiment-2026-09-11.md) for the reviewed
 data audit, hashes, commands, and error counts.
 
+A directly comparable follow-up used all 121 reviewed fitting headwords and the
+unchanged 30-headword validation set. Validation-only alphabet gaps were gone,
+but the selected checkpoint regressed to 14.29% independently measured
+character accuracy and remained at 0% exact-word accuracy. More examples alone
+did not make this from-scratch configuration useful. See the
+[expanded experiment report](kraken-headword-experiment-2026-09-11-expanded.md).
+
 Before invoking Kraken, the command rechecks page assignments, image/text
 hashes, duplicate crops, and the presence of train and validation data. This
 uses the repository's existing Kraken invocation; pinned 7.1 command support,
@@ -231,14 +234,10 @@ still do not mutate corpus entries or become corpus correction patches.
 
 Human inventory of the first 100–200 headwords and collection of the remainder
 of the approximately 500–1,000 reviewed fitting crops are still required. The
-original queue has decisions for 101 real headwords plus one false candidate,
-but only 47 belong to the fitting partition. The expanded queue contains 74
-additional fitting candidates awaiting review. Their machine suggestions include
-the three validation letters previously absent from fitting (`ט`, `ק`, and `ץ`),
-but only source-reviewed labels can establish actual alphabet coverage. Expand
-the reviewed fitting set until it covers the validation alphabet and
-representative ambiguity classes.
-Then compare crop/preprocessing variants and base models, resolve the Kraken
+expanded fitting set now covers every code point in the validation set, but it
+does not yet cover representative ambiguity classes densely enough for useful
+recognition. Compare crop/preprocessing variants and printed-Hebrew-compatible
+base models, resolve the Kraken
 geometry issue, run learning curves, and choose a model
 using validation metrics. Only a demonstrated winner should be connected to
 fast/full parsing with auditable word-level selection and uncertainty routing.

@@ -7,6 +7,9 @@ checkpoint. This resolves the mechanics and resource failure seen when the
 34.7-million-parameter PP-OCRv6 medium model was fine-tuned, but it is not an
 accuracy success: an independent test of the selected checkpoint reached 19.05%
 character accuracy and 0% exact-word accuracy on 30 validation headwords.
+The subsequent [expanded-data experiment](kraken-headword-experiment-2026-09-11-expanded.md)
+used 121 fitting headwords but regressed to 14.29% character accuracy on the
+unchanged validation set.
 
 The local, ignored experiment bundle is
 `artifacts/kraken-headword-vgsl-2026-09-11-complete`. Its selected weights are

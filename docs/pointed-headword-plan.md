@@ -1,13 +1,13 @@
 # Accurate pointed Hebrew headwords
 
 Status: first-milestone tooling and reviewed training data implemented. As of
-2026-09-11 the original 102 headword candidates have current decisions: 101
-resolved and one marked not a headword. The reviewed subset exports 47 fitting
-and 30 validation pairs; 24 development reviews remain outside fitting. A new
-15-page fitting expansion adds 74 source-anchored candidates awaiting human
-review, for up to 121 fitting pairs if every new candidate is confirmed. A
-resource-safe Kraken VGSL experiment completed but reached only 19.05%
-independently measured character accuracy and 0% exact-word accuracy. See
+2026-09-11 all candidates in the expanded queue have current decisions. The
+full export contains 121 fitting and 30 validation pairs; 24 development
+reviews remain outside fitting. A resource-safe Kraken VGSL experiment with 47
+fitting pairs reached 19.05% independently measured character accuracy and 0%
+exact-word accuracy. Repeating it with all 121 fitting pairs reached only
+14.29% character accuracy and 0% exact-word accuracy on the unchanged
+validation set. See
 [implementation and remaining gates](pointed-headword-workflow.md). Complements
 `ocr-accuracy-plan.md`, with Robinson 1854 headwords as the first bounded target;
 assess Tregelles separately.
