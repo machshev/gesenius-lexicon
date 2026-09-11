@@ -212,8 +212,10 @@ data audit, hashes, commands, and error counts.
 A directly comparable follow-up used all 121 reviewed fitting headwords and the
 unchanged 30-headword validation set. Validation-only alphabet gaps were gone,
 but the selected checkpoint regressed to 14.29% independently measured
-character accuracy and remained at 0% exact-word accuracy. More examples alone
-did not make this from-scratch configuration useful. See the
+character accuracy and remained at 0% exact-word accuracy. This selected
+from-scratch checkpoint is still not useful. Training was not
+seeded or deterministic, so a controlled repeat is needed before attributing
+the difference solely to dataset size. See the
 [expanded experiment report](kraken-headword-experiment-2026-09-11-expanded.md).
 
 Before invoking Kraken, the command rechecks page assignments, image/text

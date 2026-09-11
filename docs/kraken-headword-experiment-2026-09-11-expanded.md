@@ -56,13 +56,16 @@ The independent result was 162 errors among 189 reference characters: 53
 deletions, 107 substitutions, and two insertions. This is 14.29% character
 accuracy and 0% exact-word accuracy. Relative to the preceding run, deletion
 errors fell from 84 to 53, but substitution errors rose from 65 to 107 and
-total errors rose from 153 to 162. Increasing the fitting set alone therefore
-did not improve this architecture/configuration.
+total errors rose from 153 to 162. The expanded run therefore did not produce
+an improvement. Neither run fixed a random seed or
+enabled deterministic training, so random initialization is a confounder and
+the regression cannot be attributed solely to the larger fitting set.
 
 The laptop has an Intel Meteor Lake NPU, not a TPU. Kraken's current training
-path does not target that NPU, so this experiment ran on CPU. Intel integrated
-GPU training through PyTorch XPU would require a separate environment and
-Kraken compatibility experiment; it is not evidence about model accuracy.
+path does not target that NPU, and the pinned environment provides PyTorch
+2.10.0 as a CPU-only build: CUDA, XPU, and MPS all report unavailable. Intel
+integrated GPU training through PyTorch XPU would require a separate environment
+and Kraken compatibility experiment; it is not evidence about model accuracy.
 
 ## Next gate
 
