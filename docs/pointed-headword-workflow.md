@@ -250,6 +250,85 @@ results were measured partly against incorrect references. Both are superseded;
 re-check the 30 validation labels against their crops before selecting on them
 again.
 
+## Render synthetic pretraining data
+
+Manual transcription cannot reach the quantity of character-level supervision a
+CTC recognizer needs; see the plan for the arithmetic. Synthetic renderings
+close that gap without any transcription, and their labels are exact by
+construction.
+
+Build a word list first. Strong's Hebrew lexicon headwords are the distribution
+the recognizer actually has to read, so they are the default; the Westminster
+Leningrad Codex is available with `--source wlc` for breadth of context.
+
+```console
+python3 tool/fetch-hebrew-wordlist.py
+```
+
+This downloads from openscriptures, normalizes each token the way the reviewed
+headwords are transcribed — cantillation, meteg and rafe removed, maqaf and
+morpheme separators split, NFC — and writes `artifacts/wordlists/hebrew.txt`
+with a `.provenance.json` recording every download URL, byte count and SHA-256.
+The default run yields 8,985 distinct pointed lemmas over 41 scalars, which
+covers every scalar in the reviewed fitting and validation sets.
+
+Then render:
+
+```console
+python3 tool/render-synthetic-hebrew.py \
+  --output artifacts/synthetic-hebrew-v1 \
+  --count 50000 --validation-count 2000 --seed 42 \
+  --font-dir artifacts/fonts \
+  --font-dir "$(dirname "$(fc-match -f '%{file}' 'Frank Ruehl CLM')")"
+```
+
+Rendering goes through ImageMagick's PangoCairo delegate, so HarfBuzz places
+combining points using the font's mark-positioning tables. No new dependency is
+introduced: `magick` is already in the dev shell and already used by
+`training.rs`.
+
+That command was run on 2026-09-12 and produced 52,000 samples in 316 seconds
+across 14 cores, about 165 per second, occupying 548 MB. Its 50,000 training
+samples carry 348,709 scalars, a mean of 6.97 each, against 776 in the reviewed
+fitting set. Both splits cover all 41 scalars, no validation scalar is absent
+from training, the two vocabularies are disjoint at 8,087 and 898 words, and no
+two images are byte-identical.
+
+The output mirrors the reviewed export's layout — `train/` and `validation/`
+holding `NAME.png` and `NAME.gt.txt` pairs, plus `training-paths.txt` and
+`validation-paths.txt` named to match what `execute_kraken_training` writes, so
+a `ketos` command copied from an experiment report works against either
+directory. `manifest.jsonl` records per sample the text, font, font description,
+target ink height, every degradation parameter, and both file digests.
+`summary.json` records the seed, settings, word-list digest, font distribution,
+and train/validation alphabets separately.
+
+Several properties are enforced rather than assumed:
+
+- **Font coverage.** Pango silently substitutes another face for a missing
+  glyph, which would put an unrequested typeface into the corpus under the
+  correct label. Every font in the mixture is checked against the word list's
+  charset through `fc-list` before rendering, and a gap is a hard failure.
+- **Weight.** ImageMagick's `-weight` and `-font` options are ignored by the
+  `pango:` coder, so the weight travels inside the Pango font description. This
+  is not cosmetic: the plain and bold cuts of Frank Ruhl Libre scored 0.336 and
+  0.480 against the real crops, so a silently-regular render would have used the
+  worse face throughout.
+- **Disjoint vocabularies.** Train and validation words never overlap, so the
+  synthetic validation score measures generalization rather than memorization.
+  That score is only for early stopping while pretraining; the reportable number
+  is still `ketos test` against the real frozen validation manifest.
+- **Determinism.** Each sample seeds from `(--seed, split, index)`, so output
+  does not depend on `--count`, ordering or `--jobs`. Two runs at the same seed
+  differ only in the absolute paths bound to their output directory.
+
+The renderer produces pretraining material, not gold. `summary.json` says so in
+its `authority` field. Nothing it emits is evidence about any Robinson 1854
+page, and it must not enter the benchmark, the review queue, or the corpus.
+
+`python3 tool/test-render-synthetic-hebrew.py` covers the above; it skips when
+`magick`, `fc-list` or the Hebrew fonts are unavailable.
+
 ## Train only after review and the smoke experiment
 
 ```console

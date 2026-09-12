@@ -140,26 +140,42 @@ never prints.
 ## 2. Synthetic pretraining
 
 This is the next experiment. It changes one variable, needs no new
-transcription, and is evaluated on the existing frozen validation set.
+transcription, and is evaluated on the existing frozen validation set. The
+renderer is implemented; the training run is not yet done.
 
-- [ ] Render pointed Hebrew word images from open text sources. Labels are exact
-  by construction. Candidate text: the Open Scriptures/WLC pointed text
-  (CC BY 4.0, around 305,000 tokens and 40,000 unique pointed forms) and the
-  public-domain pointed Strong's Hebrew lemma list (about 8,674 entries). Strip
-  cantillation, which the lexicon does not print in headwords.
-- [ ] Use a font *mixture*, not a single face. A single-font synthetic model
-  overfits to that face and transfers poorly.
-- [ ] Match scale to the real crops: headword ink height including points above
-  and below is median 53 px, p10–p90 42–68 px, on a 2061×3488 page raster.
-- [ ] Randomize degradation per sample: blur, ink spread, threshold, paper tone,
-  noise, slight rotation, baseline jitter, JPEG artefacts. The degradation model
-  matters more to transfer than the font choice.
-- [ ] Pretrain on 50,000–200,000 synthetic images, then fine-tune on the
-  reviewed crops. Seed and use `--deterministic` throughout.
+- [x] Render pointed Hebrew word images from open text sources. Labels are exact
+  by construction. `tool/fetch-hebrew-wordlist.py` builds the word list from the
+  Strong's Hebrew lexicon headwords (8,985 distinct pointed lemmas over 41
+  scalars, covering every scalar in the reviewed fitting and validation sets),
+  with the Westminster Leningrad Codex available for breadth. Cantillation,
+  meteg and rafe are stripped, since the reviewed headwords contain none.
+- [x] Use a font *mixture*, not a single face. A single-font synthetic model
+  overfits to that face and transfers poorly. `tool/render-synthetic-hebrew.py`
+  weights the seven fonts below and verifies each covers the word list's charset
+  before rendering, because Pango substitutes silently for a missing glyph.
+- [x] Match scale to the real crops: headword ink height including points above
+  and below is median 53 px, p10-p90 42-68 px, on a 2061x3488 page raster. The
+  renderer samples a triangular height over that range per image.
+- [x] Randomize degradation per sample: rotation, blur, ink spread, contrast,
+  paper tone, sensor noise, JPEG artefacts and margins, each recorded per sample
+  in the manifest. The degradation model matters more to transfer than the font
+  choice.
+- [x] Produce the first corpus. `artifacts/synthetic-hebrew-v1` holds 50,000
+  training and 2,000 validation samples at seed 42, rendered in 316 seconds and
+  occupying 548 MB. Its training split carries 348,709 scalars, a mean of 6.97
+  each, against 776 in the reviewed fitting set: about 450 times the supervision.
+- [ ] Pretrain on that corpus, then fine-tune on the reviewed crops. Seed and
+  use `--deterministic` throughout.
 - [ ] Report the synthetic-only and fine-tuned scores separately on the frozen
   validation set. Expect a large gain over 14.29% but not acceptance-level
   accuracy from synthetic data alone; the domain gap to a real 1850s foundry
   face is genuine.
+
+Synthetic output is pretraining material, never gold. It must not enter the
+benchmark, the review queue or the corpus, and its own validation split exists
+only for early stopping: the reportable number is `ketos test` against the real
+frozen validation manifest. Commands and enforced invariants are in
+[the workflow](pointed-headword-workflow.md).
 
 ### Font selection
 
