@@ -1,5 +1,34 @@
 # Synthetic pretraining for pointed headwords, 2026-09-12
 
+> **Correction, 2026-09-12 (later the same day). The figures below do not
+> reproduce and are superseded.** Re-measured with a single consistent method
+> against the surviving checkpoints, the synthetic-only model scores 60.85%
+> rather than 74.60%, and the selected fine-tuned model scores 74.07% rather
+> than 88.36%, both on the same frozen 30-crop set. The Tesseract row (44.44%)
+> and the 47-pair Kraken row (12.17%) reproduce exactly, which is what
+> establishes the re-measurement as using the same method rather than a
+> different one.
+>
+> The likely cause is visible in the 121-pair row: it is recorded here as
+> 14.81%, which is precisely that run's internal checkpoint score
+> (`best_0.1481`), not an independent test — an independent test gives 12.70%.
+> This report warned about exactly that substitution for the 47-pair row and
+> then appears to have made it elsewhere. Selection scores are optimistic and
+> are not reportable numbers.
+>
+> What survives: synthetic pretraining still clears the Tesseract baseline by a
+> wide margin, fine-tuning on reviewed pairs is still worth about thirteen
+> points (60.85% to 74.07%), and the decomposition argument is unaffected. What
+> does not survive is the claim of 88.36% and "one fifth of the baseline's
+> errors". The exact-pointed counts in the table below were not re-derived and
+> should be treated as unverified.
+>
+> Measured values, the method, and the enlarged evaluation sets are in
+> `artifacts/synthetic-pretrain-2026-09-12-50k-balanced-seed42/prior-baselines.json`.
+> The intermediate pretraining checkpoints were deleted during a disk cleanup
+> before the discrepancy was found, so the per-epoch transfer curve below cannot
+> now be re-derived; only the final checkpoint and the fine-tuned weights remain.
+
 ## Outcome
 
 Synthetic pretraining works. A recognizer pretrained only on rendered pointed
