@@ -44,6 +44,37 @@ class FontDescription(unittest.TestCase):
         self.assertTrue(all(font['weight'] >= 1 for font in renderer.DEFAULT_FONTS))
 
 
+class Balancing(unittest.TestCase):
+    def test_clusters_keep_a_letter_with_its_points(self):
+        # Kaf and kaf-with-dagesh are separate discriminations to learn, so the
+        # unit has to be the letter plus the marks attached to it.
+        self.assertEqual(renderer.clusters('\u05db\u05b4\u05bc\u05e0'),
+                         ['\u05db\u05b4\u05bc', '\u05e0'])
+        self.assertEqual(renderer.clusters(''), [])
+
+    def test_alpha_zero_keeps_sampling_uniform(self):
+        # The default must reproduce corpora rendered before balancing existed.
+        self.assertIsNone(renderer.balance_weights(WORDS, 0.0))
+        import random
+        rng = lambda i: random.Random(f'seed:{i}')
+        self.assertEqual([renderer.pick(WORDS, None, rng(i)) for i in range(20)],
+                         [WORDS[rng(i).randrange(len(WORDS))] for i in range(20)])
+
+    def test_balancing_raises_the_share_of_rare_clusters(self):
+        import collections, random
+        words = ['\u05d1\u05bc\u05d0'] * 40 + ['\u05db\u05bc\u05d0']
+        weights = renderer.balance_weights(words, 1.0)
+        counts = collections.Counter(
+            renderer.pick(words, weights, random.Random(f's{i}')) for i in range(400))
+        rare = counts['\u05db\u05bc\u05d0'] / 400
+        self.assertGreater(rare, 1 / 41)
+
+    def test_weights_are_a_normalized_distribution(self):
+        weights = renderer.balance_weights(WORDS, 1.0)
+        self.assertAlmostEqual(sum(weights), 1.0, places=9)
+        self.assertTrue(all(w > 0 for w in weights))
+
+
 class Degradation(unittest.TestCase):
     def test_sampled_height_stays_within_the_measured_range(self):
         import random

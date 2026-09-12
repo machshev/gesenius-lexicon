@@ -243,6 +243,64 @@ def make_sample(job):
     }
 
 
+def clusters(text):
+    """Split into letter-plus-its-marks units, the thing a recognizer must tell apart.
+
+    Kaf and kaf-with-dagesh are different discriminations to learn, so the unit
+    that matters is the letter together with the points attached to it, not the
+    bare code point.
+    """
+    units = []
+    for character in unicodedata.normalize('NFD', text):
+        if unicodedata.combining(character) and units:
+            units[-1] += character
+        else:
+            units.append(character)
+    return [unicodedata.normalize('NFC', unit) for unit in units]
+
+
+def balance_weights(words, alpha):
+    """Sampling weights that flatten cluster frequency when alpha > 0.
+
+    A word list mirrors the natural frequency of the language, so rare letters
+    and rare letter/point combinations receive supervision in proportion to how
+    seldom they occur. The recognizer then learns a frequency prior that misfires
+    precisely on the rare configurations a lexicon of headwords is full of. With
+    alpha = 0 sampling is uniform and output matches earlier corpora exactly.
+    """
+    if alpha <= 0:
+        return None
+    frequency = {}
+    for word in words:
+        for unit in clusters(word):
+            frequency[unit] = frequency.get(unit, 0) + 1
+    weights = []
+    for word in words:
+        units = set(clusters(word))
+        # The rarest cluster decides the weight. Averaging over the word dilutes a
+        # rare configuration with the common ones beside it, which is precisely
+        # the skew this is meant to undo.
+        weights.append(max((1.0 / frequency[unit]) ** alpha for unit in units)
+                       if units else 0.0)
+    total = sum(weights)
+    if total <= 0:
+        raise SystemExit('balancing produced no usable weights')
+    return [weight / total for weight in weights]
+
+
+def pick(pool, weights, rng):
+    """Deterministic weighted choice; falls back to uniform when unweighted."""
+    if weights is None:
+        return pool[rng.randrange(len(pool))]
+    target = rng.random()
+    cumulative = 0.0
+    for word, weight in zip(pool, weights):
+        cumulative += weight
+        if target <= cumulative:
+            return word
+    return pool[-1]
+
+
 def alphabet(records):
     counts = {}
     for record in records:
@@ -286,6 +344,9 @@ def run(args):
         if not vocabulary['train']:
             raise SystemExit('validation vocabulary fraction leaves no training words')
 
+        weights = {split: balance_weights(pool, args.balance)
+                   for split, pool in vocabulary.items()}
+
         settings = dict(DEFAULTS)
         for key in settings:
             override = getattr(args, key, None)
@@ -300,7 +361,8 @@ def run(args):
             directory.mkdir()
             pool = vocabulary[split]
             for index in range(count):
-                text = pool[random.Random(f'{args.seed}:{split}:word:{index}').randrange(len(pool))]
+                text = pick(pool, weights[split],
+                            random.Random(f'{args.seed}:{split}:word:{index}'))
                 jobs.append((index, split, text, fonts, fontconfig, settings,
                              args.seed, directory, prefix))
 
@@ -340,6 +402,7 @@ def run(args):
             'wordlist_sha256': wordlist_sha256,
             'distinct_words': len(words),
             'vocabulary': {split: len(pool) for split, pool in vocabulary.items()},
+            'balance_alpha': args.balance,
             'vocabulary_overlap': sorted(set(vocabulary['train']) & set(vocabulary['validation'])),
             'fonts': fonts,
             'font_counts': {family: sum(1 for record in records if record['font'] == family)
@@ -374,6 +437,10 @@ def main():
     parser.add_argument('--validation-count', type=int, default=2000)
     parser.add_argument('--validation-vocabulary', type=float, default=0.1,
                         help='fraction of distinct words reserved for validation')
+    parser.add_argument('--balance', type=float, default=0.0,
+                        help='flatten letter/point cluster frequency; 0 is uniform '
+                             '(the default, reproducing earlier corpora), 1 fully '
+                             'inverse-frequency')
     parser.add_argument('--seed', type=int, default=0)
     parser.add_argument('--jobs', type=int, default=None)
     parser.add_argument('--font-dir', action='append', default=[],
