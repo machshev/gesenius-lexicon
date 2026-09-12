@@ -332,6 +332,49 @@ pub fn prepare(
     })
 }
 
+/// Minimum Kraken release supporting `--format-type path` for recognition training.
+///
+/// 7.0.2 accepts the flag and then raises `format_type path not in [xml, page,
+/// alto, binary]` from deep inside the data module, because its recognition
+/// data module never handles the case. Resolving `ketos` from `PATH` means a
+/// stale environment silently substitutes that version, so check before
+/// spending a training run on it.
+const MINIMUM_KRAKEN: (u32, u32) = (7, 1);
+
+fn parse_kraken_version(output: &str) -> Option<(u32, u32)> {
+    let rest = output.split("version").nth(1)?;
+    let mut parts = rest.trim().split(['.', ' ', '\n']);
+    let major = parts.next()?.parse().ok()?;
+    let minor = parts.next().and_then(|part| part.parse().ok()).unwrap_or(0);
+    Some((major, minor))
+}
+
+fn check_kraken_version() -> Result<()> {
+    let output = Command::new("ketos")
+        .arg("--version")
+        .output()
+        .context("failed to execute ketos; enter `nix develop`")?;
+    let text = String::from_utf8_lossy(&output.stdout);
+    let Some(version) = parse_kraken_version(&text) else {
+        bail!(
+            "could not read a version from `ketos --version`: {}",
+            text.trim()
+        );
+    };
+    if version < MINIMUM_KRAKEN {
+        bail!(
+            "ketos {}.{} does not support --format-type path for recognition training; \
+             {}.{} or newer is required. The resolved ketos is whichever comes first on \
+             PATH, so enter `nix develop` rather than relying on an ambient environment.",
+            version.0,
+            version.1,
+            MINIMUM_KRAKEN.0,
+            MINIMUM_KRAKEN.1,
+        );
+    }
+    Ok(())
+}
+
 /// Executes `ketos train` using prepared page-separated data.
 pub fn execute_kraken_training(
     output_root: &Path,
@@ -341,6 +384,7 @@ pub fn execute_kraken_training(
     seed: Option<u64>,
     deterministic: bool,
 ) -> Result<()> {
+    check_kraken_version()?;
     let records = read_ground_truth(&output_root.join("ground-truth.jsonl"))?;
     validate_training_records(
         &records,
@@ -537,6 +581,20 @@ fn safe_name(value: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn kraken_versions_below_the_path_format_minimum_are_rejected() {
+        assert_eq!(parse_kraken_version("ketos, version 7.1\n"), Some((7, 1)));
+        assert_eq!(parse_kraken_version("ketos, version 7.0.2\n"), Some((7, 0)));
+        assert_eq!(parse_kraken_version("ketos, version 10.2.1"), Some((10, 2)));
+        assert_eq!(parse_kraken_version("no version here"), None);
+        // 7.0.2 accepts --format-type path and then raises from the data module,
+        // so the ordering below is what separates a usable environment from a
+        // run that fails several minutes in.
+        assert!(parse_kraken_version("ketos, version 7.0.2").unwrap() < MINIMUM_KRAKEN);
+        assert!(parse_kraken_version("ketos, version 7.1").unwrap() >= MINIMUM_KRAKEN);
+        assert!(parse_kraken_version("ketos, version 8.0").unwrap() >= MINIMUM_KRAKEN);
+    }
 
     #[test]
     fn training_rejects_tampering_and_duplicate_crops_before_execution() {
