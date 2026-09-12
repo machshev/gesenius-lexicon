@@ -1,0 +1,97 @@
+{
+  "status": "draft-not-gold",
+  "kind": "headword",
+  "partition": "validation",
+  "printed_page": "1075",
+  "source_page": 1091,
+  "source_raster_sha256": "f31354501ec5b53cfc5874a66d1eaa28b29ea37427ff33e296d56e9497d5d096",
+  "original_raster_sha256": "6e425e99174e23f0eb3b07b8aab8fae92c45bc05434f6093ea369507c9330bbc",
+  "parsed_sha256": "4008dd5dbb197879ec8f75f2ad04f4862a888521c81fc1bdaf9c6c19996fc808",
+  "split_sha256": "9713ca2986e927c289bbdd1896b3e9a2704f8cd87362787f90c1c15904a62340",
+  "pipeline_run": "1e006ebf2d21fa88cd28ce51b4620b99355f1767e7e9125ba24cf2aa64463934",
+  "complete_page_inventory": false,
+  "lines": [
+    {
+      "line_id": "headword-0001",
+      "crop": "crops/headword-0001.png",
+      "crop_sha256": "d31dd1c20df6a5f7dfb9cf73f39dac43d756742cd055a0b3cdb28a11b37dfd32",
+      "context": "crops/headword-0001-context.png",
+      "context_sha256": "d31dd1c20df6a5f7dfb9cf73f39dac43d756742cd055a0b3cdb28a11b37dfd32",
+      "original_crop": "crops/headword-0001-original.png",
+      "original_crop_sha256": "87ded17c1cb2271b801021f3e7b3e92fe575b52bbbc27559c79a91d535b28dd1",
+      "rectangle": [
+        1134,
+        715,
+        740,
+        78
+      ],
+      "context_rectangle": [
+        1134,
+        715,
+        740,
+        78
+      ],
+      "source_span": "robinson-1854:p1075:e0002:headword",
+      "entry_id": "robinson-1854:p1075:e0002",
+      "source_line_id": "line_66",
+      "hypotheses": [
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng:block-psm6",
+          "model_hash": "8755b8042e59354170cae28144838ce822ecb6668bdd76d904b94529dd8e1565",
+          "text": "D?*& or Dé'\\? fut. :’2’:.:'} 1. to be",
+          "confidence": 0.6716667
+        },
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng:page-psm3",
+          "model_hash": "8755b8042e59354170cae28144838ce822ecb6668bdd76d904b94529dd8e1565",
+          "text": "D?*& or Dé'\\? fut. :’2’:.:'} 1. to be",
+          "confidence": 0.6716667
+        },
+        {
+          "engine": "tesseract",
+          "engine_version": "tesseract 5.5.1",
+          "model": "nixpkgs-tesseract-tessdata-pinned-by-flake.lock:eng+heb",
+          "model_hash": "8b6dc3c4459dfd6a225a72527016e820942568cb3646453ed30f7fe7f6f4266f",
+          "text": "fut. :’2’:.:'} 1. to be‏ ?י־,לם זס '#ילם",
+          "confidence": 0.6721212
+        }
+      ],
+      "crop_commands": [
+        [
+          "magick",
+          ".cache/gesenius/runs/1e006ebf2d21fa88cd28ce51b4620b99355f1767e7e9125ba24cf2aa64463934/robinson-1854/page-1091/processed.png",
+          "-crop",
+          "740x78+1134+715",
+          "+repage",
+          "benchmarks/transcription-drafts/robinson-1854-p1075-headwords/crops/headword-0001.png"
+        ],
+        [
+          "magick",
+          ".cache/gesenius/runs/1e006ebf2d21fa88cd28ce51b4620b99355f1767e7e9125ba24cf2aa64463934/robinson-1854/page-1091/processed.png",
+          "-crop",
+          "740x78+1134+715",
+          "+repage",
+          "benchmarks/transcription-drafts/robinson-1854-p1075-headwords/crops/headword-0001-context.png"
+        ],
+        [
+          "magick",
+          ".cache/gesenius/runs/1e006ebf2d21fa88cd28ce51b4620b99355f1767e7e9125ba24cf2aa64463934/robinson-1854/page-1091/original.png",
+          "-crop",
+          "740x78+1134+715",
+          "+repage",
+          "benchmarks/transcription-drafts/robinson-1854-p1075-headwords/crops/headword-0001-original.png"
+        ]
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "line_id": "headword-0001",
+      "detail": "Machine suggestion: check every letter and point against the crop and full line. If this is not a true headword or the crop is damaged, leave it unresolved with a note."
+    }
+  ]
+}
