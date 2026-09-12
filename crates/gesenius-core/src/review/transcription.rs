@@ -64,6 +64,9 @@ enum ReviewMethod {
     DraftAssisted,
     CropCorrectedFromReviewedContext,
     SourceManifestMigration,
+    // Re-encodes an existing reading whose marks were entered as visually identical
+    // but semantically wrong scalars. The reviewer's reading of the pixels stands.
+    PointingNormalization,
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]

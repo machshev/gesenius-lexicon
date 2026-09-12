@@ -218,6 +218,38 @@ exact unresolved review text and comment, retains the previous geometry and
 hashes, and binds the corrected crop to the full-line context the reviewer
 inspected. Repeated execution is byte-for-byte stable.
 
+## Pointing normalization
+
+The `Vowel points` palette formerly offered U+05BA, U+05C4, U+05C5 and U+05C7
+alongside the points the edition prints. At review size those render identically
+to holam, the shin dot, hiriq and qamats, and reviewers selected them by mistake:
+an audit of 170 resolved headwords found roughly 27% of marks on wrong scalars,
+including 72 uses of U+05C7 against 27 of U+05B8. The four keys are removed, and
+`tool/test-transcription-keyboard.cjs` asserts their absence.
+
+Existing reviews were re-encoded with:
+
+```console
+python3 tool/apply-pointing-normalization.py
+```
+
+This corrected 135 points across 102 reviews; the audit is written to
+`corpus/review/pointing-normalization.json`. Each correction appends a revision
+carrying the reviewer, state and timestamp of the decision it re-encodes, with
+`review_method` set to `pointing_normalization`; prior revisions stay in the
+journal and the change is purely additive. Repeated execution is byte-for-byte
+stable. The substitution re-encodes a reading rather than re-reading a crop: the
+edition prints no glyph distinguishing qamats qatan from qamats or holam haser
+for vav from holam, and U+05C5 is Masoretic punctuation rather than a vowel, so
+a diplomatic transcription cannot license any of them. Export is unchanged at
+121 fitting and 30 validation pairs with 776 and 189 scalars, and the alphabet
+audit no longer reports code points the edition never prints.
+
+Because the frozen validation set was affected, the 19.05% and 14.29% experiment
+results were measured partly against incorrect references. Both are superseded;
+re-check the 30 validation labels against their crops before selecting on them
+again.
+
 ## Train only after review and the smoke experiment
 
 ```console

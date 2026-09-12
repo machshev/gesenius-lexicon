@@ -65,7 +65,21 @@ test('seven palettes contain named scalar values and the required pointing chara
         assert.ok(name.length);
         assert.equal(fromCodePoint(glyph.codePointAt(0).toString(16).padStart(4, '0')), glyph);
     }
-    for (const glyph of ['\u05b0','\u05c1','\u05c2','\u05c7','\u064e','\u0730','\u0313','\u0345','ሀ','𐤀']) {
+    for (const glyph of ['\u05b0','\u05c1','\u05c2','\u05b8','\u064e','\u0730','\u0313','\u0345','ሀ','𐤀']) {
         assert.ok(all.some(key => key[0] === glyph));
+    }
+});
+
+test('the Hebrew vowel palette omits points the 1854 edition never prints', () => {
+    const hebrew = layouts.find(layout => layout[0] === 'hebrew');
+    const vowels = hebrew[3].find(group => group[0] === 'Vowel points')[1];
+    // U+05BA, U+05C4, U+05C5 and U+05C7 render identically to holam, the shin/sin
+    // dots, hiriq and qamats at review size. Offering them next to the points the
+    // edition does print produced systematically mislabelled training data.
+    for (const glyph of ['\u05ba','\u05c4','\u05c5','\u05c7']) {
+        assert.ok(!vowels.some(key => key[0] === glyph));
+    }
+    for (const glyph of ['\u05b4','\u05b8','\u05b9']) {
+        assert.ok(vowels.some(key => key[0] === glyph));
     }
 });
