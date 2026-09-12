@@ -1,17 +1,20 @@
 # Accurate pointed Hebrew headwords
 
-Status: measurement and review-to-training tooling are implemented. Two
-from-scratch Kraken VGSL experiments failed: 47 fitting pairs reached 19.05%
-independently measured character accuracy and 0% exact-word accuracy, and
-repeating with 121 fitting pairs reached only 14.29% and 0% on the unchanged
-validation set. Neither run was seeded, so that difference is not interpretable.
+Status: measurement, review-to-training export, and synthetic rendering are
+implemented. Every from-scratch Kraken VGSL experiment so far has failed, and
+seeded repeats measured on the frozen validation set put them at 12.17% (47
+fitting pairs) and 14.81% (121 fitting pairs) character accuracy, against
+**44.44% for the Tesseract pass already in the pipeline**. No trained checkpoint
+is yet fit to route into OCR.
 
 On 2026-09-12 a review of the plan changed its diagnosis. The bottleneck is not
-believed to be the number of reviewed headwords. It is the total quantity of
-character-level supervision, which manual transcription cannot reach at any
-plausible budget, and a labelling defect that corrupted roughly a quarter of the
-points in every reviewed set including validation. The defect is now corrected
-and the next experiment is synthetic pretraining rather than further collection.
+believed to be the number of reviewed headwords: at a fixed seed, 2.6 times the
+fitting data bought 2.64 points. It is the total quantity of character-level
+supervision, which manual transcription cannot reach at any plausible budget,
+compounded by a labelling defect that put roughly a quarter of the points in
+every reviewed set, validation included, on wrong scalars. The defect is
+corrected, the renderer is built, and the current experiment is synthetic
+pretraining rather than further collection.
 See [implementation and remaining gates](pointed-headword-workflow.md).
 Complements `ocr-accuracy-plan.md`, with Robinson 1854 headwords as the first
 bounded target; assess Tregelles separately.
@@ -54,15 +57,39 @@ suggestions stored in their drafts:
 | Consonant skeleton exact | 68 / 172 (40%) |
 | Consonant character accuracy | 64.2% (35.8% CER) |
 
-Two consequences. The bar is about 1.2% exact, not zero, so both trained
-checkpoints at 0% exact-word accuracy are worse than the recognizer already in
-the pipeline. And the consonant skeleton is much weaker than the page-17
-example alone suggests, which limits how far dictionary-assisted labelling
-(section 6) can be pushed.
+The consonant skeleton is much weaker than the page-17 example alone suggests,
+which limits how far dictionary-assisted labelling (section 6) can be pushed.
 
-The 98% exact-headword acceptance target in section 7 implies about 99.7%
-character accuracy at 6.47 scalars per headword. The distance from 14.29% should
-be read in those terms.
+On 2026-09-12 the same Tesseract pass and both seeded checkpoints were measured
+on the identical frozen validation set, 30 crops and 189 characters, with
+`ketos test`:
+
+| System | Character accuracy | Errors | Exact pointed |
+| --- | --- | --- | --- |
+| Tesseract isolated word pass, already in the pipeline | **44.44%** | 105 | 0 / 30 |
+| Kraken VGSL, 121 real fitting pairs, seed 42 | 14.81% | 161 | - |
+| Kraken VGSL, 47 real fitting pairs, seed 42 | 12.17% | 166 | - |
+
+This resets the comparator. Earlier reports compared trained checkpoints against
+each other, but the pass already in the pipeline is about three times better at
+the character level than either. **A candidate recognizer has to beat 44.44%
+character accuracy, not 14.29%.** Both from-scratch checkpoints are not merely
+weak; they are considerably worse than what the pipeline already ships, and
+neither may be routed into OCR.
+
+It also measures the learning curve directly. At a fixed seed, going from 47 to
+121 real fitting pairs bought 2.64 points. On that slope, reaching even the
+Tesseract baseline by hand transcription alone would take an implausible number
+of reviewed headwords, which is the evidence behind section 2.
+
+Note that internal training scores did not survive independent testing: the
+47-pair run's best internal score of 0.1534 tests at 12.17%, while the 121-pair
+run's 0.1481 reproduces exactly. Select on `ketos test`, never on the training
+score.
+
+The 98% exact-headword acceptance target in section 8 implies about 99.7%
+character accuracy at 6.47 scalars per headword. Both the 44.44% baseline and
+the 14.81% best trained checkpoint should be read against that.
 
 ### Observed failure and integration constraints
 
@@ -167,8 +194,9 @@ renderer is implemented; the training run is not yet done.
 - [ ] Pretrain on that corpus, then fine-tune on the reviewed crops. Seed and
   use `--deterministic` throughout.
 - [ ] Report the synthetic-only and fine-tuned scores separately on the frozen
-  validation set. Expect a large gain over 14.29% but not acceptance-level
-  accuracy from synthetic data alone; the domain gap to a real 1850s foundry
+  validation set. The target to beat is the 44.44% Tesseract baseline, not the
+  14.81% best trained checkpoint. Expect synthetic-only to land below that and
+  the fine-tune to decide the question; the domain gap to a real 1850s foundry
   face is genuine.
 
 Synthetic output is pretraining material, never gold. It must not enter the
@@ -353,7 +381,8 @@ accuracy, equivalently about 99.7% character accuracy, and 99% headword
 detection recall on representative reserved pages; report false detections, mark
 errors, counts and uncertainty alongside them. These are engineering targets,
 not measured results or promised outcomes. Require an improvement over the
-strongest baseline, currently 1.2% exact, without concealing consonant or
+strongest baseline, currently 44.44% character accuracy and 1.2% exact pointed
+across the whole reviewed set, without concealing consonant or
 rare-mark regressions. Sparse categories remain explicitly unverified.
 
 For automatically accepted output, target at least 99.5% exact precision on an
