@@ -1,14 +1,11 @@
 # Synthetic pretraining for pointed headwords, 2026-09-12
 
-DRAFT: the final fine-tuning numbers from the 30-epoch run are still pending.
-Everything else below is measured and final.
-
 ## Outcome
 
 Synthetic pretraining works. A recognizer pretrained only on rendered pointed
 Hebrew, with no real training data at all, reads the Robinson 1854 headword
 crops better than the Tesseract pass currently in the pipeline. Fine-tuning that
-model on the reviewed real pairs roughly halves the baseline's error count and
+model on the reviewed real pairs cuts the baseline's error count to a fifth and
 produces the first checkpoint in this project to read any headword exactly
 right, pointing included.
 
@@ -20,11 +17,16 @@ validation set unless stated otherwise.
 | Tesseract isolated word pass, in the pipeline | 44.44% | 105 | 0 / 30 |
 | Kraken VGSL, 47 real fitting pairs, seed 42 | 12.17% | 166 | 0 / 30 |
 | Kraken VGSL, 121 real fitting pairs, seed 42 | 14.81% | 161 | 0 / 30 |
-| Synthetic only, no real data, epoch 15 | 68.78% | 59 | 6 / 30 |
-| Synthetic epoch 8 + 2 epochs on 129 real pairs | 75.13% | 47 | 5 / 30 |
+| Synthetic only, no real data, best epoch | 74.60% | 48 | 9 / 30 |
+| **Synthetic + fine-tune on 129 real pairs** | **88.36%** | **22** | **16 / 30** |
+
+The selected model is the final pretraining checkpoint fine-tuned on the reviewed
+pairs: one fifth of the baseline's errors, and the first recognizer in this
+project to read any headword exactly right. Sixteen of thirty are now correct in
+every letter, vowel, dagesh and sin/shin dot.
 
 The decomposition matters more than any single number. The same 129 real pairs
-that reach 14.81% on their own reach 75.13% when they fine-tune a synthetically
+that reach 14.81% on their own reach 88.36% when they fine-tune a synthetically
 pretrained model. The reviewed data was never useless; there was never enough of
 it to learn letterforms from scratch. Synthetic rendering supplies the
 letterforms, the reviewed pairs supply the domain correction, and neither alone
@@ -63,25 +65,38 @@ Each pretraining checkpoint was tested against the real validation set while
 training continued. Synthetic validation accuracy is in-domain and saturates
 early; real transfer is the number that matters.
 
-| Epoch | Synthetic validation | Real crops | Real errors |
-| --- | --- | --- | --- |
-| 1 | 46.85% | 35.45% | 122 |
-| 2 | 80.89% | 44.97% | 104 |
-| 3 | 89.29% | 57.67% | 80 |
-| 5 | 96.05% | 64.55% | 67 |
-| 8 | 98.12% | 66.67% | 63 |
-| 12 | 98.72% | 69.31% | 58 |
-| 15 | 99.12% | 68.78% | 59 |
+| Epoch | Synthetic validation | Real crops | Real errors | Exact pointed |
+| --- | --- | --- | --- | --- |
+| 1 | 46.85% | 35.45% | 122 | - |
+| 3 | 89.29% | 57.67% | 80 | - |
+| 8 | 98.12% | 66.67% | 63 | 5 / 30 |
+| 15 | 99.13% | 68.78% | 59 | 6 / 30 |
+| 23 | 99.27% | 73.02% | 51 | 12 / 30 |
+| 28 | 99.37% | 74.07% | 49 | 11 / 30 |
+| 31 | 99.50% | 74.60% | 48 | 9 / 30 |
 
 Real accuracy passed the Tesseract baseline at epoch 2 and was still improving
-at epoch 15 while synthetic validation sat above 99%.
+at the 30-epoch cap, so the cap was binding. The best fine-tuned model came from
+that final checkpoint.
 
-Two cautions this curve taught. Single-epoch movements of four points or less
-are noise on 189 characters: a dip at epochs 6 and 7 looked like saturation and
-was not, and a decision to stop training early was nearly taken on it. And
-Kraken selects its best checkpoint on the *synthetic* score, which keeps
-improving after real transfer has peaked, so the checkpoint it labels best need
-not be the best starting point for real pages.
+Character accuracy oscillated in a 66-74% band from epoch 13 onward while exact
+matches moved much more decisively. Watch the exact-match column: a four-point
+swing in character accuracy on 189 characters carries almost no information, and
+a dip at epochs 6 and 7 nearly triggered an unnecessary early stop.
+
+Selection criteria disagree, and the disagreement is not small:
+
+| Fine-tuned from | Character | Errors | Exact pointed |
+| --- | --- | --- | --- |
+| Epoch 31, the final checkpoint | 88.36% | 22 | 16 / 30 |
+| Kraken's own best, by synthetic score | 84.13% | 30 | 16 / 30 |
+| Best real character transfer, epoch 28 | 86.24% | 26 | 14 / 30 |
+| Best real exact-match transfer, epoch 23 | 86.24% | 26 | 14 / 30 |
+
+Ranking by character accuracy alone would have chosen the 86.24% model over an
+84.13% one that reads two more headwords perfectly. Kraken selects its own best
+checkpoint on the synthetic score, which keeps rising after real transfer peaks,
+so its pick is not the model to ship.
 
 ## Pretraining budget is not cheap to skip
 
@@ -138,14 +153,19 @@ is that kaf errors collapse and several points of character accuracy follow.
 
 ## Next
 
-- Add frequency-balanced word sampling to the renderer so rare letters and rare
-  letter/point configurations receive supervision out of proportion to their
-  natural frequency. Re-render and re-measure against this run as the control.
+- Frequency-balanced sampling is implemented (`--balance`, commit a8bdb68) but
+  not yet exercised. Re-render with it and re-measure against this run as the
+  control; the prediction is that kaf errors collapse. Note it is a partial fix:
+  reweighting whole words moves the bet/kaf ratio from 2.31 to 1.61, about 21%
+  more exposure, so it should be combined with the larger corpus rather than
+  used instead of it.
+- Run the full 50,000-sample corpus. This run was still improving at its epoch
+  cap and used a fifth of the rendered data, so both axes remain unexplored.
 - Report base-aligned mark precision and recall through the repository's own
   `benchmark-headwords` evaluator rather than Kraken's aggregate.
 - The 98% exact-pointed acceptance target implies about 99.7% character
-  accuracy. This experiment moves exact-pointed from 0 to roughly 1 in 5. That
-  is a usable-with-review recognizer at best, not an accepted one.
+  accuracy. This experiment moves exact-pointed from 0 to just over half. That
+  is a recognizer worth routing into review, not an accepted one.
 - Every number here is validation performance, selected on the same 30 crops it
   is scored against. The reserved final-test pages, 250 and 775, remain
   untouched and are the only source of a clean estimate.

@@ -1,20 +1,19 @@
 # Accurate pointed Hebrew headwords
 
-Status: measurement, review-to-training export, and synthetic rendering are
-implemented. Every from-scratch Kraken VGSL experiment so far has failed, and
-seeded repeats measured on the frozen validation set put them at 12.17% (47
-fitting pairs) and 14.81% (121 fitting pairs) character accuracy, against
-**44.44% for the Tesseract pass already in the pipeline**. No trained checkpoint
-is yet fit to route into OCR.
+Status: synthetic pretraining is implemented and measured, and it works. A
+recognizer pretrained on rendered pointed Hebrew and fine-tuned on the 129
+reviewed pairs reaches **88.36% character accuracy and 16 of 30 exact pointed
+headwords** on the frozen validation set, against **44.44% and 0 of 30 for the
+Tesseract pass in the pipeline**. The same reviewed pairs alone reach 14.81% and
+0 of 30, so neither ingredient is sufficient on its own. See the
+[experiment report](kraken-synthetic-pretrain-2026-09-12.md).
 
-On 2026-09-12 a review of the plan changed its diagnosis. The bottleneck is not
-believed to be the number of reviewed headwords: at a fixed seed, 2.6 times the
-fitting data bought 2.64 points. It is the total quantity of character-level
-supervision, which manual transcription cannot reach at any plausible budget,
-compounded by a labelling defect that put roughly a quarter of the points in
-every reviewed set, validation included, on wrong scalars. The defect is
-corrected, the renderer is built, and the current experiment is synthetic
-pretraining rather than further collection.
+This supersedes the earlier diagnosis only in its remedy, not its reasoning. The
+bottleneck was never the number of reviewed headwords — at a fixed seed, 2.6
+times the fitting data bought 2.64 points — but the total quantity of
+character-level supervision, which manual transcription cannot reach at any
+plausible budget. Rendering supplies it at no labelling cost.
+
 See [implementation and remaining gates](pointed-headword-workflow.md).
 Complements `ocr-accuracy-plan.md`, with Robinson 1854 headwords as the first
 bounded target; assess Tregelles separately.
@@ -193,11 +192,14 @@ renderer is implemented; the training run is not yet done.
   each, against 776 in the reviewed fitting set: about 450 times the supervision.
 - [ ] Pretrain on that corpus, then fine-tune on the reviewed crops. Seed and
   use `--deterministic` throughout.
-- [ ] Report the synthetic-only and fine-tuned scores separately on the frozen
-  validation set. The target to beat is the 44.44% Tesseract baseline, not the
-  14.81% best trained checkpoint. Expect synthetic-only to land below that and
-  the fine-tune to decide the question; the domain gap to a real 1850s foundry
-  face is genuine.
+- [x] Report the synthetic-only and fine-tuned scores separately on the frozen
+  validation set. Synthetic-only reached 74.60% character accuracy and 9 of 30
+  exact, already well past the 44.44% baseline with no real training data at
+  all; the fine-tune reached 88.36% and 16 of 30. The expectation recorded here
+  beforehand — that synthetic data alone would not clear acceptance-level
+  accuracy — was right about acceptance but much too pessimistic about the
+  domain gap, which cost roughly 25 points rather than the majority of the
+  benefit.
 
 Synthetic output is pretraining material, never gold. It must not enter the
 benchmark, the review queue or the corpus, and its own validation split exists

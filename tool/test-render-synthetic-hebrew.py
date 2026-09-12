@@ -19,13 +19,23 @@ WORDS = ['אָב', 'נְשָׁמָה', 'כִּנּוֹר', 'שְׁחִיטָה',
 
 
 def font_dirs():
-    """Directories holding the mixture, discovered through the running system."""
-    found = []
-    for family in ('Ezra SIL', 'Frank Ruehl CLM'):
-        result = subprocess.run(['fc-match', '-f', '%{file}', family],
+    """Directories holding the mixture, discovered through the running system.
+
+    fc-match never fails: asked for a family it does not have, it silently
+    returns whatever it considers closest, typically DejaVu Sans. Taking that
+    directory would run the tests against the wrong fonts instead of skipping,
+    so the returned family has to be checked against the requested one.
+    """
+    found = {}
+    for font in renderer.DEFAULT_FONTS:
+        family = font['family']
+        result = subprocess.run(['fc-match', '-f', '%{family}\t%{file}', family],
                                 capture_output=True, text=True)
-        if result.returncode == 0 and result.stdout.strip():
-            found.append(str(Path(result.stdout.strip()).parent))
+        if result.returncode != 0 or '\t' not in result.stdout:
+            continue
+        matched, path = result.stdout.split('\t', 1)
+        if family in matched.split(',') and path.strip():
+            found[family] = str(Path(path.strip()).parent)
     return found
 
 
@@ -97,10 +107,16 @@ class EndToEnd(unittest.TestCase):
     def setUpClass(cls):
         if not shutil.which('magick') or not shutil.which('fc-list'):
             raise unittest.SkipTest('magick and fc-list are required; enter `nix develop`')
-        cls.directories = font_dirs()
-        if not cls.directories:
-            raise unittest.SkipTest('no Hebrew fonts from the mixture are installed')
+        available = font_dirs()
+        if not available:
+            raise unittest.SkipTest('no font from the default mixture is installed')
+        cls.directories = sorted(set(available.values()))
         cls.temporary = Path(tempfile.mkdtemp(prefix='synthetic-test-'))
+        # Exercise the renderer with the subset actually present, rather than
+        # failing because the full mixture is not installed here.
+        cls.font_config = cls.temporary / 'fonts.json'
+        cls.font_config.write_text(json.dumps(
+            [font for font in renderer.DEFAULT_FONTS if font['family'] in available]))
         cls.words = cls.temporary / 'words.txt'
         cls.words.write_text('\n'.join(WORDS) + '\n', encoding='utf-8')
 
@@ -113,7 +129,8 @@ class EndToEnd(unittest.TestCase):
         command = [sys.executable, str(ROOT / 'render-synthetic-hebrew.py'),
                    '--words', str(self.words), '--output', str(output),
                    '--count', str(count), '--validation-count', str(validation),
-                   '--validation-vocabulary', '0.25', '--seed', str(seed), *extra]
+                   '--validation-vocabulary', '0.25', '--seed', str(seed),
+                   '--font-config', str(self.font_config), *extra]
         for directory in self.directories:
             command += ['--font-dir', directory]
         result = subprocess.run(command, capture_output=True, text=True)
