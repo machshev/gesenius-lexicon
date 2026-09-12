@@ -88,6 +88,11 @@ candidates on pages 50, 325 and 700. The latest expansion added 74 fitting
 candidates on 15 more pages. All now have current review decisions. These are
 detected review inputs, not gold or complete page inventories.
 
+The 2026-09-12 collection batch assigns 33 further fitting pages and five
+previously unseen validation pages distributed across the alphabet. Existing
+development, validation, and final-test assignments remain unchanged. These
+pages must be processed and source-reviewed before they enter an export.
+
 To add candidates from another cached per-edition run:
 
 ```console

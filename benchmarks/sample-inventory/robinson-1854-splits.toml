@@ -4,8 +4,8 @@ source_sha256 = "466b061e770f212cb7d888d8dadc2a54575fb115bf6de9cdb24b0c280461cca
 status = "frozen-before-line-transcription"
 frozen_at = "2026-09-05T11:54:58+01:00"
 unit = "printed-page"
-headword_extension_at = "2026-09-11"
-headword_extension_note = "Expand fitting coverage with 15 additional pages spread across the alphabet; existing development, validation, and final-test assignments remain unchanged. New pages await complete inventory and human review."
+headword_extension_at = "2026-09-12"
+headword_extension_note = "Expand fitting coverage with 33 additional pages and add five previously unseen validation pages distributed across the alphabet; existing assignments remain unchanged. New pages await complete inventory and human review."
 
 # Pages 1-10 have already informed parser/OCR work and may not enter final test.
 excluded_from_final_test = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
@@ -14,10 +14,10 @@ excluded_from_final_test = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 development = ["1", "50", "100", "325", "700"]
 
 # Explicit fitting pages; labels still require human crop review.
-training = ["11", "25", "40", "60", "75", "90", "125", "150", "200", "225", "275", "300", "350", "400", "450", "500", "550", "600", "650", "725", "800", "850", "900", "1000", "1050"]
+training = ["11", "15", "25", "30", "35", "40", "55", "60", "70", "75", "90", "110", "115", "125", "140", "150", "165", "180", "190", "200", "225", "240", "260", "265", "275", "300", "315", "350", "365", "400", "425", "450", "465", "500", "525", "550", "565", "575", "600", "650", "665", "675", "725", "750", "765", "800", "825", "850", "865", "900", "950", "965", "975", "1000", "1025", "1050", "1065", "1100"]
 
 # Validation is available for model/configuration selection, but not fitting.
-validation = ["175", "475", "925"]
+validation = ["120", "175", "375", "475", "625", "875", "925", "1075"]
 
 # Inspect OCR output only once policy and configuration are fixed. If these pages
 # are used for tuning after evaluation, retire them to development and freeze new
