@@ -305,10 +305,13 @@ cargo run -- train --pilot pilot.toml --splits PATH --output training \
 ```
 
 Reviewed headwords are emitted as dedicated word-crop training samples, in
-addition to reviewed entry lines. This lets corrections to fine vowel points
-feed the recognizer without pairing a short lemma transcription with the whole
-mixed-language source line. Headword and line samples stay in the same
-explicit page-level partition. Add `--headwords-only` to exclude entry lines.
+addition to reviewed entry lines. Reviewed body-text Hebrew words can use the
+same compact crop path while retaining `sample_kind: hebrew-word`; the review UI
+keeps them separate from target headwords. This lets corrections to fine vowel
+points feed the recognizer without pairing a short Hebrew transcription with a
+whole mixed-language source line. All samples stay in the same explicit
+page-level partition. Add `--headwords-only` to the corpus-training path to
+exclude entry lines.
 
 Supply an authoritative printed-page split manifest with `--splits PATH`; unlisted reviewed pages are rejected, and development/final-test pages are excluded from preparation. The hash-based split fallback has been removed. Ground truth is emitted as line crops plus `.gt.txt`, and baseline CER/WER is reported overall and per script. Training explicitly uses NFC logical-order text and a CPU-capable Kraken invocation. Use an explicit `--seed` with `--deterministic` for comparable training runs.
 

@@ -78,8 +78,9 @@ The transcription queue and review export do not expose final-test material.
 ## Collect and export headword reviews
 
 The `/transcriptions` review UI opens the headword queue by default, with a
-compact crop and a labelled Hebrew input. The sample-type selector also exposes
-line reviews. Use **Only unreviewed** to hide every candidate with a saved review;
+compact crop and a labelled Hebrew input. The sample-type selector separately
+exposes Hebrew words from body text and mixed-script line reviews. Use **Only
+unreviewed** to hide every candidate with a saved review;
 resolved, crop-repair, unusable, and false-candidate decisions remain available
 when the filter is cleared. Saving any outcome advances to the next visible
 candidate. An earlier queue expansion added three fitting candidates on printed
@@ -88,10 +89,18 @@ candidates on pages 50, 325 and 700. The latest expansion added 74 fitting
 candidates on 15 more pages. All now have current review decisions. These are
 detected review inputs, not gold or complete page inventories.
 
-The 2026-09-12 collection batch assigns 33 further fitting pages and five
-previously unseen validation pages distributed across the alphabet. Existing
-development, validation, and final-test assignments remain unchanged. These
-pages must be processed and source-reviewed before they enter an export.
+The 2026-09-12 collection batch assigned and processed 33 further fitting pages
+and five previously unseen validation pages distributed across the alphabet.
+It produced 153 fitting and 16 validation headword candidates; six fitting
+pages had no detected candidate. Existing development and final-test
+assignments remain unchanged. Every new candidate still requires source review
+before it can enter an export.
+
+The recognizer need not learn the Robinson Hebrew typeface from headwords alone.
+Any reviewed Hebrew word in the same edition can supply useful letter and point
+examples. Keep those samples tagged `hebrew-word`, retain headwords as the
+target benchmark, and assign both at page level so validation material never
+enters fitting.
 
 To add candidates from another cached per-edition run:
 
@@ -116,6 +125,30 @@ python3 tool/prepare-headword-review.py \
   --splits benchmarks/sample-inventory/robinson-1854-splits.toml \
   --partition validation
 ```
+
+Seed ordinary Hebrew word crops from the same cached pages with:
+
+```console
+python3 tool/prepare-headword-review.py \
+  --kind hebrew-word \
+  --run-root .cache/gesenius/runs/RUN/robinson-1854 \
+  --splits benchmarks/sample-inventory/robinson-1854-splits.toml \
+  --partition training \
+  --partition validation
+```
+
+This reads fused ALTO word boxes, requires at least two Hebrew letters in a
+predominantly Hebrew token, removes OCR-inserted bidi controls, and excludes
+every line that supplied a detected headword. It deduplicates suggestions and
+selects at most eight per page by deterministic Hebrew letter/point diversity;
+override that bound with `--max-hebrew-words-per-page`. The 2026-09-12 batch
+produced 264 fitting and 40 validation body-word candidates. The suggested text
+is still only a review prompt. Each word retains its direct crop, original-image
+crop, full-line context, hashes, and replayable crop commands. False detections
+use **Not Hebrew text** and remain in the audit. A visual spot check across 20
+generated crops found 18 Hebrew words and two Latin words hallucinated as Hebrew
+by the multilingual refinement, so human rejection is a material part of this
+queue rather than a formality.
 
 - Set `kind` to `headword`, `partition` to `training` or `validation`, and the
   authoritative `printed_page`. The draft carries edition, PDF page and PDF hash.
@@ -156,8 +189,8 @@ cargo run -- export-headword-training \
   --output training/headwords-v1
 ```
 
-Export deliberately fails if any included fitting/validation headword is
-unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
+Export deliberately fails if any included fitting/validation Hebrew word or
+headword is unreviewed, unresolved, stale, or duplicated by crop hash. Development samples
 are skipped. One resolved human review is sufficient for both training and
 validation. Use a bounded review root if other training batches are unfinished.
 The complete expanded queue exports 121 fitting and 30 validation headwords; 24
@@ -167,7 +200,9 @@ one source-segmentation-clipped crop is explicitly excluded as unusable. A later
 complete cached run supplied three page-25 candidates; a complete-page inventory
 must still establish whether there are additional detection misses.
 
-The new output directory is published only after validation and writing finish;
+The manifest preserves `sample_kind` as either `headword` or `hebrew-word`, so
+target-only headword evaluation remains possible after joint fitting. The new
+output directory is published only after validation and writing finish;
 existing directories cannot be overwritten. `ground-truth.jsonl` records
 reviewer/revision/time, an optional additional review where available, source and crop
 hashes, split hash, diplomatic text and NFC separately, and a hash of the exact
@@ -218,6 +253,13 @@ with the smaller architecture, but the fitting set is insufficient and lacks
 three letters present in validation. See the
 [experiment report](kraken-headword-experiment-2026-09-11.md) for the reviewed
 data audit, hashes, commands, and error counts.
+
+On 2026-09-12 a deterministic seed-42 comparison scored 15.34% character
+accuracy with 47 fitting headwords and 14.81% with 121; both had 0% exact-word
+accuracy. The official PP-OCRv6 small multilingual weights scored 51.32% without
+fine-tuning on the same validation set. Local fine-tuning was killed before an
+epoch because Kraken instantiated its much larger auxiliary training decoder.
+See the [controlled experiment report](kraken-headword-experiment-2026-09-12.md).
 
 A directly comparable follow-up used all 121 reviewed fitting headwords and the
 unchanged 30-headword validation set. Validation-only alphabet gaps were gone,

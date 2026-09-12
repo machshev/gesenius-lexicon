@@ -94,7 +94,7 @@ enum Commands {
         #[arg(long)]
         allow_final_test: bool,
     },
-    /// Promote resolved human headword reviews into versioned training pairs.
+    /// Promote resolved human Hebrew word reviews into versioned training pairs.
     ExportHeadwordTraining {
         #[arg(long, default_value = "benchmarks/transcription-drafts")]
         root: PathBuf,

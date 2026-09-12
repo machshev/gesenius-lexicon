@@ -180,6 +180,10 @@ fn digest(bytes: &[u8]) -> String {
     hex::encode(Sha256::digest(bytes))
 }
 
+fn is_word_sample(kind: &str) -> bool {
+    matches!(kind, "headword" | "hebrew-word")
+}
+
 impl TranscriptionStore {
     fn records(&self) -> Result<Vec<Record>> {
         if !self.journal.exists() {
@@ -347,7 +351,7 @@ impl TranscriptionStore {
             {
                 bail!("revision conflict: source or review changed; reload before saving");
             }
-            if line.kind != "headword"
+            if !is_word_sample(&line.kind)
                 && line
                     .review
                     .as_ref()
@@ -395,7 +399,7 @@ impl TranscriptionStore {
             .into_iter()
             .find(|line| line.sample == update.sample && line.line_id == update.line_id)
             .context("unknown transcription line")?;
-        if current.kind != "headword" || current.source_digest != update.source_digest {
+        if !is_word_sample(&current.kind) || current.source_digest != update.source_digest {
             bail!("revision conflict: source or review changed; reload before editing the crop");
         }
         let sample = self.root.canonicalize()?.join(&update.sample);
@@ -612,7 +616,7 @@ pub(super) fn handle(mut request: Request, store: &TranscriptionStore) -> Result
     respond_error(request, StatusCode(404), "not found")
 }
 
-/// Deliberately promotes resolved headword reviews into auditable Kraken pairs.
+/// Deliberately promotes resolved Hebrew word reviews into auditable Kraken pairs.
 /// Development and final-test samples never enter fitting manifests.
 pub fn export_headwords(
     root: &Path,
@@ -632,7 +636,7 @@ pub fn export_headwords(
     let lines = store.lines()?;
     let mut selected = Vec::new();
     let mut crops = std::collections::BTreeSet::new();
-    for line in lines.iter().filter(|l| l.kind == "headword") {
+    for line in lines.iter().filter(|l| is_word_sample(&l.kind)) {
         let partition = splits.partition(&line.edition, &line.printed_page)?;
         let split = match partition {
             Partition::Training => "train",
@@ -653,7 +657,7 @@ pub fn export_headwords(
             .iter()
             .rev()
             .find(|r| r.sample == line.sample && r.line_id == line.line_id)
-            .context("headword has no human review")?;
+            .context("Hebrew word has no human review")?;
         if review.source_digest == line.source_digest
             && matches!(review.state, State::NotHeadword | State::Excluded)
         {
@@ -666,13 +670,13 @@ pub fn export_headwords(
             || review.revision == 0
         {
             bail!(
-                "stale or unresolved headword review: {}/{}",
+                "stale or unresolved Hebrew word review: {}/{}",
                 line.sample,
                 line.line_id
             );
         }
         if review.text.chars().any(|c| c.is_control() || matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}' | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')) {
-            bail!("headword contains controls");
+            bail!("Hebrew word contains controls");
         }
         let mut reviewers = std::collections::BTreeSet::new();
         let second = records
@@ -716,7 +720,7 @@ pub fn export_headwords(
     let mut alphabet =
         std::collections::BTreeMap::<String, std::collections::BTreeMap<String, usize>>::new();
     for (index, (line, review, second, split)) in selected.iter().enumerate() {
-        let name = format!("{split}/headword-{index:06}");
+        let name = format!("{split}/{}-{index:06}", line.kind);
         fs::create_dir_all(temporary.path().join(split))?;
         let bytes = fs::read(&line.crop)?;
         if digest(&bytes) != line.crop_sha256 {
@@ -737,7 +741,7 @@ pub fn export_headwords(
         }
         let value = serde_json::json!({
             "edition": line.edition, "printed_page": line.printed_page, "source_page": line.source_page,
-            "line_id": line.line_id, "split": split, "sample_kind": "headword",
+            "line_id": line.line_id, "split": split, "sample_kind": line.kind,
             "image": final_root.join(format!("{name}.png")),
             "ground_truth": final_root.join(format!("{name}.gt.txt")),
             "source_span": format!("{}#{}", line.sample, line.line_id),
@@ -891,6 +895,34 @@ mod tests {
         )
         .unwrap_err();
         assert!(error.to_string().contains("no resolved"));
+    }
+
+    #[test]
+    fn reviewed_non_headword_hebrew_word_is_exported_with_its_kind() {
+        let (temp, store, splits) = headword_fixture("training", "11");
+        let review_path = store.root.join("sample/review.json");
+        let mut manifest: serde_json::Value =
+            serde_json::from_slice(&fs::read(&review_path).unwrap()).unwrap();
+        manifest["kind"] = "hebrew-word".into();
+        fs::write(&review_path, serde_json::to_vec(&manifest).unwrap()).unwrap();
+        let line = store.lines().unwrap().remove(0);
+        assert_eq!(line.kind, "hebrew-word");
+        let mut reviewed = update(&line, State::Resolved);
+        reviewed.text = "מֶלֶךְ".into();
+        reviewed.runs = None;
+        store.apply(reviewed).unwrap();
+        let output = temp.path().join("export");
+        assert_eq!(
+            export_headwords(&store.root, &store.journal, &splits, &output).unwrap(),
+            1
+        );
+        let record: serde_json::Value = serde_json::from_str(
+            fs::read_to_string(output.join("ground-truth.jsonl"))
+                .unwrap()
+                .trim(),
+        )
+        .unwrap();
+        assert_eq!(record["sample_kind"], "hebrew-word");
     }
 
     #[test]
