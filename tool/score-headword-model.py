@@ -46,7 +46,14 @@ def predict(model: pathlib.Path, pairs, device: str):
     from kraken.containers import Segmentation, BBoxLine
     from PIL import Image
 
-    network = models.load_any(str(model), device=device)
+    # `models.load_any` routes .safetensors through the CoreML parser and fails.
+    # `ketos test` loads weights through the trainer module, so do the same.
+    if str(model).endswith(".safetensors"):
+        from kraken.train.vgsl import VGSLRecognitionModel, VGSLRecognitionTrainingConfig
+        module = VGSLRecognitionModel.load_from_weights(str(model), VGSLRecognitionTrainingConfig())
+        network = models.TorchSeqRecognizer(module.net, train=False, device=device)
+    else:
+        network = models.load_any(str(model), device=device)
     out = []
     for index, record in enumerate(pairs):
         image = Image.open(record["image"])

@@ -331,6 +331,23 @@ page, and it must not enter the benchmark, the review queue, or the corpus.
 
 ## Train only after review and the smoke experiment
 
+On 2026-09-13 a 50,000-sample frequency-balanced corpus and the complete 344
+reviewed headwords produced the current best recognizer: 71.34% character
+accuracy and 16% exact on the 24 development-partition headwords, the only
+reviewed material no model has fitted or selected on. Two results from that run
+change how these experiments should be run. Synthetic corpus scaling is
+exhausted: five times the data plus frequency balancing was worth 1.8 points
+against 4.3 points for doubling the reviewed fitting set. And the synthetic-only
+model does not beat the Tesseract pass once measured on more than thirty crops,
+41.89% against 42.96% on 298 held-out pairs. See the
+[scaling and fine-tuning report](kraken-synthetic-scaling-2026-09-13.md).
+
+Report `ketos test` figures, never Kraken's internal validation score. The
+internal score overstated independent test by 12 to 17 points in every case
+measured across two runs.
+
+
+
 ```console
 cargo run -- train-prepared --prepared training/headwords-v1 \
   --output-model training/checkpoints --base-model models/base.mlmodel \
