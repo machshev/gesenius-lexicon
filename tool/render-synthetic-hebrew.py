@@ -288,6 +288,34 @@ def balance_weights(words, alpha):
     return [weight / total for weight in weights]
 
 
+# Printed headwords are not always one bare word, and a crop is not always
+# clean. The reviewed data contains maqaf-joined words, construct phrases with a
+# space, and adjacent commas and full stops that the crop boundary caught. A
+# corpus of isolated words teaches the recognizer that none of these exist: it
+# cannot emit a character it has never been shown, so every one of them is a
+# guaranteed error no amount of extra volume will fix.
+PUNCTUATION = (',', '.', ';', '-')
+
+
+def compose(pool, weights, rng, args):
+    """One rendering target: a word, or a word with a real neighbour or mark."""
+    text = pick(pool, weights, rng)
+    draw = rng.random()
+    if draw < args.maqaf_probability:
+        # Maqaf joins words in print with no surrounding space.
+        return text + '\u05be' + pick(pool, weights, rng)
+    draw -= args.maqaf_probability
+    if draw < args.multiword_probability:
+        return text + ' ' + pick(pool, weights, rng)
+    draw -= args.multiword_probability
+    if draw < args.punctuation_probability:
+        mark = PUNCTUATION[rng.randrange(len(PUNCTUATION))]
+        # Trailing is the common case; a leading mark happens when the crop
+        # starts too far left.
+        return text + mark if rng.random() < 0.85 else mark + text
+    return text
+
+
 def pick(pool, weights, rng):
     """Deterministic weighted choice; falls back to uniform when unweighted."""
     if weights is None:
@@ -347,6 +375,22 @@ def run(args):
         weights = {split: balance_weights(pool, args.balance)
                    for split, pool in vocabulary.items()}
 
+        # Joiners and adjacent marks are rendered too, but requiring every font
+        # to draw them would exclude a Hebrew-only face over a comma. Pango
+        # substitutes silently for a missing glyph, so instead each sample draws
+        # only from the fonts that cover the characters it actually contains.
+        marks = set()
+        if args.maqaf_probability > 0:
+            marks.add('\u05be')
+        if args.multiword_probability > 0:
+            marks.add(' ')
+        if args.punctuation_probability > 0:
+            marks.update(PUNCTUATION)
+        mark_support = {mark: covered_families({mark}, fontconfig) for mark in marks}
+        for mark, families in mark_support.items():
+            if not any(font['family'] in families for font in fonts):
+                raise SystemExit(f'no font in the mixture draws U+{ord(mark):04X}')
+
         settings = dict(DEFAULTS)
         for key in settings:
             override = getattr(args, key, None)
@@ -361,9 +405,13 @@ def run(args):
             directory.mkdir()
             pool = vocabulary[split]
             for index in range(count):
-                text = pick(pool, weights[split],
-                            random.Random(f'{args.seed}:{split}:word:{index}'))
-                jobs.append((index, split, text, fonts, fontconfig, settings,
+                rng = random.Random(f'{args.seed}:{split}:word:{index}')
+                text = compose(pool, weights[split], rng, args)
+                usable = fonts
+                for mark, families in mark_support.items():
+                    if mark in text:
+                        usable = [f for f in usable if f['family'] in families]
+                jobs.append((index, split, text, usable, fontconfig, settings,
                              args.seed, directory, prefix))
 
         records = []
@@ -403,6 +451,9 @@ def run(args):
             'distinct_words': len(words),
             'vocabulary': {split: len(pool) for split, pool in vocabulary.items()},
             'balance_alpha': args.balance,
+        'maqaf_probability': args.maqaf_probability,
+        'multiword_probability': args.multiword_probability,
+        'punctuation_probability': args.punctuation_probability,
             'vocabulary_overlap': sorted(set(vocabulary['train']) & set(vocabulary['validation'])),
             'fonts': fonts,
             'font_counts': {family: sum(1 for record in records if record['font'] == family)
@@ -437,6 +488,13 @@ def main():
     parser.add_argument('--validation-count', type=int, default=2000)
     parser.add_argument('--validation-vocabulary', type=float, default=0.1,
                         help='fraction of distinct words reserved for validation')
+    parser.add_argument('--maqaf-probability', type=float, default=0.0,
+                        help='fraction of samples joining two words with U+05BE maqaf')
+    parser.add_argument('--multiword-probability', type=float, default=0.0,
+                        help='fraction of samples joining two words with a space')
+    parser.add_argument('--punctuation-probability', type=float, default=0.0,
+                        help='fraction of samples carrying an adjacent comma, stop, '
+                             'semicolon or hyphen, as an imperfect crop would')
     parser.add_argument('--balance', type=float, default=0.0,
                         help='flatten letter/point cluster frequency; 0 is uniform '
                              '(the default, reproducing earlier corpora), 1 fully '

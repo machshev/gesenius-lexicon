@@ -85,6 +85,63 @@ class Balancing(unittest.TestCase):
         self.assertTrue(all(w > 0 for w in weights))
 
 
+class Separators(unittest.TestCase):
+    """Maqaf, spaces and adjacent punctuation are rendered on request.
+
+    The reviewed data contains all of them: maqaf joins words in print, headwords
+    are sometimes construct phrases, and a crop boundary regularly catches the
+    comma or full stop beside the word. A recognizer cannot emit a character its
+    corpus never contained, so their absence is a guaranteed error rather than a
+    hard one.
+    """
+
+    class Args:
+        maqaf_probability = 0.0
+        multiword_probability = 0.0
+        punctuation_probability = 0.0
+
+    def compose_many(self, n=4000, **overrides):
+        import random
+        args = Separators.Args()
+        for key, value in overrides.items():
+            setattr(args, key, value)
+        return [renderer.compose(WORDS, None, random.Random(f'c{i}'), args)
+                for i in range(n)]
+
+    def test_defaults_render_bare_words_only(self):
+        # Corpora rendered before separators existed must be reproducible.
+        composed = self.compose_many(n=500)
+        self.assertTrue(all(text in WORDS for text in composed))
+
+    def test_each_separator_appears_at_about_its_probability(self):
+        composed = self.compose_many(maqaf_probability=0.1,
+                                     multiword_probability=0.1,
+                                     punctuation_probability=0.1)
+        for mark, expected in (('\u05be', 0.1), (' ', 0.1)):
+            share = sum(mark in text for text in composed) / len(composed)
+            self.assertAlmostEqual(share, expected, delta=0.02)
+        punctuated = sum(any(c in text for c in renderer.PUNCTUATION)
+                         for text in composed)
+        self.assertAlmostEqual(punctuated / len(composed), 0.1, delta=0.02)
+
+    def test_probabilities_do_not_overlap_in_one_sample(self):
+        # Each draw picks at most one treatment, so shares stay interpretable.
+        composed = self.compose_many(maqaf_probability=0.3, multiword_probability=0.3)
+        self.assertFalse(any('\u05be' in text and ' ' in text for text in composed))
+
+    def test_punctuation_is_usually_trailing(self):
+        composed = self.compose_many(punctuation_probability=1.0)
+        trailing = sum(text[-1] in renderer.PUNCTUATION for text in composed)
+        self.assertGreater(trailing / len(composed), 0.7)
+        self.assertLess(trailing / len(composed), 1.0)
+
+    def test_maqaf_joins_without_surrounding_space(self):
+        composed = [t for t in self.compose_many(maqaf_probability=1.0)
+                    if '\u05be' in t]
+        self.assertTrue(composed)
+        self.assertFalse(any(' \u05be' in t or '\u05be ' in t for t in composed))
+
+
 class Degradation(unittest.TestCase):
     def test_sampled_height_stays_within_the_measured_range(self):
         import random
