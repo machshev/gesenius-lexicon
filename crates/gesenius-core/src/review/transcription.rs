@@ -37,6 +37,21 @@ struct Crop {
     rectangle: Option<[u32; 4]>,
     #[serde(default)]
     crop_commands: Vec<Vec<String>>,
+    /// Competing machine readings of this crop, one per engine.
+    #[serde(default)]
+    hypotheses: Vec<Hypothesis>,
+}
+
+/// One engine's reading. Offered to the reviewer as a starting point, never as
+/// a label: two engines agreeing is still two machines agreeing.
+#[derive(Clone, Debug, Deserialize, Serialize, PartialEq, Eq)]
+struct Hypothesis {
+    engine: String,
+    text: String,
+    /// The reading's consonantal skeleton is an attested lexicon word. Weak
+    /// evidence, and silent about pointing, which is the part under review.
+    #[serde(default)]
+    in_lexicon: bool,
 }
 
 #[derive(Deserialize)]
@@ -170,6 +185,10 @@ struct Line {
     rectangle: Option<[u32; 4]>,
     // Draft and source-check notes are visible from the first visit.
     draft: Option<String>,
+    // Distinct machine readings, so a reviewer can pick one rather than retype
+    // it. Where engines disagree the disagreement is itself the signal about
+    // which characters need looking at.
+    candidates: Vec<Hypothesis>,
     uncertainties: Vec<String>,
     review: Option<Record>,
 }
@@ -276,8 +295,29 @@ impl TranscriptionStore {
                             && record.source_digest == source_digest
                     })
                     .cloned();
+                // Distinct, non-empty readings in engine order; the draft is
+                // dropped because the editor already starts from it, and a
+                // button that changes nothing is noise.
+                let mut seen = std::collections::BTreeSet::new();
+                let candidates: Vec<Hypothesis> = crop
+                    .hypotheses
+                    .iter()
+                    .filter(|h| {
+                        let text = h.text.trim();
+                        !text.is_empty()
+                            && text != gold.text.trim()
+                            && !text.chars().any(|c| {
+                                c.is_control()
+                                    || matches!(c, '\u{061c}' | '\u{200e}' | '\u{200f}'
+                                        | '\u{202a}'..='\u{202e}' | '\u{2066}'..='\u{2069}')
+                            })
+                            && seen.insert(text.to_owned())
+                    })
+                    .cloned()
+                    .collect();
                 result.push(Line {
                     context,
+                    candidates,
                     edition: benchmark.edition.clone(),
                     source_sha256: benchmark.source_sha256.clone(),
                     crop_sha256: crop.crop_sha256.clone(),

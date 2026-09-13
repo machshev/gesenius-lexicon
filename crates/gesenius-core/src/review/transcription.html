@@ -11,7 +11,7 @@ main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}
 @font-face{font-family:"Review Syriac Estrangela";src:url('/transcription-fonts/estrangela.ttf') format('truetype');font-weight:100 900;font-display:swap}@font-face{font-family:"Review Syriac Serto";src:url('/transcription-fonts/serto.ttf') format('truetype');font-weight:100 900;font-display:swap}@font-face{font-family:"Review Syriac Eastern";src:url('/transcription-fonts/eastern.ttf') format('truetype');font-weight:100 900;font-display:swap}.syriac-keyboard .unicode-keys button{font-family:var(--syriac-font),sans-serif}.ethiopic-table tbody th{font-family:"Noto Sans Ethiopic",sans-serif}
 .text-run textarea.syriac-run,#runPreview .syriac-run{font-family:var(--syriac-font),"Noto Sans",sans-serif}
 .headword-review .text-run>.controls,.headword-review .run-actions{display:none}.headword-review .text-run textarea{font-size:2rem;min-height:5rem}.headword-review .text-run{margin-top:0}
-#cropEditorViewport{overflow:auto;width:100%;height:min(65vh,700px);background:#d8d3c8;overscroll-behavior:contain}.crop-editor-stage{position:relative;touch-action:none;user-select:none}.crop-editor-stage.pan-mode{cursor:grab}.crop-editor-stage.pan-mode.dragging{cursor:grabbing}.crop-editor-stage.draw-mode{cursor:crosshair}#cropEditorImage{display:block;width:100%;height:auto;max-width:none;user-select:none}.crop-selection{position:absolute;border:2px solid #c2410c;background:#fb923c33;box-sizing:border-box;pointer-events:none}#cropGeometry{font-variant-numeric:tabular-nums}.mode-active{background:#313a35;color:white;border-color:#313a35}
+#cropEditorViewport{overflow:auto;width:100%;height:min(65vh,700px);background:#d8d3c8;overscroll-behavior:contain}.crop-editor-stage{position:relative;touch-action:none;user-select:none}.crop-editor-stage.pan-mode{cursor:grab}.crop-editor-stage.pan-mode.dragging{cursor:grabbing}.crop-editor-stage.draw-mode{cursor:crosshair}#cropEditorImage{display:block;width:100%;height:auto;max-width:none;user-select:none}.crop-selection{position:absolute;border:2px solid #c2410c;background:#fb923c33;box-sizing:border-box;pointer-events:none}#cropGeometry{font-variant-numeric:tabular-nums}#candidatePanel{margin:0 0 .75rem}#candidates{display:flex;flex-wrap:wrap;gap:.4rem}.candidate{display:flex;align-items:baseline;gap:.5rem;padding:.35rem .6rem;border:1px solid #b9b2a4;border-radius:.3rem;background:#fdfcf8;cursor:pointer;font:inherit}.candidate:hover{border-color:#313a35;background:#f1efe7}.candidate .reading{font-size:1.25rem;direction:rtl;unicode-bidi:isolate}.candidate .engine{font-size:.75rem;color:#5d5648}.candidate.agreed{border-color:#2f6f4f;background:#eef6f1}.candidate.attested{border-color:#8a6d1f}.candidate .lex{font-size:.7rem;color:#6b5411;border:1px solid #c9b273;border-radius:.2rem;padding:0 .25rem}.mode-active{background:#313a35;color:white;border-color:#313a35}
 </style></head><body>
 <header><a href="/">Corpus review</a><strong>Source transcription review</strong></header>
 <main><p>Check the draft against the image. Approve it as shown, edit corrections, or leave a note for anything still uncertain.</p>
@@ -20,7 +20,7 @@ main{max-width:1600px}h1{font-size:1.25rem;margin:.25rem 0}h2,h3{font-size:1rem}
 <form id="reviewForm" hidden><div class="review-column">
 <section class="source-panel"><h1 id="title"></h1><p id="identity" class="hint"></p><div class="controls"><label>Zoom <select id="zoom"><option value="100">Fit</option><option value="150">150%</option><option value="200">200%</option><option value="300">300%</option></select></label><a id="openCrop" target="_blank" rel="noopener">Open crop</a></div><div id="cropView"><img id="crop" alt="Printed source line to review"></div><details id="contextPanel" hidden><summary>Full line context</summary><img id="contextCrop" style="width:100%" alt="Full source line"></details><details id="cropEditor" hidden><summary>Edit crop from source page</summary><p class="hint">Zoom and pan to the headword, choose Draw crop, then drag its complete bounds. Saving creates new crop files and invalidates any earlier review.</p><div class="controls"><button id="cropPanMode" type="button" aria-pressed="true">Pan</button><button id="cropDrawMode" type="button" aria-pressed="false">Draw crop</button><label>Editor zoom <select id="cropEditorZoom"><option value="100">100%</option><option value="150">150%</option><option value="200" selected>200%</option><option value="300">300%</option><option value="400">400%</option><option value="500">500%</option></select></label><button id="cropZoomOut" type="button" aria-label="Zoom out">−</button><button id="cropZoomIn" type="button" aria-label="Zoom in">+</button></div><div id="cropEditorViewport"><div class="crop-editor-stage pan-mode" id="cropEditorStage"><img id="cropEditorImage" draggable="false" alt="Processed source page"><span id="cropSelection" class="crop-selection"></span></div></div><div class="controls"><span id="cropGeometry"></span><button id="saveCrop" type="button">Save adjusted crop</button></div></details></section>
 <section><label>Reviewer name <input id="reviewer" required autocomplete="name"></label>
-<h2 id="transcriptionLabel">Type your transcription below</h2><div id="runPreview" dir="ltr" aria-label="Combined transcription preview"></div>
+<div id="candidatePanel" hidden><h3>Machine readings</h3><p class="hint" id="candidateHint"></p><div id="candidates"></div></div><h2 id="transcriptionLabel">Type your transcription below</h2><div id="runPreview" dir="ltr" aria-label="Combined transcription preview"></div>
 <p id="runHint" class="hint">Edit each language run in its own direction. The combined line reads left to right. Foreign-script runs initially have an unspecified language; choose the correct language below.</p>
 <label id="newRunLabel">New run language <select id="newRunLanguage"></select></label>
 <div id="runEditors"></div><textarea id="text" hidden aria-hidden="true"></textarea>
@@ -61,7 +61,44 @@ $('uncertainties').replaceChildren(...current.uncertainties.map(note=>{const li=
 const headword=current.kind==='headword';$('reviewForm').classList.toggle('headword-review',wordSample);$('runHint').hidden=wordSample;$('newRunLabel').hidden=wordSample;$('runPreview').hidden=wordSample;
 $('transcriptionLabel').textContent=headword?'Type the Hebrew headword here':wordSample?'Type the Hebrew word here':'Type your transcription below';$('notHeadword').textContent=headword?'Not a headword':'Not Hebrew text';
 window.TranscriptionRuns.load($('text').value,r?.runs||(wordSample?[{language:'he',direction:'rtl',text:$('text').value}]:undefined));
+renderCandidates(wordSample);
 $('zoom').value='100';applyZoom();showScalars();document.dispatchEvent(new Event('transcription-rendered'));updateSaveLabel();$('next').disabled=index===lines.length-1;
+}
+// Machine readings are offered as one click each. Engines agreeing is evidence
+// about which characters are worth looking at, not evidence that either is
+// right, so an agreed reading is marked but never auto-applied: a reviewer
+// still has to choose it against the image.
+function applyCandidate(text,wordSample){
+  $('text').value=text;
+  window.TranscriptionRuns.load(text,wordSample?[{language:'he',direction:'rtl',text}]:undefined);
+  dirty=true;showScalars();updateSaveLabel();
+  document.dispatchEvent(new Event('transcription-rendered'));
+  message('Loaded a machine reading. Check every letter and point against the image before approving.');
+}
+function renderCandidates(wordSample){
+  const list=current.candidates||[];
+  $('candidatePanel').hidden=!list.length;
+  if(!list.length){$('candidates').replaceChildren();return;}
+  const counts=new Map();
+  for(const c of list)counts.set(c.text,(counts.get(c.text)||0)+1);
+  $('candidateHint').textContent=list.length===1
+    ?'One engine disagrees with the draft. Click to load it, then check it against the image.'
+    :`${list.length} readings differ from the draft. Click one to load it, then check it against the image.`;
+  const ordered=[...list].sort((a,b)=>(b.in_lexicon?1:0)-(a.in_lexicon?1:0));
+  $('candidates').replaceChildren(...ordered.map(c=>{
+    const b=document.createElement('button');
+    b.type='button';b.className='candidate'+(counts.get(c.text)>1?' agreed':'');
+    const reading=document.createElement('span');
+    reading.className='reading';reading.lang='he';reading.dir='rtl';reading.textContent=c.text;
+    const engine=document.createElement('span');
+    engine.className='engine';engine.textContent=counts.get(c.text)>1?c.engine+' (agreed)':c.engine;
+    b.append(reading,engine);
+    if(c.in_lexicon){const lex=document.createElement('span');lex.className='lex';
+      lex.title='Letters match an attested lexicon word; pointing is not checked';
+      lex.textContent='in lexicon';b.append(lex);b.classList.add('attested');}
+    b.onclick=()=>applyCandidate(c.text,wordSample);
+    return b;
+  }));
 }
 async function load(key){allLines=await api();filterLines(key);}
 function filterLines(key){filterKind=$('kind').value;filterUnreviewed=$('unreviewedOnly').checked;const kindLines=allLines.filter(line=>$('kind').value==='all'||line.kind===$('kind').value);lines=kindLines.filter(line=>!filterUnreviewed||!line.review);$('line').replaceChildren(...lines.map((line,i)=>{const o=document.createElement('option');o.value=i;o.textContent=`Page ${line.printed_page} · ${line.line_id} — ${line.review?.state||'unreviewed'}`;return o;}));$('progress').textContent=filterUnreviewed?`${lines.length} unreviewed`:`${kindLines.filter(l=>l.review?.state==='resolved').length} / ${kindLines.length} resolved`;
