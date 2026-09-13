@@ -1,112 +1,126 @@
 # Synthetic corpus scaling and fine-tuning at 274 reviewed pairs, 2026-09-13
 
+## Measurement method, and why it is stated first
+
+Every figure here is character accuracy and exact-match against the
+logical-order NFC reference, with recognition through Kraken's `rpred` on each
+crop. This is the path a pipeline actually uses, and it is the same comparison
+the Tesseract baseline has always been scored with.
+
+That matters because `ketos test` reports systematically worse numbers for the
+same weights:
+
+| Model, on development-24 | `ketos test` | `rpred`, logical NFC |
+| --- | --- | --- |
+| Synthetic only, 50k balanced | 42.07% | 55.49% |
+| Fine-tune, 10k pretrain + 129 real | 65.24% | 84.15% |
+| Fine-tune, 50k balanced + 274 real | 71.34% | 89.63% |
+
+The gap is not the comparison order: reordering both strings to display order
+gives an identical error count. It is the inference path — `ketos test`'s
+dataset preprocessing differs from `rpred`'s crop extraction and input
+transforms, and produces worse predictions from identical weights.
+
+The consequence is that mixing the two invalidates comparisons. Scoring Kraken
+with `ketos test` while scoring Tesseract in logical-order NFC understates
+Kraken by fourteen to eighteen points. An earlier draft of this report did
+exactly that and drew a conclusion that the consistent method reverses.
+
 ## Outcome
 
-Two things are settled by this run, and they point in opposite directions.
-
-Scaling the synthetic pretraining corpus five-fold and frequency-balancing it
-bought nothing. Fine-tuning on reviewed pairs bought twenty-nine points. The
-recognizer's accuracy lives in the reviewed data, not in the renderer.
-
-All figures are character accuracy from one method — `ketos test --arch vgsl -f
-path --reorder --base-dir auto -u NFC --pad 16`, Kraken 7.1 — on
-`development-24`, the 24 reviewed development-partition headwords. That set is
-the only reviewed material no model here has fitted or selected on. Pages 250
-and 775 remain untouched.
-
-| System | Character accuracy | Errors | Exact (word) |
+| System, on development-24 | Character accuracy | Errors | Exact pointed |
 | --- | --- | --- | --- |
-| Tesseract isolated word pass, in the pipeline | 30.49% | 114 | 8.00% |
-| Synthetic only, 50k balanced, no real data | 42.07% | 95 | 8.00% |
-| Fine-tune: 10k uniform pretrain + 129 real | 65.24% | 57 | 16.00% |
-| Fine-tune: 10k uniform pretrain + 274 real | 69.51% | 50 | 20.00% |
-| **Fine-tune: 50k balanced pretrain + 274 real** | **71.34%** | **47** | 16.00% |
+| Tesseract isolated word pass, in the pipeline | 30.49% | 114 | 1 / 24 |
+| Synthetic only, 50k balanced, no real data | 55.49% | 73 | 3 / 24 |
+| Fine-tune: 10k uniform pretrain + 129 real | 84.15% | 26 | 11 / 24 |
+| Fine-tune: 10k uniform pretrain + 274 real | 89.02% | 18 | 13 / 24 |
+| **Fine-tune: 50k balanced pretrain + 274 real** | **89.63%** | **17** | **15 / 24** |
+
+`development-24` is the 24 reviewed development-partition headwords: the only
+reviewed material no model here has fitted or selected on. Pages 250 and 775
+remain untouched.
+
+The selected model reads fifteen of twenty-four development headwords exactly
+right, every letter and every point, against one for the pass currently in the
+pipeline.
 
 ## What each change was worth
 
 Running two pretraining bases through the same fine-tune isolates the
 contributions:
 
-- **Fine-tuning at all: +29.3 points.** The same pretrained model goes from
-  42.07% to 71.34% once it sees 274 reviewed pairs.
-- **Doubling the real fitting set, 129 to 274, pretrain held fixed: +4.3
-  points**, 65.24% to 69.51%.
+- **Fine-tuning at all: +34.1 points.** The same pretrained model goes from
+  55.49% to 89.63% once it sees 274 reviewed pairs.
+- **Doubling the real fitting set, 129 to 274, pretrain held fixed: +4.9
+  points**, 84.15% to 89.02%.
 - **Five times the synthetic data plus frequency balancing, real set held
-  fixed: +1.8 points**, 69.51% to 71.34%.
+  fixed: +0.6 points**, 89.02% to 89.63%.
 
-That last number is three characters out of 164, and the two bases swap places
-depending on which metric is read: the 10k uniform base is *better* on exact
-matches, 20.00% against 16.00%, and on the frozen 30, 76.72% against 75.13%.
-The corpus work is not distinguishable from noise.
+That last number is one character out of 164. The corpus work bought nothing.
 
 This refutes a specific hypothesis. The 2026-09-12 report observed that the
 value of pretraining is largely invisible in the synthetic-only number and
-warned against selecting a pretraining budget on it. That was a reasonable
-argument and it is why both bases were fine-tuned here rather than only the new
-one. It does not hold: the balanced corpus was worth nothing before fine-tuning
-and nothing after it.
+warned against selecting a pretraining budget on it. That argument is why both
+bases were fine-tuned here rather than only the new one. It does not hold: the
+balanced corpus was worth nothing before fine-tuning and nothing after it.
 
-## The synthetic-only model does not beat the pipeline baseline
+## Synthetic pretraining alone does beat the pipeline baseline
 
-Measured on more than thirty crops, the central claim of the previous report
-does not survive.
+On `train-part-274` — 274 pairs and 1,889 characters, held out entirely for a
+model that fitted no real data:
 
-| Evaluation set | Pairs | Characters | Tesseract | Synthetic only, 50k balanced |
-| --- | --- | --- | --- | --- |
-| frozen-30 | 30 | 189 | 44.44% | 62.96% |
-| validation-46 | 46 | 304 | 44.08% | 56.91% |
-| development-24 | 24 | 164 | 30.49% | 42.07% |
-| train-part-274 | 274 | 1889 | 44.04% | 41.87% |
-| **heldout-298** | 298 | 2053 | **42.96%** | **41.89%** |
+| System | Character accuracy | Exact pointed |
+| --- | --- | --- |
+| Tesseract | 44.04% | 1 / 274 |
+| Synthetic only, 50k balanced | 47.86% | 30 / 274 |
 
-On 298 held-out pairs the synthetic-only recognizer scores 41.89% against
-Tesseract's 42.96%. The apparent advantage runs from +18.5 points on 30 crops
-to -1.1 points on 298. A 189-character evaluation set was hiding a twenty-one
-point gradient.
-
-Note also that Tesseract is nearly flat across frozen-30, validation-46 and
-train-part-274 at 44.4%, 44.1% and 44.0%. The frozen 30 was representative for
-the baseline while being badly unrepresentative for the recognizer, so its
-stability was not evidence that it was a sound evaluation set.
+The character-accuracy margin is narrow, 3.8 points, but the exact-match margin
+is not: thirty headwords read perfectly against one. Character accuracy
+understates the difference between a recognizer that is usually nearly right
+and one that is occasionally exactly right, which is the distinction the
+acceptance target is written in.
 
 ## The kaf hypothesis is refuted
 
 The previous report found 8 errors on 9 kaf occurrences, attributed them to the
 corpus's natural frequency skew, and predicted that frequency-balanced sampling
 would collapse them. Balancing was implemented and works: `--balance 0.75`
-moves the bet/kaf character ratio from 2.29 to 1.86, and raises word-initial
+moves the bet/kaf character ratio from 2.29 to 1.86 and raises word-initial
 kaf-with-dagesh samples from 1,539 to 1,817 at equal corpus size. Counted the
 same way, the previous run's 10,000-sample slice held 295 such samples against
-1,817 here, a 6.2-fold increase in exposure, of which balancing contributes
-about a fifth and corpus size the rest. (The previous report's count of 28 used
-a narrower configuration than the one measured here; the comparison above is
-one consistent definition throughout.)
+1,817 here, a 6.2-fold increase in exposure. (The previous report's count of 28
+used a narrower configuration; the comparison here is one consistent definition
+throughout.)
 
-Kaf read as bet, on 298 held-out pairs containing 25 kaf occurrences:
-
-| Corpus | Kaf read as bet |
-| --- | --- |
-| 10k uniform | 2 |
-| 50k balanced | 3 |
-
-Kaf/bet was never a significant error mode. Every kaf in the 30-crop validation
-set happened to be word-initial kaf with dagesh, and that accident produced a
-confident causal story about frequency priors which a larger sample dissolves.
-A six-fold increase in exposure fixed a defect that was not there.
+Kaf read as bet, across the 298 held-out pairs containing 25 kaf occurrences:
+**4 for the synthetic-only model, 0 for the fine-tuned model.** Kaf/bet was
+never a significant error mode. Every kaf in the 30-crop validation set happened
+to be word-initial kaf with dagesh, and that accident produced a confident
+causal story about frequency priors which a larger sample dissolves.
 
 ## Error structure
 
-For the selected model on `development-24`, 47 errors:
+The fine-tuned model makes 17 errors on `development-24`: 9 involve a vowel
+point, 8 are letter errors. The synthetic-only model, measured over all 298
+held-out pairs, makes 615 point-involving and 443 letter errors, 58% points.
 
-- **40 of 47 errors involve a vowel point**; only 7 are letter-only.
-- The largest single confusions are qamats inserted (5), segol dropped (4),
-  hiriq dropped (4), qamats dropped (4).
-- Dropped and inserted points outnumber point *substitutions*, so the failure
-  is as much detecting that a mark is present as identifying which mark it is.
+So pointing is the larger share but not overwhelmingly so, and fine-tuning
+improves both. With only 17 residual errors on the clean set, the split is not
+a reliable basis for prioritising work; a larger clean set is needed before
+targeting one failure mode over the other.
 
-This is the residual the acceptance target has to clear, and it is a
-small-marks-in-a-degraded-scan problem, not a letterform problem. More
-synthetic letterforms will not address it.
+## The fine-tuned models memorise their fitting set
+
+The selected model scores **100% character accuracy and 274 of 274 exact on
+`train-part-274`**, its own fitting data. A 4.0-million-parameter network
+trivially memorises 274 samples.
+
+Two consequences. `train-part-274` is not evidence about any fine-tuned model.
+And the clean evidence for the selected model is `development-24` alone: 24
+pairs, 164 characters, where a single character is 0.6 points and two points is
+three characters. Differences of a few points between fine-tuned models here
+are not measurable, which is why this report does not claim the 50k base beats
+the 10k base.
 
 ## Method
 
@@ -119,58 +133,58 @@ words), because alpha 1.0 over-concentrates on words carrying ultra-rare
 clusters that are not kaf. Zero duplicate images, disjoint train/validation
 vocabularies, all 41 scalars covered.
 
-Real data: 344 reviewed headwords, all outstanding review completed
-2026-09-12. 274 training-partition, 46 validation-partition, 24 development.
-Exported by `gesenius export-headword-training` from a bounded review root and
-by `tool/export-development-headwords.py` for the partition that command
-deliberately skips. The frozen 30 is a byte-identical subset of the validation
-partition throughout, so continuity with earlier experiments holds.
+Real data: 344 reviewed headwords, all outstanding review completed 2026-09-12.
+274 training-partition, 46 validation-partition, 24 development. Exported by
+`gesenius export-headword-training` from a bounded review root, and by
+`tool/export-development-headwords.py` for the partition that command
+deliberately skips. The frozen 30 remains a byte-identical subset of the
+validation partition, so continuity with earlier experiments holds.
 
-Pretraining selected checkpoints on the 46 real validation pairs rather than
-the synthetic score, which is the flaw the previous report identified in its own
-method. Real transfer rose 55.6% to 68.8% by epoch 4 and then oscillated for
-ten epochs without improving; early stopping ended the run at epoch 15 after
-about 13 hours. The 30-epoch cap was never binding, unlike the previous run.
+Pretraining selected checkpoints on the 46 real validation pairs rather than the
+synthetic score, which is the flaw the previous report identified in its own
+method. Real transfer rose to its peak by epoch 4 and then oscillated for ten
+epochs without improving; early stopping ended the run at epoch 15 after about
+13 hours. The 30-epoch cap was never binding.
 
 Fine-tuning used `--resize union` so the codec admits the space scalar, which
 the single-word synthetic corpus never renders and which occurs 6 times across
 5 multi-word headwords.
 
-Commands, digests, results and the corrected prior baselines are in
+Commands, digests and results are in
 `artifacts/synthetic-pretrain-2026-09-12-50k-balanced-seed42/`.
 
 ## Never report Kraken's internal validation score
 
-Kraken's own score overstated independent test in every case measured:
+Kraken's own score overstated independent measurement in every case:
 
-| Model | Internal score | `ketos test`, same pairs |
+| Model | Internal score | Measured |
 | --- | --- | --- |
-| Synthetic only, 50k balanced | 68.75% | 56.91% |
-| Fine-tune from 50k balanced | 89.47% | 72.04% |
-| Fine-tune from 10k uniform | 87.50% | 69.74% |
+| Synthetic only, 50k balanced | 68.75% | 67.76% on validation-46 |
+| Fine-tune from 50k balanced | 89.47% | 88.82% on validation-46 |
+| Fine-tune from 10k uniform | 87.50% | 87.17% on validation-46 |
 
-This is the same substitution that inflated the 2026-09-12 report, where the
-121-pair row recorded 14.81% — that run's `best_0.1481` checkpoint score —
-against 12.70% on independent test. The internal metric excludes characters
-outside the trained alphabet and runs on the compiled dataset's preprocessing.
-It is a selection signal, not a result.
+Under the consistent method the gap is small, about one point, rather than the
+twelve to seventeen points `ketos test` suggested. The internal score is still
+a selection signal computed on the selection set, and still excludes characters
+outside the trained alphabet, so it should not be reported as a result — but the
+alarming discrepancy reported earlier was an artifact of the measurement method,
+not of the score.
 
 ## Next
 
 - **Review is the highest-yield activity available.** Doubling the reviewed
-  fitting set returned +4.3 points, a real effect; five times the synthetic
-  data returned +1.8, within noise on this evaluation set. The next experiment
-  worth running is more reviewed pairs, not a better renderer.
-- **Target the pointing, not the letterforms.** 85% of residual errors involve
-  vowel points, and dropped/inserted marks outnumber substitutions. Crop
-  geometry, resolution below the baseline, and binarization are the places to
-  look.
-- **The held-out set is now thin.** Fitting on the 274 training-partition pairs
-  leaves only 24 clean pairs and 164 characters, where two points is three
-  characters. Reserve additional reviewed pages for evaluation before the next
-  fine-tune, or the next comparison will be unmeasurable.
-- **Acceptance is far off.** 98% exact pointed implies about 99.7% character
-  accuracy. This run reaches 16-20% exact on clean data. That is a recognizer
-  worth routing into review, not an accepted one.
+  fitting set returned +4.9 points; five times the synthetic data returned +0.6.
+  The next experiment worth running is more reviewed pairs, not a better
+  renderer.
+- **Reserve pages for evaluation before the next fine-tune.** Fitting on the
+  274 training-partition pairs leaves 24 clean pairs, and the model memorises
+  its fitting set completely. Without reserved pages the next comparison cannot
+  be measured.
+- **Use the recognizer to seed review.** At 89.63% character accuracy and 15 of
+  24 exact, its output is a far better review starting point than the Tesseract
+  suggestion at 30.49% and 1 of 24.
+- **Acceptance is closer but not reached.** 98% exact pointed implies about
+  99.7% character accuracy. This run reaches 62.5% exact on clean data, from a
+  baseline of 4%.
 - Pages 250 and 775 remain untouched and are still the only source of a clean
   final estimate.

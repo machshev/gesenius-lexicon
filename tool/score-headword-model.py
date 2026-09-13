@@ -39,8 +39,15 @@ def load_pairs(export: pathlib.Path, splits: set[str] | None):
     return pairs
 
 
-def predict(model: pathlib.Path, pairs, device: str):
-    """Recognize each crop as a single line covering the whole image."""
+def predict(model: pathlib.Path, pairs, device: str, reorder: bool = True):
+    """Recognize each crop as a single line covering the whole image.
+
+    `reorder` must match how the model was trained. These models are trained
+    with `ketos train --reorder`, which rewrites logical-order ground truth into
+    display order, so the network emits display order and the prediction has to
+    be reordered back before it can be compared with a logical-order reference.
+    Getting this wrong does not fail loudly: it silently scores about 14%.
+    """
     from kraken.lib import models
     from kraken import rpred
     from kraken.containers import Segmentation, BBoxLine
@@ -63,7 +70,7 @@ def predict(model: pathlib.Path, pairs, device: str):
             script_detection=False, lines=[BBoxLine(id=f"line-{index}", bbox=(0, 0, width, height))],
         )
         text = "".join(r.prediction for r in rpred.rpred(network, image, bounds, pad=16,
-                                                        bidi_reordering=False))
+                                                        bidi_reordering=reorder))
         out.append(unicodedata.normalize("NFC", text))
         if (index + 1) % 25 == 0:
             print(f"  recognized {index + 1}/{len(pairs)}", file=sys.stderr)
@@ -89,11 +96,13 @@ def main() -> int:
                         help="restrict to a split in the export; repeatable")
     parser.add_argument("--label", default=None, help="name for this run in the report")
     parser.add_argument("--device", default="cpu")
+    parser.add_argument("--no-reorder", action="store_true",
+                        help="only for a model trained without `ketos train --reorder`")
     parser.add_argument("--output", type=pathlib.Path, default=None)
     args = parser.parse_args()
 
     pairs = load_pairs(args.export, set(args.split) if args.split else None)
-    predictions = predict(args.model, pairs, args.device)
+    predictions = predict(args.model, pairs, args.device, not args.no_reorder)
 
     errors = characters = exact = consonant_exact = 0
     per_page: dict[str, list[int]] = {}
