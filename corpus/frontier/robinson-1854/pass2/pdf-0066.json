@@ -1,0 +1,2792 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 66,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0066.png",
+ "raster_sha256": "90aab2acdfbbae5fc2bec61588dcc52824c29992e1761981fb60c8608b1338d3",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0066.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 1,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-23T21:00:38+00:00",
+ "chunks": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 196,
+    "y": 37,
+    "width": 880,
+    "height": 925
+   },
+   "draft_lines": [
+    "אֵל 5",
+    "So in the phrase יֶשׁ לְאֵל יָדִי it is in the",
+    "power of my hand, in my power, e. g.",
+    "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+    "Prov. 3, 27. Mic. 2, 1; also negatively,",
+    "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in",
+    "the power of thy hand, thou canst avail",
+    "nothing. Neh. 5, 5. The לְ here indi-",
+    "cates state or condition. Some, with a",
+    "very slight perception of the nature of",
+    "this phrase, understand אֵל of God, and",
+    "render: my hand is for God, i. e. instead",
+    "of God, comp. Job 12, 6. Hab. 1, 11; also",
+    "Virg. Æn. 10. 773 Dextra mihi Deus,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 196,
+      "y": 35,
+      "width": 880,
+      "height": 358
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r00-b00-880x358+196+35-x2.png",
+     "image_sha256": "e0b8d39374083009a9f4668241df80f9113e4f601ce89bb5f869a4b615dc3ecf",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "אֵל 5",
+       "So in the phrase יֵשׁ לְאֵל יָדִי it is in the",
+       "power of my hand, in my power, e. g.",
+       "Gen. 31, 29 יֵשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "e6ec68a5-0709-44c5-8aa3-8aa34a3f8a2e",
+      "duration_api_ms": 29083,
+      "cost_usd_list": 0.29547775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34591,
+      "cache_creation_input_tokens": 10282,
+      "output_tokens": 1617
+     },
+     "lines": [
+      {
+       "draft": "אֵל 5",
+       "reread": "אֵל 5",
+       "status": "agreed",
+       "text": "אֵל 5"
+      },
+      {
+       "draft": "So in the phrase יֶשׁ לְאֵל יָדִי it is in the",
+       "reread": "So in the phrase יֵשׁ לְאֵל יָדִי it is in the",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "So in the phrase יֵשׁ לְאֵל יָדִי it is in the",
+        "verdict": "b",
+        "note": "Under the yod of the first Hebrew word the print shows two horizontal dots (tsere), not three (segol): יֵשׁ, matching the same word in line 4. All other points agree with both readings.",
+        "model": "claude-fable-5-1",
+        "session_id": "e71cdc9c-eba9-45b0-952e-7bf5c3db45cc",
+        "duration_api_ms": 16181,
+        "cost_usd_list": 0.53398575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 20503,
+        "cache_creation_input_tokens": 24341,
+        "output_tokens": 834
+       },
+       "text": "So in the phrase יֵשׁ לְאֵל יָדִי it is in the"
+      },
+      {
+       "draft": "power of my hand, in my power, e. g.",
+       "reread": "power of my hand, in my power, e. g.",
+       "status": "agreed",
+       "text": "power of my hand, in my power, e. g."
+      },
+      {
+       "draft": "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+       "reread": "Gen. 31, 29 יֵשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "Gen. 31, 29 יֵשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+        "verdict": "b",
+        "note": "Under the yod of יש the print shows two dots side by side with no third dot beneath, i.e. tsere (יֵשׁ), not segol; confirmed on the uncropped column image where the space below the line is visible. Everything else in both readings matches the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "05192920-c11d-440a-8c06-dd44c447627c",
+        "duration_api_ms": 65357,
+        "cost_usd_list": 0.7870874999999999,
+        "input_tokens": 198,
+        "cache_read_input_tokens": 208070,
+        "cache_creation_input_tokens": 30507,
+        "output_tokens": 2459
+       },
+       "text": "Gen. 31, 29 יֵשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 196,
+      "y": 377,
+      "width": 880,
+      "height": 195
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r00-b01-880x195+196+377-x2.png",
+     "image_sha256": "84d79aa293372d89ba6c6cce4a2a94296803e44a06fc97be2267e610b7337759",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "Prov. 3, 27. Mic. 2, 1; also negatively,",
+       "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in",
+       "the power of thy hand, thou canst avail"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "b55063fd-9f48-419f-8aaf-79c838c1859a",
+      "duration_api_ms": 14799,
+      "cost_usd_list": 0.22115775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34591,
+      "cache_creation_input_tokens": 9526,
+      "output_tokens": 433
+     },
+     "lines": [
+      {
+       "draft": "Prov. 3, 27. Mic. 2, 1; also negatively,",
+       "reread": "Prov. 3, 27. Mic. 2, 1; also negatively,",
+       "status": "agreed",
+       "text": "Prov. 3, 27. Mic. 2, 1; also negatively,"
+      },
+      {
+       "draft": "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in",
+       "reread": "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in",
+       "status": "agreed",
+       "text": "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in"
+      },
+      {
+       "draft": "the power of thy hand, thou canst avail",
+       "reread": "the power of thy hand, thou canst avail",
+       "status": "agreed",
+       "text": "the power of thy hand, thou canst avail"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 196,
+      "y": 556,
+      "width": 880,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r00-b02-880x236+196+556-x2.png",
+     "image_sha256": "9ed07102ff308c1782769747a7233b06a26cd3df52eb7579f9524858695a35c3",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "nothing. Neh. 5, 5. The לְ here indi-",
+       "cates state or condition. Some, with a",
+       "very slight perception of the nature of",
+       "this phrase, understand אֵל of God, and"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "5d91d59b-5209-431b-9475-5b02e9dd9998",
+      "duration_api_ms": 11421,
+      "cost_usd_list": 0.22263775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34591,
+      "cache_creation_input_tokens": 9715,
+      "output_tokens": 387
+     },
+     "lines": [
+      {
+       "draft": "nothing. Neh. 5, 5. The לְ here indi-",
+       "reread": "nothing. Neh. 5, 5. The לְ here indi-",
+       "status": "agreed",
+       "text": "nothing. Neh. 5, 5. The לְ here indi-"
+      },
+      {
+       "draft": "cates state or condition. Some, with a",
+       "reread": "cates state or condition. Some, with a",
+       "status": "agreed",
+       "text": "cates state or condition. Some, with a"
+      },
+      {
+       "draft": "very slight perception of the nature of",
+       "reread": "very slight perception of the nature of",
+       "status": "agreed",
+       "text": "very slight perception of the nature of"
+      },
+      {
+       "draft": "this phrase, understand אֵל of God, and",
+       "reread": "this phrase, understand אֵל of God, and",
+       "status": "agreed",
+       "text": "this phrase, understand אֵל of God, and"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 196,
+      "y": 776,
+      "width": 880,
+      "height": 182
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r00-b03-880x182+196+776-x2.png",
+     "image_sha256": "f5e7056d759516950f4792f841c2fd61e9f3f26fab51b105f9713383761730ff",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "render: my hand is for God, i. e. instead",
+       "of God, comp. Job 12, 6. Hab. 1, 11; also",
+       "Virg. Æn. 10. 773 Dextra mihi Deus,"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "89c3ae59-8400-435c-b496-bb3f77768e8b",
+      "duration_api_ms": 9816,
+      "cost_usd_list": 0.21179775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34591,
+      "cache_creation_input_tokens": 9463,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "render: my hand is for God, i. e. instead",
+       "reread": "render: my hand is for God, i. e. instead",
+       "status": "agreed",
+       "text": "render: my hand is for God, i. e. instead"
+      },
+      {
+       "draft": "of God, comp. Job 12, 6. Hab. 1, 11; also",
+       "reread": "of God, comp. Job 12, 6. Hab. 1, 11; also",
+       "status": "agreed",
+       "text": "of God, comp. Job 12, 6. Hab. 1, 11; also"
+      },
+      {
+       "draft": "Virg. Æn. 10. 773 Dextra mihi Deus,",
+       "reread": "Virg. Æn. 10. 773 Dextra mihi Deus,",
+       "status": "agreed",
+       "text": "Virg. Æn. 10. 773 Dextra mihi Deus,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 196,
+    "y": 950,
+    "width": 880,
+    "height": 951
+   },
+   "draft_lines": [
+    "etc. Those passages are indeed paral-",
+    "lel among themselves; but have nothing",
+    "to do with this phrase. See in אֱלוֹהַ.",
+    "3. God, the Mighty One, the Almighty.",
+    "In order to illustrate how far the Hebrew",
+    "usage in respect to the names of God, as",
+    "אֵל, אֱלֹהִים, יְהֹוָה, יָהּ, is synonymous,",
+    "we note here the following in respect to",
+    "this word: a) In prose, when spoken of",
+    "God κατ' ἐξοχήν, it never stands alone,",
+    "but always either with an attribute, as",
+    "אֵל חַי, אֵל קַנָּא, אֵל שַׁדַּי, אֵל עֶלְיוֹן; or with",
+    "another name of God, as אֵל אֱלֹהֵי יִשְׂרָאֵל",
+    "Gen. 33, 20; הָאֵל אֱלֹהֵי אָבִיךָ Gen. 46, 3;",
+    "אֵל אֱלֹהִים יְהֹוָה Josh. 22, 22. Ps. 50, 1,",
+    "where it may be rendered, God of gods,",
+    "Jehovah, comp. Dan. 11, 36 אֵל אֵלִים; or"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 196,
+      "y": 954,
+      "width": 880,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r01-b00-880x227+196+954-x2.png",
+     "image_sha256": "b798a3ea6bcc592e43e283316363c0b41b0485c0ed5865d2b719dd1e899cb270",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "etc. Those passages are indeed paral-",
+       "lel among themselves; but have nothing",
+       "to do with this phrase. See in אֱלֹהַּ.",
+       "3. God, the Mighty One, the Almighty."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "07596d4c-21a1-4dc4-8edb-0b14a9665d6e",
+      "duration_api_ms": 14900,
+      "cost_usd_list": 0.22518775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34591,
+      "cache_creation_input_tokens": 9715,
+      "output_tokens": 438
+     },
+     "lines": [
+      {
+       "draft": "etc. Those passages are indeed paral-",
+       "reread": "etc. Those passages are indeed paral-",
+       "status": "agreed",
+       "text": "etc. Those passages are indeed paral-"
+      },
+      {
+       "draft": "lel among themselves; but have nothing",
+       "reread": "lel among themselves; but have nothing",
+       "status": "agreed",
+       "text": "lel among themselves; but have nothing"
+      },
+      {
+       "draft": "to do with this phrase. See in אֱלוֹהַ.",
+       "reread": "to do with this phrase. See in אֱלֹהַּ.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "to do with this phrase. See in אֱלֹהַּ.",
+        "verdict": "b",
+        "note": "The Hebrew is spelled defectively: only alef, lamed, he are printed, with a bare holem dot above the lamed and no vav. Reading A's plene אֱלוֹהַ inserts a vav that is not on the page and drops the mappiq, which is clearly printed inside the he alongside the patah.",
+        "model": "claude-fable-5-1",
+        "session_id": "a077bea4-78b7-4980-b986-b5918f31c7a7",
+        "duration_api_ms": 29590,
+        "cost_usd_list": 0.5685905000000001,
+        "input_tokens": 98,
+        "cache_read_input_tokens": 68442,
+        "cache_creation_input_tokens": 25120,
+        "output_tokens": 962
+       },
+       "text": "to do with this phrase. See in אֱלֹהַּ."
+      },
+      {
+       "draft": "3. God, the Mighty One, the Almighty.",
+       "reread": "3. God, the Mighty One, the Almighty.",
+       "status": "agreed",
+       "text": "3. God, the Mighty One, the Almighty."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 196,
+      "y": 1165,
+      "width": 880,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r01-b01-880x238+196+1165-x2.png",
+     "image_sha256": "1eeadbdc741dc6c4456fbcc440bca265a3caafda6242432cc9f2c56e1902b10d",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "In order to illustrate how far the Hebrew",
+       "usage in respect to the names of God, as",
+       "אֵל, אֱלֹהִים, יְהֹוָה, יָהּ, is synonymous,",
+       "we note here the following in respect to"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "c74f7e6d-6ba7-43f6-bffc-fe6ae5ac3d66",
+      "duration_api_ms": 12800,
+      "cost_usd_list": 0.22847800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9717,
+      "output_tokens": 503
+     },
+     "lines": [
+      {
+       "draft": "In order to illustrate how far the Hebrew",
+       "reread": "In order to illustrate how far the Hebrew",
+       "status": "agreed",
+       "text": "In order to illustrate how far the Hebrew"
+      },
+      {
+       "draft": "usage in respect to the names of God, as",
+       "reread": "usage in respect to the names of God, as",
+       "status": "agreed",
+       "text": "usage in respect to the names of God, as"
+      },
+      {
+       "draft": "אֵל, אֱלֹהִים, יְהֹוָה, יָהּ, is synonymous,",
+       "reread": "אֵל, אֱלֹהִים, יְהֹוָה, יָהּ, is synonymous,",
+       "status": "agreed",
+       "text": "אֵל, אֱלֹהִים, יְהֹוָה, יָהּ, is synonymous,"
+      },
+      {
+       "draft": "we note here the following in respect to",
+       "reread": "we note here the following in respect to",
+       "status": "agreed",
+       "text": "we note here the following in respect to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 196,
+      "y": 1387,
+      "width": 880,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r01-b02-880x239+196+1387-x2.png",
+     "image_sha256": "d48a9942c104e1528d996a33a2d98cfb1998bc1a0cec9fc48cb466a3b28ac5ea",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "this word:   a) In prose, when spoken of",
+       "God κατ’ ἐξοχήν, it never stands alone,",
+       "but always either with an attribute, as",
+       "אֵל חַי, אֵל קַנָּא, אֵל שַׁדַּי, אֵל עֶלְיוֹן ; or with"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "f4e40c7f-c8e4-4cb4-b96c-0df7ed8118af",
+      "duration_api_ms": 24071,
+      "cost_usd_list": 0.262168,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9799,
+      "output_tokens": 1144
+     },
+     "lines": [
+      {
+       "draft": "this word: a) In prose, when spoken of",
+       "reread": "this word:   a) In prose, when spoken of",
+       "status": "agreed",
+       "text": "this word: a) In prose, when spoken of"
+      },
+      {
+       "draft": "God κατ' ἐξοχήν, it never stands alone,",
+       "reread": "God κατ’ ἐξοχήν, it never stands alone,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "God κατ᾽ ἐξοχήν, it never stands alone,",
+        "verdict": "neither",
+        "note": "The only difference is the mark after κατ. The print shows a raised Greek elision sign (koronis-shaped, curling like a comma above the baseline after τ), which in Unicode Greek is U+1FBD (᾽), not the ASCII apostrophe of Reading A nor the typographic right single quote U+2019 of Reading B. Everything else (italic God, ἐξοχήν with smooth breathing on ε and acute on η, the comma, and the English) matches both readings.",
+        "model": "claude-fable-5-1",
+        "session_id": "b9fb064a-ddee-42b6-8256-18aa6cd7bf42",
+        "duration_api_ms": 14664,
+        "cost_usd_list": 0.50328275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 20491,
+        "cache_creation_input_tokens": 23831,
+        "output_tokens": 424
+       },
+       "text": "God κατ᾽ ἐξοχήν, it never stands alone,"
+      },
+      {
+       "draft": "but always either with an attribute, as",
+       "reread": "but always either with an attribute, as",
+       "status": "agreed",
+       "text": "but always either with an attribute, as"
+      },
+      {
+       "draft": "אֵל חַי, אֵל קַנָּא, אֵל שַׁדַּי, אֵל עֶלְיוֹן; or with",
+       "reread": "אֵל חַי, אֵל קַנָּא, אֵל שַׁדַּי, אֵל עֶלְיוֹן ; or with",
+       "status": "agreed",
+       "text": "אֵל חַי, אֵל קַנָּא, אֵל שַׁדַּי, אֵל עֶלְיוֹן; or with"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 196,
+      "y": 1610,
+      "width": 880,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r01-b03-880x238+196+1610-x2.png",
+     "image_sha256": "02d973114e8269bc5eab1e261fad0a57395b4755a04066c2dfba32540a50241a",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "another name of God, as אֵל אֱלֹהֵי יִשְׂרָאֵל",
+       "Gen. 33, 20; הָאֵל אֱלֹהֵי אָבִיךָ Gen. 46, 3;",
+       "אֵל אֱלֹהִים יְהֹוָה Josh. 22, 22. Ps. 50, 1,",
+       "where it may be rendered, God of gods,"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "41e8edba-17fa-4266-b00d-9979c74e916e",
+      "duration_api_ms": 15119,
+      "cost_usd_list": 0.24012800000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9717,
+      "output_tokens": 736
+     },
+     "lines": [
+      {
+       "draft": "another name of God, as אֵל אֱלֹהֵי יִשְׂרָאֵל",
+       "reread": "another name of God, as אֵל אֱלֹהֵי יִשְׂרָאֵל",
+       "status": "agreed",
+       "text": "another name of God, as אֵל אֱלֹהֵי יִשְׂרָאֵל"
+      },
+      {
+       "draft": "Gen. 33, 20; הָאֵל אֱלֹהֵי אָבִיךָ Gen. 46, 3;",
+       "reread": "Gen. 33, 20; הָאֵל אֱלֹהֵי אָבִיךָ Gen. 46, 3;",
+       "status": "agreed",
+       "text": "Gen. 33, 20; הָאֵל אֱלֹהֵי אָבִיךָ Gen. 46, 3;"
+      },
+      {
+       "draft": "אֵל אֱלֹהִים יְהֹוָה Josh. 22, 22. Ps. 50, 1,",
+       "reread": "אֵל אֱלֹהִים יְהֹוָה Josh. 22, 22. Ps. 50, 1,",
+       "status": "agreed",
+       "text": "אֵל אֱלֹהִים יְהֹוָה Josh. 22, 22. Ps. 50, 1,"
+      },
+      {
+       "draft": "where it may be rendered, God of gods,",
+       "reread": "where it may be rendered, God of gods,",
+       "status": "agreed",
+       "text": "where it may be rendered, God of gods,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b04",
+     "bounds": {
+      "x": 196,
+      "y": 1832,
+      "width": 880,
+      "height": 77
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r01-b04-880x77+196+1832-x2.png",
+     "image_sha256": "1845195a579826d58f2fbbbec6ab25dafaadcdc60a6cdd686190dc68049dea3c",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "Jehovah, comp. Dan. 11, 36 אֵל אֵלִים ; or"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "717540f9-6cc3-430b-bbd6-e5d4fba8d4cc",
+      "duration_api_ms": 10620,
+      "cost_usd_list": 0.20831800000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9024,
+      "output_tokens": 377
+     },
+     "lines": [
+      {
+       "draft": "Jehovah, comp. Dan. 11, 36 אֵל אֵלִים; or",
+       "reread": "Jehovah, comp. Dan. 11, 36 אֵל אֵלִים ; or",
+       "status": "agreed",
+       "text": "Jehovah, comp. Dan. 11, 36 אֵל אֵלִים; or"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 196,
+    "y": 1889,
+    "width": 880,
+    "height": 896
+   },
+   "draft_lines": [
+    "lastly with the genitive of a place or",
+    "person of which God is called the God,",
+    "as אֵל בֵּית־אֵל Gen. 31, 13.   b) Far more",
+    "frequently it is the poetic name for God,",
+    "and stands in poetry very often alone,",
+    "sometimes with the art. הָאֵל, Ps. 18, 31.",
+    "33. 48. 68, 21. Job 8, 3.   c) It takes the",
+    "suff. of 1 pers. אֵלִי my God! Ps. 18, 3.",
+    "22, 2. 11.   The other suffixes are never",
+    "found with it; and for thy God, his God,",
+    "etc. is always said אֱלֹהֶיךָ, אֱלֹהָיו.   d) It",
+    "is also a general name for a divinity, and",
+    "is thus used of idols; either alone Is. 44,",
+    "10. 15; or with an epithet, as אֵל אַחֵר an-",
+    "other god Ex. 34, 14, אֵל זָר a strange",
+    "god Ps. 81, 10."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 196,
+      "y": 1881,
+      "width": 880,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r02-b00-880x239+196+1881-x2.png",
+     "image_sha256": "a595ac29c27c1d9df189b5ba35fc6d900b23e6f033b679f5e7a690fa6a93e4ec",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "lastly with the genitive of a place or",
+       "person of which God is called the God,",
+       "as אֵל בֵּית־אֵל Gen. 31, 13.  b) Far more",
+       "frequently it is the poetic name for God,"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "bd21717c-fb3f-4762-9256-ae47f22264c7",
+      "duration_api_ms": 11206,
+      "cost_usd_list": 0.22298800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9795,
+      "output_tokens": 362
+     },
+     "lines": [
+      {
+       "draft": "lastly with the genitive of a place or",
+       "reread": "lastly with the genitive of a place or",
+       "status": "agreed",
+       "text": "lastly with the genitive of a place or"
+      },
+      {
+       "draft": "person of which God is called the God,",
+       "reread": "person of which God is called the God,",
+       "status": "agreed",
+       "text": "person of which God is called the God,"
+      },
+      {
+       "draft": "as אֵל בֵּית־אֵל Gen. 31, 13.   b) Far more",
+       "reread": "as אֵל בֵּית־אֵל Gen. 31, 13.  b) Far more",
+       "status": "agreed",
+       "text": "as אֵל בֵּית־אֵל Gen. 31, 13. b) Far more"
+      },
+      {
+       "draft": "frequently it is the poetic name for God,",
+       "reread": "frequently it is the poetic name for God,",
+       "status": "agreed",
+       "text": "frequently it is the poetic name for God,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 196,
+      "y": 2104,
+      "width": 880,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r02-b01-880x238+196+2104-x2.png",
+     "image_sha256": "dd1aef5dc5e109bde0e888f984d5dc8a3cd12e78fde21b142afc4bc6e710f9da",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "and stands in poetry very often alone,",
+       "sometimes with the art. הָאֵל, Ps. 18, 31.",
+       "33. 48. 68, 21. Job 8, 3.   c) It takes the",
+       "suff. of 1 pers. אֵלִי my God ! Ps. 18, 3."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "af8372b6-dde5-4b94-9e8f-77abb33b18b3",
+      "duration_api_ms": 14233,
+      "cost_usd_list": 0.23157800000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9717,
+      "output_tokens": 565
+     },
+     "lines": [
+      {
+       "draft": "and stands in poetry very often alone,",
+       "reread": "and stands in poetry very often alone,",
+       "status": "agreed",
+       "text": "and stands in poetry very often alone,"
+      },
+      {
+       "draft": "sometimes with the art. הָאֵל, Ps. 18, 31.",
+       "reread": "sometimes with the art. הָאֵל, Ps. 18, 31.",
+       "status": "agreed",
+       "text": "sometimes with the art. הָאֵל, Ps. 18, 31."
+      },
+      {
+       "draft": "33. 48. 68, 21. Job 8, 3.   c) It takes the",
+       "reread": "33. 48. 68, 21. Job 8, 3.   c) It takes the",
+       "status": "agreed",
+       "text": "33. 48. 68, 21. Job 8, 3. c) It takes the"
+      },
+      {
+       "draft": "suff. of 1 pers. אֵלִי my God! Ps. 18, 3.",
+       "reread": "suff. of 1 pers. אֵלִי my God ! Ps. 18, 3.",
+       "status": "agreed",
+       "text": "suff. of 1 pers. אֵלִי my God! Ps. 18, 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 196,
+      "y": 2326,
+      "width": 880,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r02-b02-880x240+196+2326-x2.png",
+     "image_sha256": "200e486e9ed69b6334e229e25147c5770ae77ca9d043640765bdc51549c69cb5",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "22, 2. 11.  The other suffixes are never",
+       "found with it; and for thy God, his God,",
+       "etc. is always said אֱלֹהֶיךָ, אֱלֹהָיו.  d) It",
+       "is also a general name for a divinity, and"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "8f8678b6-a111-4e9d-8fe0-c03825d65e9c",
+      "duration_api_ms": 12595,
+      "cost_usd_list": 0.22793800000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9780,
+      "output_tokens": 467
+     },
+     "lines": [
+      {
+       "draft": "22, 2. 11.   The other suffixes are never",
+       "reread": "22, 2. 11.  The other suffixes are never",
+       "status": "agreed",
+       "text": "22, 2. 11. The other suffixes are never"
+      },
+      {
+       "draft": "found with it; and for thy God, his God,",
+       "reread": "found with it; and for thy God, his God,",
+       "status": "agreed",
+       "text": "found with it; and for thy God, his God,"
+      },
+      {
+       "draft": "etc. is always said אֱלֹהֶיךָ, אֱלֹהָיו.   d) It",
+       "reread": "etc. is always said אֱלֹהֶיךָ, אֱלֹהָיו.  d) It",
+       "status": "agreed",
+       "text": "etc. is always said אֱלֹהֶיךָ, אֱלֹהָיו. d) It"
+      },
+      {
+       "draft": "is also a general name for a divinity, and",
+       "reread": "is also a general name for a divinity, and",
+       "status": "agreed",
+       "text": "is also a general name for a divinity, and"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 196,
+      "y": 2550,
+      "width": 880,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r02-b03-880x231+196+2550-x2.png",
+     "image_sha256": "21603da0d5f51627798b06d5c2d8ba4b1c529114fd043db1a50cfe0f32569c8f",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "is thus used of idols; either alone Is. 44,",
+       "10. 15; or with an epithet, as אֵל אַחֵר an-",
+       "other god Ex. 34, 14, אֵל זָר a strange",
+       "god Ps. 81, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "ffab1db0-2188-4cbb-8334-505765ac5600",
+      "duration_api_ms": 14530,
+      "cost_usd_list": 0.226478,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9717,
+      "output_tokens": 463
+     },
+     "lines": [
+      {
+       "draft": "is thus used of idols; either alone Is. 44,",
+       "reread": "is thus used of idols; either alone Is. 44,",
+       "status": "agreed",
+       "text": "is thus used of idols; either alone Is. 44,"
+      },
+      {
+       "draft": "10. 15; or with an epithet, as אֵל אַחֵר an-",
+       "reread": "10. 15; or with an epithet, as אֵל אַחֵר an-",
+       "status": "agreed",
+       "text": "10. 15; or with an epithet, as אֵל אַחֵר an-"
+      },
+      {
+       "draft": "other god Ex. 34, 14, אֵל זָר a strange",
+       "reread": "other god Ex. 34, 14, אֵל זָר a strange",
+       "status": "agreed",
+       "text": "other god Ex. 34, 14, אֵל זָר a strange"
+      },
+      {
+       "draft": "god Ps. 81, 10.",
+       "reread": "god Ps. 81, 10.",
+       "status": "agreed",
+       "text": "god Ps. 81, 10."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 196,
+    "y": 2773,
+    "width": 880,
+    "height": 515
+   },
+   "draft_lines": [
+    "To God is said in Scripture to belong",
+    "whatever is excellent, distinguished,",
+    "superior in its kind; since the ancients",
+    "were accustomed to refer all excellence",
+    "directly to the deity as its immediate",
+    "author. Hence אַרְזֵי אֵל Ps. 80, 11 cedars",
+    "of God, i. e. the loftiest, most beautiful,",
+    "as if planted by Jehovah; comp. עֲצֵי",
+    "יְהוָֹה Ps. 104, 16, גַּן יְהוָֹה Gen. 13, 10."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 196,
+      "y": 2777,
+      "width": 880,
+      "height": 222
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r03-b00-880x222+196+2777-x2.png",
+     "image_sha256": "d9556cf986c80b96edc0c9627a7c3d295c8ad710f34d5e90e76c4337ee467b1b",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "To God is said in Scripture to belong",
+       "whatever is excellent, distinguished,",
+       "superior in its kind; since the ancients",
+       "were accustomed to refer all excellence"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "294fe395-b568-4677-b918-03fa1ecefbf1",
+      "duration_api_ms": 8494,
+      "cost_usd_list": 0.21371800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9654,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "To God is said in Scripture to belong",
+       "reread": "To God is said in Scripture to belong",
+       "status": "agreed",
+       "text": "To God is said in Scripture to belong"
+      },
+      {
+       "draft": "whatever is excellent, distinguished,",
+       "reread": "whatever is excellent, distinguished,",
+       "status": "agreed",
+       "text": "whatever is excellent, distinguished,"
+      },
+      {
+       "draft": "superior in its kind; since the ancients",
+       "reread": "superior in its kind; since the ancients",
+       "status": "agreed",
+       "text": "superior in its kind; since the ancients"
+      },
+      {
+       "draft": "were accustomed to refer all excellence",
+       "reread": "were accustomed to refer all excellence",
+       "status": "agreed",
+       "text": "were accustomed to refer all excellence"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 196,
+      "y": 2983,
+      "width": 880,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r03-b01-880x250+196+2983-x2.png",
+     "image_sha256": "c940b63d8004ee535bf72aceee876052af9e6c175de48152c1130fe0333d8d5c",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "directly to the deity as its immediate",
+       "author. Hence אַרְזֵי אֵל Ps. 80, 11 cedars",
+       "of God, i. e. the loftiest, most beautiful,",
+       "as if planted by Jehovah; comp. עֲצֵי"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "26ce515e-a775-4c30-9d48-dfd9161ec589",
+      "duration_api_ms": 17612,
+      "cost_usd_list": 0.24918800000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9780,
+      "output_tokens": 892
+     },
+     "lines": [
+      {
+       "draft": "directly to the deity as its immediate",
+       "reread": "directly to the deity as its immediate",
+       "status": "agreed",
+       "text": "directly to the deity as its immediate"
+      },
+      {
+       "draft": "author. Hence אַרְזֵי אֵל Ps. 80, 11 cedars",
+       "reread": "author. Hence אַרְזֵי אֵל Ps. 80, 11 cedars",
+       "status": "agreed",
+       "text": "author. Hence אַרְזֵי אֵל Ps. 80, 11 cedars"
+      },
+      {
+       "draft": "of God, i. e. the loftiest, most beautiful,",
+       "reread": "of God, i. e. the loftiest, most beautiful,",
+       "status": "agreed",
+       "text": "of God, i. e. the loftiest, most beautiful,"
+      },
+      {
+       "draft": "as if planted by Jehovah; comp. עֲצֵי",
+       "reread": "as if planted by Jehovah; comp. עֲצֵי",
+       "status": "agreed",
+       "text": "as if planted by Jehovah; comp. עֲצֵי"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 196,
+      "y": 3217,
+      "width": 880,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c0-r03-b02-880x73+196+3217-x2.png",
+     "image_sha256": "51155c766c250b7525f5df07dbef71e1d0858cdb375ae68d930efe20565b1c5d",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "יְהֹוָה Ps. 104, 16, גַּן יְהֹוָה Gen. 13, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "ac5fe9c5-a7ed-46c5-a327-8e022c74ebde",
+      "duration_api_ms": 13075,
+      "cost_usd_list": 0.21291800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9024,
+      "output_tokens": 469
+     },
+     "lines": [
+      {
+       "draft": "יְהוָֹה Ps. 104, 16, גַּן יְהוָֹה Gen. 13, 10.",
+       "reread": "יְהֹוָה Ps. 104, 16, גַּן יְהֹוָה Gen. 13, 10.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "יְהֹוָה Ps. 104, 16, גַּן יְהֹוָה Gen. 13, 10.",
+        "verdict": "b",
+        "note": "In both occurrences of the divine name the holem dot sits over the he (between yod and vav), with qamets under the vav, so the logical order is he+holem, vav+qamets (Reading B). Reading A wrongly stacks holem and qamets on the vav. All other characters, spacing, and the Ps./Gen. references agree in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "5045d57e-20e3-4f33-beea-539a3436139c",
+        "duration_api_ms": 15666,
+        "cost_usd_list": 0.22233675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34627,
+        "cache_creation_input_tokens": 9017,
+        "output_tokens": 660
+       },
+       "text": "יְהֹוָה Ps. 104, 16, גַּן יְהֹוָה Gen. 13, 10."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1096,
+    "y": 115,
+    "width": 875,
+    "height": 844
+   },
+   "draft_lines": [
+    "אֵל",
+    "So הַרְרֵי אֵל mountains of God Ps. 36, 7.",
+    "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in",
+    "אֱלֹהִים no. 6.",
+    "Plur. אֵלִים 1. mighty ones, heroes ;",
+    "see above in Sing. no. 1.",
+    "2. gods, in a wider sense, spoken of",
+    "Jehovah and also heathen gods, Ex. 15,",
+    "11, comp. 18, 11. Dan. 11, 36 אֵל אֵלִים",
+    "God of gods, i. e. the supreme God. Also",
+    "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,",
+    "by an idiom of Heb. and Syriac syntax,",
+    "poet. for sons of God, i. e. angels.",
+    "Note. Following the example of most"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1096,
+      "y": 113,
+      "width": 875,
+      "height": 279
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r00-b00-875x279+1096+113-x2.png",
+     "image_sha256": "691a5d598b59055e489d96dc3d09b0cdc34e3fbeeb4dc93f989d040d686fa147",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "אל",
+       "So הַרְרֵי אֵל mountains of God Ps. 36, 7.",
+       "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in",
+       "אֱלֹהִים no. 6."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "5b2a698b-3dad-4e85-bccb-49a989fd3ca7",
+      "duration_api_ms": 19247,
+      "cost_usd_list": 0.24735800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9906,
+      "output_tokens": 805
+     },
+     "lines": [
+      {
+       "draft": "אֵל",
+       "reread": "אל",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "אל",
+        "verdict": "b",
+        "note": "Line 1 is the large centred running head at the top of the column. It is printed without any vowel points: there is no tsere under the aleph, and no dagesh or other mark on the lamed. Reading A adds a tsere that is not on the page (the pointed אֵל appears only in line 2, \"So אֵל הַרְרֵי\"). Reading B matches the printed text exactly.",
+        "model": "claude-fable-5-1",
+        "session_id": "e3196507-1eae-42a0-b294-31af6929e070",
+        "duration_api_ms": 13210,
+        "cost_usd_list": 0.23189825000000003,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34553,
+        "cache_creation_input_tokens": 9816,
+        "output_tokens": 532
+       },
+       "text": "אל"
+      },
+      {
+       "draft": "So הַרְרֵי אֵל mountains of God Ps. 36, 7.",
+       "reread": "So הַרְרֵי אֵל mountains of God Ps. 36, 7.",
+       "status": "agreed",
+       "text": "So הַרְרֵי אֵל mountains of God Ps. 36, 7."
+      },
+      {
+       "draft": "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in",
+       "reread": "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in",
+       "status": "agreed",
+       "text": "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in"
+      },
+      {
+       "draft": "אֱלֹהִים no. 6.",
+       "reread": "אֱלֹהִים no. 6.",
+       "status": "agreed",
+       "text": "אֱלֹהִים no. 6."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1096,
+      "y": 376,
+      "width": 875,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r00-b01-875x250+1096+376-x2.png",
+     "image_sha256": "9dbdd8a7e679f97b7d348a1001db9f9ee466cdd8061742b38d43c5c0dff366f1",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "Plur. אֵלִים 1. mighty ones, heroes ;",
+       "see above in Sing. no. 1.",
+       "2. gods, in a wider sense, spoken of",
+       "Jehovah and also heathen gods, Ex. 15,"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "628fac3c-15dd-4bd1-a4f1-88518b88bbbe",
+      "duration_api_ms": 15089,
+      "cost_usd_list": 0.23503800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9780,
+      "output_tokens": 609
+     },
+     "lines": [
+      {
+       "draft": "Plur. אֵלִים 1. mighty ones, heroes ;",
+       "reread": "Plur. אֵלִים 1. mighty ones, heroes ;",
+       "status": "agreed",
+       "text": "Plur. אֵלִים 1. mighty ones, heroes;"
+      },
+      {
+       "draft": "see above in Sing. no. 1.",
+       "reread": "see above in Sing. no. 1.",
+       "status": "agreed",
+       "text": "see above in Sing. no. 1."
+      },
+      {
+       "draft": "2. gods, in a wider sense, spoken of",
+       "reread": "2. gods, in a wider sense, spoken of",
+       "status": "agreed",
+       "text": "2. gods, in a wider sense, spoken of"
+      },
+      {
+       "draft": "Jehovah and also heathen gods, Ex. 15,",
+       "reread": "Jehovah and also heathen gods, Ex. 15,",
+       "status": "agreed",
+       "text": "Jehovah and also heathen gods, Ex. 15,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1096,
+      "y": 610,
+      "width": 875,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r00-b02-875x239+1096+610-x2.png",
+     "image_sha256": "962994c458f6cc864bbf36edda9a5c55a3e0b74fdaa4ff42742e31b25824896d",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "11, comp. 18, 11. Dan. 11, 36 אֵל אֵלִים",
+       "God of gods, i. e. the supreme God. Also",
+       "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,",
+       "by an idiom of Heb. and Syriac syntax,"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "00310dbb-9419-4461-a170-9c6240f01111",
+      "duration_api_ms": 12148,
+      "cost_usd_list": 0.22823800000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9780,
+      "output_tokens": 473
+     },
+     "lines": [
+      {
+       "draft": "11, comp. 18, 11. Dan. 11, 36 אֵל אֵלִים",
+       "reread": "11, comp. 18, 11. Dan. 11, 36 אֵל אֵלִים",
+       "status": "agreed",
+       "text": "11, comp. 18, 11. Dan. 11, 36 אֵל אֵלִים"
+      },
+      {
+       "draft": "God of gods, i. e. the supreme God. Also",
+       "reread": "God of gods, i. e. the supreme God. Also",
+       "status": "agreed",
+       "text": "God of gods, i. e. the supreme God. Also"
+      },
+      {
+       "draft": "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,",
+       "reread": "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,",
+       "status": "agreed",
+       "text": "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,"
+      },
+      {
+       "draft": "by an idiom of Heb. and Syriac syntax,",
+       "reread": "by an idiom of Heb. and Syriac syntax,",
+       "status": "agreed",
+       "text": "by an idiom of Heb. and Syriac syntax,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1096,
+      "y": 833,
+      "width": 875,
+      "height": 134
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r00-b03-875x134+1096+833-x2.png",
+     "image_sha256": "0caeed7df46012735d845e3d4a5bdc6e46cbc227e74fed335a58ee7e2ba88507",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "poet. for sons of God, i. e. angels.",
+       "Note. Following the example of most"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "6de9f92f-3cf7-4860-b268-6f32179dc845",
+      "duration_api_ms": 8306,
+      "cost_usd_list": 0.20475800000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9276,
+      "output_tokens": 205
+     },
+     "lines": [
+      {
+       "draft": "poet. for sons of God, i. e. angels.",
+       "reread": "poet. for sons of God, i. e. angels.",
+       "status": "agreed",
+       "text": "poet. for sons of God, i. e. angels."
+      },
+      {
+       "draft": "Note. Following the example of most",
+       "reread": "Note. Following the example of most",
+       "status": "agreed",
+       "text": "Note. Following the example of most"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1096,
+    "y": 947,
+    "width": 875,
+    "height": 813
+   },
+   "draft_lines": [
+    "etymologists, we have above referred אֵל",
+    "to the root אוּל; but to speak more accu-",
+    "rately, אֵל would seem rather to be a",
+    "primitive word, yet adapted in a certain",
+    "measure to an etymology from אוּל, so",
+    "that to the mind of the Hebrew it always",
+    "presented the idea of strength and power.",
+    "However this may be, we may note in",
+    "respect to Semitic usage: a) That from",
+    "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)",
+    "as from a root or stem, are formed several",
+    "other derivative words, e. g. אָלָה to invoke",
+    "God, espec. in an oath; אֱלַהּ, أَلَهَ, to wor-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1096,
+      "y": 939,
+      "width": 875,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r01-b00-875x243+1096+939-x2.png",
+     "image_sha256": "9fc5a577936f7d7f9f0d0ba52e2df73f2d715c1a3e578b6607871883bfe1fc00",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "etymologists, we have above referred אֵל",
+       "to the root אוּל ; but to speak more accu-",
+       "rately, אֵל would seem rather to be a",
+       "primitive word, yet adapted in a certain"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "450ff202-2a87-4438-96fa-129004bb4349",
+      "duration_api_ms": 11730,
+      "cost_usd_list": 0.22733800000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34592,
+      "cache_creation_input_tokens": 9780,
+      "output_tokens": 455
+     },
+     "lines": [
+      {
+       "draft": "etymologists, we have above referred אֵל",
+       "reread": "etymologists, we have above referred אֵל",
+       "status": "agreed",
+       "text": "etymologists, we have above referred אֵל"
+      },
+      {
+       "draft": "to the root אוּל; but to speak more accu-",
+       "reread": "to the root אוּל ; but to speak more accu-",
+       "status": "agreed",
+       "text": "to the root אוּל; but to speak more accu-"
+      },
+      {
+       "draft": "rately, אֵל would seem rather to be a",
+       "reread": "rately, אֵל would seem rather to be a",
+       "status": "agreed",
+       "text": "rately, אֵל would seem rather to be a"
+      },
+      {
+       "draft": "primitive word, yet adapted in a certain",
+       "reread": "primitive word, yet adapted in a certain",
+       "status": "agreed",
+       "text": "primitive word, yet adapted in a certain"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1096,
+      "y": 1166,
+      "width": 875,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r01-b01-875x240+1096+1166-x2.png",
+     "image_sha256": "90943628b098922143248e412dd861fe6731e2351e1dfba5c1ba317628186017",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "measure to an etymology from אוּל, so",
+       "that to the mind of the Hebrew it always",
+       "presented the idea of strength and power.",
+       "However this may be, we may note in"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "fb46005f-c790-428a-bbcb-ad52ee4d7b7b",
+      "duration_api_ms": 11928,
+      "cost_usd_list": 0.22007824999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9782,
+      "output_tokens": 309
+     },
+     "lines": [
+      {
+       "draft": "measure to an etymology from אוּל, so",
+       "reread": "measure to an etymology from אוּל, so",
+       "status": "agreed",
+       "text": "measure to an etymology from אוּל, so"
+      },
+      {
+       "draft": "that to the mind of the Hebrew it always",
+       "reread": "that to the mind of the Hebrew it always",
+       "status": "agreed",
+       "text": "that to the mind of the Hebrew it always"
+      },
+      {
+       "draft": "presented the idea of strength and power.",
+       "reread": "presented the idea of strength and power.",
+       "status": "agreed",
+       "text": "presented the idea of strength and power."
+      },
+      {
+       "draft": "However this may be, we may note in",
+       "reread": "However this may be, we may note in",
+       "status": "agreed",
+       "text": "However this may be, we may note in"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1096,
+      "y": 1390,
+      "width": 875,
+      "height": 274
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r01-b02-875x274+1096+1390-x2.png",
+     "image_sha256": "f7d924b7969f5e672693046da0db3933af2b9a388b9bdbb7cad7ccd23cc71e5e",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "respect to Semitic usage: a) That from",
+       "the word אֵל (Arab. إِيلٌ, إِلٌّ, and إِلٌّ)",
+       "as from a root or stem, are formed several",
+       "other derivative words, e. g. אָלָה to invoke"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "9757b28a-2116-4052-b5b6-3d90117db995",
+      "duration_api_ms": 19323,
+      "cost_usd_list": 0.25144825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9908,
+      "output_tokens": 886
+     },
+     "lines": [
+      {
+       "draft": "respect to Semitic usage: a) That from",
+       "reread": "respect to Semitic usage: a) That from",
+       "status": "agreed",
+       "text": "respect to Semitic usage: a) That from"
+      },
+      {
+       "draft": "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)",
+       "reread": "the word אֵל (Arab. إِيلٌ, إِلٌّ, and إِلٌّ)",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)",
+        "verdict": "a",
+        "note": "The middle Arabic word has only a tanwin damm above the lam (same single curl as the first word); only the third word shows the stacked shadda + tanwin damm. Reading B wrongly adds a shadda to the middle word, making it identical to the third.",
+        "model": "claude-fable-5-1",
+        "session_id": "24e5ba5e-97a2-43be-9de0-675c4317acaf",
+        "duration_api_ms": 33307,
+        "cost_usd_list": 0.36279624999999993,
+        "input_tokens": 72,
+        "cache_read_input_tokens": 109665,
+        "cache_creation_input_tokens": 12758,
+        "output_tokens": 1590
+       },
+       "text": "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)"
+      },
+      {
+       "draft": "as from a root or stem, are formed several",
+       "reread": "as from a root or stem, are formed several",
+       "status": "agreed",
+       "text": "as from a root or stem, are formed several"
+      },
+      {
+       "draft": "other derivative words, e. g. אָלָה to invoke",
+       "reread": "other derivative words, e. g. אָלָה to invoke",
+       "status": "agreed",
+       "text": "other derivative words, e. g. אָלָה to invoke"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1096,
+      "y": 1648,
+      "width": 875,
+      "height": 106
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r01-b03-875x106+1096+1648-x2.png",
+     "image_sha256": "bc538e7b1b26284f920ec698e560cb7c8fcfa4a792f8d0a488adbcbff612434b",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "God, espec. in an oath ; אָלָה, أَلَّى, to wor-"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "135d35ec-6419-4503-9734-7ceca42dc258",
+      "duration_api_ms": 21647,
+      "cost_usd_list": 0.22387825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9152,
+      "output_tokens": 637
+     },
+     "lines": [
+      {
+       "draft": "God, espec. in an oath; אֱלַהּ, أَلَهَ, to wor-",
+       "reread": "God, espec. in an oath ; אָלָה, أَلَّى, to wor-",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "God, espec. in an oath ; אָלַהּ, أَلَهَ, to wor-",
+        "verdict": "neither",
+        "note": "Hebrew is printed אָלַהּ: a plain qamets under the alef (not hataf segol as in A, though A is right about the patah under lamed and the mapiq in the he, which B omits). Arabic is أَلَهَ as in A (hamza with fatha, lam with fatha, final ha with fatha; no shadda or alif maqsura as in B). There is a space before the semicolon, as in B.",
+        "model": "claude-fable-5-1",
+        "session_id": "5ca08fec-a45a-4b54-8a96-7587c9dc273b",
+        "duration_api_ms": 66991,
+        "cost_usd_list": 0.49643725,
+        "input_tokens": 162,
+        "cache_read_input_tokens": 136149,
+        "cache_creation_input_tokens": 15369,
+        "output_tokens": 3068
+       },
+       "text": "God, espec. in an oath; אָלַהּ, أَلَهَ, to wor-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1096,
+    "y": 1748,
+    "width": 875,
+    "height": 982
+   },
+   "draft_lines": [
+    "ship God; also אֱלוֹהַ, אֱלָהּ, إِلَاه, God;",
+    "comp. ܐܰܒܳܐ to be a father, ܐܰܒܳܗ̈ܳܬܳܐ fathers,",
+    "from ܐܰܒ. b) That in Hebrew, besides",
+    "אֵל, which follows the analogy of verbs",
+    "ע״ו, there are two other forms follow-",
+    "ing the analogy of verbs ל״ה, viz.",
+    "אֵל, אֱלִי, which are usual in pr. names,",
+    "comp. אֱלִימֶלֶךְ, אֶלְיָשִׁיב, אֶלְיָקִים, etc.—",
+    "Among the Phenicians, ἨΛ, Ἴλος, was",
+    "used κατ᾿ ἐξοχήν of Saturn; see Monum.",
+    "Phœnic. p. 406.",
+    "II. אֵל pron. plur. i. q. אֵלֶּה these, Lat.",
+    "hi, hæ, hæc, found only in the Pentateuch",
+    "and in 1 Chr. 20, 8. Kindred is the form",
+    "of the art. הַל, Arab. أَلْ."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1096,
+      "y": 1755,
+      "width": 875,
+      "height": 308
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r02-b00-875x308+1096+1755-x2.png",
+     "image_sha256": "d323f0fe9dde2e4c72e5c7e0f4649dca64de9246d868ef381098b1b134d7ca31",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "ship God; also אֱלוֹהַּ, אֱלָהּ, ܐܰܠܳܗܳܐ, God;",
+       "comp. ܐܰܒܗܺܝ to be a father, ܐܰܒܳܗܳܬܳܐ fathers,",
+       "from ܐܰܒܳܐ. b) That in Hebrew, besides",
+       "אֵל, which follows the analogy of verbs"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "a7b2f6f6-e902-466c-9870-835822d3a6c9",
+      "duration_api_ms": 28992,
+      "cost_usd_list": 0.27836825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 10034,
+      "output_tokens": 1374
+     },
+     "lines": [
+      {
+       "draft": "ship God; also אֱלוֹהַ, אֱלָהּ, إِلَاه, God;",
+       "reread": "ship God; also אֱלוֹהַּ, אֱלָהּ, ܐܰܠܳܗܳܐ, God;",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "ship God; also אֱלוֹהַּ, אֱלָהּ, إِلٰهٌ, God;",
+        "verdict": "neither",
+        "note": "Third item is Arabic (إِلٰهٌ with dagger alif and tanwin damma), not Syriac as in B; but the first Hebrew word's he has a mappiq (אֱלוֹהַּ), which A omits. A is right on the script, B is right on the mappiq, so neither is fully correct.",
+        "model": "claude-fable-5-1",
+        "session_id": "c940ef50-12f9-4864-b80c-4aea0b43de24",
+        "duration_api_ms": 32790,
+        "cost_usd_list": 0.29381674999999996,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34627,
+        "cache_creation_input_tokens": 9996,
+        "output_tokens": 1698
+       },
+       "text": "ship God; also אֱלוֹהַּ, אֱלָהּ, إِلٰهٌ, God;"
+      },
+      {
+       "draft": "comp. ܐܰܒܳܐ to be a father, ܐܰܒܳܗ̈ܳܬܳܐ fathers,",
+       "reread": "comp. ܐܰܒܗܺܝ to be a father, ܐܰܒܳܗܳܬܳܐ fathers,",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "comp. ܐܳܒܳܗ to be a father, ܐܒܗ̈ܬܐ fathers,",
+        "verdict": "neither",
+        "note": "First Syriac word ends in a looped ܗ (he), not alaph (A) and with no yod or hbasa (B): it is the verb ܐܒܗ \"to be a father\". Two identical wedge-shaped zqapha marks sit above alaph and beth. The second word ܐܒܗܬܐ carries only syame over ܗ and no vowel points, so A's vowels and B's missing syame are both wrong.",
+        "model": "claude-fable-5-1",
+        "session_id": "87891128-7021-4573-84cd-dc164396e34a",
+        "duration_api_ms": 93312,
+        "cost_usd_list": 0.61023125,
+        "input_tokens": 98,
+        "cache_read_input_tokens": 86565,
+        "cache_creation_input_tokens": 16488,
+        "output_tokens": 5157
+       },
+       "text": "comp. ܐܳܒܳܗ to be a father, ܐܒܗ̈ܬܐ fathers,"
+      },
+      {
+       "draft": "from ܐܰܒ. b) That in Hebrew, besides",
+       "reread": "from ܐܰܒܳܐ. b) That in Hebrew, besides",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "from ܐܰܒ. b) That in Hebrew, besides",
+        "verdict": "a",
+        "note": "The printed Syriac word is two letters only (alaph + beth, with a single pthaha mark above); there is no final alaph and no zqapha, so Reading B's ܐܰܒܳܐ adds letters and a vowel that are not printed. The remainder of the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "94b5f108-1edc-460b-badc-74b3974d4afd",
+        "duration_api_ms": 20723,
+        "cost_usd_list": 0.25060899999999997,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34596,
+        "cache_creation_input_tokens": 9986,
+        "output_tokens": 838
+       },
+       "text": "from ܐܰܒ. b) That in Hebrew, besides"
+      },
+      {
+       "draft": "אֵל, which follows the analogy of verbs",
+       "reread": "אֵל, which follows the analogy of verbs",
+       "status": "agreed",
+       "text": "אֵל, which follows the analogy of verbs"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1096,
+      "y": 2047,
+      "width": 875,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r02-b01-875x236+1096+2047-x2.png",
+     "image_sha256": "a889a0a2b253c30a3178b02e0ca48724772e693a373a3dfda2d06cc9e0432b8f",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "ע״ו, there are two other forms follow-",
+       "ing the analogy of verbs ל״ה, viz.",
+       "אֵל, אֱלִי, which are usual in pr. names,",
+       "comp. אֶלְיָקִים, אֶלְיָשִׁיב, אֱלִימֶלֶךְ, etc.—"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "3cabae60-9841-4243-b446-44ddd0144536",
+      "duration_api_ms": 39699,
+      "cost_usd_list": 0.31251825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9734,
+      "output_tokens": 2177
+     },
+     "lines": [
+      {
+       "draft": "ע״ו, there are two other forms follow-",
+       "reread": "ע״ו, there are two other forms follow-",
+       "status": "agreed",
+       "text": "ע״ו, there are two other forms follow-"
+      },
+      {
+       "draft": "ing the analogy of verbs ל״ה, viz.",
+       "reread": "ing the analogy of verbs ל״ה, viz.",
+       "status": "agreed",
+       "text": "ing the analogy of verbs ל״ה, viz."
+      },
+      {
+       "draft": "אֵל, אֱלִי, which are usual in pr. names,",
+       "reread": "אֵל, אֱלִי, which are usual in pr. names,",
+       "status": "agreed",
+       "text": "אֵל, אֱלִי, which are usual in pr. names,"
+      },
+      {
+       "draft": "comp. אֱלִימֶלֶךְ, אֶלְיָשִׁיב, אֶלְיָקִים, etc.—",
+       "reread": "comp. אֶלְיָקִים, אֶלְיָשִׁיב, אֱלִימֶלֶךְ, etc.—",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "comp. אֶלְיָקִים, אֶלְיָשִׁיב, אֱלִימֶלֶךְ, etc.—",
+        "verdict": "b",
+        "note": "Printed left-to-right order is אֶלְיָקִים (final mem, right after \"comp.\"), אֶלְיָשִׁיב, אֱלִימֶלֶךְ (final kaf, right before \"etc.\"); Reading A reverses the list. Pointing is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "207a2873-9e25-444a-a80a-8dca4c8d5d72",
+        "duration_api_ms": 18846,
+        "cost_usd_list": 0.2504705,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34642,
+        "cache_creation_input_tokens": 9696,
+        "output_tokens": 951
+       },
+       "text": "comp. אֶלְיָקִים, אֶלְיָשִׁיב, אֱלִימֶלֶךְ, etc.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1096,
+      "y": 2267,
+      "width": 875,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r02-b02-875x260+1096+2267-x2.png",
+     "image_sha256": "6f4fa16ad3ca5db76087f11ff0009ae5eb415f87bbf42000b65542adb733433c",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "Among the Phenicians, ἬΛ, Ἴλος, was",
+       "used κατ᾿ ἐξοχήν of Saturn; see Monum.",
+       "Phœnic. p. 406.",
+       "II. אֵל pron. plur. i. q. אֵלֶּה these, Lat."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "d5ae59e7-a3b4-438b-8779-d142a35268be",
+      "duration_api_ms": 17037,
+      "cost_usd_list": 0.24373825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9845,
+      "output_tokens": 757
+     },
+     "lines": [
+      {
+       "draft": "Among the Phenicians, ἨΛ, Ἴλος, was",
+       "reread": "Among the Phenicians, ἬΛ, Ἴλος, was",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "Among the Phenicians, ἬΛ, Ἴλος, was",
+        "verdict": "neither",
+        "note": "The capital eta carries two marks, identical to those over the iota of Ἴλος: a smooth breathing plus an acute accent. Reading A drops the accent (Ἠ), and Reading B makes the breathing rough (Ἤ). The printed letter is Ἤ (U+1F2C, psili + oxia), so the word is ἬΛ with capital lambda; everything else in both readings matches the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "bb4817cc-e82b-4536-abbc-fe50214dc726",
+        "duration_api_ms": 24946,
+        "cost_usd_list": 0.269609,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34596,
+        "cache_creation_input_tokens": 9776,
+        "output_tokens": 1302
+       },
+       "text": "Among the Phenicians, ἬΛ, Ἴλος, was"
+      },
+      {
+       "draft": "used κατ᾿ ἐξοχήν of Saturn; see Monum.",
+       "reread": "used κατ᾿ ἐξοχήν of Saturn; see Monum.",
+       "status": "agreed",
+       "text": "used κατ᾿ ἐξοχήν of Saturn; see Monum."
+      },
+      {
+       "draft": "Phœnic. p. 406.",
+       "reread": "Phœnic. p. 406.",
+       "status": "agreed",
+       "text": "Phœnic. p. 406."
+      },
+      {
+       "draft": "II. אֵל pron. plur. i. q. אֵלֶּה these, Lat.",
+       "reread": "II. אֵל pron. plur. i. q. אֵלֶּה these, Lat.",
+       "status": "agreed",
+       "text": "II. אֵל pron. plur. i. q. אֵלֶּה these, Lat."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1096,
+      "y": 2511,
+      "width": 875,
+      "height": 210
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r02-b03-875x210+1096+2511-x2.png",
+     "image_sha256": "5f5519906aa29acf768bb450dc0f24ac78a54a2f01431fe8ef549642e90fde04",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "hi, hæ, hæc, found only in the Pentateuch",
+       "and in 1 Chr. 20, 8. Kindred is the form",
+       "of the art. הַל, Arab. اَلْ."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "de3dd381-858c-4918-98fa-c57c840c190a",
+      "duration_api_ms": 20989,
+      "cost_usd_list": 0.23489824999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9593,
+      "output_tokens": 681
+     },
+     "lines": [
+      {
+       "draft": "hi, hæ, hæc, found only in the Pentateuch",
+       "reread": "hi, hæ, hæc, found only in the Pentateuch",
+       "status": "agreed",
+       "text": "hi, hæ, hæc, found only in the Pentateuch"
+      },
+      {
+       "draft": "and in 1 Chr. 20, 8. Kindred is the form",
+       "reread": "and in 1 Chr. 20, 8. Kindred is the form",
+       "status": "agreed",
+       "text": "and in 1 Chr. 20, 8. Kindred is the form"
+      },
+      {
+       "draft": "of the art. הַל, Arab. أَلْ.",
+       "reread": "of the art. הַל, Arab. اَلْ.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b03",
+       "judgement": {
+        "text": "of the art. הַל, Arab. أَلْ.",
+        "verdict": "a",
+        "note": "The alif carries a printed hamza with a fatha above it (أَ), not a bare alif with fatha as in Reading B; the lam carries a sukun. The Hebrew הַל is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "af37a4b0-2304-4f16-865f-e21823fd1a59",
+        "duration_api_ms": 24054,
+        "cost_usd_list": 0.252276,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34584,
+        "cache_creation_input_tokens": 9512,
+        "output_tokens": 1061
+       },
+       "text": "of the art. הַל, Arab. أَلْ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1096,
+    "y": 2718,
+    "width": 875,
+    "height": 566
+   },
+   "draft_lines": [
+    "III. אֵל, only in constr. אֶל, almost al-",
+    "ways with Makkeph, (without Makk.",
+    "2 Sam. 8, 7. 1 K. 7, 34,) rarely and poet.",
+    "in Plur. constr. אֱלֵי Job 3, 22. 5, 26.",
+    "15, 22. 29, 19, (comp. Arab. إِلَى,) plur. c.",
+    "suff. אֵלַי, אֵלֶיךָ, אֵלָיו, אֵלֵינוּ, אֲלֵיכֶם,",
+    "אֲלֵיהֶם and אֲלֵהֶם, once אֱלֵיהֶם Ez. 31. 14,",
+    "poet. אֱלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+    "motion and direction to or towards a"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1096,
+      "y": 2727,
+      "width": 875,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r03-b00-875x247+1096+2727-x2.png",
+     "image_sha256": "04bc6a357a8b42b9b60cd7738e1418fbaabfd64dff9977aee290caf6b11ccc27",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "III. אֶל, only in constr. אֶל, almost al-",
+       "ways with Makkeph, (without Makk.",
+       "2 Sam. 8, 7. 1 K. 7, 34,) rarely and poet.",
+       "in Plur. constr. אֱלֵי Job 3, 22. 5, 26."
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "7b329514-8ff9-41a6-b878-57e13bf5b0ef",
+      "duration_api_ms": 15420,
+      "cost_usd_list": 0.22897825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9782,
+      "output_tokens": 487
+     },
+     "lines": [
+      {
+       "draft": "III. אֵל, only in constr. אֶל, almost al-",
+       "reread": "III. אֶל, only in constr. אֶל, almost al-",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "III. אֵל, only in constr. אֶל, almost al-",
+        "verdict": "a",
+        "note": "First aleph carries tsere (two horizontal dots) in print; only the construct form after \"constr.\" has segol (three dots). Reading B wrongly gives segol for both.",
+        "model": "claude-fable-5-1",
+        "session_id": "c429055b-5f17-480e-b598-724ad86b4fc3",
+        "duration_api_ms": 14693,
+        "cost_usd_list": 0.2362275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 34590,
+        "cache_creation_input_tokens": 9707,
+        "output_tokens": 662
+       },
+       "text": "III. אֵל, only in constr. אֶל, almost al-"
+      },
+      {
+       "draft": "ways with Makkeph, (without Makk.",
+       "reread": "ways with Makkeph, (without Makk.",
+       "status": "agreed",
+       "text": "ways with Makkeph, (without Makk."
+      },
+      {
+       "draft": "2 Sam. 8, 7. 1 K. 7, 34,) rarely and poet.",
+       "reread": "2 Sam. 8, 7. 1 K. 7, 34,) rarely and poet.",
+       "status": "agreed",
+       "text": "2 Sam. 8, 7. 1 K. 7, 34,) rarely and poet."
+      },
+      {
+       "draft": "in Plur. constr. אֱלֵי Job 3, 22. 5, 26.",
+       "reread": "in Plur. constr. אֱלֵי Job 3, 22. 5, 26.",
+       "status": "agreed",
+       "text": "in Plur. constr. אֱלֵי Job 3, 22. 5, 26."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1096,
+      "y": 2958,
+      "width": 875,
+      "height": 283
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r03-b01-875x283+1096+2958-x2.png",
+     "image_sha256": "bc69d3574a25c0e8ec7e6e658527107cae18d218127ddd0d2bce99a759066ba4",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "15, 22. 29, 19, (comp. Arab. إِلَى,) plur. c.",
+       "suff. אֵלַי, אֵלֶיךָ, אֵלָיו, אֵלֵינוּ, אֲלֵיכֶם,",
+       "אֲלֵיהֶם and אֲלֵהֶם, once אֲלֵיהֵם Ez. 31. 14,",
+       "poet. אֵלֵימוֹ Ps. 2, 5; pr. a subst. implying"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "fbdfdc1c-8140-4cb8-bbd5-a5c719601192",
+      "duration_api_ms": 18068,
+      "cost_usd_list": 0.26610825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 9971,
+      "output_tokens": 1154
+     },
+     "lines": [
+      {
+       "draft": "15, 22. 29, 19, (comp. Arab. إِلَى,) plur. c.",
+       "reread": "15, 22. 29, 19, (comp. Arab. إِلَى,) plur. c.",
+       "status": "agreed",
+       "text": "15, 22. 29, 19, (comp. Arab. إِلَى,) plur. c."
+      },
+      {
+       "draft": "suff. אֵלַי, אֵלֶיךָ, אֵלָיו, אֵלֵינוּ, אֲלֵיכֶם,",
+       "reread": "suff. אֵלַי, אֵלֶיךָ, אֵלָיו, אֵלֵינוּ, אֲלֵיכֶם,",
+       "status": "agreed",
+       "text": "suff. אֵלַי, אֵלֶיךָ, אֵלָיו, אֵלֵינוּ, אֲלֵיכֶם,"
+      },
+      {
+       "draft": "אֲלֵיהֶם and אֲלֵהֶם, once אֱלֵיהֶם Ez. 31. 14,",
+       "reread": "אֲלֵיהֶם and אֲלֵהֶם, once אֲלֵיהֵם Ez. 31. 14,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "אֲלֵיהֶם and אֲלֵהֶם, once אֱלֵיהֶם Ez. 31. 14,",
+        "verdict": "a",
+        "note": "Decisive difference is the third word. Under its final he the print clearly shows three dots (segol), not two (tsere), so Reading B's הֵם is wrong. Under its aleph the pointing differs from the first word: the first word has a plain hataf patah (vertical shva plus patah bar), while the third word shows only dots with no patah bar, consistent with a partly faded hataf segol, which is also the attested Ez. 31:14 form. Everything else (yod present in words 1 and 3, absent in word 2; \"Ez. 31. 14,\" punctuation) matches both readings.",
+        "model": "claude-fable-5-1",
+        "session_id": "8417841f-8885-43ab-87ce-66dece1bc694",
+        "duration_api_ms": 53933,
+        "cost_usd_list": 0.45787724999999996,
+        "input_tokens": 164,
+        "cache_read_input_tokens": 161749,
+        "cache_creation_input_tokens": 15175,
+        "output_tokens": 2246
+       },
+       "text": "אֲלֵיהֶם and אֲלֵהֶם, once אֱלֵיהֶם Ez. 31. 14,"
+      },
+      {
+       "draft": "poet. אֱלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+       "reread": "poet. אֵלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "poet. אֵלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+        "verdict": "b",
+        "note": "Under the aleph the print shows two horizontal dots only (tsere), with no third dot forming a hataf segol, so Reading B's אֵלֵימוֹ is correct and Reading A's אֱ is wrong. Everything else (tsere under lamed, yod, holam vav, English text) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "session_id": "4ca2b53d-7365-422b-a553-d54235309a03",
+        "duration_api_ms": 24670,
+        "cost_usd_list": 0.3054395,
+        "input_tokens": 98,
+        "cache_read_input_tokens": 83158,
+        "cache_creation_input_tokens": 11746,
+        "output_tokens": 975
+       },
+       "text": "poet. אֵלֵימוֹ Ps. 2, 5; pr. a subst. implying"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1096,
+      "y": 3225,
+      "width": 875,
+      "height": 61
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/pass2/c1-r03-b02-875x61+1096+3225-x2.png",
+     "image_sha256": "55175c22d11baa6b08149268cfefd38febf1b782aaef7bb5d9f6d01a3ce8797a",
+     "prompt_version": 1,
+     "reread": {
+      "lines": [
+       "motion and direction to or towards a"
+      ],
+      "model": "claude-fable-5-1",
+      "session_id": "0c03c296-48ed-45c0-ba95-677a31451b9d",
+      "duration_api_ms": 9928,
+      "cost_usd_list": 0.19914825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 34593,
+      "cache_creation_input_tokens": 8963,
+      "output_tokens": 218
+     },
+     "lines": [
+      {
+       "draft": "motion and direction to or towards a",
+       "reread": "motion and direction to or towards a",
+       "status": "agreed",
+       "text": "motion and direction to or towards a"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֵל 5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "So in the phrase יֵשׁ לְאֵל יָדִי it is in the",
+   "status": "adjudicated",
+   "draft": "So in the phrase יֶשׁ לְאֵל יָדִי it is in the",
+   "reread": "So in the phrase יֵשׁ לְאֵל יָדִי it is in the",
+   "verdict": "b",
+   "note": "Under the yod of the first Hebrew word the print shows two horizontal dots (tsere), not three (segol): יֵשׁ, matching the same word in line 4. All other points agree with both readings."
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "power of my hand, in my power, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Gen. 31, 29 יֵשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+   "status": "adjudicated",
+   "draft": "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+   "reread": "Gen. 31, 29 יֵשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
+   "verdict": "b",
+   "note": "Under the yod of יש the print shows two dots side by side with no third dot beneath, i.e. tsere (יֵשׁ), not segol; confirmed on the uncropped column image where the space below the line is visible. Everything else in both readings matches the print."
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Prov. 3, 27. Mic. 2, 1; also negatively,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the power of thy hand, thou canst avail",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "nothing. Neh. 5, 5. The לְ here indi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "cates state or condition. Some, with a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "very slight perception of the nature of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "this phrase, understand אֵל of God, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "render: my hand is for God, i. e. instead",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of God, comp. Job 12, 6. Hab. 1, 11; also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Virg. Æn. 10. 773 Dextra mihi Deus,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "etc. Those passages are indeed paral-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "lel among themselves; but have nothing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to do with this phrase. See in אֱלֹהַּ.",
+   "status": "adjudicated",
+   "draft": "to do with this phrase. See in אֱלוֹהַ.",
+   "reread": "to do with this phrase. See in אֱלֹהַּ.",
+   "verdict": "b",
+   "note": "The Hebrew is spelled defectively: only alef, lamed, he are printed, with a bare holem dot above the lamed and no vav. Reading A's plene אֱלוֹהַ inserts a vav that is not on the page and drops the mappiq, which is clearly printed inside the he alongside the patah."
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. God, the Mighty One, the Almighty.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "In order to illustrate how far the Hebrew",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "usage in respect to the names of God, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵל, אֱלֹהִים, יְהֹוָה, יָהּ, is synonymous,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "we note here the following in respect to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "this word: a) In prose, when spoken of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "God κατ᾽ ἐξοχήν, it never stands alone,",
+   "status": "adjudicated",
+   "draft": "God κατ' ἐξοχήν, it never stands alone,",
+   "reread": "God κατ’ ἐξοχήν, it never stands alone,",
+   "verdict": "neither",
+   "note": "The only difference is the mark after κατ. The print shows a raised Greek elision sign (koronis-shaped, curling like a comma above the baseline after τ), which in Unicode Greek is U+1FBD (᾽), not the ASCII apostrophe of Reading A nor the typographic right single quote U+2019 of Reading B. Everything else (italic God, ἐξοχήν with smooth breathing on ε and acute on η, the comma, and the English) matches both readings."
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "but always either with an attribute, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵל חַי, אֵל קַנָּא, אֵל שַׁדַּי, אֵל עֶלְיוֹן; or with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "another name of God, as אֵל אֱלֹהֵי יִשְׂרָאֵל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gen. 33, 20; הָאֵל אֱלֹהֵי אָבִיךָ Gen. 46, 3;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵל אֱלֹהִים יְהֹוָה Josh. 22, 22. Ps. 50, 1,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "where it may be rendered, God of gods,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Jehovah, comp. Dan. 11, 36 אֵל אֵלִים; or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lastly with the genitive of a place or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "person of which God is called the God,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "as אֵל בֵּית־אֵל Gen. 31, 13. b) Far more",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "frequently it is the poetic name for God,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and stands in poetry very often alone,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "sometimes with the art. הָאֵל, Ps. 18, 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "33. 48. 68, 21. Job 8, 3. c) It takes the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "suff. of 1 pers. אֵלִי my God! Ps. 18, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "22, 2. 11. The other suffixes are never",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "found with it; and for thy God, his God,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "etc. is always said אֱלֹהֶיךָ, אֱלֹהָיו. d) It",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "is also a general name for a divinity, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "is thus used of idols; either alone Is. 44,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "10. 15; or with an epithet, as אֵל אַחֵר an-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "other god Ex. 34, 14, אֵל זָר a strange",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "god Ps. 81, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "To God is said in Scripture to belong",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "whatever is excellent, distinguished,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "superior in its kind; since the ancients",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "were accustomed to refer all excellence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "directly to the deity as its immediate",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "author. Hence אַרְזֵי אֵל Ps. 80, 11 cedars",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of God, i. e. the loftiest, most beautiful,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "as if planted by Jehovah; comp. עֲצֵי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "יְהֹוָה Ps. 104, 16, גַּן יְהֹוָה Gen. 13, 10.",
+   "status": "adjudicated",
+   "draft": "יְהוָֹה Ps. 104, 16, גַּן יְהוָֹה Gen. 13, 10.",
+   "reread": "יְהֹוָה Ps. 104, 16, גַּן יְהֹוָה Gen. 13, 10.",
+   "verdict": "b",
+   "note": "In both occurrences of the divine name the holem dot sits over the he (between yod and vav), with qamets under the vav, so the logical order is he+holem, vav+qamets (Reading B). Reading A wrongly stacks holem and qamets on the vav. All other characters, spacing, and the Ps./Gen. references agree in both readings and match the print."
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אל",
+   "status": "adjudicated",
+   "draft": "אֵל",
+   "reread": "אל",
+   "verdict": "b",
+   "note": "Line 1 is the large centred running head at the top of the column. It is printed without any vowel points: there is no tsere under the aleph, and no dagesh or other mark on the lamed. Reading A adds a tsere that is not on the page (the pointed אֵל appears only in line 2, \"So אֵל הַרְרֵי\"). Reading B matches the printed text exactly."
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "So הַרְרֵי אֵל mountains of God Ps. 36, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֱלֹהִים no. 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Plur. אֵלִים 1. mighty ones, heroes;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "see above in Sing. no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. gods, in a wider sense, spoken of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Jehovah and also heathen gods, Ex. 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "11, comp. 18, 11. Dan. 11, 36 אֵל אֵלִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "God of gods, i. e. the supreme God. Also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "by an idiom of Heb. and Syriac syntax,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "poet. for sons of God, i. e. angels.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Note. Following the example of most",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "etymologists, we have above referred אֵל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "to the root אוּל; but to speak more accu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "rately, אֵל would seem rather to be a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "primitive word, yet adapted in a certain",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "measure to an etymology from אוּל, so",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "that to the mind of the Hebrew it always",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "presented the idea of strength and power.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "However this may be, we may note in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "respect to Semitic usage: a) That from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)",
+   "status": "adjudicated",
+   "draft": "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)",
+   "reread": "the word אֵל (Arab. إِيلٌ, إِلٌّ, and إِلٌّ)",
+   "verdict": "a",
+   "note": "The middle Arabic word has only a tanwin damm above the lam (same single curl as the first word); only the third word shows the stacked shadda + tanwin damm. Reading B wrongly adds a shadda to the middle word, making it identical to the third."
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as from a root or stem, are formed several",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "other derivative words, e. g. אָלָה to invoke",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "God, espec. in an oath; אָלַהּ, أَلَهَ, to wor-",
+   "status": "adjudicated",
+   "draft": "God, espec. in an oath; אֱלַהּ, أَلَهَ, to wor-",
+   "reread": "God, espec. in an oath ; אָלָה, أَلَّى, to wor-",
+   "verdict": "neither",
+   "note": "Hebrew is printed אָלַהּ: a plain qamets under the alef (not hataf segol as in A, though A is right about the patah under lamed and the mapiq in the he, which B omits). Arabic is أَلَهَ as in A (hamza with fatha, lam with fatha, final ha with fatha; no shadda or alif maqsura as in B). There is a space before the semicolon, as in B."
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ship God; also אֱלוֹהַּ, אֱלָהּ, إِلٰهٌ, God;",
+   "status": "adjudicated",
+   "draft": "ship God; also אֱלוֹהַ, אֱלָהּ, إِلَاه, God;",
+   "reread": "ship God; also אֱלוֹהַּ, אֱלָהּ, ܐܰܠܳܗܳܐ, God;",
+   "verdict": "neither",
+   "note": "Third item is Arabic (إِلٰهٌ with dagger alif and tanwin damma), not Syriac as in B; but the first Hebrew word's he has a mappiq (אֱלוֹהַּ), which A omits. A is right on the script, B is right on the mappiq, so neither is fully correct."
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "comp. ܐܳܒܳܗ to be a father, ܐܒܗ̈ܬܐ fathers,",
+   "status": "adjudicated",
+   "draft": "comp. ܐܰܒܳܐ to be a father, ܐܰܒܳܗ̈ܳܬܳܐ fathers,",
+   "reread": "comp. ܐܰܒܗܺܝ to be a father, ܐܰܒܳܗܳܬܳܐ fathers,",
+   "verdict": "neither",
+   "note": "First Syriac word ends in a looped ܗ (he), not alaph (A) and with no yod or hbasa (B): it is the verb ܐܒܗ \"to be a father\". Two identical wedge-shaped zqapha marks sit above alaph and beth. The second word ܐܒܗܬܐ carries only syame over ܗ and no vowel points, so A's vowels and B's missing syame are both wrong."
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "from ܐܰܒ. b) That in Hebrew, besides",
+   "status": "adjudicated",
+   "draft": "from ܐܰܒ. b) That in Hebrew, besides",
+   "reread": "from ܐܰܒܳܐ. b) That in Hebrew, besides",
+   "verdict": "a",
+   "note": "The printed Syriac word is two letters only (alaph + beth, with a single pthaha mark above); there is no final alaph and no zqapha, so Reading B's ܐܰܒܳܐ adds letters and a vowel that are not printed. The remainder of the line is identical in both readings and matches the print."
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֵל, which follows the analogy of verbs",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ע״ו, there are two other forms follow-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ing the analogy of verbs ל״ה, viz.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֵל, אֱלִי, which are usual in pr. names,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "comp. אֶלְיָקִים, אֶלְיָשִׁיב, אֱלִימֶלֶךְ, etc.—",
+   "status": "adjudicated",
+   "draft": "comp. אֱלִימֶלֶךְ, אֶלְיָשִׁיב, אֶלְיָקִים, etc.—",
+   "reread": "comp. אֶלְיָקִים, אֶלְיָשִׁיב, אֱלִימֶלֶךְ, etc.—",
+   "verdict": "b",
+   "note": "Printed left-to-right order is אֶלְיָקִים (final mem, right after \"comp.\"), אֶלְיָשִׁיב, אֱלִימֶלֶךְ (final kaf, right before \"etc.\"); Reading A reverses the list. Pointing is identical in both readings and matches the print."
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Among the Phenicians, ἬΛ, Ἴλος, was",
+   "status": "adjudicated",
+   "draft": "Among the Phenicians, ἨΛ, Ἴλος, was",
+   "reread": "Among the Phenicians, ἬΛ, Ἴλος, was",
+   "verdict": "neither",
+   "note": "The capital eta carries two marks, identical to those over the iota of Ἴλος: a smooth breathing plus an acute accent. Reading A drops the accent (Ἠ), and Reading B makes the breathing rough (Ἤ). The printed letter is Ἤ (U+1F2C, psili + oxia), so the word is ἬΛ with capital lambda; everything else in both readings matches the print."
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "used κατ᾿ ἐξοχήν of Saturn; see Monum.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Phœnic. p. 406.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "II. אֵל pron. plur. i. q. אֵלֶּה these, Lat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "hi, hæ, hæc, found only in the Pentateuch",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "and in 1 Chr. 20, 8. Kindred is the form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of the art. הַל, Arab. أَلْ.",
+   "status": "adjudicated",
+   "draft": "of the art. הַל, Arab. أَلْ.",
+   "reread": "of the art. הַל, Arab. اَلْ.",
+   "verdict": "a",
+   "note": "The alif carries a printed hamza with a fatha above it (أَ), not a bare alif with fatha as in Reading B; the lam carries a sukun. The Hebrew הַל is identical in both readings and matches the print."
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "III. אֵל, only in constr. אֶל, almost al-",
+   "status": "adjudicated",
+   "draft": "III. אֵל, only in constr. אֶל, almost al-",
+   "reread": "III. אֶל, only in constr. אֶל, almost al-",
+   "verdict": "a",
+   "note": "First aleph carries tsere (two horizontal dots) in print; only the construct form after \"constr.\" has segol (three dots). Reading B wrongly gives segol for both."
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ways with Makkeph, (without Makk.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2 Sam. 8, 7. 1 K. 7, 34,) rarely and poet.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in Plur. constr. אֱלֵי Job 3, 22. 5, 26.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "15, 22. 29, 19, (comp. Arab. إِلَى,) plur. c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "suff. אֵלַי, אֵלֶיךָ, אֵלָיו, אֵלֵינוּ, אֲלֵיכֶם,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲלֵיהֶם and אֲלֵהֶם, once אֱלֵיהֶם Ez. 31. 14,",
+   "status": "adjudicated",
+   "draft": "אֲלֵיהֶם and אֲלֵהֶם, once אֱלֵיהֶם Ez. 31. 14,",
+   "reread": "אֲלֵיהֶם and אֲלֵהֶם, once אֲלֵיהֵם Ez. 31. 14,",
+   "verdict": "a",
+   "note": "Decisive difference is the third word. Under its final he the print clearly shows three dots (segol), not two (tsere), so Reading B's הֵם is wrong. Under its aleph the pointing differs from the first word: the first word has a plain hataf patah (vertical shva plus patah bar), while the third word shows only dots with no patah bar, consistent with a partly faded hataf segol, which is also the attested Ez. 31:14 form. Everything else (yod present in words 1 and 3, absent in word 2; \"Ez. 31. 14,\" punctuation) matches both readings."
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "poet. אֵלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+   "status": "adjudicated",
+   "draft": "poet. אֱלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+   "reread": "poet. אֵלֵימוֹ Ps. 2, 5; pr. a subst. implying",
+   "verdict": "b",
+   "note": "Under the aleph the print shows two horizontal dots only (tsere), with no third dot forming a hataf segol, so Reading B's אֵלֵימוֹ is correct and Reading A's אֱ is wrong. Everything else (tsere under lamed, yod, holam vav, English text) is identical in both readings and matches the print."
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "motion and direction to or towards a",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 90,
+  "adjudicated": 17,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0
+ },
+ "errors": 0,
+ "cost_usd_list_total": 13.935
+}

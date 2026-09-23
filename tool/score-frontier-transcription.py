@@ -17,11 +17,20 @@ from __future__ import annotations
 import argparse
 import difflib
 import json
+import re
 import unicodedata
 
 
+PUNCT_BEFORE = re.compile(r"\s+([;:!?,.)\]])")
+PUNCT_AFTER = re.compile(r"([(\[])\s+")
+
+
 def nfc(text: str) -> str:
-    return unicodedata.normalize("NFC", " ".join(text.split()))
+    """NFC, single spaces, and no space before closing punctuation: the hair
+    space the 1854 typesetting puts before ; : ! ? is not transcribed."""
+    text = unicodedata.normalize("NFC", " ".join(text.split()))
+    text = PUNCT_BEFORE.sub(r"\1", text)
+    return PUNCT_AFTER.sub(r"\1", text)
 
 
 def edits(a: str, b: str) -> int:
