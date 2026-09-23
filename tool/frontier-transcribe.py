@@ -97,32 +97,30 @@ def detect_columns(ink: np.ndarray) -> list[tuple[int, int]]:
     h, w = ink.shape
     body = ink[int(h * 0.12) : int(h * 0.92)]
     col_ink = body.mean(axis=0)
-    # 0.03 keeps text (about 0.15) and rejects the smear of a skewed column
-    # rule, whose own run is too narrow to count as a span.
-    text_cols = col_ink > 0.03
-    spans = runs(text_cols, 40)
-    if not spans:
+    # The text extent uses a low threshold so sparse title pages still span
+    # their full width. Gutter detection uses 0.03, which keeps body text
+    # (about 0.15) and rejects the smear of a skewed column rule, whose own
+    # run is too narrow to count as a span.
+    extent = runs(col_ink > 0.001, 40)
+    if not extent:
         return [(0, w)]
-    left = spans[0][0]
-    right = spans[-1][1]
-    # Gutters: gaps between text runs wider than 25 px, inside the text extent.
-    gaps = []
-    for (a0, a1), (b0, b1) in zip(spans, spans[1:]):
-        if b0 - a1 >= 25:
-            gaps.append((a1, b0))
-    # Merge spans across narrow gaps to produce columns.
-    columns = []
-    start = left
-    for g0, g1 in gaps:
-        columns.append((start, g0))
-        start = g1
-    columns.append((start, right))
-    # Drop slivers (rules, noise) narrower than 12% of the text width.
+    left = extent[0][0]
+    right = extent[-1][1]
+    spans = runs(col_ink > 0.03, 40)
+    # A column gutter is a gap of at least 25 px whose centre lies in the
+    # middle band of the text extent. Letter-spaced title lines and word gaps
+    # also produce gaps, so anything outside that band, or more than one
+    # candidate, means the page is read as a single column.
     width = right - left
-    columns = [c for c in columns if c[1] - c[0] >= width * 0.12]
-    if not columns:
+    gutters = []
+    for (a0, a1), (b0, b1) in zip(spans, spans[1:]):
+        centre = (a1 + b0) / 2
+        if b0 - a1 >= 25 and 0.35 <= (centre - left) / width <= 0.65:
+            gutters.append((a1, b0))
+    if len(gutters) != 1:
         return [(left, right)]
-    return columns
+    g0, g1 = gutters[0]
+    return [(left, g0), (g1, right)]
 
 
 def chunk_rows(ink_col: np.ndarray, target: int, maximum: int) -> list[tuple[int, int]]:
@@ -231,7 +229,8 @@ def transcribe_page(
     if out_path.exists():
         try:
             for chunk in json.load(open(out_path, encoding="utf-8")).get("chunks", []):
-                previous[(chunk["image_sha256"], chunk.get("prompt_version"))] = chunk
+                if "lines" in chunk and "error" not in chunk:
+                    previous[(chunk["image_sha256"], chunk.get("prompt_version"))] = chunk
         except (OSError, ValueError, KeyError):
             previous = {}
 
@@ -240,7 +239,9 @@ def transcribe_page(
     page_chunk_dir.mkdir(parents=True, exist_ok=True)
     for chunk in chunks:
         b = chunk["bounds"]
-        path = page_chunk_dir / f"{chunk['chunk_id']}.png"
+        # The geometry is part of the file name so a changed chunk plan never
+        # reuses a stale crop.
+        path = page_chunk_dir / f"{chunk['chunk_id']}-{b['width']}x{b['height']}+{b['x']}+{b['y']}.png"
         if not path.exists():
             img.crop((b["x"], b["y"], b["x"] + b["width"], b["y"] + b["height"])).save(path, optimize=True)
         chunk["image_path"] = str(path)

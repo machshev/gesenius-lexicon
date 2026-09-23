@@ -169,6 +169,30 @@ The schema files are:
 
 See [docs/data-model.md](docs/data-model.md) for review and export details.
 
+## Frontier transcription
+
+Since 2026-09-23 the recognition stage that leads to the datafile is a
+frontier vision model reading full column crops, driven through the `claude`
+CLI. Rasterise pages at 400 DPI with `pdftoppm`, then:
+
+```console
+tool/frontier-transcribe.py --edition robinson-1854 \
+  --raster .cache/gesenius/frontier/robinson-1854/raster/pdf-0017.png \
+  --output corpus/frontier/robinson-1854 --workers 6
+tool/score-frontier-transcription.py \
+  --gold benchmarks/gold/robinson-1854-p001-e0001.json \
+  --transcription corpus/frontier/robinson-1854/pdf-0017.json
+```
+
+Columns are found by ink projection, chunks are cut at inter-line whitespace,
+and each chunk is read with a JSON schema. Page records under
+`corpus/frontier/` keep every chunk's geometry, image digest, model lines and
+usage; reruns reuse unchanged chunks. Pass 1 on the 24 pilot pages scored
+95.6% to 99.7% characters against the gold fixtures; see
+[the pilot report](docs/frontier-transcription-2026-09-23.md). The
+Tesseract/Kraken path below remains documented but is no longer the route to
+the corpus.
+
 ## Review and training
 
 ### Entry index

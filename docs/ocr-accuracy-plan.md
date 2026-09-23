@@ -701,3 +701,20 @@ outside these commits; do not remove or overwrite it at the next session start.
   source availability also permits bounded OCR-stage experiments once comparable
   coordinate frames and artifacts are prepared. No OCR generation, recognition
   tuning, gold promotion, corpus mutation or final-test inspection ran.
+
+### 2026-09-23: frontier transcription replaces the recognizer route
+
+- Reframed the goal as the structured Unicode datafile; the OCR mechanism is
+  a means only. Surveyed existing digitisations: none of either English
+  Gesenius exists in Unicode (Blue Letter Bible serves scanned images).
+- Added `tool/frontier-transcribe.py` (column and chunk planning by ink
+  projection, `claude -p` with a JSON schema, digest-keyed reuse) and
+  `tool/score-frontier-transcription.py`. Ran pass 1 on all 24 pilot pages:
+  183 chunks, 2,310 lines, no failures after resume.
+- Against the gold fixtures: page 1 whole entry 59 of 79 lines exact and
+  95.6% characters; page 50 sample 99.1%; page 700 sample 99.7%. Zoomed
+  checks show several page-1 differences are gold errors. Real error classes
+  are list order, plene/defective normalisation, dropped points, and
+  Arabic/Syriac guesses. Report: `frontier-transcription-2026-09-23.md`.
+- Next action: pass 2 token verification at 2x zoom, spanning-header chunks,
+  and mapping frontier lines into entry segmentation for export.

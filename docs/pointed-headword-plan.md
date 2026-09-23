@@ -1,6 +1,16 @@
 # Accurate pointed Hebrew headwords
 
-Status: synthetic pretraining is implemented and measured, and it works. A
+Status update 2026-09-23: this route is retired from the critical path.
+Frontier-model page transcription reads whole pages in every script at
+95.6% to 99.7% character accuracy with no training data; see
+[frontier-transcription-2026-09-23.md](frontier-transcription-2026-09-23.md).
+The figures below are kept as the record of the recognizer experiments; the
+final measured result is in
+[kraken-synthetic-scaling-2026-09-13.md](kraken-synthetic-scaling-2026-09-13.md)
+(89.63% characters, 15 of 24 exact on the development partition), which
+supersedes the earlier numbers quoted here.
+
+Status as of 2026-09-12: synthetic pretraining is implemented and measured, and it works. A
 recognizer pretrained on rendered pointed Hebrew and fine-tuned on the 129
 reviewed pairs reaches **88.36% character accuracy and 16 of 30 exact pointed
 headwords** on the frozen validation set, against **44.44% and 0 of 30 for the
