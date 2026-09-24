@@ -12,32 +12,58 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:44+00:00",
+ "generated_at": "2026-09-24T08:42:20+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 72,
+    "y": 118,
+    "width": 1764,
+    "height": 96
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0341/header-1764x96+72+118.png",
+   "image_sha256": "9431eadda5d2d013afebbb28a12d9f8683ad992f25bb7ce01f32aa91f4a05972",
+   "prompt_version": 2,
+   "lines": [
+    "חמן",
+    "325",
+    "חמץ"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "a49d1156-b8ff-4086-a1b8-2f5038715cec",
+   "duration_api_ms": 61346,
+   "cost_usd_list": 0.36975575000000005,
+   "input_tokens": 162,
+   "cache_read_input_tokens": 134343,
+   "cache_creation_input_tokens": 11980,
+   "output_tokens": 1899
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 72,
-    "y": 118,
+    "y": 164,
     "width": 876,
-    "height": 881
+    "height": 835
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0341/c0-r00-876x881+72+118.png",
-   "image_sha256": "74a6e6345a56dadff011851bc26fd134767b017cd54a0e54b2c11ba8c74474e1",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0341/c0-r00-876x835+72+164.png",
+   "image_sha256": "d9f10f0ffd28fae6f2c1554e4df952ff2369c66598852468fff5a502332c1cad",
    "prompt_version": 2,
    "lines": [
-    "חָמַם",
     "16. Impers. חַם לוֹ, fut. יֵחַם לוֹ, it is",
     "warm to him, he is made warm, gets",
     "warmth, 1 K. 1, 1. Ecc. 4, 11.—Trop. of",
-    "the mind as heated, excited, Ps. 39, 4;",
-    "and so of heat from wine Jer. 51, 39;",
+    "the mind as heated, excited, Ps. 39, 4 ;",
+    "and so of heat from wine Jer. 51, 39 ;",
     "from lust Hos. 7, 7. Also of cattle, to be",
-    "in heat, to conceive, Gen. 30, 38. 39; see",
+    "in heat, to conceive, Gen. 30, 38. 39 ; see",
     "in יָחַם.—Inf. חֹם, c. suff. בְּחֻמָּם Jer. 51,",
-    "39. Once חָמַם, with pref. in pause",
+    "39. Once חֲמַם, with pref. in pause",
     "לַחְמָם for warming sc. oneself, Is. 47, 14.",
     "Niph. part. plur. נֵחָמִים, burning, in-",
     "flamed, sc. with lust, c. בְּ Is. 57, 5.",
@@ -45,13 +71,13 @@
     "14."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "3e00b631-77ec-4ac2-8c1c-4da6613a5223",
-   "duration_api_ms": 28098,
-   "cost_usd_list": 0.26467799999999997,
+   "session_id": "2e2e7c23-84da-4b60-95c0-278d58403486",
+   "duration_api_ms": 24213,
+   "cost_usd_list": 0.28498599999999996,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10203,
-   "output_tokens": 1511
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10227,
+   "output_tokens": 1426
   },
   {
    "chunk_id": "c0-r01",
@@ -170,16 +196,14 @@
    "row": 0,
    "bounds": {
     "x": 965,
-    "y": 120,
+    "y": 164,
     "width": 871,
-    "height": 912
+    "height": 868
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0341/c1-r00-871x912+965+120.png",
-   "image_sha256": "34467210f59db38d0f817fc479735713e1c158aaa2f07fb123fb3b155ebbfd08",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0341/c1-r00-871x868+965+164.png",
+   "image_sha256": "d1d2e3e77e8691c92f2e7910d4dce12f019ee46c6d1fe56a1e47ca7ecf7c77b9",
    "prompt_version": 2,
    "lines": [
-    "5",
-    "חמץ",
     "hedge, Lam. 2, 6. Also to tear off from",
     "oneself, i. q. to shake off; Job 15, 33",
     "יַחְמֹס כַּגֶּפֶן בִּסְרוֹ like a vine he shall",
@@ -196,13 +220,13 @@
     "i. e. false, Ex. 23, 1.—A genitive or suffix"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "e04230ad-9f45-4290-9a8f-00208f2c7d34",
-   "duration_api_ms": 24608,
-   "cost_usd_list": 0.2599905,
+   "session_id": "ce9a3032-c2be-419e-be57-134e243549a6",
+   "duration_api_ms": 19426,
+   "cost_usd_list": 0.272476,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10240,
-   "output_tokens": 1408
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10274,
+   "output_tokens": 1157
   },
   {
    "chunk_id": "c1-r01",
@@ -318,9 +342,19 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "חָמַם"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "חמן"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "325"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "חמץ"
   },
   {
    "chunk_id": "c0-r00",
@@ -340,12 +374,12 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "the mind as heated, excited, Ps. 39, 4;"
+   "text": "the mind as heated, excited, Ps. 39, 4 ;"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "and so of heat from wine Jer. 51, 39;"
+   "text": "and so of heat from wine Jer. 51, 39 ;"
   },
   {
    "chunk_id": "c0-r00",
@@ -355,7 +389,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "in heat, to conceive, Gen. 30, 38. 39; see"
+   "text": "in heat, to conceive, Gen. 30, 38. 39 ; see"
   },
   {
    "chunk_id": "c0-r00",
@@ -365,7 +399,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "39. Once חָמַם, with pref. in pause"
+   "text": "39. Once חֲמַם, with pref. in pause"
   },
   {
    "chunk_id": "c0-r00",
@@ -586,16 +620,6 @@
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "28"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "5"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "חמץ"
   },
   {
    "chunk_id": "c1-r00",
@@ -864,5 +888,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.9308
+ "cost_usd_list_total": 2.3333
 }

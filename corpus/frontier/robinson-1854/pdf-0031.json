@@ -12,23 +12,47 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:43+00:00",
+ "generated_at": "2026-09-24T08:40:28+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 104,
+    "y": 95,
+    "width": 1761,
+    "height": 90
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/header-1761x90+104+95.png",
+   "image_sha256": "ebbefe261e25e565453cbd3e6f4186d32dde85b69bf46414a4be7467be15581b",
+   "prompt_version": 2,
+   "lines": [
+    "אדם 15 אדן"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "fe920b37-ec2f-4b2e-8ac2-4e46bea0ec6f",
+   "duration_api_ms": 11689,
+   "cost_usd_list": 0.21057925000000002,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9529,
+   "output_tokens": 217
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 104,
-    "y": 103,
+    "y": 140,
     "width": 868,
-    "height": 1006
+    "height": 973
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/c0-r00-868x1006+104+103.png",
-   "image_sha256": "ce00ff3d9fc6f7fd5ac5aa2a6b04d952bdd67020e5d56227473300cd42006530",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/c0-r00-868x973+104+140.png",
+   "image_sha256": "079a6a04fdcfdac364728ecb2fbe963c137b849dfbd53764480596ef6d9dd032",
    "prompt_version": 2,
    "lines": [
-    "אדם",
     "the man as the only one of his kind;",
     "comp. הַבַּעַל Baal, the lord κατ᾿ ἐξοχ.",
     "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence",
@@ -47,13 +71,13 @@
     "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "b19c5419-6c28-4147-b565-4d43221b60c7",
-   "duration_api_ms": 15950,
-   "cost_usd_list": 0.22213575,
+   "session_id": "622df8f0-4f72-4ae5-9c79-fb3db2e460f3",
+   "duration_api_ms": 22700,
+   "cost_usd_list": 0.56385025,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10283,
-   "output_tokens": 640
+   "cache_read_input_tokens": 21161,
+   "cache_creation_input_tokens": 24431,
+   "output_tokens": 1392
   },
   {
    "chunk_id": "c0-r01",
@@ -61,12 +85,12 @@
    "row": 1,
    "bounds": {
     "x": 104,
-    "y": 1097,
+    "y": 1101,
     "width": 868,
-    "height": 660
+    "height": 656
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/c0-r01-868x660+104+1097.png",
-   "image_sha256": "6149ff6e3fec864bebc329fed56b44f2d1c1eae1a3b22f9a918db34adb119958",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/c0-r01-868x656+104+1101.png",
+   "image_sha256": "eaa4e006de173cae37be00c54027e33dafb0b9f514bf70352cb00c713c723aa2",
    "prompt_version": 2,
    "lines": [
     "of man, for man.",
@@ -82,13 +106,13 @@
     "Subst. red, redness Is. 63, 2."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "5faea2ba-386d-4695-aadb-91912324fcff",
-   "duration_api_ms": 12392,
-   "cost_usd_list": 0.20663575,
+   "session_id": "946fd54b-0b8d-44c3-a4f8-841e6346657f",
+   "duration_api_ms": 11587,
+   "cost_usd_list": 0.5094205,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 9911,
-   "output_tokens": 423
+   "cache_read_input_tokens": 21162,
+   "cache_creation_input_tokens": 24092,
+   "output_tokens": 439
   },
   {
    "chunk_id": "c0-r02",
@@ -170,19 +194,17 @@
    "row": 0,
    "bounds": {
     "x": 993,
-    "y": 93,
+    "y": 140,
     "width": 872,
-    "height": 934
+    "height": 887
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/c1-r00-872x934+993+93.png",
-   "image_sha256": "b6223a6a5ea9938afc945b4cd9ce03d777a48350e8656620d819458798aee48f",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/c1-r00-872x887+993+140.png",
+   "image_sha256": "6309585c617fe25ae82bfd8cf26948ac876fae09c81ebaed3f3a8ecfa9fcafc0",
    "prompt_version": 2,
    "lines": [
-    "5",
-    "אדן",
     "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,",
     "adj. reddish, e. g. spots in leprous per-",
-    "sons, which are described as לְבָנוֹת",
+    "sons, which are described as לְבָנֹת",
     "אֲדַמְדַּמּוֹת white and somewhat reddish,",
     "Lev. 13, 19 sq. 14, 37. R. אָדַם.",
     "אֲדָמָה f. 1. earth, Ex. 20, 24. So",
@@ -196,13 +218,13 @@
     "of the earth, Is. 1, 7."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "89d65445-83f0-4cc3-941d-14abec752a0d",
-   "duration_api_ms": 19717,
-   "cost_usd_list": 0.247353,
+   "session_id": "f2e06e8e-2938-41a3-83ab-0f284257a264",
+   "duration_api_ms": 19206,
+   "cost_usd_list": 0.5480102499999999,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10253,
-   "output_tokens": 1152
+   "cache_read_input_tokens": 21161,
+   "cache_creation_input_tokens": 24369,
+   "output_tokens": 1100
   },
   {
    "chunk_id": "c1-r01",
@@ -315,9 +337,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "אדם"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אדם 15 אדן"
   },
   {
    "chunk_id": "c0-r00",
@@ -587,16 +609,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "5"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "אדן"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,"
   },
   {
@@ -607,7 +619,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "sons, which are described as לְבָנוֹת"
+   "text": "sons, which are described as לְבָנֹת"
   },
   {
    "chunk_id": "c1-r00",
@@ -846,5 +858,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.7571
+ "cost_usd_list_total": 2.9128
 }

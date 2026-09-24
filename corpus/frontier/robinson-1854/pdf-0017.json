@@ -12,43 +12,46 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:43+00:00",
+ "generated_at": "2026-09-24T08:40:00+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 74,
+    "y": 402,
+    "width": 1769,
+    "height": 385
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/header-1769x385+74+402.png",
+   "image_sha256": "1b715ae8eadfb02007648a9ee896f3479f09d6a62668ed5f62be588423405ae4",
+   "prompt_version": 2,
+   "lines": [
+    "LEXICON.",
+    "א"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "4a1400bd-928e-4ba0-96b8-72ee29d8b4d4",
+   "duration_api_ms": 8850,
+   "cost_usd_list": 0.22125925000000002,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 10173,
+   "output_tokens": 173
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 74,
-    "y": 19,
+    "y": 839,
     "width": 875,
-    "height": 719
+    "height": 637
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r00-875x719+74+19.png",
-   "image_sha256": "fc16df74ec3d1525f57a47e2007d75163c12a4e6404a3a62eeb599ea4698c451",
-   "prompt_version": 2,
-   "lines": [],
-   "model": "claude-fable-5-1",
-   "session_id": "1105de22-f473-4c64-969d-80ee4f2649f2",
-   "duration_api_ms": 9521,
-   "cost_usd_list": 0.19852799999999998,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10015,
-   "output_tokens": 235
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "row": 1,
-   "bounds": {
-    "x": 74,
-    "y": 726,
-    "width": 875,
-    "height": 750
-   },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r01-875x750+74+726.png",
-   "image_sha256": "1a5c7cdffae393bc42a1ab084b5b299cc5ee5fa4797fd1dbfface7f5a811da61",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r00-875x637+74+839.png",
+   "image_sha256": "728b730b12a4c3e91efb1a48ecf3c83e65f708f5ee172b793c1cd8f8fac53990",
    "prompt_version": 2,
    "lines": [
     "The name Aleph, like those of the",
@@ -64,25 +67,25 @@
     "Phenician dialect: 𐤀, 𐤀, 𐤀. As a"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "1abc5cd0-516d-4631-802f-684b40e3c387",
-   "duration_api_ms": 16051,
-   "cost_usd_list": 0.2188405,
+   "session_id": "d242c76a-268c-4229-9e6d-23f7b88bc24f",
+   "duration_api_ms": 15332,
+   "cost_usd_list": 0.2323495,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10044,
-   "output_tokens": 634
+   "cache_read_input_tokens": 34678,
+   "cache_creation_input_tokens": 9472,
+   "output_tokens": 678
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
-   "row": 2,
+   "row": 1,
    "bounds": {
     "x": 74,
     "y": 1464,
     "width": 875,
     "height": 800
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r02-875x800+74+1464.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r01-875x800+74+1464.png",
    "image_sha256": "6f4db953b7b2aa71309e161065a7297dfa3ff4255065d40ebc841dfec3cad4e8",
    "prompt_version": 2,
    "lines": [
@@ -111,16 +114,16 @@
    "output_tokens": 399
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
-   "row": 3,
+   "row": 2,
    "bounds": {
     "x": 74,
     "y": 2252,
     "width": 875,
     "height": 821
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r03-875x821+74+2252.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r02-875x821+74+2252.png",
    "image_sha256": "7d0cb7368f4b8409c2604b54c992b67f2870350d2f5e17e6afb1d01bf538dca5",
    "prompt_version": 2,
    "lines": [
@@ -149,16 +152,16 @@
    "output_tokens": 6590
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
-   "row": 4,
+   "row": 3,
    "bounds": {
     "x": 74,
     "y": 3061,
     "width": 875,
     "height": 223
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r04-875x223+74+3061.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c0-r03-875x223+74+3061.png",
    "image_sha256": "b567d86f0050ea45a749b6aaea3e03616c75b2521dab1b912f58cfdfc6f7a026",
    "prompt_version": 2,
    "lines": [
@@ -182,32 +185,35 @@
    "row": 0,
    "bounds": {
     "x": 964,
-    "y": 402,
+    "y": 832,
     "width": 879,
-    "height": 849
+    "height": 709
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r00-879x849+964+402.png",
-   "image_sha256": "62e60cfef6bf3c4c872d5e0b6a9e0e3014319cb24cfff73b8714b64a57f7d43d",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r00-879x709+964+832.png",
+   "image_sha256": "e6fd593ef63e99d3eb8cd5779d14be13003ee48b2000eddd7401470f3d8e295a",
    "prompt_version": 2,
    "lines": [
-    "ICON.",
-    "א",
     "גָּעַל to pollute ; תָּאַב and תָּעַב to abhor ;",
     "גָּמָא and גָּמַע to suck in, to drink ; פִּתְאֹם",
     "suddenly, from פֶּתַע a moment, etc.",
     "Where Aleph is to be still more soft-",
     "ened, it passes over into the quiescents ו",
     "and י, as אָחַד and יָחַד to make one ; אָלַף",
-    "ܐܰܠܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר"
+    "ܝܼܠܶܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר",
+    "for בְּאֹר a well. Hence it comes, that",
+    "many verbs פ״א accord in signification",
+    "with verbs ע״ו, comp. Heb. Gr. § 76. 2 ;",
+    "e. g. אָדַשׁ and דּוּשׁ ; אָנַשׁ, Syr. ܢܳܫ, to be",
+    "sick."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "b56ec554-2ffa-431a-8bfc-9c9cf4b3b26d",
-   "duration_api_ms": 33754,
-   "cost_usd_list": 0.27330299999999996,
+   "session_id": "aa462176-3dcf-4142-b332-0328426da4ac",
+   "duration_api_ms": 27405,
+   "cost_usd_list": 0.2672695,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10173,
-   "output_tokens": 1691
+   "cache_read_input_tokens": 34678,
+   "cache_creation_input_tokens": 9553,
+   "output_tokens": 1344
   },
   {
    "chunk_id": "c1-r01",
@@ -215,19 +221,14 @@
    "row": 1,
    "bounds": {
     "x": 964,
-    "y": 1239,
+    "y": 1529,
     "width": 879,
-    "height": 810
+    "height": 741
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r01-879x810+964+1239.png",
-   "image_sha256": "52723df05fb42d6b6c02e28acbcf6b1aecdcff97642d8930a5778d84b30a18ee",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r01-879x741+964+1529.png",
+   "image_sha256": "24c6578a98c94652488e2354c85fd4b453d8a0cc54b014169aaacc0e559f4b68",
    "prompt_version": 2,
    "lines": [
-    "for בְּאֵר a well. Hence it comes, that",
-    "many verbs פ״א accord in signification",
-    "with verbs ע״ו, comp. Heb. Gr. § 76. 2;",
-    "e. g. אָדַשׁ and דּוּשׁ; אָנַשׁ, Syr. ܢܰܫ, to be",
-    "sick.",
     "In respect to the forms of words it may",
     "be noted: a) That א without a vowel at",
     "the beginning of a word is often dropped",
@@ -236,16 +237,20 @@
     "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים",
     "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136.",
     "b) But also at the beginning of words, a",
-    "prosthetic א is often prefixed, comp."
+    "prosthetic א is often prefixed, comp.",
+    "Lehrgeb. p. 139. See אֲבַטִּחִים, אֲגַפִּים,",
+    "אֲדַרְכּוֹן, אֲבַעְבּוּעֹת. This is done chiefly,",
+    "where a word otherwise begins with two",
+    "consonants separated in pronunciation"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "b764f13e-65b1-4f49-ae34-bcf1b20d3de0",
-   "duration_api_ms": 30235,
-   "cost_usd_list": 0.27123575,
+   "session_id": "4286c1cf-888b-4cfe-9f6b-22cfd85ce35e",
+   "duration_api_ms": 31688,
+   "cost_usd_list": 0.29479975,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10095,
-   "output_tokens": 1669
+   "cache_read_input_tokens": 34679,
+   "cache_creation_input_tokens": 9602,
+   "output_tokens": 1875
   },
   {
    "chunk_id": "c1-r02",
@@ -253,53 +258,25 @@
    "row": 2,
    "bounds": {
     "x": 964,
-    "y": 2037,
+    "y": 2258,
     "width": 879,
-    "height": 852
+    "height": 971
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r02-879x852+964+2037.png",
-   "image_sha256": "80a3f4907902ef5f80826d7b827297aeb27efc2c288c0a2eaab260fc99afaf4d",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r02-879x971+964+2258.png",
+   "image_sha256": "725f9cb14291f86776ec66e5239ba8689f63ff4affbdf941a1c910d4950d6635",
    "prompt_version": 2,
    "lines": [
-    "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,",
-    "אֲדַרְכּוֹן, אֶצְבָּעוֹת. This is done chiefly,",
-    "where a word otherwise begins with two",
-    "consonants separated in pronunciation",
     "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,",
     "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in",
     "which both forms occur); also אֶפְרוֹחַ for",
-    "פְּרוֹחַ progeny; אֶגְרֹף for גְּרֹף the fist;",
-    "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false.",
-    "Comp. Gr. χϑές and ἐχϑές yesterday,",
+    "פֶּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+    "אֶתְנָן for תָּנָן a gift; אַכְזָב for כָּזָב false.",
+    "Comp. Gr. χθές and ἐχθές yesterday,",
     "and also similar examples in the transi-",
     "tion from Latin to French, as spiritus,",
-    "esprit; status, état. In the Syriac man-",
-    "ner א is also added before the letter י;",
-    "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12."
-   ],
-   "model": "claude-fable-5-1",
-   "session_id": "40050c2d-ba86-4911-902c-63cbe162487b",
-   "duration_api_ms": 44600,
-   "cost_usd_list": 0.33093575,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10159,
-   "output_tokens": 2847
-  },
-  {
-   "chunk_id": "c1-r03",
-   "column": 1,
-   "row": 3,
-   "bounds": {
-    "x": 964,
-    "y": 2877,
-    "width": 879,
-    "height": 352
-   },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/c1-r03-879x352+964+2877.png",
-   "image_sha256": "630fe0cb2b90a07b2a0fd86e01c3b3fe73616659a133d70450dfcacdfbda3241",
-   "prompt_version": 2,
-   "lines": [
+    "esprit ; status, état. In the Syriac man-",
+    "ner א is also added before the letter י ;",
+    "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12.",
     "* אָב m. constr. אֲבִי, c. suff. אָבִיו,",
     "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);",
     "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,",
@@ -308,240 +285,240 @@
     "common to all the Semitic dialects, Arab."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "ca8b3ade-733d-4607-b8e7-ec29a33a263b",
-   "duration_api_ms": 18294,
-   "cost_usd_list": 0.22853575,
+   "session_id": "7aee98c4-8cb2-4b53-804e-88b404487623",
+   "duration_api_ms": 52281,
+   "cost_usd_list": 0.39746975,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 9599,
-   "output_tokens": 939
+   "cache_read_input_tokens": 34679,
+   "cache_creation_input_tokens": 9843,
+   "output_tokens": 3832
   }
  ],
  "lines": [
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "header",
+   "column": -1,
+   "text": "LEXICON."
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "א"
+  },
+  {
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "The name Aleph, like those of the"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "other letters, is of Phenician origin, and"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "signifies ox, bullock, i. q. Heb. אֶלֶף. So"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "Plutarch. Quæst. Sympos. IX. 2: Aleph"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "is put before the other letters διὰ τοὺς"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "name is derived from the form of this"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "letter in the most ancient alphabet, re-"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "presenting the rude outline of a bullock's"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "head, still found in the remains of the"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "Phenician dialect: 𐤀, 𐤀, 𐤀. As a"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "numeral it denotes unity or 1 ; and with"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "two points above (א֕), 1000."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "Of all the Hebrew gutturals Aleph"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "has the softest pronunciation, being ut-"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "tered with a slight breathing from the"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "throat or rather lungs, like the Greek"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "spiritus lenis, and the French h in habit,"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "homme, which we are apt to neglect,"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "because we cannot give them correctly."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "And since by a sort of common usage in"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "languages, especially in those of the"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "Semitic family, (comp. Ewald in Heb."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "Gram. § 31,) the stronger and harsher"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "letters in the course of time become by"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "degrees softened and give place to"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "smoother ones, we hence see why in"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "Aramæan, in the later Hebrew, and in"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "Arabic, the stronger gutturals ה and ע"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "are softened into א. E. g. הִתְקַטֵּל,"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "اِقْتَتَلَ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "Jer. 52, 15 for הָמוֹן multitude, etc."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "But, vice versa, א sometimes passes"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "over into ה and ע; and in general,"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "these letters, being very similar in pro-"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "nunciation, are very often interchanged"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "with one another. Comp. הֵיךְ in the"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "later Hebrew for the common אֵיךְ; אָבִיב"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;"
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "אָגַם and כָּהָה, לָאָה and לָהָה; also אָגַם"
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "and עָגַם to be sad; אוּד and עוּד to turn"
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "(both of them also in Ethiopic); גָּאַל and"
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "1"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "ICON."
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "א"
   },
   {
    "chunk_id": "c1-r00",
@@ -576,30 +553,30 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "ܐܰܠܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר"
+   "text": "ܝܼܠܶܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
-   "text": "for בְּאֵר a well. Hence it comes, that"
+   "text": "for בְּאֹר a well. Hence it comes, that"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "many verbs פ״א accord in signification"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
-   "text": "with verbs ע״ו, comp. Heb. Gr. § 76. 2;"
+   "text": "with verbs ע״ו, comp. Heb. Gr. § 76. 2 ;"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
-   "text": "e. g. אָדַשׁ and דּוּשׁ; אָנַשׁ, Syr. ܢܰܫ, to be"
+   "text": "e. g. אָדַשׁ and דּוּשׁ ; אָנַשׁ, Syr. ܢܳܫ, to be"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "sick."
   },
@@ -649,22 +626,22 @@
    "text": "prosthetic א is often prefixed, comp."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
-   "text": "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,"
+   "text": "Lehrgeb. p. 139. See אֲבַטִּחִים, אֲגַפִּים,"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
-   "text": "אֲדַרְכּוֹן, אֶצְבָּעוֹת. This is done chiefly,"
+   "text": "אֲדַרְכּוֹן, אֲבַעְבּוּעֹת. This is done chiefly,"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "where a word otherwise begins with two"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "consonants separated in pronunciation"
   },
@@ -686,17 +663,17 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "פְּרוֹחַ progeny; אֶגְרֹף for גְּרֹף the fist;"
+   "text": "פֶּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false."
+   "text": "אֶתְנָן for תָּנָן a gift; אַכְזָב for כָּזָב false."
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "Comp. Gr. χϑές and ἐχϑές yesterday,"
+   "text": "Comp. Gr. χθές and ἐχθές yesterday,"
   },
   {
    "chunk_id": "c1-r02",
@@ -711,12 +688,12 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "esprit; status, état. In the Syriac man-"
+   "text": "esprit ; status, état. In the Syriac man-"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "ner א is also added before the letter י;"
+   "text": "ner א is also added before the letter י ;"
   },
   {
    "chunk_id": "c1-r02",
@@ -724,36 +701,36 @@
    "text": "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "* אָב m. constr. אֲבִי, c. suff. אָבִיו,"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "It is a primitive word, see note ; and is"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "common to all the Semitic dialects, Arab."
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.439
+ "cost_usd_list_total": 2.3308
 }

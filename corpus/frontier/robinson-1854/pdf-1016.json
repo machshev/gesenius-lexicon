@@ -12,37 +12,61 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:29:21+00:00",
+ "generated_at": "2026-09-24T08:44:31+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 185,
+    "y": 132,
+    "width": 1762,
+    "height": 77
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/header-1762x77+185+132.png",
+   "image_sha256": "0083c9212313e3062dba672db93f5902d0b50c0b45a0fe9543c37dc5c0ae1d5c",
+   "prompt_version": 2,
+   "lines": [
+    "שׂבב 1000 רתק"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "6dbb9b47-8f69-4e51-b5db-81ef2d5c44fc",
+   "duration_api_ms": 15061,
+   "cost_usd_list": 0.21275925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9518,
+   "output_tokens": 265
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 185,
-    "y": 131,
+    "y": 179,
     "width": 866,
-    "height": 802
+    "height": 754
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/c0-r00-866x802+185+131.png",
-   "image_sha256": "57bb636e113deefe0be1ad8cbbc1eb59d78a75d7e33e0715d71249554722ac74",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/c0-r00-866x754+185+179.png",
+   "image_sha256": "c161213ae7d9c59b59e4645ece971330b05870e664af5d0515d4f95770a5889f",
    "prompt_version": 2,
    "lines": [
-    "רתק",
-    "נָתַק q. v. in Niph. no. 1.——Frigid is",
+    "נִתַּק q. v. in Niph. no. 1.——Frigid is",
     "Cheth. יְרֻחַק to be removed.",
     "Pual רֻתַּק to be bound, Nah. 3, 10.",
-    "Deriv. רַתּוֹק and",
+    "Deriv. רָתוֹק and",
     "רְתֻקוֹת f. plur. chains Is. 40, 19."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "59201010-738b-454a-8809-6d4d083ad9f6",
-   "duration_api_ms": 22038,
-   "cost_usd_list": 0.25283049999999996,
+   "session_id": "2a298fee-ceca-4a9b-bcf4-4165e98f0c13",
+   "duration_api_ms": 18311,
+   "cost_usd_list": 0.24889599999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10078,
-   "output_tokens": 843
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10120,
+   "output_tokens": 747
   },
   {
    "chunk_id": "c0-r01",
@@ -161,28 +185,27 @@
    "row": 0,
    "bounds": {
     "x": 1078,
-    "y": 132,
+    "y": 179,
     "width": 869,
-    "height": 747
+    "height": 706
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/c1-r00-869x747+1078+132.png",
-   "image_sha256": "4ae6ff2676213f7e4768cf3928ba7cc49294ff8962d5acab260d37c13e7a3e46",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/c1-r00-869x706+1078+179.png",
+   "image_sha256": "6d342bffc1fdf36102da2f9a1f2125509d13360920914ac850e5767e9c423e67",
    "prompt_version": 2,
    "lines": [
-    "00 שׂבב",
     "* רָתַת obsol. root, i. q. רָטַט and Aram.",
     "רְתַת, ܪܬ, to terrify; hence",
-    "רְתֵת m. terror. Hos. 13, 1. Chald.",
+    "רְתֵת m. terror Hos. 13, 1. Chald.",
     "רְתִיתָא id."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "85b8c22b-5c82-4cc0-8eb3-60049ddbd271",
-   "duration_api_ms": 39202,
-   "cost_usd_list": 0.30742075,
+   "session_id": "29b60dcb-478e-4402-9054-b58b4048d634",
+   "duration_api_ms": 29011,
+   "cost_usd_list": 0.29071625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10045,
-   "output_tokens": 1948
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10116,
+   "output_tokens": 1585
   },
   {
    "chunk_id": "c1-r01",
@@ -190,16 +213,16 @@
    "row": 1,
    "bounds": {
     "x": 1078,
-    "y": 867,
+    "y": 873,
     "width": 869,
-    "height": 838
+    "height": 832
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/c1-r01-869x838+1078+867.png",
-   "image_sha256": "e53f9b43aa17db36d182ef2b5b3ae1691e91b69404720f18de9cecc0407972e5",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1016/c1-r01-869x832+1078+873.png",
+   "image_sha256": "40c9f7b74c69948eb4bd8c26b22523039fb9f90170fcc9e03aeb1646a3da5650",
    "prompt_version": 2,
    "lines": [
     "* שָׂאַר obsol. root, kindr. with the",
-    "verbs שָׁאַר, סִיר q. v. to become hot, to",
+    "verbs שָׂעַר, סִיר q. v. to become hot, to",
     "ferment ; comp. Arab. ثار to boil up, to",
     "break out, as an ulcer. In the western",
     "languages we find from the same stock,",
@@ -212,13 +235,13 @@
     "41, 17, where other Mss. have שאתו."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "cc350c1d-7b3c-47d3-a56e-20085f46b933",
-   "duration_api_ms": 28023,
-   "cost_usd_list": 0.29763075000000005,
+   "session_id": "bc4d29ac-6255-49fc-830a-300c85dbc3e4",
+   "duration_api_ms": 26588,
+   "cost_usd_list": 0.29229625000000004,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10143,
-   "output_tokens": 1713
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10245,
+   "output_tokens": 1565
   },
   {
    "chunk_id": "c1-r02",
@@ -298,14 +321,14 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "רתק"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "שׂבב 1000 רתק"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "נָתַק q. v. in Niph. no. 1.——Frigid is"
+   "text": "נִתַּק q. v. in Niph. no. 1.——Frigid is"
   },
   {
    "chunk_id": "c0-r00",
@@ -320,7 +343,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Deriv. רַתּוֹק and"
+   "text": "Deriv. רָתוֹק and"
   },
   {
    "chunk_id": "c0-r00",
@@ -525,11 +548,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "00 שׂבב"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "* רָתַת obsol. root, i. q. רָטַט and Aram."
   },
   {
@@ -540,7 +558,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "רְתֵת m. terror. Hos. 13, 1. Chald."
+   "text": "רְתֵת m. terror Hos. 13, 1. Chald."
   },
   {
    "chunk_id": "c1-r00",
@@ -555,7 +573,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "verbs שָׁאַר, סִיר q. v. to become hot, to"
+   "text": "verbs שָׂעַר, סִיר q. v. to become hot, to"
   },
   {
    "chunk_id": "c1-r01",
@@ -744,5 +762,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.1331
+ "cost_usd_list_total": 2.3199
 }

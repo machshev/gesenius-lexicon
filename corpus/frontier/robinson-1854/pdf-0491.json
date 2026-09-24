@@ -12,26 +12,50 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:44+00:00",
+ "generated_at": "2026-09-24T08:43:01+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 83,
+    "y": 113,
+    "width": 1764,
+    "height": 84
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/header-1764x84+83+113.png",
+   "image_sha256": "b93aeeb8e9d1697c44b8234bd3230d7aa1c730dcd3e3d25813fe87a94dba8307",
+   "prompt_version": 2,
+   "lines": [
+    "כן 475 כנו"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "2414444f-75a9-4274-a18d-ed51047a154f",
+   "duration_api_ms": 26053,
+   "cost_usd_list": 0.27856250000000005,
+   "input_tokens": 98,
+   "cache_read_input_tokens": 82810,
+   "cache_creation_input_tokens": 10874,
+   "output_tokens": 788
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 83,
-    "y": 114,
+    "y": 159,
     "width": 871,
-    "height": 831
+    "height": 786
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/c0-r00-871x831+83+114.png",
-   "image_sha256": "ad2fc1bd88654f14c0ba73611a221a530b90724052402f07695ea8af140aea3d",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/c0-r00-871x786+83+159.png",
+   "image_sha256": "9783eaa0f70547a76619a08c451e9e9bfdee78e0438a04936bf0cf48fc90c8cf",
    "prompt_version": 2,
    "lines": [
-    "כן",
     "of relative conjunctions Lehrg. p. 636.",
     "Ps. 45, 3 thou art fairer than the children",
-    "of men . . . עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
+    "of men ... עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
     "that God hath blessed thee for ever. Ps.",
     "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36.",
     "e) עַד־כֵּן lit. until so, i. e. until now, as",
@@ -44,13 +68,13 @@
     "III.—R."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "064513a5-cb7c-42be-82b5-773fc00de76a",
-   "duration_api_ms": 20190,
-   "cost_usd_list": 0.2382905,
+   "session_id": "ab7031a9-47e1-4f65-a1d7-374794e243e7",
+   "duration_api_ms": 15252,
+   "cost_usd_list": 0.248496,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10144,
-   "output_tokens": 998
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10195,
+   "output_tokens": 709
   },
   {
    "chunk_id": "c0-r01",
@@ -171,15 +195,14 @@
    "row": 0,
    "bounds": {
     "x": 975,
-    "y": 113,
+    "y": 159,
     "width": 872,
-    "height": 974
+    "height": 928
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/c1-r00-872x974+975+113.png",
-   "image_sha256": "3c6aa7bffa2f1195a3719ac3bfc7fb58026cb2acd24ddae7dd6c2ea9d576c8f7",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/c1-r00-872x928+975+159.png",
+   "image_sha256": "322a2886595ed95b6d791aac4820186722afef4770a57386dfef377e4dda6314",
    "prompt_version": 2,
    "lines": [
-    "כנה",
     "* כָּנָה in Kal not used, Arab. كنى",
     "I, II, IV, to call a person or thing by",
     "another and more honourable name or",
@@ -197,13 +220,13 @@
     "kindly, though thou hast not known me."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "0ebfba62-d5f3-43ae-acd0-2574c61461d9",
-   "duration_api_ms": 22676,
-   "cost_usd_list": 0.2460905,
+   "session_id": "c67d2c1e-6f28-465b-96d3-b3dd534ab966",
+   "duration_api_ms": 18623,
+   "cost_usd_list": 0.25806599999999996,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10304,
-   "output_tokens": 1114
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10371,
+   "output_tokens": 830
   },
   {
    "chunk_id": "c1-r01",
@@ -317,9 +340,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "כן"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "כן 475 כנו"
   },
   {
    "chunk_id": "c0-r00",
@@ -334,7 +357,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "of men . . . עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because"
+   "text": "of men ... עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because"
   },
   {
    "chunk_id": "c0-r00",
@@ -590,11 +613,6 @@
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al."
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "כנה"
   },
   {
    "chunk_id": "c1-r00",
@@ -858,5 +876,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.824
+ "cost_usd_list_total": 2.1247
 }

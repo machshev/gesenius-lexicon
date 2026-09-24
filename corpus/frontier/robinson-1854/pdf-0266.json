@@ -12,45 +12,71 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:44+00:00",
+ "generated_at": "2026-09-24T08:41:14+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 174,
+    "y": 94,
+    "width": 1787,
+    "height": 66
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/header-1787x66+174+94.png",
+   "image_sha256": "3ecf51bc436484701697da4884226fa4e3fb12d67d8b205b726e9124bc28559d",
+   "prompt_version": 2,
+   "lines": [
+    "הָיָה 250 הָיָה"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "cc1752a8-4303-4598-9bb5-72528b2e67c9",
+   "duration_api_ms": 11562,
+   "cost_usd_list": 0.20877925000000003,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 205
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 174,
-    "y": 20,
+    "y": 140,
     "width": 885,
-    "height": 917
+    "height": 908
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/c0-r00-885x917+174+20.png",
-   "image_sha256": "5b9e13bc6bdb5c319a834bf1edc473307025f2190f470abdb5350d7b90c5b5b1",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/c0-r00-885x908+174+140.png",
+   "image_sha256": "878da08b45db0ed39a8ea825d54ca0522397b7d999f8ee1536c9b81fdb9ffd71",
    "prompt_version": 2,
    "lines": [
-    "הָיָה",
-    "15. Is. 1, 22. 31. 5, 9.  γ) But הָיָה לְ, to",
+    "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to",
     "be or become to any one, as his posses-",
-    "sion, property, etc.  Is. 17, 2 עָרֵי עֲרֹעֵר",
+    "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר",
     "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall",
     "be for the flocks, i. e. be given up to them.",
-    "23, 18. Job 30, 31.  So espec. of a wo-",
+    "23, 18. Job 30, 31. So espec. of a wo-",
     "man, הָיְתָה לְאִישׁ, she became to a man,",
     "i. e. became his wife, (לְאִשָּׁה being often",
     "added, Num. 36, 3,) Num. 30, 7. 36, 3.",
-    "Deut. 21, 15. 24, 2.  δ) הָיָה כְּ to be or",
-    "become as or like any thing.  Gen. 3, 5",
+    "Deut. 21, 15. 24, 2. δ) הָיָה כְּ to be or",
+    "become as or like any thing. Gen. 3, 5",
     "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as",
-    "God. v. 22. Ps. 1, 3. Cant. 1, 7.  Then"
+    "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then",
+    "also, to be or become like any one, is to",
+    "have the like lot with him; comp. Fr."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "3901d63e-1603-4d9b-9330-8ebc4bb2bffb",
-   "duration_api_ms": 25853,
-   "cost_usd_list": 0.24384049999999996,
+   "session_id": "7ab24eaa-5218-4965-ae58-4809f20f8f9f",
+   "duration_api_ms": 19217,
+   "cost_usd_list": 0.268506,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10236,
-   "output_tokens": 1086
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10323,
+   "output_tokens": 1058
   },
   {
    "chunk_id": "c0-r01",
@@ -58,37 +84,35 @@
    "row": 1,
    "bounds": {
     "x": 174,
-    "y": 925,
+    "y": 1036,
     "width": 885,
-    "height": 791
+    "height": 680
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/c0-r01-885x791+174+925.png",
-   "image_sha256": "b002fc2c98a8406fab73d66684c80d9b30719d612319cbd90b5967cf7293b4ed",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/c0-r01-885x680+174+1036.png",
+   "image_sha256": "7850b2a37dbc3735e044eaaf739878b246347e6d5d933f479972323e2ff39546",
    "prompt_version": 2,
    "lines": [
-    "also, to be or become like any one, is to",
-    "have the like lot with him; comp. Fr.",
     "‘ je ne sais pas ce qu’il est devenu.’ Is.",
     "1, 9 כִּסְדֹם הָיִינוּ we should have become",
     "like Sodom, i. e. have experienced the",
     "fate of its inhabitants. Gen. 18, 25. Num.",
     "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13.",
-    "Comp. Is. 10, 9. 20, 6; where הָיָה is",
+    "Comp. Is. 10, 9. 20, 6 ; where הָיָה is",
     "omitted.",
     "3. to be, i. e. the substantive verb, like",
     "Gr. εἰμί, Lat. sum. a) As the copulative",
     "connecting the subject with the predi-",
-    "cate; whether the latter be an adjective,",
-    "noun, numeral, or adverb; or whether it"
+    "cate ; whether the latter be an adjective,",
+    "noun, numeral, or adverb ; or whether it"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "a225b67a-f066-49e4-a09d-324197e35eff",
-   "duration_api_ms": 12964,
-   "cost_usd_list": 0.21075299999999997,
+   "session_id": "8a74fd8b-5a4a-4b4a-9e61-e387ed3bc138",
+   "duration_api_ms": 15496,
+   "cost_usd_list": 0.25947624999999996,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10093,
-   "output_tokens": 460
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10084,
+   "output_tokens": 973
   },
   {
    "chunk_id": "c0-r02",
@@ -172,15 +196,14 @@
    "row": 0,
    "bounds": {
     "x": 1077,
-    "y": 98,
+    "y": 140,
     "width": 884,
-    "height": 728
+    "height": 686
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/c1-r00-884x728+1077+98.png",
-   "image_sha256": "d3deff93983a2ca8587edc7ae11a0165d69c2fcaae3877f3e97aa5f4ff827415",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/c1-r00-884x686+1077+140.png",
+   "image_sha256": "db3f17b1666c53edaa47aa9d1aca2a88a687ef3a8bb8ce0e56021b94ff225e8b",
    "prompt_version": 2,
    "lines": [
-    "0 הָיָה",
     "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of",
     "the field were not yet in the earth, did not",
     "yet exist. 6, 4. Is. 11, 16. Absol. Gen.",
@@ -194,13 +217,13 @@
     "should not have existed, lived. Is. 23, 13."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "8e2eb6bf-6115-4385-8e8b-5929801e3276",
-   "duration_api_ms": 22770,
-   "cost_usd_list": 0.24569825,
+   "session_id": "916182c4-f133-4774-a1dc-4b288dd380e5",
+   "duration_api_ms": 18950,
+   "cost_usd_list": 0.26413625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10036,
-   "output_tokens": 1173
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10087,
+   "output_tokens": 1065
   },
   {
    "chunk_id": "c1-r01",
@@ -320,14 +343,14 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "הָיָה"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "הָיָה 250 הָיָה"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "15. Is. 1, 22. 31. 5, 9.  γ) But הָיָה לְ, to"
+   "text": "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to"
   },
   {
    "chunk_id": "c0-r00",
@@ -337,7 +360,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "sion, property, etc.  Is. 17, 2 עָרֵי עֲרֹעֵר"
+   "text": "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר"
   },
   {
    "chunk_id": "c0-r00",
@@ -352,7 +375,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "23, 18. Job 30, 31.  So espec. of a wo-"
+   "text": "23, 18. Job 30, 31. So espec. of a wo-"
   },
   {
    "chunk_id": "c0-r00",
@@ -372,12 +395,12 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Deut. 21, 15. 24, 2.  δ) הָיָה כְּ to be or"
+   "text": "Deut. 21, 15. 24, 2. δ) הָיָה כְּ to be or"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "become as or like any thing.  Gen. 3, 5"
+   "text": "become as or like any thing. Gen. 3, 5"
   },
   {
    "chunk_id": "c0-r00",
@@ -387,15 +410,15 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "God. v. 22. Ps. 1, 3. Cant. 1, 7.  Then"
+   "text": "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "also, to be or become like any one, is to"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "have the like lot with him; comp. Fr."
   },
@@ -427,7 +450,7 @@
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "Comp. Is. 10, 9. 20, 6; where הָיָה is"
+   "text": "Comp. Is. 10, 9. 20, 6 ; where הָיָה is"
   },
   {
    "chunk_id": "c0-r01",
@@ -452,12 +475,12 @@
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "cate; whether the latter be an adjective,"
+   "text": "cate ; whether the latter be an adjective,"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "noun, numeral, or adverb; or whether it"
+   "text": "noun, numeral, or adverb ; or whether it"
   },
   {
    "chunk_id": "c0-r02",
@@ -598,11 +621,6 @@
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "ence, to exist, e. g. in some place, Gen. 2, 5"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "0 הָיָה"
   },
   {
    "chunk_id": "c1-r00",
@@ -876,5 +894,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.9136
+ "cost_usd_list_total": 2.2142
 }

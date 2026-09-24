@@ -12,41 +12,65 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:26:06+00:00",
+ "generated_at": "2026-09-24T08:43:25+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 81,
+    "y": 123,
+    "width": 1766,
+    "height": 83
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0641/header-1766x83+81+123.png",
+   "image_sha256": "a3e518bbbd32c59e6a7147ac5ed1be9ef5eb83c57ba82d55be3a50e980af03e7",
+   "prompt_version": 2,
+   "lines": [
+    "מָשַׁךְ 625 מֹשֶׁה"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "7cf02dc4-5d9d-4ad1-99b1-0d000f5c8c66",
+   "duration_api_ms": 10737,
+   "cost_usd_list": 0.20777925000000003,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 185
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 81,
-    "y": 81,
+    "y": 171,
     "width": 868,
-    "height": 706
+    "height": 616
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0641/c0-r00-868x706+81+81.png",
-   "image_sha256": "916a9e35c000180ab9ea42ef07339abbb73f309cc45d15cfbd2d60664011e4b5",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0641/c0-r00-868x616+81+171.png",
+   "image_sha256": "f7724be2c0fbafaa52d9f0fabf19772a82d307cd9cbc551c6d7649db2a70872c",
    "prompt_version": 2,
    "lines": [
-    "מִשְׁחָה",
     "2. a part, portion, as measured out,",
     "Lev. 7, 35; see the root no. 2.",
-    "מָשְׁחָה f. 1. Inf. of the root מָשַׁח to",
+    "מִשְׁחָה f. 1. Inf. of the root מָשַׁח to",
     "anoint; see above.",
     "2. a part, portion, Ex. 40, 15. Num.",
-    "18, 8; see מִשְׁחָה no. 2.",
+    "18, 8; see מָשְׁחָה no. 2.",
     "מַשְׁחִית pr. part. Hiph. (r. שָׁחַת) plur.",
     "מַשְׁחִיתִים, destroying, which destroys;",
     "hence Subst."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "a3a14a28-214b-487c-9b55-0cc56bff87df",
-   "duration_api_ms": 17078,
-   "cost_usd_list": 0.23162799999999997,
+   "session_id": "a799b2df-8a59-4989-81ff-fc4de7a63b5d",
+   "duration_api_ms": 16538,
+   "cost_usd_list": 0.24909599999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 9991,
-   "output_tokens": 903
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 9965,
+   "output_tokens": 813
   },
   {
    "chunk_id": "c0-r01",
@@ -169,16 +193,14 @@
    "row": 0,
    "bounds": {
     "x": 972,
-    "y": 123,
+    "y": 171,
     "width": 875,
-    "height": 777
+    "height": 729
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0641/c1-r00-875x777+972+123.png",
-   "image_sha256": "92f77ba18b6b0fff22b423604f7a14603685be1306dfc61f30cc31c136506f50",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0641/c1-r00-875x729+972+171.png",
+   "image_sha256": "8ebbccc3e94d2ccb49e618bc9d35af7ba0db5e28b9dec6041451b5b79fd947d0",
    "prompt_version": 2,
    "lines": [
-    "5",
-    "מֶשִׁי",
     "cording to Hesychius τὸ βομβύκινον",
     "ὕφασμα. Jerome, ‘a garment so fine as",
     "to seem equal to the finest hair.’ From",
@@ -192,13 +214,13 @@
     "10, 22. 11, 24."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "e7524da4-aee2-4442-8c2d-65877aac9e91",
-   "duration_api_ms": 15419,
-   "cost_usd_list": 0.20862799999999998,
+   "session_id": "b9737bf9-c18f-4d3f-b722-8b08cf94ef55",
+   "duration_api_ms": 13026,
+   "cost_usd_list": 0.232636,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10075,
-   "output_tokens": 422
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10147,
+   "output_tokens": 411
   },
   {
    "chunk_id": "c1-r01",
@@ -317,9 +339,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "מִשְׁחָה"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "מָשַׁךְ 625 מֹשֶׁה"
   },
   {
    "chunk_id": "c0-r00",
@@ -334,7 +356,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "מָשְׁחָה f. 1. Inf. of the root מָשַׁח to"
+   "text": "מִשְׁחָה f. 1. Inf. of the root מָשַׁח to"
   },
   {
    "chunk_id": "c0-r00",
@@ -349,7 +371,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "18, 8; see מִשְׁחָה no. 2."
+   "text": "18, 8; see מָשְׁחָה no. 2."
   },
   {
    "chunk_id": "c0-r00",
@@ -580,16 +602,6 @@
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "53"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "5"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "מֶשִׁי"
   },
   {
    "chunk_id": "c1-r00",
@@ -858,5 +870,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.9025
+ "cost_usd_list_total": 2.1517
 }

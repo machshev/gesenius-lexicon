@@ -12,23 +12,49 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:26:49+00:00",
+ "generated_at": "2026-09-24T08:43:42+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 123,
+    "width": 1777,
+    "height": 75
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/header-1777x75+148+123.png",
+   "image_sha256": "fef8a066f1e192b2179335f81f5b5e3da3316f113fc064013bce6fb4b3d794be",
+   "prompt_version": 2,
+   "lines": [
+    "נָשָׁה",
+    "700",
+    "נָשַׁת"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "215c2b5a-2e15-4cbb-92fd-0b10b647b89f",
+   "duration_api_ms": 15771,
+   "cost_usd_list": 0.23107925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 651
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 148,
-    "y": 106,
+    "y": 169,
     "width": 876,
-    "height": 757
+    "height": 694
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/c0-r00-876x757+148+106.png",
-   "image_sha256": "8bf6d48f108c93c40f446c55c5de7d2072dc44a718efd00ae9bbb81f2f51d468",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/c0-r00-876x694+148+169.png",
+   "image_sha256": "f289c6fa027217ab9c71c5d9fa33869b6ad0785a44372076a40e0e759baa7060",
    "prompt_version": 2,
    "lines": [
-    "נשׂה 7",
     "Hiph. i. q. Kal no. 1, with בְּ of pers.",
     "to lend to any one on usury, Deut. 15, 2.",
     "24, 10.",
@@ -41,13 +67,13 @@
     "נְשִׁי m. debt, 2 K. 4, 7. R. נָשָׁה II."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "33693e53-1578-4a25-baa4-f5dbc9803007",
-   "duration_api_ms": 12341,
-   "cost_usd_list": 0.2321705,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10075,
-   "output_tokens": 431
+   "session_id": "fa051484-af53-45ec-981d-0a33ab700a72",
+   "duration_api_ms": 20984,
+   "cost_usd_list": 0.26944250000000003,
+   "input_tokens": 66,
+   "cache_read_input_tokens": 59370,
+   "cache_creation_input_tokens": 10627,
+   "output_tokens": 828
   },
   {
    "chunk_id": "c0-r01",
@@ -166,15 +192,14 @@
    "row": 0,
    "bounds": {
     "x": 1051,
-    "y": 124,
+    "y": 169,
     "width": 874,
-    "height": 806
+    "height": 761
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/c1-r00-874x806+1051+124.png",
-   "image_sha256": "49f8eb226241d083959a63bf015cc2f5b6c62fcffdc5870fd00b047e8ef41ebd",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/c1-r00-874x761+1051+169.png",
+   "image_sha256": "6744c4ca12ebc200187da84b4a0003bd4ff4a55e836376610b67dcb6cfd31689",
    "prompt_version": 2,
    "lines": [
-    "נָשַׁל",
     "as meat from a pot; نثل to put off a",
     "breastplate, to draw out arrows from a",
     "quiver.",
@@ -189,13 +214,13 @@
     "drive out, a people 2 K. 16, 6."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "39c12fa4-6db0-4d6a-a06e-f01d7e926af9",
-   "duration_api_ms": 17324,
-   "cost_usd_list": 0.25042074999999997,
+   "session_id": "9c480feb-e8b3-47a9-a6a8-3da4841a439a",
+   "duration_api_ms": 18227,
+   "cost_usd_list": 0.25066625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10095,
-   "output_tokens": 788
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10181,
+   "output_tokens": 758
   },
   {
    "chunk_id": "c1-r01",
@@ -312,9 +337,19 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "נשׂה 7"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "נָשָׁה"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "700"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "נָשַׁת"
   },
   {
    "chunk_id": "c0-r00",
@@ -560,11 +595,6 @@
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "שָׁלָה, נָצַל. Arab. نشل to draw out,"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "נָשַׁל"
   },
   {
    "chunk_id": "c1-r00",
@@ -828,5 +858,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.1136
+ "cost_usd_list_total": 2.3822
 }

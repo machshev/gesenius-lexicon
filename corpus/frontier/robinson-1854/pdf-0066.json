@@ -12,45 +12,71 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:43+00:00",
+ "generated_at": "2026-09-24T08:40:41+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 196,
+    "y": 115,
+    "width": 1775,
+    "height": 69
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/header-1775x69+196+115.png",
+   "image_sha256": "92501b7f107adc664da73b35f60199f76893d16de8803912153235c20a722041",
+   "prompt_version": 2,
+   "lines": [
+    "אל",
+    "50",
+    "אל"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "b66886a5-64e0-4053-a551-6caa558f62ed",
+   "duration_api_ms": 11206,
+   "cost_usd_list": 0.20717925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 173
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 196,
-    "y": 37,
+    "y": 166,
     "width": 880,
-    "height": 925
+    "height": 796
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/c0-r00-880x925+196+37.png",
-   "image_sha256": "5e89816891672812c98072e97107d3693dadffa5273e9269ede966b26bf56588",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/c0-r00-880x796+196+166.png",
+   "image_sha256": "1f78ec64657b3313d44d08c43476102ae4279b089d70543f3c4be78b12366c54",
    "prompt_version": 2,
    "lines": [
-    "אֵל 5",
     "So in the phrase יֶשׁ לְאֵל יָדִי it is in the",
     "power of my hand, in my power, e. g.",
-    "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה.",
-    "Prov. 3, 27. Mic. 2, 1; also negatively,",
+    "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָע.",
+    "Prov. 3, 27. Mic. 2, 1 ; also negatively,",
     "Deut. 28, 32 אֵין לְאֵל יָדֶךָ nothing is in",
     "the power of thy hand, thou canst avail",
     "nothing. Neh. 5, 5. The לְ here indi-",
     "cates state or condition. Some, with a",
     "very slight perception of the nature of",
     "this phrase, understand אֵל of God, and",
-    "render: my hand is for God, i. e. instead",
-    "of God, comp. Job 12, 6. Hab. 1, 11; also",
+    "render : my hand is for God, i. e. instead",
+    "of God, comp. Job 12, 6. Hab. 1, 11 ; also",
     "Virg. Æn. 10. 773 Dextra mihi Deus,"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "689e1d5c-6689-4e74-baf6-016a86f80bcf",
-   "duration_api_ms": 25468,
-   "cost_usd_list": 0.2620905,
+   "session_id": "ac559cf7-b81c-44d6-819f-2cb51ff774b4",
+   "duration_api_ms": 19661,
+   "cost_usd_list": 0.269796,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10268,
-   "output_tokens": 1443
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10195,
+   "output_tokens": 1135
   },
   {
    "chunk_id": "c0-r01",
@@ -172,15 +198,14 @@
    "row": 0,
    "bounds": {
     "x": 1096,
-    "y": 115,
+    "y": 166,
     "width": 875,
-    "height": 844
+    "height": 962
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/c1-r00-875x844+1096+115.png",
-   "image_sha256": "cf7ce42d39e1a5b8243480c73361656703453655d630f50b048347a9ed6d3dda",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/c1-r00-875x962+1096+166.png",
+   "image_sha256": "16d5d0a317b368778062110d70e53d4c0e534f3f532cfdce38f021945ed04f6a",
    "prompt_version": 2,
    "lines": [
-    "אֵל",
     "So הַרְרֵי אֵל mountains of God Ps. 36, 7.",
     "Comp. ἅλς δῖα, δῖα Λακεδαίμων. See in",
     "אֱלֹהִים no. 6.",
@@ -193,16 +218,19 @@
     "בְּנֵי אֵלִים Ps. 29, 1. 89, 7, sons of the gods,",
     "by an idiom of Heb. and Syriac syntax,",
     "poet. for sons of God, i. e. angels.",
-    "Note. Following the example of most"
+    "Note. Following the example of most",
+    "etymologists, we have above referred אֵל",
+    "to the root אוּל ; but to speak more accu-",
+    "rately, אֵל would seem rather to be a"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "9766c3ea-db86-46c8-b740-915084331973",
-   "duration_api_ms": 19433,
-   "cost_usd_list": 0.24113575,
+   "session_id": "9724d754-0623-46a4-813d-0925215fd05d",
+   "duration_api_ms": 20581,
+   "cost_usd_list": 0.27360625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10175,
-   "output_tokens": 1047
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10403,
+   "output_tokens": 1128
   },
   {
    "chunk_id": "c1-r01",
@@ -210,36 +238,33 @@
    "row": 1,
    "bounds": {
     "x": 1096,
-    "y": 947,
+    "y": 1116,
     "width": 875,
-    "height": 813
+    "height": 644
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/c1-r01-875x813+1096+947.png",
-   "image_sha256": "eeaeaf4a12b420df6022438e999d959257af8eb8c1b8b2b901c25d333ac830db",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0066/c1-r01-875x644+1096+1116.png",
+   "image_sha256": "8a2773739078cb0cdcb042761697d9c46b455ec732ca91e1b5fc71ec5b82601a",
    "prompt_version": 2,
    "lines": [
-    "etymologists, we have above referred אֵל",
-    "to the root אוּל; but to speak more accu-",
-    "rately, אֵל would seem rather to be a",
     "primitive word, yet adapted in a certain",
     "measure to an etymology from אוּל, so",
     "that to the mind of the Hebrew it always",
     "presented the idea of strength and power.",
     "However this may be, we may note in",
     "respect to Semitic usage: a) That from",
-    "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)",
+    "the word אֵל (Arab. إِيلٌ, إِلٌّ, and أَلٌّ)",
     "as from a root or stem, are formed several",
     "other derivative words, e. g. אָלָה to invoke",
-    "God, espec. in an oath; אֱלַהּ, أَلَهَ, to wor-"
+    "God, espec. in an oath; אָלַהּ, أَلَهَ, to wor-"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "6556b05d-7e0e-4a8a-a831-54720c6be2cc",
-   "duration_api_ms": 35172,
-   "cost_usd_list": 0.29110025,
-   "input_tokens": 98,
-   "cache_read_input_tokens": 83921,
-   "cache_creation_input_tokens": 12077,
-   "output_tokens": 1314
+   "session_id": "643795f3-ec48-4616-9715-0705062fb3c4",
+   "duration_api_ms": 27153,
+   "cost_usd_list": 0.2789065,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35226,
+   "cache_creation_input_tokens": 10023,
+   "output_tokens": 1386
   },
   {
    "chunk_id": "c1-r02",
@@ -316,9 +341,19 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "אֵל 5"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אל"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "50"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אל"
   },
   {
    "chunk_id": "c0-r00",
@@ -333,12 +368,12 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָעָה."
+   "text": "Gen. 31, 29 יֶשׁ לְאֵל יָדִי לַעֲשׂוֹת עִמָּכֶם רָע."
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Prov. 3, 27. Mic. 2, 1; also negatively,"
+   "text": "Prov. 3, 27. Mic. 2, 1 ; also negatively,"
   },
   {
    "chunk_id": "c0-r00",
@@ -373,12 +408,12 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "render: my hand is for God, i. e. instead"
+   "text": "render : my hand is for God, i. e. instead"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "of God, comp. Job 12, 6. Hab. 1, 11; also"
+   "text": "of God, comp. Job 12, 6. Hab. 1, 11 ; also"
   },
   {
    "chunk_id": "c0-r00",
@@ -598,11 +633,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "אֵל"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "So הַרְרֵי אֵל mountains of God Ps. 36, 7."
   },
   {
@@ -666,17 +696,17 @@
    "text": "Note. Following the example of most"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "etymologists, we have above referred אֵל"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
-   "text": "to the root אוּל; but to speak more accu-"
+   "text": "to the root אוּל ; but to speak more accu-"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "rately, אֵל would seem rather to be a"
   },
@@ -713,7 +743,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "the word אֵל (Arab. إِيلٌ, إِلٌ, and إِلٌّ)"
+   "text": "the word אֵל (Arab. إِيلٌ, إِلٌّ, and أَلٌّ)"
   },
   {
    "chunk_id": "c1-r01",
@@ -728,7 +758,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "God, espec. in an oath; אֱלַהּ, أَلَهَ, to wor-"
+   "text": "God, espec. in an oath; אָלַהּ, أَلَهَ, to wor-"
   },
   {
    "chunk_id": "c1-r02",
@@ -852,5 +882,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.7755
+ "cost_usd_list_total": 3.0106
 }

@@ -35,6 +35,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import time
 import unicodedata
 
 import numpy as np
@@ -115,6 +116,10 @@ def nfc(text: str) -> str:
     return PUNCT_AFTER.sub(r"\1", text)
 
 
+def has_script(text: str, names: tuple[str, ...]) -> bool:
+    return any(unicodedata.name(ch, "").startswith(names) for ch in text)
+
+
 def ratio(a: str, b: str) -> float:
     return difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
 
@@ -158,9 +163,16 @@ def run_claude(prompt: str, schema: str, model: str, timeout: int) -> tuple[dict
         schema,
         prompt,
     ]
-    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
+    # Transient CLI failures (rate limits, overload) exit 1 with nothing on
+    # stderr; the reason is in the JSON on stdout. Retry with backoff.
+    for attempt in range(4):
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
+        if proc.returncode == 0:
+            break
+        time.sleep(30 * 2**attempt)
     if proc.returncode != 0:
-        raise RuntimeError(f"claude exited {proc.returncode}: {proc.stderr.strip()[:500]}")
+        detail = (proc.stderr.strip() or proc.stdout.strip())[:500]
+        raise RuntimeError(f"claude exited {proc.returncode}: {detail}")
     result = json.loads(proc.stdout)
     structured = result.get("structured_output")
     if not isinstance(structured, dict):
@@ -376,7 +388,7 @@ def verify_page(
 
     # Final lines in reading order.
     final_lines = []
-    counts = {"agreed": 0, "adjudicated": 0, "draft_only": 0, "reread_only": 0, "unresolved": 0}
+    counts = {"agreed": 0, "adjudicated": 0, "draft_only": 0, "reread_only": 0, "unresolved": 0, "needs_review": 0}
     total_cost = 0.0
     for record in chunks_out:
         seq = []
@@ -407,6 +419,17 @@ def verify_page(
             elif status in ("draft_only", "reread_only", "unresolved"):
                 entry["draft"] = line["draft"]
                 entry["reread"] = line["reread"]
+            if status != "agreed":
+                # Verdicts of "neither" invent a third reading, and the model
+                # has been seen to misjudge Arabic against Syriac Serto even
+                # at 2x, so those stay in the reviewer's queue.
+                disputed = " ".join(x for x in (entry.get("draft"), entry.get("reread"), entry["text"]) if x)
+                entry["needs_review"] = (
+                    status != "adjudicated"
+                    or entry["verdict"] == "neither"
+                    or has_script(disputed, ("ARABIC", "SYRIAC"))
+                )
+                counts["needs_review"] += int(entry["needs_review"])
             final_lines.append(entry)
 
     out = {

@@ -12,23 +12,47 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:44+00:00",
+ "generated_at": "2026-09-24T08:43:13+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 167,
+    "y": 81,
+    "width": 1779,
+    "height": 66
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0566/header-1779x66+167+81.png",
+   "image_sha256": "d31008743f5dc095b966948bb29ccd00f6bddec9ea540a0157a26293f828ceb0",
+   "prompt_version": 2,
+   "lines": [
+    "מוּשׁ 550 מוּת"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "96f89759-653b-4ade-b44d-2ce3ebbdda89",
+   "duration_api_ms": 10481,
+   "cost_usd_list": 0.22626925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9486,
+   "output_tokens": 548
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 167,
-    "y": 81,
+    "y": 128,
     "width": 877,
-    "height": 698
+    "height": 651
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0566/c0-r00-877x698+167+81.png",
-   "image_sha256": "7d1a57e155ddfc7a16797d9858a7de379f8f17920e7e118a6ded88e645dd010f",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0566/c0-r00-877x651+167+128.png",
+   "image_sha256": "7e3190bfe9c7d392873cd204760dd5acfd9b7d01f87c22d13d73bf51d2e6e188",
    "prompt_version": 2,
    "lines": [
-    "מוּשׁ 5",
     "* I. מוּשׁ 1. to give way, to recede,",
     "to depart; absol. Is. 22, 25. 54, 10;",
     "with acc. of place whither, Zech. 14, 4;",
@@ -41,13 +65,13 @@
     "Hiph. 1. Trans. to let remove, to let"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "60f4b63c-e0e9-42af-95af-087b31742d1a",
-   "duration_api_ms": 20014,
-   "cost_usd_list": 0.2312405,
+   "session_id": "f8d60602-6183-451c-a7fc-008ec7764915",
+   "duration_api_ms": 16185,
+   "cost_usd_list": 0.25124599999999997,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 9980,
-   "output_tokens": 898
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10035,
+   "output_tokens": 828
   },
   {
    "chunk_id": "c0-r01",
@@ -169,23 +193,22 @@
    "row": 0,
    "bounds": {
     "x": 1069,
-    "y": 83,
+    "y": 128,
     "width": 877,
-    "height": 923
+    "height": 878
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0566/c1-r00-877x923+1069+83.png",
-   "image_sha256": "b372280effbf2e020e494389ae457152e3f861d144c671fb71f22b6336286f59",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0566/c1-r00-877x878+1069+128.png",
+   "image_sha256": "f796a6d744d6c5929c45e630b3e60656b9ca057d8027b096b7744fd113fc0ce6",
    "prompt_version": 2,
    "lines": [
-    "מות",
     "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,",
-    "מֵתְנוּ; inf. abs. מוֹת, constr. מוּת; imper.",
+    "מַתְנוּ; inf. abs. מוֹת, constr. מוֹת; imper.",
     "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמֹת.",
     "1. to die, and so in all the Semitic lan-",
     "guages; Arab. مات mid. Waw, Syr.",
     "ܡܺܝܬ. The middle radical ו, however,",
     "seems to be softened down from the liquid",
-    "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary",
+    "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary",
     "root is probably mrt, comp. Sanscr. mri",
     "to die, mrita dead, mrityu death, also",
     "mâth, muth, mith, mêth, mid, mêd, to",
@@ -193,13 +216,13 @@
     "mreté, mereté, Pehlv. murdéh, mard, mor-"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "229c829f-1e36-45c7-9081-b03759613f20",
-   "duration_api_ms": 27958,
-   "cost_usd_list": 0.25603575,
+   "session_id": "ef335fe9-e2ce-4632-ac94-21ca29176806",
+   "duration_api_ms": 28831,
+   "cost_usd_list": 0.29605624999999997,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10223,
-   "output_tokens": 1333
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10293,
+   "output_tokens": 1621
   },
   {
    "chunk_id": "c1-r01",
@@ -316,9 +339,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "מוּשׁ 5"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "מוּשׁ 550 מוּת"
   },
   {
    "chunk_id": "c0-r00",
@@ -583,17 +606,12 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "מות"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "מֵתְנוּ; inf. abs. מוֹת, constr. מוּת; imper."
+   "text": "מַתְנוּ; inf. abs. מוֹת, constr. מוֹת; imper."
   },
   {
    "chunk_id": "c1-r00",
@@ -623,7 +641,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary"
+   "text": "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary"
   },
   {
    "chunk_id": "c1-r00",
@@ -852,5 +870,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.8724
+ "cost_usd_list_total": 2.1587
 }

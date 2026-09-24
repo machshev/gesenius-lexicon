@@ -12,24 +12,49 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:27:26+00:00",
+ "generated_at": "2026-09-24T08:43:51+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 82,
+    "y": 136,
+    "width": 1755,
+    "height": 65
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/header-1755x65+82+136.png",
+   "image_sha256": "fd18e9f384675d47ade2204a9064ec16db665aac3c2b0be81b3eb48133de8410",
+   "prompt_version": 2,
+   "lines": [
+    "עִיר",
+    "775",
+    "עִיר"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "aed68bf1-0172-4e03-86fc-b5713cf4af86",
+   "duration_api_ms": 8361,
+   "cost_usd_list": 0.20731925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9466,
+   "output_tokens": 177
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 82,
-    "y": 124,
+    "y": 182,
     "width": 865,
-    "height": 843
+    "height": 841
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c0-r00-865x843+82+124.png",
-   "image_sha256": "4b9b6cc98194c1887a320bfa2be55255c546d89f133e71633311d2a5d4edc0e2",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c0-r00-865x841+82+182.png",
+   "image_sha256": "88cbb6e4b59ab9336b538af9738f9d9659b475e0ce20b5e731c2acc1d5be32dd",
    "prompt_version": 2,
    "lines": [
-    "עִיר",
-    "7",
     "lages around that city, elsewhere בְּנוֹת",
     "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1.",
     "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1.",
@@ -42,16 +67,17 @@
     "beaten road ; comp. Germ. ‘ er weiss sich",
     "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
     "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec.",
-    "עִיר is also put :"
+    "עִיר is also put :",
+    "a) For a part of a larger city, espec."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "e8512a57-bd3f-44e8-8f1c-c316e5a19d56",
-   "duration_api_ms": 13814,
-   "cost_usd_list": 0.2367405,
+   "session_id": "e7833a3c-9de5-4ed1-a24b-157a5f46f6c7",
+   "duration_api_ms": 21976,
+   "cost_usd_list": 0.275126,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10126,
-   "output_tokens": 502
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10244,
+   "output_tokens": 1222
   },
   {
    "chunk_id": "c0-r01",
@@ -59,15 +85,14 @@
    "row": 1,
    "bounds": {
     "x": 82,
-    "y": 955,
+    "y": 1011,
     "width": 865,
-    "height": 671
+    "height": 616
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c0-r01-865x671+82+955.png",
-   "image_sha256": "ffeec3816e5840e465e34566b9ec5bbd0b48923893417738df8fda49b5459926",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c0-r01-865x616+82+1011.png",
+   "image_sha256": "10fb1f5aeaba04e526badded8d8d2ef0987efada4c2089eeffb736d9091f65f2",
    "prompt_version": 2,
    "lines": [
-    "a) For a part of a larger city, espec.",
     "as fortified by a separate wall ; like Gr.",
     "πόλις see Passow, Engl. Old city, New",
     "city. So עִיר דָּוִד the city of David, i. e.",
@@ -81,13 +106,13 @@
     "of Jerusalem, 2 K. 20, 4 Cheth. where"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "39356522-83af-4f61-a6cf-97df50e5ef89",
-   "duration_api_ms": 13919,
-   "cost_usd_list": 0.22940049999999998,
+   "session_id": "39fbfec7-233b-4172-b46a-4692f3c6f6cf",
+   "duration_api_ms": 11723,
+   "cost_usd_list": 0.23063625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 9909,
-   "output_tokens": 442
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 9967,
+   "output_tokens": 443
   },
   {
    "chunk_id": "c0-r02",
@@ -95,12 +120,12 @@
    "row": 2,
    "bounds": {
     "x": 82,
-    "y": 1614,
+    "y": 1615,
     "width": 865,
-    "height": 846
+    "height": 845
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c0-r02-865x846+82+1614.png",
-   "image_sha256": "67228b4b88115c786c8a88772b06e680f23000db5de120c6657c2739102e4bae",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c0-r02-865x845+82+1615.png",
+   "image_sha256": "95d161bbcc527ace9cd8a87ccd66387344bdfa1f099af6b31c2cb431b36d4428",
    "prompt_version": 2,
    "lines": [
     "Keri has חָצֵר. So עִיר הַמַּיִם the water-",
@@ -120,13 +145,13 @@
     "p. 830, and עִיר II. b."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "75da9490-5dd9-4cc3-bc30-5838110b12b0",
-   "duration_api_ms": 24564,
-   "cost_usd_list": 0.27030075,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10144,
-   "output_tokens": 1166
+   "session_id": "ebb42506-20b4-416d-b5c2-39e7b1562b8a",
+   "duration_api_ms": 29433,
+   "cost_usd_list": 0.37745875,
+   "input_tokens": 98,
+   "cache_read_input_tokens": 84195,
+   "cache_creation_input_tokens": 14704,
+   "output_tokens": 1227
   },
   {
    "chunk_id": "c0-r03",
@@ -173,35 +198,34 @@
    "row": 0,
    "bounds": {
     "x": 969,
-    "y": 135,
+    "y": 182,
     "width": 868,
-    "height": 741
+    "height": 694
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c1-r00-868x741+969+135.png",
-   "image_sha256": "1aebaa2a149a31cb1446a0a8c4d87123bd3fe05d926084db2ee8286abfdd618b",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0791/c1-r00-868x694+969+182.png",
+   "image_sha256": "5e712ebe7cda6843101e1eaa62e3b4b01b926e95e8cdf4951c6e1fb9a35fc81a",
    "prompt_version": 2,
    "lines": [
-    "עִיר",
     "dd) עִיר הַתְּמָרִים the City of palm-trees,",
     "i. q. יְרִיחוֹ Jericho, so called from the",
     "multitude of palm-trees growing there,",
     "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6.",
     "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
     "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
-    "2. Ir, pr. n. of a man 1 Chr. 7, 12 ; for",
+    "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
     "which in v. 7 עִירִי.",
     "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
-    "ger, wrath ; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
+    "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
     "will not come in wrath. b) Of mind,"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "17f16145-0a80-4402-8353-991bb0af1459",
-   "duration_api_ms": 20166,
-   "cost_usd_list": 0.2589605,
+   "session_id": "cc7dc63a-dc3f-4307-9ae1-4046b188e1f6",
+   "duration_api_ms": 16046,
+   "cost_usd_list": 0.23393599999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10002,
-   "output_tokens": 996
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10057,
+   "output_tokens": 473
   },
   {
    "chunk_id": "c1-r01",
@@ -318,14 +342,19 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
+   "chunk_id": "header",
+   "column": -1,
    "text": "עִיר"
   },
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "7"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "775"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "עִיר"
   },
   {
    "chunk_id": "c0-r00",
@@ -393,7 +422,7 @@
    "text": "עִיר is also put :"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "a) For a part of a larger city, espec."
   },
@@ -605,11 +634,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "עִיר"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "dd) עִיר הַתְּמָרִים the City of palm-trees,"
   },
   {
@@ -640,7 +664,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "2. Ir, pr. n. of a man 1 Chr. 7, 12 ; for"
+   "text": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for"
   },
   {
    "chunk_id": "c1-r00",
@@ -655,7 +679,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "ger, wrath ; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I"
+   "text": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I"
   },
   {
    "chunk_id": "c1-r00",
@@ -864,5 +888,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.0123
+ "cost_usd_list_total": 2.3414
 }

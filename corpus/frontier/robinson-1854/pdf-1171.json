@@ -12,40 +12,71 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:32:26+00:00",
+ "generated_at": "2026-09-24T08:45:29+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 156,
+    "y": 101,
+    "width": 1765,
+    "height": 57
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/header-1765x57+156+101.png",
+   "image_sha256": "2acf36dceb217634b783b3a09a0547607c6bb8bcb388cdecb977284f95aed54c",
+   "prompt_version": 2,
+   "lines": [
+    "1155"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "2473e1bb-3518-48e7-9c72-d6504005a0b5",
+   "duration_api_ms": 31091,
+   "cost_usd_list": 0.30138200000000004,
+   "input_tokens": 130,
+   "cache_read_input_tokens": 107488,
+   "cache_creation_input_tokens": 11183,
+   "output_tokens": 991
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 156,
-    "y": 23,
+    "y": 205,
     "width": 872,
-    "height": 631
+    "height": 842
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r00-872x631+156+23.png",
-   "image_sha256": "b25c598d2d9cd42cc5704e5e448e7710c0e86c9bbdc35082a3f798ce2bbb1bcf",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r00-872x842+156+205.png",
+   "image_sha256": "90c946026005e215047684ecc774dc796780c9c9d5dc8786d44a2343f8931894",
    "prompt_version": 2,
    "lines": [
-    "י",
     "יַגֶּה, וַיַּגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
     "§ 68. note 6.",
-    "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
+    "יָגֶל, וַיָּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
     "יִגַּר fut. Niph. r. גָּרַר.",
-    "יִדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
+    "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
     "fly.",
     "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
-    "cast. § 68. note 6."
+    "cast. § 68. note 6.",
+    "יִדַּכָּא fut. Hithp. from r. דָּכָא.",
+    "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
+    "hand, Gen. 9, 2.",
+    "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
+    "from r. דָּמַם. § 66. 5. n.",
+    "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r.",
+    "דָּמַם) ; see the form חִיָּה above."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "05837586-9832-4c74-80ef-889dfe01435a",
-   "duration_api_ms": 36474,
-   "cost_usd_list": 0.37183275,
-   "input_tokens": 68,
-   "cache_read_input_tokens": 83371,
-   "cache_creation_input_tokens": 13233,
-   "output_tokens": 1713
+   "session_id": "f21fe3e9-6270-4fe2-9f90-c5fcadc95c89",
+   "duration_api_ms": 51783,
+   "cost_usd_list": 0.38337599999999994,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10274,
+   "output_tokens": 3375
   },
   {
    "chunk_id": "c0-r01",
@@ -53,38 +84,39 @@
    "row": 1,
    "bounds": {
     "x": 156,
-    "y": 642,
+    "y": 1035,
     "width": 872,
-    "height": 846
+    "height": 898
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r01-872x846+156+642.png",
-   "image_sha256": "348f32b87e55e2efc0f37858603810d1844a4df48f2a53d3fa2e2567266f3874",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r01-872x898+156+1035.png",
+   "image_sha256": "e5ede4fbc50fcc95eadab14c427ef50525b4600fee018f46c370b0a7b8b848ad",
    "prompt_version": 2,
    "lines": [
-    "יִדַּכֶּא fut. Hithp. from r. דָּכָא.",
-    "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
-    "hand, Gen. 9, 2.",
-    "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
-    "from r. דָּמַם. § 66. 5. n.",
-    "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r.",
-    "דָּמַם) ; see the form תֵּחָת above.",
     "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal",
     "from r. הָיָה to be, fut. יִהְיֶה.",
     "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד.",
-    "יְהוֹרֶה fut. Hiph. from r. יָרָה, by Chal-",
-    "daism for יוֹרֶה. § 52. note 7.",
+    "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-",
+    "daism for יוֹדֶה. § 52. note 7.",
     "וַיְהִי, יְהִי, fut. apoc. Kal from r. הָיָה to be.",
     "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
-    "the comm. contracted יְיֵלִילוּ."
+    "the comm. contracted יְיֵלִילוּ.",
+    "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
+    "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+    "from r. אָהַל.",
+    "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
+    "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from",
+    "r. אָכַל q. v.",
+    "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
+    "Gen. 16, 11. Lgb. 591."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "7b3d6575-168c-4c04-ae0c-bd96bef95fc6",
-   "duration_api_ms": 45743,
-   "cost_usd_list": 0.3512105,
+   "session_id": "de284e9c-f199-4636-8be6-8fd4962a18a7",
+   "duration_api_ms": 28823,
+   "cost_usd_list": 0.28596625000000003,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10157,
-   "output_tokens": 2779
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10341,
+   "output_tokens": 1400
   },
   {
    "chunk_id": "c0-r02",
@@ -92,36 +124,38 @@
    "row": 2,
    "bounds": {
     "x": 156,
-    "y": 1476,
+    "y": 1921,
     "width": 872,
-    "height": 730
+    "height": 846
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r02-872x730+156+1476.png",
-   "image_sha256": "dff9c99089a74a7780ba06fb1a5d817ff5f7c0ab95b31a7f4f141fb0a9d40791",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r02-872x846+156+1921.png",
+   "image_sha256": "4417e5171f0767938a65f9670856b1736e17e5f259f1089f433da96d0a97f82e",
    "prompt_version": 2,
    "lines": [
-    "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
-    "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
-    "from r. אָהַל.",
-    "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
-    "יוּכְלוּ Ez. 42, 5 for יְאָכְלוּ fut. Hoph. from",
-    "r. אָכַל q. v.",
-    "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
-    "Gen. 16, 11. Lgb. 591.",
     "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה.",
     "יוֹרֶא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
     "watered, prob. fut. Hoph. from יָרָה,",
     "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,",
-    "23. 29."
+    "23. 29.",
+    "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה.",
+    "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
+    "Kal from נָזָה.",
+    "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם.",
+    "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
+    "rejoice.",
+    "יַחֵד, fut. Hiph. see r. חָדַד p. 296.",
+    "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
+    "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
+    "from חָתַת, c. suff. ־ַן in pause for ־ֵן."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "7b86882e-e86e-4ee1-a2f0-9075a08c2fe0",
-   "duration_api_ms": 31219,
-   "cost_usd_list": 0.30889075,
+   "session_id": "9343d883-b2a4-4b4e-ac79-a21155949282",
+   "duration_api_ms": 41177,
+   "cost_usd_list": 0.34721625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10031,
-   "output_tokens": 1983
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10276,
+   "output_tokens": 2651
   },
   {
    "chunk_id": "c0-r03",
@@ -129,66 +163,32 @@
    "row": 3,
    "bounds": {
     "x": 156,
-    "y": 2194,
+    "y": 2755,
     "width": 872,
-    "height": 898
+    "height": 510
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r03-872x898+156+2194.png",
-   "image_sha256": "c205b540f9591599cc64085b6630ff28eb0560b996425b23c2feb9d2f72c21c9",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r03-872x510+156+2755.png",
+   "image_sha256": "9ee67ccd21b8522f800d944fd7f220c08490fb843e79f9a4a66521152c319b3f",
    "prompt_version": 2,
    "lines": [
-    "יַז, וַיַּז fut. apoc. Hiph. from נָזָה.",
-    "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
-    "Kal from נָזָה.",
-    "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם.",
-    "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
-    "rejoice.",
-    "יַחַד, fut. Hiph. see r. חָדַד p. 296.",
-    "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
-    "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
-    "from חָתַת, c. suff. ־ַן in pause for ־ֵן.",
     "Lgb. 145, 177.",
-    "יַחֵל, see אַחֵל above.",
-    "יִחֵלּוּ in pause for יִחֵלוּ, 3 pl. præt. Pi. r.",
-    "יָחַל, Dag. forte euphon.   Lgb. 85.",
-    "יְחַמּוּ for יְחַמוּ præt. Pi. from יָחַם.   Lgb.",
-    "170."
-   ],
-   "model": "claude-fable-5-1",
-   "session_id": "789e852a-89e0-4266-925f-0468a9e57905",
-   "duration_api_ms": 54729,
-   "cost_usd_list": 0.37800075,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10239,
-   "output_tokens": 3282
-  },
-  {
-   "chunk_id": "c0-r04",
-   "column": 0,
-   "row": 4,
-   "bounds": {
-    "x": 156,
-    "y": 3080,
-    "width": 872,
-    "height": 185
-   },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c0-r04-872x185+156+3080.png",
-   "image_sha256": "269d72482d7eb0f56cfbaf971ae7133661727fac44052ceed70623759e369d5d",
-   "prompt_version": 2,
-   "lines": [
+    "יַחַל, see אַחַל above.",
+    "יֵחַלוּ in pause for יְחַלוּ, 3 pl. præt. Pi. r.",
+    "יָחַל, Dag. forte euphon. Lgb. 85.",
+    "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb.",
+    "170.",
     "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
     "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,",
     "38. § 47. note 3. Lgb. 276."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "f1b0a10c-1e60-43d1-9c2e-e0b24c87d74a",
-   "duration_api_ms": 10306,
-   "cost_usd_list": 0.20959075,
+   "session_id": "a3590c68-e9bb-48c0-b31f-539d004b1f87",
+   "duration_api_ms": 11924,
+   "cost_usd_list": 0.22766024999999995,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 9391,
-   "output_tokens": 253
+   "cache_read_input_tokens": 35241,
+   "cache_creation_input_tokens": 9908,
+   "output_tokens": 407
   },
   {
    "chunk_id": "c1-r00",
@@ -196,38 +196,41 @@
    "row": 0,
    "bounds": {
     "x": 1052,
-    "y": 101,
+    "y": 210,
     "width": 869,
-    "height": 839
+    "height": 1005
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c1-r00-869x839+1052+101.png",
-   "image_sha256": "af743f7ea42ad7a7730be0cee90b1f696ac1e596a3a7d959f4c8ab53017cd0ae",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c1-r00-869x1005+1052+210.png",
+   "image_sha256": "0537c11300041d88185585085c86fbceb9ab54a62394002b91ef27d3cbd76212",
    "prompt_version": 2,
    "lines": [
-    "55",
-    "יֵט",
-    "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
-    "with suff. from r. יָחַם. Comp. אֶחֱזוּ.",
+    "יְחֶמְתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
+    "with suff. from r. יָחַם. Comp. אֲחָרוּ.",
     "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה.",
-    "יָחְנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb.",
+    "יָחְנְךָ for יְחָנְךָ fut. Kal from r. חָנַן. Lgb.",
     "171, 366.",
     "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
     "r. חָקַק; see above under the form",
-    "חֹקָה.",
+    "תֵּחָה.",
     "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה.",
     "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
     "from r. חָתַת.",
-    "יֵט, fut. apoc. Hiph. from r. נָטָה.",
-    "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for"
+    "יַט, fut. apoc. Hiph. from r. נָטָה.",
+    "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for",
+    "יִטֶּה, יִנְטֶה.",
+    "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
+    "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r.",
+    "יָדַע. Comp. on these and the fol-",
+    "lowing forms Lgb. p. 388, 389. § 69."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "143eb4fc-be18-4a4f-8c58-fb7ce114d92a",
-   "duration_api_ms": 70155,
-   "cost_usd_list": 0.52474,
-   "input_tokens": 98,
-   "cache_read_input_tokens": 84000,
-   "cache_creation_input_tokens": 14713,
-   "output_tokens": 4170
+   "session_id": "7a8705a8-56d9-43c0-b6c5-1ed45fcac9e7",
+   "duration_api_ms": 14218,
+   "cost_usd_list": 0.25068050000000003,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35242,
+   "cache_creation_input_tokens": 10439,
+   "output_tokens": 655
   },
   {
    "chunk_id": "c1-r01",
@@ -235,38 +238,37 @@
    "row": 1,
    "bounds": {
     "x": 1052,
-    "y": 928,
+    "y": 1203,
     "width": 869,
-    "height": 837
+    "height": 776
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c1-r01-869x837+1052+928.png",
-   "image_sha256": "2f86700a6090d4c2bb6f0e80274cb95d735e16b0f812e9485ad857482c10e75a",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c1-r01-869x776+1052+1203.png",
+   "image_sha256": "8dcfa62865aaa2fc9774124bbed0a15366ced8f6426d8fdf85f9e6b147b8fde5",
    "prompt_version": 2,
    "lines": [
-    "יִטֶּה, יִנְטֶה.",
-    "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
-    "יְיֵדָע Ps. 138, 6 for יֵדַע fut. Kal from r.",
-    "יָדַע. Comp. on these and the fol-",
-    "lowing forms Lgb. p. 388, 389. § 69.",
     "note.",
-    "יֵיטִיב for יְיֵטִיב, יְהֵיטִיב, fut. Hiph. from",
+    "וַיֵּיטֶב for וַיְהֵיטִיב, יְהֵיטִיב, fut. Hiph. from",
     "יָטַב. See as before.",
-    "יֵילִיל for יְיֵלִיל, יְהֵילִיל, fut. Hiph. from",
+    "וַיֵּילִיל for וַיְהֵילִיל, יְהֵילִיל, fut. Hiph. from",
     "יָלַל to wail. See as before.",
-    "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה.",
-    "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה.",
+    "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה.",
+    "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה.",
     "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,",
     "fut. Piel from r. כָּבַד c. suff. et Nun",
-    "epenthet."
+    "epenthet.",
+    "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
+    "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
+    "1 plur. The two Nuns coalesce into a",
+    "double one, and וּ is shortened into ֻ."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "f2dcfba5-dba9-44fa-ac2a-23a7f05ec20f",
-   "duration_api_ms": 30697,
-   "cost_usd_list": 0.30513075,
+   "session_id": "ee4d565f-a8f2-4946-a524-e8b1e5e464d3",
+   "duration_api_ms": 51873,
+   "cost_usd_list": 0.3821105,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10143,
-   "output_tokens": 1863
+   "cache_read_input_tokens": 35242,
+   "cache_creation_input_tokens": 10193,
+   "output_tokens": 3382
   },
   {
    "chunk_id": "c1-r02",
@@ -274,38 +276,34 @@
    "row": 2,
    "bounds": {
     "x": 1052,
-    "y": 1753,
+    "y": 1967,
     "width": 869,
-    "height": 836
+    "height": 622
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c1-r02-869x836+1052+1753.png",
-   "image_sha256": "d56ba38b410c76e504c59654718bd28f95248b49cc42f4d9f9077565bc5b9d02",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1171/c1-r02-869x622+1052+1967.png",
+   "image_sha256": "89d01a8254f81677edfef57ffb1c1542ce0cafeba17b51a78172c1fb62a2d35f",
    "prompt_version": 2,
    "lines": [
-    "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
-    "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
-    "1 plur. The two Nuns coalesce into a",
-    "double one, and וֹ is shortened into ֻ.",
     "יִכֻּל Chald. fut. Peal from r. יְכֵל.",
     "יְכַסְיֻמוּ for יְכַסִּימוּ or יְכַסּוּמוּ Ex. 15, 5,",
-    "fut. Pi. from r. כָּסָה. Here יֻ is writ-",
-    "ten for יִ on account of the preceding",
+    "fut. Pi. from r. כָּסָה. Here מוּ is writ-",
+    "ten for מוֹ on account of the preceding",
     "vowel u.",
-    "יֻכַּת, יֻכַּתוּ, fut. Hoph. by Chaldaism",
-    "from כָּתַת, for יוּכַת, יוּכַתוּ. § 66. 5.",
-    "יַכְּתוּ for יַכַּתוּ, and this for יַכְתּוּ fut.",
+    "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism",
+    "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5.",
+    "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut.",
     "Hiph. from כָּתַת to pound. § 66. 5. n.",
-    "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז.",
+    "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז.",
     "§ 71. note 9."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "067623f6-5d89-4c50-8b95-2e4dc4f5eab1",
-   "duration_api_ms": 42390,
-   "cost_usd_list": 0.336351,
+   "session_id": "f8ff6d32-ab7b-4ca3-aa29-b15d836806c8",
+   "duration_api_ms": 28509,
+   "cost_usd_list": 0.28771050000000004,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35124,
-   "cache_creation_input_tokens": 10129,
-   "output_tokens": 2493
+   "cache_read_input_tokens": 35242,
+   "cache_creation_input_tokens": 10038,
+   "output_tokens": 1556
   },
   {
    "chunk_id": "c1-r03",
@@ -346,9 +344,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "י"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "1155"
   },
   {
    "chunk_id": "c0-r00",
@@ -363,7 +361,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה."
+   "text": "יָגֶל, וַיָּגֶל, fut. apoc. Hiph. from r. גָּלָה."
   },
   {
    "chunk_id": "c0-r00",
@@ -373,7 +371,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יִדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to"
+   "text": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to"
   },
   {
    "chunk_id": "c0-r00",
@@ -391,39 +389,39 @@
    "text": "cast. § 68. note 6."
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יִדַּכֶּא fut. Hithp. from r. דָּכָא."
+   "text": "יִדַּכָּא fut. Hithp. from r. דָּכָא."
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "hand, Gen. 9, 2."
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal"
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "from r. דָּמַם. § 66. 5. n."
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
    "text": "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r."
   },
   {
-   "chunk_id": "c0-r01",
+   "chunk_id": "c0-r00",
    "column": 0,
-   "text": "דָּמַם) ; see the form תֵּחָת above."
+   "text": "דָּמַם) ; see the form חִיָּה above."
   },
   {
    "chunk_id": "c0-r01",
@@ -443,12 +441,12 @@
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "יְהוֹרֶה fut. Hiph. from r. יָרָה, by Chal-"
+   "text": "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "daism for יוֹרֶה. § 52. note 7."
+   "text": "daism for יוֹדֶה. § 52. note 7."
   },
   {
    "chunk_id": "c0-r01",
@@ -466,42 +464,42 @@
    "text": "the comm. contracted יְיֵלִילוּ."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "from r. אָהַל."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
-   "text": "יוּכְלוּ Ez. 42, 5 for יְאָכְלוּ fut. Hoph. from"
+   "text": "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "r. אָכַל q. v."
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,"
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "c0-r01",
    "column": 0,
    "text": "Gen. 16, 11. Lgb. 591."
   },
@@ -531,52 +529,52 @@
    "text": "23. 29."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
-   "text": "יַז, וַיַּז fut. apoc. Hiph. from נָזָה."
+   "text": "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "Kal from נָזָה."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to"
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "rejoice."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
-   "text": "יַחַד, fut. Hiph. see r. חָדַד p. 296."
+   "text": "יַחֵד, fut. Hiph. see r. חָדַד p. 296."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph."
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "c0-r02",
    "column": 0,
    "text": "from חָתַת, c. suff. ־ַן in pause for ־ֵן."
   },
@@ -588,22 +586,22 @@
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יַחֵל, see אַחֵל above."
+   "text": "יַחַל, see אַחַל above."
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יִחֵלּוּ in pause for יִחֵלוּ, 3 pl. præt. Pi. r."
+   "text": "יֵחַלוּ in pause for יְחַלוּ, 3 pl. præt. Pi. r."
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יָחַל, Dag. forte euphon.   Lgb. 85."
+   "text": "יָחַל, Dag. forte euphon. Lgb. 85."
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יְחַמּוּ for יְחַמוּ præt. Pi. from יָחַם.   Lgb."
+   "text": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb."
   },
   {
    "chunk_id": "c0-r03",
@@ -611,39 +609,29 @@
    "text": "170."
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual"
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,"
   },
   {
-   "chunk_id": "c0-r04",
+   "chunk_id": "c0-r03",
    "column": 0,
    "text": "38. § 47. note 3. Lgb. 276."
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "55"
+   "text": "יְחֶמְתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi."
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יֵט"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi."
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "with suff. from r. יָחַם. Comp. אֶחֱזוּ."
+   "text": "with suff. from r. יָחַם. Comp. אֲחָרוּ."
   },
   {
    "chunk_id": "c1-r00",
@@ -653,7 +641,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יָחְנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb."
+   "text": "יָחְנְךָ for יְחָנְךָ fut. Kal from r. חָנַן. Lgb."
   },
   {
    "chunk_id": "c1-r00",
@@ -673,7 +661,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "חֹקָה."
+   "text": "תֵּחָה."
   },
   {
    "chunk_id": "c1-r00",
@@ -693,7 +681,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יֵט, fut. apoc. Hiph. from r. נָטָה."
+   "text": "יַט, fut. apoc. Hiph. from r. נָטָה."
   },
   {
    "chunk_id": "c1-r00",
@@ -701,27 +689,27 @@
    "text": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "יִטֶּה, יִנְטֶה."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יְיֵדָע Ps. 138, 6 for יֵדַע fut. Kal from r."
+   "text": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "יָדַע. Comp. on these and the fol-"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "lowing forms Lgb. p. 388, 389. § 69."
   },
@@ -733,7 +721,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "יֵיטִיב for יְיֵטִיב, יְהֵיטִיב, fut. Hiph. from"
+   "text": "וַיֵּיטֶב for וַיְהֵיטִיב, יְהֵיטִיב, fut. Hiph. from"
   },
   {
    "chunk_id": "c1-r01",
@@ -743,7 +731,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "יֵילִיל for יְיֵלִיל, יְהֵילִיל, fut. Hiph. from"
+   "text": "וַיֵּילִיל for וַיְהֵילִיל, יְהֵילִיל, fut. Hiph. from"
   },
   {
    "chunk_id": "c1-r01",
@@ -753,12 +741,12 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה."
+   "text": "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה."
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה."
+   "text": "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה."
   },
   {
    "chunk_id": "c1-r01",
@@ -776,24 +764,24 @@
    "text": "epenthet."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "1 plur. The two Nuns coalesce into a"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
-   "text": "double one, and וֹ is shortened into ֻ."
+   "text": "double one, and וּ is shortened into ֻ."
   },
   {
    "chunk_id": "c1-r02",
@@ -808,12 +796,12 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "fut. Pi. from r. כָּסָה. Here יֻ is writ-"
+   "text": "fut. Pi. from r. כָּסָה. Here מוּ is writ-"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "ten for יִ on account of the preceding"
+   "text": "ten for מוֹ on account of the preceding"
   },
   {
    "chunk_id": "c1-r02",
@@ -823,17 +811,17 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יֻכַּת, יֻכַּתוּ, fut. Hoph. by Chaldaism"
+   "text": "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "from כָּתַת, for יוּכַת, יוּכַתוּ. § 66. 5."
+   "text": "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5."
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יַכְּתוּ for יַכַּתוּ, and this for יַכְתּוּ fut."
+   "text": "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut."
   },
   {
    "chunk_id": "c1-r02",
@@ -843,7 +831,7 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז."
+   "text": "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז."
   },
   {
    "chunk_id": "c1-r02",
@@ -912,5 +900,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 3.0911
+ "cost_usd_list_total": 2.7715
 }

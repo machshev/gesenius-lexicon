@@ -12,24 +12,48 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:43+00:00",
+ "generated_at": "2026-09-24T08:40:15+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 200,
+    "y": 104,
+    "width": 1764,
+    "height": 69
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/header-1764x69+200+104.png",
+   "image_sha256": "129d2a167e75f8470d70a9ebe033ad0b24c1121d12c138150aaf0b950af9ef64",
+   "prompt_version": 2,
+   "lines": [
+    "אב 2 אב"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "b063f93c-b56d-4ffe-aee3-d42eb5996d6f",
+   "duration_api_ms": 14579,
+   "cost_usd_list": 0.20983925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9482,
+   "output_tokens": 221
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 200,
-    "y": 112,
+    "y": 150,
     "width": 868,
-    "height": 665
+    "height": 627
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/c0-r00-868x665+200+112.png",
-   "image_sha256": "7ed7f388054914cb92a45d76f4697428a487be2059f86f4c117abf170bcc51d4",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/c0-r00-868x627+200+150.png",
+   "image_sha256": "5d45a5846e608fafb8b6f2f15e85bbe8907ef0554ad09e4d1d81634ec5105eb0",
    "prompt_version": 2,
    "lines": [
-    "אב",
-    "أَبٌ, constr. أَبُو, أَبِي, أَبَا, Chald. and",
+    "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and",
     "Syr. אַבָּא, ܐܰܒܳܐ.",
     "1. In a proper sense, Gen. 19, 31 sq.",
     "44, 19. 20. al. sæpiss.—But the word",
@@ -40,13 +64,13 @@
     "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "b09b2652-b852-41cc-8519-8a2125503743",
-   "duration_api_ms": 19449,
-   "cost_usd_list": 0.235728,
+   "session_id": "19b5009b-a03d-4a97-9191-f0df652dffec",
+   "duration_api_ms": 17226,
+   "cost_usd_list": 0.23906599999999997,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 9923,
-   "output_tokens": 1002
+   "cache_read_input_tokens": 34704,
+   "cache_creation_input_tokens": 9475,
+   "output_tokens": 811
   },
   {
    "chunk_id": "c0-r01",
@@ -171,22 +195,20 @@
    "row": 0,
    "bounds": {
     "x": 1081,
-    "y": 34,
+    "y": 150,
     "width": 883,
-    "height": 804
+    "height": 688
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/c1-r00-883x804+1081+34.png",
-   "image_sha256": "e26b4b37d151734ef1c58de0e71b6ee32ed6538682929f33efa6a8dc675f2279",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/c1-r00-883x688+1081+150.png",
+   "image_sha256": "8291a01e9832310929be9932a62d70ad149fd4ea79a818b2aa58c1ef5d7a7c06",
    "prompt_version": 2,
    "lines": [
-    "2",
-    "אב",
     "of paternal instruction, 1 Sam. 10, 12.",
     "Hence priests and prophets, as teachers",
     "sent with divine authority, are saluted",
     "with the title of father, out of respect",
     "and honour, even by kings, 2 K. 2, 12. 5,",
-    "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10",
+    "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17, 10",
     "be unto me a father and a priest. 18, 19.—",
     "So the Rabbins are called אָבוֹת fathers ;",
     "much as we use the honorary appellation",
@@ -194,13 +216,13 @@
     "i. e. the pope."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "b5b090fd-fbdd-4d8c-ab35-1e974aabfa5a",
-   "duration_api_ms": 11049,
-   "cost_usd_list": 0.20757325,
+   "session_id": "2e750c52-50af-408d-9f1a-ab927c066d02",
+   "duration_api_ms": 12269,
+   "cost_usd_list": 0.22119624999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10110,
-   "output_tokens": 392
+   "cache_read_input_tokens": 34705,
+   "cache_creation_input_tokens": 9564,
+   "output_tokens": 418
   },
   {
    "chunk_id": "c1-r01",
@@ -320,14 +342,14 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "אב"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אב 2 אב"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "أَبٌ, constr. أَبُو, أَبِي, أَبَا, Chald. and"
+   "text": "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and"
   },
   {
    "chunk_id": "c0-r00",
@@ -597,16 +619,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "2"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "אב"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "of paternal instruction, 1 Sam. 10, 12."
   },
   {
@@ -632,7 +644,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10"
+   "text": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17, 10"
   },
   {
    "chunk_id": "c1-r00",
@@ -876,5 +888,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.7991
+ "cost_usd_list_total": 2.0259
 }

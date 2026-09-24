@@ -12,34 +12,57 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:33:07+00:00",
+ "generated_at": "2026-09-24T08:45:39+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 218,
+    "y": 64,
+    "width": 1778,
+    "height": 59
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/header-1778x59+218+64.png",
+   "image_sha256": "561f48762651ad9a1b101f75a68bb54b8d28403c6f4c5542741984e5d5f15956",
+   "prompt_version": 2,
+   "lines": [
+    "ת 1160 ת"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "c9861db4-10fe-4ded-a8ae-9bd592077d6c",
+   "duration_api_ms": 8556,
+   "cost_usd_list": 0.20862925000000002,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 202
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 218,
-    "y": 37,
+    "y": 170,
     "width": 864,
-    "height": 984
+    "height": 851
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c0-r00-864x984+218+37.png",
-   "image_sha256": "5828109a066a60bb82fdfc009a963008c7dc5edd9e6f6a2433f8679f3ce6c04f",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c0-r00-864x851+218+170.png",
+   "image_sha256": "510cca78272249d11baf8c78fd4e52c6ed234585ab5b1387bf31e4173ada996b",
    "prompt_version": 2,
    "lines": [
-    "ת",
-    "1",
-    "תַּחַשׁ, וַתַּחַשׁ for וַתָּחֶשׁ, 3 pers. fut. Kal",
+    "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal",
     "from r. חוּשׁ; for an analogous instance",
-    "see under r. עִיט p. 770. Job 31, 5.",
+    "see under r. עִיט p. 770.   Job 31, 5.",
     "תַּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
-    "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+    "תַּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
     "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with",
     "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;",
     "but contrary to rule and almost cer-",
-    "tainly a corruption. Lgb. 52, 331.",
-    "תֵּכֶהּ, וַתֵּכֶהּ, fut. apoc. Kal for תִּכְהֶה,",
+    "tainly a corruption.   Lgb. 52, 331.",
+    "תִּכֵּהּ, וַתִּכֵּהּ, fut. apoc. Kal for תִּכְהֶה,",
     "from r. כָּהָה.",
     "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה.",
     "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהָה.",
@@ -47,13 +70,13 @@
     "r. לוּן or לִין."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "290bb9b5-94b6-43e3-bebb-d7390ad1b8e7",
-   "duration_api_ms": 30535,
-   "cost_usd_list": 0.3124205,
+   "session_id": "b8b84bdf-38b6-42d1-b28f-33b59576d3dc",
+   "duration_api_ms": 17132,
+   "cost_usd_list": 0.24559999999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10295,
-   "output_tokens": 1948
+   "cache_read_input_tokens": 35240,
+   "cache_creation_input_tokens": 10260,
+   "output_tokens": 625
   },
   {
    "chunk_id": "c0-r01",
@@ -157,36 +180,40 @@
    "row": 0,
    "bounds": {
     "x": 1120,
-    "y": 9,
+    "y": 148,
     "width": 876,
-    "height": 791
+    "height": 989
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r00-876x791+1120+9.png",
-   "image_sha256": "11e1a3780d2bd6ebd0c431aa977477ca80b817aa8b82125e7d7ac63995d09d68",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r00-876x989+1120+148.png",
+   "image_sha256": "f7835183dcc01c31e4fa0a92cca83d1c43b891e8c50e3347899c7dfdd6e1ef92",
    "prompt_version": 2,
    "lines": [
-    "60",
-    "ת",
     "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,",
     "for the comm. תִּצְלֶינָה. See צָלַל I.",
     "תראנה 1 Sam. 14, 27 Keth. (by a cor-",
     "ruption) for תָּאֹרְנָה. The copyist",
     "seems to have had in mind the word",
     "תִּרְאֶינָה.",
-    "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+    "תֶּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
     "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,",
-    "the form being borrowed from רוץ.",
-    "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
-    "fut. Kal of r. נָצַר. The Keth. is"
+    "the form being borrowed from רוּץ.",
+    "תִּרֹצְנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+    "fut. Kal of r. נָצַר. The Keth. is",
+    "fut. Kal of r. רוּץ, and should be read",
+    "תָּרֹצְנָה.",
+    "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
+    "r. נָשָׂא.",
+    "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055.",
+    "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "bd1231ee-90a4-41c2-a734-5cd5116afe62",
-   "duration_api_ms": 23481,
-   "cost_usd_list": 0.27842075,
+   "session_id": "61090d23-a2a5-4e04-aeab-2973ae265e12",
+   "duration_api_ms": 46482,
+   "cost_usd_list": 0.37067025,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10095,
-   "output_tokens": 1348
+   "cache_read_input_tokens": 35241,
+   "cache_creation_input_tokens": 10451,
+   "output_tokens": 3050
   },
   {
    "chunk_id": "c1-r01",
@@ -194,20 +221,14 @@
    "row": 1,
    "bounds": {
     "x": 1120,
-    "y": 788,
+    "y": 1125,
     "width": 876,
-    "height": 963
+    "height": 961
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r01-876x963+1120+788.png",
-   "image_sha256": "c54b1f25cade61b385f1b81e0790d3977dca38682240b8ff184dda11f526faa9",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r01-876x961+1120+1125.png",
+   "image_sha256": "141eb9f38a735cc2d06ccbeaf147223059a9b926f211d756c07aaf0d502c8b15",
    "prompt_version": 2,
    "lines": [
-    "fut. Kal of r. רוּץ, and should be read",
-    "תָּרֹצְנָה.",
-    "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
-    "r. נָשָׂא.",
-    "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055.",
-    "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to",
     "drink.",
     "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,",
     "from r. שָׁחָה to bow down.",
@@ -215,19 +236,25 @@
     "r. שָׁעָה.",
     "תֵּת inf. Kal from r. נָתַן to give, contract-",
     "ed for תֶּנֶת. With suff. תִּתִּי.",
-    "תִּתְבָּר 2 Sam. 22, 27, for תִּתְבָּרַר fut.",
+    "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut.",
     "Hithp. from r. בָּרַר. Lgb. p. 374.",
     "תַּתָּה by aphæresis for נָתַתָּה, which is",
-    "read Ps. 18, 41. Comp. רַד for יָרַד."
+    "read Ps. 18, 41. Comp. רַד for יָרַד.",
+    "תִּתִּי, see in תֵּת above.",
+    "תָּתֹם, תִּתַּם, fut. Kal from תָּמַם, q. v.",
+    "תתן 1 K. 17, 14 Keth. commonly taken",
+    "for תֵּת to give, with Nun parag. as",
+    "in 1 K. 6, 19, where however תִּתֵּן is",
+    "future. Here the Keri, תֵּת, is to be"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "253a4344-4dab-4a1f-90dd-781e96316bbf",
-   "duration_api_ms": 34761,
-   "cost_usd_list": 0.30784075,
+   "session_id": "5fc0a845-d4fe-4241-ae00-6781f012ea65",
+   "duration_api_ms": 35506,
+   "cost_usd_list": 0.32687049999999995,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10306,
-   "output_tokens": 1852
+   "cache_read_input_tokens": 35242,
+   "cache_creation_input_tokens": 10421,
+   "output_tokens": 2186
   },
   {
    "chunk_id": "c1-r02",
@@ -235,20 +262,14 @@
    "row": 2,
    "bounds": {
     "x": 1120,
-    "y": 1739,
+    "y": 2074,
     "width": 876,
-    "height": 873
+    "height": 809
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r02-876x873+1120+1739.png",
-   "image_sha256": "f28d5a921d5e8a91aa58d1bee58372179f8039cb1c3e2437ad73ec4592de1f85",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r02-876x809+1120+2074.png",
+   "image_sha256": "74b79ce3b0e2a153824e3c40764e7dd0ee3047fdc47a77404bfd3f1a59064ed5",
    "prompt_version": 2,
    "lines": [
-    "תַּתִּי, see in תַּת above.",
-    "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v.",
-    "תתן 1 K. 17, 14 Keth. commonly taken",
-    "for תֵּת to give, with Nun parag. as",
-    "in 1 K. 6, 19, where however תִּתֵּן is",
-    "future. Here the Keri, תֵּת, is to be",
     "preferred.",
     "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה.",
     "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp.",
@@ -257,13 +278,13 @@
     "r. יָצַב. Lgb. 386."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "517b47b6-fda6-4938-8262-1e6842ad67f2",
-   "duration_api_ms": 29344,
-   "cost_usd_list": 0.29115100000000005,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35124,
-   "cache_creation_input_tokens": 10209,
-   "output_tokens": 1557
+   "session_id": "d31fd445-01e9-44e2-b519-53b53f175516",
+   "duration_api_ms": 25356,
+   "cost_usd_list": 0.32344249999999997,
+   "input_tokens": 68,
+   "cache_read_input_tokens": 84170,
+   "cache_creation_input_tokens": 12731,
+   "output_tokens": 942
   },
   {
    "chunk_id": "c1-r03",
@@ -271,39 +292,34 @@
    "row": 3,
    "bounds": {
     "x": 1120,
-    "y": 2600,
+    "y": 2871,
     "width": 876,
-    "height": 588
+    "height": 317
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r03-876x588+1120+2600.png",
-   "image_sha256": "91f0d4f247bf829f9f77f08f877e4aa8d4bc8d4bbafa28ec7229d51ee920f29e",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/c1-r03-876x317+1120+2871.png",
+   "image_sha256": "de4adaa9a1ba47ca6cc0ccd48a22a41ce8f683a5695cc469e2b1f08981092c1b",
    "prompt_version": 2,
    "lines": [],
    "model": "claude-fable-5-1",
-   "session_id": "109f6f8b-3d78-4c86-9483-7916f38935a7",
-   "duration_api_ms": 8240,
-   "cost_usd_list": 0.21514100000000003,
+   "session_id": "962d86e5-042a-48e3-9ac1-98e3a8f8778b",
+   "duration_api_ms": 10286,
+   "cost_usd_list": 0.2132205,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35124,
-   "cache_creation_input_tokens": 9841,
-   "output_tokens": 184
+   "cache_read_input_tokens": 35242,
+   "cache_creation_input_tokens": 9686,
+   "output_tokens": 207
   }
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "ת"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "ת 1160 ת"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "1"
-  },
-  {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחֶשׁ, 3 pers. fut. Kal"
+   "text": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal"
   },
   {
    "chunk_id": "c0-r00",
@@ -313,7 +329,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "see under r. עִיט p. 770. Job 31, 5."
+   "text": "see under r. עִיט p. 770.   Job 31, 5."
   },
   {
    "chunk_id": "c0-r00",
@@ -323,7 +339,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה."
+   "text": "תַּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה."
   },
   {
    "chunk_id": "c0-r00",
@@ -343,12 +359,12 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "tainly a corruption. Lgb. 52, 331."
+   "text": "tainly a corruption.   Lgb. 52, 331."
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "תֵּכֶהּ, וַתֵּכֶהּ, fut. apoc. Kal for תִּכְהֶה,"
+   "text": "תִּכֵּהּ, וַתִּכֵּהּ, fut. apoc. Kal for תִּכְהֶה,"
   },
   {
    "chunk_id": "c0-r00",
@@ -503,16 +519,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "60"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "ת"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,"
   },
   {
@@ -543,7 +549,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה."
+   "text": "תֶּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה."
   },
   {
    "chunk_id": "c1-r00",
@@ -553,12 +559,12 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "the form being borrowed from רוץ."
+   "text": "the form being borrowed from רוּץ."
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה"
+   "text": "תִּרֹצְנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה"
   },
   {
    "chunk_id": "c1-r00",
@@ -566,32 +572,32 @@
    "text": "fut. Kal of r. נָצַר. The Keth. is"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "fut. Kal of r. רוּץ, and should be read"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "תָּרֹצְנָה."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "r. נָשָׂא."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to"
   },
@@ -633,7 +639,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "תִּתְבָּר 2 Sam. 22, 27, for תִּתְבָּרַר fut."
+   "text": "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut."
   },
   {
    "chunk_id": "c1-r01",
@@ -651,32 +657,32 @@
    "text": "read Ps. 18, 41. Comp. רַד for יָרַד."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
-   "text": "תַּתִּי, see in תַּת above."
+   "text": "תִּתִּי, see in תֵּת above."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
-   "text": "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v."
+   "text": "תָּתֹם, תִּתַּם, fut. Kal from תָּמַם, q. v."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "תתן 1 K. 17, 14 Keth. commonly taken"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "for תֵּת to give, with Nun parag. as"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "in 1 K. 6, 19, where however תִּתֵּן is"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "future. Here the Keri, תֵּת, is to be"
   },
@@ -712,5 +718,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.3009
+ "cost_usd_list_total": 2.5843
 }

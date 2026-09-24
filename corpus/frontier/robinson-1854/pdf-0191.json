@@ -12,43 +12,66 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:44+00:00",
+ "generated_at": "2026-09-24T08:41:01+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 60,
+    "y": 110,
+    "width": 1779,
+    "height": 68
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/header-1779x68+60+110.png",
+   "image_sha256": "5606aa1e7ad4b6b08867dd253a346c52158e009f20eca3a02908277e8f6bdb46",
+   "prompt_version": 2,
+   "lines": [
+    "גבל 175 גבע"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "804cc075-4631-45b3-adcf-fa041cccd55c",
+   "duration_api_ms": 9791,
+   "cost_usd_list": 0.20717925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 173
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 60,
-    "y": 111,
+    "y": 158,
     "width": 883,
-    "height": 719
+    "height": 672
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/c0-r00-883x719+60+111.png",
-   "image_sha256": "f2921c6ea56dfe7aa7504814ad5eaa6bfff5b7f6cbd4f7c889ff35393bac5b51",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/c0-r00-883x672+60+158.png",
+   "image_sha256": "2f64b0a106fa7ea2544b58b8d055446a134114dc9e9aa5959978a7d1e7759d31",
    "prompt_version": 2,
    "lines": [
-    "גבל",
-    "17",
-    "soutnwards to Petra, and still called by",
+    "southwards to Petra, and still called by",
     "the Arabs جبال Jebâl. In Judith 3, 1",
     "Lat. Vers. and also in the writings of the",
     "Crusaders, it is called Syria Sobal; by",
     "Josephus, Euseb. and Steph. Byz. Γοβο-",
     "λῖτις, Γεβαληνή, Γάβαλα. See Bibl. Res.",
-    "n Palest. II. p. 552.",
-    "גְּבֻל see גְּבוּל.",
-    "גַּבְלוּת f. (r. גָּבַל) wreathen work, twist-",
+    "in Palest. II. p. 552.",
+    "גְּבָל see גְּבוּל.",
+    "גַּבְלֻת f. (r. גָּבַל) wreathen work, twist-",
     "ed like cords, see the root Kal no. 1. Ex."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "1d6ed720-06f2-4bb4-92c8-83314a6d4d26",
-   "duration_api_ms": 53145,
-   "cost_usd_list": 0.40463625,
-   "input_tokens": 132,
-   "cache_read_input_tokens": 138385,
-   "cache_creation_input_tokens": 15776,
-   "output_tokens": 2381
+   "session_id": "0ed4b4ca-8651-4e6c-b907-75758a26d922",
+   "duration_api_ms": 23028,
+   "cost_usd_list": 0.27139599999999997,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10050,
+   "output_tokens": 1225
   },
   {
    "chunk_id": "c0-r01",
@@ -169,36 +192,34 @@
    "row": 0,
    "bounds": {
     "x": 954,
-    "y": 109,
+    "y": 158,
     "width": 885,
-    "height": 792
+    "height": 743
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/c1-r00-885x792+954+109.png",
-   "image_sha256": "72fafd479c0936ca9cd163465c634021f15bf6ab05abaded17d134e4c03c1972",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/c1-r00-885x743+954+158.png",
+   "image_sha256": "f4f79db8de3696caa7c1a128c9b38aa75dc1ce95ae95a5954a7fa8962040ad14",
    "prompt_version": 2,
    "lines": [
-    "5",
-    "גבע",
     "* גָּבַע not found in the verb, kindr.",
     "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc.",
     "and signifying to be high, like a moun-",
     "tain, hill; and spec. to be arched, con-",
     "vex, round, like a cup, the top of the",
     "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
-    "Arab. قَبُّ head, chief, Gr. κεφαλή, Lat.",
+    "Arab. قَبّ head, chief, Gr. κεφαλή, Lat.",
     "caput, capo, all which flow from the same",
     "primary source.",
     "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here",
     "following."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "ed23b22a-605b-4fd2-ac20-9531c763a439",
-   "duration_api_ms": 28113,
-   "cost_usd_list": 0.275128,
+   "session_id": "05e38c24-0ccc-4cb1-b2b6-350ff9aa3802",
+   "duration_api_ms": 27035,
+   "cost_usd_list": 0.29398599999999997,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10107,
-   "output_tokens": 1744
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10147,
+   "output_tokens": 1638
   },
   {
    "chunk_id": "c1-r01",
@@ -316,19 +337,14 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "גבל"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "גבל 175 גבע"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "17"
-  },
-  {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "soutnwards to Petra, and still called by"
+   "text": "southwards to Petra, and still called by"
   },
   {
    "chunk_id": "c0-r00",
@@ -358,17 +374,17 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "n Palest. II. p. 552."
+   "text": "in Palest. II. p. 552."
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "גְּבֻל see גְּבוּל."
+   "text": "גְּבָל see גְּבוּל."
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "גַּבְלוּת f. (r. גָּבַל) wreathen work, twist-"
+   "text": "גַּבְלֻת f. (r. גָּבַל) wreathen work, twist-"
   },
   {
    "chunk_id": "c0-r00",
@@ -583,16 +599,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "5"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "גבע"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "* גָּבַע not found in the verb, kindr."
   },
   {
@@ -623,7 +629,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "Arab. قَبُّ head, chief, Gr. κεφαλή, Lat."
+   "text": "Arab. قَبّ head, chief, Gr. κεφαλή, Lat."
   },
   {
    "chunk_id": "c1-r00",
@@ -852,5 +858,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.1691
+ "cost_usd_list_total": 2.2619
 }

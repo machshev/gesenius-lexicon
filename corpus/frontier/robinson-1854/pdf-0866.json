@@ -12,25 +12,49 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:27:59+00:00",
+ "generated_at": "2026-09-24T08:44:04+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 164,
+    "y": 121,
+    "width": 1775,
+    "height": 71
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0866/header-1775x71+164+121.png",
+   "image_sha256": "98deb8d5b7ece8d6270417fe9ed158f28eabe1133d484e5be0a641bf4227dfed",
+   "prompt_version": 2,
+   "lines": [
+    "פָּלַח 850 פָּנָה"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "2871f00b-6d83-4bcc-86ae-31a406d6fbc6",
+   "duration_api_ms": 11588,
+   "cost_usd_list": 0.20747925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 179
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 164,
-    "y": 120,
+    "y": 171,
     "width": 876,
-    "height": 794
+    "height": 743
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0866/c0-r00-876x794+164+120.png",
-   "image_sha256": "e4a328b906050766bfc5c383c83c24492a08ac590fbfffeba9a224efbaea932d",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0866/c0-r00-876x743+164+171.png",
+   "image_sha256": "16e52ce0452f4c8be5b4784dd9b350248400db8f4a92298bf76a831bcc14561b",
    "prompt_version": 2,
    "lines": [
-    "פלת",
     "*פֶּלֶת obsol. root, Arab. فلت to",
-    "flee, to escape, i. q. Heb. פָּלַט; فُلْتٌ",
+    "flee, to escape, i. q. Heb. פָּלַט ; فُلْتٌ",
     "swift, فَلَتَانٌ a swift horse, runner.—",
     "Hence the two following.",
     "פֶּלֶת (swiftness) Peleth, pr. n. m. a)",
@@ -41,13 +65,13 @@
     "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "85d976ff-a695-472c-9e8c-5058d85efca4",
-   "duration_api_ms": 18059,
-   "cost_usd_list": 0.25383049999999996,
+   "session_id": "5f069398-28d4-4ee3-b8f1-9e0d9faa5c5e",
+   "duration_api_ms": 19731,
+   "cost_usd_list": 0.257936,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10093,
-   "output_tokens": 857
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10147,
+   "output_tokens": 917
   },
   {
    "chunk_id": "c0-r01",
@@ -169,17 +193,16 @@
    "row": 0,
    "bounds": {
     "x": 1059,
-    "y": 127,
+    "y": 171,
     "width": 880,
-    "height": 677
+    "height": 633
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0866/c1-r00-880x677+1059+127.png",
-   "image_sha256": "4cbc831f7aa828b19c972e00c161c448bce7c63372f38ce16f5c2be27fbe2d26",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0866/c1-r00-880x633+1059+171.png",
+   "image_sha256": "cc17847540c57999758e6518ac105246c8bb2595f64b610a0c13f43efcf80eb0",
    "prompt_version": 2,
    "lines": [
-    "פנה",
     "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may",
-    "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהוָֹה",
+    "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה",
     "(we fear) lest a wind from Jehovah hath",
     "taken him up.—Once it approaches to",
     "the power of a negative adverb, i. q. לֹא,",
@@ -190,13 +213,13 @@
     "lest she walk in the way of life.’"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "756815d9-847e-44fc-824d-a85df93a6ba9",
-   "duration_api_ms": 16759,
-   "cost_usd_list": 0.24364075000000002,
+   "session_id": "6c543536-9a82-4955-af94-3e09c8452708",
+   "duration_api_ms": 15872,
+   "cost_usd_list": 0.24779625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 9981,
-   "output_tokens": 698
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10020,
+   "output_tokens": 765
   },
   {
    "chunk_id": "c1-r01",
@@ -317,9 +340,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "פלת"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "פָּלַח 850 פָּנָה"
   },
   {
    "chunk_id": "c0-r00",
@@ -329,7 +352,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "flee, to escape, i. q. Heb. פָּלַט; فُلْتٌ"
+   "text": "flee, to escape, i. q. Heb. פָּלַט ; فُلْتٌ"
   },
   {
    "chunk_id": "c0-r00",
@@ -584,17 +607,12 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "פנה"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהוָֹה"
+   "text": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה"
   },
   {
    "chunk_id": "c1-r00",
@@ -858,5 +876,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.9639
+ "cost_usd_list_total": 2.1796
 }

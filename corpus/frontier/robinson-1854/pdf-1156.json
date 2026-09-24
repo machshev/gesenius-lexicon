@@ -12,26 +12,50 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:31:10+00:00",
+ "generated_at": "2026-09-24T08:44:56+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 146,
+    "y": 111,
+    "width": 1774,
+    "height": 72
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/header-1774x72+146+111.png",
+   "image_sha256": "3ee767b35687d0dcc43f6e62354caaeaab059a4a6ca505727e751d504d297999",
+   "prompt_version": 2,
+   "lines": [
+    "תנך 1140 תער"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "fdb50bb3-0e3c-4ec2-8388-9f67d5b897f2",
+   "duration_api_ms": 13093,
+   "cost_usd_list": 0.21622925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 354
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 146,
-    "y": 112,
+    "y": 157,
     "width": 877,
-    "height": 941
+    "height": 896
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c0-r00-877x941+146+112.png",
-   "image_sha256": "bedd10ffb6cfb66d04597ee16863093c0ec664cdf9a32250ef3718f2092bceaa",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c0-r00-877x896+146+157.png",
+   "image_sha256": "bc2c4145468d13c03eb39e1cc853b15532ca55904fa844a75af74dbf5601861a",
    "prompt_version": 2,
    "lines": [
-    "תנן 11",
     "* II. תְּנַן Chald. i. q. تَنَّ, to smoke;",
-    "whence Eth. ትን, ἀτμίς, vapour; Chald.",
-    "תְּנָנָא, Syr. ܬܢܳܢܳܐ, ܬܰܢܽܘܢܳܐ, Sam. ࠕࠍࠍࠀ,",
+    "whence Eth. ጢስ, ἀτμίς, vapour; Chald.",
+    "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,",
     "smoke; Nasor. תאנא furnace.",
     "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
     "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
@@ -45,13 +69,13 @@
     "Saad. lizard."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "d0696cc6-5a34-46ba-9bef-858ff7ea1653",
-   "duration_api_ms": 38997,
-   "cost_usd_list": 0.35189899999999996,
-   "input_tokens": 98,
-   "cache_read_input_tokens": 84076,
-   "cache_creation_input_tokens": 12230,
-   "output_tokens": 1706
+   "session_id": "993134f7-246b-441b-b978-0f0549e8d48c",
+   "duration_api_ms": 39873,
+   "cost_usd_list": 0.306486,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10307,
+   "output_tokens": 1824
   },
   {
    "chunk_id": "c0-r01",
@@ -170,34 +194,36 @@
    "row": 0,
    "bounds": {
     "x": 1044,
-    "y": 103,
+    "y": 217,
     "width": 876,
-    "height": 695
+    "height": 749
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r00-876x695+1044+103.png",
-   "image_sha256": "807fd12064f2a2f95dbd79aca559938898186103767827e4835d23dd7f329f47",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r00-876x749+1044+217.png",
+   "image_sha256": "9655fe7b2af63ba797673b9bb6ce14b69330660726a26e4437853deb743702e5",
    "prompt_version": 2,
    "lines": [
-    "40 תעה",
     "טָעָה, to wander, to err, to go astray",
     "Chald. תְּעָא id. but oftener טְעָא; Syr.",
     "ܛܥܳܐ, Arab. طغا and طغى id. Spoken",
     "of persons Is. 35, 8. 47, 15; of beasts",
     "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
     "כְּשֶׂה אֹבֵד I have gone astray like a lost",
-    "sheep ; also of birds Job 38, 41; with בְּ",
+    "sheep; also of birds Job 38, 41; with בְּ",
     "of place Gen. 21, 14. 37, 15. Ps. 107, 4.",
     "With acc. of place, to wander through",
-    "or over, trop. of the branches of a vine"
+    "or over, trop. of the branches of a vine",
+    "shooting luxuriantly over the desert, Is.",
+    "16, 9 [8]. Spec. a) Of drunken per-",
+    "sons, who go reeling about; Is. 28, 7"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "ae7e152d-0837-43ec-b131-330b856e92e1",
-   "duration_api_ms": 25801,
-   "cost_usd_list": 0.27593075,
+   "session_id": "75c7a27b-681a-48cb-9a4c-9956ebc93476",
+   "duration_api_ms": 24001,
+   "cost_usd_list": 0.27515625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 9983,
-   "output_tokens": 1343
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10153,
+   "output_tokens": 1259
   },
   {
    "chunk_id": "c1-r01",
@@ -205,17 +231,14 @@
    "row": 1,
    "bounds": {
     "x": 1044,
-    "y": 786,
+    "y": 954,
     "width": 876,
-    "height": 958
+    "height": 843
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r01-876x958+1044+786.png",
-   "image_sha256": "479423bf4d9d22f5eb24d5f1a716d2a99689cd926436124bb38c475834329f49",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r01-876x843+1044+954.png",
+   "image_sha256": "7b1a0efc0fe83e5dc4d0013dd3f287bf520549d850c29c0a543106c405626dff",
    "prompt_version": 2,
    "lines": [
-    "shooting luxuriantly over the desert, Is.",
-    "16, 9 [8]. Spec. a) Of drunken per-",
-    "sons, who go reeling about; Is. 28, 7",
     "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from",
     "strong drink; and hence trop. of the",
     "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-",
@@ -228,17 +251,18 @@
     "מֵעַל יְהוָֹה Ez. 44, 10. 15; with מֵאַחֲרֵי",
     "יְהוָֹה from following God, from his wor-",
     "ship, Ez. 14, 11. Comp. Chald. טְעָא",
-    "spec. ‘ to be given to idolatry,’ Syr. to",
-    "be a heretic. c) Of those who miss"
+    "spec. ' to be given to idolatry,' Syr. to",
+    "be a heretic. c) Of those who miss",
+    "their aim and fail in their efforts; Prov."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "1ecce61d-c957-41a9-9cdc-b7e62fc90a87",
-   "duration_api_ms": 28112,
-   "cost_usd_list": 0.28021075,
+   "session_id": "86d10888-7629-4ce0-bb40-33b68eecaaf6",
+   "duration_api_ms": 15023,
+   "cost_usd_list": 0.24288625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10287,
-   "output_tokens": 1307
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10277,
+   "output_tokens": 564
   },
   {
    "chunk_id": "c1-r02",
@@ -246,15 +270,14 @@
    "row": 2,
    "bounds": {
     "x": 1044,
-    "y": 1732,
+    "y": 1785,
     "width": 876,
-    "height": 793
+    "height": 907
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r02-876x793+1044+1732.png",
-   "image_sha256": "17459a9d5370305e11395feafdd5be5085248303b16aa8f6bf918db0e91af2bf",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r02-876x907+1044+1785.png",
+   "image_sha256": "77a8493a717e8315b92a4db103d5dbedeecc046d5e8013689365727bcdee28ab",
    "prompt_version": 2,
    "lines": [
-    "their aim and fail in their efforts; Prov.",
     "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not",
     "err (from their mark) who devise evil?",
     "Others, do they not perish.",
@@ -262,21 +285,24 @@
     "wander, to stagger about, Is. 19, 14.",
     "Metaph. to be deceived, to err, in a mor-",
     "al sense, Job 15, 31.",
-    "Hiph. fut. apoc. יַתְעַ 1. to cause to",
+    "Hiph. fut. apoc. יַתַע 1. to cause to",
     "wander Job 12, 24. Is. 19, 13. 14. Gen.",
     "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
     "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
     "מַתְעֶה a bridle causing to err. Metaph.",
-    "to cause to wander or err from the paths"
+    "to cause to wander or err from the paths",
+    "of virtue and piety, e. g. a nation into",
+    "impiety, ungodliness, Is. 3, 12. 9, 15.",
+    "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "0e244754-400b-4cd6-9001-2e58e9cd7246",
-   "duration_api_ms": 19729,
-   "cost_usd_list": 0.255741,
+   "session_id": "b9f89e82-e4af-4411-86a1-8cc99120b9a2",
+   "duration_api_ms": 23254,
+   "cost_usd_list": 0.27073650000000005,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35124,
-   "cache_creation_input_tokens": 10111,
-   "output_tokens": 888
+   "cache_read_input_tokens": 35226,
+   "cache_creation_input_tokens": 10327,
+   "output_tokens": 1101
   },
   {
    "chunk_id": "c1-r03",
@@ -284,17 +310,14 @@
    "row": 3,
    "bounds": {
     "x": 1044,
-    "y": 2513,
+    "y": 2680,
     "width": 876,
-    "height": 776
+    "height": 609
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r03-876x776+1044+2513.png",
-   "image_sha256": "9700abc88ad31b1a9cc56672e94630655fdd7216ceb5559b7fa10938bdc6b088",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1156/c1-r03-876x609+1044+2680.png",
+   "image_sha256": "588881ff03fabd8e7aacc85cef50288f14fda3424ca39ba26d72791762486151",
    "prompt_version": 2,
    "lines": [
-    "of virtue and piety, e. g. a nation into",
-    "impiety, ungodliness, Is. 3, 12. 9, 15.",
-    "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or",
     "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;",
     "with מִן Is. 63, 17.",
     "2. Intrans. to err, pr. to let oneself",
@@ -307,20 +330,20 @@
     "cept; hence an oracle Is. 8, 16; law,"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "b562aaab-fea9-4eb2-a18f-5136a96f372d",
-   "duration_api_ms": 15009,
-   "cost_usd_list": 0.241821,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 35124,
-   "cache_creation_input_tokens": 10065,
-   "output_tokens": 628
+   "session_id": "927075b4-8c2a-4743-8803-0d0ed1525f7d",
+   "duration_api_ms": 29498,
+   "cost_usd_list": 0.310032,
+   "input_tokens": 98,
+   "cache_read_input_tokens": 83648,
+   "cache_creation_input_tokens": 12167,
+   "output_tokens": 896
   }
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "תנן 11"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "תנך 1140 תער"
   },
   {
    "chunk_id": "c0-r00",
@@ -330,12 +353,12 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "whence Eth. ትን, ἀτμίς, vapour; Chald."
+   "text": "whence Eth. ጢስ, ἀτμίς, vapour; Chald."
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "תְּנָנָא, Syr. ܬܢܳܢܳܐ, ܬܰܢܽܘܢܳܐ, Sam. ࠕࠍࠍࠀ,"
+   "text": "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,"
   },
   {
    "chunk_id": "c0-r00",
@@ -590,11 +613,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "40 תעה"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "טָעָה, to wander, to err, to go astray"
   },
   {
@@ -625,7 +643,7 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "sheep ; also of birds Job 38, 41; with בְּ"
+   "text": "sheep; also of birds Job 38, 41; with בְּ"
   },
   {
    "chunk_id": "c1-r00",
@@ -643,17 +661,17 @@
    "text": "or over, trop. of the branches of a vine"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "shooting luxuriantly over the desert, Is."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "16, 9 [8]. Spec. a) Of drunken per-"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "sons, who go reeling about; Is. 28, 7"
   },
@@ -720,7 +738,7 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "spec. ‘ to be given to idolatry,’ Syr. to"
+   "text": "spec. ' to be given to idolatry,' Syr. to"
   },
   {
    "chunk_id": "c1-r01",
@@ -728,7 +746,7 @@
    "text": "be a heretic. c) Of those who miss"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "their aim and fail in their efforts; Prov."
   },
@@ -770,7 +788,7 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "Hiph. fut. apoc. יַתְעַ 1. to cause to"
+   "text": "Hiph. fut. apoc. יַתַע 1. to cause to"
   },
   {
    "chunk_id": "c1-r02",
@@ -798,17 +816,17 @@
    "text": "to cause to wander or err from the paths"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "of virtue and piety, e. g. a nation into"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "impiety, ungodliness, Is. 3, 12. 9, 15."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or"
   },
@@ -864,5 +882,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.1792
+ "cost_usd_list_total": 2.3951
 }

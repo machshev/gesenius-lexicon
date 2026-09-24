@@ -12,30 +12,56 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:28:41+00:00",
+ "generated_at": "2026-09-24T08:44:15+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 99,
+    "y": 138,
+    "width": 1771,
+    "height": 85
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/header-1771x85+99+138.png",
+   "image_sha256": "fdbc8c4d0e0047842049a17f3771006f507eafec6d337cb5be3513459fb0a1ca",
+   "prompt_version": 2,
+   "lines": [
+    "קיט",
+    "925",
+    "קיק"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "9546c5a5-08ea-4362-8e8f-6ae1980219d9",
+   "duration_api_ms": 9142,
+   "cost_usd_list": 0.20855925000000003,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9533,
+   "output_tokens": 175
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 99,
-    "y": 147,
+    "y": 186,
     "width": 874,
-    "height": 864
+    "height": 825
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c0-r00-874x864+99+147.png",
-   "image_sha256": "78bf4238a6b0ae1b8546d3eb77af2b610268f255670f0faff6cdef1c429ec4d0",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c0-r00-874x825+99+186.png",
+   "image_sha256": "753e5697268372eef05c313b3271f2dccbdc2444e298dfbd123c83fcebdb34b1",
    "prompt_version": 2,
    "lines": [
-    "קיט",
     "קַיִט Chald. m. i. q. Heb. קַיִץ, sum-",
     "mer, Dan. 2, 35.",
-    "קִיטוֹר m. (r. קָטַר I) 1. smoke, Gen.",
+    "קִיטוֹר m. (r. קָטַר I ) 1. smoke, Gen.",
     "19, 28. Ps. 119, 83.",
     "2. vapour, a cloud, Ps. 148, 8.",
     "קִים m. (r. קוּם) a rising up against",
-    "any one, see the root no. 1. c; hence",
+    "any one, see the root no. 1. c ; hence",
     "concr. Job 22, 20 קִימָנוּ our adversaries,",
     "enemies, i. q. קָמֵינוּ.",
     "קְיָם Chald. m. a statute, edict, Dan. 6,",
@@ -43,13 +69,13 @@
     "Syr. ܩܝܳܡܳܐ. R. קוּם."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "366e2eea-a6fc-4a5f-8226-d9bcf66c2f85",
-   "duration_api_ms": 18631,
-   "cost_usd_list": 0.26071049999999996,
+   "session_id": "1a6af97f-bd8d-402a-b637-a5689fa6a741",
+   "duration_api_ms": 22432,
+   "cost_usd_list": 0.268136,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10157,
-   "output_tokens": 969
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10227,
+   "output_tokens": 1089
   },
   {
    "chunk_id": "c0-r01",
@@ -168,15 +194,14 @@
    "row": 0,
    "bounds": {
     "x": 993,
-    "y": 141,
+    "y": 186,
     "width": 877,
-    "height": 611
+    "height": 851
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r00-877x611+993+141.png",
-   "image_sha256": "f36306f6c0d4dece10e034afec4bc519da038d900e3613d6d0c539b6640b2088",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r00-877x851+993+186.png",
+   "image_sha256": "65e320810440d8d9880002c3e0a6983efaaeb04048596999ec9883f60f742f02",
    "prompt_version": 2,
    "lines": [
-    "קִין",
     "in Naphtali, Judg. 4, 11. See too קַיִן",
     "no. 2. b.—Syr. ܩܰܝܢܳܝܳܐ id. pr. ‘a smith,’",
     "and this is prob. the signif. of Heb. קֵינִי,",
@@ -184,16 +209,21 @@
     "קֵינָן (smith, perh. lancer, r. קוּן) Ke-",
     "nan or Cainan, pr. n. of an antediluvian",
     "patriarch descended from Seth, Gen. 5,",
-    "9. 1 Chr. 1, 2."
+    "9. 1 Chr. 1, 2.",
+    "קַיִץ m. (r. קוּץ III ) c. suff. קֵיצְךָ, har-",
+    "vest of fruits, fruit-harvest, not of grain",
+    "which is קָצִיר; pr. the cutting off of",
+    "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec.",
+    "fig-harvest, which in Palestine takes"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "a447d76f-2961-4ae2-9d71-c2b25c23b093",
-   "duration_api_ms": 21478,
-   "cost_usd_list": 0.2594505,
+   "session_id": "9a88c54a-8594-44ef-9b6b-5c393808dc21",
+   "duration_api_ms": 22788,
+   "cost_usd_list": 0.268846,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 9869,
-   "output_tokens": 1059
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10275,
+   "output_tokens": 1084
   },
   {
    "chunk_id": "c1-r01",
@@ -201,36 +231,38 @@
    "row": 1,
    "bounds": {
     "x": 993,
-    "y": 740,
+    "y": 1025,
     "width": 877,
-    "height": 803
+    "height": 915
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r01-877x803+993+740.png",
-   "image_sha256": "5500ef19aa3e11547fc9810d5a6f7724b10bcc9fd21d86da07d2bc80b938cbba",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r01-877x915+993+1025.png",
+   "image_sha256": "dbd43db21c72d33582e4b93b27c14fa654a9ab237d76e2a36b3fd93af57bbd7f",
    "prompt_version": 2,
    "lines": [
-    "קַיִץ m. (r. קוּץ III ) c. suff. קֵיצְךָ, har-",
-    "vest of fruits, fruit-harvest, not of grain",
-    "which is קָצִיר; pr. the cutting off of",
-    "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec.",
-    "fig-harvest, which in Palestine takes",
     "place in August; although early figs",
     "(בִּכּוּרִים) ripen at the summer solstice ;",
     "Is. 28, 4 as the early fig before the har-",
     "vest. Mic. 7, 1.—Hence",
     "a) the harvest-time of figs, i. e. sum-",
     "mer, espec. midsummer, the hottest sea-",
-    "son ; Arab. قَيْظٌ or. قَوْظٌ mid-summer.",
-    "Chald. קַיְט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4"
+    "son ; Arab. قَيْظ or قَوْظ mid-summer.",
+    "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4",
+    "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-",
+    "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35.",
+    "בֵּית הַקַּיִץ the summer-house Am. 3, 15.",
+    "Sometimes it seems to include the spring,",
+    "as חֹרֶף also includes autumn and win-",
+    "ter; see in חֹרֶף.",
+    "b) fruit, spec. figs, as harvested, Am."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "99cc0675-005c-4de2-9823-1dbf1eeedcae",
-   "duration_api_ms": 37542,
-   "cost_usd_list": 0.3492935,
-   "input_tokens": 70,
-   "cache_read_input_tokens": 109654,
-   "cache_creation_input_tokens": 12734,
-   "output_tokens": 1330
+   "session_id": "ad1e9c24-5ddb-42ab-8a01-71bb908e7351",
+   "duration_api_ms": 19582,
+   "cost_usd_list": 0.25766625,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10341,
+   "output_tokens": 834
   },
   {
    "chunk_id": "c1-r02",
@@ -238,40 +270,37 @@
    "row": 2,
    "bounds": {
     "x": 993,
-    "y": 1531,
+    "y": 1928,
     "width": 877,
-    "height": 987
+    "height": 865
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r02-877x987+993+1531.png",
-   "image_sha256": "9b8bd9555f3563a6b19545bdaa7d4adfb5c73c4f792c4e5eeba8204b4883cbea",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r02-877x865+993+1928.png",
+   "image_sha256": "15375a5e7f4654fe8b67f0319d1f8f8e54aecbb04147363de110b0b3d43a4a3c",
    "prompt_version": 2,
    "lines": [
-    "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-",
-    "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35.",
-    "בֵּית הַקַּיִץ the summer-house Am. 3, 15.",
-    "Sometimes it seems to include the spring,",
-    "as חֹרֶף also includes autumn and win-",
-    "ter; see in חֹרֶף.",
-    "b) fruit, spec. figs, as harvested, Am.",
     "8, 1. 2; comp. Jer. 24, 1 sq. Jerome po-",
     "ma, which is a general word including",
     "figs; see the lexicons. 2 Sam. 16, 1 מֵאָה",
-    "קַיִץ, ellipt. for מֵאָה דְבֵלוֹת קַיִץ, a hun-",
+    "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-",
     "dred cakes of figs. Comp. in Engl. the",
     "harvest for the grain harvested.",
-    "קִיצוֹן m. adj. (r. קָצַץ, for קִצּוֹן, after",
+    "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after",
     "the analogy of חִיצוֹן from חוּץ, Dag.",
     "om. after ־ִי) the last, the extreme, only",
-    "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17."
+    "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17.",
+    "קִיקָיוֹן m. Jon. 4, 6–10, according to",
+    "Jerome, the Talmud, and Heb. intpp.",
+    "the ricinus, palma Christi, Arab. الخروع",
+    "el-kherû'a, Egyptian κίκι, κούκι, Diod."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "081db04c-330c-4a9c-8bbb-f35ca1ec9eba",
-   "duration_api_ms": 15354,
-   "cost_usd_list": 0.24555074999999998,
+   "session_id": "8ef365f9-7174-4ed4-8f92-2e09d4df58aa",
+   "duration_api_ms": 22422,
+   "cost_usd_list": 0.29501625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10319,
-   "output_tokens": 601
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10276,
+   "output_tokens": 1607
   },
   {
    "chunk_id": "c1-r03",
@@ -279,18 +308,14 @@
    "row": 3,
    "bounds": {
     "x": 993,
-    "y": 2506,
+    "y": 2781,
     "width": 877,
-    "height": 779
+    "height": 504
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r03-877x779+993+2506.png",
-   "image_sha256": "4ca12f08c2c783a0d85a322294ae81112b6ee597b2d2d78e8c2c6c16553d6e0f",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/c1-r03-877x504+993+2781.png",
+   "image_sha256": "33fb3cdd3c62d2f48c5c5b7f044b3d465de8c5fdac299d10d0732e2cf321b26b",
    "prompt_version": 2,
    "lines": [
-    "קִיקָיוֹן m. Jon. 4, 6–10, according to",
-    "Jerome, the Talmud, and Heb. intpp.",
-    "the ricinus, palma Christi, Arab. الخِرْوَع",
-    "el-kherûʼa, Egyptian κίκι, κούκι, Diod.",
     "Sic. 1. 34, a tall biennial plant still culti-",
     "vated in gardens, of an elegant appear-",
     "ance and rapid growth, with a stalk or",
@@ -302,20 +327,30 @@
     "Sept. and Peshito, a gourd."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "a6c40054-18cc-450e-8b1f-c197dd330f3a",
-   "duration_api_ms": 14197,
-   "cost_usd_list": 0.23318075,
+   "session_id": "b9e09f36-d777-4dba-b812-ad1216c31c3d",
+   "duration_api_ms": 11637,
+   "cost_usd_list": 0.22466625,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10063,
-   "output_tokens": 456
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 9861,
+   "output_tokens": 366
   }
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
+   "chunk_id": "header",
+   "column": -1,
    "text": "קיט"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "925"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "קיק"
   },
   {
    "chunk_id": "c0-r00",
@@ -330,7 +365,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "קִיטוֹר m. (r. קָטַר I) 1. smoke, Gen."
+   "text": "קִיטוֹר m. (r. קָטַר I ) 1. smoke, Gen."
   },
   {
    "chunk_id": "c0-r00",
@@ -350,7 +385,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "any one, see the root no. 1. c; hence"
+   "text": "any one, see the root no. 1. c ; hence"
   },
   {
    "chunk_id": "c0-r00",
@@ -575,11 +610,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "קִין"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "in Naphtali, Judg. 4, 11. See too קַיִן"
   },
   {
@@ -618,27 +648,27 @@
    "text": "9. 1 Chr. 1, 2."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "קַיִץ m. (r. קוּץ III ) c. suff. קֵיצְךָ, har-"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "vest of fruits, fruit-harvest, not of grain"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "which is קָצִיר; pr. the cutting off of"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "c1-r00",
    "column": 1,
    "text": "fig-harvest, which in Palestine takes"
   },
@@ -675,45 +705,45 @@
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "son ; Arab. قَيْظٌ or. قَوْظٌ mid-summer."
+   "text": "son ; Arab. قَيْظ or قَوْظ mid-summer."
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "Chald. קַיְט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4"
+   "text": "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "בֵּית הַקַּיִץ the summer-house Am. 3, 15."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "Sometimes it seems to include the spring,"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "as חֹרֶף also includes autumn and win-"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "ter; see in חֹרֶף."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "c1-r01",
    "column": 1,
    "text": "b) fruit, spec. figs, as harvested, Am."
   },
@@ -735,7 +765,7 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "קַיִץ, ellipt. for מֵאָה דְבֵלוֹת קַיִץ, a hun-"
+   "text": "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-"
   },
   {
    "chunk_id": "c1-r02",
@@ -750,7 +780,7 @@
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "קִיצוֹן m. adj. (r. קָצַץ, for קִצּוֹן, after"
+   "text": "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after"
   },
   {
    "chunk_id": "c1-r02",
@@ -768,24 +798,24 @@
    "text": "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "קִיקָיוֹן m. Jon. 4, 6–10, according to"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
    "text": "Jerome, the Talmud, and Heb. intpp."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
-   "text": "the ricinus, palma Christi, Arab. الخِرْوَع"
+   "text": "the ricinus, palma Christi, Arab. الخروع"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "c1-r02",
    "column": 1,
-   "text": "el-kherûʼa, Egyptian κίκι, κούκι, Diod."
+   "text": "el-kherû'a, Egyptian κίκι, κούκι, Diod."
   },
   {
    "chunk_id": "c1-r03",
@@ -834,5 +864,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.0824
+ "cost_usd_list_total": 2.2571
 }

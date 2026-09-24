@@ -12,24 +12,48 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:43+00:00",
+ "generated_at": "2026-09-24T08:40:50+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 199,
+    "y": 110,
+    "width": 1763,
+    "height": 64
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/header-1763x64+199+110.png",
+   "image_sha256": "31fa37a273b2ba4005da96c3cee2bf21f977a3b203383d371c30f525f5c30c6d",
+   "prompt_version": 2,
+   "lines": [
+    "אָשֵׁר 100 אֵשֶׁת"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "af0aadc5-a129-46ae-b627-b2545e3876b1",
+   "duration_api_ms": 7798,
+   "cost_usd_list": 0.20766925000000003,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9466,
+   "output_tokens": 184
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 199,
-    "y": 2,
+    "y": 156,
     "width": 866,
-    "height": 885
+    "height": 731
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/c0-r00-866x885+199+2.png",
-   "image_sha256": "9980612298561a8beb24610df9e9770d9c7070a121271c1de54ba9e6fc9d6126",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/c0-r00-866x731+199+156.png",
+   "image_sha256": "52bac2462124e73d44ce3c4519aac2e9d9dd89f77d1d79ee1e08b741a2d1927a",
    "prompt_version": 2,
    "lines": [
-    "אָשֵׁר",
-    "3. Judg. 6, 25. Once, where in the same",
+    "3. Judg. 6, 25.   Once, where in the same",
     "context mention is made of אֲשֵׁרָה 2 K.",
     "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,",
     "the latter seems to pertain to the idola-",
@@ -39,17 +63,17 @@
     "of wood, a wooden pillar, of great size,",
     "Judg. 6, 25–27 ; which on account of",
     "its height was fixed or planted in the",
-    "ground, Deut. 16, 21. An Asherah or",
+    "ground, Deut. 16, 21.   An Asherah or",
     "statue of this sort stood near the altar of"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "1177d886-7791-43d6-a984-059bf52681f7",
-   "duration_api_ms": 16909,
-   "cost_usd_list": 0.2263905,
+   "session_id": "0e237df3-19a7-4f1d-9be4-045f433efadd",
+   "duration_api_ms": 13929,
+   "cost_usd_list": 0.24204599999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10172,
-   "output_tokens": 753
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10120,
+   "output_tokens": 610
   },
   {
    "chunk_id": "c0-r01",
@@ -172,15 +196,14 @@
    "row": 0,
    "bounds": {
     "x": 1088,
-    "y": 110,
+    "y": 156,
     "width": 874,
-    "height": 892
+    "height": 846
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/c1-r00-874x892+1088+110.png",
-   "image_sha256": "cef5aea4f851eb19097a8f4dd886785ca350d6550e1e08f5891ae181eb727a5f",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/c1-r00-874x846+1088+156.png",
+   "image_sha256": "9aa61ed9579a769926710d41e3c5c770c2f01fd740884aabc51c9e4a8bb50198",
    "prompt_version": 2,
    "lines": [
-    "90 אשׁת",
     "(Thesaur. s. h. v. et in Append.) referring",
     "אֲשֵׁרָה to the nature and qualities of the",
     "goddess herself; though I admit, that",
@@ -197,13 +220,13 @@
     "this we may add, that the Romans too"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "364298ad-3fe0-4a38-bdbc-555eecf2b990",
-   "duration_api_ms": 22115,
-   "cost_usd_list": 0.24514799999999998,
-   "input_tokens": 66,
-   "cache_read_input_tokens": 59392,
-   "cache_creation_input_tokens": 11045,
-   "output_tokens": 782
+   "session_id": "20695615-81ff-44a9-a9e7-b4e3752a462e",
+   "duration_api_ms": 21067,
+   "cost_usd_list": 0.27131625,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10261,
+   "output_tokens": 1139
   },
   {
    "chunk_id": "c1-r01",
@@ -317,14 +340,14 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "אָשֵׁר"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אָשֵׁר 100 אֵשֶׁת"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "3. Judg. 6, 25. Once, where in the same"
+   "text": "3. Judg. 6, 25.   Once, where in the same"
   },
   {
    "chunk_id": "c0-r00",
@@ -374,7 +397,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "ground, Deut. 16, 21. An Asherah or"
+   "text": "ground, Deut. 16, 21.   An Asherah or"
   },
   {
    "chunk_id": "c0-r00",
@@ -595,11 +618,6 @@
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "The former idea was adopted by me,"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
-   "text": "90 אשׁת"
   },
   {
    "chunk_id": "c1-r00",
@@ -858,5 +876,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 1.9974
+ "cost_usd_list_total": 2.2469
 }

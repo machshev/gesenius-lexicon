@@ -30,6 +30,7 @@ import os
 import pathlib
 import subprocess
 import sys
+import time
 
 import numpy as np
 from PIL import Image
@@ -151,14 +152,92 @@ def chunk_rows(ink_col: np.ndarray, target: int, maximum: int) -> list[tuple[int
     return list(zip(cuts, cuts[1:]))
 
 
+def detect_spanning_header(ink: np.ndarray, columns: list[tuple[int, int]]) -> tuple[int, int] | None:
+    """Return the [y0, y1) rows of the material set across both columns at the
+    top of the page, if any.
+
+    The running head (page number between the column catchwords), and on a
+    section's first page the heading, its rule and the section letter, are set
+    across the gutter, so their rows have ink inside the gutter. A vertical
+    column rule also inks the gutter, but over most of the page height, so
+    gutter pixel columns inked on more than 5% of rows, and their neighbours,
+    are masked out first; the skewed rule spreads over several such columns. What remains is the
+    header ink. Rows with header ink within the top 30% of the page are merged
+    into one header while the gaps between them stay under 200 px.
+    """
+    if len(columns) != 2:
+        return None
+    h, w = ink.shape
+    (l0, l1), (r0, r1) = columns
+    # Trim the gutter edges, where letters overhang the column bounds, and
+    # dilate the rule mask so the rule's blurred edges do not count either.
+    gutter = ink[:, l1 + 10 : r0 - 10]
+    if gutter.shape[1] == 0:
+        return None
+    rule = gutter.mean(axis=0) > 0.05
+    rule = np.convolve(rule.astype(int), np.ones(7, dtype=int), mode="same") > 0
+    gutter = gutter[:, ~rule]
+    if gutter.shape[1] == 0:
+        return None
+    count = gutter.sum(axis=1)
+    top = bottom = None
+    for y0, y1 in runs(count >= 3, 4):
+        if y0 > h * 0.3:
+            break
+        if top is None:
+            top, bottom = y0, y1
+        elif y0 - bottom < 200:
+            bottom = y1
+        else:
+            break
+    if top is None:
+        return None
+    return top, bottom
+
+
+def header_crop_rows(ink: np.ndarray, columns: list[tuple[int, int]], header: tuple[int, int]) -> tuple[int, int]:
+    """Extend header rows to the whole printed rows they belong to.
+
+    Gutter ink covers only the middle of a glyph set across the gutter, such
+    as the section letter under a heading. Only the header crop is extended;
+    the body still starts at the gutter-derived bottom, so the body chunk plan
+    does not move by a few pixels whenever this rule changes.
+    """
+    top, bottom = header
+    h = ink.shape[0]
+    row_ink = ink[:, columns[0][0] : columns[-1][1]].mean(axis=1) > 0.002
+    while top > 0 and row_ink[top - 1]:
+        top -= 1
+    while bottom < h and row_ink[bottom]:
+        bottom += 1
+    return top, bottom
+
+
 def plan_chunks(raster: pathlib.Path, target: int, maximum: int, pad: int) -> tuple[Image.Image, list[dict]]:
     img = Image.open(raster)
     ink = ink_mask(img)
     h, w = ink.shape
     chunks = []
-    for ci, (x0, x1) in enumerate(detect_columns(ink)):
-        col_ink = ink[:, x0:x1]
-        for ri, (y0, y1) in enumerate(chunk_rows(col_ink, target, maximum)):
+    columns = detect_columns(ink)
+    header = detect_spanning_header(ink, columns)
+    body_top = 0
+    if header is not None:
+        y0, y1 = header_crop_rows(ink, columns, header)
+        x0, x1 = columns[0][0], columns[-1][1]
+        bx0, bx1 = max(0, x0 - pad), min(w, x1 + pad)
+        by0, by1 = max(0, y0 - 6), min(h, y1 + 6)
+        chunks.append(
+            {
+                "chunk_id": "header",
+                "column": -1,
+                "row": 0,
+                "bounds": {"x": bx0, "y": by0, "width": bx1 - bx0, "height": by1 - by0},
+            }
+        )
+        body_top = header[1]
+    for ci, (x0, x1) in enumerate(columns):
+        col_ink = ink[body_top:, x0:x1]
+        for ri, (y0, y1) in enumerate((a + body_top, b + body_top) for a, b in chunk_rows(col_ink, target, maximum)):
             # Wide horizontal padding keeps marginal glyphs; tight vertical
             # padding keeps slivers of the neighbouring line out of the crop.
             bx0, bx1 = max(0, x0 - pad), min(w, x1 + pad)
@@ -189,9 +268,16 @@ def call_claude(image_path: pathlib.Path, model: str, timeout: int) -> dict:
         SCHEMA,
         prompt,
     ]
-    proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
+    # Transient CLI failures (rate limits, overload) exit 1 with nothing on
+    # stderr; the reason is in the JSON on stdout. Retry with backoff.
+    for attempt in range(4):
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
+        if proc.returncode == 0:
+            break
+        time.sleep(30 * 2**attempt)
     if proc.returncode != 0:
-        raise RuntimeError(f"claude exited {proc.returncode}: {proc.stderr.strip()[:500]}")
+        detail = (proc.stderr.strip() or proc.stdout.strip())[:500]
+        raise RuntimeError(f"claude exited {proc.returncode}: {detail}")
     result = json.loads(proc.stdout)
     structured = result.get("structured_output")
     if not isinstance(structured, dict) or "lines" not in structured:

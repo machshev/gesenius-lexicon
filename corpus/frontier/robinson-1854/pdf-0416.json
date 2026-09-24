@@ -12,27 +12,51 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-09-23T20:25:44+00:00",
+ "generated_at": "2026-09-24T08:42:32+00:00",
  "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 126,
+    "width": 1780,
+    "height": 71
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/header-1780x71+148+126.png",
+   "image_sha256": "89d0763f249755687e8282a53990568fe63afdf755a73f97a7305d7ef99ab29e",
+   "prompt_version": 2,
+   "lines": [
+    "ילד 400 ילל"
+   ],
+   "model": "claude-fable-5-1",
+   "session_id": "86fddb6e-f3f2-40ce-9caa-661b821d71ba",
+   "duration_api_ms": 11333,
+   "cost_usd_list": 0.21877925,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 35237,
+   "cache_creation_input_tokens": 9469,
+   "output_tokens": 405
+  },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "row": 0,
    "bounds": {
     "x": 148,
-    "y": 86,
+    "y": 176,
     "width": 877,
-    "height": 774
+    "height": 684
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/c0-r00-877x774+148+86.png",
-   "image_sha256": "7d0b50bb0e049b51c3380ffae0800016c18aea6246f5df7d5d664e6f72d754ab",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/c0-r00-877x684+148+176.png",
+   "image_sha256": "f0b48f827d89a434c693b9218dba7f2ac4ff80de15bddf4f487c0e0ffa3a8ddb",
    "prompt_version": 2,
    "lines": [
-    "ילד",
     "5, 7; to be born, i. q. Niph. Judg. 13, 8.",
-    "Ps. 87, 4. 5. 6. With לְ of father Gen.",
+    "Ps. 87, 4. 5. 6.  With לְ of father Gen.",
     "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl.",
-    "Gen. 10, 21. So with לְ of a near rela-",
+    "Gen. 10, 21.  So with לְ of a near rela-",
     "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;",
     "לְ of thing Job 5, 7.—Trop. to be brought",
     "forth, created, e. g. the mountains, Ps.",
@@ -42,13 +66,13 @@
     "his wife, to make fruitful, to have chil-"
    ],
    "model": "claude-fable-5-1",
-   "session_id": "0e773f7b-1e10-431e-b575-fd9b85046f9c",
-   "duration_api_ms": 18322,
-   "cost_usd_list": 0.23009049999999998,
+   "session_id": "b840e0fc-8137-414d-b799-c09fdad60198",
+   "duration_api_ms": 22346,
+   "cost_usd_list": 0.245266,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35122,
-   "cache_creation_input_tokens": 10076,
-   "output_tokens": 851
+   "cache_read_input_tokens": 35224,
+   "cache_creation_input_tokens": 10081,
+   "output_tokens": 690
   },
   {
    "chunk_id": "c0-r01",
@@ -171,15 +195,14 @@
    "row": 0,
    "bounds": {
     "x": 1044,
-    "y": 127,
+    "y": 176,
     "width": 884,
-    "height": 870
+    "height": 821
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/c1-r00-884x870+1044+127.png",
-   "image_sha256": "1ec4e44d56eebdbb1350688a7df63d023d9bbe26ecd1fafd4546a03fd40c0049",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/c1-r00-884x821+1044+176.png",
+   "image_sha256": "b402e69223a360812046507c29fae80cc0bdcc097e578b1e29e003e105d5f4bb",
    "prompt_version": 2,
    "lines": [
-    "ילל",
     "advanced, a youth, young man, Gen. 4,",
     "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph",
     "when 17 years old. Dan. 1, 4. 10. 1 K.",
@@ -194,13 +217,13 @@
     "1, 22. Josh. 5, 5. 2 Sam. 5, 14."
    ],
    "model": "claude-fable-5-1",
-   "session_id": "e421231f-7293-4413-b867-40fef25e79a5",
-   "duration_api_ms": 19886,
-   "cost_usd_list": 0.24062325,
+   "session_id": "3f7b10b1-ed3d-43b5-a96a-8908fae70534",
+   "duration_api_ms": 12820,
+   "cost_usd_list": 0.23845624999999998,
    "input_tokens": 34,
-   "cache_read_input_tokens": 35123,
-   "cache_creation_input_tokens": 10206,
-   "output_tokens": 1029
+   "cache_read_input_tokens": 35225,
+   "cache_creation_input_tokens": 10243,
+   "output_tokens": 489
   },
   {
    "chunk_id": "c1-r01",
@@ -314,9 +337,9 @@
  ],
  "lines": [
   {
-   "chunk_id": "c0-r00",
-   "column": 0,
-   "text": "ילד"
+   "chunk_id": "header",
+   "column": -1,
+   "text": "ילד 400 ילל"
   },
   {
    "chunk_id": "c0-r00",
@@ -326,7 +349,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Ps. 87, 4. 5. 6. With לְ of father Gen."
+   "text": "Ps. 87, 4. 5. 6.  With לְ of father Gen."
   },
   {
    "chunk_id": "c0-r00",
@@ -336,7 +359,7 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Gen. 10, 21. So with לְ of a near rela-"
+   "text": "Gen. 10, 21.  So with לְ of a near rela-"
   },
   {
    "chunk_id": "c0-r00",
@@ -591,11 +614,6 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "ילל"
-  },
-  {
-   "chunk_id": "c1-r00",
-   "column": 1,
    "text": "advanced, a youth, young man, Gen. 4,"
   },
   {
@@ -840,5 +858,5 @@
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 2.1073
+ "cost_usd_list_total": 2.3391
 }
