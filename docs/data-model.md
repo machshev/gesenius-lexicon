@@ -36,7 +36,20 @@ hypotheses remain intact. It then opens a new entry when a non-margin line begin
 with Hebrew and carries the last entry to an immediately consecutive page. When
 no continuation exists, leading non-margin content opens a headless fallback
 entry so section introductions and page continuations are retained; only margin
-lines remain `unparsed`. Later parsers or reviewers can refine paragraphs into
+lines remain `unparsed`.
+
+A letter heading is a section region or line whose text is a single Hebrew letter,
+possibly after `LEXICON.` as on the first page of the book. It always closes the
+entry in progress and opens a headless entry holding the heading (a `heading`
+block) and the letter's introduction, which runs until the next ordinary headword
+boundary. The same shape serves the opening page (`LEXICON.` then the letter, then
+the Aleph introduction) and a letter that begins mid-page (a full-width section
+heading between two tiers of columns), where the introduction must not be appended
+to the last entry of the previous letter. When the heading was not transcribed, the
+introduction's first line (the letter's name, a comma, then the Hebrew name, as in
+`Gimel, גִּימֶל`) opens the same entry. A printer's signature (a short number alone
+at the foot of a column) is `unparsed`. The converter keeps the page's tiers apart:
+running head, tier 0 columns, each section heading, then that tier's columns. Later parsers or reviewers can refine paragraphs into
 forms, grammar, definitions, etymology, citations, cross-references, and senses
 without losing the recognized document structure or reading order.
 

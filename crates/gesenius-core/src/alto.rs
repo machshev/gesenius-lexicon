@@ -419,6 +419,9 @@ fn parse_entries_with_hypotheses_continuing_mode(
     let mut page_entry_count = 0_usize;
 
     let mut previous_line: Option<(&str, &AltoLine)> = None;
+    // The current entry is a letter introduction: a letter heading and the
+    // essay under it, which runs to the next headword boundary.
+    let mut in_letter_introduction = false;
     for (line_index, (region, line)) in flatten_lines(canonical).enumerate() {
         if context.front_matter {
             assignments.push((
@@ -507,7 +510,20 @@ fn parse_entries_with_hypotheses_continuing_mode(
         let transcribed_boundary = mode == BoundaryMode::Transcribed
             && layout.indent(line).is_some_and(|indent| indent as f32 >= canonical.width as f32 * 0.012)
             && begins_with_marked_hebrew_headword(&line.text);
-        let starts_entry = !stem_heading
+        // A letter heading closes the entry in progress and opens a headless
+        // one for the heading and the letter's introduction, whether the
+        // heading opens the page (LEXICON. over the first letter) or falls
+        // mid-page. A page whose heading was never transcribed is recognised by
+        // the introduction's first line naming the letter.
+        let letter_heading = mode == BoundaryMode::Transcribed
+            && is_letter_heading_text(&line.text)
+            && !previous_line.is_some_and(|(_, previous)| is_lexicon_title_text(&previous.text));
+        let letter_introduction_start = mode == BoundaryMode::Transcribed
+            && !in_letter_introduction
+            && is_letter_introduction_start(&line.text);
+        let opens_letter_introduction = letter_heading || letter_introduction_start;
+        let starts_entry = opens_letter_introduction
+            || (!stem_heading
             && (entries.is_empty()
                 || match mode {
                     // Page OCR often makes every physical line its own ALTO
@@ -518,8 +534,11 @@ fn parse_entries_with_hypotheses_continuing_mode(
                     }
                     BoundaryMode::Ocr => detected_boundary,
                     BoundaryMode::Transcribed => transcribed_boundary,
-                });
-        let block_kind = if is_heading_line(line, region, canonical) {
+                }));
+        if starts_entry {
+            in_letter_introduction = opens_letter_introduction;
+        }
+        let block_kind = if letter_heading || is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {
             BlockKind::Paragraph
@@ -548,7 +567,7 @@ fn parse_entries_with_hypotheses_continuing_mode(
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
         if mode == BoundaryMode::Transcribed {
             // A page that opens mid-entry has no headword on its first line.
-            if transcribed_boundary && entry.headword.is_none() {
+            if transcribed_boundary && !opens_letter_introduction && entry.headword.is_none() {
                 entry.headword = extract_headword(&span, line);
             }
         } else if starts_entry && entry.headword.is_none() && !is_nonlexical_title(line, block_kind) {
@@ -633,6 +652,73 @@ fn parse_entries_with_hypotheses_continuing_mode(
         entries,
         assignments,
     }
+}
+
+/// The running title that precedes a letter on the first page of a letter.
+fn is_lexicon_title_text(text: &str) -> bool {
+    text.trim().trim_end_matches('.').trim().eq_ignore_ascii_case("LEXICON")
+}
+
+fn is_hebrew_base_letter(character: char) -> bool {
+    ('\u{05D0}'..='\u{05EA}').contains(&character)
+}
+
+fn is_hebrew_mark(character: char) -> bool {
+    ('\u{0591}'..='\u{05C7}').contains(&character)
+}
+
+/// A line that is one Hebrew letter, possibly with `LEXICON.` before it.
+fn is_letter_heading_text(text: &str) -> bool {
+    let mut rest = text.trim();
+    if rest.len() >= "LEXICON".len() && rest.is_char_boundary("LEXICON".len()) {
+        let (head, tail) = rest.split_at("LEXICON".len());
+        if head.eq_ignore_ascii_case("LEXICON") {
+            rest = tail.trim_start_matches(|c: char| c == '.' || c.is_whitespace());
+        }
+    }
+    let mut characters = rest.chars().filter(|character| !character.is_whitespace());
+    characters.next().is_some_and(is_hebrew_base_letter) && characters.all(is_hebrew_mark)
+}
+
+/// The Hebrew letter that a Latin letter name introduces.
+fn letter_for_name(name: &str) -> Option<char> {
+    Some(match name.to_ascii_lowercase().as_str() {
+        "aleph" => '\u{05D0}',
+        "beth" => '\u{05D1}',
+        "gimel" => '\u{05D2}',
+        "daleth" => '\u{05D3}',
+        "he" => '\u{05D4}',
+        "vav" | "vau" | "waw" => '\u{05D5}',
+        "zayin" => '\u{05D6}',
+        "cheth" | "heth" => '\u{05D7}',
+        "teth" => '\u{05D8}',
+        "yodh" | "jod" | "yod" => '\u{05D9}',
+        "kaph" => '\u{05DB}',
+        "lamed" => '\u{05DC}',
+        "mem" => '\u{05DE}',
+        "nun" => '\u{05E0}',
+        "samech" => '\u{05E1}',
+        "ayin" => '\u{05E2}',
+        "pe" => '\u{05E4}',
+        "tsade" | "tsadi" => '\u{05E6}',
+        "koph" | "qoph" => '\u{05E7}',
+        "resh" => '\u{05E8}',
+        "shin" | "sin" => '\u{05E9}',
+        "tav" | "taw" => '\u{05EA}',
+        _ => return None,
+    })
+}
+
+/// First line of a letter introduction whose heading was not transcribed:
+/// the letter's name, a comma, then the letter's own Hebrew name, as in
+/// `Gimel, גִּימֶל`.
+fn is_letter_introduction_start(text: &str) -> bool {
+    let text = text.trim_start();
+    let Some((name, rest)) = text.split_once(", ") else {
+        return false;
+    };
+    name.chars().all(|character| character.is_ascii_alphabetic())
+        && letter_for_name(name).is_some_and(|letter| rest.starts_with(letter))
 }
 
 fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
@@ -2387,13 +2473,31 @@ fn is_margin_line(line: &AltoLine, page_height: u32) -> bool {
     minimum_y < page_height as f32 * 0.05 || maximum_y > page_height as f32 * 0.975
 }
 
-fn is_isolated_page_artifact(line: &AltoLine, _region: &AltoRegion, page: &AltoPage) -> bool {
+fn is_isolated_page_artifact(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
     let (_, _, width, height) = polygon_bounds(&line.polygon);
-    line.text
+    let tiny = line
+        .text
         .chars()
         .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
         && width as f32 <= page.width as f32 * 0.02
-        && height as f32 <= page.height as f32 * 0.02
+        && height as f32 <= page.height as f32 * 0.02;
+    tiny || is_signature_mark(line, region, page)
+}
+
+/// A printer's signature (a short number such as `15`) alone on the last line
+/// of a column at the foot of the page. Its measured box can be as wide as the
+/// column, so the width is not used.
+fn is_signature_mark(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
+    let text = line.text.trim();
+    let digits = text.chars().filter(char::is_ascii_digit).count();
+    let (_, y, _, _) = polygon_bounds(&line.polygon);
+    (1..=3).contains(&digits)
+        && text
+            .chars()
+            .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
+        && text.chars().count() <= 5
+        && region.lines.last().is_some_and(|last| last.id == line.id)
+        && y as f32 >= page.height as f32 * 0.9
 }
 
 fn integer_attribute(node: Node<'_, '_>, attribute: &str) -> Result<u32> {
@@ -3092,5 +3196,202 @@ mod tests {
         assert!(word_matches_language("ܐܒܐ", "syr"));
         assert!(!word_matches_language("ܐܒܐ", "heb"));
         assert!(!word_matches_language("father", "heb"));
+    }
+
+    mod letter_headings {
+        use super::super::{
+            parse_transcribed_entries_continuing, AltoLine, AltoPage, AltoRegion, AltoWord,
+            LineAssignment, ParseContext, ParsedPage,
+        };
+        use crate::model::Point;
+
+        fn rect(x: f32, y: f32, width: f32, height: f32) -> Vec<Point> {
+            vec![
+                Point { x, y },
+                Point { x: x + width, y },
+                Point { x: x + width, y: y + height },
+                Point { x, y: y + height },
+            ]
+        }
+
+        fn line(id: &str, x: f32, y: f32, text: &str) -> AltoLine {
+            let width = 400.0;
+            let words = text
+                .split_whitespace()
+                .enumerate()
+                .map(|(index, word)| AltoWord {
+                    id: format!("{id}-w{index}"),
+                    polygon: rect(x + index as f32 * 20.0, y, 20.0, 30.0),
+                    text: word.to_owned(),
+                    confidence: 0.95,
+                    language: None,
+                    structural_language: false,
+                })
+                .collect();
+            AltoLine {
+                id: id.to_owned(),
+                polygon: rect(x, y, width, 30.0),
+                words,
+                text: text.to_owned(),
+                confidence: 0.95,
+            }
+        }
+
+        fn region(id: &str, lines: Vec<AltoLine>) -> AltoRegion {
+            AltoRegion { id: id.to_owned(), polygon: Vec::new(), lines }
+        }
+
+        fn parse(regions: Vec<AltoRegion>) -> ParsedPage {
+            let page = AltoPage { width: 1000, height: 2000, regions };
+            let context = ParseContext {
+                edition: "test",
+                printed_page: "1",
+                source_page: 1,
+                source_sha256: "sha",
+                scan_id: "scan",
+                pipeline_run: "run",
+                page_image: "page.png",
+                transform_id: "none",
+                front_matter: false,
+            };
+            parse_transcribed_entries_continuing(&page, &[], &context, None)
+        }
+
+        /// (headword, first line, last line, kind of the first block)
+        fn summary(parsed: &ParsedPage) -> Vec<(Option<String>, String, String)> {
+            parsed
+                .entries
+                .iter()
+                .map(|entry| {
+                    let lines: Vec<_> = parsed
+                        .assignments
+                        .iter()
+                        .filter(|(_, _, a)| *a == LineAssignment::Entry(entry.id.clone()))
+                        .map(|(_, line, _)| line.clone())
+                        .collect();
+                    (
+                        entry.headword.as_ref().map(|h| h.diplomatic.clone()),
+                        lines.first().cloned().unwrap_or_default(),
+                        lines.last().cloned().unwrap_or_default(),
+                    )
+                })
+                .collect()
+        }
+
+        fn mid_page(heading_region: &str, heading_text: &str) -> Vec<AltoRegion> {
+            vec![
+                region(
+                    "column-1",
+                    vec![
+                        line("a1", 120.0, 300.0, "אֶתְנַן n. m. a gift,"),
+                        line("a2", 40.0, 340.0, "hire of a harlot."),
+                        line("a3", 120.0, 380.0, "אֲתָרִים pl. n. spies."),
+                        line("a4", 40.0, 420.0, "Num. 21, 1."),
+                    ],
+                ),
+                region(heading_region, vec![line("h1", 480.0, 600.0, heading_text)]),
+                region(
+                    "t1-column-1",
+                    vec![
+                        line("b1", 40.0, 800.0, "Beth, בֵּית, the second letter"),
+                        line("b2", 40.0, 840.0, "of the alphabet, house."),
+                        line("b3", 120.0, 880.0, "בְּ prep. in, at."),
+                        line("b4", 40.0, 920.0, "with the article."),
+                    ],
+                ),
+            ]
+        }
+
+        #[test]
+        fn a_mid_page_letter_heading_closes_the_entry_and_opens_an_introduction() {
+            let parsed = parse(mid_page("section-1", "ב"));
+            let entries = summary(&parsed);
+            assert_eq!(entries.len(), 4, "{entries:?}");
+            assert_eq!(entries[1].0.as_deref(), Some("אֲתָרִים"));
+            assert_eq!((entries[1].1.as_str(), entries[1].2.as_str()), ("a3", "a4"));
+            assert_eq!(entries[2], (None, "h1".into(), "b2".into()));
+            assert_eq!(entries[3].0.as_deref(), Some("בְּ"));
+            assert_eq!(entries[3].1, "b3");
+            let heading = &parsed.entries[2].blocks[0];
+            assert_eq!(heading.kind, crate::model::BlockKind::Heading);
+        }
+
+        #[test]
+        fn lexicon_title_with_the_letter_in_one_line_is_a_heading() {
+            let parsed = parse(mid_page("section-1", "LEXICON. ב"));
+            assert_eq!(summary(&parsed)[2], (None, "h1".into(), "b2".into()));
+        }
+
+        #[test]
+        fn lexicon_title_then_letter_is_one_heading_not_two() {
+            let regions = vec![
+                region(
+                    "header",
+                    vec![line("t1", 300.0, 150.0, "LEXICON."), line("t2", 600.0, 150.0, "א")],
+                ),
+                region(
+                    "column-1",
+                    vec![
+                        line("c1", 40.0, 300.0, "The name Aleph, like the rest,"),
+                        line("c1b", 40.0, 340.0, "is of Phenician origin."),
+                        line("c1c", 40.0, 380.0, "It signifies ox."),
+                        line("c2", 120.0, 420.0, "אָב n. m. father."),
+                    ],
+                ),
+            ];
+            let entries = summary(&parse(regions));
+            assert_eq!(entries.len(), 2, "{entries:?}");
+            assert_eq!(entries[0], (None, "t1".into(), "c1c".into()));
+        }
+
+        #[test]
+        fn an_untranscribed_heading_is_recognised_from_the_introduction() {
+            let mut regions = mid_page("section-1", "ב");
+            regions.remove(1);
+            let entries = summary(&parse(regions));
+            assert_eq!(entries.len(), 4, "{entries:?}");
+            assert_eq!(entries[2], (None, "b1".into(), "b2".into()));
+        }
+
+        #[test]
+        fn a_hebrew_word_that_is_not_a_single_letter_is_not_a_heading() {
+            let parsed = parse(mid_page("section-1", "בֵּית"));
+            assert_eq!(summary(&parsed).len(), 4);
+            assert_ne!(summary(&parsed)[2].1, "h1");
+        }
+
+        #[test]
+        fn a_printers_signature_at_the_column_foot_is_unparsed() {
+            let regions = vec![region(
+                "column-1",
+                vec![
+                    line("a1", 120.0, 300.0, "אֶתְנַן n. m. a gift,"),
+                    line("a2", 40.0, 1800.0, "hire of a harlot."),
+                    line("sig", 40.0, 1850.0, "15"),
+                ],
+            )];
+            let parsed = parse(regions);
+            assert!(parsed
+                .assignments
+                .iter()
+                .any(|(_, id, a)| id == "sig" && *a == LineAssignment::Unparsed));
+        }
+
+        #[test]
+        fn a_number_inside_a_column_is_not_a_signature() {
+            let regions = vec![region(
+                "column-1",
+                vec![
+                    line("a1", 120.0, 300.0, "אֶתְנַן n. m. a gift,"),
+                    line("a2", 40.0, 340.0, "15"),
+                    line("a3", 40.0, 380.0, "hire."),
+                ],
+            )];
+            let parsed = parse(regions);
+            assert!(parsed
+                .assignments
+                .iter()
+                .any(|(_, id, a)| id == "a2" && matches!(a, LineAssignment::Entry(_))));
+        }
     }
 }
