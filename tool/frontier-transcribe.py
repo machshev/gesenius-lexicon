@@ -238,9 +238,38 @@ def detect_section_breaks(ink: np.ndarray, columns: list[tuple[int, int]], body_
             found[-1][1] = y1
         else:
             found.append([y0, y1])
-    return [
+    breaks = [
         (y0, y1) for y0, y1 in found if y1 - y0 >= 20 and int(count[y0:y1].max()) >= 10
     ]
+    # A single letter heading is small and centred on the column rule, so the
+    # rule mask above can swallow most of it. Look for it in the unmasked
+    # gutter too.
+    for y0, y1 in detect_gutter_glyphs(ink, columns):
+        if y0 >= body_top + 100 and not any(y0 < b1 and b0 < y1 for b0, b1 in breaks):
+            breaks.append((y0, y1))
+    return sorted(breaks)
+
+
+def detect_gutter_glyphs(ink: np.ndarray, columns: list[tuple[int, int]]) -> list[tuple[int, int]]:
+    """Return [y0, y1) rows of compact glyph-sized ink blobs in the gutter.
+
+    Unlike the column rule, which is a tall narrow run, a letter heading is a
+    blob 20 to 120 rows tall and at least 15 pixels wide, with blank rows
+    above and below it.
+    """
+    (_, l1), (r0, _) = columns
+    gutter = ink[:, l1 + 10 : r0 - 10]
+    if gutter.shape[1] == 0:
+        return []
+    out = []
+    for y0, y1 in runs(gutter.sum(axis=1) >= 3, 4):
+        if not 20 <= y1 - y0 <= 120:
+            continue
+        blob = gutter[y0:y1]
+        xs = np.flatnonzero(blob.any(axis=0))
+        if xs[-1] - xs[0] + 1 >= 15 and int(blob.sum(axis=1).max()) >= 10:
+            out.append((y0, y1))
+    return out
 
 
 def plan_chunks(raster: pathlib.Path, target: int, maximum: int, pad: int) -> tuple[Image.Image, list[dict]]:
