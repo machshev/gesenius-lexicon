@@ -18,7 +18,6 @@ import argparse
 import importlib.util
 import json
 import pathlib
-import re
 import sys
 import unicodedata
 
@@ -54,13 +53,17 @@ def fold(text: str) -> str:
     return fv.nfc(alto.printed_glyphs(text)).replace("ϑ", "θ")
 
 
+def bare(text: str) -> str:
+    """The text without punctuation, symbols and spaces; combining marks stay."""
+    return "".join(c for c in text if unicodedata.category(c)[0] not in "PZS")
+
+
 def classify(a: str, b: str) -> str:
     """Why two readings of a line differ; 'none' when they agree after folding."""
     a, b = fold(a), fold(b)
     if a == b:
         return "none"
-    word = re.compile(r"[\W_]+")
-    if word.sub("", a) == word.sub("", b):
+    if bare(a) == bare(b):
         return "punctuation"
     if scripts(a) != scripts(b):
         return "script change"

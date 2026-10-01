@@ -279,7 +279,7 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
             elif fv.nfc(alto.printed_glyphs(ln["blind"])) != fv.nfc(alto.printed_glyphs(ln["text"])):
                 ln["reason"] = f"theta form unresolved: blind {ln['blind']!r}, pass 2 {ln['text']!r}"
                 ln["glyph"] = "theta"
-            elif ln["blind_confidence"] != "certain":
+            elif ln["blind_confidence"] == "uncertain":
                 ln["triggers"].append(f"blind confidence {ln['blind_confidence']}")
             if differs_from_fixture(ln, fixture):
                 ln["triggers"].append("pass 1 and pass 2 agree but differ from old fixture")
@@ -299,7 +299,7 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
                 ln["reason"] = f"reviewer verdict {r['verdict']}" + (", unclear" if r["unclear"] else "")
             else:
                 ln["candidate"] = {"pass2": ln["text"], "blind": ln["blind"]}.get(r["verdict"], r["text"])
-                if r["confidence"] != "certain":
+                if r["confidence"] == "uncertain":
                     ln["triggers"].append(f"reviewer confidence {r['confidence']}")
 
     # Second reader, only for bands holding a contested item that can still become gold.

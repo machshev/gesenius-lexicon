@@ -239,3 +239,58 @@ page areas are fully transcribed. Measuring extra-line precision requires explic
 fully transcribed evaluation regions, which remain future work along with
 entry-boundary scoring. Legacy line-ID results report `line_segmentation: null`;
 missing geometry is not a perfect segmentation score.
+
+## Gold conventions and provenance
+
+Whole-page frontier-reviewed fixtures are named `benchmarks/gold/robinson-1854-pdfNNNN-full.json`
+and written by `tool/gold-assemble.py` from a review sidecar in
+`benchmarks/gold-review/robinson-1854/pdf-NNNN.json`. Every line is anchored in
+the 400 DPI frontier raster frame (`frontier-raster-400dpi-pdfNNNN-sha256-<raster sha>`)
+with the row geometry of `tool/frontier-to-alto.py`; ids are `pdfNNNN-cC-LLL`
+(column C, running line L). The `authority` text names the pass 1, pass 2,
+reviewer and second-reader models, the review date and the count of excluded
+lines. The three older fixtures (PDF 17, 66, 716) are unedited, because
+baselines cite their digests, and are superseded for foreign-script scoring;
+scores recorded against them are not comparable with the new ones.
+
+Provenance. Pass 1 and pass 2 are the same model, so their agreement is weak
+evidence. `tool/gold-review.py` therefore reads every band blind with a
+different model (`claude --model opus`), reconciles each line where that read
+differs from pass 2, and asks a second reader from a different model family
+(`codex exec`, band image and minimal instructions only, no page context) about
+contested items: blind read differs from pass 2, pass 1 and pass 2 agree but
+differ from the old fixture, or the reviewer is uncertain. A line is gold only
+when the readers converge (the second reader reads the candidate text); lines
+whose readers differ, whose verdict is `contested`, where a reader reports an
+unresolved mark or an unencoded glyph, or that were never reviewed are excluded
+from the fixture and listed in the sidecar. They are never mapped to a
+convenient letter. Pass 2 records with errored bands are refused. Only the
+development pages (PDF 17, 66, 116, 341, 716) and validation pages (191, 491,
+641, 941, 1091) are reviewed; the final-test pages PDF 266 and 791 stay unread by
+any reviewer. A pipeline scored against gold that derives from a frontier pass
+reports an upper bound; report the blind-read agreement rate per script (in the
+sidecar) next to it. Acceptance tolerances are unchanged.
+
+Transcription conventions: printed glyphs are kept (cursive theta stays theta
+as printed, typographic quotes stay typographic); the hair space before `;`
+`:` `!` `?` is not transcribed; no bidi controls; no vav or yod is inserted or
+dropped; the raised dot after an inseparable prefix is kept; text is NFC.
+
+Printed-glyph conversion. The frontier prompt is not changed, since a prompt
+version bump would stop reuse of cached passes. Instead
+`printed_glyphs` in `tool/frontier-to-alto.py` is applied when frontier text
+becomes ALTO or gold: NFC, and a straight apostrophe between a word and a
+possessive s becomes U+2019. Evidence from the pass 1 and pass 2 records (24
+pages) and the old fixtures: the model writes U+2019 and the curly single
+quotes itself (16 and 13 in pass 2), and writes a straight `'` 17 times, 14 of
+them as a possessive (Author's, David's, ship's) and the rest in Jeb'a and
+el-kherû'a, where the print could be a modifier letter, and in one isolated
+opening quote; the double quote U+201C occurs only as ditto marks in the
+errata (PDF 15). Only the possessive is therefore converted. The cursive theta
+cannot be converted reliably: the only theta in the old fixtures is U+03D1 in
+p001 line 74 (`χϑὲς`, `ἐχϑές`), where pass 2 wrote U+03B8, and all eight pass 2
+theta lines (including `Ὀρθία`, `ληίζεσθαι`) use U+03B8, so the text carries no
+information about the printed form. The blind prompt asks for U+03D1 where it is
+printed; comparisons fold both to U+03B8, and a line where the blind read
+and pass 2 differ only in the theta form is contested with `glyph: theta` in
+the sidecar for the reviewer to record. Such a line is excluded until then.
