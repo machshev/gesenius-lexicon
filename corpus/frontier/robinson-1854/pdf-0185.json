@@ -12,7 +12,7 @@
  "method": "claude-cli-print-json-schema",
  "prompt_version": 2,
  "prompt": "Read the image file {path}. It is a crop of one column of a printed 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, accent and diacritic, written in logical order with no bidi control characters; keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Where a page or column header, page number or catchword is present, include it as its own line. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
- "generated_at": "2026-10-01T19:39:19+00:00",
+ "generated_at": "2026-10-01T20:19:29+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -52,10 +52,10 @@
     "x": 56,
     "y": 166,
     "width": 871,
-    "height": 743
+    "height": 515
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c0-r00-871x743+56+166.png",
-   "image_sha256": "9dc662838bc698294207c34aa30d4821d5ffc488d0d5025615fdce252dfde48f",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c0-r00-871x515+56+166.png",
+   "image_sha256": "ee67c1a5beaf3c5a3f0faa238a3306e5473f0e2c9fd7ed46a5e1b39d1481832c",
    "prompt_version": 2,
    "lines": [
     "have been derived from the nature of",
@@ -67,36 +67,97 @@
    ],
    "model": "claude-fable-5-1",
    "cli_mode": "lean-system-prompt-v1",
-   "session_id": "60810fc1-a94a-4078-a59e-065c41667243",
-   "duration_api_ms": 9964,
-   "cost_usd_list": 0.07363600000000001,
+   "session_id": "bea2fcb9-de3b-40b7-9277-598f7d547314",
+   "duration_api_ms": 18695,
+   "cost_usd_list": 0.0687285,
    "input_tokens": 34,
-   "cache_read_input_tokens": 3384,
-   "cache_creation_input_tokens": 2220,
-   "output_tokens": 561
+   "cache_read_input_tokens": 3434,
+   "cache_creation_input_tokens": 2014,
+   "output_tokens": 545
   },
   {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "row": 1,
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
    "tier": 0,
    "bounds": {
-    "x": 56,
-    "y": 897,
-    "width": 871,
-    "height": 849
+    "x": 945,
+    "y": 166,
+    "width": 875,
+    "height": 512
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c0-r01-871x849+56+897.png",
-   "image_sha256": "c5922c12ae793ee1824933b2b7707e375b575493b4bf2538672b1659a165b63b",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c1-r00-875x512+945+166.png",
+   "image_sha256": "e1fb018c49d5ae0585fe2ae02bf1d2dc6d5a4445fd520237e74b126fad523121",
+   "prompt_version": 2,
+   "lines": [
+    "ly, entirely. In Hebrew it seems to",
+    "have signified :",
+    "1. to cut or mark out, to define, and",
+    "hence to measure ; whence בַּת II, as a",
+    "measure of liquids.",
+    "2. to cut off any thing, to make an end",
+    "of, to lay wholly waste, i. q. כִּלָּה ; whence",
+    "בָּתָה, בַּתָּה."
+   ],
+   "model": "claude-fable-5-1",
+   "cli_mode": "lean-system-prompt-v1",
+   "session_id": "c690e731-69b1-4846-9233-dd6afcdcf3a3",
+   "duration_api_ms": 10025,
+   "cost_usd_list": 0.0756285,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 3434,
+   "cache_creation_input_tokens": 2014,
+   "output_tokens": 683
+  },
+  {
+   "chunk_id": "section-1",
+   "column": -1,
+   "row": 0,
+   "tier": 1,
+   "bounds": {
+    "x": 761,
+    "y": 914,
+    "width": 348,
+    "height": 54
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/section-1-348x54+761+914.png",
+   "image_sha256": "00ee32ab275d61ce181ed86862f4de3c9abd1bd1e7f2c9ff5d4991eb50ea4003",
+   "prompt_version": 2,
+   "lines": [
+    "ג"
+   ],
+   "model": "claude-fable-5-1",
+   "cli_mode": "lean-system-prompt-v1",
+   "session_id": "e3a54153-19e0-4ac5-86bd-3072f86d5059",
+   "duration_api_ms": 4692,
+   "cost_usd_list": 0.042758000000000004,
+   "input_tokens": 34,
+   "cache_read_input_tokens": 3432,
+   "cache_creation_input_tokens": 1428,
+   "output_tokens": 260
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "row": 0,
+   "tier": 1,
+   "bounds": {
+    "x": 56,
+    "y": 1034,
+    "width": 871,
+    "height": 712
+   },
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/t1-c0-r00-871x712+56+1034.png",
+   "image_sha256": "24c78ff21041a6b8ed9a72d577ce079b2092949d1eeef25a844d0615d9279242",
    "prompt_version": 2,
    "lines": [
     "Gimel, גִּימֶל, the third letter of the",
     "Hebrew alphabet; as a numeral denot-",
     "ing 3. Its name differs only in form",
-    "from גָּמָל camel ; and its figure in Pheni-",
-    "cian inscriptions (Λ , Λ,) bears a cer-",
+    "from גָּמָל camel; and its figure in Pheni-",
+    "cian inscriptions (Λ, Λ,) bears a cer-",
     "tain resemblance to the camel's hump",
-    "or neck ; see Monumen. Phœn. p. 22.",
+    "or neck; see Monumen. Phœn. p. 22.",
     "As the softest of the palatal letters",
     "(גיכק) except Yod, it is often inter-",
     "changed: a) With the harder palatals",
@@ -105,26 +166,26 @@
    ],
    "model": "claude-fable-5-1",
    "cli_mode": "lean-system-prompt-v1",
-   "session_id": "f0bdc020-1709-4721-8606-28e31b3f31d7",
-   "duration_api_ms": 12209,
-   "cost_usd_list": 0.071996,
+   "session_id": "164cfd08-f397-4e72-bed1-51c7db30d6af",
+   "duration_api_ms": 15913,
+   "cost_usd_list": 0.0654695,
    "input_tokens": 34,
-   "cache_read_input_tokens": 3384,
-   "cache_creation_input_tokens": 2348,
-   "output_tokens": 477
+   "cache_read_input_tokens": 3438,
+   "cache_creation_input_tokens": 2246,
+   "output_tokens": 387
   },
   {
-   "chunk_id": "c0-r02",
+   "chunk_id": "t1-c0-r01",
    "column": 0,
-   "row": 2,
-   "tier": 0,
+   "row": 1,
+   "tier": 1,
    "bounds": {
     "x": 56,
     "y": 1734,
     "width": 871,
     "height": 808
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c0-r02-871x808+56+1734.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/t1-c0-r01-871x808+56+1734.png",
    "image_sha256": "b1f74c8cb9922a44cb0ab0323c10de4c0e91c31a6c80cd9c4dcee22ae2d33b47",
    "prompt_version": 2,
    "lines": [
@@ -150,17 +211,17 @@
    "output_tokens": 1053
   },
   {
-   "chunk_id": "c0-r03",
+   "chunk_id": "t1-c0-r02",
    "column": 0,
-   "row": 3,
-   "tier": 0,
+   "row": 2,
+   "tier": 1,
    "bounds": {
     "x": 56,
     "y": 2530,
     "width": 871,
     "height": 794
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c0-r03-871x794+56+2530.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/t1-c0-r02-871x794+56+2530.png",
    "image_sha256": "89f5c4723d701edf361c1d20b490904f522db5adcbc516db7834ba0e97614d9a",
    "prompt_version": 2,
    "lines": [
@@ -188,52 +249,18 @@
    "output_tokens": 1126
   },
   {
-   "chunk_id": "c1-r00",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "row": 0,
-   "tier": 0,
+   "tier": 1,
    "bounds": {
     "x": 945,
-    "y": 166,
+    "y": 1039,
     "width": 875,
-    "height": 746
+    "height": 827
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c1-r00-875x746+945+166.png",
-   "image_sha256": "4b867bfb3a181eeabeb42c395927c8d0b1ddaee565a22a664b8c370d2626c4a3",
-   "prompt_version": 2,
-   "lines": [
-    "ly, entirely. In Hebrew it seems to",
-    "have signified :",
-    "1. to cut or mark out, to define, and",
-    "hence to measure ; whence בַּת II, as a",
-    "measure of liquids.",
-    "2. to cut off any thing, to make an end",
-    "of, to lay wholly waste, i. q. בִּלָּה ; whence",
-    "בַּתָּה, בָּתָה."
-   ],
-   "model": "claude-fable-5-1",
-   "cli_mode": "lean-system-prompt-v1",
-   "session_id": "e116081a-a729-4297-af6e-fd5e24fd2692",
-   "duration_api_ms": 15621,
-   "cost_usd_list": 0.07424850000000001,
-   "input_tokens": 34,
-   "cache_read_input_tokens": 3434,
-   "cache_creation_input_tokens": 2270,
-   "output_tokens": 553
-  },
-  {
-   "chunk_id": "c1-r01",
-   "column": 1,
-   "row": 1,
-   "tier": 0,
-   "bounds": {
-    "x": 945,
-    "y": 900,
-    "width": 875,
-    "height": 966
-   },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c1-r01-875x966+945+900.png",
-   "image_sha256": "f564ccd08519681432e2ac4687a0faf64dd3e1eac036e31037debbf26befa2d5",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/t1-c1-r00-875x827+945+1039.png",
+   "image_sha256": "362765612c5f961992bc8d1a9d77ed47fea5183a7c4e0fbcfa3198eabff83b88",
    "prompt_version": 2,
    "lines": [
     "2. Metaph. to be exalted, majestic,",
@@ -242,10 +269,10 @@
     "3. to be eminent, excellent, splendid;",
     "see deriv. גָּאוֹן no. 2.",
     "4. to be elated, i. e. haughty, proud;",
-    "see deriv. גֵּאָה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+    "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
     "Syr. Pa. ܓܰܐܺܝ to decorate, to make",
     "splendid, magnificent; Ethpa. to boast",
-    "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝܳܐ decorated, elegant,",
+    "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝ decorated, elegant,",
     "magnificent. In the signif. of pride it",
     "corresponds with Gr. γαίω.",
     "Deriv. גֵּא, גֵּוָה I, and those here fol-",
@@ -253,26 +280,26 @@
    ],
    "model": "claude-fable-5-1",
    "cli_mode": "lean-system-prompt-v1",
-   "session_id": "7142a6f7-81c5-4974-9788-2264f53079ac",
-   "duration_api_ms": 23386,
-   "cost_usd_list": 0.1002185,
+   "session_id": "fd0d9cf5-9bff-4721-85cb-33a876b6b942",
+   "duration_api_ms": 24697,
+   "cost_usd_list": 0.10067949999999999,
    "input_tokens": 34,
-   "cache_read_input_tokens": 3434,
-   "cache_creation_input_tokens": 2526,
-   "output_tokens": 970
+   "cache_read_input_tokens": 3438,
+   "cache_creation_input_tokens": 2374,
+   "output_tokens": 1040
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
-   "row": 2,
-   "tier": 0,
+   "row": 1,
+   "tier": 1,
    "bounds": {
     "x": 945,
     "y": 1854,
     "width": 875,
     "height": 651
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c1-r02-875x651+945+1854.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/t1-c1-r01-875x651+945+1854.png",
    "image_sha256": "2cd68f71409538c3a272eac7926b625a7a40bd7a56d34e235bc98270f5417fee",
    "prompt_version": 2,
    "lines": [
@@ -299,17 +326,17 @@
    "output_tokens": 429
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
-   "row": 3,
-   "tier": 0,
+   "row": 2,
+   "tier": 1,
    "bounds": {
     "x": 945,
     "y": 2493,
     "width": 875,
     "height": 796
    },
-   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/c1-r03-875x796+945+2493.png",
+   "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/t1-c1-r02-875x796+945+2493.png",
    "image_sha256": "f9e9350857818c4e0d3c4e4a9bedd12dbb4afb5db4cf3b21c90426845d7abd72",
    "prompt_version": 2,
    "lines": [
@@ -385,176 +412,6 @@
    "text": "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-"
   },
   {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "Gimel, גִּימֶל, the third letter of the"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "Hebrew alphabet; as a numeral denot-"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "ing 3. Its name differs only in form"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "from גָּמָל camel ; and its figure in Pheni-"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "cian inscriptions (Λ , Λ,) bears a cer-"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "tain resemblance to the camel's hump"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "or neck ; see Monumen. Phœn. p. 22."
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "As the softest of the palatal letters"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "(גיכק) except Yod, it is often inter-"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "changed: a) With the harder palatals"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "כ and ק, both in the Hebrew itself,"
-  },
-  {
-   "chunk_id": "c0-r01",
-   "column": 0,
-   "text": "and in the corresponding forms of the"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "kindred dialects; e. g. גָּדִישׁ, جُدْس,"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "كَدِيس, a heap of sheaves; גָּפְרִית."
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "to cover, to protect; גָּנַז and כָּנַס, كنز,"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "to collect, to heap up: רָגַל and רָכַל to run"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "up and down, גָּבִיעַ, قُبَعَة, calix of flow-"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "שֵׁגֵד, ܫܶܓܕܳܐ, an almond-tree."
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "b) More rarely with the gutturals; as"
-  },
-  {
-   "chunk_id": "c0-r02",
-   "column": 0,
-   "text": "ע, e. g. נָבַע, Chald. נְבַע, נָבַג, to burst"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "forth; גִּדָּה, Arab. غَرِيَ to provoke; also ה,"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "comp. אֶחַח."
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e."
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "haughty, proud, Is. 16, 6."
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "* גָּאָה fut. יִגְאֶה, a poetic word."
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "1. to lift up oneself, to rise, to increase,"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "e. g. of rising waters Ez. 47, 5; of a"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "plant growing Job 8, 11.—Job 10, 16"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself"
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "(sc. my head) thou huntest me as a lion."
-  },
-  {
-   "chunk_id": "c0-r03",
-   "column": 0,
-   "text": "15"
-  },
-  {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "ly, entirely. In Hebrew it seems to"
@@ -587,204 +444,379 @@
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "of, to lay wholly waste, i. q. בִּלָּה ; whence"
+   "text": "of, to lay wholly waste, i. q. כִּלָּה ; whence"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "בַּתָּה, בָּתָה."
+   "text": "בָּתָה, בַּתָּה."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "section-1",
+   "column": -1,
+   "text": "ג"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "Gimel, גִּימֶל, the third letter of the"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "Hebrew alphabet; as a numeral denot-"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "ing 3. Its name differs only in form"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "from גָּמָל camel; and its figure in Pheni-"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "cian inscriptions (Λ, Λ,) bears a cer-"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "tain resemblance to the camel's hump"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "or neck; see Monumen. Phœn. p. 22."
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "As the softest of the palatal letters"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "(גיכק) except Yod, it is often inter-"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "changed: a) With the harder palatals"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "כ and ק, both in the Hebrew itself,"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "and in the corresponding forms of the"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "kindred dialects; e. g. גָּדִישׁ, جُدْس,"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "كَدِيس, a heap of sheaves; גָּפְרִית."
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "to cover, to protect; גָּנַז and כָּנַס, كنز,"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "to collect, to heap up: רָגַל and רָכַל to run"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "up and down, גָּבִיעַ, قُبَعَة, calix of flow-"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "שֵׁגֵד, ܫܶܓܕܳܐ, an almond-tree."
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "b) More rarely with the gutturals; as"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "ע, e. g. נָבַע, Chald. נְבַע, נָבַג, to burst"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "forth; גִּדָּה, Arab. غَرِيَ to provoke; also ה,"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "comp. אֶחַח."
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e."
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "haughty, proud, Is. 16, 6."
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "* גָּאָה fut. יִגְאֶה, a poetic word."
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "1. to lift up oneself, to rise, to increase,"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "e. g. of rising waters Ez. 47, 5; of a"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "plant growing Job 8, 11.—Job 10, 16"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "(sc. my head) thou huntest me as a lion."
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "15"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "2. Metaph. to be exalted, majestic,"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "glorious, spoken of God, Ex. 15, 1. 21.—"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "Hence in the derivatives also:"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "3. to be eminent, excellent, splendid;"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "see deriv. גָּאוֹן no. 2."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "4. to be elated, i. e. haughty, proud;"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
-   "text": "see deriv. גֵּאָה no. 2, גַּאֲוָה and גָּאוֹן no. 3."
+   "text": "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "Syr. Pa. ܓܰܐܺܝ to decorate, to make"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "splendid, magnificent; Ethpa. to boast"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
-   "text": "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝܳܐ decorated, elegant,"
+   "text": "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝ decorated, elegant,"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "magnificent. In the signif. of pride it"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "corresponds with Gr. γαίω."
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "Deriv. גֵּא, גֵּוָה I, and those here fol-"
   },
   {
-   "chunk_id": "c1-r01",
+   "chunk_id": "t1-c1-r00",
    "column": 1,
    "text": "lowing."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "גֵּאֶה adj. 1. lifted up, high, lofty,"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "וְהַשְׁפִּילֵהוּ look upon every high thing"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "and bring it low."
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "2. elated, i. e. proud, haughty, Jer. 48,"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "29. Plur. גֵּאִים the proud, often with the"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "accessory notion of impiety, ungodli-"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "ness; as elsewhere gentleness and hu-"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "mility include also the idea of piety, see"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "עָנָו. Ps. 94, 2. 140, 6. Prov. 15, 25. 16,"
   },
   {
-   "chunk_id": "c1-r02",
+   "chunk_id": "t1-c1-r01",
    "column": 1,
    "text": "19. Sept. ὑπερήφανοι, ὑβρισταί."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "גֵּאָה f. pride, haughtiness, Prov. 8, 13."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "גְּאוּאֵל (majesty of God) Geuel pr. n."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "m. Num. 13, 15."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "tion; hence"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "1. majesty, glory, as of God, Deut. 33"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "26. Ps. 68, 35."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "2. ornament, excellency, splendour,"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "Job 41, 7. Deut. 33, 29."
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "3. pride, haughtiness; Ps. 73, 6 לָכֵן"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "them like a neck-chain; i. e. clothes their"
   },
   {
-   "chunk_id": "c1-r03",
+   "chunk_id": "t1-c1-r02",
    "column": 1,
    "text": "neck, as being the seat of pride. Ps. 31."
   }
  ],
  "errors": 0,
- "cost_usd_list_total": 0.7419
+ "cost_usd_list_total": 0.7751
 }
