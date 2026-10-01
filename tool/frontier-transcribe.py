@@ -268,6 +268,12 @@ def detect_gutter_glyphs(ink: np.ndarray, columns: list[tuple[int, int]]) -> lis
         blob = gutter[y0:y1]
         xs = np.flatnonzero(blob.any(axis=0))
         if xs[-1] - xs[0] + 1 >= 15 and int(blob.sum(axis=1).max()) >= 10:
+            # Extend over the glyph's faint tips, which fall under the count
+            # threshold, so the heading crop is not clipped.
+            while y0 > 0 and gutter[y0 - 1].any():
+                y0 -= 1
+            while y1 < len(gutter) and gutter[y1].any():
+                y1 += 1
             out.append((y0, y1))
     return out
 
