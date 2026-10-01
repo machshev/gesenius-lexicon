@@ -15,9 +15,11 @@ incomplete are refused with the same check as tool/check-frontier-pass2.py.
 from __future__ import annotations
 
 import argparse
+import difflib
 import importlib.util
 import json
 import pathlib
+import re
 import sys
 import unicodedata
 
@@ -51,6 +53,99 @@ def fold(text: str) -> str:
     """Comparison key: NFC, hair spaces dropped, the printed-glyph conversion,
     and cursive theta folded to theta (the model cannot be trusted on it)."""
     return fv.nfc(alto.printed_glyphs(text)).replace("ϑ", "θ")
+
+
+# --- Deterministic conventions (docs/ocr-metric-policy.md, "Gold conventions and provenance") ---
+
+PTHAHA = "\u0730"  # SYRIAC PTHAHA ABOVE, the canonical form of Robinson's printed triangle
+PTHAHA_VARIANTS = "\u25bd\u25bf\u2207\u0732"  # white down triangles, nabla, pthaha dotted
+HEBREW_KEEP = {"\u05c1", "\u05c2"}  # shin and sin dot are printed even in running heads
+SPACE_BEFORE = re.compile(r"[ \t]+(?=[,.;:!?)\u2019])")
+YHWH = re.compile("(\u05d9[\u0590-\u05c7]*\u05d4)([\u0590-\u05c7]*)(\u05d5)([\u0590-\u05c7]*)(\u05d4)")
+HOLAM = "\u05b9"
+
+
+def canon_pthaha(text: str) -> str:
+    """One encoding for the Syriac pthaha: U+0730; a printed triangle or the dotted form maps to it."""
+    return "".join(PTHAHA if c in PTHAHA_VARIANTS else c for c in text)
+
+
+def canon_yhwh(text: str) -> str:
+    """One holam placement in the divine name: on the he (U+05D4 U+05B9), none on the vav."""
+
+    def fix(m: re.Match) -> str:
+        he1, marks1, vav, marks2, he2 = m.groups()
+        if HOLAM in marks2:
+            marks2 = marks2.replace(HOLAM, "")
+            if HOLAM not in marks1:
+                marks1 += HOLAM
+        return he1 + marks1 + vav + marks2 + he2
+
+    return YHWH.sub(fix, unicodedata.normalize("NFC", text))
+
+
+def canon_spacing(text: str) -> str:
+    """Print spacing: single spaces, none before , . ; : ! ? ) (the hair space is not transcribed),
+    and 'e. g.' / 'i. e.' with the one narrow gap Robinson prints inside them."""
+    text = re.sub(r"[ \t\u2009\u200a]+", " ", text).strip()
+    text = SPACE_BEFORE.sub("", text)
+    return re.sub(r"\b([eiEI])\.\s?([gGeE])\.", lambda m: f"{m.group(1)}. {m.group(2)}.", text)
+
+
+def canon(text: str) -> str:
+    """Gold text form of a reading: printed glyphs, pthaha, yhwh and spacing conventions (NFC)."""
+    return unicodedata.normalize("NFC", canon_spacing(canon_yhwh(canon_pthaha(alto.printed_glyphs(text)))))
+
+
+def is_wordchar(c: str) -> bool:
+    return c.isalnum() or unicodedata.category(c)[0] == "M"
+
+
+def space_fold(text: str) -> str:
+    """Comparison only: drop whitespace unless it sits between two word characters, so
+    'e. g.' / 'e.g.', '\u2018 a' / '\u2018a' and ', ' / ',' agree. Words still cannot merge."""
+    text = re.sub(r"\s+", " ", text).strip()
+    return "".join(
+        c for i, c in enumerate(text)
+        if c != " " or (0 < i < len(text) - 1 and is_wordchar(text[i - 1]) and is_wordchar(text[i + 1]))
+    )
+
+
+def cmpkey(text: str) -> str:
+    """Key for 'exact agreement' between readers: canon, spacing folded, theta folded."""
+    return space_fold(canon(text)).replace("\u03d1", "\u03b8")
+
+
+def strip_head_points(text: str) -> str:
+    """Running heads are printed unpointed: drop Hebrew vowel points, dagesh and accents; keep shin/sin dots."""
+    out = [
+        c for c in unicodedata.normalize("NFD", text)
+        if not ("\u0591" <= c <= "\u05c7" and c not in HEBREW_KEEP and c != "\u05be")
+    ]
+    return unicodedata.normalize("NFC", "".join(out))
+
+
+def hebrew_tokens(text: str) -> list[str]:
+    return [strip_marks(t) for t in text.split() if "HEBREW" in scripts(t)]
+
+
+def hebrew_order_flag(a: str, b: str) -> str | None:
+    """Flag when two readings hold the same Hebrew words in a different order (visual-order typing)."""
+    ta, tb = hebrew_tokens(canon(a)), hebrew_tokens(canon(b))
+    if len(ta) < 2 or ta == tb or sorted(ta) != sorted(tb):
+        return None
+    return "Hebrew word order reversed" if ta == tb[::-1] else "Hebrew word order differs"
+
+
+def token_diff(a: str, b: str) -> list[dict]:
+    """Whitespace tokens that differ between two readings (after the comparison key), for a later
+    partial-line gold: [{'a': tokens of a, 'b': tokens of b, 'at': index in a}]."""
+    ta, tb = canon(a).split(), canon(b).split()
+    out = []
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, [space_fold(t) for t in ta], [space_fold(t) for t in tb], autojunk=False).get_opcodes():
+        if tag != "equal":
+            out.append({"at": i1, "a": ta[i1:i2], "b": tb[j1:j2]})
+    return out
 
 
 def bare(text: str) -> str:

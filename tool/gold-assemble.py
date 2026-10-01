@@ -48,8 +48,9 @@ def authority(review: dict, record: dict, excluded: int, total: int) -> str:
     return (
         f"Whole page, frontier transcription reviewed independently. Pass 1 {', '.join(m1)}; pass 2 reread and "
         f"adjudication {', '.join(m2)}; blind read and reconciliation by {review['reviewer_model']}{second}, "
-        f"{review['generated_at'][:10]}. A line is included only where the readers converge; {excluded} of {total} "
-        "lines were contested, unclear or unreviewed and are excluded (listed in the review sidecar "
+        f"{review['generated_at'][:10]}. A line is included only where two of three readers (pass 2, blind, second reader) agree on the final text "
+        "under the comparison key; {excluded} of {total} "
+        "lines were contested or unreviewed and are excluded (listed in the review sidecar "
         f"{review['pass2'].replace('corpus/frontier', 'benchmarks/gold-review').replace('/pass2/', '/')}). "
         "Text follows docs/ocr-metric-policy.md, section Gold conventions and provenance."
     )

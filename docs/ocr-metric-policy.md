@@ -255,21 +255,82 @@ scores recorded against them are not comparable with the new ones.
 
 Provenance. Pass 1 and pass 2 are the same model, so their agreement is weak
 evidence. `tool/gold-review.py` therefore reads every band blind with a
-different model (`claude --model opus`), reconciles each line where that read
-differs from pass 2, and asks a second reader from a different model family
-(`codex exec`, band image and minimal instructions only, no page context) about
-contested items: blind read differs from pass 2, pass 1 and pass 2 agree but
-differ from the old fixture, or the reviewer is uncertain. A line is gold only
-when the readers converge (the second reader reads the candidate text); lines
-whose readers differ, whose verdict is `contested`, where a reader reports an
-unresolved mark or an unencoded glyph, or that were never reviewed are excluded
-from the fixture and listed in the sidecar. They are never mapped to a
-convenient letter. Pass 2 records with errored bands are refused. Only the
-development pages (PDF 17, 66, 116, 341, 716) and validation pages (191, 491,
-641, 941, 1091) are reviewed; the final-test pages PDF 266 and 791 stay unread by
-any reviewer. A pipeline scored against gold that derives from a frontier pass
-reports an upper bound; report the blind-read agreement rate per script (in the
-sidecar) next to it. Acceptance tolerances are unchanged.
+different model (`claude --model opus`) and reconciles each line where that read
+differs from pass 2 (or differs only in print spacing). A second reader from a
+different model family (`codex exec`, band image and minimal instructions only,
+no page context) reads every band that holds a line needing it: every blind vs
+pass 2 disagreement in any script, every line the blind reader flagged
+`unclear` or `uncertain`, and lines where pass 1 and pass 2 agree but differ from
+the old fixture. The blind reader's `unclear` flag no longer excludes a line by
+itself (an audit against the scans found it readable in 9 of 10 sampled cases,
+and 63 of 97 such lines had a blind read identical to pass 2).
+
+Gold rule. The reconcile verdict (pass2, blind or edited) chooses the candidate
+text. A line is gold when two of the three readers (pass 2, blind, codex) match
+that candidate exactly under the comparison key, and codex agreed whenever it was
+asked; codex alone never decides. Where blind equals pass 2 and the line is
+unclear, codex must agree too or the line is contested. A line with no such
+agreement (verdict `contested`, reviewer text supported by codex only, readers
+all different, a reader failing, a theta form unresolved, never reviewed) is
+excluded from the fixture and listed in the sidecar, never mapped to a
+convenient letter. Contested lines carry `token_diff_blind` and `token_diff_codex`
+(the whitespace tokens that differ from pass 2), so a later partial-line gold is
+possible; it is not implemented. A reversed or reordered run of Hebrew words
+between readers is recorded in `flags` and named in the reconcile prompt. Pass 2
+records with errored bands are refused. Only the development pages (PDF 17, 66,
+116, 341, 716) and validation pages (191, 491, 641, 941, 1091) are reviewed; the
+final-test pages PDF 266 and 791 stay unread by any reviewer. A pipeline scored
+against gold that derives from a frontier pass reports an upper bound; report the
+blind-read agreement rate per script (in the sidecar) next to it. Acceptance
+tolerances are unchanged. The blind and codex prompts and cache keys are
+unchanged (prompt version 1); the reconcile prompt is version 2.
+
+Reconcile prompt. It asks for what is printed, not the expected lexical or
+dictionary form: points as printed, a missing point left missing, Hebrew in
+logical order, spacing as printed. Print-defect convention: where type looks
+broken, damaged or inked over, the reviewer records the character that is
+visibly printed, not the intended one, and says so in the note (a print defect).
+Evidence: pass 2's typical error was the expected dictionary pointing, the blind
+reader's typical errors were visual-order word typing and extra matres; on 20
+sampled disagreements each was right about equally often (7 and 8).
+
+Deterministic conventions, applied in `tool/gold-queue.py` before comparison
+and to gold text (no model call). Evidence is from the 400 DPI crops of PDF 66
+(lines 14, 56, 67, 70, 83, 105), 116 line 40, 341 lines 34 and 65, 716 line 0.
+- Comparison key (`cmpkey`): NFC, the printed-glyph conversion, theta folded,
+  pthaha and YHWH normalised, and whitespace dropped wherever it does not sit
+  between two letters or digits (so `e. g.`/`e.g.`, `‘ a`/`‘a`, `, `/`,` and
+  double spaces agree). Words never merge. The key decides agreement only; it
+  never rewrites text.
+- Gold text follows the print. In `e. g.` and `i. e.` the print has a narrow but
+  visible gap after the first full stop (clear in PDF 66 line 83 and lines 14, 56,
+  67, 70, 341 line 34), so they keep one ordinary space, and `e.g.` is written
+  `e. g.`. There is no space before a comma, full stop, semicolon or colon (PDF 66
+  line 105 prints `אֲלֵיכֶם,` with the comma touching; the blind
+  reader's `word ,` is wrong); the hair space before `;` `:` is not transcribed. Runs of spaces are
+  one space. Italic commas can be set tight against the next word: PDF 341 line 65
+  prints `violence,oppression,wrong,` with no spaces, so that tight spacing is kept
+  where the reviewer reads it from the image. The earlier gold took
+  `violence, oppression, wrong,` because the old reconcile prompt let the model
+  insert a normal space and codex normalised the same way; the new prompt says
+  to put no space where none is printed, the comparison key no longer lets a
+  reader's spacing habit count as agreement, and when readers differ only in
+  spacing the reviewer arbitrates against the image (pass 2 spacing stands if the
+  reviewer fails or changes letters). The narrow gap after an opening quote
+  (`‘ a`, PDF 116 line 40) is a gap of the same size and is transcribed as one
+  space when the reviewer reads one.
+- Running heads (chunk `header`) are printed unpointed. Their vowel points,
+  dagesh and accents are stripped from every reading before comparison and from
+  the gold text; shin and sin dots are printed and kept. PDF 716 line 0 is
+  `נשׁה 700 נשׁק`, not the pointed pass 2 text.
+- Syriac pthaha. Robinson prints a small triangle above the letter (PDF 17 line
+  32, 51). One encoding: U+0730 SYRIAC PTHAHA ABOVE. A triangle glyph (U+25BD,
+  U+25BF, U+2207) or U+0732 from either reader is normalised to it.
+- Holam in the divine name. Robinson prints the dot above the he, beside the
+  vav (PDF 66 line 58). One encoding: `יְהֹוָה`, holam on the first he and
+  none on the vav. The reading `יְהוָֹה` (holam on the vav) is normalised to it.
+- Reversed Hebrew word order between readers (visual-order typing) is flagged,
+  not corrected; the reviewer decides the printed order.
 
 Transcription conventions: printed glyphs are kept (cursive theta stays theta
 as printed, typographic quotes stay typographic); the hair space before `;`

@@ -10,18 +10,23 @@ Syriac or Ethiopic, else 2x):
  1. Blind read by the claude CLI: the band image only, never the earlier
     readings. It covers every band, so the evidence does not depend on pass 2
     status flags.
- 2. Reconcile, only for lines where the blind read differs from pass 2 after
-    folding: both readings and pass 1 are shown with the image; verdict
-    pass2, blind, edited or contested, with the evidence.
- 3. Second reader, only for contested items: a different model family via
-    `codex exec` reads the band image with minimal instructions and no
-    context. Contested means the blind read disagrees with pass 2, pass 1 and
-    pass 2 agree but differ from an old fixture, or the reviewer is not
-    certain. If codex is missing or fails, those lines stay contested.
-A line is gold only when the readers converge; contested, unclear and
-unreviewed lines are never gold. Results are written per page as a sidecar and
-reused by image digest and prompt version, so reruns pay only for what is
-missing. Records with incomplete pass 2 are refused.
+ 2. Reconcile, for lines where the blind read differs from pass 2 after the
+    comparison key (fold plus spacing fold) and for lines that differ only in
+    print spacing: both readings and pass 1 are shown with the image; verdict
+    pass2, blind, edited or contested, with the evidence. An `unclear` flag
+    never excludes a line by itself.
+ 3. Second reader: a different model family via `codex exec` reads the band
+    image with minimal instructions and no context. Every disagreement, every
+    line the blind reader flagged unclear or uncertain, and lines where pass 1
+    and pass 2 agree but differ from an old fixture go to it.
+A line is gold when the final text is matched by two of the three readers (pass
+2, blind, codex) under the comparison key, with codex agreeing whenever it was
+asked; the reconcile verdict chooses the candidate and codex never decides
+alone. Other lines are contested and carry the tokens that differ (for a later
+partial-line gold). Running heads are printed unpointed, so their pointing is
+stripped first. Results are written per page as a sidecar and reused by image
+digest and prompt version, so reruns pay only for what is missing. Records with
+incomplete pass 2 are refused.
 """
 
 from __future__ import annotations
@@ -47,7 +52,8 @@ gq = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(gq)  # type: ignore[union-attr]
 fv, alto = gq.fv, gq.alto
 
-PROMPT_VERSION = 1
+PROMPT_VERSION = 1  # blind and codex prompts and cache keys; unchanged so cached reads are reused
+RECONCILE_VERSION = 2  # reconcile prompt; bumped for the exact-print instructions
 DEFAULT_OUTPUT = HERE.parent / "benchmarks/gold-review/robinson-1854"
 BLIND_EXTRA = (
     " Keep the printed form of each letter: a cursive theta printed as the "
@@ -79,16 +85,33 @@ RECONCILE_PROMPT = (
     "Read the image file {path}. It is an enlarged crop of a few printed lines from one "
     "column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). One of "
     "the printed lines has been read three times and the readings differ. Compare each "
-    "against the image character by character and decide what is printed. Check in "
-    "particular the printed order of items in a list, whether a vav or yod is printed "
-    "(plene or defective), every vowel point, dagesh, shin or sin dot and accent, whether "
-    "a word is Arabic or Syriac, and whether Syriac points are printed. Take no reading on "
-    "trust; if all are wrong, write what is printed (verdict edited). Use Unicode in "
-    "logical order with no bidi control characters and keep the printed form of theta. "
-    "Name the character-level evidence for each difference in the note. Use contested if "
-    "the image does not settle it, and unclear if a mark or glyph cannot be resolved or has "
-    "no Unicode encoding.\n"
+    "against the image character by character and decide what is printed. Transcribe "
+    "exactly what is printed, not the expected lexical or dictionary form: a writer who "
+    "knows the word tends to supply the dictionary pointing, so check every vowel point, "
+    "dagesh, shin or sin dot and accent against the ink, write the points as printed, and "
+    "leave a point out when none is printed. Check also the printed order of items in a "
+    "list, whether a vav or yod is printed (plene or defective), and whether a word is "
+    "Arabic or Syriac and whether Syriac points are printed. Hebrew is written in logical "
+    "order (the first word you read, right to left, comes first in the string), never in "
+    "visual left-to-right order. Spacing follows the print too: put no space where none is "
+    "printed (italic commas can be set tight against the next word), no space before a "
+    "comma or full stop, and one space where a gap is printed. If type looks broken, "
+    "damaged or inked over, write the character that is visibly printed, not the one it "
+    "should be, and say so in the note (a print defect). Take no reading on trust; if all "
+    "are wrong, write what is printed (verdict edited). Use Unicode in logical order with "
+    "no bidi control characters and keep the printed form of theta. Name the "
+    "character-level evidence for each difference in the note. Use contested if the image "
+    "does not settle it, and set unclear if a mark or glyph cannot be resolved or has no "
+    "Unicode encoding, while still giving your best reading in text.{extra}\n"
     "Reading 1 (blind): {blind}\nReading 2 (earlier pass): {pass2}\nReading 3 (first pass): {pass1}"
+)
+HEAD_EXTRA = (
+    " This line is a running head, and running heads are printed unpointed: write no vowel "
+    "point, dagesh or accent, only the letters and any shin or sin dot that is printed."
+)
+ORDER_EXTRA = (
+    " The readings give the Hebrew words in a different order ({flag}); decide the order the "
+    "words are printed in, right to left."
 )
 RECONCILE_SCHEMA = json.dumps(
     {
@@ -169,22 +192,36 @@ def differs_from_fixture(line: dict, fixture: list[str]) -> bool:
 
 
 def converged(candidate: str, reading: str | None) -> bool:
-    return reading is not None and gq.fold(candidate) == gq.fold(reading)
+    return reading is not None and gq.cmpkey(candidate) == gq.cmpkey(reading)
 
 
 def decide(line: dict, codex: dict | None, codex_reading: str | None) -> tuple[str, str]:
-    """(decision, reason) for one reviewed line. Gold needs converging readers."""
+    """(decision, reason) for one reviewed line.
+
+    Gold when the candidate (the reconcile choice, or pass 2) is matched under the
+    comparison key by two of the three readers pass 2, blind and codex, and codex
+    agreed whenever it was asked. Codex never decides alone."""
     if line.get("reason"):
         return "contested", line["reason"]
     if not line["triggers"]:
         return "gold", "blind read agrees with pass 2"
+    why = ", ".join(line["triggers"])
     if codex is None:
-        return "contested", "second reader unavailable: " + ", ".join(line["triggers"])
+        return "contested", "second reader unavailable: " + why
     if "error" in codex:
-        return "contested", "second reader failed: " + ", ".join(line["triggers"])
-    if converged(line["candidate"], codex_reading):
-        return "gold", "second reader converges: " + ", ".join(line["triggers"])
-    return "contested", "second reader differs: " + ", ".join(line["triggers"])
+        return "contested", "second reader failed: " + why
+    if codex_reading is None:
+        return "contested", "second reader has no counterpart line: " + why
+    cand = line["candidate"]
+    head = gq.strip_head_points if line.get("chunk_id") == "header" else (lambda t: t)
+    blind = line.get("blind")
+    readers = {"pass2": head(line["text"]), "blind": head(blind) if blind is not None else None, "codex": codex_reading}
+    agree = [k for k, v in readers.items() if converged(cand, v)]
+    if "codex" in agree and len(agree) >= 2:
+        return "gold", f"{' + '.join(agree)} agree: {why}"
+    if "codex" in agree:
+        return "contested", f"only the second reader supports the reviewer's text: {why}"
+    return "contested", f"second reader differs from the reviewer's text ({' + '.join(agree) or 'no reader'} agree): {why}"
 
 
 def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namespace) -> bool:
@@ -197,7 +234,10 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
         try:
             old = json.load(open(out_path, encoding="utf-8"))
             if old.get("prompt_version") == PROMPT_VERSION and old.get("raster_sha256") == record["raster_sha256"]:
-                cache = {k: v for k, v in old.get("cache", {}).items() if "error" not in v}
+                cache = {
+                    k: v for k, v in old.get("cache", {}).items()
+                    if "error" not in v and (not k.startswith("reconcile:") or k.startswith(f"reconcile:v{RECONCILE_VERSION}:"))
+                }
         except (OSError, ValueError):
             pass
     raster_path = pathlib.Path(record["raster"])
@@ -208,13 +248,21 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
     use_codex = args.codex == "auto" and bool(shutil.which("codex"))
     if args.codex == "auto" and not use_codex:
         print("WARNING: codex is not installed; contested items get no second reader and stay contested", file=sys.stderr)
+    dry = getattr(args, "dry_run", False)
+    stats = {"hit": {}, "miss": {}}
 
     def cached(key: str, fn):
-        if key not in cache:
-            try:
-                cache[key] = fn()
-            except Exception as exc:  # noqa: BLE001
-                return {"error": str(exc)}
+        kind = key.split(":")[0]
+        if key in cache:
+            stats["hit"][kind] = stats["hit"].get(kind, 0) + 1
+            return cache[key]
+        stats["miss"][kind] = stats["miss"].get(kind, 0) + 1
+        if dry:
+            return {"error": "dry run"}
+        try:
+            cache[key] = fn()
+        except Exception as exc:  # noqa: BLE001
+            return {"error": str(exc)}
         return cache[key]
 
     bands = []
@@ -248,8 +296,11 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
     band_extra: dict[str, list[str]] = {}
     for b in bands:
         item = b["item"]
+        b["head"] = item["chunk_id"] == "header"
+        norm = gq.strip_head_points if b["head"] else (lambda t: t)
+        b["norm"] = norm
         for ln in item["lines"]:
-            ln.update(band_id=b.get("id"), chunk_id=item["chunk_id"], column=item["column"], triggers=[], blind=None, blind_confidence=None)
+            ln.update(band_id=b.get("id"), chunk_id=item["chunk_id"], column=item["column"], triggers=[], blind=None, blind_confidence=None, flags=[])
             lines_out.append(ln)
             if not b["image"]:
                 ln["reason"] = "not reviewed" if item["band"] else "no band image"
@@ -266,43 +317,74 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
                 band_extra.setdefault(b["id"], []).append(blind_lines[rj]["text"])
                 continue
             ln = item["lines"][di]
-            ln["candidate"] = ln["text"]
+            ln["candidate"] = norm(ln["text"])
             if rj is None:
                 ln["reason"] = "no blind counterpart"
                 continue
             ln["blind"], ln["blind_confidence"] = blind_lines[rj]["text"], blind_lines[rj]["confidence"]
-            if blind_lines[rj]["unclear"]:
-                ln["reason"] = "blind reader cannot resolve a mark or glyph"
-            elif gq.fold(ln["blind"]) != gq.fold(ln["text"]):
+            ln["blind_unclear"] = bool(blind_lines[rj]["unclear"])
+            p2, bl = norm(ln["text"]), norm(ln["blind"])
+            order = gq.hebrew_order_flag(p2, bl)
+            if order:
+                ln["flags"].append(f"blind vs pass 2: {order}")
+            if gq.cmpkey(bl) != gq.cmpkey(p2):
                 ln["triggers"].append("blind read differs from pass 2")
-                jobs.append((b, ln))
-            elif fv.nfc(alto.printed_glyphs(ln["blind"])) != fv.nfc(alto.printed_glyphs(ln["text"])):
-                ln["reason"] = f"theta form unresolved: blind {ln['blind']!r}, pass 2 {ln['text']!r}"
-                ln["glyph"] = "theta"
-            elif ln["blind_confidence"] == "uncertain":
-                ln["triggers"].append(f"blind confidence {ln['blind_confidence']}")
+                ln["token_diff_blind"] = gq.token_diff(p2, bl)
+                jobs.append((b, ln, order))
+            else:
+                # Same letters and points under the comparison key. A printed-theta or a print-spacing
+                # difference is arbitrated; unclear and uncertain reads go to the second reader.
+                cp, cb = gq.canon(p2), gq.canon(bl)
+                if gq.space_fold(cp) != gq.space_fold(cb):
+                    ln["reason"] = f"theta form unresolved: blind {ln['blind']!r}, pass 2 {ln['text']!r}"
+                    ln["glyph"] = "theta"
+                elif cp != cb:
+                    jobs.append((b, ln, None))
+                    ln["spacing_variant"] = True
+                if not ln.get("reason"):
+                    if ln["blind_unclear"]:
+                        ln["triggers"].append("blind reader unclear")
+                    elif ln["blind_confidence"] == "uncertain":
+                        ln["triggers"].append(f"blind confidence {ln['blind_confidence']}")
             if differs_from_fixture(ln, fixture):
                 ln["triggers"].append("pass 1 and pass 2 agree but differ from old fixture")
 
-    def reconcile(job: tuple[dict, dict]) -> dict:
-        b, ln = job
-        prompt = RECONCILE_PROMPT.format(path=b["image"], blind=ln["blind"], pass2=ln["text"], pass1=ln["pass1"])
-        key = f"reconcile:{b['digest']}:{gq.fold(ln['blind'])}:{gq.fold(ln['text'])}:{gq.fold(ln['pass1'] or '')}"
+    def reconcile(job: tuple[dict, dict, str | None]) -> dict:
+        b, ln, order = job
+        norm = b["norm"]
+        extra = (HEAD_EXTRA if b["head"] else "") + (ORDER_EXTRA.format(flag=order) if order else "")
+        prompt = RECONCILE_PROMPT.format(
+            path=b["image"], extra=extra, blind=norm(ln["blind"]), pass2=norm(ln["text"]), pass1=norm(ln["pass1"] or "")
+        )
+        key = f"reconcile:v{RECONCILE_VERSION}:{b['digest']}:{gq.cmpkey(ln['blind'])}:{gq.cmpkey(ln['text'])}:{gq.cmpkey(ln['pass1'] or '')}:{int(b['head'])}"
         return cached(key, lambda: _claude(prompt, RECONCILE_SCHEMA))
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
-        for (b, ln), r in zip(jobs, pool.map(reconcile, jobs)):
+        for (b, ln, _), r in zip(jobs, pool.map(reconcile, jobs)):
             ln["reconcile"] = r
+            norm = b["norm"]
+            if dry and "error" in r:
+                continue
+            spacing_only = ln.get("spacing_variant") and "blind read differs from pass 2" not in ln["triggers"]
+            if spacing_only:
+                # Letters agree; the reviewer only arbitrates print spacing. Pass 2 stands unless the
+                # reviewer returns the same letters.
+                if "error" not in r and r["verdict"] != "contested" and gq.cmpkey(r["text"]) == gq.cmpkey(ln["text"]):
+                    ln["candidate"] = norm(r["text"])
+                continue
             if "error" in r:
                 ln["reason"] = "reconcile failed: " + r["error"]
-            elif r["unclear"] or r["verdict"] == "contested":
-                ln["reason"] = f"reviewer verdict {r['verdict']}" + (", unclear" if r["unclear"] else "")
+            elif r["verdict"] == "contested":
+                ln["reason"] = "reviewer verdict contested"
             else:
-                ln["candidate"] = {"pass2": ln["text"], "blind": ln["blind"]}.get(r["verdict"], r["text"])
+                chosen = {"pass2": ln["text"], "blind": ln["blind"]}.get(r["verdict"], r["text"])
+                ln["candidate"] = norm(r["text"] if gq.cmpkey(r["text"]) == gq.cmpkey(chosen) else chosen)
+                if r["unclear"]:
+                    ln["triggers"].append("reviewer unclear")
                 if r["confidence"] == "uncertain":
                     ln["triggers"].append(f"reviewer confidence {r['confidence']}")
 
-    # Second reader, only for bands holding a contested item that can still become gold.
+    # Second reader for every band holding a line that can still become gold through it.
     need = [b for b in todo if any(ln["triggers"] and not ln.get("reason") for ln in b["item"]["lines"])]
     codex_by_band: dict[str, dict] = {}
     if use_codex:
@@ -317,16 +399,23 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
         codex = codex_by_band.get(b["id"])
         reading = {}
         if codex and "error" not in codex:
-            for di, rj in fv.align([ln.get("candidate", ln["text"]) for ln in b["item"]["lines"]], codex["lines"]):
+            for di, rj in fv.align([ln["text"] for ln in b["item"]["lines"]], codex["lines"]):
                 if di is not None and rj is not None:
-                    reading[di] = codex["lines"][rj]
+                    reading[di] = b["norm"](codex["lines"][rj])
         for k, ln in enumerate(b["item"]["lines"]):
             ln["codex"] = reading.get(k)
+            if ln.get("codex") is not None and gq.cmpkey(ln["codex"]) != gq.cmpkey(ln["text"]):
+                ln["token_diff_codex"] = gq.token_diff(norm_text(b, ln["text"]), ln["codex"])
             ln["decision"], ln["decision_reason"] = decide(ln, codex, reading.get(k)) if "blind" in b else ("contested", ln.get("reason"))
     for ln in lines_out:
         if "decision" not in ln:
             ln["decision"], ln["decision_reason"] = "contested", ln.get("reason") or "not reviewed"
-        ln["text_gold"] = alto.printed_glyphs(ln["candidate"]) if ln["decision"] == "gold" else None
+        ln["text_gold"] = gq.canon(ln["candidate"]) if ln["decision"] == "gold" else None
+
+    if dry:
+        planned = {"reconcile": stats["miss"].get("reconcile", 0), "codex": stats["miss"].get("codex", 0), "blind": stats["miss"].get("blind", 0)}
+        print(f"{page_id}: DRY RUN cache hits {stats['hit']}, calls still to pay {planned}", file=sys.stderr, flush=True)
+        return True
 
     errors = sum(1 for b in todo if "error" in b["blind"]) + sum(1 for ln in lines_out if "error" in ln.get("reconcile", {}))
     unreviewed = sum(1 for ln in lines_out if ln.get("reason") in ("not reviewed", "no band image"))
@@ -337,7 +426,7 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
             for n in names:
                 a = agree.setdefault(n, [0, 0])
                 a[0] += 1
-                a[1] += gq.fold(ln["blind"]) == gq.fold(ln["text"])
+                a[1] += gq.cmpkey(ln["blind"]) == gq.cmpkey(ln["text"])
     out = {
         "schema": "gesenius-gold-review/1",
         "edition": record["edition"],
@@ -348,6 +437,7 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
         "raster_sha256": record["raster_sha256"],
         "raster_size": record["raster_size"],
         "prompt_version": PROMPT_VERSION,
+        "reconcile_prompt_version": RECONCILE_VERSION,
         "reviewer_model": args.model,
         "second_reader": "codex" if use_codex else None,
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
@@ -355,6 +445,7 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
         "errors": errors,
         "unreviewed": unreviewed,
         "counts": {k: sum(1 for ln in lines_out if ln["decision"] == k) for k in ("gold", "contested")},
+        "calls": {"hit": stats["hit"], "paid": stats["miss"]},
         "blind_agreement_by_script": {k: {"lines": v[0], "agreed": v[1]} for k, v in sorted(agree.items())},
         "blind_extra_lines": band_extra,
         "bands": [
@@ -375,6 +466,10 @@ def review_page(path: pathlib.Path, out_dir: pathlib.Path, args: argparse.Namesp
     return out["status"] == "complete"
 
 
+def norm_text(band: dict, text: str) -> str:
+    return band["norm"](text)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("pass2", nargs="+", type=pathlib.Path)
@@ -382,6 +477,7 @@ def main() -> int:
     ap.add_argument("--model", default="opus")
     ap.add_argument("--codex", choices=["auto", "off"], default="auto")
     ap.add_argument("--band", action="append", help="review only this band id (smoke tests); the rest stay unreviewed")
+    ap.add_argument("--dry-run", action="store_true", help="count cached and missing model calls; call nothing, write nothing")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--timeout", type=int, default=600)
     args = ap.parse_args()
