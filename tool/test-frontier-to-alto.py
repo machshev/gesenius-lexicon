@@ -98,5 +98,45 @@ class AlignTests(unittest.TestCase):
         self.assertTrue(all(0 <= j < len(widths) for j in out))
 
 
+class Pass2CompletenessTests(unittest.TestCase):
+    def record(self, errored=0, **extra):
+        bands = [{'reread': {'error': 'claude exited 1'}} for _ in range(errored)] + [{'reread': {'lines': []}}]
+        return {'pass': 2, 'chunks': [{'bands': bands}], **extra}
+
+    def test_clean_record_passes(self):
+        self.assertIsNone(module.pass2_problem(self.record(status='complete', errors=0)))
+
+    def test_errored_bands_are_refused_even_without_status(self):
+        self.assertIn('2 errored', module.pass2_problem(self.record(errored=2)))
+
+    def test_incomplete_status_is_refused(self):
+        self.assertIn('incomplete', module.pass2_problem(self.record(status='incomplete')))
+
+    def test_failed_adjudication_is_refused(self):
+        self.assertIn('1 failed adjudication', module.pass2_problem(self.record(judge_errors=1)))
+
+    def test_pass1_record_is_never_refused(self):
+        self.assertIsNone(module.pass2_problem({'pass': 1, 'chunks': []}))
+
+
+class VerifyIncompleteTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        spec = importlib.util.spec_from_file_location('frontier_verify', Path(__file__).with_name('frontier-verify.py'))
+        cls.verify = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.verify)
+
+    def test_first_error_finds_band_then_judgement_errors(self):
+        chunks = [{'bands': [{'reread': {'lines': []}}, {'reread': {'error': 'boom'}}]}]
+        self.assertEqual(self.verify.first_error(chunks), 'boom')
+        chunks = [{'bands': [{'reread': {'lines': []}, 'lines': [{'judgement': {'error': 'judge boom'}}]}]}]
+        self.assertEqual(self.verify.first_error(chunks), 'judge boom')
+        self.assertIsNone(self.verify.first_error([{'bands': [{'reread': {'lines': []}}]}]))
+
+    def test_quota_pattern_matches_limit_messages(self):
+        self.assertTrue(self.verify.QUOTA_PATTERN.search('{"result":"You have hit your usage limit"}'))
+        self.assertFalse(self.verify.QUOTA_PATTERN.search('no structured output'))
+
+
 if __name__ == '__main__':
     unittest.main()

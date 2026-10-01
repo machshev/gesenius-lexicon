@@ -35,6 +35,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import threading
 import time
 import unicodedata
 
@@ -102,6 +103,23 @@ JUDGE_SCHEMA = json.dumps(
         "required": ["text", "verdict", "note"],
     }
 )
+
+
+RETRIES = 4
+QUOTA_PATTERN = re.compile(r"usage limit|quota|rate.?limit|limit reached|too many requests|overloaded", re.I)
+QUOTA_STOP = threading.Event()
+
+
+def first_error(chunks: list[dict], lines: list[dict] | None = None) -> str | None:
+    """The first band re-read or adjudication error text in a pass 2 record."""
+    for c in chunks:
+        for b in c["bands"]:
+            if "error" in b.get("reread", {}):
+                return b["reread"]["error"]
+            for line in b.get("lines", []):
+                if "error" in line.get("judgement", {}):
+                    return line["judgement"]["error"]
+    return None
 
 
 PUNCT_BEFORE = re.compile(r"\s+([;:!?,.)\]])")
@@ -174,13 +192,20 @@ def run_claude(prompt: str, schema: str, model: str, timeout: int) -> tuple[dict
     ]
     # Transient CLI failures (rate limits, overload) exit 1 with nothing on
     # stderr; the reason is in the JSON on stdout. Retry with backoff.
-    for attempt in range(4):
+    if QUOTA_STOP.is_set():
+        raise RuntimeError("skipped: an earlier call hit a usage or rate limit that outlasted its retries")
+    for attempt in range(RETRIES):
         proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, check=False)
         if proc.returncode == 0:
             break
-        time.sleep(30 * 2**attempt)
+        if attempt < RETRIES - 1:
+            time.sleep(30 * 2**attempt)
     if proc.returncode != 0:
         detail = (proc.stderr.strip() or proc.stdout.strip())[:500]
+        if QUOTA_PATTERN.search(detail):
+            # Retries are spent and the text looks like a quota stop: make the
+            # other workers fail fast instead of each burning the backoff.
+            QUOTA_STOP.set()
         raise RuntimeError(f"claude exited {proc.returncode}: {detail}")
     result = json.loads(proc.stdout)
     structured = result.get("structured_output")
@@ -254,7 +279,7 @@ def verify_page(
     scale: int,
     pad: int,
     timeout: int,
-) -> pathlib.Path:
+) -> tuple[pathlib.Path, bool]:
     page = json.load(open(transcription, encoding="utf-8"))
     page_id = transcription.stem
     out_path = output_dir / f"{page_id}.json"
@@ -442,6 +467,8 @@ def verify_page(
                 counts["needs_review"] += int(entry["needs_review"])
             final_lines.append(entry)
 
+    band_errors = sum(1 for c in chunks_out for b in c["bands"] if "error" in b.get("reread", {}))
+    judge_errors = sum(1 for c in chunks_out for b in c["bands"] for ln in b.get("lines", []) if "error" in ln.get("judgement", {}))
     out = {
         "schema": "gesenius-frontier-transcription/1",
         "edition": page["edition"],
@@ -459,7 +486,11 @@ def verify_page(
         "chunks": chunks_out,
         "lines": final_lines,
         "counts": counts,
-        "errors": sum(1 for c in chunks_out for b in c["bands"] if "error" in b.get("reread", {})),
+        # "incomplete" while any band re-read or adjudication ended in an error;
+        # a rerun reuses every good band and pays only for the failed ones.
+        "status": "incomplete" if band_errors or judge_errors else "complete",
+        "errors": band_errors,
+        "judge_errors": judge_errors,
         "cost_usd_list_total": round(total_cost, 4),
     }
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -469,7 +500,15 @@ def verify_page(
         fh.write("\n")
     os.replace(tmp, out_path)
     print(f"{page_id}: {counts}, list cost ${total_cost:.2f}", file=sys.stderr, flush=True)
-    return out_path
+    if out["status"] == "incomplete":
+        print(
+            f"INCOMPLETE {page_id}: {band_errors} failed band(s), {judge_errors} failed adjudication(s); "
+            f"first error: {first_error(chunks_out)}\n"
+            f"  record kept at {out_path} with status=incomplete; rerun the same command to retry only the failures.",
+            file=sys.stderr,
+            flush=True,
+        )
+    return out_path, out["status"] == "complete"
 
 
 def main() -> int:
@@ -483,19 +522,27 @@ def main() -> int:
     ap.add_argument("--pad", type=int, default=8)
     ap.add_argument("--timeout", type=int, default=600)
     args = ap.parse_args()
+    incomplete = []
     for transcription in args.transcription:
-        print(
-            verify_page(
-                transcription,
-                args.output,
-                args.model,
-                args.workers,
-                args.lines_per_band,
-                args.scale,
-                args.pad,
-                args.timeout,
-            )
+        path, complete = verify_page(
+            transcription,
+            args.output,
+            args.model,
+            args.workers,
+            args.lines_per_band,
+            args.scale,
+            args.pad,
+            args.timeout,
         )
+        print(path)
+        if not complete:
+            incomplete.append(transcription.stem)
+        if QUOTA_STOP.is_set():
+            print("stopping: usage or rate limit; remaining pages not started", file=sys.stderr)
+            break
+    if incomplete:
+        print(f"FAILED: incomplete pass 2 for {', '.join(incomplete)}", file=sys.stderr)
+        return 1
     return 0
 
 

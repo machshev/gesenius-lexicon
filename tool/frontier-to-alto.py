@@ -306,11 +306,30 @@ def build(record: dict) -> dict:
     return out
 
 
+def pass2_problem(record: dict) -> str | None:
+    """Why a pass 2 record is not finished, or None. Records written before
+    the status field existed are judged by their errored bands."""
+    if record.get("pass") != 2:
+        return None
+    bands = sum(1 for c in record.get("chunks", []) for b in c.get("bands", []) if "error" in b.get("reread", {}))
+    bands = max(bands, record.get("errors") or 0)
+    judged = record.get("judge_errors") or 0
+    if record.get("status") == "incomplete" or bands or judged:
+        return f"pass 2 is incomplete ({bands} errored band(s), {judged} failed adjudication(s), status={record.get('status')!r})"
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--transcription", action="append", required=True, type=pathlib.Path)
     ap.add_argument("--output", required=True, type=pathlib.Path)
+    ap.add_argument("--allow-incomplete", action="store_true", help="convert pass 2 records that have errored bands")
     args = ap.parse_args()
+    for path in args.transcription:
+        problem = pass2_problem(json.load(open(path, encoding="utf-8")))
+        if problem and not args.allow_incomplete:
+            print(f"refusing {path}: {problem}; rerun tool/frontier-verify.py or pass --allow-incomplete", file=sys.stderr)
+            return 1
     args.output.mkdir(parents=True, exist_ok=True)
     for path in args.transcription:
         record = json.load(open(path, encoding="utf-8"))
