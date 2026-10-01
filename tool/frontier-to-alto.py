@@ -30,7 +30,9 @@ import importlib.util
 import json
 import os
 import pathlib
+import re
 import sys
+import unicodedata
 
 import numpy as np
 from PIL import Image
@@ -50,6 +52,22 @@ CONFIDENCE = {
     "unresolved": 0.7,
     "pass1": 0.9,
 }
+
+
+POSSESSIVE = re.compile(r"(?<=\w)'(?=s\b)")
+
+
+def printed_glyphs(text: str) -> str:
+    """Documented conversion from frontier output to gold and ALTO text (NFC).
+
+    The model types a straight apostrophe where the 1854 print has a
+    typographic one; between a word and a possessive s the mapping is
+    unambiguous, so it is applied. Every other straight quote, and the
+    cursive theta (the model always writes theta, so its form cannot be
+    recovered from the text), are left for the reviewer. See
+    docs/ocr-metric-policy.md, "Gold conventions and provenance".
+    """
+    return POSSESSIVE.sub("\u2019", unicodedata.normalize("NFC", text))
 
 
 def detect_rows(ink: np.ndarray) -> list[tuple[int, int]]:
@@ -226,7 +244,7 @@ def build(record: dict) -> dict:
                 confidence = min(confidence, 0.75)
             elif line.get("verdict") == "neither":
                 confidence = min(confidence, 0.85)
-            text = line["text"]
+            text = printed_glyphs(line["text"])
             region["lines"].append(
                 {
                     "id": line_id,
@@ -250,6 +268,7 @@ def build(record: dict) -> dict:
             # The pass 1 draft on the same geometry; lines pass 1 never
             # produced have no draft and are left out of the hypothesis.
             draft = line.get("draft", text) if pass2 else text
+            draft = printed_glyphs(draft) if draft is not None else None
             if draft is not None:
                 draft_region["lines"].append(
                     {
