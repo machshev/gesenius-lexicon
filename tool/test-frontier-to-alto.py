@@ -138,5 +138,39 @@ class VerifyIncompleteTests(unittest.TestCase):
         self.assertFalse(self.verify.QUOTA_PATTERN.search('no structured output'))
 
 
+class TierOrderTests(unittest.TestCase):
+    CHUNKS = [
+        ("t1-c1-r00", 1, 0, 1), ("t1-c0-r01", 0, 1, 1), ("c1-r00", 1, 0, 0),
+        ("section-1", -1, 0, 1), ("c0-r00", 0, 0, 0), ("header", -1, 0, 0),
+        ("t1-c0-r00", 0, 0, 1),
+    ]
+
+    def chunk(self, cid, column, row, tier, with_tier=True):
+        c = {"chunk_id": cid, "column": column, "row": row}
+        if with_tier:
+            c["tier"] = tier
+        return c
+
+    def check(self, with_tier):
+        chunks = [self.chunk(*c, with_tier=with_tier) for c in self.CHUNKS]
+        ordered = sorted(chunks, key=module.chunk_order)
+        self.assertEqual([c["chunk_id"] for c in ordered], [
+            "header", "c0-r00", "c1-r00", "section-1", "t1-c0-r00", "t1-c0-r01", "t1-c1-r00"])
+        ids = [module.region_id_for(c) for c in ordered]
+        self.assertEqual(ids, ["header", "column-1", "column-2", "section-1", "t1-column-1", "t1-column-1", "t1-column-2"])
+        unique = list(dict.fromkeys(ids))
+        self.assertEqual(sorted(unique, key=module.region_order), unique)
+
+    def test_tiers_from_the_tier_field(self):
+        self.check(True)
+
+    def test_tiers_from_the_chunk_id_prefix(self):
+        self.check(False)
+
+    def test_section_heading_is_not_the_running_head(self):
+        self.assertEqual(module.region_id_for(self.chunk("section-2", -1, 0, 2)), "section-2")
+        self.assertEqual(module.region_id_for(self.chunk("header", -1, 0, 0)), "header")
+
+
 if __name__ == '__main__':
     unittest.main()

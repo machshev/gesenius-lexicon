@@ -179,6 +179,45 @@ def words_for(text: str, x0: int, x1: int, y0: int, y1: int, confidence: float, 
     return out
 
 
+def chunk_tier(chunk: dict) -> int:
+    """The tier a chunk belongs to: the tier field, else the chunk id
+    (`t1-c0-r00`, `section-1`; unprefixed chunks are tier 0)."""
+    if chunk.get("tier") is not None:
+        return int(chunk["tier"])
+    m = re.match(r"(?:t|section-)(\d+)", chunk["chunk_id"])
+    return int(m.group(1)) if m else 0
+
+
+def is_full_width(chunk: dict) -> bool:
+    return chunk["column"] < 0
+
+
+def region_id_for(chunk: dict) -> str:
+    """header for the running head, section-N for a mid-page section heading,
+    column-N for tier 0 columns and tN-column-M for later tiers."""
+    tier = chunk_tier(chunk)
+    if is_full_width(chunk):
+        return "header" if tier == 0 else f"section-{tier}"
+    prefix = "" if tier == 0 else f"t{tier}-"
+    return f"{prefix}column-{chunk['column'] + 1}"
+
+
+def chunk_order(chunk: dict) -> tuple:
+    """Reading order: running head, tier 0 columns, then for each later tier its
+    section heading followed by its columns."""
+    tier = chunk_tier(chunk)
+    return (tier, 0 if is_full_width(chunk) else 1, chunk["column"], chunk["row"])
+
+
+def region_order(region_id: str) -> tuple:
+    m = re.match(r"(?:t(\d+)-)?column-(\d+)$", region_id)
+    if region_id == "header":
+        return (-1, 0, 0)
+    if region_id.startswith("section-"):
+        return (int(region_id[8:]), 0, 0)
+    return (int(m.group(1) or 0), 1, int(m.group(2)))
+
+
 def build(record: dict) -> dict:
     raster_path = pathlib.Path(record["raster"])
     img = Image.open(raster_path)
@@ -192,14 +231,14 @@ def build(record: dict) -> dict:
     regions: dict[str, dict] = {}
     draft_regions: dict[str, dict] = {}
     statuses = []
-    order = sorted(grouped, key=lambda cid: (chunks[cid]["column"], chunks[cid]["row"]))
+    order = sorted(grouped, key=lambda cid: chunk_order(chunks[cid]))
     for cid in order:
         chunk = chunks[cid]
         b = chunk["bounds"]
         cx0, cy0 = b["x"], b["y"]
         crop = ink[cy0 : cy0 + b["height"], cx0 : cx0 + b["width"]]
         lines = grouped[cid]
-        region_id = "header" if chunk["column"] < 0 else f"column-{chunk['column'] + 1}"
+        region_id = region_id_for(chunk)
         region = regions.setdefault(region_id, {"id": region_id, "lines": [], "_box": [10**9, 10**9, 0, 0]})
         draft_region = draft_regions.setdefault(region_id, {"id": region_id, "lines": [], "_box": [10**9, 10**9, 0, 0]})
         rows = detect_rows(crop)
@@ -282,7 +321,7 @@ def build(record: dict) -> dict:
 
     def finish(rs: dict[str, dict]) -> list[dict]:
         out = []
-        for key in sorted(rs, key=lambda r: (r != "header", r)):
+        for key in sorted(rs, key=region_order):
             r = rs[key]
             box = r.pop("_box")
             if not r["lines"]:
