@@ -186,6 +186,21 @@ class ReviewAndAssembleTests(unittest.TestCase):
             self.assertIn("frontier-raster-400dpi-pdf9001-sha256-", fixture["source_image"]["coordinate_frame"])
             self.assertEqual(len(fixture["source_sha256"]), 64)
 
+    def test_authority_text_no_literal_placeholders(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            page, _, review = self.review(root, codex=False)
+            record = json.load(open(page))
+            fixture, excluded = ga.assemble(review, record)
+            authority = fixture["authority"]
+            # Should not contain literal placeholder braces
+            self.assertNotIn("{excluded}", authority)
+            self.assertNotIn("{total}", authority)
+            # Should not contain any uninterpolated placeholders
+            self.assertNotIn("{", authority)
+            # Should contain the actual numbers
+            self.assertIn("1 of 3", authority)  # 1 excluded, 3 total lines in review
+
     def test_assemble_refusals(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
