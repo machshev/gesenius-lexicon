@@ -1,0 +1,2329 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 941,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0941.png",
+ "raster_sha256": "143398178e9957b399dd4d1bfcdec56dcbb8ab61e129aa8092717f79307308aa",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0941.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T10:45:10+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 99,
+    "y": 138,
+    "width": 1771,
+    "height": 85
+   },
+   "draft_lines": [
+    "קיט",
+    "925",
+    "קיק"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 99,
+      "y": 136,
+      "width": 1771,
+      "height": 89
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/header-b00-1771x89+99+136-x2.png",
+     "image_sha256": "7503e681e99d31a94a5bc9c286a340477e56fa43813e4f449299acb6ad463618",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a6be1180-6342-4e4c-a741-0a3614d428d4\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "קיט",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קיט"
+      },
+      {
+       "draft": "925",
+       "reread": null,
+       "status": "draft_only",
+       "text": "925"
+      },
+      {
+       "draft": "קיק",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קיק"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 99,
+    "y": 186,
+    "width": 874,
+    "height": 825
+   },
+   "draft_lines": [
+    "קַיִט Chald. m. i. q. Heb. קַיִץ, sum-",
+    "mer, Dan. 2, 35.",
+    "קִיטוֹר m. (r. קָטַר I ) 1. smoke, Gen.",
+    "19, 28. Ps. 119, 83.",
+    "2. vapour, a cloud, Ps. 148, 8.",
+    "קִים m. (r. קוּם) a rising up against",
+    "any one, see the root no. 1. c ; hence",
+    "concr. Job 22, 20 קִימָנוּ our adversaries,",
+    "enemies, i. q. קָמֵינוּ.",
+    "קְיָם Chald. m. a statute, edict, Dan. 6,",
+    "8. In Targ. often for Heb. חֹק, בְּרִית.",
+    "Syr. ܩܝܳܡܳܐ. R. קוּם."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 99,
+      "y": 178,
+      "width": 874,
+      "height": 326
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r00-b00-874x326+99+178-x2.png",
+     "image_sha256": "5dcddc236e2f3f8ba570adcec5d844a411cafc94c577038a99e8c21545ef0bb2",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2d7090c0-cb62-47d0-b2f6-9a5faa710ccd\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "קַיִט Chald. m. i. q. Heb. קַיִץ, sum-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קַיִט Chald. m. i. q. Heb. קַיִץ, sum-"
+      },
+      {
+       "draft": "mer, Dan. 2, 35.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "mer, Dan. 2, 35."
+      },
+      {
+       "draft": "קִיטוֹר m. (r. קָטַר I ) 1. smoke, Gen.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִיטוֹר m. (r. קָטַר I) 1. smoke, Gen."
+      },
+      {
+       "draft": "19, 28. Ps. 119, 83.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "19, 28. Ps. 119, 83."
+      },
+      {
+       "draft": "2. vapour, a cloud, Ps. 148, 8.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. vapour, a cloud, Ps. 148, 8."
+      },
+      {
+       "draft": "קִים m. (r. קוּם) a rising up against",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִים m. (r. קוּם) a rising up against"
+      },
+      {
+       "draft": "any one, see the root no. 1. c ; hence",
+       "reread": null,
+       "status": "draft_only",
+       "text": "any one, see the root no. 1. c; hence"
+      },
+      {
+       "draft": "concr. Job 22, 20 קִימָנוּ our adversaries,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "concr. Job 22, 20 קִימָנוּ our adversaries,"
+      },
+      {
+       "draft": "enemies, i. q. קָמֵינוּ.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "enemies, i. q. קָמֵינוּ."
+      },
+      {
+       "draft": "קְיָם Chald. m. a statute, edict, Dan. 6,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קְיָם Chald. m. a statute, edict, Dan. 6,"
+      },
+      {
+       "draft": "8. In Targ. often for Heb. חֹק, בְּרִית.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "8. In Targ. often for Heb. חֹק, בְּרִית."
+      },
+      {
+       "draft": "Syr. ܩܝܳܡܳܐ. R. קוּם.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Syr. ܩܝܳܡܳܐ. R. קוּם."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 99,
+      "y": 488,
+      "width": 874,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r00-b01-874x260+99+488-x2.png",
+     "image_sha256": "c2fd296d1e8ce8ef090c46095b9433677b1c6a16c56e4cc26397fa12e529a015",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e42ede2b-1076-480c-af30-0b7324d79d12\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 99,
+      "y": 732,
+      "width": 874,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r00-b02-874x269+99+732-x2.png",
+     "image_sha256": "cbf3e52ee047fee70ccfce75e5c40c65578091899b6b42bf50408dcd53c0d5d1",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ad0cf3b3-9abe-4d8b-a0f6-620ef398eae5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 99,
+    "y": 999,
+    "width": 874,
+    "height": 769
+   },
+   "draft_lines": [
+    "קַיָּם Chald. adj. enduring, sure, Dan.",
+    "4, 23. Syr. ܩܰܝܳܡܳܐ id. R. קוּם.",
+    "קִימָה f. (r. קוּם) a rising up, Lam.",
+    "3, 63.",
+    "קִימוֹשׂ, see קִמּוֹשׂ.",
+    "קִין see in r. קוּן.",
+    "קַיִן m. (r. קוּן) 1. a lance, spear, c.",
+    "suff. קֵינוֹ 2 Sam. 21, 16.",
+    "2. Cain, pr. n. a) The eldest son of",
+    "Adam, the murderer of his brother Abel,",
+    "Gen. 4, 1 sq. Among his posterity were",
+    "the inventors of arts and arms. The"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 99,
+      "y": 1010,
+      "width": 874,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r01-b00-874x260+99+1010-x2.png",
+     "image_sha256": "713b144c1af3924c3e14d3e58eeeb7b46a62dfc55333f521c7ae5ba1404d95db",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0765b482-3823-4582-ad8c-7c22090e7894\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "קַיָּם Chald. adj. enduring, sure, Dan.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קַיָּם Chald. adj. enduring, sure, Dan."
+      },
+      {
+       "draft": "4, 23. Syr. ܩܰܝܳܡܳܐ id. R. קוּם.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "4, 23. Syr. ܩܰܝܳܡܳܐ id. R. קוּם."
+      },
+      {
+       "draft": "קִימָה f. (r. קוּם) a rising up, Lam.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִימָה f. (r. קוּם) a rising up, Lam."
+      },
+      {
+       "draft": "3, 63.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "3, 63."
+      },
+      {
+       "draft": "קִימוֹשׂ, see קִמּוֹשׂ.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִימוֹשׂ, see קִמּוֹשׂ."
+      },
+      {
+       "draft": "קִין see in r. קוּן.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִין see in r. קוּן."
+      },
+      {
+       "draft": "קַיִן m. (r. קוּן) 1. a lance, spear, c.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קַיִן m. (r. קוּן) 1. a lance, spear, c."
+      },
+      {
+       "draft": "suff. קֵינוֹ 2 Sam. 21, 16.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "suff. קֵינוֹ 2 Sam. 21, 16."
+      },
+      {
+       "draft": "2. Cain, pr. n. a) The eldest son of",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. Cain, pr. n. a) The eldest son of"
+      },
+      {
+       "draft": "Adam, the murderer of his brother Abel,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Adam, the murderer of his brother Abel,"
+      },
+      {
+       "draft": "Gen. 4, 1 sq. Among his posterity were",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Gen. 4, 1 sq. Among his posterity were"
+      },
+      {
+       "draft": "the inventors of arts and arms. The",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the inventors of arts and arms. The"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 99,
+      "y": 1254,
+      "width": 874,
+      "height": 294
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r01-b01-874x294+99+1254-x2.png",
+     "image_sha256": "a71c8d7ac464ebe4b1097153b094faf059ddcd480aadf2849b69eadbca6b66b3",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"886595e3-c7f2-4dea-90de-8efd4f7c7225\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 99,
+      "y": 1532,
+      "width": 874,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r01-b02-874x229+99+1532-x2.png",
+     "image_sha256": "a0b33b91c7bca2d5fed7b80c1025b08045dbb6df28cc9b53de3d09bccec2349a",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ea5034fd-be0e-4262-b012-d3f001fa547e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 99,
+    "y": 1756,
+    "width": 874,
+    "height": 719
+   },
+   "draft_lines": [
+    "name comes from r. קוּן, perh. lance, as",
+    "a murderous weapon; though in Gen.",
+    "4, 1 the etymology is explained as if r.",
+    "קוּן were i. q. קָנָה no. 1, viz. she bore",
+    "Cain and said: I have gotten (borne) a",
+    "man with the help of the Lord. b)",
+    "The tribe of the Kenites, Num. 24, 22.",
+    "Judg. 4, 11; see קֵינִי. c) A town in",
+    "the tribe of Judah, c. art. Josh. 15, 57.",
+    "קִינָה f. (r. קוּן) plur. קִינוֹת, once קִינִים",
+    "Ez. 2, 10.",
+    "1. song, Syr. ܩܺܝܢܬܳܐ musical sound,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 99,
+      "y": 1763,
+      "width": 874,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r02-b00-874x231+99+1763-x2.png",
+     "image_sha256": "57a009b82f054f957b5e5d85ac72a554cd29fe97fc739f2b9ac00da2d5a06fa4",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5b07eb75-f1b3-42e2-a372-fff22a9adb52\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "name comes from r. קוּן, perh. lance, as",
+       "reread": null,
+       "status": "draft_only",
+       "text": "name comes from r. קוּן, perh. lance, as"
+      },
+      {
+       "draft": "a murderous weapon; though in Gen.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "a murderous weapon; though in Gen."
+      },
+      {
+       "draft": "4, 1 the etymology is explained as if r.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "4, 1 the etymology is explained as if r."
+      },
+      {
+       "draft": "קוּן were i. q. קָנָה no. 1, viz. she bore",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קוּן were i. q. קָנָה no. 1, viz. she bore"
+      },
+      {
+       "draft": "Cain and said: I have gotten (borne) a",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Cain and said: I have gotten (borne) a"
+      },
+      {
+       "draft": "man with the help of the Lord. b)",
+       "reread": null,
+       "status": "draft_only",
+       "text": "man with the help of the Lord. b)"
+      },
+      {
+       "draft": "The tribe of the Kenites, Num. 24, 22.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "The tribe of the Kenites, Num. 24, 22."
+      },
+      {
+       "draft": "Judg. 4, 11; see קֵינִי. c) A town in",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Judg. 4, 11; see קֵינִי. c) A town in"
+      },
+      {
+       "draft": "the tribe of Judah, c. art. Josh. 15, 57.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the tribe of Judah, c. art. Josh. 15, 57."
+      },
+      {
+       "draft": "קִינָה f. (r. קוּן) plur. קִינוֹת, once קִינִים",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִינָה f. (r. קוּן) plur. קִינוֹת, once קִינִים"
+      },
+      {
+       "draft": "Ez. 2, 10.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Ez. 2, 10."
+      },
+      {
+       "draft": "1. song, Syr. ܩܺܝܢܬܳܐ musical sound,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "1. song, Syr. ܩܺܝܢܬܳܐ musical sound,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 99,
+      "y": 1978,
+      "width": 874,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r02-b01-874x235+99+1978-x2.png",
+     "image_sha256": "f53643542122c9ca6fd926ffd451322710777c5f5c98f9f146ef4c29412cc7ed",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1ba2d04c-7045-4a6b-beb3-eb7ef8d7c94a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 99,
+      "y": 2197,
+      "width": 874,
+      "height": 271
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r02-b02-874x271+99+2197-x2.png",
+     "image_sha256": "088234e80598f25e4ffa167a7af123040073fd0b403055c066b1866f02a0ce03",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"99cf03b6-554c-4d55-8cc2-8a823e627bdc\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 99,
+    "y": 2463,
+    "width": 874,
+    "height": 862
+   },
+   "draft_lines": [
+    "song. Spec. a song of mourning, lamen-",
+    "tation, Jer. 9, 9. Am. 5, 1. 8, 10. Ez. 2,",
+    "10. 19, 14. al.",
+    "2. Kinah, pr. n. of a town in Judah",
+    "Josh. 15, 22.",
+    "קֵינִי Gen. 15, 19. Judg. 4, 11. 17. 1",
+    "Sam. 30, 29, also קִנִי 2 Sam. 27, 10 קֵינִי",
+    "1 Chr. 2, 55, gentile n. Kenite, collect.",
+    "the Kenites, a Canaanitish tribe dwell-",
+    "ing among the Amalekites, 1 Sam. 15,",
+    "6, comp. Num. 24, 20. 21. Hobab. the",
+    "father-in-law of Moses, was phylarch of",
+    "one of their tribes, Judg. 1, 16. 4, 11.",
+    "The family of Heber the Kenite dwelt",
+    "78"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 99,
+      "y": 2470,
+      "width": 874,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r03-b00-874x229+99+2470-x2.png",
+     "image_sha256": "0b01165a6d09efcce25171e6c513fddbea6c521a03aeab870ce7910a531a47b0",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"25a28116-9677-4f73-bf34-d7d280d11168\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "song. Spec. a song of mourning, lamen-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "song. Spec. a song of mourning, lamen-"
+      },
+      {
+       "draft": "tation, Jer. 9, 9. Am. 5, 1. 8, 10. Ez. 2,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "tation, Jer. 9, 9. Am. 5, 1. 8, 10. Ez. 2,"
+      },
+      {
+       "draft": "10. 19, 14. al.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "10. 19, 14. al."
+      },
+      {
+       "draft": "2. Kinah, pr. n. of a town in Judah",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. Kinah, pr. n. of a town in Judah"
+      },
+      {
+       "draft": "Josh. 15, 22.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Josh. 15, 22."
+      },
+      {
+       "draft": "קֵינִי Gen. 15, 19. Judg. 4, 11. 17. 1",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קֵינִי Gen. 15, 19. Judg. 4, 11. 17. 1"
+      },
+      {
+       "draft": "Sam. 30, 29, also קִנִי 2 Sam. 27, 10 קֵינִי",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Sam. 30, 29, also קִנִי 2 Sam. 27, 10 קֵינִי"
+      },
+      {
+       "draft": "1 Chr. 2, 55, gentile n. Kenite, collect.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "1 Chr. 2, 55, gentile n. Kenite, collect."
+      },
+      {
+       "draft": "the Kenites, a Canaanitish tribe dwell-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the Kenites, a Canaanitish tribe dwell-"
+      },
+      {
+       "draft": "ing among the Amalekites, 1 Sam. 15,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ing among the Amalekites, 1 Sam. 15,"
+      },
+      {
+       "draft": "6, comp. Num. 24, 20. 21. Hobab. the",
+       "reread": null,
+       "status": "draft_only",
+       "text": "6, comp. Num. 24, 20. 21. Hobab. the"
+      },
+      {
+       "draft": "father-in-law of Moses, was phylarch of",
+       "reread": null,
+       "status": "draft_only",
+       "text": "father-in-law of Moses, was phylarch of"
+      },
+      {
+       "draft": "one of their tribes, Judg. 1, 16. 4, 11.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "one of their tribes, Judg. 1, 16. 4, 11."
+      },
+      {
+       "draft": "The family of Heber the Kenite dwelt",
+       "reread": null,
+       "status": "draft_only",
+       "text": "The family of Heber the Kenite dwelt"
+      },
+      {
+       "draft": "78",
+       "reread": null,
+       "status": "draft_only",
+       "text": "78"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 99,
+      "y": 2683,
+      "width": 874,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r03-b01-874x270+99+2683-x2.png",
+     "image_sha256": "fe4e9674d486c988faedd443f576a53306cdd24e8b6e236dddb252b025698ec3",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d86d55c3-1df1-44bb-ad20-92747f01b1c5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 99,
+      "y": 2937,
+      "width": 874,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r03-b02-874x236+99+2937-x2.png",
+     "image_sha256": "9fefe946b596a0464a4074e0c673993005ce1cbffec7f3b9c2cc3db2d0a7303b",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3af8dfe1-e07e-47c2-93b1-10da4c5c069d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 99,
+      "y": 3157,
+      "width": 874,
+      "height": 170
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c0-r03-b03-874x170+99+3157-x2.png",
+     "image_sha256": "dcbee0cc5a95f53a5ce606afc00a8b7fcc1810ac18126d7f30a3681b3b913a8a",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f1ee3f54-f762-4fee-825b-15765c749606\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 993,
+    "y": 186,
+    "width": 877,
+    "height": 851
+   },
+   "draft_lines": [
+    "in Naphtali, Judg. 4, 11. See too קַיִן",
+    "no. 2. b.—Syr. ܩܰܝܢܳܝܳܐ id. pr. ‘a smith,’",
+    "and this is prob. the signif. of Heb. קֵינִי,",
+    "from r. קוּן.",
+    "קֵינָן (smith, perh. lancer, r. קוּן) Ke-",
+    "nan or Cainan, pr. n. of an antediluvian",
+    "patriarch descended from Seth, Gen. 5,",
+    "9. 1 Chr. 1, 2.",
+    "קַיִץ m. (r. קוּץ III ) c. suff. קֵיצְךָ, har-",
+    "vest of fruits, fruit-harvest, not of grain",
+    "which is קָצִיר; pr. the cutting off of",
+    "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec.",
+    "fig-harvest, which in Palestine takes"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 993,
+      "y": 178,
+      "width": 877,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r00-b00-877x267+993+178-x2.png",
+     "image_sha256": "b499824760ae9f7bbec1fa58a86bfcfbc3fea42c73e47b25b9dfef874972c4f3",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f1de83eb-f570-4081-be22-c527e1519e51\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "in Naphtali, Judg. 4, 11. See too קַיִן",
+       "reread": null,
+       "status": "draft_only",
+       "text": "in Naphtali, Judg. 4, 11. See too קַיִן"
+      },
+      {
+       "draft": "no. 2. b.—Syr. ܩܰܝܢܳܝܳܐ id. pr. ‘a smith,’",
+       "reread": null,
+       "status": "draft_only",
+       "text": "no. 2. b.—Syr. ܩܰܝܢܳܝܳܐ id. pr. ‘a smith,’"
+      },
+      {
+       "draft": "and this is prob. the signif. of Heb. קֵינִי,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "and this is prob. the signif. of Heb. קֵינִי,"
+      },
+      {
+       "draft": "from r. קוּן.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "from r. קוּן."
+      },
+      {
+       "draft": "קֵינָן (smith, perh. lancer, r. קוּן) Ke-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קֵינָן (smith, perh. lancer, r. קוּן) Ke-"
+      },
+      {
+       "draft": "nan or Cainan, pr. n. of an antediluvian",
+       "reread": null,
+       "status": "draft_only",
+       "text": "nan or Cainan, pr. n. of an antediluvian"
+      },
+      {
+       "draft": "patriarch descended from Seth, Gen. 5,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "patriarch descended from Seth, Gen. 5,"
+      },
+      {
+       "draft": "9. 1 Chr. 1, 2.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "9. 1 Chr. 1, 2."
+      },
+      {
+       "draft": "קַיִץ m. (r. קוּץ III ) c. suff. קֵיצְךָ, har-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קַיִץ m. (r. קוּץ III) c. suff. קֵיצְךָ, har-"
+      },
+      {
+       "draft": "vest of fruits, fruit-harvest, not of grain",
+       "reread": null,
+       "status": "draft_only",
+       "text": "vest of fruits, fruit-harvest, not of grain"
+      },
+      {
+       "draft": "which is קָצִיר; pr. the cutting off of",
+       "reread": null,
+       "status": "draft_only",
+       "text": "which is קָצִיר; pr. the cutting off of"
+      },
+      {
+       "draft": "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec."
+      },
+      {
+       "draft": "fig-harvest, which in Palestine takes",
+       "reread": null,
+       "status": "draft_only",
+       "text": "fig-harvest, which in Palestine takes"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 993,
+      "y": 429,
+      "width": 877,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r00-b01-877x254+993+429-x2.png",
+     "image_sha256": "3fb15d0533362a7cf28af89784a00a650f1b233ed0efcd9e9561260ff0d3a5ed",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6bfeba1d-a18f-4c55-b15b-86900d887c14\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 993,
+      "y": 667,
+      "width": 877,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r00-b02-877x262+993+667-x2.png",
+     "image_sha256": "903906b73d7c690001a4745eef8620e26181048fdfd7c10884f20d9b4944a97c",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b43a32df-1e0d-4c04-9d56-14181a56a1fb\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 993,
+      "y": 913,
+      "width": 877,
+      "height": 132
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r00-b03-877x132+993+913-x2.png",
+     "image_sha256": "d43a55fc650e848dcddca298f9b57828b070787440d8f990e60551fdcd807b0b",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2d07a04f-f741-4ef9-8d09-fe371df1a0d9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 993,
+    "y": 1025,
+    "width": 877,
+    "height": 915
+   },
+   "draft_lines": [
+    "place in August; although early figs",
+    "(בִּכּוּרִים) ripen at the summer solstice ;",
+    "Is. 28, 4 as the early fig before the har-",
+    "vest. Mic. 7, 1.—Hence",
+    "a) the harvest-time of figs, i. e. sum-",
+    "mer, espec. midsummer, the hottest sea-",
+    "son ; Arab. قَيْظ or قَوْظ mid-summer.",
+    "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4",
+    "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-",
+    "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35.",
+    "בֵּית הַקַּיִץ the summer-house Am. 3, 15.",
+    "Sometimes it seems to include the spring,",
+    "as חֹרֶף also includes autumn and win-",
+    "ter; see in חֹרֶף.",
+    "b) fruit, spec. figs, as harvested, Am."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 993,
+      "y": 1017,
+      "width": 877,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r01-b00-877x238+993+1017-x2.png",
+     "image_sha256": "8addd7f1fe07fc5c23b74c883af600e84406df7a072f3ea2e5b7847f3dae1078",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"44fc85bd-612c-4634-84d7-fe7d1179e525\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "place in August; although early figs",
+       "reread": null,
+       "status": "draft_only",
+       "text": "place in August; although early figs"
+      },
+      {
+       "draft": "(בִּכּוּרִים) ripen at the summer solstice ;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "(בִּכּוּרִים) ripen at the summer solstice;"
+      },
+      {
+       "draft": "Is. 28, 4 as the early fig before the har-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Is. 28, 4 as the early fig before the har-"
+      },
+      {
+       "draft": "vest. Mic. 7, 1.—Hence",
+       "reread": null,
+       "status": "draft_only",
+       "text": "vest. Mic. 7, 1.—Hence"
+      },
+      {
+       "draft": "a) the harvest-time of figs, i. e. sum-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "a) the harvest-time of figs, i. e. sum-"
+      },
+      {
+       "draft": "mer, espec. midsummer, the hottest sea-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "mer, espec. midsummer, the hottest sea-"
+      },
+      {
+       "draft": "son ; Arab. قَيْظ or قَوْظ mid-summer.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "son; Arab. قَيْظ or قَوْظ mid-summer."
+      },
+      {
+       "draft": "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4"
+      },
+      {
+       "draft": "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-"
+      },
+      {
+       "draft": "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35."
+      },
+      {
+       "draft": "בֵּית הַקַּיִץ the summer-house Am. 3, 15.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "בֵּית הַקַּיִץ the summer-house Am. 3, 15."
+      },
+      {
+       "draft": "Sometimes it seems to include the spring,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Sometimes it seems to include the spring,"
+      },
+      {
+       "draft": "as חֹרֶף also includes autumn and win-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "as חֹרֶף also includes autumn and win-"
+      },
+      {
+       "draft": "ter; see in חֹרֶף.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ter; see in חֹרֶף."
+      },
+      {
+       "draft": "b) fruit, spec. figs, as harvested, Am.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "b) fruit, spec. figs, as harvested, Am."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 993,
+      "y": 1239,
+      "width": 877,
+      "height": 302
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r01-b01-877x302+993+1239-x2.png",
+     "image_sha256": "cdf6ea3817932a7d3712f1f62ba57285c3629727f3f7320cd243a044b12d734d",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8e6ffdcf-b42e-4a58-9e45-9a73676162c0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 993,
+      "y": 1525,
+      "width": 877,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r01-b02-877x250+993+1525-x2.png",
+     "image_sha256": "ac659cbac7f05a0db5278db8a10740f997cedb6a9162ca487001ac57b9a516c4",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b09ce7ef-b6cd-4f9e-814f-3074e34bc2ed\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 993,
+      "y": 1759,
+      "width": 877,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r01-b03-877x189+993+1759-x2.png",
+     "image_sha256": "6939f19ae9433a4d6a46c3ebd6d1dcaed8a6e5581db96b868f98cacf6022471c",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3ab91716-5a5b-41e1-b1d5-532942cbc2ef\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 993,
+    "y": 1928,
+    "width": 877,
+    "height": 865
+   },
+   "draft_lines": [
+    "8, 1. 2; comp. Jer. 24, 1 sq. Jerome po-",
+    "ma, which is a general word including",
+    "figs; see the lexicons. 2 Sam. 16, 1 מֵאָה",
+    "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-",
+    "dred cakes of figs. Comp. in Engl. the",
+    "harvest for the grain harvested.",
+    "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after",
+    "the analogy of חִיצוֹן from חוּץ, Dag.",
+    "om. after ־ִי) the last, the extreme, only",
+    "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17.",
+    "קִיקָיוֹן m. Jon. 4, 6–10, according to",
+    "Jerome, the Talmud, and Heb. intpp.",
+    "the ricinus, palma Christi, Arab. الخروع",
+    "el-kherû'a, Egyptian κίκι, κούκι, Diod."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 993,
+      "y": 1920,
+      "width": 877,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r02-b00-877x243+993+1920-x2.png",
+     "image_sha256": "939fd910e3782d4698097935739a3acdbb88f5e60999dec354b70398d4b8448c",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ed42b550-87b3-43e2-a166-a5fdcd025c01\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "8, 1. 2; comp. Jer. 24, 1 sq. Jerome po-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "8, 1. 2; comp. Jer. 24, 1 sq. Jerome po-"
+      },
+      {
+       "draft": "ma, which is a general word including",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ma, which is a general word including"
+      },
+      {
+       "draft": "figs; see the lexicons. 2 Sam. 16, 1 מֵאָה",
+       "reread": null,
+       "status": "draft_only",
+       "text": "figs; see the lexicons. 2 Sam. 16, 1 מֵאָה"
+      },
+      {
+       "draft": "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-"
+      },
+      {
+       "draft": "dred cakes of figs. Comp. in Engl. the",
+       "reread": null,
+       "status": "draft_only",
+       "text": "dred cakes of figs. Comp. in Engl. the"
+      },
+      {
+       "draft": "harvest for the grain harvested.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "harvest for the grain harvested."
+      },
+      {
+       "draft": "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after"
+      },
+      {
+       "draft": "the analogy of חִיצוֹן from חוּץ, Dag.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the analogy of חִיצוֹן from חוּץ, Dag."
+      },
+      {
+       "draft": "om. after ־ִי) the last, the extreme, only",
+       "reread": null,
+       "status": "draft_only",
+       "text": "om. after ־ִי) the last, the extreme, only"
+      },
+      {
+       "draft": "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17."
+      },
+      {
+       "draft": "קִיקָיוֹן m. Jon. 4, 6–10, according to",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קִיקָיוֹן m. Jon. 4, 6–10, according to"
+      },
+      {
+       "draft": "Jerome, the Talmud, and Heb. intpp.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Jerome, the Talmud, and Heb. intpp."
+      },
+      {
+       "draft": "the ricinus, palma Christi, Arab. الخروع",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the ricinus, palma Christi, Arab. الخروع"
+      },
+      {
+       "draft": "el-kherû'a, Egyptian κίκι, κούκι, Diod.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "el-kherû'a, Egyptian κίκι, κούκι, Diod."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 993,
+      "y": 2147,
+      "width": 877,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r02-b01-877x259+993+2147-x2.png",
+     "image_sha256": "35c103cb274f9118355ef737238da7b8b24e55defe0101ac49cde13894bb0965",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d8e7c274-db67-472f-989a-2fe53ea1342c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 993,
+      "y": 2390,
+      "width": 877,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r02-b02-877x258+993+2390-x2.png",
+     "image_sha256": "4273e1bcadfd63d7e591721de6c54eb14d6fd90c62ebca8f136ccdcd1fffcea1",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e2dc47df-03f3-461a-805f-fcbedbc86a3f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 993,
+      "y": 2632,
+      "width": 877,
+      "height": 169
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r02-b03-877x169+993+2632-x2.png",
+     "image_sha256": "cd46f8b1592bfb03b1449b410725502fcf79990296a7de7079ed5ee5dabe5902",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e7a36b37-425a-4785-9e2d-79c46238a664\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 993,
+    "y": 2781,
+    "width": 877,
+    "height": 504
+   },
+   "draft_lines": [
+    "Sic. 1. 34, a tall biennial plant still culti-",
+    "vated in gardens, of an elegant appear-",
+    "ance and rapid growth, with a stalk or",
+    "trunk full of sap. At Jericho it becomes",
+    "a considerable tree; see Bibl. Res. in",
+    "Palest. II. p. 281. Bochart. Hieroz. II.",
+    "p. 293. 623. Celsii Hierobot. II. p. 273",
+    "sq. Thesaur. p. 1214.—According to",
+    "Sept. and Peshito, a gourd."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 993,
+      "y": 2773,
+      "width": 877,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r03-b00-877x239+993+2773-x2.png",
+     "image_sha256": "d5555807d408beb0968726e9df47f65381e2932907b9648e60165db3dd27d80f",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"036c096a-2ac1-416d-83ba-4a288252cc6b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "Sic. 1. 34, a tall biennial plant still culti-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Sic. 1. 34, a tall biennial plant still culti-"
+      },
+      {
+       "draft": "vated in gardens, of an elegant appear-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "vated in gardens, of an elegant appear-"
+      },
+      {
+       "draft": "ance and rapid growth, with a stalk or",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ance and rapid growth, with a stalk or"
+      },
+      {
+       "draft": "trunk full of sap. At Jericho it becomes",
+       "reread": null,
+       "status": "draft_only",
+       "text": "trunk full of sap. At Jericho it becomes"
+      },
+      {
+       "draft": "a considerable tree; see Bibl. Res. in",
+       "reread": null,
+       "status": "draft_only",
+       "text": "a considerable tree; see Bibl. Res. in"
+      },
+      {
+       "draft": "Palest. II. p. 281. Bochart. Hieroz. II.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Palest. II. p. 281. Bochart. Hieroz. II."
+      },
+      {
+       "draft": "p. 293. 623. Celsii Hierobot. II. p. 273",
+       "reread": null,
+       "status": "draft_only",
+       "text": "p. 293. 623. Celsii Hierobot. II. p. 273"
+      },
+      {
+       "draft": "sq. Thesaur. p. 1214.—According to",
+       "reread": null,
+       "status": "draft_only",
+       "text": "sq. Thesaur. p. 1214.—According to"
+      },
+      {
+       "draft": "Sept. and Peshito, a gourd.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Sept. and Peshito, a gourd."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 993,
+      "y": 2996,
+      "width": 877,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r03-b01-877x235+993+2996-x2.png",
+     "image_sha256": "5609a074e85ec10df53b1f5afe228873b990a660d92d65cdac20c52ca543bb84",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0a4a4849-d435-4a35-b6ef-4d00068926c9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 993,
+      "y": 3215,
+      "width": 877,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0941/pass2/c1-r03-b02-877x72+993+3215-x2.png",
+     "image_sha256": "374527a76cd41654d6194ad1b5ed72c260199a063f2c3b85836cec97285fda31",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"277c5b76-d204-40bf-bf10-8452042e080d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "קיט",
+   "status": "draft_only",
+   "draft": "קיט",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "925",
+   "status": "draft_only",
+   "draft": "925",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "קיק",
+   "status": "draft_only",
+   "draft": "קיק",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "קַיִט Chald. m. i. q. Heb. קַיִץ, sum-",
+   "status": "draft_only",
+   "draft": "קַיִט Chald. m. i. q. Heb. קַיִץ, sum-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "mer, Dan. 2, 35.",
+   "status": "draft_only",
+   "draft": "mer, Dan. 2, 35.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "קִיטוֹר m. (r. קָטַר I) 1. smoke, Gen.",
+   "status": "draft_only",
+   "draft": "קִיטוֹר m. (r. קָטַר I ) 1. smoke, Gen.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "19, 28. Ps. 119, 83.",
+   "status": "draft_only",
+   "draft": "19, 28. Ps. 119, 83.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. vapour, a cloud, Ps. 148, 8.",
+   "status": "draft_only",
+   "draft": "2. vapour, a cloud, Ps. 148, 8.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "קִים m. (r. קוּם) a rising up against",
+   "status": "draft_only",
+   "draft": "קִים m. (r. קוּם) a rising up against",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "any one, see the root no. 1. c; hence",
+   "status": "draft_only",
+   "draft": "any one, see the root no. 1. c ; hence",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "concr. Job 22, 20 קִימָנוּ our adversaries,",
+   "status": "draft_only",
+   "draft": "concr. Job 22, 20 קִימָנוּ our adversaries,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "enemies, i. q. קָמֵינוּ.",
+   "status": "draft_only",
+   "draft": "enemies, i. q. קָמֵינוּ.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "קְיָם Chald. m. a statute, edict, Dan. 6,",
+   "status": "draft_only",
+   "draft": "קְיָם Chald. m. a statute, edict, Dan. 6,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "8. In Targ. often for Heb. חֹק, בְּרִית.",
+   "status": "draft_only",
+   "draft": "8. In Targ. often for Heb. חֹק, בְּרִית.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Syr. ܩܝܳܡܳܐ. R. קוּם.",
+   "status": "draft_only",
+   "draft": "Syr. ܩܝܳܡܳܐ. R. קוּם.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "קַיָּם Chald. adj. enduring, sure, Dan.",
+   "status": "draft_only",
+   "draft": "קַיָּם Chald. adj. enduring, sure, Dan.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4, 23. Syr. ܩܰܝܳܡܳܐ id. R. קוּם.",
+   "status": "draft_only",
+   "draft": "4, 23. Syr. ܩܰܝܳܡܳܐ id. R. קוּם.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "קִימָה f. (r. קוּם) a rising up, Lam.",
+   "status": "draft_only",
+   "draft": "קִימָה f. (r. קוּם) a rising up, Lam.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3, 63.",
+   "status": "draft_only",
+   "draft": "3, 63.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "קִימוֹשׂ, see קִמּוֹשׂ.",
+   "status": "draft_only",
+   "draft": "קִימוֹשׂ, see קִמּוֹשׂ.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "קִין see in r. קוּן.",
+   "status": "draft_only",
+   "draft": "קִין see in r. קוּן.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "קַיִן m. (r. קוּן) 1. a lance, spear, c.",
+   "status": "draft_only",
+   "draft": "קַיִן m. (r. קוּן) 1. a lance, spear, c.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "suff. קֵינוֹ 2 Sam. 21, 16.",
+   "status": "draft_only",
+   "draft": "suff. קֵינוֹ 2 Sam. 21, 16.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. Cain, pr. n. a) The eldest son of",
+   "status": "draft_only",
+   "draft": "2. Cain, pr. n. a) The eldest son of",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Adam, the murderer of his brother Abel,",
+   "status": "draft_only",
+   "draft": "Adam, the murderer of his brother Abel,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gen. 4, 1 sq. Among his posterity were",
+   "status": "draft_only",
+   "draft": "Gen. 4, 1 sq. Among his posterity were",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the inventors of arts and arms. The",
+   "status": "draft_only",
+   "draft": "the inventors of arts and arms. The",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "name comes from r. קוּן, perh. lance, as",
+   "status": "draft_only",
+   "draft": "name comes from r. קוּן, perh. lance, as",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "a murderous weapon; though in Gen.",
+   "status": "draft_only",
+   "draft": "a murderous weapon; though in Gen.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4, 1 the etymology is explained as if r.",
+   "status": "draft_only",
+   "draft": "4, 1 the etymology is explained as if r.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "קוּן were i. q. קָנָה no. 1, viz. she bore",
+   "status": "draft_only",
+   "draft": "קוּן were i. q. קָנָה no. 1, viz. she bore",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Cain and said: I have gotten (borne) a",
+   "status": "draft_only",
+   "draft": "Cain and said: I have gotten (borne) a",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "man with the help of the Lord. b)",
+   "status": "draft_only",
+   "draft": "man with the help of the Lord. b)",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "The tribe of the Kenites, Num. 24, 22.",
+   "status": "draft_only",
+   "draft": "The tribe of the Kenites, Num. 24, 22.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Judg. 4, 11; see קֵינִי. c) A town in",
+   "status": "draft_only",
+   "draft": "Judg. 4, 11; see קֵינִי. c) A town in",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the tribe of Judah, c. art. Josh. 15, 57.",
+   "status": "draft_only",
+   "draft": "the tribe of Judah, c. art. Josh. 15, 57.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "קִינָה f. (r. קוּן) plur. קִינוֹת, once קִינִים",
+   "status": "draft_only",
+   "draft": "קִינָה f. (r. קוּן) plur. קִינוֹת, once קִינִים",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ez. 2, 10.",
+   "status": "draft_only",
+   "draft": "Ez. 2, 10.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. song, Syr. ܩܺܝܢܬܳܐ musical sound,",
+   "status": "draft_only",
+   "draft": "1. song, Syr. ܩܺܝܢܬܳܐ musical sound,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "song. Spec. a song of mourning, lamen-",
+   "status": "draft_only",
+   "draft": "song. Spec. a song of mourning, lamen-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tation, Jer. 9, 9. Am. 5, 1. 8, 10. Ez. 2,",
+   "status": "draft_only",
+   "draft": "tation, Jer. 9, 9. Am. 5, 1. 8, 10. Ez. 2,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "10. 19, 14. al.",
+   "status": "draft_only",
+   "draft": "10. 19, 14. al.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. Kinah, pr. n. of a town in Judah",
+   "status": "draft_only",
+   "draft": "2. Kinah, pr. n. of a town in Judah",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Josh. 15, 22.",
+   "status": "draft_only",
+   "draft": "Josh. 15, 22.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "קֵינִי Gen. 15, 19. Judg. 4, 11. 17. 1",
+   "status": "draft_only",
+   "draft": "קֵינִי Gen. 15, 19. Judg. 4, 11. 17. 1",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Sam. 30, 29, also קִנִי 2 Sam. 27, 10 קֵינִי",
+   "status": "draft_only",
+   "draft": "Sam. 30, 29, also קִנִי 2 Sam. 27, 10 קֵינִי",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 Chr. 2, 55, gentile n. Kenite, collect.",
+   "status": "draft_only",
+   "draft": "1 Chr. 2, 55, gentile n. Kenite, collect.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the Kenites, a Canaanitish tribe dwell-",
+   "status": "draft_only",
+   "draft": "the Kenites, a Canaanitish tribe dwell-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ing among the Amalekites, 1 Sam. 15,",
+   "status": "draft_only",
+   "draft": "ing among the Amalekites, 1 Sam. 15,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "6, comp. Num. 24, 20. 21. Hobab. the",
+   "status": "draft_only",
+   "draft": "6, comp. Num. 24, 20. 21. Hobab. the",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "father-in-law of Moses, was phylarch of",
+   "status": "draft_only",
+   "draft": "father-in-law of Moses, was phylarch of",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "one of their tribes, Judg. 1, 16. 4, 11.",
+   "status": "draft_only",
+   "draft": "one of their tribes, Judg. 1, 16. 4, 11.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "The family of Heber the Kenite dwelt",
+   "status": "draft_only",
+   "draft": "The family of Heber the Kenite dwelt",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "78",
+   "status": "draft_only",
+   "draft": "78",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "in Naphtali, Judg. 4, 11. See too קַיִן",
+   "status": "draft_only",
+   "draft": "in Naphtali, Judg. 4, 11. See too קַיִן",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "no. 2. b.—Syr. ܩܰܝܢܳܝܳܐ id. pr. ‘a smith,’",
+   "status": "draft_only",
+   "draft": "no. 2. b.—Syr. ܩܰܝܢܳܝܳܐ id. pr. ‘a smith,’",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and this is prob. the signif. of Heb. קֵינִי,",
+   "status": "draft_only",
+   "draft": "and this is prob. the signif. of Heb. קֵינִי,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "from r. קוּן.",
+   "status": "draft_only",
+   "draft": "from r. קוּן.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "קֵינָן (smith, perh. lancer, r. קוּן) Ke-",
+   "status": "draft_only",
+   "draft": "קֵינָן (smith, perh. lancer, r. קוּן) Ke-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "nan or Cainan, pr. n. of an antediluvian",
+   "status": "draft_only",
+   "draft": "nan or Cainan, pr. n. of an antediluvian",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "patriarch descended from Seth, Gen. 5,",
+   "status": "draft_only",
+   "draft": "patriarch descended from Seth, Gen. 5,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "9. 1 Chr. 1, 2.",
+   "status": "draft_only",
+   "draft": "9. 1 Chr. 1, 2.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "קַיִץ m. (r. קוּץ III) c. suff. קֵיצְךָ, har-",
+   "status": "draft_only",
+   "draft": "קַיִץ m. (r. קוּץ III ) c. suff. קֵיצְךָ, har-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "vest of fruits, fruit-harvest, not of grain",
+   "status": "draft_only",
+   "draft": "vest of fruits, fruit-harvest, not of grain",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "which is קָצִיר; pr. the cutting off of",
+   "status": "draft_only",
+   "draft": "which is קָצִיר; pr. the cutting off of",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec.",
+   "status": "draft_only",
+   "draft": "fruit. Is. 16, 9. Jer. 8, 20. 48, 32. Spec.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "fig-harvest, which in Palestine takes",
+   "status": "draft_only",
+   "draft": "fig-harvest, which in Palestine takes",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "place in August; although early figs",
+   "status": "draft_only",
+   "draft": "place in August; although early figs",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "(בִּכּוּרִים) ripen at the summer solstice;",
+   "status": "draft_only",
+   "draft": "(בִּכּוּרִים) ripen at the summer solstice ;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Is. 28, 4 as the early fig before the har-",
+   "status": "draft_only",
+   "draft": "Is. 28, 4 as the early fig before the har-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "vest. Mic. 7, 1.—Hence",
+   "status": "draft_only",
+   "draft": "vest. Mic. 7, 1.—Hence",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "a) the harvest-time of figs, i. e. sum-",
+   "status": "draft_only",
+   "draft": "a) the harvest-time of figs, i. e. sum-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "mer, espec. midsummer, the hottest sea-",
+   "status": "draft_only",
+   "draft": "mer, espec. midsummer, the hottest sea-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "son; Arab. قَيْظ or قَوْظ mid-summer.",
+   "status": "draft_only",
+   "draft": "son ; Arab. قَيْظ or قَوْظ mid-summer.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4",
+   "status": "draft_only",
+   "draft": "Chald. קַיִט, Syr. ܩܰܝܛܳܐ, id.—Ps. 32, 4",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-",
+   "status": "draft_only",
+   "draft": "בְּחַרְבוֹנֵי קַיִץ into the droughts of sum-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35.",
+   "status": "draft_only",
+   "draft": "mer. Prov. 6, 8. 10, 5. 26, 1. 30, 35.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "בֵּית הַקַּיִץ the summer-house Am. 3, 15.",
+   "status": "draft_only",
+   "draft": "בֵּית הַקַּיִץ the summer-house Am. 3, 15.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Sometimes it seems to include the spring,",
+   "status": "draft_only",
+   "draft": "Sometimes it seems to include the spring,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as חֹרֶף also includes autumn and win-",
+   "status": "draft_only",
+   "draft": "as חֹרֶף also includes autumn and win-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ter; see in חֹרֶף.",
+   "status": "draft_only",
+   "draft": "ter; see in חֹרֶף.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "b) fruit, spec. figs, as harvested, Am.",
+   "status": "draft_only",
+   "draft": "b) fruit, spec. figs, as harvested, Am.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8, 1. 2; comp. Jer. 24, 1 sq. Jerome po-",
+   "status": "draft_only",
+   "draft": "8, 1. 2; comp. Jer. 24, 1 sq. Jerome po-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ma, which is a general word including",
+   "status": "draft_only",
+   "draft": "ma, which is a general word including",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "figs; see the lexicons. 2 Sam. 16, 1 מֵאָה",
+   "status": "draft_only",
+   "draft": "figs; see the lexicons. 2 Sam. 16, 1 מֵאָה",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-",
+   "status": "draft_only",
+   "draft": "קַיִץ, ellipt. for מֵאָה דְּבֵלוֹת קַיִץ, a hun-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "dred cakes of figs. Comp. in Engl. the",
+   "status": "draft_only",
+   "draft": "dred cakes of figs. Comp. in Engl. the",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "harvest for the grain harvested.",
+   "status": "draft_only",
+   "draft": "harvest for the grain harvested.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after",
+   "status": "draft_only",
+   "draft": "קִיצוֹן m. adj. (r. קָצַץ; for קִצּוֹן, after",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the analogy of חִיצוֹן from חוּץ, Dag.",
+   "status": "draft_only",
+   "draft": "the analogy of חִיצוֹן from חוּץ, Dag.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "om. after ־ִי) the last, the extreme, only",
+   "status": "draft_only",
+   "draft": "om. after ־ִי) the last, the extreme, only",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17.",
+   "status": "draft_only",
+   "draft": "in f. קִיצוֹנָה Ex. 26, 4. 10. 36, 11. 17.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "קִיקָיוֹן m. Jon. 4, 6–10, according to",
+   "status": "draft_only",
+   "draft": "קִיקָיוֹן m. Jon. 4, 6–10, according to",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Jerome, the Talmud, and Heb. intpp.",
+   "status": "draft_only",
+   "draft": "Jerome, the Talmud, and Heb. intpp.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the ricinus, palma Christi, Arab. الخروع",
+   "status": "draft_only",
+   "draft": "the ricinus, palma Christi, Arab. الخروع",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "el-kherû'a, Egyptian κίκι, κούκι, Diod.",
+   "status": "draft_only",
+   "draft": "el-kherû'a, Egyptian κίκι, κούκι, Diod.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Sic. 1. 34, a tall biennial plant still culti-",
+   "status": "draft_only",
+   "draft": "Sic. 1. 34, a tall biennial plant still culti-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "vated in gardens, of an elegant appear-",
+   "status": "draft_only",
+   "draft": "vated in gardens, of an elegant appear-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ance and rapid growth, with a stalk or",
+   "status": "draft_only",
+   "draft": "ance and rapid growth, with a stalk or",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "trunk full of sap. At Jericho it becomes",
+   "status": "draft_only",
+   "draft": "trunk full of sap. At Jericho it becomes",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "a considerable tree; see Bibl. Res. in",
+   "status": "draft_only",
+   "draft": "a considerable tree; see Bibl. Res. in",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Palest. II. p. 281. Bochart. Hieroz. II.",
+   "status": "draft_only",
+   "draft": "Palest. II. p. 281. Bochart. Hieroz. II.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "p. 293. 623. Celsii Hierobot. II. p. 273",
+   "status": "draft_only",
+   "draft": "p. 293. 623. Celsii Hierobot. II. p. 273",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "sq. Thesaur. p. 1214.—According to",
+   "status": "draft_only",
+   "draft": "sq. Thesaur. p. 1214.—According to",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Sept. and Peshito, a gourd.",
+   "status": "draft_only",
+   "draft": "Sept. and Peshito, a gourd.",
+   "reread": null,
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 0,
+  "adjudicated": 0,
+  "draft_only": 105,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 105
+ },
+ "errors": 29,
+ "cost_usd_list_total": 0.0
+}

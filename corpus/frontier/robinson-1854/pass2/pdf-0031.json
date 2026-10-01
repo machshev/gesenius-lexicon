@@ -1,0 +1,2571 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 31,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0031.png",
+ "raster_sha256": "ce34f9da6d57cea4240f4c488b93ffda70f99e0852d3e8c20d6100e9ff9e0fa3",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0031.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:57:19+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 104,
+    "y": 95,
+    "width": 1761,
+    "height": 90
+   },
+   "draft_lines": [
+    "אדם 15 אדן"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 104,
+      "y": 93,
+      "width": 1761,
+      "height": 94
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/header-b00-1761x94+104+93-x2.png",
+     "image_sha256": "cb84cd67ea6fb30761da08e7568e13fd184921309444468dd164c6e6c6ffad7a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אדם 15 אדן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "64f8108f-9aec-4de5-86d7-be9369a74fa3",
+      "duration_api_ms": 6542,
+      "cost_usd_list": 0.048157000000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1780,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "אדם 15 אדן",
+       "reread": "אדם 15 אדן",
+       "status": "agreed",
+       "text": "אדם 15 אדן"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 104,
+    "y": 140,
+    "width": 868,
+    "height": 973
+   },
+   "draft_lines": [
+    "the man as the only one of his kind;",
+    "comp. הַבַּעַל Baal, the lord κατ᾿ ἐξοχ.",
+    "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence",
+    "Sept. Ἀδάμ, Vulg. Adam. b) Of a city",
+    "near the Jordan, Josh. 3, 16.",
+    "5. בֶּן־אָדָם, with art. בֶּן־הָאָדָם, son of",
+    "man, poet. for man, Num. 23, 19. Ps. 8,",
+    "5. 80, 18. Job 16, 21. 25, 6. 35, 8; so",
+    "very often in Ezekiel, where the prophet",
+    "is addressed from God, בֶּן־אָדָם son of",
+    "man, i. e. mortal! Ez. 2, 1. 3. 3, 1. 3. 4.",
+    "10. 4, 16. 8, 5. 6. 8. Often also in Plur.",
+    "בְּנֵי אָדָם sons of men, i. e. men, Deut.",
+    "32, 8. Ps. 11, 4. al. and with art. בְּנֵי",
+    "הָאָדָם 1 Sam. 26, 19. 1 K. 8, 39. Ps. 145,",
+    "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 104,
+      "y": 132,
+      "width": 868,
+      "height": 302
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r00-b00-868x302+104+132-x2.png",
+     "image_sha256": "39cd9bc7484e5a89ea2befb18239d1b3dda62e5c698966475bbaaff60dddabb9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the man as the only one of his kind;",
+       "comp. הַבַּעַל Baal, the lord κατ᾽ ἐξοχ.",
+       "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence",
+       "Sept. Ἀδάμ, Vulg. Adam. b) Of a city"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4cc8260a-5ef9-4a65-a45f-2c87ce974204",
+      "duration_api_ms": 12918,
+      "cost_usd_list": 0.08499775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 549
+     },
+     "lines": [
+      {
+       "draft": "the man as the only one of his kind;",
+       "reread": "the man as the only one of his kind;",
+       "status": "agreed",
+       "text": "the man as the only one of his kind;"
+      },
+      {
+       "draft": "comp. הַבַּעַל Baal, the lord κατ᾿ ἐξοχ.",
+       "reread": "comp. הַבַּעַל Baal, the lord κατ᾽ ἐξοχ.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "comp. הַבַּעַל Baal, the lord κατ᾽ ἐξοχ.",
+        "verdict": "b",
+        "note": "The only difference is the mark after κατ: the print shows an elision apostrophe (κατ' for κατά before ἐξοχήν), which is properly the Greek koronis U+1FBD (᾽, Reading B), not the standalone smooth-breathing psili U+1FBF (᾿, Reading A). Hebrew הַבַּעַל (patach, dagesh in bet, patach, patach) and ἐξοχ. are printed identically in both readings and match the image.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cc757b12-6b39-4deb-a643-b1848a4a5910",
+        "duration_api_ms": 155272,
+        "cost_usd_list": 0.093283,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3492,
+        "cache_creation_input_tokens": 2766,
+        "output_tokens": 735
+       },
+       "text": "comp. הַבַּעַל Baal, the lord κατ᾽ ἐξοχ."
+      },
+      {
+       "draft": "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence",
+       "reread": "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence",
+       "status": "agreed",
+       "text": "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence"
+      },
+      {
+       "draft": "Sept. Ἀδάμ, Vulg. Adam. b) Of a city",
+       "reread": "Sept. Ἀδάμ, Vulg. Adam. b) Of a city",
+       "status": "agreed",
+       "text": "Sept. Ἀδάμ, Vulg. Adam. b) Of a city"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 104,
+      "y": 418,
+      "width": 868,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r00-b01-868x233+104+418-x2.png",
+     "image_sha256": "2074b0211e87bd3af8f754f0229cf59747214c93c436273ec1f89c6fb5d726c3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "near the Jordan, Josh. 3, 16.",
+       "5. בֶּן־אָדָם, with art. בֶּן־הָאָדָם, son of",
+       "man, poet. for man, Num. 23, 19. Ps. 8,",
+       "5. 80, 18. Job 16, 21. 25, 6. 35, 8; so"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d6cef83b-3daf-4a3a-b692-b7c5e3686d71",
+      "duration_api_ms": 11647,
+      "cost_usd_list": 0.06674775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2507,
+      "output_tokens": 308
+     },
+     "lines": [
+      {
+       "draft": "near the Jordan, Josh. 3, 16.",
+       "reread": "near the Jordan, Josh. 3, 16.",
+       "status": "agreed",
+       "text": "near the Jordan, Josh. 3, 16."
+      },
+      {
+       "draft": "5. בֶּן־אָדָם, with art. בֶּן־הָאָדָם, son of",
+       "reread": "5. בֶּן־אָדָם, with art. בֶּן־הָאָדָם, son of",
+       "status": "agreed",
+       "text": "5. בֶּן־אָדָם, with art. בֶּן־הָאָדָם, son of"
+      },
+      {
+       "draft": "man, poet. for man, Num. 23, 19. Ps. 8,",
+       "reread": "man, poet. for man, Num. 23, 19. Ps. 8,",
+       "status": "agreed",
+       "text": "man, poet. for man, Num. 23, 19. Ps. 8,"
+      },
+      {
+       "draft": "5. 80, 18. Job 16, 21. 25, 6. 35, 8; so",
+       "reread": "5. 80, 18. Job 16, 21. 25, 6. 35, 8; so",
+       "status": "agreed",
+       "text": "5. 80, 18. Job 16, 21. 25, 6. 35, 8; so"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 104,
+      "y": 635,
+      "width": 868,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r00-b02-868x240+104+635-x2.png",
+     "image_sha256": "79f0ee41830920defe79e5d0b66a4adc0bf89493fe6e15c4cc9662e6d900a28b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "very often in Ezekiel, where the prophet",
+       "is addressed from God, בֶּן־אָדָם son of",
+       "man, i. e. mortal ! Ez. 2, 1. 3. 3, 1. 3. 4.",
+       "10. 4, 16. 8, 5. 6. 8. Often also in Plur."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9ece1c3a-7ac2-4f45-85ce-9ec16d9e6ea9",
+      "duration_api_ms": 9325,
+      "cost_usd_list": 0.06663775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2569,
+      "output_tokens": 281
+     },
+     "lines": [
+      {
+       "draft": "very often in Ezekiel, where the prophet",
+       "reread": "very often in Ezekiel, where the prophet",
+       "status": "agreed",
+       "text": "very often in Ezekiel, where the prophet"
+      },
+      {
+       "draft": "is addressed from God, בֶּן־אָדָם son of",
+       "reread": "is addressed from God, בֶּן־אָדָם son of",
+       "status": "agreed",
+       "text": "is addressed from God, בֶּן־אָדָם son of"
+      },
+      {
+       "draft": "man, i. e. mortal! Ez. 2, 1. 3. 3, 1. 3. 4.",
+       "reread": "man, i. e. mortal ! Ez. 2, 1. 3. 3, 1. 3. 4.",
+       "status": "agreed",
+       "text": "man, i. e. mortal! Ez. 2, 1. 3. 3, 1. 3. 4."
+      },
+      {
+       "draft": "10. 4, 16. 8, 5. 6. 8. Often also in Plur.",
+       "reread": "10. 4, 16. 8, 5. 6. 8. Often also in Plur.",
+       "status": "agreed",
+       "text": "10. 4, 16. 8, 5. 6. 8. Often also in Plur."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 104,
+      "y": 859,
+      "width": 868,
+      "height": 190
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r00-b03-868x190+104+859-x2.png",
+     "image_sha256": "16b75ddb52b289df7f517b9884ed5b4b6689f12e173722a83eb8888890a81bdf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בְּנֵי אָדָם sons of men, i. e. men, Deut.",
+       "32, 8. Ps. 11, 4. al. and with art. בְּנֵי",
+       "הָאָדָם 1 Sam. 26, 19. 1 K. 8, 39. Ps. 145,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "27ed5109-e6c0-44ca-993f-48001322a19a",
+      "duration_api_ms": 11313,
+      "cost_usd_list": 0.06992775000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2321,
+      "output_tokens": 446
+     },
+     "lines": [
+      {
+       "draft": "בְּנֵי אָדָם sons of men, i. e. men, Deut.",
+       "reread": "בְּנֵי אָדָם sons of men, i. e. men, Deut.",
+       "status": "agreed",
+       "text": "בְּנֵי אָדָם sons of men, i. e. men, Deut."
+      },
+      {
+       "draft": "32, 8. Ps. 11, 4. al. and with art. בְּנֵי",
+       "reread": "32, 8. Ps. 11, 4. al. and with art. בְּנֵי",
+       "status": "agreed",
+       "text": "32, 8. Ps. 11, 4. al. and with art. בְּנֵי"
+      },
+      {
+       "draft": "הָאָדָם 1 Sam. 26, 19. 1 K. 8, 39. Ps. 145,",
+       "reread": "הָאָדָם 1 Sam. 26, 19. 1 K. 8, 39. Ps. 145,",
+       "status": "agreed",
+       "text": "הָאָדָם 1 Sam. 26, 19. 1 K. 8, 39. Ps. 145,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b04",
+     "bounds": {
+      "x": 104,
+      "y": 1033,
+      "width": 868,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r00-b04-868x73+104+1033-x2.png",
+     "image_sha256": "8da29170ac434e534af7fbbc523b0dd8069837300b439e64690fe8f37c8120cd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "12. Ecc. 1, 13.  Comp. Syr. ܡܰܪܢܺܝܬܳܐ son"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f57952d9-208e-463c-9031-ffe7ee570378",
+      "duration_api_ms": 23911,
+      "cost_usd_list": 0.09944800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1827,
+      "output_tokens": 1234
+     },
+     "lines": [
+      {
+       "draft": "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son",
+       "reread": "12. Ecc. 1, 13.  Comp. Syr. ܡܰܪܢܺܝܬܳܐ son",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b04",
+       "judgement": {
+        "text": "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son",
+        "verdict": "a",
+        "note": "The Syriac word is five letters ܒ‑ܪ‑ܢ‑ܫ‑ܐ (barnāšā, \"son [of man]\"), with pthāḥā on beth and zqāphā on nun and shin, exactly as in A; B's ܡܰܪܢܺܝܬܳܐ has the wrong initial letter, an extra yod/taw and wrong vowels, and does not match the gloss \"son\" that follows.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e779fdef-2a72-4461-ac31-6bad5566528f",
+        "duration_api_ms": 25255,
+        "cost_usd_list": 0.093218,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3512,
+        "cache_creation_input_tokens": 1795,
+        "output_tokens": 1122
+       },
+       "text": "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 104,
+    "y": 1101,
+    "width": 868,
+    "height": 656
+   },
+   "draft_lines": [
+    "of man, for man.",
+    "אָדֹם and אָדוֹם adj. f. אֲדֻמָּה, plur.",
+    "אֲדֻמִּים; after the form קָטֹל, קְטֻלָּה, which",
+    "is common in noting colours, see Lehrg.",
+    "§ 120. no. 21; red, ruddy, e. g. of a gar-",
+    "ment sprinkled with blood Is. 63, 2; of",
+    "ruddy cheeks Cant. 5, 10; of a chesnut",
+    "or bay-coloured horse Zech. 1, 8. 6, 2;",
+    "of a red heifer Num. 19, 2; of the red-",
+    "dish colour of lentiles Gen. 25, 30.",
+    "Subst. red, redness Is. 63, 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 104,
+      "y": 1109,
+      "width": 868,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r01-b00-868x252+104+1109-x2.png",
+     "image_sha256": "3bd2dafcfedb51dc3d6f4f06042a84876510b3b739aea290d91a22e7310aa39c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of man, for man.",
+       "אָדֹם and אָדוֹם adj. f. אֲדֻמָּה, plur.",
+       "אֲדֻמִּים; after the form קָטֹל, קְטֻלָּה, which",
+       "is common in noting colours, see Lehrg."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6a489420-4926-4f37-a628-96856084e96e",
+      "duration_api_ms": 15505,
+      "cost_usd_list": 0.075728,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 462
+     },
+     "lines": [
+      {
+       "draft": "of man, for man.",
+       "reread": "of man, for man.",
+       "status": "agreed",
+       "text": "of man, for man."
+      },
+      {
+       "draft": "אָדֹם and אָדוֹם adj. f. אֲדֻמָּה, plur.",
+       "reread": "אָדֹם and אָדוֹם adj. f. אֲדֻמָּה, plur.",
+       "status": "agreed",
+       "text": "אָדֹם and אָדוֹם adj. f. אֲדֻמָּה, plur."
+      },
+      {
+       "draft": "אֲדֻמִּים; after the form קָטֹל, קְטֻלָּה, which",
+       "reread": "אֲדֻמִּים; after the form קָטֹל, קְטֻלָּה, which",
+       "status": "agreed",
+       "text": "אֲדֻמִּים; after the form קָטֹל, קְטֻלָּה, which"
+      },
+      {
+       "draft": "is common in noting colours, see Lehrg.",
+       "reread": "is common in noting colours, see Lehrg.",
+       "status": "agreed",
+       "text": "is common in noting colours, see Lehrg."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 104,
+      "y": 1345,
+      "width": 868,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r01-b01-868x238+104+1345-x2.png",
+     "image_sha256": "8d339af67d1cb7bb370e32a11a792618e46ff9ffed36c128a3be7450fb81736d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "§ 120. no. 21; red, ruddy, e. g. of a gar-",
+       "ment sprinkled with blood Is. 63, 2; of",
+       "ruddy cheeks Cant. 5, 10; of a chesnut",
+       "or bay-coloured horse Zech. 1, 8. 6, 2;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "35d24ce7-9bbb-4d9e-b111-8361e0a46eca",
+      "duration_api_ms": 17462,
+      "cost_usd_list": 0.066738,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 307
+     },
+     "lines": [
+      {
+       "draft": "§ 120. no. 21; red, ruddy, e. g. of a gar-",
+       "reread": "§ 120. no. 21; red, ruddy, e. g. of a gar-",
+       "status": "agreed",
+       "text": "§ 120. no. 21; red, ruddy, e. g. of a gar-"
+      },
+      {
+       "draft": "ment sprinkled with blood Is. 63, 2; of",
+       "reread": "ment sprinkled with blood Is. 63, 2; of",
+       "status": "agreed",
+       "text": "ment sprinkled with blood Is. 63, 2; of"
+      },
+      {
+       "draft": "ruddy cheeks Cant. 5, 10; of a chesnut",
+       "reread": "ruddy cheeks Cant. 5, 10; of a chesnut",
+       "status": "agreed",
+       "text": "ruddy cheeks Cant. 5, 10; of a chesnut"
+      },
+      {
+       "draft": "or bay-coloured horse Zech. 1, 8. 6, 2;",
+       "reread": "or bay-coloured horse Zech. 1, 8. 6, 2;",
+       "status": "agreed",
+       "text": "or bay-coloured horse Zech. 1, 8. 6, 2;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 104,
+      "y": 1567,
+      "width": 868,
+      "height": 182
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r01-b02-868x182+104+1567-x2.png",
+     "image_sha256": "ef9697e7b5c6fa25682f969c6708094deab7af05d4690a04739d21d14f58234e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of a red heifer Num. 19, 2 ; of the red-",
+       "dish colour of lentiles Gen. 25, 30.",
+       "Subst. red, redness Is. 63, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "66cf511a-1045-47d1-93cb-b797545c164c",
+      "duration_api_ms": 10497,
+      "cost_usd_list": 0.058328000000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2261,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "of a red heifer Num. 19, 2; of the red-",
+       "reread": "of a red heifer Num. 19, 2 ; of the red-",
+       "status": "agreed",
+       "text": "of a red heifer Num. 19, 2; of the red-"
+      },
+      {
+       "draft": "dish colour of lentiles Gen. 25, 30.",
+       "reread": "dish colour of lentiles Gen. 25, 30.",
+       "status": "agreed",
+       "text": "dish colour of lentiles Gen. 25, 30."
+      },
+      {
+       "draft": "Subst. red, redness Is. 63, 2.",
+       "reread": "Subst. red, redness Is. 63, 2.",
+       "status": "agreed",
+       "text": "Subst. red, redness Is. 63, 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 104,
+    "y": 1745,
+    "width": 868,
+    "height": 970
+   },
+   "draft_lines": [
+    "אֱדֹם pr. n. Edom. 1. The son of Isaac",
+    "and elder twin-brother of Jacob, Gen.",
+    "25, 25; more freq. called Esau, עֵשָׂו.",
+    "2. Collect. for the Edomites, the pos-",
+    "terity of Edom or Esau, and likewise for",
+    "their country, Idumea. Of the nation",
+    "Num. 20, 20; more fully בְּנֵי אֱדֹם Ps. 137,",
+    "7, and poet. בַּת אֱדֹם daughter of Edom",
+    "Lam. 4, 21. 22. Of the country, אֶרֶץ אֱדֹם",
+    "Gen. 36, 16. 21. 31; אֱדֹם Amos 1, 6; and",
+    "שְׂדֵה אֱדֹם Gen. 32, 3 [4]. Judg. 5, 4.",
+    "Where it stands alone, it is masc. when",
+    "spoken of the people, Num. 20, 20; but",
+    "fem. when it denotes the country, Jer.",
+    "49, 17. The country of the Edomites,",
+    "Idumea, was the mountainous tract be-",
+    "tween the Dead sea and the Elanitic"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 104,
+      "y": 1754,
+      "width": 868,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r02-b00-868x244+104+1754-x2.png",
+     "image_sha256": "8311a14f913b10508a3fc142ecbc25390c89c1758bbf79b3343952bb084c0888",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱדֹם pr. n. Edom. 1. The son of Isaac",
+       "and elder twin-brother of Jacob, Gen.",
+       "25, 25; more freq. called Esau, עֵשָׂו.",
+       "2. Collect. for the Edomites, the pos-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "29e12b07-690c-4fb4-b140-0681528c83b7",
+      "duration_api_ms": 15183,
+      "cost_usd_list": 0.070428,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 356
+     },
+     "lines": [
+      {
+       "draft": "אֱדֹם pr. n. Edom. 1. The son of Isaac",
+       "reread": "אֱדֹם pr. n. Edom. 1. The son of Isaac",
+       "status": "agreed",
+       "text": "אֱדֹם pr. n. Edom. 1. The son of Isaac"
+      },
+      {
+       "draft": "and elder twin-brother of Jacob, Gen.",
+       "reread": "and elder twin-brother of Jacob, Gen.",
+       "status": "agreed",
+       "text": "and elder twin-brother of Jacob, Gen."
+      },
+      {
+       "draft": "25, 25; more freq. called Esau, עֵשָׂו.",
+       "reread": "25, 25; more freq. called Esau, עֵשָׂו.",
+       "status": "agreed",
+       "text": "25, 25; more freq. called Esau, עֵשָׂו."
+      },
+      {
+       "draft": "2. Collect. for the Edomites, the pos-",
+       "reread": "2. Collect. for the Edomites, the pos-",
+       "status": "agreed",
+       "text": "2. Collect. for the Edomites, the pos-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 104,
+      "y": 1982,
+      "width": 868,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r02-b01-868x241+104+1982-x2.png",
+     "image_sha256": "563ab5af2da0f3228e0060981eafeabe4c59c33f2c2826b846afa56652f7d544",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "terity of Edom or Esau, and likewise for",
+       "their country, Idumea. Of the nation",
+       "Num. 20, 20 ; more fully בְּנֵי אֱדֹם Ps. 137,",
+       "7, and poet. בַּת אֱדֹם daughter of Edom"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "224990d6-7186-4702-a622-8e3e2498285a",
+      "duration_api_ms": 11348,
+      "cost_usd_list": 0.07347800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 417
+     },
+     "lines": [
+      {
+       "draft": "terity of Edom or Esau, and likewise for",
+       "reread": "terity of Edom or Esau, and likewise for",
+       "status": "agreed",
+       "text": "terity of Edom or Esau, and likewise for"
+      },
+      {
+       "draft": "their country, Idumea. Of the nation",
+       "reread": "their country, Idumea. Of the nation",
+       "status": "agreed",
+       "text": "their country, Idumea. Of the nation"
+      },
+      {
+       "draft": "Num. 20, 20; more fully בְּנֵי אֱדֹם Ps. 137,",
+       "reread": "Num. 20, 20 ; more fully בְּנֵי אֱדֹם Ps. 137,",
+       "status": "agreed",
+       "text": "Num. 20, 20; more fully בְּנֵי אֱדֹם Ps. 137,"
+      },
+      {
+       "draft": "7, and poet. בַּת אֱדֹם daughter of Edom",
+       "reread": "7, and poet. בַּת אֱדֹם daughter of Edom",
+       "status": "agreed",
+       "text": "7, and poet. בַּת אֱדֹם daughter of Edom"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 104,
+      "y": 2207,
+      "width": 868,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r02-b02-868x235+104+2207-x2.png",
+     "image_sha256": "690b70cf97a9c0557966cfb21240f72bf9100aa8a77e980e20d21db96735c9c6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Lam. 4, 21. 22.  Of the country, אֶרֶץ אֱדֹם",
+       "Gen. 36, 16. 21. 31 ; אֱדֹם Amos 1, 6 ; and",
+       "שְׂדֵה אֱדֹם Gen. 32, 3 [4]. Judg. 5, 4.",
+       "Where it stands alone, it is masc. when"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "135073b9-42d0-4b6e-bba2-dd610a59b0be",
+      "duration_api_ms": 12851,
+      "cost_usd_list": 0.082988,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 632
+     },
+     "lines": [
+      {
+       "draft": "Lam. 4, 21. 22. Of the country, אֶרֶץ אֱדֹם",
+       "reread": "Lam. 4, 21. 22.  Of the country, אֶרֶץ אֱדֹם",
+       "status": "agreed",
+       "text": "Lam. 4, 21. 22. Of the country, אֶרֶץ אֱדֹם"
+      },
+      {
+       "draft": "Gen. 36, 16. 21. 31; אֱדֹם Amos 1, 6; and",
+       "reread": "Gen. 36, 16. 21. 31 ; אֱדֹם Amos 1, 6 ; and",
+       "status": "agreed",
+       "text": "Gen. 36, 16. 21. 31; אֱדֹם Amos 1, 6; and"
+      },
+      {
+       "draft": "שְׂדֵה אֱדֹם Gen. 32, 3 [4]. Judg. 5, 4.",
+       "reread": "שְׂדֵה אֱדֹם Gen. 32, 3 [4]. Judg. 5, 4.",
+       "status": "agreed",
+       "text": "שְׂדֵה אֱדֹם Gen. 32, 3 [4]. Judg. 5, 4."
+      },
+      {
+       "draft": "Where it stands alone, it is masc. when",
+       "reread": "Where it stands alone, it is masc. when",
+       "status": "agreed",
+       "text": "Where it stands alone, it is masc. when"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 104,
+      "y": 2426,
+      "width": 868,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r02-b03-868x235+104+2426-x2.png",
+     "image_sha256": "308fb848820bf0d4daaf67b144809e6fc7f73dd0e02fe79f6ef62c28b6cf632d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "spoken of the people, Num. 20, 20; but",
+       "fem. when it denotes the country, Jer.",
+       "49, 17. The country of the Edomites,",
+       "Idumea, was the mountainous tract be-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b1f589fa-1d00-493b-ac18-44ed1e3294f8",
+      "duration_api_ms": 10974,
+      "cost_usd_list": 0.066438,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 301
+     },
+     "lines": [
+      {
+       "draft": "spoken of the people, Num. 20, 20; but",
+       "reread": "spoken of the people, Num. 20, 20; but",
+       "status": "agreed",
+       "text": "spoken of the people, Num. 20, 20; but"
+      },
+      {
+       "draft": "fem. when it denotes the country, Jer.",
+       "reread": "fem. when it denotes the country, Jer.",
+       "status": "agreed",
+       "text": "fem. when it denotes the country, Jer."
+      },
+      {
+       "draft": "49, 17. The country of the Edomites,",
+       "reread": "49, 17. The country of the Edomites,",
+       "status": "agreed",
+       "text": "49, 17. The country of the Edomites,"
+      },
+      {
+       "draft": "Idumea, was the mountainous tract be-",
+       "reread": "Idumea, was the mountainous tract be-",
+       "status": "agreed",
+       "text": "Idumea, was the mountainous tract be-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b04",
+     "bounds": {
+      "x": 104,
+      "y": 2645,
+      "width": 868,
+      "height": 65
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r02-b04-868x65+104+2645-x2.png",
+     "image_sha256": "0230875e2bad6a899c3adbb7605cfd47dbe9fd0864df1922dcfc76e6981eba0d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tween the Dead sea and the Elanitic"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3ee03125-cfcc-4c1d-9d15-9e63fbaf22c5",
+      "duration_api_ms": 9527,
+      "cost_usd_list": 0.048508,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1765,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "tween the Dead sea and the Elanitic",
+       "reread": "tween the Dead sea and the Elanitic",
+       "status": "agreed",
+       "text": "tween the Dead sea and the Elanitic"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 104,
+    "y": 2703,
+    "width": 868,
+    "height": 769
+   },
+   "draft_lines": [
+    "gulf of the Red sea, afterwards called",
+    "Gebalene, Γεβαληνή, now جبال Jebâl.",
+    "The gentile n. is אֲדֹמִי Edomite, Idu-",
+    "mean, Deut. 23, 8; plur. אֲדוֹמִים 2 K.",
+    "16, 6 Keri. Fem. אֲדֹמִית, plur. אֲדֹמִיּוֹת",
+    "Edomitish women 1 K. 11, 1.",
+    "אֹדֶם a gem of a red colour, perh. ruby,",
+    "garnet, Ex. 28, 17. 39, 10. Ez. 28, 13.",
+    "Sept. Vulg. σάρδιον, sardius."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 104,
+      "y": 2709,
+      "width": 868,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r03-b00-868x238+104+2709-x2.png",
+     "image_sha256": "378e6ccb64580042a198960e90767616aac5326b3b8db3dccfcd39f198735f1c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "gulf of the Red sea, afterwards called",
+       "Gebalene, Γεβαληνή, now جبال Jebâl.",
+       "The gentile n. is אֲדֹמִי Edomite, Idu-",
+       "mean, Deut. 23, 8; plur. אֲדוֹמִים 2 K."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5f11a3b-b8ba-4ce5-b65a-e0a7eed6034e",
+      "duration_api_ms": 17237,
+      "cost_usd_list": 0.086038,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 693
+     },
+     "lines": [
+      {
+       "draft": "gulf of the Red sea, afterwards called",
+       "reread": "gulf of the Red sea, afterwards called",
+       "status": "agreed",
+       "text": "gulf of the Red sea, afterwards called"
+      },
+      {
+       "draft": "Gebalene, Γεβαληνή, now جبال Jebâl.",
+       "reread": "Gebalene, Γεβαληνή, now جبال Jebâl.",
+       "status": "agreed",
+       "text": "Gebalene, Γεβαληνή, now جبال Jebâl."
+      },
+      {
+       "draft": "The gentile n. is אֲדֹמִי Edomite, Idu-",
+       "reread": "The gentile n. is אֲדֹמִי Edomite, Idu-",
+       "status": "agreed",
+       "text": "The gentile n. is אֲדֹמִי Edomite, Idu-"
+      },
+      {
+       "draft": "mean, Deut. 23, 8; plur. אֲדוֹמִים 2 K.",
+       "reread": "mean, Deut. 23, 8; plur. אֲדוֹמִים 2 K.",
+       "status": "agreed",
+       "text": "mean, Deut. 23, 8; plur. אֲדוֹמִים 2 K."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 104,
+      "y": 2931,
+      "width": 868,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r03-b01-868x262+104+2931-x2.png",
+     "image_sha256": "f80e668c945dccdc726aa0a513435ea9a1a1b4643149649c01e224cd48aea481",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "16, 6 Keri.  Fem. אֲדֹמִית , plur. אֲדֹמִיּוֹת",
+       "Edomitish women 1 K. 11, 1.",
+       "אֹדֶם a gem of a red colour, perh. ruby,",
+       "garnet, Ex. 28, 17. 39, 10. Ez. 28, 13."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b1bf4e9f-ec51-4e7e-88ed-7d60cf063944",
+      "duration_api_ms": 20330,
+      "cost_usd_list": 0.08676800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2633,
+      "output_tokens": 658
+     },
+     "lines": [
+      {
+       "draft": "16, 6 Keri. Fem. אֲדֹמִית, plur. אֲדֹמִיּוֹת",
+       "reread": "16, 6 Keri.  Fem. אֲדֹמִית , plur. אֲדֹמִיּוֹת",
+       "status": "agreed",
+       "text": "16, 6 Keri. Fem. אֲדֹמִית, plur. אֲדֹמִיּוֹת"
+      },
+      {
+       "draft": "Edomitish women 1 K. 11, 1.",
+       "reread": "Edomitish women 1 K. 11, 1.",
+       "status": "agreed",
+       "text": "Edomitish women 1 K. 11, 1."
+      },
+      {
+       "draft": "אֹדֶם a gem of a red colour, perh. ruby,",
+       "reread": "אֹדֶם a gem of a red colour, perh. ruby,",
+       "status": "agreed",
+       "text": "אֹדֶם a gem of a red colour, perh. ruby,"
+      },
+      {
+       "draft": "garnet, Ex. 28, 17. 39, 10. Ez. 28, 13.",
+       "reread": "garnet, Ex. 28, 17. 39, 10. Ez. 28, 13.",
+       "status": "agreed",
+       "text": "garnet, Ex. 28, 17. 39, 10. Ez. 28, 13."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 104,
+      "y": 3177,
+      "width": 868,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c0-r03-b02-868x297+104+3177-x2.png",
+     "image_sha256": "22f70ccdf4d3fc7a74444dc21ac27638b9079711b509cbf3ece47ec8555c7c3d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Sept. Vulg. σάρδιον, sardius."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b9c790e9-1f0c-4566-8b80-79a2eff31ca9",
+      "duration_api_ms": 8134,
+      "cost_usd_list": 0.067438,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 197
+     },
+     "lines": [
+      {
+       "draft": "Sept. Vulg. σάρδιον, sardius.",
+       "reread": "Sept. Vulg. σάρδιον, sardius.",
+       "status": "agreed",
+       "text": "Sept. Vulg. σάρδιον, sardius."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 993,
+    "y": 140,
+    "width": 872,
+    "height": 887
+   },
+   "draft_lines": [
+    "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,",
+    "adj. reddish, e. g. spots in leprous per-",
+    "sons, which are described as לְבָנֹת",
+    "אֲדַמְדַּמּוֹת white and somewhat reddish,",
+    "Lev. 13, 19 sq. 14, 37. R. אָדַם.",
+    "אֲדָמָה f. 1. earth, Ex. 20, 24. So",
+    "called from its reddish colour ; see Cred-",
+    "ner on Joel p. 125 sq.—Spec. the earth,",
+    "ground, land, as tilled, Gen. 4, 2. 47, 19.",
+    "22. 23. Ps. 105, 35. Is. 28, 24. אִישׁ אֲדָמָה",
+    "a husbandman Gen. 9, 20 ; אֹהֵב אֲדָמָה a",
+    "lover of the ground, i. e. of husbandry,",
+    "2 Chr. 26, 10. Spoken of the produce",
+    "of the earth, Is. 1, 7."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 993,
+      "y": 132,
+      "width": 872,
+      "height": 316
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r00-b00-872x316+993+132-x2.png",
+     "image_sha256": "e1486ef9c0c457f3166e37a2177e71ded40ca87fff5a7f51da0ef9d4b52ddd71",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,",
+       "adj. reddish, e. g. spots in leprous per-",
+       "sons, which are described as לְבָנוֹת",
+       "אֲדַמְדַּמּוֹת white and somewhat reddish,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9fc970dc-a2c0-45c4-a42b-5fd453b96c77",
+      "duration_api_ms": 19515,
+      "cost_usd_list": 0.09399774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2902,
+      "output_tokens": 695
+     },
+     "lines": [
+      {
+       "draft": "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,",
+       "reread": "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,",
+       "status": "agreed",
+       "text": "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,"
+      },
+      {
+       "draft": "adj. reddish, e. g. spots in leprous per-",
+       "reread": "adj. reddish, e. g. spots in leprous per-",
+       "status": "agreed",
+       "text": "adj. reddish, e. g. spots in leprous per-"
+      },
+      {
+       "draft": "sons, which are described as לְבָנֹת",
+       "reread": "sons, which are described as לְבָנוֹת",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "sons, which are described as לְבָנוֹת",
+        "verdict": "b",
+        "note": "The printed word has a vav between nun and tav with the holem dot above it (plene לְבָנוֹת), not defective לְבָנֹת; Reading A drops the vav.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e82998bb-5d54-4222-92e2-828b14c4dd7a",
+        "duration_api_ms": 13148,
+        "cost_usd_list": 0.07687424999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3457,
+        "cache_creation_input_tokens": 2816,
+        "output_tokens": 387
+       },
+       "text": "sons, which are described as לְבָנוֹת"
+      },
+      {
+       "draft": "אֲדַמְדַּמּוֹת white and somewhat reddish,",
+       "reread": "אֲדַמְדַּמּוֹת white and somewhat reddish,",
+       "status": "agreed",
+       "text": "אֲדַמְדַּמּוֹת white and somewhat reddish,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 993,
+      "y": 432,
+      "width": 872,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r00-b01-872x264+993+432-x2.png",
+     "image_sha256": "aa4ef20fd10f049ff155d62e129f6051a7a4f8d203489bd5dd716eedd5bc95c0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Lev. 13, 19 sq. 14, 37. R. אָדַם.",
+       "אֲדָמָה f. 1. earth, Ex. 20, 24. So",
+       "called from its reddish colour ; see Cred-",
+       "ner on Joel p. 125 sq.—Spec. the earth,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "53eaefb0-6bc5-4cdf-acbe-c7142be7782e",
+      "duration_api_ms": 11530,
+      "cost_usd_list": 0.07540775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2650,
+      "output_tokens": 424
+     },
+     "lines": [
+      {
+       "draft": "Lev. 13, 19 sq. 14, 37. R. אָדַם.",
+       "reread": "Lev. 13, 19 sq. 14, 37. R. אָדַם.",
+       "status": "agreed",
+       "text": "Lev. 13, 19 sq. 14, 37. R. אָדַם."
+      },
+      {
+       "draft": "אֲדָמָה f. 1. earth, Ex. 20, 24. So",
+       "reread": "אֲדָמָה f. 1. earth, Ex. 20, 24. So",
+       "status": "agreed",
+       "text": "אֲדָמָה f. 1. earth, Ex. 20, 24. So"
+      },
+      {
+       "draft": "called from its reddish colour ; see Cred-",
+       "reread": "called from its reddish colour ; see Cred-",
+       "status": "agreed",
+       "text": "called from its reddish colour; see Cred-"
+      },
+      {
+       "draft": "ner on Joel p. 125 sq.—Spec. the earth,",
+       "reread": "ner on Joel p. 125 sq.—Spec. the earth,",
+       "status": "agreed",
+       "text": "ner on Joel p. 125 sq.—Spec. the earth,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 993,
+      "y": 680,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r00-b02-872x238+993+680-x2.png",
+     "image_sha256": "ff4c5ca1c52f6f840a51a6317ec97dfce3b2db8f77edcdff307a803e3ba0fbbd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ground, land, as tilled, Gen. 4, 2. 47, 19.",
+       "22. 23. Ps. 105, 35. Is. 28, 24. אִישׁ אֲדָמָה",
+       "a husbandman Gen. 9, 20; אֹהֵב אֲדָמָה a",
+       "lover of the ground, i. e. of husbandry,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7dd55c33-b759-4297-a164-1eabec3a65c6",
+      "duration_api_ms": 10156,
+      "cost_usd_list": 0.06643774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2524,
+      "output_tokens": 295
+     },
+     "lines": [
+      {
+       "draft": "ground, land, as tilled, Gen. 4, 2. 47, 19.",
+       "reread": "ground, land, as tilled, Gen. 4, 2. 47, 19.",
+       "status": "agreed",
+       "text": "ground, land, as tilled, Gen. 4, 2. 47, 19."
+      },
+      {
+       "draft": "22. 23. Ps. 105, 35. Is. 28, 24. אִישׁ אֲדָמָה",
+       "reread": "22. 23. Ps. 105, 35. Is. 28, 24. אִישׁ אֲדָמָה",
+       "status": "agreed",
+       "text": "22. 23. Ps. 105, 35. Is. 28, 24. אִישׁ אֲדָמָה"
+      },
+      {
+       "draft": "a husbandman Gen. 9, 20 ; אֹהֵב אֲדָמָה a",
+       "reread": "a husbandman Gen. 9, 20; אֹהֵב אֲדָמָה a",
+       "status": "agreed",
+       "text": "a husbandman Gen. 9, 20; אֹהֵב אֲדָמָה a"
+      },
+      {
+       "draft": "lover of the ground, i. e. of husbandry,",
+       "reread": "lover of the ground, i. e. of husbandry,",
+       "status": "agreed",
+       "text": "lover of the ground, i. e. of husbandry,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 993,
+      "y": 902,
+      "width": 872,
+      "height": 133
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r00-b03-872x133+993+902-x2.png",
+     "image_sha256": "72fde7fb4a1abe22eb62f9ecd7dc3b8bd1a5e52a43fb2cceadf7d2fd58629567",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2 Chr. 26, 10. Spoken of the produce",
+       "of the earth, Is. 1, 7."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cd4f598d-61b9-4662-9e5d-7ab0c8391847",
+      "duration_api_ms": 8235,
+      "cost_usd_list": 0.053467749999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2083,
+      "output_tokens": 212
+     },
+     "lines": [
+      {
+       "draft": "2 Chr. 26, 10. Spoken of the produce",
+       "reread": "2 Chr. 26, 10. Spoken of the produce",
+       "status": "agreed",
+       "text": "2 Chr. 26, 10. Spoken of the produce"
+      },
+      {
+       "draft": "of the earth, Is. 1, 7.",
+       "reread": "of the earth, Is. 1, 7.",
+       "status": "agreed",
+       "text": "of the earth, Is. 1, 7."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 993,
+    "y": 1015,
+    "width": 872,
+    "height": 967
+   },
+   "draft_lines": [
+    "2. a land, region, country, Gen. 28, 15.",
+    "אַדְמַת יְהוָֹה land of Jehovah, i. e. Canaan,",
+    "Is. 14, 2. Plur. אֲדָמוֹת lands, countries,",
+    "once Ps. 49, 12, q. d. in all lands.",
+    "3. the earth, orbis terræ, Gen. 4, 11.",
+    "6, 1. 7, 4.",
+    "4. Adamah, pr. n. of a city in Naph-",
+    "tali, Josh. 19, 36.",
+    "אַדְמָה Admah, pr. n. of a city de-",
+    "stroyed with Sodom and Gomorrah,",
+    "Gen. 10, 19. 14, 2. 8. Deut. 29, 22. Hos.",
+    "11, 8.",
+    "אַדְמוֹנִי and אַדְמֹנִי adj. (after the form",
+    "קַדְמֹנִי) red, i. e. red-haired, e. g. Esau,",
+    "Gen. 25, 25; David, 1 Sam. 16, 12. 17,",
+    "42. Sept. πυῤῥάκης, Vulg. rufus."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 993,
+      "y": 1007,
+      "width": 872,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r01-b00-872x240+993+1007-x2.png",
+     "image_sha256": "1e72e740692369be58eda06b0af959ea09500a6c510483bf4eace72bf568219e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. a land, region, country, Gen. 28, 15.",
+       "אַדְמַת יְהוָֹה land of Jehovah, i. e. Canaan,",
+       "Is. 14, 2. Plur. אֲדָמוֹת lands, countries,",
+       "once Ps. 49, 12, q. d. in all lands."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6466db7d-5964-48b6-afd7-3dd1a73f14e4",
+      "duration_api_ms": 25743,
+      "cost_usd_list": 0.086588,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 672
+     },
+     "lines": [
+      {
+       "draft": "2. a land, region, country, Gen. 28, 15.",
+       "reread": "2. a land, region, country, Gen. 28, 15.",
+       "status": "agreed",
+       "text": "2. a land, region, country, Gen. 28, 15."
+      },
+      {
+       "draft": "אַדְמַת יְהוָֹה land of Jehovah, i. e. Canaan,",
+       "reread": "אַדְמַת יְהוָֹה land of Jehovah, i. e. Canaan,",
+       "status": "agreed",
+       "text": "אַדְמַת יְהוָֹה land of Jehovah, i. e. Canaan,"
+      },
+      {
+       "draft": "Is. 14, 2. Plur. אֲדָמוֹת lands, countries,",
+       "reread": "Is. 14, 2. Plur. אֲדָמוֹת lands, countries,",
+       "status": "agreed",
+       "text": "Is. 14, 2. Plur. אֲדָמוֹת lands, countries,"
+      },
+      {
+       "draft": "once Ps. 49, 12, q. d. in all lands.",
+       "reread": "once Ps. 49, 12, q. d. in all lands.",
+       "status": "agreed",
+       "text": "once Ps. 49, 12, q. d. in all lands."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 993,
+      "y": 1231,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r01-b01-872x238+993+1231-x2.png",
+     "image_sha256": "0a469b4525f900c7e4c7b9dfa4db024dab8c46d72413d293a6553a5b99eb73b4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. the earth, orbis terræ, Gen. 4, 11.",
+       "6, 1. 7, 4.",
+       "4. Adamah, pr. n. of a city in Naph-",
+       "tali, Josh. 19, 36."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4ecb55f9-ee0b-4a4f-ad15-1ef164d5a9df",
+      "duration_api_ms": 12047,
+      "cost_usd_list": 0.06422800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "3. the earth, orbis terræ, Gen. 4, 11.",
+       "reread": "3. the earth, orbis terræ, Gen. 4, 11.",
+       "status": "agreed",
+       "text": "3. the earth, orbis terræ, Gen. 4, 11."
+      },
+      {
+       "draft": "6, 1. 7, 4.",
+       "reread": "6, 1. 7, 4.",
+       "status": "agreed",
+       "text": "6, 1. 7, 4."
+      },
+      {
+       "draft": "4. Adamah, pr. n. of a city in Naph-",
+       "reread": "4. Adamah, pr. n. of a city in Naph-",
+       "status": "agreed",
+       "text": "4. Adamah, pr. n. of a city in Naph-"
+      },
+      {
+       "draft": "tali, Josh. 19, 36.",
+       "reread": "tali, Josh. 19, 36.",
+       "status": "agreed",
+       "text": "tali, Josh. 19, 36."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 993,
+      "y": 1453,
+      "width": 872,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r01-b02-872x264+993+1453-x2.png",
+     "image_sha256": "646da95799373003730c28599bda70414b345fb582ae06ef6c441d3b1fc4afaa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַדְמָה Admah, pr. n. of a city de-",
+       "stroyed with Sodom and Gomorrah,",
+       "Gen. 10, 19. 14, 2. 8. Deut. 29, 22. Hos.",
+       "11, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b121786-c84c-4f33-a1b3-167b43945f45",
+      "duration_api_ms": 10901,
+      "cost_usd_list": 0.06719800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2652,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "אַדְמָה Admah, pr. n. of a city de-",
+       "reread": "אַדְמָה Admah, pr. n. of a city de-",
+       "status": "agreed",
+       "text": "אַדְמָה Admah, pr. n. of a city de-"
+      },
+      {
+       "draft": "stroyed with Sodom and Gomorrah,",
+       "reread": "stroyed with Sodom and Gomorrah,",
+       "status": "agreed",
+       "text": "stroyed with Sodom and Gomorrah,"
+      },
+      {
+       "draft": "Gen. 10, 19. 14, 2. 8. Deut. 29, 22. Hos.",
+       "reread": "Gen. 10, 19. 14, 2. 8. Deut. 29, 22. Hos.",
+       "status": "agreed",
+       "text": "Gen. 10, 19. 14, 2. 8. Deut. 29, 22. Hos."
+      },
+      {
+       "draft": "11, 8.",
+       "reread": "11, 8.",
+       "status": "agreed",
+       "text": "11, 8."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 993,
+      "y": 1701,
+      "width": 872,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r01-b03-872x270+993+1701-x2.png",
+     "image_sha256": "8de82ba7be8f59e1f0f966470a36eb3a3aedfedddac6d1be851cbb029ba741d2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַדְמוֹנִי and אַדְמֹנִי adj. (after the form",
+       "קַדְמֹנִי) red, i. e. red-haired, e. g. Esau,",
+       "Gen. 25, 25; David, 1 Sam. 16, 12. 17,",
+       "42. Sept. πυῤῥάκης, Vulg. rufus."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "29232056-77c7-4c5e-bb10-9d1875be6bc4",
+      "duration_api_ms": 14409,
+      "cost_usd_list": 0.075408,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2715,
+      "output_tokens": 398
+     },
+     "lines": [
+      {
+       "draft": "אַדְמוֹנִי and אַדְמֹנִי adj. (after the form",
+       "reread": "אַדְמוֹנִי and אַדְמֹנִי adj. (after the form",
+       "status": "agreed",
+       "text": "אַדְמוֹנִי and אַדְמֹנִי adj. (after the form"
+      },
+      {
+       "draft": "קַדְמֹנִי) red, i. e. red-haired, e. g. Esau,",
+       "reread": "קַדְמֹנִי) red, i. e. red-haired, e. g. Esau,",
+       "status": "agreed",
+       "text": "קַדְמֹנִי) red, i. e. red-haired, e. g. Esau,"
+      },
+      {
+       "draft": "Gen. 25, 25; David, 1 Sam. 16, 12. 17,",
+       "reread": "Gen. 25, 25; David, 1 Sam. 16, 12. 17,",
+       "status": "agreed",
+       "text": "Gen. 25, 25; David, 1 Sam. 16, 12. 17,"
+      },
+      {
+       "draft": "42. Sept. πυῤῥάκης, Vulg. rufus.",
+       "reread": "42. Sept. πυῤῥάκης, Vulg. rufus.",
+       "status": "agreed",
+       "text": "42. Sept. πυῤῥάκης, Vulg. rufus."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 993,
+    "y": 1970,
+    "width": 872,
+    "height": 997
+   },
+   "draft_lines": [
+    "אֲדָמִי (pr. human) Adami, pr. n. of a",
+    "city of Naphtali, Josh. 19, 33.",
+    "אֲדֹמִי see in אָדֹם.",
+    "אַדְמָתָא Admatha, pr. n. of a Persian",
+    "nobleman, Esth. 1, 14.",
+    "* אָדַן obsol. root. 1. i. q. דּוּן, Arab.",
+    "دان mid. Waw, to be low, humble, infe-",
+    "rior. Hence אֶדֶן.",
+    "2. Transit. i. q. דִּין, to judge, to com-",
+    "mand, to domineer. Hence אָדוֹן domi-",
+    "nus, lord, and אֲדֹנָי the Lord; also",
+    "אַדָּן Addan, pr. n. of a man who re-",
+    "turned under Zerubbabel to Jerusalem,",
+    "Ezra 2, 59; in the parall. passage Neh.",
+    "7, 61 written אַדּוֹן."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 993,
+      "y": 1981,
+      "width": 872,
+      "height": 294
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r02-b00-872x294+993+1981-x2.png",
+     "image_sha256": "c0849e5138d4583c3fab92539156bc6b6651ec25bde4483d168c180bd6fd47d0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדָמִי (pr. human) Adami, pr. n. of a",
+       "city of Naphtali, Josh. 19, 33.",
+       "אֱדֹמִי see in אֱדֹם .",
+       "אַדְמָתָא Admatha, pr. n. of a Persian"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "983e8b9c-bc08-4306-8188-208f31b3888e",
+      "duration_api_ms": 12055,
+      "cost_usd_list": 0.080868,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2778,
+      "output_tokens": 482
+     },
+     "lines": [
+      {
+       "draft": "אֲדָמִי (pr. human) Adami, pr. n. of a",
+       "reread": "אֲדָמִי (pr. human) Adami, pr. n. of a",
+       "status": "agreed",
+       "text": "אֲדָמִי (pr. human) Adami, pr. n. of a"
+      },
+      {
+       "draft": "city of Naphtali, Josh. 19, 33.",
+       "reread": "city of Naphtali, Josh. 19, 33.",
+       "status": "agreed",
+       "text": "city of Naphtali, Josh. 19, 33."
+      },
+      {
+       "draft": "אֲדֹמִי see in אָדֹם.",
+       "reread": "אֱדֹמִי see in אֱדֹם .",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אֱדֹמִי see in אֱדֹם .",
+        "verdict": "b",
+        "note": "Both alephs carry hataf segol (three dots: sheva plus two-dot cluster visible beneath each א), not hataf patah as in Reading A — consistent with אֱדֹם \"Edom\". Reading B also correctly preserves the visible gap before the final period.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "318bb3e9-31e6-4266-b732-2d08dc0cd89c",
+        "duration_api_ms": 17334,
+        "cost_usd_list": 0.092366,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3464,
+        "cache_creation_input_tokens": 2698,
+        "output_tokens": 744
+       },
+       "text": "אֱדֹמִי see in אֱדֹם."
+      },
+      {
+       "draft": "אַדְמָתָא Admatha, pr. n. of a Persian",
+       "reread": "אַדְמָתָא Admatha, pr. n. of a Persian",
+       "status": "agreed",
+       "text": "אַדְמָתָא Admatha, pr. n. of a Persian"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 993,
+      "y": 2259,
+      "width": 872,
+      "height": 340
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r02-b01-872x340+993+2259-x2.png",
+     "image_sha256": "a6ffc01c8df2caffe6ff62d2005bdaee404f1d5c2cd40fe5fba7afc805d091c5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "nobleman, Esth. 1, 14.",
+       "* אָדַן obsol. root. 1. i. q. דּוּן , Arab.",
+       "دان mid. Waw, to be low, humble, infe-",
+       "rior. Hence אֶדֶן .",
+       "2. Transit. i. q. דִּין, to judge, to com-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "771ca64f-006e-4034-8aa3-c38eb3707c2a",
+      "duration_api_ms": 14509,
+      "cost_usd_list": 0.093058,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 3030,
+      "output_tokens": 625
+     },
+     "lines": [
+      {
+       "draft": "nobleman, Esth. 1, 14.",
+       "reread": "nobleman, Esth. 1, 14.",
+       "status": "agreed",
+       "text": "nobleman, Esth. 1, 14."
+      },
+      {
+       "draft": "* אָדַן obsol. root. 1. i. q. דּוּן, Arab.",
+       "reread": "* אָדַן obsol. root. 1. i. q. דּוּן , Arab.",
+       "status": "agreed",
+       "text": "* אָדַן obsol. root. 1. i. q. דּוּן, Arab."
+      },
+      {
+       "draft": "دان mid. Waw, to be low, humble, infe-",
+       "reread": "دان mid. Waw, to be low, humble, infe-",
+       "status": "agreed",
+       "text": "دان mid. Waw, to be low, humble, infe-"
+      },
+      {
+       "draft": "rior. Hence אֶדֶן.",
+       "reread": "rior. Hence אֶדֶן .",
+       "status": "agreed",
+       "text": "rior. Hence אֶדֶן."
+      },
+      {
+       "draft": "2. Transit. i. q. דִּין, to judge, to com-",
+       "reread": "2. Transit. i. q. דִּין, to judge, to com-",
+       "status": "agreed",
+       "text": "2. Transit. i. q. דִּין, to judge, to com-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 993,
+      "y": 2583,
+      "width": 872,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r02-b02-872x264+993+2583-x2.png",
+     "image_sha256": "f3117b0acf8f5a2e1f2dec4d3f67554c36110332a796476452ac7c09f58d8e4d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mand, to domineer. Hence אָדוֹן domi-",
+       "nus, lord, and אֲדֹנָי the Lord; also",
+       "אַדָּן Addan, pr. n. of a man who re-",
+       "turned under Zerubbabel to Jerusalem,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d35e8ceb-fbaa-4d43-9311-ec0e55488685",
+      "duration_api_ms": 27469,
+      "cost_usd_list": 0.083148,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2652,
+      "output_tokens": 578
+     },
+     "lines": [
+      {
+       "draft": "mand, to domineer. Hence אָדוֹן domi-",
+       "reread": "mand, to domineer. Hence אָדוֹן domi-",
+       "status": "agreed",
+       "text": "mand, to domineer. Hence אָדוֹן domi-"
+      },
+      {
+       "draft": "nus, lord, and אֲדֹנָי the Lord; also",
+       "reread": "nus, lord, and אֲדֹנָי the Lord; also",
+       "status": "agreed",
+       "text": "nus, lord, and אֲדֹנָי the Lord; also"
+      },
+      {
+       "draft": "אַדָּן Addan, pr. n. of a man who re-",
+       "reread": "אַדָּן Addan, pr. n. of a man who re-",
+       "status": "agreed",
+       "text": "אַדָּן Addan, pr. n. of a man who re-"
+      },
+      {
+       "draft": "turned under Zerubbabel to Jerusalem,",
+       "reread": "turned under Zerubbabel to Jerusalem,",
+       "status": "agreed",
+       "text": "turned under Zerubbabel to Jerusalem,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 993,
+      "y": 2831,
+      "width": 872,
+      "height": 124
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r02-b03-872x124+993+2831-x2.png",
+     "image_sha256": "59970adfd5df6ae8edbfc76f0d35910b37a036d37ac296fdcfcd9635cea29bb4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ezra 2, 59; in the parall. passage Neh.",
+       "7, 61 written אַדּוֹן."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "385fb8af-0892-409d-871f-d729c691241d",
+      "duration_api_ms": 16632,
+      "cost_usd_list": 0.057598,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2022,
+      "output_tokens": 319
+     },
+     "lines": [
+      {
+       "draft": "Ezra 2, 59; in the parall. passage Neh.",
+       "reread": "Ezra 2, 59; in the parall. passage Neh.",
+       "status": "agreed",
+       "text": "Ezra 2, 59; in the parall. passage Neh."
+      },
+      {
+       "draft": "7, 61 written אַדּוֹן.",
+       "reread": "7, 61 written אַדּוֹן.",
+       "status": "agreed",
+       "text": "7, 61 written אַדּוֹן."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 993,
+    "y": 2955,
+    "width": 872,
+    "height": 288
+   },
+   "draft_lines": [
+    "אֶדֶן m. plur. אֲדָנִים, constr. אַדְנֵי, a",
+    "foundation, e. g. of a column, base, pedes-",
+    "tal, Cant. 5, 15. Ex. 26, 19 sq. 27, 10 sq.",
+    "36, 38; of a building, Job 38, 6.  R. אָדַן",
+    "no. 1."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 993,
+      "y": 2967,
+      "width": 872,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r03-b00-872x240+993+2967-x2.png",
+     "image_sha256": "d6b37a03ff5ed02c4c6f91cbe1adb9ac92902c6d7a40ab4e590cbb6ae7d7b663",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶדֶן m. plur. אֲדָנִים , constr. אַדְנֵי , a",
+       "foundation, e. g. of a column, base, pedes-",
+       "tal, Cant. 5, 15. Ex. 26, 19 sq. 27, 10 sq.",
+       "36, 38 ; of a building, Job 38, 6.  R. אָדַן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "39e46892-b9c7-4990-aeae-b87c917b204d",
+      "duration_api_ms": 22964,
+      "cost_usd_list": 0.084838,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 637
+     },
+     "lines": [
+      {
+       "draft": "אֶדֶן m. plur. אֲדָנִים, constr. אַדְנֵי, a",
+       "reread": "אֶדֶן m. plur. אֲדָנִים , constr. אַדְנֵי , a",
+       "status": "agreed",
+       "text": "אֶדֶן m. plur. אֲדָנִים, constr. אַדְנֵי, a"
+      },
+      {
+       "draft": "foundation, e. g. of a column, base, pedes-",
+       "reread": "foundation, e. g. of a column, base, pedes-",
+       "status": "agreed",
+       "text": "foundation, e. g. of a column, base, pedes-"
+      },
+      {
+       "draft": "tal, Cant. 5, 15. Ex. 26, 19 sq. 27, 10 sq.",
+       "reread": "tal, Cant. 5, 15. Ex. 26, 19 sq. 27, 10 sq.",
+       "status": "agreed",
+       "text": "tal, Cant. 5, 15. Ex. 26, 19 sq. 27, 10 sq."
+      },
+      {
+       "draft": "36, 38; of a building, Job 38, 6.  R. אָדַן",
+       "reread": "36, 38 ; of a building, Job 38, 6.  R. אָדַן",
+       "status": "agreed",
+       "text": "36, 38; of a building, Job 38, 6. R. אָדַן"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 993,
+      "y": 3191,
+      "width": 872,
+      "height": 54
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0031/pass2/c1-r03-b01-872x54+993+3191-x2.png",
+     "image_sha256": "4473db4f8897f3bdcc2eed5f7624b1328a1ef716fa148a931c876b870a482568",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "no. 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "401f7539-b33c-4338-8fb3-59021c39a7f6",
+      "duration_api_ms": 10239,
+      "cost_usd_list": 0.046548000000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1707,
+      "output_tokens": 224
+     },
+     "lines": [
+      {
+       "draft": "no. 1.",
+       "reread": "no. 1.",
+       "status": "agreed",
+       "text": "no. 1."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אדם 15 אדן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the man as the only one of his kind;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "comp. הַבַּעַל Baal, the lord κατ᾽ ἐξοχ.",
+   "status": "adjudicated",
+   "draft": "comp. הַבַּעַל Baal, the lord κατ᾿ ἐξοχ.",
+   "reread": "comp. הַבַּעַל Baal, the lord κατ᾽ ἐξοχ.",
+   "verdict": "b",
+   "note": "The only difference is the mark after κατ: the print shows an elision apostrophe (κατ' for κατά before ἐξοχήν), which is properly the Greek koronis U+1FBD (᾽, Reading B), not the standalone smooth-breathing psili U+1FBF (᾿, Reading A). Hebrew הַבַּעַל (patach, dagesh in bet, patach, patach) and ἐξοχ. are printed identically in both readings and match the image.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "הַשָּׂטָן Satan. Lehrg. p. 653, 654. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Sept. Ἀδάμ, Vulg. Adam. b) Of a city",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "near the Jordan, Josh. 3, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "5. בֶּן־אָדָם, with art. בֶּן־הָאָדָם, son of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "man, poet. for man, Num. 23, 19. Ps. 8,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "5. 80, 18. Job 16, 21. 25, 6. 35, 8; so",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "very often in Ezekiel, where the prophet",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "is addressed from God, בֶּן־אָדָם son of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "man, i. e. mortal! Ez. 2, 1. 3. 3, 1. 3. 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "10. 4, 16. 8, 5. 6. 8. Often also in Plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "בְּנֵי אָדָם sons of men, i. e. men, Deut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "32, 8. Ps. 11, 4. al. and with art. בְּנֵי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "הָאָדָם 1 Sam. 26, 19. 1 K. 8, 39. Ps. 145,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son",
+   "status": "adjudicated",
+   "draft": "12. Ecc. 1, 13. Comp. Syr. ܒܰܪܢܳܫܳܐ son",
+   "reread": "12. Ecc. 1, 13.  Comp. Syr. ܡܰܪܢܺܝܬܳܐ son",
+   "verdict": "a",
+   "note": "The Syriac word is five letters ܒ‑ܪ‑ܢ‑ܫ‑ܐ (barnāšā, \"son [of man]\"), with pthāḥā on beth and zqāphā on nun and shin, exactly as in A; B's ܡܰܪܢܺܝܬܳܐ has the wrong initial letter, an extra yod/taw and wrong vowels, and does not match the gloss \"son\" that follows.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of man, for man.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אָדֹם and אָדוֹם adj. f. אֲדֻמָּה, plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲדֻמִּים; after the form קָטֹל, קְטֻלָּה, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "is common in noting colours, see Lehrg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "§ 120. no. 21; red, ruddy, e. g. of a gar-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ment sprinkled with blood Is. 63, 2; of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ruddy cheeks Cant. 5, 10; of a chesnut",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "or bay-coloured horse Zech. 1, 8. 6, 2;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of a red heifer Num. 19, 2; of the red-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "dish colour of lentiles Gen. 25, 30.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Subst. red, redness Is. 63, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֱדֹם pr. n. Edom. 1. The son of Isaac",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and elder twin-brother of Jacob, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "25, 25; more freq. called Esau, עֵשָׂו.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. Collect. for the Edomites, the pos-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "terity of Edom or Esau, and likewise for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "their country, Idumea. Of the nation",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Num. 20, 20; more fully בְּנֵי אֱדֹם Ps. 137,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "7, and poet. בַּת אֱדֹם daughter of Edom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Lam. 4, 21. 22. Of the country, אֶרֶץ אֱדֹם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gen. 36, 16. 21. 31; אֱדֹם Amos 1, 6; and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "שְׂדֵה אֱדֹם Gen. 32, 3 [4]. Judg. 5, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Where it stands alone, it is masc. when",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "spoken of the people, Num. 20, 20; but",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "fem. when it denotes the country, Jer.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "49, 17. The country of the Edomites,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Idumea, was the mountainous tract be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tween the Dead sea and the Elanitic",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "gulf of the Red sea, afterwards called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Gebalene, Γεβαληνή, now جبال Jebâl.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "The gentile n. is אֲדֹמִי Edomite, Idu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mean, Deut. 23, 8; plur. אֲדוֹמִים 2 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "16, 6 Keri. Fem. אֲדֹמִית, plur. אֲדֹמִיּוֹת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Edomitish women 1 K. 11, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֹדֶם a gem of a red colour, perh. ruby,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "garnet, Ex. 28, 17. 39, 10. Ez. 28, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Sept. Vulg. σάρδιον, sardius.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲדַמְדָּם, f. אֲדַמְדֶּמֶת, plur. f. אֲדַמְדַּמּוֹת,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "adj. reddish, e. g. spots in leprous per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "sons, which are described as לְבָנוֹת",
+   "status": "adjudicated",
+   "draft": "sons, which are described as לְבָנֹת",
+   "reread": "sons, which are described as לְבָנוֹת",
+   "verdict": "b",
+   "note": "The printed word has a vav between nun and tav with the holem dot above it (plene לְבָנוֹת), not defective לְבָנֹת; Reading A drops the vav.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲדַמְדַּמּוֹת white and somewhat reddish,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Lev. 13, 19 sq. 14, 37. R. אָדַם.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲדָמָה f. 1. earth, Ex. 20, 24. So",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "called from its reddish colour; see Cred-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ner on Joel p. 125 sq.—Spec. the earth,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ground, land, as tilled, Gen. 4, 2. 47, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "22. 23. Ps. 105, 35. Is. 28, 24. אִישׁ אֲדָמָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "a husbandman Gen. 9, 20; אֹהֵב אֲדָמָה a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lover of the ground, i. e. of husbandry,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2 Chr. 26, 10. Spoken of the produce",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of the earth, Is. 1, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. a land, region, country, Gen. 28, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַדְמַת יְהוָֹה land of Jehovah, i. e. Canaan,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Is. 14, 2. Plur. אֲדָמוֹת lands, countries,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "once Ps. 49, 12, q. d. in all lands.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. the earth, orbis terræ, Gen. 4, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "6, 1. 7, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4. Adamah, pr. n. of a city in Naph-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "tali, Josh. 19, 36.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַדְמָה Admah, pr. n. of a city de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "stroyed with Sodom and Gomorrah,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Gen. 10, 19. 14, 2. 8. Deut. 29, 22. Hos.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "11, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַדְמוֹנִי and אַדְמֹנִי adj. (after the form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "קַדְמֹנִי) red, i. e. red-haired, e. g. Esau,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Gen. 25, 25; David, 1 Sam. 16, 12. 17,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "42. Sept. πυῤῥάκης, Vulg. rufus.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲדָמִי (pr. human) Adami, pr. n. of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "city of Naphtali, Josh. 19, 33.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֱדֹמִי see in אֱדֹם.",
+   "status": "adjudicated",
+   "draft": "אֲדֹמִי see in אָדֹם.",
+   "reread": "אֱדֹמִי see in אֱדֹם .",
+   "verdict": "b",
+   "note": "Both alephs carry hataf segol (three dots: sheva plus two-dot cluster visible beneath each א), not hataf patah as in Reading A — consistent with אֱדֹם \"Edom\". Reading B also correctly preserves the visible gap before the final period.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַדְמָתָא Admatha, pr. n. of a Persian",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "nobleman, Esth. 1, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָדַן obsol. root. 1. i. q. דּוּן, Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "دان mid. Waw, to be low, humble, infe-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "rior. Hence אֶדֶן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. Transit. i. q. דִּין, to judge, to com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "mand, to domineer. Hence אָדוֹן domi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "nus, lord, and אֲדֹנָי the Lord; also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַדָּן Addan, pr. n. of a man who re-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "turned under Zerubbabel to Jerusalem,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Ezra 2, 59; in the parall. passage Neh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "7, 61 written אַדּוֹן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֶדֶן m. plur. אֲדָנִים, constr. אַדְנֵי, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "foundation, e. g. of a column, base, pedes-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "tal, Cant. 5, 15. Ex. 26, 19 sq. 27, 10 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "36, 38; of a building, Job 38, 6. R. אָדַן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "no. 1.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 100,
+  "adjudicated": 4,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "errors": 0,
+ "cost_usd_list_total": 2.6033
+}

@@ -1,0 +1,611 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 5,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0005.png",
+ "raster_sha256": "a91833b531fc47243bb9893cb015b567846beb3fdc50a065f63a9d8ddfcff5ce",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0005.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:47:45+00:00",
+ "chunks": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 220,
+    "y": 22,
+    "width": 1707,
+    "height": 748
+   },
+   "draft_lines": [
+    "A",
+    "HEBREW AND ENGLISH",
+    "LEXICON",
+    "OF"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 220,
+      "y": 20,
+      "width": 1707,
+      "height": 715
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r00-b00-1707x715+220+20-x2.png",
+     "image_sha256": "fad1fd88eba11f2a1f494a255a52aac25246f32d6c83e916ecb7eaebf8d70abe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "A",
+       "HEBREW AND ENGLISH",
+       "LEXICON",
+       "OF"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e7cec408-0859-4519-92ab-a92d3c8e2274",
+      "duration_api_ms": 10757,
+      "cost_usd_list": 0.0875125,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3450,
+      "cache_creation_input_tokens": 3683,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "A",
+       "reread": "A",
+       "status": "agreed",
+       "text": "A"
+      },
+      {
+       "draft": "HEBREW AND ENGLISH",
+       "reread": "HEBREW AND ENGLISH",
+       "status": "agreed",
+       "text": "HEBREW AND ENGLISH"
+      },
+      {
+       "draft": "LEXICON",
+       "reread": "LEXICON",
+       "status": "agreed",
+       "text": "LEXICON"
+      },
+      {
+       "draft": "OF",
+       "reread": "OF",
+       "status": "agreed",
+       "text": "OF"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 220,
+    "y": 758,
+    "width": 1707,
+    "height": 921
+   },
+   "draft_lines": [
+    "THE OLD TESTAMENT,",
+    "INCLUDING THE",
+    "BIBLICAL CHALDEE.",
+    "FROM THE LATIN OF",
+    "WILLIAM GESENIUS,",
+    "LATE PROFESSOR OF THEOLOGY IN THE UNIVERSITY OF HALLE-WITTEMBERG."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 220,
+      "y": 794,
+      "width": 1707,
+      "height": 419
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r01-b00-1707x419+220+794-x2.png",
+     "image_sha256": "ee622735298f1dcf834a188d250c0995c4f549256b311ead3ac49c5d365290f7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "THE OLD TESTAMENT,",
+       "INCLUDING THE",
+       "BIBLICAL CHALDEE."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "90125da6-3d19-4766-ae98-f89e00566eb1",
+      "duration_api_ms": 10159,
+      "cost_usd_list": 0.0680625,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3450,
+      "cache_creation_input_tokens": 2818,
+      "output_tokens": 216
+     },
+     "lines": [
+      {
+       "draft": "THE OLD TESTAMENT,",
+       "reread": "THE OLD TESTAMENT,",
+       "status": "agreed",
+       "text": "THE OLD TESTAMENT,"
+      },
+      {
+       "draft": "INCLUDING THE",
+       "reread": "INCLUDING THE",
+       "status": "agreed",
+       "text": "INCLUDING THE"
+      },
+      {
+       "draft": "BIBLICAL CHALDEE.",
+       "reread": "BIBLICAL CHALDEE.",
+       "status": "agreed",
+       "text": "BIBLICAL CHALDEE."
+      },
+      {
+       "draft": "LATE PROFESSOR OF THEOLOGY IN THE UNIVERSITY OF HALLE-WITTEMBERG.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "LATE PROFESSOR OF THEOLOGY IN THE UNIVERSITY OF HALLE-WITTEMBERG."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 220,
+      "y": 1197,
+      "width": 1707,
+      "height": 445
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r01-b01-1707x445+220+1197-x2.png",
+     "image_sha256": "cdc216fcb618fc148ca3023e43b940f84be8d8e216e529760713dacd1893b12d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "FROM THE LATIN OF",
+       "WILLIAM GESENIUS,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bebc86fb-030f-4467-8da3-b071448eefcd",
+      "duration_api_ms": 16036,
+      "cost_usd_list": 0.07219275,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3451,
+      "cache_creation_input_tokens": 2892,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "FROM THE LATIN OF",
+       "reread": "FROM THE LATIN OF",
+       "status": "agreed",
+       "text": "FROM THE LATIN OF"
+      },
+      {
+       "draft": "WILLIAM GESENIUS,",
+       "reread": "WILLIAM GESENIUS,",
+       "status": "agreed",
+       "text": "WILLIAM GESENIUS,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 220,
+    "y": 1667,
+    "width": 1707,
+    "height": 676
+   },
+   "draft_lines": [
+    "BY",
+    "EDWARD ROBINSON,",
+    "Professor in the Union Theological Seminary, New-York.",
+    "WITH CORRECTIONS AND LARGE ADDITIONS, PARTLY FURNISHED BY THE AUTHOR",
+    "IN MANUSCRIPT, AND PARTLY CONDENSED FROM HIS LARGER",
+    "THESAURUS, AS COMPLETED BY ROEDIGER."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 220,
+      "y": 1704,
+      "width": 1707,
+      "height": 518
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r02-b00-1707x518+220+1704-x2.png",
+     "image_sha256": "6fa2cf7a78f96f45aa95dba4e7b8855c83701a84dce074b5b5608e976ac2f49a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "BY",
+       "EDWARD ROBINSON,",
+       "Professor in the Union Theological Seminary, New-York.",
+       "WITH CORRECTIONS AND LARGE ADDITIONS, PARTLY FURNISHED BY THE AUTHOR",
+       "IN MANUSCRIPT, AND PARTLY CONDENSED FROM HIS LARGER"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b80c75e5-cb36-45ef-92d2-b5604d2e54fa",
+      "duration_api_ms": 11386,
+      "cost_usd_list": 0.07813275,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3451,
+      "cache_creation_input_tokens": 3109,
+      "output_tokens": 301
+     },
+     "lines": [
+      {
+       "draft": "BY",
+       "reread": "BY",
+       "status": "agreed",
+       "text": "BY"
+      },
+      {
+       "draft": "EDWARD ROBINSON,",
+       "reread": "EDWARD ROBINSON,",
+       "status": "agreed",
+       "text": "EDWARD ROBINSON,"
+      },
+      {
+       "draft": "Professor in the Union Theological Seminary, New-York.",
+       "reread": "Professor in the Union Theological Seminary, New-York.",
+       "status": "agreed",
+       "text": "Professor in the Union Theological Seminary, New-York."
+      },
+      {
+       "draft": "WITH CORRECTIONS AND LARGE ADDITIONS, PARTLY FURNISHED BY THE AUTHOR",
+       "reread": "WITH CORRECTIONS AND LARGE ADDITIONS, PARTLY FURNISHED BY THE AUTHOR",
+       "status": "agreed",
+       "text": "WITH CORRECTIONS AND LARGE ADDITIONS, PARTLY FURNISHED BY THE AUTHOR"
+      },
+      {
+       "draft": "IN MANUSCRIPT, AND PARTLY CONDENSED FROM HIS LARGER",
+       "reread": "IN MANUSCRIPT, AND PARTLY CONDENSED FROM HIS LARGER",
+       "status": "agreed",
+       "text": "IN MANUSCRIPT, AND PARTLY CONDENSED FROM HIS LARGER"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 220,
+      "y": 2206,
+      "width": 1707,
+      "height": 74
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r02-b01-1707x74+220+2206-x2.png",
+     "image_sha256": "36cdfb8169bb0ced5889b5e63a6e554ad6dd97e281f711e0e92dbc00abc26ff1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "THESAURUS, AS COMPLETED BY ROEDIGER."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f6073004-ab7e-4553-b115-f9fd0ed77731",
+      "duration_api_ms": 15737,
+      "cost_usd_list": 0.048192750000000006,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3451,
+      "cache_creation_input_tokens": 1812,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "THESAURUS, AS COMPLETED BY ROEDIGER.",
+       "reread": "THESAURUS, AS COMPLETED BY ROEDIGER.",
+       "status": "agreed",
+       "text": "THESAURUS, AS COMPLETED BY ROEDIGER."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 220,
+    "y": 2331,
+    "width": 1707,
+    "height": 961
+   },
+   "draft_lines": [
+    "FIFTH EDITION,",
+    "REVISED AND STEREOTYPED.",
+    "BOSTON:",
+    "PUBLISHED BY CROCKER AND BREWSTER,",
+    "47 Washington-street.",
+    "1854."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 220,
+      "y": 2395,
+      "width": 1707,
+      "height": 708
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r03-b00-1707x708+220+2395-x2.png",
+     "image_sha256": "8f2c9b91968915f4ea5fad65363a69e9c582881e7b96d344e62a0dc61a18aef1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "FIFTH EDITION,",
+       "REVISED AND STEREOTYPED.",
+       "BOSTON:",
+       "PUBLISHED BY CROCKER AND BREWSTER,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "99c179a6-3b57-4f9e-8ca2-816867c49867",
+      "duration_api_ms": 8903,
+      "cost_usd_list": 0.08611825000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 3663,
+      "output_tokens": 239
+     },
+     "lines": [
+      {
+       "draft": "FIFTH EDITION,",
+       "reread": "FIFTH EDITION,",
+       "status": "agreed",
+       "text": "FIFTH EDITION,"
+      },
+      {
+       "draft": "REVISED AND STEREOTYPED.",
+       "reread": "REVISED AND STEREOTYPED.",
+       "status": "agreed",
+       "text": "REVISED AND STEREOTYPED."
+      },
+      {
+       "draft": "BOSTON:",
+       "reread": "BOSTON:",
+       "status": "agreed",
+       "text": "BOSTON:"
+      },
+      {
+       "draft": "PUBLISHED BY CROCKER AND BREWSTER,",
+       "reread": "PUBLISHED BY CROCKER AND BREWSTER,",
+       "status": "agreed",
+       "text": "PUBLISHED BY CROCKER AND BREWSTER,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 220,
+      "y": 3087,
+      "width": 1707,
+      "height": 157
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0005/pass2/c0-r03-b01-1707x157+220+3087-x2.png",
+     "image_sha256": "9aaab409fa1635615e8ea029921dc274dfcf4c457feb528dc25db9d82ff40fbf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "47 Washington-street.",
+       "1854."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b60d206b-e95e-44ed-b75a-ffbcdc105d5d",
+      "duration_api_ms": 11867,
+      "cost_usd_list": 0.051778250000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2006,
+      "output_tokens": 215
+     },
+     "lines": [
+      {
+       "draft": "47 Washington-street.",
+       "reread": "47 Washington-street.",
+       "status": "agreed",
+       "text": "47 Washington-street."
+      },
+      {
+       "draft": "1854.",
+       "reread": "1854.",
+       "status": "agreed",
+       "text": "1854."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r04",
+   "column": 0,
+   "row": 4,
+   "bounds": {
+    "x": 220,
+    "y": 3280,
+    "width": 1707,
+    "height": 161
+   },
+   "draft_lines": [],
+   "bands": []
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "A",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "HEBREW AND ENGLISH",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "LEXICON",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "OF",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "THE OLD TESTAMENT,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "INCLUDING THE",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "BIBLICAL CHALDEE.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "LATE PROFESSOR OF THEOLOGY IN THE UNIVERSITY OF HALLE-WITTEMBERG.",
+   "status": "draft_only",
+   "draft": "LATE PROFESSOR OF THEOLOGY IN THE UNIVERSITY OF HALLE-WITTEMBERG.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "FROM THE LATIN OF",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "WILLIAM GESENIUS,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "BY",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "EDWARD ROBINSON,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Professor in the Union Theological Seminary, New-York.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "WITH CORRECTIONS AND LARGE ADDITIONS, PARTLY FURNISHED BY THE AUTHOR",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "IN MANUSCRIPT, AND PARTLY CONDENSED FROM HIS LARGER",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "THESAURUS, AS COMPLETED BY ROEDIGER.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "FIFTH EDITION,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "REVISED AND STEREOTYPED.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "BOSTON:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "PUBLISHED BY CROCKER AND BREWSTER,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "47 Washington-street.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1854.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 21,
+  "adjudicated": 0,
+  "draft_only": 1,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "errors": 0,
+ "cost_usd_list_total": 0.492
+}

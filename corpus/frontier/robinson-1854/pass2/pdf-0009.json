@@ -1,0 +1,1108 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 9,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0009.png",
+ "raster_sha256": "2b5de549b33eca72f70657437cd45edbbd002e513577440766f372bf967abc58",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0009.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:48:51+00:00",
+ "chunks": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 120,
+    "y": 121,
+    "width": 1800,
+    "height": 894
+   },
+   "draft_lines": [
+    "PREFACE.",
+    "v",
+    "primary signification of the Hebrew roots ; the reference of whole fami-",
+    "lies of triliteral roots to single biliteral ones, which are mostly onomato-",
+    "pœetic ; and the illustration of these latter from the analogy of the",
+    "Indo-European tongues, viz. the Sanscrit, Zend, Persian, Greek, Latin,",
+    "Gothic, German, English, and other kindred dialects. Here it is found,",
+    "that the Hebrew and the Semitic dialects generally, in their primary",
+    "elements, (not in their grammatical structure,) approach much nearer",
+    "to the great family of Eastern and Western languages, than has usually",
+    "been supposed. From a similar comparison of other languages is also",
+    "given a more full and complete exposition of the power and use of the",
+    "Hebrew particles and pronouns. From all these sources, the Author"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 120,
+      "y": 119,
+      "width": 1800,
+      "height": 329
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r00-b00-1800x329+120+119-x2.png",
+     "image_sha256": "b67eba9a8e9177fd7ff6f38a4b375962f927728b865e2eccc38ebdf8b80e9189",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "PREFACE. v",
+       "primary signification of the Hebrew roots ; the reference of whole fami-",
+       "lies of triliteral roots to single biliteral ones, which are mostly onomato-",
+       "pœetic ; and the illustration of these latter from the analogy of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cf62a3fc-e5c8-4b0f-b2ba-50b1055bc9a2",
+      "duration_api_ms": 9174,
+      "cost_usd_list": 0.06426799999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2508,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "PREFACE.",
+       "reread": "PREFACE. v",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "PREFACE. v",
+        "verdict": "b",
+        "note": "The running head line also carries the page number \"v\" (small-capital roman numeral) at the far right of the column; Reading A omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a7aaa381-c829-4dcb-b8a3-2fc335f95482",
+        "duration_api_ms": 9529,
+        "cost_usd_list": 0.084458,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 2312,
+        "cache_creation_input_tokens": 3532,
+        "output_tokens": 264
+       },
+       "text": "PREFACE. v"
+      },
+      {
+       "draft": "v",
+       "reread": null,
+       "status": "draft_only",
+       "text": "v"
+      },
+      {
+       "draft": "primary signification of the Hebrew roots ; the reference of whole fami-",
+       "reread": "primary signification of the Hebrew roots ; the reference of whole fami-",
+       "status": "agreed",
+       "text": "primary signification of the Hebrew roots; the reference of whole fami-"
+      },
+      {
+       "draft": "lies of triliteral roots to single biliteral ones, which are mostly onomato-",
+       "reread": "lies of triliteral roots to single biliteral ones, which are mostly onomato-",
+       "status": "agreed",
+       "text": "lies of triliteral roots to single biliteral ones, which are mostly onomato-"
+      },
+      {
+       "draft": "pœetic ; and the illustration of these latter from the analogy of the",
+       "reread": "pœetic ; and the illustration of these latter from the analogy of the",
+       "status": "agreed",
+       "text": "pœetic; and the illustration of these latter from the analogy of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 120,
+      "y": 432,
+      "width": 1800,
+      "height": 293
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r00-b01-1800x293+120+432-x2.png",
+     "image_sha256": "ca4fb74600edd74aba9a6fc1d57db1e962b1f585fe764a31516a93b18de31821",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Indo-European tongues, viz. the Sanscrit, Zend, Persian, Greek, Latin,",
+       "Gothic, German, English, and other kindred dialects. Here it is found,",
+       "that the Hebrew and the Semitic dialects generally, in their primary",
+       "elements, (not in their grammatical structure,) approach much nearer"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bb808a39-cc28-4df2-be6f-1041415a3d76",
+      "duration_api_ms": 14385,
+      "cost_usd_list": 0.062588,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2364,
+      "output_tokens": 288
+     },
+     "lines": [
+      {
+       "draft": "Indo-European tongues, viz. the Sanscrit, Zend, Persian, Greek, Latin,",
+       "reread": "Indo-European tongues, viz. the Sanscrit, Zend, Persian, Greek, Latin,",
+       "status": "agreed",
+       "text": "Indo-European tongues, viz. the Sanscrit, Zend, Persian, Greek, Latin,"
+      },
+      {
+       "draft": "Gothic, German, English, and other kindred dialects. Here it is found,",
+       "reread": "Gothic, German, English, and other kindred dialects. Here it is found,",
+       "status": "agreed",
+       "text": "Gothic, German, English, and other kindred dialects. Here it is found,"
+      },
+      {
+       "draft": "that the Hebrew and the Semitic dialects generally, in their primary",
+       "reread": "that the Hebrew and the Semitic dialects generally, in their primary",
+       "status": "agreed",
+       "text": "that the Hebrew and the Semitic dialects generally, in their primary"
+      },
+      {
+       "draft": "elements, (not in their grammatical structure,) approach much nearer",
+       "reread": "elements, (not in their grammatical structure,) approach much nearer",
+       "status": "agreed",
+       "text": "elements, (not in their grammatical structure,) approach much nearer"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 120,
+      "y": 709,
+      "width": 1800,
+      "height": 301
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r00-b02-1800x301+120+709-x2.png",
+     "image_sha256": "3a2bb8a80a06558517c955e3187193853e3b6a3f6dc420f66ddb7f34817b0f6c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to the great family of Eastern and Western languages, than has usually",
+       "been supposed. From a similar comparison of other languages is also",
+       "given a more full and complete exposition of the power and use of the",
+       "Hebrew particles and pronouns. From all these sources, the Author"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "23e76bef-fa31-4aec-9209-f044a53edb2b",
+      "duration_api_ms": 6396,
+      "cost_usd_list": 0.061188,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2364,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "to the great family of Eastern and Western languages, than has usually",
+       "reread": "to the great family of Eastern and Western languages, than has usually",
+       "status": "agreed",
+       "text": "to the great family of Eastern and Western languages, than has usually"
+      },
+      {
+       "draft": "been supposed. From a similar comparison of other languages is also",
+       "reread": "been supposed. From a similar comparison of other languages is also",
+       "status": "agreed",
+       "text": "been supposed. From a similar comparison of other languages is also"
+      },
+      {
+       "draft": "given a more full and complete exposition of the power and use of the",
+       "reread": "given a more full and complete exposition of the power and use of the",
+       "status": "agreed",
+       "text": "given a more full and complete exposition of the power and use of the"
+      },
+      {
+       "draft": "Hebrew particles and pronouns. From all these sources, the Author",
+       "reread": "Hebrew particles and pronouns. From all these sources, the Author",
+       "status": "agreed",
+       "text": "Hebrew particles and pronouns. From all these sources, the Author"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 120,
+    "y": 1003,
+    "width": 1800,
+    "height": 729
+   },
+   "draft_lines": [
+    "was able, both in the Latin Manual and especially in the later Parts",
+    "of the Thesaurus, not indeed to obtain a new basis for Hebrew",
+    "Grammar and Lexicography, but certainly to enlarge and strengthen",
+    "the old one by new courses of solid materials and a new and firmer",
+    "cement.",
+    "The same remarks apply to the tenth edition of the Author's smaller",
+    "Hebrew Grammar, published in 1831 ; and reprinted in the eleventh",
+    "and twelfth editions, in 1834 and 1839, without great change. The",
+    "thirteenth edition, bearing extensive marks of further progress, was",
+    "published in 1842. Four subsequent editions have been since revised"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 120,
+      "y": 1008,
+      "width": 1800,
+      "height": 288
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r01-b00-1800x288+120+1008-x2.png",
+     "image_sha256": "37ff38dc4861411f7663d84d1c5da04fc0b7d7fd6bc784d64ccb28da107bbe39",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "was able, both in the Latin Manual and especially in the later Parts",
+       "of the Thesaurus, not indeed to obtain a new basis for Hebrew",
+       "Grammar and Lexicography, but certainly to enlarge and strengthen",
+       "the old one by new courses of solid materials and a new and firmer"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e73795f3-e055-4834-9916-a35a7194ead4",
+      "duration_api_ms": 6372,
+      "cost_usd_list": 0.06207825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2366,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "was able, both in the Latin Manual and especially in the later Parts",
+       "reread": "was able, both in the Latin Manual and especially in the later Parts",
+       "status": "agreed",
+       "text": "was able, both in the Latin Manual and especially in the later Parts"
+      },
+      {
+       "draft": "of the Thesaurus, not indeed to obtain a new basis for Hebrew",
+       "reread": "of the Thesaurus, not indeed to obtain a new basis for Hebrew",
+       "status": "agreed",
+       "text": "of the Thesaurus, not indeed to obtain a new basis for Hebrew"
+      },
+      {
+       "draft": "Grammar and Lexicography, but certainly to enlarge and strengthen",
+       "reread": "Grammar and Lexicography, but certainly to enlarge and strengthen",
+       "status": "agreed",
+       "text": "Grammar and Lexicography, but certainly to enlarge and strengthen"
+      },
+      {
+       "draft": "the old one by new courses of solid materials and a new and firmer",
+       "reread": "the old one by new courses of solid materials and a new and firmer",
+       "status": "agreed",
+       "text": "the old one by new courses of solid materials and a new and firmer"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 120,
+      "y": 1280,
+      "width": 1800,
+      "height": 301
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r01-b01-1800x301+120+1280-x2.png",
+     "image_sha256": "b6f14b5b8deee280b8551e353ae7a551a4b1665ac84808c0bfb848593c7b3d6a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cement.",
+       "The same remarks apply to the tenth edition of the Author's smaller",
+       "Hebrew Grammar, published in 1831 ; and reprinted in the eleventh",
+       "and twelfth editions, in 1834 and 1839, without great change. The"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "72a8f2d7-1a5f-4920-8e69-bb1da16c7609",
+      "duration_api_ms": 11323,
+      "cost_usd_list": 0.06132825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2366,
+      "output_tokens": 262
+     },
+     "lines": [
+      {
+       "draft": "cement.",
+       "reread": "cement.",
+       "status": "agreed",
+       "text": "cement."
+      },
+      {
+       "draft": "The same remarks apply to the tenth edition of the Author's smaller",
+       "reread": "The same remarks apply to the tenth edition of the Author's smaller",
+       "status": "agreed",
+       "text": "The same remarks apply to the tenth edition of the Author's smaller"
+      },
+      {
+       "draft": "Hebrew Grammar, published in 1831 ; and reprinted in the eleventh",
+       "reread": "Hebrew Grammar, published in 1831 ; and reprinted in the eleventh",
+       "status": "agreed",
+       "text": "Hebrew Grammar, published in 1831; and reprinted in the eleventh"
+      },
+      {
+       "draft": "and twelfth editions, in 1834 and 1839, without great change. The",
+       "reread": "and twelfth editions, in 1834 and 1839, without great change. The",
+       "status": "agreed",
+       "text": "and twelfth editions, in 1834 and 1839, without great change. The"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 120,
+      "y": 1565,
+      "width": 1800,
+      "height": 161
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r01-b02-1800x161+120+1565-x2.png",
+     "image_sha256": "1c9434af0d3b04252e2fc973bfa0fb0518f7cc7d93db84212bf85c640fea0848",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "thirteenth edition, bearing extensive marks of further progress, was",
+       "published in 1842. Four subsequent editions have been since revised"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d1a25ae7-5b41-4278-a646-4c10f1d2211d",
+      "duration_api_ms": 9502,
+      "cost_usd_list": 0.05212825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2006,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "thirteenth edition, bearing extensive marks of further progress, was",
+       "reread": "thirteenth edition, bearing extensive marks of further progress, was",
+       "status": "agreed",
+       "text": "thirteenth edition, bearing extensive marks of further progress, was"
+      },
+      {
+       "draft": "published in 1842. Four subsequent editions have been since revised",
+       "reread": "published in 1842. Four subsequent editions have been since revised",
+       "status": "agreed",
+       "text": "published in 1842. Four subsequent editions have been since revised"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 120,
+    "y": 1720,
+    "width": 1800,
+    "height": 653
+   },
+   "draft_lines": [
+    "and published by Roediger.",
+    "To Gesenius unquestionably belongs the high merit of having given",
+    "an impulse and interest to the cultivation of Hebrew Literature, far",
+    "beyond any thing which has been felt since the days of the Buxtorfs.",
+    "At the commencement of his labours, Hebrew learning in Germany, as",
+    "elsewhere, was at a very low ebb. In the autumn of 1829, the writer",
+    "was present at the opening of his course of Lectures on the book of",
+    "Genesis. He then stated, as illustrating the progress of this branch of",
+    "literature, that he was now about to lecture on that book for the tenth"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 120,
+      "y": 1726,
+      "width": 1800,
+      "height": 285
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r02-b00-1800x285+120+1726-x2.png",
+     "image_sha256": "37dacd8a9159d8cecf384150f64c0f162032c7ed4125ee1b53cef066d1dbe08d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and published by Roediger.",
+       "To Gesenius unquestionably belongs the high merit of having given",
+       "an impulse and interest to the cultivation of Hebrew Literature, far",
+       "beyond any thing which has been felt since the days of the Buxtorfs."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e4446236-8e50-4ece-89d1-21c44124ba86",
+      "duration_api_ms": 15548,
+      "cost_usd_list": 0.061278250000000006,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2366,
+      "output_tokens": 261
+     },
+     "lines": [
+      {
+       "draft": "and published by Roediger.",
+       "reread": "and published by Roediger.",
+       "status": "agreed",
+       "text": "and published by Roediger."
+      },
+      {
+       "draft": "To Gesenius unquestionably belongs the high merit of having given",
+       "reread": "To Gesenius unquestionably belongs the high merit of having given",
+       "status": "agreed",
+       "text": "To Gesenius unquestionably belongs the high merit of having given"
+      },
+      {
+       "draft": "an impulse and interest to the cultivation of Hebrew Literature, far",
+       "reread": "an impulse and interest to the cultivation of Hebrew Literature, far",
+       "status": "agreed",
+       "text": "an impulse and interest to the cultivation of Hebrew Literature, far"
+      },
+      {
+       "draft": "beyond any thing which has been felt since the days of the Buxtorfs.",
+       "reread": "beyond any thing which has been felt since the days of the Buxtorfs.",
+       "status": "agreed",
+       "text": "beyond any thing which has been felt since the days of the Buxtorfs."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 120,
+      "y": 1995,
+      "width": 1800,
+      "height": 304
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r02-b01-1800x304+120+1995-x2.png",
+     "image_sha256": "fbb308393a4834c556fcb752af1f3654cb1d5c45b4f3cb43df46d9d27a3f5421",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "At the commencement of his labours, Hebrew learning in Germany, as",
+       "elsewhere, was at a very low ebb. In the autumn of 1829, the writer",
+       "was present at the opening of his course of Lectures on the book of",
+       "Genesis. He then stated, as illustrating the progress of this branch of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c15ca4f3-2a44-42ab-834a-4c5a86c26c85",
+      "duration_api_ms": 16097,
+      "cost_usd_list": 0.06351825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2438,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "At the commencement of his labours, Hebrew learning in Germany, as",
+       "reread": "At the commencement of his labours, Hebrew learning in Germany, as",
+       "status": "agreed",
+       "text": "At the commencement of his labours, Hebrew learning in Germany, as"
+      },
+      {
+       "draft": "elsewhere, was at a very low ebb. In the autumn of 1829, the writer",
+       "reread": "elsewhere, was at a very low ebb. In the autumn of 1829, the writer",
+       "status": "agreed",
+       "text": "elsewhere, was at a very low ebb. In the autumn of 1829, the writer"
+      },
+      {
+       "draft": "was present at the opening of his course of Lectures on the book of",
+       "reread": "was present at the opening of his course of Lectures on the book of",
+       "status": "agreed",
+       "text": "was present at the opening of his course of Lectures on the book of"
+      },
+      {
+       "draft": "Genesis. He then stated, as illustrating the progress of this branch of",
+       "reread": "Genesis. He then stated, as illustrating the progress of this branch of",
+       "status": "agreed",
+       "text": "Genesis. He then stated, as illustrating the progress of this branch of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 120,
+      "y": 2283,
+      "width": 1800,
+      "height": 84
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r02-b02-1800x84+120+2283-x2.png",
+     "image_sha256": "350a2d3b3588db6d5005784321907dfe2045738408af43ed377c0f4de41aa0ef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "literature, that he was now about to lecture on that book for the tenth"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0bee188e-ab43-4e2c-a992-301274d5a4e8",
+      "duration_api_ms": 21837,
+      "cost_usd_list": 0.046658250000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1790,
+      "output_tokens": 199
+     },
+     "lines": [
+      {
+       "draft": "literature, that he was now about to lecture on that book for the tenth",
+       "reread": "literature, that he was now about to lecture on that book for the tenth",
+       "status": "agreed",
+       "text": "literature, that he was now about to lecture on that book for the tenth"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 120,
+    "y": 2361,
+    "width": 1800,
+    "height": 1000
+   },
+   "draft_lines": [
+    "time in course ; that when twenty years before he had commenced his",
+    "career in Halle with the same course, the number of his hearers was but",
+    "fourteen ; and that he had then felt gratified, inasmuch as his colleague,",
+    "the celebrated Vater, had lectured on the same book the preceding year",
+    "to a class of only seven.  This statement was made to a class of more",
+    "than five hundred hearers.  But among the thousands who had been",
+    "his pupils, many of whom were now devoting their lives to Hebrew and",
+    "Oriental learning ; and also among others who had been led on by his",
+    "example and instructed by his labours ; it would have been strange",
+    "indeed, had there arisen none to penetrate further than he into some of",
+    "the various departments and recesses of Hebrew philology.  And it was",
+    "perhaps, in our days, a singular merit in Gesenius, that he was among",
+    "the first to admit and adopt, with full acknowledgment, every valuable"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 120,
+      "y": 2367,
+      "width": 1800,
+      "height": 288
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r03-b00-1800x288+120+2367-x2.png",
+     "image_sha256": "7564d5e561c5fbc38aefc7542ed8307a1ba66eab07aa40dcc82a69b8de4b5736",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "time in course ; that when twenty years before he had commenced his",
+       "career in Halle with the same course, the number of his hearers was but",
+       "fourteen ; and that he had then felt gratified, inasmuch as his colleague,",
+       "the celebrated Vater, had lectured on the same book the preceding year"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e33ed827-11ce-4c56-b16f-d6042727a92a",
+      "duration_api_ms": 13541,
+      "cost_usd_list": 0.06182825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2366,
+      "output_tokens": 272
+     },
+     "lines": [
+      {
+       "draft": "time in course ; that when twenty years before he had commenced his",
+       "reread": "time in course ; that when twenty years before he had commenced his",
+       "status": "agreed",
+       "text": "time in course; that when twenty years before he had commenced his"
+      },
+      {
+       "draft": "career in Halle with the same course, the number of his hearers was but",
+       "reread": "career in Halle with the same course, the number of his hearers was but",
+       "status": "agreed",
+       "text": "career in Halle with the same course, the number of his hearers was but"
+      },
+      {
+       "draft": "fourteen ; and that he had then felt gratified, inasmuch as his colleague,",
+       "reread": "fourteen ; and that he had then felt gratified, inasmuch as his colleague,",
+       "status": "agreed",
+       "text": "fourteen; and that he had then felt gratified, inasmuch as his colleague,"
+      },
+      {
+       "draft": "the celebrated Vater, had lectured on the same book the preceding year",
+       "reread": "the celebrated Vater, had lectured on the same book the preceding year",
+       "status": "agreed",
+       "text": "the celebrated Vater, had lectured on the same book the preceding year"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 120,
+      "y": 2639,
+      "width": 1800,
+      "height": 301
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r03-b01-1800x301+120+2639-x2.png",
+     "image_sha256": "24321094778f54a4a7708bb3426e4e70fdf3e7a4e3d99a81cf5bbf6ca73c1477",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to a class of only seven. This statement was made to a class of more",
+       "than five hundred hearers. But among the thousands who had been",
+       "his pupils, many of whom were now devoting their lives to Hebrew and",
+       "Oriental learning ; and also among others who had been led on by his"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9dc8e35f-b61e-411c-84e3-84f97cf96241",
+      "duration_api_ms": 12538,
+      "cost_usd_list": 0.061428250000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2366,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "to a class of only seven.  This statement was made to a class of more",
+       "reread": "to a class of only seven. This statement was made to a class of more",
+       "status": "agreed",
+       "text": "to a class of only seven. This statement was made to a class of more"
+      },
+      {
+       "draft": "than five hundred hearers.  But among the thousands who had been",
+       "reread": "than five hundred hearers. But among the thousands who had been",
+       "status": "agreed",
+       "text": "than five hundred hearers. But among the thousands who had been"
+      },
+      {
+       "draft": "his pupils, many of whom were now devoting their lives to Hebrew and",
+       "reread": "his pupils, many of whom were now devoting their lives to Hebrew and",
+       "status": "agreed",
+       "text": "his pupils, many of whom were now devoting their lives to Hebrew and"
+      },
+      {
+       "draft": "Oriental learning ; and also among others who had been led on by his",
+       "reread": "Oriental learning ; and also among others who had been led on by his",
+       "status": "agreed",
+       "text": "Oriental learning; and also among others who had been led on by his"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 120,
+      "y": 2924,
+      "width": 1800,
+      "height": 298
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r03-b02-1800x298+120+2924-x2.png",
+     "image_sha256": "09d1c1cf0f7c25e636083d4d68260a18faec7870cc5ea4ef41ac15e5d991fe64",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "example and instructed by his labours ; it would have been strange",
+       "indeed, had there arisen none to penetrate further than he into some of",
+       "the various departments and recesses of Hebrew philology. And it was",
+       "perhaps, in our days, a singular merit in Gesenius, that he was among"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3f3c34a5-3f53-4361-8549-6931fc2b27d7",
+      "duration_api_ms": 13290,
+      "cost_usd_list": 0.06162825000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2366,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "example and instructed by his labours ; it would have been strange",
+       "reread": "example and instructed by his labours ; it would have been strange",
+       "status": "agreed",
+       "text": "example and instructed by his labours; it would have been strange"
+      },
+      {
+       "draft": "indeed, had there arisen none to penetrate further than he into some of",
+       "reread": "indeed, had there arisen none to penetrate further than he into some of",
+       "status": "agreed",
+       "text": "indeed, had there arisen none to penetrate further than he into some of"
+      },
+      {
+       "draft": "the various departments and recesses of Hebrew philology.  And it was",
+       "reread": "the various departments and recesses of Hebrew philology. And it was",
+       "status": "agreed",
+       "text": "the various departments and recesses of Hebrew philology. And it was"
+      },
+      {
+       "draft": "perhaps, in our days, a singular merit in Gesenius, that he was among",
+       "reread": "perhaps, in our days, a singular merit in Gesenius, that he was among",
+       "status": "agreed",
+       "text": "perhaps, in our days, a singular merit in Gesenius, that he was among"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 120,
+      "y": 3206,
+      "width": 1800,
+      "height": 157
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0009/pass2/c0-r03-b03-1800x157+120+3206-x2.png",
+     "image_sha256": "40f0e07ef6c90e4b1359a2e0fc38177f10f3cfe1c289be902582298caa4e9010",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the first to admit and adopt, with full acknowledgment, every valuable"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2bd44353-1681-49fc-a959-7e42048a7a67",
+      "duration_api_ms": 7500,
+      "cost_usd_list": 0.05112825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2006,
+      "output_tokens": 202
+     },
+     "lines": [
+      {
+       "draft": "the first to admit and adopt, with full acknowledgment, every valuable",
+       "reread": "the first to admit and adopt, with full acknowledgment, every valuable",
+       "status": "agreed",
+       "text": "the first to admit and adopt, with full acknowledgment, every valuable"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "PREFACE. v",
+   "status": "adjudicated",
+   "draft": "PREFACE.",
+   "reread": "PREFACE. v",
+   "verdict": "b",
+   "note": "The running head line also carries the page number \"v\" (small-capital roman numeral) at the far right of the column; Reading A omits it.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "v",
+   "status": "draft_only",
+   "draft": "v",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "primary signification of the Hebrew roots; the reference of whole fami-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "lies of triliteral roots to single biliteral ones, which are mostly onomato-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "pœetic; and the illustration of these latter from the analogy of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Indo-European tongues, viz. the Sanscrit, Zend, Persian, Greek, Latin,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Gothic, German, English, and other kindred dialects. Here it is found,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "that the Hebrew and the Semitic dialects generally, in their primary",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "elements, (not in their grammatical structure,) approach much nearer",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to the great family of Eastern and Western languages, than has usually",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "been supposed. From a similar comparison of other languages is also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "given a more full and complete exposition of the power and use of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hebrew particles and pronouns. From all these sources, the Author",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "was able, both in the Latin Manual and especially in the later Parts",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of the Thesaurus, not indeed to obtain a new basis for Hebrew",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Grammar and Lexicography, but certainly to enlarge and strengthen",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the old one by new courses of solid materials and a new and firmer",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "cement.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "The same remarks apply to the tenth edition of the Author's smaller",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Hebrew Grammar, published in 1831; and reprinted in the eleventh",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and twelfth editions, in 1834 and 1839, without great change. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thirteenth edition, bearing extensive marks of further progress, was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "published in 1842. Four subsequent editions have been since revised",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and published by Roediger.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "To Gesenius unquestionably belongs the high merit of having given",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "an impulse and interest to the cultivation of Hebrew Literature, far",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "beyond any thing which has been felt since the days of the Buxtorfs.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "At the commencement of his labours, Hebrew learning in Germany, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "elsewhere, was at a very low ebb. In the autumn of 1829, the writer",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "was present at the opening of his course of Lectures on the book of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Genesis. He then stated, as illustrating the progress of this branch of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "literature, that he was now about to lecture on that book for the tenth",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "time in course; that when twenty years before he had commenced his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "career in Halle with the same course, the number of his hearers was but",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "fourteen; and that he had then felt gratified, inasmuch as his colleague,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the celebrated Vater, had lectured on the same book the preceding year",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to a class of only seven. This statement was made to a class of more",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "than five hundred hearers. But among the thousands who had been",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "his pupils, many of whom were now devoting their lives to Hebrew and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Oriental learning; and also among others who had been led on by his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "example and instructed by his labours; it would have been strange",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "indeed, had there arisen none to penetrate further than he into some of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the various departments and recesses of Hebrew philology. And it was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "perhaps, in our days, a singular merit in Gesenius, that he was among",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the first to admit and adopt, with full acknowledgment, every valuable",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 43,
+  "adjudicated": 1,
+  "draft_only": 1,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "errors": 0,
+ "cost_usd_list_total": 0.8555
+}

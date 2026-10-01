@@ -46,7 +46,7 @@ _spec = importlib.util.spec_from_file_location("frontier_transcribe", HERE / "fr
 ft = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(ft)  # type: ignore[union-attr]
 
-PROMPT_VERSION = 1
+PROMPT_VERSION = 2  # 2: lean CLI system prompt
 READ_PROMPT = (
     "Read the image file {path}. It is an enlarged crop of a few printed lines from "
     "one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). "
@@ -82,6 +82,8 @@ JUDGE_PROMPT = (
     "Reading A: {a}\n"
     "Reading B: {b}"
 )
+CLI_MODE = "lean-system-prompt-v1"
+CLI_SYSTEM_PROMPT = "You transcribe printed text from images exactly, following the user's instructions."
 READ_SCHEMA = json.dumps(
     {
         "type": "object",
@@ -155,8 +157,15 @@ def run_claude(prompt: str, schema: str, model: str, timeout: int) -> tuple[dict
         "-p",
         "--model",
         model,
-        "--allowedTools",
+        # A one-line system prompt in place of Claude Code's default, only
+        # the Read tool, and no MCP servers or skills: the default context
+        # cost about 10k cache-creation tokens per call, 2.6x the lean call.
+        "--system-prompt",
+        CLI_SYSTEM_PROMPT,
+        "--tools",
         "Read",
+        "--strict-mcp-config",
+        "--disable-slash-commands",
         "--output-format",
         "json",
         "--json-schema",
@@ -180,6 +189,7 @@ def run_claude(prompt: str, schema: str, model: str, timeout: int) -> tuple[dict
     usage = result.get("usage", {})
     meta = {
         "model": model,
+        "cli_mode": CLI_MODE,
         "session_id": result.get("session_id"),
         "duration_api_ms": result.get("duration_api_ms"),
         "cost_usd_list": result.get("total_cost_usd"),

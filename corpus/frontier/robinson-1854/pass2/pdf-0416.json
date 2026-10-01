@@ -1,0 +1,2623 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 416,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0416.png",
+ "raster_sha256": "f45b8385648912cca6406bfb245154ad8a5c3d15bab39cf1a047e74b2221a7e8",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0416.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T09:05:29+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 126,
+    "width": 1780,
+    "height": 71
+   },
+   "draft_lines": [
+    "ילד 400 ילל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 148,
+      "y": 124,
+      "width": 1780,
+      "height": 75
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/header-b00-1780x75+148+124-x2.png",
+     "image_sha256": "be9ddd53f23dc4fe02ef717c7457551dd77a4c0e540bce196dae794c534c8527",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ילד 400 ילל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "20ad6b5e-de3b-4636-9a05-f12321a1ec62",
+      "duration_api_ms": 12088,
+      "cost_usd_list": 0.045617000000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1708,
+      "output_tokens": 211
+     },
+     "lines": [
+      {
+       "draft": "ילד 400 ילל",
+       "reread": "ילד 400 ילל",
+       "status": "agreed",
+       "text": "ילד 400 ילל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 176,
+    "width": 877,
+    "height": 684
+   },
+   "draft_lines": [
+    "5, 7; to be born, i. q. Niph. Judg. 13, 8.",
+    "Ps. 87, 4. 5. 6.  With לְ of father Gen.",
+    "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl.",
+    "Gen. 10, 21.  So with לְ of a near rela-",
+    "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;",
+    "לְ of thing Job 5, 7.—Trop. to be brought",
+    "forth, created, e. g. the mountains, Ps.",
+    "90, 2.",
+    "Hiph. הוֹלִיד 1. to cause to bring",
+    "forth, as God a woman Is. 66, 9; a man",
+    "his wife, to make fruitful, to have chil-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 148,
+      "y": 168,
+      "width": 877,
+      "height": 292
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r00-b00-877x292+148+168-x2.png",
+     "image_sha256": "f9e40658d3b567ca4c302d54832f9715538eb08cd3fbc0e456928e7833182d85",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5, 7; to be born, i. q. Niph. Judg. 13, 8.",
+       "Ps. 87, 4. 5. 6. With לְ of father Gen.",
+       "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl.",
+       "Gen. 10, 21. So with לְ of a near rela-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e54dbc45-b8cd-444c-b6f6-616d6bfb4d69",
+      "duration_api_ms": 15565,
+      "cost_usd_list": 0.09022775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2776,
+      "output_tokens": 670
+     },
+     "lines": [
+      {
+       "draft": "5, 7; to be born, i. q. Niph. Judg. 13, 8.",
+       "reread": "5, 7; to be born, i. q. Niph. Judg. 13, 8.",
+       "status": "agreed",
+       "text": "5, 7; to be born, i. q. Niph. Judg. 13, 8."
+      },
+      {
+       "draft": "Ps. 87, 4. 5. 6.  With לְ of father Gen.",
+       "reread": "Ps. 87, 4. 5. 6. With לְ of father Gen.",
+       "status": "agreed",
+       "text": "Ps. 87, 4. 5. 6. With לְ of father Gen."
+      },
+      {
+       "draft": "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl.",
+       "reread": "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl.",
+       "status": "agreed",
+       "text": "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl."
+      },
+      {
+       "draft": "Gen. 10, 21.  So with לְ of a near rela-",
+       "reread": "Gen. 10, 21. So with לְ of a near rela-",
+       "status": "agreed",
+       "text": "Gen. 10, 21. So with לְ of a near rela-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 148,
+      "y": 444,
+      "width": 877,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r00-b01-877x193+148+444-x2.png",
+     "image_sha256": "88463474095aca8000c8915e2f3863716b546d8f72ca152ba1cc90cb6981eea1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tive, Ruth 4, 17 יֻלַּד בֵּן לְנָעֳמִי. Is. 9, 5;",
+       "לְ of thing Job 5, 7.—Trop. to be brought",
+       "forth, created, e. g. the mountains, Ps."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b06f8c1f-6c4f-4411-ba3d-c8abf5f8160f",
+      "duration_api_ms": 15773,
+      "cost_usd_list": 0.07845774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2335,
+      "output_tokens": 611
+     },
+     "lines": [
+      {
+       "draft": "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;",
+       "reread": "tive, Ruth 4, 17 יֻלַּד בֵּן לְנָעֳמִי. Is. 9, 5;",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;",
+        "verdict": "a",
+        "note": "A short horizontal stroke at top-line height joins the dalet of יֻלַּד to the following bet — a printed maqqef (יֻלַּד־בֵּן), not a word space; the rest of the line (vowels, dagesh in lamed and bet, לְנָעֳמִי with hataf-qamets) is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ac987484-c96a-4e76-ba5e-510e188e52b5",
+        "duration_api_ms": 16770,
+        "cost_usd_list": 0.07989925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3517,
+        "cache_creation_input_tokens": 2309,
+        "output_tokens": 650
+       },
+       "text": "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;"
+      },
+      {
+       "draft": "לְ of thing Job 5, 7.—Trop. to be brought",
+       "reread": "לְ of thing Job 5, 7.—Trop. to be brought",
+       "status": "agreed",
+       "text": "לְ of thing Job 5, 7.—Trop. to be brought"
+      },
+      {
+       "draft": "forth, created, e. g. the mountains, Ps.",
+       "reread": "forth, created, e. g. the mountains, Ps.",
+       "status": "agreed",
+       "text": "forth, created, e. g. the mountains, Ps."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 148,
+      "y": 621,
+      "width": 877,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r00-b02-877x236+148+621-x2.png",
+     "image_sha256": "434d6fcecbe9b43d20d44df51c9c436fec343c8c5903c8643474f86fe3da0cf9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "90, 2.",
+       "Hiph. הוֹלִיד 1. to cause to bring",
+       "forth, as God a woman Is. 66, 9; a man",
+       "his wife, to make fruitful, to have chil-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "815a0723-4a36-4002-bf87-cbf01e829c3a",
+      "duration_api_ms": 10925,
+      "cost_usd_list": 0.06728775000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2524,
+      "output_tokens": 312
+     },
+     "lines": [
+      {
+       "draft": "90, 2.",
+       "reread": "90, 2.",
+       "status": "agreed",
+       "text": "90, 2."
+      },
+      {
+       "draft": "Hiph. הוֹלִיד 1. to cause to bring",
+       "reread": "Hiph. הוֹלִיד 1. to cause to bring",
+       "status": "agreed",
+       "text": "Hiph. הוֹלִיד 1. to cause to bring"
+      },
+      {
+       "draft": "forth, as God a woman Is. 66, 9; a man",
+       "reread": "forth, as God a woman Is. 66, 9; a man",
+       "status": "agreed",
+       "text": "forth, as God a woman Is. 66, 9; a man"
+      },
+      {
+       "draft": "his wife, to make fruitful, to have chil-",
+       "reread": "his wife, to make fruitful, to have chil-",
+       "status": "agreed",
+       "text": "his wife, to make fruitful, to have chil-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 148,
+    "y": 848,
+    "width": 877,
+    "height": 968
+   },
+   "draft_lines": [
+    "dren by her, 1 Chr. 2, 18. 8, 8.—Trop.",
+    "of rain as fertilizing the earth Is. 55, 10.",
+    "2. to beget, as a father, i. q. Kal no. 2;",
+    "Gen. 5, 4. 7. 11, 11 sq. 1 Chr. 2, 10 sq.",
+    "Ecc. 6, 3. al.—Trop. to create, Job 38, 28",
+    "מִי־הוֹלִיד אֶגְלֵי־טָל who hath begotten",
+    "(created) the store-houses of the dew?",
+    "3. i. q. Kal no. 1, to bear, to bring",
+    "forth; but only trop. to bring forth",
+    "wickedness, Is. 59, 4; parall. הָרָה עָמָל.",
+    "Hoph. pr. ‘to be begotten,’ hence to",
+    "be born. Inf. הֻלֶּדֶת Gen. 40, 20. Ez. 16,",
+    "5, and הוּלֶּדֶת Ez. 16, 4, a being born,",
+    "birth, nativity. Gen. l. c. יוֹם הֻלֶּדֶת אֶת־",
+    "פַּרְעֹה the birth-day of Pharaoh, pr. the",
+    "day of Pharaoh’s being born. On the",
+    "accus. with passives, see Heb. Gr. § 140."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 148,
+      "y": 840,
+      "width": 877,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r01-b00-877x239+148+840-x2.png",
+     "image_sha256": "7c9886831bf4ad38f2055b36078315ee41fc0eeaf85b50d886301149d146209e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "dren by her, 1 Chr. 2, 18. 8, 8.—Trop.",
+       "of rain as fertilizing the earth Is. 55, 10.",
+       "2. to beget, as a father, i. q. Kal no. 2;",
+       "Gen. 5, 4. 7. 11, 11 sq. 1 Chr. 2, 10 sq."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ff67752a-abbd-4007-82fb-d0d8e568b14c",
+      "duration_api_ms": 9759,
+      "cost_usd_list": 0.06754774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2587,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "dren by her, 1 Chr. 2, 18. 8, 8.—Trop.",
+       "reread": "dren by her, 1 Chr. 2, 18. 8, 8.—Trop.",
+       "status": "agreed",
+       "text": "dren by her, 1 Chr. 2, 18. 8, 8.—Trop."
+      },
+      {
+       "draft": "of rain as fertilizing the earth Is. 55, 10.",
+       "reread": "of rain as fertilizing the earth Is. 55, 10.",
+       "status": "agreed",
+       "text": "of rain as fertilizing the earth Is. 55, 10."
+      },
+      {
+       "draft": "2. to beget, as a father, i. q. Kal no. 2;",
+       "reread": "2. to beget, as a father, i. q. Kal no. 2;",
+       "status": "agreed",
+       "text": "2. to beget, as a father, i. q. Kal no. 2;"
+      },
+      {
+       "draft": "Gen. 5, 4. 7. 11, 11 sq. 1 Chr. 2, 10 sq.",
+       "reread": "Gen. 5, 4. 7. 11, 11 sq. 1 Chr. 2, 10 sq.",
+       "status": "agreed",
+       "text": "Gen. 5, 4. 7. 11, 11 sq. 1 Chr. 2, 10 sq."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 148,
+      "y": 1063,
+      "width": 877,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r01-b01-877x243+148+1063-x2.png",
+     "image_sha256": "8e88a652c4d47c76ad7b7b71f2031594eee88daacc9295f83cf52088ac04fbd1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ecc. 6, 3. al.—Trop. to create, Job 38, 28",
+       "מִי־הוֹלִיד אֶגְלֵי־טָל who hath begotten",
+       "(created) the store-houses of the dew?",
+       "3. i. q. Kal no. 1, to bear, to bring"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f64b3ae6-98f9-46d1-8327-50bf798f0c8b",
+      "duration_api_ms": 11802,
+      "cost_usd_list": 0.07438800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 428
+     },
+     "lines": [
+      {
+       "draft": "Ecc. 6, 3. al.—Trop. to create, Job 38, 28",
+       "reread": "Ecc. 6, 3. al.—Trop. to create, Job 38, 28",
+       "status": "agreed",
+       "text": "Ecc. 6, 3. al.—Trop. to create, Job 38, 28"
+      },
+      {
+       "draft": "מִי־הוֹלִיד אֶגְלֵי־טָל who hath begotten",
+       "reread": "מִי־הוֹלִיד אֶגְלֵי־טָל who hath begotten",
+       "status": "agreed",
+       "text": "מִי־הוֹלִיד אֶגְלֵי־טָל who hath begotten"
+      },
+      {
+       "draft": "(created) the store-houses of the dew?",
+       "reread": "(created) the store-houses of the dew?",
+       "status": "agreed",
+       "text": "(created) the store-houses of the dew?"
+      },
+      {
+       "draft": "3. i. q. Kal no. 1, to bear, to bring",
+       "reread": "3. i. q. Kal no. 1, to bear, to bring",
+       "status": "agreed",
+       "text": "3. i. q. Kal no. 1, to bear, to bring"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 148,
+      "y": 1290,
+      "width": 877,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r01-b02-877x249+148+1290-x2.png",
+     "image_sha256": "dea89e2cf27db4eee01a39cd7538f2d4a2b1b681d2e41ff58c4bd954ad9b24bc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "forth ; but only trop. to bring forth",
+       "wickedness, Is. 59, 4 ; parall. הָרָה עָמָל .",
+       "Hoph. pr. ‘ to be begotten,’ hence to",
+       "be born. Inf. הֻלֶּדֶת Gen. 40, 20. Ez. 16,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "556912ae-3719-4ca3-819a-e37f515df1ec",
+      "duration_api_ms": 12301,
+      "cost_usd_list": 0.080088,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 542
+     },
+     "lines": [
+      {
+       "draft": "forth; but only trop. to bring forth",
+       "reread": "forth ; but only trop. to bring forth",
+       "status": "agreed",
+       "text": "forth; but only trop. to bring forth"
+      },
+      {
+       "draft": "wickedness, Is. 59, 4; parall. הָרָה עָמָל.",
+       "reread": "wickedness, Is. 59, 4 ; parall. הָרָה עָמָל .",
+       "status": "agreed",
+       "text": "wickedness, Is. 59, 4; parall. הָרָה עָמָל."
+      },
+      {
+       "draft": "Hoph. pr. ‘to be begotten,’ hence to",
+       "reread": "Hoph. pr. ‘ to be begotten,’ hence to",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "Hoph. pr. ‘to be begotten,’ hence to",
+        "verdict": "a",
+        "note": "The opening quotation mark sits directly against \"to\" with only normal type-side bearing, not a printed space; Reading B's \"‘ to\" inserts a space that is not in the print. Everything else is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0a21f0df-1034-491b-a4f8-22684c239d30",
+        "duration_api_ms": 11337,
+        "cost_usd_list": 0.074048,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3472,
+        "cache_creation_input_tokens": 2517,
+        "output_tokens": 450
+       },
+       "text": "Hoph. pr. ‘to be begotten,’ hence to"
+      },
+      {
+       "draft": "be born. Inf. הֻלֶּדֶת Gen. 40, 20. Ez. 16,",
+       "reread": "be born. Inf. הֻלֶּדֶת Gen. 40, 20. Ez. 16,",
+       "status": "agreed",
+       "text": "be born. Inf. הֻלֶּדֶת Gen. 40, 20. Ez. 16,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 148,
+      "y": 1523,
+      "width": 877,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r01-b03-877x235+148+1523-x2.png",
+     "image_sha256": "10ddcfec34ced6439e2508c369a62ed699f7e0df37beff256bfa6573a3538089",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5, and הוּלֶּדֶת Ez. 16, 4, a being born,",
+       "birth, nativity. Gen. l. c. יוֹם הֻלֶּדֶת אֶת־",
+       "פַּרְעֹה the birth-day of Pharaoh, pr. the",
+       "day of Pharaoh’s being born. On the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1c8555b8-e3b6-4cb1-b1d5-31eaa0304cd7",
+      "duration_api_ms": 14697,
+      "cost_usd_list": 0.07957800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 557
+     },
+     "lines": [
+      {
+       "draft": "5, and הוּלֶּדֶת Ez. 16, 4, a being born,",
+       "reread": "5, and הוּלֶּדֶת Ez. 16, 4, a being born,",
+       "status": "agreed",
+       "text": "5, and הוּלֶּדֶת Ez. 16, 4, a being born,"
+      },
+      {
+       "draft": "birth, nativity. Gen. l. c. יוֹם הֻלֶּדֶת אֶת־",
+       "reread": "birth, nativity. Gen. l. c. יוֹם הֻלֶּדֶת אֶת־",
+       "status": "agreed",
+       "text": "birth, nativity. Gen. l. c. יוֹם הֻלֶּדֶת אֶת־"
+      },
+      {
+       "draft": "פַּרְעֹה the birth-day of Pharaoh, pr. the",
+       "reread": "פַּרְעֹה the birth-day of Pharaoh, pr. the",
+       "status": "agreed",
+       "text": "פַּרְעֹה the birth-day of Pharaoh, pr. the"
+      },
+      {
+       "draft": "day of Pharaoh’s being born. On the",
+       "reread": "day of Pharaoh’s being born. On the",
+       "status": "agreed",
+       "text": "day of Pharaoh’s being born. On the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b04",
+     "bounds": {
+      "x": 148,
+      "y": 1742,
+      "width": 877,
+      "height": 82
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r01-b04-877x82+148+1742-x2.png",
+     "image_sha256": "32acb26547ba9fd55ac0941c1d576a9d3279b67663ff2615d584227d2fda90fd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "accus. with passives, see Heb. Gr. § 140."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88216599-1296-4fc9-9f83-3b4a948c366c",
+      "duration_api_ms": 8418,
+      "cost_usd_list": 0.048918,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1833,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "accus. with passives, see Heb. Gr. § 140.",
+       "reread": "accus. with passives, see Heb. Gr. § 140.",
+       "status": "agreed",
+       "text": "accus. with passives, see Heb. Gr. § 140."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 148,
+    "y": 1804,
+    "width": 877,
+    "height": 824
+   },
+   "draft_lines": [
+    "Hithpa. to declare one's birth or de-",
+    "scent, pedigree ; to give one's name to",
+    "be enrolled in genealogical tables, Num.",
+    "1, 18.—In the later books this idea is",
+    "expressed by הִתְיַחֵשׂ.",
+    "Deriv. תּוֹלֵדֶת, מוֹלֶדֶת, יָלִיד; pr. names",
+    "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלַד; and the",
+    "four here following.",
+    "יֶלֶד m. in pause יָלֶד; plur. יְלָדִים,",
+    "constr. יַלְדֵי, once יִלְדֵי Is. 57, 4.",
+    "1. one born, a son, poet. i. q. בֵּן; spoken",
+    "κατ' ἐξοχήν of the king's son Is. 9, 5.",
+    "Hence יַלְדֵי נָכְרִים sons of strangers,",
+    "poet. for foreigners, see בֵּן no. 1; also"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 148,
+      "y": 1796,
+      "width": 877,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r02-b00-877x238+148+1796-x2.png",
+     "image_sha256": "73f9f3add5d96898401f91eb3d3158b590b54ad0f7c1ddfd81e21ee10c2bba98",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Hithpa. to declare one's birth or de-",
+       "scent, pedigree; to give one's name to",
+       "be enrolled in genealogical tables, Num.",
+       "1, 18.—In the later books this idea is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3945444d-1969-4565-871c-818e5461cfc9",
+      "duration_api_ms": 10376,
+      "cost_usd_list": 0.06672800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 300
+     },
+     "lines": [
+      {
+       "draft": "Hithpa. to declare one's birth or de-",
+       "reread": "Hithpa. to declare one's birth or de-",
+       "status": "agreed",
+       "text": "Hithpa. to declare one's birth or de-"
+      },
+      {
+       "draft": "scent, pedigree ; to give one's name to",
+       "reread": "scent, pedigree; to give one's name to",
+       "status": "agreed",
+       "text": "scent, pedigree; to give one's name to"
+      },
+      {
+       "draft": "be enrolled in genealogical tables, Num.",
+       "reread": "be enrolled in genealogical tables, Num.",
+       "status": "agreed",
+       "text": "be enrolled in genealogical tables, Num."
+      },
+      {
+       "draft": "1, 18.—In the later books this idea is",
+       "reread": "1, 18.—In the later books this idea is",
+       "status": "agreed",
+       "text": "1, 18.—In the later books this idea is"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 148,
+      "y": 2018,
+      "width": 877,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r02-b01-877x245+148+2018-x2.png",
+     "image_sha256": "048eaf377c122dd2f95a4c21f697b075de15b280f52655451e1f48f02fe23e40",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "expressed by הִתְיַחֵשׂ.",
+       "Deriv. יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת; pr. names",
+       "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלָד; and the",
+       "four here following."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3470c8aa-45b5-4304-a9e2-c7289051cade",
+      "duration_api_ms": 16061,
+      "cost_usd_list": 0.092388,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 788
+     },
+     "lines": [
+      {
+       "draft": "expressed by הִתְיַחֵשׂ.",
+       "reread": "expressed by הִתְיַחֵשׂ.",
+       "status": "agreed",
+       "text": "expressed by הִתְיַחֵשׂ."
+      },
+      {
+       "draft": "Deriv. תּוֹלֵדֶת, מוֹלֶדֶת, יָלִיד; pr. names",
+       "reread": "Deriv. יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת; pr. names",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "Deriv. יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת; pr. names",
+        "verdict": "b",
+        "note": "The printed left-to-right order after \"Deriv.\" is יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת (Reading A reversed it), and the lamed of תּוֹלֶדֶת carries segol (three dots), not tsere as in A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1084a2ef-3e48-4a69-818a-53f11bbcf178",
+        "duration_api_ms": 15678,
+        "cost_usd_list": 0.09394725000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3509,
+        "cache_creation_input_tokens": 2554,
+        "output_tokens": 833
+       },
+       "text": "Deriv. יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת; pr. names"
+      },
+      {
+       "draft": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלַד; and the",
+       "reread": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלָד; and the",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלָד; and the",
+        "verdict": "b",
+        "note": "The vowel under the final lamed of אֶלְתּוֹלָד is a qamets (T-shaped, matching the preceding תּוֹלָד), not a pathach as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8e351b65-9d8d-4af9-9263-8478cd594c69",
+        "duration_api_ms": 13236,
+        "cost_usd_list": 0.07446875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3515,
+        "cache_creation_input_tokens": 2560,
+        "output_tokens": 441
+       },
+       "text": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלָד; and the"
+      },
+      {
+       "draft": "four here following.",
+       "reread": "four here following.",
+       "status": "agreed",
+       "text": "four here following."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 148,
+      "y": 2247,
+      "width": 877,
+      "height": 271
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r02-b02-877x271+148+2247-x2.png",
+     "image_sha256": "623623b1d851a14cbbdbedf0ac5889cc9a127cc3bb564d6c613d7cd5fc5a45a8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "יֶלֶד m. in pause יָלֶד; plur. יְלָדִים,",
+       "constr. יַלְדֵי, once יִלְדֵי Is. 57, 4.",
+       "1. one born, a son, poet. i. q. בֵּן; spoken",
+       "κατ᾿ ἐξοχήν of the king's son Is. 9, 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "576af620-5e66-4c66-a225-8743e65e8ba8",
+      "duration_api_ms": 10285,
+      "cost_usd_list": 0.07910800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2715,
+      "output_tokens": 472
+     },
+     "lines": [
+      {
+       "draft": "יֶלֶד m. in pause יָלֶד; plur. יְלָדִים,",
+       "reread": "יֶלֶד m. in pause יָלֶד; plur. יְלָדִים,",
+       "status": "agreed",
+       "text": "יֶלֶד m. in pause יָלֶד; plur. יְלָדִים,"
+      },
+      {
+       "draft": "constr. יַלְדֵי, once יִלְדֵי Is. 57, 4.",
+       "reread": "constr. יַלְדֵי, once יִלְדֵי Is. 57, 4.",
+       "status": "agreed",
+       "text": "constr. יַלְדֵי, once יִלְדֵי Is. 57, 4."
+      },
+      {
+       "draft": "1. one born, a son, poet. i. q. בֵּן; spoken",
+       "reread": "1. one born, a son, poet. i. q. בֵּן; spoken",
+       "status": "agreed",
+       "text": "1. one born, a son, poet. i. q. בֵּן; spoken"
+      },
+      {
+       "draft": "κατ' ἐξοχήν of the king's son Is. 9, 5.",
+       "reread": "κατ᾿ ἐξοχήν of the king's son Is. 9, 5.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "κατ᾿ ἐξοχήν of the king's son Is. 9, 5.",
+        "verdict": "b",
+        "note": "The elision mark after κατ is printed as the Greek typographic psili/koronis-shaped apostrophe, not a straight ASCII apostrophe; B's U+1FBF matches that (U+2019 would be an equally acceptable rendering). Everything else is identical in both readings and correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2f56beba-c2ce-4a8b-94eb-f860ca66c2db",
+        "duration_api_ms": 19104,
+        "cost_usd_list": 0.1129705,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3482,
+        "cache_creation_input_tokens": 2653,
+        "output_tokens": 1174
+       },
+       "text": "κατ᾿ ἐξοχήν of the king's son Is. 9, 5."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 148,
+      "y": 2502,
+      "width": 877,
+      "height": 134
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r02-b03-877x134+148+2502-x2.png",
+     "image_sha256": "7a5969eb043546cecaa60ba6bf59824a2db2ec9a139a76177a208eff0a8b01c0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Hence יַלְדֵי נָכְרִים sons of strangers,",
+       "poet. for foreigners, see בֵּן no. 1; also"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eaf1a79c-f29c-44c8-a8f9-2c51614ccaf7",
+      "duration_api_ms": 10930,
+      "cost_usd_list": 0.060508000000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2085,
+      "output_tokens": 352
+     },
+     "lines": [
+      {
+       "draft": "Hence יַלְדֵי נָכְרִים sons of strangers,",
+       "reread": "Hence יַלְדֵי נָכְרִים sons of strangers,",
+       "status": "agreed",
+       "text": "Hence יַלְדֵי נָכְרִים sons of strangers,"
+      },
+      {
+       "draft": "poet. for foreigners, see בֵּן no. 1; also",
+       "reread": "poet. for foreigners, see בֵּן no. 1; also",
+       "status": "agreed",
+       "text": "poet. for foreigners, see בֵּן no. 1; also"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 148,
+    "y": 2616,
+    "width": 877,
+    "height": 670
+   },
+   "draft_lines": [
+    "sons of transgression, for transgressors,",
+    "Is. 57, 4.—Plur. comm. children, i. q.",
+    "בָּנִים, Ex. 21, 4. Ezra 10, 1. Hos. 1, 2;",
+    "also for the young of animals, Is. 11, 7.",
+    "Job 38, 41.",
+    "2. a boy, child, recently born, an in-",
+    "fant, Ex. 1, 17. 2, 3 sq. Ruth 4, 16.",
+    "2 Sam. 12, 15 sq. 1 K. 3, 25; as borne in",
+    "the arms Gen. 21, 8; also as older and",
+    "mingling in childish sports 2 K. 2, 24.",
+    "Job 21, 11. Zech. 8, 5; but still of tender",
+    "age Gen. 33, 13. Is. 57, 5. Also as more"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 148,
+      "y": 2608,
+      "width": 877,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r03-b00-877x241+148+2608-x2.png",
+     "image_sha256": "2f6dfdbc1fdbc79a36a1818cd85f599248da05533d022362a03a365f7d10bc3f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sons of transgression, for transgressors,",
+       "Is. 57, 4.—Plur. comm. children, i. q.",
+       "בָּנִים, Ex. 21, 4. Ezra 10, 1. Hos. 1, 2;",
+       "also for the young of animals, Is. 11, 7."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8c53ebf8-ce09-4b6a-b196-91477c6bfe9e",
+      "duration_api_ms": 8616,
+      "cost_usd_list": 0.066638,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 273
+     },
+     "lines": [
+      {
+       "draft": "sons of transgression, for transgressors,",
+       "reread": "sons of transgression, for transgressors,",
+       "status": "agreed",
+       "text": "sons of transgression, for transgressors,"
+      },
+      {
+       "draft": "Is. 57, 4.—Plur. comm. children, i. q.",
+       "reread": "Is. 57, 4.—Plur. comm. children, i. q.",
+       "status": "agreed",
+       "text": "Is. 57, 4.—Plur. comm. children, i. q."
+      },
+      {
+       "draft": "בָּנִים, Ex. 21, 4. Ezra 10, 1. Hos. 1, 2;",
+       "reread": "בָּנִים, Ex. 21, 4. Ezra 10, 1. Hos. 1, 2;",
+       "status": "agreed",
+       "text": "בָּנִים, Ex. 21, 4. Ezra 10, 1. Hos. 1, 2;"
+      },
+      {
+       "draft": "also for the young of animals, Is. 11, 7.",
+       "reread": "also for the young of animals, Is. 11, 7.",
+       "status": "agreed",
+       "text": "also for the young of animals, Is. 11, 7."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 148,
+      "y": 2833,
+      "width": 877,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r03-b01-877x233+148+2833-x2.png",
+     "image_sha256": "3fd6e60147efcf38d0b319224d1171932e65444ffc98ed8314968c5f141da8f3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Job 38, 41.",
+       "2. a boy, child, recently born, an in-",
+       "fant, Ex. 1, 17. 2, 3 sq. Ruth 4, 16.",
+       "2 Sam. 12, 15 sq. 1 K. 3, 25; as borne in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8c0325cb-5f1a-4bdd-bea6-dc3877e34a48",
+      "duration_api_ms": 9468,
+      "cost_usd_list": 0.065178,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "Job 38, 41.",
+       "reread": "Job 38, 41.",
+       "status": "agreed",
+       "text": "Job 38, 41."
+      },
+      {
+       "draft": "2. a boy, child, recently born, an in-",
+       "reread": "2. a boy, child, recently born, an in-",
+       "status": "agreed",
+       "text": "2. a boy, child, recently born, an in-"
+      },
+      {
+       "draft": "fant, Ex. 1, 17. 2, 3 sq. Ruth 4, 16.",
+       "reread": "fant, Ex. 1, 17. 2, 3 sq. Ruth 4, 16.",
+       "status": "agreed",
+       "text": "fant, Ex. 1, 17. 2, 3 sq. Ruth 4, 16."
+      },
+      {
+       "draft": "2 Sam. 12, 15 sq. 1 K. 3, 25; as borne in",
+       "reread": "2 Sam. 12, 15 sq. 1 K. 3, 25; as borne in",
+       "status": "agreed",
+       "text": "2 Sam. 12, 15 sq. 1 K. 3, 25; as borne in"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 148,
+      "y": 3050,
+      "width": 877,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c0-r03-b02-877x238+148+3050-x2.png",
+     "image_sha256": "35dfe2509bcd05ab0db5667bda71245bf1816afcca9493ba821d002237b88ca6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the arms Gen. 21, 8; also as older and",
+       "mingling in childish sports 2 K. 2, 24.",
+       "Job 21, 11. Zech. 8, 5; but still of tender",
+       "age Gen. 33, 13. Is. 57, 5. Also as more"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "82060606-6779-4064-b92a-ea8d73bb5a1a",
+      "duration_api_ms": 8372,
+      "cost_usd_list": 0.065078,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 267
+     },
+     "lines": [
+      {
+       "draft": "the arms Gen. 21, 8; also as older and",
+       "reread": "the arms Gen. 21, 8; also as older and",
+       "status": "agreed",
+       "text": "the arms Gen. 21, 8; also as older and"
+      },
+      {
+       "draft": "mingling in childish sports 2 K. 2, 24.",
+       "reread": "mingling in childish sports 2 K. 2, 24.",
+       "status": "agreed",
+       "text": "mingling in childish sports 2 K. 2, 24."
+      },
+      {
+       "draft": "Job 21, 11. Zech. 8, 5; but still of tender",
+       "reread": "Job 21, 11. Zech. 8, 5; but still of tender",
+       "status": "agreed",
+       "text": "Job 21, 11. Zech. 8, 5; but still of tender"
+      },
+      {
+       "draft": "age Gen. 33, 13. Is. 57, 5. Also as more",
+       "reread": "age Gen. 33, 13. Is. 57, 5. Also as more",
+       "status": "agreed",
+       "text": "age Gen. 33, 13. Is. 57, 5. Also as more"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1044,
+    "y": 176,
+    "width": 884,
+    "height": 821
+   },
+   "draft_lines": [
+    "advanced, a youth, young man, Gen. 4,",
+    "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph",
+    "when 17 years old. Dan. 1, 4. 10. 1 K.",
+    "12, 8. 10. Ecc. 4, 13.",
+    "יַלְדָּה fem. of יֶלֶד, a girl, maiden,",
+    "Gen. 34, 4. Joel 4, 3. Plur. יְלָדוֹת Zech.",
+    "8, 5.",
+    "יַלְדוּת f. (denom. from יֶלֶד) childhood,",
+    "youth, Ecc. 11, 9. 10.—Concr. youth, for",
+    "young men, Ps. 110, 3.",
+    "יִלּוֹד adj. verbal, born, i. q. יָלוּד, Ex.",
+    "1, 22. Josh. 5, 5. 2 Sam. 5, 14."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 168,
+      "width": 884,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r00-b00-884x248+1044+168-x2.png",
+     "image_sha256": "5d40de9da894bf9187c0e56eb9fafabd60335e2505ab359f86f1c2b682405743",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "advanced, a youth, young man, Gen. 4,",
+       "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph",
+       "when 17 years old. Dan. 1, 4. 10. 1 K."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43e3005f-c8b2-4eea-97a0-0ab90db6be1d",
+      "duration_api_ms": 8599,
+      "cost_usd_list": 0.06719800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "advanced, a youth, young man, Gen. 4,",
+       "reread": "advanced, a youth, young man, Gen. 4,",
+       "status": "agreed",
+       "text": "advanced, a youth, young man, Gen. 4,"
+      },
+      {
+       "draft": "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph",
+       "reread": "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph",
+       "status": "agreed",
+       "text": "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph"
+      },
+      {
+       "draft": "when 17 years old. Dan. 1, 4. 10. 1 K.",
+       "reread": "when 17 years old. Dan. 1, 4. 10. 1 K.",
+       "status": "agreed",
+       "text": "when 17 years old. Dan. 1, 4. 10. 1 K."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 400,
+      "width": 884,
+      "height": 345
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r00-b01-884x345+1044+400-x2.png",
+     "image_sha256": "d22fd3e175d3197580f23b8a2ece56421536b447019d9297bf5f7c62090b269a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "12, 8. 10. Ecc. 4, 13.",
+       "יַלְדָּה fem. of יֶלֶד, a girl, maiden,",
+       "Gen. 34, 4. Joel 4, 3. Plur. יְלָדוֹת Zech.",
+       "8, 5.",
+       "יַלְדוּת f. (denom. from יֶלֶד) childhood,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4646f532-fee1-4b42-9159-04ad3ec1734e",
+      "duration_api_ms": 15559,
+      "cost_usd_list": 0.094108,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 3055,
+      "output_tokens": 636
+     },
+     "lines": [
+      {
+       "draft": "12, 8. 10. Ecc. 4, 13.",
+       "reread": "12, 8. 10. Ecc. 4, 13.",
+       "status": "agreed",
+       "text": "12, 8. 10. Ecc. 4, 13."
+      },
+      {
+       "draft": "יַלְדָּה fem. of יֶלֶד, a girl, maiden,",
+       "reread": "יַלְדָּה fem. of יֶלֶד, a girl, maiden,",
+       "status": "agreed",
+       "text": "יַלְדָּה fem. of יֶלֶד, a girl, maiden,"
+      },
+      {
+       "draft": "Gen. 34, 4. Joel 4, 3. Plur. יְלָדוֹת Zech.",
+       "reread": "Gen. 34, 4. Joel 4, 3. Plur. יְלָדוֹת Zech.",
+       "status": "agreed",
+       "text": "Gen. 34, 4. Joel 4, 3. Plur. יְלָדוֹת Zech."
+      },
+      {
+       "draft": "8, 5.",
+       "reread": "8, 5.",
+       "status": "agreed",
+       "text": "8, 5."
+      },
+      {
+       "draft": "יַלְדוּת f. (denom. from יֶלֶד) childhood,",
+       "reread": "יַלְדוּת f. (denom. from יֶלֶד) childhood,",
+       "status": "agreed",
+       "text": "יַלְדוּת f. (denom. from יֶלֶד) childhood,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 729,
+      "width": 884,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r00-b02-884x260+1044+729-x2.png",
+     "image_sha256": "48b25eb89a51d317a8da0868c105419615e7b5854038cb30191c86484b9b4809",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "youth, Ecc. 11, 9. 10.—Concr. youth, for",
+       "young men, Ps. 110, 3.",
+       "יִלּוֹד adj. verbal, born, i. q. יָלוֹד, Ex.",
+       "1, 22. Josh. 5, 5. 2 Sam. 5, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "071dbcbd-116a-4e14-9372-f51fdd89285f",
+      "duration_api_ms": 16617,
+      "cost_usd_list": 0.094378,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 795
+     },
+     "lines": [
+      {
+       "draft": "youth, Ecc. 11, 9. 10.—Concr. youth, for",
+       "reread": "youth, Ecc. 11, 9. 10.—Concr. youth, for",
+       "status": "agreed",
+       "text": "youth, Ecc. 11, 9. 10.—Concr. youth, for"
+      },
+      {
+       "draft": "young men, Ps. 110, 3.",
+       "reread": "young men, Ps. 110, 3.",
+       "status": "agreed",
+       "text": "young men, Ps. 110, 3."
+      },
+      {
+       "draft": "יִלּוֹד adj. verbal, born, i. q. יָלוּד, Ex.",
+       "reread": "יִלּוֹד adj. verbal, born, i. q. יָלוֹד, Ex.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "יִלּוֹד adj. verbal, born, i. q. יָלוּד, Ex.",
+        "verdict": "a",
+        "note": "In the second Hebrew word the dot on the vav sits at mid-height (shureq, יָלוּד = passive participle), not above the letter as the holem clearly does in the first word יִלּוֹד; Reading B's יָלוֹד is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9b8e61b5-f9fb-4303-9dcf-21973d29ab60",
+        "duration_api_ms": 15822,
+        "cost_usd_list": 0.084893,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3492,
+        "cache_creation_input_tokens": 2619,
+        "output_tokens": 626
+       },
+       "text": "יִלּוֹד adj. verbal, born, i. q. יָלוּד, Ex."
+      },
+      {
+       "draft": "1, 22. Josh. 5, 5. 2 Sam. 5, 14.",
+       "reread": "1, 22. Josh. 5, 5. 2 Sam. 5, 14.",
+       "status": "agreed",
+       "text": "1, 22. Josh. 5, 5. 2 Sam. 5, 14."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1044,
+    "y": 985,
+    "width": 884,
+    "height": 920
+   },
+   "draft_lines": [
+    "יָלוֹן (passing the night, abiding, r.",
+    "לוּן) Jalon, pr. n. m. 1 Chr. 4, 17.",
+    "יָלִיד m. (r. יָלַד) 1. Adj. verbal, born,",
+    "chiefly in the phrase יְלִיד בַּיִת one born",
+    "in the house, a house-born slave, verna,",
+    "Gen. 14, 14. 17, 12. 13. 23. Lev. 22, 11.",
+    "Jer. 2, 14. Arab. وَلِيدٌ, تَلِيدٌ, id.",
+    "2. Subst. a son, child, יְלִידֵי הָעֲנָק the",
+    "sons of Anak Num. 13, 22. 28; יְלִידֵי",
+    "הָרָפָה the sons of Rapha, i. q. רְפָאִים",
+    "Rephaim, 2 Sam. 21, 16. 18.",
+    "* יָלַךְ to go, see הָלַךְ.",
+    "* יָלַל not used in Kal, onomatopoetic,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 994,
+      "width": 884,
+      "height": 278
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r01-b00-884x278+1044+994-x2.png",
+     "image_sha256": "d523e11b5ad19656013a5343f2f986afc6598a7c345f53ac34573b9550a83df4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "יָלוֹן (passing the night, abiding, r.",
+       "לוּן) Jalon, pr. n. m. 1 Chr. 4, 17.",
+       "יָלִיד m. (r. יָלַד) 1. Adj. verbal, born,",
+       "chiefly in the phrase יְלִיד בַּיִת one born"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f61b7ad8-fd26-434a-b810-d775d2fa8769",
+      "duration_api_ms": 13509,
+      "cost_usd_list": 0.08795800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 641
+     },
+     "lines": [
+      {
+       "draft": "יָלוֹן (passing the night, abiding, r.",
+       "reread": "יָלוֹן (passing the night, abiding, r.",
+       "status": "agreed",
+       "text": "יָלוֹן (passing the night, abiding, r."
+      },
+      {
+       "draft": "לוּן) Jalon, pr. n. m. 1 Chr. 4, 17.",
+       "reread": "לוּן) Jalon, pr. n. m. 1 Chr. 4, 17.",
+       "status": "agreed",
+       "text": "לוּן) Jalon, pr. n. m. 1 Chr. 4, 17."
+      },
+      {
+       "draft": "יָלִיד m. (r. יָלַד) 1. Adj. verbal, born,",
+       "reread": "יָלִיד m. (r. יָלַד) 1. Adj. verbal, born,",
+       "status": "agreed",
+       "text": "יָלִיד m. (r. יָלַד) 1. Adj. verbal, born,"
+      },
+      {
+       "draft": "chiefly in the phrase יְלִיד בַּיִת one born",
+       "reread": "chiefly in the phrase יְלִיד בַּיִת one born",
+       "status": "agreed",
+       "text": "chiefly in the phrase יְלִיד בַּיִת one born"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 1256,
+      "width": 884,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r01-b01-884x226+1044+1256-x2.png",
+     "image_sha256": "ab287728d54cd0ecee3f57ac0eb9d12a63aeb81c87c67b73fa7bbf2f3dca999c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in the house, a house-born slave, verna,",
+       "Gen. 14, 14. 17, 12. 13. 23. Lev. 22, 11.",
+       "Jer. 2, 14. Arab. وَلِيدٌ, تَلِيدٌ, id."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eea1b8d6-71a4-43cf-bead-12f4b5387f14",
+      "duration_api_ms": 14984,
+      "cost_usd_list": 0.07150825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 388
+     },
+     "lines": [
+      {
+       "draft": "in the house, a house-born slave, verna,",
+       "reread": "in the house, a house-born slave, verna,",
+       "status": "agreed",
+       "text": "in the house, a house-born slave, verna,"
+      },
+      {
+       "draft": "Gen. 14, 14. 17, 12. 13. 23. Lev. 22, 11.",
+       "reread": "Gen. 14, 14. 17, 12. 13. 23. Lev. 22, 11.",
+       "status": "agreed",
+       "text": "Gen. 14, 14. 17, 12. 13. 23. Lev. 22, 11."
+      },
+      {
+       "draft": "Jer. 2, 14. Arab. وَلِيدٌ, تَلِيدٌ, id.",
+       "reread": "Jer. 2, 14. Arab. وَلِيدٌ, تَلِيدٌ, id.",
+       "status": "agreed",
+       "text": "Jer. 2, 14. Arab. وَلِيدٌ, تَلِيدٌ, id."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 1466,
+      "width": 884,
+      "height": 201
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r01-b02-884x201+1044+1466-x2.png",
+     "image_sha256": "6ef73e06dad7069cbc8aa67fa5fcce5c8a11150708d1f334b522a2082c8d7086",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Subst. a son, child, יְלִידֵי הָעֲנָק the",
+       "sons of Anak Num. 13, 22. 28 ; יְלִידֵי",
+       "הָרָפָה the sons of Rapha, i. q. רְפָאִים"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6736c6ba-4c5e-47da-b2f6-97c5b28ca2a4",
+      "duration_api_ms": 12433,
+      "cost_usd_list": 0.07154825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2417,
+      "output_tokens": 440
+     },
+     "lines": [
+      {
+       "draft": "2. Subst. a son, child, יְלִידֵי הָעֲנָק the",
+       "reread": "2. Subst. a son, child, יְלִידֵי הָעֲנָק the",
+       "status": "agreed",
+       "text": "2. Subst. a son, child, יְלִידֵי הָעֲנָק the"
+      },
+      {
+       "draft": "sons of Anak Num. 13, 22. 28; יְלִידֵי",
+       "reread": "sons of Anak Num. 13, 22. 28 ; יְלִידֵי",
+       "status": "agreed",
+       "text": "sons of Anak Num. 13, 22. 28; יְלִידֵי"
+      },
+      {
+       "draft": "הָרָפָה the sons of Rapha, i. q. רְפָאִים",
+       "reread": "הָרָפָה the sons of Rapha, i. q. רְפָאִים",
+       "status": "agreed",
+       "text": "הָרָפָה the sons of Rapha, i. q. רְפָאִים"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1044,
+      "y": 1651,
+      "width": 884,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r01-b03-884x248+1044+1651-x2.png",
+     "image_sha256": "046a6b291ce9ad975edf9000d8d312d4a3c57fcc22fe929ac558c912e6e080b2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Rephaim, 2 Sam. 21, 16. 18.",
+       "* יָלַךְ to go, see הָלַךְ.",
+       "* יָלַל not used in Kal, onomatopoetic,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "82331c86-e505-45f3-8d9e-3c01b8bc0c5e",
+      "duration_api_ms": 10915,
+      "cost_usd_list": 0.07398825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 412
+     },
+     "lines": [
+      {
+       "draft": "Rephaim, 2 Sam. 21, 16. 18.",
+       "reread": "Rephaim, 2 Sam. 21, 16. 18.",
+       "status": "agreed",
+       "text": "Rephaim, 2 Sam. 21, 16. 18."
+      },
+      {
+       "draft": "* יָלַךְ to go, see הָלַךְ.",
+       "reread": "* יָלַךְ to go, see הָלַךְ.",
+       "status": "agreed",
+       "text": "* יָלַךְ to go, see הָלַךְ."
+      },
+      {
+       "draft": "* יָלַל not used in Kal, onomatopoetic,",
+       "reread": "* יָלַל not used in Kal, onomatopoetic,",
+       "status": "agreed",
+       "text": "* יָלַל not used in Kal, onomatopoetic,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1044,
+    "y": 1893,
+    "width": 884,
+    "height": 836
+   },
+   "draft_lines": [
+    "to yell, to wail, Arab. وَلْوَلَ, Syr. and",
+    "Zab. ࡀࡋࡋ, Chald. יְלֵל Aph. אַיְלֵל.",
+    "Kindred roots are אָלַל II, אָלָה, Gr.",
+    "ὀλολύζειν, Lat. ejulare, ululare, Engl.",
+    "to yell ; also Armen. lal, Germ. lullen,",
+    "Engl. to lull.",
+    "Hiph. הֵילִיל ; fut. יֵילִיל Mic. 1, 8 ;",
+    "oftener יְיֵלִיל Is. 15, 2. 3, from the form",
+    "יְהֵילִילוּ Is. 52, 5 ; ה between two vowels",
+    "being softened to י.",
+    "1. to wail, to lament, Jer. 47, 2. Ez.",
+    "21, 17. al. With עַל of that over or for",
+    "which, Jer. 48, 31. 51, 8. Mic. 1, 8 ; לְ id.",
+    "Is. 16, 7.—Ascribed also to inanimate"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 1899,
+      "width": 884,
+      "height": 278
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r02-b00-884x278+1044+1899-x2.png",
+     "image_sha256": "2a3ca1224a841252f4394e19d6b0b61c3fef0487b78e4b3a4ff17f3dd1e2ea56",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to yell, to wail, Arab. وَلْوَلَ, Syr. and",
+       "Zab. ܐܝܠܠ, Chald. יְלֵל Aph. אַיְלֵל.",
+       "Kindred roots are אָלַל II, אָלָה, Gr.",
+       "ὀλολύζειν, Lat. ejulare, ululare, Engl."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "da1e521e-803a-4e89-986a-040d83609185",
+      "duration_api_ms": 16378,
+      "cost_usd_list": 0.09114825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2737,
+      "output_tokens": 704
+     },
+     "lines": [
+      {
+       "draft": "to yell, to wail, Arab. وَلْوَلَ, Syr. and",
+       "reread": "to yell, to wail, Arab. وَلْوَلَ, Syr. and",
+       "status": "agreed",
+       "text": "to yell, to wail, Arab. وَلْوَلَ, Syr. and"
+      },
+      {
+       "draft": "Zab. ࡀࡋࡋ, Chald. יְלֵל Aph. אַיְלֵל.",
+       "reread": "Zab. ܐܝܠܠ, Chald. יְלֵל Aph. אַיְלֵל.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "Zab. ܐܝܠܠ, Chald. יְלֵל Aph. אַיְלֵל.",
+        "verdict": "b",
+        "note": "The word after \"Zab.\" is set in Syriac Estrangela type (alaph, yod, lamadh, lamadh = ܐܝܠܠ), not Mandaic script as Reading A gives; Reading B has the right script and letters. The Chaldee forms יְלֵל and אַיְלֵל match the print exactly. Caveat: there are two small marks above the Syriac word (one over the alaph, one over the lamadhs) that may be Syriac vowel points, but they are too indistinct in this scan to identify with confidence, so they are not encoded.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "dec8b0ee-39c0-4f81-913c-4db397d11892",
+        "duration_api_ms": 22861,
+        "cost_usd_list": 0.11655625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3505,
+        "cache_creation_input_tokens": 2697,
+        "output_tokens": 1228
+       },
+       "text": "Zab. ܐܝܠܠ, Chald. יְלֵל Aph. אַיְלֵל."
+      },
+      {
+       "draft": "Kindred roots are אָלַל II, אָלָה, Gr.",
+       "reread": "Kindred roots are אָלַל II, אָלָה, Gr.",
+       "status": "agreed",
+       "text": "Kindred roots are אָלַל II, אָלָה, Gr."
+      },
+      {
+       "draft": "ὀλολύζειν, Lat. ejulare, ululare, Engl.",
+       "reread": "ὀλολύζειν, Lat. ejulare, ululare, Engl.",
+       "status": "agreed",
+       "text": "ὀλολύζειν, Lat. ejulare, ululare, Engl."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 2161,
+      "width": 884,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r02-b01-884x235+1044+2161-x2.png",
+     "image_sha256": "80ed7751a683e22855e67d91bb2cefd6a870c21f0fc17b7a6f6d5787d4424c97",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to yell ; also Armen. lal, Germ. lullen,",
+       "Engl. to lull.",
+       "Hiph. הֵילִיל ; fut. יֵילִיל Mic. 1, 8 ;",
+       "oftener יְיֵלִיל Is. 15, 2. 3, from the form"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92abf98f-4a4c-413b-86a1-ce78f9bc81fd",
+      "duration_api_ms": 12774,
+      "cost_usd_list": 0.07455825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 449
+     },
+     "lines": [
+      {
+       "draft": "to yell ; also Armen. lal, Germ. lullen,",
+       "reread": "to yell ; also Armen. lal, Germ. lullen,",
+       "status": "agreed",
+       "text": "to yell; also Armen. lal, Germ. lullen,"
+      },
+      {
+       "draft": "Engl. to lull.",
+       "reread": "Engl. to lull.",
+       "status": "agreed",
+       "text": "Engl. to lull."
+      },
+      {
+       "draft": "Hiph. הֵילִיל ; fut. יֵילִיל Mic. 1, 8 ;",
+       "reread": "Hiph. הֵילִיל ; fut. יֵילִיל Mic. 1, 8 ;",
+       "status": "agreed",
+       "text": "Hiph. הֵילִיל; fut. יֵילִיל Mic. 1, 8;"
+      },
+      {
+       "draft": "oftener יְיֵלִיל Is. 15, 2. 3, from the form",
+       "reread": "oftener יְיֵלִיל Is. 15, 2. 3, from the form",
+       "status": "agreed",
+       "text": "oftener יְיֵלִיל Is. 15, 2. 3, from the form"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 2380,
+      "width": 884,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r02-b02-884x238+1044+2380-x2.png",
+     "image_sha256": "0a3936cd1c3a2552df8555041af97d79095fce9e7fbd16f0cdc746e136014ae6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "יְהֵילִילוּ Is. 52, 5; ה between two vowels",
+       "being softened to י.",
+       "1. to wail, to lament, Jer. 47, 2. Ez.",
+       "21, 17. al. With עַל of that over or for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9a03fd57-14f9-4d62-be7f-16088ef52b33",
+      "duration_api_ms": 12404,
+      "cost_usd_list": 0.07170825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 392
+     },
+     "lines": [
+      {
+       "draft": "יְהֵילִילוּ Is. 52, 5 ; ה between two vowels",
+       "reread": "יְהֵילִילוּ Is. 52, 5; ה between two vowels",
+       "status": "agreed",
+       "text": "יְהֵילִילוּ Is. 52, 5; ה between two vowels"
+      },
+      {
+       "draft": "being softened to י.",
+       "reread": "being softened to י.",
+       "status": "agreed",
+       "text": "being softened to י."
+      },
+      {
+       "draft": "1. to wail, to lament, Jer. 47, 2. Ez.",
+       "reread": "1. to wail, to lament, Jer. 47, 2. Ez.",
+       "status": "agreed",
+       "text": "1. to wail, to lament, Jer. 47, 2. Ez."
+      },
+      {
+       "draft": "21, 17. al. With עַל of that over or for",
+       "reread": "21, 17. al. With עַל of that over or for",
+       "status": "agreed",
+       "text": "21, 17. al. With עַל of that over or for"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1044,
+      "y": 2602,
+      "width": 884,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r02-b03-884x135+1044+2602-x2.png",
+     "image_sha256": "97d3ff9a64eb3f43bcf95f387801b0c8fb95bddba328830a877fb07cb4b43ef3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which, Jer. 48, 31. 51, 8. Mic. 1, 8; לְ id.",
+       "Is. 16, 7.—Ascribed also to inanimate"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "10bb4516-72ce-40a6-9caa-8267e1574b22",
+      "duration_api_ms": 13197,
+      "cost_usd_list": 0.058148250000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2097,
+      "output_tokens": 300
+     },
+     "lines": [
+      {
+       "draft": "which, Jer. 48, 31. 51, 8. Mic. 1, 8 ; לְ id.",
+       "reread": "which, Jer. 48, 31. 51, 8. Mic. 1, 8; לְ id.",
+       "status": "agreed",
+       "text": "which, Jer. 48, 31. 51, 8. Mic. 1, 8; לְ id."
+      },
+      {
+       "draft": "Is. 16, 7.—Ascribed also to inanimate",
+       "reread": "Is. 16, 7.—Ascribed also to inanimate",
+       "status": "agreed",
+       "text": "Is. 16, 7.—Ascribed also to inanimate"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1044,
+    "y": 2717,
+    "width": 884,
+    "height": 716
+   },
+   "draft_lines": [
+    "things, as trees Zech. 11, 2; places, as",
+    "filled with wailings, הֵילִילִי שַׁעַר Is. 14, 31.",
+    "23, 1. Often in prophetic denunciations",
+    "Is. 13, 6. 23, 6. Jer. 25, 34. Joel 1, 11. 13.",
+    "Zeph. 1, 11. Amos 8, 3 הֵילִילוּ שִׁירוֹת הֵיכָל",
+    "the songs of the palace wail, are turned",
+    "to wailings.",
+    "2. Once of the exulting cries of",
+    "haughty victors, to yell, to shout, Lat.",
+    "ululare, Is. 52, 5. So أَلَّ of a warlike"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 2709,
+      "width": 884,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r03-b00-884x238+1044+2709-x2.png",
+     "image_sha256": "dd0b0f7faf3d593be370bf974037b8f09b2ae7ed834e5520f619f48a8c12b871",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "things, as trees Zech. 11, 2; places, as",
+       "filled with wailings, הֵילִילִי שַׁעַר Is. 14, 31.",
+       "23, 1. Often in prophetic denunciations",
+       "Is. 13, 6. 23, 6. Jer. 25, 34. Joel 1, 11. 13."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f10e37f7-9046-4b12-8dd7-a4b8a904ac38",
+      "duration_api_ms": 21579,
+      "cost_usd_list": 0.10365825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 1031
+     },
+     "lines": [
+      {
+       "draft": "things, as trees Zech. 11, 2; places, as",
+       "reread": "things, as trees Zech. 11, 2; places, as",
+       "status": "agreed",
+       "text": "things, as trees Zech. 11, 2; places, as"
+      },
+      {
+       "draft": "filled with wailings, הֵילִילִי שַׁעַר Is. 14, 31.",
+       "reread": "filled with wailings, הֵילִילִי שַׁעַר Is. 14, 31.",
+       "status": "agreed",
+       "text": "filled with wailings, הֵילִילִי שַׁעַר Is. 14, 31."
+      },
+      {
+       "draft": "23, 1. Often in prophetic denunciations",
+       "reread": "23, 1. Often in prophetic denunciations",
+       "status": "agreed",
+       "text": "23, 1. Often in prophetic denunciations"
+      },
+      {
+       "draft": "Is. 13, 6. 23, 6. Jer. 25, 34. Joel 1, 11. 13.",
+       "reread": "Is. 13, 6. 23, 6. Jer. 25, 34. Joel 1, 11. 13.",
+       "status": "agreed",
+       "text": "Is. 13, 6. 23, 6. Jer. 25, 34. Joel 1, 11. 13."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 2931,
+      "width": 884,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r03-b01-884x236+1044+2931-x2.png",
+     "image_sha256": "4c2fe90e5b511e05cbdbf06bc49974d49e1308bdd01db8532f388a15afe9bd5e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Zeph. 1, 11. Amos 8, 3 הֵילִילוּ שִׁירוֹת הֵיכָל",
+       "the songs of the palace wail, are turned",
+       "to wailings.",
+       "2. Once of the exulting cries of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3a651966-6bed-4db6-a6fc-6d3e38fe9136",
+      "duration_api_ms": 13129,
+      "cost_usd_list": 0.07375825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 433
+     },
+     "lines": [
+      {
+       "draft": "Zeph. 1, 11. Amos 8, 3 הֵילִילוּ שִׁירוֹת הֵיכָל",
+       "reread": "Zeph. 1, 11. Amos 8, 3 הֵילִילוּ שִׁירוֹת הֵיכָל",
+       "status": "agreed",
+       "text": "Zeph. 1, 11. Amos 8, 3 הֵילִילוּ שִׁירוֹת הֵיכָל"
+      },
+      {
+       "draft": "the songs of the palace wail, are turned",
+       "reread": "the songs of the palace wail, are turned",
+       "status": "agreed",
+       "text": "the songs of the palace wail, are turned"
+      },
+      {
+       "draft": "to wailings.",
+       "reread": "to wailings.",
+       "status": "agreed",
+       "text": "to wailings."
+      },
+      {
+       "draft": "2. Once of the exulting cries of",
+       "reread": "2. Once of the exulting cries of",
+       "status": "agreed",
+       "text": "2. Once of the exulting cries of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 3151,
+      "width": 884,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0416/pass2/c1-r03-b02-884x284+1044+3151-x2.png",
+     "image_sha256": "c5c45634b262ccd88f94aa78afd93b608c73283ea0a6281c1332588b848a589c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "haughty victors, to yell, to shout, Lat.",
+       "ululare, Is. 52, 5. So أهلّ of a warlike"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7c937fd8-8f87-4be2-af43-a931c0e3f36e",
+      "duration_api_ms": 29298,
+      "cost_usd_list": 0.12662825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 1388
+     },
+     "lines": [
+      {
+       "draft": "haughty victors, to yell, to shout, Lat.",
+       "reread": "haughty victors, to yell, to shout, Lat.",
+       "status": "agreed",
+       "text": "haughty victors, to yell, to shout, Lat."
+      },
+      {
+       "draft": "ululare, Is. 52, 5. So أَلَّ of a warlike",
+       "reread": "ululare, Is. 52, 5. So أهلّ of a warlike",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "ululare, Is. 52, 5. So أهلّ of a warlike",
+        "verdict": "b",
+        "note": "The Arabic word has three letter-bodies (hamza-alif, medial hā', final lām with shadda); Reading A omits the hā' (أَلَّ), which the print does not support. No fatḥas are printed beyond the hamza and shadda.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d4ee9c9b-0ee2-4b88-a119-f64c8b9bf33a",
+        "duration_api_ms": 35648,
+        "cost_usd_list": 0.14981925000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3477,
+        "cache_creation_input_tokens": 2733,
+        "output_tokens": 1879
+       },
+       "text": "ululare, Is. 52, 5. So أهلّ of a warlike"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "ילד 400 ילל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "5, 7; to be born, i. q. Niph. Judg. 13, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ps. 87, 4. 5. 6. With לְ of father Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "4, 26. 24, 15. Judg. 18, 29; with בֵּן impl.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Gen. 10, 21. So with לְ of a near rela-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;",
+   "status": "adjudicated",
+   "draft": "tive, Ruth 4, 17 יֻלַּד־בֵּן לְנָעֳמִי. Is. 9, 5;",
+   "reread": "tive, Ruth 4, 17 יֻלַּד בֵּן לְנָעֳמִי. Is. 9, 5;",
+   "verdict": "a",
+   "note": "A short horizontal stroke at top-line height joins the dalet of יֻלַּד to the following bet — a printed maqqef (יֻלַּד־בֵּן), not a word space; the rest of the line (vowels, dagesh in lamed and bet, לְנָעֳמִי with hataf-qamets) is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "לְ of thing Job 5, 7.—Trop. to be brought",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "forth, created, e. g. the mountains, Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "90, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hiph. הוֹלִיד 1. to cause to bring",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "forth, as God a woman Is. 66, 9; a man",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "his wife, to make fruitful, to have chil-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "dren by her, 1 Chr. 2, 18. 8, 8.—Trop.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of rain as fertilizing the earth Is. 55, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. to beget, as a father, i. q. Kal no. 2;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gen. 5, 4. 7. 11, 11 sq. 1 Chr. 2, 10 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ecc. 6, 3. al.—Trop. to create, Job 38, 28",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מִי־הוֹלִיד אֶגְלֵי־טָל who hath begotten",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "(created) the store-houses of the dew?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. i. q. Kal no. 1, to bear, to bring",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "forth; but only trop. to bring forth",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "wickedness, Is. 59, 4; parall. הָרָה עָמָל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Hoph. pr. ‘to be begotten,’ hence to",
+   "status": "adjudicated",
+   "draft": "Hoph. pr. ‘to be begotten,’ hence to",
+   "reread": "Hoph. pr. ‘ to be begotten,’ hence to",
+   "verdict": "a",
+   "note": "The opening quotation mark sits directly against \"to\" with only normal type-side bearing, not a printed space; Reading B's \"‘ to\" inserts a space that is not in the print. Everything else is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "be born. Inf. הֻלֶּדֶת Gen. 40, 20. Ez. 16,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "5, and הוּלֶּדֶת Ez. 16, 4, a being born,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "birth, nativity. Gen. l. c. יוֹם הֻלֶּדֶת אֶת־",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "פַּרְעֹה the birth-day of Pharaoh, pr. the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "day of Pharaoh’s being born. On the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "accus. with passives, see Heb. Gr. § 140.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hithpa. to declare one's birth or de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "scent, pedigree; to give one's name to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "be enrolled in genealogical tables, Num.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1, 18.—In the later books this idea is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "expressed by הִתְיַחֵשׂ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Deriv. יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת; pr. names",
+   "status": "adjudicated",
+   "draft": "Deriv. תּוֹלֵדֶת, מוֹלֶדֶת, יָלִיד; pr. names",
+   "reread": "Deriv. יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת; pr. names",
+   "verdict": "b",
+   "note": "The printed left-to-right order after \"Deriv.\" is יָלִיד, מוֹלֶדֶת, תּוֹלֶדֶת (Reading A reversed it), and the lamed of תּוֹלֶדֶת carries segol (three dots), not tsere as in A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלָד; and the",
+   "status": "adjudicated",
+   "draft": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלַד; and the",
+   "reread": "מוֹלִיד, מוֹלָדָה, תּוֹלָד, אֶלְתּוֹלָד; and the",
+   "verdict": "b",
+   "note": "The vowel under the final lamed of אֶלְתּוֹלָד is a qamets (T-shaped, matching the preceding תּוֹלָד), not a pathach as in Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "four here following.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "יֶלֶד m. in pause יָלֶד; plur. יְלָדִים,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "constr. יַלְדֵי, once יִלְדֵי Is. 57, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. one born, a son, poet. i. q. בֵּן; spoken",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "κατ᾿ ἐξοχήν of the king's son Is. 9, 5.",
+   "status": "adjudicated",
+   "draft": "κατ' ἐξοχήν of the king's son Is. 9, 5.",
+   "reread": "κατ᾿ ἐξοχήν of the king's son Is. 9, 5.",
+   "verdict": "b",
+   "note": "The elision mark after κατ is printed as the Greek typographic psili/koronis-shaped apostrophe, not a straight ASCII apostrophe; B's U+1FBF matches that (U+2019 would be an equally acceptable rendering). Everything else is identical in both readings and correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hence יַלְדֵי נָכְרִים sons of strangers,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "poet. for foreigners, see בֵּן no. 1; also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sons of transgression, for transgressors,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Is. 57, 4.—Plur. comm. children, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "בָּנִים, Ex. 21, 4. Ezra 10, 1. Hos. 1, 2;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "also for the young of animals, Is. 11, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Job 38, 41.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. a boy, child, recently born, an in-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "fant, Ex. 1, 17. 2, 3 sq. Ruth 4, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2 Sam. 12, 15 sq. 1 K. 3, 25; as borne in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the arms Gen. 21, 8; also as older and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mingling in childish sports 2 K. 2, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Job 21, 11. Zech. 8, 5; but still of tender",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "age Gen. 33, 13. Is. 57, 5. Also as more",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "advanced, a youth, young man, Gen. 4,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "23 parall. אִישׁ. 37, 30. 42, 22 of Joseph",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "when 17 years old. Dan. 1, 4. 10. 1 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "12, 8. 10. Ecc. 4, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "יַלְדָּה fem. of יֶלֶד, a girl, maiden,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Gen. 34, 4. Joel 4, 3. Plur. יְלָדוֹת Zech.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "8, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "יַלְדוּת f. (denom. from יֶלֶד) childhood,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "youth, Ecc. 11, 9. 10.—Concr. youth, for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "young men, Ps. 110, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "יִלּוֹד adj. verbal, born, i. q. יָלוּד, Ex.",
+   "status": "adjudicated",
+   "draft": "יִלּוֹד adj. verbal, born, i. q. יָלוּד, Ex.",
+   "reread": "יִלּוֹד adj. verbal, born, i. q. יָלוֹד, Ex.",
+   "verdict": "a",
+   "note": "In the second Hebrew word the dot on the vav sits at mid-height (shureq, יָלוּד = passive participle), not above the letter as the holem clearly does in the first word יִלּוֹד; Reading B's יָלוֹד is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1, 22. Josh. 5, 5. 2 Sam. 5, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "יָלוֹן (passing the night, abiding, r.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "לוּן) Jalon, pr. n. m. 1 Chr. 4, 17.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "יָלִיד m. (r. יָלַד) 1. Adj. verbal, born,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "chiefly in the phrase יְלִיד בַּיִת one born",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "in the house, a house-born slave, verna,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Gen. 14, 14. 17, 12. 13. 23. Lev. 22, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Jer. 2, 14. Arab. وَلِيدٌ, تَلِيدٌ, id.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. Subst. a son, child, יְלִידֵי הָעֲנָק the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sons of Anak Num. 13, 22. 28; יְלִידֵי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "הָרָפָה the sons of Rapha, i. q. רְפָאִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Rephaim, 2 Sam. 21, 16. 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "* יָלַךְ to go, see הָלַךְ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "* יָלַל not used in Kal, onomatopoetic,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to yell, to wail, Arab. وَلْوَلَ, Syr. and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Zab. ܐܝܠܠ, Chald. יְלֵל Aph. אַיְלֵל.",
+   "status": "adjudicated",
+   "draft": "Zab. ࡀࡋࡋ, Chald. יְלֵל Aph. אַיְלֵל.",
+   "reread": "Zab. ܐܝܠܠ, Chald. יְלֵל Aph. אַיְלֵל.",
+   "verdict": "b",
+   "note": "The word after \"Zab.\" is set in Syriac Estrangela type (alaph, yod, lamadh, lamadh = ܐܝܠܠ), not Mandaic script as Reading A gives; Reading B has the right script and letters. The Chaldee forms יְלֵל and אַיְלֵל match the print exactly. Caveat: there are two small marks above the Syriac word (one over the alaph, one over the lamadhs) that may be Syriac vowel points, but they are too indistinct in this scan to identify with confidence, so they are not encoded.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Kindred roots are אָלַל II, אָלָה, Gr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ὀλολύζειν, Lat. ejulare, ululare, Engl.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to yell; also Armen. lal, Germ. lullen,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Engl. to lull.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Hiph. הֵילִיל; fut. יֵילִיל Mic. 1, 8;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "oftener יְיֵלִיל Is. 15, 2. 3, from the form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "יְהֵילִילוּ Is. 52, 5; ה between two vowels",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "being softened to י.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1. to wail, to lament, Jer. 47, 2. Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "21, 17. al. With עַל of that over or for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "which, Jer. 48, 31. 51, 8. Mic. 1, 8; לְ id.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Is. 16, 7.—Ascribed also to inanimate",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "things, as trees Zech. 11, 2; places, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "filled with wailings, הֵילִילִי שַׁעַר Is. 14, 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "23, 1. Often in prophetic denunciations",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Is. 13, 6. 23, 6. Jer. 25, 34. Joel 1, 11. 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Zeph. 1, 11. Amos 8, 3 הֵילִילוּ שִׁירוֹת הֵיכָל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the songs of the palace wail, are turned",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "to wailings.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. Once of the exulting cries of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "haughty victors, to yell, to shout, Lat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ululare, Is. 52, 5. So أهلّ of a warlike",
+   "status": "adjudicated",
+   "draft": "ululare, Is. 52, 5. So أَلَّ of a warlike",
+   "reread": "ululare, Is. 52, 5. So أهلّ of a warlike",
+   "verdict": "b",
+   "note": "The Arabic word has three letter-bodies (hamza-alif, medial hā', final lām with shadda); Reading A omits the hā' (أَلَّ), which the print does not support. No fatḥas are printed beyond the hamza and shadda.",
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 96,
+  "adjudicated": 8,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "errors": 0,
+ "cost_usd_list_total": 3.0746
+}

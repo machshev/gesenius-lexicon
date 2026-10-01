@@ -1,0 +1,2801 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 491,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0491.png",
+ "raster_sha256": "8cc1deeebb5f7fdacfca7dccfe66d03d2044178bb281585701ec40be3749b481",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0491.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T09:03:51+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 83,
+    "y": 113,
+    "width": 1764,
+    "height": 84
+   },
+   "draft_lines": [
+    "כן 475 כנו"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 83,
+      "y": 111,
+      "width": 1764,
+      "height": 88
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/header-b00-1764x88+83+111-x2.png",
+     "image_sha256": "4c2901ad65eeb30bfa7f0e00b96c916b959320cef80566a2db3b1eac3bda9975",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כן 475 כנר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "163ad78c-2efb-4a2b-a235-32567bad2291",
+      "duration_api_ms": 9195,
+      "cost_usd_list": 0.045607,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1780,
+      "output_tokens": 182
+     },
+     "lines": [
+      {
+       "draft": "כן 475 כנו",
+       "reread": "כן 475 כנר",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "כן 475 כנו",
+        "verdict": "a",
+        "note": "The final (leftmost) letter of the right-hand word is a narrow vertical stroke with no broad head extending left — a vav, not a resh; so כנו, not כנר.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9fc6cf5a-4281-4a84-8427-a5bebeed7ee8",
+        "duration_api_ms": 18562,
+        "cost_usd_list": 0.08477975,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3439,
+        "cache_creation_input_tokens": 1679,
+        "output_tokens": 1006
+       },
+       "text": "כן 475 כנו"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 83,
+    "y": 159,
+    "width": 871,
+    "height": 786
+   },
+   "draft_lines": [
+    "of relative conjunctions Lehrg. p. 636.",
+    "Ps. 45, 3 thou art fairer than the children",
+    "of men ... עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
+    "that God hath blessed thee for ever. Ps.",
+    "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36.",
+    "e) עַד־כֵּן lit. until so, i. e. until now, as",
+    "yet, hitherto, Neh. 2, 16. Here כֵּן refers",
+    "to time as in Syriac ; see note above.",
+    "f) כְּמוֹ־כֵן like this, in like manner,",
+    "Is. 51, 6 ; comp. Engl. such-like. Sept.",
+    "ὥσπερ ταῦτα, Vulg. sicut hæc ; and so",
+    "all the ancient versions. But see in כֵּן",
+    "III.—R."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 83,
+      "y": 151,
+      "width": 871,
+      "height": 293
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r00-b00-871x293+83+151-x2.png",
+     "image_sha256": "dc938eb6ea1afd469e7c68b21a4f0013b6e6e23ddc2b5e0637061953baf1acff",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of relative conjunctions Lehrg. p. 636.",
+       "Ps. 45, 3 thou art fairer than the children",
+       "of men . . . עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
+       "that God hath blessed thee for ever. Ps."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "603db7f8-0ecb-499b-bfc8-b720f06db738",
+      "duration_api_ms": 17503,
+      "cost_usd_list": 0.07907775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2776,
+      "output_tokens": 447
+     },
+     "lines": [
+      {
+       "draft": "of relative conjunctions Lehrg. p. 636.",
+       "reread": "of relative conjunctions Lehrg. p. 636.",
+       "status": "agreed",
+       "text": "of relative conjunctions Lehrg. p. 636."
+      },
+      {
+       "draft": "Ps. 45, 3 thou art fairer than the children",
+       "reread": "Ps. 45, 3 thou art fairer than the children",
+       "status": "agreed",
+       "text": "Ps. 45, 3 thou art fairer than the children"
+      },
+      {
+       "draft": "of men ... עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
+       "reread": "of men . . . עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
+       "status": "agreed",
+       "text": "of men... עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because"
+      },
+      {
+       "draft": "that God hath blessed thee for ever. Ps.",
+       "reread": "that God hath blessed thee for ever. Ps.",
+       "status": "agreed",
+       "text": "that God hath blessed thee for ever. Ps."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 83,
+      "y": 428,
+      "width": 871,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r00-b01-871x238+83+428-x2.png",
+     "image_sha256": "f01aed7afbf11fb3832008db4d142559ac47d5cd2d65b2cf8a68d175a169c915",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36.",
+       "e) עַד־כֵּן lit. until so, i. e. until now, as",
+       "yet, hitherto, Neh. 2, 16.  Here כֵּן refers",
+       "to time as in Syriac ; see note above."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6b83d41-0340-4566-ae1b-6576a821b608",
+      "duration_api_ms": 11083,
+      "cost_usd_list": 0.06563775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2524,
+      "output_tokens": 279
+     },
+     "lines": [
+      {
+       "draft": "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36.",
+       "reread": "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36.",
+       "status": "agreed",
+       "text": "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36."
+      },
+      {
+       "draft": "e) עַד־כֵּן lit. until so, i. e. until now, as",
+       "reread": "e) עַד־כֵּן lit. until so, i. e. until now, as",
+       "status": "agreed",
+       "text": "e) עַד־כֵּן lit. until so, i. e. until now, as"
+      },
+      {
+       "draft": "yet, hitherto, Neh. 2, 16. Here כֵּן refers",
+       "reread": "yet, hitherto, Neh. 2, 16.  Here כֵּן refers",
+       "status": "agreed",
+       "text": "yet, hitherto, Neh. 2, 16. Here כֵּן refers"
+      },
+      {
+       "draft": "to time as in Syriac ; see note above.",
+       "reread": "to time as in Syriac ; see note above.",
+       "status": "agreed",
+       "text": "to time as in Syriac; see note above."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 83,
+      "y": 650,
+      "width": 871,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r00-b02-871x235+83+650-x2.png",
+     "image_sha256": "6199fcc143e6836c40b8c4e2f2392fa27485d87bea47ab56cb0663d2a7017ddd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "f) כְּמוֹ־כֵן like this, in like manner,",
+       "Is. 51, 6; comp. Engl. such-like. Sept.",
+       "ὥσπερ ταῦτα, Vulg. sicut hæc; and so",
+       "all the ancient versions. But see in כֵּן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "de1722b6-9f29-44e3-b5a4-43938554a053",
+      "duration_api_ms": 16231,
+      "cost_usd_list": 0.07933775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2524,
+      "output_tokens": 553
+     },
+     "lines": [
+      {
+       "draft": "f) כְּמוֹ־כֵן like this, in like manner,",
+       "reread": "f) כְּמוֹ־כֵן like this, in like manner,",
+       "status": "agreed",
+       "text": "f) כְּמוֹ־כֵן like this, in like manner,"
+      },
+      {
+       "draft": "Is. 51, 6 ; comp. Engl. such-like. Sept.",
+       "reread": "Is. 51, 6; comp. Engl. such-like. Sept.",
+       "status": "agreed",
+       "text": "Is. 51, 6; comp. Engl. such-like. Sept."
+      },
+      {
+       "draft": "ὥσπερ ταῦτα, Vulg. sicut hæc ; and so",
+       "reread": "ὥσπερ ταῦτα, Vulg. sicut hæc; and so",
+       "status": "agreed",
+       "text": "ὥσπερ ταῦτα, Vulg. sicut hæc; and so"
+      },
+      {
+       "draft": "all the ancient versions. But see in כֵּן",
+       "reread": "all the ancient versions. But see in כֵּן",
+       "status": "agreed",
+       "text": "all the ancient versions. But see in כֵּן"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 83,
+      "y": 869,
+      "width": 871,
+      "height": 64
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r00-b03-871x64+83+869-x2.png",
+     "image_sha256": "82f986cf1d00d9ffb0f582459e7b20452fae75cddd26c75787b681d40103db23",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "III.—R."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f0ab34b1-c068-4b15-a2d2-efebab1b5496",
+      "duration_api_ms": 10211,
+      "cost_usd_list": 0.04751775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 1768,
+      "output_tokens": 219
+     },
+     "lines": [
+      {
+       "draft": "III.—R.",
+       "reread": "III.—R.",
+       "status": "agreed",
+       "text": "III.—R."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 83,
+    "y": 933,
+    "width": 871,
+    "height": 969
+   },
+   "draft_lines": [
+    "II. כֵּן m. (r. כּוּן I) c. suff. כַּנִּי, כַּנּוֹ.",
+    "1. a stand, base, pedestal; 1 K. 7, 31",
+    "מַעֲשֵׂה־כֵן in the manner of a base, like a",
+    "pedestal. Spec. of the base or foot of",
+    "the laver in the court of the temple, Ex.",
+    "30, 18. 28. 31, 9. Lev. 8, 11. Of the",
+    "base or socket of a ship's mast, Is. 33, 23;",
+    "called in Greek μεσόδμη Od. 15. 290,",
+    "ἱστοδόκη Il. 1. 494, ἱστοπέδη Od. 12. 51.",
+    "2. a stand, station, place, Gen. 40, 13.",
+    "41. 13. Dan. 11, 20 וְעָמַד עַל כַּנּוֹ and there",
+    "shall rise up in his place, in his stead. v.",
+    "21. 38. So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנּוֹ",
+    "and out of a shoot of her roots (one) shall",
+    "rise up in his place, pr. stand in his place.",
+    "Sept. and Vulg. render כַּנּוֹ by φυτὸν αὐ-",
+    "τοῦ, plantatio ejus, taking it in the nom."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 83,
+      "y": 945,
+      "width": 871,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r01-b00-871x238+83+945-x2.png",
+     "image_sha256": "bbc92b0dd38ab927f7268ea98aea0d5042135616210c817197282f8aa46486d6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "II. כֵּן m. (r. כָּנַן I) c. suff. כַּנִּי, כַּנּוֹ.",
+       "1. a stand, base, pedestal; 1 K. 7, 31",
+       "מַעֲשֵׂה־כֵן in the manner of a base, like a",
+       "pedestal. Spec. of the base or foot of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8e92ac3d-891d-4d62-90ce-aee015422a51",
+      "duration_api_ms": 11648,
+      "cost_usd_list": 0.08333775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2524,
+      "output_tokens": 633
+     },
+     "lines": [
+      {
+       "draft": "II. כֵּן m. (r. כּוּן I) c. suff. כַּנִּי, כַּנּוֹ.",
+       "reread": "II. כֵּן m. (r. כָּנַן I) c. suff. כַּנִּי, כַּנּוֹ.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "II. כֵּן m. (r. כָּנַן I) c. suff. כַּנִּי, כַּנּוֹ.",
+        "verdict": "b",
+        "note": "The root in parentheses is printed as three letters כָּנַן (kaph–nun–final nun, with qamets and pathach), not כּוּן; the rest of the line (כֵּן, suffixed forms כַּנִּי then כַּנּוֹ) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d4526076-59a5-48cd-831a-71aebffcb8e9",
+        "duration_api_ms": 16859,
+        "cost_usd_list": 0.08300774999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3511,
+        "cache_creation_input_tokens": 2492,
+        "output_tokens": 639
+       },
+       "text": "II. כֵּן m. (r. כָּנַן I) c. suff. כַּנִּי, כַּנּוֹ."
+      },
+      {
+       "draft": "1. a stand, base, pedestal; 1 K. 7, 31",
+       "reread": "1. a stand, base, pedestal; 1 K. 7, 31",
+       "status": "agreed",
+       "text": "1. a stand, base, pedestal; 1 K. 7, 31"
+      },
+      {
+       "draft": "מַעֲשֵׂה־כֵן in the manner of a base, like a",
+       "reread": "מַעֲשֵׂה־כֵן in the manner of a base, like a",
+       "status": "agreed",
+       "text": "מַעֲשֵׂה־כֵן in the manner of a base, like a"
+      },
+      {
+       "draft": "pedestal. Spec. of the base or foot of",
+       "reread": "pedestal. Spec. of the base or foot of",
+       "status": "agreed",
+       "text": "pedestal. Spec. of the base or foot of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 83,
+      "y": 1167,
+      "width": 871,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r01-b01-871x234+83+1167-x2.png",
+     "image_sha256": "28599d054c2a82e1be047491c327e3c98214efc9a2429a34bb5dbcbdd3089aa9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the laver in the court of the temple, Ex.",
+       "30, 18. 28. 31, 9. Lev. 8, 11. Of the",
+       "base or socket of a ship's mast, Is. 33, 23;",
+       "called in Greek μεσόδμη Od. 15. 290,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "73976457-3114-4e14-8d6f-5c2803a4b8e4",
+      "duration_api_ms": 11701,
+      "cost_usd_list": 0.065128,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "the laver in the court of the temple, Ex.",
+       "reread": "the laver in the court of the temple, Ex.",
+       "status": "agreed",
+       "text": "the laver in the court of the temple, Ex."
+      },
+      {
+       "draft": "30, 18. 28. 31, 9. Lev. 8, 11. Of the",
+       "reread": "30, 18. 28. 31, 9. Lev. 8, 11. Of the",
+       "status": "agreed",
+       "text": "30, 18. 28. 31, 9. Lev. 8, 11. Of the"
+      },
+      {
+       "draft": "base or socket of a ship's mast, Is. 33, 23;",
+       "reread": "base or socket of a ship's mast, Is. 33, 23;",
+       "status": "agreed",
+       "text": "base or socket of a ship's mast, Is. 33, 23;"
+      },
+      {
+       "draft": "called in Greek μεσόδμη Od. 15. 290,",
+       "reread": "called in Greek μεσόδμη Od. 15. 290,",
+       "status": "agreed",
+       "text": "called in Greek μεσόδμη Od. 15. 290,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 83,
+      "y": 1385,
+      "width": 871,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r01-b02-871x238+83+1385-x2.png",
+     "image_sha256": "552ef73a20b08c8634384ad65a1bfc58655c2bc26fb445fb9246096ec9470fc0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ἱστοδόκη Il. 1. 494, ἱστοπέδη Od. 12. 51.",
+       "2. a stand, station, place, Gen. 40, 13.",
+       "41. 13. Dan. 11, 20 וְעָמַד עַל כַּנּוֹ and there",
+       "shall rise up in his place, in his stead. v."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "298749ca-08c8-4af8-b8f4-3ba4a65a2d65",
+      "duration_api_ms": 10146,
+      "cost_usd_list": 0.066278,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 291
+     },
+     "lines": [
+      {
+       "draft": "ἱστοδόκη Il. 1. 494, ἱστοπέδη Od. 12. 51.",
+       "reread": "ἱστοδόκη Il. 1. 494, ἱστοπέδη Od. 12. 51.",
+       "status": "agreed",
+       "text": "ἱστοδόκη Il. 1. 494, ἱστοπέδη Od. 12. 51."
+      },
+      {
+       "draft": "2. a stand, station, place, Gen. 40, 13.",
+       "reread": "2. a stand, station, place, Gen. 40, 13.",
+       "status": "agreed",
+       "text": "2. a stand, station, place, Gen. 40, 13."
+      },
+      {
+       "draft": "41. 13. Dan. 11, 20 וְעָמַד עַל כַּנּוֹ and there",
+       "reread": "41. 13. Dan. 11, 20 וְעָמַד עַל כַּנּוֹ and there",
+       "status": "agreed",
+       "text": "41. 13. Dan. 11, 20 וְעָמַד עַל כַּנּוֹ and there"
+      },
+      {
+       "draft": "shall rise up in his place, in his stead. v.",
+       "reread": "shall rise up in his place, in his stead. v.",
+       "status": "agreed",
+       "text": "shall rise up in his place, in his stead. v."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 83,
+      "y": 1607,
+      "width": 871,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r01-b03-871x238+83+1607-x2.png",
+     "image_sha256": "4e085ece5c985f3a302bfdb3153b7081ccde13ef45eb5502aabe264e03e6de4e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "21. 38.  So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנֹּו",
+       "and out of a shoot of her roots (one) shall",
+       "rise up in his place, pr. stand in his place.",
+       "Sept. and Vulg. render כַּנֹּו by φυτόν αὐ-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "77b6b74d-bb44-424e-a39a-42074bd52d2a",
+      "duration_api_ms": 18474,
+      "cost_usd_list": 0.080878,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 583
+     },
+     "lines": [
+      {
+       "draft": "21. 38. So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנּוֹ",
+       "reread": "21. 38.  So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנֹּו",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b03",
+       "judgement": {
+        "text": "21. 38. So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנּוֹ",
+        "verdict": "a",
+        "note": "Final word: the ḥolem is printed over the vav (כַּנּוֹ, ḥolem male), not over the nun as in B's נֹּו; the nun carries only dagesh. A matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "acd06229-90ac-4b0f-b7c2-c66482137bbd",
+        "duration_api_ms": 21881,
+        "cost_usd_list": 0.09732324999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3533,
+        "cache_creation_input_tokens": 2515,
+        "output_tokens": 916
+       },
+       "text": "21. 38. So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנּוֹ"
+      },
+      {
+       "draft": "and out of a shoot of her roots (one) shall",
+       "reread": "and out of a shoot of her roots (one) shall",
+       "status": "agreed",
+       "text": "and out of a shoot of her roots (one) shall"
+      },
+      {
+       "draft": "rise up in his place, pr. stand in his place.",
+       "reread": "rise up in his place, pr. stand in his place.",
+       "status": "agreed",
+       "text": "rise up in his place, pr. stand in his place."
+      },
+      {
+       "draft": "Sept. and Vulg. render כַּנּוֹ by φυτὸν αὐ-",
+       "reread": "Sept. and Vulg. render כַּנֹּו by φυτόν αὐ-",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b03",
+       "judgement": {
+        "text": "Sept. and Vulg. render כַּנּוֹ by φυτόν αὐ-",
+        "verdict": "neither",
+        "note": "Hebrew: the holam dot sits over the vav (holam male), so the correct encoding is nun+dagesh, vav, holam (כַּנּוֹ) as in A, not B's holam-before-vav (כַּנֹּו). Greek: the accent on φυτόν is printed as an acute (´), as in B, not A's grave (φυτὸν). Each reading has one error, so neither matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c8e166ed-dc1c-4b6e-a7ea-5200c4051578",
+        "duration_api_ms": 16740,
+        "cost_usd_list": 0.09113225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3489,
+        "cache_creation_input_tokens": 2471,
+        "output_tokens": 810
+       },
+       "text": "Sept. and Vulg. render כַּנּוֹ by φυτόν αὐ-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b04",
+     "bounds": {
+      "x": 83,
+      "y": 1829,
+      "width": 871,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r01-b04-871x81+83+1829-x2.png",
+     "image_sha256": "5c2d628061e555973fe6dd67583e1919a25ae5ad91db3ca9cff412e6010939cf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "τοῦ, plantatio ejus, taking it in the nom."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6a0773f7-2a63-4e9a-81e2-befc6c7a9e2f",
+      "duration_api_ms": 9455,
+      "cost_usd_list": 0.047818,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1833,
+      "output_tokens": 199
+     },
+     "lines": [
+      {
+       "draft": "τοῦ, plantatio ejus, taking it in the nom.",
+       "reread": "τοῦ, plantatio ejus, taking it in the nom.",
+       "status": "agreed",
+       "text": "τοῦ, plantatio ejus, taking it in the nom."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 83,
+    "y": 1890,
+    "width": 871,
+    "height": 637
+   },
+   "draft_lines": [
+    "case ; see in כִּנָּה.",
+    "III. כֵּן m. (r. כָּנַן II ) a gnat, in Sing.",
+    "once Is. 51, 6 כְּמוֹ־כֵן like gnats. Sept.",
+    "frigidly ὥσπερ ταῦτα, Vulg. sicut hæc ;",
+    "see in כֵּן I. B. f. above.",
+    "Plur. כִּנִּים Ex. 8, 12. 14. Ps. 105, 31 ;",
+    "Sept. σκνῖφες, Vulg. sciniphes, a species",
+    "of small gnats, very troublesome from",
+    "their sting, and abounding in the marshy",
+    "regions of Egypt ; culex reptans Linn.",
+    "culex molestus Forsk. See Hdot. 1. 95."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 83,
+      "y": 1882,
+      "width": 871,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r02-b00-871x260+83+1882-x2.png",
+     "image_sha256": "ffb6bce4604752f6999e366a51c502718ff127ae95bf4863908ea80b5ba90641",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "case ; see in כִּנָּה .",
+       "III. כֵּן m. (r. כָּנַן II ) a gnat, in Sing.",
+       "once Is. 51, 6 כְּמוֹ־כֵּן like gnats. Sept.",
+       "frigidly ὥσπερ ταῦτα, Vulg. sicut hæc ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5eff0cd2-ae78-433c-8f5e-638657222b71",
+      "duration_api_ms": 17472,
+      "cost_usd_list": 0.095248,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2652,
+      "output_tokens": 820
+     },
+     "lines": [
+      {
+       "draft": "case ; see in כִּנָּה.",
+       "reread": "case ; see in כִּנָּה .",
+       "status": "agreed",
+       "text": "case; see in כִּנָּה."
+      },
+      {
+       "draft": "III. כֵּן m. (r. כָּנַן II ) a gnat, in Sing.",
+       "reread": "III. כֵּן m. (r. כָּנַן II ) a gnat, in Sing.",
+       "status": "agreed",
+       "text": "III. כֵּן m. (r. כָּנַן II) a gnat, in Sing."
+      },
+      {
+       "draft": "once Is. 51, 6 כְּמוֹ־כֵן like gnats. Sept.",
+       "reread": "once Is. 51, 6 כְּמוֹ־כֵּן like gnats. Sept.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "once Is. 51, 6 כְּמוֹ־כֵן like gnats. Sept.",
+        "verdict": "a",
+        "note": "The decisive difference is the dagesh in the second kaf: the printed כֵן after the maqqef shows only tsere beneath the kaf with no dot inside it (contrast the clearly dotted first kaf כְּ), so Reading A's undageshed כֵן matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "17bd3df9-f451-4850-a578-add2e94a0c75",
+        "duration_api_ms": 16941,
+        "cost_usd_list": 0.088613,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3492,
+        "cache_creation_input_tokens": 2600,
+        "output_tokens": 708
+       },
+       "text": "once Is. 51, 6 כְּמוֹ־כֵן like gnats. Sept."
+      },
+      {
+       "draft": "frigidly ὥσπερ ταῦτα, Vulg. sicut hæc ;",
+       "reread": "frigidly ὥσπερ ταῦτα, Vulg. sicut hæc ;",
+       "status": "agreed",
+       "text": "frigidly ὥσπερ ταῦτα, Vulg. sicut hæc;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 83,
+      "y": 2126,
+      "width": 871,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r02-b01-871x239+83+2126-x2.png",
+     "image_sha256": "815a496d489909bf08a7dbc0bae4babfe35bc68ad54365dabb99dc8a132da555",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "see in כֵּן I. B. f. above.",
+       "Plur. כִּנִּים Ex. 8, 12. 14. Ps. 105, 31 ;",
+       "Sept. σκνῖφες, Vulg. sciniphes, a species",
+       "of small gnats, very troublesome from"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4ff3caa6-cd70-4b5f-8205-ce51cb704ac8",
+      "duration_api_ms": 9729,
+      "cost_usd_list": 0.06658800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 272
+     },
+     "lines": [
+      {
+       "draft": "see in כֵּן I. B. f. above.",
+       "reread": "see in כֵּן I. B. f. above.",
+       "status": "agreed",
+       "text": "see in כֵּן I. B. f. above."
+      },
+      {
+       "draft": "Plur. כִּנִּים Ex. 8, 12. 14. Ps. 105, 31 ;",
+       "reread": "Plur. כִּנִּים Ex. 8, 12. 14. Ps. 105, 31 ;",
+       "status": "agreed",
+       "text": "Plur. כִּנִּים Ex. 8, 12. 14. Ps. 105, 31;"
+      },
+      {
+       "draft": "Sept. σκνῖφες, Vulg. sciniphes, a species",
+       "reread": "Sept. σκνῖφες, Vulg. sciniphes, a species",
+       "status": "agreed",
+       "text": "Sept. σκνῖφες, Vulg. sciniphes, a species"
+      },
+      {
+       "draft": "of small gnats, very troublesome from",
+       "reread": "of small gnats, very troublesome from",
+       "status": "agreed",
+       "text": "of small gnats, very troublesome from"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 83,
+      "y": 2349,
+      "width": 871,
+      "height": 170
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r02-b02-871x170+83+2349-x2.png",
+     "image_sha256": "93a990c443f6dd09aca8bfca409c52f796f9d3904187e9337c219a2c461cf380",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "their sting, and abounding in the marshy",
+       "regions of Egypt ; culex reptans Linn.",
+       "culex molestus Forsk. See Hdot. 1. 95."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dbc3964b-aef0-42fd-974d-93f0c5540a0a",
+      "duration_api_ms": 9150,
+      "cost_usd_list": 0.059488,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2274,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "their sting, and abounding in the marshy",
+       "reread": "their sting, and abounding in the marshy",
+       "status": "agreed",
+       "text": "their sting, and abounding in the marshy"
+      },
+      {
+       "draft": "regions of Egypt ; culex reptans Linn.",
+       "reread": "regions of Egypt ; culex reptans Linn.",
+       "status": "agreed",
+       "text": "regions of Egypt; culex reptans Linn."
+      },
+      {
+       "draft": "culex molestus Forsk. See Hdot. 1. 95.",
+       "reread": "culex molestus Forsk. See Hdot. 1. 95.",
+       "status": "agreed",
+       "text": "culex molestus Forsk. See Hdot. 1. 95."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 83,
+    "y": 2515,
+    "width": 871,
+    "height": 751
+   },
+   "draft_lines": [
+    "Philo de vita Mosis T. II. p. 97 ed. Man-",
+    "gey. Other ancient and modern testi-",
+    "monies are collected in Bochart Hieroz.",
+    "II. p. 572. Oedmann's Verm. Sammll.",
+    "aus der Naturkunde, Fasc. I. c. 6.—The",
+    "Hebrew intpp. and Josephus (Ant. 2. 14.",
+    "3) with little probability explain it by",
+    "lice; and the Talmudists also use the",
+    "sing. כִּנָּם for a louse. Comp. כִּנָּם.",
+    "כֵּן Chald. i. q. Heb. so, thus, but re-",
+    "ferring always to what follows, where",
+    "the Hebrews use not כֵּן, but כֹּה; so",
+    "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 83,
+      "y": 2523,
+      "width": 871,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r03-b00-871x227+83+2523-x2.png",
+     "image_sha256": "118dace5c712078771a70b86d5a9adc3e7a223a459592762a67503340c4e0005",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Philo de vita Mosis T. II. p. 97 ed. Man-",
+       "gey. Other ancient and modern testi-",
+       "monies are collected in Bochart Hieroz.",
+       "II. p. 572. Oedmann's Verm. Sammll."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c3251e02-d118-4cfc-9c86-fc331aa262ce",
+      "duration_api_ms": 9817,
+      "cost_usd_list": 0.06472800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "Philo de vita Mosis T. II. p. 97 ed. Man-",
+       "reread": "Philo de vita Mosis T. II. p. 97 ed. Man-",
+       "status": "agreed",
+       "text": "Philo de vita Mosis T. II. p. 97 ed. Man-"
+      },
+      {
+       "draft": "gey. Other ancient and modern testi-",
+       "reread": "gey. Other ancient and modern testi-",
+       "status": "agreed",
+       "text": "gey. Other ancient and modern testi-"
+      },
+      {
+       "draft": "monies are collected in Bochart Hieroz.",
+       "reread": "monies are collected in Bochart Hieroz.",
+       "status": "agreed",
+       "text": "monies are collected in Bochart Hieroz."
+      },
+      {
+       "draft": "II. p. 572. Oedmann's Verm. Sammll.",
+       "reread": "II. p. 572. Oedmann's Verm. Sammll.",
+       "status": "agreed",
+       "text": "II. p. 572. Oedmann's Verm. Sammll."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 83,
+      "y": 2734,
+      "width": 871,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r03-b01-871x230+83+2734-x2.png",
+     "image_sha256": "8bbc1440d1394e8ce6333d732abd67ea34f1b77f16bd4e28ea40cb3516c3c886",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "aus der Naturkunde, Fasc. I. c. 6.—The",
+       "Hebrew intpp. and Josephus (Ant. 2. 14.",
+       "3) with little probability explain it by",
+       "lice; and the Talmudists also use the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1b5f0c59-96e9-49d1-bbdf-d490e49d6a64",
+      "duration_api_ms": 8340,
+      "cost_usd_list": 0.064528,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "aus der Naturkunde, Fasc. I. c. 6.—The",
+       "reread": "aus der Naturkunde, Fasc. I. c. 6.—The",
+       "status": "agreed",
+       "text": "aus der Naturkunde, Fasc. I. c. 6.—The"
+      },
+      {
+       "draft": "Hebrew intpp. and Josephus (Ant. 2. 14.",
+       "reread": "Hebrew intpp. and Josephus (Ant. 2. 14.",
+       "status": "agreed",
+       "text": "Hebrew intpp. and Josephus (Ant. 2. 14."
+      },
+      {
+       "draft": "3) with little probability explain it by",
+       "reread": "3) with little probability explain it by",
+       "status": "agreed",
+       "text": "3) with little probability explain it by"
+      },
+      {
+       "draft": "lice; and the Talmudists also use the",
+       "reread": "lice; and the Talmudists also use the",
+       "status": "agreed",
+       "text": "lice; and the Talmudists also use the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 83,
+      "y": 2948,
+      "width": 871,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r03-b02-871x262+83+2948-x2.png",
+     "image_sha256": "39a86f328480426498795d33ce9d806d7d17d60afb66ba41e3f6e13ed155a6a0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sing. כִּנָּם for a louse.  Comp. כִּנָּם.",
+       "כֵּן Chald. i. q. Heb. so, thus, but re-",
+       "ferring always to what follows, where",
+       "the Hebrews use not כֵּן, but כֹּה; so"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "383e15d5-1c62-43f7-8cdb-03b281a8e1a4",
+      "duration_api_ms": 12143,
+      "cost_usd_list": 0.06769800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2652,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "sing. כִּנָּם for a louse. Comp. כִּנָּם.",
+       "reread": "sing. כִּנָּם for a louse.  Comp. כִּנָּם.",
+       "status": "agreed",
+       "text": "sing. כִּנָּם for a louse. Comp. כִּנָּם."
+      },
+      {
+       "draft": "כֵּן Chald. i. q. Heb. so, thus, but re-",
+       "reread": "כֵּן Chald. i. q. Heb. so, thus, but re-",
+       "status": "agreed",
+       "text": "כֵּן Chald. i. q. Heb. so, thus, but re-"
+      },
+      {
+       "draft": "ferring always to what follows, where",
+       "reread": "ferring always to what follows, where",
+       "status": "agreed",
+       "text": "ferring always to what follows, where"
+      },
+      {
+       "draft": "the Hebrews use not כֵּן, but כֹּה; so",
+       "reread": "the Hebrews use not כֵּן, but כֹּה; so",
+       "status": "agreed",
+       "text": "the Hebrews use not כֵּן, but כֹּה; so"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 83,
+      "y": 3194,
+      "width": 871,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c0-r03-b03-871x73+83+3194-x2.png",
+     "image_sha256": "cafb3182745158489975e1b50ad419f77e0442e0e0b10ea926e16bf50e813fae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6, 2. al."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02216d57-249c-4508-85af-8d7cfdffcf09",
+      "duration_api_ms": 17408,
+      "cost_usd_list": 0.067718,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1833,
+      "output_tokens": 597
+     },
+     "lines": [
+      {
+       "draft": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al.",
+       "reread": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6, 2. al.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b03",
+       "judgement": {
+        "text": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al.",
+        "verdict": "a",
+        "note": "After \"6\" the print shows a baseline period with only a detached speck beneath it, not the continuous comma tail seen after \"5\"; so \"6. 2.\" (Reading A), not \"6, 2.\" (Reading B). \"4 11\" is indeed printed without a comma.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3ea0d43a-5b59-4de2-8eb9-cb9e8548d845",
+        "duration_api_ms": 21238,
+        "cost_usd_list": 0.09134624999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3505,
+        "cache_creation_input_tokens": 1794,
+        "output_tokens": 1085
+       },
+       "text": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 975,
+    "y": 159,
+    "width": 872,
+    "height": 928
+   },
+   "draft_lines": [
+    "* כָּנָה in Kal not used, Arab. كنى",
+    "I, II, IV, to call a person or thing by",
+    "another and more honourable name or",
+    "title, to deck with a title; see Tauriz.",
+    "ad Hamas. Schult. p. 320. Teblebi ad",
+    "Harir. Schult. II. 57. Chald. to address",
+    "one by his proper title. The primary",
+    "idea is perh. to cover, comp. גָּנַן.—In",
+    "Heb. only",
+    "Piel fut. יְכַנֶּה 1. to address in a",
+    "soothing manner, to speak kindly to any",
+    "one. Is. 44, 5 וּבְשֵׁם יִשְׂרָאֵל יְכַנֶּה and",
+    "soothingly names the name of Israel.",
+    "45, 4 אֲכַנְּךָ וְלֹא יְדַעְתָּנִי I called thee",
+    "kindly, though thou hast not known me."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 975,
+      "y": 151,
+      "width": 872,
+      "height": 319
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r00-b00-872x319+975+151-x2.png",
+     "image_sha256": "b96dc4a61b9ff7f3a725c262ffd38bd80da06d3f4b86df27e6c3bf0f0909ef3e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* כָּנָה in Kal not used, Arab. كنى",
+       "I, II, IV, to call a person or thing by",
+       "another and more honourable name or",
+       "title, to deck with a title; see Tauriz."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "45231878-dbba-40b2-b432-1b2734eba3ff",
+      "duration_api_ms": 10654,
+      "cost_usd_list": 0.07464774999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2902,
+      "output_tokens": 308
+     },
+     "lines": [
+      {
+       "draft": "* כָּנָה in Kal not used, Arab. كنى",
+       "reread": "* כָּנָה in Kal not used, Arab. كنى",
+       "status": "agreed",
+       "text": "* כָּנָה in Kal not used, Arab. كنى"
+      },
+      {
+       "draft": "I, II, IV, to call a person or thing by",
+       "reread": "I, II, IV, to call a person or thing by",
+       "status": "agreed",
+       "text": "I, II, IV, to call a person or thing by"
+      },
+      {
+       "draft": "another and more honourable name or",
+       "reread": "another and more honourable name or",
+       "status": "agreed",
+       "text": "another and more honourable name or"
+      },
+      {
+       "draft": "title, to deck with a title; see Tauriz.",
+       "reread": "title, to deck with a title; see Tauriz.",
+       "status": "agreed",
+       "text": "title, to deck with a title; see Tauriz."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 975,
+      "y": 454,
+      "width": 872,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r00-b01-872x240+975+454-x2.png",
+     "image_sha256": "2e684d1a5b830abb94f4c9b21e19b480b5bb7ab183e01d8d77ae3ae6d788ff68",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ad Hamas. Schult. p. 320. Teblebi ad",
+       "Harir. Schult. II. 57. Chald. to address",
+       "one by his proper title. The primary",
+       "idea is perh. to cover, comp. גָּנַן.—In"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b36384a7-b457-47c3-9dd3-7686658dd4ba",
+      "duration_api_ms": 19533,
+      "cost_usd_list": 0.08179775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2587,
+      "output_tokens": 577
+     },
+     "lines": [
+      {
+       "draft": "ad Hamas. Schult. p. 320. Teblebi ad",
+       "reread": "ad Hamas. Schult. p. 320. Teblebi ad",
+       "status": "agreed",
+       "text": "ad Hamas. Schult. p. 320. Teblebi ad"
+      },
+      {
+       "draft": "Harir. Schult. II. 57. Chald. to address",
+       "reread": "Harir. Schult. II. 57. Chald. to address",
+       "status": "agreed",
+       "text": "Harir. Schult. II. 57. Chald. to address"
+      },
+      {
+       "draft": "one by his proper title. The primary",
+       "reread": "one by his proper title. The primary",
+       "status": "agreed",
+       "text": "one by his proper title. The primary"
+      },
+      {
+       "draft": "idea is perh. to cover, comp. גָּנַן.—In",
+       "reread": "idea is perh. to cover, comp. גָּנַן.—In",
+       "status": "agreed",
+       "text": "idea is perh. to cover, comp. גָּנַן.—In"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 975,
+      "y": 678,
+      "width": 872,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r00-b02-872x246+975+678-x2.png",
+     "image_sha256": "c6f8434598882b4c094f28b5c21ca65637e3e3333a737caf9f8339504339cd26",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Heb. only",
+       "Piel fut. יְכַנֶּה 1. to address in a",
+       "soothing manner, to speak kindly to any",
+       "one. Is. 44, 5 וּבְשֵׁם יִשְׂרָאֵל יְכַנֶּה and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "08959e2b-3a0a-471f-9e7a-a8c19415752e",
+      "duration_api_ms": 10816,
+      "cost_usd_list": 0.06629774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2587,
+      "output_tokens": 267
+     },
+     "lines": [
+      {
+       "draft": "Heb. only",
+       "reread": "Heb. only",
+       "status": "agreed",
+       "text": "Heb. only"
+      },
+      {
+       "draft": "Piel fut. יְכַנֶּה 1. to address in a",
+       "reread": "Piel fut. יְכַנֶּה 1. to address in a",
+       "status": "agreed",
+       "text": "Piel fut. יְכַנֶּה 1. to address in a"
+      },
+      {
+       "draft": "soothing manner, to speak kindly to any",
+       "reread": "soothing manner, to speak kindly to any",
+       "status": "agreed",
+       "text": "soothing manner, to speak kindly to any"
+      },
+      {
+       "draft": "one. Is. 44, 5 וּבְשֵׁם יִשְׂרָאֵל יְכַנֶּה and",
+       "reread": "one. Is. 44, 5 וּבְשֵׁם יִשְׂרָאֵל יְכַנֶּה and",
+       "status": "agreed",
+       "text": "one. Is. 44, 5 וּבְשֵׁם יִשְׂרָאֵל יְכַנֶּה and"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 975,
+      "y": 908,
+      "width": 872,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r00-b03-872x187+975+908-x2.png",
+     "image_sha256": "4516fd88f6360661b049ad50e737f8f2550399873a2d37f4020b5a89500a2d33",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "soothingly names the name of Israel.",
+       "45, 4 אֲכַנְּךָ וְלֹא יְדַעְתָּנִי I called thee",
+       "kindly, though thou hast not known me."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c90f6167-9296-4590-afe7-94932bda5460",
+      "duration_api_ms": 11608,
+      "cost_usd_list": 0.06660775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2335,
+      "output_tokens": 374
+     },
+     "lines": [
+      {
+       "draft": "soothingly names the name of Israel.",
+       "reread": "soothingly names the name of Israel.",
+       "status": "agreed",
+       "text": "soothingly names the name of Israel."
+      },
+      {
+       "draft": "45, 4 אֲכַנְּךָ וְלֹא יְדַעְתָּנִי I called thee",
+       "reread": "45, 4 אֲכַנְּךָ וְלֹא יְדַעְתָּנִי I called thee",
+       "status": "agreed",
+       "text": "45, 4 אֲכַנְּךָ וְלֹא יְדַעְתָּנִי I called thee"
+      },
+      {
+       "draft": "kindly, though thou hast not known me.",
+       "reread": "kindly, though thou hast not known me.",
+       "status": "agreed",
+       "text": "kindly, though thou hast not known me."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 975,
+    "y": 1075,
+    "width": 872,
+    "height": 788
+   },
+   "draft_lines": [
+    "2. to flatter, Job 32, 21. 22.",
+    "Deriv. subst. כִּנָּה.",
+    "כַּנָּה f. (r. כָּנַן I ) a plant, shoot, as be-",
+    "ing set, placed; comp. נָצַב, שָׁתַל. Ps.",
+    "80, 16 וְכַנָּה אֲשֶׁר נָטְעָה יְמִינֶךָ and (visit,",
+    "protect) the plant which thy right hand",
+    "hath planted. The ancient intpp. as-",
+    "sumed also the masc. כֵּן in the same",
+    "sense Dan. 11, 7; see in כֵּן II. 2.—Others",
+    "here make כַּנָּה imper. Kal with He pa-",
+    "ragog. from r. כָּנַן in a signif. to cover, to",
+    "protect ; of which however there is no",
+    "other trace."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 975,
+      "y": 1067,
+      "width": 872,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r01-b00-872x270+975+1067-x2.png",
+     "image_sha256": "e614f76465458eacd85af6f0423d1974e3f6366df22a1008446f624e6d0dd162",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. to flatter, Job 32, 21. 22.",
+       "Deriv. subst. כְּנָת.",
+       "כַּנָּה f. (r. כָּנַן I ) a plant, shoot, as be-",
+       "ing set, placed; comp. נְצָב, שְׁתִל. Ps."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0ea00f5d-ae13-4283-a465-fe6baaf88517",
+      "duration_api_ms": 22657,
+      "cost_usd_list": 0.11965800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2715,
+      "output_tokens": 1283
+     },
+     "lines": [
+      {
+       "draft": "2. to flatter, Job 32, 21. 22.",
+       "reread": "2. to flatter, Job 32, 21. 22.",
+       "status": "agreed",
+       "text": "2. to flatter, Job 32, 21. 22."
+      },
+      {
+       "draft": "Deriv. subst. כִּנָּה.",
+       "reread": "Deriv. subst. כְּנָת.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "Deriv. subst. כְּנָת.",
+        "verdict": "b",
+        "note": "Final letter is ת (tav, with its distinct left foot), not ה; the mark under the kaf is a vertical two-dot shewa, not a single hiriq dot. Kaf carries dagesh lene, nun has qamets. Reading B matches; Reading A's כִּנָּה is wrong in final letter and first vowel.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ec71ffa9-cebd-47f4-8c52-57044279b8e1",
+        "duration_api_ms": 25171,
+        "cost_usd_list": 0.1178345,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3458,
+        "cache_creation_input_tokens": 2629,
+        "output_tokens": 1281
+       },
+       "text": "Deriv. subst. כְּנָת."
+      },
+      {
+       "draft": "כַּנָּה f. (r. כָּנַן I ) a plant, shoot, as be-",
+       "reread": "כַּנָּה f. (r. כָּנַן I ) a plant, shoot, as be-",
+       "status": "agreed",
+       "text": "כַּנָּה f. (r. כָּנַן I) a plant, shoot, as be-"
+      },
+      {
+       "draft": "ing set, placed; comp. נָצַב, שָׁתַל. Ps.",
+       "reread": "ing set, placed; comp. נְצָב, שְׁתִל. Ps.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "ing set, placed; comp. נָצַב, שָׁתַל. Ps.",
+        "verdict": "a",
+        "note": "Both Hebrew words print qamets under the first letter (T-shaped mark under nun and under shin) and patach (flat stroke) under the second (tsade, tav) — נָצַב, שָׁתַל, matching Reading A; Reading B's sheva + qamets / sheva + hireq is not what is printed. Shin dot is at top right in both readings and in print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fc2dbd0d-fd5f-48f8-9408-85c4677fa755",
+        "duration_api_ms": 14851,
+        "cost_usd_list": 0.09339075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3483,
+        "cache_creation_input_tokens": 2654,
+        "output_tokens": 782
+       },
+       "text": "ing set, placed; comp. נָצַב, שָׁתַל. Ps."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 975,
+      "y": 1321,
+      "width": 872,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r01-b01-872x244+975+1321-x2.png",
+     "image_sha256": "a097762addcf9b762803c02ab588848d42ac5078823f9d9f35fdc9f9b923aa08",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "80, 16 וְכַנָּה אֲשֶׁר נָטְעָה יְמִינֶךָ and (visit,",
+       "protect) the plant which thy right hand",
+       "hath planted. The ancient intpp. as-",
+       "sumed also the masc. כֵּן in the same"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1d882455-dfda-4e07-a546-57d664051588",
+      "duration_api_ms": 9905,
+      "cost_usd_list": 0.07388800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 418
+     },
+     "lines": [
+      {
+       "draft": "80, 16 וְכַנָּה אֲשֶׁר נָטְעָה יְמִינֶךָ and (visit,",
+       "reread": "80, 16 וְכַנָּה אֲשֶׁר נָטְעָה יְמִינֶךָ and (visit,",
+       "status": "agreed",
+       "text": "80, 16 וְכַנָּה אֲשֶׁר נָטְעָה יְמִינֶךָ and (visit,"
+      },
+      {
+       "draft": "protect) the plant which thy right hand",
+       "reread": "protect) the plant which thy right hand",
+       "status": "agreed",
+       "text": "protect) the plant which thy right hand"
+      },
+      {
+       "draft": "hath planted. The ancient intpp. as-",
+       "reread": "hath planted. The ancient intpp. as-",
+       "status": "agreed",
+       "text": "hath planted. The ancient intpp. as-"
+      },
+      {
+       "draft": "sumed also the masc. כֵּן in the same",
+       "reread": "sumed also the masc. כֵּן in the same",
+       "status": "agreed",
+       "text": "sumed also the masc. כֵּן in the same"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 975,
+      "y": 1549,
+      "width": 872,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r01-b02-872x249+975+1549-x2.png",
+     "image_sha256": "50239fa2f8f404ae472d1965ba22145e91bf5d75676480271cb0a0f40607c381",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sense Dan. 11, 7 ; see in כֵּן II. 2.—Others",
+       "here make כַּנָּה imper. Kal with He pa-",
+       "ragog. from r. כָּנַן in a signif. to cover, to",
+       "protect ; of which however there is no"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "42dfdff5-454d-429e-9348-fa0b66dd8940",
+      "duration_api_ms": 16566,
+      "cost_usd_list": 0.08138800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 568
+     },
+     "lines": [
+      {
+       "draft": "sense Dan. 11, 7; see in כֵּן II. 2.—Others",
+       "reread": "sense Dan. 11, 7 ; see in כֵּן II. 2.—Others",
+       "status": "agreed",
+       "text": "sense Dan. 11, 7; see in כֵּן II. 2.—Others"
+      },
+      {
+       "draft": "here make כַּנָּה imper. Kal with He pa-",
+       "reread": "here make כַּנָּה imper. Kal with He pa-",
+       "status": "agreed",
+       "text": "here make כַּנָּה imper. Kal with He pa-"
+      },
+      {
+       "draft": "ragog. from r. כָּנַן in a signif. to cover, to",
+       "reread": "ragog. from r. כָּנַן in a signif. to cover, to",
+       "status": "agreed",
+       "text": "ragog. from r. כָּנַן in a signif. to cover, to"
+      },
+      {
+       "draft": "protect ; of which however there is no",
+       "reread": "protect ; of which however there is no",
+       "status": "agreed",
+       "text": "protect; of which however there is no"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 975,
+      "y": 1782,
+      "width": 872,
+      "height": 62
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r01-b03-872x62+975+1782-x2.png",
+     "image_sha256": "611930810f8736c3ec35081beccf1897bf2cadffb84da0ea5bab4cd41c0eb1b4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "other trace."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "447f0cff-1767-4a55-bfb3-aa785c02f36c",
+      "duration_api_ms": 8146,
+      "cost_usd_list": 0.045658000000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1770,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "other trace.",
+       "reread": "other trace.",
+       "status": "agreed",
+       "text": "other trace."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 975,
+    "y": 1851,
+    "width": 872,
+    "height": 869
+   },
+   "draft_lines": [
+    "כַּנֶּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+    "n. of a city, prob. Ctesiphon, i. q. כַּלְנֶה",
+    "which also is read in one of De Rossi's",
+    "Mss. Comp. יִקַּח for וְלֶקַח ; see more",
+    "in כַּלְנֶה.",
+    "כִּנְרוֹת see כִּנֶּרֶת.",
+    "כִּנּוֹר m. (r. כָּנַר) plur. כִּנֹּרוֹת 1 K. 10,",
+    "12, c. suff. כִּנּוֹרוֹתֵינוּ Ps. 137, 2, once",
+    "כִּנּוֹרַיִךְ Ez. 26, 13 ; Gr. κινύρα, κιννύρα,",
+    "a species of harp or lyre, Lat. cithara,",
+    "[whence the modern word guitar,] a",
+    "stringed instrument of music, celebrated",
+    "for David's skill in playing upon it, and",
+    "employed both in sacred and profane"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 975,
+      "y": 1870,
+      "width": 872,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r02-b00-872x233+975+1870-x2.png",
+     "image_sha256": "19a369638669b0f68fdbf34f2a896f9c94b7e039d8850eadb3330bfcabacce4d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כַּנֵּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+       "n. of a city, prob. Ctesiphon, i. q. כַּלְנֵה",
+       "which also is read in one of De Rossi's",
+       "Mss.  Comp. יִקַּח for יִלְקַח ; see more"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9395ca97-f44b-4256-85d1-c4bb4f25dddc",
+      "duration_api_ms": 23990,
+      "cost_usd_list": 0.08892800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 744
+     },
+     "lines": [
+      {
+       "draft": "כַּנֶּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+       "reread": "כַּנֵּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "כַּנֵּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+        "verdict": "b",
+        "note": "Under the nun two dots are printed side by side (tsere), not a single segol cluster; the rest of the line is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ddb6299c-eff8-46cc-8240-7d92c9b8cbbb",
+        "duration_api_ms": 12080,
+        "cost_usd_list": 0.07285625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3505,
+        "cache_creation_input_tokens": 2487,
+        "output_tokens": 438
+       },
+       "text": "כַּנֵּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr."
+      },
+      {
+       "draft": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֶה",
+       "reread": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֵה",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֵה",
+        "verdict": "b",
+        "note": "Under the nun of the final Hebrew word two dots are printed side by side (tsere), not three (segol); the rest of the line is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9245afb8-6c17-46a4-9480-f6a9341a27ca",
+        "duration_api_ms": 14162,
+        "cost_usd_list": 0.07654174999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3487,
+        "cache_creation_input_tokens": 2469,
+        "output_tokens": 519
+       },
+       "text": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֵה"
+      },
+      {
+       "draft": "which also is read in one of De Rossi's",
+       "reread": "which also is read in one of De Rossi's",
+       "status": "agreed",
+       "text": "which also is read in one of De Rossi's"
+      },
+      {
+       "draft": "Mss. Comp. יִקַּח for וְלֶקַח ; see more",
+       "reread": "Mss.  Comp. יִקַּח for יִלְקַח ; see more",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "Mss.  Comp. יִקַּח for וְיִלְקַח ; see more",
+        "verdict": "neither",
+        "note": "The second Hebrew word is printed with five letters: vav (sheva) + yod (hireq) + lamed (sheva) + qof (patah) + chet, i.e. וְיִלְקַח. Reading A drops the yod and mis-points (וְלֶקַח); Reading B drops the initial vav (יִלְקַח). The first word יִקַּח (with dagesh in qof) is correct in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e2d8e2bc-18c4-4e7d-9cda-ff296e3ab3e9",
+        "duration_api_ms": 21329,
+        "cost_usd_list": 0.10362025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3481,
+        "cache_creation_input_tokens": 2463,
+        "output_tokens": 1063
+       },
+       "text": "Mss. Comp. יִקַּח for וְיִלְקַח; see more"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 975,
+      "y": 2087,
+      "width": 872,
+      "height": 296
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r02-b01-872x296+975+2087-x2.png",
+     "image_sha256": "ea1334cd19c6aad0d6075ce2a97de2a7b79a8a93684263995e17b3e52f4f157d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in כַּלְנֶה.",
+       "כִּנְרוֹת see כִּנֶּרֶת.",
+       "כִּנּוֹר m. (r. כָּנַר) plur. כִּנֹּרוֹת 1 K. 10,",
+       "12, c. suff. כִּנֹּרוֹתֵינוּ Ps. 137, 2, once"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e74f3ea0-5850-4f3e-9327-15e700d50397",
+      "duration_api_ms": 19579,
+      "cost_usd_list": 0.107678,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2841,
+      "output_tokens": 993
+     },
+     "lines": [
+      {
+       "draft": "in כַּלְנֶה.",
+       "reread": "in כַּלְנֶה.",
+       "status": "agreed",
+       "text": "in כַּלְנֶה."
+      },
+      {
+       "draft": "כִּנְרוֹת see כִּנֶּרֶת.",
+       "reread": "כִּנְרוֹת see כִּנֶּרֶת.",
+       "status": "agreed",
+       "text": "כִּנְרוֹת see כִּנֶּרֶת."
+      },
+      {
+       "draft": "כִּנּוֹר m. (r. כָּנַר) plur. כִּנֹּרוֹת 1 K. 10,",
+       "reread": "כִּנּוֹר m. (r. כָּנַר) plur. כִּנֹּרוֹת 1 K. 10,",
+       "status": "agreed",
+       "text": "כִּנּוֹר m. (r. כָּנַר) plur. כִּנֹּרוֹת 1 K. 10,"
+      },
+      {
+       "draft": "12, c. suff. כִּנּוֹרוֹתֵינוּ Ps. 137, 2, once",
+       "reread": "12, c. suff. כִּנֹּרוֹתֵינוּ Ps. 137, 2, once",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "12, c. suff. כִּנֹּרוֹתֵינוּ Ps. 137, 2, once",
+        "verdict": "b",
+        "note": "The first syllable is printed defectively: the nun carries dagesh and a holem dot directly above it, followed immediately by resh — there is no vav between nun and resh (matching the defective plural כִּנֹּרוֹת in the line above). Only the second holem is written with vav (וֹ).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bb02f462-761a-4fd7-afdb-ac750e57093e",
+        "duration_api_ms": 16414,
+        "cost_usd_list": 0.0880455,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3502,
+        "cache_creation_input_tokens": 2799,
+        "output_tokens": 617
+       },
+       "text": "12, c. suff. כִּנֹּרוֹתֵינוּ Ps. 137, 2, once"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 975,
+      "y": 2367,
+      "width": 872,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r02-b02-872x239+975+2367-x2.png",
+     "image_sha256": "ad1e258e9a63f451159599ed3c2c9497047d593c81979a32950fa5d96f6dac46",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כִּנּוֹרַיִךְ Ez. 26, 13 ; Gr. κινύρα, κιννύρα,",
+       "a species of harp or lyre, Lat. cithara,",
+       "[whence the modern word guitar,] a",
+       "stringed instrument of music, celebrated"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "05039220-d95b-4335-8019-4913cce41f8d",
+      "duration_api_ms": 12103,
+      "cost_usd_list": 0.07533800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 447
+     },
+     "lines": [
+      {
+       "draft": "כִּנּוֹרַיִךְ Ez. 26, 13 ; Gr. κινύρα, κιννύρα,",
+       "reread": "כִּנּוֹרַיִךְ Ez. 26, 13 ; Gr. κινύρα, κιννύρα,",
+       "status": "agreed",
+       "text": "כִּנּוֹרַיִךְ Ez. 26, 13; Gr. κινύρα, κιννύρα,"
+      },
+      {
+       "draft": "a species of harp or lyre, Lat. cithara,",
+       "reread": "a species of harp or lyre, Lat. cithara,",
+       "status": "agreed",
+       "text": "a species of harp or lyre, Lat. cithara,"
+      },
+      {
+       "draft": "[whence the modern word guitar,] a",
+       "reread": "[whence the modern word guitar,] a",
+       "status": "agreed",
+       "text": "[whence the modern word guitar,] a"
+      },
+      {
+       "draft": "stringed instrument of music, celebrated",
+       "reread": "stringed instrument of music, celebrated",
+       "status": "agreed",
+       "text": "stringed instrument of music, celebrated"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 975,
+      "y": 2590,
+      "width": 872,
+      "height": 138
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r02-b03-872x138+975+2590-x2.png",
+     "image_sha256": "25337bab71016bf6110731fd815d3d387e691907b3b4a919b2d0a3ba2d818e70",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for David's skill in playing upon it, and",
+       "employed both in sacred and profane"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2a82f4ff-7304-4167-80a3-60c59bec81d3",
+      "duration_api_ms": 7995,
+      "cost_usd_list": 0.053058,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2085,
+      "output_tokens": 203
+     },
+     "lines": [
+      {
+       "draft": "for David's skill in playing upon it, and",
+       "reread": "for David's skill in playing upon it, and",
+       "status": "agreed",
+       "text": "for David's skill in playing upon it, and"
+      },
+      {
+       "draft": "employed both in sacred and profane",
+       "reread": "employed both in sacred and profane",
+       "status": "agreed",
+       "text": "employed both in sacred and profane"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 975,
+    "y": 2708,
+    "width": 872,
+    "height": 554
+   },
+   "draft_lines": [
+    "music, in rejoicing and in mourning,",
+    "1 K. 10, 12. Is. 5, 12. 23, 12. Gen. 31, 27.",
+    "Job 30, 31; usually as an accompaniment",
+    "to the voice, Ps. 33, 2. 43, 4. 49, 5. 71,",
+    "22. al. Josephus relates, Ant. 7. 12. 3,",
+    "that the κινύρα had ten strings, and was",
+    "struck with a plectrum; but this is con-",
+    "trary to the words in 1 Sam. 16, 23. 18,",
+    "10. 19, 9, from which it appears that this",
+    "instrument was played with the fingers."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 975,
+      "y": 2700,
+      "width": 872,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r03-b00-872x237+975+2700-x2.png",
+     "image_sha256": "1d6e9d3f926f2997eb21bece9f3dd183c16c2b9c14c19f1aa8bfb5022a67f09a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "music, in rejoicing and in mourning,",
+       "1 K. 10, 12. Is. 5, 12. 23, 12. Gen. 31, 27.",
+       "Job 30, 31; usually as an accompaniment",
+       "to the voice, Ps. 33, 2. 43, 4. 49, 5. 71,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cb70fd59-51b9-4b1d-8db5-4069e1502913",
+      "duration_api_ms": 9946,
+      "cost_usd_list": 0.067678,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 319
+     },
+     "lines": [
+      {
+       "draft": "music, in rejoicing and in mourning,",
+       "reread": "music, in rejoicing and in mourning,",
+       "status": "agreed",
+       "text": "music, in rejoicing and in mourning,"
+      },
+      {
+       "draft": "1 K. 10, 12. Is. 5, 12. 23, 12. Gen. 31, 27.",
+       "reread": "1 K. 10, 12. Is. 5, 12. 23, 12. Gen. 31, 27.",
+       "status": "agreed",
+       "text": "1 K. 10, 12. Is. 5, 12. 23, 12. Gen. 31, 27."
+      },
+      {
+       "draft": "Job 30, 31; usually as an accompaniment",
+       "reread": "Job 30, 31; usually as an accompaniment",
+       "status": "agreed",
+       "text": "Job 30, 31; usually as an accompaniment"
+      },
+      {
+       "draft": "to the voice, Ps. 33, 2. 43, 4. 49, 5. 71,",
+       "reread": "to the voice, Ps. 33, 2. 43, 4. 49, 5. 71,",
+       "status": "agreed",
+       "text": "to the voice, Ps. 33, 2. 43, 4. 49, 5. 71,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 975,
+      "y": 2921,
+      "width": 872,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r03-b01-872x230+975+2921-x2.png",
+     "image_sha256": "e363f2c8354af05333580593f4f8d709ac9409432b72f0508218882173be92b2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "22. al. Josephus relates, Ant. 7. 12. 3,",
+       "that the κινύρα had ten strings, and was",
+       "struck with a plectrum ; but this is con-",
+       "trary to the words in 1 Sam. 16, 23. 18,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dfcfd09e-c523-44fc-a6bf-7ca08493e716",
+      "duration_api_ms": 9656,
+      "cost_usd_list": 0.06472800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "22. al. Josephus relates, Ant. 7. 12. 3,",
+       "reread": "22. al. Josephus relates, Ant. 7. 12. 3,",
+       "status": "agreed",
+       "text": "22. al. Josephus relates, Ant. 7. 12. 3,"
+      },
+      {
+       "draft": "that the κινύρα had ten strings, and was",
+       "reread": "that the κινύρα had ten strings, and was",
+       "status": "agreed",
+       "text": "that the κινύρα had ten strings, and was"
+      },
+      {
+       "draft": "struck with a plectrum; but this is con-",
+       "reread": "struck with a plectrum ; but this is con-",
+       "status": "agreed",
+       "text": "struck with a plectrum; but this is con-"
+      },
+      {
+       "draft": "trary to the words in 1 Sam. 16, 23. 18,",
+       "reread": "trary to the words in 1 Sam. 16, 23. 18,",
+       "status": "agreed",
+       "text": "trary to the words in 1 Sam. 16, 23. 18,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 975,
+      "y": 3135,
+      "width": 872,
+      "height": 129
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0491/pass2/c1-r03-b02-872x129+975+3135-x2.png",
+     "image_sha256": "6b79fbcae277e5a180295a2e6c0e2517d898a108584da80b8d8f6ea83ee3f0f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "10. 19, 9, from which it appears that this",
+       "instrument was played with the fingers."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "17835715-e60f-4e92-9147-a7d9fb1e3eba",
+      "duration_api_ms": 8998,
+      "cost_usd_list": 0.053158000000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2085,
+      "output_tokens": 205
+     },
+     "lines": [
+      {
+       "draft": "10. 19, 9, from which it appears that this",
+       "reread": "10. 19, 9, from which it appears that this",
+       "status": "agreed",
+       "text": "10. 19, 9, from which it appears that this"
+      },
+      {
+       "draft": "instrument was played with the fingers.",
+       "reread": "instrument was played with the fingers.",
+       "status": "agreed",
+       "text": "instrument was played with the fingers."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "כן 475 כנו",
+   "status": "adjudicated",
+   "draft": "כן 475 כנו",
+   "reread": "כן 475 כנר",
+   "verdict": "a",
+   "note": "The final (leftmost) letter of the right-hand word is a narrow vertical stroke with no broad head extending left — a vav, not a resh; so כנו, not כנר.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of relative conjunctions Lehrg. p. 636.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ps. 45, 3 thou art fairer than the children",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of men... עַל־כֵּן בֵּרַכְךָ אֱלֹהִים because",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "that God hath blessed thee for ever. Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1, 5. 42, 7. Is. 15, 4. Jer. 48, 36.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "e) עַד־כֵּן lit. until so, i. e. until now, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "yet, hitherto, Neh. 2, 16. Here כֵּן refers",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to time as in Syriac; see note above.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "f) כְּמוֹ־כֵן like this, in like manner,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Is. 51, 6; comp. Engl. such-like. Sept.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ὥσπερ ταῦτα, Vulg. sicut hæc; and so",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "all the ancient versions. But see in כֵּן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "III.—R.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "II. כֵּן m. (r. כָּנַן I) c. suff. כַּנִּי, כַּנּוֹ.",
+   "status": "adjudicated",
+   "draft": "II. כֵּן m. (r. כּוּן I) c. suff. כַּנִּי, כַּנּוֹ.",
+   "reread": "II. כֵּן m. (r. כָּנַן I) c. suff. כַּנִּי, כַּנּוֹ.",
+   "verdict": "b",
+   "note": "The root in parentheses is printed as three letters כָּנַן (kaph–nun–final nun, with qamets and pathach), not כּוּן; the rest of the line (כֵּן, suffixed forms כַּנִּי then כַּנּוֹ) is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1. a stand, base, pedestal; 1 K. 7, 31",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מַעֲשֵׂה־כֵן in the manner of a base, like a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "pedestal. Spec. of the base or foot of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the laver in the court of the temple, Ex.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "30, 18. 28. 31, 9. Lev. 8, 11. Of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "base or socket of a ship's mast, Is. 33, 23;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "called in Greek μεσόδμη Od. 15. 290,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ἱστοδόκη Il. 1. 494, ἱστοπέδη Od. 12. 51.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. a stand, station, place, Gen. 40, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "41. 13. Dan. 11, 20 וְעָמַד עַל כַּנּוֹ and there",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "shall rise up in his place, in his stead. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "21. 38. So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנּוֹ",
+   "status": "adjudicated",
+   "draft": "21. 38. So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנּוֹ",
+   "reread": "21. 38.  So v. 7 וְעָמַד מִנֵּצֶר שָׁרָשֶׁיהָ כַּנֹּו",
+   "verdict": "a",
+   "note": "Final word: the ḥolem is printed over the vav (כַּנּוֹ, ḥolem male), not over the nun as in B's נֹּו; the nun carries only dagesh. A matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and out of a shoot of her roots (one) shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "rise up in his place, pr. stand in his place.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Sept. and Vulg. render כַּנּוֹ by φυτόν αὐ-",
+   "status": "adjudicated",
+   "draft": "Sept. and Vulg. render כַּנּוֹ by φυτὸν αὐ-",
+   "reread": "Sept. and Vulg. render כַּנֹּו by φυτόν αὐ-",
+   "verdict": "neither",
+   "note": "Hebrew: the holam dot sits over the vav (holam male), so the correct encoding is nun+dagesh, vav, holam (כַּנּוֹ) as in A, not B's holam-before-vav (כַּנֹּו). Greek: the accent on φυτόν is printed as an acute (´), as in B, not A's grave (φυτὸν). Each reading has one error, so neither matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "τοῦ, plantatio ejus, taking it in the nom.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "case; see in כִּנָּה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "III. כֵּן m. (r. כָּנַן II) a gnat, in Sing.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "once Is. 51, 6 כְּמוֹ־כֵן like gnats. Sept.",
+   "status": "adjudicated",
+   "draft": "once Is. 51, 6 כְּמוֹ־כֵן like gnats. Sept.",
+   "reread": "once Is. 51, 6 כְּמוֹ־כֵּן like gnats. Sept.",
+   "verdict": "a",
+   "note": "The decisive difference is the dagesh in the second kaf: the printed כֵן after the maqqef shows only tsere beneath the kaf with no dot inside it (contrast the clearly dotted first kaf כְּ), so Reading A's undageshed כֵן matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "frigidly ὥσπερ ταῦτα, Vulg. sicut hæc;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "see in כֵּן I. B. f. above.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Plur. כִּנִּים Ex. 8, 12. 14. Ps. 105, 31;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Sept. σκνῖφες, Vulg. sciniphes, a species",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of small gnats, very troublesome from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "their sting, and abounding in the marshy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "regions of Egypt; culex reptans Linn.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "culex molestus Forsk. See Hdot. 1. 95.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Philo de vita Mosis T. II. p. 97 ed. Man-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "gey. Other ancient and modern testi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "monies are collected in Bochart Hieroz.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "II. p. 572. Oedmann's Verm. Sammll.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "aus der Naturkunde, Fasc. I. c. 6.—The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Hebrew intpp. and Josephus (Ant. 2. 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "3) with little probability explain it by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "lice; and the Talmudists also use the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sing. כִּנָּם for a louse. Comp. כִּנָּם.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "כֵּן Chald. i. q. Heb. so, thus, but re-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ferring always to what follows, where",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the Hebrews use not כֵּן, but כֹּה; so",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al.",
+   "status": "adjudicated",
+   "draft": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6. 2. al.",
+   "reread": "Dan. 2, 25. 4 11. 6, 7. Ezra 5, 3. 6, 2. al.",
+   "verdict": "a",
+   "note": "After \"6\" the print shows a baseline period with only a detached speck beneath it, not the continuous comma tail seen after \"5\"; so \"6. 2.\" (Reading A), not \"6, 2.\" (Reading B). \"4 11\" is indeed printed without a comma.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "* כָּנָה in Kal not used, Arab. كنى",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "I, II, IV, to call a person or thing by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "another and more honourable name or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "title, to deck with a title; see Tauriz.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ad Hamas. Schult. p. 320. Teblebi ad",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Harir. Schult. II. 57. Chald. to address",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "one by his proper title. The primary",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "idea is perh. to cover, comp. גָּנַן.—In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Heb. only",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Piel fut. יְכַנֶּה 1. to address in a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "soothing manner, to speak kindly to any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "one. Is. 44, 5 וּבְשֵׁם יִשְׂרָאֵל יְכַנֶּה and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "soothingly names the name of Israel.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "45, 4 אֲכַנְּךָ וְלֹא יְדַעְתָּנִי I called thee",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "kindly, though thou hast not known me.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. to flatter, Job 32, 21. 22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Deriv. subst. כְּנָת.",
+   "status": "adjudicated",
+   "draft": "Deriv. subst. כִּנָּה.",
+   "reread": "Deriv. subst. כְּנָת.",
+   "verdict": "b",
+   "note": "Final letter is ת (tav, with its distinct left foot), not ה; the mark under the kaf is a vertical two-dot shewa, not a single hiriq dot. Kaf carries dagesh lene, nun has qamets. Reading B matches; Reading A's כִּנָּה is wrong in final letter and first vowel.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "כַּנָּה f. (r. כָּנַן I) a plant, shoot, as be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ing set, placed; comp. נָצַב, שָׁתַל. Ps.",
+   "status": "adjudicated",
+   "draft": "ing set, placed; comp. נָצַב, שָׁתַל. Ps.",
+   "reread": "ing set, placed; comp. נְצָב, שְׁתִל. Ps.",
+   "verdict": "a",
+   "note": "Both Hebrew words print qamets under the first letter (T-shaped mark under nun and under shin) and patach (flat stroke) under the second (tsade, tav) — נָצַב, שָׁתַל, matching Reading A; Reading B's sheva + qamets / sheva + hireq is not what is printed. Shin dot is at top right in both readings and in print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "80, 16 וְכַנָּה אֲשֶׁר נָטְעָה יְמִינֶךָ and (visit,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "protect) the plant which thy right hand",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hath planted. The ancient intpp. as-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sumed also the masc. כֵּן in the same",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sense Dan. 11, 7; see in כֵּן II. 2.—Others",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "here make כַּנָּה imper. Kal with He pa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ragog. from r. כָּנַן in a signif. to cover, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "protect; of which however there is no",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "other trace.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "כַּנֵּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+   "status": "adjudicated",
+   "draft": "כַּנֶּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+   "reread": "כַּנֵּה ἅπ. λεγόμ. Ez. 27, 23, Canneh, pr.",
+   "verdict": "b",
+   "note": "Under the nun two dots are printed side by side (tsere), not a single segol cluster; the rest of the line is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֵה",
+   "status": "adjudicated",
+   "draft": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֶה",
+   "reread": "n. of a city, prob. Ctesiphon, i. q. כַּלְנֵה",
+   "verdict": "b",
+   "note": "Under the nun of the final Hebrew word two dots are printed side by side (tsere), not three (segol); the rest of the line is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "which also is read in one of De Rossi's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Mss. Comp. יִקַּח for וְיִלְקַח; see more",
+   "status": "adjudicated",
+   "draft": "Mss. Comp. יִקַּח for וְלֶקַח ; see more",
+   "reread": "Mss.  Comp. יִקַּח for יִלְקַח ; see more",
+   "verdict": "neither",
+   "note": "The second Hebrew word is printed with five letters: vav (sheva) + yod (hireq) + lamed (sheva) + qof (patah) + chet, i.e. וְיִלְקַח. Reading A drops the yod and mis-points (וְלֶקַח); Reading B drops the initial vav (יִלְקַח). The first word יִקַּח (with dagesh in qof) is correct in both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "in כַּלְנֶה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "כִּנְרוֹת see כִּנֶּרֶת.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "כִּנּוֹר m. (r. כָּנַר) plur. כִּנֹּרוֹת 1 K. 10,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "12, c. suff. כִּנֹּרוֹתֵינוּ Ps. 137, 2, once",
+   "status": "adjudicated",
+   "draft": "12, c. suff. כִּנּוֹרוֹתֵינוּ Ps. 137, 2, once",
+   "reread": "12, c. suff. כִּנֹּרוֹתֵינוּ Ps. 137, 2, once",
+   "verdict": "b",
+   "note": "The first syllable is printed defectively: the nun carries dagesh and a holem dot directly above it, followed immediately by resh — there is no vav between nun and resh (matching the defective plural כִּנֹּרוֹת in the line above). Only the second holem is written with vav (וֹ).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "כִּנּוֹרַיִךְ Ez. 26, 13; Gr. κινύρα, κιννύρα,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a species of harp or lyre, Lat. cithara,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "[whence the modern word guitar,] a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "stringed instrument of music, celebrated",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "for David's skill in playing upon it, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "employed both in sacred and profane",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "music, in rejoicing and in mourning,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1 K. 10, 12. Is. 5, 12. 23, 12. Gen. 31, 27.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Job 30, 31; usually as an accompaniment",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "to the voice, Ps. 33, 2. 43, 4. 49, 5. 71,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "22. al. Josephus relates, Ant. 7. 12. 3,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "that the κινύρα had ten strings, and was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "struck with a plectrum; but this is con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "trary to the words in 1 Sam. 16, 23. 18,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "10. 19, 9, from which it appears that this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "instrument was played with the fingers.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 95,
+  "adjudicated": 12,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "errors": 0,
+ "cost_usd_list_total": 3.3556
+}

@@ -1,0 +1,2329 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 1176,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-1176.png",
+ "raster_sha256": "e5a1f4308806aca013ce0fbb4e400a212002339b42fa784e11cec111f6140289",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-1176.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T13:13:19+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 218,
+    "y": 64,
+    "width": 1778,
+    "height": 59
+   },
+   "draft_lines": [
+    "ת 1160 ת"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 218,
+      "y": 56,
+      "width": 1778,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/header-b00-1778x69+218+56-x2.png",
+     "image_sha256": "c31a080937656dc2ef67e2ae2ca74694eeab14943b516d66d5597993ed70d046",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ת 1160 ת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e7785794-dcf3-4b5f-972d-2234714def2b",
+      "duration_api_ms": 8548,
+      "cost_usd_list": 0.065734,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 2376,
+      "cache_creation_input_tokens": 2800,
+      "output_tokens": 182
+     },
+     "lines": [
+      {
+       "draft": "ת 1160 ת",
+       "reread": "ת 1160 ת",
+       "status": "agreed",
+       "text": "ת 1160 ת"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 218,
+    "y": 170,
+    "width": 864,
+    "height": 851
+   },
+   "draft_lines": [
+    "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal",
+    "from r. חוּשׁ; for an analogous instance",
+    "see under r. עִיט p. 770.   Job 31, 5.",
+    "תַּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+    "תַּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+    "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with",
+    "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;",
+    "but contrary to rule and almost cer-",
+    "tainly a corruption.   Lgb. 52, 331.",
+    "תִּכֵּהּ, וַתִּכֵּהּ, fut. apoc. Kal for תִּכְהֶה,",
+    "from r. כָּהָה.",
+    "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה.",
+    "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהָה.",
+    "תָּלַן fut. Kal shortened from תָּלִין, from",
+    "r. לוּן or לִין."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 218,
+      "y": 168,
+      "width": 864,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r00-b00-864x238+218+168-x2.png",
+     "image_sha256": "9c42f05e4dc530701b6e935c906b716d39e304309fd81eeb79e73222e8f5ce79",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תָּחַשׁ, וַתַּחַשׁ for וַתָּחַשׁ, 3 pers. fut. Kal",
+       "from r. חוּשׁ; for an analogous instance",
+       "see under r. עִיט p. 770.  Job 31, 5.",
+       "תֵּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "279dbf37-4618-4720-87dc-022d9faf40a9",
+      "duration_api_ms": 16741,
+      "cost_usd_list": 0.10971475,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2379,
+      "cache_creation_input_tokens": 3599,
+      "output_tokens": 736
+     },
+     "lines": [
+      {
+       "draft": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal",
+       "reread": "תָּחַשׁ, וַתַּחַשׁ for וַתָּחַשׁ, 3 pers. fut. Kal",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal",
+        "verdict": "a",
+        "note": "First word has patach (flat stroke) under the dageshed tav, not qamets; in the third word the chet carries a qamets (vertical tail visible), matching the regular ayin-vav form וַתָּחָשׁ with retracted tone that the shortened וַתַּחַשׁ stands for.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a655d5f5-2451-44a1-a52d-32161b02452b",
+        "duration_api_ms": 24193,
+        "cost_usd_list": 0.1292875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2390,
+        "cache_creation_input_tokens": 3610,
+        "output_tokens": 1123
+       },
+       "text": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal"
+      },
+      {
+       "draft": "from r. חוּשׁ; for an analogous instance",
+       "reread": "from r. חוּשׁ; for an analogous instance",
+       "status": "agreed",
+       "text": "from r. חוּשׁ; for an analogous instance"
+      },
+      {
+       "draft": "see under r. עִיט p. 770.   Job 31, 5.",
+       "reread": "see under r. עִיט p. 770.  Job 31, 5.",
+       "status": "agreed",
+       "text": "see under r. עִיט p. 770. Job 31, 5."
+      },
+      {
+       "draft": "תַּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+       "reread": "תֵּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "תֵּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+        "verdict": "b",
+        "note": "Under the initial tav two horizontal dots (tsere) are printed, not a single patach; so תֵּחַת (Reading B), matching Prov. 17:10 fut. Kal of נָחַת.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "33bdc456-3042-4e6d-96a3-934864f2f7e9",
+        "duration_api_ms": 13798,
+        "cost_usd_list": 0.09542175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2367,
+        "cache_creation_input_tokens": 3587,
+        "output_tokens": 455
+       },
+       "text": "תֵּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 218,
+      "y": 390,
+      "width": 864,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r00-b01-864x237+218+390-x2.png",
+     "image_sha256": "e5838b5fa16c41ab33f156a7855796be43f0ce8d293a2276fbb784d198f833a9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+       "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with",
+       "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;",
+       "but contrary to rule and almost cer-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "37e8533a-4b0e-4f43-b629-7e12526eeaa2",
+      "duration_api_ms": 15429,
+      "cost_usd_list": 0.10411475,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2379,
+      "cache_creation_input_tokens": 3599,
+      "output_tokens": 624
+     },
+     "lines": [
+      {
+       "draft": "תַּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+       "reread": "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+        "verdict": "b",
+        "note": "Under the initial tav the print shows two dots side by side (tsere), not a horizontal patah stroke; the rest of the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "551ac7e4-29ac-493d-b226-a0becc49c84b",
+        "duration_api_ms": 15798,
+        "cost_usd_list": 0.10538125000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2365,
+        "cache_creation_input_tokens": 3585,
+        "output_tokens": 655
+       },
+       "text": "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה."
+      },
+      {
+       "draft": "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with",
+       "reread": "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with",
+       "status": "agreed",
+       "text": "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with"
+      },
+      {
+       "draft": "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;",
+       "reread": "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;",
+       "status": "agreed",
+       "text": "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;"
+      },
+      {
+       "draft": "but contrary to rule and almost cer-",
+       "reread": "but contrary to rule and almost cer-",
+       "status": "agreed",
+       "text": "but contrary to rule and almost cer-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 218,
+      "y": 611,
+      "width": 864,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r00-b02-864x230+218+611-x2.png",
+     "image_sha256": "253cffdaec11e48d3a0ab98732b0487617164b5a601dd19303f1bd2669bba7b1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tainly a corruption.   Lgb. 52, 331.",
+       "תֵּכַהּ, וַתֵּכַהּ, fut. apoc. Kal for תִּכְהֶה,",
+       "from r. כָּהָה.",
+       "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5bc671f3-bc4c-4824-8ff9-ecb2babbe8ee",
+      "duration_api_ms": 20430,
+      "cost_usd_list": 0.11436474999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2379,
+      "cache_creation_input_tokens": 3599,
+      "output_tokens": 829
+     },
+     "lines": [
+      {
+       "draft": "tainly a corruption.   Lgb. 52, 331.",
+       "reread": "tainly a corruption.   Lgb. 52, 331.",
+       "status": "agreed",
+       "text": "tainly a corruption. Lgb. 52, 331."
+      },
+      {
+       "draft": "תִּכֵּהּ, וַתִּכֵּהּ, fut. apoc. Kal for תִּכְהֶה,",
+       "reread": "תֵּכַהּ, וַתֵּכַהּ, fut. apoc. Kal for תִּכְהֶה,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "תֵּכַהּ, וַתֵּכַהּ, fut. apoc. Kal for תִּכְהֶה,",
+        "verdict": "b",
+        "note": "The print shows tsere (two dots) under the dageshed tav and patach under the kaf in both apocopated forms (תֵּכַהּ / וַתֵּכַהּ), not hiriq under tav and tsere under kaf as in Reading A; the final תִּכְהֶה is the same in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "894b4de0-3555-4154-8945-ac6138824df3",
+        "duration_api_ms": 15596,
+        "cost_usd_list": 0.1066565,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2386,
+        "cache_creation_input_tokens": 3606,
+        "output_tokens": 672
+       },
+       "text": "תֵּכַהּ, וַתֵּכַהּ, fut. apoc. Kal for תִּכְהֶה,"
+      },
+      {
+       "draft": "from r. כָּהָה.",
+       "reread": "from r. כָּהָה.",
+       "status": "agreed",
+       "text": "from r. כָּהָה."
+      },
+      {
+       "draft": "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה.",
+       "reread": "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה.",
+       "status": "agreed",
+       "text": "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 218,
+      "y": 825,
+      "width": 864,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r00-b03-864x193+218+825-x2.png",
+     "image_sha256": "b2565c795042d821653484bc4263d41561cd43870c8e808b370cbbb29d9b8e8c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהַהּ.",
+       "תָּלֵן fut. Kal shortened from תָּלִין, from",
+       "r. לוּן or לִין."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d2619f3f-cb2c-4d0f-840c-fc62d3adb814",
+      "duration_api_ms": 16962,
+      "cost_usd_list": 0.09664475,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2379,
+      "cache_creation_input_tokens": 3413,
+      "output_tokens": 549
+     },
+     "lines": [
+      {
+       "draft": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהָה.",
+       "reread": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהַהּ.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהַהּ.",
+        "verdict": "b",
+        "note": "The final root word is printed with a mappiq (dot) in the last he and patah under the middle he — לָהַהּ, matching Reading B; Reading A's לָהָה (qamets, no mappiq) is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "074906ad-9785-4024-b4b1-cbe096463fc7",
+        "duration_api_ms": 22667,
+        "cost_usd_list": 0.11895549999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2382,
+        "cache_creation_input_tokens": 3416,
+        "output_tokens": 994
+       },
+       "text": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהַהּ."
+      },
+      {
+       "draft": "תָּלַן fut. Kal shortened from תָּלִין, from",
+       "reread": "תָּלֵן fut. Kal shortened from תָּלִין, from",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "תָּלַן fut. Kal shortened from תָּלִין, from",
+        "verdict": "a",
+        "note": "Under the lamed of the first word the print shows a single short horizontal bar (patach), not two separate dots (tsere); compare the clearly dotted tsere/segol forms on the line above. Reading A (תָּלַן) is correct; everything else in both readings matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0d7faf8b-08eb-4df8-a665-3ec71828baa7",
+        "duration_api_ms": 25458,
+        "cost_usd_list": 0.10046875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3475,
+        "cache_creation_input_tokens": 2253,
+        "output_tokens": 1084
+       },
+       "text": "תָּלַן fut. Kal shortened from תָּלִין, from"
+      },
+      {
+       "draft": "r. לוּן or לִין.",
+       "reread": "r. לוּן or לִין.",
+       "status": "agreed",
+       "text": "r. לוּן or לִין."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 218,
+    "y": 1009,
+    "width": 864,
+    "height": 747
+   },
+   "draft_lines": [
+    "תֶּמְחִי for תַּמְחֶה 2 masc. (the Yod be-",
+    "longs to the root) of fut. Hiph. from",
+    "מָחָה to wipe away. Jer. 18, 23.",
+    "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תָּמַמְנוּ,",
+    "Num. 17, 28. Lehrg. 373.—Also for",
+    "3 pl. תַּמּוּ Lam. 3, 22 ; so Ewald and",
+    "Roediger.",
+    "תֶּמֶס, וַתֶּמֶס, fut. apoc. Hiph. from r. מָסָה",
+    "to flow down.",
+    "תַּמֵּר Ex. 23, 21, fut. Hiph. see מָרַר Hiph.",
+    "note, p. 620.",
+    "תֹּמְרוּ for תֹּאמְרוּ fut. Kal from r. אָמַר.",
+    "תֵּן, תְּנָה, imp. Kal from r. נָתַן q. v."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 218,
+      "y": 1001,
+      "width": 864,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r01-b00-864x246+218+1001-x2.png",
+     "image_sha256": "7f9bb6132011958f4d603f69dcfd7a966bf03c67574e0a5e0379e21be016b1ec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֶּמְחִי for תִּמְחֶה 2 masc. (the Yod be-",
+       "longs to the root) of fut. Hiph. from",
+       "מָחָה to wipe away. Jer. 18, 23.",
+       "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תַּמּוֹנוּ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "85e9d200-1dae-4bb4-914a-7651fde3a0ed",
+      "duration_api_ms": 22929,
+      "cost_usd_list": 0.10932800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 1134
+     },
+     "lines": [
+      {
+       "draft": "תֶּמְחִי for תַּמְחֶה 2 masc. (the Yod be-",
+       "reread": "תֶּמְחִי for תִּמְחֶה 2 masc. (the Yod be-",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "תֶּמְחִי for תַּמְחֶה 2 masc. (the Yod be-",
+        "verdict": "a",
+        "note": "Under the tav of the second word the print shows a horizontal stroke (patach), not a hiriq dot; fits \"fut. Hiph.\" תַּמְחֶה. Rest of line identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "16b36580-ed72-47bb-bc71-ebb9b6e2386b",
+        "duration_api_ms": 16235,
+        "cost_usd_list": 0.08567275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3491,
+        "cache_creation_input_tokens": 2518,
+        "output_tokens": 682
+       },
+       "text": "תֶּמְחִי for תַּמְחֶה 2 masc. (the Yod be-"
+      },
+      {
+       "draft": "longs to the root) of fut. Hiph. from",
+       "reread": "longs to the root) of fut. Hiph. from",
+       "status": "agreed",
+       "text": "longs to the root) of fut. Hiph. from"
+      },
+      {
+       "draft": "מָחָה to wipe away. Jer. 18, 23.",
+       "reread": "מָחָה to wipe away. Jer. 18, 23.",
+       "status": "agreed",
+       "text": "מָחָה to wipe away. Jer. 18, 23."
+      },
+      {
+       "draft": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תָּמַמְנוּ,",
+       "reread": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תַּמּוֹנוּ,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תַּמּוֹנוּ,",
+        "verdict": "b",
+        "note": "The last word is printed with a plene vav (ḥolem-vav) after a single dageshed mem — תַּמּוֹנוּ, five letters — not the six-letter תָּמַמְנוּ with two mems that Reading A gives.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "333638fd-7f29-4682-82eb-cc7456686834",
+        "duration_api_ms": 18941,
+        "cost_usd_list": 0.087279,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3516,
+        "cache_creation_input_tokens": 2543,
+        "output_tokens": 704
+       },
+       "text": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תַּמּוֹנוּ,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 218,
+      "y": 1231,
+      "width": 864,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r01-b01-864x242+218+1231-x2.png",
+     "image_sha256": "3a960cd4859db04210a5cb316461ff14618356e69eedfb94d36781d3a74f7e83",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Num. 17, 28.  Lehrg. 373.—Also for",
+       "3 pl. תַּמּוּ Lam. 3, 22 ; so Ewald and",
+       "Roediger.",
+       "תֶּמֶס, וַתֶּמֶס, fut. apoc. Hiph. from r. מָסָה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "977e7690-af89-4130-a097-a61098e24981",
+      "duration_api_ms": 16258,
+      "cost_usd_list": 0.08862800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 720
+     },
+     "lines": [
+      {
+       "draft": "Num. 17, 28. Lehrg. 373.—Also for",
+       "reread": "Num. 17, 28.  Lehrg. 373.—Also for",
+       "status": "agreed",
+       "text": "Num. 17, 28. Lehrg. 373.—Also for"
+      },
+      {
+       "draft": "3 pl. תַּמּוּ Lam. 3, 22 ; so Ewald and",
+       "reread": "3 pl. תַּמּוּ Lam. 3, 22 ; so Ewald and",
+       "status": "agreed",
+       "text": "3 pl. תַּמּוּ Lam. 3, 22; so Ewald and"
+      },
+      {
+       "draft": "Roediger.",
+       "reread": "Roediger.",
+       "status": "agreed",
+       "text": "Roediger."
+      },
+      {
+       "draft": "תֶּמֶס, וַתֶּמֶס, fut. apoc. Hiph. from r. מָסָה",
+       "reread": "תֶּמֶס, וַתֶּמֶס, fut. apoc. Hiph. from r. מָסָה",
+       "status": "agreed",
+       "text": "תֶּמֶס, וַתֶּמֶס, fut. apoc. Hiph. from r. מָסָה"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 218,
+      "y": 1457,
+      "width": 864,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r01-b02-864x240+218+1457-x2.png",
+     "image_sha256": "4019e0608745e1fe7efd784b9463e465e5e06b0fc2d3bea626929f938e16b870",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to flow down.",
+       "תַּמֵּר Ex. 23, 21, fut. Hiph. see מָרַר Hiph.",
+       "note, p. 620.",
+       "תֹּמְרוּ for תֹּאמְרוּ fut. Kal from r. אָמַר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "71f406aa-296b-43cb-8aaf-f226146afaa2",
+      "duration_api_ms": 11095,
+      "cost_usd_list": 0.081178,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 571
+     },
+     "lines": [
+      {
+       "draft": "to flow down.",
+       "reread": "to flow down.",
+       "status": "agreed",
+       "text": "to flow down."
+      },
+      {
+       "draft": "תַּמֵּר Ex. 23, 21, fut. Hiph. see מָרַר Hiph.",
+       "reread": "תַּמֵּר Ex. 23, 21, fut. Hiph. see מָרַר Hiph.",
+       "status": "agreed",
+       "text": "תַּמֵּר Ex. 23, 21, fut. Hiph. see מָרַר Hiph."
+      },
+      {
+       "draft": "note, p. 620.",
+       "reread": "note, p. 620.",
+       "status": "agreed",
+       "text": "note, p. 620."
+      },
+      {
+       "draft": "תֹּמְרוּ for תֹּאמְרוּ fut. Kal from r. אָמַר.",
+       "reread": "תֹּמְרוּ for תֹּאמְרוּ fut. Kal from r. אָמַר.",
+       "status": "agreed",
+       "text": "תֹּמְרוּ for תֹּאמְרוּ fut. Kal from r. אָמַר."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 218,
+      "y": 1681,
+      "width": 864,
+      "height": 83
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r01-b03-864x83+218+1681-x2.png",
+     "image_sha256": "2bc65ac9f8e47c790b1dc53fbb9232444336bad099a41bea009546b4b04278c1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֵּן, תְּנָה, imp. Kal from r. נָתַן q. v."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fadefa14-3ade-462a-b56b-c76150d58252",
+      "duration_api_ms": 13147,
+      "cost_usd_list": 0.060648,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1827,
+      "output_tokens": 458
+     },
+     "lines": [
+      {
+       "draft": "תֵּן, תְּנָה, imp. Kal from r. נָתַן q. v.",
+       "reread": "תֵּן, תְּנָה, imp. Kal from r. נָתַן q. v.",
+       "status": "agreed",
+       "text": "תֵּן, תְּנָה, imp. Kal from r. נָתַן q. v."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 218,
+    "y": 1744,
+    "width": 864,
+    "height": 888
+   },
+   "draft_lines": [
+    "תִּנְדַּע, see יִנְדַּע.",
+    "תֹּנוּ fut. Hiph. of r. יָנָה q. v.",
+    "תֹּסֵף for תֹּאסֵף fut. Kal from r. אָסַף.",
+    "תֵּעָגֵנָה for תֵּעָגֵנָּה 2 plur. fut. Niph. from",
+    "r. עָגַן, Dag. forte being omitted; see",
+    "above in חָיָה. § 66. note 11.",
+    "תְּעֻגֶנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+    "עוּג q. v. Dag. forte euphon. in ג.",
+    "תֹּפֵהוּ, וַתֹּפֵהוּ, fut. Kal from r. אָפָה to",
+    "bake, for תֹּאפֵהוּ.",
+    "תְּפוֹצוֹתִיכֶם Jer. 25, 34, see under the root",
+    "פּוּץ, note."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 218,
+      "y": 1736,
+      "width": 864,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r02-b00-864x238+218+1736-x2.png",
+     "image_sha256": "e40fa076489250c74a3ef5b9d5295d0f3dce42ced3d79be7bbfb50ca3532bc9e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תִּנְדַע, see יִנְדַע.",
+       "תֹּנוּ fut. Hiph. of r. יָנָה q. v.",
+       "תֹּסֵף for תֹּאסֵף fut. Kal from r. אָסַף.",
+       "תֵּעָגֵנָה for תֵּעָגֵנָּה 2 plur. fut. Niph. from"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "de212042-9b1b-415c-a942-cd84cea8408d",
+      "duration_api_ms": 21551,
+      "cost_usd_list": 0.10423800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 1057
+     },
+     "lines": [
+      {
+       "draft": "תִּנְדַּע, see יִנְדַּע.",
+       "reread": "תִּנְדַע, see יִנְדַע.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "תִּנְדַּע, see יִנְדַּע.",
+        "verdict": "a",
+        "note": "Both dalets show a dot inside the letter (dagesh lene after quiescent shewa in נְדּ), so Reading A's דַּ is correct; B omits the dagesh. All else (hiriq under tav with dagesh, shewa under nun, patah, qamets-less final ayin, punctuation) is identical in both and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fd75c08d-ad8b-48c6-b2fd-323ec6bee85f",
+        "duration_api_ms": 17531,
+        "cost_usd_list": 0.08325625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3465,
+        "cache_creation_input_tokens": 2430,
+        "output_tokens": 669
+       },
+       "text": "תִּנְדַּע, see יִנְדַּע."
+      },
+      {
+       "draft": "תֹּנוּ fut. Hiph. of r. יָנָה q. v.",
+       "reread": "תֹּנוּ fut. Hiph. of r. יָנָה q. v.",
+       "status": "agreed",
+       "text": "תֹּנוּ fut. Hiph. of r. יָנָה q. v."
+      },
+      {
+       "draft": "תֹּסֵף for תֹּאסֵף fut. Kal from r. אָסַף.",
+       "reread": "תֹּסֵף for תֹּאסֵף fut. Kal from r. אָסַף.",
+       "status": "agreed",
+       "text": "תֹּסֵף for תֹּאסֵף fut. Kal from r. אָסַף."
+      },
+      {
+       "draft": "תֵּעָגֵנָה for תֵּעָגֵנָּה 2 plur. fut. Niph. from",
+       "reread": "תֵּעָגֵנָה for תֵּעָגֵנָּה 2 plur. fut. Niph. from",
+       "status": "agreed",
+       "text": "תֵּעָגֵנָה for תֵּעָגֵנָּה 2 plur. fut. Niph. from"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 218,
+      "y": 1958,
+      "width": 864,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r02-b01-864x239+218+1958-x2.png",
+     "image_sha256": "6ecaaf058490bd98419eb70131e38cfc1187ec3b9eba4f4f3a109d0927b24210",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "r. עָנַן, Dag. forte being omitted; see",
+       "above in חָיָה. § 66. note 11.",
+       "תְּעֻגֶּנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+       "עוּג q. v. Dag. forte euphon. in ג."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba95b493-df4a-4f1d-8f70-4e1e36d98825",
+      "duration_api_ms": 19340,
+      "cost_usd_list": 0.09067800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 761
+     },
+     "lines": [
+      {
+       "draft": "r. עָגַן, Dag. forte being omitted; see",
+       "reread": "r. עָנַן, Dag. forte being omitted; see",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "r. עָגַן, Dag. forte being omitted; see",
+        "verdict": "a",
+        "note": "Middle letter is gimel (ג) with its projecting foot, not nun; the root עגן fits the entry (תֵּעָגֵנָה Ruth 1:13, with dagesh forte omitted).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "666c7573-b0b5-4dc0-9fe2-6edc3d01b470",
+        "duration_api_ms": 15625,
+        "cost_usd_list": 0.07778675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3467,
+        "cache_creation_input_tokens": 2494,
+        "output_tokens": 534
+       },
+       "text": "r. עָגַן, Dag. forte being omitted; see"
+      },
+      {
+       "draft": "above in חָיָה. § 66. note 11.",
+       "reread": "above in חָיָה. § 66. note 11.",
+       "status": "agreed",
+       "text": "above in חָיָה. § 66. note 11."
+      },
+      {
+       "draft": "תְּעֻגֶנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+       "reread": "תְּעֻגֶּנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "תְּעֻגֶּנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+        "verdict": "b",
+        "note": "The gimel carries a printed dagesh (a dot is visible inside the ג), which the following line confirms: \"Dag. forte euphon. in ג\". Reading A omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9d575d00-62b7-4072-8417-a5c60d288814",
+        "duration_api_ms": 12559,
+        "cost_usd_list": 0.07265500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3500,
+        "cache_creation_input_tokens": 2527,
+        "output_tokens": 418
+       },
+       "text": "תְּעֻגֶּנָה Ez. 4. 12, fut. Kal c. suff. from r."
+      },
+      {
+       "draft": "עוּג q. v. Dag. forte euphon. in ג.",
+       "reread": "עוּג q. v. Dag. forte euphon. in ג.",
+       "status": "agreed",
+       "text": "עוּג q. v. Dag. forte euphon. in ג."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 218,
+      "y": 2181,
+      "width": 864,
+      "height": 330
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c0-r02-b02-864x330+218+2181-x2.png",
+     "image_sha256": "d155cda26723b50bf838f7839d5d4e30eeb5d753c98055e8f39f066c74c1d016",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֹּפֵהוּ, וַתֹּפֵהוּ, fut. Kal from r. אָפָה to",
+       "bake, for תֶּאֱפֵהוּ.",
+       "תְּפוֹצוֹתִיכֶם Jer. 25, 34, see under the root",
+       "פּוּץ, note."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0a426722-5c06-4c28-9c3e-fbbc2e0f8078",
+      "duration_api_ms": 18713,
+      "cost_usd_list": 0.097518,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 749
+     },
+     "lines": [
+      {
+       "draft": "תֹּפֵהוּ, וַתֹּפֵהוּ, fut. Kal from r. אָפָה to",
+       "reread": "תֹּפֵהוּ, וַתֹּפֵהוּ, fut. Kal from r. אָפָה to",
+       "status": "agreed",
+       "text": "תֹּפֵהוּ, וַתֹּפֵהוּ, fut. Kal from r. אָפָה to"
+      },
+      {
+       "draft": "bake, for תֹּאפֵהוּ.",
+       "reread": "bake, for תֶּאֱפֵהוּ.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "bake, for תֹּאפֵהוּ.",
+        "verdict": "a",
+        "note": "The tav carries a dot above it (holem) with dagesh inside, and the aleph is quiescent with no hataf segol beneath; the only sub-linear points are the tsere under pe. Reading B's segol + hataf segol are not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "29dfea17-fd4d-4062-b47c-c249263568ca",
+        "duration_api_ms": 17469,
+        "cost_usd_list": 0.09654575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3463,
+        "cache_creation_input_tokens": 2862,
+        "output_tokens": 762
+       },
+       "text": "bake, for תֹּאפֵהוּ."
+      },
+      {
+       "draft": "תְּפוֹצוֹתִיכֶם Jer. 25, 34, see under the root",
+       "reread": "תְּפוֹצוֹתִיכֶם Jer. 25, 34, see under the root",
+       "status": "agreed",
+       "text": "תְּפוֹצוֹתִיכֶם Jer. 25, 34, see under the root"
+      },
+      {
+       "draft": "פּוּץ, note.",
+       "reread": "פּוּץ, note.",
+       "status": "agreed",
+       "text": "פּוּץ, note."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 218,
+    "y": 2620,
+    "width": 864,
+    "height": 753
+   },
+   "draft_lines": [],
+   "bands": []
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1120,
+    "y": 148,
+    "width": 876,
+    "height": 989
+   },
+   "draft_lines": [
+    "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,",
+    "for the comm. תִּצְלֶינָה. See צָלַל I.",
+    "תראנה 1 Sam. 14, 27 Keth. (by a cor-",
+    "ruption) for תָּאֹרְנָה. The copyist",
+    "seems to have had in mind the word",
+    "תִּרְאֶינָה.",
+    "תֶּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+    "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,",
+    "the form being borrowed from רוּץ.",
+    "תִּרֹצְנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+    "fut. Kal of r. נָצַר. The Keth. is",
+    "fut. Kal of r. רוּץ, and should be read",
+    "תָּרֹצְנָה.",
+    "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
+    "r. נָשָׂא.",
+    "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055.",
+    "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1120,
+      "y": 146,
+      "width": 876,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r00-b00-876x262+1120+146-x2.png",
+     "image_sha256": "bd773ae16e798a37253e0151291e0fd4524d1857c5bd5d777338f181fc9e251e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,",
+       "for the comm. תִּצְלֶינָה. See צָלַל I.",
+       "תראנה 1 Sam. 14, 27 Keth. (by a cor-",
+       "ruption) for תָּאֹרְנָה. The copyist"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a48139f7-afb0-4972-abef-8af834af9584",
+      "duration_api_ms": 15269,
+      "cost_usd_list": 0.08404800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2652,
+      "output_tokens": 596
+     },
+     "lines": [
+      {
+       "draft": "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,",
+       "reread": "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,",
+       "status": "agreed",
+       "text": "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,"
+      },
+      {
+       "draft": "for the comm. תִּצְלֶינָה. See צָלַל I.",
+       "reread": "for the comm. תִּצְלֶינָה. See צָלַל I.",
+       "status": "agreed",
+       "text": "for the comm. תִּצְלֶינָה. See צָלַל I."
+      },
+      {
+       "draft": "תראנה 1 Sam. 14, 27 Keth. (by a cor-",
+       "reread": "תראנה 1 Sam. 14, 27 Keth. (by a cor-",
+       "status": "agreed",
+       "text": "תראנה 1 Sam. 14, 27 Keth. (by a cor-"
+      },
+      {
+       "draft": "ruption) for תָּאֹרְנָה. The copyist",
+       "reread": "ruption) for תָּאֹרְנָה. The copyist",
+       "status": "agreed",
+       "text": "ruption) for תָּאֹרְנָה. The copyist"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1120,
+      "y": 392,
+      "width": 876,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r00-b01-876x240+1120+392-x2.png",
+     "image_sha256": "5e18df36c11e97d4b47bc2d0bad9a74efd0ccdf66cd98893258e95da034f3bd0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "seems to have had in mind the word",
+       "תִּרְאֶינָה.",
+       "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+       "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c16ede25-5df1-4155-81b7-f18357fc404a",
+      "duration_api_ms": 16197,
+      "cost_usd_list": 0.087038,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 681
+     },
+     "lines": [
+      {
+       "draft": "seems to have had in mind the word",
+       "reread": "seems to have had in mind the word",
+       "status": "agreed",
+       "text": "seems to have had in mind the word"
+      },
+      {
+       "draft": "תִּרְאֶינָה.",
+       "reread": "תִּרְאֶינָה.",
+       "status": "agreed",
+       "text": "תִּרְאֶינָה."
+      },
+      {
+       "draft": "תֶּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+       "reread": "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+        "verdict": "b",
+        "note": "First word has tsere (two dots) under the tav, same as in וַתֵּרֶב; Reading A's segol is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6f954d03-ba3b-422b-bf43-0194f62a7afe",
+        "duration_api_ms": 11361,
+        "cost_usd_list": 0.08856625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3505,
+        "cache_creation_input_tokens": 2550,
+        "output_tokens": 727
+       },
+       "text": "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה."
+      },
+      {
+       "draft": "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,",
+       "reread": "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,",
+       "status": "agreed",
+       "text": "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1120,
+      "y": 616,
+      "width": 876,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r00-b02-876x245+1120+616-x2.png",
+     "image_sha256": "14a9f575ced8f7dd362a59010b96856bac5c63b11925a10da53760f84b55f529",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the form being borrowed from רוּץ.",
+       "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+       "fut. Kal of r. נָצַר. The Keth. is",
+       "fut. Kal of r. רוּץ, and should be read"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "994f11b2-6ef8-4ec1-8ea5-44580ecdb39b",
+      "duration_api_ms": 20590,
+      "cost_usd_list": 0.10288800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 998
+     },
+     "lines": [
+      {
+       "draft": "the form being borrowed from רוּץ.",
+       "reread": "the form being borrowed from רוּץ.",
+       "status": "agreed",
+       "text": "the form being borrowed from רוּץ."
+      },
+      {
+       "draft": "תִּרֹצְנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+       "reread": "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+        "verdict": "b",
+        "note": "Decisive difference is the first word's pointing: the print shows shewa under resh and holem over tsade (תִּרְצֹנָה), not holem over resh with shewa under tsade as in Reading A. The Keri form תִּצֹּרְנָה is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "962a924c-6b15-4e3c-a423-08c25dba34a0",
+        "duration_api_ms": 17803,
+        "cost_usd_list": 0.08484725000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3509,
+        "cache_creation_input_tokens": 2554,
+        "output_tokens": 651
+       },
+       "text": "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה"
+      },
+      {
+       "draft": "fut. Kal of r. נָצַר. The Keth. is",
+       "reread": "fut. Kal of r. נָצַר. The Keth. is",
+       "status": "agreed",
+       "text": "fut. Kal of r. נָצַר. The Keth. is"
+      },
+      {
+       "draft": "fut. Kal of r. רוּץ, and should be read",
+       "reread": "fut. Kal of r. רוּץ, and should be read",
+       "status": "agreed",
+       "text": "fut. Kal of r. רוּץ, and should be read"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1120,
+      "y": 845,
+      "width": 876,
+      "height": 221
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r00-b03-876x221+1120+845-x2.png",
+     "image_sha256": "319d9efc2d8dfddeca0f6615d90ee4ce056bea73b9fc8b5961df1f8f0cbc6416",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תָּרֹצְנָה.",
+       "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
+       "r. נָשָׂא.",
+       "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9a55b7b7-bbc3-431b-9adc-2c590abf383c",
+      "duration_api_ms": 14764,
+      "cost_usd_list": 0.07596800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2463,
+      "output_tokens": 510
+     },
+     "lines": [
+      {
+       "draft": "תָּרֹצְנָה.",
+       "reread": "תָּרֹצְנָה.",
+       "status": "agreed",
+       "text": "תָּרֹצְנָה."
+      },
+      {
+       "draft": "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
+       "reread": "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
+       "status": "agreed",
+       "text": "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from"
+      },
+      {
+       "draft": "r. נָשָׂא.",
+       "reread": "r. נָשָׂא.",
+       "status": "agreed",
+       "text": "r. נָשָׂא."
+      },
+      {
+       "draft": "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055.",
+       "reread": "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055.",
+       "status": "agreed",
+       "text": "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b04",
+     "bounds": {
+      "x": 1120,
+      "y": 1050,
+      "width": 876,
+      "height": 95
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r00-b04-876x95+1120+1050-x2.png",
+     "image_sha256": "389836c742aba3bbba7ca060105809d7dd7132e97fd861f39b97e29b6a418296",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4acf43ab-fa27-4ff8-9219-ba300bfeae9b",
+      "duration_api_ms": 17434,
+      "cost_usd_list": 0.05786825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1898,
+      "output_tokens": 374
+     },
+     "lines": [
+      {
+       "draft": "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to",
+       "reread": "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to",
+       "status": "agreed",
+       "text": "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1120,
+    "y": 1125,
+    "width": 876,
+    "height": 961
+   },
+   "draft_lines": [
+    "drink.",
+    "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,",
+    "from r. שָׁחָה to bow down.",
+    "תִּשְׁתָּע Is. 41, 10, fut. apoc. Hithp. from",
+    "r. שָׁעָה.",
+    "תֵּת inf. Kal from r. נָתַן to give, contract-",
+    "ed for תֶּנֶת. With suff. תִּתִּי.",
+    "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut.",
+    "Hithp. from r. בָּרַר. Lgb. p. 374.",
+    "תַּתָּה by aphæresis for נָתַתָּה, which is",
+    "read Ps. 18, 41. Comp. רַד for יָרַד.",
+    "תִּתִּי, see in תֵּת above.",
+    "תָּתֹם, תִּתַּם, fut. Kal from תָּמַם, q. v.",
+    "תתן 1 K. 17, 14 Keth. commonly taken",
+    "for תֵּת to give, with Nun parag. as",
+    "in 1 K. 6, 19, where however תִּתֵּן is",
+    "future. Here the Keri, תֵּת, is to be"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1120,
+      "y": 1117,
+      "width": 876,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r01-b00-876x244+1120+1117-x2.png",
+     "image_sha256": "4dccc1a74c44ff24cfecf65d7c73750b94d0fd5cbe396b4b3609cfe3bb52859f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "drink.",
+       "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,",
+       "from r. שָׁחָה to bow down.",
+       "תִּשְׁתָּע Is. 41, 10, fut. apoc. Hithp. from"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1287d3b9-e907-448c-8e96-b79fbcb5f80d",
+      "duration_api_ms": 9377,
+      "cost_usd_list": 0.08447825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2591,
+      "output_tokens": 629
+     },
+     "lines": [
+      {
+       "draft": "drink.",
+       "reread": "drink.",
+       "status": "agreed",
+       "text": "drink."
+      },
+      {
+       "draft": "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,",
+       "reread": "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,",
+       "status": "agreed",
+       "text": "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,"
+      },
+      {
+       "draft": "from r. שָׁחָה to bow down.",
+       "reread": "from r. שָׁחָה to bow down.",
+       "status": "agreed",
+       "text": "from r. שָׁחָה to bow down."
+      },
+      {
+       "draft": "תִּשְׁתָּע Is. 41, 10, fut. apoc. Hithp. from",
+       "reread": "תִּשְׁתָּע Is. 41, 10, fut. apoc. Hithp. from",
+       "status": "agreed",
+       "text": "תִּשְׁתָּע Is. 41, 10, fut. apoc. Hithp. from"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1120,
+      "y": 1345,
+      "width": 876,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r01-b01-876x238+1120+1345-x2.png",
+     "image_sha256": "a2a704590efdc77b128f723b927b081062d26d459d4e4547c3c42077b623c835",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "r. שָׁעָה.",
+       "תֵּת inf. Kal from r. נָתַן to give, contract-",
+       "ed for תֶּנֶת. With suff. תִּתִּי.",
+       "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "11c4b965-688c-436c-a47b-4408cb1d7038",
+      "duration_api_ms": 18528,
+      "cost_usd_list": 0.09116825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2528,
+      "output_tokens": 788
+     },
+     "lines": [
+      {
+       "draft": "r. שָׁעָה.",
+       "reread": "r. שָׁעָה.",
+       "status": "agreed",
+       "text": "r. שָׁעָה."
+      },
+      {
+       "draft": "תֵּת inf. Kal from r. נָתַן to give, contract-",
+       "reread": "תֵּת inf. Kal from r. נָתַן to give, contract-",
+       "status": "agreed",
+       "text": "תֵּת inf. Kal from r. נָתַן to give, contract-"
+      },
+      {
+       "draft": "ed for תֶּנֶת. With suff. תִּתִּי.",
+       "reread": "ed for תֶּנֶת. With suff. תִּתִּי.",
+       "status": "agreed",
+       "text": "ed for תֶּנֶת. With suff. תִּתִּי."
+      },
+      {
+       "draft": "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut.",
+       "reread": "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut.",
+       "status": "agreed",
+       "text": "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1120,
+      "y": 1567,
+      "width": 876,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r01-b02-876x236+1120+1567-x2.png",
+     "image_sha256": "19533d49de3e1f1ea28edccebe2c461d54082a6515d266f2d0c549a63a92eb90",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Hithp. from r. בָּרַר. Lgb. p. 374.",
+       "תַּתָּה by aphæresis for נִתַּתָּה, which is",
+       "read Ps. 18, 41. Comp. רַד for יָרַד.",
+       "תַּתִּי, see in תַּת above."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "87c22057-a571-4796-9925-011d357a4d6c",
+      "duration_api_ms": 15891,
+      "cost_usd_list": 0.08511825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2528,
+      "output_tokens": 667
+     },
+     "lines": [
+      {
+       "draft": "Hithp. from r. בָּרַר. Lgb. p. 374.",
+       "reread": "Hithp. from r. בָּרַר. Lgb. p. 374.",
+       "status": "agreed",
+       "text": "Hithp. from r. בָּרַר. Lgb. p. 374."
+      },
+      {
+       "draft": "תַּתָּה by aphæresis for נָתַתָּה, which is",
+       "reread": "תַּתָּה by aphæresis for נִתַּתָּה, which is",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "תַּתָּה by aphæresis for נָתַתָּה, which is",
+        "verdict": "a",
+        "note": "The nun carries a qamets (T-shaped mark), not a hireq, and the following tav has patach with no dagesh; the print reads נָתַתָּה (Qal \"thou hast given\"), as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2884dab3-31f0-454e-b768-c13916795e1e",
+        "duration_api_ms": 13805,
+        "cost_usd_list": 0.07114975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3479,
+        "cache_creation_input_tokens": 2462,
+        "output_tokens": 414
+       },
+       "text": "תַּתָּה by aphæresis for נָתַתָּה, which is"
+      },
+      {
+       "draft": "read Ps. 18, 41. Comp. רַד for יָרַד.",
+       "reread": "read Ps. 18, 41. Comp. רַד for יָרַד.",
+       "status": "agreed",
+       "text": "read Ps. 18, 41. Comp. רַד for יָרַד."
+      },
+      {
+       "draft": "תִּתִּי, see in תֵּת above.",
+       "reread": "תַּתִּי, see in תַּת above.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "תַּתִּי, see in תַּת above.",
+        "verdict": "b",
+        "note": "Under the first tav of both תַּתִּי and תַּת the print shows a single horizontal stroke (patach), not the dot of hiriq or the two dots of tsere; Reading B matches, Reading A does not.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d92987b6-a761-4f5e-a7cf-1932e980fff2",
+        "duration_api_ms": 13457,
+        "cost_usd_list": 0.07698525,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3461,
+        "cache_creation_input_tokens": 2444,
+        "output_tokens": 538
+       },
+       "text": "תַּתִּי, see in תַּת above."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1120,
+      "y": 1787,
+      "width": 876,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r01-b03-876x239+1120+1787-x2.png",
+     "image_sha256": "512fb3977f2b80db2c48f26c929368b78ee37822fea376084d672c3e86c64e18",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v.",
+       "תתן 1 K. 17, 14 Keth. commonly taken",
+       "for תֵּת to give, with Nun parag. as",
+       "in 1 K. 6, 19, where however תִּתֵּן is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1e007add-130d-48d6-ac13-0d7563345a4d",
+      "duration_api_ms": 22326,
+      "cost_usd_list": 0.09997825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2591,
+      "output_tokens": 939
+     },
+     "lines": [
+      {
+       "draft": "תָּתֹם, תִּתַּם, fut. Kal from תָּמַם, q. v.",
+       "reread": "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v.",
+        "verdict": "b",
+        "note": "The first (rightmost) Hebrew item has hiriq under the first tav and dagesh + patach under the second (תִּתַּם); the second item has hiriq under the first tav and a holem dot above the second tav (תִּתֹּם). Reading A reverses the order and gives a qamets that is not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8dbf2d1a-6833-45f5-a256-924e7a6dcd07",
+        "duration_api_ms": 12842,
+        "cost_usd_list": 0.08617425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3497,
+        "cache_creation_input_tokens": 2543,
+        "output_tokens": 682
+       },
+       "text": "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v."
+      },
+      {
+       "draft": "תתן 1 K. 17, 14 Keth. commonly taken",
+       "reread": "תתן 1 K. 17, 14 Keth. commonly taken",
+       "status": "agreed",
+       "text": "תתן 1 K. 17, 14 Keth. commonly taken"
+      },
+      {
+       "draft": "for תֵּת to give, with Nun parag. as",
+       "reread": "for תֵּת to give, with Nun parag. as",
+       "status": "agreed",
+       "text": "for תֵּת to give, with Nun parag. as"
+      },
+      {
+       "draft": "in 1 K. 6, 19, where however תִּתֵּן is",
+       "reread": "in 1 K. 6, 19, where however תִּתֵּן is",
+       "status": "agreed",
+       "text": "in 1 K. 6, 19, where however תִּתֵּן is"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 1120,
+      "y": 2010,
+      "width": 876,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r01-b04-876x72+1120+2010-x2.png",
+     "image_sha256": "80bbee4c1d8b1801cef10ebfc3f9dadd5bff04e3bafab9e86cd17676c5ec14b9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "future.  Here the Keri, הַתְּ, is to be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "14d19f4f-c92c-467c-b7bd-5e7d1f4c5ca2",
+      "duration_api_ms": 9950,
+      "cost_usd_list": 0.06490825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1835,
+      "output_tokens": 540
+     },
+     "lines": [
+      {
+       "draft": "future. Here the Keri, תֵּת, is to be",
+       "reread": "future.  Here the Keri, הַתְּ, is to be",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b04",
+       "judgement": {
+        "text": "future. Here the Keri, הַתְּ, is to be",
+        "verdict": "b",
+        "note": "Right-hand letter is ה (detached left leg, no foot) with patach; left-hand letter is תּ with dagesh and shewa. No tsere and no second ת, so Reading A's תֵּת is wrong; Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "588a2fc6-745b-4011-ae6d-07c1810fa558",
+        "duration_api_ms": 32825,
+        "cost_usd_list": 0.1263765,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3466,
+        "cache_creation_input_tokens": 1756,
+        "output_tokens": 1801
+       },
+       "text": "future. Here the Keri, הַתְּ, is to be"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1120,
+    "y": 2074,
+    "width": 876,
+    "height": 809
+   },
+   "draft_lines": [
+    "preferred.",
+    "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה.",
+    "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp.",
+    "p. 876.",
+    "תֵּתַצַּב Ex. 2, 4, for תִּתְיַצֵּב Hithp. from",
+    "r. יָצַב. Lgb. 386."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1120,
+      "y": 2078,
+      "width": 876,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r02-b00-876x228+1120+2078-x2.png",
+     "image_sha256": "bec6d9918c81686839755934c7ab96d080679e8f5787ba115a087d406656d927",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "preferred.",
+       "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה.",
+       "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp.",
+       "p. 876."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c5fc119e-9f96-49a7-b4b4-3ff554af7e5a",
+      "duration_api_ms": 15008,
+      "cost_usd_list": 0.07756825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2528,
+      "output_tokens": 516
+     },
+     "lines": [
+      {
+       "draft": "preferred.",
+       "reread": "preferred.",
+       "status": "agreed",
+       "text": "preferred."
+      },
+      {
+       "draft": "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה.",
+       "reread": "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה.",
+       "status": "agreed",
+       "text": "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה."
+      },
+      {
+       "draft": "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp.",
+       "reread": "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp.",
+       "status": "agreed",
+       "text": "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp."
+      },
+      {
+       "draft": "p. 876.",
+       "reread": "p. 876.",
+       "status": "agreed",
+       "text": "p. 876."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1120,
+      "y": 2290,
+      "width": 876,
+      "height": 186
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-1176/pass2/c1-r02-b01-876x186+1120+2290-x2.png",
+     "image_sha256": "061afc9a0a0836503df3d134160a275b6b3aaed9dfc072ea5992887f25e569a6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֵּתַצַּב Ex. 2, 4, for תִּתְיַצֵּב Hithp. from",
+       "r. יָצַב. Lgb. 386."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cd65323a-89f8-4b04-aba3-238455e695cf",
+      "duration_api_ms": 11983,
+      "cost_usd_list": 0.06688825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2339,
+      "output_tokens": 378
+     },
+     "lines": [
+      {
+       "draft": "תֵּתַצַּב Ex. 2, 4, for תִּתְיַצֵּב Hithp. from",
+       "reread": "תֵּתַצַּב Ex. 2, 4, for תִּתְיַצֵּב Hithp. from",
+       "status": "agreed",
+       "text": "תֵּתַצַּב Ex. 2, 4, for תִּתְיַצֵּב Hithp. from"
+      },
+      {
+       "draft": "r. יָצַב. Lgb. 386.",
+       "reread": "r. יָצַב. Lgb. 386.",
+       "status": "agreed",
+       "text": "r. יָצַב. Lgb. 386."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1120,
+    "y": 2871,
+    "width": 876,
+    "height": 317
+   },
+   "draft_lines": [],
+   "bands": []
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "ת 1160 ת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal",
+   "status": "adjudicated",
+   "draft": "תַּחַשׁ, וַתַּחַשׁ for וַתָּחָשׁ, 3 pers. fut. Kal",
+   "reread": "תָּחַשׁ, וַתַּחַשׁ for וַתָּחַשׁ, 3 pers. fut. Kal",
+   "verdict": "a",
+   "note": "First word has patach (flat stroke) under the dageshed tav, not qamets; in the third word the chet carries a qamets (vertical tail visible), matching the regular ayin-vav form וַתָּחָשׁ with retracted tone that the shortened וַתַּחַשׁ stands for.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "from r. חוּשׁ; for an analogous instance",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "see under r. עִיט p. 770. Job 31, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תֵּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+   "status": "adjudicated",
+   "draft": "תַּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+   "reread": "תֵּחַת Prov. 17, 10, fut. Kal of r. נָחַת q. v.",
+   "verdict": "b",
+   "note": "Under the initial tav two horizontal dots (tsere) are printed, not a single patach; so תֵּחַת (Reading B), matching Prov. 17:10 fut. Kal of נָחַת.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+   "status": "adjudicated",
+   "draft": "תַּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+   "reread": "תֵּט fut. apoc. Kal from r. נָטָה, for תִּטֶּה.",
+   "verdict": "b",
+   "note": "Under the initial tav the print shows two dots side by side (tsere), not a horizontal patah stroke; the rest of the line is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תֵּיעָשֶׂה Ex. 25, 31 in many editions, with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Yod as ‘mater lectionis,’ for תֵּעָשֶׂה;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "but contrary to rule and almost cer-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tainly a corruption. Lgb. 52, 331.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תֵּכַהּ, וַתֵּכַהּ, fut. apoc. Kal for תִּכְהֶה,",
+   "status": "adjudicated",
+   "draft": "תִּכֵּהּ, וַתִּכֵּהּ, fut. apoc. Kal for תִּכְהֶה,",
+   "reread": "תֵּכַהּ, וַתֵּכַהּ, fut. apoc. Kal for תִּכְהֶה,",
+   "verdict": "b",
+   "note": "The print shows tsere (two dots) under the dageshed tav and patach under the kaf in both apocopated forms (תֵּכַהּ / וַתֵּכַהּ), not hiriq under tav and tsere under kaf as in Reading A; the final תִּכְהֶה is the same in both.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "from r. כָּהָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תְּכַס fut. apoc. Pi. for תְּכַסֶּה, from r. כָּסָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהַהּ.",
+   "status": "adjudicated",
+   "draft": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהָה.",
+   "reread": "תֵּלַהּ, וַתֵּלַהּ, fut. apoc. Kal from r. לָהַהּ.",
+   "verdict": "b",
+   "note": "The final root word is printed with a mappiq (dot) in the last he and patah under the middle he — לָהַהּ, matching Reading B; Reading A's לָהָה (qamets, no mappiq) is not what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תָּלַן fut. Kal shortened from תָּלִין, from",
+   "status": "adjudicated",
+   "draft": "תָּלַן fut. Kal shortened from תָּלִין, from",
+   "reread": "תָּלֵן fut. Kal shortened from תָּלִין, from",
+   "verdict": "a",
+   "note": "Under the lamed of the first word the print shows a single short horizontal bar (patach), not two separate dots (tsere); compare the clearly dotted tsere/segol forms on the line above. Reading A (תָּלַן) is correct; everything else in both readings matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "r. לוּן or לִין.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תֶּמְחִי for תַּמְחֶה 2 masc. (the Yod be-",
+   "status": "adjudicated",
+   "draft": "תֶּמְחִי for תַּמְחֶה 2 masc. (the Yod be-",
+   "reread": "תֶּמְחִי for תִּמְחֶה 2 masc. (the Yod be-",
+   "verdict": "a",
+   "note": "Under the tav of the second word the print shows a horizontal stroke (patach), not a hiriq dot; fits \"fut. Hiph.\" תַּמְחֶה. Rest of line identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "longs to the root) of fut. Hiph. from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מָחָה to wipe away. Jer. 18, 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תַּמּוֹנוּ,",
+   "status": "adjudicated",
+   "draft": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תָּמַמְנוּ,",
+   "reread": "תַּמְנוּ Chald. 1 pl. præt. r. תָּמַם, for תַּמּוֹנוּ,",
+   "verdict": "b",
+   "note": "The last word is printed with a plene vav (ḥolem-vav) after a single dageshed mem — תַּמּוֹנוּ, five letters — not the six-letter תָּמַמְנוּ with two mems that Reading A gives.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Num. 17, 28. Lehrg. 373.—Also for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3 pl. תַּמּוּ Lam. 3, 22; so Ewald and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Roediger.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תֶּמֶס, וַתֶּמֶס, fut. apoc. Hiph. from r. מָסָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to flow down.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תַּמֵּר Ex. 23, 21, fut. Hiph. see מָרַר Hiph.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "note, p. 620.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תֹּמְרוּ for תֹּאמְרוּ fut. Kal from r. אָמַר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תֵּן, תְּנָה, imp. Kal from r. נָתַן q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תִּנְדַּע, see יִנְדַּע.",
+   "status": "adjudicated",
+   "draft": "תִּנְדַּע, see יִנְדַּע.",
+   "reread": "תִּנְדַע, see יִנְדַע.",
+   "verdict": "a",
+   "note": "Both dalets show a dot inside the letter (dagesh lene after quiescent shewa in נְדּ), so Reading A's דַּ is correct; B omits the dagesh. All else (hiriq under tav with dagesh, shewa under nun, patah, qamets-less final ayin, punctuation) is identical in both and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תֹּנוּ fut. Hiph. of r. יָנָה q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תֹּסֵף for תֹּאסֵף fut. Kal from r. אָסַף.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תֵּעָגֵנָה for תֵּעָגֵנָּה 2 plur. fut. Niph. from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "r. עָגַן, Dag. forte being omitted; see",
+   "status": "adjudicated",
+   "draft": "r. עָגַן, Dag. forte being omitted; see",
+   "reread": "r. עָנַן, Dag. forte being omitted; see",
+   "verdict": "a",
+   "note": "Middle letter is gimel (ג) with its projecting foot, not nun; the root עגן fits the entry (תֵּעָגֵנָה Ruth 1:13, with dagesh forte omitted).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "above in חָיָה. § 66. note 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תְּעֻגֶּנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+   "status": "adjudicated",
+   "draft": "תְּעֻגֶנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+   "reread": "תְּעֻגֶּנָה Ez. 4. 12, fut. Kal c. suff. from r.",
+   "verdict": "b",
+   "note": "The gimel carries a printed dagesh (a dot is visible inside the ג), which the following line confirms: \"Dag. forte euphon. in ג\". Reading A omits it.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "עוּג q. v. Dag. forte euphon. in ג.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תֹּפֵהוּ, וַתֹּפֵהוּ, fut. Kal from r. אָפָה to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "bake, for תֹּאפֵהוּ.",
+   "status": "adjudicated",
+   "draft": "bake, for תֹּאפֵהוּ.",
+   "reread": "bake, for תֶּאֱפֵהוּ.",
+   "verdict": "a",
+   "note": "The tav carries a dot above it (holem) with dagesh inside, and the aleph is quiescent with no hataf segol beneath; the only sub-linear points are the tsere under pe. Reading B's segol + hataf segol are not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תְּפוֹצוֹתִיכֶם Jer. 25, 34, see under the root",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "פּוּץ, note.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תִּצַּלְנָה Jer. 19, 3, fut. Kal from r. צָלַל,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "for the comm. תִּצְלֶינָה. See צָלַל I.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תראנה 1 Sam. 14, 27 Keth. (by a cor-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ruption) for תָּאֹרְנָה. The copyist",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "seems to have had in mind the word",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תִּרְאֶינָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+   "status": "adjudicated",
+   "draft": "תֶּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+   "reread": "תֵּרֶב, וַתֵּרֶב, fut. apoc. Kal from r. רָבָה.",
+   "verdict": "b",
+   "note": "First word has tsere (two dots) under the tav, same as in וַתֵּרֶב; Reading A's segol is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תֵּרוֹץ fut. Niph. from r. רָצַץ to break,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the form being borrowed from רוּץ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+   "status": "adjudicated",
+   "draft": "תִּרֹצְנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+   "reread": "תִּרְצֹנָה Prov. 23, 26, i. e. for Keri תִּצֹּרְנָה",
+   "verdict": "b",
+   "note": "Decisive difference is the first word's pointing: the print shows shewa under resh and holem over tsade (תִּרְצֹנָה), not holem over resh with shewa under tsade as in Reading A. The Keri form תִּצֹּרְנָה is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "fut. Kal of r. נָצַר. The Keth. is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "fut. Kal of r. רוּץ, and should be read",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תָּרֹצְנָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תִּשֶּׂנָה Jer. 9, 17 for תִּשֶּׂאנָה fut. Kal from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "r. נָשָׂא.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תֶּשִׁי Deut. 32, 18, see r. שָׁיָה p. 1055.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "תֵּשְׁתְּ fut. apoc. Kal from r. שָׁתָה to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "drink.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תִּשְׁתַּחוּ fut. apoc. sing. Hithp. for תִּשְׁתַּחֲוֶה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "from r. שָׁחָה to bow down.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תִּשְׁתָּע Is. 41, 10, fut. apoc. Hithp. from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "r. שָׁעָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תֵּת inf. Kal from r. נָתַן to give, contract-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ed for תֶּנֶת. With suff. תִּתִּי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תִּתָּבָר 2 Sam. 22, 27, for תִּתְבָּרַר fut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Hithp. from r. בָּרַר. Lgb. p. 374.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תַּתָּה by aphæresis for נָתַתָּה, which is",
+   "status": "adjudicated",
+   "draft": "תַּתָּה by aphæresis for נָתַתָּה, which is",
+   "reread": "תַּתָּה by aphæresis for נִתַּתָּה, which is",
+   "verdict": "a",
+   "note": "The nun carries a qamets (T-shaped mark), not a hireq, and the following tav has patach with no dagesh; the print reads נָתַתָּה (Qal \"thou hast given\"), as in Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "read Ps. 18, 41. Comp. רַד for יָרַד.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תַּתִּי, see in תַּת above.",
+   "status": "adjudicated",
+   "draft": "תִּתִּי, see in תֵּת above.",
+   "reread": "תַּתִּי, see in תַּת above.",
+   "verdict": "b",
+   "note": "Under the first tav of both תַּתִּי and תַּת the print shows a single horizontal stroke (patach), not the dot of hiriq or the two dots of tsere; Reading B matches, Reading A does not.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v.",
+   "status": "adjudicated",
+   "draft": "תָּתֹם, תִּתַּם, fut. Kal from תָּמַם, q. v.",
+   "reread": "תִּתַּם, תִּתֹּם, fut. Kal from תָּמַם, q. v.",
+   "verdict": "b",
+   "note": "The first (rightmost) Hebrew item has hiriq under the first tav and dagesh + patach under the second (תִּתַּם); the second item has hiriq under the first tav and a holem dot above the second tav (תִּתֹּם). Reading A reverses the order and gives a qamets that is not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תתן 1 K. 17, 14 Keth. commonly taken",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "for תֵּת to give, with Nun parag. as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "in 1 K. 6, 19, where however תִּתֵּן is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "future. Here the Keri, הַתְּ, is to be",
+   "status": "adjudicated",
+   "draft": "future. Here the Keri, תֵּת, is to be",
+   "reread": "future.  Here the Keri, הַתְּ, is to be",
+   "verdict": "b",
+   "note": "Right-hand letter is ה (detached left leg, no foot) with patach; left-hand letter is תּ with dagesh and shewa. No tsere and no second ת, so Reading A's תֵּת is wrong; Reading B matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "preferred.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "תֵּתַע, וַתֵּתַע, fut. apoc. Kal from r. תָּעָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "תִּתַּפָּל 2 Sam. 22, 27, see in פָּתַל Hithp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "p. 876.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "תֵּתַצַּב Ex. 2, 4, for תִּתְיַצֵּב Hithp. from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "r. יָצַב. Lgb. 386.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 63,
+  "adjudicated": 18,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 0
+ },
+ "errors": 0,
+ "cost_usd_list_total": 3.7942
+}

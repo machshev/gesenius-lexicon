@@ -1,0 +1,2673 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 116,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0116.png",
+ "raster_sha256": "dd011d0cbc6c6d87a42db1b0e40acdf1c3862c721fea5c06966d776676434a06",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0116.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:59:41+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 199,
+    "y": 110,
+    "width": 1763,
+    "height": 64
+   },
+   "draft_lines": [
+    "אָשֵׁר 100 אֵשֶׁת"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 199,
+      "y": 108,
+      "width": 1763,
+      "height": 68
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/header-b00-1763x68+199+108-x2.png",
+     "image_sha256": "2cdfc35d913e1f374d8fc5e01f22599dcc57789fcb4d1e5e4551e7bcea825d47",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָשַׂר 100 אֶשֶׁת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7d186b3b-5beb-49aa-882e-b0a30d911d66",
+      "duration_api_ms": 9062,
+      "cost_usd_list": 0.046417,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1708,
+      "output_tokens": 227
+     },
+     "lines": [
+      {
+       "draft": "אָשֵׁר 100 אֵשֶׁת",
+       "reread": "אָשַׂר 100 אֶשֶׁת",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אָשֵׁר 100 אֵשֶׁת",
+        "verdict": "a",
+        "note": "Left word has a shin dot (right arm) and tsere under the shin, so אָשֵׁר not אָשַׂר; right word has tsere (two dots) under the aleph, אֵשֶׁת not אֶשֶׁת.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1aa83674-4e87-42ba-b45d-5d5c6b9b67d6",
+        "duration_api_ms": 14780,
+        "cost_usd_list": 0.07505550000000001,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3462,
+        "cache_creation_input_tokens": 1630,
+        "output_tokens": 831
+       },
+       "text": "אָשֵׁר 100 אֵשֶׁת"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 199,
+    "y": 156,
+    "width": 866,
+    "height": 731
+   },
+   "draft_lines": [
+    "3. Judg. 6, 25.   Once, where in the same",
+    "context mention is made of אֲשֵׁרָה 2 K.",
+    "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,",
+    "the latter seems to pertain to the idola-",
+    "trous worship of the Sidonians, and the",
+    "former to that of the Hebrews.",
+    "2. a statue, image, of Asherah, made",
+    "of wood, a wooden pillar, of great size,",
+    "Judg. 6, 25–27 ; which on account of",
+    "its height was fixed or planted in the",
+    "ground, Deut. 16, 21.   An Asherah or",
+    "statue of this sort stood near the altar of"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 199,
+      "y": 148,
+      "width": 866,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r00-b00-866x248+199+148-x2.png",
+     "image_sha256": "d8f1142a293d576b22b396322d9efb1c0fd099b29d4731246c883638541671e2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Judg. 6, 25.   Once, where in the same",
+       "context mention is made of אֲשֵׁרָה 2 K.",
+       "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0892aea3-8549-40b3-9e5c-6995f53627ae",
+      "duration_api_ms": 24452,
+      "cost_usd_list": 0.07508775000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2569,
+      "output_tokens": 450
+     },
+     "lines": [
+      {
+       "draft": "3. Judg. 6, 25.   Once, where in the same",
+       "reread": "3. Judg. 6, 25.   Once, where in the same",
+       "status": "agreed",
+       "text": "3. Judg. 6, 25. Once, where in the same"
+      },
+      {
+       "draft": "context mention is made of אֲשֵׁרָה 2 K.",
+       "reread": "context mention is made of אֲשֵׁרָה 2 K.",
+       "status": "agreed",
+       "text": "context mention is made of אֲשֵׁרָה 2 K."
+      },
+      {
+       "draft": "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,",
+       "reread": "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,",
+       "status": "agreed",
+       "text": "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 199,
+      "y": 380,
+      "width": 866,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r00-b01-866x235+199+380-x2.png",
+     "image_sha256": "9898f111e526e8df39e48075cc3ffe516ae20fda28e13f562f391b039dd43e28",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the latter seems to pertain to the idola-",
+       "trous worship of the Sidonians, and the",
+       "former to that of the Hebrews.",
+       "2. a statue, image, of Asherah, made"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8397ce7b-add4-4320-a673-231915d3c303",
+      "duration_api_ms": 11482,
+      "cost_usd_list": 0.06319775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2507,
+      "output_tokens": 237
+     },
+     "lines": [
+      {
+       "draft": "the latter seems to pertain to the idola-",
+       "reread": "the latter seems to pertain to the idola-",
+       "status": "agreed",
+       "text": "the latter seems to pertain to the idola-"
+      },
+      {
+       "draft": "trous worship of the Sidonians, and the",
+       "reread": "trous worship of the Sidonians, and the",
+       "status": "agreed",
+       "text": "trous worship of the Sidonians, and the"
+      },
+      {
+       "draft": "former to that of the Hebrews.",
+       "reread": "former to that of the Hebrews.",
+       "status": "agreed",
+       "text": "former to that of the Hebrews."
+      },
+      {
+       "draft": "2. a statue, image, of Asherah, made",
+       "reread": "2. a statue, image, of Asherah, made",
+       "status": "agreed",
+       "text": "2. a statue, image, of Asherah, made"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 199,
+      "y": 599,
+      "width": 866,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r00-b02-866x238+199+599-x2.png",
+     "image_sha256": "8b2a65d19863c7a567522f9830c1a2724980f0ba5b45bdaee24e68ec11e668da",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of wood, a wooden pillar, of great size,",
+       "Judg. 6, 25–27 ; which on account of",
+       "its height was fixed or planted in the",
+       "ground, Deut. 16, 21. An Asherah or"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6878395-c8b0-4052-bbca-76b720fb656f",
+      "duration_api_ms": 11823,
+      "cost_usd_list": 0.06479774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2507,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "of wood, a wooden pillar, of great size,",
+       "reread": "of wood, a wooden pillar, of great size,",
+       "status": "agreed",
+       "text": "of wood, a wooden pillar, of great size,"
+      },
+      {
+       "draft": "Judg. 6, 25–27 ; which on account of",
+       "reread": "Judg. 6, 25–27 ; which on account of",
+       "status": "agreed",
+       "text": "Judg. 6, 25–27; which on account of"
+      },
+      {
+       "draft": "its height was fixed or planted in the",
+       "reread": "its height was fixed or planted in the",
+       "status": "agreed",
+       "text": "its height was fixed or planted in the"
+      },
+      {
+       "draft": "ground, Deut. 16, 21.   An Asherah or",
+       "reread": "ground, Deut. 16, 21. An Asherah or",
+       "status": "agreed",
+       "text": "ground, Deut. 16, 21. An Asherah or"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 199,
+      "y": 821,
+      "width": 866,
+      "height": 60
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r00-b03-866x60+199+821-x2.png",
+     "image_sha256": "10a01700e15fae3caf9107d055357bb9d2059427bca6aa5acebdfe876fd493ed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "statue of this sort stood near the altar of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e6d29438-3343-4856-9380-48c1524a7bad",
+      "duration_api_ms": 8666,
+      "cost_usd_list": 0.04751775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 1763,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "statue of this sort stood near the altar of",
+       "reread": "statue of this sort stood near the altar of",
+       "status": "agreed",
+       "text": "statue of this sort stood near the altar of"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 199,
+    "y": 875,
+    "width": 866,
+    "height": 848
+   },
+   "draft_lines": [
+    "Baal at Samaria from the time of Ahab,",
+    "1 K. 16, 32. 33. 2 K. 10, 26. 17, 16 ; on",
+    "the high place of Bethel, 2 K. 23, 15 ; at",
+    "Ophra, Judg. 6, 25 ; and even in the",
+    "temple at Jerusalem from Manasseh",
+    "until Josiah, 2 K. 21, 3. 7. 23, 6.—Plur.",
+    "אֲשֵׁרִים, Asherahs, pillars, columns, often",
+    "coupled with the cippi or stone pillars",
+    "(מַצֵּבוֹת) consecrated to Baal, 1 K. 14,",
+    "23. 2 K. 17, 10. 23, 14. 2 Chr. 14, 2.",
+    "Mic. 5, 12. 13. Ex. 34, 13. Deut. 7, 5. 12,",
+    "3 ; with בְּעָלִים Judg. 3, 7 ; with חַמָּנִים",
+    "Is. 17, 8. 27, 9. 2 Chr. 34, 4. 7 ; and with",
+    "other species of idols, Deut. 7, 5. 12, 3.",
+    "2 Chr. 31, 1. 33, 9.—That these pillars"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 199,
+      "y": 882,
+      "width": 866,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r01-b00-866x231+199+882-x2.png",
+     "image_sha256": "d5894eed734cc4c56089f123d8f9d12aa7248fdd80f99ecd7867886fd02c2adf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Baal at Samaria from the time of Ahab,",
+       "1 K. 16, 32. 33. 2 K. 10, 26. 17, 16; on",
+       "the high place of Bethel, 2 K. 23, 15; at",
+       "Ophra, Judg. 6, 25; and even in the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b99dfae7-9bbb-4a76-85f5-8c32d4b99a64",
+      "duration_api_ms": 7253,
+      "cost_usd_list": 0.06489775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2507,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "Baal at Samaria from the time of Ahab,",
+       "reread": "Baal at Samaria from the time of Ahab,",
+       "status": "agreed",
+       "text": "Baal at Samaria from the time of Ahab,"
+      },
+      {
+       "draft": "1 K. 16, 32. 33. 2 K. 10, 26. 17, 16 ; on",
+       "reread": "1 K. 16, 32. 33. 2 K. 10, 26. 17, 16; on",
+       "status": "agreed",
+       "text": "1 K. 16, 32. 33. 2 K. 10, 26. 17, 16; on"
+      },
+      {
+       "draft": "the high place of Bethel, 2 K. 23, 15 ; at",
+       "reread": "the high place of Bethel, 2 K. 23, 15; at",
+       "status": "agreed",
+       "text": "the high place of Bethel, 2 K. 23, 15; at"
+      },
+      {
+       "draft": "Ophra, Judg. 6, 25 ; and even in the",
+       "reread": "Ophra, Judg. 6, 25; and even in the",
+       "status": "agreed",
+       "text": "Ophra, Judg. 6, 25; and even in the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 199,
+      "y": 1097,
+      "width": 866,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r01-b01-866x237+199+1097-x2.png",
+     "image_sha256": "d1796571e750bcf934e29d9ae72019b9e2d4925ce2b621071938d509ea879618",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "temple at Jerusalem from Manasseh",
+       "until Josiah, 2 K. 21, 3. 7. 23, 6.—Plur.",
+       "אֲשֵׁרִים, Asherahs, pillars, columns, often",
+       "coupled with the cippi or stone pillars"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "94fbc76e-cd0a-4875-8f33-e659d9616710",
+      "duration_api_ms": 11854,
+      "cost_usd_list": 0.06858800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 344
+     },
+     "lines": [
+      {
+       "draft": "temple at Jerusalem from Manasseh",
+       "reread": "temple at Jerusalem from Manasseh",
+       "status": "agreed",
+       "text": "temple at Jerusalem from Manasseh"
+      },
+      {
+       "draft": "until Josiah, 2 K. 21, 3. 7. 23, 6.—Plur.",
+       "reread": "until Josiah, 2 K. 21, 3. 7. 23, 6.—Plur.",
+       "status": "agreed",
+       "text": "until Josiah, 2 K. 21, 3. 7. 23, 6.—Plur."
+      },
+      {
+       "draft": "אֲשֵׁרִים, Asherahs, pillars, columns, often",
+       "reread": "אֲשֵׁרִים, Asherahs, pillars, columns, often",
+       "status": "agreed",
+       "text": "אֲשֵׁרִים, Asherahs, pillars, columns, often"
+      },
+      {
+       "draft": "coupled with the cippi or stone pillars",
+       "reread": "coupled with the cippi or stone pillars",
+       "status": "agreed",
+       "text": "coupled with the cippi or stone pillars"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 199,
+      "y": 1318,
+      "width": 866,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r01-b02-866x243+199+1318-x2.png",
+     "image_sha256": "fe15da6bbc1405fb586ccc85b20d9f0a05fab554c099d5893bc557da9dd3d74c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(מַצֵּבוֹת) consecrated to Baal, 1 K. 14,",
+       "23. 2 K. 17, 10. 23, 14. 2 Chr. 14, 2.",
+       "Mic. 5, 12. 13. Ex. 34, 13. Deut. 7, 5. 12,",
+       "3; with בְּעָלִים Judg. 3, 7; with חַמָּנִים"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "643834a6-98e6-4c9c-9126-cdfd157027c9",
+      "duration_api_ms": 13528,
+      "cost_usd_list": 0.084428,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 636
+     },
+     "lines": [
+      {
+       "draft": "(מַצֵּבוֹת) consecrated to Baal, 1 K. 14,",
+       "reread": "(מַצֵּבוֹת) consecrated to Baal, 1 K. 14,",
+       "status": "agreed",
+       "text": "(מַצֵּבוֹת) consecrated to Baal, 1 K. 14,"
+      },
+      {
+       "draft": "23. 2 K. 17, 10. 23, 14. 2 Chr. 14, 2.",
+       "reread": "23. 2 K. 17, 10. 23, 14. 2 Chr. 14, 2.",
+       "status": "agreed",
+       "text": "23. 2 K. 17, 10. 23, 14. 2 Chr. 14, 2."
+      },
+      {
+       "draft": "Mic. 5, 12. 13. Ex. 34, 13. Deut. 7, 5. 12,",
+       "reread": "Mic. 5, 12. 13. Ex. 34, 13. Deut. 7, 5. 12,",
+       "status": "agreed",
+       "text": "Mic. 5, 12. 13. Ex. 34, 13. Deut. 7, 5. 12,"
+      },
+      {
+       "draft": "3 ; with בְּעָלִים Judg. 3, 7 ; with חַמָּנִים",
+       "reread": "3; with בְּעָלִים Judg. 3, 7; with חַמָּנִים",
+       "status": "agreed",
+       "text": "3; with בְּעָלִים Judg. 3, 7; with חַמָּנִים"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 199,
+      "y": 1545,
+      "width": 866,
+      "height": 186
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r01-b03-866x186+199+1545-x2.png",
+     "image_sha256": "dadcaa7a820d97f18249c43538cd23821944210b6e58366283148edcb5f1c921",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Is. 17, 8. 27, 9. 2 Chr. 34, 4. 7 ; and with",
+       "other species of idols, Deut. 7, 5. 12, 3.",
+       "2 Chr. 31, 1. 33, 9.—That these pillars"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2c45518e-1767-4576-911e-4d0268bbda84",
+      "duration_api_ms": 10818,
+      "cost_usd_list": 0.060818,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2323,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "Is. 17, 8. 27, 9. 2 Chr. 34, 4. 7 ; and with",
+       "reread": "Is. 17, 8. 27, 9. 2 Chr. 34, 4. 7 ; and with",
+       "status": "agreed",
+       "text": "Is. 17, 8. 27, 9. 2 Chr. 34, 4. 7; and with"
+      },
+      {
+       "draft": "other species of idols, Deut. 7, 5. 12, 3.",
+       "reread": "other species of idols, Deut. 7, 5. 12, 3.",
+       "status": "agreed",
+       "text": "other species of idols, Deut. 7, 5. 12, 3."
+      },
+      {
+       "draft": "2 Chr. 31, 1. 33, 9.—That these pillars",
+       "reread": "2 Chr. 31, 1. 33, 9.—That these pillars",
+       "status": "agreed",
+       "text": "2 Chr. 31, 1. 33, 9.—That these pillars"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 199,
+    "y": 1711,
+    "width": 866,
+    "height": 893
+   },
+   "draft_lines": [
+    "were of wood appears especially from",
+    "the fact, that whenever they are de-",
+    "stroyed they are always said to be cut",
+    "down and burned, Ex. 34, 13. Judg. 6, 25.",
+    "2 K. 23, 6. 15. etc.",
+    "Note. Of the ancient versions some",
+    "render this word Astarte, others a wood-",
+    "en pillar, others a tree. Sept. very fre-",
+    "quently ἄλσος, Vulg. lucus, (Engl. a",
+    "grove,) by which they seem to have",
+    "understood a sacred tree ; but see 2 K.",
+    "17, 10. In the Mishna too it is explained",
+    "by אִילָן נֶעֱבָד ‘ a tree that is worshipped.’",
+    "The primary signification of the word",
+    "may pertain either to the goddess, her",
+    "nature and qualities ; or to the statue or"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 199,
+      "y": 1703,
+      "width": 866,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r02-b00-866x240+199+1703-x2.png",
+     "image_sha256": "15eeced365304522bd62b1f4f62eb41f86bd501279390bcbe9279d16f6db3116",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "were of wood appears especially from",
+       "the fact, that whenever they are de-",
+       "stroyed they are always said to be cut",
+       "down and burned, Ex. 34, 13. Judg. 6, 25."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b818985a-0bd8-4dd1-9824-6d439ba366c3",
+      "duration_api_ms": 11303,
+      "cost_usd_list": 0.06467800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "were of wood appears especially from",
+       "reread": "were of wood appears especially from",
+       "status": "agreed",
+       "text": "were of wood appears especially from"
+      },
+      {
+       "draft": "the fact, that whenever they are de-",
+       "reread": "the fact, that whenever they are de-",
+       "status": "agreed",
+       "text": "the fact, that whenever they are de-"
+      },
+      {
+       "draft": "stroyed they are always said to be cut",
+       "reread": "stroyed they are always said to be cut",
+       "status": "agreed",
+       "text": "stroyed they are always said to be cut"
+      },
+      {
+       "draft": "down and burned, Ex. 34, 13. Judg. 6, 25.",
+       "reread": "down and burned, Ex. 34, 13. Judg. 6, 25.",
+       "status": "agreed",
+       "text": "down and burned, Ex. 34, 13. Judg. 6, 25."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 199,
+      "y": 1927,
+      "width": 866,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r02-b01-866x239+199+1927-x2.png",
+     "image_sha256": "2b07ecaa60010d7b7bf513572af1a7564eeaacd1f8c27fb841d386451ecbbde1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2 K. 23, 6. 15. etc.",
+       "Note. Of the ancient versions some",
+       "render this word Astarte, others a wood-",
+       "en pillar, others a tree. Sept. very fre-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ca6d6306-73a7-4aaf-9f4c-76f7efc5dff7",
+      "duration_api_ms": 9586,
+      "cost_usd_list": 0.064778,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 243
+     },
+     "lines": [
+      {
+       "draft": "2 K. 23, 6. 15. etc.",
+       "reread": "2 K. 23, 6. 15. etc.",
+       "status": "agreed",
+       "text": "2 K. 23, 6. 15. etc."
+      },
+      {
+       "draft": "Note. Of the ancient versions some",
+       "reread": "Note. Of the ancient versions some",
+       "status": "agreed",
+       "text": "Note. Of the ancient versions some"
+      },
+      {
+       "draft": "render this word Astarte, others a wood-",
+       "reread": "render this word Astarte, others a wood-",
+       "status": "agreed",
+       "text": "render this word Astarte, others a wood-"
+      },
+      {
+       "draft": "en pillar, others a tree. Sept. very fre-",
+       "reread": "en pillar, others a tree. Sept. very fre-",
+       "status": "agreed",
+       "text": "en pillar, others a tree. Sept. very fre-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 199,
+      "y": 2150,
+      "width": 866,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r02-b02-866x235+199+2150-x2.png",
+     "image_sha256": "8683d93d2ed252317a964271b0b76358338e5518c27a28a15fb5bb4884f6049d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "quently ἄλσος, Vulg. lucus, (Engl. a",
+       "grove,) by which they seem to have",
+       "understood a sacred tree ; but see 2 K.",
+       "17, 10. In the Mishna too it is explained"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "73608232-40a2-4d11-9bcd-858fb6173ab1",
+      "duration_api_ms": 8709,
+      "cost_usd_list": 0.063988,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "quently ἄλσος, Vulg. lucus, (Engl. a",
+       "reread": "quently ἄλσος, Vulg. lucus, (Engl. a",
+       "status": "agreed",
+       "text": "quently ἄλσος, Vulg. lucus, (Engl. a"
+      },
+      {
+       "draft": "grove,) by which they seem to have",
+       "reread": "grove,) by which they seem to have",
+       "status": "agreed",
+       "text": "grove,) by which they seem to have"
+      },
+      {
+       "draft": "understood a sacred tree ; but see 2 K.",
+       "reread": "understood a sacred tree ; but see 2 K.",
+       "status": "agreed",
+       "text": "understood a sacred tree; but see 2 K."
+      },
+      {
+       "draft": "17, 10. In the Mishna too it is explained",
+       "reread": "17, 10. In the Mishna too it is explained",
+       "status": "agreed",
+       "text": "17, 10. In the Mishna too it is explained"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 199,
+      "y": 2369,
+      "width": 866,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r02-b03-866x243+199+2369-x2.png",
+     "image_sha256": "e28ef35ee208215bb548492195e772d5aa1f45559664dacc11ab8a9378a5c366",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "by אילן נעבד ‘ a tree that is worshipped.’",
+       "The primary signification of the word",
+       "may pertain either to the goddess, her",
+       "nature and qualities ; or to the statue or"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8e15cf94-07b3-4c19-8b77-96e8cfdc73e3",
+      "duration_api_ms": 9758,
+      "cost_usd_list": 0.066628,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 280
+     },
+     "lines": [
+      {
+       "draft": "by אִילָן נֶעֱבָד ‘ a tree that is worshipped.’",
+       "reread": "by אילן נעבד ‘ a tree that is worshipped.’",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "by אילן נעבד ‘ a tree that is worshipped.’",
+        "verdict": "b",
+        "note": "The Hebrew is printed unpointed: no vowel marks under אילן or נעבד are visible in the image (Rabbinic phrase cited without points). Reading A adds vocalization that is not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "04a4a02a-f53a-446c-84c9-6474642f44ed",
+        "duration_api_ms": 12650,
+        "cost_usd_list": 0.07295000000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3480,
+        "cache_creation_input_tokens": 2507,
+        "output_tokens": 432
+       },
+       "text": "by אילן נעבד ‘ a tree that is worshipped.’"
+      },
+      {
+       "draft": "The primary signification of the word",
+       "reread": "The primary signification of the word",
+       "status": "agreed",
+       "text": "The primary signification of the word"
+      },
+      {
+       "draft": "may pertain either to the goddess, her",
+       "reread": "may pertain either to the goddess, her",
+       "status": "agreed",
+       "text": "may pertain either to the goddess, her"
+      },
+      {
+       "draft": "nature and qualities ; or to the statue or",
+       "reread": "nature and qualities ; or to the statue or",
+       "status": "agreed",
+       "text": "nature and qualities; or to the statue or"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 199,
+    "y": 2592,
+    "width": 866,
+    "height": 669
+   },
+   "draft_lines": [
+    "figure of the goddess. The latter has",
+    "recently been maintained by Movers in",
+    "a learned dissertation on this word (Phœ-",
+    "nizier I. p. 560 sq. Bonn 1840); accord-",
+    "ing to whom אֲשֵׁרָה is pr. right, upright,",
+    "then a pillar, and at last a female divi-",
+    "nity of the Canaanites worshipped under",
+    "the figure of an upright pillar, often as",
+    "the partner (σύμβωμος) of Baal in his",
+    "altars, but different from Astarte; comp.",
+    "the epithet of Diana, Ὀρθία, Ὀρθωσία.",
+    "The former idea was adopted by me,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 199,
+      "y": 2584,
+      "width": 866,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r03-b00-866x239+199+2584-x2.png",
+     "image_sha256": "c250c445db9d7a1e5b0bd069f09e3e97260feda6ae7dcf5bd42e41dc764137f3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "figure of the goddess. The latter has",
+       "recently been maintained by Movers in",
+       "a learned dissertation on this word (Phœ-",
+       "nizier I. p. 560 sq. Bonn 1840); accord-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7006a2c0-cfd8-4421-9426-a079f3c0b774",
+      "duration_api_ms": 9756,
+      "cost_usd_list": 0.069278,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 333
+     },
+     "lines": [
+      {
+       "draft": "figure of the goddess. The latter has",
+       "reread": "figure of the goddess. The latter has",
+       "status": "agreed",
+       "text": "figure of the goddess. The latter has"
+      },
+      {
+       "draft": "recently been maintained by Movers in",
+       "reread": "recently been maintained by Movers in",
+       "status": "agreed",
+       "text": "recently been maintained by Movers in"
+      },
+      {
+       "draft": "a learned dissertation on this word (Phœ-",
+       "reread": "a learned dissertation on this word (Phœ-",
+       "status": "agreed",
+       "text": "a learned dissertation on this word (Phœ-"
+      },
+      {
+       "draft": "nizier I. p. 560 sq. Bonn 1840); accord-",
+       "reread": "nizier I. p. 560 sq. Bonn 1840); accord-",
+       "status": "agreed",
+       "text": "nizier I. p. 560 sq. Bonn 1840); accord-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 199,
+      "y": 2807,
+      "width": 866,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r03-b01-866x235+199+2807-x2.png",
+     "image_sha256": "df9bf2fd5a15859f96c87e15f196fbe2f3a29d2e3d5d7b1ba955202ba72d343d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ing to whom אֲשֵׁרָה is pr. right, upright,",
+       "then a pillar, and at last a female divi-",
+       "nity of the Canaanites worshipped under",
+       "the figure of an upright pillar, often as"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5e507c15-a2fe-4c97-9b12-af60cc5448bd",
+      "duration_api_ms": 10063,
+      "cost_usd_list": 0.06758800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 324
+     },
+     "lines": [
+      {
+       "draft": "ing to whom אֲשֵׁרָה is pr. right, upright,",
+       "reread": "ing to whom אֲשֵׁרָה is pr. right, upright,",
+       "status": "agreed",
+       "text": "ing to whom אֲשֵׁרָה is pr. right, upright,"
+      },
+      {
+       "draft": "then a pillar, and at last a female divi-",
+       "reread": "then a pillar, and at last a female divi-",
+       "status": "agreed",
+       "text": "then a pillar, and at last a female divi-"
+      },
+      {
+       "draft": "nity of the Canaanites worshipped under",
+       "reread": "nity of the Canaanites worshipped under",
+       "status": "agreed",
+       "text": "nity of the Canaanites worshipped under"
+      },
+      {
+       "draft": "the figure of an upright pillar, often as",
+       "reread": "the figure of an upright pillar, often as",
+       "status": "agreed",
+       "text": "the figure of an upright pillar, often as"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 199,
+      "y": 3026,
+      "width": 866,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c0-r03-b02-866x237+199+3026-x2.png",
+     "image_sha256": "9b03b502aaa9694b01a47ca805ba0ea3ce7c89a46baef5fde88419c2e511992c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the partner (σύμβωμος) of Baal in his",
+       "altars, but different from Astarte; comp.",
+       "the epithet of Diana, Ὀρθία, Ὀρθωσία.",
+       "The former idea was adopted by me,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4e67ec25-ad68-42db-8133-257d3036bc66",
+      "duration_api_ms": 10557,
+      "cost_usd_list": 0.070388,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 380
+     },
+     "lines": [
+      {
+       "draft": "the partner (σύμβωμος) of Baal in his",
+       "reread": "the partner (σύμβωμος) of Baal in his",
+       "status": "agreed",
+       "text": "the partner (σύμβωμος) of Baal in his"
+      },
+      {
+       "draft": "altars, but different from Astarte; comp.",
+       "reread": "altars, but different from Astarte; comp.",
+       "status": "agreed",
+       "text": "altars, but different from Astarte; comp."
+      },
+      {
+       "draft": "the epithet of Diana, Ὀρθία, Ὀρθωσία.",
+       "reread": "the epithet of Diana, Ὀρθία, Ὀρθωσία.",
+       "status": "agreed",
+       "text": "the epithet of Diana, Ὀρθία, Ὀρθωσία."
+      },
+      {
+       "draft": "The former idea was adopted by me,",
+       "reread": "The former idea was adopted by me,",
+       "status": "agreed",
+       "text": "The former idea was adopted by me,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1088,
+    "y": 156,
+    "width": 874,
+    "height": 846
+   },
+   "draft_lines": [
+    "(Thesaur. s. h. v. et in Append.) referring",
+    "אֲשֵׁרָה to the nature and qualities of the",
+    "goddess herself; though I admit, that",
+    "the proper and primary signification of",
+    "the word was afterwards neglected and",
+    "obliterated, as is not uncommon. Ac-",
+    "cording to this view אֲשֵׁרָה is pr. For-",
+    "tune, happiness, (comp. אָשַׁר no. 3, אֹשֶׁר",
+    "Gen. 30, 13, espec. אַשְׁרֵי,) and hence",
+    "became an attribute of Astarte, or Venus",
+    "as Fortuna datrix, which was made",
+    "great account of among the Hebrew",
+    "idolaters; see the arts. גַּד, מְנִי. To",
+    "this we may add, that the Romans too"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 148,
+      "width": 874,
+      "height": 298
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r00-b00-874x298+1088+148-x2.png",
+     "image_sha256": "9dfa58eccfe04714ac9dd0d58502c10648a35298bfca75f058baa30faea322ce",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(Thesaur. s. h. v. et in Append.) referring",
+       "אֲשֵׁרָה to the nature and qualities of the",
+       "goddess herself; though I admit, that",
+       "the proper and primary signification of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5fcd524d-e34f-43c8-b4f5-37d2fd3847cc",
+      "duration_api_ms": 9836,
+      "cost_usd_list": 0.072628,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2841,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "(Thesaur. s. h. v. et in Append.) referring",
+       "reread": "(Thesaur. s. h. v. et in Append.) referring",
+       "status": "agreed",
+       "text": "(Thesaur. s. h. v. et in Append.) referring"
+      },
+      {
+       "draft": "אֲשֵׁרָה to the nature and qualities of the",
+       "reread": "אֲשֵׁרָה to the nature and qualities of the",
+       "status": "agreed",
+       "text": "אֲשֵׁרָה to the nature and qualities of the"
+      },
+      {
+       "draft": "goddess herself; though I admit, that",
+       "reread": "goddess herself; though I admit, that",
+       "status": "agreed",
+       "text": "goddess herself; though I admit, that"
+      },
+      {
+       "draft": "the proper and primary signification of",
+       "reread": "the proper and primary signification of",
+       "status": "agreed",
+       "text": "the proper and primary signification of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 430,
+      "width": 874,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r00-b01-874x242+1088+430-x2.png",
+     "image_sha256": "9ecf375b8b92d81b64cd99852067b76592745983bff40eadd5cb30d2d69c593e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the word was afterwards neglected and",
+       "obliterated, as is not uncommon. Ac-",
+       "cording to this view אֲשֵׁרָה is pr. For-",
+       "tune, happiness, (comp. אָשַׁר no. 3, אָשֵׁר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a6b76fee-e415-4e03-9ce8-0fcde98bbfcf",
+      "duration_api_ms": 13155,
+      "cost_usd_list": 0.075438,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 449
+     },
+     "lines": [
+      {
+       "draft": "the word was afterwards neglected and",
+       "reread": "the word was afterwards neglected and",
+       "status": "agreed",
+       "text": "the word was afterwards neglected and"
+      },
+      {
+       "draft": "obliterated, as is not uncommon. Ac-",
+       "reread": "obliterated, as is not uncommon. Ac-",
+       "status": "agreed",
+       "text": "obliterated, as is not uncommon. Ac-"
+      },
+      {
+       "draft": "cording to this view אֲשֵׁרָה is pr. For-",
+       "reread": "cording to this view אֲשֵׁרָה is pr. For-",
+       "status": "agreed",
+       "text": "cording to this view אֲשֵׁרָה is pr. For-"
+      },
+      {
+       "draft": "tune, happiness, (comp. אָשַׁר no. 3, אֹשֶׁר",
+       "reread": "tune, happiness, (comp. אָשַׁר no. 3, אָשֵׁר",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "tune, happiness, (comp. אָשַׁר no. 3, אֹשֶׁר",
+        "verdict": "a",
+        "note": "The last word has a holem dot printed above the aleph and segol under the shin (אֹשֶׁר, \"happiness\"), not qamets + tsere as in B; the next line begins \"Gen. 30, 13\", the standard citation for אֹשֶׁר.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7a2f9d5e-3f55-4661-b8eb-2e39414ac732",
+        "duration_api_ms": 14561,
+        "cost_usd_list": 0.08221250000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3490,
+        "cache_creation_input_tokens": 2535,
+        "output_tokens": 606
+       },
+       "text": "tune, happiness, (comp. אָשַׁר no. 3, אֹשֶׁר"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 656,
+      "width": 874,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r00-b02-874x235+1088+656-x2.png",
+     "image_sha256": "7f9f39b46c4a7bb300f7c26daf5b8666e0484ae68ad6f6e581a85307b8671ed1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gen. 30, 13, espec. אַשְׁרֵי,) and hence",
+       "became an attribute of Astarte, or Venus",
+       "as Fortuna datrix, which was made",
+       "great account of among the Hebrew"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28ffb1d7-aeea-4ab0-b171-b15aaa1a1b99",
+      "duration_api_ms": 11512,
+      "cost_usd_list": 0.06697800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 305
+     },
+     "lines": [
+      {
+       "draft": "Gen. 30, 13, espec. אַשְׁרֵי,) and hence",
+       "reread": "Gen. 30, 13, espec. אַשְׁרֵי,) and hence",
+       "status": "agreed",
+       "text": "Gen. 30, 13, espec. אַשְׁרֵי,) and hence"
+      },
+      {
+       "draft": "became an attribute of Astarte, or Venus",
+       "reread": "became an attribute of Astarte, or Venus",
+       "status": "agreed",
+       "text": "became an attribute of Astarte, or Venus"
+      },
+      {
+       "draft": "as Fortuna datrix, which was made",
+       "reread": "as Fortuna datrix, which was made",
+       "status": "agreed",
+       "text": "as Fortuna datrix, which was made"
+      },
+      {
+       "draft": "great account of among the Hebrew",
+       "reread": "great account of among the Hebrew",
+       "status": "agreed",
+       "text": "great account of among the Hebrew"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1088,
+      "y": 875,
+      "width": 874,
+      "height": 124
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r00-b03-874x124+1088+875-x2.png",
+     "image_sha256": "ce65fe22dbe33097187d23efb440e236d54aeb0d59201a9b7fb5d0e4a319bac8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "idolaters; see the arts. גַּד, מְנִי. To",
+       "this we may add, that the Romans too"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "52c5282c-9643-475f-9ba5-25119ad88a94",
+      "duration_api_ms": 9536,
+      "cost_usd_list": 0.056248,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2022,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "idolaters; see the arts. גַּד, מְנִי. To",
+       "reread": "idolaters; see the arts. גַּד, מְנִי. To",
+       "status": "agreed",
+       "text": "idolaters; see the arts. גַּד, מְנִי. To"
+      },
+      {
+       "draft": "this we may add, that the Romans too",
+       "reread": "this we may add, that the Romans too",
+       "status": "agreed",
+       "text": "this we may add, that the Romans too"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1088,
+    "y": 990,
+    "width": 874,
+    "height": 950
+   },
+   "draft_lines": [
+    "regarded Venus as the giver of good",
+    "fortune and a happy lot ; comp. the",
+    "expressions : Venerem jacere Suet. ve-",
+    "nereus jactus Cic. et al. And I am still",
+    "induced to regard this view with favour,",
+    "by the analogy of other similar names",
+    "derived obviously from the nature and",
+    "qualities of heathen gods, and very",
+    "rarely if ever from the form of their sta-",
+    "tues or images ; e. g. בְּעָלִים, עַשְׁתָּרוֹת,",
+    "חַמָּנִים. It is however quite possible",
+    "that, the proper signification of אֲשֵׁרָה,",
+    "אֲשֵׁרִים, being afterwards neglected,",
+    "these words might come to be used of",
+    "rude pillars and wooden statues ; just as",
+    "the Gr. Ἑρμῆς was used of any human",
+    "statue which terminated below the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 982,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r01-b00-874x240+1088+982-x2.png",
+     "image_sha256": "4230ccfdb9af8ffc1623ac083008379b6fe7aef2f00bf8d40fe59e7482b72266",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "regarded Venus as the giver of good",
+       "fortune and a happy lot; comp. the",
+       "expressions: Venerem jacere Suet. ve-",
+       "nereus jactus Cic. et al. And I am still"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "25c2c841-0930-49f7-aacb-311181f00c41",
+      "duration_api_ms": 8229,
+      "cost_usd_list": 0.065238,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "regarded Venus as the giver of good",
+       "reread": "regarded Venus as the giver of good",
+       "status": "agreed",
+       "text": "regarded Venus as the giver of good"
+      },
+      {
+       "draft": "fortune and a happy lot ; comp. the",
+       "reread": "fortune and a happy lot; comp. the",
+       "status": "agreed",
+       "text": "fortune and a happy lot; comp. the"
+      },
+      {
+       "draft": "expressions : Venerem jacere Suet. ve-",
+       "reread": "expressions: Venerem jacere Suet. ve-",
+       "status": "agreed",
+       "text": "expressions: Venerem jacere Suet. ve-"
+      },
+      {
+       "draft": "nereus jactus Cic. et al. And I am still",
+       "reread": "nereus jactus Cic. et al. And I am still",
+       "status": "agreed",
+       "text": "nereus jactus Cic. et al. And I am still"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 1206,
+      "width": 874,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r01-b01-874x242+1088+1206-x2.png",
+     "image_sha256": "dc101968fbedc44f459dfcdd25a2db9ce40b0bedb2f8cb5294aaa8759878188d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "induced to regard this view with favour,",
+       "by the analogy of other similar names",
+       "derived obviously from the nature and",
+       "qualities of heathen gods, and very"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e6f23ba1-10d2-43a2-9469-e02605456e83",
+      "duration_api_ms": 9391,
+      "cost_usd_list": 0.06442825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2591,
+      "output_tokens": 228
+     },
+     "lines": [
+      {
+       "draft": "induced to regard this view with favour,",
+       "reread": "induced to regard this view with favour,",
+       "status": "agreed",
+       "text": "induced to regard this view with favour,"
+      },
+      {
+       "draft": "by the analogy of other similar names",
+       "reread": "by the analogy of other similar names",
+       "status": "agreed",
+       "text": "by the analogy of other similar names"
+      },
+      {
+       "draft": "derived obviously from the nature and",
+       "reread": "derived obviously from the nature and",
+       "status": "agreed",
+       "text": "derived obviously from the nature and"
+      },
+      {
+       "draft": "qualities of heathen gods, and very",
+       "reread": "qualities of heathen gods, and very",
+       "status": "agreed",
+       "text": "qualities of heathen gods, and very"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 1432,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r01-b02-874x240+1088+1432-x2.png",
+     "image_sha256": "2f467c838cac2bba0c5ba72f1955cf7ed5bd69f254ec05570ad277e26e674960",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "rarely if ever from the form of their sta-",
+       "tues or images; e. g. בְּעָלִים, עַשְׁתָּרוֹת,",
+       "חַמָּנִים. It is however quite possible",
+       "that, the proper signification of אֲשֵׁרָה,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4ec089d6-6314-4d8c-bd3a-ca77e4dd512f",
+      "duration_api_ms": 13818,
+      "cost_usd_list": 0.08017825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2591,
+      "output_tokens": 543
+     },
+     "lines": [
+      {
+       "draft": "rarely if ever from the form of their sta-",
+       "reread": "rarely if ever from the form of their sta-",
+       "status": "agreed",
+       "text": "rarely if ever from the form of their sta-"
+      },
+      {
+       "draft": "tues or images ; e. g. בְּעָלִים, עַשְׁתָּרוֹת,",
+       "reread": "tues or images; e. g. בְּעָלִים, עַשְׁתָּרוֹת,",
+       "status": "agreed",
+       "text": "tues or images; e. g. בְּעָלִים, עַשְׁתָּרוֹת,"
+      },
+      {
+       "draft": "חַמָּנִים. It is however quite possible",
+       "reread": "חַמָּנִים. It is however quite possible",
+       "status": "agreed",
+       "text": "חַמָּנִים. It is however quite possible"
+      },
+      {
+       "draft": "that, the proper signification of אֲשֵׁרָה,",
+       "reread": "that, the proper signification of אֲשֵׁרָה,",
+       "status": "agreed",
+       "text": "that, the proper signification of אֲשֵׁרָה,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1088,
+      "y": 1656,
+      "width": 874,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r01-b03-874x234+1088+1656-x2.png",
+     "image_sha256": "637b569099ba9864edc5b07285ad549710537281e50a614c6f0cb371e839af52",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲשֵׁרִים, being afterwards neglected,",
+       "these words might come to be used of",
+       "rude pillars and wooden statues ; just as",
+       "the Gr. Ἑρμῆς was used of any human"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dbeb5b3a-e1a2-4e9c-98a4-b0391b445a1d",
+      "duration_api_ms": 13310,
+      "cost_usd_list": 0.07236825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2528,
+      "output_tokens": 412
+     },
+     "lines": [
+      {
+       "draft": "אֲשֵׁרִים, being afterwards neglected,",
+       "reread": "אֲשֵׁרִים, being afterwards neglected,",
+       "status": "agreed",
+       "text": "אֲשֵׁרִים, being afterwards neglected,"
+      },
+      {
+       "draft": "these words might come to be used of",
+       "reread": "these words might come to be used of",
+       "status": "agreed",
+       "text": "these words might come to be used of"
+      },
+      {
+       "draft": "rude pillars and wooden statues ; just as",
+       "reread": "rude pillars and wooden statues ; just as",
+       "status": "agreed",
+       "text": "rude pillars and wooden statues; just as"
+      },
+      {
+       "draft": "the Gr. Ἑρμῆς was used of any human",
+       "reread": "the Gr. Ἑρμῆς was used of any human",
+       "status": "agreed",
+       "text": "the Gr. Ἑρμῆς was used of any human"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 1088,
+      "y": 1874,
+      "width": 874,
+      "height": 61
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r01-b04-874x61+1088+1874-x2.png",
+     "image_sha256": "992b525a753d609856992ce0dabb481813206a588d0571d8c09022fb2e604be4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "statue which terminated below the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4e7f76a4-0c0d-41b1-be03-0af7f655c4c0",
+      "duration_api_ms": 9589,
+      "cost_usd_list": 0.05004825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1772,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "statue which terminated below the",
+       "reread": "statue which terminated below the",
+       "status": "agreed",
+       "text": "statue which terminated below the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1088,
+    "y": 1928,
+    "width": 874,
+    "height": 695
+   },
+   "draft_lines": [
+    "breast in a square column, although it",
+    "might represent any thing or every thing",
+    "but Mercury.",
+    "אֻשַּׁרְנָא Chald. a wall, so called as",
+    "being upright, see r. אָשַׁר no. 1. Ezra",
+    "5, 3. For the form, see in בִּשְׁנָה.",
+    "* אָשַׁשׁ obsol. root, pr. to cram or",
+    "press together, to make compact, either",
+    "by treading, stamping, or in any other",
+    "way; comp. Arab. أَثَّ to tread, to"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 1935,
+      "width": 874,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r02-b00-874x270+1088+1935-x2.png",
+     "image_sha256": "d366310580a1893c02f6a21852817f3d9bbcf1da36d6ed9c90594ce4536d672d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "breast in a square column, although it",
+       "might represent any thing or every thing",
+       "but Mercury.",
+       "אֻשַּׁרְנָא Chald. a wall, so called as"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0acb395b-b95c-468b-9b4e-69000027912d",
+      "duration_api_ms": 11807,
+      "cost_usd_list": 0.07459825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2717,
+      "output_tokens": 381
+     },
+     "lines": [
+      {
+       "draft": "breast in a square column, although it",
+       "reread": "breast in a square column, although it",
+       "status": "agreed",
+       "text": "breast in a square column, although it"
+      },
+      {
+       "draft": "might represent any thing or every thing",
+       "reread": "might represent any thing or every thing",
+       "status": "agreed",
+       "text": "might represent any thing or every thing"
+      },
+      {
+       "draft": "but Mercury.",
+       "reread": "but Mercury.",
+       "status": "agreed",
+       "text": "but Mercury."
+      },
+      {
+       "draft": "אֻשַּׁרְנָא Chald. a wall, so called as",
+       "reread": "אֻשַּׁרְנָא Chald. a wall, so called as",
+       "status": "agreed",
+       "text": "אֻשַּׁרְנָא Chald. a wall, so called as"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 2189,
+      "width": 874,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r02-b01-874x284+1088+2189-x2.png",
+     "image_sha256": "b65aecea54c4996e676a016cc36534f63a472428d28df809948eff603361fe71",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "being upright, see r. אָשַׁר no. 1. Ezra",
+       "5, 3. For the form, see in בַּשְּׁנָה.",
+       "* אָשַׁשׁ obsol. root, pr. to cram or",
+       "press together, to make compact, either"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "56797c91-05e9-46f4-9991-0156f2cf4c32",
+      "duration_api_ms": 12163,
+      "cost_usd_list": 0.08515825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2780,
+      "output_tokens": 567
+     },
+     "lines": [
+      {
+       "draft": "being upright, see r. אָשַׁר no. 1. Ezra",
+       "reread": "being upright, see r. אָשַׁר no. 1. Ezra",
+       "status": "agreed",
+       "text": "being upright, see r. אָשַׁר no. 1. Ezra"
+      },
+      {
+       "draft": "5, 3. For the form, see in בִּשְׁנָה.",
+       "reread": "5, 3. For the form, see in בַּשְּׁנָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "5, 3. For the form, see in בַּשְּׁנָה.",
+        "verdict": "b",
+        "note": "Bet carries a patach (horizontal stroke), not a hiriq dot, and the shin has a visible dagesh dot in addition to the shin dot — matching Reading B; Reading A's בִּשְׁנָה (hiriq, no dagesh) is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b6f132ba-5e1c-4214-afc4-74b0d58cf3e5",
+        "duration_api_ms": 18088,
+        "cost_usd_list": 0.09355875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3475,
+        "cache_creation_input_tokens": 2710,
+        "output_tokens": 763
+       },
+       "text": "5, 3. For the form, see in בַּשְּׁנָה."
+      },
+      {
+       "draft": "* אָשַׁשׁ obsol. root, pr. to cram or",
+       "reread": "* אָשַׁשׁ obsol. root, pr. to cram or",
+       "status": "agreed",
+       "text": "* אָשַׁשׁ obsol. root, pr. to cram or"
+      },
+      {
+       "draft": "press together, to make compact, either",
+       "reread": "press together, to make compact, either",
+       "status": "agreed",
+       "text": "press together, to make compact, either"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 2457,
+      "width": 874,
+      "height": 161
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r02-b02-874x161+1088+2457-x2.png",
+     "image_sha256": "e40861d91003edd4907f05ce8eb5fedb93892c0a6b68dd19c52a32e4373bdc38",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "by treading, stamping, or in any other",
+       "way; comp. Arab. أَثَّ to tread, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2bd93b4b-3360-45b7-9d29-583a452cd5a9",
+      "duration_api_ms": 17562,
+      "cost_usd_list": 0.07441825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2213,
+      "output_tokens": 579
+     },
+     "lines": [
+      {
+       "draft": "by treading, stamping, or in any other",
+       "reread": "by treading, stamping, or in any other",
+       "status": "agreed",
+       "text": "by treading, stamping, or in any other"
+      },
+      {
+       "draft": "way; comp. Arab. أَثَّ to tread, to",
+       "reread": "way; comp. Arab. أَثَّ to tread, to",
+       "status": "agreed",
+       "text": "way; comp. Arab. أَثَّ to tread, to"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1088,
+    "y": 2611,
+    "width": 874,
+    "height": 877
+   },
+   "draft_lines": [
+    "stamp, to subdue. Kindr. is אָצַץ to press,",
+    "to urge ; also אוּץ and the roots there",
+    "adduced.—Hence אֲשִׁישָׁה a pressed cake",
+    "of dried grapes ; אָשִׁישׁ a foundation, sc.",
+    "as made firm by stamping ; also Arab.",
+    "أَسَّ Conj. II, to found, to make firm ;",
+    "comp. אָשָׁה to prop.",
+    "Note. Hithp. הִתְאוֹשֵׁשׁ see under r.",
+    "אִישׁ p. 45.",
+    "אֶשֶׁת see אֵשֶׂה."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 2616,
+      "width": 874,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r03-b00-874x231+1088+2616-x2.png",
+     "image_sha256": "f39a1bc9e9973e9cc8b9d04f06f47f448e77f2d743c3790288268e78e227c6e1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "stamp, to subdue.  Kindr. is אָצַץ to press,",
+       "to urge ; also אוּץ and the roots there",
+       "adduced.—Hence אֲשִׁישָׁה a pressed cake",
+       "of dried grapes ; אָשִׁישׁ a foundation, sc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "262a9fb6-4daa-483c-9b9e-7ef39d087c19",
+      "duration_api_ms": 17684,
+      "cost_usd_list": 0.08036825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2528,
+      "output_tokens": 572
+     },
+     "lines": [
+      {
+       "draft": "stamp, to subdue. Kindr. is אָצַץ to press,",
+       "reread": "stamp, to subdue.  Kindr. is אָצַץ to press,",
+       "status": "agreed",
+       "text": "stamp, to subdue. Kindr. is אָצַץ to press,"
+      },
+      {
+       "draft": "to urge ; also אוּץ and the roots there",
+       "reread": "to urge ; also אוּץ and the roots there",
+       "status": "agreed",
+       "text": "to urge; also אוּץ and the roots there"
+      },
+      {
+       "draft": "adduced.—Hence אֲשִׁישָׁה a pressed cake",
+       "reread": "adduced.—Hence אֲשִׁישָׁה a pressed cake",
+       "status": "agreed",
+       "text": "adduced.—Hence אֲשִׁישָׁה a pressed cake"
+      },
+      {
+       "draft": "of dried grapes ; אָשִׁישׁ a foundation, sc.",
+       "reread": "of dried grapes ; אָשִׁישׁ a foundation, sc.",
+       "status": "agreed",
+       "text": "of dried grapes; אָשִׁישׁ a foundation, sc."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 2831,
+      "width": 874,
+      "height": 300
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r03-b01-874x300+1088+2831-x2.png",
+     "image_sha256": "0ad034376a00b0f642b2a740e96fdf13451940cf180f15b6a8c76f4b6051a562",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "as made firm by stamping; also Arab.",
+       "أَسَّ Conj. II, to found, to make firm;",
+       "comp. אָשְׁיָה to prop.",
+       "Note. Hithp. הִתְאוֹשָׁשׁ see under r."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26c33349-74d6-49f8-9f24-eb49759e6f5f",
+      "duration_api_ms": 22122,
+      "cost_usd_list": 0.09671825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2843,
+      "output_tokens": 773
+     },
+     "lines": [
+      {
+       "draft": "as made firm by stamping ; also Arab.",
+       "reread": "as made firm by stamping; also Arab.",
+       "status": "agreed",
+       "text": "as made firm by stamping; also Arab."
+      },
+      {
+       "draft": "أَسَّ Conj. II, to found, to make firm ;",
+       "reread": "أَسَّ Conj. II, to found, to make firm;",
+       "status": "agreed",
+       "text": "أَسَّ Conj. II, to found, to make firm;"
+      },
+      {
+       "draft": "comp. אָשָׁה to prop.",
+       "reread": "comp. אָשְׁיָה to prop.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "comp. אָשָׁה to prop.",
+        "verdict": "a",
+        "note": "Only three Hebrew letters are printed (aleph, shin, he), each of the first two with qamets and the shin with a right-hand dot; there is no yod and no shewa, so Reading B's אָשְׁיָה is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1cc69e62-ae22-4ceb-8fbb-76dc856526ca",
+        "duration_api_ms": 11907,
+        "cost_usd_list": 0.07607449999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3458,
+        "cache_creation_input_tokens": 2756,
+        "output_tokens": 395
+       },
+       "text": "comp. אָשָׁה to prop."
+      },
+      {
+       "draft": "Note. Hithp. הִתְאוֹשֵׁשׁ see under r.",
+       "reread": "Note. Hithp. הִתְאוֹשָׁשׁ see under r.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "Note. Hithp. הִתְאוֹשֵׁשׁ see under r.",
+        "verdict": "a",
+        "note": "Under the first shin (after the vav) the print shows two horizontal dots (tsere), not the qamets of Reading B; the vav with holem is printed (plene), and both shin dots are present. Matches the expected form הִתְאוֹשֵׁשׁ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eb9daa62-fa56-41f6-b845-a0d9fda8a56c",
+        "duration_api_ms": 13692,
+        "cost_usd_list": 0.08367125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3485,
+        "cache_creation_input_tokens": 2783,
+        "output_tokens": 536
+       },
+       "text": "Note. Hithp. הִתְאוֹשֵׁשׁ see under r."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 3115,
+      "width": 874,
+      "height": 373
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0116/pass2/c1-r03-b02-874x373+1088+3115-x2.png",
+     "image_sha256": "a17a97d321fc8fb964b341d495834112ca42678f7b7d653b4d771be687555d4c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישׁ p. 45.",
+       "אֵשֶׁת see אִשָּׁה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "825b0434-30dc-4512-99dd-782fecc4f909",
+      "duration_api_ms": 13144,
+      "cost_usd_list": 0.08516825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 3158,
+      "output_tokens": 416
+     },
+     "lines": [
+      {
+       "draft": "אִישׁ p. 45.",
+       "reread": "אִישׁ p. 45.",
+       "status": "agreed",
+       "text": "אִישׁ p. 45."
+      },
+      {
+       "draft": "אֶשֶׁת see אֵשֶׂה.",
+       "reread": "אֵשֶׁת see אִשָּׁה.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "אֵשֶׁת see אִשָּׁה.",
+        "verdict": "b",
+        "note": "The second word is printed אִשָּׁה: aleph with hireq, shin with right-hand (shin) dot plus dagesh and qamets, final he — not אֵשֶׂה with sin dot and tsere as in A. The first word has tsere under the aleph (two horizontal dots), matching B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "81e8cc41-0c9c-4689-81d5-9c8864633888",
+        "duration_api_ms": 17037,
+        "cost_usd_list": 0.10005675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3467,
+        "cache_creation_input_tokens": 3080,
+        "output_tokens": 745
+       },
+       "text": "אֵשֶׁת see אִשָּׁה."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אָשֵׁר 100 אֵשֶׁת",
+   "status": "adjudicated",
+   "draft": "אָשֵׁר 100 אֵשֶׁת",
+   "reread": "אָשַׂר 100 אֶשֶׁת",
+   "verdict": "a",
+   "note": "Left word has a shin dot (right arm) and tsere under the shin, so אָשֵׁר not אָשַׂר; right word has tsere (two dots) under the aleph, אֵשֶׁת not אֶשֶׁת.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. Judg. 6, 25. Once, where in the same",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "context mention is made of אֲשֵׁרָה 2 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "23, 6. 14. 15, and also of עַשְׁתֹּרֶת v. 13,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the latter seems to pertain to the idola-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "trous worship of the Sidonians, and the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "former to that of the Hebrews.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. a statue, image, of Asherah, made",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of wood, a wooden pillar, of great size,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Judg. 6, 25–27; which on account of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "its height was fixed or planted in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ground, Deut. 16, 21. An Asherah or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "statue of this sort stood near the altar of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Baal at Samaria from the time of Ahab,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1 K. 16, 32. 33. 2 K. 10, 26. 17, 16; on",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the high place of Bethel, 2 K. 23, 15; at",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ophra, Judg. 6, 25; and even in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "temple at Jerusalem from Manasseh",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "until Josiah, 2 K. 21, 3. 7. 23, 6.—Plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲשֵׁרִים, Asherahs, pillars, columns, often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "coupled with the cippi or stone pillars",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "(מַצֵּבוֹת) consecrated to Baal, 1 K. 14,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "23. 2 K. 17, 10. 23, 14. 2 Chr. 14, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Mic. 5, 12. 13. Ex. 34, 13. Deut. 7, 5. 12,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3; with בְּעָלִים Judg. 3, 7; with חַמָּנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Is. 17, 8. 27, 9. 2 Chr. 34, 4. 7; and with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "other species of idols, Deut. 7, 5. 12, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2 Chr. 31, 1. 33, 9.—That these pillars",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "were of wood appears especially from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the fact, that whenever they are de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "stroyed they are always said to be cut",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "down and burned, Ex. 34, 13. Judg. 6, 25.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2 K. 23, 6. 15. etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Note. Of the ancient versions some",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "render this word Astarte, others a wood-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "en pillar, others a tree. Sept. very fre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "quently ἄλσος, Vulg. lucus, (Engl. a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "grove,) by which they seem to have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "understood a sacred tree; but see 2 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "17, 10. In the Mishna too it is explained",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "by אילן נעבד ‘ a tree that is worshipped.’",
+   "status": "adjudicated",
+   "draft": "by אִילָן נֶעֱבָד ‘ a tree that is worshipped.’",
+   "reread": "by אילן נעבד ‘ a tree that is worshipped.’",
+   "verdict": "b",
+   "note": "The Hebrew is printed unpointed: no vowel marks under אילן or נעבד are visible in the image (Rabbinic phrase cited without points). Reading A adds vocalization that is not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "The primary signification of the word",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "may pertain either to the goddess, her",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nature and qualities; or to the statue or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "figure of the goddess. The latter has",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "recently been maintained by Movers in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "a learned dissertation on this word (Phœ-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "nizier I. p. 560 sq. Bonn 1840); accord-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ing to whom אֲשֵׁרָה is pr. right, upright,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "then a pillar, and at last a female divi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "nity of the Canaanites worshipped under",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the figure of an upright pillar, often as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the partner (σύμβωμος) of Baal in his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "altars, but different from Astarte; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the epithet of Diana, Ὀρθία, Ὀρθωσία.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "The former idea was adopted by me,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "(Thesaur. s. h. v. et in Append.) referring",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲשֵׁרָה to the nature and qualities of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "goddess herself; though I admit, that",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the proper and primary signification of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the word was afterwards neglected and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "obliterated, as is not uncommon. Ac-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "cording to this view אֲשֵׁרָה is pr. For-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tune, happiness, (comp. אָשַׁר no. 3, אֹשֶׁר",
+   "status": "adjudicated",
+   "draft": "tune, happiness, (comp. אָשַׁר no. 3, אֹשֶׁר",
+   "reread": "tune, happiness, (comp. אָשַׁר no. 3, אָשֵׁר",
+   "verdict": "a",
+   "note": "The last word has a holem dot printed above the aleph and segol under the shin (אֹשֶׁר, \"happiness\"), not qamets + tsere as in B; the next line begins \"Gen. 30, 13\", the standard citation for אֹשֶׁר.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Gen. 30, 13, espec. אַשְׁרֵי,) and hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "became an attribute of Astarte, or Venus",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "as Fortuna datrix, which was made",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "great account of among the Hebrew",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "idolaters; see the arts. גַּד, מְנִי. To",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "this we may add, that the Romans too",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "regarded Venus as the giver of good",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "fortune and a happy lot; comp. the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "expressions: Venerem jacere Suet. ve-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "nereus jactus Cic. et al. And I am still",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "induced to regard this view with favour,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "by the analogy of other similar names",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "derived obviously from the nature and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "qualities of heathen gods, and very",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "rarely if ever from the form of their sta-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "tues or images; e. g. בְּעָלִים, עַשְׁתָּרוֹת,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "חַמָּנִים. It is however quite possible",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "that, the proper signification of אֲשֵׁרָה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲשֵׁרִים, being afterwards neglected,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "these words might come to be used of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "rude pillars and wooden statues; just as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the Gr. Ἑρμῆς was used of any human",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "statue which terminated below the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "breast in a square column, although it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "might represent any thing or every thing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "but Mercury.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֻשַּׁרְנָא Chald. a wall, so called as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "being upright, see r. אָשַׁר no. 1. Ezra",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "5, 3. For the form, see in בַּשְּׁנָה.",
+   "status": "adjudicated",
+   "draft": "5, 3. For the form, see in בִּשְׁנָה.",
+   "reread": "5, 3. For the form, see in בַּשְּׁנָה.",
+   "verdict": "b",
+   "note": "Bet carries a patach (horizontal stroke), not a hiriq dot, and the shin has a visible dagesh dot in addition to the shin dot — matching Reading B; Reading A's בִּשְׁנָה (hiriq, no dagesh) is not what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָשַׁשׁ obsol. root, pr. to cram or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "press together, to make compact, either",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "by treading, stamping, or in any other",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "way; comp. Arab. أَثَّ to tread, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "stamp, to subdue. Kindr. is אָצַץ to press,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "to urge; also אוּץ and the roots there",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "adduced.—Hence אֲשִׁישָׁה a pressed cake",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of dried grapes; אָשִׁישׁ a foundation, sc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "as made firm by stamping; also Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "أَسَّ Conj. II, to found, to make firm;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "comp. אָשָׁה to prop.",
+   "status": "adjudicated",
+   "draft": "comp. אָשָׁה to prop.",
+   "reread": "comp. אָשְׁיָה to prop.",
+   "verdict": "a",
+   "note": "Only three Hebrew letters are printed (aleph, shin, he), each of the first two with qamets and the shin with a right-hand dot; there is no yod and no shewa, so Reading B's אָשְׁיָה is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Note. Hithp. הִתְאוֹשֵׁשׁ see under r.",
+   "status": "adjudicated",
+   "draft": "Note. Hithp. הִתְאוֹשֵׁשׁ see under r.",
+   "reread": "Note. Hithp. הִתְאוֹשָׁשׁ see under r.",
+   "verdict": "a",
+   "note": "Under the first shin (after the vav) the print shows two horizontal dots (tsere), not the qamets of Reading B; the vav with holem is printed (plene), and both shin dots are present. Matches the expected form הִתְאוֹשֵׁשׁ.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אִישׁ p. 45.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֵשֶׁת see אִשָּׁה.",
+   "status": "adjudicated",
+   "draft": "אֶשֶׁת see אֵשֶׂה.",
+   "reread": "אֵשֶׁת see אִשָּׁה.",
+   "verdict": "b",
+   "note": "The second word is printed אִשָּׁה: aleph with hireq, shin with right-hand (shin) dot plus dagesh and qamets, final he — not אֵשֶׂה with sin dot and tsere as in A. The first word has tsere under the aleph (two horizontal dots), matching B.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 100,
+  "adjudicated": 7,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 0
+ },
+ "errors": 0,
+ "cost_usd_list_total": 2.7266
+}

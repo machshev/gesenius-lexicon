@@ -1,0 +1,1176 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 15,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0015.png",
+ "raster_sha256": "4ff1dd31e4e9e6b2ced404380246c0456dc7927147f334f40e44b7290f06fcf2",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0015.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:49:32+00:00",
+ "chunks": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 142,
+    "y": 380,
+    "width": 1757,
+    "height": 636
+   },
+   "draft_lines": [
+    "ADDENDA.",
+    "The student is requested to mark the following Addenda in the proper places.",
+    "Page 27. col. 1, before Art. אוּשׁ add this article :",
+    "אוֹרְנָה, see אֲרַוְנָה.",
+    "“ 32. “ 2, l. 3 from bott. for ‘q. d. etc.’ read : lit. soothes it, keeps it within",
+    "himself."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 142,
+      "y": 378,
+      "width": 1757,
+      "height": 534
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r00-b00-1757x534+142+378-x2.png",
+     "image_sha256": "a44530d18f262cf25938bd0a040879ccea826d61783d8f4a2a806fa980527c5e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ADDENDA.",
+       "The student is requested to mark the following Addenda in the proper places.",
+       "Page 27. col. 1, before Art. אוּשׁ add this article :",
+       "אוֹרְנָה, see אֲרַוְנָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1bf6dffa-82a6-415b-b79a-f230e267ed08",
+      "duration_api_ms": 19203,
+      "cost_usd_list": 0.090008,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 3085,
+      "output_tokens": 548
+     },
+     "lines": [
+      {
+       "draft": "ADDENDA.",
+       "reread": "ADDENDA.",
+       "status": "agreed",
+       "text": "ADDENDA."
+      },
+      {
+       "draft": "The student is requested to mark the following Addenda in the proper places.",
+       "reread": "The student is requested to mark the following Addenda in the proper places.",
+       "status": "agreed",
+       "text": "The student is requested to mark the following Addenda in the proper places."
+      },
+      {
+       "draft": "Page 27. col. 1, before Art. אוּשׁ add this article :",
+       "reread": "Page 27. col. 1, before Art. אוּשׁ add this article :",
+       "status": "agreed",
+       "text": "Page 27. col. 1, before Art. אוּשׁ add this article:"
+      },
+      {
+       "draft": "אוֹרְנָה, see אֲרַוְנָה.",
+       "reread": "אוֹרְנָה, see אֲרַוְנָה.",
+       "status": "agreed",
+       "text": "אוֹרְנָה, see אֲרַוְנָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 142,
+      "y": 896,
+      "width": 1757,
+      "height": 115
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r00-b01-1757x115+142+896-x2.png",
+     "image_sha256": "ec7340245aac60f602ed1871a7aa9c2e29cebfe49aaef1805d7b0fabeff46430",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ 32. “ 2, l. 3 from bott. for ‘q. d. etc.’ read: lit. soothes it, keeps it within",
+       "himself."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c07e330c-83ed-49c9-826c-9b7bd612c23e",
+      "duration_api_ms": 23154,
+      "cost_usd_list": 0.049558000000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1860,
+      "output_tokens": 229
+     },
+     "lines": [
+      {
+       "draft": "“ 32. “ 2, l. 3 from bott. for ‘q. d. etc.’ read : lit. soothes it, keeps it within",
+       "reread": "“ 32. “ 2, l. 3 from bott. for ‘q. d. etc.’ read: lit. soothes it, keeps it within",
+       "status": "agreed",
+       "text": "“ 32. “ 2, l. 3 from bott. for ‘q. d. etc.’ read: lit. soothes it, keeps it within"
+      },
+      {
+       "draft": "himself.",
+       "reread": "himself.",
+       "status": "agreed",
+       "text": "himself."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 142,
+    "y": 1004,
+    "width": 1757,
+    "height": 807
+   },
+   "draft_lines": [
+    "“ 38. “ 1, l. 25 sq. read : kšatrapa, pr. protector (representative) of the regal",
+    "power, viceroy ; Lassen in Zeitschr. f. d. Morgenl. VI. p. 18.",
+    "“ 38. “ 1, l. 6 from bott. read : khysyârsâ, rex pius, Lassen in Zeitschr. f. d.",
+    "Morgenl. VI. p. 124. It is certain, etc.",
+    "“ 66. “ 2, l. 3 from bott. after to say ; add : but see in זָמַר II. Note. Comp.",
+    "“ 69. “ 2, l. 3, add at the end : See more in r. צָדַק .",
+    "“ 84. “ 1, l. 15, after 166, add : Irby and Mangles p. 478.",
+    "“ 104. “ 2, bott. after [41]. add : In v. 6 [21] written יֶאְתְרַי q. v.",
+    "“ 144. “ 1, l. 22, for come among us, read : fall upon us round about.",
+    "“ 150. “ 1, l. 20, for wounded, read : hurt, broken ;",
+    "“ 151. “ 1, l. 2, for Keri, read : Kethibh ;",
+    "“ 170. “ 1, l. 16 from bott. dele : Nah. 2, 3.",
+    "“ 183. “ 1, l. 3 from bott. add : See r. שָׁפֵל Hiph. p. 1102.",
+    "“ 191. “ 2, after Art. גִּלֹנִי add this article :"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 142,
+      "y": 1010,
+      "width": 1757,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r01-b00-1757x237+142+1010-x2.png",
+     "image_sha256": "784252ae22d3e6e681fe0e90b0e9c94f0c367886ce565d612b82558b815fe603",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ 38. “ 1, l. 25 sq. read : kśatrapa, pr. protector (representative) of the regal",
+       "power, viceroy ; Lassen in Zeitschr. f. d. Morgenl. VI. p. 18.",
+       "“ 38. “ 1, l. 6 from bott. read : khysyârsâ, rex pius, Lassen in Zeitschr. f. d.",
+       "Morgenl. VI. p. 124. It is certain, etc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a0546f0e-bf22-4eb5-8901-b411eb12f39c",
+      "duration_api_ms": 15279,
+      "cost_usd_list": 0.062048250000000006,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2222,
+      "output_tokens": 334
+     },
+     "lines": [
+      {
+       "draft": "“ 38. “ 1, l. 25 sq. read : kšatrapa, pr. protector (representative) of the regal",
+       "reread": "“ 38. “ 1, l. 25 sq. read : kśatrapa, pr. protector (representative) of the regal",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "“ 38. “ 1, l. 25 sq. read : kśatrapa, pr. protector (representative) of the regal",
+        "verdict": "b",
+        "note": "The diacritic over the italic s in \"kśatrapa\" is a single acute stroke (ś), not a caron (š); everything else is identical in A and B and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "903f8784-ba12-435d-b815-c3f12da07f28",
+        "duration_api_ms": 14900,
+        "cost_usd_list": 0.069667,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3508,
+        "cache_creation_input_tokens": 2185,
+        "output_tokens": 501
+       },
+       "text": "“ 38. “ 1, l. 25 sq. read: kśatrapa, pr. protector (representative) of the regal"
+      },
+      {
+       "draft": "power, viceroy ; Lassen in Zeitschr. f. d. Morgenl. VI. p. 18.",
+       "reread": "power, viceroy ; Lassen in Zeitschr. f. d. Morgenl. VI. p. 18.",
+       "status": "agreed",
+       "text": "power, viceroy; Lassen in Zeitschr. f. d. Morgenl. VI. p. 18."
+      },
+      {
+       "draft": "“ 38. “ 1, l. 6 from bott. read : khysyârsâ, rex pius, Lassen in Zeitschr. f. d.",
+       "reread": "“ 38. “ 1, l. 6 from bott. read : khysyârsâ, rex pius, Lassen in Zeitschr. f. d.",
+       "status": "agreed",
+       "text": "“ 38. “ 1, l. 6 from bott. read: khysyârsâ, rex pius, Lassen in Zeitschr. f. d."
+      },
+      {
+       "draft": "Morgenl. VI. p. 124. It is certain, etc.",
+       "reread": "Morgenl. VI. p. 124. It is certain, etc.",
+       "status": "agreed",
+       "text": "Morgenl. VI. p. 124. It is certain, etc."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 142,
+      "y": 1231,
+      "width": 1757,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r01-b01-1757x243+142+1231-x2.png",
+     "image_sha256": "e8128c6c792b130282382dd9b73cee5bded67fc7d104c081913ddd988386e6a3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“   66.   “   2, l. 3 from bott. after to say; add: but see in זָמַר II. Note.  Comp.",
+       "“   69.   “   2, l. 3, add at the end: See more in r. פָּרַק.",
+       "“   84.   “   1, l. 15, after 166, add: Irby and Mangles p. 478.",
+       "“  104.   “   2, bott. after [41]. add: In v. 6 [21] written יְאָתְרַי q. v."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f4f2e8ed-07a4-4bce-b5dd-7ab5045fe695",
+      "duration_api_ms": 20346,
+      "cost_usd_list": 0.07954825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2222,
+      "output_tokens": 684
+     },
+     "lines": [
+      {
+       "draft": "“ 66. “ 2, l. 3 from bott. after to say ; add : but see in זָמַר II. Note. Comp.",
+       "reread": "“   66.   “   2, l. 3 from bott. after to say; add: but see in זָמַר II. Note.  Comp.",
+       "status": "agreed",
+       "text": "“ 66. “ 2, l. 3 from bott. after to say; add: but see in זָמַר II. Note. Comp."
+      },
+      {
+       "draft": "“ 69. “ 2, l. 3, add at the end : See more in r. צָדַק .",
+       "reread": "“   69.   “   2, l. 3, add at the end: See more in r. פָּרַק.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "“ 69. “ 2, l. 3, add at the end : See more in r. פָּרַק .",
+        "verdict": "neither",
+        "note": "The root is printed פָּרַק (pe with dagesh, not tsade) — Reading A's צָדַק is wrong; but the print has the period-style spaces before the colon after \"end\" and before the final period, which Reading B drops.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b6f3c7b7-dcda-4d00-80ef-8e5a62018cfe",
+        "duration_api_ms": 19638,
+        "cost_usd_list": 0.0732525,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3490,
+        "cache_creation_input_tokens": 2167,
+        "output_tokens": 580
+       },
+       "text": "“ 69. “ 2, l. 3, add at the end: See more in r. פָּרַק."
+      },
+      {
+       "draft": "“ 84. “ 1, l. 15, after 166, add : Irby and Mangles p. 478.",
+       "reread": "“   84.   “   1, l. 15, after 166, add: Irby and Mangles p. 478.",
+       "status": "agreed",
+       "text": "“ 84. “ 1, l. 15, after 166, add: Irby and Mangles p. 478."
+      },
+      {
+       "draft": "“ 104. “ 2, bott. after [41]. add : In v. 6 [21] written יֶאְתְרַי q. v.",
+       "reread": "“  104.   “   2, bott. after [41]. add: In v. 6 [21] written יְאָתְרַי q. v.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "“ 104. “ 2, bott. after [41]. add : In v. 6 [21] written יְאָתְרַי q. v.",
+        "verdict": "neither",
+        "note": "The Hebrew vowels are as in B: shewa under yod, qamets under aleph, shewa under tav, patah under resh (יְאָתְרַי, Jeaterai, 1 Chr 6:6 [21], variant of Ethni v. 26 [41]); A's segol under yod and shewa under aleph are wrong. But B drops the printed space before the colon (\"add :\"), which A has; so neither is exact.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cb413a54-f9bc-465b-aff1-700edf7479e0",
+        "duration_api_ms": 26419,
+        "cost_usd_list": 0.0942385,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3514,
+        "cache_creation_input_tokens": 2191,
+        "output_tokens": 990
+       },
+       "text": "“ 104. “ 2, bott. after [41]. add: In v. 6 [21] written יְאָתְרַי q. v."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 142,
+      "y": 1458,
+      "width": 1757,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r01-b02-1757x235+142+1458-x2.png",
+     "image_sha256": "90123b24dbc02a5116c0e5ded6b3b10046efcdafa5344ce835cd10aab4d537fc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ 144. “ 1, l. 22, for come among us, read: fall upon us round about.",
+       "“ 150. “ 1, l. 20, for wounded, read: hurt, broken;",
+       "“ 151. “ 1, l. 2, for Keri, read: Kethibh;",
+       "“ 170. “ 1, l. 16 from bott. dele: Nah. 2, 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "63c9dacd-4f96-4dcc-a01e-da172093643b",
+      "duration_api_ms": 11733,
+      "cost_usd_list": 0.06049825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2222,
+      "output_tokens": 303
+     },
+     "lines": [
+      {
+       "draft": "“ 144. “ 1, l. 22, for come among us, read : fall upon us round about.",
+       "reread": "“ 144. “ 1, l. 22, for come among us, read: fall upon us round about.",
+       "status": "agreed",
+       "text": "“ 144. “ 1, l. 22, for come among us, read: fall upon us round about."
+      },
+      {
+       "draft": "“ 150. “ 1, l. 20, for wounded, read : hurt, broken ;",
+       "reread": "“ 150. “ 1, l. 20, for wounded, read: hurt, broken;",
+       "status": "agreed",
+       "text": "“ 150. “ 1, l. 20, for wounded, read: hurt, broken;"
+      },
+      {
+       "draft": "“ 151. “ 1, l. 2, for Keri, read : Kethibh ;",
+       "reread": "“ 151. “ 1, l. 2, for Keri, read: Kethibh;",
+       "status": "agreed",
+       "text": "“ 151. “ 1, l. 2, for Keri, read: Kethibh;"
+      },
+      {
+       "draft": "“ 170. “ 1, l. 16 from bott. dele : Nah. 2, 3.",
+       "reread": "“ 170. “ 1, l. 16 from bott. dele: Nah. 2, 3.",
+       "status": "agreed",
+       "text": "“ 170. “ 1, l. 16 from bott. dele: Nah. 2, 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 142,
+      "y": 1677,
+      "width": 1757,
+      "height": 129
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r01-b03-1757x129+142+1677-x2.png",
+     "image_sha256": "b18dcd94575cd2348362722ab2048460341754103f166ffbdd927be019d421c4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ 183. “ 1, l. 3 from bott. add : See r. שָׁפֵל Hiph. p. 1102.",
+       "“ 191. “ 2, after Art. גִּלְיֹנִים add this article :"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8a39ccde-31a7-42f0-a48d-126c3aed7999",
+      "duration_api_ms": 25243,
+      "cost_usd_list": 0.09123824999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1934,
+      "output_tokens": 1033
+     },
+     "lines": [
+      {
+       "draft": "“ 183. “ 1, l. 3 from bott. add : See r. שָׁפֵל Hiph. p. 1102.",
+       "reread": "“ 183. “ 1, l. 3 from bott. add : See r. שָׁפֵל Hiph. p. 1102.",
+       "status": "agreed",
+       "text": "“ 183. “ 1, l. 3 from bott. add: See r. שָׁפֵל Hiph. p. 1102."
+      },
+      {
+       "draft": "“ 191. “ 2, after Art. גִּלֹנִי add this article :",
+       "reread": "“ 191. “ 2, after Art. גִּלְיֹנִים add this article :",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b03",
+       "judgement": {
+        "text": "“ 191. “ 2, after Art. גִּלֹנִי add this article :",
+        "verdict": "a",
+        "note": "The printed Hebrew is the short four-letter word גִּלֹנִי (gimel-dagesh-hiriq, lamed-holem, nun-hiriq, yod) — the gentilic \"Gilonite\", which is indeed the article on p. 191. Reading B's גִּלְיֹנִים inserts a yod and final mem that are not printed; there is no plene yod after lamed and no mem.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c69a60f2-94a2-4d87-bd2b-c32977467ece",
+        "duration_api_ms": 17594,
+        "cost_usd_list": 0.073271,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3484,
+        "cache_creation_input_tokens": 1873,
+        "output_tokens": 698
+       },
+       "text": "“ 191. “ 2, after Art. גִּלֹנִי add this article:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 142,
+    "y": 1799,
+    "width": 1757,
+    "height": 881
+   },
+   "draft_lines": [
+    "גִּינַת (garden, r. גָּנַן) Ginath, pr. n. m. 1 K. 16, 21. 22.",
+    "“ 211. “ 1, l. 12, read : to speak ; see more in r. זָמַר II. Note.",
+    "“ 216. “ 2, before Art. הוֹדָה add this article :",
+    "דּוּדָאִים, see in דּוּדַי.",
+    "“ 222. “ 2, l. 4 from bott. after other. add : But see in r. הָמַךְ no. 1.",
+    "“ 285. “ 2, l. 11 from bott. add : See Biblioth. Sac. 1848, p. 684.",
+    "“ 333. “ 1, l. 7 from bott. after m. add : emphat. חַסְפָּא,",
+    "“ 371. “ 1, l. 15 from bott. dele : Zech. 10, 11.",
+    "“ “ “ 1, l. 13 from bott. read : In two places only it is spoken of the Eu-",
+    "phrates, Zech. 10, 11. Dan. 12, 5. 6. 7.",
+    "“ 484. “ 1, l. 20, before 1. add : also כְּפֹר Job 38, 29.",
+    "“ 486. “ 1, before Art. כְּפִרִים add this article :",
+    "כְּפֹר, see כְּפוֹר.",
+    "“ 549. “ 2, l. 3, end of the line, add : Russell’s Aleppo I. p. 76. Biblioth. Sac.",
+    "1848. p. 473."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 142,
+      "y": 1804,
+      "width": 1757,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r02-b00-1757x249+142+1804-x2.png",
+     "image_sha256": "77bf9335f2b0e46dd435e735c57bf7e8efd35a9ba580d5eb2ba7332afab52600",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גִּינַת (garden, r. גָּנַן) Ginath, pr. n. m. 1 K. 16, 21. 22.",
+       "“ 211. “ 1, l. 12, read : to speak ; see more in r. זָמַר II. Note.",
+       "“ 216. “ 2, before Art. הוֹדָה add this article :",
+       "הוֹדָאִים, see in הוֹדִי."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b24640e-0e34-44f7-b1bd-22de28e36e76",
+      "duration_api_ms": 12575,
+      "cost_usd_list": 0.062338250000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2294,
+      "output_tokens": 311
+     },
+     "lines": [
+      {
+       "draft": "גִּינַת (garden, r. גָּנַן) Ginath, pr. n. m. 1 K. 16, 21. 22.",
+       "reread": "גִּינַת (garden, r. גָּנַן) Ginath, pr. n. m. 1 K. 16, 21. 22.",
+       "status": "agreed",
+       "text": "גִּינַת (garden, r. גָּנַן) Ginath, pr. n. m. 1 K. 16, 21. 22."
+      },
+      {
+       "draft": "“ 211. “ 1, l. 12, read : to speak ; see more in r. זָמַר II. Note.",
+       "reread": "“ 211. “ 1, l. 12, read : to speak ; see more in r. זָמַר II. Note.",
+       "status": "agreed",
+       "text": "“ 211. “ 1, l. 12, read: to speak; see more in r. זָמַר II. Note."
+      },
+      {
+       "draft": "“ 216. “ 2, before Art. הוֹדָה add this article :",
+       "reread": "“ 216. “ 2, before Art. הוֹדָה add this article :",
+       "status": "agreed",
+       "text": "“ 216. “ 2, before Art. הוֹדָה add this article:"
+      },
+      {
+       "draft": "דּוּדָאִים, see in דּוּדַי.",
+       "reread": "הוֹדָאִים, see in הוֹדִי.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "דּוּדָאִים, see in דּוּדַי.",
+        "verdict": "a",
+        "note": "Both Hebrew words begin with dalet bearing a dagesh followed by vav with shureq (דּוּ), not he with holem-vav (הוֹ) as in Reading B; the flat-topped dalet with its inner dot is clear, and the context (an article on mandrakes to be inserted before דּוֹדָה, referring to דּוּדַי) confirms it. The final word has patah under the second dalet and yod (דּוּדַי), not hiriq and no vav as in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c2f35778-8b62-4d74-8268-0a0d1866eb46",
+        "duration_api_ms": 25754,
+        "cost_usd_list": 0.104647,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3468,
+        "cache_creation_input_tokens": 2217,
+        "output_tokens": 1188
+       },
+       "text": "דּוּדָאִים, see in דּוּדַי."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 142,
+      "y": 2037,
+      "width": 1757,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r02-b01-1757x240+142+2037-x2.png",
+     "image_sha256": "f75f8161ac040c0c32c8218bf2a3a3f661d7706719ff6c25e81bb7f2b2279878",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ 222. “ 2, l. 4 from bott. after other. add : But see in r. הָמַךְ no. 1.",
+       "“ 285. “ 2, l. 11 from bott. add : See Biblioth. Sac. 1848, p. 684.",
+       "“ 333. “ 1, l. 7 from bott. after m. add : emphat. חַסְפָּא,",
+       "“ 371. “ 1, l. 15 from bott. dele : Zech. 10, 11."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f7b4e923-b6cd-40b7-a9cc-ae608251d924",
+      "duration_api_ms": 19704,
+      "cost_usd_list": 0.08714825000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2222,
+      "output_tokens": 836
+     },
+     "lines": [
+      {
+       "draft": "“ 222. “ 2, l. 4 from bott. after other. add : But see in r. הָמַךְ no. 1.",
+       "reread": "“ 222. “ 2, l. 4 from bott. after other. add : But see in r. הָמַךְ no. 1.",
+       "status": "agreed",
+       "text": "“ 222. “ 2, l. 4 from bott. after other. add: But see in r. הָמַךְ no. 1."
+      },
+      {
+       "draft": "“ 285. “ 2, l. 11 from bott. add : See Biblioth. Sac. 1848, p. 684.",
+       "reread": "“ 285. “ 2, l. 11 from bott. add : See Biblioth. Sac. 1848, p. 684.",
+       "status": "agreed",
+       "text": "“ 285. “ 2, l. 11 from bott. add: See Biblioth. Sac. 1848, p. 684."
+      },
+      {
+       "draft": "“ 333. “ 1, l. 7 from bott. after m. add : emphat. חַסְפָּא,",
+       "reread": "“ 333. “ 1, l. 7 from bott. after m. add : emphat. חַסְפָּא,",
+       "status": "agreed",
+       "text": "“ 333. “ 1, l. 7 from bott. after m. add: emphat. חַסְפָּא,"
+      },
+      {
+       "draft": "“ 371. “ 1, l. 15 from bott. dele : Zech. 10, 11.",
+       "reread": "“ 371. “ 1, l. 15 from bott. dele : Zech. 10, 11.",
+       "status": "agreed",
+       "text": "“ 371. “ 1, l. 15 from bott. dele: Zech. 10, 11."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 142,
+      "y": 2261,
+      "width": 1757,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r02-b02-1757x251+142+2261-x2.png",
+     "image_sha256": "068873e866e8d0372bb3b5a0d71f644ac86086eb1adddc05f417efed4ba602e9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ “ “ 1, l. 13 from bott. read : In two places only it is spoken of the Eu-",
+       "phrates, Zech. 10, 11. Dan. 12, 5. 6. 7.",
+       "“ 484. “ 1, l. 20, before 1. add : also כְּפֹר Job 38, 29.",
+       "“ 486. “ 1, before Art. כַּפְרִים add this article :"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c76222d6-fd48-42aa-98ef-0e6151e0ab36",
+      "duration_api_ms": 13044,
+      "cost_usd_list": 0.06243825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2294,
+      "output_tokens": 313
+     },
+     "lines": [
+      {
+       "draft": "“ “ “ 1, l. 13 from bott. read : In two places only it is spoken of the Eu-",
+       "reread": "“ “ “ 1, l. 13 from bott. read : In two places only it is spoken of the Eu-",
+       "status": "agreed",
+       "text": "“ “ “ 1, l. 13 from bott. read: In two places only it is spoken of the Eu-"
+      },
+      {
+       "draft": "phrates, Zech. 10, 11. Dan. 12, 5. 6. 7.",
+       "reread": "phrates, Zech. 10, 11. Dan. 12, 5. 6. 7.",
+       "status": "agreed",
+       "text": "phrates, Zech. 10, 11. Dan. 12, 5. 6. 7."
+      },
+      {
+       "draft": "“ 484. “ 1, l. 20, before 1. add : also כְּפֹר Job 38, 29.",
+       "reread": "“ 484. “ 1, l. 20, before 1. add : also כְּפֹר Job 38, 29.",
+       "status": "agreed",
+       "text": "“ 484. “ 1, l. 20, before 1. add: also כְּפֹר Job 38, 29."
+      },
+      {
+       "draft": "“ 486. “ 1, before Art. כְּפִרִים add this article :",
+       "reread": "“ 486. “ 1, before Art. כַּפְרִים add this article :",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "“ 486. “ 1, before Art. כְּפִרִים add this article :",
+        "verdict": "a",
+        "note": "Under the kaf the print shows two vertically stacked dots (shva), not a patach bar, and under the pe a single dot (hiriq), not a shva; the word is defective כְּפִרִים with no yod after pe. Reading A matches; B's כַּפְרִים is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1f085391-9fc5-4414-8df3-eb223a68bfed",
+        "duration_api_ms": 24346,
+        "cost_usd_list": 0.09579,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3480,
+        "cache_creation_input_tokens": 2229,
+        "output_tokens": 1006
+       },
+       "text": "“ 486. “ 1, before Art. כְּפִרִים add this article:"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 142,
+      "y": 2496,
+      "width": 1757,
+      "height": 192
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r02-b03-1757x192+142+2496-x2.png",
+     "image_sha256": "907fdc11553d99e7379a21d6a4e1692edd83b70c39b13c21b678ee2094a59bb8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כְּפֹר, see כְּפוֹר.",
+       "“ 549. “ 2, l. 3, end of the line, add: Russell’s Aleppo I. p. 76. Biblioth. Sac.",
+       "1848. p. 473."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a535611f-09dc-4298-954a-66dae86e24fb",
+      "duration_api_ms": 8758,
+      "cost_usd_list": 0.055318250000000006,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2078,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "כְּפֹר, see כְּפוֹר.",
+       "reread": "כְּפֹר, see כְּפוֹר.",
+       "status": "agreed",
+       "text": "כְּפֹר, see כְּפוֹר."
+      },
+      {
+       "draft": "“ 549. “ 2, l. 3, end of the line, add : Russell’s Aleppo I. p. 76. Biblioth. Sac.",
+       "reread": "“ 549. “ 2, l. 3, end of the line, add: Russell’s Aleppo I. p. 76. Biblioth. Sac.",
+       "status": "agreed",
+       "text": "“ 549. “ 2, l. 3, end of the line, add: Russell’s Aleppo I. p. 76. Biblioth. Sac."
+      },
+      {
+       "draft": "1848. p. 473.",
+       "reread": "1848. p. 473.",
+       "status": "agreed",
+       "text": "1848. p. 473."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 142,
+    "y": 2668,
+    "width": 1757,
+    "height": 425
+   },
+   "draft_lines": [
+    "“ 664. “ 1, l. 16 from bott. before d) add : Also of the Holy Land, Jer. 2, 7.",
+    "16. 18. Ps. 79, 1. Ex. 15, 7.",
+    "“ 773. “ 2, before Art. עֵינַיִם add this article :",
+    "עַיִן Chald. m. constr. עֵין ; plur. עַיְנִין, constr. עַיְנֵי ; an eye, i. q.",
+    "Heb. Ezra 5, 5. Dan. 4, 31. 7, 8. 20.",
+    "“ 1016. “ 2, after Art. שֻׁפָּם add this article :",
+    "שְׁפָמוֹת, see שִׂפְמוֹת."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 142,
+      "y": 2660,
+      "width": 1757,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r03-b00-1757x262+142+2660-x2.png",
+     "image_sha256": "35e407e860c7738271c187fd5162c4e469d455ad6471070f48aa5ced9c5b3836",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "“ 664. “ 1, l. 16 from bott. before d) add : Also of the Holy Land, Jer. 2, 7.",
+       "16. 18. Ps. 79, 1. Ex. 15, 7.",
+       "“ 773. “ 2, before Art. עֵינַיִם add this article :",
+       "עַיִן Chald. m. constr. עֵין ; plur. עַיְנִין, constr. עַיְנֵי ; an eye, i. q."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f930969b-7c67-47f3-acd2-b29ee231a102",
+      "duration_api_ms": 16729,
+      "cost_usd_list": 0.07973825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2294,
+      "output_tokens": 659
+     },
+     "lines": [
+      {
+       "draft": "“ 664. “ 1, l. 16 from bott. before d) add : Also of the Holy Land, Jer. 2, 7.",
+       "reread": "“ 664. “ 1, l. 16 from bott. before d) add : Also of the Holy Land, Jer. 2, 7.",
+       "status": "agreed",
+       "text": "“ 664. “ 1, l. 16 from bott. before d) add: Also of the Holy Land, Jer. 2, 7."
+      },
+      {
+       "draft": "16. 18. Ps. 79, 1. Ex. 15, 7.",
+       "reread": "16. 18. Ps. 79, 1. Ex. 15, 7.",
+       "status": "agreed",
+       "text": "16. 18. Ps. 79, 1. Ex. 15, 7."
+      },
+      {
+       "draft": "“ 773. “ 2, before Art. עֵינַיִם add this article :",
+       "reread": "“ 773. “ 2, before Art. עֵינַיִם add this article :",
+       "status": "agreed",
+       "text": "“ 773. “ 2, before Art. עֵינַיִם add this article:"
+      },
+      {
+       "draft": "עַיִן Chald. m. constr. עֵין ; plur. עַיְנִין, constr. עַיְנֵי ; an eye, i. q.",
+       "reread": "עַיִן Chald. m. constr. עֵין ; plur. עַיְנִין, constr. עַיְנֵי ; an eye, i. q.",
+       "status": "agreed",
+       "text": "עַיִן Chald. m. constr. עֵין; plur. עַיְנִין, constr. עַיְנֵי; an eye, i. q."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 142,
+      "y": 2906,
+      "width": 1757,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0015/pass2/c0-r03-b01-1757x189+142+2906-x2.png",
+     "image_sha256": "140cdd046c7772f4cb14243feefbae7ce3219ba3efe4294d6379869e07486152",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Heb. Ezra 5, 5. Dan. 4, 31. 7, 8. 20.",
+       "“ 1016.  “  2, after Art. שָׂפָם add this article :",
+       "שִׂפְמוֹת, see שְׂפָמוֹת."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "caae080b-0664-4063-b323-1d6311ca2a6d",
+      "duration_api_ms": 9503,
+      "cost_usd_list": 0.055768250000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2078,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "Heb. Ezra 5, 5. Dan. 4, 31. 7, 8. 20.",
+       "reread": "Heb. Ezra 5, 5. Dan. 4, 31. 7, 8. 20.",
+       "status": "agreed",
+       "text": "Heb. Ezra 5, 5. Dan. 4, 31. 7, 8. 20."
+      },
+      {
+       "draft": "“ 1016. “ 2, after Art. שֻׁפָּם add this article :",
+       "reread": "“ 1016.  “  2, after Art. שָׂפָם add this article :",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "“ 1016.  “  2, after Art. שָׂפָם add this article :",
+        "verdict": "b",
+        "note": "The Hebrew word is printed שָׂפָם: the shin carries a sin dot (upper left) and a qamets beneath, not a shin dot with qubbuts as in Reading A. Pe has dagesh + qamets, final mem. Matches Gesenius p. 1016 שָׂפָם \"moustache\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "281b7cff-d7e0-4792-977d-eb89693477bb",
+        "duration_api_ms": 16030,
+        "cost_usd_list": 0.0695605,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3482,
+        "cache_creation_input_tokens": 2015,
+        "output_tokens": 567
+       },
+       "text": "“ 1016. “ 2, after Art. שָׂפָם add this article:"
+      },
+      {
+       "draft": "שְׁפָמוֹת, see שִׂפְמוֹת.",
+       "reread": "שִׂפְמוֹת, see שְׂפָמוֹת.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "שְׁפָמוֹת, see שִׂפְמוֹת.",
+        "verdict": "a",
+        "note": "First word has shin dot (upper right) with shewa under shin and qamets under pe; second word has sin dot (upper left) with hireq under sin and shewa under pe. Reading B swaps the vocalisations of the two words.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e98eb6d9-68b4-4185-a9c7-12ebb9f8723e",
+        "duration_api_ms": 11657,
+        "cost_usd_list": 0.0713795,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3478,
+        "cache_creation_input_tokens": 2011,
+        "output_tokens": 605
+       },
+       "text": "שְׁפָמוֹת, see שִׂפְמוֹת."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ADDENDA.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "The student is requested to mark the following Addenda in the proper places.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Page 27. col. 1, before Art. אוּשׁ add this article:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אוֹרְנָה, see אֲרַוְנָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "“ 32. “ 2, l. 3 from bott. for ‘q. d. etc.’ read: lit. soothes it, keeps it within",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "himself.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 38. “ 1, l. 25 sq. read: kśatrapa, pr. protector (representative) of the regal",
+   "status": "adjudicated",
+   "draft": "“ 38. “ 1, l. 25 sq. read : kšatrapa, pr. protector (representative) of the regal",
+   "reread": "“ 38. “ 1, l. 25 sq. read : kśatrapa, pr. protector (representative) of the regal",
+   "verdict": "b",
+   "note": "The diacritic over the italic s in \"kśatrapa\" is a single acute stroke (ś), not a caron (š); everything else is identical in A and B and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "power, viceroy; Lassen in Zeitschr. f. d. Morgenl. VI. p. 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 38. “ 1, l. 6 from bott. read: khysyârsâ, rex pius, Lassen in Zeitschr. f. d.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Morgenl. VI. p. 124. It is certain, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 66. “ 2, l. 3 from bott. after to say; add: but see in זָמַר II. Note. Comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 69. “ 2, l. 3, add at the end: See more in r. פָּרַק.",
+   "status": "adjudicated",
+   "draft": "“ 69. “ 2, l. 3, add at the end : See more in r. צָדַק .",
+   "reread": "“   69.   “   2, l. 3, add at the end: See more in r. פָּרַק.",
+   "verdict": "neither",
+   "note": "The root is printed פָּרַק (pe with dagesh, not tsade) — Reading A's צָדַק is wrong; but the print has the period-style spaces before the colon after \"end\" and before the final period, which Reading B drops.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 84. “ 1, l. 15, after 166, add: Irby and Mangles p. 478.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 104. “ 2, bott. after [41]. add: In v. 6 [21] written יְאָתְרַי q. v.",
+   "status": "adjudicated",
+   "draft": "“ 104. “ 2, bott. after [41]. add : In v. 6 [21] written יֶאְתְרַי q. v.",
+   "reread": "“  104.   “   2, bott. after [41]. add: In v. 6 [21] written יְאָתְרַי q. v.",
+   "verdict": "neither",
+   "note": "The Hebrew vowels are as in B: shewa under yod, qamets under aleph, shewa under tav, patah under resh (יְאָתְרַי, Jeaterai, 1 Chr 6:6 [21], variant of Ethni v. 26 [41]); A's segol under yod and shewa under aleph are wrong. But B drops the printed space before the colon (\"add :\"), which A has; so neither is exact.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 144. “ 1, l. 22, for come among us, read: fall upon us round about.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 150. “ 1, l. 20, for wounded, read: hurt, broken;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 151. “ 1, l. 2, for Keri, read: Kethibh;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 170. “ 1, l. 16 from bott. dele: Nah. 2, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 183. “ 1, l. 3 from bott. add: See r. שָׁפֵל Hiph. p. 1102.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "“ 191. “ 2, after Art. גִּלֹנִי add this article:",
+   "status": "adjudicated",
+   "draft": "“ 191. “ 2, after Art. גִּלֹנִי add this article :",
+   "reread": "“ 191. “ 2, after Art. גִּלְיֹנִים add this article :",
+   "verdict": "a",
+   "note": "The printed Hebrew is the short four-letter word גִּלֹנִי (gimel-dagesh-hiriq, lamed-holem, nun-hiriq, yod) — the gentilic \"Gilonite\", which is indeed the article on p. 191. Reading B's גִּלְיֹנִים inserts a yod and final mem that are not printed; there is no plene yod after lamed and no mem.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "גִּינַת (garden, r. גָּנַן) Ginath, pr. n. m. 1 K. 16, 21. 22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 211. “ 1, l. 12, read: to speak; see more in r. זָמַר II. Note.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 216. “ 2, before Art. הוֹדָה add this article:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "דּוּדָאִים, see in דּוּדַי.",
+   "status": "adjudicated",
+   "draft": "דּוּדָאִים, see in דּוּדַי.",
+   "reread": "הוֹדָאִים, see in הוֹדִי.",
+   "verdict": "a",
+   "note": "Both Hebrew words begin with dalet bearing a dagesh followed by vav with shureq (דּוּ), not he with holem-vav (הוֹ) as in Reading B; the flat-topped dalet with its inner dot is clear, and the context (an article on mandrakes to be inserted before דּוֹדָה, referring to דּוּדַי) confirms it. The final word has patah under the second dalet and yod (דּוּדַי), not hiriq and no vav as in B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 222. “ 2, l. 4 from bott. after other. add: But see in r. הָמַךְ no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 285. “ 2, l. 11 from bott. add: See Biblioth. Sac. 1848, p. 684.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 333. “ 1, l. 7 from bott. after m. add: emphat. חַסְפָּא,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 371. “ 1, l. 15 from bott. dele: Zech. 10, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ “ “ 1, l. 13 from bott. read: In two places only it is spoken of the Eu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "phrates, Zech. 10, 11. Dan. 12, 5. 6. 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 484. “ 1, l. 20, before 1. add: also כְּפֹר Job 38, 29.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 486. “ 1, before Art. כְּפִרִים add this article:",
+   "status": "adjudicated",
+   "draft": "“ 486. “ 1, before Art. כְּפִרִים add this article :",
+   "reread": "“ 486. “ 1, before Art. כַּפְרִים add this article :",
+   "verdict": "a",
+   "note": "Under the kaf the print shows two vertically stacked dots (shva), not a patach bar, and under the pe a single dot (hiriq), not a shva; the word is defective כְּפִרִים with no yod after pe. Reading A matches; B's כַּפְרִים is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "כְּפֹר, see כְּפוֹר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "“ 549. “ 2, l. 3, end of the line, add: Russell’s Aleppo I. p. 76. Biblioth. Sac.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1848. p. 473.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "“ 664. “ 1, l. 16 from bott. before d) add: Also of the Holy Land, Jer. 2, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "16. 18. Ps. 79, 1. Ex. 15, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "“ 773. “ 2, before Art. עֵינַיִם add this article:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "עַיִן Chald. m. constr. עֵין; plur. עַיְנִין, constr. עַיְנֵי; an eye, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Heb. Ezra 5, 5. Dan. 4, 31. 7, 8. 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "“ 1016. “ 2, after Art. שָׂפָם add this article:",
+   "status": "adjudicated",
+   "draft": "“ 1016. “ 2, after Art. שֻׁפָּם add this article :",
+   "reread": "“ 1016.  “  2, after Art. שָׂפָם add this article :",
+   "verdict": "b",
+   "note": "The Hebrew word is printed שָׂפָם: the shin carries a sin dot (upper left) and a qamets beneath, not a shin dot with qubbuts as in Reading A. Pe has dagesh + qamets, final mem. Matches Gesenius p. 1016 שָׂפָם \"moustache\".",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "שְׁפָמוֹת, see שִׂפְמוֹת.",
+   "status": "adjudicated",
+   "draft": "שְׁפָמוֹת, see שִׂפְמוֹת.",
+   "reread": "שִׂפְמוֹת, see שְׂפָמוֹת.",
+   "verdict": "a",
+   "note": "First word has shin dot (upper right) with shewa under shin and qamets under pe; second word has sin dot (upper left) with hireq under sin and shewa under pe. Reading B swaps the vocalisations of the two words.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 34,
+  "adjudicated": 8,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "errors": 0,
+ "cost_usd_list_total": 1.4875
+}

@@ -1,0 +1,2729 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 18,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0018.png",
+ "raster_sha256": "3a811af33bd08da383ae1ca2a15e342c008a253f7f4dd8bf86170e0beede8dca",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0018.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:52:26+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 200,
+    "y": 104,
+    "width": 1764,
+    "height": 69
+   },
+   "draft_lines": [
+    "אב 2 אב"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 200,
+      "y": 102,
+      "width": 1764,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/header-b00-1764x73+200+102-x2.png",
+     "image_sha256": "c559ee30bf224fdefe4515e60cd4daec17ee20f77f34ca8cc1193bbb40ff23fc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אב 2 אב"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6375a66f-a5d4-4c2d-85d2-78f120e4cf72",
+      "duration_api_ms": 8626,
+      "cost_usd_list": 0.044117,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1708,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "אב 2 אב",
+       "reread": "אב 2 אב",
+       "status": "agreed",
+       "text": "אב 2 אב"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 200,
+    "y": 150,
+    "width": 868,
+    "height": 627
+   },
+   "draft_lines": [
+    "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and",
+    "Syr. אַבָּא, ܐܰܒܳܐ.",
+    "1. In a proper sense, Gen. 19, 31 sq.",
+    "44, 19. 20. al. sæpiss.—But the word",
+    "father often has a wider sense; see",
+    "Fesselii Adv. Sacra VI. 6. E. g.",
+    "2. i. q. forefather, ancestor, 1 K. 15, 11.",
+    "2 K. 14, 3. 15, 38. 16, 2. al. E. g. a grand-",
+    "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 200,
+      "y": 142,
+      "width": 868,
+      "height": 357
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r00-b00-868x357+200+142-x2.png",
+     "image_sha256": "99e37ccea9c18b585cb148677d10dd32ead8c94d23307dc8065f9fc79bfc765c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "أَبٌ, constr. أَبُو, أَبِي, أَبَا, Chald. and",
+       "Syr. אַבָּא, ܐܰܒܳܐ.",
+       "1. In a proper sense, Gen. 19, 31 sq.",
+       "44, 19. 20. al. sæpiss.—But the word"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0828c706-3c73-49f7-b07d-d850542a44c4",
+      "duration_api_ms": 15785,
+      "cost_usd_list": 0.09470775000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 3065,
+      "output_tokens": 644
+     },
+     "lines": [
+      {
+       "draft": "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and",
+       "reread": "أَبٌ, constr. أَبُو, أَبِي, أَبَا, Chald. and",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and",
+        "verdict": "a",
+        "note": "The only difference is the final letter of the third form: the print shows a dotless final yā (ى), with no two dots beneath it, as Reading A has; Reading B's dotted ي is not printed. Order (أَبُو, أَبِى, أَبَا), hamzas, fatha/damma/kasra and the tanwīn on أَبٌ all match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c6f85992-ac3f-4653-8ec2-fbfb8c2440b7",
+        "duration_api_ms": 17214,
+        "cost_usd_list": 0.097993,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3492,
+        "cache_creation_input_tokens": 3014,
+        "output_tokens": 730
+       },
+       "text": "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and"
+      },
+      {
+       "draft": "Syr. אַבָּא, ܐܰܒܳܐ.",
+       "reread": "Syr. אַבָּא, ܐܰܒܳܐ.",
+       "status": "agreed",
+       "text": "Syr. אַבָּא, ܐܰܒܳܐ."
+      },
+      {
+       "draft": "1. In a proper sense, Gen. 19, 31 sq.",
+       "reread": "1. In a proper sense, Gen. 19, 31 sq.",
+       "status": "agreed",
+       "text": "1. In a proper sense, Gen. 19, 31 sq."
+      },
+      {
+       "draft": "44, 19. 20. al. sæpiss.—But the word",
+       "reread": "44, 19. 20. al. sæpiss.—But the word",
+       "status": "agreed",
+       "text": "44, 19. 20. al. sæpiss.—But the word"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 200,
+      "y": 483,
+      "width": 868,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r00-b01-868x237+200+483-x2.png",
+     "image_sha256": "ecdccdcd3b6822b00bba97d8e53432a532b76881d4b23bd2d1c8acb2be3b2804",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "father often has a wider sense; see",
+       "Fesselii Adv. Sacra VI. 6. E. g.",
+       "2. i. q. forefather, ancestor, 1 K. 15, 11.",
+       "2 K. 14, 3. 15, 38. 16, 2. al. E. g. a grand-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4e8265b9-0b36-41a3-ab93-9970a6eec403",
+      "duration_api_ms": 7114,
+      "cost_usd_list": 0.06504774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2507,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "father often has a wider sense; see",
+       "reread": "father often has a wider sense; see",
+       "status": "agreed",
+       "text": "father often has a wider sense; see"
+      },
+      {
+       "draft": "Fesselii Adv. Sacra VI. 6. E. g.",
+       "reread": "Fesselii Adv. Sacra VI. 6. E. g.",
+       "status": "agreed",
+       "text": "Fesselii Adv. Sacra VI. 6. E. g."
+      },
+      {
+       "draft": "2. i. q. forefather, ancestor, 1 K. 15, 11.",
+       "reread": "2. i. q. forefather, ancestor, 1 K. 15, 11.",
+       "status": "agreed",
+       "text": "2. i. q. forefather, ancestor, 1 K. 15, 11."
+      },
+      {
+       "draft": "2 K. 14, 3. 15, 38. 16, 2. al. E. g. a grand-",
+       "reread": "2 K. 14, 3. 15, 38. 16, 2. al. E. g. a grand-",
+       "status": "agreed",
+       "text": "2 K. 14, 3. 15, 38. 16, 2. al. E. g. a grand-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 200,
+      "y": 704,
+      "width": 868,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r00-b02-868x81+200+704-x2.png",
+     "image_sha256": "42adc8fad222d25af7f202843763e8c4e6ca21eca6b6c8f03b8ccba69404b214",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d6afb1ee-927d-4662-bd06-a0be1f10d69b",
+      "duration_api_ms": 12320,
+      "cost_usd_list": 0.04940774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 1825,
+      "output_tokens": 234
+     },
+     "lines": [
+      {
+       "draft": "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;",
+       "reread": "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;",
+       "status": "agreed",
+       "text": "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 200,
+    "y": 765,
+    "width": 868,
+    "height": 831
+   },
+   "draft_lines": [
+    "a great-grandfather, Num. 18, 1. 2. 1 K.",
+    "15, 11. 24. al. Is. 43, 27 אָבִיךָ הָרִאשׁוֹן חָטָא",
+    "collect. thy first forefathers sinned.—",
+    "Very frequent in Plur. אָבוֹת fathers,",
+    "i. e. forefathers, Gen. 15, 15. Ps. 45, 17.—",
+    "For the phrase נֶאֱסַף אֶל־אֲבוֹת, see un-",
+    "der אָסַף.",
+    "3. i. q. the founder, author, i. e. first",
+    "ancestor of a tribe or nation, Gen. 10, 21.",
+    "17, 4. 5. 19, 37. 36, 9. 43. Josh. 24, 3.—",
+    "Here we may refer Gen. 4, 21 the fa-",
+    "ther of all such as handle the harp and",
+    "the pipe, i. e. the founder of the family",
+    "of musicians, the inventor of the art of",
+    "music."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 200,
+      "y": 757,
+      "width": 868,
+      "height": 185
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r01-b00-868x185+200+757-x2.png",
+     "image_sha256": "71d28017c966f4c54d9377f3e31606ea8e163cd5d61b80a189c77828906afe6c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a great-grandfather, Num. 18, 1. 2. 1 K.",
+       "15, 11. 24. al. Is. 43, 27 אָבִיךָ הָרִאשׁוֹן חָטָא",
+       "collect. thy first forefathers sinned.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d8284305-95e8-4f6f-adad-c64ec5209d50",
+      "duration_api_ms": 13883,
+      "cost_usd_list": 0.07697775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2321,
+      "output_tokens": 587
+     },
+     "lines": [
+      {
+       "draft": "a great-grandfather, Num. 18, 1. 2. 1 K.",
+       "reread": "a great-grandfather, Num. 18, 1. 2. 1 K.",
+       "status": "agreed",
+       "text": "a great-grandfather, Num. 18, 1. 2. 1 K."
+      },
+      {
+       "draft": "15, 11. 24. al. Is. 43, 27 אָבִיךָ הָרִאשׁוֹן חָטָא",
+       "reread": "15, 11. 24. al. Is. 43, 27 אָבִיךָ הָרִאשׁוֹן חָטָא",
+       "status": "agreed",
+       "text": "15, 11. 24. al. Is. 43, 27 אָבִיךָ הָרִאשׁוֹן חָטָא"
+      },
+      {
+       "draft": "collect. thy first forefathers sinned.—",
+       "reread": "collect. thy first forefathers sinned.—",
+       "status": "agreed",
+       "text": "collect. thy first forefathers sinned.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 200,
+      "y": 926,
+      "width": 868,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r01-b01-868x236+200+926-x2.png",
+     "image_sha256": "90382752b24a62686d5fcea7d7e0a4103c32dc283d7f794f186c3806a0c33475",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Very frequent in Plur. אָבוֹת fathers,",
+       "i. e. forefathers, Gen. 15, 15. Ps. 45, 17.—",
+       "For the phrase נֶאֱסַף אֶל־אֲבוֹת, see un-",
+       "der אָסַף."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b69b79e5-9923-46ea-8688-87a9879d7333",
+      "duration_api_ms": 17654,
+      "cost_usd_list": 0.07694775000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2507,
+      "output_tokens": 512
+     },
+     "lines": [
+      {
+       "draft": "Very frequent in Plur. אָבוֹת fathers,",
+       "reread": "Very frequent in Plur. אָבוֹת fathers,",
+       "status": "agreed",
+       "text": "Very frequent in Plur. אָבוֹת fathers,"
+      },
+      {
+       "draft": "i. e. forefathers, Gen. 15, 15. Ps. 45, 17.—",
+       "reread": "i. e. forefathers, Gen. 15, 15. Ps. 45, 17.—",
+       "status": "agreed",
+       "text": "i. e. forefathers, Gen. 15, 15. Ps. 45, 17.—"
+      },
+      {
+       "draft": "For the phrase נֶאֱסַף אֶל־אֲבוֹת, see un-",
+       "reread": "For the phrase נֶאֱסַף אֶל־אֲבוֹת, see un-",
+       "status": "agreed",
+       "text": "For the phrase נֶאֱסַף אֶל־אֲבוֹת, see un-"
+      },
+      {
+       "draft": "der אָסַף.",
+       "reread": "der אָסַף.",
+       "status": "agreed",
+       "text": "der אָסַף."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 200,
+      "y": 1146,
+      "width": 868,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r01-b02-868x236+200+1146-x2.png",
+     "image_sha256": "543aab8f27f00b5f2054112ef14cc2921d0250b6132af20a600bbc2682a43286",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. i. q. the founder, author, i. e. first",
+       "ancestor of a tribe or nation, Gen. 10, 21.",
+       "17, 4. 5. 19, 37. 36, 9. 43. Josh. 24, 3.—",
+       "Here we may refer Gen. 4, 21 the fa-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aa32d81c-40d7-4afd-a8bd-4e94e6cc8994",
+      "duration_api_ms": 12075,
+      "cost_usd_list": 0.06873800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 347
+     },
+     "lines": [
+      {
+       "draft": "3. i. q. the founder, author, i. e. first",
+       "reread": "3. i. q. the founder, author, i. e. first",
+       "status": "agreed",
+       "text": "3. i. q. the founder, author, i. e. first"
+      },
+      {
+       "draft": "ancestor of a tribe or nation, Gen. 10, 21.",
+       "reread": "ancestor of a tribe or nation, Gen. 10, 21.",
+       "status": "agreed",
+       "text": "ancestor of a tribe or nation, Gen. 10, 21."
+      },
+      {
+       "draft": "17, 4. 5. 19, 37. 36, 9. 43. Josh. 24, 3.—",
+       "reread": "17, 4. 5. 19, 37. 36, 9. 43. Josh. 24, 3.—",
+       "status": "agreed",
+       "text": "17, 4. 5. 19, 37. 36, 9. 43. Josh. 24, 3.—"
+      },
+      {
+       "draft": "Here we may refer Gen. 4, 21 the fa-",
+       "reread": "Here we may refer Gen. 4, 21 the fa-",
+       "status": "agreed",
+       "text": "Here we may refer Gen. 4, 21 the fa-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 200,
+      "y": 1366,
+      "width": 868,
+      "height": 223
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r01-b03-868x223+200+1366-x2.png",
+     "image_sha256": "2c8c950384840416c9e9d6368b5d1624802e4759e772e31a16f09195ca59872f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ther of all such as handle the harp and",
+       "the pipe, i. e. the founder of the family",
+       "of musicians, the inventor of the art of",
+       "music."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2267bdcc-32d1-4a5f-9b43-786f4b3a7884",
+      "duration_api_ms": 9270,
+      "cost_usd_list": 0.06139800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2447,
+      "output_tokens": 225
+     },
+     "lines": [
+      {
+       "draft": "ther of all such as handle the harp and",
+       "reread": "ther of all such as handle the harp and",
+       "status": "agreed",
+       "text": "ther of all such as handle the harp and"
+      },
+      {
+       "draft": "the pipe, i. e. the founder of the family",
+       "reread": "the pipe, i. e. the founder of the family",
+       "status": "agreed",
+       "text": "the pipe, i. e. the founder of the family"
+      },
+      {
+       "draft": "of musicians, the inventor of the art of",
+       "reread": "of musicians, the inventor of the art of",
+       "status": "agreed",
+       "text": "of musicians, the inventor of the art of"
+      },
+      {
+       "draft": "music.",
+       "reread": "music.",
+       "status": "agreed",
+       "text": "music."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 200,
+    "y": 1584,
+    "width": 868,
+    "height": 730
+   },
+   "draft_lines": [
+    "4. Of the author or maker of any",
+    "thing, espec. a creator ; Job 38, 28 hath",
+    "the rain a father ? i. e. creator. In this",
+    "sense God is called the father of men,",
+    "their Creator, Is. 63, 16. 64, 7. Deut. 32,",
+    "6 ; comp. Jer. 2, 27.—Here too may be",
+    "referred Job 34, 36 אָבִי יִבָּחֵן אִיּוֹב , Vulg.",
+    "mi pater, probetur Jobus, i. e. my Father,",
+    "let Job be tried ; but the sense is lan-",
+    "guid. Others not unaptly make אבי i. q.",
+    "אֲבוֹי wo !",
+    "The above tropical senses come from",
+    "the notion of source, origin ; others are"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 200,
+      "y": 1591,
+      "width": 868,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r02-b00-868x228+200+1591-x2.png",
+     "image_sha256": "26c6db0d9f7bf7c8882c4d2009c9acfc74eec615c4555440d12c2a5bde2aff81",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "4. Of the author or maker of any",
+       "thing, espec. a creator ; Job 38, 28 hath",
+       "the rain a father? i. e. creator. In this",
+       "sense God is called the father of men,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d46d6fe9-1ad0-4937-8b11-a9f169ad7fde",
+      "duration_api_ms": 13770,
+      "cost_usd_list": 0.06343800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "4. Of the author or maker of any",
+       "reread": "4. Of the author or maker of any",
+       "status": "agreed",
+       "text": "4. Of the author or maker of any"
+      },
+      {
+       "draft": "thing, espec. a creator ; Job 38, 28 hath",
+       "reread": "thing, espec. a creator ; Job 38, 28 hath",
+       "status": "agreed",
+       "text": "thing, espec. a creator; Job 38, 28 hath"
+      },
+      {
+       "draft": "the rain a father ? i. e. creator. In this",
+       "reread": "the rain a father? i. e. creator. In this",
+       "status": "agreed",
+       "text": "the rain a father? i. e. creator. In this"
+      },
+      {
+       "draft": "sense God is called the father of men,",
+       "reread": "sense God is called the father of men,",
+       "status": "agreed",
+       "text": "sense God is called the father of men,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 200,
+      "y": 1803,
+      "width": 868,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r02-b01-868x237+200+1803-x2.png",
+     "image_sha256": "87582e0f8362e097454c465ec0bdfbaf61dd22bc26446fdc2b750320b0799538",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "their Creator, Is. 63, 16. 64, 7. Deut. 32,",
+       "6; comp. Jer. 2, 27.—Here too may be",
+       "referred Job 34, 36 אָבִי יִבָּחֵן אִיּוֹב, Vulg.",
+       "mi pater, probetur Jobus, i. e. my Father,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "38986db1-c96a-413b-816b-27ce7aa9d43b",
+      "duration_api_ms": 15228,
+      "cost_usd_list": 0.074988,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 472
+     },
+     "lines": [
+      {
+       "draft": "their Creator, Is. 63, 16. 64, 7. Deut. 32,",
+       "reread": "their Creator, Is. 63, 16. 64, 7. Deut. 32,",
+       "status": "agreed",
+       "text": "their Creator, Is. 63, 16. 64, 7. Deut. 32,"
+      },
+      {
+       "draft": "6 ; comp. Jer. 2, 27.—Here too may be",
+       "reread": "6; comp. Jer. 2, 27.—Here too may be",
+       "status": "agreed",
+       "text": "6; comp. Jer. 2, 27.—Here too may be"
+      },
+      {
+       "draft": "referred Job 34, 36 אָבִי יִבָּחֵן אִיּוֹב , Vulg.",
+       "reread": "referred Job 34, 36 אָבִי יִבָּחֵן אִיּוֹב, Vulg.",
+       "status": "agreed",
+       "text": "referred Job 34, 36 אָבִי יִבָּחֵן אִיּוֹב, Vulg."
+      },
+      {
+       "draft": "mi pater, probetur Jobus, i. e. my Father,",
+       "reread": "mi pater, probetur Jobus, i. e. my Father,",
+       "status": "agreed",
+       "text": "mi pater, probetur Jobus, i. e. my Father,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 200,
+      "y": 2024,
+      "width": 868,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r02-b02-868x235+200+2024-x2.png",
+     "image_sha256": "2d328106e18c80a12dc4c280e132e06e787e5fec65a5c23267d80919e39edc2a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "let Job be tried ; but the sense is lan-",
+       "guid. Others not unaptly make אבי i. q.",
+       "אֲבוֹי wo !",
+       "The above tropical senses come from"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bf909e32-9155-494a-8460-d58a51fde98f",
+      "duration_api_ms": 11164,
+      "cost_usd_list": 0.07083800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 389
+     },
+     "lines": [
+      {
+       "draft": "let Job be tried ; but the sense is lan-",
+       "reread": "let Job be tried ; but the sense is lan-",
+       "status": "agreed",
+       "text": "let Job be tried; but the sense is lan-"
+      },
+      {
+       "draft": "guid. Others not unaptly make אבי i. q.",
+       "reread": "guid. Others not unaptly make אבי i. q.",
+       "status": "agreed",
+       "text": "guid. Others not unaptly make אבי i. q."
+      },
+      {
+       "draft": "אֲבוֹי wo !",
+       "reread": "אֲבוֹי wo !",
+       "status": "agreed",
+       "text": "אֲבוֹי wo!"
+      },
+      {
+       "draft": "The above tropical senses come from",
+       "reread": "The above tropical senses come from",
+       "status": "agreed",
+       "text": "The above tropical senses come from"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 200,
+      "y": 2243,
+      "width": 868,
+      "height": 67
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r02-b03-868x67+200+2243-x2.png",
+     "image_sha256": "d4ffe6a2d798283774681a7cbc66228f7484b1d925451be4b4513e2c983f21f6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the notion of source, origin ; others are"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f17b4836-748b-4c64-95c3-62e94fe8fc72",
+      "duration_api_ms": 7762,
+      "cost_usd_list": 0.047208,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1765,
+      "output_tokens": 214
+     },
+     "lines": [
+      {
+       "draft": "the notion of source, origin ; others are",
+       "reread": "the notion of source, origin ; others are",
+       "status": "agreed",
+       "text": "the notion of source, origin; others are"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 200,
+    "y": 2302,
+    "width": 868,
+    "height": 945
+   },
+   "draft_lines": [
+    "drawn from the idea of paternal love and",
+    "care, the honour due to a father, etc. E. g.",
+    "5. i. q. a nursing-father, benefactor, as",
+    "doing good and providing for others in",
+    "the manner of a father. Job 29, 16 I was",
+    "a father to the poor. Ps. 68, 6 a father",
+    "to the fatherless. Is. 22, 21 a father to",
+    "the inhabitants of Jerusalem, spoken of",
+    "Eliakim the prefect of the palace. Is.",
+    "9, 5 אֲבִי עַד the everlasting father of his",
+    "people, i. e. the Messiah ; comp. pater",
+    "patriæ among the Romans. By the",
+    "same metaphor God is called the father",
+    "of the righteous and of kings, and these",
+    "also are called his sons, 2 Sam. 7, 14.",
+    "1 Chr. 17, 13. 22, 10. Ps. 89, 27. 28.",
+    "6. For a master, teacher, from the idea"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 200,
+      "y": 2306,
+      "width": 868,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r03-b00-868x228+200+2306-x2.png",
+     "image_sha256": "b984d0a05dedc2215dffe6cc5d37c1f95d28985dbbc2b2be1a96068f1f03a1e3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "drawn from the idea of paternal love and",
+       "care, the honour due to a father, etc. E. g.",
+       "5. i. q. a nursing-father, benefactor, as",
+       "doing good and providing for others in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "249ac92c-9e81-43b7-953d-8853dc222702",
+      "duration_api_ms": 17371,
+      "cost_usd_list": 0.063488,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "drawn from the idea of paternal love and",
+       "reread": "drawn from the idea of paternal love and",
+       "status": "agreed",
+       "text": "drawn from the idea of paternal love and"
+      },
+      {
+       "draft": "care, the honour due to a father, etc. E. g.",
+       "reread": "care, the honour due to a father, etc. E. g.",
+       "status": "agreed",
+       "text": "care, the honour due to a father, etc. E. g."
+      },
+      {
+       "draft": "5. i. q. a nursing-father, benefactor, as",
+       "reread": "5. i. q. a nursing-father, benefactor, as",
+       "status": "agreed",
+       "text": "5. i. q. a nursing-father, benefactor, as"
+      },
+      {
+       "draft": "doing good and providing for others in",
+       "reread": "doing good and providing for others in",
+       "status": "agreed",
+       "text": "doing good and providing for others in"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 200,
+      "y": 2518,
+      "width": 868,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r03-b01-868x235+200+2518-x2.png",
+     "image_sha256": "e2d37b015e8dc1952a0fd112cd8dbf6ecc2550c0574802eb8ea4b28c459027df",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the manner of a father. Job 29, 16 I was",
+       "a father to the poor. Ps. 68, 6 a father",
+       "to the fatherless. Is. 22, 21 a father to",
+       "the inhabitants of Jerusalem, spoken of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "450cb04c-3fc1-40a9-a493-e8c9b4ae9fcd",
+      "duration_api_ms": 8331,
+      "cost_usd_list": 0.064238,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "the manner of a father. Job 29, 16 I was",
+       "reread": "the manner of a father. Job 29, 16 I was",
+       "status": "agreed",
+       "text": "the manner of a father. Job 29, 16 I was"
+      },
+      {
+       "draft": "a father to the poor. Ps. 68, 6 a father",
+       "reread": "a father to the poor. Ps. 68, 6 a father",
+       "status": "agreed",
+       "text": "a father to the poor. Ps. 68, 6 a father"
+      },
+      {
+       "draft": "to the fatherless. Is. 22, 21 a father to",
+       "reread": "to the fatherless. Is. 22, 21 a father to",
+       "status": "agreed",
+       "text": "to the fatherless. Is. 22, 21 a father to"
+      },
+      {
+       "draft": "the inhabitants of Jerusalem, spoken of",
+       "reread": "the inhabitants of Jerusalem, spoken of",
+       "status": "agreed",
+       "text": "the inhabitants of Jerusalem, spoken of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 200,
+      "y": 2737,
+      "width": 868,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r03-b02-868x240+200+2737-x2.png",
+     "image_sha256": "ee861b17a8101471ccf575cee26160bbf92d341808477c340f58b202c98dc09a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Eliakim the prefect of the palace. Is.",
+       "9, 5 אֲבִי עַד the everlasting father of his",
+       "people, i. e. the Messiah ; comp. pater",
+       "patriæ among the Romans. By the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "27034398-873e-433a-a0da-559d6317dfbb",
+      "duration_api_ms": 9806,
+      "cost_usd_list": 0.065278,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2571,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "Eliakim the prefect of the palace. Is.",
+       "reread": "Eliakim the prefect of the palace. Is.",
+       "status": "agreed",
+       "text": "Eliakim the prefect of the palace. Is."
+      },
+      {
+       "draft": "9, 5 אֲבִי עַד the everlasting father of his",
+       "reread": "9, 5 אֲבִי עַד the everlasting father of his",
+       "status": "agreed",
+       "text": "9, 5 אֲבִי עַד the everlasting father of his"
+      },
+      {
+       "draft": "people, i. e. the Messiah ; comp. pater",
+       "reread": "people, i. e. the Messiah ; comp. pater",
+       "status": "agreed",
+       "text": "people, i. e. the Messiah; comp. pater"
+      },
+      {
+       "draft": "patriæ among the Romans. By the",
+       "reread": "patriæ among the Romans. By the",
+       "status": "agreed",
+       "text": "patriæ among the Romans. By the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 200,
+      "y": 2961,
+      "width": 868,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r03-b03-868x234+200+2961-x2.png",
+     "image_sha256": "75bb1fb7466d524bccdf37a114e0518f288df36b4fa21b61295d674f297a8f92",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "same metaphor God is called the father",
+       "of the righteous and of kings, and these",
+       "also are called his sons, 2 Sam. 7, 14.",
+       "1 Chr. 17, 13. 22, 10. Ps. 89, 27. 28."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6dfdb085-36ce-45ff-9fe6-baf1612e5cbf",
+      "duration_api_ms": 6888,
+      "cost_usd_list": 0.06418800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2509,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "same metaphor God is called the father",
+       "reread": "same metaphor God is called the father",
+       "status": "agreed",
+       "text": "same metaphor God is called the father"
+      },
+      {
+       "draft": "of the righteous and of kings, and these",
+       "reread": "of the righteous and of kings, and these",
+       "status": "agreed",
+       "text": "of the righteous and of kings, and these"
+      },
+      {
+       "draft": "also are called his sons, 2 Sam. 7, 14.",
+       "reread": "also are called his sons, 2 Sam. 7, 14.",
+       "status": "agreed",
+       "text": "also are called his sons, 2 Sam. 7, 14."
+      },
+      {
+       "draft": "1 Chr. 17, 13. 22, 10. Ps. 89, 27. 28.",
+       "reread": "1 Chr. 17, 13. 22, 10. Ps. 89, 27. 28.",
+       "status": "agreed",
+       "text": "1 Chr. 17, 13. 22, 10. Ps. 89, 27. 28."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b04",
+     "bounds": {
+      "x": 200,
+      "y": 3179,
+      "width": 868,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c0-r03-b04-868x71+200+3179-x2.png",
+     "image_sha256": "d7c0829e7f7c0775030d0663fd8335e54008c56f829c5eae63cad5392a26926c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "6. For a master, teacher, from the idea"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f8a0171f-b84b-438d-aa15-645fe9041791",
+      "duration_api_ms": 7836,
+      "cost_usd_list": 0.047348,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1827,
+      "output_tokens": 192
+     },
+     "lines": [
+      {
+       "draft": "6. For a master, teacher, from the idea",
+       "reread": "6. For a master, teacher, from the idea",
+       "status": "agreed",
+       "text": "6. For a master, teacher, from the idea"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1081,
+    "y": 150,
+    "width": 883,
+    "height": 688
+   },
+   "draft_lines": [
+    "of paternal instruction, 1 Sam. 10, 12.",
+    "Hence priests and prophets, as teachers",
+    "sent with divine authority, are saluted",
+    "with the title of father, out of respect",
+    "and honour, even by kings, 2 K. 2, 12. 5,",
+    "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17, 10",
+    "be unto me a father and a priest. 18, 19.—",
+    "So the Rabbins are called אָבוֹת fathers ;",
+    "much as we use the honorary appellation",
+    "of fathers of the church, the holy father",
+    "i. e. the pope."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1081,
+      "y": 142,
+      "width": 883,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r00-b00-883x251+1081+142-x2.png",
+     "image_sha256": "e1b9677a9384f513a53cae99a4be35e82055afb566b9df757b0066811b84c731",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of paternal instruction, 1 Sam. 10, 12.",
+       "Hence priests and prophets, as teachers",
+       "sent with divine authority, are saluted"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b59ef63e-e3f9-47f9-80f6-4d6f44bad1b6",
+      "duration_api_ms": 6223,
+      "cost_usd_list": 0.066548,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "of paternal instruction, 1 Sam. 10, 12.",
+       "reread": "of paternal instruction, 1 Sam. 10, 12.",
+       "status": "agreed",
+       "text": "of paternal instruction, 1 Sam. 10, 12."
+      },
+      {
+       "draft": "Hence priests and prophets, as teachers",
+       "reread": "Hence priests and prophets, as teachers",
+       "status": "agreed",
+       "text": "Hence priests and prophets, as teachers"
+      },
+      {
+       "draft": "sent with divine authority, are saluted",
+       "reread": "sent with divine authority, are saluted",
+       "status": "agreed",
+       "text": "sent with divine authority, are saluted"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1081,
+      "y": 377,
+      "width": 883,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r00-b01-883x236+1081+377-x2.png",
+     "image_sha256": "ecc44743bb6a315d104085fd69995c31043b367f175d9e2ce55e7221f0c1dd1a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "with the title of father, out of respect",
+       "and honour, even by kings, 2 K. 2, 12. 5,",
+       "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10",
+       "be unto me a father and a priest. 18, 19.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "41ba8998-7617-41db-aecc-7cb09df9daf5",
+      "duration_api_ms": 9041,
+      "cost_usd_list": 0.065468,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "with the title of father, out of respect",
+       "reread": "with the title of father, out of respect",
+       "status": "agreed",
+       "text": "with the title of father, out of respect"
+      },
+      {
+       "draft": "and honour, even by kings, 2 K. 2, 12. 5,",
+       "reread": "and honour, even by kings, 2 K. 2, 12. 5,",
+       "status": "agreed",
+       "text": "and honour, even by kings, 2 K. 2, 12. 5,"
+      },
+      {
+       "draft": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17, 10",
+       "reread": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10",
+        "verdict": "b",
+        "note": "Only difference is spacing after the comma in the final reference: the print is set tight at line end with no visible space between \"17,\" and \"10\", so Reading B matches; everything else (13. 6, 21. 13, 14. (comp. 8, 9.) Judg.) is identical in both and in the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c034807b-df66-4d6d-8bb7-e78904723ba0",
+        "duration_api_ms": 16535,
+        "cost_usd_list": 0.074364,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3496,
+        "cache_creation_input_tokens": 2495,
+        "output_tokens": 465
+       },
+       "text": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10"
+      },
+      {
+       "draft": "be unto me a father and a priest. 18, 19.—",
+       "reread": "be unto me a father and a priest. 18, 19.—",
+       "status": "agreed",
+       "text": "be unto me a father and a priest. 18, 19.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1081,
+      "y": 597,
+      "width": 883,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r00-b02-883x249+1081+597-x2.png",
+     "image_sha256": "76182e674db6c0ac3023035918b4a8c12e6b4f397f8199f221c5a82743a2c496",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "So the Rabbins are called אָבוֹת fathers ;",
+       "much as we use the honorary appellation",
+       "of fathers of the church, the holy father",
+       "i. e. the pope."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7956652b-77c2-46bb-81ff-78b2513b8cf8",
+      "duration_api_ms": 10789,
+      "cost_usd_list": 0.067798,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 289
+     },
+     "lines": [
+      {
+       "draft": "So the Rabbins are called אָבוֹת fathers ;",
+       "reread": "So the Rabbins are called אָבוֹת fathers ;",
+       "status": "agreed",
+       "text": "So the Rabbins are called אָבוֹת fathers;"
+      },
+      {
+       "draft": "much as we use the honorary appellation",
+       "reread": "much as we use the honorary appellation",
+       "status": "agreed",
+       "text": "much as we use the honorary appellation"
+      },
+      {
+       "draft": "of fathers of the church, the holy father",
+       "reread": "of fathers of the church, the holy father",
+       "status": "agreed",
+       "text": "of fathers of the church, the holy father"
+      },
+      {
+       "draft": "i. e. the pope.",
+       "reread": "i. e. the pope.",
+       "status": "agreed",
+       "text": "i. e. the pope."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1081,
+    "y": 826,
+    "width": 883,
+    "height": 908
+   },
+   "draft_lines": [
+    "7. Spec. father of the king, in a similar",
+    "sense, i. e. his chief adviser and prime",
+    "minister, whom the modern orientals call",
+    "Vizier. Gen. 45, 8 וַיְשִׂימֵנִי לְאָב לְפַרְעֹה",
+    "and hath made me a father to Pharaoh.",
+    "So Haman is said to be δεύτερος πατήρ",
+    "to Artaxerxes, Sept. Esth. 3, 13; comp.",
+    "1 Macc. 11, 32. Comp. also Turkish",
+    "اتابك Atâbek, father-prince, and Lala",
+    "father, spoken of the Vizier; see Ja-",
+    "blonsky Opusc. ed. te Water, T. I. p. 206.",
+    "Barhebræi Chron. Syr. p. 219. l. 15.—",
+    "Some of the ancient interpreters un-",
+    "derstand the same by the word אַבְרֵךְ",
+    "Gen. 41, 43; explaining it father of the",
+    "king, or of the land, kingdom; so Luther."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1081,
+      "y": 818,
+      "width": 883,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r01-b00-883x238+1081+818-x2.png",
+     "image_sha256": "9e5ed1606d7b3f526ee58f2b6329d93a233da77405b19933d2b8b04ed92c23c9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "7. Spec. father of the king, in a similar",
+       "sense, i. e. his chief adviser and prime",
+       "minister, whom the modern orientals call",
+       "Vizier. Gen. 45, 8 וַיְשִׂימֵנִי לְאָב לְפַרְעֹה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "19ff3103-4030-4a3a-bfcb-a5f9bb539210",
+      "duration_api_ms": 16792,
+      "cost_usd_list": 0.07466800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 452
+     },
+     "lines": [
+      {
+       "draft": "7. Spec. father of the king, in a similar",
+       "reread": "7. Spec. father of the king, in a similar",
+       "status": "agreed",
+       "text": "7. Spec. father of the king, in a similar"
+      },
+      {
+       "draft": "sense, i. e. his chief adviser and prime",
+       "reread": "sense, i. e. his chief adviser and prime",
+       "status": "agreed",
+       "text": "sense, i. e. his chief adviser and prime"
+      },
+      {
+       "draft": "minister, whom the modern orientals call",
+       "reread": "minister, whom the modern orientals call",
+       "status": "agreed",
+       "text": "minister, whom the modern orientals call"
+      },
+      {
+       "draft": "Vizier. Gen. 45, 8 וַיְשִׂימֵנִי לְאָב לְפַרְעֹה",
+       "reread": "Vizier. Gen. 45, 8 וַיְשִׂימֵנִי לְאָב לְפַרְעֹה",
+       "status": "agreed",
+       "text": "Vizier. Gen. 45, 8 וַיְשִׂימֵנִי לְאָב לְפַרְעֹה"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1081,
+      "y": 1040,
+      "width": 883,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r01-b01-883x239+1081+1040-x2.png",
+     "image_sha256": "2234432b7c6f64ba5f1c884317260d7450827ba276528b8ca4e2b1d220fa4f66",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and hath made me a father to Pharaoh.",
+       "So Haman is said to be δεύτερος πατήρ",
+       "to Artaxerxes, Sept. Esth. 3, 13; comp.",
+       "1 Macc. 11, 32. Comp. also Turkish"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4f674cbe-6bd3-40f7-89ac-8ed156fd01d9",
+      "duration_api_ms": 6903,
+      "cost_usd_list": 0.06783825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 289
+     },
+     "lines": [
+      {
+       "draft": "and hath made me a father to Pharaoh.",
+       "reread": "and hath made me a father to Pharaoh.",
+       "status": "agreed",
+       "text": "and hath made me a father to Pharaoh."
+      },
+      {
+       "draft": "So Haman is said to be δεύτερος πατήρ",
+       "reread": "So Haman is said to be δεύτερος πατήρ",
+       "status": "agreed",
+       "text": "So Haman is said to be δεύτερος πατήρ"
+      },
+      {
+       "draft": "to Artaxerxes, Sept. Esth. 3, 13; comp.",
+       "reread": "to Artaxerxes, Sept. Esth. 3, 13; comp.",
+       "status": "agreed",
+       "text": "to Artaxerxes, Sept. Esth. 3, 13; comp."
+      },
+      {
+       "draft": "1 Macc. 11, 32. Comp. also Turkish",
+       "reread": "1 Macc. 11, 32. Comp. also Turkish",
+       "status": "agreed",
+       "text": "1 Macc. 11, 32. Comp. also Turkish"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1081,
+      "y": 1263,
+      "width": 883,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r01-b02-883x250+1081+1263-x2.png",
+     "image_sha256": "d8ab623f8d894913093e8b469bacd5fa2dc921df1944786a3ff454a907830f25",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "اتابك Atâbek, father-prince, and Lala",
+       "father, spoken of the Vizier; see Ja-",
+       "blonsky Opusc. ed. te Water, T. I. p. 206.",
+       "Barhebræi Chron. Syr. p. 219. l. 15.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a6f99b12-3a16-4185-a314-47dbc6ae6283",
+      "duration_api_ms": 11977,
+      "cost_usd_list": 0.06693825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "اتابك Atâbek, father-prince, and Lala",
+       "reread": "اتابك Atâbek, father-prince, and Lala",
+       "status": "agreed",
+       "text": "اتابك Atâbek, father-prince, and Lala"
+      },
+      {
+       "draft": "father, spoken of the Vizier; see Ja-",
+       "reread": "father, spoken of the Vizier; see Ja-",
+       "status": "agreed",
+       "text": "father, spoken of the Vizier; see Ja-"
+      },
+      {
+       "draft": "blonsky Opusc. ed. te Water, T. I. p. 206.",
+       "reread": "blonsky Opusc. ed. te Water, T. I. p. 206.",
+       "status": "agreed",
+       "text": "blonsky Opusc. ed. te Water, T. I. p. 206."
+      },
+      {
+       "draft": "Barhebræi Chron. Syr. p. 219. l. 15.—",
+       "reread": "Barhebræi Chron. Syr. p. 219. l. 15.—",
+       "status": "agreed",
+       "text": "Barhebræi Chron. Syr. p. 219. l. 15.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1081,
+      "y": 1497,
+      "width": 883,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r01-b03-883x234+1081+1497-x2.png",
+     "image_sha256": "86c820a69cd4dff6d7d37ff9c201724956478bf07f78824f1d9434924b1245c4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Some of the ancient interpreters un-",
+       "derstand the same by the word אַבְרֵךְ",
+       "Gen. 41, 43; explaining it father of the",
+       "king, or of the land, kingdom; so Luther."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2f3c00b6-f6c2-4b1e-9220-27f41b321b4c",
+      "duration_api_ms": 14568,
+      "cost_usd_list": 0.06870825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 332
+     },
+     "lines": [
+      {
+       "draft": "Some of the ancient interpreters un-",
+       "reread": "Some of the ancient interpreters un-",
+       "status": "agreed",
+       "text": "Some of the ancient interpreters un-"
+      },
+      {
+       "draft": "derstand the same by the word אַבְרֵךְ",
+       "reread": "derstand the same by the word אַבְרֵךְ",
+       "status": "agreed",
+       "text": "derstand the same by the word אַבְרֵךְ"
+      },
+      {
+       "draft": "Gen. 41, 43; explaining it father of the",
+       "reread": "Gen. 41, 43; explaining it father of the",
+       "status": "agreed",
+       "text": "Gen. 41, 43; explaining it father of the"
+      },
+      {
+       "draft": "king, or of the land, kingdom; so Luther.",
+       "reread": "king, or of the land, kingdom; so Luther.",
+       "status": "agreed",
+       "text": "king, or of the land, kingdom; so Luther."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1081,
+    "y": 1722,
+    "width": 883,
+    "height": 747
+   },
+   "draft_lines": [
+    "8. As expressing intimate relationship,",
+    "close alliance. Job 17, 14 לַשַּׁחַת קָרָאתִי",
+    "אָבִי אָתָּה to the grave I said, thou art",
+    "my father ; and in the other hemistich,",
+    "to the worm, thou art my mother and",
+    "my sister ; comp. Ps. 88, 19.",
+    "9. In Arab. and Ethiopic, the name",
+    "father is also put trop. for possessor, and",
+    "is spoken of one who excels in any thing,",
+    "and is distinguished for it, e. g. ابو شام",
+    "father of odours, i. e. an odoriferous tree.",
+    "So in Heb. only in pr. names, e. g.",
+    "אַבְשָׁלוֹם father of peace, i. e. pacific."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1081,
+      "y": 1714,
+      "width": 883,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r02-b00-883x241+1081+1714-x2.png",
+     "image_sha256": "1e2219dc0a6d7ec7f171565d7dfc80e29b4c4f31d18bdda7778f2adae9298b72",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "8. As expressing intimate relationship,",
+       "close alliance. Job 17, 14 לַשַּׁחַת קָרָאתִי",
+       "אָבִי אַתָּה to the grave I said, thou art",
+       "my father ; and in the other hemistich,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e91868f8-5e72-44a7-9ffb-974767e1dcf8",
+      "duration_api_ms": 30600,
+      "cost_usd_list": 0.10323825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 997
+     },
+     "lines": [
+      {
+       "draft": "8. As expressing intimate relationship,",
+       "reread": "8. As expressing intimate relationship,",
+       "status": "agreed",
+       "text": "8. As expressing intimate relationship,"
+      },
+      {
+       "draft": "close alliance. Job 17, 14 לַשַּׁחַת קָרָאתִי",
+       "reread": "close alliance. Job 17, 14 לַשַּׁחַת קָרָאתִי",
+       "status": "agreed",
+       "text": "close alliance. Job 17, 14 לַשַּׁחַת קָרָאתִי"
+      },
+      {
+       "draft": "אָבִי אָתָּה to the grave I said, thou art",
+       "reread": "אָבִי אַתָּה to the grave I said, thou art",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אָבִי אַתָּה to the grave I said, thou art",
+        "verdict": "b",
+        "note": "The vowel under the aleph of אתה is a plain horizontal stroke (patach), with no descending tick below it that would make it a qamets; Reading B's אַתָּה matches the print (and the standard Job 17:14 pointing). Everything else — אָבִי, the dagesh in tav, and the English — is identical in both readings and matches the image.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fd92d3ac-689d-4180-890a-44651854e2be",
+        "duration_api_ms": 14982,
+        "cost_usd_list": 0.0768875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3470,
+        "cache_creation_input_tokens": 2534,
+        "output_tokens": 500
+       },
+       "text": "אָבִי אַתָּה to the grave I said, thou art"
+      },
+      {
+       "draft": "my father ; and in the other hemistich,",
+       "reread": "my father ; and in the other hemistich,",
+       "status": "agreed",
+       "text": "my father; and in the other hemistich,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1081,
+      "y": 1939,
+      "width": 883,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r02-b01-883x246+1081+1939-x2.png",
+     "image_sha256": "49995a4cdbd80c8fc42d1ff8aa902695c4e6f5775ef30025811e494702f3457b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to the worm, thou art my mother and",
+       "my sister ; comp. Ps. 88, 19.",
+       "9. In Arab. and Ethiopic, the name",
+       "father is also put trop. for possessor, and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "10cd996f-697d-45c3-aeb0-2a486a8f81fb",
+      "duration_api_ms": 11400,
+      "cost_usd_list": 0.06563825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "to the worm, thou art my mother and",
+       "reread": "to the worm, thou art my mother and",
+       "status": "agreed",
+       "text": "to the worm, thou art my mother and"
+      },
+      {
+       "draft": "my sister ; comp. Ps. 88, 19.",
+       "reread": "my sister ; comp. Ps. 88, 19.",
+       "status": "agreed",
+       "text": "my sister; comp. Ps. 88, 19."
+      },
+      {
+       "draft": "9. In Arab. and Ethiopic, the name",
+       "reread": "9. In Arab. and Ethiopic, the name",
+       "status": "agreed",
+       "text": "9. In Arab. and Ethiopic, the name"
+      },
+      {
+       "draft": "father is also put trop. for possessor, and",
+       "reread": "father is also put trop. for possessor, and",
+       "status": "agreed",
+       "text": "father is also put trop. for possessor, and"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1081,
+      "y": 2169,
+      "width": 883,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r02-b02-883x245+1081+2169-x2.png",
+     "image_sha256": "47c10eb10584526fcceaf28d5e796a9de484b5cbd41beac44318340542b98d03",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is spoken of one who excels in any thing,",
+       "and is distinguished for it, e. g. أبو شام",
+       "father of odours, i. e. an odoriferous tree.",
+       "So in Heb. only in pr. names, e. g."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "27707281-d852-46a9-bbdc-ab7a1a027898",
+      "duration_api_ms": 16433,
+      "cost_usd_list": 0.06793825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 291
+     },
+     "lines": [
+      {
+       "draft": "is spoken of one who excels in any thing,",
+       "reread": "is spoken of one who excels in any thing,",
+       "status": "agreed",
+       "text": "is spoken of one who excels in any thing,"
+      },
+      {
+       "draft": "and is distinguished for it, e. g. ابو شام",
+       "reread": "and is distinguished for it, e. g. أبو شام",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "and is distinguished for it, e. g. أبو شام",
+        "verdict": "b",
+        "note": "The alif of ابو carries a printed hamza above it (أ), clearly visible as a mark over the tall stroke; Reading A omits it. Shin has its three dots; no other vowel marks are printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "256c0df4-c7db-4bbe-bba9-deecd73f6eed",
+        "duration_api_ms": 14039,
+        "cost_usd_list": 0.07216600000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3464,
+        "cache_creation_input_tokens": 2528,
+        "output_tokens": 408
+       },
+       "text": "and is distinguished for it, e. g. أبو شام"
+      },
+      {
+       "draft": "father of odours, i. e. an odoriferous tree.",
+       "reread": "father of odours, i. e. an odoriferous tree.",
+       "status": "agreed",
+       "text": "father of odours, i. e. an odoriferous tree."
+      },
+      {
+       "draft": "So in Heb. only in pr. names, e. g.",
+       "reread": "So in Heb. only in pr. names, e. g.",
+       "status": "agreed",
+       "text": "So in Heb. only in pr. names, e. g."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1081,
+      "y": 2398,
+      "width": 883,
+      "height": 66
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r02-b03-883x66+1081+2398-x2.png",
+     "image_sha256": "733aa98fc290f10ed53304eaf74cd87e612292188a7120d3cef25598adc6621b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַבְשָׁלוֹם father of peace, i. e. pacific."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a4d68d3b-79af-4b25-aae8-9429f2b78c2b",
+      "duration_api_ms": 12446,
+      "cost_usd_list": 0.05554825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1777,
+      "output_tokens": 376
+     },
+     "lines": [
+      {
+       "draft": "אַבְשָׁלוֹם father of peace, i. e. pacific.",
+       "reread": "אַבְשָׁלוֹם father of peace, i. e. pacific.",
+       "status": "agreed",
+       "text": "אַבְשָׁלוֹם father of peace, i. e. pacific."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1081,
+    "y": 2457,
+    "width": 883,
+    "height": 833
+   },
+   "draft_lines": [
+    "Note. The grammatical form of this",
+    "noun may be said to follow the analogy",
+    "of verbs ל״ה, as if for אָבֶה, Lehrg. § 118.",
+    "Still it is no doubt primitive; since",
+    "both אָב father and אֵם mother imitate",
+    "the simplest labial sounds of the infant;",
+    "as also πάπας (παππάζω), papa, pappus,",
+    "avus, Turk. بابا.—Besides the usual",
+    "form of the constr. אֲבִי there is also",
+    "an ancient form אַב, or also אָב, (like יַד,",
+    "יֶדְכֶם,) found only in compound proper",
+    "names, as אַבְרָהָם, אַבְשָׁלוֹם, אֶבְיָתָר; al-",
+    "though even in these the form אֲבִי is also",
+    "often employed, as אֲבִימֶלֶךְ, אֲבִיעֶזֶר."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1081,
+      "y": 2463,
+      "width": 883,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r03-b00-883x230+1081+2463-x2.png",
+     "image_sha256": "5aa411399b0e24987a40295c6db7caf5927915d5e9f733b98aac822397e78dae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Note. The grammatical form of this",
+       "noun may be said to follow the analogy",
+       "of verbs ל״ה, as if for אָבֶה, Lehrg. § 118.",
+       "Still it is no doubt primitive; since"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2c1615f4-28fa-483e-90f6-d021d7872365",
+      "duration_api_ms": 10898,
+      "cost_usd_list": 0.06985825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 355
+     },
+     "lines": [
+      {
+       "draft": "Note. The grammatical form of this",
+       "reread": "Note. The grammatical form of this",
+       "status": "agreed",
+       "text": "Note. The grammatical form of this"
+      },
+      {
+       "draft": "noun may be said to follow the analogy",
+       "reread": "noun may be said to follow the analogy",
+       "status": "agreed",
+       "text": "noun may be said to follow the analogy"
+      },
+      {
+       "draft": "of verbs ל״ה, as if for אָבֶה, Lehrg. § 118.",
+       "reread": "of verbs ל״ה, as if for אָבֶה, Lehrg. § 118.",
+       "status": "agreed",
+       "text": "of verbs ל״ה, as if for אָבֶה, Lehrg. § 118."
+      },
+      {
+       "draft": "Still it is no doubt primitive; since",
+       "reread": "Still it is no doubt primitive; since",
+       "status": "agreed",
+       "text": "Still it is no doubt primitive; since"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1081,
+      "y": 2677,
+      "width": 883,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r03-b01-883x242+1081+2677-x2.png",
+     "image_sha256": "986102dc2d393800008deee49cf96993d998b4f84af708edf64ca329d0132a13",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "both אָב father and אֵם mother imitate",
+       "the simplest labial sounds of the infant;",
+       "as also πάπας (παππάζω), papa, pappus,",
+       "avus, Turk. بَابَا.—Besides the usual"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2d70eea6-e782-449c-8814-2f2af69a8aed",
+      "duration_api_ms": 31103,
+      "cost_usd_list": 0.07413825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 415
+     },
+     "lines": [
+      {
+       "draft": "both אָב father and אֵם mother imitate",
+       "reread": "both אָב father and אֵם mother imitate",
+       "status": "agreed",
+       "text": "both אָב father and אֵם mother imitate"
+      },
+      {
+       "draft": "the simplest labial sounds of the infant;",
+       "reread": "the simplest labial sounds of the infant;",
+       "status": "agreed",
+       "text": "the simplest labial sounds of the infant;"
+      },
+      {
+       "draft": "as also πάπας (παππάζω), papa, pappus,",
+       "reread": "as also πάπας (παππάζω), papa, pappus,",
+       "status": "agreed",
+       "text": "as also πάπας (παππάζω), papa, pappus,"
+      },
+      {
+       "draft": "avus, Turk. بابا.—Besides the usual",
+       "reread": "avus, Turk. بَابَا.—Besides the usual",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "avus, Turk. بابا.—Besides the usual",
+        "verdict": "a",
+        "note": "The Arabic بابا is printed without vowel points: only the subscript dots of the two bā' are visible, no fatḥa strokes above, so Reading B's بَابَا adds unprinted vocalisation.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "212e2e7e-3132-4a2f-95f7-8f4e2092d2d4",
+        "duration_api_ms": 14429,
+        "cost_usd_list": 0.0697065,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3466,
+        "cache_creation_input_tokens": 2530,
+        "output_tokens": 358
+       },
+       "text": "avus, Turk. بابا.—Besides the usual"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1081,
+      "y": 2903,
+      "width": 883,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r03-b02-883x241+1081+2903-x2.png",
+     "image_sha256": "1c6398262e2ce94aae0658c48e0d597c5203128adbc130ed00340468fc26bfe6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "form of the constr. אֲבִי there is also",
+       "an ancient form אַב, or also אֲב, (like יַד,",
+       "יֶדְכֶם,) found only in compound proper",
+       "names, as אַבְרָהָם, אֲבְשָׁלוֹם, אֲבְיָתָר; al-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4b378f2a-720d-4790-8d15-ec0c187f0448",
+      "duration_api_ms": 24702,
+      "cost_usd_list": 0.09973825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 927
+     },
+     "lines": [
+      {
+       "draft": "form of the constr. אֲבִי there is also",
+       "reread": "form of the constr. אֲבִי there is also",
+       "status": "agreed",
+       "text": "form of the constr. אֲבִי there is also"
+      },
+      {
+       "draft": "an ancient form אַב, or also אָב, (like יַד,",
+       "reread": "an ancient form אַב, or also אֲב, (like יַד,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "an ancient form אַב, or also אֲב, (like יַד,",
+        "verdict": "b",
+        "note": "Under the aleph of the second אב the print shows a hataf patah (two stacked dots beside a short horizontal stroke), not a qamets; Reading A's אָב is wrong, Reading B's אֲב matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cc502a6a-d7fc-4e10-8569-e0dc31332efa",
+        "duration_api_ms": 29240,
+        "cost_usd_list": 0.09100775,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3471,
+        "cache_creation_input_tokens": 2535,
+        "output_tokens": 782
+       },
+       "text": "an ancient form אַב, or also אֲב, (like יַד,"
+      },
+      {
+       "draft": "יֶדְכֶם,) found only in compound proper",
+       "reread": "יֶדְכֶם,) found only in compound proper",
+       "status": "agreed",
+       "text": "יֶדְכֶם,) found only in compound proper"
+      },
+      {
+       "draft": "names, as אַבְרָהָם, אַבְשָׁלוֹם, אֶבְיָתָר; al-",
+       "reread": "names, as אַבְרָהָם, אֲבְשָׁלוֹם, אֲבְיָתָר; al-",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "names, as אַבְרָהָם, אַבְשָׁלוֹם, אֶבְיָתָר; al-",
+        "verdict": "a",
+        "note": "Decisive difference is the vowel under the initial alef of the 2nd and 3rd names: the print shows a plain pataḥ (single horizontal stroke, no adjacent shewa dots) under א in אַבְשָׁלוֹם, and a segol (three dots) under א in אֶבְיָתָר — not ḥataf-pataḥ as in Reading B. Order of the three names, plene ו in שָׁלוֹם, shin dot, and all other points match Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "84bcf2f5-1542-4e4b-a992-827094477858",
+        "duration_api_ms": 19609,
+        "cost_usd_list": 0.09262725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3509,
+        "cache_creation_input_tokens": 2573,
+        "output_tokens": 799
+       },
+       "text": "names, as אַבְרָהָם, אַבְשָׁלוֹם, אֶבְיָתָר; al-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1081,
+      "y": 3128,
+      "width": 883,
+      "height": 164
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0018/pass2/c1-r03-b03-883x164+1081+3128-x2.png",
+     "image_sha256": "f54c31dab4526dbe272e33f778e7270bc83328d8e5187097bc11ce31aea53538",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "though even in these the form אֲבִי is also",
+       "often employed, as אֲבִימֶלֶךְ, אֲבִיעֶזֶר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3c76138a-8785-4de4-872c-88a885910c65",
+      "duration_api_ms": 10496,
+      "cost_usd_list": 0.06880825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2225,
+      "output_tokens": 462
+     },
+     "lines": [
+      {
+       "draft": "though even in these the form אֲבִי is also",
+       "reread": "though even in these the form אֲבִי is also",
+       "status": "agreed",
+       "text": "though even in these the form אֲבִי is also"
+      },
+      {
+       "draft": "often employed, as אֲבִימֶלֶךְ, אֲבִיעֶזֶר.",
+       "reread": "often employed, as אֲבִימֶלֶךְ, אֲבִיעֶזֶר.",
+       "status": "agreed",
+       "text": "often employed, as אֲבִימֶלֶךְ, אֲבִיעֶזֶר."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אב 2 אב",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and",
+   "status": "adjudicated",
+   "draft": "أَبٌ, constr. أَبُو, أَبِى, أَبَا, Chald. and",
+   "reread": "أَبٌ, constr. أَبُو, أَبِي, أَبَا, Chald. and",
+   "verdict": "a",
+   "note": "The only difference is the final letter of the third form: the print shows a dotless final yā (ى), with no two dots beneath it, as Reading A has; Reading B's dotted ي is not printed. Order (أَبُو, أَبِى, أَبَا), hamzas, fatha/damma/kasra and the tanwīn on أَبٌ all match both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Syr. אַבָּא, ܐܰܒܳܐ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. In a proper sense, Gen. 19, 31 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "44, 19. 20. al. sæpiss.—But the word",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "father often has a wider sense; see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Fesselii Adv. Sacra VI. 6. E. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. i. q. forefather, ancestor, 1 K. 15, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2 K. 14, 3. 15, 38. 16, 2. al. E. g. a grand-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "father, Gen. 28, 13. 31, 42. 32, 10, 37, 35;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "a great-grandfather, Num. 18, 1. 2. 1 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "15, 11. 24. al. Is. 43, 27 אָבִיךָ הָרִאשׁוֹן חָטָא",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "collect. thy first forefathers sinned.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Very frequent in Plur. אָבוֹת fathers,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "i. e. forefathers, Gen. 15, 15. Ps. 45, 17.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "For the phrase נֶאֱסַף אֶל־אֲבוֹת, see un-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "der אָסַף.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. i. q. the founder, author, i. e. first",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ancestor of a tribe or nation, Gen. 10, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "17, 4. 5. 19, 37. 36, 9. 43. Josh. 24, 3.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Here we may refer Gen. 4, 21 the fa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ther of all such as handle the harp and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the pipe, i. e. the founder of the family",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of musicians, the inventor of the art of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "music.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4. Of the author or maker of any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "thing, espec. a creator; Job 38, 28 hath",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the rain a father? i. e. creator. In this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "sense God is called the father of men,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "their Creator, Is. 63, 16. 64, 7. Deut. 32,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "6; comp. Jer. 2, 27.—Here too may be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "referred Job 34, 36 אָבִי יִבָּחֵן אִיּוֹב, Vulg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "mi pater, probetur Jobus, i. e. my Father,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "let Job be tried; but the sense is lan-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "guid. Others not unaptly make אבי i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲבוֹי wo!",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "The above tropical senses come from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the notion of source, origin; others are",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "drawn from the idea of paternal love and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "care, the honour due to a father, etc. E. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5. i. q. a nursing-father, benefactor, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "doing good and providing for others in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the manner of a father. Job 29, 16 I was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "a father to the poor. Ps. 68, 6 a father",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to the fatherless. Is. 22, 21 a father to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the inhabitants of Jerusalem, spoken of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Eliakim the prefect of the palace. Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "9, 5 אֲבִי עַד the everlasting father of his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "people, i. e. the Messiah; comp. pater",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "patriæ among the Romans. By the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "same metaphor God is called the father",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of the righteous and of kings, and these",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "also are called his sons, 2 Sam. 7, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 Chr. 17, 13. 22, 10. Ps. 89, 27. 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "6. For a master, teacher, from the idea",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of paternal instruction, 1 Sam. 10, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Hence priests and prophets, as teachers",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "sent with divine authority, are saluted",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "with the title of father, out of respect",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and honour, even by kings, 2 K. 2, 12. 5,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10",
+   "status": "adjudicated",
+   "draft": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17, 10",
+   "reread": "13. 6, 21. 13, 14. (comp. 8, 9.) Judg. 17,10",
+   "verdict": "b",
+   "note": "Only difference is spacing after the comma in the final reference: the print is set tight at line end with no visible space between \"17,\" and \"10\", so Reading B matches; everything else (13. 6, 21. 13, 14. (comp. 8, 9.) Judg.) is identical in both and in the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "be unto me a father and a priest. 18, 19.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "So the Rabbins are called אָבוֹת fathers;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "much as we use the honorary appellation",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of fathers of the church, the holy father",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. the pope.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "7. Spec. father of the king, in a similar",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sense, i. e. his chief adviser and prime",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "minister, whom the modern orientals call",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Vizier. Gen. 45, 8 וַיְשִׂימֵנִי לְאָב לְפַרְעֹה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and hath made me a father to Pharaoh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "So Haman is said to be δεύτερος πατήρ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "to Artaxerxes, Sept. Esth. 3, 13; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1 Macc. 11, 32. Comp. also Turkish",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "اتابك Atâbek, father-prince, and Lala",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "father, spoken of the Vizier; see Ja-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "blonsky Opusc. ed. te Water, T. I. p. 206.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Barhebræi Chron. Syr. p. 219. l. 15.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Some of the ancient interpreters un-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "derstand the same by the word אַבְרֵךְ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Gen. 41, 43; explaining it father of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "king, or of the land, kingdom; so Luther.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8. As expressing intimate relationship,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "close alliance. Job 17, 14 לַשַּׁחַת קָרָאתִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָבִי אַתָּה to the grave I said, thou art",
+   "status": "adjudicated",
+   "draft": "אָבִי אָתָּה to the grave I said, thou art",
+   "reread": "אָבִי אַתָּה to the grave I said, thou art",
+   "verdict": "b",
+   "note": "The vowel under the aleph of אתה is a plain horizontal stroke (patach), with no descending tick below it that would make it a qamets; Reading B's אַתָּה matches the print (and the standard Job 17:14 pointing). Everything else — אָבִי, the dagesh in tav, and the English — is identical in both readings and matches the image.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "my father; and in the other hemistich,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to the worm, thou art my mother and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "my sister; comp. Ps. 88, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "9. In Arab. and Ethiopic, the name",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "father is also put trop. for possessor, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "is spoken of one who excels in any thing,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "and is distinguished for it, e. g. أبو شام",
+   "status": "adjudicated",
+   "draft": "and is distinguished for it, e. g. ابو شام",
+   "reread": "and is distinguished for it, e. g. أبو شام",
+   "verdict": "b",
+   "note": "The alif of ابو carries a printed hamza above it (أ), clearly visible as a mark over the tall stroke; Reading A omits it. Shin has its three dots; no other vowel marks are printed.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "father of odours, i. e. an odoriferous tree.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "So in Heb. only in pr. names, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַבְשָׁלוֹם father of peace, i. e. pacific.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Note. The grammatical form of this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "noun may be said to follow the analogy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of verbs ל״ה, as if for אָבֶה, Lehrg. § 118.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Still it is no doubt primitive; since",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "both אָב father and אֵם mother imitate",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the simplest labial sounds of the infant;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "as also πάπας (παππάζω), papa, pappus,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "avus, Turk. بابا.—Besides the usual",
+   "status": "adjudicated",
+   "draft": "avus, Turk. بابا.—Besides the usual",
+   "reread": "avus, Turk. بَابَا.—Besides the usual",
+   "verdict": "a",
+   "note": "The Arabic بابا is printed without vowel points: only the subscript dots of the two bā' are visible, no fatḥa strokes above, so Reading B's بَابَا adds unprinted vocalisation.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "form of the constr. אֲבִי there is also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "an ancient form אַב, or also אֲב, (like יַד,",
+   "status": "adjudicated",
+   "draft": "an ancient form אַב, or also אָב, (like יַד,",
+   "reread": "an ancient form אַב, or also אֲב, (like יַד,",
+   "verdict": "b",
+   "note": "Under the aleph of the second אב the print shows a hataf patah (two stacked dots beside a short horizontal stroke), not a qamets; Reading A's אָב is wrong, Reading B's אֲב matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "יֶדְכֶם,) found only in compound proper",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "names, as אַבְרָהָם, אַבְשָׁלוֹם, אֶבְיָתָר; al-",
+   "status": "adjudicated",
+   "draft": "names, as אַבְרָהָם, אַבְשָׁלוֹם, אֶבְיָתָר; al-",
+   "reread": "names, as אַבְרָהָם, אֲבְשָׁלוֹם, אֲבְיָתָר; al-",
+   "verdict": "a",
+   "note": "Decisive difference is the vowel under the initial alef of the 2nd and 3rd names: the print shows a plain pataḥ (single horizontal stroke, no adjacent shewa dots) under א in אַבְשָׁלוֹם, and a segol (three dots) under א in אֶבְיָתָר — not ḥataf-pataḥ as in Reading B. Order of the three names, plene ו in שָׁלוֹם, shin dot, and all other points match Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "though even in these the form אֲבִי is also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "often employed, as אֲבִימֶלֶךְ, אֲבִיעֶזֶר.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 102,
+  "adjudicated": 7,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 3
+ },
+ "errors": 0,
+ "cost_usd_list_total": 2.756
+}

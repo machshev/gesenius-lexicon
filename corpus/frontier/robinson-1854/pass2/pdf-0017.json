@@ -1,0 +1,2324 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 17,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0017.png",
+ "raster_sha256": "88dbecb093e574f2471947428363f238331521344a8fc2008903d2199521c71f",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0017.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:52:51+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 74,
+    "y": 402,
+    "width": 1769,
+    "height": 385
+   },
+   "draft_lines": [
+    "LEXICON.",
+    "א"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 74,
+      "y": 400,
+      "width": 1769,
+      "height": 389
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/header-b00-1769x389+74+400-x2.png",
+     "image_sha256": "68027d3e019d5fa4df3f2a1917073e4f08ecdc76afd76edbf45e423411245fbc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "LEXICON."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5cb3c9f0-5add-4a90-b122-88aae06c152b",
+      "duration_api_ms": 12942,
+      "cost_usd_list": 0.077287,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 2644,
+      "output_tokens": 470
+     },
+     "lines": [
+      {
+       "draft": "LEXICON.",
+       "reread": "LEXICON.",
+       "status": "agreed",
+       "text": "LEXICON."
+      },
+      {
+       "draft": "א",
+       "reread": null,
+       "status": "draft_only",
+       "text": "א"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 74,
+    "y": 839,
+    "width": 875,
+    "height": 637
+   },
+   "draft_lines": [
+    "The name Aleph, like those of the",
+    "other letters, is of Phenician origin, and",
+    "signifies ox, bullock, i. q. Heb. אֶלֶף. So",
+    "Plutarch. Quæst. Sympos. IX. 2: Aleph",
+    "is put before the other letters διὰ τοὺς",
+    "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The",
+    "name is derived from the form of this",
+    "letter in the most ancient alphabet, re-",
+    "presenting the rude outline of a bullock's",
+    "head, still found in the remains of the",
+    "Phenician dialect: 𐤀, 𐤀, 𐤀. As a"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 74,
+      "y": 837,
+      "width": 875,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r00-b00-875x233+74+837-x2.png",
+     "image_sha256": "7e4bbd5cb28953b57b142563d6aa10731821663d70a0d761230eb241c37e6927",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "The name Aleph, like those of the",
+       "other letters, is of Phenician origin, and",
+       "signifies ox, bullock, i. q. Heb. אֶלֶף. So",
+       "Plutarch, Quæst. Sympos. IX. 2: Aleph"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "59335197-6e60-4ca7-bb13-9f9b4e392b36",
+      "duration_api_ms": 13893,
+      "cost_usd_list": 0.07038775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2524,
+      "output_tokens": 374
+     },
+     "lines": [
+      {
+       "draft": "The name Aleph, like those of the",
+       "reread": "The name Aleph, like those of the",
+       "status": "agreed",
+       "text": "The name Aleph, like those of the"
+      },
+      {
+       "draft": "other letters, is of Phenician origin, and",
+       "reread": "other letters, is of Phenician origin, and",
+       "status": "agreed",
+       "text": "other letters, is of Phenician origin, and"
+      },
+      {
+       "draft": "signifies ox, bullock, i. q. Heb. אֶלֶף. So",
+       "reread": "signifies ox, bullock, i. q. Heb. אֶלֶף. So",
+       "status": "agreed",
+       "text": "signifies ox, bullock, i. q. Heb. אֶלֶף. So"
+      },
+      {
+       "draft": "Plutarch. Quæst. Sympos. IX. 2: Aleph",
+       "reread": "Plutarch, Quæst. Sympos. IX. 2: Aleph",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "Plutarch, Quæst. Sympos. IX. 2: Aleph",
+        "verdict": "b",
+        "note": "The mark after \"Plutarch\" descends below the baseline with a tail, unlike the round full stops after \"Quæst.\" and \"Sympos.\", so it is a comma, not a period.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5955fc04-3420-49ca-bdd0-fa270fe338f7",
+        "duration_api_ms": 14768,
+        "cost_usd_list": 0.07718950000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3478,
+        "cache_creation_input_tokens": 2459,
+        "output_tokens": 536
+       },
+       "text": "Plutarch, Quæst. Sympos. IX. 2: Aleph"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 74,
+      "y": 1054,
+      "width": 875,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r00-b01-875x235+74+1054-x2.png",
+     "image_sha256": "324e223a4097757fa1a8989e0942c2f5075e6fe29a35599ad3653f6217206971",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is put before the other letters διὰ τοὺς",
+       "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The",
+       "name is derived from the form of this",
+       "letter in the most ancient alphabet, re-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4394e729-8e9c-440a-8152-266c2afc5333",
+      "duration_api_ms": 6338,
+      "cost_usd_list": 0.065428,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "is put before the other letters διὰ τοὺς",
+       "reread": "is put before the other letters διὰ τοὺς",
+       "status": "agreed",
+       "text": "is put before the other letters διὰ τοὺς"
+      },
+      {
+       "draft": "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The",
+       "reread": "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The",
+       "status": "agreed",
+       "text": "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The"
+      },
+      {
+       "draft": "name is derived from the form of this",
+       "reread": "name is derived from the form of this",
+       "status": "agreed",
+       "text": "name is derived from the form of this"
+      },
+      {
+       "draft": "letter in the most ancient alphabet, re-",
+       "reread": "letter in the most ancient alphabet, re-",
+       "status": "agreed",
+       "text": "letter in the most ancient alphabet, re-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 74,
+      "y": 1273,
+      "width": 875,
+      "height": 197
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r00-b02-875x197+74+1273-x2.png",
+     "image_sha256": "295919da50b1bc77d57d5338000f8a01f13651ca04b568603d677d8ef94626a0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "presenting the rude outline of a bullock's",
+       "head, still found in the remains of the",
+       "Phenician dialect: 𐤀, 𐤀, 𐤀. As a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a368cc2a-dee5-404c-a4ee-cbaad03474e7",
+      "duration_api_ms": 17012,
+      "cost_usd_list": 0.07005800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2400,
+      "output_tokens": 417
+     },
+     "lines": [
+      {
+       "draft": "presenting the rude outline of a bullock's",
+       "reread": "presenting the rude outline of a bullock's",
+       "status": "agreed",
+       "text": "presenting the rude outline of a bullock's"
+      },
+      {
+       "draft": "head, still found in the remains of the",
+       "reread": "head, still found in the remains of the",
+       "status": "agreed",
+       "text": "head, still found in the remains of the"
+      },
+      {
+       "draft": "Phenician dialect: 𐤀, 𐤀, 𐤀. As a",
+       "reread": "Phenician dialect: 𐤀, 𐤀, 𐤀. As a",
+       "status": "agreed",
+       "text": "Phenician dialect: 𐤀, 𐤀, 𐤀. As a"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 74,
+    "y": 1464,
+    "width": 875,
+    "height": 800
+   },
+   "draft_lines": [
+    "numeral it denotes unity or 1 ; and with",
+    "two points above (א֕), 1000.",
+    "Of all the Hebrew gutturals Aleph",
+    "has the softest pronunciation, being ut-",
+    "tered with a slight breathing from the",
+    "throat or rather lungs, like the Greek",
+    "spiritus lenis, and the French h in habit,",
+    "homme, which we are apt to neglect,",
+    "because we cannot give them correctly.",
+    "And since by a sort of common usage in",
+    "languages, especially in those of the",
+    "Semitic family, (comp. Ewald in Heb.",
+    "Gram. § 31,) the stronger and harsher",
+    "letters in the course of time become by"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 74,
+      "y": 1470,
+      "width": 875,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r01-b00-875x243+74+1470-x2.png",
+     "image_sha256": "389e66691909de51e51d119aff3a22ee356615e6917c1a335c9e7397ded39a6a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "numeral it denotes unity or 1 ; and with",
+       "two points above (א̈), 1000.",
+       "Of all the Hebrew gutturals Aleph",
+       "has the softest pronunciation, being ut-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e803f7ec-f52e-4bd5-9309-13ac99493800",
+      "duration_api_ms": 10548,
+      "cost_usd_list": 0.06758800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "numeral it denotes unity or 1 ; and with",
+       "reread": "numeral it denotes unity or 1 ; and with",
+       "status": "agreed",
+       "text": "numeral it denotes unity or 1; and with"
+      },
+      {
+       "draft": "two points above (א֕), 1000.",
+       "reread": "two points above (א̈), 1000.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "two points above (א̈), 1000.",
+        "verdict": "b",
+        "note": "The two dots over the aleph are printed side by side horizontally, as in the diaeresis-like mark for the thousands numeral; U+0308 (Reading B) represents this, whereas U+0595 zaqef gadol (Reading A) is a vertically stacked pair, which is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5290f7c2-35ca-46c2-ae8d-a0f773bb1338",
+        "duration_api_ms": 14395,
+        "cost_usd_list": 0.07206275000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3451,
+        "cache_creation_input_tokens": 2508,
+        "output_tokens": 414
+       },
+       "text": "two points above (א̈), 1000."
+      },
+      {
+       "draft": "Of all the Hebrew gutturals Aleph",
+       "reread": "Of all the Hebrew gutturals Aleph",
+       "status": "agreed",
+       "text": "Of all the Hebrew gutturals Aleph"
+      },
+      {
+       "draft": "has the softest pronunciation, being ut-",
+       "reread": "has the softest pronunciation, being ut-",
+       "status": "agreed",
+       "text": "has the softest pronunciation, being ut-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 74,
+      "y": 1697,
+      "width": 875,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r01-b01-875x233+74+1697-x2.png",
+     "image_sha256": "1e6eb8bfb58665c2cc40688b3f0fbe9ff42946b63bd9cb0489f9324182aab40e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tered with a slight breathing from the",
+       "throat or rather lungs, like the Greek",
+       "spiritus lenis, and the French h in habit,",
+       "homme, which we are apt to neglect,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e71cb6d2-ccc2-4463-9ba6-693363b2bb4f",
+      "duration_api_ms": 144938,
+      "cost_usd_list": 0.063628,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "tered with a slight breathing from the",
+       "reread": "tered with a slight breathing from the",
+       "status": "agreed",
+       "text": "tered with a slight breathing from the"
+      },
+      {
+       "draft": "throat or rather lungs, like the Greek",
+       "reread": "throat or rather lungs, like the Greek",
+       "status": "agreed",
+       "text": "throat or rather lungs, like the Greek"
+      },
+      {
+       "draft": "spiritus lenis, and the French h in habit,",
+       "reread": "spiritus lenis, and the French h in habit,",
+       "status": "agreed",
+       "text": "spiritus lenis, and the French h in habit,"
+      },
+      {
+       "draft": "homme, which we are apt to neglect,",
+       "reread": "homme, which we are apt to neglect,",
+       "status": "agreed",
+       "text": "homme, which we are apt to neglect,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 74,
+      "y": 1914,
+      "width": 875,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r01-b02-875x241+74+1914-x2.png",
+     "image_sha256": "0967b09f4c17e9cffab48b1517f0af860cb90d96a921605463eb4ad7978716c5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "because we cannot give them correctly.",
+       "And since by a sort of common usage in",
+       "languages, especially in those of the",
+       "Semitic family, (comp. Ewald in Heb."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3ec4254d-d351-4765-b062-bbb233378e68",
+      "duration_api_ms": 11523,
+      "cost_usd_list": 0.064638,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "because we cannot give them correctly.",
+       "reread": "because we cannot give them correctly.",
+       "status": "agreed",
+       "text": "because we cannot give them correctly."
+      },
+      {
+       "draft": "And since by a sort of common usage in",
+       "reread": "And since by a sort of common usage in",
+       "status": "agreed",
+       "text": "And since by a sort of common usage in"
+      },
+      {
+       "draft": "languages, especially in those of the",
+       "reread": "languages, especially in those of the",
+       "status": "agreed",
+       "text": "languages, especially in those of the"
+      },
+      {
+       "draft": "Semitic family, (comp. Ewald in Heb.",
+       "reread": "Semitic family, (comp. Ewald in Heb.",
+       "status": "agreed",
+       "text": "Semitic family, (comp. Ewald in Heb."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 74,
+      "y": 2139,
+      "width": 875,
+      "height": 133
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r01-b03-875x133+74+2139-x2.png",
+     "image_sha256": "f7a6f08e87044221e41a3bd0d26187015df1e79a07089cd0546bd7cfae1a17ac",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gram. § 31,) the stronger and harsher",
+       "letters in the course of time become by"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0816ee59-d82a-4a57-b930-043a7e825ca1",
+      "duration_api_ms": 13945,
+      "cost_usd_list": 0.053208000000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2085,
+      "output_tokens": 206
+     },
+     "lines": [
+      {
+       "draft": "Gram. § 31,) the stronger and harsher",
+       "reread": "Gram. § 31,) the stronger and harsher",
+       "status": "agreed",
+       "text": "Gram. § 31,) the stronger and harsher"
+      },
+      {
+       "draft": "letters in the course of time become by",
+       "reread": "letters in the course of time become by",
+       "status": "agreed",
+       "text": "letters in the course of time become by"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 74,
+    "y": 2252,
+    "width": 875,
+    "height": 821
+   },
+   "draft_lines": [
+    "degrees softened and give place to",
+    "smoother ones, we hence see why in",
+    "Aramæan, in the later Hebrew, and in",
+    "Arabic, the stronger gutturals ה and ע",
+    "are softened into א. E. g. הִתְקַטֵּל,",
+    "اِقْتَتَلَ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן",
+    "Jer. 52, 15 for הָמוֹן multitude, etc.",
+    "But, vice versa, א sometimes passes",
+    "over into ה and ע; and in general,",
+    "these letters, being very similar in pro-",
+    "nunciation, are very often interchanged",
+    "with one another. Comp. הֵיךְ in the",
+    "later Hebrew for the common אֵיךְ; אָבִיב",
+    "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 74,
+      "y": 2244,
+      "width": 875,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r02-b00-875x243+74+2244-x2.png",
+     "image_sha256": "feef2b1cde95f713b93a8f7721a0c88dab8da9789186707bd47524ac19212e7c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "degrees softened and give place to",
+       "smoother ones, we hence see why in",
+       "Aramæan, in the later Hebrew, and in",
+       "Arabic, the stronger gutturals ח and ע"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ed390304-3b6d-4be4-9987-e556a6ec91cb",
+      "duration_api_ms": 11238,
+      "cost_usd_list": 0.071288,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 366
+     },
+     "lines": [
+      {
+       "draft": "degrees softened and give place to",
+       "reread": "degrees softened and give place to",
+       "status": "agreed",
+       "text": "degrees softened and give place to"
+      },
+      {
+       "draft": "smoother ones, we hence see why in",
+       "reread": "smoother ones, we hence see why in",
+       "status": "agreed",
+       "text": "smoother ones, we hence see why in"
+      },
+      {
+       "draft": "Aramæan, in the later Hebrew, and in",
+       "reread": "Aramæan, in the later Hebrew, and in",
+       "status": "agreed",
+       "text": "Aramæan, in the later Hebrew, and in"
+      },
+      {
+       "draft": "Arabic, the stronger gutturals ה and ע",
+       "reread": "Arabic, the stronger gutturals ח and ע",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "Arabic, the stronger gutturals ח and ע",
+        "verdict": "b",
+        "note": "The letter after \"gutturals\" is ח (cheth), not ה: the left stroke joins the top bar, and the sense requires it — Gesenius is contrasting the *stronger* gutturals ח and ע with the weaker ה and א into which they soften.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3c0260fd-dabd-4fa6-b7b6-84a960850da3",
+        "duration_api_ms": 29854,
+        "cost_usd_list": 0.09226575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3463,
+        "cache_creation_input_tokens": 2508,
+        "output_tokens": 818
+       },
+       "text": "Arabic, the stronger gutturals ח and ע"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 74,
+      "y": 2471,
+      "width": 875,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r02-b01-875x256+74+2471-x2.png",
+     "image_sha256": "37dcea7476d041d1534d834647572c305ffaec057c8fa0ccd8df7d1bf40f9b80",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "are softened into א. E. g. הִתְקַטֵּל,",
+       "ܐܶܬܩܰܛܰܠ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן",
+       "Jer. 52, 15 for הָמוֹן multitude, etc.",
+       "But, vice versa, א sometimes passes"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c4aa32e0-cd7e-4f8c-ad7a-72cc2343b7c7",
+      "duration_api_ms": 43249,
+      "cost_usd_list": 0.165548,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2652,
+      "output_tokens": 2226
+     },
+     "lines": [
+      {
+       "draft": "are softened into א. E. g. הִתְקַטֵּל,",
+       "reread": "are softened into א. E. g. הִתְקַטֵּל,",
+       "status": "agreed",
+       "text": "are softened into א. E. g. הִתְקַטֵּל,"
+      },
+      {
+       "draft": "اِقْتَتَلَ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן",
+       "reread": "ܐܶܬܩܰܛܰܠ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "ܐܶܬܩܰܛܰܠ; הִקְטִיל, ܐܰܩܛܶܠ, אַקְטֵל; אָמוֹן",
+        "verdict": "neither",
+        "note": "Both foreign words are printed in sloping Serto Syriac type (long diagonal final lamadh, Syriac points above), not Arabic. B is right that the first is Syriac ܐܶܬܩܰܛܰܠ, but both A and B wrongly give the second as Arabic أَقْتَلَ; it is Syriac ܐܰܩܛܶܠ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "584ed270-0698-4cdc-b6e9-4d7f672de11d",
+        "duration_api_ms": 30649,
+        "cost_usd_list": 0.123942,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3528,
+        "cache_creation_input_tokens": 2636,
+        "output_tokens": 1400
+       },
+       "text": "ܐܶܬܩܰܛܰܠ; הִקְטִיל, ܐܰܩܛܶܠ, אַקְטֵל; אָמוֹן"
+      },
+      {
+       "draft": "Jer. 52, 15 for הָמוֹן multitude, etc.",
+       "reread": "Jer. 52, 15 for הָמוֹן multitude, etc.",
+       "status": "agreed",
+       "text": "Jer. 52, 15 for הָמוֹן multitude, etc."
+      },
+      {
+       "draft": "But, vice versa, א sometimes passes",
+       "reread": "But, vice versa, א sometimes passes",
+       "status": "agreed",
+       "text": "But, vice versa, א sometimes passes"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 74,
+      "y": 2711,
+      "width": 875,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r02-b02-875x240+74+2711-x2.png",
+     "image_sha256": "c31bb85fb5a1f6a93abe28e788b8d3d80d00994126825d2ec071c6fa48ba28e5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "over into ה and ע; and in general,",
+       "these letters, being very similar in pro-",
+       "nunciation, are very often interchanged",
+       "with one another. Comp. הֵיךְ in the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "350ff48d-8695-42ce-b341-d41a3d831437",
+      "duration_api_ms": 10548,
+      "cost_usd_list": 0.068188,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 304
+     },
+     "lines": [
+      {
+       "draft": "over into ה and ע; and in general,",
+       "reread": "over into ה and ע; and in general,",
+       "status": "agreed",
+       "text": "over into ה and ע; and in general,"
+      },
+      {
+       "draft": "these letters, being very similar in pro-",
+       "reread": "these letters, being very similar in pro-",
+       "status": "agreed",
+       "text": "these letters, being very similar in pro-"
+      },
+      {
+       "draft": "nunciation, are very often interchanged",
+       "reread": "nunciation, are very often interchanged",
+       "status": "agreed",
+       "text": "nunciation, are very often interchanged"
+      },
+      {
+       "draft": "with one another. Comp. הֵיךְ in the",
+       "reread": "with one another. Comp. הֵיךְ in the",
+       "status": "agreed",
+       "text": "with one another. Comp. הֵיךְ in the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 74,
+      "y": 2935,
+      "width": 875,
+      "height": 146
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r02-b03-875x146+74+2935-x2.png",
+     "image_sha256": "1d185f408863cfeffa54979ea1bcd2fb0da7fd129f94a1aa1d94ba16d917a886",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "later Hebrew for the common אֵיךְ; אָבִיב",
+       "ear of grain, comp. Syr. ܗܒܳܒܳܐ flower ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92fce49d-1908-47cb-8022-a2ff928a421d",
+      "duration_api_ms": 16810,
+      "cost_usd_list": 0.08601800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2148,
+      "output_tokens": 837
+     },
+     "lines": [
+      {
+       "draft": "later Hebrew for the common אֵיךְ; אָבִיב",
+       "reread": "later Hebrew for the common אֵיךְ; אָבִיב",
+       "status": "agreed",
+       "text": "later Hebrew for the common אֵיךְ; אָבִיב"
+      },
+      {
+       "draft": "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;",
+       "reread": "ear of grain, comp. Syr. ܗܒܳܒܳܐ flower ;",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;",
+        "verdict": "a",
+        "note": "Three vowel marks are printed over the Syriac word: a small stroke (pthaha) above the he as well as the two zqapha rings over the beths, so Reading A's ܗܰ is correct and B's unpointed he is wrong. (The thin gap before the final semicolon in the print is 19th‑c. typographic spacing, not a distinct character.)",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "06273e11-a889-44f9-83b7-eb2c125f118a",
+        "duration_api_ms": 23553,
+        "cost_usd_list": 0.1032425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3490,
+        "cache_creation_input_tokens": 2094,
+        "output_tokens": 1203
+       },
+       "text": "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 74,
+    "y": 3061,
+    "width": 875,
+    "height": 223
+   },
+   "draft_lines": [
+    "אָגַם and כָּהָה, לָאָה and לָהָה; also אָגַם",
+    "and עָגַם to be sad; אוּד and עוּד to turn",
+    "(both of them also in Ethiopic); גָּאַל and",
+    "1"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 74,
+      "y": 3053,
+      "width": 875,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c0-r03-b00-875x233+74+3053-x2.png",
+     "image_sha256": "7ebabfddb4b08b81b695f58f4f46437708aae2e8c6e0e512f042d08799e5659a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כָּאָה and כָּהָה, לָאָה and לָהָה; also אָגַם",
+       "and עָגַם to be sad; אוּד and עוּד to turn",
+       "(both of them also in Ethiopic); גָּאַל and",
+       "1"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "74c17271-ed5c-4cc4-899d-af859088315b",
+      "duration_api_ms": 13210,
+      "cost_usd_list": 0.07807800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 527
+     },
+     "lines": [
+      {
+       "draft": "אָגַם and כָּהָה, לָאָה and לָהָה; also אָגַם",
+       "reread": "כָּאָה and כָּהָה, לָאָה and לָהָה; also אָגַם",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "כָּאָה and כָּהָה, לָאָה and לָהָה; also אָגַם",
+        "verdict": "b",
+        "note": "The first (leftmost) word is printed כָּאָה (kaph with dagesh, aleph, he), paralleling כָּהָה — not אָגַם, which appears only at the line end. Reading B matches every letter and point.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bef8c647-a935-4abd-b6c9-4965a856094e",
+        "duration_api_ms": 13265,
+        "cost_usd_list": 0.0749025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3490,
+        "cache_creation_input_tokens": 2472,
+        "output_tokens": 485
+       },
+       "text": "כָּאָה and כָּהָה, לָאָה and לָהָה; also אָגַם"
+      },
+      {
+       "draft": "and עָגַם to be sad; אוּד and עוּד to turn",
+       "reread": "and עָגַם to be sad; אוּד and עוּד to turn",
+       "status": "agreed",
+       "text": "and עָגַם to be sad; אוּד and עוּד to turn"
+      },
+      {
+       "draft": "(both of them also in Ethiopic); גָּאַל and",
+       "reread": "(both of them also in Ethiopic); גָּאַל and",
+       "status": "agreed",
+       "text": "(both of them also in Ethiopic); גָּאַל and"
+      },
+      {
+       "draft": "1",
+       "reread": "1",
+       "status": "agreed",
+       "text": "1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 964,
+    "y": 832,
+    "width": 879,
+    "height": 709
+   },
+   "draft_lines": [
+    "גָּעַל to pollute ; תָּאַב and תָּעַב to abhor ;",
+    "גָּמָא and גָּמַע to suck in, to drink ; פִּתְאֹם",
+    "suddenly, from פֶּתַע a moment, etc.",
+    "Where Aleph is to be still more soft-",
+    "ened, it passes over into the quiescents ו",
+    "and י, as אָחַד and יָחַד to make one ; אָלַף",
+    "ܝܼܠܶܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר",
+    "for בְּאֹר a well. Hence it comes, that",
+    "many verbs פ״א accord in signification",
+    "with verbs ע״ו, comp. Heb. Gr. § 76. 2 ;",
+    "e. g. אָדַשׁ and דּוּשׁ ; אָנַשׁ, Syr. ܢܳܫ, to be",
+    "sick."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 964,
+      "y": 830,
+      "width": 879,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r00-b00-879x239+964+830-x2.png",
+     "image_sha256": "5c7a23773e79fdc2d7282e92f99eca5f56c633914d6fa19b21cfdee4897a1544",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גָּעַל to pollute ; תָּאַב and תָּעַב to abhor ;",
+       "גָּמָא and גָּמַע to suck in, to drink ; פִּתְאֹם",
+       "suddenly, from פֶּתַע a moment, etc.",
+       "Where Aleph is to be still more soft-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "62f379d5-5cbd-48fc-a860-08c7b5893ee3",
+      "duration_api_ms": 25480,
+      "cost_usd_list": 0.08209775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2587,
+      "output_tokens": 583
+     },
+     "lines": [
+      {
+       "draft": "גָּעַל to pollute ; תָּאַב and תָּעַב to abhor ;",
+       "reread": "גָּעַל to pollute ; תָּאַב and תָּעַב to abhor ;",
+       "status": "agreed",
+       "text": "גָּעַל to pollute; תָּאַב and תָּעַב to abhor;"
+      },
+      {
+       "draft": "גָּמָא and גָּמַע to suck in, to drink ; פִּתְאֹם",
+       "reread": "גָּמָא and גָּמַע to suck in, to drink ; פִּתְאֹם",
+       "status": "agreed",
+       "text": "גָּמָא and גָּמַע to suck in, to drink; פִּתְאֹם"
+      },
+      {
+       "draft": "suddenly, from פֶּתַע a moment, etc.",
+       "reread": "suddenly, from פֶּתַע a moment, etc.",
+       "status": "agreed",
+       "text": "suddenly, from פֶּתַע a moment, etc."
+      },
+      {
+       "draft": "Where Aleph is to be still more soft-",
+       "reread": "Where Aleph is to be still more soft-",
+       "status": "agreed",
+       "text": "Where Aleph is to be still more soft-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 964,
+      "y": 1053,
+      "width": 879,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r00-b01-879x252+964+1053-x2.png",
+     "image_sha256": "8534134d9397821cc6e2fcaa35c097178d7f8382d54c907c03d4bb969f981cfe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ened, it passes over into the quiescents ו",
+       "and י, as אָחַד and יָחַד to make one; אָלַף",
+       "أَلِفَ to learn; רְאֵם, רֵים, buffalo; בּוֹר",
+       "for בְּאֵר a well.  Hence it comes, that"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "68dfc3ba-1f5a-427d-843c-ed94e37f1473",
+      "duration_api_ms": 14898,
+      "cost_usd_list": 0.08518800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 644
+     },
+     "lines": [
+      {
+       "draft": "ened, it passes over into the quiescents ו",
+       "reread": "ened, it passes over into the quiescents ו",
+       "status": "agreed",
+       "text": "ened, it passes over into the quiescents ו"
+      },
+      {
+       "draft": "and י, as אָחַד and יָחַד to make one ; אָלַף",
+       "reread": "and י, as אָחַד and יָחַד to make one; אָלַף",
+       "status": "agreed",
+       "text": "and י, as אָחַד and יָחַד to make one; אָלַף"
+      },
+      {
+       "draft": "ܝܼܠܶܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר",
+       "reread": "أَلِفَ to learn; רְאֵם, רֵים, buffalo; בּוֹר",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "ܝܼܠܶܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר",
+        "verdict": "a",
+        "note": "The first word is printed in Syriac Serto script with vowel points above it (ܝܠܦ, \"to learn\"), not Arabic أَلِفَ as in Reading B; the Hebrew items and their order agree in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c0ae7e8b-b985-4916-ac3f-98d98f021076",
+        "duration_api_ms": 22499,
+        "cost_usd_list": 0.0954055,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3502,
+        "cache_creation_input_tokens": 2547,
+        "output_tokens": 865
+       },
+       "text": "ܝܼܠܶܦ to learn; רְאֵם, רֵים, buffalo; בּוֹר"
+      },
+      {
+       "draft": "for בְּאֹר a well. Hence it comes, that",
+       "reread": "for בְּאֵר a well.  Hence it comes, that",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "for בְּאֹר a well. Hence it comes, that",
+        "verdict": "a",
+        "note": "The aleph carries a holem dot printed above it, not a tsere beneath — the point is בֹּור for בְּאֹר (the vav being the quiescent for holem), so Reading A's אֹ is right and B's אֵ is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "668f18db-3585-4cbe-91dd-554585f0ec53",
+        "duration_api_ms": 16916,
+        "cost_usd_list": 0.0784765,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3466,
+        "cache_creation_input_tokens": 2511,
+        "output_tokens": 541
+       },
+       "text": "for בְּאֹר a well. Hence it comes, that"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 964,
+      "y": 1289,
+      "width": 879,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r00-b02-879x245+964+1289-x2.png",
+     "image_sha256": "5954b3afdf2d5a59ab4d7065c74718c965985ad9fa0e60d27f7e5efa575fab4e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "many verbs פ״א accord in signification",
+       "with verbs ע״ו, comp. Heb. Gr. § 76. 2;",
+       "e. g. אָדַשׁ and דּוּשׁ; אָנַשׁ, Syr. ܢܳܫ, to be",
+       "sick."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5651abc7-6d87-4a28-bd7a-05cb8f5ba684",
+      "duration_api_ms": 21284,
+      "cost_usd_list": 0.084088,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2589,
+      "output_tokens": 622
+     },
+     "lines": [
+      {
+       "draft": "many verbs פ״א accord in signification",
+       "reread": "many verbs פ״א accord in signification",
+       "status": "agreed",
+       "text": "many verbs פ״א accord in signification"
+      },
+      {
+       "draft": "with verbs ע״ו, comp. Heb. Gr. § 76. 2 ;",
+       "reread": "with verbs ע״ו, comp. Heb. Gr. § 76. 2;",
+       "status": "agreed",
+       "text": "with verbs ע״ו, comp. Heb. Gr. § 76. 2;"
+      },
+      {
+       "draft": "e. g. אָדַשׁ and דּוּשׁ ; אָנַשׁ, Syr. ܢܳܫ, to be",
+       "reread": "e. g. אָדַשׁ and דּוּשׁ; אָנַשׁ, Syr. ܢܳܫ, to be",
+       "status": "agreed",
+       "text": "e. g. אָדַשׁ and דּוּשׁ; אָנַשׁ, Syr. ܢܳܫ, to be"
+      },
+      {
+       "draft": "sick.",
+       "reread": "sick.",
+       "status": "agreed",
+       "text": "sick."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 964,
+    "y": 1529,
+    "width": 879,
+    "height": 741
+   },
+   "draft_lines": [
+    "In respect to the forms of words it may",
+    "be noted: a) That א without a vowel at",
+    "the beginning of a word is often dropped",
+    "by aphæresis, as נַחְנוּ, אֲנַחְנוּ, we; אֲשֶׁר",
+    "later שֶׁ, who, which, what; אֶחָד and חַד",
+    "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים",
+    "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136.",
+    "b) But also at the beginning of words, a",
+    "prosthetic א is often prefixed, comp.",
+    "Lehrgeb. p. 139. See אֲבַטִּחִים, אֲגַפִּים,",
+    "אֲדַרְכּוֹן, אֲבַעְבּוּעֹת. This is done chiefly,",
+    "where a word otherwise begins with two",
+    "consonants separated in pronunciation"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 964,
+      "y": 1537,
+      "width": 879,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r01-b00-879x237+964+1537-x2.png",
+     "image_sha256": "63a54df3ea400ec16a04eb928b556e22f22cb77f23bfc677a5286f78c76f2c42",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "In respect to the forms of words it may",
+       "be noted: a) That א without a vowel at",
+       "the beginning of a word is often dropped",
+       "by aphæresis, as אֲנַחְנוּ, נַחְנוּ, we; אֲשֶׁר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b1409b07-d323-43b7-9271-f11267dd41ea",
+      "duration_api_ms": 12625,
+      "cost_usd_list": 0.073678,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 439
+     },
+     "lines": [
+      {
+       "draft": "In respect to the forms of words it may",
+       "reread": "In respect to the forms of words it may",
+       "status": "agreed",
+       "text": "In respect to the forms of words it may"
+      },
+      {
+       "draft": "be noted: a) That א without a vowel at",
+       "reread": "be noted: a) That א without a vowel at",
+       "status": "agreed",
+       "text": "be noted: a) That א without a vowel at"
+      },
+      {
+       "draft": "the beginning of a word is often dropped",
+       "reread": "the beginning of a word is often dropped",
+       "status": "agreed",
+       "text": "the beginning of a word is often dropped"
+      },
+      {
+       "draft": "by aphæresis, as נַחְנוּ, אֲנַחְנוּ, we; אֲשֶׁר",
+       "reread": "by aphæresis, as אֲנַחְנוּ, נַחְנוּ, we; אֲשֶׁר",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "by aphæresis, as אֲנַחְנוּ, נַחְנוּ, we; אֲשֶׁר",
+        "verdict": "b",
+        "note": "The first Hebrew item printed (left) begins with א (aleph + hataf patah), i.e. the full form אֲנַחְנוּ; the shorter aphæretic form נַחְנוּ comes second. Reading A reverses the order.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "132a7310-b320-4cac-ad4e-fd6eaa66868e",
+        "duration_api_ms": 13262,
+        "cost_usd_list": 0.07314675000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3507,
+        "cache_creation_input_tokens": 2489,
+        "output_tokens": 443
+       },
+       "text": "by aphæresis, as אֲנַחְנוּ, נַחְנוּ, we; אֲשֶׁר"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 964,
+      "y": 1758,
+      "width": 879,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r01-b01-879x234+964+1758-x2.png",
+     "image_sha256": "6a99b937d09fc1eb85b72e395d22eda1a5a1978efd4723a79bc85b08981b10ae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "later שֶׁ·, who, which, what; אֶחָד and חַד",
+       "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים",
+       "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136.",
+       "b) But also at the beginning of words, a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5d6fc03-8ae6-4503-938e-11e717e53781",
+      "duration_api_ms": 19821,
+      "cost_usd_list": 0.08882799999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 742
+     },
+     "lines": [
+      {
+       "draft": "later שֶׁ, who, which, what; אֶחָד and חַד",
+       "reread": "later שֶׁ·, who, which, what; אֶחָד and חַד",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "later שֶׁ·, who, which, what; אֶחָד and חַד",
+        "verdict": "b",
+        "note": "A raised dot is clearly printed immediately after (to the left of) the שֶׁ, Gesenius's usual mark for an inseparable prefix; Reading A omits it. Vowels (segol under shin, shin dot; אֶחָד with segol/qamets; חַד with patach) are identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1cdbcede-a641-42ca-a8af-67d7efe397e7",
+        "duration_api_ms": 16851,
+        "cost_usd_list": 0.08746899999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3476,
+        "cache_creation_input_tokens": 2458,
+        "output_tokens": 742
+       },
+       "text": "later שֶׁ·, who, which, what; אֶחָד and חַד"
+      },
+      {
+       "draft": "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים",
+       "reread": "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים",
+       "status": "agreed",
+       "text": "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים"
+      },
+      {
+       "draft": "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136.",
+       "reread": "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136.",
+       "status": "agreed",
+       "text": "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136."
+      },
+      {
+       "draft": "b) But also at the beginning of words, a",
+       "reread": "b) But also at the beginning of words, a",
+       "status": "agreed",
+       "text": "b) But also at the beginning of words, a"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 964,
+      "y": 1976,
+      "width": 879,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r01-b02-879x238+964+1976-x2.png",
+     "image_sha256": "5cca8f26209905dfe9337a89016dc5fb01bc8585d1e1b01b60d01c58f3c3f0fd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "prosthetic א is often prefixed, comp.",
+       "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,",
+       "אֲבַעְבֻּעֹת, אֲדַרְכּוֹן. This is done chiefly,",
+       "where a word otherwise begins with two"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f9be66b4-1ff7-49a5-89da-c5bf466c7c6b",
+      "duration_api_ms": 27531,
+      "cost_usd_list": 0.099528,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 956
+     },
+     "lines": [
+      {
+       "draft": "prosthetic א is often prefixed, comp.",
+       "reread": "prosthetic א is often prefixed, comp.",
+       "status": "agreed",
+       "text": "prosthetic א is often prefixed, comp."
+      },
+      {
+       "draft": "Lehrgeb. p. 139. See אֲבַטִּחִים, אֲגַפִּים,",
+       "reread": "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,",
+        "verdict": "b",
+        "note": "The first Hebrew word is printed plene: a yod is clearly visible between the ṭet (with dagesh) and the ḥet — אֲבַטִּיחִים, as in Reading B; Reading A drops that yod.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ccdeb2ce-7c30-429f-9c70-5b001c09bb5d",
+        "duration_api_ms": 13588,
+        "cost_usd_list": 0.07905500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3500,
+        "cache_creation_input_tokens": 2482,
+        "output_tokens": 564
+       },
+       "text": "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,"
+      },
+      {
+       "draft": "אֲדַרְכּוֹן, אֲבַעְבּוּעֹת. This is done chiefly,",
+       "reread": "אֲבַעְבֻּעֹת, אֲדַרְכּוֹן. This is done chiefly,",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "אֲבַעְבּוּעֹת, אֲדַרְכּוֹן. This is done chiefly,",
+        "verdict": "neither",
+        "note": "Printed left-to-right order is אֲבַעְבּוּעֹת first (leftmost), then אֲדַרְכּוֹן (as B), but the first word is plene with shureq vav בּוּ (as A), not kubbutz בֻּ. Each reading gets one point right, so neither is fully correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c88e2832-3961-43e6-9e46-446f4d742bc5",
+        "duration_api_ms": 24963,
+        "cost_usd_list": 0.11801574999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3503,
+        "cache_creation_input_tokens": 2485,
+        "output_tokens": 1342
+       },
+       "text": "אֲבַעְבּוּעֹת, אֲדַרְכּוֹן. This is done chiefly,"
+      },
+      {
+       "draft": "where a word otherwise begins with two",
+       "reread": "where a word otherwise begins with two",
+       "status": "agreed",
+       "text": "where a word otherwise begins with two"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 964,
+      "y": 2198,
+      "width": 879,
+      "height": 80
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r01-b03-879x80+964+2198-x2.png",
+     "image_sha256": "360cbf119f0eb610d2916fd2e03b1828786fbfc04299ae4bba354d04af5ed36b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "consonants separated in pronunciation"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1501c5d8-8d45-4bff-95e6-d7eb10e539f4",
+      "duration_api_ms": 9734,
+      "cost_usd_list": 0.050718000000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1833,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "consonants separated in pronunciation",
+       "reread": "consonants separated in pronunciation",
+       "status": "agreed",
+       "text": "consonants separated in pronunciation"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 964,
+    "y": 2258,
+    "width": 879,
+    "height": 971
+   },
+   "draft_lines": [
+    "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,",
+    "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in",
+    "which both forms occur); also אֶפְרוֹחַ for",
+    "פֶּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+    "אֶתְנָן for תָּנָן a gift; אַכְזָב for כָּזָב false.",
+    "Comp. Gr. χθές and ἐχθές yesterday,",
+    "and also similar examples in the transi-",
+    "tion from Latin to French, as spiritus,",
+    "esprit ; status, état. In the Syriac man-",
+    "ner א is also added before the letter י ;",
+    "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12.",
+    "* אָב m. constr. אֲבִי, c. suff. אָבִיו,",
+    "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);",
+    "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,",
+    "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father.",
+    "It is a primitive word, see note ; and is",
+    "common to all the Semitic dialects, Arab."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 964,
+      "y": 2250,
+      "width": 879,
+      "height": 301
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r02-b00-879x301+964+2250-x2.png",
+     "image_sha256": "524fdeb9290d0c24342255ab74381542b66b438a1ee41e3bb6e08116293c109e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,",
+       "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in",
+       "which both forms occur); also אֶפְרוֹחַ for",
+       "פְּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+       "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aca51c87-be0f-42ac-be96-01c108bd8109",
+      "duration_api_ms": 28517,
+      "cost_usd_list": 0.119728,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2841,
+      "output_tokens": 1234
+     },
+     "lines": [
+      {
+       "draft": "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,",
+       "reread": "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,",
+       "status": "agreed",
+       "text": "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,"
+      },
+      {
+       "draft": "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in",
+       "reread": "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in",
+       "status": "agreed",
+       "text": "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in"
+      },
+      {
+       "draft": "which both forms occur); also אֶפְרוֹחַ for",
+       "reread": "which both forms occur); also אֶפְרוֹחַ for",
+       "status": "agreed",
+       "text": "which both forms occur); also אֶפְרוֹחַ for"
+      },
+      {
+       "draft": "פֶּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+       "reread": "פְּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "פְּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+        "verdict": "b",
+        "note": "Under the initial pe (which has a dagesh) the print shows two vertically stacked dots, i.e. shewa, not the three-dot segol of Reading A; this matches the paragraph's point (prosthetic aleph before a movable shewa) and the preceding line's אֶפְרוֹחַ. The rest (אֶגְרֹף, גֹּרֶף with dagesh and holem on gimel, segol under resh) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c5611c23-63db-4cc1-b9ee-4814269df5fe",
+        "duration_api_ms": 20698,
+        "cost_usd_list": 0.099705,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3500,
+        "cache_creation_input_tokens": 2797,
+        "output_tokens": 851
+       },
+       "text": "פְּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;"
+      },
+      {
+       "draft": "אֶתְנָן for תָּנָן a gift; אַכְזָב for כָּזָב false.",
+       "reread": "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false.",
+        "verdict": "b",
+        "note": "Under the tav of the second word the print shows two vertically stacked dots (sheva) with a dagesh in the letter, not a qamets; so תְּנָן (B), not תָּנָן (A). All other items agree with the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fb9f1a29-7145-4d73-87e2-c8237e8934bb",
+        "duration_api_ms": 19366,
+        "cost_usd_list": 0.08559425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3497,
+        "cache_creation_input_tokens": 2794,
+        "output_tokens": 570
+       },
+       "text": "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 964,
+      "y": 2535,
+      "width": 879,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r02-b01-879x235+964+2535-x2.png",
+     "image_sha256": "6a0398bfa05da1748c273317c6420d440b3d5522a56ce2737b6cf7450f442071",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Comp. Gr. χθές and ἐχθές yesterday,",
+       "and also similar examples in the transi-",
+       "tion from Latin to French, as spiritus,",
+       "esprit ; status, état.  In the Syriac man-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "86953af9-fce6-4ac0-ac0f-8fb8cbd2e007",
+      "duration_api_ms": 10390,
+      "cost_usd_list": 0.064278,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2526,
+      "output_tokens": 251
+     },
+     "lines": [
+      {
+       "draft": "Comp. Gr. χθές and ἐχθές yesterday,",
+       "reread": "Comp. Gr. χθές and ἐχθές yesterday,",
+       "status": "agreed",
+       "text": "Comp. Gr. χθές and ἐχθές yesterday,"
+      },
+      {
+       "draft": "and also similar examples in the transi-",
+       "reread": "and also similar examples in the transi-",
+       "status": "agreed",
+       "text": "and also similar examples in the transi-"
+      },
+      {
+       "draft": "tion from Latin to French, as spiritus,",
+       "reread": "tion from Latin to French, as spiritus,",
+       "status": "agreed",
+       "text": "tion from Latin to French, as spiritus,"
+      },
+      {
+       "draft": "esprit ; status, état. In the Syriac man-",
+       "reread": "esprit ; status, état.  In the Syriac man-",
+       "status": "agreed",
+       "text": "esprit; status, état. In the Syriac man-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 964,
+      "y": 2754,
+      "width": 879,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r02-b02-879x270+964+2754-x2.png",
+     "image_sha256": "3c7c85063639cbff784ef7fba2c4148e41b765f1ef9948fe257a83324ff6d7dc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ner א is also added before the letter י;",
+       "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12.",
+       "* אָב m. constr. אֲבִי, c. suff. אָבִיו,",
+       "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3feba15c-667b-452d-b1a7-4a15765a3501",
+      "duration_api_ms": 20916,
+      "cost_usd_list": 0.086358,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2715,
+      "output_tokens": 617
+     },
+     "lines": [
+      {
+       "draft": "ner א is also added before the letter י ;",
+       "reread": "ner א is also added before the letter י;",
+       "status": "agreed",
+       "text": "ner א is also added before the letter י;"
+      },
+      {
+       "draft": "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12.",
+       "reread": "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12.",
+       "status": "agreed",
+       "text": "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12."
+      },
+      {
+       "draft": "* אָב m. constr. אֲבִי, c. suff. אָבִיו,",
+       "reread": "* אָב m. constr. אֲבִי, c. suff. אָבִיו,",
+       "status": "agreed",
+       "text": "* אָב m. constr. אֲבִי, c. suff. אָבִיו,"
+      },
+      {
+       "draft": "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);",
+       "reread": "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);",
+       "status": "agreed",
+       "text": "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 964,
+      "y": 3008,
+      "width": 879,
+      "height": 223
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0017/pass2/c1-r02-b03-879x223+964+3008-x2.png",
+     "image_sha256": "bf843e2035bf12dfed8bb834d83f952edacde0a23eb61fc4e8fc325cdffa4bbb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,",
+       "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father.",
+       "It is a primitive word, see note ; and is",
+       "common to all the Semitic dialects, Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e79fb8c2-5961-465a-ba99-4b59b0b980bb",
+      "duration_api_ms": 21832,
+      "cost_usd_list": 0.077318,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2463,
+      "output_tokens": 537
+     },
+     "lines": [
+      {
+       "draft": "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,",
+       "reread": "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,",
+       "status": "agreed",
+       "text": "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,"
+      },
+      {
+       "draft": "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father.",
+       "reread": "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father.",
+       "status": "agreed",
+       "text": "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father."
+      },
+      {
+       "draft": "It is a primitive word, see note ; and is",
+       "reread": "It is a primitive word, see note ; and is",
+       "status": "agreed",
+       "text": "It is a primitive word, see note; and is"
+      },
+      {
+       "draft": "common to all the Semitic dialects, Arab.",
+       "reread": "common to all the Semitic dialects, Arab.",
+       "status": "agreed",
+       "text": "common to all the Semitic dialects, Arab."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "LEXICON.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "א",
+   "status": "draft_only",
+   "draft": "א",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "The name Aleph, like those of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "other letters, is of Phenician origin, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "signifies ox, bullock, i. q. Heb. אֶלֶף. So",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Plutarch, Quæst. Sympos. IX. 2: Aleph",
+   "status": "adjudicated",
+   "draft": "Plutarch. Quæst. Sympos. IX. 2: Aleph",
+   "reread": "Plutarch, Quæst. Sympos. IX. 2: Aleph",
+   "verdict": "b",
+   "note": "The mark after \"Plutarch\" descends below the baseline with a tail, unlike the round full stops after \"Quæst.\" and \"Sympos.\", so it is a comma, not a period.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "is put before the other letters διὰ τοὺς",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Φοίνικας οὕτω καλεῖν τὸν βοῦν. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "name is derived from the form of this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "letter in the most ancient alphabet, re-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "presenting the rude outline of a bullock's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "head, still found in the remains of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Phenician dialect: 𐤀, 𐤀, 𐤀. As a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "numeral it denotes unity or 1; and with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "two points above (א̈), 1000.",
+   "status": "adjudicated",
+   "draft": "two points above (א֕), 1000.",
+   "reread": "two points above (א̈), 1000.",
+   "verdict": "b",
+   "note": "The two dots over the aleph are printed side by side horizontally, as in the diaeresis-like mark for the thousands numeral; U+0308 (Reading B) represents this, whereas U+0595 zaqef gadol (Reading A) is a vertically stacked pair, which is not what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Of all the Hebrew gutturals Aleph",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "has the softest pronunciation, being ut-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "tered with a slight breathing from the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "throat or rather lungs, like the Greek",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "spiritus lenis, and the French h in habit,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "homme, which we are apt to neglect,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "because we cannot give them correctly.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "And since by a sort of common usage in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "languages, especially in those of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Semitic family, (comp. Ewald in Heb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gram. § 31,) the stronger and harsher",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "letters in the course of time become by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "degrees softened and give place to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "smoother ones, we hence see why in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Aramæan, in the later Hebrew, and in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Arabic, the stronger gutturals ח and ע",
+   "status": "adjudicated",
+   "draft": "Arabic, the stronger gutturals ה and ע",
+   "reread": "Arabic, the stronger gutturals ח and ע",
+   "verdict": "b",
+   "note": "The letter after \"gutturals\" is ח (cheth), not ה: the left stroke joins the top bar, and the sense requires it — Gesenius is contrasting the *stronger* gutturals ח and ע with the weaker ה and א into which they soften.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "are softened into א. E. g. הִתְקַטֵּל,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ܐܶܬܩܰܛܰܠ; הִקְטִיל, ܐܰܩܛܶܠ, אַקְטֵל; אָמוֹן",
+   "status": "adjudicated",
+   "draft": "اِقْتَتَلَ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן",
+   "reread": "ܐܶܬܩܰܛܰܠ; הִקְטִיל, أَقْتَلَ, אַקְטֵל; אָמוֹן",
+   "verdict": "neither",
+   "note": "Both foreign words are printed in sloping Serto Syriac type (long diagonal final lamadh, Syriac points above), not Arabic. B is right that the first is Syriac ܐܶܬܩܰܛܰܠ, but both A and B wrongly give the second as Arabic أَقْتَلَ; it is Syriac ܐܰܩܛܶܠ.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Jer. 52, 15 for הָמוֹן multitude, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "But, vice versa, א sometimes passes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "over into ה and ע; and in general,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "these letters, being very similar in pro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nunciation, are very often interchanged",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with one another. Comp. הֵיךְ in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "later Hebrew for the common אֵיךְ; אָבִיב",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;",
+   "status": "adjudicated",
+   "draft": "ear of grain, comp. Syr. ܗܰܒܳܒܳܐ flower;",
+   "reread": "ear of grain, comp. Syr. ܗܒܳܒܳܐ flower ;",
+   "verdict": "a",
+   "note": "Three vowel marks are printed over the Syriac word: a small stroke (pthaha) above the he as well as the two zqapha rings over the beths, so Reading A's ܗܰ is correct and B's unpointed he is wrong. (The thin gap before the final semicolon in the print is 19th‑c. typographic spacing, not a distinct character.)",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "כָּאָה and כָּהָה, לָאָה and לָהָה; also אָגַם",
+   "status": "adjudicated",
+   "draft": "אָגַם and כָּהָה, לָאָה and לָהָה; also אָגַם",
+   "reread": "כָּאָה and כָּהָה, לָאָה and לָהָה; also אָגַם",
+   "verdict": "b",
+   "note": "The first (leftmost) word is printed כָּאָה (kaph with dagesh, aleph, he), paralleling כָּהָה — not אָגַם, which appears only at the line end. Reading B matches every letter and point.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and עָגַם to be sad; אוּד and עוּד to turn",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "(both of them also in Ethiopic); גָּאַל and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "גָּעַל to pollute; תָּאַב and תָּעַב to abhor;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "גָּמָא and גָּמַע to suck in, to drink; פִּתְאֹם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "suddenly, from פֶּתַע a moment, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Where Aleph is to be still more soft-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ened, it passes over into the quiescents ו",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and י, as אָחַד and יָחַד to make one; אָלַף",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ܝܼܠܶܦ to learn; רְאֵם, רֵים, buffalo; בּוֹר",
+   "status": "adjudicated",
+   "draft": "ܝܼܠܶܦ to learn ; רְאֵם, רֵים, buffalo ; בּוֹר",
+   "reread": "أَلِفَ to learn; רְאֵם, רֵים, buffalo; בּוֹר",
+   "verdict": "a",
+   "note": "The first word is printed in Syriac Serto script with vowel points above it (ܝܠܦ, \"to learn\"), not Arabic أَلِفَ as in Reading B; the Hebrew items and their order agree in both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "for בְּאֹר a well. Hence it comes, that",
+   "status": "adjudicated",
+   "draft": "for בְּאֹר a well. Hence it comes, that",
+   "reread": "for בְּאֵר a well.  Hence it comes, that",
+   "verdict": "a",
+   "note": "The aleph carries a holem dot printed above it, not a tsere beneath — the point is בֹּור for בְּאֹר (the vav being the quiescent for holem), so Reading A's אֹ is right and B's אֵ is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "many verbs פ״א accord in signification",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "with verbs ע״ו, comp. Heb. Gr. § 76. 2;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "e. g. אָדַשׁ and דּוּשׁ; אָנַשׁ, Syr. ܢܳܫ, to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "sick.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "In respect to the forms of words it may",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "be noted: a) That א without a vowel at",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the beginning of a word is often dropped",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "by aphæresis, as אֲנַחְנוּ, נַחְנוּ, we; אֲשֶׁר",
+   "status": "adjudicated",
+   "draft": "by aphæresis, as נַחְנוּ, אֲנַחְנוּ, we; אֲשֶׁר",
+   "reread": "by aphæresis, as אֲנַחְנוּ, נַחְנוּ, we; אֲשֶׁר",
+   "verdict": "b",
+   "note": "The first Hebrew item printed (left) begins with א (aleph + hataf patah), i.e. the full form אֲנַחְנוּ; the shorter aphæretic form נַחְנוּ comes second. Reading A reverses the order.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "later שֶׁ·, who, which, what; אֶחָד and חַד",
+   "status": "adjudicated",
+   "draft": "later שֶׁ, who, which, what; אֶחָד and חַד",
+   "reread": "later שֶׁ·, who, which, what; אֶחָד and חַד",
+   "verdict": "b",
+   "note": "A raised dot is clearly printed immediately after (to the left of) the שֶׁ, Gesenius's usual mark for an inseparable prefix; Reading A omits it. Vowels (segol under shin, shin dot; אֶחָד with segol/qamets; חַד with patach) are identical in both readings and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "one, Ez. 33, 30; הָסוּרִים for הָאֲסוּרִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ecc. 4, 14; comp. Lehrgeb. p. 135, 136.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "b) But also at the beginning of words, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "prosthetic א is often prefixed, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,",
+   "status": "adjudicated",
+   "draft": "Lehrgeb. p. 139. See אֲבַטִּחִים, אֲגַפִּים,",
+   "reread": "Lehrgeb. p. 139. See אֲבַטִּיחִים, אֲגַפִּים,",
+   "verdict": "b",
+   "note": "The first Hebrew word is printed plene: a yod is clearly visible between the ṭet (with dagesh) and the ḥet — אֲבַטִּיחִים, as in Reading B; Reading A drops that yod.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲבַעְבּוּעֹת, אֲדַרְכּוֹן. This is done chiefly,",
+   "status": "adjudicated",
+   "draft": "אֲדַרְכּוֹן, אֲבַעְבּוּעֹת. This is done chiefly,",
+   "reread": "אֲבַעְבֻּעֹת, אֲדַרְכּוֹן. This is done chiefly,",
+   "verdict": "neither",
+   "note": "Printed left-to-right order is אֲבַעְבּוּעֹת first (leftmost), then אֲדַרְכּוֹן (as B), but the first word is plene with shureq vav בּוּ (as A), not kubbutz בֻּ. Each reading gets one point right, so neither is fully correct.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "where a word otherwise begins with two",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "consonants separated in pronunciation",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "only by a movable Sheva, as זְרוֹעַ, אֶזְרוֹעַ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the arm; אֶשְׁכֹּל Aram. סְגוֹל grape (in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "which both forms occur); also אֶפְרוֹחַ for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "פְּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+   "status": "adjudicated",
+   "draft": "פֶּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+   "reread": "פְּרוֹחַ progeny; אֶגְרֹף for גֹּרֶף the fist;",
+   "verdict": "b",
+   "note": "Under the initial pe (which has a dagesh) the print shows two vertically stacked dots, i.e. shewa, not the three-dot segol of Reading A; this matches the paragraph's point (prosthetic aleph before a movable shewa) and the preceding line's אֶפְרוֹחַ. The rest (אֶגְרֹף, גֹּרֶף with dagesh and holem on gimel, segol under resh) is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false.",
+   "status": "adjudicated",
+   "draft": "אֶתְנָן for תָּנָן a gift; אַכְזָב for כָּזָב false.",
+   "reread": "אֶתְנָן for תְּנָן a gift; אַכְזָב for כָּזָב false.",
+   "verdict": "b",
+   "note": "Under the tav of the second word the print shows two vertically stacked dots (sheva) with a dagesh in the letter, not a qamets; so תְּנָן (B), not תָּנָן (A). All other items agree with the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Comp. Gr. χθές and ἐχθές yesterday,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "and also similar examples in the transi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "tion from Latin to French, as spiritus,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "esprit; status, état. In the Syriac man-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ner א is also added before the letter י;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "as יִשַׁי and אִישַׁי Jesse, 1 Chr. 2, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָב m. constr. אֲבִי, c. suff. אָבִיו,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָבִיךָ, אֲבִיכֶם, 1 pers. אָבִי (from אָב);",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Plur. אָבוֹת, constr. אֲבוֹת, c. suff. אֲבֹתַי,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲבֹתֵיכֶם, אֲבֹתָם and אֲבֹתֵיהֶם, father.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "It is a primitive word, see note; and is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "common to all the Semitic dialects, Arab.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 72,
+  "adjudicated": 14,
+  "draft_only": 1,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 5
+ },
+ "errors": 0,
+ "cost_usd_list_total": 3.1736
+}

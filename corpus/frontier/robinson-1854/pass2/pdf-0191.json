@@ -1,0 +1,2643 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 191,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0191.png",
+ "raster_sha256": "203822cae41cb535aa2ff4d155eda35ed6af390e9d537fbc66b548ed3b50d4d5",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0191.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T08:58:07+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 60,
+    "y": 110,
+    "width": 1779,
+    "height": 68
+   },
+   "draft_lines": [
+    "גבל 175 גבע"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 60,
+      "y": 108,
+      "width": 1779,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/header-b00-1779x72+60+108-x2.png",
+     "image_sha256": "5feab498f85908903a16faf13f81e235b93053ae72bb98e5f5e86153f815a328",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גבל 175 גבע"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b9bb751-467d-42d9-9002-ef751a9e0dba",
+      "duration_api_ms": 9841,
+      "cost_usd_list": 0.048017000000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1708,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "גבל 175 גבע",
+       "reread": "גבל 175 גבע",
+       "status": "agreed",
+       "text": "גבל 175 גבע"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 60,
+    "y": 158,
+    "width": 883,
+    "height": 672
+   },
+   "draft_lines": [
+    "southwards to Petra, and still called by",
+    "the Arabs جبال Jebâl. In Judith 3, 1",
+    "Lat. Vers. and also in the writings of the",
+    "Crusaders, it is called Syria Sobal; by",
+    "Josephus, Euseb. and Steph. Byz. Γοβο-",
+    "λῖτις, Γεβαληνή, Γάβαλα. See Bibl. Res.",
+    "in Palest. II. p. 552.",
+    "גְּבָל see גְּבוּל.",
+    "גַּבְלֻת f. (r. גָּבַל) wreathen work, twist-",
+    "ed like cords, see the root Kal no. 1. Ex."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 60,
+      "y": 150,
+      "width": 883,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r00-b00-883x248+60+150-x2.png",
+     "image_sha256": "bb77bb418a929f0a3e7db4021c02e6d283f07d5250f9dc15667a76985761668f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "soutnwards to Petra, and still called by",
+       "the Arabs جبال Jebâl. In Judith 3, 1",
+       "Lat. Vers. and also in the writings of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92855e9d-e2de-4b3d-91f9-ceba397a26f6",
+      "duration_api_ms": 12748,
+      "cost_usd_list": 0.07625774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2605,
+      "output_tokens": 459
+     },
+     "lines": [
+      {
+       "draft": "southwards to Petra, and still called by",
+       "reread": "soutnwards to Petra, and still called by",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "southwards to Petra, and still called by",
+        "verdict": "a",
+        "note": "The sixth letter is an 'h' whose ascender failed to ink, so it looks like 'n' in the scan; the word is southwards, so Reading A is correct and B copies the print defect.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "40408bc0-f76e-454c-ae53-118b8e49bbbe",
+        "duration_api_ms": 14580,
+        "cost_usd_list": 0.081533,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3452,
+        "cache_creation_input_tokens": 2514,
+        "output_tokens": 601
+       },
+       "text": "southwards to Petra, and still called by"
+      },
+      {
+       "draft": "the Arabs جبال Jebâl. In Judith 3, 1",
+       "reread": "the Arabs جبال Jebâl. In Judith 3, 1",
+       "status": "agreed",
+       "text": "the Arabs جبال Jebâl. In Judith 3, 1"
+      },
+      {
+       "draft": "Lat. Vers. and also in the writings of the",
+       "reread": "Lat. Vers. and also in the writings of the",
+       "status": "agreed",
+       "text": "Lat. Vers. and also in the writings of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 60,
+      "y": 382,
+      "width": 883,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r00-b01-883x243+60+382-x2.png",
+     "image_sha256": "bb8308515bc104dc6148dd52e375022ef381fdc6f0e0a943c406e43f9ade049d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Crusaders, it is called Syria Sobal ; by",
+       "Josephus, Euseb. and Steph. Byz. Γοβο-",
+       "λῖτις, Γεβαληνή, Γάβαλα.  See Bibl. Res.",
+       "n Palest. II. p. 552."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bd3cf0d6-7057-480f-9cf8-052a72154c50",
+      "duration_api_ms": 11253,
+      "cost_usd_list": 0.07295774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2605,
+      "output_tokens": 393
+     },
+     "lines": [
+      {
+       "draft": "Crusaders, it is called Syria Sobal; by",
+       "reread": "Crusaders, it is called Syria Sobal ; by",
+       "status": "agreed",
+       "text": "Crusaders, it is called Syria Sobal; by"
+      },
+      {
+       "draft": "Josephus, Euseb. and Steph. Byz. Γοβο-",
+       "reread": "Josephus, Euseb. and Steph. Byz. Γοβο-",
+       "status": "agreed",
+       "text": "Josephus, Euseb. and Steph. Byz. Γοβο-"
+      },
+      {
+       "draft": "λῖτις, Γεβαληνή, Γάβαλα. See Bibl. Res.",
+       "reread": "λῖτις, Γεβαληνή, Γάβαλα.  See Bibl. Res.",
+       "status": "agreed",
+       "text": "λῖτις, Γεβαληνή, Γάβαλα. See Bibl. Res."
+      },
+      {
+       "draft": "in Palest. II. p. 552.",
+       "reread": "n Palest. II. p. 552.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "n Palest. II. p. 552.",
+        "verdict": "b",
+        "note": "The line begins with a bare \"n\" — no \"i\" is printed before it. The left margin is fully within the crop (the \"C\" of \"Crusaders\" above starts further left), and the space where the \"i\" of \"in\" should be is blank, so the type either dropped out or failed to ink. Reading A supplies the intended \"in\" but not what is printed; Reading B records the page as it stands.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "dd0191f4-8fb9-4a9e-a664-c4f63b5e60fa",
+        "duration_api_ms": 18112,
+        "cost_usd_list": 0.0796925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3450,
+        "cache_creation_input_tokens": 2512,
+        "output_tokens": 565
+       },
+       "text": "n Palest. II. p. 552."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 60,
+      "y": 609,
+      "width": 883,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r00-b02-883x229+60+609-x2.png",
+     "image_sha256": "4f349bb27d8f7d7344f4580a5ef7f267807f78bfc14c293738ebb91fc49af258",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גְּבֻל see גְּבוּל .",
+       "גַּבְלֹת f. (r. גָּבַל) wreathen work, twist-",
+       "ed like cords, see the root Kal no. 1.  Ex."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a4f8101-643c-419a-a688-90b91f5cb15d",
+      "duration_api_ms": 19878,
+      "cost_usd_list": 0.10497774999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2541,
+      "output_tokens": 1059
+     },
+     "lines": [
+      {
+       "draft": "גְּבָל see גְּבוּל.",
+       "reread": "גְּבֻל see גְּבוּל .",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "גְּבֻל see גְּבוּל .",
+        "verdict": "b",
+        "note": "Under the bet of the headword the print shows three diagonal dots (qibbuts, גְּבֻל), not a qamets as in Reading A; this is the defective spelling cross-referenced to plene גְּבוּל. The final period is set off by a visible space, as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4b1fa6f9-a6bf-4e5b-8bbf-e7cbc8b7ce53",
+        "duration_api_ms": 12697,
+        "cost_usd_list": 0.07365425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3457,
+        "cache_creation_input_tokens": 2455,
+        "output_tokens": 467
+       },
+       "text": "גְּבֻל see גְּבוּל."
+      },
+      {
+       "draft": "גַּבְלֻת f. (r. גָּבַל) wreathen work, twist-",
+       "reread": "גַּבְלֹת f. (r. גָּבַל) wreathen work, twist-",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "גַּבְלֹת f. (r. גָּבַל) wreathen work, twist-",
+        "verdict": "b",
+        "note": "The lamed of the headword carries a single dot printed above/left of its upright (holem), with no three-dot qibbuts beneath it; the print reads גַּבְלֹת, not גַּבְלֻת. Everything else in both readings matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "abc51deb-9861-4217-80ae-3d865278be92",
+        "duration_api_ms": 24751,
+        "cost_usd_list": 0.10094149999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3486,
+        "cache_creation_input_tokens": 2484,
+        "output_tokens": 1001
+       },
+       "text": "גַּבְלֹת f. (r. גָּבַל) wreathen work, twist-"
+      },
+      {
+       "draft": "ed like cords, see the root Kal no. 1. Ex.",
+       "reread": "ed like cords, see the root Kal no. 1.  Ex.",
+       "status": "agreed",
+       "text": "ed like cords, see the root Kal no. 1. Ex."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 60,
+    "y": 818,
+    "width": 883,
+    "height": 862
+   },
+   "draft_lines": [
+    "28, 22 and thou shalt make upon the",
+    "breast-plate שַׁרְשׁוֹת גַּבְלֻת מַעֲשֵׂה עֲבֹת זָהָב",
+    "טָהוֹר wreathed chains (i. e. like cords),",
+    "braided or laced work of pure gold ;",
+    "Sept. well κροσσοὺς συμπεπλεγμένους.",
+    "Ex. 39, 15. The same thing is expressed",
+    "in Ex. 28, 14, and two chains of pure gold,",
+    "מִגְבָּלוֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+    "(like cords) shalt thou make them, braid-",
+    "ed work ; Sept. καταμεμιγμένα (ἐν ἄν-",
+    "θεσι). Most prob. we are to understand",
+    "small chains made of gold threads or",
+    "wire twisted or braided together like",
+    "cords; and then מַעֲשֵׂה עֲבֹת is added by",
+    "way of epexegesis."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 60,
+      "y": 810,
+      "width": 883,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r01-b00-883x243+60+810-x2.png",
+     "image_sha256": "0a4dc0fb56dc848519ad6a48f0b161a87eb5d43e06c00d045a229c196531557c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "28, 22 and thou shalt make upon the",
+       "breast-plate שַׁרְשׁוֹת גַּבְלֻת מַעֲשֵׂה עֲבֹת זָהָב",
+       "טָהוֹר wreathed chains (i. e. like cords),",
+       "braided or laced work of pure gold ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "581b812a-0141-4f28-a28b-600d4396a216",
+      "duration_api_ms": 14628,
+      "cost_usd_list": 0.08400774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2605,
+      "output_tokens": 614
+     },
+     "lines": [
+      {
+       "draft": "28, 22 and thou shalt make upon the",
+       "reread": "28, 22 and thou shalt make upon the",
+       "status": "agreed",
+       "text": "28, 22 and thou shalt make upon the"
+      },
+      {
+       "draft": "breast-plate שַׁרְשׁוֹת גַּבְלֻת מַעֲשֵׂה עֲבֹת זָהָב",
+       "reread": "breast-plate שַׁרְשׁוֹת גַּבְלֻת מַעֲשֵׂה עֲבֹת זָהָב",
+       "status": "agreed",
+       "text": "breast-plate שַׁרְשׁוֹת גַּבְלֻת מַעֲשֵׂה עֲבֹת זָהָב"
+      },
+      {
+       "draft": "טָהוֹר wreathed chains (i. e. like cords),",
+       "reread": "טָהוֹר wreathed chains (i. e. like cords),",
+       "status": "agreed",
+       "text": "טָהוֹר wreathed chains (i. e. like cords),"
+      },
+      {
+       "draft": "braided or laced work of pure gold ;",
+       "reread": "braided or laced work of pure gold ;",
+       "status": "agreed",
+       "text": "braided or laced work of pure gold;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 60,
+      "y": 1037,
+      "width": 883,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r01-b01-883x244+60+1037-x2.png",
+     "image_sha256": "de000eaa541ffc4916de16592e02704bf8d0b6aad15f5c0ca3f15e9eba48be2d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Sept. well κροσσοὺς συμπεπλεγμένους.",
+       "Ex. 39, 15. The same thing is expressed",
+       "in Ex. 28, 14, and two chains of pure gold,",
+       "מִגְבָּלֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8fc5b705-b707-46dc-9934-5eac32848098",
+      "duration_api_ms": 10251,
+      "cost_usd_list": 0.081848,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 570
+     },
+     "lines": [
+      {
+       "draft": "Sept. well κροσσοὺς συμπεπλεγμένους.",
+       "reread": "Sept. well κροσσοὺς συμπεπλεγμένους.",
+       "status": "agreed",
+       "text": "Sept. well κροσσοὺς συμπεπλεγμένους."
+      },
+      {
+       "draft": "Ex. 39, 15. The same thing is expressed",
+       "reread": "Ex. 39, 15. The same thing is expressed",
+       "status": "agreed",
+       "text": "Ex. 39, 15. The same thing is expressed"
+      },
+      {
+       "draft": "in Ex. 28, 14, and two chains of pure gold,",
+       "reread": "in Ex. 28, 14, and two chains of pure gold,",
+       "status": "agreed",
+       "text": "in Ex. 28, 14, and two chains of pure gold,"
+      },
+      {
+       "draft": "מִגְבָּלוֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+       "reread": "מִגְבָּלֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "מִגְבָּלוֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+        "verdict": "a",
+        "note": "In the first word a narrow vertical stroke (vav) is printed between lamed and tav, with the holem dot sitting over it rather than over the lamed: plene מִגְבָּלוֹת, not defective מִגְבָּלֹת. All other points agree in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a09c72f2-0d1d-419f-9704-e13207819404",
+        "duration_api_ms": 20974,
+        "cost_usd_list": 0.1041825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3530,
+        "cache_creation_input_tokens": 2593,
+        "output_tokens": 1022
+       },
+       "text": "מִגְבָּלוֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 60,
+      "y": 1265,
+      "width": 883,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r01-b02-883x232+60+1265-x2.png",
+     "image_sha256": "d1e2b8631e44fbddb2fdbf1fe9abb68bb01bf57618f74b69415bd373d6d3fa3b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(like cords) shalt thou make them, braid-",
+       "ed work ; Sept. καταμεμιγμένα (ἐν ἄν-",
+       "θεσι). Most prob. we are to understand",
+       "small chains made of gold threads or"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0c377eb8-6321-4e17-9877-2c43c6cba93a",
+      "duration_api_ms": 10834,
+      "cost_usd_list": 0.064768,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 254
+     },
+     "lines": [
+      {
+       "draft": "(like cords) shalt thou make them, braid-",
+       "reread": "(like cords) shalt thou make them, braid-",
+       "status": "agreed",
+       "text": "(like cords) shalt thou make them, braid-"
+      },
+      {
+       "draft": "ed work ; Sept. καταμεμιγμένα (ἐν ἄν-",
+       "reread": "ed work ; Sept. καταμεμιγμένα (ἐν ἄν-",
+       "status": "agreed",
+       "text": "ed work; Sept. καταμεμιγμένα (ἐν ἄν-"
+      },
+      {
+       "draft": "θεσι). Most prob. we are to understand",
+       "reread": "θεσι). Most prob. we are to understand",
+       "status": "agreed",
+       "text": "θεσι). Most prob. we are to understand"
+      },
+      {
+       "draft": "small chains made of gold threads or",
+       "reread": "small chains made of gold threads or",
+       "status": "agreed",
+       "text": "small chains made of gold threads or"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 60,
+      "y": 1481,
+      "width": 883,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r01-b03-883x188+60+1481-x2.png",
+     "image_sha256": "28aebf3ecb9b7198b7e8456d546afdc9dbfce4e96ee73ab8b1afe684adcddd37",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "wire twisted or braided together like",
+       "cords; and then מַעֲשֵׂה עֲבֹת is added by",
+       "way of epexegesis."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d6da3c3a-ef1d-4fbc-9dba-87c7b72df496",
+      "duration_api_ms": 7642,
+      "cost_usd_list": 0.065028,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2351,
+      "output_tokens": 336
+     },
+     "lines": [
+      {
+       "draft": "wire twisted or braided together like",
+       "reread": "wire twisted or braided together like",
+       "status": "agreed",
+       "text": "wire twisted or braided together like"
+      },
+      {
+       "draft": "cords; and then מַעֲשֵׂה עֲבֹת is added by",
+       "reread": "cords; and then מַעֲשֵׂה עֲבֹת is added by",
+       "status": "agreed",
+       "text": "cords; and then מַעֲשֵׂה עֲבֹת is added by"
+      },
+      {
+       "draft": "way of epexegesis.",
+       "reread": "way of epexegesis.",
+       "status": "agreed",
+       "text": "way of epexegesis."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 60,
+    "y": 1668,
+    "width": 883,
+    "height": 755
+   },
+   "draft_lines": [
+    "* גָּבַן not used in Heb. 1. to be gib-",
+    "bous, curved, see under גָּבַב no. 1 ; so of",
+    "the body, see גִּבֵּן ; of a mountain, see",
+    "גַּבְנֻנִּים ; of the eye-brow, arch of the eye,",
+    "see Syr. and Chald. גְּבִינָא .",
+    "2. Trop. of the body, to shrink together",
+    "from fear, terror, Arab. جَبُنَ and جَبَنَ",
+    "to be timid, fearful ; Act. to terrify.",
+    "3. Of milk, to curdle, to coagulate ;",
+    "comp. Germ. die Milch erschrickt, i. e.",
+    "curdles. Hence גְּבִינָה curdled milk,",
+    "cheese."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 60,
+      "y": 1679,
+      "width": 883,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r02-b00-883x250+60+1679-x2.png",
+     "image_sha256": "abd495c8c1f4fa7ede76f07f8e608eed2551798e2104888973ede2dfb10b3f95",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* גָּבַן not used in Heb. 1. to be gib-",
+       "bous, curved, see under גָּבַב no. 1 ; so of",
+       "the body, see גִּבֵּן ; of a mountain, see",
+       "גַּבְנֻנִּים ; of the eye-brow, arch of the eye,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7340e503-8663-4310-b55f-4ef515c5f720",
+      "duration_api_ms": 15623,
+      "cost_usd_list": 0.08099800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 553
+     },
+     "lines": [
+      {
+       "draft": "* גָּבַן not used in Heb. 1. to be gib-",
+       "reread": "* גָּבַן not used in Heb. 1. to be gib-",
+       "status": "agreed",
+       "text": "* גָּבַן not used in Heb. 1. to be gib-"
+      },
+      {
+       "draft": "bous, curved, see under גָּבַב no. 1 ; so of",
+       "reread": "bous, curved, see under גָּבַב no. 1 ; so of",
+       "status": "agreed",
+       "text": "bous, curved, see under גָּבַב no. 1; so of"
+      },
+      {
+       "draft": "the body, see גִּבֵּן ; of a mountain, see",
+       "reread": "the body, see גִּבֵּן ; of a mountain, see",
+       "status": "agreed",
+       "text": "the body, see גִּבֵּן; of a mountain, see"
+      },
+      {
+       "draft": "גַּבְנֻנִּים ; of the eye-brow, arch of the eye,",
+       "reread": "גַּבְנֻנִּים ; of the eye-brow, arch of the eye,",
+       "status": "agreed",
+       "text": "גַּבְנֻנִּים; of the eye-brow, arch of the eye,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 60,
+      "y": 1913,
+      "width": 883,
+      "height": 276
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r02-b01-883x276+60+1913-x2.png",
+     "image_sha256": "226e96e2a0e08ce4196aa78941dc0c20cd1f7b50c2c77275f251b7d837a62fea",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "see Syr. and Chald. גַּבְרִיָא .",
+       "2. Trop. of the body, to shrink together",
+       "from fear, terror, Arab. جَبَنَ and جَبُنَ",
+       "to be timid, fearful; Act. to terrify."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "51af026a-8348-46f3-a595-d84cd1d10001",
+      "duration_api_ms": 13928,
+      "cost_usd_list": 0.079458,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 471
+     },
+     "lines": [
+      {
+       "draft": "see Syr. and Chald. גְּבִינָא .",
+       "reread": "see Syr. and Chald. גַּבְרִיָא .",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "see Syr. and Chald. גְּבִינָא .",
+        "verdict": "a",
+        "note": "The printed word is גְּבִינָא (gimel with dagesh, bet, yod, nun with qamets, aleph) — \"cheese\", fitting the root גָּבַן. Reading B's גַּבְרִיָא inserts a resh that is not printed and misplaces the yod/nun; the crop clearly shows the yod-nun-aleph ending.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c6ff6c92-09cd-426f-8f05-e32a024bb820",
+        "duration_api_ms": 20289,
+        "cost_usd_list": 0.10181675000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3467,
+        "cache_creation_input_tokens": 2658,
+        "output_tokens": 949
+       },
+       "text": "see Syr. and Chald. גְּבִינָא."
+      },
+      {
+       "draft": "2. Trop. of the body, to shrink together",
+       "reread": "2. Trop. of the body, to shrink together",
+       "status": "agreed",
+       "text": "2. Trop. of the body, to shrink together"
+      },
+      {
+       "draft": "from fear, terror, Arab. جَبُنَ and جَبَنَ",
+       "reread": "from fear, terror, Arab. جَبَنَ and جَبُنَ",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "from fear, terror, Arab. جَبَنَ and جَبُنَ",
+        "verdict": "b",
+        "note": "Decisive difference is the vowel on the bāʾ of each Arabic form: the first word (left of \"and\") shows a fatḥa stroke over ب (جَبَنَ), while the second word (right of \"and\") shows the small comma-shaped ḍamma over ب (جَبُنَ). Reading A reverses the two.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8fd2c280-5d91-4507-bffc-4c3d99a1cc0c",
+        "duration_api_ms": 19986,
+        "cost_usd_list": 0.08025975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3479,
+        "cache_creation_input_tokens": 2670,
+        "output_tokens": 513
+       },
+       "text": "from fear, terror, Arab. جَبَنَ and جَبُنَ"
+      },
+      {
+       "draft": "to be timid, fearful ; Act. to terrify.",
+       "reread": "to be timid, fearful; Act. to terrify.",
+       "status": "agreed",
+       "text": "to be timid, fearful; Act. to terrify."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 60,
+      "y": 2173,
+      "width": 883,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r02-b02-883x234+60+2173-x2.png",
+     "image_sha256": "35a0354b16d9516893e716877a0b88ec560bf7544bad059e39b22c84d6816235",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Of milk, to curdle, to coagulate ;",
+       "comp. Germ. die Milch erschrickt, i. e.",
+       "curdles. Hence גְּבִינָה curdled milk,",
+       "cheese."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e2129162-ba56-4722-9819-8006cd40bbba",
+      "duration_api_ms": 10609,
+      "cost_usd_list": 0.07291800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 417
+     },
+     "lines": [
+      {
+       "draft": "3. Of milk, to curdle, to coagulate ;",
+       "reread": "3. Of milk, to curdle, to coagulate ;",
+       "status": "agreed",
+       "text": "3. Of milk, to curdle, to coagulate;"
+      },
+      {
+       "draft": "comp. Germ. die Milch erschrickt, i. e.",
+       "reread": "comp. Germ. die Milch erschrickt, i. e.",
+       "status": "agreed",
+       "text": "comp. Germ. die Milch erschrickt, i. e."
+      },
+      {
+       "draft": "curdles. Hence גְּבִינָה curdled milk,",
+       "reread": "curdles. Hence גְּבִינָה curdled milk,",
+       "status": "agreed",
+       "text": "curdles. Hence גְּבִינָה curdled milk,"
+      },
+      {
+       "draft": "cheese.",
+       "reread": "cheese.",
+       "status": "agreed",
+       "text": "cheese."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 60,
+    "y": 2411,
+    "width": 883,
+    "height": 873
+   },
+   "draft_lines": [
+    "גִּבֵּן m. adj. gibbous, hunch-backed,",
+    "Lev. 21, 20. R. גָּבַן no. 1.",
+    "גַּבְנֻנִּים m. plur. (r. גָּבַן no. 1) heights,",
+    "summits, q. d. humps, hummocks of a",
+    "mountain. Ps. 68, 16 הַר־גַּבְנֻנִּים הַר־בָּשָׁן O",
+    "mount of summits, mount of Bashan;",
+    "and v. 17 הָרִים גַּבְנֻנִּים by apposit. ye",
+    "mountains, summits, i. e. abounding",
+    "in summits. — Comp. Talm. גַּבְנוּנִית",
+    "crown of the head, summit; Syr. ܓܒܺܝܢܳܐ",
+    "summit of a mountain, arch of the eye-",
+    "brow; Arab. جَبَّانَة rough uneven coun-",
+    "try; also a cemetery, so called from the",
+    "sepulchral mounds, tumuli."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 60,
+      "y": 2427,
+      "width": 883,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r03-b00-883x256+60+2427-x2.png",
+     "image_sha256": "dcbb4cd8b9bc587eec18362ce6c4a8fd4bc3cfa3642526fa0b424579e70e2e6a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גִּבֵּן m. adj. gibbous, hunch-backed,",
+       "Lev. 21, 20. R. גָּבַן no. 1.",
+       "גַּבְנֻנִּים m. plur. (r. גָּבַן no. 1) heights,",
+       "summits, q. d. humps, hummocks of a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a83b7d7c-d5f3-43eb-a0d2-2e7a01e6b31b",
+      "duration_api_ms": 13790,
+      "cost_usd_list": 0.08362800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 580
+     },
+     "lines": [
+      {
+       "draft": "גִּבֵּן m. adj. gibbous, hunch-backed,",
+       "reread": "גִּבֵּן m. adj. gibbous, hunch-backed,",
+       "status": "agreed",
+       "text": "גִּבֵּן m. adj. gibbous, hunch-backed,"
+      },
+      {
+       "draft": "Lev. 21, 20. R. גָּבַן no. 1.",
+       "reread": "Lev. 21, 20. R. גָּבַן no. 1.",
+       "status": "agreed",
+       "text": "Lev. 21, 20. R. גָּבַן no. 1."
+      },
+      {
+       "draft": "גַּבְנֻנִּים m. plur. (r. גָּבַן no. 1) heights,",
+       "reread": "גַּבְנֻנִּים m. plur. (r. גָּבַן no. 1) heights,",
+       "status": "agreed",
+       "text": "גַּבְנֻנִּים m. plur. (r. גָּבַן no. 1) heights,"
+      },
+      {
+       "draft": "summits, q. d. humps, hummocks of a",
+       "reread": "summits, q. d. humps, hummocks of a",
+       "status": "agreed",
+       "text": "summits, q. d. humps, hummocks of a"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 60,
+      "y": 2667,
+      "width": 883,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r03-b01-883x239+60+2667-x2.png",
+     "image_sha256": "18ec64d1628d8822a42756aded68e859887a450412fbba870f74aba087a98321",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mountain. Ps. 68, 16 הַר־גַּבְנֻנִּים הַר־בָּשָׁן O",
+       "mount of summits, mount of Bashan;",
+       "and v. 17 הָרִים גַּבְנֻנִּים by apposit. ye",
+       "mountains, summits, i. e. abounding"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b661545-3ee5-429f-b628-82971058c748",
+      "duration_api_ms": 12487,
+      "cost_usd_list": 0.078798,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 509
+     },
+     "lines": [
+      {
+       "draft": "mountain. Ps. 68, 16 הַר־גַּבְנֻנִּים הַר־בָּשָׁן O",
+       "reread": "mountain. Ps. 68, 16 הַר־גַּבְנֻנִּים הַר־בָּשָׁן O",
+       "status": "agreed",
+       "text": "mountain. Ps. 68, 16 הַר־גַּבְנֻנִּים הַר־בָּשָׁן O"
+      },
+      {
+       "draft": "mount of summits, mount of Bashan;",
+       "reread": "mount of summits, mount of Bashan;",
+       "status": "agreed",
+       "text": "mount of summits, mount of Bashan;"
+      },
+      {
+       "draft": "and v. 17 הָרִים גַּבְנֻנִּים by apposit. ye",
+       "reread": "and v. 17 הָרִים גַּבְנֻנִּים by apposit. ye",
+       "status": "agreed",
+       "text": "and v. 17 הָרִים גַּבְנֻנִּים by apposit. ye"
+      },
+      {
+       "draft": "mountains, summits, i. e. abounding",
+       "reread": "mountains, summits, i. e. abounding",
+       "status": "agreed",
+       "text": "mountains, summits, i. e. abounding"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 60,
+      "y": 2890,
+      "width": 883,
+      "height": 290
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r03-b02-883x290+60+2890-x2.png",
+     "image_sha256": "ad80621cefe4c0fe0696efeac24780a7a5c89d84b4b7d90a271115667f174977",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in summits. — Comp. Talm. גַּבְנוּנִית",
+       "crown of the head, summit; Syr. ܓܒܺܝܢܳܐ",
+       "summit of a mountain, arch of the eye-",
+       "brow; Arab. جَبَّانَة rough uneven coun-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "047d91b8-63a8-4233-b967-dbc6065158b3",
+      "duration_api_ms": 24837,
+      "cost_usd_list": 0.118738,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 1231
+     },
+     "lines": [
+      {
+       "draft": "in summits. — Comp. Talm. גַּבְנוּנִית",
+       "reread": "in summits. — Comp. Talm. גַּבְנוּנִית",
+       "status": "agreed",
+       "text": "in summits. — Comp. Talm. גַּבְנוּנִית"
+      },
+      {
+       "draft": "crown of the head, summit; Syr. ܓܒܺܝܢܳܐ",
+       "reread": "crown of the head, summit; Syr. ܓܒܺܝܢܳܐ",
+       "status": "agreed",
+       "text": "crown of the head, summit; Syr. ܓܒܺܝܢܳܐ"
+      },
+      {
+       "draft": "summit of a mountain, arch of the eye-",
+       "reread": "summit of a mountain, arch of the eye-",
+       "status": "agreed",
+       "text": "summit of a mountain, arch of the eye-"
+      },
+      {
+       "draft": "brow; Arab. جَبَّانَة rough uneven coun-",
+       "reread": "brow; Arab. جَبَّانَة rough uneven coun-",
+       "status": "agreed",
+       "text": "brow; Arab. جَبَّانَة rough uneven coun-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 60,
+      "y": 3164,
+      "width": 883,
+      "height": 122
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c0-r03-b03-883x122+60+3164-x2.png",
+     "image_sha256": "8624865b46ab99e8d7a0969deb2476424ab763c970baa07a0a522a12c67040a1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "try ; also a cemetery, so called from the",
+       "sepulchral mounds, tumuli."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eabcf5f7-9d0c-4ca1-9011-0e9dbe785315",
+      "duration_api_ms": 8260,
+      "cost_usd_list": 0.053478,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2031,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "try; also a cemetery, so called from the",
+       "reread": "try ; also a cemetery, so called from the",
+       "status": "agreed",
+       "text": "try; also a cemetery, so called from the"
+      },
+      {
+       "draft": "sepulchral mounds, tumuli.",
+       "reread": "sepulchral mounds, tumuli.",
+       "status": "agreed",
+       "text": "sepulchral mounds, tumuli."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 954,
+    "y": 158,
+    "width": 885,
+    "height": 743
+   },
+   "draft_lines": [
+    "* גָּבַע not found in the verb, kindr.",
+    "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc.",
+    "and signifying to be high, like a moun-",
+    "tain, hill; and spec. to be arched, con-",
+    "vex, round, like a cup, the top of the",
+    "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+    "Arab. قَبّ head, chief, Gr. κεφαλή, Lat.",
+    "caput, capo, all which flow from the same",
+    "primary source.",
+    "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here",
+    "following."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 954,
+      "y": 150,
+      "width": 885,
+      "height": 316
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r00-b00-885x316+954+150-x2.png",
+     "image_sha256": "e6c827bd1fb48c38877c23573525c2dbcc942edd36f792c86a0d1a485441a0be",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* גָּבַע not found in the verb, kindr.",
+       "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc.",
+       "and signifying to be high, like a moun-",
+       "tain, hill; and spec. to be arched, con-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9ebc3749-a27c-4402-9468-a2a1fa043bef",
+      "duration_api_ms": 11635,
+      "cost_usd_list": 0.08335775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2925,
+      "output_tokens": 473
+     },
+     "lines": [
+      {
+       "draft": "* גָּבַע not found in the verb, kindr.",
+       "reread": "* גָּבַע not found in the verb, kindr.",
+       "status": "agreed",
+       "text": "* גָּבַע not found in the verb, kindr."
+      },
+      {
+       "draft": "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc.",
+       "reread": "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc.",
+       "status": "agreed",
+       "text": "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc."
+      },
+      {
+       "draft": "and signifying to be high, like a moun-",
+       "reread": "and signifying to be high, like a moun-",
+       "status": "agreed",
+       "text": "and signifying to be high, like a moun-"
+      },
+      {
+       "draft": "tain, hill; and spec. to be arched, con-",
+       "reread": "tain, hill; and spec. to be arched, con-",
+       "status": "agreed",
+       "text": "tain, hill; and spec. to be arched, con-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 954,
+      "y": 450,
+      "width": 885,
+      "height": 215
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r00-b01-885x215+954+450-x2.png",
+     "image_sha256": "9b8ce80a8a2a2569ea98a22f12b3eb5b72a3d6243d8dd5b4c625e267ef7a31e2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "vex, round, like a cup, the top of the",
+       "head, etc. see גְּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+       "Arab. قَبٌّ head, chief, Gr. κεφαλή, Lat."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "27747828-b8c5-4f26-960d-f1550a1169e4",
+      "duration_api_ms": 16965,
+      "cost_usd_list": 0.08809775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2477,
+      "output_tokens": 747
+     },
+     "lines": [
+      {
+       "draft": "vex, round, like a cup, the top of the",
+       "reread": "vex, round, like a cup, the top of the",
+       "status": "agreed",
+       "text": "vex, round, like a cup, the top of the"
+      },
+      {
+       "draft": "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+       "reread": "head, etc. see גְּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+        "verdict": "a",
+        "note": "Under the first gimel of גביע the print shows a qamets (T-shaped mark with a stem), not a shewa; Reading B's גְּבִיעַ is wrong. All other points and the item order agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2fac9c98-960a-4542-aae3-edc40245b039",
+        "duration_api_ms": 15359,
+        "cost_usd_list": 0.08265700000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3508,
+        "cache_creation_input_tokens": 2442,
+        "output_tokens": 652
+       },
+       "text": "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp."
+      },
+      {
+       "draft": "Arab. قَبّ head, chief, Gr. κεφαλή, Lat.",
+       "reread": "Arab. قَبٌّ head, chief, Gr. κεφαλή, Lat.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "Arab. قَبٌّ head, chief, Gr. κεφαλή, Lat.",
+        "verdict": "b",
+        "note": "The mark stacked above the final ب is a shadda with a dammatan (tanwīn) on top, not a bare shadda — the tall two-tier glyph with the curled upper element is the shadda+dammatan combination, so Reading B's قَبٌّ is what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d1db2abf-f586-4672-887a-745331bd7325",
+        "duration_api_ms": 13956,
+        "cost_usd_list": 0.0769115,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3486,
+        "cache_creation_input_tokens": 2420,
+        "output_tokens": 546
+       },
+       "text": "Arab. قَبٌّ head, chief, Gr. κεφαλή, Lat."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 954,
+      "y": 649,
+      "width": 885,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r00-b02-885x240+954+649-x2.png",
+     "image_sha256": "4c6debbc0f5a5358cf24178d7b5a3d3d245366a8467dbf54494da7fef5dc43ee",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "caput, capo, all which flow from the same",
+       "primary source.",
+       "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here",
+       "following."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "875c2af2-22e3-400d-8bb8-d5e044ac9d31",
+      "duration_api_ms": 13325,
+      "cost_usd_list": 0.07650774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2605,
+      "output_tokens": 464
+     },
+     "lines": [
+      {
+       "draft": "caput, capo, all which flow from the same",
+       "reread": "caput, capo, all which flow from the same",
+       "status": "agreed",
+       "text": "caput, capo, all which flow from the same"
+      },
+      {
+       "draft": "primary source.",
+       "reread": "primary source.",
+       "status": "agreed",
+       "text": "primary source."
+      },
+      {
+       "draft": "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here",
+       "reread": "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here",
+       "status": "agreed",
+       "text": "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here"
+      },
+      {
+       "draft": "following.",
+       "reread": "following.",
+       "status": "agreed",
+       "text": "following."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 954,
+    "y": 889,
+    "width": 885,
+    "height": 953
+   },
+   "draft_lines": [
+    "גֶּבַע (hill) Geba, Gaba, pr. n. of a",
+    "Levitical city in Benjamin, Josh. 18, 24.",
+    "21, 17; situated on the northern border",
+    "of the kingdom of Judah, 2 K. 23, 8. Zech.",
+    "14, 10. More fully גֶּבַע בִּנְיָמִין 1 Sam.",
+    "13, 16. 1 K. 15, 22. It was near to",
+    "Gibeah (גִּבְעָה no. 2. a), towards the",
+    "northeast, Is. 10, 29. Josh. 18, 24. 28.",
+    "From these passages too it is evident",
+    "that Geba and Gibeah could not have",
+    "been the same place; although in Judg.",
+    "20, 10. 33, גֶּבַע is inaccurately put for",
+    "גִּבְעָה; comp. the context. [Now جبع",
+    "Jeb'a; see Bibl. Res. in Palest. II. p.",
+    "113, 114. Biblioth. Sac. 1844, p. 598 sq.",
+    "—R."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 954,
+      "y": 902,
+      "width": 885,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r01-b00-885x235+954+902-x2.png",
+     "image_sha256": "ebe91450d95ef6671758dc514fd1f92c9fb3737429ab9d95069adb64f9df3c3c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גֶּבַע (hill) Geba, Gaba, pr. n. of a",
+       "Levitical city in Benjamin, Josh. 18, 24.",
+       "21, 17; situated on the northern border",
+       "of the kingdom of Judah, 2 K. 23, 8. Zech."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8589cbac-5059-43b2-b614-c9614c5309b1",
+      "duration_api_ms": 8696,
+      "cost_usd_list": 0.06547775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2541,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "גֶּבַע (hill) Geba, Gaba, pr. n. of a",
+       "reread": "גֶּבַע (hill) Geba, Gaba, pr. n. of a",
+       "status": "agreed",
+       "text": "גֶּבַע (hill) Geba, Gaba, pr. n. of a"
+      },
+      {
+       "draft": "Levitical city in Benjamin, Josh. 18, 24.",
+       "reread": "Levitical city in Benjamin, Josh. 18, 24.",
+       "status": "agreed",
+       "text": "Levitical city in Benjamin, Josh. 18, 24."
+      },
+      {
+       "draft": "21, 17; situated on the northern border",
+       "reread": "21, 17; situated on the northern border",
+       "status": "agreed",
+       "text": "21, 17; situated on the northern border"
+      },
+      {
+       "draft": "of the kingdom of Judah, 2 K. 23, 8. Zech.",
+       "reread": "of the kingdom of Judah, 2 K. 23, 8. Zech.",
+       "status": "agreed",
+       "text": "of the kingdom of Judah, 2 K. 23, 8. Zech."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 954,
+      "y": 1121,
+      "width": 885,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r01-b01-885x238+954+1121-x2.png",
+     "image_sha256": "61dad7fb56d09040e4f5e9f7c8b9d490dcf9fb34ceb71e9764ed72ed79632f2a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "14, 10. More fully גֶּבַע בִּנְיָמִין 1 Sam.",
+       "13, 16. 1 K. 15, 22. It was near to",
+       "Gibeah (גִּבְעָה no. 2. a), towards the",
+       "northeast, Is. 10, 29. Josh. 18, 24. 28."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5bf9b906-1517-49f0-93c7-23c990600789",
+      "duration_api_ms": 15008,
+      "cost_usd_list": 0.07721800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 503
+     },
+     "lines": [
+      {
+       "draft": "14, 10. More fully גֶּבַע בִּנְיָמִין 1 Sam.",
+       "reread": "14, 10. More fully גֶּבַע בִּנְיָמִין 1 Sam.",
+       "status": "agreed",
+       "text": "14, 10. More fully גֶּבַע בִּנְיָמִין 1 Sam."
+      },
+      {
+       "draft": "13, 16. 1 K. 15, 22. It was near to",
+       "reread": "13, 16. 1 K. 15, 22. It was near to",
+       "status": "agreed",
+       "text": "13, 16. 1 K. 15, 22. It was near to"
+      },
+      {
+       "draft": "Gibeah (גִּבְעָה no. 2. a), towards the",
+       "reread": "Gibeah (גִּבְעָה no. 2. a), towards the",
+       "status": "agreed",
+       "text": "Gibeah (גִּבְעָה no. 2. a), towards the"
+      },
+      {
+       "draft": "northeast, Is. 10, 29. Josh. 18, 24. 28.",
+       "reread": "northeast, Is. 10, 29. Josh. 18, 24. 28.",
+       "status": "agreed",
+       "text": "northeast, Is. 10, 29. Josh. 18, 24. 28."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 954,
+      "y": 1343,
+      "width": 885,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r01-b02-885x242+954+1343-x2.png",
+     "image_sha256": "ca08925440ec4234790ad2a68701c4833e3011d404f97a68d62456c546d30763",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "From these passages too it is evident",
+       "that Geba and Gibeah could not have",
+       "been the same place; although in Judg.",
+       "20, 10. 33, גֶּבַע is inaccurately put for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5fe91c1f-1c85-49b8-ae90-3065953fdf34",
+      "duration_api_ms": 15162,
+      "cost_usd_list": 0.065348,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "From these passages too it is evident",
+       "reread": "From these passages too it is evident",
+       "status": "agreed",
+       "text": "From these passages too it is evident"
+      },
+      {
+       "draft": "that Geba and Gibeah could not have",
+       "reread": "that Geba and Gibeah could not have",
+       "status": "agreed",
+       "text": "that Geba and Gibeah could not have"
+      },
+      {
+       "draft": "been the same place; although in Judg.",
+       "reread": "been the same place; although in Judg.",
+       "status": "agreed",
+       "text": "been the same place; although in Judg."
+      },
+      {
+       "draft": "20, 10. 33, גֶּבַע is inaccurately put for",
+       "reread": "20, 10. 33, גֶּבַע is inaccurately put for",
+       "status": "agreed",
+       "text": "20, 10. 33, גֶּבַע is inaccurately put for"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 954,
+      "y": 1569,
+      "width": 885,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r01-b03-885x254+954+1569-x2.png",
+     "image_sha256": "0b884b2ac612a606dd9a650e678a7d4f16ebb32313a9e0f69961aeee0a771877",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גִּבְעָה; comp. the context. [Now جبع",
+       "Jeb'a; see Bibl. Res. in Palest. II. p.",
+       "113, 114. Biblioth. Sac. 1844, p. 598 sq.",
+       "—R."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2259468b-8d9f-4844-beda-2c874e060b27",
+      "duration_api_ms": 9802,
+      "cost_usd_list": 0.067578,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "גִּבְעָה; comp. the context. [Now جبع",
+       "reread": "גִּבְעָה; comp. the context. [Now جبع",
+       "status": "agreed",
+       "text": "גִּבְעָה; comp. the context. [Now جبع"
+      },
+      {
+       "draft": "Jeb'a; see Bibl. Res. in Palest. II. p.",
+       "reread": "Jeb'a; see Bibl. Res. in Palest. II. p.",
+       "status": "agreed",
+       "text": "Jeb'a; see Bibl. Res. in Palest. II. p."
+      },
+      {
+       "draft": "113, 114. Biblioth. Sac. 1844, p. 598 sq.",
+       "reread": "113, 114. Biblioth. Sac. 1844, p. 598 sq.",
+       "status": "agreed",
+       "text": "113, 114. Biblioth. Sac. 1844, p. 598 sq."
+      },
+      {
+       "draft": "—R.",
+       "reread": "—R.",
+       "status": "agreed",
+       "text": "—R."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 954,
+    "y": 1830,
+    "width": 885,
+    "height": 957
+   },
+   "draft_lines": [
+    "גִּבְעָא (hill) Gibea, pr. n. m. 1 Chr.",
+    "2, 49.",
+    "גִּבְעָה f. (r. גָּבַע) plur. גְּבָעוֹת 1. a hill,",
+    "2 Sam. 2, 25. Is. 40, 12. 41, 15. Cant. 2, 8. al.",
+    "גִּבְעֹת עוֹלָם everlasting hills, i. e. ever the",
+    "same from the creation until now, Gen.",
+    "49, 26. Job 15, 7 לִפְנֵי גְבָעוֹת חוֹלָלְתָּ wast",
+    "thou brought forth before the hills? Prov.",
+    "8, 25. גִּבְעַת יְהוָֹה the hill of Jehovah, i. e.",
+    "Zion, Ez. 34, 26, comp. Is. 31, 4. Many",
+    "of the hills in Palestine were distinguish-",
+    "ed by pr. names; as אַמָּה, גָּרֵב, חֲכִילָה.",
+    "2. Meton. a city on a hill; comp. the",
+    "termination dunum in the early names of",
+    "cities in Germany, France, and Britain,",
+    "which in Celtic signifies a hill, as Au-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 954,
+      "y": 1849,
+      "width": 885,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r02-b00-885x264+954+1849-x2.png",
+     "image_sha256": "6ca6f071e481bc82f8f81db9f9226a7a64eabffef3bee50d388146170a5ad8ff",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גִּבְעָא (hill) Gibea, pr. n. m. 1 Chr.",
+       "2, 49.",
+       "גִּבְעָה f. (r. גָּבַע) plur. גְּבָעוֹת 1. a hill,",
+       "2 Sam. 2, 25. Is. 40, 12. 41, 15. Cant. 2, 8. al."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "924b9f2e-9ed9-4840-93f8-43f1b0a8d72a",
+      "duration_api_ms": 17113,
+      "cost_usd_list": 0.069528,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 298
+     },
+     "lines": [
+      {
+       "draft": "גִּבְעָא (hill) Gibea, pr. n. m. 1 Chr.",
+       "reread": "גִּבְעָא (hill) Gibea, pr. n. m. 1 Chr.",
+       "status": "agreed",
+       "text": "גִּבְעָא (hill) Gibea, pr. n. m. 1 Chr."
+      },
+      {
+       "draft": "2, 49.",
+       "reread": "2, 49.",
+       "status": "agreed",
+       "text": "2, 49."
+      },
+      {
+       "draft": "גִּבְעָה f. (r. גָּבַע) plur. גְּבָעוֹת 1. a hill,",
+       "reread": "גִּבְעָה f. (r. גָּבַע) plur. גְּבָעוֹת 1. a hill,",
+       "status": "agreed",
+       "text": "גִּבְעָה f. (r. גָּבַע) plur. גְּבָעוֹת 1. a hill,"
+      },
+      {
+       "draft": "2 Sam. 2, 25. Is. 40, 12. 41, 15. Cant. 2, 8. al.",
+       "reread": "2 Sam. 2, 25. Is. 40, 12. 41, 15. Cant. 2, 8. al.",
+       "status": "agreed",
+       "text": "2 Sam. 2, 25. Is. 40, 12. 41, 15. Cant. 2, 8. al."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 954,
+      "y": 2097,
+      "width": 885,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r02-b01-885x189+954+2097-x2.png",
+     "image_sha256": "d96768f947ed2ecdbeb46a442835477ee51e205d4a0278070d87aef335280f83",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גִּבְעֹת עוֹלָם everlasting hills, i. e. ever the",
+       "same from the creation until now, Gen.",
+       "49, 26. Job 15, 7 לִפְנֵי גְבָעוֹת חוֹלָלְתָּ wast"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "11fcb50d-a1e3-4959-8ca0-c9b1554da69a",
+      "duration_api_ms": 14129,
+      "cost_usd_list": 0.073728,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2351,
+      "output_tokens": 510
+     },
+     "lines": [
+      {
+       "draft": "גִּבְעֹת עוֹלָם everlasting hills, i. e. ever the",
+       "reread": "גִּבְעֹת עוֹלָם everlasting hills, i. e. ever the",
+       "status": "agreed",
+       "text": "גִּבְעֹת עוֹלָם everlasting hills, i. e. ever the"
+      },
+      {
+       "draft": "same from the creation until now, Gen.",
+       "reread": "same from the creation until now, Gen.",
+       "status": "agreed",
+       "text": "same from the creation until now, Gen."
+      },
+      {
+       "draft": "49, 26. Job 15, 7 לִפְנֵי גְבָעוֹת חוֹלָלְתָּ wast",
+       "reread": "49, 26. Job 15, 7 לִפְנֵי גְבָעוֹת חוֹלָלְתָּ wast",
+       "status": "agreed",
+       "text": "49, 26. Job 15, 7 לִפְנֵי גְבָעוֹת חוֹלָלְתָּ wast"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 954,
+      "y": 2270,
+      "width": 885,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r02-b02-885x233+954+2270-x2.png",
+     "image_sha256": "50ed80c11d153ba1d687e9a043dcc552cf9a6d8ab0e5ef244368cec46c830a09",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "thou brought forth before the hills? Prov.",
+       "8, 25. גִּבְעַת יְהוָֹה the hill of Jehovah, i. e.",
+       "Zion, Ez. 34, 26, comp. Is. 31, 4. Many",
+       "of the hills in Palestine were distinguish-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "79453766-a652-4b64-be31-b179701ae419",
+      "duration_api_ms": 11958,
+      "cost_usd_list": 0.065918,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "thou brought forth before the hills? Prov.",
+       "reread": "thou brought forth before the hills? Prov.",
+       "status": "agreed",
+       "text": "thou brought forth before the hills? Prov."
+      },
+      {
+       "draft": "8, 25. גִּבְעַת יְהוָֹה the hill of Jehovah, i. e.",
+       "reread": "8, 25. גִּבְעַת יְהוָֹה the hill of Jehovah, i. e.",
+       "status": "agreed",
+       "text": "8, 25. גִּבְעַת יְהוָֹה the hill of Jehovah, i. e."
+      },
+      {
+       "draft": "Zion, Ez. 34, 26, comp. Is. 31, 4. Many",
+       "reread": "Zion, Ez. 34, 26, comp. Is. 31, 4. Many",
+       "status": "agreed",
+       "text": "Zion, Ez. 34, 26, comp. Is. 31, 4. Many"
+      },
+      {
+       "draft": "of the hills in Palestine were distinguish-",
+       "reread": "of the hills in Palestine were distinguish-",
+       "status": "agreed",
+       "text": "of the hills in Palestine were distinguish-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 954,
+      "y": 2487,
+      "width": 885,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r02-b03-885x243+954+2487-x2.png",
+     "image_sha256": "944662494496094fb5bafae6f6582b6960f3b500a380e26e26ae54361150e3bf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ed by pr. names; as אַמָּה, גָּרֵב, חֲכִילָה.",
+       "2. Meton. a city on a hill; comp. the",
+       "termination dunum in the early names of",
+       "cities in Germany, France, and Britain,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "44cae817-7cd5-4e9f-976f-10ad65cb12ad",
+      "duration_api_ms": 15944,
+      "cost_usd_list": 0.084248,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 618
+     },
+     "lines": [
+      {
+       "draft": "ed by pr. names; as אַמָּה, גָּרֵב, חֲכִילָה.",
+       "reread": "ed by pr. names; as אַמָּה, גָּרֵב, חֲכִילָה.",
+       "status": "agreed",
+       "text": "ed by pr. names; as אַמָּה, גָּרֵב, חֲכִילָה."
+      },
+      {
+       "draft": "2. Meton. a city on a hill; comp. the",
+       "reread": "2. Meton. a city on a hill; comp. the",
+       "status": "agreed",
+       "text": "2. Meton. a city on a hill; comp. the"
+      },
+      {
+       "draft": "termination dunum in the early names of",
+       "reread": "termination dunum in the early names of",
+       "status": "agreed",
+       "text": "termination dunum in the early names of"
+      },
+      {
+       "draft": "cities in Germany, France, and Britain,",
+       "reread": "cities in Germany, France, and Britain,",
+       "status": "agreed",
+       "text": "cities in Germany, France, and Britain,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b04",
+     "bounds": {
+      "x": 954,
+      "y": 2714,
+      "width": 885,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r02-b04-885x81+954+2714-x2.png",
+     "image_sha256": "a1ad05c9ab12d32f6fba121de5a037d467aca4fa10bc17b9a8b62546618e9d53",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which in Celtic signifies a hill, as Au-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3f377587-dae3-4f65-aa21-f5225acd2770",
+      "duration_api_ms": 11119,
+      "cost_usd_list": 0.047738,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1839,
+      "output_tokens": 195
+     },
+     "lines": [
+      {
+       "draft": "which in Celtic signifies a hill, as Au-",
+       "reread": "which in Celtic signifies a hill, as Au-",
+       "status": "agreed",
+       "text": "which in Celtic signifies a hill, as Au-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 954,
+    "y": 2775,
+    "width": 885,
+    "height": 512
+   },
+   "draft_lines": [
+    "gustodunum, Cæsarodunum, Lugdunum,",
+    "etc.  Hence as pr. n. Gibeah:",
+    "a) גִּבְעַת בִּנְיָמִין 1 Sam. 13, 2. 15, ג׳ בְּנֵי",
+    "בִּנְיָמִין 2 Sam. 23, 29, Gibeah of Benja-",
+    "min; likewise called גִּבְעַת שָׁאוּל Gibeah",
+    "of Saul 1 Sam. 11, 4; גִּבְעַת הָאֱלֹהִים",
+    "1 Sam. 10, 5, comp. 10; also κατ᾿ ἐξοχήν",
+    "הַגִּבְעָה Gibeah, Hos. 5, 8. 9, 9. 10, 9;",
+    "גִּבְעָה 1 Sam. 10, 26, גִּבְעַת Josh. 18, 28;"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 954,
+      "y": 2767,
+      "width": 885,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r03-b00-885x245+954+2767-x2.png",
+     "image_sha256": "b473e7337a933adc405ff236cab04d049cd2f99ecaf3bede56f0acabf2e12c03",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "gustodunum, Cæsarodunum, Lugdunum,",
+       "etc.   Hence as pr. n. Gibeah:",
+       "a) גִּבְעַת בִּנְיָמִין 1 Sam. 13, 2. 15, ג׳ בְּנֵי",
+       "בִּנְיָמִין 2 Sam. 23, 29, Gibeah of Benja-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "105cdba2-158d-4a3c-9005-8cb4e31e3334",
+      "duration_api_ms": 22856,
+      "cost_usd_list": 0.098798,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 909
+     },
+     "lines": [
+      {
+       "draft": "gustodunum, Cæsarodunum, Lugdunum,",
+       "reread": "gustodunum, Cæsarodunum, Lugdunum,",
+       "status": "agreed",
+       "text": "gustodunum, Cæsarodunum, Lugdunum,"
+      },
+      {
+       "draft": "etc.  Hence as pr. n. Gibeah:",
+       "reread": "etc.   Hence as pr. n. Gibeah:",
+       "status": "agreed",
+       "text": "etc. Hence as pr. n. Gibeah:"
+      },
+      {
+       "draft": "a) גִּבְעַת בִּנְיָמִין 1 Sam. 13, 2. 15, ג׳ בְּנֵי",
+       "reread": "a) גִּבְעַת בִּנְיָמִין 1 Sam. 13, 2. 15, ג׳ בְּנֵי",
+       "status": "agreed",
+       "text": "a) גִּבְעַת בִּנְיָמִין 1 Sam. 13, 2. 15, ג׳ בְּנֵי"
+      },
+      {
+       "draft": "בִּנְיָמִין 2 Sam. 23, 29, Gibeah of Benja-",
+       "reread": "בִּנְיָמִין 2 Sam. 23, 29, Gibeah of Benja-",
+       "status": "agreed",
+       "text": "בִּנְיָמִין 2 Sam. 23, 29, Gibeah of Benja-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 954,
+      "y": 2996,
+      "width": 885,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r03-b01-885x232+954+2996-x2.png",
+     "image_sha256": "e53165481955d0d453be94073f041f59e30a7ed65075f4b5858b8c083bf13213",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "min ; likewise called גִּבְעַת שָׁאוּל Gibeah",
+       "of Saul 1 Sam. 11, 4 ; גִּבְעַת הָאֱלֹהִים",
+       "1 Sam. 10, 5, comp. 10 ; also κατ᾿ ἐξοχήν",
+       "הַגִּבְעָה Gibeah, Hos. 5, 8. 9, 9. 10, 9 ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7cd85ade-135a-4703-a663-1d5a55274408",
+      "duration_api_ms": 14392,
+      "cost_usd_list": 0.082468,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 608
+     },
+     "lines": [
+      {
+       "draft": "min; likewise called גִּבְעַת שָׁאוּל Gibeah",
+       "reread": "min ; likewise called גִּבְעַת שָׁאוּל Gibeah",
+       "status": "agreed",
+       "text": "min; likewise called גִּבְעַת שָׁאוּל Gibeah"
+      },
+      {
+       "draft": "of Saul 1 Sam. 11, 4; גִּבְעַת הָאֱלֹהִים",
+       "reread": "of Saul 1 Sam. 11, 4 ; גִּבְעַת הָאֱלֹהִים",
+       "status": "agreed",
+       "text": "of Saul 1 Sam. 11, 4; גִּבְעַת הָאֱלֹהִים"
+      },
+      {
+       "draft": "1 Sam. 10, 5, comp. 10; also κατ᾿ ἐξοχήν",
+       "reread": "1 Sam. 10, 5, comp. 10 ; also κατ᾿ ἐξοχήν",
+       "status": "agreed",
+       "text": "1 Sam. 10, 5, comp. 10; also κατ᾿ ἐξοχήν"
+      },
+      {
+       "draft": "הַגִּבְעָה Gibeah, Hos. 5, 8. 9, 9. 10, 9;",
+       "reread": "הַגִּבְעָה Gibeah, Hos. 5, 8. 9, 9. 10, 9 ;",
+       "status": "agreed",
+       "text": "הַגִּבְעָה Gibeah, Hos. 5, 8. 9, 9. 10, 9;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 954,
+      "y": 3212,
+      "width": 885,
+      "height": 77
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0191/pass2/c1-r03-b02-885x77+954+3212-x2.png",
+     "image_sha256": "845f3ad6f0336f1ae4b9600b81374fb65780b13ccf307400ae4bdae66381d060",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גִּבְעָה 1 Sam. 10, 26, גִּבְעַת Josh. 18, 28 ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02b8d578-1f3a-44c1-885d-8f2ebb0f9b13",
+      "duration_api_ms": 10024,
+      "cost_usd_list": 0.054688,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 1839,
+      "output_tokens": 334
+     },
+     "lines": [
+      {
+       "draft": "גִּבְעָה 1 Sam. 10, 26, גִּבְעַת Josh. 18, 28;",
+       "reread": "גִּבְעָה 1 Sam. 10, 26, גִּבְעַת Josh. 18, 28 ;",
+       "status": "agreed",
+       "text": "גִּבְעָה 1 Sam. 10, 26, גִּבְעַת Josh. 18, 28;"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "גבל 175 גבע",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "southwards to Petra, and still called by",
+   "status": "adjudicated",
+   "draft": "southwards to Petra, and still called by",
+   "reread": "soutnwards to Petra, and still called by",
+   "verdict": "a",
+   "note": "The sixth letter is an 'h' whose ascender failed to ink, so it looks like 'n' in the scan; the word is southwards, so Reading A is correct and B copies the print defect.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the Arabs جبال Jebâl. In Judith 3, 1",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Lat. Vers. and also in the writings of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Crusaders, it is called Syria Sobal; by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Josephus, Euseb. and Steph. Byz. Γοβο-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "λῖτις, Γεβαληνή, Γάβαλα. See Bibl. Res.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "n Palest. II. p. 552.",
+   "status": "adjudicated",
+   "draft": "in Palest. II. p. 552.",
+   "reread": "n Palest. II. p. 552.",
+   "verdict": "b",
+   "note": "The line begins with a bare \"n\" — no \"i\" is printed before it. The left margin is fully within the crop (the \"C\" of \"Crusaders\" above starts further left), and the space where the \"i\" of \"in\" should be is blank, so the type either dropped out or failed to ink. Reading A supplies the intended \"in\" but not what is printed; Reading B records the page as it stands.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "גְּבֻל see גְּבוּל.",
+   "status": "adjudicated",
+   "draft": "גְּבָל see גְּבוּל.",
+   "reread": "גְּבֻל see גְּבוּל .",
+   "verdict": "b",
+   "note": "Under the bet of the headword the print shows three diagonal dots (qibbuts, גְּבֻל), not a qamets as in Reading A; this is the defective spelling cross-referenced to plene גְּבוּל. The final period is set off by a visible space, as in Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "גַּבְלֹת f. (r. גָּבַל) wreathen work, twist-",
+   "status": "adjudicated",
+   "draft": "גַּבְלֻת f. (r. גָּבַל) wreathen work, twist-",
+   "reread": "גַּבְלֹת f. (r. גָּבַל) wreathen work, twist-",
+   "verdict": "b",
+   "note": "The lamed of the headword carries a single dot printed above/left of its upright (holem), with no three-dot qibbuts beneath it; the print reads גַּבְלֹת, not גַּבְלֻת. Everything else in both readings matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ed like cords, see the root Kal no. 1. Ex.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "28, 22 and thou shalt make upon the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "breast-plate שַׁרְשׁוֹת גַּבְלֻת מַעֲשֵׂה עֲבֹת זָהָב",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "טָהוֹר wreathed chains (i. e. like cords),",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "braided or laced work of pure gold;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Sept. well κροσσοὺς συμπεπλεγμένους.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ex. 39, 15. The same thing is expressed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "in Ex. 28, 14, and two chains of pure gold,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מִגְבָּלוֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+   "status": "adjudicated",
+   "draft": "מִגְבָּלוֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+   "reread": "מִגְבָּלֹת תַּעֲשֶׂה אֹתָם מַעֲשֵׂה עֲבֹת wreathed",
+   "verdict": "a",
+   "note": "In the first word a narrow vertical stroke (vav) is printed between lamed and tav, with the holem dot sitting over it rather than over the lamed: plene מִגְבָּלוֹת, not defective מִגְבָּלֹת. All other points agree in both readings and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "(like cords) shalt thou make them, braid-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ed work; Sept. καταμεμιγμένα (ἐν ἄν-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "θεσι). Most prob. we are to understand",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "small chains made of gold threads or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "wire twisted or braided together like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "cords; and then מַעֲשֵׂה עֲבֹת is added by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "way of epexegesis.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* גָּבַן not used in Heb. 1. to be gib-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "bous, curved, see under גָּבַב no. 1; so of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the body, see גִּבֵּן; of a mountain, see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "גַּבְנֻנִּים; of the eye-brow, arch of the eye,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "see Syr. and Chald. גְּבִינָא.",
+   "status": "adjudicated",
+   "draft": "see Syr. and Chald. גְּבִינָא .",
+   "reread": "see Syr. and Chald. גַּבְרִיָא .",
+   "verdict": "a",
+   "note": "The printed word is גְּבִינָא (gimel with dagesh, bet, yod, nun with qamets, aleph) — \"cheese\", fitting the root גָּבַן. Reading B's גַּבְרִיָא inserts a resh that is not printed and misplaces the yod/nun; the crop clearly shows the yod-nun-aleph ending.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. Trop. of the body, to shrink together",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "from fear, terror, Arab. جَبَنَ and جَبُنَ",
+   "status": "adjudicated",
+   "draft": "from fear, terror, Arab. جَبُنَ and جَبَنَ",
+   "reread": "from fear, terror, Arab. جَبَنَ and جَبُنَ",
+   "verdict": "b",
+   "note": "Decisive difference is the vowel on the bāʾ of each Arabic form: the first word (left of \"and\") shows a fatḥa stroke over ب (جَبَنَ), while the second word (right of \"and\") shows the small comma-shaped ḍamma over ب (جَبُنَ). Reading A reverses the two.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to be timid, fearful; Act. to terrify.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "3. Of milk, to curdle, to coagulate;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "comp. Germ. die Milch erschrickt, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "curdles. Hence גְּבִינָה curdled milk,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cheese.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "גִּבֵּן m. adj. gibbous, hunch-backed,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Lev. 21, 20. R. גָּבַן no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "גַּבְנֻנִּים m. plur. (r. גָּבַן no. 1) heights,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "summits, q. d. humps, hummocks of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mountain. Ps. 68, 16 הַר־גַּבְנֻנִּים הַר־בָּשָׁן O",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mount of summits, mount of Bashan;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and v. 17 הָרִים גַּבְנֻנִּים by apposit. ye",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mountains, summits, i. e. abounding",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "in summits. — Comp. Talm. גַּבְנוּנִית",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "crown of the head, summit; Syr. ܓܒܺܝܢܳܐ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "summit of a mountain, arch of the eye-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "brow; Arab. جَبَّانَة rough uneven coun-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "try; also a cemetery, so called from the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sepulchral mounds, tumuli.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "* גָּבַע not found in the verb, kindr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "with the roots גָּבַב q. v. גָּבַהּ, גָּבַח, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and signifying to be high, like a moun-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tain, hill; and spec. to be arched, con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "vex, round, like a cup, the top of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+   "status": "adjudicated",
+   "draft": "head, etc. see גָּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+   "reread": "head, etc. see גְּבִיעַ, גִּבְעֹל, מִגְבָּעָה. Comp.",
+   "verdict": "a",
+   "note": "Under the first gimel of גביע the print shows a qamets (T-shaped mark with a stem), not a shewa; Reading B's גְּבִיעַ is wrong. All other points and the item order agree in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Arab. قَبٌّ head, chief, Gr. κεφαλή, Lat.",
+   "status": "adjudicated",
+   "draft": "Arab. قَبّ head, chief, Gr. κεφαλή, Lat.",
+   "reread": "Arab. قَبٌّ head, chief, Gr. κεφαλή, Lat.",
+   "verdict": "b",
+   "note": "The mark stacked above the final ب is a shadda with a dammatan (tanwīn) on top, not a bare shadda — the tall two-tier glyph with the curled upper element is the shadda+dammatan combination, so Reading B's قَبٌّ is what is printed.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "caput, capo, all which flow from the same",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "primary source.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Deriv. גָּבִיעַ, מִגְבָּעָה, and the six here",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "following.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "גֶּבַע (hill) Geba, Gaba, pr. n. of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Levitical city in Benjamin, Josh. 18, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "21, 17; situated on the northern border",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of the kingdom of Judah, 2 K. 23, 8. Zech.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "14, 10. More fully גֶּבַע בִּנְיָמִין 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "13, 16. 1 K. 15, 22. It was near to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Gibeah (גִּבְעָה no. 2. a), towards the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "northeast, Is. 10, 29. Josh. 18, 24. 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "From these passages too it is evident",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "that Geba and Gibeah could not have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "been the same place; although in Judg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "20, 10. 33, גֶּבַע is inaccurately put for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "גִּבְעָה; comp. the context. [Now جبع",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Jeb'a; see Bibl. Res. in Palest. II. p.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "113, 114. Biblioth. Sac. 1844, p. 598 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "—R.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "גִּבְעָא (hill) Gibea, pr. n. m. 1 Chr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2, 49.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "גִּבְעָה f. (r. גָּבַע) plur. גְּבָעוֹת 1. a hill,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2 Sam. 2, 25. Is. 40, 12. 41, 15. Cant. 2, 8. al.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "גִּבְעֹת עוֹלָם everlasting hills, i. e. ever the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "same from the creation until now, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "49, 26. Job 15, 7 לִפְנֵי גְבָעוֹת חוֹלָלְתָּ wast",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "thou brought forth before the hills? Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8, 25. גִּבְעַת יְהוָֹה the hill of Jehovah, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Zion, Ez. 34, 26, comp. Is. 31, 4. Many",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of the hills in Palestine were distinguish-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ed by pr. names; as אַמָּה, גָּרֵב, חֲכִילָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. Meton. a city on a hill; comp. the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "termination dunum in the early names of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "cities in Germany, France, and Britain,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "which in Celtic signifies a hill, as Au-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "gustodunum, Cæsarodunum, Lugdunum,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "etc. Hence as pr. n. Gibeah:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "a) גִּבְעַת בִּנְיָמִין 1 Sam. 13, 2. 15, ג׳ בְּנֵי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "בִּנְיָמִין 2 Sam. 23, 29, Gibeah of Benja-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "min; likewise called גִּבְעַת שָׁאוּל Gibeah",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of Saul 1 Sam. 11, 4; גִּבְעַת הָאֱלֹהִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1 Sam. 10, 5, comp. 10; also κατ᾿ ἐξοχήν",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "הַגִּבְעָה Gibeah, Hos. 5, 8. 9, 9. 10, 9;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "גִּבְעָה 1 Sam. 10, 26, גִּבְעַת Josh. 18, 28;",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 95,
+  "adjudicated": 9,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "errors": 0,
+ "cost_usd_list_total": 3.0482
+}

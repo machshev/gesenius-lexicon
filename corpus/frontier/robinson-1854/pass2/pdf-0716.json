@@ -1,0 +1,2329 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 716,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0716.png",
+ "raster_sha256": "3f9c3474fe729360d800658f3325b1d753d8bc1d42576aafff0cd3d569ea740d",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0716.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T10:37:04+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 123,
+    "width": 1777,
+    "height": 75
+   },
+   "draft_lines": [
+    "נָשָׁה",
+    "700",
+    "נָשַׁת"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 148,
+      "y": 121,
+      "width": 1777,
+      "height": 85
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/header-b00-1777x85+148+121-x2.png",
+     "image_sha256": "42e59199ec334c7b0b0f5f5d5af28bf8ab296dbc20593918eb3091685f7b9192",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0c845d26-a864-4300-9214-f49c8c238a22\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "נָשָׁה",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נָשָׁה"
+      },
+      {
+       "draft": "700",
+       "reread": null,
+       "status": "draft_only",
+       "text": "700"
+      },
+      {
+       "draft": "נָשַׁת",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נָשַׁת"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 169,
+    "width": 876,
+    "height": 694
+   },
+   "draft_lines": [
+    "Hiph. i. q. Kal no. 1, with בְּ of pers.",
+    "to lend to any one on usury, Deut. 15, 2.",
+    "24, 10.",
+    "Deriv. נְשִׁי, מַשֶּׁה, pr. n. יְשִׁיָּה.",
+    "נָשֶׁה m. Gen. 32, 33, i. q. Arab. نَسَا,",
+    "prob. nervus ischiadicus, the nerve or",
+    "tendon extending through the thigh and",
+    "leg to the ankles. R. נָשָׁה I. 1; see",
+    "Thesaur. p. 921 sq.",
+    "נְשִׁי m. debt, 2 K. 4, 7. R. נָשָׁה II."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 148,
+      "y": 161,
+      "width": 876,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r00-b00-876x243+148+161-x2.png",
+     "image_sha256": "a1e37a6113f5e4dd0fe0a7629df0b06d489ddc0ce1d912bbc38f934a972ec7aa",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9209f02a-14f5-4351-8b1e-1986c0a4e287\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "Hiph. i. q. Kal no. 1, with בְּ of pers.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Hiph. i. q. Kal no. 1, with בְּ of pers."
+      },
+      {
+       "draft": "to lend to any one on usury, Deut. 15, 2.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "to lend to any one on usury, Deut. 15, 2."
+      },
+      {
+       "draft": "24, 10.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "24, 10."
+      },
+      {
+       "draft": "Deriv. נְשִׁי, מַשֶּׁה, pr. n. יְשִׁיָּה.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Deriv. נְשִׁי, מַשֶּׁה, pr. n. יְשִׁיָּה."
+      },
+      {
+       "draft": "נָשֶׁה m. Gen. 32, 33, i. q. Arab. نَسَا,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נָשֶׁה m. Gen. 32, 33, i. q. Arab. نَسَا,"
+      },
+      {
+       "draft": "prob. nervus ischiadicus, the nerve or",
+       "reread": null,
+       "status": "draft_only",
+       "text": "prob. nervus ischiadicus, the nerve or"
+      },
+      {
+       "draft": "tendon extending through the thigh and",
+       "reread": null,
+       "status": "draft_only",
+       "text": "tendon extending through the thigh and"
+      },
+      {
+       "draft": "leg to the ankles. R. נָשָׁה I. 1; see",
+       "reread": null,
+       "status": "draft_only",
+       "text": "leg to the ankles. R. נָשָׁה I. 1; see"
+      },
+      {
+       "draft": "Thesaur. p. 921 sq.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Thesaur. p. 921 sq."
+      },
+      {
+       "draft": "נְשִׁי m. debt, 2 K. 4, 7. R. נָשָׁה II.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נְשִׁי m. debt, 2 K. 4, 7. R. נָשָׁה II."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 148,
+      "y": 388,
+      "width": 876,
+      "height": 220
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r00-b01-876x220+148+388-x2.png",
+     "image_sha256": "332366628f13d67b9e747e1a24bad237b67eeb129a707d8238fea3ec381cd3bd",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0d0f84e5-21ec-4d76-bf2e-8021720c32a0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 148,
+      "y": 592,
+      "width": 876,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r00-b02-876x264+148+592-x2.png",
+     "image_sha256": "b4d7a8ade38da6893a19557c0a0c478148b29702dd076853990c42dde7d72d18",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3cf5af4f-a9b8-4688-8c16-d3b1aabc066d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 148,
+    "y": 851,
+    "width": 876,
+    "height": 703
+   },
+   "draft_lines": [
+    "נְשִׁיָּה f. forgetfulness, oblivion, Ps. 88,",
+    "13. R. נָשָׁה I.",
+    "נָשִׁים plur. f. women, see sing. אִשָּׁה.",
+    "נְשִׁיקָה f. (r. נָשַׁק) a kiss, Cant. 1, 2.",
+    "Prov. 27, 6.",
+    "* נָשַׁךְ, fut. יִשֹּׁךְ Ecc. 10, 11, and יִשָּׁךְ",
+    "Prov. 23, 32, to bite, as a serpent Gen.",
+    "49, 17. Num. 21, 8. 9. Am. 5, 19; a man",
+    "Mic. 3, 5. Eth. ነሰከ id. Syr. by transp.",
+    "ܢܟܬ.—Metaph. a) to vex, to oppress,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 148,
+      "y": 858,
+      "width": 876,
+      "height": 300
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r01-b00-876x300+148+858-x2.png",
+     "image_sha256": "7e0f46898b86ecc46cc4d1f08a7973ae103249e790bfaef36f2f8602a7e3a6c6",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"645d2251-36be-4f8e-92e4-b3f44ef9aa2b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "נְשִׁיָּה f. forgetfulness, oblivion, Ps. 88,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נְשִׁיָּה f. forgetfulness, oblivion, Ps. 88,"
+      },
+      {
+       "draft": "13. R. נָשָׁה I.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "13. R. נָשָׁה I."
+      },
+      {
+       "draft": "נָשִׁים plur. f. women, see sing. אִשָּׁה.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נָשִׁים plur. f. women, see sing. אִשָּׁה."
+      },
+      {
+       "draft": "נְשִׁיקָה f. (r. נָשַׁק) a kiss, Cant. 1, 2.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נְשִׁיקָה f. (r. נָשַׁק) a kiss, Cant. 1, 2."
+      },
+      {
+       "draft": "Prov. 27, 6.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Prov. 27, 6."
+      },
+      {
+       "draft": "* נָשַׁךְ, fut. יִשֹּׁךְ Ecc. 10, 11, and יִשָּׁךְ",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* נָשַׁךְ, fut. יִשֹּׁךְ Ecc. 10, 11, and יִשָּׁךְ"
+      },
+      {
+       "draft": "Prov. 23, 32, to bite, as a serpent Gen.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Prov. 23, 32, to bite, as a serpent Gen."
+      },
+      {
+       "draft": "49, 17. Num. 21, 8. 9. Am. 5, 19; a man",
+       "reread": null,
+       "status": "draft_only",
+       "text": "49, 17. Num. 21, 8. 9. Am. 5, 19; a man"
+      },
+      {
+       "draft": "Mic. 3, 5. Eth. ነሰከ id. Syr. by transp.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Mic. 3, 5. Eth. ነሰከ id. Syr. by transp."
+      },
+      {
+       "draft": "ܢܟܬ.—Metaph. a) to vex, to oppress,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ܢܟܬ.—Metaph. a) to vex, to oppress,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 148,
+      "y": 1142,
+      "width": 876,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r01-b01-876x273+148+1142-x2.png",
+     "image_sha256": "d155564a9dd7b054586f9167a470a20ea7fb79220ecb487e27e6c451df1f99be",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c91e3f1b-f4c5-41fb-b77c-b056322303cc\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 148,
+      "y": 1399,
+      "width": 876,
+      "height": 149
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r01-b02-876x149+148+1399-x2.png",
+     "image_sha256": "c62a9c1c0d31db131672e14ec159cec0364237f0f0c8f326e6fd43e672fdf11f",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"7f425db9-d4c5-49f9-9f6d-de92658c8f69\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 148,
+    "y": 1542,
+    "width": 876,
+    "height": 837
+   },
+   "draft_lines": [
+    "Hab. 2, 7. b) to lend on usury, Deut.",
+    "23, 20; since not only the lending on",
+    "usury, but even the taking of interest,",
+    "was regarded as sordid and oppressive.",
+    "Comp. Aram. נְכַת, ܢܟܰܬ, to bite, whence",
+    "נוֹכְתָא usury; Arab. قرض to gnaw,",
+    "Conj. III to lend on usury; Gr. δάκνε-",
+    "σθαι ὑπὸ τῶν χρεῶν Aristoph. Nub. 1. 12;",
+    "Lat. ‘usura vorax’ Lucan. 1. 171.",
+    "Piel i. q. Kal, to bite, Num. 21, 6. Jer.",
+    "8, 17.",
+    "Hiph. הִשִּׁיךְ caus. of Kal lett. b. to take",
+    "usury of any one, to exact interest, with",
+    "dat. of pers. Deut. 23, 20. 21.—Hence"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 148,
+      "y": 1549,
+      "width": 876,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r02-b00-876x233+148+1549-x2.png",
+     "image_sha256": "466ee404d6f324f52c1c1d7df6835e94fa770c64f28ce51daf309e48abf9f0c8",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d7dce672-24c5-4883-b041-53c7340ca79a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "Hab. 2, 7. b) to lend on usury, Deut.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Hab. 2, 7. b) to lend on usury, Deut."
+      },
+      {
+       "draft": "23, 20; since not only the lending on",
+       "reread": null,
+       "status": "draft_only",
+       "text": "23, 20; since not only the lending on"
+      },
+      {
+       "draft": "usury, but even the taking of interest,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "usury, but even the taking of interest,"
+      },
+      {
+       "draft": "was regarded as sordid and oppressive.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "was regarded as sordid and oppressive."
+      },
+      {
+       "draft": "Comp. Aram. נְכַת, ܢܟܰܬ, to bite, whence",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Comp. Aram. נְכַת, ܢܟܰܬ, to bite, whence"
+      },
+      {
+       "draft": "נוֹכְתָא usury; Arab. قرض to gnaw,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נוֹכְתָא usury; Arab. قرض to gnaw,"
+      },
+      {
+       "draft": "Conj. III to lend on usury; Gr. δάκνε-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Conj. III to lend on usury; Gr. δάκνε-"
+      },
+      {
+       "draft": "σθαι ὑπὸ τῶν χρεῶν Aristoph. Nub. 1. 12;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "σθαι ὑπὸ τῶν χρεῶν Aristoph. Nub. 1. 12;"
+      },
+      {
+       "draft": "Lat. ‘usura vorax’ Lucan. 1. 171.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Lat. ‘usura vorax’ Lucan. 1. 171."
+      },
+      {
+       "draft": "Piel i. q. Kal, to bite, Num. 21, 6. Jer.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Piel i. q. Kal, to bite, Num. 21, 6. Jer."
+      },
+      {
+       "draft": "8, 17.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "8, 17."
+      },
+      {
+       "draft": "Hiph. הִשִּׁיךְ caus. of Kal lett. b. to take",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Hiph. הִשִּׁיךְ caus. of Kal lett. b. to take"
+      },
+      {
+       "draft": "usury of any one, to exact interest, with",
+       "reread": null,
+       "status": "draft_only",
+       "text": "usury of any one, to exact interest, with"
+      },
+      {
+       "draft": "dat. of pers. Deut. 23, 20. 21.—Hence",
+       "reread": null,
+       "status": "draft_only",
+       "text": "dat. of pers. Deut. 23, 20. 21.—Hence"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 148,
+      "y": 1766,
+      "width": 876,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r02-b01-876x273+148+1766-x2.png",
+     "image_sha256": "1f3be06524407358eb25fbe9d3332a5f4ca60b1b4ffd683ba22aff610070064b",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"dd0c0737-5811-4e5f-a3ef-37f975f65295\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 148,
+      "y": 2023,
+      "width": 876,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r02-b02-876x240+148+2023-x2.png",
+     "image_sha256": "e41c196051453759ab9c771028799725b74f579d4f357ea7ddd769f74949db2e",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6a50139f-0c7f-4ddb-86bb-a2260fc950d9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 148,
+      "y": 2247,
+      "width": 876,
+      "height": 124
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r02-b03-876x124+148+2247-x2.png",
+     "image_sha256": "2bde93e2275248234094072b92ce81df844bc95c8d64985ee461952aee44b6dd",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"288cf6bf-2fd9-4886-9a54-4c5dba4c0a5f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 148,
+    "y": 2367,
+    "width": 876,
+    "height": 932
+   },
+   "draft_lines": [
+    "נֶשֶׁךְ m. in pause נֶשֶׁךְ Ex. 22, 24,",
+    "usury, interest, Prov. 28, 8. Ps. 15, 5.",
+    "Ez. 18, 8. 13. שִׂים נֶשֶׁךְ עַל to impose",
+    "usury upon any one, to exact it from",
+    "him, Ex. 22, 24; c. לְ Deut. 23, 30. לָקַח",
+    "נֶשֶׁךְ מִן to take usury from any one Lev.",
+    "25, 36. Ez. 18, 17. 22, 12.",
+    "נִשְׁכָּה a cell, see לִשְׁכָּה and note.",
+    "* נָשַׁל, fut. יִשַּׁל intrans. in no. 2. b;",
+    "imper. שַׁל Ex. 3, 5. Josh. 5, 15.",
+    "1. Trans. a) to draw out or off, to",
+    "put off, e. g. a shoe Ex. 3, 5. Josh. 5, 15.",
+    "b) to cast out, to eject a people from a",
+    "land Deut. 7, 1. 22.—Kindr. are שָׁלַל,",
+    "שָׁלָה, נָצַל. Arab. نشل to draw out,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 148,
+      "y": 2375,
+      "width": 876,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r03-b00-876x246+148+2375-x2.png",
+     "image_sha256": "4d2457a25382f296e36aedfbb2aecb0903640bd4aa6e9b9f67ab80f4ddff75dd",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8b433cfd-b9d7-49a5-aed8-e8a3e5a14355\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "נֶשֶׁךְ m. in pause נֶשֶׁךְ Ex. 22, 24,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נֶשֶׁךְ m. in pause נֶשֶׁךְ Ex. 22, 24,"
+      },
+      {
+       "draft": "usury, interest, Prov. 28, 8. Ps. 15, 5.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "usury, interest, Prov. 28, 8. Ps. 15, 5."
+      },
+      {
+       "draft": "Ez. 18, 8. 13. שִׂים נֶשֶׁךְ עַל to impose",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Ez. 18, 8. 13. שִׂים נֶשֶׁךְ עַל to impose"
+      },
+      {
+       "draft": "usury upon any one, to exact it from",
+       "reread": null,
+       "status": "draft_only",
+       "text": "usury upon any one, to exact it from"
+      },
+      {
+       "draft": "him, Ex. 22, 24; c. לְ Deut. 23, 30. לָקַח",
+       "reread": null,
+       "status": "draft_only",
+       "text": "him, Ex. 22, 24; c. לְ Deut. 23, 30. לָקַח"
+      },
+      {
+       "draft": "נֶשֶׁךְ מִן to take usury from any one Lev.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נֶשֶׁךְ מִן to take usury from any one Lev."
+      },
+      {
+       "draft": "25, 36. Ez. 18, 17. 22, 12.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "25, 36. Ez. 18, 17. 22, 12."
+      },
+      {
+       "draft": "נִשְׁכָּה a cell, see לִשְׁכָּה and note.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נִשְׁכָּה a cell, see לִשְׁכָּה and note."
+      },
+      {
+       "draft": "* נָשַׁל, fut. יִשַּׁל intrans. in no. 2. b;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* נָשַׁל, fut. יִשַּׁל intrans. in no. 2. b;"
+      },
+      {
+       "draft": "imper. שַׁל Ex. 3, 5. Josh. 5, 15.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "imper. שַׁל Ex. 3, 5. Josh. 5, 15."
+      },
+      {
+       "draft": "1. Trans. a) to draw out or off, to",
+       "reread": null,
+       "status": "draft_only",
+       "text": "1. Trans. a) to draw out or off, to"
+      },
+      {
+       "draft": "put off, e. g. a shoe Ex. 3, 5. Josh. 5, 15.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "put off, e. g. a shoe Ex. 3, 5. Josh. 5, 15."
+      },
+      {
+       "draft": "b) to cast out, to eject a people from a",
+       "reread": null,
+       "status": "draft_only",
+       "text": "b) to cast out, to eject a people from a"
+      },
+      {
+       "draft": "land Deut. 7, 1. 22.—Kindr. are שָׁלַל,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "land Deut. 7, 1. 22.—Kindr. are שָׁלַל,"
+      },
+      {
+       "draft": "שָׁלָה, נָצַל. Arab. نشل to draw out,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "שָׁלָה, נָצַל. Arab. نشل to draw out,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 148,
+      "y": 2605,
+      "width": 876,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r03-b01-876x267+148+2605-x2.png",
+     "image_sha256": "d6e9035e2b2b626b531f8d767b4bc66d5d9bcf86c52357814fcc246d8d1be742",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4eff0921-20dd-4f53-9a4c-68a27a1201f3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 148,
+      "y": 2856,
+      "width": 876,
+      "height": 271
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r03-b02-876x271+148+2856-x2.png",
+     "image_sha256": "551697be7f2133578ebf0f0719ac064523867d122ed94f5efbc20dbb38a28d38",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a8dcaeda-49ed-40fa-b5dc-5e4be337ede2\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 148,
+      "y": 3111,
+      "width": 876,
+      "height": 190
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c0-r03-b03-876x190+148+3111-x2.png",
+     "image_sha256": "8f53a9ed6b002589399ca850e6b14e1fa47dc4ab107cd4d24f78656931667262",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"401b26a3-8ce4-48c2-8382-187830afbaf3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1051,
+    "y": 169,
+    "width": 874,
+    "height": 761
+   },
+   "draft_lines": [
+    "as meat from a pot; نثل to put off a",
+    "breastplate, to draw out arrows from a",
+    "quiver.",
+    "2. Intrans. a) to slip off or away;",
+    "Deut. 19, 5 וְנָשַׁל הַבַּרְזֶל מִן־הָעֵץ and if",
+    "the iron slippeth from the helve. b) to",
+    "fall or drop off, as the fruit of the olive",
+    "Deut. 28, 40, where fut. A. Correspond-",
+    "ing is Arab. نسل to fall off, as hair,",
+    "wool, feathers.",
+    "Piel i. q. Kal no. 1. b, to cast out, to",
+    "drive out, a people 2 K. 16, 6."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1051,
+      "y": 161,
+      "width": 874,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r00-b00-874x251+1051+161-x2.png",
+     "image_sha256": "ca90176f5cb15e6e6fb8b128a7a170a1c8089c9f77731e273718f5f5e8f5df54",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3ee1b02c-9086-4a95-a784-e5806825f655\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "as meat from a pot; نثل to put off a",
+       "reread": null,
+       "status": "draft_only",
+       "text": "as meat from a pot; نثل to put off a"
+      },
+      {
+       "draft": "breastplate, to draw out arrows from a",
+       "reread": null,
+       "status": "draft_only",
+       "text": "breastplate, to draw out arrows from a"
+      },
+      {
+       "draft": "quiver.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "quiver."
+      },
+      {
+       "draft": "2. Intrans. a) to slip off or away;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. Intrans. a) to slip off or away;"
+      },
+      {
+       "draft": "Deut. 19, 5 וְנָשַׁל הַבַּרְזֶל מִן־הָעֵץ and if",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Deut. 19, 5 וְנָשַׁל הַבַּרְזֶל מִן־הָעֵץ and if"
+      },
+      {
+       "draft": "the iron slippeth from the helve. b) to",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the iron slippeth from the helve. b) to"
+      },
+      {
+       "draft": "fall or drop off, as the fruit of the olive",
+       "reread": null,
+       "status": "draft_only",
+       "text": "fall or drop off, as the fruit of the olive"
+      },
+      {
+       "draft": "Deut. 28, 40, where fut. A. Correspond-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Deut. 28, 40, where fut. A. Correspond-"
+      },
+      {
+       "draft": "ing is Arab. نسل to fall off, as hair,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ing is Arab. نسل to fall off, as hair,"
+      },
+      {
+       "draft": "wool, feathers.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "wool, feathers."
+      },
+      {
+       "draft": "Piel i. q. Kal no. 1. b, to cast out, to",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Piel i. q. Kal no. 1. b, to cast out, to"
+      },
+      {
+       "draft": "drive out, a people 2 K. 16, 6.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "drive out, a people 2 K. 16, 6."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1051,
+      "y": 396,
+      "width": 874,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r00-b01-874x241+1051+396-x2.png",
+     "image_sha256": "b693b5947a8e4c1873e461ae4492367e1814a48ad1542408b2d19eac4e421881",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1ea1f3fb-aa62-443a-ae42-851fe222f10a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1051,
+      "y": 621,
+      "width": 874,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r00-b02-874x246+1051+621-x2.png",
+     "image_sha256": "a448ad0e26a15f6e3c216c131acc7f05dab340717ddf4c6777dd1c84984c3f15",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"81f5b70a-28e2-4882-9b35-1b9acbc6c355\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1051,
+      "y": 851,
+      "width": 874,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r00-b03-874x70+1051+851-x2.png",
+     "image_sha256": "5afb3e4504d1147e9298613995ad37a7eecc66a3c831836684530b427f071648",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"cb06cbd4-f48c-4668-9b0c-6f672e93c048\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1051,
+    "y": 918,
+    "width": 874,
+    "height": 865
+   },
+   "draft_lines": [
+    "* נָשַׁם to breathe; Chald. Syr. id.",
+    "Arab. نسم to blow gently, as the wind;",
+    "V, to breathe.  Kindred roots are נָשַׁב,",
+    "נָשַׁף, by transp. נָפַשׁ, comp. Arab. نفس",
+    "anhelavit, also parturivit, peperit.—Not",
+    "found in the verb; since fut. אֶשֹּׁם Is. 42,",
+    "14, as elsewhere fut. יִשֹּׁם, belongs to",
+    "the root שָׁמֵם.",
+    "Deriv. תִּנְשֶׁמֶת and",
+    "נְשָׁמָה f. constr. נִשְׁמַת, c. suff. נִשְׁמָתִי,",
+    "plur. נְשָׁמוֹת.",
+    "1. breath, spirit, spoken of the breath",
+    "of God, i. e.  a) the wind, i. q. רוּחַ יְיָ,",
+    "Job 37, 10.  b) the breath, breathing, of"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1051,
+      "y": 928,
+      "width": 874,
+      "height": 332
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r01-b00-874x332+1051+928-x2.png",
+     "image_sha256": "c4b213aceb0e41e40ffba46c550ed43ae4b973762db919b0c8e5437070277d22",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"84708593-e1fb-4515-8859-66038eeffc3b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "* נָשַׁם to breathe; Chald. Syr. id.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* נָשַׁם to breathe; Chald. Syr. id."
+      },
+      {
+       "draft": "Arab. نسم to blow gently, as the wind;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Arab. نسم to blow gently, as the wind;"
+      },
+      {
+       "draft": "V, to breathe.  Kindred roots are נָשַׁב,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "V, to breathe. Kindred roots are נָשַׁב,"
+      },
+      {
+       "draft": "נָשַׁף, by transp. נָפַשׁ, comp. Arab. نفس",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נָשַׁף, by transp. נָפַשׁ, comp. Arab. نفس"
+      },
+      {
+       "draft": "anhelavit, also parturivit, peperit.—Not",
+       "reread": null,
+       "status": "draft_only",
+       "text": "anhelavit, also parturivit, peperit.—Not"
+      },
+      {
+       "draft": "found in the verb; since fut. אֶשֹּׁם Is. 42,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "found in the verb; since fut. אֶשֹּׁם Is. 42,"
+      },
+      {
+       "draft": "14, as elsewhere fut. יִשֹּׁם, belongs to",
+       "reread": null,
+       "status": "draft_only",
+       "text": "14, as elsewhere fut. יִשֹּׁם, belongs to"
+      },
+      {
+       "draft": "the root שָׁמֵם.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "the root שָׁמֵם."
+      },
+      {
+       "draft": "Deriv. תִּנְשֶׁמֶת and",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Deriv. תִּנְשֶׁמֶת and"
+      },
+      {
+       "draft": "נְשָׁמָה f. constr. נִשְׁמַת, c. suff. נִשְׁמָתִי,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נְשָׁמָה f. constr. נִשְׁמַת, c. suff. נִשְׁמָתִי,"
+      },
+      {
+       "draft": "plur. נְשָׁמוֹת.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "plur. נְשָׁמוֹת."
+      },
+      {
+       "draft": "1. breath, spirit, spoken of the breath",
+       "reread": null,
+       "status": "draft_only",
+       "text": "1. breath, spirit, spoken of the breath"
+      },
+      {
+       "draft": "of God, i. e.  a) the wind, i. q. רוּחַ יְיָ,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "of God, i. e. a) the wind, i. q. רוּחַ יְיָ,"
+      },
+      {
+       "draft": "Job 37, 10.  b) the breath, breathing, of",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Job 37, 10. b) the breath, breathing, of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1051,
+      "y": 1244,
+      "width": 874,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r01-b01-874x226+1051+1244-x2.png",
+     "image_sha256": "ab6ca0c5a3fae02e41322c07b9e97b288455d3b2a2ab538993be8c0f0e535646",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c13d89f3-8073-4938-963e-852e0c61491b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1051,
+      "y": 1454,
+      "width": 874,
+      "height": 274
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r01-b02-874x274+1051+1454-x2.png",
+     "image_sha256": "13f3d1c7ee6a37e4023aa85e93fe67e0782ed0a649b0d099e9546a57738675cf",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a82eac77-c32b-43f8-a35f-2d0998d3be1f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1051,
+      "y": 1712,
+      "width": 874,
+      "height": 79
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r01-b03-874x79+1051+1712-x2.png",
+     "image_sha256": "193b7a9c60b26d555ab5cddecab4c4961fa454635184e373cad9bdeea1b20f95",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3199016b-8878-4d81-b2f5-5a8d0a39eee4\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1051,
+    "y": 1771,
+    "width": 874,
+    "height": 957
+   },
+   "draft_lines": [
+    "his anger Is. 30, 33. Job 4, 9. Ps. 18, 16.",
+    "c) the spirit of God, imparting life and",
+    "wisdom, Job 32, 8. 33, 4; comp. 26, 4.",
+    "2. breath, life, of man and beasts;",
+    "Gen. 2, 7 and breathed into his nostrils",
+    "נִשְׁמַת חַיִּים the breath of life; more fully",
+    "נִשְׁמַת רוּחַ חַיִּים Gen. 7, 22. Simpl. נְשָׁמָה",
+    "id. Job 27, 3. Is. 42, 5. Dan. 10, 17. As",
+    "something vain and fleeting Is. 2, 22.—",
+    "Hence, anima, the vital spirit, ψυχή, i. q.",
+    "נֶפֶשׁ no. 2, plur. Is. 57, 16.",
+    "3. the mind, intellect, i. q. נֶפֶשׁ no. 3,",
+    "Prov. 20, 27.",
+    "4. Concr. i. q. נֶפֶשׁ no. 4, living thing,",
+    "animal; e. g. כָּל־נְשָׁמָה every thing that",
+    "hath breath, Deut. 20, 16. Josh. 10, 40.",
+    "11, 11. 14. 1 K. 15, 29. 17, 1. Ps. 150, 6."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1051,
+      "y": 1763,
+      "width": 874,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r02-b00-874x239+1051+1763-x2.png",
+     "image_sha256": "21667ff0074611b41f1b2e06c35004603c9481294b165ba1f44194aef2df6935",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9e51cbf5-998f-4c1c-9042-1ae25cc9cf60\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "his anger Is. 30, 33. Job 4, 9. Ps. 18, 16.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "his anger Is. 30, 33. Job 4, 9. Ps. 18, 16."
+      },
+      {
+       "draft": "c) the spirit of God, imparting life and",
+       "reread": null,
+       "status": "draft_only",
+       "text": "c) the spirit of God, imparting life and"
+      },
+      {
+       "draft": "wisdom, Job 32, 8. 33, 4; comp. 26, 4.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "wisdom, Job 32, 8. 33, 4; comp. 26, 4."
+      },
+      {
+       "draft": "2. breath, life, of man and beasts;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. breath, life, of man and beasts;"
+      },
+      {
+       "draft": "Gen. 2, 7 and breathed into his nostrils",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Gen. 2, 7 and breathed into his nostrils"
+      },
+      {
+       "draft": "נִשְׁמַת חַיִּים the breath of life; more fully",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נִשְׁמַת חַיִּים the breath of life; more fully"
+      },
+      {
+       "draft": "נִשְׁמַת רוּחַ חַיִּים Gen. 7, 22. Simpl. נְשָׁמָה",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נִשְׁמַת רוּחַ חַיִּים Gen. 7, 22. Simpl. נְשָׁמָה"
+      },
+      {
+       "draft": "id. Job 27, 3. Is. 42, 5. Dan. 10, 17. As",
+       "reread": null,
+       "status": "draft_only",
+       "text": "id. Job 27, 3. Is. 42, 5. Dan. 10, 17. As"
+      },
+      {
+       "draft": "something vain and fleeting Is. 2, 22.—",
+       "reread": null,
+       "status": "draft_only",
+       "text": "something vain and fleeting Is. 2, 22.—"
+      },
+      {
+       "draft": "Hence, anima, the vital spirit, ψυχή, i. q.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Hence, anima, the vital spirit, ψυχή, i. q."
+      },
+      {
+       "draft": "נֶפֶשׁ no. 2, plur. Is. 57, 16.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נֶפֶשׁ no. 2, plur. Is. 57, 16."
+      },
+      {
+       "draft": "3. the mind, intellect, i. q. נֶפֶשׁ no. 3,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "3. the mind, intellect, i. q. נֶפֶשׁ no. 3,"
+      },
+      {
+       "draft": "Prov. 20, 27.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Prov. 20, 27."
+      },
+      {
+       "draft": "4. Concr. i. q. נֶפֶשׁ no. 4, living thing,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "4. Concr. i. q. נֶפֶשׁ no. 4, living thing,"
+      },
+      {
+       "draft": "animal; e. g. כָּל־נְשָׁמָה every thing that",
+       "reread": null,
+       "status": "draft_only",
+       "text": "animal; e. g. כָּל־נְשָׁמָה every thing that"
+      },
+      {
+       "draft": "hath breath, Deut. 20, 16. Josh. 10, 40.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "hath breath, Deut. 20, 16. Josh. 10, 40."
+      },
+      {
+       "draft": "11, 11. 14. 1 K. 15, 29. 17, 1. Ps. 150, 6.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "11, 11. 14. 1 K. 15, 29. 17, 1. Ps. 150, 6."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1051,
+      "y": 1986,
+      "width": 874,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r02-b01-874x237+1051+1986-x2.png",
+     "image_sha256": "01dd7456fb4b85278715233de3b7f9de89f4a623e2a6089fd55a6b214369f2c4",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1831bdd6-1f08-4bd7-98a8-0aa70d517f69\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1051,
+      "y": 2207,
+      "width": 874,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r02-b02-874x242+1051+2207-x2.png",
+     "image_sha256": "dd020b24eed864fa5806a38180f450e91179d1a13b5d8d9583c396ea8e38472c",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9145e0dc-a9d8-49f9-869f-3891b0792185\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1051,
+      "y": 2433,
+      "width": 874,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r02-b03-874x234+1051+2433-x2.png",
+     "image_sha256": "d47229745f170f1ddf32de378d9528945c67496ca352002cedfc38985a3da379",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f33add84-a9d8-4191-8e0f-5802c9eb9b4d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    },
+    {
+     "band_id": "c1-r02-b04",
+     "bounds": {
+      "x": 1051,
+      "y": 2651,
+      "width": 874,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r02-b04-874x72+1051+2651-x2.png",
+     "image_sha256": "b59a5bbe4d2bdab2efc9779f7efa373ea8e2fbaa13f928871138477e8668ebf6",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"34edc21e-813f-403f-88f5-8a0a62a30c90\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1051,
+    "y": 2716,
+    "width": 874,
+    "height": 585
+   },
+   "draft_lines": [
+    "נִשְׁמָא Chald. f. breath, life, Dan.",
+    "5, 23.",
+    "* נָשַׁף to breathe, to blow, Ex. 15, 10;",
+    "c. בְּ to blow upon, Is. 40, 24.—Kindred",
+    "are נָשַׁב, נָשַׁם, also שָׁאַף, by transp. נָפַשׁ.",
+    "Arab. نسف to winnow.",
+    "Deriv. יַנְשׁוּף and",
+    "נֶשֶׁף m. in pause נָ֑שֶׁף Job 7, 4; c. suff.",
+    "נִשְׁפוֹ Job 3, 9."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1051,
+      "y": 2721,
+      "width": 874,
+      "height": 332
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r03-b00-874x332+1051+2721-x2.png",
+     "image_sha256": "7cb1fa82b7f191dbc2001f828162acd5b5fbb2f70992133b2c0b64daeacd2655",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"277f9116-e26e-41cd-a3dc-a1f6772e8a9f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     },
+     "lines": [
+      {
+       "draft": "נִשְׁמָא Chald. f. breath, life, Dan.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נִשְׁמָא Chald. f. breath, life, Dan."
+      },
+      {
+       "draft": "5, 23.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "5, 23."
+      },
+      {
+       "draft": "* נָשַׁף to breathe, to blow, Ex. 15, 10;",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* נָשַׁף to breathe, to blow, Ex. 15, 10;"
+      },
+      {
+       "draft": "c. בְּ to blow upon, Is. 40, 24.—Kindred",
+       "reread": null,
+       "status": "draft_only",
+       "text": "c. בְּ to blow upon, Is. 40, 24.—Kindred"
+      },
+      {
+       "draft": "are נָשַׁב, נָשַׁם, also שָׁאַף, by transp. נָפַשׁ.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "are נָשַׁב, נָשַׁם, also שָׁאַף, by transp. נָפַשׁ."
+      },
+      {
+       "draft": "Arab. نسف to winnow.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Arab. نسف to winnow."
+      },
+      {
+       "draft": "Deriv. יַנְשׁוּף and",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Deriv. יַנְשׁוּף and"
+      },
+      {
+       "draft": "נֶשֶׁף m. in pause נָ֑שֶׁף Job 7, 4; c. suff.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נֶשֶׁף m. in pause נָ֑שֶׁף Job 7, 4; c. suff."
+      },
+      {
+       "draft": "נִשְׁפוֹ Job 3, 9.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נִשְׁפוֹ Job 3, 9."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1051,
+      "y": 3037,
+      "width": 874,
+      "height": 266
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0716/pass2/c1-r03-b01-874x266+1051+3037-x2.png",
+     "image_sha256": "a4b6e9878dc702289ae5041979c377523dcb771f5936280f98e6fd0bd1e43e0d",
+     "prompt_version": 2,
+     "reread": {
+      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8b8aa895-9083-41ca-9836-23087b7e99e9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+     }
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "נָשָׁה",
+   "status": "draft_only",
+   "draft": "נָשָׁה",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "700",
+   "status": "draft_only",
+   "draft": "700",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "נָשַׁת",
+   "status": "draft_only",
+   "draft": "נָשַׁת",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hiph. i. q. Kal no. 1, with בְּ of pers.",
+   "status": "draft_only",
+   "draft": "Hiph. i. q. Kal no. 1, with בְּ of pers.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to lend to any one on usury, Deut. 15, 2.",
+   "status": "draft_only",
+   "draft": "to lend to any one on usury, Deut. 15, 2.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "24, 10.",
+   "status": "draft_only",
+   "draft": "24, 10.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deriv. נְשִׁי, מַשֶּׁה, pr. n. יְשִׁיָּה.",
+   "status": "draft_only",
+   "draft": "Deriv. נְשִׁי, מַשֶּׁה, pr. n. יְשִׁיָּה.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "נָשֶׁה m. Gen. 32, 33, i. q. Arab. نَسَا,",
+   "status": "draft_only",
+   "draft": "נָשֶׁה m. Gen. 32, 33, i. q. Arab. نَسَا,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "prob. nervus ischiadicus, the nerve or",
+   "status": "draft_only",
+   "draft": "prob. nervus ischiadicus, the nerve or",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tendon extending through the thigh and",
+   "status": "draft_only",
+   "draft": "tendon extending through the thigh and",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "leg to the ankles. R. נָשָׁה I. 1; see",
+   "status": "draft_only",
+   "draft": "leg to the ankles. R. נָשָׁה I. 1; see",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Thesaur. p. 921 sq.",
+   "status": "draft_only",
+   "draft": "Thesaur. p. 921 sq.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "נְשִׁי m. debt, 2 K. 4, 7. R. נָשָׁה II.",
+   "status": "draft_only",
+   "draft": "נְשִׁי m. debt, 2 K. 4, 7. R. נָשָׁה II.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "נְשִׁיָּה f. forgetfulness, oblivion, Ps. 88,",
+   "status": "draft_only",
+   "draft": "נְשִׁיָּה f. forgetfulness, oblivion, Ps. 88,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "13. R. נָשָׁה I.",
+   "status": "draft_only",
+   "draft": "13. R. נָשָׁה I.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "נָשִׁים plur. f. women, see sing. אִשָּׁה.",
+   "status": "draft_only",
+   "draft": "נָשִׁים plur. f. women, see sing. אִשָּׁה.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "נְשִׁיקָה f. (r. נָשַׁק) a kiss, Cant. 1, 2.",
+   "status": "draft_only",
+   "draft": "נְשִׁיקָה f. (r. נָשַׁק) a kiss, Cant. 1, 2.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Prov. 27, 6.",
+   "status": "draft_only",
+   "draft": "Prov. 27, 6.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* נָשַׁךְ, fut. יִשֹּׁךְ Ecc. 10, 11, and יִשָּׁךְ",
+   "status": "draft_only",
+   "draft": "* נָשַׁךְ, fut. יִשֹּׁךְ Ecc. 10, 11, and יִשָּׁךְ",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Prov. 23, 32, to bite, as a serpent Gen.",
+   "status": "draft_only",
+   "draft": "Prov. 23, 32, to bite, as a serpent Gen.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "49, 17. Num. 21, 8. 9. Am. 5, 19; a man",
+   "status": "draft_only",
+   "draft": "49, 17. Num. 21, 8. 9. Am. 5, 19; a man",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Mic. 3, 5. Eth. ነሰከ id. Syr. by transp.",
+   "status": "draft_only",
+   "draft": "Mic. 3, 5. Eth. ነሰከ id. Syr. by transp.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ܢܟܬ.—Metaph. a) to vex, to oppress,",
+   "status": "draft_only",
+   "draft": "ܢܟܬ.—Metaph. a) to vex, to oppress,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hab. 2, 7. b) to lend on usury, Deut.",
+   "status": "draft_only",
+   "draft": "Hab. 2, 7. b) to lend on usury, Deut.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "23, 20; since not only the lending on",
+   "status": "draft_only",
+   "draft": "23, 20; since not only the lending on",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "usury, but even the taking of interest,",
+   "status": "draft_only",
+   "draft": "usury, but even the taking of interest,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "was regarded as sordid and oppressive.",
+   "status": "draft_only",
+   "draft": "was regarded as sordid and oppressive.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Comp. Aram. נְכַת, ܢܟܰܬ, to bite, whence",
+   "status": "draft_only",
+   "draft": "Comp. Aram. נְכַת, ܢܟܰܬ, to bite, whence",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "נוֹכְתָא usury; Arab. قرض to gnaw,",
+   "status": "draft_only",
+   "draft": "נוֹכְתָא usury; Arab. قرض to gnaw,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Conj. III to lend on usury; Gr. δάκνε-",
+   "status": "draft_only",
+   "draft": "Conj. III to lend on usury; Gr. δάκνε-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "σθαι ὑπὸ τῶν χρεῶν Aristoph. Nub. 1. 12;",
+   "status": "draft_only",
+   "draft": "σθαι ὑπὸ τῶν χρεῶν Aristoph. Nub. 1. 12;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Lat. ‘usura vorax’ Lucan. 1. 171.",
+   "status": "draft_only",
+   "draft": "Lat. ‘usura vorax’ Lucan. 1. 171.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Piel i. q. Kal, to bite, Num. 21, 6. Jer.",
+   "status": "draft_only",
+   "draft": "Piel i. q. Kal, to bite, Num. 21, 6. Jer.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "8, 17.",
+   "status": "draft_only",
+   "draft": "8, 17.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hiph. הִשִּׁיךְ caus. of Kal lett. b. to take",
+   "status": "draft_only",
+   "draft": "Hiph. הִשִּׁיךְ caus. of Kal lett. b. to take",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "usury of any one, to exact interest, with",
+   "status": "draft_only",
+   "draft": "usury of any one, to exact interest, with",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "dat. of pers. Deut. 23, 20. 21.—Hence",
+   "status": "draft_only",
+   "draft": "dat. of pers. Deut. 23, 20. 21.—Hence",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "נֶשֶׁךְ m. in pause נֶשֶׁךְ Ex. 22, 24,",
+   "status": "draft_only",
+   "draft": "נֶשֶׁךְ m. in pause נֶשֶׁךְ Ex. 22, 24,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "usury, interest, Prov. 28, 8. Ps. 15, 5.",
+   "status": "draft_only",
+   "draft": "usury, interest, Prov. 28, 8. Ps. 15, 5.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ez. 18, 8. 13. שִׂים נֶשֶׁךְ עַל to impose",
+   "status": "draft_only",
+   "draft": "Ez. 18, 8. 13. שִׂים נֶשֶׁךְ עַל to impose",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "usury upon any one, to exact it from",
+   "status": "draft_only",
+   "draft": "usury upon any one, to exact it from",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "him, Ex. 22, 24; c. לְ Deut. 23, 30. לָקַח",
+   "status": "draft_only",
+   "draft": "him, Ex. 22, 24; c. לְ Deut. 23, 30. לָקַח",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "נֶשֶׁךְ מִן to take usury from any one Lev.",
+   "status": "draft_only",
+   "draft": "נֶשֶׁךְ מִן to take usury from any one Lev.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "25, 36. Ez. 18, 17. 22, 12.",
+   "status": "draft_only",
+   "draft": "25, 36. Ez. 18, 17. 22, 12.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "נִשְׁכָּה a cell, see לִשְׁכָּה and note.",
+   "status": "draft_only",
+   "draft": "נִשְׁכָּה a cell, see לִשְׁכָּה and note.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* נָשַׁל, fut. יִשַּׁל intrans. in no. 2. b;",
+   "status": "draft_only",
+   "draft": "* נָשַׁל, fut. יִשַּׁל intrans. in no. 2. b;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "imper. שַׁל Ex. 3, 5. Josh. 5, 15.",
+   "status": "draft_only",
+   "draft": "imper. שַׁל Ex. 3, 5. Josh. 5, 15.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1. Trans. a) to draw out or off, to",
+   "status": "draft_only",
+   "draft": "1. Trans. a) to draw out or off, to",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "put off, e. g. a shoe Ex. 3, 5. Josh. 5, 15.",
+   "status": "draft_only",
+   "draft": "put off, e. g. a shoe Ex. 3, 5. Josh. 5, 15.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "b) to cast out, to eject a people from a",
+   "status": "draft_only",
+   "draft": "b) to cast out, to eject a people from a",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "land Deut. 7, 1. 22.—Kindr. are שָׁלַל,",
+   "status": "draft_only",
+   "draft": "land Deut. 7, 1. 22.—Kindr. are שָׁלַל,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "שָׁלָה, נָצַל. Arab. نشل to draw out,",
+   "status": "draft_only",
+   "draft": "שָׁלָה, נָצַל. Arab. نشل to draw out,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "as meat from a pot; نثل to put off a",
+   "status": "draft_only",
+   "draft": "as meat from a pot; نثل to put off a",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "breastplate, to draw out arrows from a",
+   "status": "draft_only",
+   "draft": "breastplate, to draw out arrows from a",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "quiver.",
+   "status": "draft_only",
+   "draft": "quiver.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. Intrans. a) to slip off or away;",
+   "status": "draft_only",
+   "draft": "2. Intrans. a) to slip off or away;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Deut. 19, 5 וְנָשַׁל הַבַּרְזֶל מִן־הָעֵץ and if",
+   "status": "draft_only",
+   "draft": "Deut. 19, 5 וְנָשַׁל הַבַּרְזֶל מִן־הָעֵץ and if",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the iron slippeth from the helve. b) to",
+   "status": "draft_only",
+   "draft": "the iron slippeth from the helve. b) to",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "fall or drop off, as the fruit of the olive",
+   "status": "draft_only",
+   "draft": "fall or drop off, as the fruit of the olive",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Deut. 28, 40, where fut. A. Correspond-",
+   "status": "draft_only",
+   "draft": "Deut. 28, 40, where fut. A. Correspond-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ing is Arab. نسل to fall off, as hair,",
+   "status": "draft_only",
+   "draft": "ing is Arab. نسل to fall off, as hair,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "wool, feathers.",
+   "status": "draft_only",
+   "draft": "wool, feathers.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Piel i. q. Kal no. 1. b, to cast out, to",
+   "status": "draft_only",
+   "draft": "Piel i. q. Kal no. 1. b, to cast out, to",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "drive out, a people 2 K. 16, 6.",
+   "status": "draft_only",
+   "draft": "drive out, a people 2 K. 16, 6.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "* נָשַׁם to breathe; Chald. Syr. id.",
+   "status": "draft_only",
+   "draft": "* נָשַׁם to breathe; Chald. Syr. id.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Arab. نسم to blow gently, as the wind;",
+   "status": "draft_only",
+   "draft": "Arab. نسم to blow gently, as the wind;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "V, to breathe. Kindred roots are נָשַׁב,",
+   "status": "draft_only",
+   "draft": "V, to breathe.  Kindred roots are נָשַׁב,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "נָשַׁף, by transp. נָפַשׁ, comp. Arab. نفس",
+   "status": "draft_only",
+   "draft": "נָשַׁף, by transp. נָפַשׁ, comp. Arab. نفس",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "anhelavit, also parturivit, peperit.—Not",
+   "status": "draft_only",
+   "draft": "anhelavit, also parturivit, peperit.—Not",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "found in the verb; since fut. אֶשֹּׁם Is. 42,",
+   "status": "draft_only",
+   "draft": "found in the verb; since fut. אֶשֹּׁם Is. 42,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "14, as elsewhere fut. יִשֹּׁם, belongs to",
+   "status": "draft_only",
+   "draft": "14, as elsewhere fut. יִשֹּׁם, belongs to",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the root שָׁמֵם.",
+   "status": "draft_only",
+   "draft": "the root שָׁמֵם.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Deriv. תִּנְשֶׁמֶת and",
+   "status": "draft_only",
+   "draft": "Deriv. תִּנְשֶׁמֶת and",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "נְשָׁמָה f. constr. נִשְׁמַת, c. suff. נִשְׁמָתִי,",
+   "status": "draft_only",
+   "draft": "נְשָׁמָה f. constr. נִשְׁמַת, c. suff. נִשְׁמָתִי,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "plur. נְשָׁמוֹת.",
+   "status": "draft_only",
+   "draft": "plur. נְשָׁמוֹת.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1. breath, spirit, spoken of the breath",
+   "status": "draft_only",
+   "draft": "1. breath, spirit, spoken of the breath",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of God, i. e. a) the wind, i. q. רוּחַ יְיָ,",
+   "status": "draft_only",
+   "draft": "of God, i. e.  a) the wind, i. q. רוּחַ יְיָ,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Job 37, 10. b) the breath, breathing, of",
+   "status": "draft_only",
+   "draft": "Job 37, 10.  b) the breath, breathing, of",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "his anger Is. 30, 33. Job 4, 9. Ps. 18, 16.",
+   "status": "draft_only",
+   "draft": "his anger Is. 30, 33. Job 4, 9. Ps. 18, 16.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "c) the spirit of God, imparting life and",
+   "status": "draft_only",
+   "draft": "c) the spirit of God, imparting life and",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "wisdom, Job 32, 8. 33, 4; comp. 26, 4.",
+   "status": "draft_only",
+   "draft": "wisdom, Job 32, 8. 33, 4; comp. 26, 4.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. breath, life, of man and beasts;",
+   "status": "draft_only",
+   "draft": "2. breath, life, of man and beasts;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Gen. 2, 7 and breathed into his nostrils",
+   "status": "draft_only",
+   "draft": "Gen. 2, 7 and breathed into his nostrils",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "נִשְׁמַת חַיִּים the breath of life; more fully",
+   "status": "draft_only",
+   "draft": "נִשְׁמַת חַיִּים the breath of life; more fully",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "נִשְׁמַת רוּחַ חַיִּים Gen. 7, 22. Simpl. נְשָׁמָה",
+   "status": "draft_only",
+   "draft": "נִשְׁמַת רוּחַ חַיִּים Gen. 7, 22. Simpl. נְשָׁמָה",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "id. Job 27, 3. Is. 42, 5. Dan. 10, 17. As",
+   "status": "draft_only",
+   "draft": "id. Job 27, 3. Is. 42, 5. Dan. 10, 17. As",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "something vain and fleeting Is. 2, 22.—",
+   "status": "draft_only",
+   "draft": "something vain and fleeting Is. 2, 22.—",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Hence, anima, the vital spirit, ψυχή, i. q.",
+   "status": "draft_only",
+   "draft": "Hence, anima, the vital spirit, ψυχή, i. q.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "נֶפֶשׁ no. 2, plur. Is. 57, 16.",
+   "status": "draft_only",
+   "draft": "נֶפֶשׁ no. 2, plur. Is. 57, 16.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "3. the mind, intellect, i. q. נֶפֶשׁ no. 3,",
+   "status": "draft_only",
+   "draft": "3. the mind, intellect, i. q. נֶפֶשׁ no. 3,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Prov. 20, 27.",
+   "status": "draft_only",
+   "draft": "Prov. 20, 27.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4. Concr. i. q. נֶפֶשׁ no. 4, living thing,",
+   "status": "draft_only",
+   "draft": "4. Concr. i. q. נֶפֶשׁ no. 4, living thing,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "animal; e. g. כָּל־נְשָׁמָה every thing that",
+   "status": "draft_only",
+   "draft": "animal; e. g. כָּל־נְשָׁמָה every thing that",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "hath breath, Deut. 20, 16. Josh. 10, 40.",
+   "status": "draft_only",
+   "draft": "hath breath, Deut. 20, 16. Josh. 10, 40.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "11, 11. 14. 1 K. 15, 29. 17, 1. Ps. 150, 6.",
+   "status": "draft_only",
+   "draft": "11, 11. 14. 1 K. 15, 29. 17, 1. Ps. 150, 6.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "נִשְׁמָא Chald. f. breath, life, Dan.",
+   "status": "draft_only",
+   "draft": "נִשְׁמָא Chald. f. breath, life, Dan.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "5, 23.",
+   "status": "draft_only",
+   "draft": "5, 23.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* נָשַׁף to breathe, to blow, Ex. 15, 10;",
+   "status": "draft_only",
+   "draft": "* נָשַׁף to breathe, to blow, Ex. 15, 10;",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "c. בְּ to blow upon, Is. 40, 24.—Kindred",
+   "status": "draft_only",
+   "draft": "c. בְּ to blow upon, Is. 40, 24.—Kindred",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "are נָשַׁב, נָשַׁם, also שָׁאַף, by transp. נָפַשׁ.",
+   "status": "draft_only",
+   "draft": "are נָשַׁב, נָשַׁם, also שָׁאַף, by transp. נָפַשׁ.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Arab. نسف to winnow.",
+   "status": "draft_only",
+   "draft": "Arab. نسف to winnow.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Deriv. יַנְשׁוּף and",
+   "status": "draft_only",
+   "draft": "Deriv. יַנְשׁוּף and",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "נֶשֶׁף m. in pause נָ֑שֶׁף Job 7, 4; c. suff.",
+   "status": "draft_only",
+   "draft": "נֶשֶׁף m. in pause נָ֑שֶׁף Job 7, 4; c. suff.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "נִשְׁפוֹ Job 3, 9.",
+   "status": "draft_only",
+   "draft": "נִשְׁפוֹ Job 3, 9.",
+   "reread": null,
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 0,
+  "adjudicated": 0,
+  "draft_only": 104,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 104
+ },
+ "errors": 30,
+ "cost_usd_list_total": 0.0
+}

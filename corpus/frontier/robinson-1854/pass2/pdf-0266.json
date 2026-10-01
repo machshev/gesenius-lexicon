@@ -1,0 +1,2731 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 266,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0266.png",
+ "raster_sha256": "841069c5b4c593422ba9cc53078f32113a70d4bdd8721663e6b373b953141430",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0266.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-09-24T09:02:33+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 174,
+    "y": 94,
+    "width": 1787,
+    "height": 66
+   },
+   "draft_lines": [
+    "הָיָה 250 הָיָה"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 174,
+      "y": 92,
+      "width": 1787,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/header-b00-1787x70+174+92-x2.png",
+     "image_sha256": "eaeed6f8de3359d895cd687dd1e9937e7982dd29d76f0426e532449dcf072c7c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "היה 250 היה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0352661f-7ce4-4301-ae9c-8f6e2070a6e6",
+      "duration_api_ms": 11302,
+      "cost_usd_list": 0.046617000000000006,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3468,
+      "cache_creation_input_tokens": 1708,
+      "output_tokens": 231
+     },
+     "lines": [
+      {
+       "draft": "הָיָה 250 הָיָה",
+       "reread": "היה 250 היה",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "היה 250 היה",
+        "verdict": "b",
+        "note": "Running-header catchwords are printed unpointed: no qamets or any vowel point appears under either היה, so Reading A's pointing is not on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ce7d0bd9-ca2e-4e41-8e0f-611069c4c03c",
+        "duration_api_ms": 11114,
+        "cost_usd_list": 0.048820749999999996,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3443,
+        "cache_creation_input_tokens": 1611,
+        "output_tokens": 314
+       },
+       "text": "היה 250 היה"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 174,
+    "y": 140,
+    "width": 885,
+    "height": 908
+   },
+   "draft_lines": [
+    "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to",
+    "be or become to any one, as his posses-",
+    "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר",
+    "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall",
+    "be for the flocks, i. e. be given up to them.",
+    "23, 18. Job 30, 31. So espec. of a wo-",
+    "man, הָיְתָה לְאִישׁ, she became to a man,",
+    "i. e. became his wife, (לְאִשָּׁה being often",
+    "added, Num. 36, 3,) Num. 30, 7. 36, 3.",
+    "Deut. 21, 15. 24, 2. δ) הָיָה כְּ to be or",
+    "become as or like any thing. Gen. 3, 5",
+    "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as",
+    "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then",
+    "also, to be or become like any one, is to",
+    "have the like lot with him; comp. Fr."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 174,
+      "y": 132,
+      "width": 885,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r00-b00-885x249+174+132-x2.png",
+     "image_sha256": "0f0ec2d4836fd070463ca9ac2f2818af066661686c17d26664ce533f216862f6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to",
+       "be or become to any one, as his posses-",
+       "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e7f5e314-77b8-476f-a592-f7ad487b6f49",
+      "duration_api_ms": 17093,
+      "cost_usd_list": 0.08630774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2605,
+      "output_tokens": 660
+     },
+     "lines": [
+      {
+       "draft": "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to",
+       "reread": "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to",
+       "status": "agreed",
+       "text": "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to"
+      },
+      {
+       "draft": "be or become to any one, as his posses-",
+       "reread": "be or become to any one, as his posses-",
+       "status": "agreed",
+       "text": "be or become to any one, as his posses-"
+      },
+      {
+       "draft": "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר",
+       "reread": "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר",
+       "status": "agreed",
+       "text": "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 174,
+      "y": 365,
+      "width": 885,
+      "height": 181
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r00-b01-885x181+174+365-x2.png",
+     "image_sha256": "adfd69cf036ff80958175b423de2d6e6bbf57212d170c46545076734e1bdeb8a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall",
+       "be for the flocks, i. e. be given up to them.",
+       "23, 18. Job 30, 31. So espec. of a wo-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "87cea326-5052-400e-bd5f-c1a215de34c7",
+      "duration_api_ms": 9269,
+      "cost_usd_list": 0.06490774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2285,
+      "output_tokens": 360
+     },
+     "lines": [
+      {
+       "draft": "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall",
+       "reread": "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall",
+       "status": "agreed",
+       "text": "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall"
+      },
+      {
+       "draft": "be for the flocks, i. e. be given up to them.",
+       "reread": "be for the flocks, i. e. be given up to them.",
+       "status": "agreed",
+       "text": "be for the flocks, i. e. be given up to them."
+      },
+      {
+       "draft": "23, 18. Job 30, 31. So espec. of a wo-",
+       "reread": "23, 18. Job 30, 31. So espec. of a wo-",
+       "status": "agreed",
+       "text": "23, 18. Job 30, 31. So espec. of a wo-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 174,
+      "y": 530,
+      "width": 885,
+      "height": 183
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r00-b02-885x183+174+530-x2.png",
+     "image_sha256": "afc6257495140361a7d86a84aa35a83503155ccb64401e65574fed6fab0a5ed2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "man, הָיְתָה לְאִישׁ, she became to a man,",
+       "i. e. became his wife, (לְאִשָּׁה being often",
+       "added, Num. 36, 3,) Num. 30, 7. 36, 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "45fdccce-4534-4e9f-9774-52b006b61940",
+      "duration_api_ms": 9384,
+      "cost_usd_list": 0.060837749999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2349,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "man, הָיְתָה לְאִישׁ, she became to a man,",
+       "reread": "man, הָיְתָה לְאִישׁ, she became to a man,",
+       "status": "agreed",
+       "text": "man, הָיְתָה לְאִישׁ, she became to a man,"
+      },
+      {
+       "draft": "i. e. became his wife, (לְאִשָּׁה being often",
+       "reread": "i. e. became his wife, (לְאִשָּׁה being often",
+       "status": "agreed",
+       "text": "i. e. became his wife, (לְאִשָּׁה being often"
+      },
+      {
+       "draft": "added, Num. 36, 3,) Num. 30, 7. 36, 3.",
+       "reread": "added, Num. 36, 3,) Num. 30, 7. 36, 3.",
+       "status": "agreed",
+       "text": "added, Num. 36, 3,) Num. 30, 7. 36, 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 174,
+      "y": 697,
+      "width": 885,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r00-b03-885x238+174+697-x2.png",
+     "image_sha256": "4bcf3eea9a997c4eb521cd8f43cb189d26d1f8eb3a5a9d054df7b6b26bfb0813",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Deut. 21, 15. 24, 2.  δ) הָיָה כְּ to be or",
+       "become as or like any thing. Gen. 3, 5",
+       "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as",
+       "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f78340b1-a2be-43b0-a126-f803d79b3ff7",
+      "duration_api_ms": 14227,
+      "cost_usd_list": 0.07792774999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2541,
+      "output_tokens": 518
+     },
+     "lines": [
+      {
+       "draft": "Deut. 21, 15. 24, 2. δ) הָיָה כְּ to be or",
+       "reread": "Deut. 21, 15. 24, 2.  δ) הָיָה כְּ to be or",
+       "status": "agreed",
+       "text": "Deut. 21, 15. 24, 2. δ) הָיָה כְּ to be or"
+      },
+      {
+       "draft": "become as or like any thing. Gen. 3, 5",
+       "reread": "become as or like any thing. Gen. 3, 5",
+       "status": "agreed",
+       "text": "become as or like any thing. Gen. 3, 5"
+      },
+      {
+       "draft": "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as",
+       "reread": "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as",
+       "status": "agreed",
+       "text": "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as"
+      },
+      {
+       "draft": "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then",
+       "reread": "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then",
+       "status": "agreed",
+       "text": "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b04",
+     "bounds": {
+      "x": 174,
+      "y": 919,
+      "width": 885,
+      "height": 126
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r00-b04-885x126+174+919-x2.png",
+     "image_sha256": "3ecdeed43348b1764ccf22f0169805092dafb6d9322deb31f01fa743fe20b888",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "also, to be or become like any one, is to",
+       "have the like lot with him; comp. Fr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a606b6a8-e6a1-4739-9dc5-26fe80eb4fdc",
+      "duration_api_ms": 12095,
+      "cost_usd_list": 0.053787749999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3471,
+      "cache_creation_input_tokens": 2029,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "also, to be or become like any one, is to",
+       "reread": "also, to be or become like any one, is to",
+       "status": "agreed",
+       "text": "also, to be or become like any one, is to"
+      },
+      {
+       "draft": "have the like lot with him; comp. Fr.",
+       "reread": "have the like lot with him; comp. Fr.",
+       "status": "agreed",
+       "text": "have the like lot with him; comp. Fr."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 174,
+    "y": 1036,
+    "width": 885,
+    "height": 680
+   },
+   "draft_lines": [
+    "‘ je ne sais pas ce qu’il est devenu.’ Is.",
+    "1, 9 כִּסְדֹם הָיִינוּ we should have become",
+    "like Sodom, i. e. have experienced the",
+    "fate of its inhabitants. Gen. 18, 25. Num.",
+    "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13.",
+    "Comp. Is. 10, 9. 20, 6 ; where הָיָה is",
+    "omitted.",
+    "3. to be, i. e. the substantive verb, like",
+    "Gr. εἰμί, Lat. sum. a) As the copulative",
+    "connecting the subject with the predi-",
+    "cate ; whether the latter be an adjective,",
+    "noun, numeral, or adverb ; or whether it"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 174,
+      "y": 1028,
+      "width": 885,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r01-b00-885x240+174+1028-x2.png",
+     "image_sha256": "662d2ba55d12ef22101387e303fbf009fe7df6da255c3180e10a35559c861175",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "‘ je ne sais pas ce qu’il est devenu.’   Is.",
+       "1, 9 כִּסְדֹם הָיִינוּ we should have become",
+       "like Sodom, i. e. have experienced the",
+       "fate of its inhabitants. Gen. 18, 25. Num."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1306026c-95b3-4958-930e-2d6296e544f1",
+      "duration_api_ms": 14925,
+      "cost_usd_list": 0.07619800000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 457
+     },
+     "lines": [
+      {
+       "draft": "‘ je ne sais pas ce qu’il est devenu.’ Is.",
+       "reread": "‘ je ne sais pas ce qu’il est devenu.’   Is.",
+       "status": "agreed",
+       "text": "‘ je ne sais pas ce qu’il est devenu.’ Is."
+      },
+      {
+       "draft": "1, 9 כִּסְדֹם הָיִינוּ we should have become",
+       "reread": "1, 9 כִּסְדֹם הָיִינוּ we should have become",
+       "status": "agreed",
+       "text": "1, 9 כִּסְדֹם הָיִינוּ we should have become"
+      },
+      {
+       "draft": "like Sodom, i. e. have experienced the",
+       "reread": "like Sodom, i. e. have experienced the",
+       "status": "agreed",
+       "text": "like Sodom, i. e. have experienced the"
+      },
+      {
+       "draft": "fate of its inhabitants. Gen. 18, 25. Num.",
+       "reread": "fate of its inhabitants. Gen. 18, 25. Num.",
+       "status": "agreed",
+       "text": "fate of its inhabitants. Gen. 18, 25. Num."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 174,
+      "y": 1252,
+      "width": 885,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r01-b01-885x240+174+1252-x2.png",
+     "image_sha256": "b10f62938ec690f938a031b8f004205a95c00c2bbfbe9260e8b7abe4d0ae2fa4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13.",
+       "Comp. Is. 10, 9. 20, 6; where הָיָה is",
+       "omitted.",
+       "3. to be, i. e. the substantive verb, like"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e644863b-cb22-45c6-b4cb-6507a3779a25",
+      "duration_api_ms": 12494,
+      "cost_usd_list": 0.066798,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13.",
+       "reread": "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13.",
+       "status": "agreed",
+       "text": "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13."
+      },
+      {
+       "draft": "Comp. Is. 10, 9. 20, 6 ; where הָיָה is",
+       "reread": "Comp. Is. 10, 9. 20, 6; where הָיָה is",
+       "status": "agreed",
+       "text": "Comp. Is. 10, 9. 20, 6; where הָיָה is"
+      },
+      {
+       "draft": "omitted.",
+       "reread": "omitted.",
+       "status": "agreed",
+       "text": "omitted."
+      },
+      {
+       "draft": "3. to be, i. e. the substantive verb, like",
+       "reread": "3. to be, i. e. the substantive verb, like",
+       "status": "agreed",
+       "text": "3. to be, i. e. the substantive verb, like"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 174,
+      "y": 1476,
+      "width": 885,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r01-b02-885x248+174+1476-x2.png",
+     "image_sha256": "a10e7f2de36dd370a275db104e397d8d779610cd4b920ce255c378bd356396f2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gr. εἰμί, Lat. sum. a) As the copulative",
+       "connecting the subject with the predi-",
+       "cate; whether the latter be an adjective,",
+       "noun, numeral, or adverb; or whether it"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b11d7a3-c765-4f33-abc6-9b71b9db8697",
+      "duration_api_ms": 8914,
+      "cost_usd_list": 0.065798,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "Gr. εἰμί, Lat. sum. a) As the copulative",
+       "reread": "Gr. εἰμί, Lat. sum. a) As the copulative",
+       "status": "agreed",
+       "text": "Gr. εἰμί, Lat. sum. a) As the copulative"
+      },
+      {
+       "draft": "connecting the subject with the predi-",
+       "reread": "connecting the subject with the predi-",
+       "status": "agreed",
+       "text": "connecting the subject with the predi-"
+      },
+      {
+       "draft": "cate ; whether the latter be an adjective,",
+       "reread": "cate; whether the latter be an adjective,",
+       "status": "agreed",
+       "text": "cate; whether the latter be an adjective,"
+      },
+      {
+       "draft": "noun, numeral, or adverb ; or whether it",
+       "reread": "noun, numeral, or adverb; or whether it",
+       "status": "agreed",
+       "text": "noun, numeral, or adverb; or whether it"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 174,
+    "y": 1704,
+    "width": 885,
+    "height": 789
+   },
+   "draft_lines": [
+    "stand alone, or in connection with a par-",
+    "ticle. So with an adjective, Gen. 3, 1",
+    "וְהַנָּחָשׁ הָיָה עָרוּם and the serpent was",
+    "cunning. 2, 25. With a substantive,",
+    "Gen. 3, 20 כִּי הִיא הָיְתָה אֵם כָּל־חָי for she",
+    "was the mother of all living. 5, 32. 16, 12.",
+    "With a subst. and numeral, Gen. 5, 5",
+    "and all the days of Adam .... were nine",
+    "hundred and thirty years. v. 8. 11. Job",
+    "1, 3. With an adverb, Gen. 15, 5 כֵּן",
+    "יִהְיֶה זַרְעֶךָ so shall thy seed be. With a",
+    "subst. having the prefix כְּ, Ps. 22, 15 הָיָה",
+    "לִבִּי כַּדּוֹנָג my heart is like wax. Is. 1, 18.",
+    "30. 9, 18. In very many examples of"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 174,
+      "y": 1696,
+      "width": 885,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r02-b00-885x241+174+1696-x2.png",
+     "image_sha256": "cc32dd015b2059463359ec47de5ae0a8fb04e76cf4137c2480a795b5d8bdad7d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "stand alone, or in connection with a par-",
+       "ticle. So with an adjective, Gen. 3, 1",
+       "וְהַנָּחָשׁ הָיָה עָרוּם and the serpent was",
+       "cunning. 2, 25. With a substantive,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1cae66a9-6f63-4273-ab6b-e70837cd7f2f",
+      "duration_api_ms": 10557,
+      "cost_usd_list": 0.07369800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 407
+     },
+     "lines": [
+      {
+       "draft": "stand alone, or in connection with a par-",
+       "reread": "stand alone, or in connection with a par-",
+       "status": "agreed",
+       "text": "stand alone, or in connection with a par-"
+      },
+      {
+       "draft": "ticle. So with an adjective, Gen. 3, 1",
+       "reread": "ticle. So with an adjective, Gen. 3, 1",
+       "status": "agreed",
+       "text": "ticle. So with an adjective, Gen. 3, 1"
+      },
+      {
+       "draft": "וְהַנָּחָשׁ הָיָה עָרוּם and the serpent was",
+       "reread": "וְהַנָּחָשׁ הָיָה עָרוּם and the serpent was",
+       "status": "agreed",
+       "text": "וְהַנָּחָשׁ הָיָה עָרוּם and the serpent was"
+      },
+      {
+       "draft": "cunning. 2, 25. With a substantive,",
+       "reread": "cunning. 2, 25. With a substantive,",
+       "status": "agreed",
+       "text": "cunning. 2, 25. With a substantive,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 174,
+      "y": 1921,
+      "width": 885,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r02-b01-885x238+174+1921-x2.png",
+     "image_sha256": "b129182cf51eec0fa01fa6d2d536c00b5fffbaedc99f7d6fc02f1a0d32117419",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gen. 3, 20 כִּי הִיא הָיְתָה אֵם כָּל־חָי for she",
+       "was the mother of all living. 5, 32. 16, 12.",
+       "With a subst. and numeral, Gen. 5, 5",
+       "and all the days of Adam . . . . were nine"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f7454900-0d03-47e9-adf8-cb7a61e96c70",
+      "duration_api_ms": 10484,
+      "cost_usd_list": 0.069768,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 354
+     },
+     "lines": [
+      {
+       "draft": "Gen. 3, 20 כִּי הִיא הָיְתָה אֵם כָּל־חָי for she",
+       "reread": "Gen. 3, 20 כִּי הִיא הָיְתָה אֵם כָּל־חָי for she",
+       "status": "agreed",
+       "text": "Gen. 3, 20 כִּי הִיא הָיְתָה אֵם כָּל־חָי for she"
+      },
+      {
+       "draft": "was the mother of all living. 5, 32. 16, 12.",
+       "reread": "was the mother of all living. 5, 32. 16, 12.",
+       "status": "agreed",
+       "text": "was the mother of all living. 5, 32. 16, 12."
+      },
+      {
+       "draft": "With a subst. and numeral, Gen. 5, 5",
+       "reread": "With a subst. and numeral, Gen. 5, 5",
+       "status": "agreed",
+       "text": "With a subst. and numeral, Gen. 5, 5"
+      },
+      {
+       "draft": "and all the days of Adam .... were nine",
+       "reread": "and all the days of Adam . . . . were nine",
+       "status": "agreed",
+       "text": "and all the days of Adam.... were nine"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 174,
+      "y": 2143,
+      "width": 885,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r02-b02-885x242+174+2143-x2.png",
+     "image_sha256": "7c188df06b03012cec7ae0a81f87f3db02be80a0d7b49ccd96f983ef45798109",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hundred and thirty years. v. 8. 11. Job",
+       "1, 3.  With an adverb, Gen. 15, 5 כֹּה",
+       "יִהְיֶה זַרְעֶךָ so shall thy seed be.  With a",
+       "subst. having the prefix כְּ, Ps. 22, 15 הָיָה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4087b87e-985c-42d1-9235-f33e2b5af9f8",
+      "duration_api_ms": 14444,
+      "cost_usd_list": 0.094248,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 818
+     },
+     "lines": [
+      {
+       "draft": "hundred and thirty years. v. 8. 11. Job",
+       "reread": "hundred and thirty years. v. 8. 11. Job",
+       "status": "agreed",
+       "text": "hundred and thirty years. v. 8. 11. Job"
+      },
+      {
+       "draft": "1, 3. With an adverb, Gen. 15, 5 כֵּן",
+       "reread": "1, 3.  With an adverb, Gen. 15, 5 כֹּה",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "1, 3. With an adverb, Gen. 15, 5 כֵּן",
+        "verdict": "a",
+        "note": "Final letter is a final nun ן with a clear descender below the baseline (not he ה), and the kaf has tsere (two dots) beneath it, no holem above — so כֵּן as in Reading A, not כֹּה.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "58a58687-4b78-431f-aef6-224c36c12d51",
+        "duration_api_ms": 15661,
+        "cost_usd_list": 0.0862605,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3482,
+        "cache_creation_input_tokens": 2545,
+        "output_tokens": 683
+       },
+       "text": "1, 3. With an adverb, Gen. 15, 5 כֵּן"
+      },
+      {
+       "draft": "יִהְיֶה זַרְעֶךָ so shall thy seed be. With a",
+       "reread": "יִהְיֶה זַרְעֶךָ so shall thy seed be.  With a",
+       "status": "agreed",
+       "text": "יִהְיֶה זַרְעֶךָ so shall thy seed be. With a"
+      },
+      {
+       "draft": "subst. having the prefix כְּ, Ps. 22, 15 הָיָה",
+       "reread": "subst. having the prefix כְּ, Ps. 22, 15 הָיָה",
+       "status": "agreed",
+       "text": "subst. having the prefix כְּ, Ps. 22, 15 הָיָה"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 174,
+      "y": 2369,
+      "width": 885,
+      "height": 132
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r02-b03-885x132+174+2369-x2.png",
+     "image_sha256": "c25d4bc46d8200863e1a87d0df44ffb01c60aac90bee1f8ab609145fc6296816",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "לִבִּי כַדּוֹנָג my heart is like wax. Is. 1, 18.",
+       "30. 9, 18. In very many examples of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1dffee3c-d137-47ed-9c70-ed5960d37102",
+      "duration_api_ms": 12157,
+      "cost_usd_list": 0.06515800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2095,
+      "output_tokens": 441
+     },
+     "lines": [
+      {
+       "draft": "לִבִּי כַּדּוֹנָג my heart is like wax. Is. 1, 18.",
+       "reread": "לִבִּי כַדּוֹנָג my heart is like wax. Is. 1, 18.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "לִבִּי כַדּוֹנָג my heart is like wax. Is. 1, 18.",
+        "verdict": "b",
+        "note": "The kaph of כַדּוֹנָג is printed without a dagesh (patach only); the sole dagesh in the word is in the dalet. Reading A adds a dagesh in the kaph that is not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fb68aca6-6f0e-47eb-b49d-cad51a398860",
+        "duration_api_ms": 18015,
+        "cost_usd_list": 0.0761635,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3494,
+        "cache_creation_input_tokens": 2045,
+        "output_tokens": 681
+       },
+       "text": "לִבִּי כַדּוֹנָג my heart is like wax. Is. 1, 18."
+      },
+      {
+       "draft": "30. 9, 18. In very many examples of",
+       "reread": "30. 9, 18. In very many examples of",
+       "status": "agreed",
+       "text": "30. 9, 18. In very many examples of"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 174,
+    "y": 2481,
+    "width": 885,
+    "height": 784
+   },
+   "draft_lines": [
+    "this kind the substantive verb may be",
+    "omitted; and indeed is more frequently",
+    "omitted than inserted ; see Lehrg. p. 849.",
+    "But the rules laid down as to its use by",
+    "Ewald are too narrow ; Krit. Gr. p. 632.",
+    "Kl. Gr. § 571. 2. b) As expressing",
+    "the being or remaining in any place or",
+    "state ; Gen. 4, 8 וַיְהִי בִּהְיוֹתָם בַּשָּׂדֶה and it",
+    "came to pass when they were in the field,",
+    "pr. in their being in the field. 13, 3. 17,",
+    "13. Is. 7, 23. Gen. 2, 18 לֹא טוֹב הֱיוֹת הָאָדָם",
+    "לְבַדּוֹ it is not good for man to be alone.",
+    "Ecc. 7, 14. c) Emphatic; to be in exist-",
+    "ence, to exist, e. g. in some place, Gen. 2, 5"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 174,
+      "y": 2473,
+      "width": 885,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r03-b00-885x242+174+2473-x2.png",
+     "image_sha256": "3a0502a52b8217f18a8bea75ee17dbb3541e431467c0f93759f7cd940812675f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "this kind the substantive verb may be",
+       "omitted; and indeed is more frequently",
+       "omitted than inserted ; see Lehrg. p. 849.",
+       "But the rules laid down as to its use by"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ef107b64-71eb-478f-a859-06b56846446e",
+      "duration_api_ms": 9011,
+      "cost_usd_list": 0.06539800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "this kind the substantive verb may be",
+       "reread": "this kind the substantive verb may be",
+       "status": "agreed",
+       "text": "this kind the substantive verb may be"
+      },
+      {
+       "draft": "omitted; and indeed is more frequently",
+       "reread": "omitted; and indeed is more frequently",
+       "status": "agreed",
+       "text": "omitted; and indeed is more frequently"
+      },
+      {
+       "draft": "omitted than inserted ; see Lehrg. p. 849.",
+       "reread": "omitted than inserted ; see Lehrg. p. 849.",
+       "status": "agreed",
+       "text": "omitted than inserted; see Lehrg. p. 849."
+      },
+      {
+       "draft": "But the rules laid down as to its use by",
+       "reread": "But the rules laid down as to its use by",
+       "status": "agreed",
+       "text": "But the rules laid down as to its use by"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 174,
+      "y": 2699,
+      "width": 885,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r03-b01-885x240+174+2699-x2.png",
+     "image_sha256": "204008eaeba73e0568dc7ad3355eed9f7e591fc33c06589e62adc46dc484c0aa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ewald are too narrow ; Krit. Gr. p. 632.",
+       "Kl. Gr. § 571. 2.   b) As expressing",
+       "the being or remaining in any place or",
+       "state ; Gen. 4, 8 וַיְהִי בִּהְיוֹתָם בַּשָּׂדֶה and it"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b132bad9-9a26-4b48-9766-c8ba77c6b604",
+      "duration_api_ms": 13704,
+      "cost_usd_list": 0.080848,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 550
+     },
+     "lines": [
+      {
+       "draft": "Ewald are too narrow ; Krit. Gr. p. 632.",
+       "reread": "Ewald are too narrow ; Krit. Gr. p. 632.",
+       "status": "agreed",
+       "text": "Ewald are too narrow; Krit. Gr. p. 632."
+      },
+      {
+       "draft": "Kl. Gr. § 571. 2. b) As expressing",
+       "reread": "Kl. Gr. § 571. 2.   b) As expressing",
+       "status": "agreed",
+       "text": "Kl. Gr. § 571. 2. b) As expressing"
+      },
+      {
+       "draft": "the being or remaining in any place or",
+       "reread": "the being or remaining in any place or",
+       "status": "agreed",
+       "text": "the being or remaining in any place or"
+      },
+      {
+       "draft": "state ; Gen. 4, 8 וַיְהִי בִּהְיוֹתָם בַּשָּׂדֶה and it",
+       "reread": "state ; Gen. 4, 8 וַיְהִי בִּהְיוֹתָם בַּשָּׂדֶה and it",
+       "status": "agreed",
+       "text": "state; Gen. 4, 8 וַיְהִי בִּהְיוֹתָם בַּשָּׂדֶה and it"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 174,
+      "y": 2923,
+      "width": 885,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r03-b02-885x236+174+2923-x2.png",
+     "image_sha256": "ca19b2e765942d3ab0fe7f61da0bd2823966cfc7348258f3577ed0952b7e13db",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "came to pass when they were in the field,",
+       "pr. in their being in the field. 13, 3. 17,",
+       "13. Is. 7, 23. Gen. 2, 18 לֹא טוֹב הֱיוֹת הָאָדָם",
+       "לְבַדּוֹ it is not good for man to be alone."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e25061ae-1341-4a00-922f-cd3b7e63f210",
+      "duration_api_ms": 14769,
+      "cost_usd_list": 0.073968,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 438
+     },
+     "lines": [
+      {
+       "draft": "came to pass when they were in the field,",
+       "reread": "came to pass when they were in the field,",
+       "status": "agreed",
+       "text": "came to pass when they were in the field,"
+      },
+      {
+       "draft": "pr. in their being in the field. 13, 3. 17,",
+       "reread": "pr. in their being in the field. 13, 3. 17,",
+       "status": "agreed",
+       "text": "pr. in their being in the field. 13, 3. 17,"
+      },
+      {
+       "draft": "13. Is. 7, 23. Gen. 2, 18 לֹא טוֹב הֱיוֹת הָאָדָם",
+       "reread": "13. Is. 7, 23. Gen. 2, 18 לֹא טוֹב הֱיוֹת הָאָדָם",
+       "status": "agreed",
+       "text": "13. Is. 7, 23. Gen. 2, 18 לֹא טוֹב הֱיוֹת הָאָדָם"
+      },
+      {
+       "draft": "לְבַדּוֹ it is not good for man to be alone.",
+       "reread": "לְבַדּוֹ it is not good for man to be alone.",
+       "status": "agreed",
+       "text": "לְבַדּוֹ it is not good for man to be alone."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 174,
+      "y": 3143,
+      "width": 885,
+      "height": 124
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c0-r03-b03-885x124+174+3143-x2.png",
+     "image_sha256": "f3a9c9e2288bc22e980eda4fcb843e35352dd522169a1851eb57b4db27b3c958",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ecc. 7, 14. c) Emphatic; to be in exist-",
+       "ence, to exist, e. g. in some place, Gen. 2, 5"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "52f1b2a1-b461-4d09-a954-938806d76e6e",
+      "duration_api_ms": 9711,
+      "cost_usd_list": 0.054828,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2031,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "Ecc. 7, 14. c) Emphatic; to be in exist-",
+       "reread": "Ecc. 7, 14. c) Emphatic; to be in exist-",
+       "status": "agreed",
+       "text": "Ecc. 7, 14. c) Emphatic; to be in exist-"
+      },
+      {
+       "draft": "ence, to exist, e. g. in some place, Gen. 2, 5",
+       "reread": "ence, to exist, e. g. in some place, Gen. 2, 5",
+       "status": "agreed",
+       "text": "ence, to exist, e. g. in some place, Gen. 2, 5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1077,
+    "y": 140,
+    "width": 884,
+    "height": 686
+   },
+   "draft_lines": [
+    "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of",
+    "the field were not yet in the earth, did not",
+    "yet exist. 6, 4. Is. 11, 16. Absol. Gen.",
+    "13, 7 וַיְהִי רִיב and there was strife. 15,",
+    "17 עֲלָטָה הָיָה there was darkness. Zech.",
+    "14, 6. Is. 15, 6. Ecc. 1, 9. 10.—Also, to",
+    "exist, to live; so Gr. εἰμί, e. g. ἔτ᾽ εἰσί",
+    "Hom. Od. 15. 432; οὐ δὴν ἦν Il. 6. 131.",
+    "Matt. 2, 18. So Job 3, 16 as a hidden",
+    "untimely birth לֹא אֶהְיֶה I had not been,",
+    "should not have existed, lived. Is. 23, 13."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1077,
+      "y": 132,
+      "width": 884,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r00-b00-884x250+1077+132-x2.png",
+     "image_sha256": "6bdb46a35371fa1a8863f366d5027cf4de1947d5c336268cf0aa582bcdb64471",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of",
+       "the field were not yet in the earth, did not",
+       "yet exist. 6, 4. Is. 11, 16. Absol. Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "543bf265-7aa4-4706-ab5b-79b7a6964ea1",
+      "duration_api_ms": 15864,
+      "cost_usd_list": 0.088698,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 707
+     },
+     "lines": [
+      {
+       "draft": "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of",
+       "reread": "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of",
+       "status": "agreed",
+       "text": "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of"
+      },
+      {
+       "draft": "the field were not yet in the earth, did not",
+       "reread": "the field were not yet in the earth, did not",
+       "status": "agreed",
+       "text": "the field were not yet in the earth, did not"
+      },
+      {
+       "draft": "yet exist. 6, 4. Is. 11, 16. Absol. Gen.",
+       "reread": "yet exist. 6, 4. Is. 11, 16. Absol. Gen.",
+       "status": "agreed",
+       "text": "yet exist. 6, 4. Is. 11, 16. Absol. Gen."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1077,
+      "y": 366,
+      "width": 884,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r00-b01-884x233+1077+366-x2.png",
+     "image_sha256": "6c537a45f2d8d3efa00ba3819951f2364b3c11c7f153425b77e44d5ddfccdafa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "13, 7 וַיְהִי רִיב and there was strife. 15,",
+       "17 עֲלָטָה הָיָה there was darkness. Zech.",
+       "14, 6. Is. 15, 6. Ecc. 1, 9. 10.—Also, to",
+       "exist, to live; so Gr. εἰμί, e. g. ἔτ᾽ εἰσί"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d572919-5645-401d-ae5d-e6c0a7f3abf1",
+      "duration_api_ms": 15231,
+      "cost_usd_list": 0.08136800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2543,
+      "output_tokens": 586
+     },
+     "lines": [
+      {
+       "draft": "13, 7 וַיְהִי רִיב and there was strife. 15,",
+       "reread": "13, 7 וַיְהִי רִיב and there was strife. 15,",
+       "status": "agreed",
+       "text": "13, 7 וַיְהִי רִיב and there was strife. 15,"
+      },
+      {
+       "draft": "17 עֲלָטָה הָיָה there was darkness. Zech.",
+       "reread": "17 עֲלָטָה הָיָה there was darkness. Zech.",
+       "status": "agreed",
+       "text": "17 עֲלָטָה הָיָה there was darkness. Zech."
+      },
+      {
+       "draft": "14, 6. Is. 15, 6. Ecc. 1, 9. 10.—Also, to",
+       "reread": "14, 6. Is. 15, 6. Ecc. 1, 9. 10.—Also, to",
+       "status": "agreed",
+       "text": "14, 6. Is. 15, 6. Ecc. 1, 9. 10.—Also, to"
+      },
+      {
+       "draft": "exist, to live; so Gr. εἰμί, e. g. ἔτ᾽ εἰσί",
+       "reread": "exist, to live; so Gr. εἰμί, e. g. ἔτ᾽ εἰσί",
+       "status": "agreed",
+       "text": "exist, to live; so Gr. εἰμί, e. g. ἔτ᾽ εἰσί"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1077,
+      "y": 583,
+      "width": 884,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r00-b02-884x251+1077+583-x2.png",
+     "image_sha256": "df2fe2e83ad7ee182dae4f2c3cf1beec2d703ec17626b0d0dbd0b0476c0a8380",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Hom. Od. 15. 432 ; οὐ δὴν ἦν Il. 6. 131.",
+       "Matt. 2, 18. So Job 3, 16 as a hidden",
+       "untimely birth לֹא אֶהְיֶה I had not been,",
+       "should not have existed, lived. Is. 23, 13."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "846ece9c-bb01-4de5-94c8-24ca116df3f6",
+      "duration_api_ms": 11854,
+      "cost_usd_list": 0.07374800000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 408
+     },
+     "lines": [
+      {
+       "draft": "Hom. Od. 15. 432; οὐ δὴν ἦν Il. 6. 131.",
+       "reread": "Hom. Od. 15. 432 ; οὐ δὴν ἦν Il. 6. 131.",
+       "status": "agreed",
+       "text": "Hom. Od. 15. 432; οὐ δὴν ἦν Il. 6. 131."
+      },
+      {
+       "draft": "Matt. 2, 18. So Job 3, 16 as a hidden",
+       "reread": "Matt. 2, 18. So Job 3, 16 as a hidden",
+       "status": "agreed",
+       "text": "Matt. 2, 18. So Job 3, 16 as a hidden"
+      },
+      {
+       "draft": "untimely birth לֹא אֶהְיֶה I had not been,",
+       "reread": "untimely birth לֹא אֶהְיֶה I had not been,",
+       "status": "agreed",
+       "text": "untimely birth לֹא אֶהְיֶה I had not been,"
+      },
+      {
+       "draft": "should not have existed, lived. Is. 23, 13.",
+       "reread": "should not have existed, lived. Is. 23, 13.",
+       "status": "agreed",
+       "text": "should not have existed, lived. Is. 23, 13."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1077,
+    "y": 814,
+    "width": 884,
+    "height": 767
+   },
+   "draft_lines": [
+    "Dan. 1, 21. Ecc. 2, 7. 18. 4, 16. 6, 12.",
+    "The following constructions and phra-",
+    "ses may also be noted : aa) הָיָה קֹטֵל,",
+    "he was slaying, for he slew ; comp. Syr.",
+    "ܗܘܳܐ ܩܳܛܶܠ. Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+    "was building. 15, 17 וַיְהִי הַשֶּׁמֶשׁ בָּאָה",
+    "and the sun was going down. Is. 10, 14.",
+    "Often in the later writers, Job 1, 14.",
+    "Neh. 1. 4. 2, 13. 15. bb) הָיָה לְ, to be to",
+    "any one, i. e. to belong to, and with a per-",
+    "sonal subject, to have. Gen. 12, 16 וַיְהִי",
+    "לוֹ צֹאן וּבָקָר and he had sheep and oxen.",
+    "Ex. 20, 3 לֹא־יִהְיֶה לְךָ אֱלֹהִים אֲחֵרִים thou"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1077,
+      "y": 806,
+      "width": 884,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r01-b00-884x242+1077+806-x2.png",
+     "image_sha256": "afc07eff0c4ee7c41e010bd4edf96b7ec5df26bd9cf34f70c4ffb6d4e4a676a0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Dan. 1, 21. Ecc. 2, 7. 18. 4, 16. 6, 12.",
+       "The following constructions and phra-",
+       "ses may also be noted: aa) הָיָה קֹטֵל,",
+       "he was slaying, for he slew; comp. Syr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "58120db2-1017-46db-9ec1-bfffd9e9bad8",
+      "duration_api_ms": 9438,
+      "cost_usd_list": 0.066848,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3472,
+      "cache_creation_input_tokens": 2607,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "Dan. 1, 21. Ecc. 2, 7. 18. 4, 16. 6, 12.",
+       "reread": "Dan. 1, 21. Ecc. 2, 7. 18. 4, 16. 6, 12.",
+       "status": "agreed",
+       "text": "Dan. 1, 21. Ecc. 2, 7. 18. 4, 16. 6, 12."
+      },
+      {
+       "draft": "The following constructions and phra-",
+       "reread": "The following constructions and phra-",
+       "status": "agreed",
+       "text": "The following constructions and phra-"
+      },
+      {
+       "draft": "ses may also be noted : aa) הָיָה קֹטֵל,",
+       "reread": "ses may also be noted: aa) הָיָה קֹטֵל,",
+       "status": "agreed",
+       "text": "ses may also be noted: aa) הָיָה קֹטֵל,"
+      },
+      {
+       "draft": "he was slaying, for he slew ; comp. Syr.",
+       "reread": "he was slaying, for he slew; comp. Syr.",
+       "status": "agreed",
+       "text": "he was slaying, for he slew; comp. Syr."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1077,
+      "y": 1032,
+      "width": 884,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r01-b01-884x259+1077+1032-x2.png",
+     "image_sha256": "5cd570abc23d4432ddf8094793d7bb7148fe7d956e50cf26d228195ad9a19ba6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܡܬܠ ܗܘܐ.  Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+       "was building. 15, 17 וַיְהִי הַשֶּׁמֶשׁ בָּאָה",
+       "and the sun was going down. Is. 10, 14.",
+       "Often in the later writers, Job 1, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a486e671-8244-440a-b55d-ce6cf37b79b9",
+      "duration_api_ms": 22447,
+      "cost_usd_list": 0.10046825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 916
+     },
+     "lines": [
+      {
+       "draft": "ܗܘܳܐ ܩܳܛܶܠ. Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+       "reread": "ܡܬܠ ܗܘܐ.  Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "ܩܳܛܶܠ ܗܘܳܐ. Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+        "verdict": "neither",
+        "note": "Printed Syriac is pointed (so B's unpointed ܡܬܠ ܗܘܐ is wrong, and its letters are wrong), but the rightmost-printed word is ܩܳܛܶܠ and ܗܘܳܐ stands leftmost, so in logical order it is ܩܳܛܶܠ ܗܘܳܐ, the reverse of A's order.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9e7214e8-864d-41cd-af6f-8a4ed2895e8d",
+        "duration_api_ms": 30366,
+        "cost_usd_list": 0.12344074999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3523,
+        "cache_creation_input_tokens": 2651,
+        "output_tokens": 1384
+       },
+       "text": "ܩܳܛܶܠ ܗܘܳܐ. Gen. 4, 17 וַיְהִי בֹּנֶה and he"
+      },
+      {
+       "draft": "was building. 15, 17 וַיְהִי הַשֶּׁמֶשׁ בָּאָה",
+       "reread": "was building. 15, 17 וַיְהִי הַשֶּׁמֶשׁ בָּאָה",
+       "status": "agreed",
+       "text": "was building. 15, 17 וַיְהִי הַשֶּׁמֶשׁ בָּאָה"
+      },
+      {
+       "draft": "and the sun was going down. Is. 10, 14.",
+       "reread": "and the sun was going down. Is. 10, 14.",
+       "status": "agreed",
+       "text": "and the sun was going down. Is. 10, 14."
+      },
+      {
+       "draft": "Often in the later writers, Job 1, 14.",
+       "reread": "Often in the later writers, Job 1, 14.",
+       "status": "agreed",
+       "text": "Often in the later writers, Job 1, 14."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1077,
+      "y": 1275,
+      "width": 884,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r01-b02-884x243+1077+1275-x2.png",
+     "image_sha256": "3d1e9dda4810877b3240be4b18d4dd3aa03d6e85f00160b05b111a8fe61ee159",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Neh. 1. 4. 2, 13. 15.  bb) הָיָה לְ, to be to",
+       "any one, i. e. to belong to, and with a per-",
+       "sonal subject, to have. Gen. 12, 16 וַיְהִי",
+       "לוֹ צֹאן וּבָקָר and he had sheep and oxen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "de6e6867-3d77-4e99-9588-d0d0beb63295",
+      "duration_api_ms": 15939,
+      "cost_usd_list": 0.08538825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 640
+     },
+     "lines": [
+      {
+       "draft": "Neh. 1. 4. 2, 13. 15. bb) הָיָה לְ, to be to",
+       "reread": "Neh. 1. 4. 2, 13. 15.  bb) הָיָה לְ, to be to",
+       "status": "agreed",
+       "text": "Neh. 1. 4. 2, 13. 15. bb) הָיָה לְ, to be to"
+      },
+      {
+       "draft": "any one, i. e. to belong to, and with a per-",
+       "reread": "any one, i. e. to belong to, and with a per-",
+       "status": "agreed",
+       "text": "any one, i. e. to belong to, and with a per-"
+      },
+      {
+       "draft": "sonal subject, to have. Gen. 12, 16 וַיְהִי",
+       "reread": "sonal subject, to have. Gen. 12, 16 וַיְהִי",
+       "status": "agreed",
+       "text": "sonal subject, to have. Gen. 12, 16 וַיְהִי"
+      },
+      {
+       "draft": "לוֹ צֹאן וּבָקָר and he had sheep and oxen.",
+       "reread": "לוֹ צֹאן וּבָקָר and he had sheep and oxen.",
+       "status": "agreed",
+       "text": "לוֹ צֹאן וּבָקָר and he had sheep and oxen."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1077,
+      "y": 1502,
+      "width": 884,
+      "height": 87
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r01-b03-884x87+1077+1502-x2.png",
+     "image_sha256": "889a4ccc5e5ad94acd0f0e3fab05ac6278b7a1804120da0a91e09661ca9a774b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ex. 20, 3 לֹא־יִהְיֶה לְךָ אֱלֹהִים אֲחֵרִים thou"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "57e94f31-e75f-4978-b111-c610075c84fa",
+      "duration_api_ms": 11970,
+      "cost_usd_list": 0.054158250000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 1905,
+      "output_tokens": 297
+     },
+     "lines": [
+      {
+       "draft": "Ex. 20, 3 לֹא־יִהְיֶה לְךָ אֱלֹהִים אֲחֵרִים thou",
+       "reread": "Ex. 20, 3 לֹא־יִהְיֶה לְךָ אֱלֹהִים אֲחֵרִים thou",
+       "status": "agreed",
+       "text": "Ex. 20, 3 לֹא־יִהְיֶה לְךָ אֱלֹהִים אֲחֵרִים thou"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1077,
+    "y": 1569,
+    "width": 884,
+    "height": 981
+   },
+   "draft_lines": [
+    "shalt have no other gods. Gen. 13, 5.",
+    "2 Sam. 12, 2. Is. 5, 1; לְ omitted 2 Sam.",
+    "4, 2. Comp. יֶשׁ לִי, Gr. ἔστι μοι, Arab.",
+    "كان لى est mihi, i. q. habeo, Cor. 10. 100.",
+    "cc) Also הָיָה לְ, to be for any thing, i. e.",
+    "to serve as or for any thing, to be any",
+    "thing, Gr. εἶναι εἴς τι, γένεσθαι εἴς τι.",
+    "Gen. 1, 15 וְהָיוּ לִמְאוֹרֹת and they shall",
+    "be for lights. v. 14. 29. Is. 1, 14 הָיוּ עָלַי",
+    "לָטֹרַח they are to me for a burden. With",
+    "לְ c. inf. Is. 5, 5 וְהָיָה לְבָעֵר and it shall",
+    "be for consuming, burning, pr. Eng. it",
+    "shall be to burn. With a dat. of pers.",
+    "Gen. 6, 21 וְהָיָה לְךָ וְלָהֶם לְאָכְלָה and it",
+    "shall be to thee and to them for food. Ex.",
+    "4, 16 הוּא יִהְיֶה לְךָ לְפֶה וְאַתָּה תִהְיֶה לוֹ",
+    "לֵאלֹהִים he shall be to thee for a mouth,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1077,
+      "y": 1561,
+      "width": 884,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r02-b00-884x259+1077+1561-x2.png",
+     "image_sha256": "6cef4136b24bee1a5eadc3561a29e3fc18da44c38453b29420938900791966ab",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "shalt have no other gods. Gen. 13, 5.",
+       "2 Sam. 12, 2. Is. 5, 1; לְ omitted 2 Sam.",
+       "4, 2. Comp. יֶשׁ לִי, Gr. ἔστι μοι, Arab.",
+       "كان لى est mihi, i. q. habeo, Cor. 10. 100."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fb8d1864-2de5-48fd-8b96-d298a9f69aa2",
+      "duration_api_ms": 11303,
+      "cost_usd_list": 0.06971825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 301
+     },
+     "lines": [
+      {
+       "draft": "shalt have no other gods. Gen. 13, 5.",
+       "reread": "shalt have no other gods. Gen. 13, 5.",
+       "status": "agreed",
+       "text": "shalt have no other gods. Gen. 13, 5."
+      },
+      {
+       "draft": "2 Sam. 12, 2. Is. 5, 1; לְ omitted 2 Sam.",
+       "reread": "2 Sam. 12, 2. Is. 5, 1; לְ omitted 2 Sam.",
+       "status": "agreed",
+       "text": "2 Sam. 12, 2. Is. 5, 1; לְ omitted 2 Sam."
+      },
+      {
+       "draft": "4, 2. Comp. יֶשׁ לִי, Gr. ἔστι μοι, Arab.",
+       "reread": "4, 2. Comp. יֶשׁ לִי, Gr. ἔστι μοι, Arab.",
+       "status": "agreed",
+       "text": "4, 2. Comp. יֶשׁ לִי, Gr. ἔστι μοι, Arab."
+      },
+      {
+       "draft": "كان لى est mihi, i. q. habeo, Cor. 10. 100.",
+       "reread": "كان لى est mihi, i. q. habeo, Cor. 10. 100.",
+       "status": "agreed",
+       "text": "كان لى est mihi, i. q. habeo, Cor. 10. 100."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1077,
+      "y": 1804,
+      "width": 884,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r02-b01-884x226+1077+1804-x2.png",
+     "image_sha256": "717196d7295786a2fda75f8250ed123c0f58d91e5c6afd8b0bbf4d3a7f155022",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cc) Also הָיָה לְ, to be for any thing, i. e.",
+       "to serve as or for any thing, to be any",
+       "thing, Gr. εἶναι εἴς τι, γένεσθαι εἴς τι.",
+       "Gen. 1, 15 וְהָיוּ לִמְאוֹרֹת and they shall"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "56fe0891-441a-4c4e-be58-63d97f430d19",
+      "duration_api_ms": 17736,
+      "cost_usd_list": 0.08810825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 720
+     },
+     "lines": [
+      {
+       "draft": "cc) Also הָיָה לְ, to be for any thing, i. e.",
+       "reread": "cc) Also הָיָה לְ, to be for any thing, i. e.",
+       "status": "agreed",
+       "text": "cc) Also הָיָה לְ, to be for any thing, i. e."
+      },
+      {
+       "draft": "to serve as or for any thing, to be any",
+       "reread": "to serve as or for any thing, to be any",
+       "status": "agreed",
+       "text": "to serve as or for any thing, to be any"
+      },
+      {
+       "draft": "thing, Gr. εἶναι εἴς τι, γένεσθαι εἴς τι.",
+       "reread": "thing, Gr. εἶναι εἴς τι, γένεσθαι εἴς τι.",
+       "status": "agreed",
+       "text": "thing, Gr. εἶναι εἴς τι, γένεσθαι εἴς τι."
+      },
+      {
+       "draft": "Gen. 1, 15 וְהָיוּ לִמְאוֹרֹת and they shall",
+       "reread": "Gen. 1, 15 וְהָיוּ לִמְאוֹרֹת and they shall",
+       "status": "agreed",
+       "text": "Gen. 1, 15 וְהָיוּ לִמְאוֹרֹת and they shall"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1077,
+      "y": 2014,
+      "width": 884,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r02-b02-884x249+1077+2014-x2.png",
+     "image_sha256": "56a3aabed0cdd704f591b98963afb3a269feafda40873ca6dc3207a671aeb9b9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "be for lights. v. 14. 29. Is. 1, 14 הָיוּ עָלַי",
+       "לָטֹרַח they are to me for a burden. With",
+       "לְ c. inf. Is. 5, 5 וְהָיָה לְבָעֵר and it shall",
+       "be for consuming, burning, pr. Eng. it"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "153903e9-54e2-47a0-860b-0cae27102be6",
+      "duration_api_ms": 13974,
+      "cost_usd_list": 0.08428825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 618
+     },
+     "lines": [
+      {
+       "draft": "be for lights. v. 14. 29. Is. 1, 14 הָיוּ עָלַי",
+       "reread": "be for lights. v. 14. 29. Is. 1, 14 הָיוּ עָלַי",
+       "status": "agreed",
+       "text": "be for lights. v. 14. 29. Is. 1, 14 הָיוּ עָלַי"
+      },
+      {
+       "draft": "לָטֹרַח they are to me for a burden. With",
+       "reread": "לָטֹרַח they are to me for a burden. With",
+       "status": "agreed",
+       "text": "לָטֹרַח they are to me for a burden. With"
+      },
+      {
+       "draft": "לְ c. inf. Is. 5, 5 וְהָיָה לְבָעֵר and it shall",
+       "reread": "לְ c. inf. Is. 5, 5 וְהָיָה לְבָעֵר and it shall",
+       "status": "agreed",
+       "text": "לְ c. inf. Is. 5, 5 וְהָיָה לְבָעֵר and it shall"
+      },
+      {
+       "draft": "be for consuming, burning, pr. Eng. it",
+       "reread": "be for consuming, burning, pr. Eng. it",
+       "status": "agreed",
+       "text": "be for consuming, burning, pr. Eng. it"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1077,
+      "y": 2247,
+      "width": 884,
+      "height": 186
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r02-b03-884x186+1077+2247-x2.png",
+     "image_sha256": "e8d7ed1f9d6d641bf57241d9c219dae5347e34da8b5d9d12981644a5a63d3427",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "shall be to burn. With a dat. of pers.",
+       "Gen. 6, 21 וְהָיָה לְךָ וְלָהֶם לְאָכְלָה and it",
+       "shall be to thee and to them for food. Ex."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28357106-9aed-4bb1-8417-80eabf8e1f0a",
+      "duration_api_ms": 8084,
+      "cost_usd_list": 0.06726825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2353,
+      "output_tokens": 380
+     },
+     "lines": [
+      {
+       "draft": "shall be to burn. With a dat. of pers.",
+       "reread": "shall be to burn. With a dat. of pers.",
+       "status": "agreed",
+       "text": "shall be to burn. With a dat. of pers."
+      },
+      {
+       "draft": "Gen. 6, 21 וְהָיָה לְךָ וְלָהֶם לְאָכְלָה and it",
+       "reread": "Gen. 6, 21 וְהָיָה לְךָ וְלָהֶם לְאָכְלָה and it",
+       "status": "agreed",
+       "text": "Gen. 6, 21 וְהָיָה לְךָ וְלָהֶם לְאָכְלָה and it"
+      },
+      {
+       "draft": "shall be to thee and to them for food. Ex.",
+       "reread": "shall be to thee and to them for food. Ex.",
+       "status": "agreed",
+       "text": "shall be to thee and to them for food. Ex."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b04",
+     "bounds": {
+      "x": 1077,
+      "y": 2417,
+      "width": 884,
+      "height": 130
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r02-b04-884x130+1077+2417-x2.png",
+     "image_sha256": "8780e66d46bcf1e6341fa4c96a259e3e830f06f540c59c09e0d006223ea43616",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "4, 16 הוּא יִהְיֶה לְּךָ לְפֶה וְאַתָּה תִּהְיֶה לּוֹ",
+       "לֵאלֹהִים he shall be to thee for a mouth,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0100eeb5-0ff6-4094-80f1-e31b9b3c820a",
+      "duration_api_ms": 14201,
+      "cost_usd_list": 0.07869825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2097,
+      "output_tokens": 711
+     },
+     "lines": [
+      {
+       "draft": "4, 16 הוּא יִהְיֶה לְךָ לְפֶה וְאַתָּה תִהְיֶה לוֹ",
+       "reread": "4, 16 הוּא יִהְיֶה לְּךָ לְפֶה וְאַתָּה תִּהְיֶה לּוֹ",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b04",
+       "judgement": {
+        "text": "4, 16 הוּא יִהְיֶה לְּךָ לְפֶה וְאַתָּה תִּהְיֶה לּוֹ",
+        "verdict": "b",
+        "note": "The print shows dagesh dots in the lamed of לְּךָ, the tav of תִּהְיֶה and the lamed of לּוֹ (matching MT Ex 4:16 pointing); Reading A omits all three. Otherwise both readings match the print, including the defective/plene spellings and the number \"4, 16\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cc4409e3-3ca6-4e89-a49e-4d1c5403de57",
+        "duration_api_ms": 19030,
+        "cost_usd_list": 0.08548275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3531,
+        "cache_creation_input_tokens": 2083,
+        "output_tokens": 852
+       },
+       "text": "4, 16 הוּא יִהְיֶה לְּךָ לְפֶה וְאַתָּה תִּהְיֶה לּוֹ"
+      },
+      {
+       "draft": "לֵאלֹהִים he shall be to thee for a mouth,",
+       "reread": "לֵאלֹהִים he shall be to thee for a mouth,",
+       "status": "agreed",
+       "text": "לֵאלֹהִים he shall be to thee for a mouth,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1077,
+    "y": 2538,
+    "width": 884,
+    "height": 876
+   },
+   "draft_lines": [
+    "and thou shalt be to him for God, i. e.",
+    "he shall speak in public whatever thou",
+    "shalt suggest to him in private.—",
+    "Sometimes הָיָה לְ is i. q. to show oneself",
+    "so and so, to acquit oneself as; 1 Sam.",
+    "4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים be strong and",
+    "quit yourselves like men. So with לְ",
+    "twice, 1 Sam. 18, 17 הֱיֵה־לִי לְבֶן־חַיִל be",
+    "thou valiant for me, pr. quit thyself for",
+    "me as a man of valour. dd) The for-",
+    "mula הָיָה לַעֲשׂוֹת has a double signif.",
+    "α) to be about to do, to begin to do, as",
+    "Gen. 15, 12 וַיְהִי הַשֶּׁמֶשׁ לָבוֹא and the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1077,
+      "y": 2530,
+      "width": 884,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r03-b00-884x243+1077+2530-x2.png",
+     "image_sha256": "ca6ff42ed5c70f63980a49de86f0054b7f02567f9d5c4680d05ba0509064e047",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and thou shalt be to him for God, i. e.",
+       "he shall speak in public whatever thou",
+       "shalt suggest to him in private.—",
+       "Sometimes הָיָה לְ is i. q. to show oneself"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a162ea4c-e2c5-466e-bc32-2668f12990bd",
+      "duration_api_ms": 9853,
+      "cost_usd_list": 0.06578825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 248
+     },
+     "lines": [
+      {
+       "draft": "and thou shalt be to him for God, i. e.",
+       "reread": "and thou shalt be to him for God, i. e.",
+       "status": "agreed",
+       "text": "and thou shalt be to him for God, i. e."
+      },
+      {
+       "draft": "he shall speak in public whatever thou",
+       "reread": "he shall speak in public whatever thou",
+       "status": "agreed",
+       "text": "he shall speak in public whatever thou"
+      },
+      {
+       "draft": "shalt suggest to him in private.—",
+       "reread": "shalt suggest to him in private.—",
+       "status": "agreed",
+       "text": "shalt suggest to him in private.—"
+      },
+      {
+       "draft": "Sometimes הָיָה לְ is i. q. to show oneself",
+       "reread": "Sometimes הָיָה לְ is i. q. to show oneself",
+       "status": "agreed",
+       "text": "Sometimes הָיָה לְ is i. q. to show oneself"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1077,
+      "y": 2757,
+      "width": 884,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r03-b01-884x239+1077+2757-x2.png",
+     "image_sha256": "7918ae1f70ada00b79ed2afbcbee8a7f91f9438aace7ae512a5bf26c30d74709",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "so and so, to acquit oneself as; 1 Sam.",
+       "4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים be strong and",
+       "quit yourselves like men. So with לְ",
+       "twice, 1 Sam. 18, 17 הֱיֵה־לִי לְבֶן־חַיִל be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a68f9b64-3986-48c7-ab3f-585fd2b2181d",
+      "duration_api_ms": 17819,
+      "cost_usd_list": 0.08478825000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 628
+     },
+     "lines": [
+      {
+       "draft": "so and so, to acquit oneself as; 1 Sam.",
+       "reread": "so and so, to acquit oneself as; 1 Sam.",
+       "status": "agreed",
+       "text": "so and so, to acquit oneself as; 1 Sam."
+      },
+      {
+       "draft": "4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים be strong and",
+       "reread": "4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים be strong and",
+       "status": "agreed",
+       "text": "4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים be strong and"
+      },
+      {
+       "draft": "quit yourselves like men. So with לְ",
+       "reread": "quit yourselves like men. So with לְ",
+       "status": "agreed",
+       "text": "quit yourselves like men. So with לְ"
+      },
+      {
+       "draft": "twice, 1 Sam. 18, 17 הֱיֵה־לִי לְבֶן־חַיִל be",
+       "reread": "twice, 1 Sam. 18, 17 הֱיֵה־לִי לְבֶן־חַיִל be",
+       "status": "agreed",
+       "text": "twice, 1 Sam. 18, 17 הֱיֵה־לִי לְבֶן־חַיִל be"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1077,
+      "y": 2980,
+      "width": 884,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r03-b02-884x233+1077+2980-x2.png",
+     "image_sha256": "c8e95ea4fa002eabf0ffcf25a1ee10a03ea7de79a2b894b153f8b852be0de7b7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "thou valiant for me, pr. quit thyself for",
+       "me as a man of valour. dd) The for-",
+       "mula הָיָה לַעֲשׂוֹת has a double signif.",
+       "α) to be about to do, to begin to do, as"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "11e79944-cfdb-4ee7-817b-b7fad55b2bb9",
+      "duration_api_ms": 14175,
+      "cost_usd_list": 0.07015825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2545,
+      "output_tokens": 361
+     },
+     "lines": [
+      {
+       "draft": "thou valiant for me, pr. quit thyself for",
+       "reread": "thou valiant for me, pr. quit thyself for",
+       "status": "agreed",
+       "text": "thou valiant for me, pr. quit thyself for"
+      },
+      {
+       "draft": "me as a man of valour. dd) The for-",
+       "reread": "me as a man of valour. dd) The for-",
+       "status": "agreed",
+       "text": "me as a man of valour. dd) The for-"
+      },
+      {
+       "draft": "mula הָיָה לַעֲשׂוֹת has a double signif.",
+       "reread": "mula הָיָה לַעֲשׂוֹת has a double signif.",
+       "status": "agreed",
+       "text": "mula הָיָה לַעֲשׂוֹת has a double signif."
+      },
+      {
+       "draft": "α) to be about to do, to begin to do, as",
+       "reread": "α) to be about to do, to begin to do, as",
+       "status": "agreed",
+       "text": "α) to be about to do, to begin to do, as"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1077,
+      "y": 3197,
+      "width": 884,
+      "height": 219
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0266/pass2/c1-r03-b03-884x219+1077+3197-x2.png",
+     "image_sha256": "2a6bf177577b281e3b2ed10fac5bc28fe7ca57364ddc9c9e6316d550511fad91",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gen. 15, 12 וַיְהִי הַשֶּׁמֶשׁ לָבוֹא and the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1ed16cca-cf23-4f9b-a6b5-90f2aecbbc86",
+      "duration_api_ms": 11659,
+      "cost_usd_list": 0.07137825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3473,
+      "cache_creation_input_tokens": 2481,
+      "output_tokens": 411
+     },
+     "lines": [
+      {
+       "draft": "Gen. 15, 12 וַיְהִי הַשֶּׁמֶשׁ לָבוֹא and the",
+       "reread": "Gen. 15, 12 וַיְהִי הַשֶּׁמֶשׁ לָבוֹא and the",
+       "status": "agreed",
+       "text": "Gen. 15, 12 וַיְהִי הַשֶּׁמֶשׁ לָבוֹא and the"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "היה 250 היה",
+   "status": "adjudicated",
+   "draft": "הָיָה 250 הָיָה",
+   "reread": "היה 250 היה",
+   "verdict": "b",
+   "note": "Running-header catchwords are printed unpointed: no qamets or any vowel point appears under either היה, so Reading A's pointing is not on the page.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "15. Is. 1, 22. 31. 5, 9. γ) But הָיָה לְ, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "be or become to any one, as his posses-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "sion, property, etc. Is. 17, 2 עָרֵי עֲרֹעֵר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "לַעֲדָרִים תִּהְיֶינָה the cities of Aroer shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "be for the flocks, i. e. be given up to them.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "23, 18. Job 30, 31. So espec. of a wo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "man, הָיְתָה לְאִישׁ, she became to a man,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "i. e. became his wife, (לְאִשָּׁה being often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "added, Num. 36, 3,) Num. 30, 7. 36, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deut. 21, 15. 24, 2. δ) הָיָה כְּ to be or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "become as or like any thing. Gen. 3, 5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "וִהְיִיתֶם כֵּאלֹהִים and ye shall become as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "God. v. 22. Ps. 1, 3. Cant. 1, 7. Then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "also, to be or become like any one, is to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "have the like lot with him; comp. Fr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "‘ je ne sais pas ce qu’il est devenu.’ Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1, 9 כִּסְדֹם הָיִינוּ we should have become",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "like Sodom, i. e. have experienced the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "fate of its inhabitants. Gen. 18, 25. Num.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "17, 5. Is. 17, 3. 24, 2. 28, 4. 29, 7. 30, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Comp. Is. 10, 9. 20, 6; where הָיָה is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "omitted.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. to be, i. e. the substantive verb, like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gr. εἰμί, Lat. sum. a) As the copulative",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "connecting the subject with the predi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "cate; whether the latter be an adjective,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "noun, numeral, or adverb; or whether it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "stand alone, or in connection with a par-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ticle. So with an adjective, Gen. 3, 1",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "וְהַנָּחָשׁ הָיָה עָרוּם and the serpent was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cunning. 2, 25. With a substantive,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gen. 3, 20 כִּי הִיא הָיְתָה אֵם כָּל־חָי for she",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "was the mother of all living. 5, 32. 16, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "With a subst. and numeral, Gen. 5, 5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and all the days of Adam.... were nine",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "hundred and thirty years. v. 8. 11. Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1, 3. With an adverb, Gen. 15, 5 כֵּן",
+   "status": "adjudicated",
+   "draft": "1, 3. With an adverb, Gen. 15, 5 כֵּן",
+   "reread": "1, 3.  With an adverb, Gen. 15, 5 כֹּה",
+   "verdict": "a",
+   "note": "Final letter is a final nun ן with a clear descender below the baseline (not he ה), and the kaf has tsere (two dots) beneath it, no holem above — so כֵּן as in Reading A, not כֹּה.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "יִהְיֶה זַרְעֶךָ so shall thy seed be. With a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "subst. having the prefix כְּ, Ps. 22, 15 הָיָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "לִבִּי כַדּוֹנָג my heart is like wax. Is. 1, 18.",
+   "status": "adjudicated",
+   "draft": "לִבִּי כַּדּוֹנָג my heart is like wax. Is. 1, 18.",
+   "reread": "לִבִּי כַדּוֹנָג my heart is like wax. Is. 1, 18.",
+   "verdict": "b",
+   "note": "The kaph of כַדּוֹנָג is printed without a dagesh (patach only); the sole dagesh in the word is in the dalet. Reading A adds a dagesh in the kaph that is not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "30. 9, 18. In very many examples of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "this kind the substantive verb may be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "omitted; and indeed is more frequently",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "omitted than inserted; see Lehrg. p. 849.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "But the rules laid down as to its use by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ewald are too narrow; Krit. Gr. p. 632.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Kl. Gr. § 571. 2. b) As expressing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the being or remaining in any place or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "state; Gen. 4, 8 וַיְהִי בִּהְיוֹתָם בַּשָּׂדֶה and it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "came to pass when they were in the field,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pr. in their being in the field. 13, 3. 17,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "13. Is. 7, 23. Gen. 2, 18 לֹא טוֹב הֱיוֹת הָאָדָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "לְבַדּוֹ it is not good for man to be alone.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ecc. 7, 14. c) Emphatic; to be in exist-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ence, to exist, e. g. in some place, Gen. 2, 5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "שִׂיחַ הַשָּׂדֶה טֶרֶם יִהְיֶה בָאָרֶץ the plants of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the field were not yet in the earth, did not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "yet exist. 6, 4. Is. 11, 16. Absol. Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "13, 7 וַיְהִי רִיב and there was strife. 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "17 עֲלָטָה הָיָה there was darkness. Zech.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "14, 6. Is. 15, 6. Ecc. 1, 9. 10.—Also, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "exist, to live; so Gr. εἰμί, e. g. ἔτ᾽ εἰσί",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Hom. Od. 15. 432; οὐ δὴν ἦν Il. 6. 131.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Matt. 2, 18. So Job 3, 16 as a hidden",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "untimely birth לֹא אֶהְיֶה I had not been,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "should not have existed, lived. Is. 23, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Dan. 1, 21. Ecc. 2, 7. 18. 4, 16. 6, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "The following constructions and phra-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ses may also be noted: aa) הָיָה קֹטֵל,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "he was slaying, for he slew; comp. Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ܩܳܛܶܠ ܗܘܳܐ. Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+   "status": "adjudicated",
+   "draft": "ܗܘܳܐ ܩܳܛܶܠ. Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+   "reread": "ܡܬܠ ܗܘܐ.  Gen. 4, 17 וַיְהִי בֹּנֶה and he",
+   "verdict": "neither",
+   "note": "Printed Syriac is pointed (so B's unpointed ܡܬܠ ܗܘܐ is wrong, and its letters are wrong), but the rightmost-printed word is ܩܳܛܶܠ and ܗܘܳܐ stands leftmost, so in logical order it is ܩܳܛܶܠ ܗܘܳܐ, the reverse of A's order.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "was building. 15, 17 וַיְהִי הַשֶּׁמֶשׁ בָּאָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and the sun was going down. Is. 10, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Often in the later writers, Job 1, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Neh. 1. 4. 2, 13. 15. bb) הָיָה לְ, to be to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "any one, i. e. to belong to, and with a per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sonal subject, to have. Gen. 12, 16 וַיְהִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "לוֹ צֹאן וּבָקָר and he had sheep and oxen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ex. 20, 3 לֹא־יִהְיֶה לְךָ אֱלֹהִים אֲחֵרִים thou",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "shalt have no other gods. Gen. 13, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2 Sam. 12, 2. Is. 5, 1; לְ omitted 2 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4, 2. Comp. יֶשׁ לִי, Gr. ἔστι μοι, Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "كان لى est mihi, i. q. habeo, Cor. 10. 100.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "cc) Also הָיָה לְ, to be for any thing, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to serve as or for any thing, to be any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "thing, Gr. εἶναι εἴς τι, γένεσθαι εἴς τι.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Gen. 1, 15 וְהָיוּ לִמְאוֹרֹת and they shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "be for lights. v. 14. 29. Is. 1, 14 הָיוּ עָלַי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "לָטֹרַח they are to me for a burden. With",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "לְ c. inf. Is. 5, 5 וְהָיָה לְבָעֵר and it shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "be for consuming, burning, pr. Eng. it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "shall be to burn. With a dat. of pers.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Gen. 6, 21 וְהָיָה לְךָ וְלָהֶם לְאָכְלָה and it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "shall be to thee and to them for food. Ex.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4, 16 הוּא יִהְיֶה לְּךָ לְפֶה וְאַתָּה תִּהְיֶה לּוֹ",
+   "status": "adjudicated",
+   "draft": "4, 16 הוּא יִהְיֶה לְךָ לְפֶה וְאַתָּה תִהְיֶה לוֹ",
+   "reread": "4, 16 הוּא יִהְיֶה לְּךָ לְפֶה וְאַתָּה תִּהְיֶה לּוֹ",
+   "verdict": "b",
+   "note": "The print shows dagesh dots in the lamed of לְּךָ, the tav of תִּהְיֶה and the lamed of לּוֹ (matching MT Ex 4:16 pointing); Reading A omits all three. Otherwise both readings match the print, including the defective/plene spellings and the number \"4, 16\".",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "לֵאלֹהִים he shall be to thee for a mouth,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "and thou shalt be to him for God, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "he shall speak in public whatever thou",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "shalt suggest to him in private.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Sometimes הָיָה לְ is i. q. to show oneself",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "so and so, to acquit oneself as; 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים be strong and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "quit yourselves like men. So with לְ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "twice, 1 Sam. 18, 17 הֱיֵה־לִי לְבֶן־חַיִל be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "thou valiant for me, pr. quit thyself for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "me as a man of valour. dd) The for-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "mula הָיָה לַעֲשׂוֹת has a double signif.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "α) to be about to do, to begin to do, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Gen. 15, 12 וַיְהִי הַשֶּׁמֶשׁ לָבוֹא and the",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 105,
+  "adjudicated": 5,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "errors": 0,
+ "cost_usd_list_total": 2.8281
+}

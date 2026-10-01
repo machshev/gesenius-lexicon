@@ -52,6 +52,8 @@ PROMPT = (
     "reorder, translate, normalise or omit anything that is fully visible. If the "
     "crop contains no text, return an empty array."
 )
+CLI_MODE = "lean-system-prompt-v1"
+CLI_SYSTEM_PROMPT = "You transcribe printed text from images exactly, following the user's instructions."
 SCHEMA = json.dumps(
     {
         "type": "object",
@@ -161,25 +163,17 @@ def detect_spanning_header(ink: np.ndarray, columns: list[tuple[int, int]]) -> t
     across the gutter, so their rows have ink inside the gutter. A vertical
     column rule also inks the gutter, but over most of the page height, so
     gutter pixel columns inked on more than 5% of rows, and their neighbours,
-    are masked out first; the skewed rule spreads over several such columns. What remains is the
-    header ink. Rows with header ink within the top 30% of the page are merged
+    are masked out first; the skewed rule spreads over several such columns.
+    What remains is the header ink. Rows with header ink within the top 30% of the page are merged
     into one header while the gaps between them stay under 200 px.
     """
     if len(columns) != 2:
         return None
     h, w = ink.shape
     (l0, l1), (r0, r1) = columns
-    # Trim the gutter edges, where letters overhang the column bounds, and
-    # dilate the rule mask so the rule's blurred edges do not count either.
-    gutter = ink[:, l1 + 10 : r0 - 10]
-    if gutter.shape[1] == 0:
-        return None
-    rule = gutter.mean(axis=0) > 0.05
-    rule = np.convolve(rule.astype(int), np.ones(7, dtype=int), mode="same") > 0
-    gutter = gutter[:, ~rule]
-    if gutter.shape[1] == 0:
-        return None
-    count = gutter.sum(axis=1)
+    # The gutter edges are trimmed, where letters overhang the column bounds,
+    # and the dilated rule mask keeps the rule's blurred edges out.
+    count = gutter_ink_counts(ink, columns)
     top = bottom = None
     for y0, y1 in runs(count >= 3, 4):
         if y0 > h * 0.3:
@@ -213,43 +207,104 @@ def header_crop_rows(ink: np.ndarray, columns: list[tuple[int, int]], header: tu
     return top, bottom
 
 
+def gutter_ink_counts(ink: np.ndarray, columns: list[tuple[int, int]]) -> np.ndarray:
+    """Per-row count of ink pixels in the gutter, excluding the column rule."""
+    (_, l1), (r0, _) = columns
+    gutter = ink[:, l1 + 10 : r0 - 10]
+    if gutter.shape[1] == 0:
+        return np.zeros(ink.shape[0], dtype=int)
+    rule = gutter.mean(axis=0) > 0.05
+    rule = np.convolve(rule.astype(int), np.ones(7, dtype=int), mode="same") > 0
+    return gutter[:, ~rule].sum(axis=1)
+
+
+def detect_section_breaks(ink: np.ndarray, columns: list[tuple[int, int]], body_top: int) -> list[tuple[int, int]]:
+    """Return [y0, y1) rows of headings set across the gutter below the page header.
+
+    A new letter of the alphabet begins mid-page under a centred heading, and
+    the two columns restart below it, so the reading order is the upper
+    band of both columns, the heading, then the lower band. A heading is gutter
+    ink at least 20 rows tall and 10 pixels wide at its widest; stray specks
+    and overhanging letters are far smaller.
+    """
+    if len(columns) != 2:
+        return []
+    count = gutter_ink_counts(ink, columns)
+    found: list[list[int]] = []
+    for y0, y1 in runs(count >= 3, 4):
+        if y0 < body_top + 100:
+            continue
+        if found and y0 - found[-1][1] < 60:
+            found[-1][1] = y1
+        else:
+            found.append([y0, y1])
+    return [
+        (y0, y1) for y0, y1 in found if y1 - y0 >= 20 and int(count[y0:y1].max()) >= 10
+    ]
+
+
 def plan_chunks(raster: pathlib.Path, target: int, maximum: int, pad: int) -> tuple[Image.Image, list[dict]]:
+    """Plan chunks in reading order.
+
+    The page is cut into tiers at full-width material: the running head at
+    the top and any section heading lower down. Each full-width piece is one
+    chunk, and within each tier every column is cut into chunks at
+    inter-line whitespace. The returned list is in reading order: header,
+    tier 0 columns, then each section heading followed by its tier.
+    """
     img = Image.open(raster)
     ink = ink_mask(img)
     h, w = ink.shape
-    chunks = []
+    chunks: list[dict] = []
     columns = detect_columns(ink)
-    header = detect_spanning_header(ink, columns)
-    body_top = 0
-    if header is not None:
-        y0, y1 = header_crop_rows(ink, columns, header)
+
+    def full_width(chunk_id: str, rows: tuple[int, int], tier: int) -> None:
+        y0, y1 = header_crop_rows(ink, columns, rows)
         x0, x1 = columns[0][0], columns[-1][1]
         bx0, bx1 = max(0, x0 - pad), min(w, x1 + pad)
         by0, by1 = max(0, y0 - 6), min(h, y1 + 6)
         chunks.append(
             {
-                "chunk_id": "header",
+                "chunk_id": chunk_id,
                 "column": -1,
                 "row": 0,
+                "tier": tier,
                 "bounds": {"x": bx0, "y": by0, "width": bx1 - bx0, "height": by1 - by0},
             }
         )
+
+    header = detect_spanning_header(ink, columns)
+    body_top = 0
+    if header is not None:
+        full_width("header", header, 0)
         body_top = header[1]
-    for ci, (x0, x1) in enumerate(columns):
-        col_ink = ink[body_top:, x0:x1]
-        for ri, (y0, y1) in enumerate((a + body_top, b + body_top) for a, b in chunk_rows(col_ink, target, maximum)):
-            # Wide horizontal padding keeps marginal glyphs; tight vertical
-            # padding keeps slivers of the neighbouring line out of the crop.
-            bx0, bx1 = max(0, x0 - pad), min(w, x1 + pad)
-            by0, by1 = max(0, y0 - 6), min(h, y1 + 6)
-            chunks.append(
-                {
-                    "chunk_id": f"c{ci}-r{ri:02d}",
-                    "column": ci,
-                    "row": ri,
-                    "bounds": {"x": bx0, "y": by0, "width": bx1 - bx0, "height": by1 - by0},
-                }
-            )
+    breaks = detect_section_breaks(ink, columns, body_top)
+    tiers = []
+    top = body_top
+    for y0, y1 in breaks:
+        tiers.append((top, y0))
+        top = y1
+    tiers.append((top, h))
+    for tier, (t0, t1) in enumerate(tiers):
+        if tier > 0:
+            full_width(f"section-{tier}", breaks[tier - 1], tier)
+        prefix = "" if tier == 0 else f"t{tier}-"
+        for ci, (x0, x1) in enumerate(columns):
+            col_ink = ink[t0:t1, x0:x1]
+            for ri, (y0, y1) in enumerate((a + t0, b + t0) for a, b in chunk_rows(col_ink, target, maximum)):
+                # Wide horizontal padding keeps marginal glyphs; tight vertical
+                # padding keeps slivers of the neighbouring line out of the crop.
+                bx0, bx1 = max(0, x0 - pad), min(w, x1 + pad)
+                by0, by1 = max(0, y0 - 6), min(h, y1 + 6)
+                chunks.append(
+                    {
+                        "chunk_id": f"{prefix}c{ci}-r{ri:02d}",
+                        "column": ci,
+                        "row": ri,
+                        "tier": tier,
+                        "bounds": {"x": bx0, "y": by0, "width": bx1 - bx0, "height": by1 - by0},
+                    }
+                )
     return img, chunks
 
 
@@ -260,8 +315,15 @@ def call_claude(image_path: pathlib.Path, model: str, timeout: int) -> dict:
         "-p",
         "--model",
         model,
-        "--allowedTools",
+        # A one-line system prompt in place of Claude Code's default, only
+        # the Read tool, and no MCP servers or skills: the default context
+        # cost about 10k cache-creation tokens per call, 2.6x the lean call.
+        "--system-prompt",
+        CLI_SYSTEM_PROMPT,
+        "--tools",
         "Read",
+        "--strict-mcp-config",
+        "--disable-slash-commands",
         "--output-format",
         "json",
         "--json-schema",
@@ -286,6 +348,7 @@ def call_claude(image_path: pathlib.Path, model: str, timeout: int) -> dict:
     return {
         "lines": [str(line) for line in structured["lines"]],
         "model": model,
+        "cli_mode": CLI_MODE,
         "session_id": result.get("session_id"),
         "duration_api_ms": result.get("duration_api_ms"),
         "cost_usd_list": result.get("total_cost_usd"),
