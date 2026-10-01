@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-09-24T11:31:09+00:00",
+ "generated_at": "2026-10-01T20:27:03+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -43,13 +43,24 @@
      "image_sha256": "9316a58c5794514eee87fdf769c3aa3b706ea8ac89899710d88c0f42dc125ecf",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2cba96c0-463e-4752-9ad8-916bd1b1712d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "פָּלַח 850 פָּנָה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f20a8020-d6dc-4801-8303-ec579ea629c6",
+      "duration_api_ms": 4077,
+      "cost_usd_list": 0.011977999999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 5352,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 212
      },
      "lines": [
       {
        "draft": "פָּלַח 850 פָּנָה",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "פָּלַח 850 פָּנָה",
+       "status": "agreed",
        "text": "פָּלַח 850 פָּנָה"
       }
      ]
@@ -92,68 +103,47 @@
      "image_sha256": "72836bd3d818582f901883f005f85a416e78c81d7a60864458163a970d909a74",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"623cc310-d8f1-4742-8699-2ee7d447c97e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "* פָּלַח obsol. root, Arab. فلت to",
+       "flee, to escape, i. q. Heb. פָּלַט ; فُلْتٌ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c3e8b671-fe37-4352-a44c-f326fe1ad1f0",
+      "duration_api_ms": 8038,
+      "cost_usd_list": 0.023246250000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6225,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 427
      },
      "lines": [
       {
        "draft": "*פֶּלֶת obsol. root, Arab. فلت to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "*פֶּלֶת obsol. root, Arab. فلت to"
+       "reread": "* פָּלַח obsol. root, Arab. فلت to",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "* פָּלַת obsol. root, Arab. فلت to",
+        "verdict": "neither",
+        "note": "The Hebrew headword is printed פָּלַת: qamets under pe and patach under lamed (as in B, not A's segols), but the final letter is tav — its left leg has the characteristic foot — not cheth (as B gives). Cognate to Arab. فلت and Heb. פָּלַט confirms ת.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "dbe235fd-2933-4e98-a3ff-8be8ae05174b",
+        "duration_api_ms": 13030,
+        "cost_usd_list": 0.0928505,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3522,
+        "cache_creation_input_tokens": 2629,
+        "output_tokens": 781
+       },
+       "text": "* פָּלַת obsol. root, Arab. فلت to"
       },
       {
        "draft": "flee, to escape, i. q. Heb. פָּלַט ; فُلْتٌ",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "flee, to escape, i. q. Heb. פָּלַט ; فُلْتٌ",
+       "status": "agreed",
        "text": "flee, to escape, i. q. Heb. פָּלַט; فُلْتٌ"
-      },
-      {
-       "draft": "swift, فَلَتَانٌ a swift horse, runner.—",
-       "reread": null,
-       "status": "draft_only",
-       "text": "swift, فَلَتَانٌ a swift horse, runner.—"
-      },
-      {
-       "draft": "Hence the two following.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hence the two following."
-      },
-      {
-       "draft": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)",
-       "reread": null,
-       "status": "draft_only",
-       "text": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)"
-      },
-      {
-       "draft": "Num. 16, 1. b) 1 Chr. 2, 33.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Num. 16, 1. b) 1 Chr. 2, 33."
-      },
-      {
-       "draft": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-"
-      },
-      {
-       "draft": "rier, with art. collect. the public runners,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "rier, with art. collect. the public runners,"
-      },
-      {
-       "draft": "couriers, everywhere coupled with כְּרֵתִי",
-       "reread": null,
-       "status": "draft_only",
-       "text": "couriers, everywhere coupled with כְּרֵתִי"
-      },
-      {
-       "draft": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K."
       }
      ]
     },
@@ -170,8 +160,56 @@
      "image_sha256": "dfa7a0ec485c4ef55e3be1449be40f3a969fa32e59725656433bc06f72a9ab06",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"59b0a186-f891-4a71-be81-920db947c38d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "swift, فَلَتَان a swift horse, runner.—",
+       "Hence the two following.",
+       "פֶּלֶת (swiftness) Peleth, pr. n. m. a)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1229b9a4-4044-4a99-a686-30a0889aed67",
+      "duration_api_ms": 14127,
+      "cost_usd_list": 0.027049,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6036,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 504
+     },
+     "lines": [
+      {
+       "draft": "swift, فَلَتَانٌ a swift horse, runner.—",
+       "reread": "swift, فَلَتَان a swift horse, runner.—",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "swift, فَلَتَان a swift horse, runner.—",
+        "verdict": "b",
+        "note": "The final nūn has only its own dot; no tanwīn ḍammatān is printed above it (Reading A's ٌ is spurious). Everything else is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "648f9b39-a609-46ba-be2e-5e8b48ea72db",
+        "duration_api_ms": 12854,
+        "cost_usd_list": 0.08760025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3521,
+        "cache_creation_input_tokens": 2439,
+        "output_tokens": 752
+       },
+       "text": "swift, فَلَتَان a swift horse, runner.—"
+      },
+      {
+       "draft": "Hence the two following.",
+       "reread": "Hence the two following.",
+       "status": "agreed",
+       "text": "Hence the two following."
+      },
+      {
+       "draft": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)",
+       "reread": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)",
+       "status": "agreed",
+       "text": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b02",
@@ -186,8 +224,63 @@
      "image_sha256": "63f8dbe8003bd7f079b815c1403e8d01000212ef77dad60d592237baee82f0a7",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"48e8c296-e928-4b16-ba5d-68273e071655\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Num. 16, 1.    b) 1 Chr. 2, 33.",
+       "פְּלֵתִי m. (r. פָּלַת) a public runner, cou-",
+       "rier, with art. collect. the public runners,",
+       "couriers, everywhere coupled with כְּרֵתִי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bdd9da01-76a3-46c5-97e0-6560ac36371c",
+      "duration_api_ms": 9722,
+      "cost_usd_list": 0.015480499999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6162,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 272
+     },
+     "lines": [
+      {
+       "draft": "Num. 16, 1. b) 1 Chr. 2, 33.",
+       "reread": "Num. 16, 1.    b) 1 Chr. 2, 33.",
+       "status": "agreed",
+       "text": "Num. 16, 1. b) 1 Chr. 2, 33."
+      },
+      {
+       "draft": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-",
+       "reread": "פְּלֵתִי m. (r. פָּלַת) a public runner, cou-",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-",
+        "verdict": "a",
+        "note": "The root in parentheses is printed with dot-cluster vowels (segol) under both pe and lamed — פֶּלֶת — not the stroke vowels qamets/patah of Reading B; the headword's sheva, tsere and hiriq are as both readings give.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a4b2f417-de97-4fb5-80a6-842aee26aaca",
+        "duration_api_ms": 10165,
+        "cost_usd_list": 0.0854145,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3538,
+        "cache_creation_input_tokens": 2582,
+        "output_tokens": 651
+       },
+       "text": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-"
+      },
+      {
+       "draft": "rier, with art. collect. the public runners,",
+       "reread": "rier, with art. collect. the public runners,",
+       "status": "agreed",
+       "text": "rier, with art. collect. the public runners,"
+      },
+      {
+       "draft": "couriers, everywhere coupled with כְּרֵתִי",
+       "reread": "couriers, everywhere coupled with כְּרֵתִי",
+       "status": "agreed",
+       "text": "couriers, everywhere coupled with כְּרֵתִי"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b03",
@@ -202,8 +295,27 @@
      "image_sha256": "ab57e609f78e0da157922766ce6f7ee120abba1aa548efedcd81879ccbcf4808",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d83d9ed5-e2f7-4ddd-9b40-defda547fe08\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ae8d25c4-315c-4d16-95dd-0d7dc119a438",
+      "duration_api_ms": 9948,
+      "cost_usd_list": 0.012341500000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5406,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 213
+     },
+     "lines": [
+      {
+       "draft": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K.",
+       "reread": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K.",
+       "status": "agreed",
+       "text": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K."
+      }
+     ]
     }
    ]
   },
@@ -245,80 +357,46 @@
      "image_sha256": "64a2d9f01dad7ccddbc569abaedf5cc1b80d758af3cb154e074b2afc3ec673c0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"272dff87-ea92-4a46-a75b-dc4879a6ef0c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "11, 4. 19. Some without good reason",
+       "hold both כְּרֵתִי and פְּלֵתִי to be Philis-",
+       "tines, and regard the latter form as put",
+       "by paronomasia for פְּלִשְׁתִּי, but against"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5ae47c3e-0210-4786-aada-cd5c65b27a89",
+      "duration_api_ms": 8757,
+      "cost_usd_list": 0.014880500000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6162,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 260
      },
      "lines": [
       {
        "draft": "11, 4. 19.  Some without good reason",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "11, 4. 19. Some without good reason",
+       "status": "agreed",
        "text": "11, 4. 19. Some without good reason"
       },
       {
        "draft": "hold both כְּרֵתִי and פְּלֵתִי to be Philis-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "hold both כְּרֵתִי and פְּלֵתִי to be Philis-",
+       "status": "agreed",
        "text": "hold both כְּרֵתִי and פְּלֵתִי to be Philis-"
       },
       {
        "draft": "tines, and regard the latter form as put",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "tines, and regard the latter form as put",
+       "status": "agreed",
        "text": "tines, and regard the latter form as put"
       },
       {
        "draft": "by paronomasia for פְּלִשְׁתִּי, but against",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "by paronomasia for פְּלִשְׁתִּי, but against",
+       "status": "agreed",
        "text": "by paronomasia for פְּלִשְׁתִּי, but against"
-      },
-      {
-       "draft": "the analogy of the Hebrew language;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the analogy of the Hebrew language;"
-      },
-      {
-       "draft": "so Ewald Heb. Gram. p. 297.  See in",
-       "reread": null,
-       "status": "draft_only",
-       "text": "so Ewald Heb. Gram. p. 297. See in"
-      },
-      {
-       "draft": "כְּרֵתִי.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "כְּרֵתִי."
-      },
-      {
-       "draft": "I. פֵּן m. i. q. fem. פִּנָּה which is more",
-       "reread": null,
-       "status": "draft_only",
-       "text": "I. פֵּן m. i. q. fem. פִּנָּה which is more"
-      },
-      {
-       "draft": "usual, a corner, c. suff. פִּנַּת Prov. 7, 8.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "usual, a corner, c. suff. פִּנַּת Prov. 7, 8."
-      },
-      {
-       "draft": "Plur. פִּנִּים Zech. 14, 10.  R. פָּנַן.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Plur. פִּנִּים Zech. 14, 10. R. פָּנַן."
-      },
-      {
-       "draft": "II. פֶּן conj. (for פְּנֵה, r. פָּנָה Pi. no. 1)",
-       "reread": null,
-       "status": "draft_only",
-       "text": "II. פֶּן conj. (for פְּנֵה, r. פָּנָה Pi. no. 1)"
-      },
-      {
-       "draft": "pr. a removing, taking away; used only",
-       "reread": null,
-       "status": "draft_only",
-       "text": "pr. a removing, taking away; used only"
       }
      ]
     },
@@ -335,8 +413,85 @@
      "image_sha256": "5b1c5984b6c43d81129455a29e6ff2272fe3e3060a6e47782f527548fd31e97c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"04eea92d-6110-4f87-8792-70e1198b6297\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "the analogy of the Hebrew language;",
+       "so Ewald Heb. Gram. p. 297. See in",
+       "פְּרֵתִי.",
+       "I. פֵּן m. i. q. fem. פִּנָּה which is more",
+       "usual, a corner, c. suff. פִּנָּהּ Prov. 7, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f16b7d47-5cb2-41f7-8771-099415b8829d",
+      "duration_api_ms": 26960,
+      "cost_usd_list": 0.06934425000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6417,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 1348
+     },
+     "lines": [
+      {
+       "draft": "the analogy of the Hebrew language;",
+       "reread": "the analogy of the Hebrew language;",
+       "status": "agreed",
+       "text": "the analogy of the Hebrew language;"
+      },
+      {
+       "draft": "so Ewald Heb. Gram. p. 297.  See in",
+       "reread": "so Ewald Heb. Gram. p. 297. See in",
+       "status": "agreed",
+       "text": "so Ewald Heb. Gram. p. 297. See in"
+      },
+      {
+       "draft": "כְּרֵתִי.",
+       "reread": "פְּרֵתִי.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "פְּרֵתִי.",
+        "verdict": "b",
+        "note": "The first letter has the inner hook/curl of פ (compare the פ of פֵּן and פִּנָּה on the lines below); no plain-open כ is printed. Contextually one would expect כְּרֵתִי (the cross-reference to the Cherethites), so this looks like a typographic error in the 1854 printing, but the printed glyph is פ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3b037182-ec28-4183-b589-21eeefc20bb1",
+        "duration_api_ms": 20127,
+        "cost_usd_list": 0.11888475000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3499,
+        "cache_creation_input_tokens": 2796,
+        "output_tokens": 1235
+       },
+       "text": "פְּרֵתִי."
+      },
+      {
+       "draft": "I. פֵּן m. i. q. fem. פִּנָּה which is more",
+       "reread": "I. פֵּן m. i. q. fem. פִּנָּה which is more",
+       "status": "agreed",
+       "text": "I. פֵּן m. i. q. fem. פִּנָּה which is more"
+      },
+      {
+       "draft": "usual, a corner, c. suff. פִּנַּת Prov. 7, 8.",
+       "reread": "usual, a corner, c. suff. פִּנָּהּ Prov. 7, 8.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "usual, a corner, c. suff. פִּנָּהּ Prov. 7, 8.",
+        "verdict": "b",
+        "note": "The final letter is a he with mappiq (הּ), not a tav, and the vowel under the nun is qamets, not pathach — matching Prov. 7:8 פִּנָּהּ \"her corner\"; Reading A's פִּנַּת is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bf80f8e0-26df-494c-ac0f-1aec31ec09be",
+        "duration_api_ms": 7298,
+        "cost_usd_list": 0.08129475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3539,
+        "cache_creation_input_tokens": 2836,
+        "output_tokens": 467
+       },
+       "text": "usual, a corner, c. suff. פִּנָּהּ Prov. 7, 8."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -351,8 +506,56 @@
      "image_sha256": "640e5f1d227d1dd16b00895caa436e4388fd775906625d23b5ab88d4fb5599c7",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"64042f8c-d085-4e8a-a906-11d3a9493bec\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Plur. פִּנִּים Zech. 14, 10. R. פָּנַן.",
+       "II. פֵּן conj. (for פַּנֵּה, r. פָּנָה Pi. no. 1)",
+       "pr. a removing, taking away; used only"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4042ed7d-62cf-4c9e-82ca-a2e238937520",
+      "duration_api_ms": 19967,
+      "cost_usd_list": 0.022434000000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5976,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 412
+     },
+     "lines": [
+      {
+       "draft": "Plur. פִּנִּים Zech. 14, 10.  R. פָּנַן.",
+       "reread": "Plur. פִּנִּים Zech. 14, 10. R. פָּנַן.",
+       "status": "agreed",
+       "text": "Plur. פִּנִּים Zech. 14, 10. R. פָּנַן."
+      },
+      {
+       "draft": "II. פֶּן conj. (for פְּנֵה, r. פָּנָה Pi. no. 1)",
+       "reread": "II. פֵּן conj. (for פַּנֵּה, r. פָּנָה Pi. no. 1)",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "II. פֶּן conj. (for פַּנֵּה , r. פָּנָה Pi. no. 1)",
+        "verdict": "neither",
+        "note": "Headword has segol under pe (three dots, A right, B wrong); the \"for\" word is printed פַּנֵּה with patach under pe and dagesh + tsere in nun (Piel infinitive; B right, A wrong with shewa and no dagesh). A space precedes the comma after פַּנֵּה.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3ab2709b-8255-4f3b-b4b8-8ee4afbdd5a0",
+        "duration_api_ms": 19660,
+        "cost_usd_list": 0.0994285,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3554,
+        "cache_creation_input_tokens": 2410,
+        "output_tokens": 1000
+       },
+       "text": "II. פֶּן conj. (for פַּנֵּה, r. פָּנָה Pi. no. 1)"
+      },
+      {
+       "draft": "pr. a removing, taking away; used only",
+       "reread": "pr. a removing, taking away; used only",
+       "status": "agreed",
+       "text": "pr. a removing, taking away; used only"
+      }
+     ]
     }
    ]
   },
@@ -399,110 +602,46 @@
      "image_sha256": "1497ecafb1ec41d0a59d009b26f4e907482a8d1789ba0d3158a9b13e6ad684b3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"96938188-3081-4272-9e5c-d09f65c817de\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "in the constr. state with Makk. פֶּן־, as a",
+       "Conj. of removing, prohibiting, hinder-",
+       "ing, i. q. μή, that not, lest. Thus:",
+       "1. Where an action precedes, that"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fb5cfb68-86e3-47ac-a6d0-c2168b6b791f",
+      "duration_api_ms": 5253,
+      "cost_usd_list": 0.0145155,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 253
      },
      "lines": [
       {
        "draft": "in the constr. state with Makk. פֶּן־, as a",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "in the constr. state with Makk. פֶּן־, as a",
+       "status": "agreed",
        "text": "in the constr. state with Makk. פֶּן־, as a"
       },
       {
        "draft": "Conj. of removing, prohibiting, hinder-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Conj. of removing, prohibiting, hinder-",
+       "status": "agreed",
        "text": "Conj. of removing, prohibiting, hinder-"
       },
       {
        "draft": "ing, i. q. μή, that not, lest. Thus:",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "ing, i. q. μή, that not, lest. Thus:",
+       "status": "agreed",
        "text": "ing, i. q. μή, that not, lest. Thus:"
       },
       {
        "draft": "1. Where an action precedes, that",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "1. Where an action precedes, that",
+       "status": "agreed",
        "text": "1. Where an action precedes, that"
-      },
-      {
-       "draft": "serves to hinder or prohibit something",
-       "reread": null,
-       "status": "draft_only",
-       "text": "serves to hinder or prohibit something"
-      },
-      {
-       "draft": "which one fears and wishes to remove",
-       "reread": null,
-       "status": "draft_only",
-       "text": "which one fears and wishes to remove"
-      },
-      {
-       "draft": "or avoid. Gen. 11, 4 let us build us a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "or avoid. Gen. 11, 4 let us build us a"
-      },
-      {
-       "draft": "city . . . פֶּן־נָפוּץ lest we be scattered. 19,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "city... פֶּן־נָפוּץ lest we be scattered. 19,"
-      },
-      {
-       "draft": "15 arise . . . פֶּן־תִּסָּפֶה lest thou perish. 3,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "15 arise... פֶּן־תִּסָּפֶה lest thou perish. 3,"
-      },
-      {
-       "draft": "3 eat not of it . . . פֶּן־תְּמֻתוּן lest ye die.—",
-       "reread": null,
-       "status": "draft_only",
-       "text": "3 eat not of it... פֶּן־תְּמֻתוּן lest ye die.—"
-      },
-      {
-       "draft": "Then, after verbs of fearing, like Gr.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Then, after verbs of fearing, like Gr."
-      },
-      {
-       "draft": "δείδω μή, Lat. vereor ne, Gen. 31, 31,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "δείδω μή, Lat. vereor ne, Gen. 31, 31,"
-      },
-      {
-       "draft": "comp. 26, 9 ; of caution, comp. Gr. ἰδεῖν",
-       "reread": null,
-       "status": "draft_only",
-       "text": "comp. 26, 9; of caution, comp. Gr. ἰδεῖν"
-      },
-      {
-       "draft": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23 ; also",
-       "reread": null,
-       "status": "draft_only",
-       "text": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23; also"
-      },
-      {
-       "draft": "of swearing Judg. 15, 12, comp. ὀμνύω μή",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of swearing Judg. 15, 12, comp. ὀμνύω μή"
-      },
-      {
-       "draft": "Il. 23. 585. In examples of this kind אַל",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Il. 23. 585. In examples of this kind אַל"
-      },
-      {
-       "draft": "is never used.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "is never used."
       }
      ]
     },
@@ -519,8 +658,48 @@
      "image_sha256": "1799f86dca25b32b4fdcb55d84f6c04fdff05805de5102cb58dc84c8b7934127",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"39eaefb1-bd13-4379-b810-5fed64d08ad5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "serves to hinder or prohibit something",
+       "which one fears and wishes to remove",
+       "or avoid. Gen. 11, 4 let us build us a",
+       "city . . . פֶּן־נָפוּץ lest we be scattered. 19,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "03c943e3-61a0-4748-b085-d4ebe7748f5a",
+      "duration_api_ms": 10802,
+      "cost_usd_list": 0.020615500000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 375
+     },
+     "lines": [
+      {
+       "draft": "serves to hinder or prohibit something",
+       "reread": "serves to hinder or prohibit something",
+       "status": "agreed",
+       "text": "serves to hinder or prohibit something"
+      },
+      {
+       "draft": "which one fears and wishes to remove",
+       "reread": "which one fears and wishes to remove",
+       "status": "agreed",
+       "text": "which one fears and wishes to remove"
+      },
+      {
+       "draft": "or avoid. Gen. 11, 4 let us build us a",
+       "reread": "or avoid. Gen. 11, 4 let us build us a",
+       "status": "agreed",
+       "text": "or avoid. Gen. 11, 4 let us build us a"
+      },
+      {
+       "draft": "city . . . פֶּן־נָפוּץ lest we be scattered. 19,",
+       "reread": "city . . . פֶּן־נָפוּץ lest we be scattered. 19,",
+       "status": "agreed",
+       "text": "city... פֶּן־נָפוּץ lest we be scattered. 19,"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -535,8 +714,48 @@
      "image_sha256": "6d235fa35716a4177b9ea4da74afb958c2bcb35b97a52bbbefc03d2f4ccdfba2",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"11cb5181-b433-4d31-906d-68c6a56d3b3e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "15 arise . . . פֶּן־תִּסָּפֶה lest thou perish. 3,",
+       "3 eat not of it . . . פֶּן־תְּמֻתוּן lest ye die.—",
+       "Then, after verbs of fearing, like Gr.",
+       "δείδω μή, Lat. vereor ne, Gen. 31, 31,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "61a8fe28-6766-4f92-b6c6-65a26e064ee1",
+      "duration_api_ms": 20486,
+      "cost_usd_list": 0.019165500000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 346
+     },
+     "lines": [
+      {
+       "draft": "15 arise . . . פֶּן־תִּסָּפֶה lest thou perish. 3,",
+       "reread": "15 arise . . . פֶּן־תִּסָּפֶה lest thou perish. 3,",
+       "status": "agreed",
+       "text": "15 arise... פֶּן־תִּסָּפֶה lest thou perish. 3,"
+      },
+      {
+       "draft": "3 eat not of it . . . פֶּן־תְּמֻתוּן lest ye die.—",
+       "reread": "3 eat not of it . . . פֶּן־תְּמֻתוּן lest ye die.—",
+       "status": "agreed",
+       "text": "3 eat not of it... פֶּן־תְּמֻתוּן lest ye die.—"
+      },
+      {
+       "draft": "Then, after verbs of fearing, like Gr.",
+       "reread": "Then, after verbs of fearing, like Gr.",
+       "status": "agreed",
+       "text": "Then, after verbs of fearing, like Gr."
+      },
+      {
+       "draft": "δείδω μή, Lat. vereor ne, Gen. 31, 31,",
+       "reread": "δείδω μή, Lat. vereor ne, Gen. 31, 31,",
+       "status": "agreed",
+       "text": "δείδω μή, Lat. vereor ne, Gen. 31, 31,"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b03",
@@ -551,8 +770,48 @@
      "image_sha256": "5a575d03ace3aeee6e61af81ac93677afc3e9f62accd5f9d634e5d97db75bb73",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2f75518c-d8b6-4feb-9c74-a7827d368473\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "comp. 26, 9 ; of caution, comp. Gr. ἰδεῖν",
+       "μή, Gen. 24, 6. 31, 24. Deut. 4, 23 ; also",
+       "of swearing Judg. 15, 12, comp. ὀμνύω μή",
+       "Il. 23. 585.   In examples of this kind אַל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b42ec6aa-e173-4530-85b6-590ed82a6d0c",
+      "duration_api_ms": 10990,
+      "cost_usd_list": 0.0164655,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "comp. 26, 9 ; of caution, comp. Gr. ἰδεῖν",
+       "reread": "comp. 26, 9 ; of caution, comp. Gr. ἰδεῖν",
+       "status": "agreed",
+       "text": "comp. 26, 9; of caution, comp. Gr. ἰδεῖν"
+      },
+      {
+       "draft": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23 ; also",
+       "reread": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23 ; also",
+       "status": "agreed",
+       "text": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23; also"
+      },
+      {
+       "draft": "of swearing Judg. 15, 12, comp. ὀμνύω μή",
+       "reread": "of swearing Judg. 15, 12, comp. ὀμνύω μή",
+       "status": "agreed",
+       "text": "of swearing Judg. 15, 12, comp. ὀμνύω μή"
+      },
+      {
+       "draft": "Il. 23. 585. In examples of this kind אַל",
+       "reread": "Il. 23. 585.   In examples of this kind אַל",
+       "status": "agreed",
+       "text": "Il. 23. 585. In examples of this kind אַל"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b04",
@@ -567,8 +826,27 @@
      "image_sha256": "42dc02e6db096b7538106b99cfa6099e260b5de5bfab583a72eb987f2b5b4f9a",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"7147a71e-2e4c-4929-a4d9-5f75aea3824c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "is never used."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "61468e76-b6a1-4ff2-b5d2-42195b566e8b",
+      "duration_api_ms": 14895,
+      "cost_usd_list": 0.0127765,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5346,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "is never used.",
+       "reread": "is never used.",
+       "status": "agreed",
+       "text": "is never used."
+      }
+     ]
     }
    ]
   },
@@ -611,86 +889,46 @@
      "image_sha256": "5fc7b0d99188fedabcacca35aeed0763dfd727ccf1c572085f2d7e93fd7d78b3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6526cd59-350a-478a-907e-a1eefc7300fc\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "2. At the beginning of a sentence,",
+       "where it implies : a) Prohibition or dis-",
+       "suasion, like אַל. Job 32, 13 פֶּן־תֹּאמְרוּ",
+       "say not, i. e. beware lest ye say. Is. 36,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5bab726-91da-4666-8ce1-1dc2a32e1664",
+      "duration_api_ms": 12411,
+      "cost_usd_list": 0.015265500000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 268
      },
      "lines": [
       {
        "draft": "2. At the beginning of a sentence,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "2. At the beginning of a sentence,",
+       "status": "agreed",
        "text": "2. At the beginning of a sentence,"
       },
       {
        "draft": "where it implies : a) Prohibition or dis-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "where it implies : a) Prohibition or dis-",
+       "status": "agreed",
        "text": "where it implies: a) Prohibition or dis-"
       },
       {
        "draft": "suasion, like אַל. Job 32, 13 פֶּן־תֹּאמְרוּ",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "suasion, like אַל. Job 32, 13 פֶּן־תֹּאמְרוּ",
+       "status": "agreed",
        "text": "suasion, like אַל. Job 32, 13 פֶּן־תֹּאמְרוּ"
       },
       {
        "draft": "say not, i. e. beware lest ye say. Is. 36,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "say not, i. e. beware lest ye say. Is. 36,",
+       "status": "agreed",
        "text": "say not, i. e. beware lest ye say. Is. 36,"
-      },
-      {
-       "draft": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest",
-       "reread": null,
-       "status": "draft_only",
-       "text": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest"
-      },
-      {
-       "draft": "Hezekiah deceive you. b) Fear, appre-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hezekiah deceive you. b) Fear, appre-"
-      },
-      {
-       "draft": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ",
-       "reread": null,
-       "status": "draft_only",
-       "text": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ"
-      },
-      {
-       "draft": "וגו׳ and now (I fear) lest he put forth",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וגו׳ and now (I fear) lest he put forth"
-      },
-      {
-       "draft": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳",
-       "reread": null,
-       "status": "draft_only",
-       "text": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳"
-      },
-      {
-       "draft": "(I fear) lest I see the evil, etc. 31, 31. 38,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "(I fear) lest I see the evil, etc. 31, 31. 38,"
-      },
-      {
-       "draft": "11. 42, 4. Ex. 13, 17. Num. 16, 34.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "11. 42, 4. Ex. 13, 17. Num. 16, 34."
-      },
-      {
-       "draft": "1 Sam. 13, 19. With præt. where one",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1 Sam. 13, 19. With præt. where one"
-      },
-      {
-       "draft": "fears lest something has already taken",
-       "reread": null,
-       "status": "draft_only",
-       "text": "fears lest something has already taken"
       }
      ]
     },
@@ -707,8 +945,48 @@
      "image_sha256": "68f9e94702f257c1fb4f89ade4c594a9d590fb85c212eeec61eb408b3b70fa73",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f79a4614-7f54-4742-94dd-db911b5e4c4b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest",
+       "Hezekiah deceive you. b) Fear, appre-",
+       "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ",
+       "וגו׳ and now (I fear) lest he put forth"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e80bbbd4-80ea-4ec9-8be1-05061b081965",
+      "duration_api_ms": 14753,
+      "cost_usd_list": 0.033815500000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 639
+     },
+     "lines": [
+      {
+       "draft": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest",
+       "reread": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest",
+       "status": "agreed",
+       "text": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest"
+      },
+      {
+       "draft": "Hezekiah deceive you. b) Fear, appre-",
+       "reread": "Hezekiah deceive you. b) Fear, appre-",
+       "status": "agreed",
+       "text": "Hezekiah deceive you. b) Fear, appre-"
+      },
+      {
+       "draft": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ",
+       "reread": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ",
+       "status": "agreed",
+       "text": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ"
+      },
+      {
+       "draft": "וגו׳ and now (I fear) lest he put forth",
+       "reread": "וגו׳ and now (I fear) lest he put forth",
+       "status": "agreed",
+       "text": "וגו׳ and now (I fear) lest he put forth"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b02",
@@ -723,8 +1001,48 @@
      "image_sha256": "07446410d032256e542ff85607bf80b654fe811ad9b9f66fd5d03fe5f012c3fc",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"241d88a4-51c9-4b0d-8750-46c3be9ec48a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳",
+       "(I fear) lest I see the evil, etc. 31, 31. 38,",
+       "11. 42, 4. Ex. 13, 17. Num. 16, 34.",
+       "1 Sam. 13, 19. With præt. where one"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c2a51532-ba1b-4061-ba8c-3c76cfcac474",
+      "duration_api_ms": 11411,
+      "cost_usd_list": 0.088381,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 712
+     },
+     "lines": [
+      {
+       "draft": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳",
+       "reread": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳",
+       "status": "agreed",
+       "text": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳"
+      },
+      {
+       "draft": "(I fear) lest I see the evil, etc. 31, 31. 38,",
+       "reread": "(I fear) lest I see the evil, etc. 31, 31. 38,",
+       "status": "agreed",
+       "text": "(I fear) lest I see the evil, etc. 31, 31. 38,"
+      },
+      {
+       "draft": "11. 42, 4. Ex. 13, 17. Num. 16, 34.",
+       "reread": "11. 42, 4. Ex. 13, 17. Num. 16, 34.",
+       "status": "agreed",
+       "text": "11. 42, 4. Ex. 13, 17. Num. 16, 34."
+      },
+      {
+       "draft": "1 Sam. 13, 19. With præt. where one",
+       "reread": "1 Sam. 13, 19. With præt. where one",
+       "status": "agreed",
+       "text": "1 Sam. 13, 19. With præt. where one"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b03",
@@ -739,8 +1057,27 @@
      "image_sha256": "85f63683cb7e34c8e0448faca9b704b5a9caaccaa71f676f51ce74f617fb8bde",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ccf8d7fe-ee19-43fc-81c1-7fbff5a737c3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "fears lest something has already taken"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "997f14a3-b2c6-4065-a586-33ce1126d42e",
+      "duration_api_ms": 4419,
+      "cost_usd_list": 0.049621000000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 1885,
+      "output_tokens": 214
+     },
+     "lines": [
+      {
+       "draft": "fears lest something has already taken",
+       "reread": "fears lest something has already taken",
+       "status": "agreed",
+       "text": "fears lest something has already taken"
+      }
+     ]
     }
    ]
   },
@@ -780,68 +1117,32 @@
      "image_sha256": "4e7b9a9d61740735fa99ff8eeadd8949303d07add170be17be0b805dc45c5d97",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"40dc0633-9cf4-436b-b2d3-d260c574aa41\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may",
+       "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "023b2d7e-4831-4a62-be49-b98874da6cd4",
+      "duration_api_ms": 8373,
+      "cost_usd_list": 0.074561,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2452,
+      "output_tokens": 486
      },
      "lines": [
       {
        "draft": "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may",
+       "status": "agreed",
        "text": "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may"
       },
       {
        "draft": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה",
+       "status": "agreed",
        "text": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה"
-      },
-      {
-       "draft": "(we fear) lest a wind from Jehovah hath",
-       "reread": null,
-       "status": "draft_only",
-       "text": "(we fear) lest a wind from Jehovah hath"
-      },
-      {
-       "draft": "taken him up.—Once it approaches to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "taken him up.—Once it approaches to"
-      },
-      {
-       "draft": "the power of a negative adverb, i. q. לֹא,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the power of a negative adverb, i. q. לֹא,"
-      },
-      {
-       "draft": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of"
-      },
-      {
-       "draft": "life she prepareth not for herself, sc. the",
-       "reread": null,
-       "status": "draft_only",
-       "text": "life she prepareth not for herself, sc. the"
-      },
-      {
-       "draft": "adulteress, i. e. she walks not in the way",
-       "reread": null,
-       "status": "draft_only",
-       "text": "adulteress, i. e. she walks not in the way"
-      },
-      {
-       "draft": "of life. But the full sentence is: ‘(see)",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of life. But the full sentence is: ‘(see)"
-      },
-      {
-       "draft": "lest she walk in the way of life.’",
-       "reread": null,
-       "status": "draft_only",
-       "text": "lest she walk in the way of life.’"
       }
      ]
     },
@@ -858,8 +1159,48 @@
      "image_sha256": "80d1977b4116ae638be347e600e8d2ea489bc052c710a44a062941ed86ba0958",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1d27dc61-be61-4279-8e23-057676287dfd\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "(we fear) lest a wind from Jehovah hath",
+       "taken him up.—Once it approaches to",
+       "the power of a negative adverb, i. q. לֹא,",
+       "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8fe042fc-14cd-4071-a574-4a505ece0a19",
+      "duration_api_ms": 13337,
+      "cost_usd_list": 0.073631,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 417
+     },
+     "lines": [
+      {
+       "draft": "(we fear) lest a wind from Jehovah hath",
+       "reread": "(we fear) lest a wind from Jehovah hath",
+       "status": "agreed",
+       "text": "(we fear) lest a wind from Jehovah hath"
+      },
+      {
+       "draft": "taken him up.—Once it approaches to",
+       "reread": "taken him up.—Once it approaches to",
+       "status": "agreed",
+       "text": "taken him up.—Once it approaches to"
+      },
+      {
+       "draft": "the power of a negative adverb, i. q. לֹא,",
+       "reread": "the power of a negative adverb, i. q. לֹא,",
+       "status": "agreed",
+       "text": "the power of a negative adverb, i. q. לֹא,"
+      },
+      {
+       "draft": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of",
+       "reread": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of",
+       "status": "agreed",
+       "text": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of"
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b02",
@@ -874,8 +1215,48 @@
      "image_sha256": "093cd6f73e50b8af6df84c6195bffd32d1489e4f79a6ac36280b3989283d6c5d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"10684bd1-355b-45ef-a6d8-15a6441d1c16\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "life she prepareth not for herself, sc. the",
+       "adulteress, i. e. she walks not in the way",
+       "of life. But the full sentence is: ‘(see)",
+       "lest she walk in the way of life.’"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ee4e01ab-dbad-47b1-bc24-0e1d512b104d",
+      "duration_api_ms": 4706,
+      "cost_usd_list": 0.064981,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 244
+     },
+     "lines": [
+      {
+       "draft": "life she prepareth not for herself, sc. the",
+       "reread": "life she prepareth not for herself, sc. the",
+       "status": "agreed",
+       "text": "life she prepareth not for herself, sc. the"
+      },
+      {
+       "draft": "adulteress, i. e. she walks not in the way",
+       "reread": "adulteress, i. e. she walks not in the way",
+       "status": "agreed",
+       "text": "adulteress, i. e. she walks not in the way"
+      },
+      {
+       "draft": "of life. But the full sentence is: ‘(see)",
+       "reread": "of life. But the full sentence is: ‘(see)",
+       "status": "agreed",
+       "text": "of life. But the full sentence is: ‘(see)"
+      },
+      {
+       "draft": "lest she walk in the way of life.’",
+       "reread": "lest she walk in the way of life.’",
+       "status": "agreed",
+       "text": "lest she walk in the way of life.’"
+      }
+     ]
     }
    ]
   },
@@ -920,98 +1301,46 @@
      "image_sha256": "a601aba59f15fb6a9b90b04a3d6746a35ae1476f85d9a0734ffe29ad26064122",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9f895c04-0f55-4040-9f4a-ef399bc13b66\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "פַּנַּג ἅπ. λεγόμ. Ez. 27, 17. perh. a",
+       "kind of pastry or sweet cake. The Targ.",
+       "renders it קוֹלְיָא, i. e. Gr. κολία, a kind",
+       "of sweet pastry; and in the book Zohar"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0b96299d-fecf-4af1-ac69-a1284566bbcc",
+      "duration_api_ms": 11902,
+      "cost_usd_list": 0.070731,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 359
      },
      "lines": [
       {
        "draft": "פַּנַּג ἅπ. λεγόμ. Ez. 27, 17. perh. a",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "פַּנַּג ἅπ. λεγόμ. Ez. 27, 17. perh. a",
+       "status": "agreed",
        "text": "פַּנַּג ἅπ. λεγόμ. Ez. 27, 17. perh. a"
       },
       {
        "draft": "kind of pastry or sweet cake. The Targ.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "kind of pastry or sweet cake. The Targ.",
+       "status": "agreed",
        "text": "kind of pastry or sweet cake. The Targ."
       },
       {
        "draft": "renders it קוֹלְיָא, i. e. Gr. κολία, a kind",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "renders it קוֹלְיָא, i. e. Gr. κολία, a kind",
+       "status": "agreed",
        "text": "renders it קוֹלְיָא, i. e. Gr. κολία, a kind"
       },
       {
        "draft": "of sweet pastry; and in the book Zohar",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "of sweet pastry; and in the book Zohar",
+       "status": "agreed",
        "text": "of sweet pastry; and in the book Zohar"
-      },
-      {
-       "draft": "לחם פנג is pastry-work. Other opinions",
-       "reread": null,
-       "status": "draft_only",
-       "text": "לחם פנג is pastry-work. Other opinions"
-      },
-      {
-       "draft": "are enumerated by Celsius in Hierobot.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "are enumerated by Celsius in Hierobot."
-      },
-      {
-       "draft": "II. p. 73. Sept. κασία, Vulg. balsamum.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "II. p. 73. Sept. κασία, Vulg. balsamum."
-      },
-      {
-       "draft": "—The etymology is wholly uncertain.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "—The etymology is wholly uncertain."
-      },
-      {
-       "draft": "* פָּנָה fut. יִפְנֶה, apoc. and conv.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* פָּנָה fut. יִפְנֶה, apoc. and conv."
-      },
-      {
-       "draft": "וַיִּפֶן, יִפֶן, in the other persons וָאֵפֶן,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיִּפֶן, יִפֶן, in the other persons וָאֵפֶן,"
-      },
-      {
-       "draft": "וַנֵּפֶן, תֵּפֶן; imper. פְּנֵה; to turn, trans. in",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַנֵּפֶן, תֵּפֶן; imper. פְּנֵה; to turn, trans. in"
-      },
-      {
-       "draft": "one phrase: פָּנָה עֹרֶף to turn the back",
-       "reread": null,
-       "status": "draft_only",
-       "text": "one phrase: פָּנָה עֹרֶף to turn the back"
-      },
-      {
-       "draft": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-"
-      },
-      {
-       "draft": "where always intrans. to turn, to turn",
-       "reread": null,
-       "status": "draft_only",
-       "text": "where always intrans. to turn, to turn"
-      },
-      {
-       "draft": "oneself, i. e.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "oneself, i. e."
       }
      ]
     },
@@ -1028,8 +1357,48 @@
      "image_sha256": "2c0f7544559301a0647df042f3fa61c16d2368ca3aabd350033ede781031b3d3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9b73c2c1-aba5-40c8-ba5b-781f13c70a8c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "לחם פנג is pastry-work. Other opinions",
+       "are enumerated by Celsius in Hierobot.",
+       "II. p. 73. Sept. κασία, Vulg. balsamum.",
+       "—The etymology is wholly uncertain."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d07b920d-5a9f-44d5-87af-75d37d2ffd07",
+      "duration_api_ms": 10800,
+      "cost_usd_list": 0.07457125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 435
+     },
+     "lines": [
+      {
+       "draft": "לחם פנג is pastry-work. Other opinions",
+       "reread": "לחם פנג is pastry-work. Other opinions",
+       "status": "agreed",
+       "text": "לחם פנג is pastry-work. Other opinions"
+      },
+      {
+       "draft": "are enumerated by Celsius in Hierobot.",
+       "reread": "are enumerated by Celsius in Hierobot.",
+       "status": "agreed",
+       "text": "are enumerated by Celsius in Hierobot."
+      },
+      {
+       "draft": "II. p. 73. Sept. κασία, Vulg. balsamum.",
+       "reread": "II. p. 73. Sept. κασία, Vulg. balsamum.",
+       "status": "agreed",
+       "text": "II. p. 73. Sept. κασία, Vulg. balsamum."
+      },
+      {
+       "draft": "—The etymology is wholly uncertain.",
+       "reread": "—The etymology is wholly uncertain.",
+       "status": "agreed",
+       "text": "—The etymology is wholly uncertain."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -1044,8 +1413,93 @@
      "image_sha256": "d228a78e9e51977f4fb497c8b0480800c69e6e1fca76022ff469af1e1df72324",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"75540924-c692-4e33-986d-7ada46986e9c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "*פָּנָה fut. יִפְנֶה, apoc. and conv.",
+       "יִפֶן, וַיִּפֶן, in the other persons וָאֵפֶן,",
+       "תֵּפֶן, וַנֵּפֶן; imper. פְּנֵה; to turn, trans. in",
+       "one phrase: פָּנָה עֹרֶף to turn the back"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8e68c73f-04f6-4f1d-af45-554573d4b455",
+      "duration_api_ms": 19834,
+      "cost_usd_list": 0.09740125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2769,
+      "output_tokens": 816
+     },
+     "lines": [
+      {
+       "draft": "* פָּנָה fut. יִפְנֶה, apoc. and conv.",
+       "reread": "*פָּנָה fut. יִפְנֶה, apoc. and conv.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "*פָּנָה fut. יִפְנֶה, apoc. and conv.",
+        "verdict": "b",
+        "note": "The asterisk is set directly against the headword with no word-space (gap is much narrower than the inter-word spaces on the line), so B's unspaced \"*פָּנָה\" is correct; all vowel points and the dagesh in both Hebrew words match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "804053f6-a16e-46ce-b1d8-419c5d73ff4f",
+        "duration_api_ms": 21815,
+        "cost_usd_list": 0.0965935,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3534,
+        "cache_creation_input_tokens": 2706,
+        "output_tokens": 825
+       },
+       "text": "*פָּנָה fut. יִפְנֶה, apoc. and conv."
+      },
+      {
+       "draft": "וַיִּפֶן, יִפֶן, in the other persons וָאֵפֶן,",
+       "reread": "יִפֶן, וַיִּפֶן, in the other persons וָאֵפֶן,",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "יִפֶן, וַיִּפֶן, in the other persons וָאֵפֶן,",
+        "verdict": "b",
+        "note": "Printed left-to-right order: the shorter form יִפֶן (no vav) is leftmost, followed by וַיִּפֶן (with vav and dagesh in yod); Reading A swaps them. Vowels match B: hiriq under yod, segol under pe; וָאֵפֶן with qamets, tsere, segol.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d978a1ef-fc78-4657-ab56-9089b750974f",
+        "duration_api_ms": 14854,
+        "cost_usd_list": 0.080596,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3544,
+        "cache_creation_input_tokens": 2716,
+        "output_tokens": 501
+       },
+       "text": "יִפֶן, וַיִּפֶן, in the other persons וָאֵפֶן,"
+      },
+      {
+       "draft": "וַנֵּפֶן, תֵּפֶן; imper. פְּנֵה; to turn, trans. in",
+       "reread": "תֵּפֶן, וַנֵּפֶן; imper. פְּנֵה; to turn, trans. in",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "תֵּפֶן, וַנֵּפֶן; imper. פְּנֵה; to turn, trans. in",
+        "verdict": "b",
+        "note": "Decisive difference is the left-to-right order of the two apocopated forms: the printed line begins (leftmost) with תֵּפֶן, followed by a comma and then וַנֵּפֶן, as in Reading B. Reading A swaps them. All vowel points, dagesh in tav and nun, and the rest of the line agree in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "96cecc51-33a0-442d-b50b-a0ed684cd79e",
+        "duration_api_ms": 9255,
+        "cost_usd_list": 0.0885795,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3558,
+        "cache_creation_input_tokens": 2730,
+        "output_tokens": 655
+       },
+       "text": "תֵּפֶן, וַנֵּפֶן; imper. פְּנֵה; to turn, trans. in"
+      },
+      {
+       "draft": "one phrase: פָּנָה עֹרֶף to turn the back",
+       "reread": "one phrase: פָּנָה עֹרֶף to turn the back",
+       "status": "agreed",
+       "text": "one phrase: פָּנָה עֹרֶף to turn the back"
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b03",
@@ -1060,8 +1514,41 @@
      "image_sha256": "7abbec4d65c14aba04b2552ec330e9b35d5a5b251855c01a42fd8d3394e76af2",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"732a86a8-e194-406e-ae1f-291d89b78daa\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-",
+       "where always intrans. to turn, to turn",
+       "oneself, i. e."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c1996684-1858-41f6-aa04-efe2822d6f49",
+      "duration_api_ms": 3963,
+      "cost_usd_list": 0.06069125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2391,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-",
+       "reread": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-",
+       "status": "agreed",
+       "text": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-"
+      },
+      {
+       "draft": "where always intrans. to turn, to turn",
+       "reread": "where always intrans. to turn, to turn",
+       "status": "agreed",
+       "text": "where always intrans. to turn, to turn"
+      },
+      {
+       "draft": "oneself, i. e.",
+       "reread": "oneself, i. e.",
+       "status": "agreed",
+       "text": "oneself, i. e."
+      }
+     ]
     }
    ]
   },
@@ -1106,98 +1593,46 @@
      "image_sha256": "6444bdcd335bab448d53e96b941a4640792c1ab1bf488e2cd9400682184cc36c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"edeb10de-a2d8-4e2d-aaf1-3bc2f7ca8916\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "1. In order to go anywhere, to go",
+       "away; Ex. 7, 23 וַיִּפֶן פַּרְעֹה וַיָּבֹא. 10, 6.",
+       "32, 15. Gen. 18, 22. Deut. 9, 15. 10, 5.",
+       "16, 7. al. Sometimes with a dat. pleon."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "44be498b-9348-4c35-8b5e-f8a6d97e30d3",
+      "duration_api_ms": 11302,
+      "cost_usd_list": 0.07627125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 469
      },
      "lines": [
       {
        "draft": "1. In order to go anywhere, to go",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "1. In order to go anywhere, to go",
+       "status": "agreed",
        "text": "1. In order to go anywhere, to go"
       },
       {
        "draft": "away; Ex. 7, 23 וַיִּפֶן פַּרְעֹה וַיָּבֹא. 10, 6.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "away; Ex. 7, 23 וַיִּפֶן פַּרְעֹה וַיָּבֹא. 10, 6.",
+       "status": "agreed",
        "text": "away; Ex. 7, 23 וַיִּפֶן פַּרְעֹה וַיָּבֹא. 10, 6."
       },
       {
        "draft": "32, 15. Gen. 18, 22. Deut. 9, 15. 10, 5.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "32, 15. Gen. 18, 22. Deut. 9, 15. 10, 5.",
+       "status": "agreed",
        "text": "32, 15. Gen. 18, 22. Deut. 9, 15. 10, 5."
       },
       {
        "draft": "16, 7. al. Sometimes with a dat. pleon.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "16, 7. al. Sometimes with a dat. pleon.",
+       "status": "agreed",
        "text": "16, 7. al. Sometimes with a dat. pleon."
-      },
-      {
-       "draft": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence"
-      },
-      {
-       "draft": "a) to turn to or towards any place, to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a) to turn to or towards any place, to"
-      },
-      {
-       "draft": "betake oneself in any direction, c. עַל",
-       "reread": null,
-       "status": "draft_only",
-       "text": "betake oneself in any direction, c. עַל"
-      },
-      {
-       "draft": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,"
-      },
-      {
-       "draft": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47",
-       "reread": null,
-       "status": "draft_only",
-       "text": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47"
-      },
-      {
-       "draft": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned",
-       "reread": null,
-       "status": "draft_only",
-       "text": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned"
-      },
-      {
-       "draft": "himself; with He parag. 1 K. 17, 3. Deut.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "himself; with He parag. 1 K. 17, 3. Deut."
-      },
-      {
-       "draft": "2, 3. Cant. 6, 1. Also with אֶל of pers. to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2, 3. Cant. 6, 1. Also with אֶל of pers. to"
-      },
-      {
-       "draft": "turn unto any one, to go to him for re-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "turn unto any one, to go to him for re-"
-      },
-      {
-       "draft": "sponse or for aid, espec. God Is. 45, 22;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sponse or for aid, espec. God Is. 45, 22;"
-      },
-      {
-       "draft": "angels Job 5, 1; idols Lev. 19, 4. Deut.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "angels Job 5, 1; idols Lev. 19, 4. Deut."
       }
      ]
     },
@@ -1214,8 +1649,48 @@
      "image_sha256": "1134e703b6301eabf78230b87beb8c9c0c1880abbbc3258f8673eca5320c7e0c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f2f0f110-edc3-437e-b7a2-a1ab07e6340c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence",
+       "a) to turn to or towards any place, to",
+       "betake oneself in any direction, c. עַל",
+       "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1e172b0e-5cef-4729-8ebc-47047305d317",
+      "duration_api_ms": 4911,
+      "cost_usd_list": 0.06803125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 279
+     },
+     "lines": [
+      {
+       "draft": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence",
+       "reread": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence",
+       "status": "agreed",
+       "text": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence"
+      },
+      {
+       "draft": "a) to turn to or towards any place, to",
+       "reread": "a) to turn to or towards any place, to",
+       "status": "agreed",
+       "text": "a) to turn to or towards any place, to"
+      },
+      {
+       "draft": "betake oneself in any direction, c. עַל",
+       "reread": "betake oneself in any direction, c. עַל",
+       "status": "agreed",
+       "text": "betake oneself in any direction, c. עַל"
+      },
+      {
+       "draft": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,",
+       "reread": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,",
+       "status": "agreed",
+       "text": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1230,8 +1705,48 @@
      "image_sha256": "cc010ddc21c0f66b510a57fbc78f299455f9ff6472ed1c3051da360c99d7f773",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"590ee05c-8202-4ff9-a2d7-6835ab056928\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47",
+       "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned",
+       "himself; with He parag. 1 K. 17, 3. Deut.",
+       "2, 3. Cant. 6, 1. Also with אֶל of pers. to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "91e22464-879c-4cb4-b6e3-e79b2e51ce01",
+      "duration_api_ms": 17117,
+      "cost_usd_list": 0.07492125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 442
+     },
+     "lines": [
+      {
+       "draft": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47",
+       "reread": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47",
+       "status": "agreed",
+       "text": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47"
+      },
+      {
+       "draft": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned",
+       "reread": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned",
+       "status": "agreed",
+       "text": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned"
+      },
+      {
+       "draft": "himself; with He parag. 1 K. 17, 3. Deut.",
+       "reread": "himself; with He parag. 1 K. 17, 3. Deut.",
+       "status": "agreed",
+       "text": "himself; with He parag. 1 K. 17, 3. Deut."
+      },
+      {
+       "draft": "2, 3. Cant. 6, 1. Also with אֶל of pers. to",
+       "reread": "2, 3. Cant. 6, 1. Also with אֶל of pers. to",
+       "status": "agreed",
+       "text": "2, 3. Cant. 6, 1. Also with אֶל of pers. to"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b03",
@@ -1246,8 +1761,41 @@
      "image_sha256": "1f7df0541d1e9f94a1ea34f11c8cefad1c7f66ad91bf8968e0229ed9bf9faf78",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d240eac0-fa5d-484a-bda4-70cf5573d8a7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "turn unto any one, to go to him for re-",
+       "sponse or for aid, espec. God Is. 45, 22 ;",
+       "angels Job 5, 1 ; idols Lev. 19, 4. Deut."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26303f5c-284d-4c98-944d-19cf61d95ca7",
+      "duration_api_ms": 4806,
+      "cost_usd_list": 0.06139125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2391,
+      "output_tokens": 247
+     },
+     "lines": [
+      {
+       "draft": "turn unto any one, to go to him for re-",
+       "reread": "turn unto any one, to go to him for re-",
+       "status": "agreed",
+       "text": "turn unto any one, to go to him for re-"
+      },
+      {
+       "draft": "sponse or for aid, espec. God Is. 45, 22;",
+       "reread": "sponse or for aid, espec. God Is. 45, 22 ;",
+       "status": "agreed",
+       "text": "sponse or for aid, espec. God Is. 45, 22;"
+      },
+      {
+       "draft": "angels Job 5, 1; idols Lev. 19, 4. Deut.",
+       "reread": "angels Job 5, 1 ; idols Lev. 19, 4. Deut.",
+       "status": "agreed",
+       "text": "angels Job 5, 1; idols Lev. 19, 4. Deut."
+      }
+     ]
     }
    ]
   },
@@ -1291,92 +1839,46 @@
      "image_sha256": "b537388c122de87b607ba0ee8a6e592f90d39ceaaa480dca952bfdb50916ad95",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"bb396630-dc30-48e8-987b-05a46be4fc01\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "31, 18. 20; wicked men Ps. 40, 5; di-",
+       "viners Lev. 20, 6; with אֶל of thing, to",
+       "turn unto e. g. iniquity Job 36, 21.",
+       "פָּנָה אַחֲרֵי פ׳ to turn after any one, to in-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1fe9a749-fcc9-4af3-bd50-8c60023d14a1",
+      "duration_api_ms": 13943,
+      "cost_usd_list": 0.06813125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 281
      },
      "lines": [
       {
        "draft": "31, 18. 20; wicked men Ps. 40, 5; di-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "31, 18. 20; wicked men Ps. 40, 5; di-",
+       "status": "agreed",
        "text": "31, 18. 20; wicked men Ps. 40, 5; di-"
       },
       {
        "draft": "viners Lev. 20, 6; with אֶל of thing, to",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "viners Lev. 20, 6; with אֶל of thing, to",
+       "status": "agreed",
        "text": "viners Lev. 20, 6; with אֶל of thing, to"
       },
       {
        "draft": "turn unto e. g. iniquity Job 36, 21.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "turn unto e. g. iniquity Job 36, 21.",
+       "status": "agreed",
        "text": "turn unto e. g. iniquity Job 36, 21."
       },
       {
        "draft": "פָּנָה אַחֲרֵי פ׳ to turn after any one, to in-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "פָּנָה אַחֲרֵי פ׳ to turn after any one, to in-",
+       "status": "agreed",
        "text": "פָּנָה אַחֲרֵי פ׳ to turn after any one, to in-"
-      },
-      {
-       "draft": "cline to his side or party, Ez. 29, 16.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "cline to his side or party, Ez. 29, 16."
-      },
-      {
-       "draft": "b) to turn away from any one, c. מֵעִם",
-       "reread": null,
-       "status": "draft_only",
-       "text": "b) to turn away from any one, c. מֵעִם"
-      },
-      {
-       "draft": "Deut. 29, 17 mentally; absol. 30, 17 if",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deut. 29, 17 mentally; absol. 30, 17 if"
-      },
-      {
-       "draft": "thy heart turn away from God, and thou",
-       "reread": null,
-       "status": "draft_only",
-       "text": "thy heart turn away from God, and thou"
-      },
-      {
-       "draft": "do not obey, etc. c) Trop. of time, e. g.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "do not obey, etc. c) Trop. of time, e. g."
-      },
-      {
-       "draft": "α) to turn away, i. e. to pass away, Jer.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "α) to turn away, i. e. to pass away, Jer."
-      },
-      {
-       "draft": "6, 4 פָּנָה הַיּוֹם the day turns, declines;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "6, 4 פָּנָה הַיּוֹם the day turns, declines;"
-      },
-      {
-       "draft": "also poet. Ps. 90, 9 all our days turn",
-       "reread": null,
-       "status": "draft_only",
-       "text": "also poet. Ps. 90, 9 all our days turn"
-      },
-      {
-       "draft": "away, pass away. β) to turn in ap-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "away, pass away. β) to turn in ap-"
-      },
-      {
-       "draft": "proaching, e. g. in the phrases: לִפְנוֹת",
-       "reread": null,
-       "status": "draft_only",
-       "text": "proaching, e. g. in the phrases: לִפְנוֹת"
       }
      ]
     },
@@ -1393,8 +1895,78 @@
      "image_sha256": "3f2e447585f3b08b27341e09cb65b31459e46d5afb8129505ae48b9bb8f392c0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"937c746e-6316-4f26-aa0b-bce377386b5f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "cline to his side or party, Ez. 29, 16.",
+       "b) to turn away from any one. c. מֵעִם",
+       "Deut. 29, 17 mentally ; absol. 30, 17 if",
+       "thy heart turn away from God. and thou"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "66d04e9b-4267-4550-b5dc-24433bc6c7f1",
+      "duration_api_ms": 11574,
+      "cost_usd_list": 0.06837125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 311
+     },
+     "lines": [
+      {
+       "draft": "cline to his side or party, Ez. 29, 16.",
+       "reread": "cline to his side or party, Ez. 29, 16.",
+       "status": "agreed",
+       "text": "cline to his side or party, Ez. 29, 16."
+      },
+      {
+       "draft": "b) to turn away from any one, c. מֵעִם",
+       "reread": "b) to turn away from any one. c. מֵעִם",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "b) to turn away from any one, c. מֵעִם",
+        "verdict": "a",
+        "note": "The mark after \"one\" is a worn comma (same shape as the clearly-grammatical comma in \"from God, and thou\" two lines below), not a period; Hebrew מֵעִם with tsere and hiriq confirmed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c89d61b3-11d6-48c5-bfb4-fa631390b2b3",
+        "duration_api_ms": 14856,
+        "cost_usd_list": 0.084249,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3516,
+        "cache_creation_input_tokens": 2499,
+        "output_tokens": 661
+       },
+       "text": "b) to turn away from any one, c. מֵעִם"
+      },
+      {
+       "draft": "Deut. 29, 17 mentally; absol. 30, 17 if",
+       "reread": "Deut. 29, 17 mentally ; absol. 30, 17 if",
+       "status": "agreed",
+       "text": "Deut. 29, 17 mentally; absol. 30, 17 if"
+      },
+      {
+       "draft": "thy heart turn away from God, and thou",
+       "reread": "thy heart turn away from God. and thou",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "thy heart turn away from God. and thou",
+        "verdict": "b",
+        "note": "The mark after \"God\" prints as a plain dot on the baseline with no descending tail, unlike the clear commas in \"29, 17\" and \"30, 17\" on the line above; it matches the period in \"one.\" on line 2. Grammatically a comma is expected, so this is probably a worn/broken comma, but what is printed is a period.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "495a849a-bf71-4466-81a8-f74ddbf80c98",
+        "duration_api_ms": 9892,
+        "cost_usd_list": 0.08379650000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3506,
+        "cache_creation_input_tokens": 2489,
+        "output_tokens": 656
+       },
+       "text": "thy heart turn away from God. and thou"
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1409,8 +1981,48 @@
      "image_sha256": "e2afe7627aad390fb930e61bbbe734fc38934c38fa4b338b6cf6fff9e7a81d58",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"cb8793aa-fbaa-4b95-912f-f16cf7d21b9c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "do not obey, etc.  c) Trop. of time, e. g.",
+       "α) to turn away, i. e. to pass away, Jer.",
+       "6, 4 פָּנָה הַיּוֹם the day turns, declines;",
+       "also poet. Ps. 90, 9 all our days turn"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "51f6fa17-b713-45f2-88b9-c541983d2a6e",
+      "duration_api_ms": 6872,
+      "cost_usd_list": 0.07087125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 361
+     },
+     "lines": [
+      {
+       "draft": "do not obey, etc. c) Trop. of time, e. g.",
+       "reread": "do not obey, etc.  c) Trop. of time, e. g.",
+       "status": "agreed",
+       "text": "do not obey, etc. c) Trop. of time, e. g."
+      },
+      {
+       "draft": "α) to turn away, i. e. to pass away, Jer.",
+       "reread": "α) to turn away, i. e. to pass away, Jer.",
+       "status": "agreed",
+       "text": "α) to turn away, i. e. to pass away, Jer."
+      },
+      {
+       "draft": "6, 4 פָּנָה הַיּוֹם the day turns, declines;",
+       "reread": "6, 4 פָּנָה הַיּוֹם the day turns, declines;",
+       "status": "agreed",
+       "text": "6, 4 פָּנָה הַיּוֹם the day turns, declines;"
+      },
+      {
+       "draft": "also poet. Ps. 90, 9 all our days turn",
+       "reread": "also poet. Ps. 90, 9 all our days turn",
+       "status": "agreed",
+       "text": "also poet. Ps. 90, 9 all our days turn"
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b03",
@@ -1425,8 +2037,34 @@
      "image_sha256": "5ff7c1d93d95f9109e955d5d4dfff7af786b181ec68c4f0fbb298add5f3f8871",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d03eed7e-76ae-42c8-8264-5928c0e4e7c8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "away, pass away. β) to turn in ap-",
+       "proaching, e. g. in the phrases: לִפְנוֹת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c69d8077-ed93-4794-83c6-788bc55f09fc",
+      "duration_api_ms": 4404,
+      "cost_usd_list": 0.05495125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2139,
+      "output_tokens": 219
+     },
+     "lines": [
+      {
+       "draft": "away, pass away. β) to turn in ap-",
+       "reread": "away, pass away. β) to turn in ap-",
+       "status": "agreed",
+       "text": "away, pass away. β) to turn in ap-"
+      },
+      {
+       "draft": "proaching, e. g. in the phrases: לִפְנוֹת",
+       "reread": "proaching, e. g. in the phrases: לִפְנוֹת",
+       "status": "agreed",
+       "text": "proaching, e. g. in the phrases: לִפְנוֹת"
+      }
+     ]
     }
    ]
   }
@@ -1436,974 +2074,710 @@
    "chunk_id": "header",
    "column": -1,
    "text": "פָּלַח 850 פָּנָה",
-   "status": "draft_only",
-   "draft": "פָּלַח 850 פָּנָה",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "*פֶּלֶת obsol. root, Arab. فلت to",
-   "status": "draft_only",
+   "text": "* פָּלַת obsol. root, Arab. فلت to",
+   "status": "adjudicated",
    "draft": "*פֶּלֶת obsol. root, Arab. فلت to",
-   "reread": null,
+   "reread": "* פָּלַח obsol. root, Arab. فلت to",
+   "verdict": "neither",
+   "note": "The Hebrew headword is printed פָּלַת: qamets under pe and patach under lamed (as in B, not A's segols), but the final letter is tav — its left leg has the characteristic foot — not cheth (as B gives). Cognate to Arab. فلت and Heb. פָּלַט confirms ת.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "flee, to escape, i. q. Heb. פָּלַט; فُلْتٌ",
-   "status": "draft_only",
-   "draft": "flee, to escape, i. q. Heb. פָּלַט ; فُلْتٌ",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "swift, فَلَتَانٌ a swift horse, runner.—",
-   "status": "draft_only",
+   "text": "swift, فَلَتَان a swift horse, runner.—",
+   "status": "adjudicated",
    "draft": "swift, فَلَتَانٌ a swift horse, runner.—",
-   "reread": null,
+   "reread": "swift, فَلَتَان a swift horse, runner.—",
+   "verdict": "b",
+   "note": "The final nūn has only its own dot; no tanwīn ḍammatān is printed above it (Reading A's ٌ is spurious). Everything else is identical in both readings.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Hence the two following.",
-   "status": "draft_only",
-   "draft": "Hence the two following.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)",
-   "status": "draft_only",
-   "draft": "פֶּלֶת (swiftness) Peleth, pr. n. m. a)",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Num. 16, 1. b) 1 Chr. 2, 33.",
-   "status": "draft_only",
-   "draft": "Num. 16, 1. b) 1 Chr. 2, 33.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "פְּלֵתִי m. (r. פֶּלֶת) a public runner, cou-",
-   "reread": null,
-   "needs_review": true
+   "reread": "פְּלֵתִי m. (r. פָּלַת) a public runner, cou-",
+   "verdict": "a",
+   "note": "The root in parentheses is printed with dot-cluster vowels (segol) under both pe and lamed — פֶּלֶת — not the stroke vowels qamets/patah of Reading B; the headword's sheva, tsere and hiriq are as both readings give.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "rier, with art. collect. the public runners,",
-   "status": "draft_only",
-   "draft": "rier, with art. collect. the public runners,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "couriers, everywhere coupled with כְּרֵתִי",
-   "status": "draft_only",
-   "draft": "couriers, everywhere coupled with כְּרֵתִי",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K.",
-   "status": "draft_only",
-   "draft": "q. v. 2 Sam. 8, 18. 15, 18. 20, 7. 23. 2 K.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "11, 4. 19. Some without good reason",
-   "status": "draft_only",
-   "draft": "11, 4. 19.  Some without good reason",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "hold both כְּרֵתִי and פְּלֵתִי to be Philis-",
-   "status": "draft_only",
-   "draft": "hold both כְּרֵתִי and פְּלֵתִי to be Philis-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "tines, and regard the latter form as put",
-   "status": "draft_only",
-   "draft": "tines, and regard the latter form as put",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "by paronomasia for פְּלִשְׁתִּי, but against",
-   "status": "draft_only",
-   "draft": "by paronomasia for פְּלִשְׁתִּי, but against",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "the analogy of the Hebrew language;",
-   "status": "draft_only",
-   "draft": "the analogy of the Hebrew language;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "so Ewald Heb. Gram. p. 297. See in",
-   "status": "draft_only",
-   "draft": "so Ewald Heb. Gram. p. 297.  See in",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "כְּרֵתִי.",
-   "status": "draft_only",
+   "text": "פְּרֵתִי.",
+   "status": "adjudicated",
    "draft": "כְּרֵתִי.",
-   "reread": null,
-   "needs_review": true
+   "reread": "פְּרֵתִי.",
+   "verdict": "b",
+   "note": "The first letter has the inner hook/curl of פ (compare the פ of פֵּן and פִּנָּה on the lines below); no plain-open כ is printed. Contextually one would expect כְּרֵתִי (the cross-reference to the Cherethites), so this looks like a typographic error in the 1854 printing, but the printed glyph is פ.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "I. פֵּן m. i. q. fem. פִּנָּה which is more",
-   "status": "draft_only",
-   "draft": "I. פֵּן m. i. q. fem. פִּנָּה which is more",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "usual, a corner, c. suff. פִּנַּת Prov. 7, 8.",
-   "status": "draft_only",
+   "text": "usual, a corner, c. suff. פִּנָּהּ Prov. 7, 8.",
+   "status": "adjudicated",
    "draft": "usual, a corner, c. suff. פִּנַּת Prov. 7, 8.",
-   "reread": null,
-   "needs_review": true
+   "reread": "usual, a corner, c. suff. פִּנָּהּ Prov. 7, 8.",
+   "verdict": "b",
+   "note": "The final letter is a he with mappiq (הּ), not a tav, and the vowel under the nun is qamets, not pathach — matching Prov. 7:8 פִּנָּהּ \"her corner\"; Reading A's פִּנַּת is wrong.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Plur. פִּנִּים Zech. 14, 10. R. פָּנַן.",
-   "status": "draft_only",
-   "draft": "Plur. פִּנִּים Zech. 14, 10.  R. פָּנַן.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "II. פֶּן conj. (for פְּנֵה, r. פָּנָה Pi. no. 1)",
-   "status": "draft_only",
+   "text": "II. פֶּן conj. (for פַּנֵּה, r. פָּנָה Pi. no. 1)",
+   "status": "adjudicated",
    "draft": "II. פֶּן conj. (for פְּנֵה, r. פָּנָה Pi. no. 1)",
-   "reread": null,
+   "reread": "II. פֵּן conj. (for פַּנֵּה, r. פָּנָה Pi. no. 1)",
+   "verdict": "neither",
+   "note": "Headword has segol under pe (three dots, A right, B wrong); the \"for\" word is printed פַּנֵּה with patach under pe and dagesh + tsere in nun (Piel infinitive; B right, A wrong with shewa and no dagesh). A space precedes the comma after פַּנֵּה.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "pr. a removing, taking away; used only",
-   "status": "draft_only",
-   "draft": "pr. a removing, taking away; used only",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "in the constr. state with Makk. פֶּן־, as a",
-   "status": "draft_only",
-   "draft": "in the constr. state with Makk. פֶּן־, as a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Conj. of removing, prohibiting, hinder-",
-   "status": "draft_only",
-   "draft": "Conj. of removing, prohibiting, hinder-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "ing, i. q. μή, that not, lest. Thus:",
-   "status": "draft_only",
-   "draft": "ing, i. q. μή, that not, lest. Thus:",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "1. Where an action precedes, that",
-   "status": "draft_only",
-   "draft": "1. Where an action precedes, that",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "serves to hinder or prohibit something",
-   "status": "draft_only",
-   "draft": "serves to hinder or prohibit something",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "which one fears and wishes to remove",
-   "status": "draft_only",
-   "draft": "which one fears and wishes to remove",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "or avoid. Gen. 11, 4 let us build us a",
-   "status": "draft_only",
-   "draft": "or avoid. Gen. 11, 4 let us build us a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "city... פֶּן־נָפוּץ lest we be scattered. 19,",
-   "status": "draft_only",
-   "draft": "city . . . פֶּן־נָפוּץ lest we be scattered. 19,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "15 arise... פֶּן־תִּסָּפֶה lest thou perish. 3,",
-   "status": "draft_only",
-   "draft": "15 arise . . . פֶּן־תִּסָּפֶה lest thou perish. 3,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "3 eat not of it... פֶּן־תְּמֻתוּן lest ye die.—",
-   "status": "draft_only",
-   "draft": "3 eat not of it . . . פֶּן־תְּמֻתוּן lest ye die.—",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Then, after verbs of fearing, like Gr.",
-   "status": "draft_only",
-   "draft": "Then, after verbs of fearing, like Gr.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "δείδω μή, Lat. vereor ne, Gen. 31, 31,",
-   "status": "draft_only",
-   "draft": "δείδω μή, Lat. vereor ne, Gen. 31, 31,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "comp. 26, 9; of caution, comp. Gr. ἰδεῖν",
-   "status": "draft_only",
-   "draft": "comp. 26, 9 ; of caution, comp. Gr. ἰδεῖν",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23; also",
-   "status": "draft_only",
-   "draft": "μή, Gen. 24, 6. 31, 24. Deut. 4, 23 ; also",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "of swearing Judg. 15, 12, comp. ὀμνύω μή",
-   "status": "draft_only",
-   "draft": "of swearing Judg. 15, 12, comp. ὀμνύω μή",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Il. 23. 585. In examples of this kind אַל",
-   "status": "draft_only",
-   "draft": "Il. 23. 585. In examples of this kind אַל",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "is never used.",
-   "status": "draft_only",
-   "draft": "is never used.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "2. At the beginning of a sentence,",
-   "status": "draft_only",
-   "draft": "2. At the beginning of a sentence,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "where it implies: a) Prohibition or dis-",
-   "status": "draft_only",
-   "draft": "where it implies : a) Prohibition or dis-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "suasion, like אַל. Job 32, 13 פֶּן־תֹּאמְרוּ",
-   "status": "draft_only",
-   "draft": "suasion, like אַל. Job 32, 13 פֶּן־תֹּאמְרוּ",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "say not, i. e. beware lest ye say. Is. 36,",
-   "status": "draft_only",
-   "draft": "say not, i. e. beware lest ye say. Is. 36,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest",
-   "status": "draft_only",
-   "draft": "18 פֶּן־יַסִּית אֶתְכֶם חִזְקִיָּהוּ beware lest",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Hezekiah deceive you. b) Fear, appre-",
-   "status": "draft_only",
-   "draft": "Hezekiah deceive you. b) Fear, appre-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ",
-   "status": "draft_only",
-   "draft": "hension, as Gen. 3, 22 וְעַתָּה פֶּן־יִשְׁלַח יָדוֹ",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "וגו׳ and now (I fear) lest he put forth",
-   "status": "draft_only",
-   "draft": "וגו׳ and now (I fear) lest he put forth",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳",
-   "status": "draft_only",
-   "draft": "his hand, etc. 44, 34 פֶּן־אֶרְאֶה בָרָע וגו׳",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "(I fear) lest I see the evil, etc. 31, 31. 38,",
-   "status": "draft_only",
-   "draft": "(I fear) lest I see the evil, etc. 31, 31. 38,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "11. 42, 4. Ex. 13, 17. Num. 16, 34.",
-   "status": "draft_only",
-   "draft": "11. 42, 4. Ex. 13, 17. Num. 16, 34.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "1 Sam. 13, 19. With præt. where one",
-   "status": "draft_only",
-   "draft": "1 Sam. 13, 19. With præt. where one",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "fears lest something has already taken",
-   "status": "draft_only",
-   "draft": "fears lest something has already taken",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may",
-   "status": "draft_only",
-   "draft": "place, 2 Sam. 20, 6 פֶּן־מָצָא lest he may",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה",
-   "status": "draft_only",
-   "draft": "have found. 2 K. 2, 16 פֶּן־נְשָׂאוֹ רוּחַ יְהֹוָה",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "(we fear) lest a wind from Jehovah hath",
-   "status": "draft_only",
-   "draft": "(we fear) lest a wind from Jehovah hath",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "taken him up.—Once it approaches to",
-   "status": "draft_only",
-   "draft": "taken him up.—Once it approaches to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "the power of a negative adverb, i. q. לֹא,",
-   "status": "draft_only",
-   "draft": "the power of a negative adverb, i. q. לֹא,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of",
-   "status": "draft_only",
-   "draft": "Prov. 5, 6 אֹרַח חַיִּים פֶּן־תְּפַלֵּס the way of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "life she prepareth not for herself, sc. the",
-   "status": "draft_only",
-   "draft": "life she prepareth not for herself, sc. the",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "adulteress, i. e. she walks not in the way",
-   "status": "draft_only",
-   "draft": "adulteress, i. e. she walks not in the way",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "of life. But the full sentence is: ‘(see)",
-   "status": "draft_only",
-   "draft": "of life. But the full sentence is: ‘(see)",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "lest she walk in the way of life.’",
-   "status": "draft_only",
-   "draft": "lest she walk in the way of life.’",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "פַּנַּג ἅπ. λεγόμ. Ez. 27, 17. perh. a",
-   "status": "draft_only",
-   "draft": "פַּנַּג ἅπ. λεγόμ. Ez. 27, 17. perh. a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "kind of pastry or sweet cake. The Targ.",
-   "status": "draft_only",
-   "draft": "kind of pastry or sweet cake. The Targ.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "renders it קוֹלְיָא, i. e. Gr. κολία, a kind",
-   "status": "draft_only",
-   "draft": "renders it קוֹלְיָא, i. e. Gr. κολία, a kind",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "of sweet pastry; and in the book Zohar",
-   "status": "draft_only",
-   "draft": "of sweet pastry; and in the book Zohar",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "לחם פנג is pastry-work. Other opinions",
-   "status": "draft_only",
-   "draft": "לחם פנג is pastry-work. Other opinions",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "are enumerated by Celsius in Hierobot.",
-   "status": "draft_only",
-   "draft": "are enumerated by Celsius in Hierobot.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "II. p. 73. Sept. κασία, Vulg. balsamum.",
-   "status": "draft_only",
-   "draft": "II. p. 73. Sept. κασία, Vulg. balsamum.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "—The etymology is wholly uncertain.",
-   "status": "draft_only",
-   "draft": "—The etymology is wholly uncertain.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "* פָּנָה fut. יִפְנֶה, apoc. and conv.",
-   "status": "draft_only",
+   "text": "*פָּנָה fut. יִפְנֶה, apoc. and conv.",
+   "status": "adjudicated",
    "draft": "* פָּנָה fut. יִפְנֶה, apoc. and conv.",
-   "reread": null,
-   "needs_review": true
+   "reread": "*פָּנָה fut. יִפְנֶה, apoc. and conv.",
+   "verdict": "b",
+   "note": "The asterisk is set directly against the headword with no word-space (gap is much narrower than the inter-word spaces on the line), so B's unspaced \"*פָּנָה\" is correct; all vowel points and the dagesh in both Hebrew words match both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "וַיִּפֶן, יִפֶן, in the other persons וָאֵפֶן,",
-   "status": "draft_only",
+   "text": "יִפֶן, וַיִּפֶן, in the other persons וָאֵפֶן,",
+   "status": "adjudicated",
    "draft": "וַיִּפֶן, יִפֶן, in the other persons וָאֵפֶן,",
-   "reread": null,
-   "needs_review": true
+   "reread": "יִפֶן, וַיִּפֶן, in the other persons וָאֵפֶן,",
+   "verdict": "b",
+   "note": "Printed left-to-right order: the shorter form יִפֶן (no vav) is leftmost, followed by וַיִּפֶן (with vav and dagesh in yod); Reading A swaps them. Vowels match B: hiriq under yod, segol under pe; וָאֵפֶן with qamets, tsere, segol.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "וַנֵּפֶן, תֵּפֶן; imper. פְּנֵה; to turn, trans. in",
-   "status": "draft_only",
+   "text": "תֵּפֶן, וַנֵּפֶן; imper. פְּנֵה; to turn, trans. in",
+   "status": "adjudicated",
    "draft": "וַנֵּפֶן, תֵּפֶן; imper. פְּנֵה; to turn, trans. in",
-   "reread": null,
-   "needs_review": true
+   "reread": "תֵּפֶן, וַנֵּפֶן; imper. פְּנֵה; to turn, trans. in",
+   "verdict": "b",
+   "note": "Decisive difference is the left-to-right order of the two apocopated forms: the printed line begins (leftmost) with תֵּפֶן, followed by a comma and then וַנֵּפֶן, as in Reading B. Reading A swaps them. All vowel points, dagesh in tav and nun, and the rest of the line agree in both readings and match the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "one phrase: פָּנָה עֹרֶף to turn the back",
-   "status": "draft_only",
-   "draft": "one phrase: פָּנָה עֹרֶף to turn the back",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-",
-   "status": "draft_only",
-   "draft": "Josh. 17, 12. Jer. 2, 27. 30, 33.—Else-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "where always intrans. to turn, to turn",
-   "status": "draft_only",
-   "draft": "where always intrans. to turn, to turn",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "oneself, i. e.",
-   "status": "draft_only",
-   "draft": "oneself, i. e.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "1. In order to go anywhere, to go",
-   "status": "draft_only",
-   "draft": "1. In order to go anywhere, to go",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "away; Ex. 7, 23 וַיִּפֶן פַּרְעֹה וַיָּבֹא. 10, 6.",
-   "status": "draft_only",
-   "draft": "away; Ex. 7, 23 וַיִּפֶן פַּרְעֹה וַיָּבֹא. 10, 6.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "32, 15. Gen. 18, 22. Deut. 9, 15. 10, 5.",
-   "status": "draft_only",
-   "draft": "32, 15. Gen. 18, 22. Deut. 9, 15. 10, 5.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "16, 7. al. Sometimes with a dat. pleon.",
-   "status": "draft_only",
-   "draft": "16, 7. al. Sometimes with a dat. pleon.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence",
-   "status": "draft_only",
-   "draft": "Deut. 1, 40. 2, 3. 1 K. 17, 3. Hence",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "a) to turn to or towards any place, to",
-   "status": "draft_only",
-   "draft": "a) to turn to or towards any place, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "betake oneself in any direction, c. עַל",
-   "status": "draft_only",
-   "draft": "betake oneself in any direction, c. עַל",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,",
-   "status": "draft_only",
-   "draft": "Gen. 24, 49; אֶל 1 Sam. 13, 17; לְ Is. 53,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47",
-   "status": "draft_only",
-   "draft": "6. 56, 11; acc. 1 Sam. 13, 18. 14, 47",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned",
-   "status": "draft_only",
-   "draft": "בְּכֹל אֲשֶׁר יִפְנֶה whithersoever he turned",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "himself; with He parag. 1 K. 17, 3. Deut.",
-   "status": "draft_only",
-   "draft": "himself; with He parag. 1 K. 17, 3. Deut.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "2, 3. Cant. 6, 1. Also with אֶל of pers. to",
-   "status": "draft_only",
-   "draft": "2, 3. Cant. 6, 1. Also with אֶל of pers. to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "turn unto any one, to go to him for re-",
-   "status": "draft_only",
-   "draft": "turn unto any one, to go to him for re-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "sponse or for aid, espec. God Is. 45, 22;",
-   "status": "draft_only",
-   "draft": "sponse or for aid, espec. God Is. 45, 22;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "angels Job 5, 1; idols Lev. 19, 4. Deut.",
-   "status": "draft_only",
-   "draft": "angels Job 5, 1; idols Lev. 19, 4. Deut.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "31, 18. 20; wicked men Ps. 40, 5; di-",
-   "status": "draft_only",
-   "draft": "31, 18. 20; wicked men Ps. 40, 5; di-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "viners Lev. 20, 6; with אֶל of thing, to",
-   "status": "draft_only",
-   "draft": "viners Lev. 20, 6; with אֶל of thing, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "turn unto e. g. iniquity Job 36, 21.",
-   "status": "draft_only",
-   "draft": "turn unto e. g. iniquity Job 36, 21.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "פָּנָה אַחֲרֵי פ׳ to turn after any one, to in-",
-   "status": "draft_only",
-   "draft": "פָּנָה אַחֲרֵי פ׳ to turn after any one, to in-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "cline to his side or party, Ez. 29, 16.",
-   "status": "draft_only",
-   "draft": "cline to his side or party, Ez. 29, 16.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "b) to turn away from any one, c. מֵעִם",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "b) to turn away from any one, c. מֵעִם",
-   "reread": null,
-   "needs_review": true
+   "reread": "b) to turn away from any one. c. מֵעִם",
+   "verdict": "a",
+   "note": "The mark after \"one\" is a worn comma (same shape as the clearly-grammatical comma in \"from God, and thou\" two lines below), not a period; Hebrew מֵעִם with tsere and hiriq confirmed.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Deut. 29, 17 mentally; absol. 30, 17 if",
-   "status": "draft_only",
-   "draft": "Deut. 29, 17 mentally; absol. 30, 17 if",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
-   "text": "thy heart turn away from God, and thou",
-   "status": "draft_only",
+   "text": "thy heart turn away from God. and thou",
+   "status": "adjudicated",
    "draft": "thy heart turn away from God, and thou",
-   "reread": null,
-   "needs_review": true
+   "reread": "thy heart turn away from God. and thou",
+   "verdict": "b",
+   "note": "The mark after \"God\" prints as a plain dot on the baseline with no descending tail, unlike the clear commas in \"29, 17\" and \"30, 17\" on the line above; it matches the period in \"one.\" on line 2. Grammatically a comma is expected, so this is probably a worn/broken comma, but what is printed is a period.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "do not obey, etc. c) Trop. of time, e. g.",
-   "status": "draft_only",
-   "draft": "do not obey, etc. c) Trop. of time, e. g.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "α) to turn away, i. e. to pass away, Jer.",
-   "status": "draft_only",
-   "draft": "α) to turn away, i. e. to pass away, Jer.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "6, 4 פָּנָה הַיּוֹם the day turns, declines;",
-   "status": "draft_only",
-   "draft": "6, 4 פָּנָה הַיּוֹם the day turns, declines;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "also poet. Ps. 90, 9 all our days turn",
-   "status": "draft_only",
-   "draft": "also poet. Ps. 90, 9 all our days turn",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "away, pass away. β) to turn in ap-",
-   "status": "draft_only",
-   "draft": "away, pass away. β) to turn in ap-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "proaching, e. g. in the phrases: לִפְנוֹת",
-   "status": "draft_only",
-   "draft": "proaching, e. g. in the phrases: לִפְנוֹת",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 0,
-  "adjudicated": 0,
-  "draft_only": 107,
+  "agreed": 96,
+  "adjudicated": 11,
+  "draft_only": 0,
   "reread_only": 0,
   "unresolved": 0,
-  "needs_review": 107
+  "needs_review": 3
  },
- "errors": 32,
- "cost_usd_list_total": 0.0
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.5262
 }

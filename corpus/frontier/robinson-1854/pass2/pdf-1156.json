@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-09-24T13:10:16+00:00",
+ "generated_at": "2026-10-01T20:47:26+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -43,13 +43,24 @@
      "image_sha256": "dbbc215d16da0ca062179e4f312cea8935c8b7287e83f8587769b39f43cd4750",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d30a65e5-6438-4da6-82e2-dae246dda086\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "תנך 1140 תער"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5688f043-2e2b-44e1-86be-f7db3cda9729",
+      "duration_api_ms": 10633,
+      "cost_usd_list": 0.04671,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3520,
+      "cache_creation_input_tokens": 1832,
+      "output_tokens": 183
      },
      "lines": [
       {
        "draft": "תנך 1140 תער",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "תנך 1140 תער",
+       "status": "agreed",
        "text": "תנך 1140 תער"
       }
      ]
@@ -96,92 +107,106 @@
      "image_sha256": "8f92b462c705595598cc18e5be361abbfb0218c7eb86c4817a8f45fcdba81c65",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"05c76917-cd94-4cee-ba8d-c3d5c55bf2db\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "* II. תְּנַן Chald. i. q. ܬܢ̇ܢ, to smoke ;",
+       "whence Eth. ተን, ἀτμίς, vapour ; Chald.",
+       "תְּנָנָא, Syr. ܬܢܢܐ, ܬܢܘܢܐ, Sam. ࠕࠍࠍࠀ,",
+       "smoke; Nasor. חאנא furnace."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8c161a45-84eb-49ca-aab5-17c530079251",
+      "duration_api_ms": 23868,
+      "cost_usd_list": 0.13116075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 3017,
+      "output_tokens": 1392
      },
      "lines": [
       {
        "draft": "* II. תְּנַן Chald. i. q. تَنَّ, to smoke;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* II. תְּנַן Chald. i. q. تَنَّ, to smoke;"
+       "reread": "* II. תְּנַן Chald. i. q. ܬܢ̇ܢ, to smoke ;",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "* II. תְּנַן Chald. i. q. ܬܢ̇ܢ, to smoke ;",
+        "verdict": "b",
+        "note": "The word after \"i. q.\" is printed in Syriac script (same letterforms as the Syr. items on line 3: a taw at the right, two nuns with a descending final), with a single point above the nun — not Arabic تَنَّ. Reading B's Syriac is correct; the Hebrew תְּנַן and \"to smoke ;\" are the same in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cebad804-feaa-4772-8555-509db9d14f19",
+        "duration_api_ms": 22010,
+        "cost_usd_list": 0.10057574999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 2965,
+        "output_tokens": 801
+       },
+       "text": "* II. תְּנַן Chald. i. q. ܬܢ̇ܢ, to smoke;"
       },
       {
        "draft": "whence Eth. ጢስ, ἀτμίς, vapour; Chald.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "whence Eth. ጢስ, ἀτμίς, vapour; Chald."
+       "reread": "whence Eth. ተን, ἀτμίς, vapour ; Chald.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "whence Eth. ተን, ἀτμίς, vapour ; Chald.",
+        "verdict": "b",
+        "note": "The Ethiopic word is printed as a cross-shaped ተ (tä) followed by a 7-shaped ን (nə) — ተን \"tan\", smoke — not ጢስ (which would show a looped ጠ-form); a thin space is also printed before the semicolon after \"vapour\", matching Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c88ee0a3-77a8-414d-88c4-24ae75260d8d",
+        "duration_api_ms": 17630,
+        "cost_usd_list": 0.09462324999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3533,
+        "cache_creation_input_tokens": 2955,
+        "output_tokens": 686
+       },
+       "text": "whence Eth. ተን, ἀτμίς, vapour; Chald."
       },
       {
        "draft": "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "תְּנָנָא, Syr. ܬܢܢܐ, ܬܢܘܢܐ, Sam. ࠕࠍࠍࠀ,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,",
+        "verdict": "a",
+        "note": "In the second Syriac word the waw (the small \"o\") is printed immediately after the taw (ܬܘܢܢܐ), not after the first nun as in B; and Syriac vowel points are clearly printed (dots/circles above the nuns and marks at the taw), which B omits.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "848bb512-8e33-4e26-a7ca-07e93cb354f9",
+        "duration_api_ms": 30077,
+        "cost_usd_list": 0.1221205,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3602,
+        "cache_creation_input_tokens": 3024,
+        "output_tokens": 1208
+       },
        "text": "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,"
       },
       {
        "draft": "smoke; Nasor. תאנא furnace.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "smoke; Nasor. תאנא furnace."
-      },
-      {
-       "draft": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר."
-      },
-      {
-       "draft": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev."
-      },
-      {
-       "draft": "11, 30, an unclean animal, classed with",
-       "reread": null,
-       "status": "draft_only",
-       "text": "11, 30, an unclean animal, classed with"
-      },
-      {
-       "draft": "other species of lizards; according to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "other species of lizards; according to"
-      },
-      {
-       "draft": "Bochart (Hieroz. T. I. p. 1083) the cha-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Bochart (Hieroz. T. I. p. 1083) the cha-"
-      },
-      {
-       "draft": "melion, so called as living upon air ac-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "melion, so called as living upon air ac-"
-      },
-      {
-       "draft": "cording to the opinion of the ancients,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "cording to the opinion of the ancients,"
-      },
-      {
-       "draft": "Plin. H. N. 8. 33. Hasselquist Reise",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Plin. H. N. 8. 33. Hasselquist Reise"
-      },
-      {
-       "draft": "p. 350. Sept. and Vulg. talpa, mole.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "p. 350. Sept. and Vulg. talpa, mole."
-      },
-      {
-       "draft": "Saad. lizard.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Saad. lizard."
+       "reread": "smoke; Nasor. חאנא furnace.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "smoke; Nasor. חאנא furnace.",
+        "verdict": "b",
+        "note": "The rightmost (first) letter of the Hebrew word is printed as ח: flat top bar with two plain legs and no left foot. Compare the tav in תְּנַן on line 1, which clearly shows the foot on the left leg; this glyph lacks it. So the printed word is חאנא, not תאנא. Remaining letters אנא and the Latin text agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4ef00283-bde6-4798-ab92-d679cced6eb5",
+        "duration_api_ms": 14416,
+        "cost_usd_list": 0.10284800000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3512,
+        "cache_creation_input_tokens": 2934,
+        "output_tokens": 859
+       },
+       "text": "smoke; Nasor. חאנא furnace."
       }
      ]
     },
@@ -198,8 +223,48 @@
      "image_sha256": "c5780182078644ec3bd86776ed4ffe293552e89056f953fe9e3aca20395c2e22",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"911e22a2-2088-4315-9b81-33829b1eaf94\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
+       "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
+       "11, 30, an unclean animal, classed with",
+       "other species of lizards; according to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3b0988b4-6c5b-4e31-96b0-55c1240fb5df",
+      "duration_api_ms": 9501,
+      "cost_usd_list": 0.08336075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2702,
+      "output_tokens": 562
+     },
+     "lines": [
+      {
+       "draft": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
+       "reread": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
+       "status": "agreed",
+       "text": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר."
+      },
+      {
+       "draft": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
+       "reread": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
+       "status": "agreed",
+       "text": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev."
+      },
+      {
+       "draft": "11, 30, an unclean animal, classed with",
+       "reread": "11, 30, an unclean animal, classed with",
+       "status": "agreed",
+       "text": "11, 30, an unclean animal, classed with"
+      },
+      {
+       "draft": "other species of lizards; according to",
+       "reread": "other species of lizards; according to",
+       "status": "agreed",
+       "text": "other species of lizards; according to"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b02",
@@ -214,8 +279,48 @@
      "image_sha256": "d988b4dac9a7d2749c0bec4e53372a868c756a6459061521fdb514dc0277db5c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4c0e2b40-ae7c-461f-b935-f61437a03e1e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Bochart (Hieroz. T. I. p. 1083) the cha-",
+       "melion, so called as living upon air ac-",
+       "cording to the opinion of the ancients,",
+       "Plin. H. N. 8. 33. Hasselquist Reise"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "269bde36-cf05-4616-9614-8663d154f6ba",
+      "duration_api_ms": 4572,
+      "cost_usd_list": 0.06559075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2576,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "Bochart (Hieroz. T. I. p. 1083) the cha-",
+       "reread": "Bochart (Hieroz. T. I. p. 1083) the cha-",
+       "status": "agreed",
+       "text": "Bochart (Hieroz. T. I. p. 1083) the cha-"
+      },
+      {
+       "draft": "melion, so called as living upon air ac-",
+       "reread": "melion, so called as living upon air ac-",
+       "status": "agreed",
+       "text": "melion, so called as living upon air ac-"
+      },
+      {
+       "draft": "cording to the opinion of the ancients,",
+       "reread": "cording to the opinion of the ancients,",
+       "status": "agreed",
+       "text": "cording to the opinion of the ancients,"
+      },
+      {
+       "draft": "Plin. H. N. 8. 33. Hasselquist Reise",
+       "reread": "Plin. H. N. 8. 33. Hasselquist Reise",
+       "status": "agreed",
+       "text": "Plin. H. N. 8. 33. Hasselquist Reise"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b03",
@@ -230,8 +335,34 @@
      "image_sha256": "c95aab29835404f3687259e96f3636fc102b3877c20d15fe88b0c9cd6f1a16d8",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e346e086-4c09-47a3-b89f-b701137c24bf\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "p. 350. Sept. and Vulg. talpa, mole.",
+       "Saad. lizard."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d405c148-003c-49d9-a69a-52a6d818603b",
+      "duration_api_ms": 8431,
+      "cost_usd_list": 0.05306075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2072,
+      "output_tokens": 208
+     },
+     "lines": [
+      {
+       "draft": "p. 350. Sept. and Vulg. talpa, mole.",
+       "reread": "p. 350. Sept. and Vulg. talpa, mole.",
+       "status": "agreed",
+       "text": "p. 350. Sept. and Vulg. talpa, mole."
+      },
+      {
+       "draft": "Saad. lizard.",
+       "reread": "Saad. lizard.",
+       "status": "agreed",
+       "text": "Saad. lizard."
+      }
+     ]
     }
    ]
   },
@@ -272,74 +403,46 @@
      "image_sha256": "987a225a66fcfefa78920882baaa43f2e783786cc5834e2a9a05584e0ba0cf2a",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"056c2e66-a354-484a-bbda-57eda65f9c7d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "2. Lev. 11, 18. Deut. 14, 16, an unclean",
+       "aquatic bird, prob. the pelican, pelecanus",
+       "onocrotalus, so called from its pouch,",
+       "which it can extend by inflation, see"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ddaa10cc-9a05-42a4-9777-568f39e7ac71",
+      "duration_api_ms": 8948,
+      "cost_usd_list": 0.065581,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 256
      },
      "lines": [
       {
        "draft": "2. Lev. 11, 18. Deut. 14, 16, an unclean",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "2. Lev. 11, 18. Deut. 14, 16, an unclean",
+       "status": "agreed",
        "text": "2. Lev. 11, 18. Deut. 14, 16, an unclean"
       },
       {
        "draft": "aquatic bird, prob. the pelican, pelecanus",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "aquatic bird, prob. the pelican, pelecanus",
+       "status": "agreed",
        "text": "aquatic bird, prob. the pelican, pelecanus"
       },
       {
        "draft": "onocrotalus, so called from its pouch,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "onocrotalus, so called from its pouch,",
+       "status": "agreed",
        "text": "onocrotalus, so called from its pouch,"
       },
       {
        "draft": "which it can extend by inflation, see",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "which it can extend by inflation, see",
+       "status": "agreed",
        "text": "which it can extend by inflation, see"
-      },
-      {
-       "draft": "Oedm. Verm. Samml. III. 50.—Sept.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Oedm. Verm. Samml. III. 50.—Sept."
-      },
-      {
-       "draft": "πορφυρίων, i. e. the crested purple heron,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "πορφυρίων, i. e. the crested purple heron,"
-      },
-      {
-       "draft": "ardea purpurea Linn. Vulg. cygnus,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ardea purpurea Linn. Vulg. cygnus,"
-      },
-      {
-       "draft": "swan.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "swan."
-      },
-      {
-       "draft": "* תָּעַב in Kal not used; comp. תָּאַב",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* תָּעַב in Kal not used; comp. תָּאַב"
-      },
-      {
-       "draft": "II. This root is very rarely found in",
-       "reread": null,
-       "status": "draft_only",
-       "text": "II. This root is very rarely found in"
-      },
-      {
-       "draft": "the other Semitic dialects in its usual",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the other Semitic dialects in its usual"
       }
      ]
     },
@@ -356,8 +459,48 @@
      "image_sha256": "6f3db8c183bf48a74e98c37dcc7c19c2736869fd890c91cb82a3ef78f479e3c3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"147d75e2-23cd-489c-b8f4-904010c1e34c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Oedm. Verm. Samml. III. 50.—Sept.",
+       "πορφυρίων, i. e. the crested purple heron,",
+       "ardea purpurea Linn. Vulg. cygnus,",
+       "swan."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dba6bbbd-220a-42a6-8ed9-55de6e793d80",
+      "duration_api_ms": 9410,
+      "cost_usd_list": 0.065281,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "Oedm. Verm. Samml. III. 50.—Sept.",
+       "reread": "Oedm. Verm. Samml. III. 50.—Sept.",
+       "status": "agreed",
+       "text": "Oedm. Verm. Samml. III. 50.—Sept."
+      },
+      {
+       "draft": "πορφυρίων, i. e. the crested purple heron,",
+       "reread": "πορφυρίων, i. e. the crested purple heron,",
+       "status": "agreed",
+       "text": "πορφυρίων, i. e. the crested purple heron,"
+      },
+      {
+       "draft": "ardea purpurea Linn. Vulg. cygnus,",
+       "reread": "ardea purpurea Linn. Vulg. cygnus,",
+       "status": "agreed",
+       "text": "ardea purpurea Linn. Vulg. cygnus,"
+      },
+      {
+       "draft": "swan.",
+       "reread": "swan.",
+       "status": "agreed",
+       "text": "swan."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -372,8 +515,41 @@
      "image_sha256": "a8e4c3d27b9259c714de18d184f413c220340d83b4682a4b940865fddc50cd07",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"703e8cad-afe5-4ab5-bd5f-76cc96a75395\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "* תָּעַב in Kal not used; comp. תָּאַב",
+       "II. This root is very rarely found in",
+       "the other Semitic dialects in its usual"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0a6e7884-0f3b-4ba7-b148-8d3050dcfb02",
+      "duration_api_ms": 17529,
+      "cost_usd_list": 0.069121,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2515,
+      "output_tokens": 352
+     },
+     "lines": [
+      {
+       "draft": "* תָּעַב in Kal not used; comp. תָּאַב",
+       "reread": "* תָּעַב in Kal not used; comp. תָּאַב",
+       "status": "agreed",
+       "text": "* תָּעַב in Kal not used; comp. תָּאַב"
+      },
+      {
+       "draft": "II. This root is very rarely found in",
+       "reread": "II. This root is very rarely found in",
+       "status": "agreed",
+       "text": "II. This root is very rarely found in"
+      },
+      {
+       "draft": "the other Semitic dialects in its usual",
+       "reread": "the other Semitic dialects in its usual",
+       "status": "agreed",
+       "text": "the other Semitic dialects in its usual"
+      }
+     ]
     }
    ]
   },
@@ -416,86 +592,46 @@
      "image_sha256": "663234e4e2c1c8d570fff4c5aed5e5e57abe0e0c63624986a3d37f8db386c4ca",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"16c3937a-3e95-4e3c-9433-04483a8ee95c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "Hebrew signification. The primary",
+       "idea seems to be to thrust forth or away,",
+       "to drive away; and hence to reject, to",
+       "abhor, to abominate."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b7decd16-17a6-4854-9ed3-77e5a781985c",
+      "duration_api_ms": 5203,
+      "cost_usd_list": 0.064331,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 231
      },
      "lines": [
       {
        "draft": "Hebrew signification. The primary",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Hebrew signification. The primary",
+       "status": "agreed",
        "text": "Hebrew signification. The primary"
       },
       {
        "draft": "idea seems to be to thrust forth or away,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "idea seems to be to thrust forth or away,",
+       "status": "agreed",
        "text": "idea seems to be to thrust forth or away,"
       },
       {
        "draft": "to drive away; and hence to reject, to",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "to drive away; and hence to reject, to",
+       "status": "agreed",
        "text": "to drive away; and hence to reject, to"
       },
       {
        "draft": "abhor, to abominate.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "abhor, to abominate.",
+       "status": "agreed",
        "text": "abhor, to abominate."
-      },
-      {
-       "draft": "Piel תִּעֵב, fut. תְּתַעֵב 1. to abominate,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Piel תִּעֵב, fut. תְּתַעֵב 1. to abominate,"
-      },
-      {
-       "draft": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10."
-      },
-      {
-       "draft": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al."
-      },
-      {
-       "draft": "2. Causat. to cause to abhor, to fill",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. Causat. to cause to abhor, to fill"
-      },
-      {
-       "draft": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי",
-       "reread": null,
-       "status": "draft_only",
-       "text": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי"
-      },
-      {
-       "draft": "who causeth abhorrence to the people,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "who causeth abhorrence to the people,"
-      },
-      {
-       "draft": "who is an abomination to the people.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "who is an abomination to the people."
-      },
-      {
-       "draft": "3. Causat. to make abominable, to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "3. Causat. to make abominable, to"
-      },
-      {
-       "draft": "cause to be abhorred, Job 9, 31. Ez. 16,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "cause to be abhorred, Job 9, 31. Ez. 16,"
       }
      ]
     },
@@ -512,8 +648,63 @@
      "image_sha256": "2bae03a8be0a260fe0a26a7f7dd1994bcd91cbaf2ee0382a582a4b8a159531e3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a7a33fe7-857b-4d4d-a915-96351a84e102\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Piel תִּעֵב, fut. יְתַעֵב 1. to abominate,",
+       "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10.",
+       "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al.",
+       "2. Causat. to cause to abhor, to fill"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d66ce7e3-e782-4967-afd2-474beac03a61",
+      "duration_api_ms": 6987,
+      "cost_usd_list": 0.07389100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 397
+     },
+     "lines": [
+      {
+       "draft": "Piel תִּעֵב, fut. תְּתַעֵב 1. to abominate,",
+       "reread": "Piel תִּעֵב, fut. יְתַעֵב 1. to abominate,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "Piel תִּעֵב, fut. יְתַעֵב 1. to abominate,",
+        "verdict": "b",
+        "note": "The future form's first (rightmost) letter is a short yod with sheva, not a tav; the printed form is יְתַעֵב (3 m. sg.), so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6f04c1df-c4fd-4cdc-9d6a-7813a7436f91",
+        "duration_api_ms": 7494,
+        "cost_usd_list": 0.077575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3540,
+        "cache_creation_input_tokens": 2585,
+        "output_tokens": 493
+       },
+       "text": "Piel תִּעֵב, fut. יְתַעֵב 1. to abominate,"
+      },
+      {
+       "draft": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10.",
+       "reread": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10.",
+       "status": "agreed",
+       "text": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10."
+      },
+      {
+       "draft": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al.",
+       "reread": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al.",
+       "status": "agreed",
+       "text": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al."
+      },
+      {
+       "draft": "2. Causat. to cause to abhor, to fill",
+       "reread": "2. Causat. to cause to abhor, to fill",
+       "status": "agreed",
+       "text": "2. Causat. to cause to abhor, to fill"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -528,8 +719,48 @@
      "image_sha256": "4fb14cf36bb9206f6ff8c51906cb1ad6ca39e14f5207b488798620854b88cbc4",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1e2997b6-da7e-4346-8f47-c5a19d4317c5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי",
+       "who causeth abhorrence to the people,",
+       "who is an abomination to the people.",
+       "3. Causat. to make abominable, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fb27a2f4-3e1a-4a38-b44b-2b03c8d8e3a9",
+      "duration_api_ms": 10928,
+      "cost_usd_list": 0.070781,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 360
+     },
+     "lines": [
+      {
+       "draft": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי",
+       "reread": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי",
+       "status": "agreed",
+       "text": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי"
+      },
+      {
+       "draft": "who causeth abhorrence to the people,",
+       "reread": "who causeth abhorrence to the people,",
+       "status": "agreed",
+       "text": "who causeth abhorrence to the people,"
+      },
+      {
+       "draft": "who is an abomination to the people.",
+       "reread": "who is an abomination to the people.",
+       "status": "agreed",
+       "text": "who is an abomination to the people."
+      },
+      {
+       "draft": "3. Causat. to make abominable, to",
+       "reread": "3. Causat. to make abominable, to",
+       "status": "agreed",
+       "text": "3. Causat. to make abominable, to"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b03",
@@ -544,8 +775,27 @@
      "image_sha256": "2630351bb7338bfa727e5583f6374b2c4d9c6cc5092a7ac09f705859452548b5",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0046206f-c8bf-4ee9-beb2-48a653a47136\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "cause to be abhorred, Job 9, 31. Ez. 16,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "98a4347f-c84c-4eeb-adbf-04027b6b0516",
+      "duration_api_ms": 4650,
+      "cost_usd_list": 0.05042100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 1885,
+      "output_tokens": 230
+     },
+     "lines": [
+      {
+       "draft": "cause to be abhorred, Job 9, 31. Ez. 16,",
+       "reread": "cause to be abhorred, Job 9, 31. Ez. 16,",
+       "status": "agreed",
+       "text": "cause to be abhorred, Job 9, 31. Ez. 16,"
+      }
+     ]
     }
    ]
   },
@@ -590,98 +840,46 @@
      "image_sha256": "bf0258bfe673c011b2620b38db12e5a4f526ff2c924f210eb19a6e66406dcb91",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"734d1b4f-d99a-411d-9f9a-a9a91ce03030\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "25.  See Hiph.",
+       "Hiph. to make abominable, shameful.",
+       "Ps. 14, 1 הִתְעִיבוּ עֲלִילָה they make abom-",
+       "inable their doings, i. e. they do abom-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4619f1f5-0c00-4a45-af81-711019b6967d",
+      "duration_api_ms": 12901,
+      "cost_usd_list": 0.07834100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 486
      },
      "lines": [
       {
        "draft": "25. See Hiph.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "25.  See Hiph.",
+       "status": "agreed",
        "text": "25. See Hiph."
       },
       {
        "draft": "Hiph. to make abominable, shameful.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Hiph. to make abominable, shameful.",
+       "status": "agreed",
        "text": "Hiph. to make abominable, shameful."
       },
       {
        "draft": "Ps. 14, 1 הִתְעִיבוּ עֲלִילָה they make abom-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Ps. 14, 1 הִתְעִיבוּ עֲלִילָה they make abom-",
+       "status": "agreed",
        "text": "Ps. 14, 1 הִתְעִיבוּ עֲלִילָה they make abom-"
       },
       {
        "draft": "inable their doings, i. e. they do abom-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "inable their doings, i. e. they do abom-",
+       "status": "agreed",
        "text": "inable their doings, i. e. they do abom-"
-      },
-      {
-       "draft": "inable deeds, act abominably; comp. Ps.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "inable deeds, act abominably; comp. Ps."
-      },
-      {
-       "draft": "53, 2. So with עֲלִילָה implied id. 1 K.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "53, 2. So with עֲלִילָה implied id. 1 K."
-      },
-      {
-       "draft": "21, 26. Ez. 16, 52. Comp. הֵרַע, הִשְׁחִית.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "21, 26. Ez. 16, 52. Comp. הֵרַע, הִשְׁחִית."
-      },
-      {
-       "draft": "Niph. pass. to be an abomination, ab-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Niph. pass. to be an abomination, ab-"
-      },
-      {
-       "draft": "horred, detestable, 1 Chr. 21, 6. Part.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "horred, detestable, 1 Chr. 21, 6. Part."
-      },
-      {
-       "draft": "נִתְעָב abominable Job 15, 16; despised,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "נִתְעָב abominable Job 15, 16; despised,"
-      },
-      {
-       "draft": "worthless, Is. 14, 19.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "worthless, Is. 14, 19."
-      },
-      {
-       "draft": "Deriv. תּוֹעֵבָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deriv. תּוֹעֵבָה."
-      },
-      {
-       "draft": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to"
-      },
-      {
-       "draft": "be thrust hither and thither,’ comp.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "be thrust hither and thither,’ comp."
-      },
-      {
-       "draft": "תָּעַע; kindr. is תָּעַב q. v. Then, like r.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תָּעַע; kindr. is תָּעַב q. v. Then, like r."
       }
      ]
     },
@@ -698,8 +896,63 @@
      "image_sha256": "e76218e707d3bbfc279e5be174e45d688ad1a1d9cd91540ac043a118cfdd478d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0e0db96c-09ea-4563-ba11-68239d467b23\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "inable deeds, act abominably; comp. Ps.",
+       "53, 2. So with עֲלִילָה implied id. 1 K.",
+       "21, 26. Ez. 16, 52. Comp. הִשְׁחִית, הֵרַע.",
+       "Niph. pass. to be an abomination, ab-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6bf60c84-ee08-4657-8031-223820897c74",
+      "duration_api_ms": 7247,
+      "cost_usd_list": 0.072681,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 398
+     },
+     "lines": [
+      {
+       "draft": "inable deeds, act abominably; comp. Ps.",
+       "reread": "inable deeds, act abominably; comp. Ps.",
+       "status": "agreed",
+       "text": "inable deeds, act abominably; comp. Ps."
+      },
+      {
+       "draft": "53, 2. So with עֲלִילָה implied id. 1 K.",
+       "reread": "53, 2. So with עֲלִילָה implied id. 1 K.",
+       "status": "agreed",
+       "text": "53, 2. So with עֲלִילָה implied id. 1 K."
+      },
+      {
+       "draft": "21, 26. Ez. 16, 52. Comp. הֵרַע, הִשְׁחִית.",
+       "reread": "21, 26. Ez. 16, 52. Comp. הִשְׁחִית, הֵרַע.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "21, 26. Ez. 16, 52. Comp. הִשְׁחִית, הֵרַע.",
+        "verdict": "b",
+        "note": "Printed left-to-right order after \"Comp.\" is הִשְׁחִית first (immediately following \"Comp.\"), then a comma, then הֵרַע at the line's end; Reading A reverses the two items. All points agree in both readings and match the print (הִשְׁחִית with shin dot, sheva, two hiriqs and plene yod; הֵרַע with tsere and patah).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c41bf68e-ac7d-4e50-b61e-d3701977f16a",
+        "duration_api_ms": 14204,
+        "cost_usd_list": 0.10427824999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3553,
+        "cache_creation_input_tokens": 2535,
+        "output_tokens": 1047
+       },
+       "text": "21, 26. Ez. 16, 52. Comp. הִשְׁחִית, הֵרַע."
+      },
+      {
+       "draft": "Niph. pass. to be an abomination, ab-",
+       "reread": "Niph. pass. to be an abomination, ab-",
+       "status": "agreed",
+       "text": "Niph. pass. to be an abomination, ab-"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b02",
@@ -714,8 +967,48 @@
      "image_sha256": "44da1370b71d2474ad725108aeee6462821b8a3fb14275c6fdb226e285ae2b8d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"267df1a4-7ce0-45cd-92b5-0c34ada6ceac\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "horred, detestable, 1 Chr. 21, 6. Part.",
+       "נִתְעָב abominable Job 15, 16; despised,",
+       "worthless, Is. 14, 19.",
+       "Deriv. תּוֹעֵבָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aac1441e-cdd0-401a-aec9-78b7d56726e5",
+      "duration_api_ms": 10514,
+      "cost_usd_list": 0.06437100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2515,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "horred, detestable, 1 Chr. 21, 6. Part.",
+       "reread": "horred, detestable, 1 Chr. 21, 6. Part.",
+       "status": "agreed",
+       "text": "horred, detestable, 1 Chr. 21, 6. Part."
+      },
+      {
+       "draft": "נִתְעָב abominable Job 15, 16; despised,",
+       "reread": "נִתְעָב abominable Job 15, 16; despised,",
+       "status": "agreed",
+       "text": "נִתְעָב abominable Job 15, 16; despised,"
+      },
+      {
+       "draft": "worthless, Is. 14, 19.",
+       "reread": "worthless, Is. 14, 19.",
+       "status": "agreed",
+       "text": "worthless, Is. 14, 19."
+      },
+      {
+       "draft": "Deriv. תּוֹעֵבָה.",
+       "reread": "Deriv. תּוֹעֵבָה.",
+       "status": "agreed",
+       "text": "Deriv. תּוֹעֵבָה."
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b03",
@@ -730,8 +1023,41 @@
      "image_sha256": "f469207d6ba4b1ee032b636915790b0c843114ac677400f1f07c44fe1478729c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"af86a1e9-4583-45e0-b0c8-b586c90bac3b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to",
+       "be thrust hither and thither,’ comp.",
+       "תָּעַע; kindr. is תָּעַב q. v. Then, like r."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "812abf15-0a2b-4be5-b753-820bfccceac0",
+      "duration_api_ms": 13479,
+      "cost_usd_list": 0.079331,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 531
+     },
+     "lines": [
+      {
+       "draft": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to",
+       "reread": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to",
+       "status": "agreed",
+       "text": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to"
+      },
+      {
+       "draft": "be thrust hither and thither,’ comp.",
+       "reread": "be thrust hither and thither,’ comp.",
+       "status": "agreed",
+       "text": "be thrust hither and thither,’ comp."
+      },
+      {
+       "draft": "תָּעַע; kindr. is תָּעַב q. v. Then, like r.",
+       "reread": "תָּעַע; kindr. is תָּעַב q. v. Then, like r.",
+       "status": "agreed",
+       "text": "תָּעַע; kindr. is תָּעַב q. v. Then, like r."
+      }
+     ]
     }
    ]
   },
@@ -774,86 +1100,61 @@
      "image_sha256": "7ca1296a3fd8b487417c5ccab465f54289599600d8bc43636069c4f9d8a03864",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"38ab9374-4d70-46d2-ae7b-834b794bf127\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "תָּעָה, to wander, to err, to go astray",
+       "Chald. תְּעָא id. but oftener טְעָא; Syr.",
+       "ܛܥܳܐ, Arab. طغا and طغى id. Spoken",
+       "of persons Is. 35, 8. 47, 15; of beasts"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a9aefe64-899b-4f62-9303-5ccc52515179",
+      "duration_api_ms": 19147,
+      "cost_usd_list": 0.112941,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 1178
      },
      "lines": [
       {
        "draft": "טָעָה, to wander, to err, to go astray",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "תָּעָה, to wander, to err, to go astray",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "טָעָה, to wander, to err, to go astray",
+        "verdict": "a",
+        "note": "Initial letter is a rounded closed-bowl teth (ט) with qamets, no dagesh; not tav. Consistent with Arabic cognate طغا (ṭ) and Chaldee טְעָא on the following lines.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5f70c6f7-361f-46d3-9bad-46dbb5947491",
+        "duration_api_ms": 13009,
+        "cost_usd_list": 0.09094850000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3514,
+        "cache_creation_input_tokens": 2559,
+        "output_tokens": 771
+       },
        "text": "טָעָה, to wander, to err, to go astray"
       },
       {
        "draft": "Chald. תְּעָא id. but oftener טְעָא; Syr.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Chald. תְּעָא id. but oftener טְעָא; Syr.",
+       "status": "agreed",
        "text": "Chald. תְּעָא id. but oftener טְעָא; Syr."
       },
       {
        "draft": "ܛܥܳܐ, Arab. طغا and طغى id. Spoken",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "ܛܥܳܐ, Arab. طغا and طغى id. Spoken",
+       "status": "agreed",
        "text": "ܛܥܳܐ, Arab. طغا and طغى id. Spoken"
       },
       {
        "draft": "of persons Is. 35, 8. 47, 15; of beasts",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "of persons Is. 35, 8. 47, 15; of beasts",
+       "status": "agreed",
        "text": "of persons Is. 35, 8. 47, 15; of beasts"
-      },
-      {
-       "draft": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי"
-      },
-      {
-       "draft": "כְּשֶׂה אֹבֵד I have gone astray like a lost",
-       "reread": null,
-       "status": "draft_only",
-       "text": "כְּשֶׂה אֹבֵד I have gone astray like a lost"
-      },
-      {
-       "draft": "sheep; also of birds Job 38, 41; with בְּ",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sheep; also of birds Job 38, 41; with בְּ"
-      },
-      {
-       "draft": "of place Gen. 21, 14. 37, 15. Ps. 107, 4.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of place Gen. 21, 14. 37, 15. Ps. 107, 4."
-      },
-      {
-       "draft": "With acc. of place, to wander through",
-       "reread": null,
-       "status": "draft_only",
-       "text": "With acc. of place, to wander through"
-      },
-      {
-       "draft": "or over, trop. of the branches of a vine",
-       "reread": null,
-       "status": "draft_only",
-       "text": "or over, trop. of the branches of a vine"
-      },
-      {
-       "draft": "shooting luxuriantly over the desert, Is.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "shooting luxuriantly over the desert, Is."
-      },
-      {
-       "draft": "16, 9 [8]. Spec. a) Of drunken per-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "16, 9 [8]. Spec. a) Of drunken per-"
-      },
-      {
-       "draft": "sons, who go reeling about; Is. 28, 7",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sons, who go reeling about; Is. 28, 7"
       }
      ]
     },
@@ -870,8 +1171,48 @@
      "image_sha256": "2262d0ca8a39aa008d9c0c698eed84975e69bfbb643fb25d746db5a5290404ca",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"42664040-e360-41f9-853b-f36094e7844c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
+       "כְּשֶׂה אֹבֵד I have gone astray like a lost",
+       "sheep ; also of birds Job 38, 41 ; with בְּ",
+       "of place Gen. 21, 14. 37, 15. Ps. 107, 4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d85e31f5-e73b-4abc-a017-a6f92ab65cf2",
+      "duration_api_ms": 15257,
+      "cost_usd_list": 0.083481,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 614
+     },
+     "lines": [
+      {
+       "draft": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
+       "reread": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
+       "status": "agreed",
+       "text": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי"
+      },
+      {
+       "draft": "כְּשֶׂה אֹבֵד I have gone astray like a lost",
+       "reread": "כְּשֶׂה אֹבֵד I have gone astray like a lost",
+       "status": "agreed",
+       "text": "כְּשֶׂה אֹבֵד I have gone astray like a lost"
+      },
+      {
+       "draft": "sheep; also of birds Job 38, 41; with בְּ",
+       "reread": "sheep ; also of birds Job 38, 41 ; with בְּ",
+       "status": "agreed",
+       "text": "sheep; also of birds Job 38, 41; with בְּ"
+      },
+      {
+       "draft": "of place Gen. 21, 14. 37, 15. Ps. 107, 4.",
+       "reread": "of place Gen. 21, 14. 37, 15. Ps. 107, 4.",
+       "status": "agreed",
+       "text": "of place Gen. 21, 14. 37, 15. Ps. 107, 4."
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b02",
@@ -886,8 +1227,48 @@
      "image_sha256": "fa702d70023ccef34cc862933e49b9e9fc86cc7a887c99ccc0671d682d4fa731",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"7581b69b-6d03-4be4-8518-87a5316f90ff\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "With acc. of place, to wander through",
+       "or over, trop. of the branches of a vine",
+       "shooting luxuriantly over the desert, Is.",
+       "16, 9 [8]. Spec. a) Of drunken per-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7a874bce-a9ec-4953-bfce-8efc3f8f5f73",
+      "duration_api_ms": 8811,
+      "cost_usd_list": 0.066441,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 248
+     },
+     "lines": [
+      {
+       "draft": "With acc. of place, to wander through",
+       "reread": "With acc. of place, to wander through",
+       "status": "agreed",
+       "text": "With acc. of place, to wander through"
+      },
+      {
+       "draft": "or over, trop. of the branches of a vine",
+       "reread": "or over, trop. of the branches of a vine",
+       "status": "agreed",
+       "text": "or over, trop. of the branches of a vine"
+      },
+      {
+       "draft": "shooting luxuriantly over the desert, Is.",
+       "reread": "shooting luxuriantly over the desert, Is.",
+       "status": "agreed",
+       "text": "shooting luxuriantly over the desert, Is."
+      },
+      {
+       "draft": "16, 9 [8]. Spec. a) Of drunken per-",
+       "reread": "16, 9 [8]. Spec. a) Of drunken per-",
+       "status": "agreed",
+       "text": "16, 9 [8]. Spec. a) Of drunken per-"
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b03",
@@ -902,8 +1283,27 @@
      "image_sha256": "15b1eccbbb9718448c1a8c7169f16d0bd058804ee47a1a110571a60c312c7608",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d4fb3916-1447-48cb-9a62-38b4ae3003a8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "sons, who go reeling about ; Is. 28, 7"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "35199451-8532-48d0-b63e-1602bf32c669",
+      "duration_api_ms": 4265,
+      "cost_usd_list": 0.049971,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 1885,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "sons, who go reeling about; Is. 28, 7",
+       "reread": "sons, who go reeling about ; Is. 28, 7",
+       "status": "agreed",
+       "text": "sons, who go reeling about; Is. 28, 7"
+      }
+     ]
     }
    ]
   },
@@ -948,98 +1348,46 @@
      "image_sha256": "a91c4af182f0c8449748d21ab611e3d5c260f2966283feea59c9b564b5ce941b",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b0c24d2b-8cd7-4753-835d-45b264766e36\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from",
+       "strong drink; and hence trop. of the",
+       "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-",
+       "eth, is seized with giddiness. b) Trop."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe598602-5f9e-4e82-a323-31fc2804c7d6",
+      "duration_api_ms": 7554,
+      "cost_usd_list": 0.074991,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 419
      },
      "lines": [
       {
        "draft": "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from",
+       "status": "agreed",
        "text": "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from"
       },
       {
        "draft": "strong drink; and hence trop. of the",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "strong drink; and hence trop. of the",
+       "status": "agreed",
        "text": "strong drink; and hence trop. of the"
       },
       {
        "draft": "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-",
+       "status": "agreed",
        "text": "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-"
       },
       {
        "draft": "eth, is seized with giddiness. b) Trop.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "eth, is seized with giddiness. b) Trop.",
+       "status": "agreed",
        "text": "eth, is seized with giddiness. b) Trop."
-      },
-      {
-       "draft": "of the mind as erring from the paths of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of the mind as erring from the paths of"
-      },
-      {
-       "draft": "virtue and piety, Ps. 58, 4. Ez. 48, 11;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "virtue and piety, Ps. 58, 4. Ez. 48, 11;"
-      },
-      {
-       "draft": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,"
-      },
-      {
-       "draft": "24. With מִן, e. g. from God's precepts",
-       "reread": null,
-       "status": "draft_only",
-       "text": "24. With מִן, e. g. from God's precepts"
-      },
-      {
-       "draft": "Ps. 119, 110, comp. Prov. 21, 16; with",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Ps. 119, 110, comp. Prov. 21, 16; with"
-      },
-      {
-       "draft": "מֵעַל יְהוָֹה Ez. 44, 10. 15; with מֵאַחֲרֵי",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מֵעַל יְהוָֹה Ez. 44, 10. 15; with מֵאַחֲרֵי"
-      },
-      {
-       "draft": "יְהוָֹה from following God, from his wor-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְהוָֹה from following God, from his wor-"
-      },
-      {
-       "draft": "ship, Ez. 14, 11. Comp. Chald. טְעָא",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ship, Ez. 14, 11. Comp. Chald. טְעָא"
-      },
-      {
-       "draft": "spec. ' to be given to idolatry,' Syr. to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "spec. ' to be given to idolatry,' Syr. to"
-      },
-      {
-       "draft": "be a heretic. c) Of those who miss",
-       "reread": null,
-       "status": "draft_only",
-       "text": "be a heretic. c) Of those who miss"
-      },
-      {
-       "draft": "their aim and fail in their efforts; Prov.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "their aim and fail in their efforts; Prov."
       }
      ]
     },
@@ -1056,8 +1404,48 @@
      "image_sha256": "fa730680f05dd835ec1dfd96cb4525e8582f46836d99a21d783f273ad3d5e123",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f0344e11-0f58-46c6-87a5-2ca7fcafd42c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "of the mind as erring from the paths of",
+       "virtue and piety, Ps. 58, 4. Ez. 48, 11 ;",
+       "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,",
+       "24. With מִן, e. g. from God's precepts"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3b5a9cba-021c-4929-b127-3457171eb3b1",
+      "duration_api_ms": 14366,
+      "cost_usd_list": 0.08602125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 664
+     },
+     "lines": [
+      {
+       "draft": "of the mind as erring from the paths of",
+       "reread": "of the mind as erring from the paths of",
+       "status": "agreed",
+       "text": "of the mind as erring from the paths of"
+      },
+      {
+       "draft": "virtue and piety, Ps. 58, 4. Ez. 48, 11;",
+       "reread": "virtue and piety, Ps. 58, 4. Ez. 48, 11 ;",
+       "status": "agreed",
+       "text": "virtue and piety, Ps. 58, 4. Ez. 48, 11;"
+      },
+      {
+       "draft": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,",
+       "reread": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,",
+       "status": "agreed",
+       "text": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,"
+      },
+      {
+       "draft": "24. With מִן, e. g. from God's precepts",
+       "reread": "24. With מִן, e. g. from God's precepts",
+       "status": "agreed",
+       "text": "24. With מִן, e. g. from God's precepts"
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -1072,8 +1460,78 @@
      "image_sha256": "1c32eff1c77bdc1fafaf43d990d14c5f0afd30960af281ca9dcc4ac90a005ac0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9c438fb1-f89f-41b0-bd77-034cae10a2c1\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Ps. 119, 110, comp. Prov. 21, 16; with",
+       "מֵעַל יְהֹוָה Ez. 44, 10. 15; with מֵאַחֲרֵי",
+       "יְהֹוָה from following God, from his wor-",
+       "ship, Ez. 14, 11. Comp. Chald. טְעָא"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "94a3d602-51f3-4264-bf7f-e40788bd4fb1",
+      "duration_api_ms": 16415,
+      "cost_usd_list": 0.09453125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 809
+     },
+     "lines": [
+      {
+       "draft": "Ps. 119, 110, comp. Prov. 21, 16; with",
+       "reread": "Ps. 119, 110, comp. Prov. 21, 16; with",
+       "status": "agreed",
+       "text": "Ps. 119, 110, comp. Prov. 21, 16; with"
+      },
+      {
+       "draft": "מֵעַל יְהוָֹה Ez. 44, 10. 15; with מֵאַחֲרֵי",
+       "reread": "מֵעַל יְהֹוָה Ez. 44, 10. 15; with מֵאַחֲרֵי",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "מֵעַל יְהֹוָה Ez. 44, 10. 15; with מֵאַחֲרֵי",
+        "verdict": "b",
+        "note": "The only difference is the point order inside the tetragrammaton. In the print the holem dot sits above the he (at the he/vav junction), not above the vav, so the sequence is he+holem, vav+qamets (יְהֹוָה) as in B, not vav+holem+qamets (יְהוָֹה) as in A. Everything else (מֵעַל, \"Ez. 44, 10. 15; with\", מֵאַחֲרֵי with hataf-patah under het and tsere under resh) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "077f77f3-7d04-435d-8378-f79d3c298c5c",
+        "duration_api_ms": 16988,
+        "cost_usd_list": 0.09534999999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2606,
+        "output_tokens": 840
+       },
+       "text": "מֵעַל יְהֹוָה Ez. 44, 10. 15; with מֵאַחֲרֵי"
+      },
+      {
+       "draft": "יְהוָֹה from following God, from his wor-",
+       "reread": "יְהֹוָה from following God, from his wor-",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "יְהֹוָה from following God, from his wor-",
+        "verdict": "b",
+        "note": "The holem dot is printed over the he (הֹ), not over the vav; the vav carries only qamets (וָ). So the sequence is he+holem, vav+qamets, as in Reading B. Reading A places holem on the vav after the qamets, which does not match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0337f20e-8574-4cfb-b431-8685299e3427",
+        "duration_api_ms": 15427,
+        "cost_usd_list": 0.07886850000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3514,
+        "cache_creation_input_tokens": 2560,
+        "output_tokens": 529
+       },
+       "text": "יְהֹוָה from following God, from his wor-"
+      },
+      {
+       "draft": "ship, Ez. 14, 11. Comp. Chald. טְעָא",
+       "reread": "ship, Ez. 14, 11. Comp. Chald. טְעָא",
+       "status": "agreed",
+       "text": "ship, Ez. 14, 11. Comp. Chald. טְעָא"
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b03",
@@ -1088,8 +1546,56 @@
      "image_sha256": "9118c544f048512b2de821588954ba0d3cea61c9e14efe17a44f40642b9b00a3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"042d76e0-d869-4ee7-8dcf-caf9f1944a63\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "spec. ‘ to be given to idolatry,’ Syr. to",
+       "be a heretic.   c) Of those who miss",
+       "their aim and fail in their efforts; Prov."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "73d908a5-159e-44bc-9d39-0d8a1c9fbf39",
+      "duration_api_ms": 11002,
+      "cost_usd_list": 0.06084125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2391,
+      "output_tokens": 236
+     },
+     "lines": [
+      {
+       "draft": "spec. ' to be given to idolatry,' Syr. to",
+       "reread": "spec. ‘ to be given to idolatry,’ Syr. to",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "spec. ‘ to be given to idolatry,’ Syr. to",
+        "verdict": "b",
+        "note": "The printed quotation marks are typographic single quotes (inverted-comma ‘ opening, raised-comma ’ closing), not straight ASCII apostrophes; otherwise the two readings are identical and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a2fcdc92-36fc-484f-a6b2-e0588b1bea36",
+        "duration_api_ms": 12451,
+        "cost_usd_list": 0.06836075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3523,
+        "cache_creation_input_tokens": 2317,
+        "output_tokens": 416
+       },
+       "text": "spec. ‘ to be given to idolatry,’ Syr. to"
+      },
+      {
+       "draft": "be a heretic. c) Of those who miss",
+       "reread": "be a heretic.   c) Of those who miss",
+       "status": "agreed",
+       "text": "be a heretic. c) Of those who miss"
+      },
+      {
+       "draft": "their aim and fail in their efforts; Prov.",
+       "reread": "their aim and fail in their efforts; Prov.",
+       "status": "agreed",
+       "text": "their aim and fail in their efforts; Prov."
+      }
+     ]
     }
    ]
   },
@@ -1135,104 +1641,46 @@
      "image_sha256": "11d995594627de48a860f46866b48bd902df54e8c8c09d89c368d3c6c56aa0da",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ab0d32e5-0cae-4ca2-92da-21651a80df27\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not",
+       "err (from their mark) who devise evil?",
+       "Others, do they not perish.",
+       "Niph. to wander, pr. to be made to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b61faff3-9f85-4d9a-95ca-4b1c4face1a4",
+      "duration_api_ms": 14634,
+      "cost_usd_list": 0.08063125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 531
      },
      "lines": [
       {
        "draft": "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not",
+       "status": "agreed",
        "text": "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not"
       },
       {
        "draft": "err (from their mark) who devise evil?",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "err (from their mark) who devise evil?",
+       "status": "agreed",
        "text": "err (from their mark) who devise evil?"
       },
       {
        "draft": "Others, do they not perish.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Others, do they not perish.",
+       "status": "agreed",
        "text": "Others, do they not perish."
       },
       {
        "draft": "Niph. to wander, pr. to be made to",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Niph. to wander, pr. to be made to",
+       "status": "agreed",
        "text": "Niph. to wander, pr. to be made to"
-      },
-      {
-       "draft": "wander, to stagger about, Is. 19, 14.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "wander, to stagger about, Is. 19, 14."
-      },
-      {
-       "draft": "Metaph. to be deceived, to err, in a mor-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Metaph. to be deceived, to err, in a mor-"
-      },
-      {
-       "draft": "al sense, Job 15, 31.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "al sense, Job 15, 31."
-      },
-      {
-       "draft": "Hiph. fut. apoc. יַתַע 1. to cause to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hiph. fut. apoc. יַתַע 1. to cause to"
-      },
-      {
-       "draft": "wander Job 12, 24. Is. 19, 13. 14. Gen.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "wander Job 12, 24. Is. 19, 13. 14. Gen."
-      },
-      {
-       "draft": "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "20, 13. Ps. 107, 40. Jer. 50, 6; like a"
-      },
-      {
-       "draft": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
-       "reread": null,
-       "status": "draft_only",
-       "text": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן"
-      },
-      {
-       "draft": "מַתְעֶה a bridle causing to err. Metaph.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מַתְעֶה a bridle causing to err. Metaph."
-      },
-      {
-       "draft": "to cause to wander or err from the paths",
-       "reread": null,
-       "status": "draft_only",
-       "text": "to cause to wander or err from the paths"
-      },
-      {
-       "draft": "of virtue and piety, e. g. a nation into",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of virtue and piety, e. g. a nation into"
-      },
-      {
-       "draft": "impiety, ungodliness, Is. 3, 12. 9, 15.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "impiety, ungodliness, Is. 3, 12. 9, 15."
-      },
-      {
-       "draft": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or"
       }
      ]
     },
@@ -1249,8 +1697,63 @@
      "image_sha256": "1a7d242e316d434bec9df747e275604a07517b6bc682fd2bd7f64b6ca53dbd68",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"829d3d65-6e7c-4ed6-ad41-6bc89b8b7666\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "wander, to stagger about, Is. 19, 14.",
+       "Metaph. to be deceived, to err, in a mor-",
+       "al sense, Job 15, 31.",
+       "Hiph. fut. apoc. וַיֶּ֫תַע 1. to cause to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "538f9a90-1cb5-4304-b1af-703574276d63",
+      "duration_api_ms": 9815,
+      "cost_usd_list": 0.08353125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 589
+     },
+     "lines": [
+      {
+       "draft": "wander, to stagger about, Is. 19, 14.",
+       "reread": "wander, to stagger about, Is. 19, 14.",
+       "status": "agreed",
+       "text": "wander, to stagger about, Is. 19, 14."
+      },
+      {
+       "draft": "Metaph. to be deceived, to err, in a mor-",
+       "reread": "Metaph. to be deceived, to err, in a mor-",
+       "status": "agreed",
+       "text": "Metaph. to be deceived, to err, in a mor-"
+      },
+      {
+       "draft": "al sense, Job 15, 31.",
+       "reread": "al sense, Job 15, 31.",
+       "status": "agreed",
+       "text": "al sense, Job 15, 31."
+      },
+      {
+       "draft": "Hiph. fut. apoc. יַתַע 1. to cause to",
+       "reread": "Hiph. fut. apoc. וַיֶּ֫תַע 1. to cause to",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "Hiph. fut. apoc. יֶ֫תַע 1. to cause to",
+        "verdict": "neither",
+        "note": "Printed form is three letters (yod-tav-ayin), no vav prefix as in B; but the yod has segol below and a stress accent above, not patach as in A. No dagesh visible.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "28925953-432b-4113-87ac-f1ace9eaa4aa",
+        "duration_api_ms": 19044,
+        "cost_usd_list": 0.11744375000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3535,
+        "cache_creation_input_tokens": 2581,
+        "output_tokens": 1292
+       },
+       "text": "Hiph. fut. apoc. יֶ֫תַע 1. to cause to"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1265,8 +1768,48 @@
      "image_sha256": "baee29e363591ade2783ecb7bcc5edb11f4dc055c249c1e98ba4d9b8fab8b70c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"bd841ba0-33b4-46ae-8881-db3c47febde6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "wander Job 12, 24. Is. 19, 13. 14. Gen.",
+       "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
+       "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
+       "מַתְעֶה a bridle causing to err. Metaph."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a4b35d6-8000-4df3-ba09-6a7946e5f35e",
+      "duration_api_ms": 7849,
+      "cost_usd_list": 0.07623125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 443
+     },
+     "lines": [
+      {
+       "draft": "wander Job 12, 24. Is. 19, 13. 14. Gen.",
+       "reread": "wander Job 12, 24. Is. 19, 13. 14. Gen.",
+       "status": "agreed",
+       "text": "wander Job 12, 24. Is. 19, 13. 14. Gen."
+      },
+      {
+       "draft": "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
+       "reread": "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
+       "status": "agreed",
+       "text": "20, 13. Ps. 107, 40. Jer. 50, 6; like a"
+      },
+      {
+       "draft": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
+       "reread": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
+       "status": "agreed",
+       "text": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן"
+      },
+      {
+       "draft": "מַתְעֶה a bridle causing to err. Metaph.",
+       "reread": "מַתְעֶה a bridle causing to err. Metaph.",
+       "status": "agreed",
+       "text": "מַתְעֶה a bridle causing to err. Metaph."
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b03",
@@ -1281,8 +1824,48 @@
      "image_sha256": "13b77d3908ab4c994848ef7eb9d3c55b2c53c821301ce39ad98469bc06f9ea03",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5c3dbe6d-d4da-49f0-b58a-f0f6f8aa4086\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "to cause to wander or err from the paths",
+       "of virtue and piety, e. g. a nation into",
+       "impiety, ungodliness, Is. 3, 12. 9, 15.",
+       "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "05287468-aa0e-47df-99fd-1b64e0e3084b",
+      "duration_api_ms": 4655,
+      "cost_usd_list": 0.06763125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "to cause to wander or err from the paths",
+       "reread": "to cause to wander or err from the paths",
+       "status": "agreed",
+       "text": "to cause to wander or err from the paths"
+      },
+      {
+       "draft": "of virtue and piety, e. g. a nation into",
+       "reread": "of virtue and piety, e. g. a nation into",
+       "status": "agreed",
+       "text": "of virtue and piety, e. g. a nation into"
+      },
+      {
+       "draft": "impiety, ungodliness, Is. 3, 12. 9, 15.",
+       "reread": "impiety, ungodliness, Is. 3, 12. 9, 15.",
+       "status": "agreed",
+       "text": "impiety, ungodliness, Is. 3, 12. 9, 15."
+      },
+      {
+       "draft": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or",
+       "reread": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or",
+       "status": "agreed",
+       "text": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or"
+      }
+     ]
     }
    ]
   },
@@ -1322,68 +1905,46 @@
      "image_sha256": "248db07134cfe516577c8c52e296c36f1eeab4ec29da5ef507430e01676b1ab1",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c1507f30-7aea-4235-aba1-0b2b2d7b1a28\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;",
+       "with מִן Is. 63, 17.",
+       "2. Intrans. to err, pr. to let oneself",
+       "wander, Jer. 42, 20 Keri. Prov. 10, 17."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a37d133a-4838-4c17-b77e-13974aa25bc4",
+      "duration_api_ms": 4692,
+      "cost_usd_list": 0.06768125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 272
      },
      "lines": [
       {
        "draft": "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;",
+       "status": "agreed",
        "text": "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;"
       },
       {
        "draft": "with מִן Is. 63, 17.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "with מִן Is. 63, 17.",
+       "status": "agreed",
        "text": "with מִן Is. 63, 17."
       },
       {
        "draft": "2. Intrans. to err, pr. to let oneself",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "2. Intrans. to err, pr. to let oneself",
+       "status": "agreed",
        "text": "2. Intrans. to err, pr. to let oneself"
       },
       {
        "draft": "wander, Jer. 42, 20 Keri. Prov. 10, 17.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "wander, Jer. 42, 20 Keri. Prov. 10, 17.",
+       "status": "agreed",
        "text": "wander, Jer. 42, 20 Keri. Prov. 10, 17."
-      },
-      {
-       "draft": "Deriv. תּוֹעָה, and",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deriv. תּוֹעָה, and"
-      },
-      {
-       "draft": "תֹּעוּ (error) Tou, pr. n. of a king of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תֹּעוּ (error) Tou, pr. n. of a king of"
-      },
-      {
-       "draft": "Hamath or Epiphania, 1 Chr. 18, 9. 10;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hamath or Epiphania, 1 Chr. 18, 9. 10;"
-      },
-      {
-       "draft": "written תֹּעִי Toi 2 Sam. 8, 9. 10.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "written תֹּעִי Toi 2 Sam. 8, 9. 10."
-      },
-      {
-       "draft": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-"
-      },
-      {
-       "draft": "cept; hence an oracle Is. 8, 16; law,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "cept; hence an oracle Is. 8, 16; law,"
       }
      ]
     },
@@ -1400,8 +1961,63 @@
      "image_sha256": "16938f8be843f864fffc056b24cd845a5455381ee51790ff9969d9ccab6bf76c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5406be9b-f9f1-4c77-b31c-29c19b5c11c0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Deriv. תּוֹעֵה, and",
+       "תֹּעוּ (error) Tou, pr. n. of a king of",
+       "Hamath or Epiphania, 1 Chr. 18, 9. 10;",
+       "written תֹּעִי Toi 2 Sam. 8, 9. 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "75cf4aa6-878c-451c-b56e-274a138e09b8",
+      "duration_api_ms": 14404,
+      "cost_usd_list": 0.08429125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2706,
+      "output_tokens": 579
+     },
+     "lines": [
+      {
+       "draft": "Deriv. תּוֹעָה, and",
+       "reread": "Deriv. תּוֹעֵה, and",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "Deriv. תּוֹעָה, and",
+        "verdict": "a",
+        "note": "The vowel under ע is a qamets (bar with descending tick), not tsere; compare the clearly dotted tsere under ע in the next line's תֹּעוּ. Dagesh in ת and holem on ו as both readings have.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "dc7f15fd-db3a-4a9b-a226-fa54cc63fa81",
+        "duration_api_ms": 14562,
+        "cost_usd_list": 0.08326775,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3511,
+        "cache_creation_input_tokens": 2620,
+        "output_tokens": 593
+       },
+       "text": "Deriv. תּוֹעָה, and"
+      },
+      {
+       "draft": "תֹּעוּ (error) Tou, pr. n. of a king of",
+       "reread": "תֹּעוּ (error) Tou, pr. n. of a king of",
+       "status": "agreed",
+       "text": "תֹּעוּ (error) Tou, pr. n. of a king of"
+      },
+      {
+       "draft": "Hamath or Epiphania, 1 Chr. 18, 9. 10;",
+       "reread": "Hamath or Epiphania, 1 Chr. 18, 9. 10;",
+       "status": "agreed",
+       "text": "Hamath or Epiphania, 1 Chr. 18, 9. 10;"
+      },
+      {
+       "draft": "written תֹּעִי Toi 2 Sam. 8, 9. 10.",
+       "reread": "written תֹּעִי Toi 2 Sam. 8, 9. 10.",
+       "status": "agreed",
+       "text": "written תֹּעִי Toi 2 Sam. 8, 9. 10."
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1416,8 +2032,34 @@
      "image_sha256": "e2277c7be3b9781c7bc078efac96067f650b430c8c9af7cdbf1a17a6216bc691",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5c6b3d8c-482f-4e8e-bafa-a81d40c8d5bc\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-",
+       "cept ; hence an oracle Is. 8, 16 ; law,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7423a22e-e596-49c7-8919-af7ee261af6e",
+      "duration_api_ms": 4331,
+      "cost_usd_list": 0.056961250000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2202,
+      "output_tokens": 234
+     },
+     "lines": [
+      {
+       "draft": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-",
+       "reread": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-",
+       "status": "agreed",
+       "text": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-"
+      },
+      {
+       "draft": "cept; hence an oracle Is. 8, 16; law,",
+       "reread": "cept ; hence an oracle Is. 8, 16 ; law,",
+       "status": "agreed",
+       "text": "cept; hence an oracle Is. 8, 16; law,"
+      }
+     ]
     }
    ]
   }
@@ -1427,983 +2069,721 @@
    "chunk_id": "header",
    "column": -1,
    "text": "תנך 1140 תער",
-   "status": "draft_only",
-   "draft": "תנך 1140 תער",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "* II. תְּנַן Chald. i. q. تَنَّ, to smoke;",
-   "status": "draft_only",
+   "text": "* II. תְּנַן Chald. i. q. ܬܢ̇ܢ, to smoke;",
+   "status": "adjudicated",
    "draft": "* II. תְּנַן Chald. i. q. تَنَّ, to smoke;",
-   "reread": null,
+   "reread": "* II. תְּנַן Chald. i. q. ܬܢ̇ܢ, to smoke ;",
+   "verdict": "b",
+   "note": "The word after \"i. q.\" is printed in Syriac script (same letterforms as the Syr. items on line 3: a taw at the right, two nuns with a descending final), with a single point above the nun — not Arabic تَنَّ. Reading B's Syriac is correct; the Hebrew תְּנַן and \"to smoke ;\" are the same in both.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "whence Eth. ጢስ, ἀτμίς, vapour; Chald.",
-   "status": "draft_only",
+   "text": "whence Eth. ተን, ἀτμίς, vapour; Chald.",
+   "status": "adjudicated",
    "draft": "whence Eth. ጢስ, ἀτμίς, vapour; Chald.",
-   "reread": null,
-   "needs_review": true
+   "reread": "whence Eth. ተን, ἀτμίς, vapour ; Chald.",
+   "verdict": "b",
+   "note": "The Ethiopic word is printed as a cross-shaped ተ (tä) followed by a 7-shaped ን (nə) — ተን \"tan\", smoke — not ጢስ (which would show a looped ጠ-form); a thin space is also printed before the semicolon after \"vapour\", matching Reading B.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "תְּנָנָא, Syr. ܬܶܢܳܢܳܐ, ܬܽܘܢܳܢܳܐ, Sam. ࠕࠍࠍࠀ,",
-   "reread": null,
+   "reread": "תְּנָנָא, Syr. ܬܢܢܐ, ܬܢܘܢܐ, Sam. ࠕࠍࠍࠀ,",
+   "verdict": "a",
+   "note": "In the second Syriac word the waw (the small \"o\") is printed immediately after the taw (ܬܘܢܢܐ), not after the first nun as in B; and Syriac vowel points are clearly printed (dots/circles above the nuns and marks at the taw), which B omits.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "smoke; Nasor. תאנא furnace.",
-   "status": "draft_only",
+   "text": "smoke; Nasor. חאנא furnace.",
+   "status": "adjudicated",
    "draft": "smoke; Nasor. תאנא furnace.",
-   "reread": null,
-   "needs_review": true
+   "reread": "smoke; Nasor. חאנא furnace.",
+   "verdict": "b",
+   "note": "The rightmost (first) letter of the Hebrew word is printed as ח: flat top bar with two plain legs and no left foot. Compare the tav in תְּנַן on line 1, which clearly shows the foot on the left leg; this glyph lacks it. So the printed word is חאנא, not תאנא. Remaining letters אנא and the Latin text agree in both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
-   "status": "draft_only",
-   "draft": "Deriv. Chald. אַתּוּן, comp. תַּנּוּר.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
-   "status": "draft_only",
-   "draft": "תִּנְשֶׁמֶת f. (r. נָשַׁם to respire) 1. Lev.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "11, 30, an unclean animal, classed with",
-   "status": "draft_only",
-   "draft": "11, 30, an unclean animal, classed with",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "other species of lizards; according to",
-   "status": "draft_only",
-   "draft": "other species of lizards; according to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Bochart (Hieroz. T. I. p. 1083) the cha-",
-   "status": "draft_only",
-   "draft": "Bochart (Hieroz. T. I. p. 1083) the cha-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "melion, so called as living upon air ac-",
-   "status": "draft_only",
-   "draft": "melion, so called as living upon air ac-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "cording to the opinion of the ancients,",
-   "status": "draft_only",
-   "draft": "cording to the opinion of the ancients,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Plin. H. N. 8. 33. Hasselquist Reise",
-   "status": "draft_only",
-   "draft": "Plin. H. N. 8. 33. Hasselquist Reise",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "p. 350. Sept. and Vulg. talpa, mole.",
-   "status": "draft_only",
-   "draft": "p. 350. Sept. and Vulg. talpa, mole.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Saad. lizard.",
-   "status": "draft_only",
-   "draft": "Saad. lizard.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "2. Lev. 11, 18. Deut. 14, 16, an unclean",
-   "status": "draft_only",
-   "draft": "2. Lev. 11, 18. Deut. 14, 16, an unclean",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "aquatic bird, prob. the pelican, pelecanus",
-   "status": "draft_only",
-   "draft": "aquatic bird, prob. the pelican, pelecanus",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "onocrotalus, so called from its pouch,",
-   "status": "draft_only",
-   "draft": "onocrotalus, so called from its pouch,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "which it can extend by inflation, see",
-   "status": "draft_only",
-   "draft": "which it can extend by inflation, see",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Oedm. Verm. Samml. III. 50.—Sept.",
-   "status": "draft_only",
-   "draft": "Oedm. Verm. Samml. III. 50.—Sept.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "πορφυρίων, i. e. the crested purple heron,",
-   "status": "draft_only",
-   "draft": "πορφυρίων, i. e. the crested purple heron,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "ardea purpurea Linn. Vulg. cygnus,",
-   "status": "draft_only",
-   "draft": "ardea purpurea Linn. Vulg. cygnus,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "swan.",
-   "status": "draft_only",
-   "draft": "swan.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "* תָּעַב in Kal not used; comp. תָּאַב",
-   "status": "draft_only",
-   "draft": "* תָּעַב in Kal not used; comp. תָּאַב",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "II. This root is very rarely found in",
-   "status": "draft_only",
-   "draft": "II. This root is very rarely found in",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "the other Semitic dialects in its usual",
-   "status": "draft_only",
-   "draft": "the other Semitic dialects in its usual",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Hebrew signification. The primary",
-   "status": "draft_only",
-   "draft": "Hebrew signification. The primary",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "idea seems to be to thrust forth or away,",
-   "status": "draft_only",
-   "draft": "idea seems to be to thrust forth or away,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "to drive away; and hence to reject, to",
-   "status": "draft_only",
-   "draft": "to drive away; and hence to reject, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "abhor, to abominate.",
-   "status": "draft_only",
-   "draft": "abhor, to abominate.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
-   "text": "Piel תִּעֵב, fut. תְּתַעֵב 1. to abominate,",
-   "status": "draft_only",
+   "text": "Piel תִּעֵב, fut. יְתַעֵב 1. to abominate,",
+   "status": "adjudicated",
    "draft": "Piel תִּעֵב, fut. תְּתַעֵב 1. to abominate,",
-   "reread": null,
-   "needs_review": true
+   "reread": "Piel תִּעֵב, fut. יְתַעֵב 1. to abominate,",
+   "verdict": "b",
+   "note": "The future form's first (rightmost) letter is a short yod with sheva, not a tav; the printed form is יְתַעֵב (3 m. sg.), so Reading B is correct.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10.",
-   "status": "draft_only",
-   "draft": "to abhor, Deut. 7, 26. 23, 8. Am. 5, 10.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al.",
-   "status": "draft_only",
-   "draft": "Mic. 3, 9. Job 19, 19. Ps. 5, 7. al.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "2. Causat. to cause to abhor, to fill",
-   "status": "draft_only",
-   "draft": "2. Causat. to cause to abhor, to fill",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי",
-   "status": "draft_only",
-   "draft": "one with abhorrence. Is. 49, 7 מְתָעֵב גּוֹי",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "who causeth abhorrence to the people,",
-   "status": "draft_only",
-   "draft": "who causeth abhorrence to the people,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "who is an abomination to the people.",
-   "status": "draft_only",
-   "draft": "who is an abomination to the people.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "3. Causat. to make abominable, to",
-   "status": "draft_only",
-   "draft": "3. Causat. to make abominable, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "cause to be abhorred, Job 9, 31. Ez. 16,",
-   "status": "draft_only",
-   "draft": "cause to be abhorred, Job 9, 31. Ez. 16,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "25. See Hiph.",
-   "status": "draft_only",
-   "draft": "25. See Hiph.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Hiph. to make abominable, shameful.",
-   "status": "draft_only",
-   "draft": "Hiph. to make abominable, shameful.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Ps. 14, 1 הִתְעִיבוּ עֲלִילָה they make abom-",
-   "status": "draft_only",
-   "draft": "Ps. 14, 1 הִתְעִיבוּ עֲלִילָה they make abom-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "inable their doings, i. e. they do abom-",
-   "status": "draft_only",
-   "draft": "inable their doings, i. e. they do abom-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "inable deeds, act abominably; comp. Ps.",
-   "status": "draft_only",
-   "draft": "inable deeds, act abominably; comp. Ps.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "53, 2. So with עֲלִילָה implied id. 1 K.",
-   "status": "draft_only",
-   "draft": "53, 2. So with עֲלִילָה implied id. 1 K.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "21, 26. Ez. 16, 52. Comp. הֵרַע, הִשְׁחִית.",
-   "status": "draft_only",
+   "text": "21, 26. Ez. 16, 52. Comp. הִשְׁחִית, הֵרַע.",
+   "status": "adjudicated",
    "draft": "21, 26. Ez. 16, 52. Comp. הֵרַע, הִשְׁחִית.",
-   "reread": null,
-   "needs_review": true
+   "reread": "21, 26. Ez. 16, 52. Comp. הִשְׁחִית, הֵרַע.",
+   "verdict": "b",
+   "note": "Printed left-to-right order after \"Comp.\" is הִשְׁחִית first (immediately following \"Comp.\"), then a comma, then הֵרַע at the line's end; Reading A reverses the two items. All points agree in both readings and match the print (הִשְׁחִית with shin dot, sheva, two hiriqs and plene yod; הֵרַע with tsere and patah).",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Niph. pass. to be an abomination, ab-",
-   "status": "draft_only",
-   "draft": "Niph. pass. to be an abomination, ab-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "horred, detestable, 1 Chr. 21, 6. Part.",
-   "status": "draft_only",
-   "draft": "horred, detestable, 1 Chr. 21, 6. Part.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "נִתְעָב abominable Job 15, 16; despised,",
-   "status": "draft_only",
-   "draft": "נִתְעָב abominable Job 15, 16; despised,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "worthless, Is. 14, 19.",
-   "status": "draft_only",
-   "draft": "worthless, Is. 14, 19.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Deriv. תּוֹעֵבָה.",
-   "status": "draft_only",
-   "draft": "Deriv. תּוֹעֵבָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to",
-   "status": "draft_only",
-   "draft": "* תָּעָה fut. יִתְעֶה, apoc. יֵתַע, pr. ‘to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "be thrust hither and thither,’ comp.",
-   "status": "draft_only",
-   "draft": "be thrust hither and thither,’ comp.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "תָּעַע; kindr. is תָּעַב q. v. Then, like r.",
-   "status": "draft_only",
-   "draft": "תָּעַע; kindr. is תָּעַב q. v. Then, like r.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "טָעָה, to wander, to err, to go astray",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "טָעָה, to wander, to err, to go astray",
-   "reread": null,
-   "needs_review": true
+   "reread": "תָּעָה, to wander, to err, to go astray",
+   "verdict": "a",
+   "note": "Initial letter is a rounded closed-bowl teth (ט) with qamets, no dagesh; not tav. Consistent with Arabic cognate طغا (ṭ) and Chaldee טְעָא on the following lines.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Chald. תְּעָא id. but oftener טְעָא; Syr.",
-   "status": "draft_only",
-   "draft": "Chald. תְּעָא id. but oftener טְעָא; Syr.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "ܛܥܳܐ, Arab. طغا and طغى id. Spoken",
-   "status": "draft_only",
-   "draft": "ܛܥܳܐ, Arab. طغا and طغى id. Spoken",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "of persons Is. 35, 8. 47, 15; of beasts",
-   "status": "draft_only",
-   "draft": "of persons Is. 35, 8. 47, 15; of beasts",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
-   "status": "draft_only",
-   "draft": "Ex. 23, 4. Is. 53, 6. Ps. 119, 176 תָּעִיתִי",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "כְּשֶׂה אֹבֵד I have gone astray like a lost",
-   "status": "draft_only",
-   "draft": "כְּשֶׂה אֹבֵד I have gone astray like a lost",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "sheep; also of birds Job 38, 41; with בְּ",
-   "status": "draft_only",
-   "draft": "sheep; also of birds Job 38, 41; with בְּ",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "of place Gen. 21, 14. 37, 15. Ps. 107, 4.",
-   "status": "draft_only",
-   "draft": "of place Gen. 21, 14. 37, 15. Ps. 107, 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "With acc. of place, to wander through",
-   "status": "draft_only",
-   "draft": "With acc. of place, to wander through",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "or over, trop. of the branches of a vine",
-   "status": "draft_only",
-   "draft": "or over, trop. of the branches of a vine",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "shooting luxuriantly over the desert, Is.",
-   "status": "draft_only",
-   "draft": "shooting luxuriantly over the desert, Is.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "16, 9 [8]. Spec. a) Of drunken per-",
-   "status": "draft_only",
-   "draft": "16, 9 [8]. Spec. a) Of drunken per-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "sons, who go reeling about; Is. 28, 7",
-   "status": "draft_only",
-   "draft": "sons, who go reeling about; Is. 28, 7",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from",
-   "status": "draft_only",
-   "draft": "תָּעוּ מִן־הַשֵּׁכָר they go astray (reel) from",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "strong drink; and hence trop. of the",
-   "status": "draft_only",
-   "draft": "strong drink; and hence trop. of the",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-",
-   "status": "draft_only",
-   "draft": "mind, Is. 21, 4 תָּעָה לְבָבִי my heart reel-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "eth, is seized with giddiness. b) Trop.",
-   "status": "draft_only",
-   "draft": "eth, is seized with giddiness. b) Trop.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "of the mind as erring from the paths of",
-   "status": "draft_only",
-   "draft": "of the mind as erring from the paths of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "virtue and piety, Ps. 58, 4. Ez. 48, 11;",
-   "status": "draft_only",
-   "draft": "virtue and piety, Ps. 58, 4. Ez. 48, 11;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,",
-   "status": "draft_only",
-   "draft": "comp. תֹּעֵי לֵבָב Ps. 95, 10, תֹּעֵי רוּחַ Is. 29,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "24. With מִן, e. g. from God's precepts",
-   "status": "draft_only",
-   "draft": "24. With מִן, e. g. from God's precepts",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Ps. 119, 110, comp. Prov. 21, 16; with",
-   "status": "draft_only",
-   "draft": "Ps. 119, 110, comp. Prov. 21, 16; with",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "מֵעַל יְהוָֹה Ez. 44, 10. 15; with מֵאַחֲרֵי",
-   "status": "draft_only",
+   "text": "מֵעַל יְהֹוָה Ez. 44, 10. 15; with מֵאַחֲרֵי",
+   "status": "adjudicated",
    "draft": "מֵעַל יְהוָֹה Ez. 44, 10. 15; with מֵאַחֲרֵי",
-   "reread": null,
-   "needs_review": true
+   "reread": "מֵעַל יְהֹוָה Ez. 44, 10. 15; with מֵאַחֲרֵי",
+   "verdict": "b",
+   "note": "The only difference is the point order inside the tetragrammaton. In the print the holem dot sits above the he (at the he/vav junction), not above the vav, so the sequence is he+holem, vav+qamets (יְהֹוָה) as in B, not vav+holem+qamets (יְהוָֹה) as in A. Everything else (מֵעַל, \"Ez. 44, 10. 15; with\", מֵאַחֲרֵי with hataf-patah under het and tsere under resh) is identical in both readings and matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "יְהוָֹה from following God, from his wor-",
-   "status": "draft_only",
+   "text": "יְהֹוָה from following God, from his wor-",
+   "status": "adjudicated",
    "draft": "יְהוָֹה from following God, from his wor-",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְהֹוָה from following God, from his wor-",
+   "verdict": "b",
+   "note": "The holem dot is printed over the he (הֹ), not over the vav; the vav carries only qamets (וָ). So the sequence is he+holem, vav+qamets, as in Reading B. Reading A places holem on the vav after the qamets, which does not match the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "ship, Ez. 14, 11. Comp. Chald. טְעָא",
-   "status": "draft_only",
-   "draft": "ship, Ez. 14, 11. Comp. Chald. טְעָא",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "spec. ' to be given to idolatry,' Syr. to",
-   "status": "draft_only",
+   "text": "spec. ‘ to be given to idolatry,’ Syr. to",
+   "status": "adjudicated",
    "draft": "spec. ' to be given to idolatry,' Syr. to",
-   "reread": null,
-   "needs_review": true
+   "reread": "spec. ‘ to be given to idolatry,’ Syr. to",
+   "verdict": "b",
+   "note": "The printed quotation marks are typographic single quotes (inverted-comma ‘ opening, raised-comma ’ closing), not straight ASCII apostrophes; otherwise the two readings are identical and match the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "be a heretic. c) Of those who miss",
-   "status": "draft_only",
-   "draft": "be a heretic. c) Of those who miss",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "their aim and fail in their efforts; Prov.",
-   "status": "draft_only",
-   "draft": "their aim and fail in their efforts; Prov.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not",
-   "status": "draft_only",
-   "draft": "14, 22 הֲלוֹא יִתְעוּ חֹרְשֵׁי רָע do they not",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "err (from their mark) who devise evil?",
-   "status": "draft_only",
-   "draft": "err (from their mark) who devise evil?",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Others, do they not perish.",
-   "status": "draft_only",
-   "draft": "Others, do they not perish.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Niph. to wander, pr. to be made to",
-   "status": "draft_only",
-   "draft": "Niph. to wander, pr. to be made to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "wander, to stagger about, Is. 19, 14.",
-   "status": "draft_only",
-   "draft": "wander, to stagger about, Is. 19, 14.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Metaph. to be deceived, to err, in a mor-",
-   "status": "draft_only",
-   "draft": "Metaph. to be deceived, to err, in a mor-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "al sense, Job 15, 31.",
-   "status": "draft_only",
-   "draft": "al sense, Job 15, 31.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "Hiph. fut. apoc. יַתַע 1. to cause to",
-   "status": "draft_only",
+   "text": "Hiph. fut. apoc. יֶ֫תַע 1. to cause to",
+   "status": "adjudicated",
    "draft": "Hiph. fut. apoc. יַתַע 1. to cause to",
-   "reread": null,
+   "reread": "Hiph. fut. apoc. וַיֶּ֫תַע 1. to cause to",
+   "verdict": "neither",
+   "note": "Printed form is three letters (yod-tav-ayin), no vav prefix as in B; but the yod has segol below and a stress accent above, not patach as in A. No dagesh visible.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "wander Job 12, 24. Is. 19, 13. 14. Gen.",
-   "status": "draft_only",
-   "draft": "wander Job 12, 24. Is. 19, 13. 14. Gen.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
-   "status": "draft_only",
-   "draft": "20, 13. Ps. 107, 40. Jer. 50, 6; like a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
-   "status": "draft_only",
-   "draft": "drunken man Job 12, 25. Is. 30, 28 רֶסֶן",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "מַתְעֶה a bridle causing to err. Metaph.",
-   "status": "draft_only",
-   "draft": "מַתְעֶה a bridle causing to err. Metaph.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "to cause to wander or err from the paths",
-   "status": "draft_only",
-   "draft": "to cause to wander or err from the paths",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "of virtue and piety, e. g. a nation into",
-   "status": "draft_only",
-   "draft": "of virtue and piety, e. g. a nation into",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "impiety, ungodliness, Is. 3, 12. 9, 15.",
-   "status": "draft_only",
-   "draft": "impiety, ungodliness, Is. 3, 12. 9, 15.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or",
-   "status": "draft_only",
-   "draft": "Am. 2, 4. Hos. 4, 12. Jer. 23, 13. 32; or",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;",
-   "status": "draft_only",
-   "draft": "into idolatry, 2 K. 21, 9. 2 Chr. 33, 9;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "with מִן Is. 63, 17.",
-   "status": "draft_only",
-   "draft": "with מִן Is. 63, 17.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "2. Intrans. to err, pr. to let oneself",
-   "status": "draft_only",
-   "draft": "2. Intrans. to err, pr. to let oneself",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "wander, Jer. 42, 20 Keri. Prov. 10, 17.",
-   "status": "draft_only",
-   "draft": "wander, Jer. 42, 20 Keri. Prov. 10, 17.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Deriv. תּוֹעָה, and",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "Deriv. תּוֹעָה, and",
-   "reread": null,
-   "needs_review": true
+   "reread": "Deriv. תּוֹעֵה, and",
+   "verdict": "a",
+   "note": "The vowel under ע is a qamets (bar with descending tick), not tsere; compare the clearly dotted tsere under ע in the next line's תֹּעוּ. Dagesh in ת and holem on ו as both readings have.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "תֹּעוּ (error) Tou, pr. n. of a king of",
-   "status": "draft_only",
-   "draft": "תֹּעוּ (error) Tou, pr. n. of a king of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Hamath or Epiphania, 1 Chr. 18, 9. 10;",
-   "status": "draft_only",
-   "draft": "Hamath or Epiphania, 1 Chr. 18, 9. 10;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "written תֹּעִי Toi 2 Sam. 8, 9. 10.",
-   "status": "draft_only",
-   "draft": "written תֹּעִי Toi 2 Sam. 8, 9. 10.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-",
-   "status": "draft_only",
-   "draft": "תְּעוּדָה f. (r. עוּד Hiph.) a divine pre-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "cept; hence an oracle Is. 8, 16; law,",
-   "status": "draft_only",
-   "draft": "cept; hence an oracle Is. 8, 16; law,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 0,
-  "adjudicated": 0,
-  "draft_only": 108,
+  "agreed": 96,
+  "adjudicated": 12,
+  "draft_only": 0,
   "reread_only": 0,
   "unresolved": 0,
-  "needs_review": 108
+  "needs_review": 3
  },
- "errors": 31,
- "cost_usd_list_total": 0.0
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.4165
 }

@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-09-24T12:27:25+00:00",
+ "generated_at": "2026-10-01T20:58:51+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -43,7 +43,16 @@
      "image_sha256": "9d3ac1b84d1a1019e7aa9fa2e338f2e8be54a9f5beec68362d6f7991f863c60b",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e39b7f33-ab8e-4f4f-9330-d7b2b290e596\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "032686eb-c9c5-4efc-a003-5c643f4b08f6",
+      "duration_api_ms": 10779,
+      "cost_usd_list": 0.06831999999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3520,
+      "cache_creation_input_tokens": 1760,
+      "output_tokens": 644
      },
      "lines": [
       {
@@ -97,98 +106,76 @@
      "image_sha256": "852f7c9b038c595f2579c731c2496ab104e22ddf53381d7abbee44212f9fbf2a",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"da7c838d-d40d-4ef3-a998-78a2aebdc8da\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "יְגֶּה, וַיְגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
+       "§ 68. note 6.",
+       "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
+       "יִגַּר fut. Niph. r. גָּרַר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8354bf15-9670-4917-b062-9436722bbd00",
+      "duration_api_ms": 17791,
+      "cost_usd_list": 0.09389075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2576,
+      "output_tokens": 823
      },
      "lines": [
       {
        "draft": "יַגֶּה, וַיַּגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַגֶּה, וַיַּגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I."
+       "reread": "יְגֶּה, וַיְגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "יְגֶּה, וַיְגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
+        "verdict": "b",
+        "note": "Under the yod of both the first word and the second word the print shows two vertically stacked dots (shewa), not a single horizontal stroke (patach); Reading A's יַגֶּה / וַיַּגֶּה is wrong. The rest (וַיְיַגֶּה, יָגָה I.) is identical in both and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8cfa1ed4-4549-40c4-b050-2c50fe05ef48",
+        "duration_api_ms": 30660,
+        "cost_usd_list": 0.11816325,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2554,
+        "output_tokens": 1317
+       },
+       "text": "יְגֶּה, וַיְגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I."
       },
       {
        "draft": "§ 68. note 6.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "§ 68. note 6.",
+       "status": "agreed",
        "text": "§ 68. note 6."
       },
       {
        "draft": "יָגֶל, וַיָּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יָגֶל, וַיָּגֶל, fut. apoc. Hiph. from r. גָּלָה."
+       "reread": "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
+        "verdict": "b",
+        "note": "Under the yod in both יֶגֶל and וַיֶּגֶל the print shows a three-dot segol cluster, not a qamets stroke; the apocopated Hiphil of גלה is indeed יֶגֶל/וַיֶּגֶל. Reading B matches; Reading A's qamets under yod is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "df00aecc-7de9-4e5d-92f1-58b6fda36cfd",
+        "duration_api_ms": 12293,
+        "cost_usd_list": 0.08305950000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3558,
+        "cache_creation_input_tokens": 2539,
+        "output_tokens": 621
+       },
+       "text": "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה."
       },
       {
        "draft": "יִגַּר fut. Niph. r. גָּרַר.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יִגַּר fut. Niph. r. גָּרַר.",
+       "status": "agreed",
        "text": "יִגַּר fut. Niph. r. גָּרַר."
-      },
-      {
-       "draft": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to"
-      },
-      {
-       "draft": "fly.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "fly."
-      },
-      {
-       "draft": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to"
-      },
-      {
-       "draft": "cast. § 68. note 6.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "cast. § 68. note 6."
-      },
-      {
-       "draft": "יִדַּכָּא fut. Hithp. from r. דָּכָא.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִדַּכָּא fut. Hithp. from r. דָּכָא."
-      },
-      {
-       "draft": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your"
-      },
-      {
-       "draft": "hand, Gen. 9, 2.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "hand, Gen. 9, 2."
-      },
-      {
-       "draft": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal"
-      },
-      {
-       "draft": "from r. דָּמַם. § 66. 5. n.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from r. דָּמַם. § 66. 5. n."
-      },
-      {
-       "draft": "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r."
-      },
-      {
-       "draft": "דָּמַם) ; see the form חִיָּה above.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "דָּמַם); see the form חִיָּה above."
       }
      ]
     },
@@ -205,8 +192,63 @@
      "image_sha256": "18b1477b08f59b5c45cb47f2c43dbfd1bf13bcc88dbb9806fc6d32ba6cd1f617",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e788082b-23c3-4822-ba3f-6ff502171342\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יֵרֶא, וַיֵּרֶא, fut. apoc. Kal from r. דָּאָה to",
+       "fly.",
+       "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
+       "cast.  § 68. note 6."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26544dfb-5cee-422b-8453-c2020c554723",
+      "duration_api_ms": 13735,
+      "cost_usd_list": 0.08139075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2576,
+      "output_tokens": 573
+     },
+     "lines": [
+      {
+       "draft": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
+       "reread": "יֵרֶא, וַיֵּרֶא, fut. apoc. Kal from r. דָּאָה to",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
+        "verdict": "a",
+        "note": "The second letter of both forms is printed as a dalet (square shoulder, top bar projecting right of the stem), not a resh; this agrees with the root דָּאָה \"to fly\" named on the same line.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "639f7022-367b-49f5-918b-6e533818f5bf",
+        "duration_api_ms": 10270,
+        "cost_usd_list": 0.081919,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3556,
+        "cache_creation_input_tokens": 2537,
+        "output_tokens": 599
+       },
+       "text": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to"
+      },
+      {
+       "draft": "fly.",
+       "reread": "fly.",
+       "status": "agreed",
+       "text": "fly."
+      },
+      {
+       "draft": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
+       "reread": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
+       "status": "agreed",
+       "text": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to"
+      },
+      {
+       "draft": "cast. § 68. note 6.",
+       "reread": "cast.  § 68. note 6.",
+       "status": "agreed",
+       "text": "cast. § 68. note 6."
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b02",
@@ -221,8 +263,63 @@
      "image_sha256": "624f6b522b1a352d6c8867212eb4a07344fef061855e1e94e4d44932d20907e0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c5f1e6f5-0192-4c9f-a824-a441ac2094b7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יִדַּכֵּא fut. Hithp. from r. דָּכָא.",
+       "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
+       "hand, Gen. 9, 2.",
+       "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8b1f7451-2528-44d0-aab5-a19fcdb7b000",
+      "duration_api_ms": 17999,
+      "cost_usd_list": 0.09180074999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2639,
+      "output_tokens": 756
+     },
+     "lines": [
+      {
+       "draft": "יִדַּכָּא fut. Hithp. from r. דָּכָא.",
+       "reread": "יִדַּכֵּא fut. Hithp. from r. דָּכָא.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "יִדַּכֵּא fut. Hithp. from r. דָּכָא.",
+        "verdict": "b",
+        "note": "Under the כּ of the headword the print shows two side-by-side dots (tsere, ֵ), not a qamets stroke; so יִדַּכֵּא (Reading B), the regular Hithpael vocalisation. The rest of the line (fut. Hithp. from r. דָּכָא.) matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "dc2cfec5-44e0-4d7b-ba57-ec77389735ac",
+        "duration_api_ms": 15539,
+        "cost_usd_list": 0.08446324999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3533,
+        "cache_creation_input_tokens": 2577,
+        "output_tokens": 634
+       },
+       "text": "יִדַּכֵּא fut. Hithp. from r. דָּכָא."
+      },
+      {
+       "draft": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
+       "reread": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
+       "status": "agreed",
+       "text": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your"
+      },
+      {
+       "draft": "hand, Gen. 9, 2.",
+       "reread": "hand, Gen. 9, 2.",
+       "status": "agreed",
+       "text": "hand, Gen. 9, 2."
+      },
+      {
+       "draft": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
+       "reread": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
+       "status": "agreed",
+       "text": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b03",
@@ -237,8 +334,86 @@
      "image_sha256": "5cc4723af43bae7984c6140dba01a7d38bf826a75ff5ce487f7eccafb23815ff",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8d9015fb-c212-4384-bc01-e544abb2f35a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "from r. הָמַם. § 66. 5. n.",
+       "יֵהָמּוּ fut. Niph. in pause, for יֵהַמּוּ (r.",
+       "הָמַם) ; see the form חֳיְהָ above."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dc543a1c-b8e6-4e5d-938a-6822d6bfd21a",
+      "duration_api_ms": 17489,
+      "cost_usd_list": 0.10191075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2387,
+      "output_tokens": 1059
+     },
+     "lines": [
+      {
+       "draft": "from r. דָּמַם. § 66. 5. n.",
+       "reread": "from r. הָמַם. § 66. 5. n.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "from r. דָּמַם. § 66. 5. n.",
+        "verdict": "a",
+        "note": "The root's first letter is a dalet (flat top, protruding right shoulder, no left leg), identical to the דָּמַם printed two lines below and consistent with the context (Niphal forms of דמם); it is not a he.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3f955342-3a94-40ab-a2c2-ac7e268d3695",
+        "duration_api_ms": 17619,
+        "cost_usd_list": 0.08055875000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3515,
+        "cache_creation_input_tokens": 2307,
+        "output_tokens": 664
+       },
+       "text": "from r. דָּמַם. § 66. 5. n."
+      },
+      {
+       "draft": "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r.",
+       "reread": "יֵהָמּוּ fut. Niph. in pause, for יֵהַמּוּ (r.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "יֵהָמּוּ fut. Niph. in pause, for יֵהַמּוּ (r.",
+        "verdict": "b",
+        "note": "Second letter of both Hebrew forms is ה (open gap at top-left of the left stroke), not ד, matching the root הָמַם cited on the lines above and below; the yod carries tsere, not hireq. Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d474ff72-a09e-428c-9351-cc60094567fd",
+        "duration_api_ms": 20429,
+        "cost_usd_list": 0.09320675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3547,
+        "cache_creation_input_tokens": 2339,
+        "output_tokens": 904
+       },
+       "text": "יֵהָמּוּ fut. Niph. in pause, for יֵהַמּוּ (r."
+      },
+      {
+       "draft": "דָּמַם) ; see the form חִיָּה above.",
+       "reread": "הָמַם) ; see the form חֳיְהָ above.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "הָמַם) ; see the form חֳ֫יְהָ above.",
+        "verdict": "neither",
+        "note": "First word is הָמַם (he, matching \"r. הָמַם\" in line 1), not דָּמַם — no dagesh in the first letter. The last word is printed חֳיְהָ with an accent stroke above the ח (hateph under ח, sheva under י, qamets under ה); Reading A's חִיָּה is wrong and Reading B omits the accent.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5e20bd1a-be8c-45bd-a13f-2c49b51034ef",
+        "duration_api_ms": 56980,
+        "cost_usd_list": 0.23533975000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3519,
+        "cache_creation_input_tokens": 2311,
+        "output_tokens": 3758
+       },
+       "text": "הָמַם); see the form חֳ֫יְהָ above."
+      }
+     ]
     }
    ]
   },
@@ -284,104 +459,46 @@
      "image_sha256": "35ca26565cfb689b7ac83799d899057f52560955c9351f53eb433a850dfdeb93",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5e5306cc-5d26-46f1-b5d1-ac5756f2b825\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal",
+       "from r. הָיָה to be, fut. יִהְיֶה.",
+       "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד.",
+       "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ee41d4fc-284d-4e64-a4e1-c35285122c62",
+      "duration_api_ms": 10401,
+      "cost_usd_list": 0.08514100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 622
      },
      "lines": [
       {
        "draft": "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal",
+       "status": "agreed",
        "text": "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal"
       },
       {
        "draft": "from r. הָיָה to be, fut. יִהְיֶה.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "from r. הָיָה to be, fut. יִהְיֶה.",
+       "status": "agreed",
        "text": "from r. הָיָה to be, fut. יִהְיֶה."
       },
       {
        "draft": "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד.",
+       "status": "agreed",
        "text": "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד."
       },
       {
        "draft": "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-",
+       "status": "agreed",
        "text": "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-"
-      },
-      {
-       "draft": "daism for יוֹדֶה. § 52. note 7.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "daism for יוֹדֶה. § 52. note 7."
-      },
-      {
-       "draft": "וַיְהִי, יְהִי, fut. apoc. Kal from r. הָיָה to be.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיְהִי, יְהִי, fut. apoc. Kal from r. הָיָה to be."
-      },
-      {
-       "draft": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for"
-      },
-      {
-       "draft": "the comm. contracted יְיֵלִילוּ.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the comm. contracted יְיֵלִילוּ."
-      },
-      {
-       "draft": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go."
-      },
-      {
-       "draft": "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi."
-      },
-      {
-       "draft": "from r. אָהַל.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from r. אָהַל."
-      },
-      {
-       "draft": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph."
-      },
-      {
-       "draft": "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from"
-      },
-      {
-       "draft": "r. אָכַל q. v.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "r. אָכַל q. v."
-      },
-      {
-       "draft": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,"
-      },
-      {
-       "draft": "Gen. 16, 11. Lgb. 591.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Gen. 16, 11. Lgb. 591."
       }
      ]
     },
@@ -398,8 +515,78 @@
      "image_sha256": "32277d7fe3729d28402c1553f310654fe69f1f26921fbfc78556292857d69199",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"30795af1-f65b-492c-9367-0031af393102\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "daism for יוֹרֶה. § 52. note 7.",
+       "יְהִי, וַיְהִי, fut. apoc. Kal from r. הָיָה to be.",
+       "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
+       "the comm. contracted יְיֵלִילוּ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8e2b4b29-4bef-4805-b4f4-4c69276f1740",
+      "duration_api_ms": 14281,
+      "cost_usd_list": 0.07977100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2515,
+      "output_tokens": 565
+     },
+     "lines": [
+      {
+       "draft": "daism for יוֹדֶה. § 52. note 7.",
+       "reread": "daism for יוֹרֶה. § 52. note 7.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "daism for יוֹדֶה. § 52. note 7.",
+        "verdict": "a",
+        "note": "Third letter is dalet, not resh: the printed letter has a squared top-right corner with the bar overhanging the downstroke (resh in this font is rounded). Context confirms: the entry (יְהוֹדֶה, Hiph. fut. of ידה) is a Chaldaism for יוֹדֶה.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0d3f519a-998e-4e20-8769-09413868ef7b",
+        "duration_api_ms": 19186,
+        "cost_usd_list": 0.08882975000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3519,
+        "cache_creation_input_tokens": 2438,
+        "output_tokens": 777
+       },
+       "text": "daism for יוֹדֶה. § 52. note 7."
+      },
+      {
+       "draft": "וַיְהִי, יְהִי, fut. apoc. Kal from r. הָיָה to be.",
+       "reread": "יְהִי, וַיְהִי, fut. apoc. Kal from r. הָיָה to be.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "יְהִי, וַיְהִי, fut. apoc. Kal from r. הָיָה to be.",
+        "verdict": "b",
+        "note": "Printed left-to-right order: the short three-letter form יְהִי (yod-sheva, he-hiriq, yod) stands at the left margin, followed by the four-letter וַיְהִי (vav-patah). Reading A swaps them; Reading B matches the print, including all vowel points and הָיָה with two qamats.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "91cd7ce9-d6d5-4890-8cb3-3b08d2ed71e3",
+        "duration_api_ms": 16531,
+        "cost_usd_list": 0.07813725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3549,
+        "cache_creation_input_tokens": 2468,
+        "output_tokens": 551
+       },
+       "text": "יְהִי, וַיְהִי, fut. apoc. Kal from r. הָיָה to be."
+      },
+      {
+       "draft": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
+       "reread": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
+       "status": "agreed",
+       "text": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for"
+      },
+      {
+       "draft": "the comm. contracted יְיֵלִילוּ.",
+       "reread": "the comm. contracted יְיֵלִילוּ.",
+       "status": "agreed",
+       "text": "the comm. contracted יְיֵלִילוּ."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -414,8 +601,78 @@
      "image_sha256": "23a277595e2bc85149b1e0d7a72e317b4e7dac7d22b4125dc04f2e9246d62405",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f9f52804-f82d-4feb-9641-0554bf55f395\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
+       "יְהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+       "from r. אָהַל.",
+       "יְהַתְלוּ, see under r. הָתַל and r. הָלַל Hiph."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4ca44e71-bdaa-4675-ab2b-cdb31129cfaa",
+      "duration_api_ms": 19215,
+      "cost_usd_list": 0.098181,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 908
+     },
+     "lines": [
+      {
+       "draft": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
+       "reread": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
+       "status": "agreed",
+       "text": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go."
+      },
+      {
+       "draft": "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+       "reread": "יְהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "יְהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+        "verdict": "b",
+        "note": "The headword's yod carries a shewa (two vertically stacked dots), not a patach (single horizontal stroke), so יְהֵל (B) matches the print; the rest of the line is identical in both readings and in the image.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2a0dd64c-e405-40dd-8dbe-c75669b70305",
+        "duration_api_ms": 10139,
+        "cost_usd_list": 0.08094725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3549,
+        "cache_creation_input_tokens": 2531,
+        "output_tokens": 582
+       },
+       "text": "יְהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi."
+      },
+      {
+       "draft": "from r. אָהַל.",
+       "reread": "from r. אָהַל.",
+       "status": "agreed",
+       "text": "from r. אָהַל."
+      },
+      {
+       "draft": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
+       "reread": "יְהַתְלוּ, see under r. הָתַל and r. הָלַל Hiph.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
+        "verdict": "a",
+        "note": "The last root's first letter has the ת foot (תָּלַל with dagesh, not הָלַל), and the headword shows qamets under ה, tsere + dagesh in ל and shureq (יְהָתֵלּוּ, Job 13:9 form), not יְהַתְלוּ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c528138c-0328-4d63-b08f-fe1505db3fb5",
+        "duration_api_ms": 11826,
+        "cost_usd_list": 0.092677,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3548,
+        "cache_creation_input_tokens": 2530,
+        "output_tokens": 817
+       },
+       "text": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b03",
@@ -430,8 +687,56 @@
      "image_sha256": "60c3b2c856394e531efc882d138bad047037f3dbeab1c90a67a301a8d2c886ef",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"22894d91-78df-4fc4-929b-a03e23e834b9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יוּכְלוּ Ez. 42, 5 for יְאֻכְּלוּ fut. Hoph. from",
+       "r. אָכַל q. v.",
+       "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "67f19f28-e934-48bd-9d1b-cb6d99d22542",
+      "duration_api_ms": 14404,
+      "cost_usd_list": 0.095051,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2389,
+      "output_tokens": 921
+     },
+     "lines": [
+      {
+       "draft": "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from",
+       "reread": "יוּכְלוּ Ez. 42, 5 for יְאֻכְּלוּ fut. Hoph. from",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b03",
+       "judgement": {
+        "text": "יוּכְלוּ Ez. 42, 5 for יְאָכְלוּ fut. Hoph. from",
+        "verdict": "neither",
+        "note": "Second Hebrew word is printed יְאָכְלוּ: sheva under yod (not tsere as in A), qamets under aleph and no dagesh in kaf (not qibbuts/dagesh as in B).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "529568a8-2469-4d90-936a-e0d52b011212",
+        "duration_api_ms": 15238,
+        "cost_usd_list": 0.08394,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2353,
+        "output_tokens": 713
+       },
+       "text": "יוּכְלוּ Ez. 42, 5 for יְאָכְלוּ fut. Hoph. from"
+      },
+      {
+       "draft": "r. אָכַל q. v.",
+       "reread": "r. אָכַל q. v.",
+       "status": "agreed",
+       "text": "r. אָכַל q. v."
+      },
+      {
+       "draft": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
+       "reread": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
+       "status": "agreed",
+       "text": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,"
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b04",
@@ -446,8 +751,27 @@
      "image_sha256": "63e534aaa8054af5d0be25bd9662bf917f42ec5f4cfb40a66f331b9dcb6834fc",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5b955ccd-7940-45eb-936c-eed391ef95b2\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Gen. 16, 11.  Lgb. 591."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "47a74403-11f2-4f0e-bf92-39ca4794f532",
+      "duration_api_ms": 8285,
+      "cost_usd_list": 0.05128100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 1948,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "Gen. 16, 11. Lgb. 591.",
+       "reread": "Gen. 16, 11.  Lgb. 591.",
+       "status": "agreed",
+       "text": "Gen. 16, 11. Lgb. 591."
+      }
+     ]
     }
    ]
   },
@@ -492,98 +816,61 @@
      "image_sha256": "00006f2d0f5cf43862a6472a23b45542e6a159c02e8097632098925e037aaf99",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"88fabd94-c02f-499e-b97e-85fd1e80761f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה .",
+       "יוֹרֵא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
+       "watered, prob. fut. Hoph. from יָרָה,",
+       "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "59952f3c-c71c-470a-bb0d-c8b4af3d9e19",
+      "duration_api_ms": 23835,
+      "cost_usd_list": 0.112991,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 1179
      },
      "lines": [
       {
        "draft": "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה .",
+       "status": "agreed",
        "text": "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה."
       },
       {
        "draft": "יוֹרֶא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יוֹרֵא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "יוֹרֶא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
+        "verdict": "a",
+        "note": "The vowel under the resh of the first word is a three-dot segol (same as the parenthetical יוֹרֶה and the MT of Prov. 11:25), not a two-dot tsere; Reading B's יוֹרֵא is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7a117359-ea83-4f00-b46c-690a7b8accba",
+        "duration_api_ms": 14606,
+        "cost_usd_list": 0.08343824999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3553,
+        "cache_creation_input_tokens": 2598,
+        "output_tokens": 605
+       },
        "text": "יוֹרֶא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,"
       },
       {
        "draft": "watered, prob. fut. Hoph. from יָרָה,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "watered, prob. fut. Hoph. from יָרָה,",
+       "status": "agreed",
        "text": "watered, prob. fut. Hoph. from יָרָה,"
       },
       {
        "draft": "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,",
+       "status": "agreed",
        "text": "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,"
-      },
-      {
-       "draft": "23. 29.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "23. 29."
-      },
-      {
-       "draft": "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה."
-      },
-      {
-       "draft": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc."
-      },
-      {
-       "draft": "Kal from נָזָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Kal from נָזָה."
-      },
-      {
-       "draft": "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם."
-      },
-      {
-       "draft": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to"
-      },
-      {
-       "draft": "rejoice.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "rejoice."
-      },
-      {
-       "draft": "יַחֵד, fut. Hiph. see r. חָדַד p. 296.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַחֵד, fut. Hiph. see r. חָדַד p. 296."
-      },
-      {
-       "draft": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה."
-      },
-      {
-       "draft": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph."
-      },
-      {
-       "draft": "from חָתַת, c. suff. ־ַן in pause for ־ֵן.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from חָתַת, c. suff. ־ַן in pause for ־ֵן."
       }
      ]
     },
@@ -600,8 +887,78 @@
      "image_sha256": "9a38e3687918b0637147be6243e28813d2486aebcd81123d962862a3c829b810",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c29d20db-c52b-4a5b-b249-71682010e999\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "23. 29.",
+       "יַז, וַיַּז fut. apoc. Hiph. from נָזָה.",
+       "יֵז and יַז, with ו conv. וַיִּז, וַיֵּז, fut. apoc.",
+       "Kal from נָזָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4426297e-37f9-48d7-9a97-ab769b1c023c",
+      "duration_api_ms": 22828,
+      "cost_usd_list": 0.09927100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2515,
+      "output_tokens": 955
+     },
+     "lines": [
+      {
+       "draft": "23. 29.",
+       "reread": "23. 29.",
+       "status": "agreed",
+       "text": "23. 29."
+      },
+      {
+       "draft": "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה.",
+       "reread": "יַז, וַיַּז fut. apoc. Hiph. from נָזָה.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "יַז, וַיַּז fut. apoc. Hiph. from נָזָה.",
+        "verdict": "b",
+        "note": "Both yods carry a patach (single horizontal stroke), not tsere; compare the clearly two-dotted יֵז at the start of line 3, which is the Kal form contrasted with this Hiph. patach form.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e2471c51-dd0a-46d9-a5ed-301d7fe1671c",
+        "duration_api_ms": 11312,
+        "cost_usd_list": 0.08798475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3539,
+        "cache_creation_input_tokens": 2458,
+        "output_tokens": 752
+       },
+       "text": "יַז, וַיַּז fut. apoc. Hiph. from נָזָה."
+      },
+      {
+       "draft": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
+       "reread": "יֵז and יַז, with ו conv. וַיִּז, וַיֵּז, fut. apoc.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
+        "verdict": "a",
+        "note": "The second form after \"and\" has a single dot (hireq, יִז), not a patach bar — the patach form יַז is the Hiph. one on the line above, whereas this Kal line gives tsere/hireq (וַיֵּז Is. 63:3, וַיִּז 2 K. 9:33). The two vav-conversive forms are printed tsere first, then hireq, matching the order of the bare forms; Reading B inverts them and misreads the vowel.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2186fde4-6105-4c94-94d7-f4a3e34c711d",
+        "duration_api_ms": 21480,
+        "cost_usd_list": 0.12371825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3553,
+        "cache_creation_input_tokens": 2472,
+        "output_tokens": 1461
+       },
+       "text": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc."
+      },
+      {
+       "draft": "Kal from נָזָה.",
+       "reread": "Kal from נָזָה.",
+       "status": "agreed",
+       "text": "Kal from נָזָה."
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -616,8 +973,63 @@
      "image_sha256": "0feff5ed740a056fbad6d677f6fb1c4f6df1773fde01973e2b060a095998f41e",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"41520a1b-688b-4442-a77e-ce83d8811a27\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יֶזְּמוּ fut. Kal for יָזֹמּוּ, from r. זָמַם.",
+       "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
+       "rejoice.",
+       "יַחֵד, fut. Hiph. see r. חָדַד p. 296."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "42c68348-3aea-45c6-80d6-2f8ba445cce9",
+      "duration_api_ms": 17840,
+      "cost_usd_list": 0.08889100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 697
+     },
+     "lines": [
+      {
+       "draft": "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם.",
+       "reread": "יֶזְּמוּ fut. Kal for יָזֹמּוּ, from r. זָמַם.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "יָזְמוּ fut. Kal for יָזֹמּוּ, from r. זָמַם.",
+        "verdict": "neither",
+        "note": "First word has qamets (not segol) under yod and plain shewa under zayin with no dagesh, as in A; but the second word's mem carries a dagesh (יָזֹמּוּ, the uncontracted geminate form), as in B. Each reading is right on one word and wrong on the other.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9eaade81-5572-465c-858a-2fbe3126ddfb",
+        "duration_api_ms": 12011,
+        "cost_usd_list": 0.0931275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3550,
+        "cache_creation_input_tokens": 2595,
+        "output_tokens": 800
+       },
+       "text": "יָזְמוּ fut. Kal for יָזֹמּוּ, from r. זָמַם."
+      },
+      {
+       "draft": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
+       "reread": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
+       "status": "agreed",
+       "text": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to"
+      },
+      {
+       "draft": "rejoice.",
+       "reread": "rejoice.",
+       "status": "agreed",
+       "text": "rejoice."
+      },
+      {
+       "draft": "יַחֵד, fut. Hiph. see r. חָדַד p. 296.",
+       "reread": "יַחֵד, fut. Hiph. see r. חָדַד p. 296.",
+       "status": "agreed",
+       "text": "יַחֵד, fut. Hiph. see r. חָדַד p. 296."
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b03",
@@ -632,8 +1044,41 @@
      "image_sha256": "50f98fd8ff41d978bc5303600459f2c55cb982531c638ca99a43225ede982b42",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f773aa3a-9482-499a-980e-52bfeb03829a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
+       "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
+       "from חָתַת, c. suff. ־ַן in pause for ־ֵן."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8d3f1b05-231c-4321-80d5-3c230aa632e2",
+      "duration_api_ms": 30316,
+      "cost_usd_list": 0.102151,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2389,
+      "output_tokens": 1063
+     },
+     "lines": [
+      {
+       "draft": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
+       "reread": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
+       "status": "agreed",
+       "text": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה."
+      },
+      {
+       "draft": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
+       "reread": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
+       "status": "agreed",
+       "text": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph."
+      },
+      {
+       "draft": "from חָתַת, c. suff. ־ַן in pause for ־ֵן.",
+       "reread": "from חָתַת, c. suff. ־ַן in pause for ־ֵן.",
+       "status": "agreed",
+       "text": "from חָתַת, c. suff. ־ַן in pause for ־ֵן."
+      }
+     ]
     }
    ]
   },
@@ -672,62 +1117,91 @@
      "image_sha256": "e3f19a5324c55b030733f5baafa18838ee845529e58c995f2639abd96ae0116a",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"aae00635-7a58-41db-9c9b-c1ac35e4e0fc\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "Lgb. 145, 177.",
+       "יִחַל, see אִחֵל above.",
+       "יִחַלּוּ in pause for יִחֲלוּ, 3 pl. præt. Pi. r.",
+       "יִחַל, Dag. forte euphon.  Lgb. 85."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d62fe0a4-c5ac-41c2-9a75-327dc49a7bd2",
+      "duration_api_ms": 31584,
+      "cost_usd_list": 0.157141,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 2062
      },
      "lines": [
       {
        "draft": "Lgb. 145, 177.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Lgb. 145, 177.",
+       "status": "agreed",
        "text": "Lgb. 145, 177."
       },
       {
        "draft": "יַחַל, see אַחַל above.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַחַל, see אַחַל above."
+       "reread": "יִחַל, see אִחֵל above.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "יִחַל, see אִחֵל above.",
+        "verdict": "b",
+        "note": "Under the yod of the first word and under the aleph of the second a single dot (hiriq) is printed, not patah; and under the het of אִחֵל two dots (tsere) are printed, not patah. Reading B matches the printed vowels (Piel אִחֵל, with יִחַל the shortened form).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ce896a81-4f80-4681-b44a-48f76f4b81b2",
+        "duration_api_ms": 15191,
+        "cost_usd_list": 0.077877,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3508,
+        "cache_creation_input_tokens": 2553,
+        "output_tokens": 512
+       },
+       "text": "יִחַל, see אִחֵל above."
       },
       {
        "draft": "יֵחַלוּ in pause for יְחַלוּ, 3 pl. præt. Pi. r.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵחַלוּ in pause for יְחַלוּ, 3 pl. præt. Pi. r."
+       "reread": "יִחַלּוּ in pause for יִחֲלוּ, 3 pl. præt. Pi. r.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "יִחַלּוּ in pause for יִחֲלוּ, 3 pl. præt. Pi. r.",
+        "verdict": "b",
+        "note": "Both words carry a single dot (ḥireq) under the yod, not ṣere/shewa; the first word's lamed has a visible dagesh (the \"Dag. forte euphon.\" the next line refers to), and the second word's ḥet has ḥaṭeph pataḥ, not pataḥ. Reading B matches on all points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b4bec384-0466-4111-9d72-7077c221bd4e",
+        "duration_api_ms": 37165,
+        "cost_usd_list": 0.15635849999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3554,
+        "cache_creation_input_tokens": 2599,
+        "output_tokens": 2063
+       },
+       "text": "יִחַלּוּ in pause for יִחֲלוּ, 3 pl. præt. Pi. r."
       },
       {
        "draft": "יָחַל, Dag. forte euphon. Lgb. 85.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יָחַל, Dag. forte euphon. Lgb. 85."
-      },
-      {
-       "draft": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb."
-      },
-      {
-       "draft": "170.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "170."
-      },
-      {
-       "draft": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual"
-      },
-      {
-       "draft": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,"
-      },
-      {
-       "draft": "38. § 47. note 3. Lgb. 276.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "38. § 47. note 3. Lgb. 276."
+       "reread": "יִחַל, Dag. forte euphon.  Lgb. 85.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "יִחַל, Dag. forte euphon. Lgb. 85.",
+        "verdict": "b",
+        "note": "Under the yod the print shows a single dot (hireq), not the T-shaped qamets of Reading A — consistent with the Piel lemma יִחַל referred to by the euphonic dagesh remark (Lgb. 85). B's double space after \"euphon.\" is just the wider inter-sentence gap in the print; collapsed to a single space here.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b478d2fc-3fc2-4571-b674-4c324721095b",
+        "duration_api_ms": 25828,
+        "cost_usd_list": 0.104932,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3528,
+        "cache_creation_input_tokens": 2573,
+        "output_tokens": 1045
+       },
+       "text": "יִחַל, Dag. forte euphon. Lgb. 85."
       }
      ]
     },
@@ -744,8 +1218,63 @@
      "image_sha256": "80b831746c2c0bfaa797e1628131db822eb674d3ff6e1afe9675ebbcc0533077",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ff39527f-909d-4512-84e6-1c65e5016b9b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יֶחֱמוּ for יִחֲמוּ præt. Pi. from יָחַם. Lgb.",
+       "170.",
+       "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
+       "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "99038a28-40c7-4064-a47c-641b30c3e029",
+      "duration_api_ms": 27014,
+      "cost_usd_list": 0.09359100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 791
+     },
+     "lines": [
+      {
+       "draft": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb.",
+       "reread": "יֶחֱמוּ for יִחֲמוּ præt. Pi. from יָחַם. Lgb.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb.",
+        "verdict": "a",
+        "note": "Decisive: under the yod of the second word the mark is a vertical two-dot shva (יְ), not a single-dot hireq; and the first word's yod carries a horizontal two-dot tsere (יֵ) with hataf-patah under the chet, not segol/hataf-segol. Reading A matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bc577d26-a5be-4b52-865a-951ba58e939b",
+        "duration_api_ms": 30439,
+        "cost_usd_list": 0.16176925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3557,
+        "cache_creation_input_tokens": 2602,
+        "output_tokens": 2170
+       },
+       "text": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb."
+      },
+      {
+       "draft": "170.",
+       "reread": "170.",
+       "status": "agreed",
+       "text": "170."
+      },
+      {
+       "draft": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
+       "reread": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
+       "status": "agreed",
+       "text": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual"
+      },
+      {
+       "draft": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,",
+       "reread": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,",
+       "status": "agreed",
+       "text": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b02",
@@ -760,8 +1289,27 @@
      "image_sha256": "9ded530626dcf150c324672126bca3d89146cc57d1b64486af60fc566bf93874",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"10919ebe-acde-45fc-bff2-6c43b45b0f12\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "38.  § 47. note 3.  Lgb. 276."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1be4b5f0-fafa-413f-a3da-ec6d61ea1de9",
+      "duration_api_ms": 3835,
+      "cost_usd_list": 0.047511,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 1822,
+      "output_tokens": 197
+     },
+     "lines": [
+      {
+       "draft": "38. § 47. note 3. Lgb. 276.",
+       "reread": "38.  § 47. note 3.  Lgb. 276.",
+       "status": "agreed",
+       "text": "38. § 47. note 3. Lgb. 276."
+      }
+     ]
     }
    ]
   },
@@ -809,116 +1357,91 @@
      "image_sha256": "f68893342193ddd1b8cb80cc5ed14d670454f5587196eb7e67c1021294575c8d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"72d0c26f-b32e-4efe-89ec-1d00d0598672\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
+       "with suff. from r. יָחַם. Comp. אֲחַרוּ.",
+       "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה.",
+       "יְחָנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a6723e90-f5e7-42a7-8b42-81ccb599674a",
+      "duration_api_ms": 16074,
+      "cost_usd_list": 0.101131,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2578,
+      "output_tokens": 967
      },
      "lines": [
       {
        "draft": "יְחֶמְתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְחֶמְתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi."
+       "reread": "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
+        "verdict": "b",
+        "note": "First word: the print has segol under yod and ḥaṭeph‑segol under ḥeth (יֶחֱמַתְנִי), not shva/segol/shva as in A; the second word is identically read by both and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1bbf754f-21d8-4b16-b619-dfd00f7c9675",
+        "duration_api_ms": 16471,
+        "cost_usd_list": 0.085251,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3564,
+        "cache_creation_input_tokens": 2546,
+        "output_tokens": 662
+       },
+       "text": "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi."
       },
       {
        "draft": "with suff. from r. יָחַם. Comp. אֲחָרוּ.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "with suff. from r. יָחַם. Comp. אֲחָרוּ."
+       "reread": "with suff. from r. יָחַם. Comp. אֲחַרוּ.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "with suff. from r. יָחַם. Comp. אֶחֱרוּ.",
+        "verdict": "neither",
+        "note": "Last word is printed אֶחֱרוּ: segol under א and ḥaṭef segol (shewa + three dots) under ח, not ḥaṭef pataḥ + qameṣ (A) or + pataḥ (B). It is the anomalous Piel præt. of Judg. 5:28 cited elsewhere in the lexicon as the parallel to יִחֲמַתְנִי.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d2f0ce2b-553d-4105-a7d6-e141b30085c6",
+        "duration_api_ms": 30914,
+        "cost_usd_list": 0.12662325000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3533,
+        "cache_creation_input_tokens": 2515,
+        "output_tokens": 1502
+       },
+       "text": "with suff. from r. יָחַם. Comp. אֶחֱרוּ."
       },
       {
        "draft": "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה.",
+       "status": "agreed",
        "text": "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה."
       },
       {
        "draft": "יָחְנְךָ for יְחָנְךָ fut. Kal from r. חָנַן. Lgb.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יָחְנְךָ for יְחָנְךָ fut. Kal from r. חָנַן. Lgb."
-      },
-      {
-       "draft": "171, 366.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "171, 366."
-      },
-      {
-       "draft": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from"
-      },
-      {
-       "draft": "r. חָקַק; see above under the form",
-       "reread": null,
-       "status": "draft_only",
-       "text": "r. חָקַק; see above under the form"
-      },
-      {
-       "draft": "תֵּחָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תֵּחָה."
-      },
-      {
-       "draft": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה."
-      },
-      {
-       "draft": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph."
-      },
-      {
-       "draft": "from r. חָתַת.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from r. חָתַת."
-      },
-      {
-       "draft": "יַט, fut. apoc. Hiph. from r. נָטָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַט, fut. apoc. Hiph. from r. נָטָה."
-      },
-      {
-       "draft": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for"
-      },
-      {
-       "draft": "יִטֶּה, יִנְטֶה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִטֶּה, יִנְטֶה."
-      },
-      {
-       "draft": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1."
-      },
-      {
-       "draft": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r."
-      },
-      {
-       "draft": "יָדַע. Comp. on these and the fol-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יָדַע. Comp. on these and the fol-"
-      },
-      {
-       "draft": "lowing forms Lgb. p. 388, 389. § 69.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "lowing forms Lgb. p. 388, 389. § 69."
+       "reread": "יְחָנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "יָחְנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb.",
+        "verdict": "neither",
+        "note": "First word is printed יָחְנְךָ (qamets under yod, shewa under ḥet) as in A; the second word is printed with dagesh forte in the nun, יְחָנְּךָ, as in B. A drops the dagesh, B mis-points the first word, so neither is exact.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "44a5e6b1-4bcc-41b0-957a-2bbbad3bc8e7",
+        "duration_api_ms": 28210,
+        "cost_usd_list": 0.12132949999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3558,
+        "cache_creation_input_tokens": 2540,
+        "output_tokens": 1386
+       },
+       "text": "יָחְנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb."
       }
      ]
     },
@@ -935,8 +1458,70 @@
      "image_sha256": "7a11c2b11636f88cc2f824a700a255091d7470efcda3eb507a7fd01bf6cdeeb6",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"64a3ba22-50c5-4b4b-aa1a-4a317dc69435\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "171, 366.",
+       "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
+       "r. חָקַק; see above under the form",
+       "חָיָה.",
+       "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a610e925-ac03-4adf-8948-0ef2ee2c92e0",
+      "duration_api_ms": 15909,
+      "cost_usd_list": 0.10702099999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2830,
+      "output_tokens": 984
+     },
+     "lines": [
+      {
+       "draft": "171, 366.",
+       "reread": "171, 366.",
+       "status": "agreed",
+       "text": "171, 366."
+      },
+      {
+       "draft": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
+       "reread": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
+       "status": "agreed",
+       "text": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from"
+      },
+      {
+       "draft": "r. חָקַק; see above under the form",
+       "reread": "r. חָקַק; see above under the form",
+       "status": "agreed",
+       "text": "r. חָקַק; see above under the form"
+      },
+      {
+       "draft": "תֵּחָה.",
+       "reread": "חָיָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "חָיָה.",
+        "verdict": "b",
+        "note": "First letter is clearly ח (open at the top-left, no foot like ת) with a qamets beneath, not תּ with tsere/dagesh; the middle letter is a short yod with qamets, and the final ה also carries qamets. Reading A misreads ח as ת and invents a tsere/dagesh; Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "413d3060-03a1-48d5-82b2-5135b4ab615e",
+        "duration_api_ms": 18039,
+        "cost_usd_list": 0.10890325000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3493,
+        "cache_creation_input_tokens": 2727,
+        "output_tokens": 1063
+       },
+       "text": "חָיָה."
+      },
+      {
+       "draft": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה.",
+       "reread": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה.",
+       "status": "agreed",
+       "text": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה."
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b02",
@@ -951,8 +1536,63 @@
      "image_sha256": "51e025542b16467691606d150e596af97ed896554c2ef59128deed286a9773aa",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4a2ed3ee-230d-4de1-bbe0-2e48efd1fea7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
+       "from r. חָתַת.",
+       "יֵט, fut. apoc. Hiph. from r. נָטָה.",
+       "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a2834f36-aa26-4713-97c6-c6067a50dd05",
+      "duration_api_ms": 13874,
+      "cost_usd_list": 0.079241,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 504
+     },
+     "lines": [
+      {
+       "draft": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
+       "reread": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
+       "status": "agreed",
+       "text": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph."
+      },
+      {
+       "draft": "from r. חָתַת.",
+       "reread": "from r. חָתַת.",
+       "status": "agreed",
+       "text": "from r. חָתַת."
+      },
+      {
+       "draft": "יַט, fut. apoc. Hiph. from r. נָטָה.",
+       "reread": "יֵט, fut. apoc. Hiph. from r. נָטָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "יַט, fut. apoc. Hiph. from r. נָטָה.",
+        "verdict": "a",
+        "note": "Under the yod in line 3 a single horizontal stroke (patach) is printed, contrasting visibly with the two-dot tsere under the yod of יֵט / וַיֵּט in line 4 (the Kal form). Hiph. apocopated יַט with patach is also the expected form. The rest of the line (comma after headword, final period after נָטָה) is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "40dccecb-b569-4e91-9aa6-ac4b6eeb1b91",
+        "duration_api_ms": 14855,
+        "cost_usd_list": 0.0814225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3530,
+        "cache_creation_input_tokens": 2575,
+        "output_tokens": 574
+       },
+       "text": "יַט, fut. apoc. Hiph. from r. נָטָה."
+      },
+      {
+       "draft": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for",
+       "reread": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for",
+       "status": "agreed",
+       "text": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for"
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b03",
@@ -967,8 +1607,41 @@
      "image_sha256": "14be53bb9de0ba3a38e8617b42ecf7aeef6e52b40dae34997a3710bf73833552",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"045d1f8d-05b5-4526-8ec1-b4d8fcdc4691\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יִטֶּה, יִנְטֶה.",
+       "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
+       "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "74af6bae-8113-44c7-968c-bfbd5a78a48a",
+      "duration_api_ms": 15770,
+      "cost_usd_list": 0.078841,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2326,
+      "output_tokens": 622
+     },
+     "lines": [
+      {
+       "draft": "יִטֶּה, יִנְטֶה.",
+       "reread": "יִטֶּה, יִנְטֶה.",
+       "status": "agreed",
+       "text": "יִטֶּה, יִנְטֶה."
+      },
+      {
+       "draft": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
+       "reread": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
+       "status": "agreed",
+       "text": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1."
+      },
+      {
+       "draft": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r.",
+       "reread": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r.",
+       "status": "agreed",
+       "text": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r."
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b04",
@@ -983,8 +1656,49 @@
      "image_sha256": "1efd8ca73b05d4c72f612a81f2907af28928799dafa9f01c3efb733ff29f1f7f",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ecb8bf12-db05-4f0a-8e1a-3af92dd1b34a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יְדָע. Comp. on these and the fol-",
+       "lowing forms Lgb. p. 388, 389. § 69."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "27500b8e-d8f7-436e-b41e-9082b2bdedb3",
+      "duration_api_ms": 14007,
+      "cost_usd_list": 0.06775125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2139,
+      "output_tokens": 475
+     },
+     "lines": [
+      {
+       "draft": "יָדַע. Comp. on these and the fol-",
+       "reread": "יְדָע. Comp. on these and the fol-",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b04",
+       "judgement": {
+        "text": "יְדָע. Comp. on these and the fol-",
+        "verdict": "b",
+        "note": "Under the yod the print shows two vertical dots (shewa), not a qamets; under the dalet a qamets (horizontal stroke with tail), not a patach. No point under the ayin. This matches Reading B exactly.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3791c0fa-cc8f-4787-9ac4-693719f907e5",
+        "duration_api_ms": 17752,
+        "cost_usd_list": 0.0753885,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3514,
+        "cache_creation_input_tokens": 2056,
+        "output_tokens": 661
+       },
+       "text": "יְדָע. Comp. on these and the fol-"
+      },
+      {
+       "draft": "lowing forms Lgb. p. 388, 389. § 69.",
+       "reread": "lowing forms Lgb. p. 388, 389. § 69.",
+       "status": "agreed",
+       "text": "lowing forms Lgb. p. 388, 389. § 69."
+      }
+     ]
     }
    ]
   },
@@ -1028,92 +1742,76 @@
      "image_sha256": "45d1ba5a10ffcfbd64add5a1a68fe9c2cf069a5b75858413fdb33ac76a0fa7f1",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8e962c0d-965d-4196-be49-4b57b1f7772c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "note.",
+       "יְיֵטִיב for יְהֵיטִיב, יֵיטִיב, fut. Hiph. from",
+       "יָטַב. See as before.",
+       "יְיֵלִיל for יְהֵילִיל, יֵילִיל, fut. Hiph. from"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fff195a5-abef-47f8-9269-8f0ecca72085",
+      "duration_api_ms": 19298,
+      "cost_usd_list": 0.10156125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2517,
+      "output_tokens": 1000
      },
      "lines": [
       {
        "draft": "note.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "note.",
+       "status": "agreed",
        "text": "note."
       },
       {
        "draft": "וַיֵּיטֶב for וַיְהֵיטִיב, יְהֵיטִיב, fut. Hiph. from",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיֵּיטֶב for וַיְהֵיטִיב, יְהֵיטִיב, fut. Hiph. from"
+       "reread": "יְיֵטִיב for יְהֵיטִיב, יֵיטִיב, fut. Hiph. from",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "יְיֵטִיב for יְהֵיטִיב, יֵיטִיב, fut. Hiph. from",
+        "verdict": "b",
+        "note": "Headword begins yod+sheva, yod+tsere (no vav, no patah, no dagesh) and ends plene ־ִיב, not ־ֶב; third item is יֵיטִיב, matching the parallel יְיֵלִיל/יֵילִיל line below. Reading B matches exactly.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "faa63f0c-a86f-4849-b6e1-505d9cdf9ef4",
+        "duration_api_ms": 16426,
+        "cost_usd_list": 0.109211,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3564,
+        "cache_creation_input_tokens": 2484,
+        "output_tokens": 1166
+       },
+       "text": "יְיֵטִיב for יְהֵיטִיב, יֵיטִיב, fut. Hiph. from"
       },
       {
        "draft": "יָטַב. See as before.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יָטַב. See as before.",
+       "status": "agreed",
        "text": "יָטַב. See as before."
       },
       {
        "draft": "וַיֵּילִיל for וַיְהֵילִיל, יְהֵילִיל, fut. Hiph. from",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיֵּילִיל for וַיְהֵילִיל, יְהֵילִיל, fut. Hiph. from"
-      },
-      {
-       "draft": "יָלַל to wail. See as before.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יָלַל to wail. See as before."
-      },
-      {
-       "draft": "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה."
-      },
-      {
-       "draft": "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה."
-      },
-      {
-       "draft": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,"
-      },
-      {
-       "draft": "fut. Piel from r. כָּבַד c. suff. et Nun",
-       "reread": null,
-       "status": "draft_only",
-       "text": "fut. Piel from r. כָּבַד c. suff. et Nun"
-      },
-      {
-       "draft": "epenthet.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "epenthet."
-      },
-      {
-       "draft": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for"
-      },
-      {
-       "draft": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff."
-      },
-      {
-       "draft": "1 plur. The two Nuns coalesce into a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1 plur. The two Nuns coalesce into a"
-      },
-      {
-       "draft": "double one, and וּ is shortened into ֻ.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "double one, and וּ is shortened into ֻ."
+       "reread": "יְיֵלִיל for יְהֵילִיל, יֵילִיל, fut. Hiph. from",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "יְיֵלִיל for יְהֵילִיל, יֵילִיל, fut. Hiph. from",
+        "verdict": "b",
+        "note": "No vav is printed at the start of either the first or the third word: the first word is four letters (yod-yod-lamed-yod-lamed, sheva under the first yod, tsere under the second) and the third is יֵילִיל with tsere under the initial yod, exactly paralleling line 2 (יְיֵטִיב … יֵיטִיב). Reading A's וַ prefixes and הֵ in the third word are not on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4f439907-1226-4707-845f-00af7d5e5436",
+        "duration_api_ms": 17586,
+        "cost_usd_list": 0.08990975000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3559,
+        "cache_creation_input_tokens": 2479,
+        "output_tokens": 782
+       },
+       "text": "יְיֵלִיל for יְהֵילִיל, יֵילִיל, fut. Hiph. from"
       }
      ]
     },
@@ -1130,8 +1828,93 @@
      "image_sha256": "c536a29c070c81ecc813cbb73bd5469de351f361dc1331110c25fcbcf08d82a4",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3576069f-7eac-412f-86f5-2e1c4266f0d9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יְלֵל to wail.   See as before.",
+       "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה.",
+       "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה.",
+       "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "347e68a7-780e-499b-a7c6-7046a202533b",
+      "duration_api_ms": 17897,
+      "cost_usd_list": 0.09848125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 888
+     },
+     "lines": [
+      {
+       "draft": "יָלַל to wail. See as before.",
+       "reread": "יְלֵל to wail.   See as before.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "יְלֵל to wail. See as before.",
+        "verdict": "b",
+        "note": "The yod carries a sheva (two vertical dots) and the first lamed a tsere (two horizontal dots), not qamets/patach as in A; the form is יְלֵל, so Reading B is correct (ignoring its extra spacing after \"wail.\").",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b00bc084-1ce2-4ae3-aaaf-8b0477c6ae1f",
+        "duration_api_ms": 9200,
+        "cost_usd_list": 0.07924700000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3508,
+        "cache_creation_input_tokens": 2554,
+        "output_tokens": 539
+       },
+       "text": "יְלֵל to wail. See as before."
+      },
+      {
+       "draft": "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה.",
+       "reread": "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה.",
+        "verdict": "b",
+        "note": "Printed left-to-right order: the shorter 3-letter form יִיף (no vav) stands at the far left of the line, and the longer vav-consecutive form וַיִּיף (patah under vav, dagesh + hiriq in yod) comes second, immediately before \"fut.\" — the same short-then-long pattern as the next line (יַךְ, וַיַּךְ). Reading A reverses them. Points on יָפָה (qamets, qamets) and the rest match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2e9389a1-bc1c-48aa-bf1e-0370348f0798",
+        "duration_api_ms": 15713,
+        "cost_usd_list": 0.086976,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3544,
+        "cache_creation_input_tokens": 2590,
+        "output_tokens": 679
+       },
+       "text": "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה."
+      },
+      {
+       "draft": "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה.",
+       "reread": "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה.",
+        "verdict": "b",
+        "note": "The leftmost (first) item on the printed line is the two-letter form יַךְ; the three-letter form with vav, וַיַּךְ, comes second — same order as the preceding Kal line. Reading A reverses the order.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6096a1f1-43c8-439f-8ce0-88226e44d97e",
+        "duration_api_ms": 13764,
+        "cost_usd_list": 0.083938,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3552,
+        "cache_creation_input_tokens": 2598,
+        "output_tokens": 615
+       },
+       "text": "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה."
+      },
+      {
+       "draft": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,",
+       "reread": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,",
+       "status": "agreed",
+       "text": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,"
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -1146,8 +1929,63 @@
      "image_sha256": "d5e9db845cd567c620468645575c01a13d9dbf79d75a5b48737114602385d0a5",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"756aa40f-74bf-4a13-b43a-b03f31984213\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "fut. Piel from r. כָּבַד c. suff. et Nun",
+       "epenthet.",
+       "יְכוּנֶנּוּ he fashioned us Job 31, 15, for",
+       "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "274af89d-36ef-477d-a7ec-2ebedbe1912b",
+      "duration_api_ms": 14397,
+      "cost_usd_list": 0.08542125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 652
+     },
+     "lines": [
+      {
+       "draft": "fut. Piel from r. כָּבַד c. suff. et Nun",
+       "reread": "fut. Piel from r. כָּבַד c. suff. et Nun",
+       "status": "agreed",
+       "text": "fut. Piel from r. כָּבַד c. suff. et Nun"
+      },
+      {
+       "draft": "epenthet.",
+       "reread": "epenthet.",
+       "status": "agreed",
+       "text": "epenthet."
+      },
+      {
+       "draft": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
+       "reread": "יְכוּנֶנּוּ he fashioned us Job 31, 15, for",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
+        "verdict": "a",
+        "note": "The printed word is defective: kaf carries qubbuts (three dots below) with no vav between kaf and nun — the glyph is clearly shorter than the plene יְכוֹנְנֵהוּ on the next line, and matches MT Job 31:15 יְכֻנֶנּוּ. Reading B's shureq-vav is not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "357aaa9b-833f-4936-a318-655b8ebf9768",
+        "duration_api_ms": 19330,
+        "cost_usd_list": 0.099454,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3536,
+        "cache_creation_input_tokens": 2519,
+        "output_tokens": 957
+       },
+       "text": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for"
+      },
+      {
+       "draft": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
+       "reread": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
+       "status": "agreed",
+       "text": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b03",
@@ -1162,8 +2000,34 @@
      "image_sha256": "df6b350ecbd4ab3e1094be74884fe0c394036a8131c4b1059f9a23b20e00e7f6",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d0de9077-0c4e-4e77-b6d5-6ed3f72b955c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "1 plur. The two Nuns coalesce into a",
+       "double one, and וּ is shortened into ֻ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4a5195e0-0ca1-4b74-b72c-8026779119fd",
+      "duration_api_ms": 4273,
+      "cost_usd_list": 0.05218125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2013,
+      "output_tokens": 214
+     },
+     "lines": [
+      {
+       "draft": "1 plur. The two Nuns coalesce into a",
+       "reread": "1 plur. The two Nuns coalesce into a",
+       "status": "agreed",
+       "text": "1 plur. The two Nuns coalesce into a"
+      },
+      {
+       "draft": "double one, and וּ is shortened into ֻ.",
+       "reread": "double one, and וּ is shortened into ֻ.",
+       "status": "agreed",
+       "text": "double one, and וּ is shortened into ֻ."
+      }
+     ]
     }
    ]
   },
@@ -1204,74 +2068,61 @@
      "image_sha256": "4b81e6bf4fa9ce5ffc86cc85fb00f5b336bde8efd4d72b55be61940917e61572",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"52372d9c-0ab5-49bb-88db-a947c36eb752\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "יִכֻּל Chald. fut. Peal from r. יְכֵל .",
+       "יְכַסְיֻמוּ for יְכַסְיֻמוֹ or יְכַסּוּמוֹ Ex. 15, 5,",
+       "fut. Pi. from r. כָּסָה . Here מוּ is writ-",
+       "ten for מוֹ on account of the preceding"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "21cd57b0-93a5-4ed8-8cf8-82ff9a6ee2a7",
+      "duration_api_ms": 18273,
+      "cost_usd_list": 0.10182125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 980
      },
      "lines": [
       {
        "draft": "יִכֻּל Chald. fut. Peal from r. יְכֵל.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יִכֻּל Chald. fut. Peal from r. יְכֵל .",
+       "status": "agreed",
        "text": "יִכֻּל Chald. fut. Peal from r. יְכֵל."
       },
       {
        "draft": "יְכַסְיֻמוּ for יְכַסִּימוּ or יְכַסּוּמוּ Ex. 15, 5,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְכַסְיֻמוּ for יְכַסִּימוּ or יְכַסּוּמוּ Ex. 15, 5,"
+       "reread": "יְכַסְיֻמוּ for יְכַסְיֻמוֹ or יְכַסּוּמוֹ Ex. 15, 5,",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "יְכַסְיֻמוּ for יְכַסִּימוֹ or יְכַסּוּמוֹ Ex. 15, 5,",
+        "verdict": "neither",
+        "note": "Both second and third forms end in holem-vav מוֹ (dot above the vav is printed; the following lines confirm \"מוּ is written for מוֹ\"), not shureq as in A; and the second form is יְכַסִּימוֹ with hireq-yod, not B's יְכַסְיֻמוֹ. Only the first word has shureq מוּ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0d48e284-e477-419e-8168-51b42549129f",
+        "duration_api_ms": 20640,
+        "cost_usd_list": 0.10874500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2573,
+        "output_tokens": 1121
+       },
+       "text": "יְכַסְיֻמוּ for יְכַסִּימוֹ or יְכַסּוּמוֹ Ex. 15, 5,"
       },
       {
        "draft": "fut. Pi. from r. כָּסָה. Here מוּ is writ-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "fut. Pi. from r. כָּסָה . Here מוּ is writ-",
+       "status": "agreed",
        "text": "fut. Pi. from r. כָּסָה. Here מוּ is writ-"
       },
       {
        "draft": "ten for מוֹ on account of the preceding",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "ten for מוֹ on account of the preceding",
+       "status": "agreed",
        "text": "ten for מוֹ on account of the preceding"
-      },
-      {
-       "draft": "vowel u.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "vowel u."
-      },
-      {
-       "draft": "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism"
-      },
-      {
-       "draft": "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5."
-      },
-      {
-       "draft": "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut."
-      },
-      {
-       "draft": "Hiph. from כָּתַת to pound. § 66. 5. n.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hiph. from כָּתַת to pound. § 66. 5. n."
-      },
-      {
-       "draft": "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז."
-      },
-      {
-       "draft": "§ 71. note 9.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "§ 71. note 9."
       }
      ]
     },
@@ -1288,8 +2139,93 @@
      "image_sha256": "d241ec01dd4ec70bb26da656e4a129992ce1be5528a31ade7e53e4fd5455a79b",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d567e90d-f035-4672-9acd-77ce5473bc93\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "vowel u.",
+       "יֻכַּת, יֻכַּתּוּ, fut. Hoph. by Chaldaism",
+       "from כָּתַת, for יוּכַת, יוּכַתּוּ. § 66. 5.",
+       "יֻכַּתּוּ for יֻכַּתוּ, and this for יֻכְתּוּ fut."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b9d6accc-b5e9-483d-b05c-1c6bf49b4d14",
+      "duration_api_ms": 24737,
+      "cost_usd_list": 0.12048125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 1328
+     },
+     "lines": [
+      {
+       "draft": "vowel u.",
+       "reread": "vowel u.",
+       "status": "agreed",
+       "text": "vowel u."
+      },
+      {
+       "draft": "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism",
+       "reread": "יֻכַּת, יֻכַּתּוּ, fut. Hoph. by Chaldaism",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "יֻכַּת, יֻכַּתּוּ, fut. Hoph. by Chaldaism",
+        "verdict": "b",
+        "note": "In the second word the kaf carries a patach (horizontal stroke), not a sheva, and the tav has a dagesh dot before the shureq: יֻכַּתּוּ. The sheva form יֻכְּתוּ appears only in line 4 (\"and this for\"), which Reading A has conflated with line 2.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "891ebf4d-a379-487b-8ba8-7bd721cd109b",
+        "duration_api_ms": 10418,
+        "cost_usd_list": 0.08492725000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3549,
+        "cache_creation_input_tokens": 2595,
+        "output_tokens": 636
+       },
+       "text": "יֻכַּת, יֻכַּתּוּ, fut. Hoph. by Chaldaism"
+      },
+      {
+       "draft": "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5.",
+       "reread": "from כָּתַת, for יוּכַת, יוּכַתּוּ. § 66. 5.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "from כָּתַת, for יוּכַת, יוּכַתּוּ. § 66. 5.",
+        "verdict": "b",
+        "note": "Decisive point is the last Hebrew word: under the kaf the print shows a single horizontal stroke (patach), not the two vertical dots of a shewa, and the dot sits inside the tav (dagesh), not the kaf — matching Reading B's יוּכַתּוּ and the parallel forms יֻכַּתּוּ / יְכַתּוּ on the adjacent lines. Everything else (order of items, plene vav in both יוּ- forms, pointing of כָּתַת, \"§ 66. 5.\") is identical in A and B and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d8d8524b-48eb-455e-a0b4-87be23858e4e",
+        "duration_api_ms": 18054,
+        "cost_usd_list": 0.11895700000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3548,
+        "cache_creation_input_tokens": 2594,
+        "output_tokens": 1317
+       },
+       "text": "from כָּתַת, for יוּכַת, יוּכַתּוּ. § 66. 5."
+      },
+      {
+       "draft": "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut.",
+       "reread": "יֻכַּתּוּ for יֻכַּתוּ, and this for יֻכְתּוּ fut.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "יֻכַּתּוּ for יֻכַּתוּ, and this for יֻכְתּוּ fut.",
+        "verdict": "b",
+        "note": "All three Hebrew words carry qibbuts (three slanting dots) under the yod, not shewa as in Reading A; the third word has shewa under kaf and dagesh in tav (יֻכְתּוּ, the regular Hophal), not hireq under kaf. Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ed782bb1-d1ba-4690-86db-11b6bfa9eeb2",
+        "duration_api_ms": 30847,
+        "cost_usd_list": 0.14094875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3555,
+        "cache_creation_input_tokens": 2601,
+        "output_tokens": 1754
+       },
+       "text": "יֻכַּתּוּ for יֻכַּתוּ, and this for יֻכְתּוּ fut."
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1304,8 +2240,56 @@
      "image_sha256": "7fbb4c9bc180b211d04c56e43d726936f5bf46d4455f1fe7ec776321d80e3b13",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"21ab6dd5-8fcf-4cb4-a354-a2887161721e\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Hiph. from כָּתַת to pound.   § 66. 5. n.",
+       "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז.",
+       "§ 71. note 9."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "efeab9c2-40c7-4175-9cb3-51117da414b7",
+      "duration_api_ms": 11411,
+      "cost_usd_list": 0.07908125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2328,
+      "output_tokens": 626
+     },
+     "lines": [
+      {
+       "draft": "Hiph. from כָּתַת to pound. § 66. 5. n.",
+       "reread": "Hiph. from כָּתַת to pound.   § 66. 5. n.",
+       "status": "agreed",
+       "text": "Hiph. from כָּתַת to pound. § 66. 5. n."
+      },
+      {
+       "draft": "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז.",
+       "reread": "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז.",
+        "verdict": "b",
+        "note": "Under the yod of the second word the print shows a single T-shaped qamets, not the two stacked dots of a shewa; the regular Hiph. fut. of an ʿayin-vav root (יָלִיזוּ) confirms qamets. Everything else (patach + dagesh in the first word, לוּז) is as both readings have it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fd4ccd9d-dc08-4769-beef-b0483d81e18f",
+        "duration_api_ms": 17552,
+        "cost_usd_list": 0.082988,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3552,
+        "cache_creation_input_tokens": 2283,
+        "output_tokens": 722
+       },
+       "text": "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז."
+      },
+      {
+       "draft": "§ 71. note 9.",
+       "reread": "§ 71. note 9.",
+       "status": "agreed",
+       "text": "§ 71. note 9."
+      }
+     ]
     }
    ]
   },
@@ -1347,80 +2331,61 @@
      "image_sha256": "62ce6987cb6aa2b4753bcb5c413db4bb24f226e57cc1e20c5c4c20495e6bd247",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"77c8f399-9cc1-4aa2-8f94-ccb6bb914391\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "יַלִּינוּ, וַיַּלִּינוּ, fut. Hiph. from r. לוּן; see",
+       "in לוּן Hiph. no. 2.",
+       "יִמַח, וַיִּמַח Gen. 7, 23, fut. apoc. Kal",
+       "from r. מָחָה. But other very respect-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bafacefe-52cb-4e3a-86aa-f6904956dfc9",
+      "duration_api_ms": 10033,
+      "cost_usd_list": 0.08498125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 618
      },
      "lines": [
       {
        "draft": "וַיַּלִּינוּ, וַיַּלֹּנוּ, fut. Hiph. from r. לוּן; see",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַיַּלִּינוּ, וַיַּלֹּנוּ, fut. Hiph. from r. לוּן; see"
+       "reread": "יַלִּינוּ, וַיַּלִּינוּ, fut. Hiph. from r. לוּן; see",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "יַלִּינוּ, וַיַּלִּינוּ, fut. Hiph. from r. לוּן; see",
+        "verdict": "b",
+        "note": "First word starts with yod (no vav); second word is plene וַיַּלִּינוּ with yod and dagesh in lamed, not defective וַיַּלֹּנוּ with holem as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4c23f81d-a37e-4908-92e4-8ce1e23da17d",
+        "duration_api_ms": 21367,
+        "cost_usd_list": 0.095631,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3564,
+        "cache_creation_input_tokens": 2610,
+        "output_tokens": 844
+       },
+       "text": "יַלִּינוּ, וַיַּלִּינוּ, fut. Hiph. from r. לוּן; see"
       },
       {
        "draft": "in לוּן Hiph. no. 2.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "in לוּן Hiph. no. 2.",
+       "status": "agreed",
        "text": "in לוּן Hiph. no. 2."
       },
       {
        "draft": "יִמַח, וַיִּמַח Gen. 7, 23, fut. apoc. Kal",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "יִמַח, וַיִּמַח Gen. 7, 23, fut. apoc. Kal",
+       "status": "agreed",
        "text": "יִמַח, וַיִּמַח Gen. 7, 23, fut. apoc. Kal"
       },
       {
        "draft": "from r. מָחָה. But other very respect-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "from r. מָחָה. But other very respect-",
+       "status": "agreed",
        "text": "from r. מָחָה. But other very respect-"
-      },
-      {
-       "draft": "able copies, both Mss. and editions,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "able copies, both Mss. and editions,"
-      },
-      {
-       "draft": "e. g. the edition of Van der Hooght,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "e. g. the edition of Van der Hooght,"
-      },
-      {
-       "draft": "read וַיִּמַּח fut. Niph. of the same verb.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "read וַיִּמַּח fut. Niph. of the same verb."
-      },
-      {
-       "draft": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא."
-      },
-      {
-       "draft": "יֵמַר fut. A, from r. מָרַר to be bitter, for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֵמַר fut. A, from r. מָרַר to be bitter, for"
-      },
-      {
-       "draft": "יִמְרַר. § 66. note 3. Lgb. 366.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יִמְרַר. § 66. note 3. Lgb. 366."
-      },
-      {
-       "draft": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,"
-      },
-      {
-       "draft": "Ps. 139, 20.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Ps. 139, 20."
       }
      ]
     },
@@ -1437,8 +2402,48 @@
      "image_sha256": "b39345fb29047fef2e9f903fc09d251aa5297a12a24692176a6b8e54c8196224",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3479a229-2dfa-4202-b1ad-e767fb4c5007\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "able copies, both Mss. and editions,",
+       "e. g. the edition of Van der Hooght,",
+       "read וַיִּמַּח fut. Niph. of the same verb.",
+       "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "497ab972-5ed5-4d34-8e95-86a5c3b54e22",
+      "duration_api_ms": 14082,
+      "cost_usd_list": 0.07902125000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 524
+     },
+     "lines": [
+      {
+       "draft": "able copies, both Mss. and editions,",
+       "reread": "able copies, both Mss. and editions,",
+       "status": "agreed",
+       "text": "able copies, both Mss. and editions,"
+      },
+      {
+       "draft": "e. g. the edition of Van der Hooght,",
+       "reread": "e. g. the edition of Van der Hooght,",
+       "status": "agreed",
+       "text": "e. g. the edition of Van der Hooght,"
+      },
+      {
+       "draft": "read וַיִּמַּח fut. Niph. of the same verb.",
+       "reread": "read וַיִּמַּח fut. Niph. of the same verb.",
+       "status": "agreed",
+       "text": "read וַיִּמַּח fut. Niph. of the same verb."
+      },
+      {
+       "draft": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא.",
+       "reread": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא.",
+       "status": "agreed",
+       "text": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא."
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1453,8 +2458,63 @@
      "image_sha256": "cd8c66f99c10985dcc41390fea7319d9d3215e338f23a40d09c818c546a904a3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0c1894c0-4e06-4318-b6fd-81ec91ac8e6d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "יֵמַר fut. A, from r. מָרַר to be bitter, for",
+       "יֵמָרַר. § 66. note 3. Lgb. 366.",
+       "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,",
+       "Ps. 139, 20."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "303154c4-0214-489b-8c8e-65b2bb8b6d33",
+      "duration_api_ms": 11027,
+      "cost_usd_list": 0.08477125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 639
+     },
+     "lines": [
+      {
+       "draft": "יֵמַר fut. A, from r. מָרַר to be bitter, for",
+       "reread": "יֵמַר fut. A, from r. מָרַר to be bitter, for",
+       "status": "agreed",
+       "text": "יֵמַר fut. A, from r. מָרַר to be bitter, for"
+      },
+      {
+       "draft": "יִמְרַר. § 66. note 3. Lgb. 366.",
+       "reread": "יֵמָרַר. § 66. note 3. Lgb. 366.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "יִמְרַר. § 66. note 3. Lgb. 366.",
+        "verdict": "a",
+        "note": "Under the yod a single dot (hireq), not two (tsere); under the mem a vertical two-dot shewa, not a qamets. Reading A matches the print (the unsyncopated form יִמְרַר underlying יֵמַר).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6afa92fb-3ffb-4bbb-9213-ef6684b5074c",
+        "duration_api_ms": 13176,
+        "cost_usd_list": 0.07476225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3529,
+        "cache_creation_input_tokens": 2512,
+        "output_tokens": 466
+       },
+       "text": "יִמְרַר. § 66. note 3. Lgb. 366."
+      },
+      {
+       "draft": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,",
+       "reread": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,",
+       "status": "agreed",
+       "text": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,"
+      },
+      {
+       "draft": "Ps. 139, 20.",
+       "reread": "Ps. 139, 20.",
+       "status": "agreed",
+       "text": "Ps. 139, 20."
+      }
+     ]
     }
    ]
   }
@@ -1472,1002 +2532,869 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יַגֶּה, וַיַּגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
-   "status": "draft_only",
+   "text": "יְגֶּה, וַיְגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
+   "status": "adjudicated",
    "draft": "יַגֶּה, וַיַּגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְגֶּה, וַיְגֶּה, fut. Pi. for וַיְיַגֶּה from r. יָגָה I.",
+   "verdict": "b",
+   "note": "Under the yod of both the first word and the second word the print shows two vertically stacked dots (shewa), not a single horizontal stroke (patach); Reading A's יַגֶּה / וַיַּגֶּה is wrong. The rest (וַיְיַגֶּה, יָגָה I.) is identical in both and matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "§ 68. note 6.",
-   "status": "draft_only",
-   "draft": "§ 68. note 6.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יָגֶל, וַיָּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
-   "status": "draft_only",
+   "text": "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
+   "status": "adjudicated",
    "draft": "יָגֶל, וַיָּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֶגֶל, וַיֶּגֶל, fut. apoc. Hiph. from r. גָּלָה.",
+   "verdict": "b",
+   "note": "Under the yod in both יֶגֶל and וַיֶּגֶל the print shows a three-dot segol cluster, not a qamets stroke; the apocopated Hiphil of גלה is indeed יֶגֶל/וַיֶּגֶל. Reading B matches; Reading A's qamets under yod is wrong.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "יִגַּר fut. Niph. r. גָּרַר.",
-   "status": "draft_only",
-   "draft": "יִגַּר fut. Niph. r. גָּרַר.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יֵדֶא, וַיֵּדֶא, fut. apoc. Kal from r. דָּאָה to",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֵרֶא, וַיֵּרֶא, fut. apoc. Kal from r. דָּאָה to",
+   "verdict": "a",
+   "note": "The second letter of both forms is printed as a dalet (square shoulder, top bar projecting right of the stem), not a resh; this agrees with the root דָּאָה \"to fly\" named on the same line.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "fly.",
-   "status": "draft_only",
-   "draft": "fly.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
-   "status": "draft_only",
-   "draft": "יַדּוּ, וַיַּדּוּ for וַיְיַדּוּ, fut. Pi. from יָדָה to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "cast. § 68. note 6.",
-   "status": "draft_only",
-   "draft": "cast. § 68. note 6.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יִדַּכָּא fut. Hithp. from r. דָּכָא.",
-   "status": "draft_only",
+   "text": "יִדַּכֵּא fut. Hithp. from r. דָּכָא.",
+   "status": "adjudicated",
    "draft": "יִדַּכָּא fut. Hithp. from r. דָּכָא.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יִדַּכֵּא fut. Hithp. from r. דָּכָא.",
+   "verdict": "b",
+   "note": "Under the כּ of the headword the print shows two side-by-side dots (tsere, ֵ), not a qamets stroke; so יִדַּכֵּא (Reading B), the regular Hithpael vocalisation. The rest of the line (fut. Hithp. from r. דָּכָא.) matches both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
-   "status": "draft_only",
-   "draft": "יֶדְכֶם and יֶדְכֶן, for יַדְכֶם and יַדְכֶן, your",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "hand, Gen. 9, 2.",
-   "status": "draft_only",
-   "draft": "hand, Gen. 9, 2.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
-   "status": "draft_only",
-   "draft": "יִדֹּם plur. יִדְּמוּ by Chaldaism, fut. Kal",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "from r. דָּמַם. § 66. 5. n.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "from r. דָּמַם. § 66. 5. n.",
-   "reread": null,
-   "needs_review": true
+   "reread": "from r. הָמַם. § 66. 5. n.",
+   "verdict": "a",
+   "note": "The root's first letter is a dalet (flat top, protruding right shoulder, no left leg), identical to the דָּמַם printed two lines below and consistent with the context (Niphal forms of דמם); it is not a he.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r.",
-   "status": "draft_only",
+   "text": "יֵהָמּוּ fut. Niph. in pause, for יֵהַמּוּ (r.",
+   "status": "adjudicated",
    "draft": "יִדָּמוּ fut. Niph. in pause, for יִדַּמּוּ (r.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֵהָמּוּ fut. Niph. in pause, for יֵהַמּוּ (r.",
+   "verdict": "b",
+   "note": "Second letter of both Hebrew forms is ה (open gap at top-left of the left stroke), not ד, matching the root הָמַם cited on the lines above and below; the yod carries tsere, not hireq. Reading B is correct.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "דָּמַם); see the form חִיָּה above.",
-   "status": "draft_only",
+   "text": "הָמַם); see the form חֳ֫יְהָ above.",
+   "status": "adjudicated",
    "draft": "דָּמַם) ; see the form חִיָּה above.",
-   "reread": null,
+   "reread": "הָמַם) ; see the form חֳיְהָ above.",
+   "verdict": "neither",
+   "note": "First word is הָמַם (he, matching \"r. הָמַם\" in line 1), not דָּמַם — no dagesh in the first letter. The last word is printed חֳיְהָ with an accent stroke above the ח (hateph under ח, sheva under י, qamets under ה); Reading A's חִיָּה is wrong and Reading B omits the accent.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal",
-   "status": "draft_only",
-   "draft": "יְהוּא Ecc. 11, 3, for יְהוּ, fut. apoc. Kal",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "from r. הָיָה to be, fut. יִהְיֶה.",
-   "status": "draft_only",
-   "draft": "from r. הָיָה to be, fut. יִהְיֶה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד.",
-   "status": "draft_only",
-   "draft": "יְהוֹבַד Chald. fut. Aph. from r. אֲבַד.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-",
-   "status": "draft_only",
-   "draft": "יְהוֹדֶה fut. Hiph. from r. יָדָה, by Chal-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "daism for יוֹדֶה. § 52. note 7.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "daism for יוֹדֶה. § 52. note 7.",
-   "reread": null,
-   "needs_review": true
+   "reread": "daism for יוֹרֶה. § 52. note 7.",
+   "verdict": "a",
+   "note": "Third letter is dalet, not resh: the printed letter has a squared top-right corner with the bar overhanging the downstroke (resh in this font is rounded). Context confirms: the entry (יְהוֹדֶה, Hiph. fut. of ידה) is a Chaldaism for יוֹדֶה.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "וַיְהִי, יְהִי, fut. apoc. Kal from r. הָיָה to be.",
-   "status": "draft_only",
+   "text": "יְהִי, וַיְהִי, fut. apoc. Kal from r. הָיָה to be.",
+   "status": "adjudicated",
    "draft": "וַיְהִי, יְהִי, fut. apoc. Kal from r. הָיָה to be.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְהִי, וַיְהִי, fut. apoc. Kal from r. הָיָה to be.",
+   "verdict": "b",
+   "note": "Printed left-to-right order: the short three-letter form יְהִי (yod-sheva, he-hiriq, yod) stands at the left margin, followed by the four-letter וַיְהִי (vav-patah). Reading A swaps them; Reading B matches the print, including all vowel points and הָיָה with two qamats.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
-   "status": "draft_only",
-   "draft": "יְהֵילִילוּ Is. 52, 5, Hiph. from r. יָלַל, for",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "the comm. contracted יְיֵלִילוּ.",
-   "status": "draft_only",
-   "draft": "the comm. contracted יְיֵלִילוּ.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
-   "status": "draft_only",
-   "draft": "יְהָךְ Chald. fut. A, Pe. from r. הוּךְ to go.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
-   "status": "draft_only",
+   "text": "יְהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+   "status": "adjudicated",
    "draft": "יַהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְהֵל Is. 13, 20 contr. for יְאַהֵל, fut. Pi.",
+   "verdict": "b",
+   "note": "The headword's yod carries a shewa (two vertically stacked dots), not a patach (single horizontal stroke), so יְהֵל (B) matches the print; the rest of the line is identical in both readings and in the image.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "from r. אָהַל.",
-   "status": "draft_only",
-   "draft": "from r. אָהַל.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יְהָתֵלּוּ, see under r. הָתַל and r. תָּלַל Hiph.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְהַתְלוּ, see under r. הָתַל and r. הָלַל Hiph.",
+   "verdict": "a",
+   "note": "The last root's first letter has the ת foot (תָּלַל with dagesh, not הָלַל), and the headword shows qamets under ה, tsere + dagesh in ל and shureq (יְהָתֵלּוּ, Job 13:9 form), not יְהַתְלוּ.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from",
-   "status": "draft_only",
+   "text": "יוּכְלוּ Ez. 42, 5 for יְאָכְלוּ fut. Hoph. from",
+   "status": "adjudicated",
    "draft": "יוּכְלוּ Ez. 42, 5 for יֵאָכְלוּ fut. Hoph. from",
-   "reread": null,
+   "reread": "יוּכְלוּ Ez. 42, 5 for יְאֻכְּלוּ fut. Hoph. from",
+   "verdict": "neither",
+   "note": "Second Hebrew word is printed יְאָכְלוּ: sheva under yod (not tsere as in A), qamets under aleph and no dagesh in kaf (not qibbuts/dagesh as in B).",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "r. אָכַל q. v.",
-   "status": "draft_only",
-   "draft": "r. אָכַל q. v.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
-   "status": "draft_only",
-   "draft": "יוֹלַדְתְּ part. fem. for the usual יוֹלֶדֶת,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Gen. 16, 11. Lgb. 591.",
-   "status": "draft_only",
-   "draft": "Gen. 16, 11. Lgb. 591.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה.",
-   "status": "draft_only",
-   "draft": "יוֹר, וַיּוֹר, fut. apoc. Hiph. from r. יָרָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יוֹרֶא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יוֹרֶא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
-   "reread": null,
-   "needs_review": true
+   "reread": "יוֹרֵא Prov. 11, 25 (al. יוֹרֶה) is sprinkled,",
+   "verdict": "a",
+   "note": "The vowel under the resh of the first word is a three-dot segol (same as the parenthetical יוֹרֶה and the MT of Prov. 11:25), not a two-dot tsere; Reading B's יוֹרֵא is wrong.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "watered, prob. fut. Hoph. from יָרָה,",
-   "status": "draft_only",
-   "draft": "watered, prob. fut. Hoph. from יָרָה,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,",
-   "status": "draft_only",
-   "draft": "for יוּרֶה, comp. הוֹדַע for הוּדַע Lev. 4,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "23. 29.",
-   "status": "draft_only",
-   "draft": "23. 29.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
-   "text": "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה.",
-   "status": "draft_only",
+   "text": "יַז, וַיַּז fut. apoc. Hiph. from נָזָה.",
+   "status": "adjudicated",
    "draft": "יֵז, וַיֵּז fut. apoc. Hiph. from נָזָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יַז, וַיַּז fut. apoc. Hiph. from נָזָה.",
+   "verdict": "b",
+   "note": "Both yods carry a patach (single horizontal stroke), not tsere; compare the clearly two-dotted יֵז at the start of line 3, which is the Kal form contrasted with this Hiph. patach form.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יֵז and יִז, with ו conv. וַיֵּז, וַיִּז, fut. apoc.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֵז and יַז, with ו conv. וַיִּז, וַיֵּז, fut. apoc.",
+   "verdict": "a",
+   "note": "The second form after \"and\" has a single dot (hireq, יִז), not a patach bar — the patach form יַז is the Hiph. one on the line above, whereas this Kal line gives tsere/hireq (וַיֵּז Is. 63:3, וַיִּז 2 K. 9:33). The two vav-conversive forms are printed tsere first, then hireq, matching the order of the bare forms; Reading B inverts them and misreads the vowel.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Kal from נָזָה.",
-   "status": "draft_only",
-   "draft": "Kal from נָזָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
-   "text": "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם.",
-   "status": "draft_only",
+   "text": "יָזְמוּ fut. Kal for יָזֹמּוּ, from r. זָמַם.",
+   "status": "adjudicated",
    "draft": "יָזְמוּ fut. Kal for יָזֹמוּ, from r. זָמַם.",
-   "reread": null,
+   "reread": "יֶזְּמוּ fut. Kal for יָזֹמּוּ, from r. זָמַם.",
+   "verdict": "neither",
+   "note": "First word has qamets (not segol) under yod and plain shewa under zayin with no dagesh, as in A; but the second word's mem carries a dagesh (יָזֹמּוּ, the uncontracted geminate form), as in B. Each reading is right on one word and wrong on the other.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
-   "status": "draft_only",
-   "draft": "יִחַדְּ, וַיִּחַדְּ, fut. apoc. Kal from חָדָה to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "rejoice.",
-   "status": "draft_only",
-   "draft": "rejoice.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יַחֵד, fut. Hiph. see r. חָדַד p. 296.",
-   "status": "draft_only",
-   "draft": "יַחֵד, fut. Hiph. see r. חָדַד p. 296.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
-   "status": "draft_only",
-   "draft": "יְחִי, וַיְחִי, fut. apoc. Kal from r. חָיָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
-   "status": "draft_only",
-   "draft": "יְחִיתַן Hab. 2, 17 for יְחִתֵּן fut. Hiph.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "from חָתַת, c. suff. ־ַן in pause for ־ֵן.",
-   "status": "draft_only",
-   "draft": "from חָתַת, c. suff. ־ַן in pause for ־ֵן.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Lgb. 145, 177.",
-   "status": "draft_only",
-   "draft": "Lgb. 145, 177.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יַחַל, see אַחַל above.",
-   "status": "draft_only",
+   "text": "יִחַל, see אִחֵל above.",
+   "status": "adjudicated",
    "draft": "יַחַל, see אַחַל above.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יִחַל, see אִחֵל above.",
+   "verdict": "b",
+   "note": "Under the yod of the first word and under the aleph of the second a single dot (hiriq) is printed, not patah; and under the het of אִחֵל two dots (tsere) are printed, not patah. Reading B matches the printed vowels (Piel אִחֵל, with יִחַל the shortened form).",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יֵחַלוּ in pause for יְחַלוּ, 3 pl. præt. Pi. r.",
-   "status": "draft_only",
+   "text": "יִחַלּוּ in pause for יִחֲלוּ, 3 pl. præt. Pi. r.",
+   "status": "adjudicated",
    "draft": "יֵחַלוּ in pause for יְחַלוּ, 3 pl. præt. Pi. r.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יִחַלּוּ in pause for יִחֲלוּ, 3 pl. præt. Pi. r.",
+   "verdict": "b",
+   "note": "Both words carry a single dot (ḥireq) under the yod, not ṣere/shewa; the first word's lamed has a visible dagesh (the \"Dag. forte euphon.\" the next line refers to), and the second word's ḥet has ḥaṭeph pataḥ, not pataḥ. Reading B matches on all points.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "יָחַל, Dag. forte euphon. Lgb. 85.",
-   "status": "draft_only",
+   "text": "יִחַל, Dag. forte euphon. Lgb. 85.",
+   "status": "adjudicated",
    "draft": "יָחַל, Dag. forte euphon. Lgb. 85.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יִחַל, Dag. forte euphon.  Lgb. 85.",
+   "verdict": "b",
+   "note": "Under the yod the print shows a single dot (hireq), not the T-shaped qamets of Reading A — consistent with the Piel lemma יִחַל referred to by the euphonic dagesh remark (Lgb. 85). B's double space after \"euphon.\" is just the wider inter-sentence gap in the print; collapsed to a single space here.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יֵחֲמוּ for יְחֲמוּ præt. Pi. from יָחַם. Lgb.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֶחֱמוּ for יִחֲמוּ præt. Pi. from יָחַם. Lgb.",
+   "verdict": "a",
+   "note": "Decisive: under the yod of the second word the mark is a vertical two-dot shva (יְ), not a single-dot hireq; and the first word's yod carries a horizontal two-dot tsere (יֵ) with hataf-patah under the chet, not segol/hataf-segol. Reading A matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "170.",
-   "status": "draft_only",
-   "draft": "170.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
-   "status": "draft_only",
-   "draft": "יֵחַמְנָה 3 plur. fem. fut. Kal, for the usual",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,",
-   "status": "draft_only",
-   "draft": "תֵּחַמְנָה, from r. יָחַם or חָמַם, Gen. 30,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "38. § 47. note 3. Lgb. 276.",
-   "status": "draft_only",
-   "draft": "38. § 47. note 3. Lgb. 276.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יְחֶמְתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
-   "status": "draft_only",
+   "text": "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
+   "status": "adjudicated",
    "draft": "יְחֶמְתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֶחֱמַתְנִי Ps. 51, 7 for יִחֲמַתְנִי præt. Pi.",
+   "verdict": "b",
+   "note": "First word: the print has segol under yod and ḥaṭeph‑segol under ḥeth (יֶחֱמַתְנִי), not shva/segol/shva as in A; the second word is identically read by both and matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "with suff. from r. יָחַם. Comp. אֲחָרוּ.",
-   "status": "draft_only",
+   "text": "with suff. from r. יָחַם. Comp. אֶחֱרוּ.",
+   "status": "adjudicated",
    "draft": "with suff. from r. יָחַם. Comp. אֲחָרוּ.",
-   "reread": null,
+   "reread": "with suff. from r. יָחַם. Comp. אֲחַרוּ.",
+   "verdict": "neither",
+   "note": "Last word is printed אֶחֱרוּ: segol under א and ḥaṭef segol (shewa + three dots) under ח, not ḥaṭef pataḥ + qameṣ (A) or + pataḥ (B). It is the anomalous Piel præt. of Judg. 5:28 cited elsewhere in the lexicon as the parallel to יִחֲמַתְנִי.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה.",
-   "status": "draft_only",
-   "draft": "יִחַן, וַיִּחַן, fut. apoc. Kal from r. חָנָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יָחְנְךָ for יְחָנְךָ fut. Kal from r. חָנַן. Lgb.",
-   "status": "draft_only",
+   "text": "יָחְנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb.",
+   "status": "adjudicated",
    "draft": "יָחְנְךָ for יְחָנְךָ fut. Kal from r. חָנַן. Lgb.",
-   "reread": null,
+   "reread": "יְחָנְךָ for יְחָנְּךָ fut. Kal from r. חָנַן. Lgb.",
+   "verdict": "neither",
+   "note": "First word is printed יָחְנְךָ (qamets under yod, shewa under ḥet) as in A; the second word is printed with dagesh forte in the nun, יְחָנְּךָ, as in B. A drops the dagesh, B mis-points the first word, so neither is exact.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "171, 366.",
-   "status": "draft_only",
-   "draft": "171, 366.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
-   "status": "draft_only",
-   "draft": "יֻחָקוּ in pause for יֻחֲקוּ, fut. Hoph. from",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "r. חָקַק; see above under the form",
-   "status": "draft_only",
-   "draft": "r. חָקַק; see above under the form",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "תֵּחָה.",
-   "status": "draft_only",
+   "text": "חָיָה.",
+   "status": "adjudicated",
    "draft": "תֵּחָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "חָיָה.",
+   "verdict": "b",
+   "note": "First letter is clearly ח (open at the top-left, no foot like ת) with a qamets beneath, not תּ with tsere/dagesh; the middle letter is a short yod with qamets, and the final ה also carries qamets. Reading A misreads ח as ת and invents a tsere/dagesh; Reading B matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה.",
-   "status": "draft_only",
-   "draft": "יִחַר, וַיִּחַר, fut. apoc. Kal. from r. חָרָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
-   "status": "draft_only",
-   "draft": "יֵחַת fut. Kal from r. נָחַת, and fut. Niph.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "from r. חָתַת.",
-   "status": "draft_only",
-   "draft": "from r. חָתַת.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יַט, fut. apoc. Hiph. from r. נָטָה.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יַט, fut. apoc. Hiph. from r. נָטָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֵט, fut. apoc. Hiph. from r. נָטָה.",
+   "verdict": "a",
+   "note": "Under the yod in line 3 a single horizontal stroke (patach) is printed, contrasting visibly with the two-dot tsere under the yod of יֵט / וַיֵּט in line 4 (the Kal form). Hiph. apocopated יַט with patach is also the expected form. The rest of the line (comma after headword, final period after נָטָה) is identical in both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for",
-   "status": "draft_only",
-   "draft": "יֵט, וַיֵּט, fut. apoc. Kal from r. נָטָה, for",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יִטֶּה, יִנְטֶה.",
-   "status": "draft_only",
-   "draft": "יִטֶּה, יִנְטֶה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
-   "status": "draft_only",
-   "draft": "יֻטַּל fut. Hoph. from r. טוּל, Job 40, 1.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r.",
-   "status": "draft_only",
-   "draft": "יְיֵדַע Ps. 138, 6 for יֵדַע fut. Kal from r.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "יָדַע. Comp. on these and the fol-",
-   "status": "draft_only",
+   "text": "יְדָע. Comp. on these and the fol-",
+   "status": "adjudicated",
    "draft": "יָדַע. Comp. on these and the fol-",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְדָע. Comp. on these and the fol-",
+   "verdict": "b",
+   "note": "Under the yod the print shows two vertical dots (shewa), not a qamets; under the dalet a qamets (horizontal stroke with tail), not a patach. No point under the ayin. This matches Reading B exactly.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "lowing forms Lgb. p. 388, 389. § 69.",
-   "status": "draft_only",
-   "draft": "lowing forms Lgb. p. 388, 389. § 69.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "note.",
-   "status": "draft_only",
-   "draft": "note.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "וַיֵּיטֶב for וַיְהֵיטִיב, יְהֵיטִיב, fut. Hiph. from",
-   "status": "draft_only",
+   "text": "יְיֵטִיב for יְהֵיטִיב, יֵיטִיב, fut. Hiph. from",
+   "status": "adjudicated",
    "draft": "וַיֵּיטֶב for וַיְהֵיטִיב, יְהֵיטִיב, fut. Hiph. from",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְיֵטִיב for יְהֵיטִיב, יֵיטִיב, fut. Hiph. from",
+   "verdict": "b",
+   "note": "Headword begins yod+sheva, yod+tsere (no vav, no patah, no dagesh) and ends plene ־ִיב, not ־ֶב; third item is יֵיטִיב, matching the parallel יְיֵלִיל/יֵילִיל line below. Reading B matches exactly.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "יָטַב. See as before.",
-   "status": "draft_only",
-   "draft": "יָטַב. See as before.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "וַיֵּילִיל for וַיְהֵילִיל, יְהֵילִיל, fut. Hiph. from",
-   "status": "draft_only",
+   "text": "יְיֵלִיל for יְהֵילִיל, יֵילִיל, fut. Hiph. from",
+   "status": "adjudicated",
    "draft": "וַיֵּילִיל for וַיְהֵילִיל, יְהֵילִיל, fut. Hiph. from",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְיֵלִיל for יְהֵילִיל, יֵילִיל, fut. Hiph. from",
+   "verdict": "b",
+   "note": "No vav is printed at the start of either the first or the third word: the first word is four letters (yod-yod-lamed-yod-lamed, sheva under the first yod, tsere under the second) and the third is יֵילִיל with tsere under the initial yod, exactly paralleling line 2 (יְיֵטִיב … יֵיטִיב). Reading A's וַ prefixes and הֵ in the third word are not on the page.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "יָלַל to wail. See as before.",
-   "status": "draft_only",
+   "text": "יְלֵל to wail. See as before.",
+   "status": "adjudicated",
    "draft": "יָלַל to wail. See as before.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְלֵל to wail.   See as before.",
+   "verdict": "b",
+   "note": "The yod carries a sheva (two vertical dots) and the first lamed a tsere (two horizontal dots), not qamets/patach as in A; the form is יְלֵל, so Reading B is correct (ignoring its extra spacing after \"wail.\").",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה.",
-   "status": "draft_only",
+   "text": "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה.",
+   "status": "adjudicated",
    "draft": "וַיִּיף, יִיף, fut. apoc. Kal from r. יָפָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יִיף, וַיִּיף, fut. apoc. Kal from r. יָפָה.",
+   "verdict": "b",
+   "note": "Printed left-to-right order: the shorter 3-letter form יִיף (no vav) stands at the far left of the line, and the longer vav-consecutive form וַיִּיף (patah under vav, dagesh + hiriq in yod) comes second, immediately before \"fut.\" — the same short-then-long pattern as the next line (יַךְ, וַיַּךְ). Reading A reverses them. Points on יָפָה (qamets, qamets) and the rest match both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה.",
-   "status": "draft_only",
+   "text": "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה.",
+   "status": "adjudicated",
    "draft": "וַיַּךְ, יַךְ, fut. apoc. Hiph. from r. נָכָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יַךְ, וַיַּךְ, fut. apoc. Hiph. from r. נָכָה.",
+   "verdict": "b",
+   "note": "The leftmost (first) item on the printed line is the two-letter form יַךְ; the three-letter form with vav, וַיַּךְ, comes second — same order as the preceding Kal line. Reading A reverses the order.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,",
-   "status": "draft_only",
-   "draft": "יְכַבְּדָנְנִי Ps. 50, 23 he will honour me,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "fut. Piel from r. כָּבַד c. suff. et Nun",
-   "status": "draft_only",
-   "draft": "fut. Piel from r. כָּבַד c. suff. et Nun",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "epenthet.",
-   "status": "draft_only",
-   "draft": "epenthet.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יְכֻנֶנּוּ he fashioned us Job 31, 15, for",
-   "reread": null,
-   "needs_review": true
+   "reread": "יְכוּנֶנּוּ he fashioned us Job 31, 15, for",
+   "verdict": "a",
+   "note": "The printed word is defective: kaf carries qubbuts (three dots below) with no vav between kaf and nun — the glyph is clearly shorter than the plene יְכוֹנְנֵהוּ on the next line, and matches MT Job 31:15 יְכֻנֶנּוּ. Reading B's shureq-vav is not printed.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
-   "status": "draft_only",
-   "draft": "יְכוֹנְנֵנוּ fut. Pil. from r. כּוּן, c. suff.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "1 plur. The two Nuns coalesce into a",
-   "status": "draft_only",
-   "draft": "1 plur. The two Nuns coalesce into a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "double one, and וּ is shortened into ֻ.",
-   "status": "draft_only",
-   "draft": "double one, and וּ is shortened into ֻ.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "יִכֻּל Chald. fut. Peal from r. יְכֵל.",
-   "status": "draft_only",
-   "draft": "יִכֻּל Chald. fut. Peal from r. יְכֵל.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יְכַסְיֻמוּ for יְכַסִּימוּ or יְכַסּוּמוּ Ex. 15, 5,",
-   "status": "draft_only",
+   "text": "יְכַסְיֻמוּ for יְכַסִּימוֹ or יְכַסּוּמוֹ Ex. 15, 5,",
+   "status": "adjudicated",
    "draft": "יְכַסְיֻמוּ for יְכַסִּימוּ or יְכַסּוּמוּ Ex. 15, 5,",
-   "reread": null,
+   "reread": "יְכַסְיֻמוּ for יְכַסְיֻמוֹ or יְכַסּוּמוֹ Ex. 15, 5,",
+   "verdict": "neither",
+   "note": "Both second and third forms end in holem-vav מוֹ (dot above the vav is printed; the following lines confirm \"מוּ is written for מוֹ\"), not shureq as in A; and the second form is יְכַסִּימוֹ with hireq-yod, not B's יְכַסְיֻמוֹ. Only the first word has shureq מוּ.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "fut. Pi. from r. כָּסָה. Here מוּ is writ-",
-   "status": "draft_only",
-   "draft": "fut. Pi. from r. כָּסָה. Here מוּ is writ-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "ten for מוֹ on account of the preceding",
-   "status": "draft_only",
-   "draft": "ten for מוֹ on account of the preceding",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "vowel u.",
-   "status": "draft_only",
-   "draft": "vowel u.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism",
-   "status": "draft_only",
+   "text": "יֻכַּת, יֻכַּתּוּ, fut. Hoph. by Chaldaism",
+   "status": "adjudicated",
    "draft": "יֻכַּת, יֻכְּתוּ, fut. Hoph. by Chaldaism",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֻכַּת, יֻכַּתּוּ, fut. Hoph. by Chaldaism",
+   "verdict": "b",
+   "note": "In the second word the kaf carries a patach (horizontal stroke), not a sheva, and the tav has a dagesh dot before the shureq: יֻכַּתּוּ. The sheva form יֻכְּתוּ appears only in line 4 (\"and this for\"), which Reading A has conflated with line 2.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5.",
-   "status": "draft_only",
+   "text": "from כָּתַת, for יוּכַת, יוּכַתּוּ. § 66. 5.",
+   "status": "adjudicated",
    "draft": "from כָּתַת, for יוּכַת, יוּכְּתוּ. § 66. 5.",
-   "reread": null,
-   "needs_review": true
+   "reread": "from כָּתַת, for יוּכַת, יוּכַתּוּ. § 66. 5.",
+   "verdict": "b",
+   "note": "Decisive point is the last Hebrew word: under the kaf the print shows a single horizontal stroke (patach), not the two vertical dots of a shewa, and the dot sits inside the tav (dagesh), not the kaf — matching Reading B's יוּכַתּוּ and the parallel forms יֻכַּתּוּ / יְכַתּוּ on the adjacent lines. Everything else (order of items, plene vav in both יוּ- forms, pointing of כָּתַת, \"§ 66. 5.\") is identical in A and B and matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut.",
-   "status": "draft_only",
+   "text": "יֻכַּתּוּ for יֻכַּתוּ, and this for יֻכְתּוּ fut.",
+   "status": "adjudicated",
    "draft": "יַכְּתוּ for יֻכְּתוּ, and this for יְכִתּוּ fut.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֻכַּתּוּ for יֻכַּתוּ, and this for יֻכְתּוּ fut.",
+   "verdict": "b",
+   "note": "All three Hebrew words carry qibbuts (three slanting dots) under the yod, not shewa as in Reading A; the third word has shewa under kaf and dagesh in tav (יֻכְתּוּ, the regular Hophal), not hireq under kaf. Reading B matches the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Hiph. from כָּתַת to pound. § 66. 5. n.",
-   "status": "draft_only",
-   "draft": "Hiph. from כָּתַת to pound. § 66. 5. n.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז.",
-   "status": "draft_only",
+   "text": "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז.",
+   "status": "adjudicated",
    "draft": "יַלִּיזוּ for יְלִיזוּ fut. Hiph. from r. לוּז.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יַלִּיזוּ for יָלִיזוּ fut. Hiph. from r. לוּז.",
+   "verdict": "b",
+   "note": "Under the yod of the second word the print shows a single T-shaped qamets, not the two stacked dots of a shewa; the regular Hiph. fut. of an ʿayin-vav root (יָלִיזוּ) confirms qamets. Everything else (patach + dagesh in the first word, לוּז) is as both readings have it.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "§ 71. note 9.",
-   "status": "draft_only",
-   "draft": "§ 71. note 9.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
-   "text": "וַיַּלִּינוּ, וַיַּלֹּנוּ, fut. Hiph. from r. לוּן; see",
-   "status": "draft_only",
+   "text": "יַלִּינוּ, וַיַּלִּינוּ, fut. Hiph. from r. לוּן; see",
+   "status": "adjudicated",
    "draft": "וַיַּלִּינוּ, וַיַּלֹּנוּ, fut. Hiph. from r. לוּן; see",
-   "reread": null,
-   "needs_review": true
+   "reread": "יַלִּינוּ, וַיַּלִּינוּ, fut. Hiph. from r. לוּן; see",
+   "verdict": "b",
+   "note": "First word starts with yod (no vav); second word is plene וַיַּלִּינוּ with yod and dagesh in lamed, not defective וַיַּלֹּנוּ with holem as in Reading A.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "in לוּן Hiph. no. 2.",
-   "status": "draft_only",
-   "draft": "in לוּן Hiph. no. 2.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "יִמַח, וַיִּמַח Gen. 7, 23, fut. apoc. Kal",
-   "status": "draft_only",
-   "draft": "יִמַח, וַיִּמַח Gen. 7, 23, fut. apoc. Kal",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "from r. מָחָה. But other very respect-",
-   "status": "draft_only",
-   "draft": "from r. מָחָה. But other very respect-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "able copies, both Mss. and editions,",
-   "status": "draft_only",
-   "draft": "able copies, both Mss. and editions,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "e. g. the edition of Van der Hooght,",
-   "status": "draft_only",
-   "draft": "e. g. the edition of Van der Hooght,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "read וַיִּמַּח fut. Niph. of the same verb.",
-   "status": "draft_only",
-   "draft": "read וַיִּמַּח fut. Niph. of the same verb.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא.",
-   "status": "draft_only",
-   "draft": "יְמַלֵּה fut. Pi. from r. מָלֵא, for יְמַלֵּא.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "יֵמַר fut. A, from r. מָרַר to be bitter, for",
-   "status": "draft_only",
-   "draft": "יֵמַר fut. A, from r. מָרַר to be bitter, for",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "יִמְרַר. § 66. note 3. Lgb. 366.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "יִמְרַר. § 66. note 3. Lgb. 366.",
-   "reread": null,
-   "needs_review": true
+   "reread": "יֵמָרַר. § 66. note 3. Lgb. 366.",
+   "verdict": "a",
+   "note": "Under the yod a single dot (hireq), not two (tsere); under the mem a vertical two-dot shewa, not a qamets. Reading A matches the print (the unsyncopated form יִמְרַר underlying יֵמַר).",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,",
-   "status": "draft_only",
-   "draft": "יֹמְרוּךָ for יֹאמְרוּךָ fut. Kal from r. אָמַר,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Ps. 139, 20.",
-   "status": "draft_only",
-   "draft": "Ps. 139, 20.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 0,
-  "adjudicated": 0,
-  "draft_only": 111,
+  "agreed": 71,
+  "adjudicated": 39,
+  "draft_only": 1,
   "reread_only": 0,
   "unresolved": 0,
-  "needs_review": 111
+  "needs_review": 7
  },
- "errors": 32,
- "cost_usd_list_total": 0.0
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 6.8151
 }

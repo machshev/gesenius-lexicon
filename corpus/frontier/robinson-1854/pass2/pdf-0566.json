@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-09-24T09:51:22+00:00",
+ "generated_at": "2026-10-01T20:07:03+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -43,13 +43,24 @@
      "image_sha256": "8bf19626ae1533c3868559d6d015d14d4515b5d8b01c9ac5b86682f4fa74a288",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"84075d29-7703-44ba-ba1f-8e0427c7a924\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "מוּשׁ 550 מוּת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0aa97731-8573-4943-b221-3e51570f7b6c",
+      "duration_api_ms": 9396,
+      "cost_usd_list": 0.045520000000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3520,
+      "cache_creation_input_tokens": 1760,
+      "output_tokens": 188
      },
      "lines": [
       {
        "draft": "מוּשׁ 550 מוּת",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "מוּשׁ 550 מוּת",
+       "status": "agreed",
        "text": "מוּשׁ 550 מוּת"
       }
      ]
@@ -92,68 +103,46 @@
      "image_sha256": "8ab9479734c875ea3ce7b6632dc13c2f41502c4d85851e737686b839b179486c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"758ccd99-80bc-45fe-ab2a-e6e33a9e7c8a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "* I. מוּשׁ 1. to give way, to recede,",
+       "to depart ; absol. Is. 22, 25. 54, 10 ;",
+       "with acc. of place whither, Zech. 14, 4 ;",
+       "מִן of place whence, Num. 14, 44. Judg."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "246ef6e8-fc20-48c2-9dbf-0f99637dcd5c",
+      "duration_api_ms": 15124,
+      "cost_usd_list": 0.08496075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 3017,
+      "output_tokens": 468
      },
      "lines": [
       {
        "draft": "* I. מוּשׁ 1. to give way, to recede,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "* I. מוּשׁ 1. to give way, to recede,",
+       "status": "agreed",
        "text": "* I. מוּשׁ 1. to give way, to recede,"
       },
       {
        "draft": "to depart; absol. Is. 22, 25. 54, 10;",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "to depart ; absol. Is. 22, 25. 54, 10 ;",
+       "status": "agreed",
        "text": "to depart; absol. Is. 22, 25. 54, 10;"
       },
       {
        "draft": "with acc. of place whither, Zech. 14, 4;",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "with acc. of place whither, Zech. 14, 4 ;",
+       "status": "agreed",
        "text": "with acc. of place whither, Zech. 14, 4;"
       },
       {
        "draft": "מִן of place whence, Num. 14, 44. Judg.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "מִן of place whence, Num. 14, 44. Judg.",
+       "status": "agreed",
        "text": "מִן of place whence, Num. 14, 44. Judg."
-      },
-      {
-       "draft": "6, 18. Josh. 1, 8. Is. 59, 21; מֵאֵת id. Is.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "6, 18. Josh. 1, 8. Is. 59, 21; מֵאֵת id. Is."
-      },
-      {
-       "draft": "54, 10; מִלִּפְנֵי of pers. Jer. 31, 36.—Not",
-       "reread": null,
-       "status": "draft_only",
-       "text": "54, 10; מִלִּפְנֵי of pers. Jer. 31, 36.—Not"
-      },
-      {
-       "draft": "found in the kindred dialects.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "found in the kindred dialects."
-      },
-      {
-       "draft": "2. Causat. to put away, to remove,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. Causat. to put away, to remove,"
-      },
-      {
-       "draft": "Zech. 3, 9.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Zech. 3, 9."
-      },
-      {
-       "draft": "Hiph. 1. Trans. to let remove, to let",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hiph. 1. Trans. to let remove, to let"
       }
      ]
     },
@@ -170,8 +159,48 @@
      "image_sha256": "5cfe59978b3356df7fb012d1b8bc9d8a561b4fe2be52753097b33be167bd87e4",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"afe8b5fe-f864-4772-9a61-63d6ba3b8287\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "6, 18. Josh. 1, 8. Is. 59, 21 ; מֵאֵת id. Is.",
+       "54, 10 ; מִלִּפְנֵי of pers. Jer. 31, 36.—Not",
+       "found in the kindred dialects.",
+       "2. Causat. to put away, to remove,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bf654324-e3ae-487d-8497-f02019ff6596",
+      "duration_api_ms": 6966,
+      "cost_usd_list": 0.07560075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2639,
+      "output_tokens": 432
+     },
+     "lines": [
+      {
+       "draft": "6, 18. Josh. 1, 8. Is. 59, 21; מֵאֵת id. Is.",
+       "reread": "6, 18. Josh. 1, 8. Is. 59, 21 ; מֵאֵת id. Is.",
+       "status": "agreed",
+       "text": "6, 18. Josh. 1, 8. Is. 59, 21; מֵאֵת id. Is."
+      },
+      {
+       "draft": "54, 10; מִלִּפְנֵי of pers. Jer. 31, 36.—Not",
+       "reread": "54, 10 ; מִלִּפְנֵי of pers. Jer. 31, 36.—Not",
+       "status": "agreed",
+       "text": "54, 10; מִלִּפְנֵי of pers. Jer. 31, 36.—Not"
+      },
+      {
+       "draft": "found in the kindred dialects.",
+       "reread": "found in the kindred dialects.",
+       "status": "agreed",
+       "text": "found in the kindred dialects."
+      },
+      {
+       "draft": "2. Causat. to put away, to remove,",
+       "reread": "2. Causat. to put away, to remove,",
+       "status": "agreed",
+       "text": "2. Causat. to put away, to remove,"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b02",
@@ -186,8 +215,34 @@
      "image_sha256": "d61905aada8951927475b55db25b6a81e7a528c4b1867fa6f585188fe7e4be58",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e2d7994b-8ba9-493e-a0c7-cf06995095ae\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Zech. 3, 9.",
+       "Hiph. 1. Trans. to let remove, to let"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43e9d775-60f4-4103-b792-188cdaea10b6",
+      "duration_api_ms": 9290,
+      "cost_usd_list": 0.05306075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2072,
+      "output_tokens": 208
+     },
+     "lines": [
+      {
+       "draft": "Zech. 3, 9.",
+       "reread": "Zech. 3, 9.",
+       "status": "agreed",
+       "text": "Zech. 3, 9."
+      },
+      {
+       "draft": "Hiph. 1. Trans. to let remove, to let",
+       "reread": "Hiph. 1. Trans. to let remove, to let",
+       "status": "agreed",
+       "text": "Hiph. 1. Trans. to let remove, to let"
+      }
+     ]
     }
    ]
   },
@@ -232,98 +287,46 @@
      "image_sha256": "8f0bb542d81224929cba52ebeceb17ba81057501f1a107f40096039bf7abfe39",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2f7fe2f4-a605-45db-b721-16d8dddb3cf6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "go, e. g. prey, Nah. 3, 1; to withdraw",
+       "from, c. מִן, Mic. 2, 3 from which ye",
+       "shall not withdraw your necks. v. 4.",
+       "2. More frequently i. q. Kal, to give"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "291d3f16-fd05-467d-a107-d45c5b6b1cb9",
+      "duration_api_ms": 10856,
+      "cost_usd_list": 0.06705074999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2639,
+      "output_tokens": 261
      },
      "lines": [
       {
        "draft": "go, e. g. prey, Nah. 3, 1 ; to withdraw",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "go, e. g. prey, Nah. 3, 1; to withdraw",
+       "status": "agreed",
        "text": "go, e. g. prey, Nah. 3, 1; to withdraw"
       },
       {
        "draft": "from, c. מִן, Mic. 2, 3 from which ye",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "from, c. מִן, Mic. 2, 3 from which ye",
+       "status": "agreed",
        "text": "from, c. מִן, Mic. 2, 3 from which ye"
       },
       {
        "draft": "shall not withdraw your necks. v. 4.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "shall not withdraw your necks. v. 4.",
+       "status": "agreed",
        "text": "shall not withdraw your necks. v. 4."
       },
       {
        "draft": "2. More frequently i. q. Kal, to give",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "2. More frequently i. q. Kal, to give",
+       "status": "agreed",
        "text": "2. More frequently i. q. Kal, to give"
-      },
-      {
-       "draft": "way, to withdraw, to depart, absol. Ex.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "way, to withdraw, to depart, absol. Ex."
-      },
-      {
-       "draft": "13, 22. Job 23, 12 ; with מִן of place, Ex.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "13, 22. Job 23, 12; with מִן of place, Ex."
-      },
-      {
-       "draft": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12 ;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12;"
-      },
-      {
-       "draft": "c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
-       "reread": null,
-       "status": "draft_only",
-       "text": "c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי"
-      },
-      {
-       "draft": "and doth not withdraw (cease) from",
-       "reread": null,
-       "status": "draft_only",
-       "text": "and doth not withdraw (cease) from"
-      },
-      {
-       "draft": "yielding fruit.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "yielding fruit."
-      },
-      {
-       "draft": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,"
-      },
-      {
-       "draft": "to touch, to try by the touch, Gen. 27, 21.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "to touch, to try by the touch, Gen. 27, 21."
-      },
-      {
-       "draft": "Hiph. id. Ps. 115, 7. Judg. 16, 26",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hiph. id. Ps. 115, 7. Judg. 16, 26"
-      },
-      {
-       "draft": "Keri.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Keri."
-      },
-      {
-       "draft": "Deriv. pr. n. מוּשִׁי.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deriv. pr. n. מוּשִׁי."
       }
      ]
     },
@@ -340,8 +343,63 @@
      "image_sha256": "09c056a97e3715c50cbceb24014d9f2d93c9b379a5823ba0eda4d18f33b6fc56",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a929af32-7bdf-4fe6-b8f8-a18e57d8dbb6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "way, to withdraw, to depart, absol. Ex.",
+       "13, 22. Job 23, 12 ; with מִן of place, Ex.",
+       "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12 ;",
+       "מִן c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "47d1d225-4495-4881-926f-d35de0843ff4",
+      "duration_api_ms": 15831,
+      "cost_usd_list": 0.08700074999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2639,
+      "output_tokens": 660
+     },
+     "lines": [
+      {
+       "draft": "way, to withdraw, to depart, absol. Ex.",
+       "reread": "way, to withdraw, to depart, absol. Ex.",
+       "status": "agreed",
+       "text": "way, to withdraw, to depart, absol. Ex."
+      },
+      {
+       "draft": "13, 22. Job 23, 12 ; with מִן of place, Ex.",
+       "reread": "13, 22. Job 23, 12 ; with מִן of place, Ex.",
+       "status": "agreed",
+       "text": "13, 22. Job 23, 12; with מִן of place, Ex."
+      },
+      {
+       "draft": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12 ;",
+       "reread": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12 ;",
+       "status": "agreed",
+       "text": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12;"
+      },
+      {
+       "draft": "c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
+       "reread": "מִן c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "מִן c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
+        "verdict": "b",
+        "note": "The line begins with a printed מִן (hireq under mem, final nun) at the far left before \"c. inf.\"; Reading A omits it. The Hebrew citation is otherwise identical in both readings and matches the print (וְלֹא, יָמִישׁ, מֵעֲשׂוֹת with sin dot, פֶּרִי with dagesh and segol).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "21b8eb04-781d-489f-a318-c51fd8707a63",
+        "duration_api_ms": 9454,
+        "cost_usd_list": 0.08214474999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2623,
+        "output_tokens": 569
+       },
+       "text": "מִן c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי"
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -356,8 +414,48 @@
      "image_sha256": "a4e2158afa5d4a50bf5bfc8d271fdb8d39d5ca27f2a80e60946054601159fd90",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"04fd8668-04ab-463d-9bac-b5852bc0107c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "and doth not withdraw (cease) from",
+       "yielding fruit.",
+       "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,",
+       "to touch, to try by the touch, Gen. 27, 21."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3c4dfca0-e9d0-4481-b4d4-07579398534e",
+      "duration_api_ms": 6473,
+      "cost_usd_list": 0.074501,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2704,
+      "output_tokens": 384
+     },
+     "lines": [
+      {
+       "draft": "and doth not withdraw (cease) from",
+       "reread": "and doth not withdraw (cease) from",
+       "status": "agreed",
+       "text": "and doth not withdraw (cease) from"
+      },
+      {
+       "draft": "yielding fruit.",
+       "reread": "yielding fruit.",
+       "status": "agreed",
+       "text": "yielding fruit."
+      },
+      {
+       "draft": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,",
+       "reread": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,",
+       "status": "agreed",
+       "text": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,"
+      },
+      {
+       "draft": "to touch, to try by the touch, Gen. 27, 21.",
+       "reread": "to touch, to try by the touch, Gen. 27, 21.",
+       "status": "agreed",
+       "text": "to touch, to try by the touch, Gen. 27, 21."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b03",
@@ -372,8 +470,41 @@
      "image_sha256": "98cfefd41a121d8f9f99250a6b1b81068a5c23d0bbb45498fb35887468306961",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"1ac7485d-8877-40e3-a576-6cd897ec06ad\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Hiph. id. Ps. 115, 7. Judg. 16, 26",
+       "Keri.",
+       "Deriv. pr. n. מוּשִׁי."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e049da79-a33c-4a67-bdc6-f7b7798b7629",
+      "duration_api_ms": 14747,
+      "cost_usd_list": 0.078201,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2389,
+      "output_tokens": 584
+     },
+     "lines": [
+      {
+       "draft": "Hiph. id. Ps. 115, 7. Judg. 16, 26",
+       "reread": "Hiph. id. Ps. 115, 7. Judg. 16, 26",
+       "status": "agreed",
+       "text": "Hiph. id. Ps. 115, 7. Judg. 16, 26"
+      },
+      {
+       "draft": "Keri.",
+       "reread": "Keri.",
+       "status": "agreed",
+       "text": "Keri."
+      },
+      {
+       "draft": "Deriv. pr. n. מוּשִׁי.",
+       "reread": "Deriv. pr. n. מוּשִׁי.",
+       "status": "agreed",
+       "text": "Deriv. pr. n. מוּשִׁי."
+      }
+     ]
     }
    ]
   },
@@ -419,104 +550,46 @@
      "image_sha256": "98e098295d8084b7b79f009e7fb52d51085edac923161b322bc4d2c475155a2e",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f7941f50-db92-4d52-9972-5eaadef21880\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "מוֹשָׁב m. (r. יָשַׁב) constr. מוֹשַׁב, c. suff.",
+       "מוֹשָׁבִי ; plur. constr. מוֹשְׁבוֹת, once מוֹשְׁבֵי",
+       "Ez. 34, 13.",
+       "1. a seat, 1 Sam. 20, 18. 25. Job 29,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6e9e6bcf-d0cb-4dac-b977-df1813006242",
+      "duration_api_ms": 8454,
+      "cost_usd_list": 0.083251,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2704,
+      "output_tokens": 559
      },
      "lines": [
       {
        "draft": "מוֹשָׁב m. (r. יָשַׁב) constr. מוֹשַׁב, c. suff.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "מוֹשָׁב m. (r. יָשַׁב) constr. מוֹשַׁב, c. suff.",
+       "status": "agreed",
        "text": "מוֹשָׁב m. (r. יָשַׁב) constr. מוֹשַׁב, c. suff."
       },
       {
        "draft": "מוֹשָׁבִי; plur. constr. מוֹשְׁבוֹת, once מוֹשְׁבֵי",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "מוֹשָׁבִי ; plur. constr. מוֹשְׁבוֹת, once מוֹשְׁבֵי",
+       "status": "agreed",
        "text": "מוֹשָׁבִי; plur. constr. מוֹשְׁבוֹת, once מוֹשְׁבֵי"
       },
       {
        "draft": "Ez. 34, 13.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Ez. 34, 13.",
+       "status": "agreed",
        "text": "Ez. 34, 13."
       },
       {
        "draft": "1. a seat, 1 Sam. 20, 18. 25. Job 29,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "1. a seat, 1 Sam. 20, 18. 25. Job 29,",
+       "status": "agreed",
        "text": "1. a seat, 1 Sam. 20, 18. 25. Job 29,"
-      },
-      {
-       "draft": "7. Of things, as a city, seat, i. e. site,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "7. Of things, as a city, seat, i. e. site,"
-      },
-      {
-       "draft": "situation, 2 K. 2, 19.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "situation, 2 K. 2, 19."
-      },
-      {
-       "draft": "2. a sitting, session, an assembly of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. a sitting, session, an assembly of"
-      },
-      {
-       "draft": "persons sitting together, Ps. 1, 1. 107,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "persons sitting together, Ps. 1, 1. 107,"
-      },
-      {
-       "draft": "32.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "32."
-      },
-      {
-       "draft": "3. seat, dwelling, Gen. 27, 39. Num.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "3. seat, dwelling, Gen. 27, 39. Num."
-      },
-      {
-       "draft": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב",
-       "reread": null,
-       "status": "draft_only",
-       "text": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב"
-      },
-      {
-       "draft": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב"
-      },
-      {
-       "draft": "a city of dwelling, to dwell in, Ps. 107, 4.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a city of dwelling, to dwell in, Ps. 107, 4."
-      },
-      {
-       "draft": "7. Meton. a time of abode, Ex. 12, 40.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "7. Meton. a time of abode, Ex. 12, 40."
-      },
-      {
-       "draft": "Concr. dwellers, inhabitants, 2 Sam. 9,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Concr. dwellers, inhabitants, 2 Sam. 9,"
-      },
-      {
-       "draft": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא."
       }
      ]
     },
@@ -533,8 +606,48 @@
      "image_sha256": "29271c38e6d17fee59b99e0c0433f85a4ef2dbff888c5ef69e7c5eb9b10c70de",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"cc612781-b415-4940-8516-679df318ddcd\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "7. Of things, as a city, seat, i. e. site,",
+       "situation, 2 K. 2, 19.",
+       "2. a sitting, session, an assembly of",
+       "persons sitting together, Ps. 1, 1. 107,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "da8f2b04-f7f9-4b3b-9e25-f565551156d4",
+      "duration_api_ms": 9058,
+      "cost_usd_list": 0.06659100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 251
+     },
+     "lines": [
+      {
+       "draft": "7. Of things, as a city, seat, i. e. site,",
+       "reread": "7. Of things, as a city, seat, i. e. site,",
+       "status": "agreed",
+       "text": "7. Of things, as a city, seat, i. e. site,"
+      },
+      {
+       "draft": "situation, 2 K. 2, 19.",
+       "reread": "situation, 2 K. 2, 19.",
+       "status": "agreed",
+       "text": "situation, 2 K. 2, 19."
+      },
+      {
+       "draft": "2. a sitting, session, an assembly of",
+       "reread": "2. a sitting, session, an assembly of",
+       "status": "agreed",
+       "text": "2. a sitting, session, an assembly of"
+      },
+      {
+       "draft": "persons sitting together, Ps. 1, 1. 107,",
+       "reread": "persons sitting together, Ps. 1, 1. 107,",
+       "status": "agreed",
+       "text": "persons sitting together, Ps. 1, 1. 107,"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -549,8 +662,55 @@
      "image_sha256": "01042ceba96e9ee3b326086a04a3a0d6bf135087bd8944b17e46da50d18f748c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"02fa5f44-8bc2-48d2-adfd-619aa4d2ab16\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "32.",
+       "3. seat, dwelling, Gen. 27, 39. Num.",
+       "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב",
+       "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב",
+       "a city of dwelling, to dwell in, Ps. 107, 4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "34f76f32-c09d-44bb-a475-155fff5b207b",
+      "duration_api_ms": 24239,
+      "cost_usd_list": 0.085771,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2830,
+      "output_tokens": 559
+     },
+     "lines": [
+      {
+       "draft": "32.",
+       "reread": "32.",
+       "status": "agreed",
+       "text": "32."
+      },
+      {
+       "draft": "3. seat, dwelling, Gen. 27, 39. Num.",
+       "reread": "3. seat, dwelling, Gen. 27, 39. Num.",
+       "status": "agreed",
+       "text": "3. seat, dwelling, Gen. 27, 39. Num."
+      },
+      {
+       "draft": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב",
+       "reread": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב",
+       "status": "agreed",
+       "text": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב"
+      },
+      {
+       "draft": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב",
+       "reread": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב",
+       "status": "agreed",
+       "text": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב"
+      },
+      {
+       "draft": "a city of dwelling, to dwell in, Ps. 107, 4.",
+       "reread": "a city of dwelling, to dwell in, Ps. 107, 4.",
+       "status": "agreed",
+       "text": "a city of dwelling, to dwell in, Ps. 107, 4."
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b03",
@@ -565,8 +725,56 @@
      "image_sha256": "546205323534b32814aa26a274230c5b53e67e27f9eb8282aa827f314a87bf36",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3280f06b-2ade-4a37-9a25-809b3806b617\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "7. Meton. a time of abode, Ex. 12, 40.",
+       "Concr. dwellers, inhabitants, 2 Sam. 9,",
+       "12 כָּל־מוֹשַׁב בֵּית צִיבָא."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2166481b-51f7-41c7-95bb-be3301d2cd03",
+      "duration_api_ms": 5265,
+      "cost_usd_list": 0.060541,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2326,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "7. Meton. a time of abode, Ex. 12, 40.",
+       "reread": "7. Meton. a time of abode, Ex. 12, 40.",
+       "status": "agreed",
+       "text": "7. Meton. a time of abode, Ex. 12, 40."
+      },
+      {
+       "draft": "Concr. dwellers, inhabitants, 2 Sam. 9,",
+       "reread": "Concr. dwellers, inhabitants, 2 Sam. 9,",
+       "status": "agreed",
+       "text": "Concr. dwellers, inhabitants, 2 Sam. 9,"
+      },
+      {
+       "draft": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא.",
+       "reread": "12 כָּל־מוֹשַׁב בֵּית צִיבָא.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא.",
+        "verdict": "a",
+        "note": "The kaf carries a dot printed above it (holem) and a dagesh inside, with no qamets beneath — so כֹּל, not כָּל. All other points (שׁ shin dot, holem-vav, patah, tsere, hiriq, qamets) match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ebce9e89-b608-4461-a39a-b8abfd773315",
+        "duration_api_ms": 9525,
+        "cost_usd_list": 0.0754845,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3538,
+        "cache_creation_input_tokens": 2268,
+        "output_tokens": 578
+       },
+       "text": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא."
+      }
+     ]
     }
    ]
   },
@@ -607,74 +815,61 @@
      "image_sha256": "29c10071ec1cbe282c00e22944b819e57e3b096ba96975b3a568187ff664cb9e",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"458041b1-434c-4188-8c94-ce13a198610c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "מוּשִׁי (prob. for מוּשִׁיָּה felt out by Je-",
+       "hovah, r. מוּשׁ II) Mushi, pr. n. m. Ex. 6,",
+       "19. Num. 3, 20 ; defect. מֻשִׁי 1 Chr. 6, 4.",
+       "—Patronym. also מוּשִׁי for מוּשִׁיִי Num."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1be90942-89ad-4abe-8d79-6aa1be49d05e",
+      "duration_api_ms": 21591,
+      "cost_usd_list": 0.08259100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 571
      },
      "lines": [
       {
        "draft": "מוּשִׁי (prob. for מוּשִׁיָה felt out by Je-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מוּשִׁי (prob. for מוּשִׁיָה felt out by Je-"
+       "reread": "מוּשִׁי (prob. for מוּשִׁיָּה felt out by Je-",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "מוּשִׁי (prob. for מוּשִׁיָּה felt out by Je-",
+        "verdict": "b",
+        "note": "The decisive difference is the dagesh in the yod of the second word: the image shows a dot printed inside the yod of מוּשִׁיָּה (yod with dagesh + qamets), so Reading B is correct; Reading A omits it. All other characters, vowels, shureq and shin dots agree in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "25cc0ffa-3ee9-486c-ab22-0a5ed29f997f",
+        "duration_api_ms": 15034,
+        "cost_usd_list": 0.083625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3540,
+        "cache_creation_input_tokens": 2585,
+        "output_tokens": 614
+       },
+       "text": "מוּשִׁי (prob. for מוּשִׁיָּה felt out by Je-"
       },
       {
        "draft": "hovah, r. מוּשׁ II) Mushi, pr. n. m. Ex. 6,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "hovah, r. מוּשׁ II) Mushi, pr. n. m. Ex. 6,",
+       "status": "agreed",
        "text": "hovah, r. מוּשׁ II) Mushi, pr. n. m. Ex. 6,"
       },
       {
        "draft": "19. Num. 3, 20; defect. מֻשִׁי 1 Chr. 6, 4.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "19. Num. 3, 20 ; defect. מֻשִׁי 1 Chr. 6, 4.",
+       "status": "agreed",
        "text": "19. Num. 3, 20; defect. מֻשִׁי 1 Chr. 6, 4."
       },
       {
        "draft": "—Patronym. also מוּשִׁי for מוּשִׁיִי Num.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "—Patronym. also מוּשִׁי for מוּשִׁיִי Num.",
+       "status": "agreed",
        "text": "—Patronym. also מוּשִׁי for מוּשִׁיִי Num."
-      },
-      {
-       "draft": "3, 33. 26, 58.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "3, 33. 26, 58."
-      },
-      {
-       "draft": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,"
-      },
-      {
-       "draft": "poet. for cords, bands, with which one is",
-       "reread": null,
-       "status": "draft_only",
-       "text": "poet. for cords, bands, with which one is"
-      },
-      {
-       "draft": "bound, Job 38, 31. Comp. Arab. مَسَكَة",
-       "reread": null,
-       "status": "draft_only",
-       "text": "bound, Job 38, 31. Comp. Arab. مَسَكَة"
-      },
-      {
-       "draft": "a fetter, from مسك firmiter tenuit.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a fetter, from مسك firmiter tenuit."
-      },
-      {
-       "draft": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,"
-      },
-      {
-       "draft": "Ps. 68. 21.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Ps. 68. 21."
       }
      ]
     },
@@ -691,8 +886,78 @@
      "image_sha256": "27ba2e60caf7b0059a0d20c0fce39ae5c26c4878a76574a83155ccb83749596e",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"99f7a5d5-dfe5-44e2-b06c-ee9afe45148f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "3, 33. 26, 58.",
+       "מֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
+       "poet. for cords, bands, with which one is",
+       "bound, Job 38, 31.   Comp. Arab. مَسَكَةٌ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "736ee08a-323c-4830-9f75-671f6b6445aa",
+      "duration_api_ms": 10088,
+      "cost_usd_list": 0.08432100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2830,
+      "output_tokens": 530
+     },
+     "lines": [
+      {
+       "draft": "3, 33. 26, 58.",
+       "reread": "3, 33. 26, 58.",
+       "status": "agreed",
+       "text": "3, 33. 26, 58."
+      },
+      {
+       "draft": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
+       "reread": "מֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
+        "verdict": "a",
+        "note": "The headword is printed plene: a distinct vav stroke stands between the mem and the shin, carrying the holem (six letters מ-ו-ש-כ-ו-ת), so Reading A's מוֹשְׁכוֹת is correct and B's defective מֹשְׁכוֹת is not what is printed. The rest of the line is identical in both readings and matches the image.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7699bbc4-6618-4122-838b-51d47ba82ebc",
+        "duration_api_ms": 26128,
+        "cost_usd_list": 0.0925575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3550,
+        "cache_creation_input_tokens": 2784,
+        "output_tokens": 713
+       },
+       "text": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,"
+      },
+      {
+       "draft": "poet. for cords, bands, with which one is",
+       "reread": "poet. for cords, bands, with which one is",
+       "status": "agreed",
+       "text": "poet. for cords, bands, with which one is"
+      },
+      {
+       "draft": "bound, Job 38, 31. Comp. Arab. مَسَكَة",
+       "reread": "bound, Job 38, 31.   Comp. Arab. مَسَكَةٌ",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "bound, Job 38, 31. Comp. Arab. مَسَكَةٌ",
+        "verdict": "b",
+        "note": "The final tāʾ marbūṭa carries a clearly printed tanwīn (dammatan, the small hooked mark above the ة); Reading A omits it. Fatḥas on م, س, ك as in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3d284530-48ac-48ca-88e1-7262dbbaf4a3",
+        "duration_api_ms": 9826,
+        "cost_usd_list": 0.08285375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3535,
+        "cache_creation_input_tokens": 2769,
+        "output_tokens": 525
+       },
+       "text": "bound, Job 38, 31. Comp. Arab. مَسَكَةٌ"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b02",
@@ -707,8 +972,41 @@
      "image_sha256": "8464305515ecb30c5c2bb9254484a7980e90c31dc5cc90de11e4b978d04d64b7",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"bb3ff0c7-e169-40c7-b337-88ef99b93ce9\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "a fetter, from مسك firmiter tenuit.",
+       "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,",
+       "Ps. 68. 21."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e4604ba9-b731-4ed2-a08d-47d9012d693c",
+      "duration_api_ms": 8516,
+      "cost_usd_list": 0.067911,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2452,
+      "output_tokens": 353
+     },
+     "lines": [
+      {
+       "draft": "a fetter, from مسك firmiter tenuit.",
+       "reread": "a fetter, from مسك firmiter tenuit.",
+       "status": "agreed",
+       "text": "a fetter, from مسك firmiter tenuit."
+      },
+      {
+       "draft": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,",
+       "reread": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,",
+       "status": "agreed",
+       "text": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,"
+      },
+      {
+       "draft": "Ps. 68. 21.",
+       "reread": "Ps. 68. 21.",
+       "status": "agreed",
+       "text": "Ps. 68. 21."
+      }
+     ]
     }
    ]
   },
@@ -751,86 +1049,76 @@
      "image_sha256": "d0e05d8cce79b340e647b6d3f9b27c7295652b05e964e5266eaf4f744516b567",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5ae3071b-0dd0-4a02-a7e1-20aac7905fdd\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,",
+       "מַתְנוּ; inf. abs. מוֹת, constr. מוּת; imper.",
+       "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמָת.",
+       "1. to die, and so in all the Semitic lan-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe8fb63d-f13f-4caf-a7f1-1585890a0550",
+      "duration_api_ms": 14272,
+      "cost_usd_list": 0.095351,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 3019,
+      "output_tokens": 675
      },
      "lines": [
       {
        "draft": "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,",
+       "status": "agreed",
        "text": "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,"
       },
       {
        "draft": "מַתְנוּ; inf. abs. מוֹת, constr. מוֹת; imper.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מַתְנוּ; inf. abs. מוֹת, constr. מוֹת; imper."
+       "reread": "מַתְנוּ; inf. abs. מוֹת, constr. מוּת; imper.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "מַתְנוּ; inf. abs. מוֹת, constr. מוּת; imper.",
+        "verdict": "b",
+        "note": "Decisive point is the vowel on the constr. form: in the inf. abs. the dot sits clearly above the vav (holem, מוֹת), whereas in the constr. form the dot sits lower, at the left of the vav's shaft (shureq, מוּת). Reading B matches the print; A wrongly repeats holem.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "50d2a8c6-9cf8-41fb-9fe8-6f4faa1a750d",
+        "duration_api_ms": 21727,
+        "cost_usd_list": 0.106116,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3544,
+        "cache_creation_input_tokens": 2967,
+        "output_tokens": 911
+       },
+       "text": "מַתְנוּ; inf. abs. מוֹת, constr. מוּת; imper."
       },
       {
        "draft": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמֹת.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמֹת."
+       "reread": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמָת.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמָת.",
+        "verdict": "b",
+        "note": "Final word is printed וַיָּמָת with qamets under the mem; there is no holem dot above the mem (contrast the visible holem dot on תָּמֹת just before it).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8a176b2d-07cf-4e5e-b127-6f869278fb34",
+        "duration_api_ms": 11604,
+        "cost_usd_list": 0.0990305,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3562,
+        "cache_creation_input_tokens": 2985,
+        "output_tokens": 762
+       },
+       "text": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמָת."
       },
       {
        "draft": "1. to die, and so in all the Semitic lan-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "1. to die, and so in all the Semitic lan-",
+       "status": "agreed",
        "text": "1. to die, and so in all the Semitic lan-"
-      },
-      {
-       "draft": "guages; Arab. مات mid. Waw, Syr.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "guages; Arab. مات mid. Waw, Syr."
-      },
-      {
-       "draft": "ܡܺܝܬ. The middle radical ו, however,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ܡܺܝܬ. The middle radical ו, however,"
-      },
-      {
-       "draft": "seems to be softened down from the liquid",
-       "reread": null,
-       "status": "draft_only",
-       "text": "seems to be softened down from the liquid"
-      },
-      {
-       "draft": "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary"
-      },
-      {
-       "draft": "root is probably mrt, comp. Sanscr. mri",
-       "reread": null,
-       "status": "draft_only",
-       "text": "root is probably mrt, comp. Sanscr. mri"
-      },
-      {
-       "draft": "to die, mrita dead, mrityu death, also",
-       "reread": null,
-       "status": "draft_only",
-       "text": "to die, mrita dead, mrityu death, also"
-      },
-      {
-       "draft": "mâth, muth, mith, mêth, mid, mêd, to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "mâth, muth, mith, mêth, mid, mêd, to"
-      },
-      {
-       "draft": "kill; Malay mita to kill and to die; Zend.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "kill; Malay mita to kill and to die; Zend."
-      },
-      {
-       "draft": "mreté, mereté, Pehlv. murdéh, mard, mor-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "mreté, mereté, Pehlv. murdéh, mard, mor-"
       }
      ]
     },
@@ -847,8 +1135,63 @@
      "image_sha256": "d2e420037b970eab5a449c4b4c917ec82334fca05fb7e0f9d84fdf7111a5d5f6",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"05a985a5-1d19-4811-9af4-b32a40d1a9c6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "guages; Arab. مات mid. Waw, Syr.",
+       "ܡܺܝܬ. The middle radical ו, however,",
+       "seems to be softened down from the liquid",
+       "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba564e03-4992-46d3-93c5-392e0f2774c8",
+      "duration_api_ms": 10174,
+      "cost_usd_list": 0.084111,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2767,
+      "output_tokens": 551
+     },
+     "lines": [
+      {
+       "draft": "guages; Arab. مات mid. Waw, Syr.",
+       "reread": "guages; Arab. مات mid. Waw, Syr.",
+       "status": "agreed",
+       "text": "guages; Arab. مات mid. Waw, Syr."
+      },
+      {
+       "draft": "ܡܺܝܬ. The middle radical ו, however,",
+       "reread": "ܡܺܝܬ. The middle radical ו, however,",
+       "status": "agreed",
+       "text": "ܡܺܝܬ. The middle radical ו, however,"
+      },
+      {
+       "draft": "seems to be softened down from the liquid",
+       "reread": "seems to be softened down from the liquid",
+       "status": "agreed",
+       "text": "seems to be softened down from the liquid"
+      },
+      {
+       "draft": "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary",
+       "reread": "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary",
+        "verdict": "b",
+        "note": "Printed order after \"comp.\" is דָּרַשׁ first (left), then דּוּשׁ (right, before the semicolon); Reading A reverses the two items. Vowel points, dagesh and shin dots on both words are as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9d363c84-42f0-4ffe-87a2-ed067b8ef204",
+        "duration_api_ms": 8254,
+        "cost_usd_list": 0.08032475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3539,
+        "cache_creation_input_tokens": 2710,
+        "output_tokens": 498
+       },
+       "text": "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary"
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b02",
@@ -863,8 +1206,48 @@
      "image_sha256": "fe16133bc8919dd44fcca0f8bc18d2b6337355ed6ec3b500c218b62112f4a914",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0a383cb5-a0b8-463b-9569-a52a4e8704e2\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "root is probably mrt, comp. Sanscr. mri",
+       "to die, mrita dead, mrityu death, also",
+       "mâth, muth, mith, mêth, mid, mêd, to",
+       "kill; Malay mita to kill and to die; Zend."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b2b0f2b2-467e-481f-b98a-eab0ab6673a3",
+      "duration_api_ms": 9413,
+      "cost_usd_list": 0.066991,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2641,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "root is probably mrt, comp. Sanscr. mri",
+       "reread": "root is probably mrt, comp. Sanscr. mri",
+       "status": "agreed",
+       "text": "root is probably mrt, comp. Sanscr. mri"
+      },
+      {
+       "draft": "to die, mrita dead, mrityu death, also",
+       "reread": "to die, mrita dead, mrityu death, also",
+       "status": "agreed",
+       "text": "to die, mrita dead, mrityu death, also"
+      },
+      {
+       "draft": "mâth, muth, mith, mêth, mid, mêd, to",
+       "reread": "mâth, muth, mith, mêth, mid, mêd, to",
+       "status": "agreed",
+       "text": "mâth, muth, mith, mêth, mid, mêd, to"
+      },
+      {
+       "draft": "kill; Malay mita to kill and to die; Zend.",
+       "reread": "kill; Malay mita to kill and to die; Zend.",
+       "status": "agreed",
+       "text": "kill; Malay mita to kill and to die; Zend."
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b03",
@@ -879,8 +1262,27 @@
      "image_sha256": "fb2c998f47b9f39e960f695b49f5090f67b0c257338eb80e592a279a46ff3dfb",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"38551ed7-311a-46a4-91ce-556ea0f17db8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "mreté, mereté, Pehlv. murdéh, mard, mor-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "663b7235-bdda-4393-ad76-045ca4d91f98",
+      "duration_api_ms": 12964,
+      "cost_usd_list": 0.049071000000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 1885,
+      "output_tokens": 203
+     },
+     "lines": [
+      {
+       "draft": "mreté, mereté, Pehlv. murdéh, mard, mor-",
+       "reread": "mreté, mereté, Pehlv. murdéh, mard, mor-",
+       "status": "agreed",
+       "text": "mreté, mereté, Pehlv. murdéh, mard, mor-"
+      }
+     ]
     }
    ]
   },
@@ -925,98 +1327,46 @@
      "image_sha256": "e49958763433e8d677186d913d9101293a40b7ab527670556dc1f9492c948fe5",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"7bde0a9f-ca18-4fba-8683-4aa8efef15ed\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "tal, man; Pers. مردن to die, Gr. μορ-",
+       "τός i. q. βροτός, Lat. mors, mortis, Morta",
+       "in Liv. Andr. Germ. Mord, in old Germ.",
+       "used not only of killing but also for death,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4cf5bf16-d980-4692-bd91-eed274c9d550",
+      "duration_api_ms": 14951,
+      "cost_usd_list": 0.06743125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 267
      },
      "lines": [
       {
        "draft": "tal, man; Pers. مردن to die, Gr. μορ-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "tal, man; Pers. مردن to die, Gr. μορ-",
+       "status": "agreed",
        "text": "tal, man; Pers. مردن to die, Gr. μορ-"
       },
       {
        "draft": "τός i. q. βροτός, Lat. mors, mortis, Morta",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "τός i. q. βροτός, Lat. mors, mortis, Morta",
+       "status": "agreed",
        "text": "τός i. q. βροτός, Lat. mors, mortis, Morta"
       },
       {
        "draft": "in Liv. Andr. Germ. Mord, in old Germ.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "in Liv. Andr. Germ. Mord, in old Germ.",
+       "status": "agreed",
        "text": "in Liv. Andr. Germ. Mord, in old Germ."
       },
       {
        "draft": "used not only of killing but also for death,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "used not only of killing but also for death,",
+       "status": "agreed",
        "text": "used not only of killing but also for death,"
-      },
-      {
-       "draft": "Engl. murder.—Spoken of the death of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Engl. murder.—Spoken of the death of"
-      },
-      {
-       "draft": "men or animals, Ex. 11, 5. Ecc. 9, 4;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "men or animals, Ex. 11, 5. Ecc. 9, 4;"
-      },
-      {
-       "draft": "both natural Gen. 5, 8. 11. 14. 17. 20. 27.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "both natural Gen. 5, 8. 11. 14. 17. 20. 27."
-      },
-      {
-       "draft": "31. al. sæpiss. and violent Ex. 21, 12.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "31. al. sæpiss. and violent Ex. 21, 12."
-      },
-      {
-       "draft": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job",
-       "reread": null,
-       "status": "draft_only",
-       "text": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job"
-      },
-      {
-       "draft": "1, 19. al. The instrument or cause of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1, 19. al. The instrument or cause of"
-      },
-      {
-       "draft": "death is put usually with בְּ, Num. 35, 17.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "death is put usually with בְּ, Num. 35, 17."
-      },
-      {
-       "draft": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am."
-      },
-      {
-       "draft": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,"
-      },
-      {
-       "draft": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד",
-       "reread": null,
-       "status": "draft_only",
-       "text": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד"
-      },
-      {
-       "draft": "of the hail-stones than, etc. Judg. 15, 18",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of the hail-stones than, etc. Judg. 15, 18"
       }
      ]
     },
@@ -1033,8 +1383,48 @@
      "image_sha256": "1db362148c2866953ae9fffb5135e47967e1ffe5a0a0435599cc13da3c4223d1",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a789df79-d92d-4cd2-a058-deb0ee53f9f6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Engl. murder.—Spoken of the death of",
+       "men or animals, Ex. 11, 5. Ecc. 9, 4;",
+       "both natural Gen. 5, 8. 11. 14. 17. 20. 27.",
+       "31. al. sæpiss. and violent Ex. 21, 12."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7320e416-3387-4930-b13c-a038d9a5b8c8",
+      "duration_api_ms": 5358,
+      "cost_usd_list": 0.06793125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "Engl. murder.—Spoken of the death of",
+       "reread": "Engl. murder.—Spoken of the death of",
+       "status": "agreed",
+       "text": "Engl. murder.—Spoken of the death of"
+      },
+      {
+       "draft": "men or animals, Ex. 11, 5. Ecc. 9, 4;",
+       "reread": "men or animals, Ex. 11, 5. Ecc. 9, 4;",
+       "status": "agreed",
+       "text": "men or animals, Ex. 11, 5. Ecc. 9, 4;"
+      },
+      {
+       "draft": "both natural Gen. 5, 8. 11. 14. 17. 20. 27.",
+       "reread": "both natural Gen. 5, 8. 11. 14. 17. 20. 27.",
+       "status": "agreed",
+       "text": "both natural Gen. 5, 8. 11. 14. 17. 20. 27."
+      },
+      {
+       "draft": "31. al. sæpiss. and violent Ex. 21, 12.",
+       "reread": "31. al. sæpiss. and violent Ex. 21, 12.",
+       "status": "agreed",
+       "text": "31. al. sæpiss. and violent Ex. 21, 12."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -1049,8 +1439,48 @@
      "image_sha256": "4dbcea0d4774f91aa0c88e2813a63b80ea74080df3fc5bf0c9d9f18ef5e9087f",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c70970c8-dd1d-4059-afe6-5160e3f86c0c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job",
+       "1, 19. al. The instrument or cause of",
+       "death is put usually with בְּ, Num. 35, 17.",
+       "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "444767a5-6c2d-46c2-8bbf-58da2f88c910",
+      "duration_api_ms": 6040,
+      "cost_usd_list": 0.06823125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 283
+     },
+     "lines": [
+      {
+       "draft": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job",
+       "reread": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job",
+       "status": "agreed",
+       "text": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job"
+      },
+      {
+       "draft": "1, 19. al. The instrument or cause of",
+       "reread": "1, 19. al. The instrument or cause of",
+       "status": "agreed",
+       "text": "1, 19. al. The instrument or cause of"
+      },
+      {
+       "draft": "death is put usually with בְּ, Num. 35, 17.",
+       "reread": "death is put usually with בְּ, Num. 35, 17.",
+       "status": "agreed",
+       "text": "death is put usually with בְּ, Num. 35, 17."
+      },
+      {
+       "draft": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am.",
+       "reread": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am.",
+       "status": "agreed",
+       "text": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b03",
@@ -1065,8 +1495,41 @@
      "image_sha256": "056f052ceb6ec2807396791ccaf3f9519d9048a1aa44c7feee9008c582533b1f",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2c322b98-7c97-4eaf-8fa3-b5fee42ac409\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,",
+       "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד",
+       "of the hail-stones than, etc. Judg. 15, 18"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fdac119c-e667-4ac5-8aef-66b9a7c4d5a8",
+      "duration_api_ms": 6801,
+      "cost_usd_list": 0.06274125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2391,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,",
+       "reread": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,",
+       "status": "agreed",
+       "text": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,"
+      },
+      {
+       "draft": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד",
+       "reread": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד",
+       "status": "agreed",
+       "text": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד"
+      },
+      {
+       "draft": "of the hail-stones than, etc. Judg. 15, 18",
+       "reread": "of the hail-stones than, etc. Judg. 15, 18",
+       "status": "agreed",
+       "text": "of the hail-stones than, etc. Judg. 15, 18"
+      }
+     ]
     }
    ]
   },
@@ -1111,98 +1574,46 @@
      "image_sha256": "8f5530a7ea57f90db427e90e18775c12017493103a051726f235f6d7a52e79d4",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2f55142c-bfdb-4a4c-81d8-10ab01af3814\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "אָמוּת בַּצָּמָא I die of thirst. Ez. 5, 12 ;",
+       "also מִפְּנֵי Jer. 38, 9.—Freq. is the phrase",
+       "מוֹת יָמוּת dying he shall die, i. e. he shall",
+       "surely die, Gen. 2, 17. 3, 4. 20, 7. 1 Sam."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e547ee8d-850d-4622-adab-81859201619f",
+      "duration_api_ms": 7608,
+      "cost_usd_list": 0.07708125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 460
      },
      "lines": [
       {
        "draft": "אָמוּת בַּצָּמָא I die of thirst. Ez. 5, 12 ;",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "אָמוּת בַּצָּמָא I die of thirst. Ez. 5, 12 ;",
+       "status": "agreed",
        "text": "אָמוּת בַּצָּמָא I die of thirst. Ez. 5, 12;"
       },
       {
        "draft": "also מִפְּנֵי Jer. 38, 9.—Freq. is the phrase",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "also מִפְּנֵי Jer. 38, 9.—Freq. is the phrase",
+       "status": "agreed",
        "text": "also מִפְּנֵי Jer. 38, 9.—Freq. is the phrase"
       },
       {
        "draft": "מוֹת יָמוּת dying he shall die, i. e. he shall",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "מוֹת יָמוּת dying he shall die, i. e. he shall",
+       "status": "agreed",
        "text": "מוֹת יָמוּת dying he shall die, i. e. he shall"
       },
       {
        "draft": "surely die, Gen. 2, 17. 3, 4. 20, 7. 1 Sam.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "surely die, Gen. 2, 17. 3, 4. 20, 7. 1 Sam.",
+       "status": "agreed",
        "text": "surely die, Gen. 2, 17. 3, 4. 20, 7. 1 Sam."
-      },
-      {
-       "draft": "14, 39. 44. 2 Sam. 12, 14. al. Slightly",
-       "reread": null,
-       "status": "draft_only",
-       "text": "14, 39. 44. 2 Sam. 12, 14. al. Slightly"
-      },
-      {
-       "draft": "different is the phrase מוֹת יוּמַת with fut.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "different is the phrase מוֹת יוּמַת with fut."
-      },
-      {
-       "draft": "Hoph. he shall surely be put to death,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Hoph. he shall surely be put to death,"
-      },
-      {
-       "draft": "used in the Mosaic law to denote punish-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "used in the Mosaic law to denote punish-"
-      },
-      {
-       "draft": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,"
-      },
-      {
-       "draft": "2. 9 sq. 27, 29. Num. 15, 35. al. Also",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. 9 sq. 27, 29. Num. 15, 35. al. Also"
-      },
-      {
-       "draft": "חָלָה לָמוּת to be sick unto death, 2 K. 20,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "חָלָה לָמוּת to be sick unto death, 2 K. 20,"
-      },
-      {
-       "draft": "1. 2 Chr. 32, 24 ; and hyperbol. Judg. 16,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1. 2 Chr. 32, 24; and hyperbol. Judg. 16,"
-      },
-      {
-       "draft": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed",
-       "reread": null,
-       "status": "draft_only",
-       "text": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed"
-      },
-      {
-       "draft": "unto death, impatient.—Trop. the heart",
-       "reread": null,
-       "status": "draft_only",
-       "text": "unto death, impatient.—Trop. the heart"
-      },
-      {
-       "draft": "of any one is said to die, i. e. to faint, to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of any one is said to die, i. e. to faint, to"
       }
      ]
     },
@@ -1219,8 +1630,63 @@
      "image_sha256": "cbee41f35d633082bee1d1526de832f0684aee0ff0686b80876c6d7e9ac94cb5",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"34484533-eabf-4ed2-b5bd-bce937d41012\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "14, 39. 44.  2 Sam. 12, 14. al.  Slightly",
+       "different is the phrase מוֹת יוּמָת with fut.",
+       "Hoph. he shall surely be put to death,",
+       "used in the Mosaic law to denote punish-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d4e31ab7-5e67-48b0-9655-9129c24bd979",
+      "duration_api_ms": 14607,
+      "cost_usd_list": 0.06997125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 343
+     },
+     "lines": [
+      {
+       "draft": "14, 39. 44. 2 Sam. 12, 14. al. Slightly",
+       "reread": "14, 39. 44.  2 Sam. 12, 14. al.  Slightly",
+       "status": "agreed",
+       "text": "14, 39. 44. 2 Sam. 12, 14. al. Slightly"
+      },
+      {
+       "draft": "different is the phrase מוֹת יוּמַת with fut.",
+       "reread": "different is the phrase מוֹת יוּמָת with fut.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "different is the phrase מוֹת יוּמָת with fut.",
+        "verdict": "b",
+        "note": "Under the mem of יוּמָת the printed vowel has a small vertical stem below the horizontal bar — a qamets, not a flat patach. Reading B is correct (standard Hophal יוּמָת); everything else in the line is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e1720c54-219e-4f4b-818c-62471783ddf2",
+        "duration_api_ms": 12072,
+        "cost_usd_list": 0.0770205,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3522,
+        "cache_creation_input_tokens": 2505,
+        "output_tokens": 514
+       },
+       "text": "different is the phrase מוֹת יוּמָת with fut."
+      },
+      {
+       "draft": "Hoph. he shall surely be put to death,",
+       "reread": "Hoph. he shall surely be put to death,",
+       "status": "agreed",
+       "text": "Hoph. he shall surely be put to death,"
+      },
+      {
+       "draft": "used in the Mosaic law to denote punish-",
+       "reread": "used in the Mosaic law to denote punish-",
+       "status": "agreed",
+       "text": "used in the Mosaic law to denote punish-"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1235,8 +1701,48 @@
      "image_sha256": "5f26e017e50db5e3b14ac4adfc839c243ee547cc5e653159887ea027d7841f3d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6059cdaf-283f-46ec-83e1-aee6a23e6fd0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,",
+       "2. 9 sq. 27, 29. Num. 15, 35. al. Also",
+       "חָלָה לָמוּת to be sick unto death, 2 K. 20,",
+       "1. 2 Chr. 32, 24; and hyperbol. Judg. 16,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "55eb3eee-bbaf-4d9f-8c1f-ae2939b8354a",
+      "duration_api_ms": 16681,
+      "cost_usd_list": 0.06908125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 300
+     },
+     "lines": [
+      {
+       "draft": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,",
+       "reread": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,",
+       "status": "agreed",
+       "text": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,"
+      },
+      {
+       "draft": "2. 9 sq. 27, 29. Num. 15, 35. al. Also",
+       "reread": "2. 9 sq. 27, 29. Num. 15, 35. al. Also",
+       "status": "agreed",
+       "text": "2. 9 sq. 27, 29. Num. 15, 35. al. Also"
+      },
+      {
+       "draft": "חָלָה לָמוּת to be sick unto death, 2 K. 20,",
+       "reread": "חָלָה לָמוּת to be sick unto death, 2 K. 20,",
+       "status": "agreed",
+       "text": "חָלָה לָמוּת to be sick unto death, 2 K. 20,"
+      },
+      {
+       "draft": "1. 2 Chr. 32, 24 ; and hyperbol. Judg. 16,",
+       "reread": "1. 2 Chr. 32, 24; and hyperbol. Judg. 16,",
+       "status": "agreed",
+       "text": "1. 2 Chr. 32, 24; and hyperbol. Judg. 16,"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b03",
@@ -1251,8 +1757,41 @@
      "image_sha256": "cb59a51054eac4d9186341820a5ebf872ece6f22a3b01c4f49eab46f33dea297",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a0258e32-8afd-4cd9-9f34-cd28054ae3ae\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed",
+       "unto death, impatient.—Trop. the heart",
+       "of any one is said to die, i. e. to faint, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "57b01323-25af-4a78-962f-60838c3fb699",
+      "duration_api_ms": 20909,
+      "cost_usd_list": 0.07019125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2391,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed",
+       "reread": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed",
+       "status": "agreed",
+       "text": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed"
+      },
+      {
+       "draft": "unto death, impatient.—Trop. the heart",
+       "reread": "unto death, impatient.—Trop. the heart",
+       "status": "agreed",
+       "text": "unto death, impatient.—Trop. the heart"
+      },
+      {
+       "draft": "of any one is said to die, i. e. to faint, to",
+       "reread": "of any one is said to die, i. e. to faint, to",
+       "status": "agreed",
+       "text": "of any one is said to die, i. e. to faint, to"
+      }
+     ]
     }
    ]
   },
@@ -1292,68 +1831,46 @@
      "image_sha256": "c725feb4c0022723c81dd2f3dceef9f725ee8b221fa45e5d86d2cce0d83c090d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e25040db-fe0d-4306-a393-ef2ce3e07070\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "fail, 1 Sam. 25, 37 ; comp. opp. חָיָה",
+       "Gen. 45, 27. Judg. 15, 19. So the trunk",
+       "of a tree Job 14, 8, comp. הָרַג ; or land",
+       "untilled, Gen. 47, 19 why should we die,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ec4aaa62-f5d6-4e5a-bcee-3ee3e7e62f58",
+      "duration_api_ms": 12215,
+      "cost_usd_list": 0.08832125000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 710
      },
      "lines": [
       {
        "draft": "fail, 1 Sam. 25, 37; comp. opp. חָיָה",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "fail, 1 Sam. 25, 37 ; comp. opp. חָיָה",
+       "status": "agreed",
        "text": "fail, 1 Sam. 25, 37; comp. opp. חָיָה"
       },
       {
        "draft": "Gen. 45, 27. Judg. 15, 19. So the trunk",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Gen. 45, 27. Judg. 15, 19. So the trunk",
+       "status": "agreed",
        "text": "Gen. 45, 27. Judg. 15, 19. So the trunk"
       },
       {
        "draft": "of a tree Job 14, 8, comp. הָרַג ; or land",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "of a tree Job 14, 8, comp. הָרַג ; or land",
+       "status": "agreed",
        "text": "of a tree Job 14, 8, comp. הָרַג; or land"
       },
       {
        "draft": "untilled, Gen. 47, 19 why should we die,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "untilled, Gen. 47, 19 why should we die,",
+       "status": "agreed",
        "text": "untilled, Gen. 47, 19 why should we die,"
-      },
-      {
-       "draft": "we and our land, which is afterwards",
-       "reread": null,
-       "status": "draft_only",
-       "text": "we and our land, which is afterwards"
-      },
-      {
-       "draft": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp."
-      },
-      {
-       "draft": "Arab. مات inculta, sterilis, deserta fuit",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Arab. مات inculta, sterilis, deserta fuit"
-      },
-      {
-       "draft": "terra, Kor. 2. 159. ib. 25. 51. ib. 29.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "terra, Kor. 2. 159. ib. 25. 51. ib. 29."
-      },
-      {
-       "draft": "63.—Spoken ironically Job 12, 2 עִמָּכֶם",
-       "reread": null,
-       "status": "draft_only",
-       "text": "63.—Spoken ironically Job 12, 2 עִמָּכֶם"
-      },
-      {
-       "draft": "תָּמוּת חָכְמָה wisdom will die with you.—",
-       "reread": null,
-       "status": "draft_only",
-       "text": "תָּמוּת חָכְמָה wisdom will die with you.—"
       }
      ]
     },
@@ -1370,8 +1887,63 @@
      "image_sha256": "bc2000bf89ef79c0aa74422d1fcb78a6b5412bd24f819d2ac887176fb3bd3ba9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"eabc0748-1e0e-40ee-a44d-5b875e95e786\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "we and our land, which is afterwards",
+       "explained by וְהָאֲדָמָה לֹא תֵשַּׁם. Comp.",
+       "Arab. مات inculta, sterilis, deserta fuit",
+       "terra, Kor. 2. 159. ib. 25. 51. ib. 29."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8ad3ca2c-04fd-458b-807c-952cfbd9dbc2",
+      "duration_api_ms": 19571,
+      "cost_usd_list": 0.09857125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 915
+     },
+     "lines": [
+      {
+       "draft": "we and our land, which is afterwards",
+       "reread": "we and our land, which is afterwards",
+       "status": "agreed",
+       "text": "we and our land, which is afterwards"
+      },
+      {
+       "draft": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp.",
+       "reread": "explained by וְהָאֲדָמָה לֹא תֵשַּׁם. Comp.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp.",
+        "verdict": "a",
+        "note": "Under the shin of תֵשָׁם the print shows a qamets (T-shaped, with a tail), not a flat patach, and there is no dagesh in the shin — only the shin dot above; this matches Gen. 47:19 niphal תֵשָׁם. Reading B's patach + dagesh is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f581f6fa-f649-4f37-b74d-1367a9f5af86",
+        "duration_api_ms": 20674,
+        "cost_usd_list": 0.09433625000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3545,
+        "cache_creation_input_tokens": 2528,
+        "output_tokens": 851
+       },
+       "text": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp."
+      },
+      {
+       "draft": "Arab. مات inculta, sterilis, deserta fuit",
+       "reread": "Arab. مات inculta, sterilis, deserta fuit",
+       "status": "agreed",
+       "text": "Arab. مات inculta, sterilis, deserta fuit"
+      },
+      {
+       "draft": "terra, Kor. 2. 159. ib. 25. 51. ib. 29.",
+       "reread": "terra, Kor. 2. 159. ib. 25. 51. ib. 29.",
+       "status": "agreed",
+       "text": "terra, Kor. 2. 159. ib. 25. 51. ib. 29."
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1386,8 +1958,49 @@
      "image_sha256": "d6c4151a21119827a2cf69a7c8fd439f178084e18551391833eac6de3dbd91e4",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e76ac9f9-fda0-4ea3-b467-12c6d3064bd1\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "63.—Spoken ironically Job 12, 2 עִמְּכֶם",
+       "תָּמוּת חָכְמָה wisdom will die with you.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fa2d99cf-019b-4b97-b1c9-237864ac6f15",
+      "duration_api_ms": 14344,
+      "cost_usd_list": 0.06956125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2202,
+      "output_tokens": 486
+     },
+     "lines": [
+      {
+       "draft": "63.—Spoken ironically Job 12, 2 עִמָּכֶם",
+       "reread": "63.—Spoken ironically Job 12, 2 עִמְּכֶם",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "63.—Spoken ironically Job 12, 2 עִמָּכֶם",
+        "verdict": "a",
+        "note": "Under the mem the print shows a qamets (T-shaped bar with a stem), not a shewa (two vertical dots); the dagesh in mem is also printed. Reading A matches.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "72b6ca03-72ae-441d-b571-cd14e400f7b5",
+        "duration_api_ms": 6812,
+        "cost_usd_list": 0.064844,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3536,
+        "cache_creation_input_tokens": 2141,
+        "output_tokens": 416
+       },
+       "text": "63.—Spoken ironically Job 12, 2 עִמָּכֶם"
+      },
+      {
+       "draft": "תָּמוּת חָכְמָה wisdom will die with you.—",
+       "reread": "תָּמוּת חָכְמָה wisdom will die with you.—",
+       "status": "agreed",
+       "text": "תָּמוּת חָכְמָה wisdom will die with you.—"
+      }
+     ]
     }
    ]
   }
@@ -1397,965 +2010,704 @@
    "chunk_id": "header",
    "column": -1,
    "text": "מוּשׁ 550 מוּת",
-   "status": "draft_only",
-   "draft": "מוּשׁ 550 מוּת",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "* I. מוּשׁ 1. to give way, to recede,",
-   "status": "draft_only",
-   "draft": "* I. מוּשׁ 1. to give way, to recede,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "to depart; absol. Is. 22, 25. 54, 10;",
-   "status": "draft_only",
-   "draft": "to depart; absol. Is. 22, 25. 54, 10;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "with acc. of place whither, Zech. 14, 4;",
-   "status": "draft_only",
-   "draft": "with acc. of place whither, Zech. 14, 4;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "מִן of place whence, Num. 14, 44. Judg.",
-   "status": "draft_only",
-   "draft": "מִן of place whence, Num. 14, 44. Judg.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "6, 18. Josh. 1, 8. Is. 59, 21; מֵאֵת id. Is.",
-   "status": "draft_only",
-   "draft": "6, 18. Josh. 1, 8. Is. 59, 21; מֵאֵת id. Is.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "54, 10; מִלִּפְנֵי of pers. Jer. 31, 36.—Not",
-   "status": "draft_only",
-   "draft": "54, 10; מִלִּפְנֵי of pers. Jer. 31, 36.—Not",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "found in the kindred dialects.",
-   "status": "draft_only",
-   "draft": "found in the kindred dialects.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "2. Causat. to put away, to remove,",
-   "status": "draft_only",
-   "draft": "2. Causat. to put away, to remove,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Zech. 3, 9.",
-   "status": "draft_only",
-   "draft": "Zech. 3, 9.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Hiph. 1. Trans. to let remove, to let",
-   "status": "draft_only",
-   "draft": "Hiph. 1. Trans. to let remove, to let",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "go, e. g. prey, Nah. 3, 1; to withdraw",
-   "status": "draft_only",
-   "draft": "go, e. g. prey, Nah. 3, 1 ; to withdraw",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "from, c. מִן, Mic. 2, 3 from which ye",
-   "status": "draft_only",
-   "draft": "from, c. מִן, Mic. 2, 3 from which ye",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "shall not withdraw your necks. v. 4.",
-   "status": "draft_only",
-   "draft": "shall not withdraw your necks. v. 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "2. More frequently i. q. Kal, to give",
-   "status": "draft_only",
-   "draft": "2. More frequently i. q. Kal, to give",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "way, to withdraw, to depart, absol. Ex.",
-   "status": "draft_only",
-   "draft": "way, to withdraw, to depart, absol. Ex.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "13, 22. Job 23, 12; with מִן of place, Ex.",
-   "status": "draft_only",
-   "draft": "13, 22. Job 23, 12 ; with מִן of place, Ex.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12;",
-   "status": "draft_only",
-   "draft": "33, 11. Prov. 17, 13 Cheth. Ps. 55, 12 ;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
-   "status": "draft_only",
+   "text": "מִן c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
+   "status": "adjudicated",
    "draft": "c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
-   "reread": null,
-   "needs_review": true
+   "reread": "מִן c. inf. Jer. 17, 8 וְלֹא יָמִישׁ מֵעֲשׂוֹת פֶּרִי",
+   "verdict": "b",
+   "note": "The line begins with a printed מִן (hireq under mem, final nun) at the far left before \"c. inf.\"; Reading A omits it. The Hebrew citation is otherwise identical in both readings and matches the print (וְלֹא, יָמִישׁ, מֵעֲשׂוֹת with sin dot, פֶּרִי with dagesh and segol).",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "and doth not withdraw (cease) from",
-   "status": "draft_only",
-   "draft": "and doth not withdraw (cease) from",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "yielding fruit.",
-   "status": "draft_only",
-   "draft": "yielding fruit.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,",
-   "status": "draft_only",
-   "draft": "* II. מוּשׁ i. q. מָשַׁשׁ and יָמַשׁ, to feel,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "to touch, to try by the touch, Gen. 27, 21.",
-   "status": "draft_only",
-   "draft": "to touch, to try by the touch, Gen. 27, 21.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Hiph. id. Ps. 115, 7. Judg. 16, 26",
-   "status": "draft_only",
-   "draft": "Hiph. id. Ps. 115, 7. Judg. 16, 26",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Keri.",
-   "status": "draft_only",
-   "draft": "Keri.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Deriv. pr. n. מוּשִׁי.",
-   "status": "draft_only",
-   "draft": "Deriv. pr. n. מוּשִׁי.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "מוֹשָׁב m. (r. יָשַׁב) constr. מוֹשַׁב, c. suff.",
-   "status": "draft_only",
-   "draft": "מוֹשָׁב m. (r. יָשַׁב) constr. מוֹשַׁב, c. suff.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "מוֹשָׁבִי; plur. constr. מוֹשְׁבוֹת, once מוֹשְׁבֵי",
-   "status": "draft_only",
-   "draft": "מוֹשָׁבִי; plur. constr. מוֹשְׁבוֹת, once מוֹשְׁבֵי",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Ez. 34, 13.",
-   "status": "draft_only",
-   "draft": "Ez. 34, 13.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "1. a seat, 1 Sam. 20, 18. 25. Job 29,",
-   "status": "draft_only",
-   "draft": "1. a seat, 1 Sam. 20, 18. 25. Job 29,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "7. Of things, as a city, seat, i. e. site,",
-   "status": "draft_only",
-   "draft": "7. Of things, as a city, seat, i. e. site,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "situation, 2 K. 2, 19.",
-   "status": "draft_only",
-   "draft": "situation, 2 K. 2, 19.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "2. a sitting, session, an assembly of",
-   "status": "draft_only",
-   "draft": "2. a sitting, session, an assembly of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "persons sitting together, Ps. 1, 1. 107,",
-   "status": "draft_only",
-   "draft": "persons sitting together, Ps. 1, 1. 107,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "32.",
-   "status": "draft_only",
-   "draft": "32.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "3. seat, dwelling, Gen. 27, 39. Num.",
-   "status": "draft_only",
-   "draft": "3. seat, dwelling, Gen. 27, 39. Num.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב",
-   "status": "draft_only",
-   "draft": "24, 21. 1 K. 10, 5. Ps. 132, 13. בֵּית־מוֹשָׁב",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב",
-   "status": "draft_only",
-   "draft": "a dwelling-house, Lev. 25, 19. עִיר מוֹשָׁב",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "a city of dwelling, to dwell in, Ps. 107, 4.",
-   "status": "draft_only",
-   "draft": "a city of dwelling, to dwell in, Ps. 107, 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "7. Meton. a time of abode, Ex. 12, 40.",
-   "status": "draft_only",
-   "draft": "7. Meton. a time of abode, Ex. 12, 40.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Concr. dwellers, inhabitants, 2 Sam. 9,",
-   "status": "draft_only",
-   "draft": "Concr. dwellers, inhabitants, 2 Sam. 9,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "12 כֹּל־מוֹשַׁב בֵּית צִיבָא.",
-   "reread": null,
-   "needs_review": true
+   "reread": "12 כָּל־מוֹשַׁב בֵּית צִיבָא.",
+   "verdict": "a",
+   "note": "The kaf carries a dot printed above it (holem) and a dagesh inside, with no qamets beneath — so כֹּל, not כָּל. All other points (שׁ shin dot, holem-vav, patah, tsere, hiriq, qamets) match both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "מוּשִׁי (prob. for מוּשִׁיָה felt out by Je-",
-   "status": "draft_only",
+   "text": "מוּשִׁי (prob. for מוּשִׁיָּה felt out by Je-",
+   "status": "adjudicated",
    "draft": "מוּשִׁי (prob. for מוּשִׁיָה felt out by Je-",
-   "reread": null,
-   "needs_review": true
+   "reread": "מוּשִׁי (prob. for מוּשִׁיָּה felt out by Je-",
+   "verdict": "b",
+   "note": "The decisive difference is the dagesh in the yod of the second word: the image shows a dot printed inside the yod of מוּשִׁיָּה (yod with dagesh + qamets), so Reading B is correct; Reading A omits it. All other characters, vowels, shureq and shin dots agree in both readings and match the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "hovah, r. מוּשׁ II) Mushi, pr. n. m. Ex. 6,",
-   "status": "draft_only",
-   "draft": "hovah, r. מוּשׁ II) Mushi, pr. n. m. Ex. 6,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "19. Num. 3, 20; defect. מֻשִׁי 1 Chr. 6, 4.",
-   "status": "draft_only",
-   "draft": "19. Num. 3, 20; defect. מֻשִׁי 1 Chr. 6, 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "—Patronym. also מוּשִׁי for מוּשִׁיִי Num.",
-   "status": "draft_only",
-   "draft": "—Patronym. also מוּשִׁי for מוּשִׁיִי Num.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "3, 33. 26, 58.",
-   "status": "draft_only",
-   "draft": "3, 33. 26, 58.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "מוֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
-   "reread": null,
-   "needs_review": true
+   "reread": "מֹשְׁכוֹת f. plur. (r. מָשַׁךְ) the drawers,",
+   "verdict": "a",
+   "note": "The headword is printed plene: a distinct vav stroke stands between the mem and the shin, carrying the holem (six letters מ-ו-ש-כ-ו-ת), so Reading A's מוֹשְׁכוֹת is correct and B's defective מֹשְׁכוֹת is not what is printed. The rest of the line is identical in both readings and matches the image.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "poet. for cords, bands, with which one is",
-   "status": "draft_only",
-   "draft": "poet. for cords, bands, with which one is",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "bound, Job 38, 31. Comp. Arab. مَسَكَة",
-   "status": "draft_only",
+   "text": "bound, Job 38, 31. Comp. Arab. مَسَكَةٌ",
+   "status": "adjudicated",
    "draft": "bound, Job 38, 31. Comp. Arab. مَسَكَة",
-   "reread": null,
+   "reread": "bound, Job 38, 31.   Comp. Arab. مَسَكَةٌ",
+   "verdict": "b",
+   "note": "The final tāʾ marbūṭa carries a clearly printed tanwīn (dammatan, the small hooked mark above the ة); Reading A omits it. Fatḥas on م, س, ك as in both readings.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "a fetter, from مسك firmiter tenuit.",
-   "status": "draft_only",
-   "draft": "a fetter, from مسك firmiter tenuit.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,",
-   "status": "draft_only",
-   "draft": "מוֹשָׁעוֹת f. plur. (r. יָשַׁע) deliverances,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Ps. 68. 21.",
-   "status": "draft_only",
-   "draft": "Ps. 68. 21.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,",
-   "status": "draft_only",
-   "draft": "* מוּת præt. מֵת, מַתִּי, plur. מֵתוּ,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "מַתְנוּ; inf. abs. מוֹת, constr. מוֹת; imper.",
-   "status": "draft_only",
+   "text": "מַתְנוּ; inf. abs. מוֹת, constr. מוּת; imper.",
+   "status": "adjudicated",
    "draft": "מַתְנוּ; inf. abs. מוֹת, constr. מוֹת; imper.",
-   "reread": null,
-   "needs_review": true
+   "reread": "מַתְנוּ; inf. abs. מוֹת, constr. מוּת; imper.",
+   "verdict": "b",
+   "note": "Decisive point is the vowel on the constr. form: in the inf. abs. the dot sits clearly above the vav (holem, מוֹת), whereas in the constr. form the dot sits lower, at the left of the vav's shaft (shureq, מוּת). Reading B matches the print; A wrongly repeats holem.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמֹת.",
-   "status": "draft_only",
+   "text": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמָת.",
+   "status": "adjudicated",
    "draft": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמֹת.",
-   "reread": null,
-   "needs_review": true
+   "reread": "מֻת; fut. יָמוּת, 3 pers. תָּמֹת, conv. וַיָּמָת.",
+   "verdict": "b",
+   "note": "Final word is printed וַיָּמָת with qamets under the mem; there is no holem dot above the mem (contrast the visible holem dot on תָּמֹת just before it).",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "1. to die, and so in all the Semitic lan-",
-   "status": "draft_only",
-   "draft": "1. to die, and so in all the Semitic lan-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "guages; Arab. مات mid. Waw, Syr.",
-   "status": "draft_only",
-   "draft": "guages; Arab. مات mid. Waw, Syr.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "ܡܺܝܬ. The middle radical ו, however,",
-   "status": "draft_only",
-   "draft": "ܡܺܝܬ. The middle radical ו, however,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "seems to be softened down from the liquid",
-   "status": "draft_only",
-   "draft": "seems to be softened down from the liquid",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary",
-   "status": "draft_only",
+   "text": "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary",
+   "status": "adjudicated",
    "draft": "ר, comp. דּוּשׁ, דָּרַשׁ; so that the primary",
-   "reread": null,
-   "needs_review": true
+   "reread": "ר, comp. דָּרַשׁ, דּוּשׁ; so that the primary",
+   "verdict": "b",
+   "note": "Printed order after \"comp.\" is דָּרַשׁ first (left), then דּוּשׁ (right, before the semicolon); Reading A reverses the two items. Vowel points, dagesh and shin dots on both words are as in Reading B.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "root is probably mrt, comp. Sanscr. mri",
-   "status": "draft_only",
-   "draft": "root is probably mrt, comp. Sanscr. mri",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "to die, mrita dead, mrityu death, also",
-   "status": "draft_only",
-   "draft": "to die, mrita dead, mrityu death, also",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "mâth, muth, mith, mêth, mid, mêd, to",
-   "status": "draft_only",
-   "draft": "mâth, muth, mith, mêth, mid, mêd, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "kill; Malay mita to kill and to die; Zend.",
-   "status": "draft_only",
-   "draft": "kill; Malay mita to kill and to die; Zend.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "mreté, mereté, Pehlv. murdéh, mard, mor-",
-   "status": "draft_only",
-   "draft": "mreté, mereté, Pehlv. murdéh, mard, mor-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "tal, man; Pers. مردن to die, Gr. μορ-",
-   "status": "draft_only",
-   "draft": "tal, man; Pers. مردن to die, Gr. μορ-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "τός i. q. βροτός, Lat. mors, mortis, Morta",
-   "status": "draft_only",
-   "draft": "τός i. q. βροτός, Lat. mors, mortis, Morta",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "in Liv. Andr. Germ. Mord, in old Germ.",
-   "status": "draft_only",
-   "draft": "in Liv. Andr. Germ. Mord, in old Germ.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "used not only of killing but also for death,",
-   "status": "draft_only",
-   "draft": "used not only of killing but also for death,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Engl. murder.—Spoken of the death of",
-   "status": "draft_only",
-   "draft": "Engl. murder.—Spoken of the death of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "men or animals, Ex. 11, 5. Ecc. 9, 4;",
-   "status": "draft_only",
-   "draft": "men or animals, Ex. 11, 5. Ecc. 9, 4;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "both natural Gen. 5, 8. 11. 14. 17. 20. 27.",
-   "status": "draft_only",
-   "draft": "both natural Gen. 5, 8. 11. 14. 17. 20. 27.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "31. al. sæpiss. and violent Ex. 21, 12.",
-   "status": "draft_only",
-   "draft": "31. al. sæpiss. and violent Ex. 21, 12.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job",
-   "status": "draft_only",
-   "draft": "15. Deut. 13, 10. 19, 11. 12. 21, 21. Job",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "1, 19. al. The instrument or cause of",
-   "status": "draft_only",
-   "draft": "1, 19. al. The instrument or cause of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "death is put usually with בְּ, Num. 35, 17.",
-   "status": "draft_only",
-   "draft": "death is put usually with בְּ, Num. 35, 17.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am.",
-   "status": "draft_only",
-   "draft": "18. 23; as בַּחֶרֶב Jer. 34, 4. 42, 17. Am.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,",
-   "status": "draft_only",
-   "draft": "9, 10; also Jer. 11, 21. 22. 21, 6. 2 Chr. 21,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד",
-   "status": "draft_only",
-   "draft": "19. al. Josh. 10, 11 more died בְּאַבְנֵי הַבָּרָד",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "of the hail-stones than, etc. Judg. 15, 18",
-   "status": "draft_only",
-   "draft": "of the hail-stones than, etc. Judg. 15, 18",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "אָמוּת בַּצָּמָא I die of thirst. Ez. 5, 12;",
-   "status": "draft_only",
-   "draft": "אָמוּת בַּצָּמָא I die of thirst. Ez. 5, 12 ;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "also מִפְּנֵי Jer. 38, 9.—Freq. is the phrase",
-   "status": "draft_only",
-   "draft": "also מִפְּנֵי Jer. 38, 9.—Freq. is the phrase",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "מוֹת יָמוּת dying he shall die, i. e. he shall",
-   "status": "draft_only",
-   "draft": "מוֹת יָמוּת dying he shall die, i. e. he shall",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "surely die, Gen. 2, 17. 3, 4. 20, 7. 1 Sam.",
-   "status": "draft_only",
-   "draft": "surely die, Gen. 2, 17. 3, 4. 20, 7. 1 Sam.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "14, 39. 44. 2 Sam. 12, 14. al. Slightly",
-   "status": "draft_only",
-   "draft": "14, 39. 44. 2 Sam. 12, 14. al. Slightly",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "different is the phrase מוֹת יוּמַת with fut.",
-   "status": "draft_only",
+   "text": "different is the phrase מוֹת יוּמָת with fut.",
+   "status": "adjudicated",
    "draft": "different is the phrase מוֹת יוּמַת with fut.",
-   "reread": null,
-   "needs_review": true
+   "reread": "different is the phrase מוֹת יוּמָת with fut.",
+   "verdict": "b",
+   "note": "Under the mem of יוּמָת the printed vowel has a small vertical stem below the horizontal bar — a qamets, not a flat patach. Reading B is correct (standard Hophal יוּמָת); everything else in the line is identical in both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Hoph. he shall surely be put to death,",
-   "status": "draft_only",
-   "draft": "Hoph. he shall surely be put to death,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "used in the Mosaic law to denote punish-",
-   "status": "draft_only",
-   "draft": "used in the Mosaic law to denote punish-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,",
-   "status": "draft_only",
-   "draft": "ment, Ex. 21, 12. 15 sq. 22, 18. Lev. 20,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "2. 9 sq. 27, 29. Num. 15, 35. al. Also",
-   "status": "draft_only",
-   "draft": "2. 9 sq. 27, 29. Num. 15, 35. al. Also",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "חָלָה לָמוּת to be sick unto death, 2 K. 20,",
-   "status": "draft_only",
-   "draft": "חָלָה לָמוּת to be sick unto death, 2 K. 20,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "1. 2 Chr. 32, 24; and hyperbol. Judg. 16,",
-   "status": "draft_only",
-   "draft": "1. 2 Chr. 32, 24 ; and hyperbol. Judg. 16,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed",
-   "status": "draft_only",
-   "draft": "16 קָצְרָה נַפְשׁוֹ לָמוּת his soul was vexed",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "unto death, impatient.—Trop. the heart",
-   "status": "draft_only",
-   "draft": "unto death, impatient.—Trop. the heart",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "of any one is said to die, i. e. to faint, to",
-   "status": "draft_only",
-   "draft": "of any one is said to die, i. e. to faint, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "fail, 1 Sam. 25, 37; comp. opp. חָיָה",
-   "status": "draft_only",
-   "draft": "fail, 1 Sam. 25, 37; comp. opp. חָיָה",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Gen. 45, 27. Judg. 15, 19. So the trunk",
-   "status": "draft_only",
-   "draft": "Gen. 45, 27. Judg. 15, 19. So the trunk",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "of a tree Job 14, 8, comp. הָרַג; or land",
-   "status": "draft_only",
-   "draft": "of a tree Job 14, 8, comp. הָרַג ; or land",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "untilled, Gen. 47, 19 why should we die,",
-   "status": "draft_only",
-   "draft": "untilled, Gen. 47, 19 why should we die,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "we and our land, which is afterwards",
-   "status": "draft_only",
-   "draft": "we and our land, which is afterwards",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "explained by וְהָאֲדָמָה לֹא תֵשָׁם. Comp.",
-   "reread": null,
-   "needs_review": true
+   "reread": "explained by וְהָאֲדָמָה לֹא תֵשַּׁם. Comp.",
+   "verdict": "a",
+   "note": "Under the shin of תֵשָׁם the print shows a qamets (T-shaped, with a tail), not a flat patach, and there is no dagesh in the shin — only the shin dot above; this matches Gen. 47:19 niphal תֵשָׁם. Reading B's patach + dagesh is wrong.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Arab. مات inculta, sterilis, deserta fuit",
-   "status": "draft_only",
-   "draft": "Arab. مات inculta, sterilis, deserta fuit",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "terra, Kor. 2. 159. ib. 25. 51. ib. 29.",
-   "status": "draft_only",
-   "draft": "terra, Kor. 2. 159. ib. 25. 51. ib. 29.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "63.—Spoken ironically Job 12, 2 עִמָּכֶם",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "63.—Spoken ironically Job 12, 2 עִמָּכֶם",
-   "reread": null,
-   "needs_review": true
+   "reread": "63.—Spoken ironically Job 12, 2 עִמְּכֶם",
+   "verdict": "a",
+   "note": "Under the mem the print shows a qamets (T-shaped bar with a stem), not a shewa (two vertical dots); the dagesh in mem is also printed. Reading A matches.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "תָּמוּת חָכְמָה wisdom will die with you.—",
-   "status": "draft_only",
-   "draft": "תָּמוּת חָכְמָה wisdom will die with you.—",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 0,
-  "adjudicated": 0,
-  "draft_only": 106,
+  "agreed": 95,
+  "adjudicated": 11,
+  "draft_only": 0,
   "reread_only": 0,
   "unresolved": 0,
-  "needs_review": 106
+  "needs_review": 1
  },
- "errors": 30,
- "cost_usd_list_total": 0.0
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.1398
 }

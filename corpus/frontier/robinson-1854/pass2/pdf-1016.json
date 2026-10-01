@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-09-24T12:16:54+00:00",
+ "generated_at": "2026-10-01T20:37:30+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -43,9 +43,27 @@
      "image_sha256": "8f6bfecd4025f828ccad34ac3fdbce866f1dbbd24de772a03bf2a2c0597e9d94",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c8d2a0ff-0a9a-46d3-a10b-4e80c2d2260b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "רחק 1000 שֹׁבֵב"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8d9bd33b-ec6e-4860-a1d4-79426de9496d",
+      "duration_api_ms": 4543,
+      "cost_usd_list": 0.012978,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 5352,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 232
      },
      "lines": [
+      {
+       "draft": null,
+       "reread": "רחק 1000 שֹׁבֵב",
+       "status": "reread_only",
+       "band_id": "header-b00",
+       "text": "רחק 1000 שֹׁבֵב"
+      },
       {
        "draft": "שׂבב 1000 רתק",
        "reread": null,
@@ -87,38 +105,76 @@
      "image_sha256": "09c353c5dcc229b0814559762ac88257b5bea8ffacf56ddcd0064eed6b3253f5",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"57c9ce65-0c3d-412a-ac29-19f5b4637034\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "נָתַק q. v. in Niph. no. 1.—Frigid is",
+       "Cheth. יְרֻחַק to be removed.",
+       "Pual רֻתַּק to be bound, Nah. 3, 10.",
+       "Deriv. רַתּוֹק and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3121a136-ab3c-4303-9b5f-9d4d8b79f481",
+      "duration_api_ms": 11041,
+      "cost_usd_list": 0.032738,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6392,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 616
      },
      "lines": [
       {
        "draft": "נִתַּק q. v. in Niph. no. 1.——Frigid is",
-       "reread": null,
-       "status": "draft_only",
-       "text": "נִתַּק q. v. in Niph. no. 1.——Frigid is"
+       "reread": "נָתַק q. v. in Niph. no. 1.—Frigid is",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "נָתַק q. v. in Niph. no. 1.—Frigid is",
+        "verdict": "b",
+        "note": "Under the nun is a qamets (bar with descending stem), not a hireq dot, and the tav has no dagesh; the dash before \"Frigid\" is a single em dash, not a doubled one. Reading B matches the print exactly.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "90fbcc3c-b842-4390-8040-eeb4822dd6ab",
+        "duration_api_ms": 12643,
+        "cost_usd_list": 0.08328225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3529,
+        "cache_creation_input_tokens": 2803,
+        "output_tokens": 520
+       },
+       "text": "נָתַק q. v. in Niph. no. 1.—Frigid is"
       },
       {
        "draft": "Cheth. יְרֻחַק to be removed.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Cheth. יְרֻחַק to be removed.",
+       "status": "agreed",
        "text": "Cheth. יְרֻחַק to be removed."
       },
       {
        "draft": "Pual רֻתַּק to be bound, Nah. 3, 10.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Pual רֻתַּק to be bound, Nah. 3, 10.",
+       "status": "agreed",
        "text": "Pual רֻתַּק to be bound, Nah. 3, 10."
       },
       {
        "draft": "Deriv. רָתוֹק and",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deriv. רָתוֹק and"
-      },
-      {
-       "draft": "רְתֻקוֹת f. plur. chains Is. 40, 19.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "רְתֻקוֹת f. plur. chains Is. 40, 19."
+       "reread": "Deriv. רַתּוֹק and",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "Deriv. רַתּוֹק and",
+        "verdict": "b",
+        "note": "The resh carries a single short horizontal stroke (patach), not a qamets with a descending tail, and a dagesh dot is printed inside the tav; this matches the lexicon's form רַתּוֹק \"chain\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "07d36f00-8ece-4649-8921-ec7511cba728",
+        "duration_api_ms": 8240,
+        "cost_usd_list": 0.07909625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3505,
+        "cache_creation_input_tokens": 2779,
+        "output_tokens": 446
+       },
+       "text": "Deriv. רַתּוֹק and"
       }
      ]
     },
@@ -135,8 +191,27 @@
      "image_sha256": "4bcf5016be5c8d2f1372289480b62d27cb08ca3c6108f051462888e20454e76d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d5accea0-0851-4e4e-b7b1-4830366ceb4a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "רְתֻקוֹת f. plur. chains Is. 40, 19."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6de69aa6-c607-4be2-bc06-3903cdd12a2c",
+      "duration_api_ms": 12407,
+      "cost_usd_list": 0.020762,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6888,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 374
+     },
+     "lines": [
+      {
+       "draft": "רְתֻקוֹת f. plur. chains Is. 40, 19.",
+       "reread": "רְתֻקוֹת f. plur. chains Is. 40, 19.",
+       "status": "agreed",
+       "text": "רְתֻקוֹת f. plur. chains Is. 40, 19."
+      }
+     ]
     }
    ]
   },
@@ -179,86 +254,61 @@
      "image_sha256": "a73489f5907773eac511d35382b2dfefc7da166460cce28922ebb03557c139f3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b36ca7bb-efee-4026-971d-941bc579c125\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "The letter ש originally, and before the",
+       "invention of diacritical signs, served to",
+       "express both the simple sound of s, and",
+       "also the thicker sound sh. In like man-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "16d8e41d-b7c4-4cd4-8fff-49ec78eecebd",
+      "duration_api_ms": 14875,
+      "cost_usd_list": 0.015745000000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6020,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 278
      },
      "lines": [
       {
        "draft": "The letter שׁ originally, and before the",
-       "reread": null,
-       "status": "draft_only",
-       "text": "The letter שׁ originally, and before the"
+       "reread": "The letter ש originally, and before the",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "The letter ש originally, and before the",
+        "verdict": "b",
+        "note": "The printed ש has no shin dot (or any point) above it — consistent with the sense of the passage, which is about the letter before diacritical signs were invented. Reading A's שׁ adds an unprinted dot.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9eed4276-51f8-4ec4-8292-5587d9c59fc0",
+        "duration_api_ms": 5291,
+        "cost_usd_list": 0.0663955,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3502,
+        "cache_creation_input_tokens": 2404,
+        "output_tokens": 342
+       },
+       "text": "The letter ש originally, and before the"
       },
       {
        "draft": "invention of diacritical signs, served to",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "invention of diacritical signs, served to",
+       "status": "agreed",
        "text": "invention of diacritical signs, served to"
       },
       {
        "draft": "express both the simple sound of s, and",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "express both the simple sound of s, and",
+       "status": "agreed",
        "text": "express both the simple sound of s, and"
       },
       {
        "draft": "also the thicker sound sh. In like man-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "also the thicker sound sh. In like man-",
+       "status": "agreed",
        "text": "also the thicker sound sh. In like man-"
-      },
-      {
-       "draft": "ner the Irish language has only one",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ner the Irish language has only one"
-      },
-      {
-       "draft": "sign, s, for these two sounds, e. g. solâ",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sign, s, for these two sounds, e. g. solâ"
-      },
-      {
-       "draft": "solace, and se (she) he, si (shi) she. At",
-       "reread": null,
-       "status": "draft_only",
-       "text": "solace, and se (she) he, si (shi) she. At"
-      },
-      {
-       "draft": "a later period a distinction was made by",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a later period a distinction was made by"
-      },
-      {
-       "draft": "the Grammarians, so that the simple",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the Grammarians, so that the simple"
-      },
-      {
-       "draft": "sound of s came to be indicated by a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sound of s came to be indicated by a"
-      },
-      {
-       "draft": "point over the left horn, and the thicker",
-       "reread": null,
-       "status": "draft_only",
-       "text": "point over the left horn, and the thicker"
-      },
-      {
-       "draft": "sound sh by one over the right.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sound sh by one over the right."
-      },
-      {
-       "draft": "For the Heb. שׁ the Chaldee often",
-       "reread": null,
-       "status": "draft_only",
-       "text": "For the Heb. שׁ the Chaldee often"
       }
      ]
     },
@@ -275,8 +325,48 @@
      "image_sha256": "e19af2fec4cf075c18f3805f098e8deb81f6a5f6fded6758e70881373bb12df0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"226b2212-dd97-4b7f-9f1c-35155c7b1088\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "ner the Irish language has only one",
+       "sign, s, for these two sounds, e. g. solâ",
+       "solace, and se (she) he, si (shi) she. At",
+       "a later period a distinction was made by"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "89621a89-f22a-4ee7-9be5-1f04c28b6881",
+      "duration_api_ms": 9289,
+      "cost_usd_list": 0.013926750000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6147,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "ner the Irish language has only one",
+       "reread": "ner the Irish language has only one",
+       "status": "agreed",
+       "text": "ner the Irish language has only one"
+      },
+      {
+       "draft": "sign, s, for these two sounds, e. g. solâ",
+       "reread": "sign, s, for these two sounds, e. g. solâ",
+       "status": "agreed",
+       "text": "sign, s, for these two sounds, e. g. solâ"
+      },
+      {
+       "draft": "solace, and se (she) he, si (shi) she. At",
+       "reread": "solace, and se (she) he, si (shi) she. At",
+       "status": "agreed",
+       "text": "solace, and se (she) he, si (shi) she. At"
+      },
+      {
+       "draft": "a later period a distinction was made by",
+       "reread": "a later period a distinction was made by",
+       "status": "agreed",
+       "text": "a later period a distinction was made by"
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -291,8 +381,48 @@
      "image_sha256": "ac089f3fb921c001462fe678f361cfbd0212c5b01abec782b9566d0cead3be3b",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ba1a2a21-0c98-42cb-b095-caa9fbdef30b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "the Grammarians, so that the simple",
+       "sound of s came to be indicated by a",
+       "point over the left horn, and the thicker",
+       "sound sh by one over the right."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "21ab6582-9ae8-4963-953a-e91fd9452d82",
+      "duration_api_ms": 4117,
+      "cost_usd_list": 0.01331125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 229
+     },
+     "lines": [
+      {
+       "draft": "the Grammarians, so that the simple",
+       "reread": "the Grammarians, so that the simple",
+       "status": "agreed",
+       "text": "the Grammarians, so that the simple"
+      },
+      {
+       "draft": "sound of s came to be indicated by a",
+       "reread": "sound of s came to be indicated by a",
+       "status": "agreed",
+       "text": "sound of s came to be indicated by a"
+      },
+      {
+       "draft": "point over the left horn, and the thicker",
+       "reread": "point over the left horn, and the thicker",
+       "status": "agreed",
+       "text": "point over the left horn, and the thicker"
+      },
+      {
+       "draft": "sound sh by one over the right.",
+       "reread": "sound sh by one over the right.",
+       "status": "agreed",
+       "text": "sound sh by one over the right."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b03",
@@ -307,8 +437,27 @@
      "image_sha256": "58c049d1416b1cf551b0e5b9404876a0e9b80909b8b216c44198f42d4f37e8b1",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"aa4f4695-a12a-44d6-a3f5-756760371287\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "For the Heb. שׁ the Chaldee often"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26c5620e-893f-41a8-8a3c-37fa718e434b",
+      "duration_api_ms": 6786,
+      "cost_usd_list": 0.01827525,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5341,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 332
+     },
+     "lines": [
+      {
+       "draft": "For the Heb. שׁ the Chaldee often",
+       "reread": "For the Heb. שׁ the Chaldee often",
+       "status": "agreed",
+       "text": "For the Heb. שׁ the Chaldee often"
+      }
+     ]
     }
    ]
   },
@@ -349,74 +498,46 @@
      "image_sha256": "37d366c446892408e162951b711862b883d8a3884c3cdfc41dda8e1f32a16d63",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c77d8fc2-f0ae-417b-9bf2-028afae94fd6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "and the Syriac always (as being desti-",
+       "tute of the letter Sin) substitute ס; see",
+       "in lett. ס, p. 707. The Arabic, from a",
+       "peculiarity of the language, in almost all"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "764e4463-7ff1-47e0-a6d5-c3795945c85e",
+      "duration_api_ms": 4437,
+      "cost_usd_list": 0.014211250000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 247
      },
      "lines": [
       {
        "draft": "and the Syriac always (as being desti-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "and the Syriac always (as being desti-",
+       "status": "agreed",
        "text": "and the Syriac always (as being desti-"
       },
       {
        "draft": "tute of the letter Sin) substitute ס ; see",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "tute of the letter Sin) substitute ס; see",
+       "status": "agreed",
        "text": "tute of the letter Sin) substitute ס; see"
       },
       {
        "draft": "in lett. ס, p. 707.  The Arabic, from a",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "in lett. ס, p. 707. The Arabic, from a",
+       "status": "agreed",
        "text": "in lett. ס, p. 707. The Arabic, from a"
       },
       {
        "draft": "peculiarity of the language, in almost all",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "peculiarity of the language, in almost all",
+       "status": "agreed",
        "text": "peculiarity of the language, in almost all"
-      },
-      {
-       "draft": "these words has ش ; as שָׂנֵא شنأ, שָׂכַר",
-       "reread": null,
-       "status": "draft_only",
-       "text": "these words has ش; as שָׂנֵא شنأ, שָׂכַר"
-      },
-      {
-       "draft": "شكر, שָׂכַל شكل, etc. much as the",
-       "reread": null,
-       "status": "draft_only",
-       "text": "شكر, שָׂכַל شكل, etc. much as the"
-      },
-      {
-       "draft": "people of Wirtemberg give a thicker",
-       "reread": null,
-       "status": "draft_only",
-       "text": "people of Wirtemberg give a thicker"
-      },
-      {
-       "draft": "sound to the German s, pronouncing ist",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sound to the German s, pronouncing ist"
-      },
-      {
-       "draft": "like isht.  Very rarely does the Arabic",
-       "reread": null,
-       "status": "draft_only",
-       "text": "like isht. Very rarely does the Arabic"
-      },
-      {
-       "draft": "retain س, as שְׂלָו سلوى quail.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "retain س, as שְׂלָו سلوى quail."
-      },
-      {
-       "draft": "In the Hebrew itself, kindred letters",
-       "reread": null,
-       "status": "draft_only",
-       "text": "In the Hebrew itself, kindred letters"
       }
      ]
     },
@@ -433,8 +554,63 @@
      "image_sha256": "c43aaf947a6cb164ccd31370374a84a9e6189b6f8895e48ed764c25c554ec4fd",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"66101ab0-6b95-4d28-a3fc-bb812da6d6b5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "these words has ش ; as شنأ שָׂנֵא, שָׂכַר",
+       "شكر, שָׂכַל شكل, etc. much as the",
+       "people of Wirtemberg give a thicker",
+       "sound to the German s, pronouncing ist"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7f87892d-ec9f-4fe8-9d60-a1aa0a7f53f6",
+      "duration_api_ms": 10409,
+      "cost_usd_list": 0.03213875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6395,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 604
+     },
+     "lines": [
+      {
+       "draft": "these words has ش ; as שָׂנֵא شنأ, שָׂכַר",
+       "reread": "these words has ش ; as شنأ שָׂנֵא, שָׂכַר",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "these words has ش ; as شنأ שָׂנֵא, שָׂכַר",
+        "verdict": "b",
+        "note": "Printed left-to-right after \"as\" is שָׂנֵא then شنأ (hamza on alif), then \", שָׂכַר\"; within that single RTL run the rightmost item شنأ is logically first, so B's order is correct and A's is reversed. Pointing (sin dots, qamets/tsere, qamets/patah) agrees in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bfee86c3-c935-42ce-8c39-595f5070adf5",
+        "duration_api_ms": 20280,
+        "cost_usd_list": 0.10882375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3535,
+        "cache_creation_input_tokens": 2810,
+        "output_tokens": 1028
+       },
+       "text": "these words has ش; as شنأ שָׂנֵא, שָׂכַר"
+      },
+      {
+       "draft": "شكر, שָׂכַל شكل, etc. much as the",
+       "reread": "شكر, שָׂכַל شكل, etc. much as the",
+       "status": "agreed",
+       "text": "شكر, שָׂכַל شكل, etc. much as the"
+      },
+      {
+       "draft": "people of Wirtemberg give a thicker",
+       "reread": "people of Wirtemberg give a thicker",
+       "status": "agreed",
+       "text": "people of Wirtemberg give a thicker"
+      },
+      {
+       "draft": "sound to the German s, pronouncing ist",
+       "reread": "sound to the German s, pronouncing ist",
+       "status": "agreed",
+       "text": "sound to the German s, pronouncing ist"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -449,8 +625,56 @@
      "image_sha256": "761a8d0878f3cad63a18b2ce99695f2dd7f873339ba4e597f3da657ff270031f",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ecc7e9df-a12a-4dc3-8d99-76196e3301c3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "like isht. Very rarely does the Arabic",
+       "retain س, as שְׂלָוֹ سلوى quail.",
+       "In the Hebrew itself, kindred letters"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "890a0dc9-fe9a-4efe-b834-1f295dcb81a2",
+      "duration_api_ms": 17138,
+      "cost_usd_list": 0.093911,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2437,
+      "output_tokens": 879
+     },
+     "lines": [
+      {
+       "draft": "like isht.  Very rarely does the Arabic",
+       "reread": "like isht. Very rarely does the Arabic",
+       "status": "agreed",
+       "text": "like isht. Very rarely does the Arabic"
+      },
+      {
+       "draft": "retain س, as שְׂלָו سلوى quail.",
+       "reread": "retain س, as שְׂלָוֹ سلوى quail.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "retain س, as שְׂלָו سلوى quail.",
+        "verdict": "a",
+        "note": "The only dot above the Hebrew word is the sin dot over ש; there is no holem printed over the final ו, so Reading B's שְׂלָוֹ is wrong. Lamed carries qamets, shin carries sheva, Arabic is سلوى with no points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7372e39f-5fe5-43a4-832f-5762550abce4",
+        "duration_api_ms": 24070,
+        "cost_usd_list": 0.10714000000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3520,
+        "cache_creation_input_tokens": 2361,
+        "output_tokens": 1174
+       },
+       "text": "retain س, as שְׂלָו سلوى quail."
+      },
+      {
+       "draft": "In the Hebrew itself, kindred letters",
+       "reread": "In the Hebrew itself, kindred letters",
+       "status": "agreed",
+       "text": "In the Hebrew itself, kindred letters"
+      }
+     ]
     }
    ]
   },
@@ -495,98 +719,76 @@
      "image_sha256": "d663664cf769298e9d2b0c6abd9736031b3515a9731353ea7e90400d0cc8caf6",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ad3d5637-9893-44e0-853e-310c2eae132c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "are:   a) The other sibilants, as שׂ, ס,",
+       "צ, ז, see p. 707; comp. also צָפַן, שָׂפַן,",
+       "סָפַן; צָחַק, שָׂחַק; שָׁקַק, זָקַק to strain;",
+       "שָׂאַר and שָׁאַר to ferment.   b) Some-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "447df212-cf7c-4f62-9187-fe9a65d5c99b",
+      "duration_api_ms": 17644,
+      "cost_usd_list": 0.088631,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2623,
+      "output_tokens": 699
      },
      "lines": [
       {
        "draft": "are:   a) The other sibilants, as שׂ, ס,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "are:   a) The other sibilants, as שׂ, ס,",
+       "status": "agreed",
        "text": "are: a) The other sibilants, as שׂ, ס,"
       },
       {
        "draft": "צ, ז, see p. 707; comp. also שָׁפַן, צָפַן,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "צ, ז, see p. 707; comp. also שָׁפַן, צָפַן,"
+       "reread": "צ, ז, see p. 707; comp. also צָפַן, שָׂפַן,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "צ, ז, see p. 707; comp. also צָפַן, שָׂפַן,",
+        "verdict": "b",
+        "note": "Printed left-to-right order after \"also\" is צָפַן first, then שָׂפַן (Reading A swaps them). The dot on the ש sits on the upper-left arm (sin, as in שָׂחַק on the next line), unlike the right-dotted שׁ in line 1, so שָׂפַן with sin dot is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5f2c3cdd-e067-4822-a082-aeb721875585",
+        "duration_api_ms": 12996,
+        "cost_usd_list": 0.09539475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3539,
+        "cache_creation_input_tokens": 2566,
+        "output_tokens": 857
+       },
+       "text": "צ, ז, see p. 707; comp. also צָפַן, שָׂפַן,"
       },
       {
        "draft": "סָפַן; שָׂחַק, צָחַק; שָׁקַק, זָקַק to strain;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "סָפַן; שָׂחַק, צָחַק; שָׁקַק, זָקַק to strain;"
+       "reread": "סָפַן; צָחַק, שָׂחַק; שָׁקַק, זָקַק to strain;",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "סָפַן; צָחַק, שָׂחַק; שָׁקַק, זָקַק to strain;",
+        "verdict": "b",
+        "note": "Printed left-to-right order of the second pair is צָחַק then שָׂחַק (sin dot upper-left), as in Reading B; Reading A swaps them. All points otherwise identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e7746a93-c4b5-44f9-b902-e02c5f1919ea",
+        "duration_api_ms": 9419,
+        "cost_usd_list": 0.08179825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3553,
+        "cache_creation_input_tokens": 2591,
+        "output_tokens": 575
+       },
+       "text": "סָפַן; צָחַק, שָׂחַק; שָׁקַק, זָקַק to strain;"
       },
       {
        "draft": "שָׂאַר and שָׁאַר to ferment.   b) Some-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "שָׂאַר and שָׁאַר to ferment.   b) Some-",
+       "status": "agreed",
        "text": "שָׂאַר and שָׁאַר to ferment. b) Some-"
-      },
-      {
-       "draft": "times the aspirates, almost like Gr. ὗς",
-       "reread": null,
-       "status": "draft_only",
-       "text": "times the aspirates, almost like Gr. ὗς"
-      },
-      {
-       "draft": "Lat. sus, ὕλη sylva; comp. שָׂדָה i. q. הָדָה",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Lat. sus, ὕλη sylva; comp. שָׂדָה i. q. הָדָה"
-      },
-      {
-       "draft": "to extend; سلك סָלַךְ i. q. הָלַךְ to go;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "to extend; سلك סָלַךְ i. q. הָלַךְ to go;"
-      },
-      {
-       "draft": "שָׂרַג i. q. אָרַג to plait, to weave.   Some-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שָׂרַג i. q. אָרַג to plait, to weave. Some-"
-      },
-      {
-       "draft": "times also, in the formation of roots, a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "times also, in the formation of roots, a"
-      },
-      {
-       "draft": "sibilant is prefixed to the primary bilite-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sibilant is prefixed to the primary bilite-"
-      },
-      {
-       "draft": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,"
-      },
-      {
-       "draft": "שָׂגָא i. q. גָּאָה, etc.   Comp. γράφω scribo,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שָׂגָא i. q. גָּאָה, etc. Comp. γράφω scribo,"
-      },
-      {
-       "draft": "γλύφω sculpo, τρίζω strideo, tego στέγω,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "γλύφω sculpo, τρίζω strideo, tego στέγω,"
-      },
-      {
-       "draft": "fallo σφάλλω, and many others.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "fallo σφάλλω, and many others."
-      },
-      {
-       "draft": "* שָׁאָה obsol. root, see in שָׂה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* שָׁאָה obsol. root, see in שָׂה."
       }
      ]
     },
@@ -603,8 +805,63 @@
      "image_sha256": "1ef52acd9c7538f8432fb2b3881a701931871d4cabf5bf2df2765803d0b7cfcb",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d2b4eb07-39c8-4ea5-9a71-d3477c7bd277\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "times the aspirates, almost like Gr. ὗς",
+       "Lat. sus, ὕλη sylva ; comp. שָׂדָה i. q. הָדָה",
+       "to extend ; סָלַךְ سلك i. q. הָלַךְ to go ;",
+       "שָׂרַג i. q. אָרַג to plait, to weave.  Some-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "548f694b-813f-402e-bccd-2ae48895b6e5",
+      "duration_api_ms": 10241,
+      "cost_usd_list": 0.08718100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2623,
+      "output_tokens": 670
+     },
+     "lines": [
+      {
+       "draft": "times the aspirates, almost like Gr. ὗς",
+       "reread": "times the aspirates, almost like Gr. ὗς",
+       "status": "agreed",
+       "text": "times the aspirates, almost like Gr. ὗς"
+      },
+      {
+       "draft": "Lat. sus, ὕλη sylva; comp. שָׂדָה i. q. הָדָה",
+       "reread": "Lat. sus, ὕλη sylva ; comp. שָׂדָה i. q. הָדָה",
+       "status": "agreed",
+       "text": "Lat. sus, ὕλη sylva; comp. שָׂדָה i. q. הָדָה"
+      },
+      {
+       "draft": "to extend; سلك סָלַךְ i. q. הָלַךְ to go;",
+       "reread": "to extend ; סָלַךְ سلك i. q. הָלַךְ to go ;",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "to extend ; سلك סָלַךְ i. q. הָלַךְ to go ;",
+        "verdict": "neither",
+        "note": "Decisive point is the left-to-right order: the Arabic سلك is printed first (leftmost), with the Hebrew סָלַךְ to its right, as in Reading A; but the print also has a visible space before both semicolons (\"extend ;\", \"go ;\"), as in Reading B. Vowels confirmed: סָלַךְ and הָלַךְ (qamets, patach, final shewa), Arabic unpointed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "170715e5-3ed3-45b2-8251-89b5c0587e69",
+        "duration_api_ms": 11243,
+        "cost_usd_list": 0.09102425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3537,
+        "cache_creation_input_tokens": 2590,
+        "output_tokens": 760
+       },
+       "text": "to extend; سلك סָלַךְ i. q. הָלַךְ to go;"
+      },
+      {
+       "draft": "שָׂרַג i. q. אָרַג to plait, to weave.   Some-",
+       "reread": "שָׂרַג i. q. אָרַג to plait, to weave.  Some-",
+       "status": "agreed",
+       "text": "שָׂרַג i. q. אָרַג to plait, to weave. Some-"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b02",
@@ -619,8 +876,48 @@
      "image_sha256": "d1345dba84e4dc8499880b0f81be5d105394a7005b42151d1bad32a815d08d2c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"414c435d-f82e-4826-857b-ea74506be1c1\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "times also, in the formation of roots, a",
+       "sibilant is prefixed to the primary bilite-",
+       "ral syllable, as שָׂגַב i. q. גָּבַב to be high,",
+       "שָׂגָא i. q. גָּאָה, etc. Comp. γράφω scribo,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dd71f5c9-05c4-44db-82ef-83ef0734649d",
+      "duration_api_ms": 5212,
+      "cost_usd_list": 0.066141,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2561,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "times also, in the formation of roots, a",
+       "reread": "times also, in the formation of roots, a",
+       "status": "agreed",
+       "text": "times also, in the formation of roots, a"
+      },
+      {
+       "draft": "sibilant is prefixed to the primary bilite-",
+       "reread": "sibilant is prefixed to the primary bilite-",
+       "status": "agreed",
+       "text": "sibilant is prefixed to the primary bilite-"
+      },
+      {
+       "draft": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,",
+       "reread": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,",
+       "status": "agreed",
+       "text": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,"
+      },
+      {
+       "draft": "שָׂגָא i. q. גָּאָה, etc.   Comp. γράφω scribo,",
+       "reread": "שָׂגָא i. q. גָּאָה, etc. Comp. γράφω scribo,",
+       "status": "agreed",
+       "text": "שָׂגָא i. q. גָּאָה, etc. Comp. γράφω scribo,"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b03",
@@ -635,8 +932,56 @@
      "image_sha256": "edf1ac50512004523f4b8912a3a47145d175aa88bcd3ee968a03461382ebf7a7",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f6698088-c8cd-4cb6-b00d-f644b7e6ef81\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "γλύφω sculpo, τρίζω strideo, tego στέγω,",
+       "fallo σφάλλω, and many others.",
+       "* שָׁאָה obsol. root, see in שֶׁה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b719bde9-ae42-4b47-869f-3cb7126bdbb8",
+      "duration_api_ms": 6658,
+      "cost_usd_list": 0.07120100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2499,
+      "output_tokens": 400
+     },
+     "lines": [
+      {
+       "draft": "γλύφω sculpo, τρίζω strideo, tego στέγω,",
+       "reread": "γλύφω sculpo, τρίζω strideo, tego στέγω,",
+       "status": "agreed",
+       "text": "γλύφω sculpo, τρίζω strideo, tego στέγω,"
+      },
+      {
+       "draft": "fallo σφάλλω, and many others.",
+       "reread": "fallo σφάλλω, and many others.",
+       "status": "agreed",
+       "text": "fallo σφάλλω, and many others."
+      },
+      {
+       "draft": "* שָׁאָה obsol. root, see in שָׂה.",
+       "reread": "* שָׁאָה obsol. root, see in שֶׁה.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b03",
+       "judgement": {
+        "text": "* שָׁאָה obsol. root, see in שֶׂה.",
+        "verdict": "neither",
+        "note": "Final word is printed שֶׂה: the dot sits on the left arm (sin, as in A) and the vowel below is a three-dot segol (as in B), so A has the wrong vowel and B the wrong shin/sin dot.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1aba1cfc-2dab-42cb-a87f-9a8e6a620ef2",
+        "duration_api_ms": 12561,
+        "cost_usd_list": 0.072661,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3524,
+        "cache_creation_input_tokens": 2427,
+        "output_tokens": 458
+       },
+       "text": "* שָׁאָה obsol. root, see in שֶׂה."
+      }
+     ]
     }
    ]
   },
@@ -670,31 +1015,75 @@
      "image_sha256": "feffc25dd934c25d4403bb204e64250ce06308bce8448ea5d03486c20f2a3542",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a0fe07ac-662a-4f15-9f7e-b8ffd2ebb334\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "* רְתַת obsol. root, i. q. רְטַט and Aram.",
+       "רְתַת, ܪܰܬ, to terrify; hence",
+       "רְתֵת m. terror Hos. 13, 1. Chald.",
+       "רְתִיתָא id."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e8385957-2fa6-4566-900d-e54f7630d093",
+      "duration_api_ms": 26995,
+      "cost_usd_list": 0.155451,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 4594,
+      "output_tokens": 1247
      },
      "lines": [
       {
        "draft": "* רָתַת obsol. root, i. q. רָטַט and Aram.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "* רְתַת obsol. root, i. q. רְטַט and Aram.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "* רָתַת obsol. root, i. q. רָטַט and Aram.",
+        "verdict": "a",
+        "note": "Under the resh of both רָתַת and רָטַט the print shows a qamets (horizontal bar with a vertical stroke beneath), not the two stacked dots of sheva; the second letter in each carries a patach. Reading A matches the printed line; B's shevas are wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3688fec2-637a-4ac2-a958-b24c830ac9ec",
+        "duration_api_ms": 9091,
+        "cost_usd_list": 0.11565275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3531,
+        "cache_creation_input_tokens": 4529,
+        "output_tokens": 477
+       },
        "text": "* רָתַת obsol. root, i. q. רָטַט and Aram."
       },
       {
        "draft": "רְתַת, ܪܬ, to terrify; hence",
-       "reread": null,
-       "status": "draft_only",
-       "text": "רְתַת, ܪܬ, to terrify; hence"
+       "reread": "רְתַת, ܪܰܬ, to terrify; hence",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "רְתַת, ܪܰܬ, to terrify; hence",
+        "verdict": "b",
+        "note": "The Syriac ܪܬ is printed with a vowel sign above the resh — the small wedge/triangle-shaped Western pthaḥa (ܰ) is clearly visible above and between the two letters, distinct from the resh's own intrinsic dot. Reading A omits this point; Reading B includes it. Hebrew רְתַת, punctuation and English agree in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ddbfe40b-34de-482f-b8c0-957ddfcf9796",
+        "duration_api_ms": 23149,
+        "cost_usd_list": 0.12920025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3521,
+        "cache_creation_input_tokens": 4519,
+        "output_tokens": 752
+       },
+       "text": "רְתַת, ܪܰܬ, to terrify; hence"
       },
       {
        "draft": "רְתֵת m. terror Hos. 13, 1. Chald.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "רְתֵת m. terror Hos. 13, 1. Chald.",
+       "status": "agreed",
        "text": "רְתֵת m. terror Hos. 13, 1. Chald."
       },
       {
        "draft": "רְתִיתָא id.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "רְתִיתָא id.",
+       "status": "agreed",
        "text": "רְתִיתָא id."
       }
      ]
@@ -739,80 +1128,76 @@
      "image_sha256": "ebaae69a6f29b37fdc0541306710cc5272297ee02f90499b3e5d2596802f74a4",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"22f9eb75-e25a-408c-96e6-01ac74ba8ac0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "* שָׁאַר obsol. root, kindr. with the",
+       "verbs שָׂאַר, סִיר q. v. to become hot, to",
+       "ferment ; comp. Arab. ثار to boil up, to",
+       "break out, as an ulcer. In the western"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e3f43ec4-457e-4989-87af-d357b9b3c1c0",
+      "duration_api_ms": 8556,
+      "cost_usd_list": 0.075951,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3524,
+      "cache_creation_input_tokens": 2704,
+      "output_tokens": 413
      },
      "lines": [
       {
        "draft": "* שָׂאַר obsol. root, kindr. with the",
-       "reread": null,
-       "status": "draft_only",
-       "text": "* שָׂאַר obsol. root, kindr. with the"
+       "reread": "* שָׁאַר obsol. root, kindr. with the",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "* שָׁאַר obsol. root, kindr. with the",
+        "verdict": "b",
+        "note": "The dot over the shin is printed above the right arm (shin dot), not the left (sin dot); Reading A's שָׂ is wrong. Vowels (qamets under shin, patach under aleph) match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b359a7e9-1dcf-4833-83aa-1246d620cca5",
+        "duration_api_ms": 7238,
+        "cost_usd_list": 0.07485975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3519,
+        "cache_creation_input_tokens": 2637,
+        "output_tokens": 418
+       },
+       "text": "* שָׁאַר obsol. root, kindr. with the"
       },
       {
        "draft": "verbs שָׂעַר, סִיר q. v. to become hot, to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "verbs שָׂעַר, סִיר q. v. to become hot, to"
+       "reread": "verbs שָׂאַר, סִיר q. v. to become hot, to",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "verbs שָׂאַר, סִיר q. v. to become hot, to",
+        "verdict": "b",
+        "note": "The second Hebrew letter is printed as aleph (א, with its diagonal stroke and two feet), not ayin; it matches the headword שָׂאַר on line 1. Patah under aleph, qamets under shin, סִיר with hireq and yod as both readings have.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b710ce12-ce66-4ecc-abd6-3a4906e22741",
+        "duration_api_ms": 17342,
+        "cost_usd_list": 0.08821225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3529,
+        "cache_creation_input_tokens": 2637,
+        "output_tokens": 685
+       },
+       "text": "verbs שָׂאַר, סִיר q. v. to become hot, to"
       },
       {
        "draft": "ferment ; comp. Arab. ثار to boil up, to",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "ferment ; comp. Arab. ثار to boil up, to",
+       "status": "agreed",
        "text": "ferment; comp. Arab. ثار to boil up, to"
       },
       {
        "draft": "break out, as an ulcer. In the western",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "break out, as an ulcer. In the western",
+       "status": "agreed",
        "text": "break out, as an ulcer. In the western"
-      },
-      {
-       "draft": "languages we find from the same stock,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "languages we find from the same stock,"
-      },
-      {
-       "draft": "Germ. in Ottfr. suar, Anglosax. sur,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Germ. in Ottfr. suar, Anglosax. sur,"
-      },
-      {
-       "draft": "Germ. sauer, Engl. sour.—Hence",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Germ. sauer, Engl. sour.—Hence"
-      },
-      {
-       "draft": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7."
-      },
-      {
-       "draft": "Lev. 2, 11. Deut. 16, 4. Chald. סְאֹר id.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Lev. 2, 11. Deut. 16, 4. Chald. סְאֹר id."
-      },
-      {
-       "draft": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for"
-      },
-      {
-       "draft": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job"
-      },
-      {
-       "draft": "41, 17, where other Mss. have שאתו.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "41, 17, where other Mss. have שאתו."
       }
      ]
     },
@@ -829,8 +1214,48 @@
      "image_sha256": "4b2415a571843dccc5c07cc5068d6112bdbc28d1149037eba10dbe3b00db97b3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ab53c6c4-ffe7-488e-b148-a5cb1a18a70a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "languages we find from the same stock,",
+       "Germ. in Ottfr. suar, Anglosax. sur,",
+       "Germ. sauer, Engl. sour.—Hence",
+       "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "190582af-d15c-4d29-8e97-fed3f8f2dfa8",
+      "duration_api_ms": 9094,
+      "cost_usd_list": 0.06879125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2706,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "languages we find from the same stock,",
+       "reread": "languages we find from the same stock,",
+       "status": "agreed",
+       "text": "languages we find from the same stock,"
+      },
+      {
+       "draft": "Germ. in Ottfr. suar, Anglosax. sur,",
+       "reread": "Germ. in Ottfr. suar, Anglosax. sur,",
+       "status": "agreed",
+       "text": "Germ. in Ottfr. suar, Anglosax. sur,"
+      },
+      {
+       "draft": "Germ. sauer, Engl. sour.—Hence",
+       "reread": "Germ. sauer, Engl. sour.—Hence",
+       "status": "agreed",
+       "text": "Germ. sauer, Engl. sour.—Hence"
+      },
+      {
+       "draft": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7.",
+       "reread": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7.",
+       "status": "agreed",
+       "text": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -845,8 +1270,63 @@
      "image_sha256": "7f2def1ee486acc253c54f8a181ff7b71a2aec2ada4c095352066d40c5117a03",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6c9d1c2f-b53b-4a21-a2cb-a390ecdb119c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Lev. 2, 11. Deut. 16, 4.   Chald. סְאֹר id.",
+       "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for",
+       "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job",
+       "41, 17, where other Mss. have שֵׂאתוֹ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8a69b9e3-e8be-46e3-a045-7d417cf0cd62",
+      "duration_api_ms": 12733,
+      "cost_usd_list": 0.09614125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2706,
+      "output_tokens": 816
+     },
+     "lines": [
+      {
+       "draft": "Lev. 2, 11. Deut. 16, 4. Chald. סְאֹר id.",
+       "reread": "Lev. 2, 11. Deut. 16, 4.   Chald. סְאֹר id.",
+       "status": "agreed",
+       "text": "Lev. 2, 11. Deut. 16, 4. Chald. סְאֹר id."
+      },
+      {
+       "draft": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for",
+       "reread": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for",
+       "status": "agreed",
+       "text": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for"
+      },
+      {
+       "draft": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job",
+       "reread": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job",
+       "status": "agreed",
+       "text": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job"
+      },
+      {
+       "draft": "41, 17, where other Mss. have שאתו.",
+       "reread": "41, 17, where other Mss. have שֵׂאתוֹ.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "41, 17, where other Mss. have שׂאתו.",
+        "verdict": "neither",
+        "note": "The word is printed without vowel points (no tsere, no holam — B is wrong), but a sin dot is visible at the upper left of the shin (A omits it): שׂאתו.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5f01d998-eef5-4672-935d-f81b974d2f6e",
+        "duration_api_ms": 13309,
+        "cost_usd_list": 0.09736075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3523,
+        "cache_creation_input_tokens": 2632,
+        "output_tokens": 870
+       },
+       "text": "41, 17, where other Mss. have שׂאתו."
+      }
+     ]
     }
    ]
   },
@@ -889,86 +1369,46 @@
      "image_sha256": "ef7bc23b2502fab95a7f9d286b2018d5ba91cf05774f037f6b8871014e161bf9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c1779bb7-19b8-4ac3-8751-547161cdc097\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "1. a lifting up, Job 41, 17 [25]; so of",
+       "the countenance, elation, cheerfulness,",
+       "Gen. 4, 7.   See the root נָשָׂא no. 1. c.",
+       "2. elevation, a rising in the skin, hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "32035e4e-62f3-4607-bdcf-2f4ff9b49269",
+      "duration_api_ms": 9184,
+      "cost_usd_list": 0.06738125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 266
      },
      "lines": [
       {
        "draft": "1. a lifting up, Job 41, 17 [25]; so of",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "1. a lifting up, Job 41, 17 [25]; so of",
+       "status": "agreed",
        "text": "1. a lifting up, Job 41, 17 [25]; so of"
       },
       {
        "draft": "the countenance, elation, cheerfulness,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "the countenance, elation, cheerfulness,",
+       "status": "agreed",
        "text": "the countenance, elation, cheerfulness,"
       },
       {
        "draft": "Gen. 4, 7.   See the root נָשָׂא no. 1. c.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Gen. 4, 7.   See the root נָשָׂא no. 1. c.",
+       "status": "agreed",
        "text": "Gen. 4, 7. See the root נָשָׂא no. 1. c."
       },
       {
        "draft": "2. elevation, a rising in the skin, hence",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "2. elevation, a rising in the skin, hence",
+       "status": "agreed",
        "text": "2. elevation, a rising in the skin, hence"
-      },
-      {
-       "draft": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43."
-      },
-      {
-       "draft": "14, 56; so too where more than skin",
-       "reread": null,
-       "status": "draft_only",
-       "text": "14, 56; so too where more than skin"
-      },
-      {
-       "draft": "deep, comp. Lev. 13, 2 with v. 3. 4.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "deep, comp. Lev. 13, 2 with v. 3. 4."
-      },
-      {
-       "draft": "3. exaltation, dignity, majesty, Gen.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "3. exaltation, dignity, majesty, Gen."
-      },
-      {
-       "draft": "49, 3.  Ps. 62, 5; of God Job 13, 11. 31,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "49, 3. Ps. 62, 5; of God Job 13, 11. 31,"
-      },
-      {
-       "draft": "23.  Here too we may refer Hab. 1, 7",
-       "reread": null,
-       "status": "draft_only",
-       "text": "23. Here too we may refer Hab. 1, 7"
-      },
-      {
-       "draft": "from himself go forth his law and his",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from himself go forth his law and his"
-      },
-      {
-       "draft": "dignity, i. e. he acknowledges no law",
-       "reread": null,
-       "status": "draft_only",
-       "text": "dignity, i. e. he acknowledges no law"
-      },
-      {
-       "draft": "and no dignity but his own.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "and no dignity but his own."
       }
      ]
     },
@@ -985,8 +1425,48 @@
      "image_sha256": "58bd7e9c5dad7ce042ceb9603d989f1a3860b15869b516a515cdc6b2b4136dfc",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5a9fd6e0-651b-48bf-bb6f-77acd906b4be\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "genr. a spot, Lev. 13, 2. 10. 19. 28. 43.",
+       "14, 56; so too where more than skin",
+       "deep, comp. Lev. 13, 2 with v. 3. 4.",
+       "3. exaltation, dignity, majesty, Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7f731809-9db7-4893-ba7d-4ade4a4dd3cd",
+      "duration_api_ms": 5578,
+      "cost_usd_list": 0.06627125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43.",
+       "reread": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43.",
+       "status": "agreed",
+       "text": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43."
+      },
+      {
+       "draft": "14, 56; so too where more than skin",
+       "reread": "14, 56; so too where more than skin",
+       "status": "agreed",
+       "text": "14, 56; so too where more than skin"
+      },
+      {
+       "draft": "deep, comp. Lev. 13, 2 with v. 3. 4.",
+       "reread": "deep, comp. Lev. 13, 2 with v. 3. 4.",
+       "status": "agreed",
+       "text": "deep, comp. Lev. 13, 2 with v. 3. 4."
+      },
+      {
+       "draft": "3. exaltation, dignity, majesty, Gen.",
+       "reread": "3. exaltation, dignity, majesty, Gen.",
+       "status": "agreed",
+       "text": "3. exaltation, dignity, majesty, Gen."
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1001,8 +1481,48 @@
      "image_sha256": "4aa89b73bf48e9086cc72832492ba36162909fd8757c34c2c69cef5f9aa66d76",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"5a79a0da-b765-47ca-b738-35a897186cb3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "49, 3. Ps. 62, 5; of God Job 13, 11. 31,",
+       "23. Here too we may refer Hab. 1, 7",
+       "from himself go forth his law and his",
+       "dignity, i. e. he acknowledges no law"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "24870fb3-644c-4e15-a065-0651fc1bb7d0",
+      "duration_api_ms": 4333,
+      "cost_usd_list": 0.06567125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "49, 3.  Ps. 62, 5; of God Job 13, 11. 31,",
+       "reread": "49, 3. Ps. 62, 5; of God Job 13, 11. 31,",
+       "status": "agreed",
+       "text": "49, 3. Ps. 62, 5; of God Job 13, 11. 31,"
+      },
+      {
+       "draft": "23.  Here too we may refer Hab. 1, 7",
+       "reread": "23. Here too we may refer Hab. 1, 7",
+       "status": "agreed",
+       "text": "23. Here too we may refer Hab. 1, 7"
+      },
+      {
+       "draft": "from himself go forth his law and his",
+       "reread": "from himself go forth his law and his",
+       "status": "agreed",
+       "text": "from himself go forth his law and his"
+      },
+      {
+       "draft": "dignity, i. e. he acknowledges no law",
+       "reread": "dignity, i. e. he acknowledges no law",
+       "status": "agreed",
+       "text": "dignity, i. e. he acknowledges no law"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b03",
@@ -1017,8 +1537,27 @@
      "image_sha256": "7f0dc63f7fef3748d28e888ca5594fde899751957441731b7c63e6190c81b7b9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"aab5e3f3-5f7c-492e-8d65-400e34521a63\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "and no dignity but his own."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ebc06dd1-1504-4720-ad1b-fe0474be68fb",
+      "duration_api_ms": 7903,
+      "cost_usd_list": 0.04831125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 1887,
+      "output_tokens": 187
+     },
+     "lines": [
+      {
+       "draft": "and no dignity but his own.",
+       "reread": "and no dignity but his own.",
+       "status": "agreed",
+       "text": "and no dignity but his own."
+      }
+     ]
     }
    ]
   },
@@ -1062,92 +1601,76 @@
      "image_sha256": "b86abfaed4bad6da1ddc382aee89366fe659f5661d0e7d5976b1e490b1e4be31",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"afd5ffdd-debe-47c1-9274-f2118a27e2a6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "שָׂב an old man, see in r. שִׂיב.",
+       "* שָׂבַךְ to interweave, to braid, i. q.",
+       "סָבַךְ. Hence שֹׂבֶךְ, שְׂבָכָה, שׂוֹבֶךְ.",
+       "שֹׂבֶךְ m. only plur. שְׂבָכִים lattices, ba-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "db1df7d3-13c4-40b5-9e91-a9df670e82f7",
+      "duration_api_ms": 18489,
+      "cost_usd_list": 0.08422125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2895,
+      "output_tokens": 502
      },
      "lines": [
       {
        "draft": "שָׂב an old man, see in r. שִׂיב.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "שָׂב an old man, see in r. שִׂיב.",
+       "status": "agreed",
        "text": "שָׂב an old man, see in r. שִׂיב."
       },
       {
        "draft": "* שָׂבַךְ to interweave, to braid, i. q.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "* שָׂבַךְ to interweave, to braid, i. q.",
+       "status": "agreed",
        "text": "* שָׂבַךְ to interweave, to braid, i. q."
       },
       {
        "draft": "סָבַךְ. Hence שׂוֹבֶךְ, שְׂבָכָה, שָׂבָךְ.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "סָבַךְ. Hence שׂוֹבֶךְ, שְׂבָכָה, שָׂבָךְ."
+       "reread": "סָבַךְ. Hence שֹׂבֶךְ, שְׂבָכָה, שׂוֹבֶךְ.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "סָבַךְ. Hence שֹׂבֶךְ, שְׂבָכָה, שׂוֹבֶךְ.",
+        "verdict": "b",
+        "note": "The first derivative after \"Hence\" is printed defectively (שֹׂבֶךְ, no vav) and the last one plene (שׂוֹבֶךְ, vav clearly visible); Reading A swaps the plene form to first position and gives a non-existent שָׂבָךְ as the third item.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1a11f93f-d887-4b5c-8d9e-e90554e2a5bc",
+        "duration_api_ms": 14364,
+        "cost_usd_list": 0.0892425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2868,
+        "output_tokens": 613
+       },
+       "text": "סָבַךְ. Hence שֹׂבֶךְ, שְׂבָכָה, שׂוֹבֶךְ."
       },
       {
        "draft": "שָׂבָךְ m. only plur. שְׂבָכִים lattices, ba-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שָׂבָךְ m. only plur. שְׂבָכִים lattices, ba-"
-      },
-      {
-       "draft": "lusters, around the capitals of columns,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "lusters, around the capitals of columns,"
-      },
-      {
-       "draft": "1 K. 7, 17. See in שְׂבָכָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1 K. 7, 17. See in שְׂבָכָה."
-      },
-      {
-       "draft": "שַׂבְּכָא sambuca, see סַבְּכָא.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שַׂבְּכָא sambuca, see סַבְּכָא."
-      },
-      {
-       "draft": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8."
-      },
-      {
-       "draft": "2. lattice, lattice-work, balustrade, es-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. lattice, lattice-work, balustrade, es-"
-      },
-      {
-       "draft": "pec. upon or around the capitals of col-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "pec. upon or around the capitals of col-"
-      },
-      {
-       "draft": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer."
-      },
-      {
-       "draft": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42."
-      },
-      {
-       "draft": "2 Chr. 4, 12. 13. Also before a window",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2 Chr. 4, 12. 13. Also before a window"
-      },
-      {
-       "draft": "or balcony, 2 K. 1, 2.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "or balcony, 2 K. 1, 2."
+       "reread": "שֹׂבֶךְ m. only plur. שְׂבָכִים lattices, ba-",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "שְׂבָךְ m. only plur. שְׂבָכִים lattices, ba-",
+        "verdict": "neither",
+        "note": "Under the sin of the headword the print shows a shewa (two vertical dots, matching the first item in line 3 \"Hence שְׂבָךְ\"), not a qamets (A) and not a holem (B); the single dot above is the sin dot only. Rest of the line is as both readings give.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d93e0dfc-62a1-410e-b2da-e8f01d5c0ce9",
+        "duration_api_ms": 30495,
+        "cost_usd_list": 0.141766,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3544,
+        "cache_creation_input_tokens": 2842,
+        "output_tokens": 1674
+       },
+       "text": "שְׂבָךְ m. only plur. שְׂבָכִים lattices, ba-"
       }
      ]
     },
@@ -1164,8 +1687,48 @@
      "image_sha256": "acdee3f31fd5997dc41e1529ae5ac23ce536ab7edcf9e63ec8cde03755d08af9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ea334cd8-8274-4d81-9db2-6bf1f33b5797\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "lusters, around the capitals of columns,",
+       "1 K. 7, 17. See in שְׂבָכָה.",
+       "שַׂבְּכָא sambuca, see סַבְּכָא.",
+       "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4581ce60-3fee-46f1-b976-d53e7a48caff",
+      "duration_api_ms": 15452,
+      "cost_usd_list": 0.08899125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2706,
+      "output_tokens": 673
+     },
+     "lines": [
+      {
+       "draft": "lusters, around the capitals of columns,",
+       "reread": "lusters, around the capitals of columns,",
+       "status": "agreed",
+       "text": "lusters, around the capitals of columns,"
+      },
+      {
+       "draft": "1 K. 7, 17. See in שְׂבָכָה.",
+       "reread": "1 K. 7, 17. See in שְׂבָכָה.",
+       "status": "agreed",
+       "text": "1 K. 7, 17. See in שְׂבָכָה."
+      },
+      {
+       "draft": "שַׂבְּכָא sambuca, see סַבְּכָא.",
+       "reread": "שַׂבְּכָא sambuca, see סַבְּכָא.",
+       "status": "agreed",
+       "text": "שַׂבְּכָא sambuca, see סַבְּכָא."
+      },
+      {
+       "draft": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8.",
+       "reread": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8.",
+       "status": "agreed",
+       "text": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8."
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1180,8 +1743,48 @@
      "image_sha256": "821d698831323635bd6f1c893192552a9eb53ef4c58613626d5769e64d513f98",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"9604db18-4f37-43f3-807b-cae2ee6249ca\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "2. lattice, lattice-work, balustrade, es-",
+       "pec. upon or around the capitals of col-",
+       "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer.",
+       "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "54752031-7eae-47a4-8173-cf2306b60e04",
+      "duration_api_ms": 11507,
+      "cost_usd_list": 0.07397125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2580,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "2. lattice, lattice-work, balustrade, es-",
+       "reread": "2. lattice, lattice-work, balustrade, es-",
+       "status": "agreed",
+       "text": "2. lattice, lattice-work, balustrade, es-"
+      },
+      {
+       "draft": "pec. upon or around the capitals of col-",
+       "reread": "pec. upon or around the capitals of col-",
+       "status": "agreed",
+       "text": "pec. upon or around the capitals of col-"
+      },
+      {
+       "draft": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer.",
+       "reread": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer.",
+       "status": "agreed",
+       "text": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer."
+      },
+      {
+       "draft": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42.",
+       "reread": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42.",
+       "status": "agreed",
+       "text": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42."
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b03",
@@ -1196,13 +1799,48 @@
      "image_sha256": "7c82486edf47b8ba5457871e3bf4c2440a2568bcadb20ebee079cdcdc6310b11",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2d3ce200-24d0-46fb-93a2-7608d3802644\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "2 Chr. 4, 12. 13. Also before a window",
+       "or balcony, 2 K. 1, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "086d1589-d337-4b14-9843-100cc8ebc657",
+      "duration_api_ms": 4065,
+      "cost_usd_list": 0.053541250000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3525,
+      "cache_creation_input_tokens": 2076,
+      "output_tokens": 216
+     },
+     "lines": [
+      {
+       "draft": "2 Chr. 4, 12. 13. Also before a window",
+       "reread": "2 Chr. 4, 12. 13. Also before a window",
+       "status": "agreed",
+       "text": "2 Chr. 4, 12. 13. Also before a window"
+      },
+      {
+       "draft": "or balcony, 2 K. 1, 2.",
+       "reread": "or balcony, 2 K. 1, 2.",
+       "status": "agreed",
+       "text": "or balcony, 2 K. 1, 2."
+      }
+     ]
     }
    ]
   }
  ],
  "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "רחק 1000 שֹׁבֵב",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "רחק 1000 שֹׁבֵב",
+   "needs_review": true
+  },
   {
    "chunk_id": "header",
    "column": -1,
@@ -1215,795 +1853,616 @@
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "נִתַּק q. v. in Niph. no. 1.——Frigid is",
-   "status": "draft_only",
+   "text": "נָתַק q. v. in Niph. no. 1.—Frigid is",
+   "status": "adjudicated",
    "draft": "נִתַּק q. v. in Niph. no. 1.——Frigid is",
-   "reread": null,
-   "needs_review": true
+   "reread": "נָתַק q. v. in Niph. no. 1.—Frigid is",
+   "verdict": "b",
+   "note": "Under the nun is a qamets (bar with descending stem), not a hireq dot, and the tav has no dagesh; the dash before \"Frigid\" is a single em dash, not a doubled one. Reading B matches the print exactly.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Cheth. יְרֻחַק to be removed.",
-   "status": "draft_only",
-   "draft": "Cheth. יְרֻחַק to be removed.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "Pual רֻתַּק to be bound, Nah. 3, 10.",
-   "status": "draft_only",
-   "draft": "Pual רֻתַּק to be bound, Nah. 3, 10.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
-   "text": "Deriv. רָתוֹק and",
-   "status": "draft_only",
+   "text": "Deriv. רַתּוֹק and",
+   "status": "adjudicated",
    "draft": "Deriv. רָתוֹק and",
-   "reread": null,
-   "needs_review": true
+   "reread": "Deriv. רַתּוֹק and",
+   "verdict": "b",
+   "note": "The resh carries a single short horizontal stroke (patach), not a qamets with a descending tail, and a dagesh dot is printed inside the tav; this matches the lexicon's form רַתּוֹק \"chain\".",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "רְתֻקוֹת f. plur. chains Is. 40, 19.",
-   "status": "draft_only",
-   "draft": "רְתֻקוֹת f. plur. chains Is. 40, 19.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "The letter שׁ originally, and before the",
-   "status": "draft_only",
+   "text": "The letter ש originally, and before the",
+   "status": "adjudicated",
    "draft": "The letter שׁ originally, and before the",
-   "reread": null,
-   "needs_review": true
+   "reread": "The letter ש originally, and before the",
+   "verdict": "b",
+   "note": "The printed ש has no shin dot (or any point) above it — consistent with the sense of the passage, which is about the letter before diacritical signs were invented. Reading A's שׁ adds an unprinted dot.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "invention of diacritical signs, served to",
-   "status": "draft_only",
-   "draft": "invention of diacritical signs, served to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "express both the simple sound of s, and",
-   "status": "draft_only",
-   "draft": "express both the simple sound of s, and",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "also the thicker sound sh. In like man-",
-   "status": "draft_only",
-   "draft": "also the thicker sound sh. In like man-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "ner the Irish language has only one",
-   "status": "draft_only",
-   "draft": "ner the Irish language has only one",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "sign, s, for these two sounds, e. g. solâ",
-   "status": "draft_only",
-   "draft": "sign, s, for these two sounds, e. g. solâ",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "solace, and se (she) he, si (shi) she. At",
-   "status": "draft_only",
-   "draft": "solace, and se (she) he, si (shi) she. At",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "a later period a distinction was made by",
-   "status": "draft_only",
-   "draft": "a later period a distinction was made by",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "the Grammarians, so that the simple",
-   "status": "draft_only",
-   "draft": "the Grammarians, so that the simple",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "sound of s came to be indicated by a",
-   "status": "draft_only",
-   "draft": "sound of s came to be indicated by a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "point over the left horn, and the thicker",
-   "status": "draft_only",
-   "draft": "point over the left horn, and the thicker",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "sound sh by one over the right.",
-   "status": "draft_only",
-   "draft": "sound sh by one over the right.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "For the Heb. שׁ the Chaldee often",
-   "status": "draft_only",
-   "draft": "For the Heb. שׁ the Chaldee often",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "and the Syriac always (as being desti-",
-   "status": "draft_only",
-   "draft": "and the Syriac always (as being desti-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "tute of the letter Sin) substitute ס; see",
-   "status": "draft_only",
-   "draft": "tute of the letter Sin) substitute ס ; see",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "in lett. ס, p. 707. The Arabic, from a",
-   "status": "draft_only",
-   "draft": "in lett. ס, p. 707.  The Arabic, from a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "peculiarity of the language, in almost all",
-   "status": "draft_only",
-   "draft": "peculiarity of the language, in almost all",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
-   "text": "these words has ش; as שָׂנֵא شنأ, שָׂכַר",
-   "status": "draft_only",
+   "text": "these words has ش; as شنأ שָׂנֵא, שָׂכַר",
+   "status": "adjudicated",
    "draft": "these words has ش ; as שָׂנֵא شنأ, שָׂכַר",
-   "reread": null,
+   "reread": "these words has ش ; as شنأ שָׂנֵא, שָׂכַר",
+   "verdict": "b",
+   "note": "Printed left-to-right after \"as\" is שָׂנֵא then شنأ (hamza on alif), then \", שָׂכַר\"; within that single RTL run the rightmost item شنأ is logically first, so B's order is correct and A's is reversed. Pointing (sin dots, qamets/tsere, qamets/patah) agrees in both.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "شكر, שָׂכַל شكل, etc. much as the",
-   "status": "draft_only",
-   "draft": "شكر, שָׂכַל شكل, etc. much as the",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "people of Wirtemberg give a thicker",
-   "status": "draft_only",
-   "draft": "people of Wirtemberg give a thicker",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "sound to the German s, pronouncing ist",
-   "status": "draft_only",
-   "draft": "sound to the German s, pronouncing ist",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "like isht. Very rarely does the Arabic",
-   "status": "draft_only",
-   "draft": "like isht.  Very rarely does the Arabic",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "retain س, as שְׂלָו سلوى quail.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "retain س, as שְׂלָו سلوى quail.",
-   "reread": null,
+   "reread": "retain س, as שְׂלָוֹ سلوى quail.",
+   "verdict": "a",
+   "note": "The only dot above the Hebrew word is the sin dot over ש; there is no holem printed over the final ו, so Reading B's שְׂלָוֹ is wrong. Lamed carries qamets, shin carries sheva, Arabic is سلوى with no points.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "In the Hebrew itself, kindred letters",
-   "status": "draft_only",
-   "draft": "In the Hebrew itself, kindred letters",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "are: a) The other sibilants, as שׂ, ס,",
-   "status": "draft_only",
-   "draft": "are:   a) The other sibilants, as שׂ, ס,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "צ, ז, see p. 707; comp. also שָׁפַן, צָפַן,",
-   "status": "draft_only",
+   "text": "צ, ז, see p. 707; comp. also צָפַן, שָׂפַן,",
+   "status": "adjudicated",
    "draft": "צ, ז, see p. 707; comp. also שָׁפַן, צָפַן,",
-   "reread": null,
-   "needs_review": true
+   "reread": "צ, ז, see p. 707; comp. also צָפַן, שָׂפַן,",
+   "verdict": "b",
+   "note": "Printed left-to-right order after \"also\" is צָפַן first, then שָׂפַן (Reading A swaps them). The dot on the ש sits on the upper-left arm (sin, as in שָׂחַק on the next line), unlike the right-dotted שׁ in line 1, so שָׂפַן with sin dot is correct.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "סָפַן; שָׂחַק, צָחַק; שָׁקַק, זָקַק to strain;",
-   "status": "draft_only",
+   "text": "סָפַן; צָחַק, שָׂחַק; שָׁקַק, זָקַק to strain;",
+   "status": "adjudicated",
    "draft": "סָפַן; שָׂחַק, צָחַק; שָׁקַק, זָקַק to strain;",
-   "reread": null,
-   "needs_review": true
+   "reread": "סָפַן; צָחַק, שָׂחַק; שָׁקַק, זָקַק to strain;",
+   "verdict": "b",
+   "note": "Printed left-to-right order of the second pair is צָחַק then שָׂחַק (sin dot upper-left), as in Reading B; Reading A swaps them. All points otherwise identical in both readings and match the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "שָׂאַר and שָׁאַר to ferment. b) Some-",
-   "status": "draft_only",
-   "draft": "שָׂאַר and שָׁאַר to ferment.   b) Some-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "times the aspirates, almost like Gr. ὗς",
-   "status": "draft_only",
-   "draft": "times the aspirates, almost like Gr. ὗς",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Lat. sus, ὕλη sylva; comp. שָׂדָה i. q. הָדָה",
-   "status": "draft_only",
-   "draft": "Lat. sus, ὕλη sylva; comp. שָׂדָה i. q. הָדָה",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "to extend; سلك סָלַךְ i. q. הָלַךְ to go;",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "to extend; سلك סָלַךְ i. q. הָלַךְ to go;",
-   "reread": null,
+   "reread": "to extend ; סָלַךְ سلك i. q. הָלַךְ to go ;",
+   "verdict": "neither",
+   "note": "Decisive point is the left-to-right order: the Arabic سلك is printed first (leftmost), with the Hebrew סָלַךְ to its right, as in Reading A; but the print also has a visible space before both semicolons (\"extend ;\", \"go ;\"), as in Reading B. Vowels confirmed: סָלַךְ and הָלַךְ (qamets, patach, final shewa), Arabic unpointed.",
    "needs_review": true
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "שָׂרַג i. q. אָרַג to plait, to weave. Some-",
-   "status": "draft_only",
-   "draft": "שָׂרַג i. q. אָרַג to plait, to weave.   Some-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "times also, in the formation of roots, a",
-   "status": "draft_only",
-   "draft": "times also, in the formation of roots, a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "sibilant is prefixed to the primary bilite-",
-   "status": "draft_only",
-   "draft": "sibilant is prefixed to the primary bilite-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,",
-   "status": "draft_only",
-   "draft": "ral syllable, as שָׂגַב i. q. גָּבַב to be high,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "שָׂגָא i. q. גָּאָה, etc. Comp. γράφω scribo,",
-   "status": "draft_only",
-   "draft": "שָׂגָא i. q. גָּאָה, etc.   Comp. γράφω scribo,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "γλύφω sculpo, τρίζω strideo, tego στέγω,",
-   "status": "draft_only",
-   "draft": "γλύφω sculpo, τρίζω strideo, tego στέγω,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "fallo σφάλλω, and many others.",
-   "status": "draft_only",
-   "draft": "fallo σφάλλω, and many others.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "* שָׁאָה obsol. root, see in שָׂה.",
-   "status": "draft_only",
+   "text": "* שָׁאָה obsol. root, see in שֶׂה.",
+   "status": "adjudicated",
    "draft": "* שָׁאָה obsol. root, see in שָׂה.",
-   "reread": null,
+   "reread": "* שָׁאָה obsol. root, see in שֶׁה.",
+   "verdict": "neither",
+   "note": "Final word is printed שֶׂה: the dot sits on the left arm (sin, as in A) and the vowel below is a three-dot segol (as in B), so A has the wrong vowel and B the wrong shin/sin dot.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "* רָתַת obsol. root, i. q. רָטַט and Aram.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "* רָתַת obsol. root, i. q. רָטַט and Aram.",
-   "reread": null,
-   "needs_review": true
+   "reread": "* רְתַת obsol. root, i. q. רְטַט and Aram.",
+   "verdict": "a",
+   "note": "Under the resh of both רָתַת and רָטַט the print shows a qamets (horizontal bar with a vertical stroke beneath), not the two stacked dots of sheva; the second letter in each carries a patach. Reading A matches the printed line; B's shevas are wrong.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "רְתַת, ܪܬ, to terrify; hence",
-   "status": "draft_only",
+   "text": "רְתַת, ܪܰܬ, to terrify; hence",
+   "status": "adjudicated",
    "draft": "רְתַת, ܪܬ, to terrify; hence",
-   "reread": null,
+   "reread": "רְתַת, ܪܰܬ, to terrify; hence",
+   "verdict": "b",
+   "note": "The Syriac ܪܬ is printed with a vowel sign above the resh — the small wedge/triangle-shaped Western pthaḥa (ܰ) is clearly visible above and between the two letters, distinct from the resh's own intrinsic dot. Reading A omits this point; Reading B includes it. Hebrew רְתַת, punctuation and English agree in both.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "רְתֵת m. terror Hos. 13, 1. Chald.",
-   "status": "draft_only",
-   "draft": "רְתֵת m. terror Hos. 13, 1. Chald.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "רְתִיתָא id.",
-   "status": "draft_only",
-   "draft": "רְתִיתָא id.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "* שָׂאַר obsol. root, kindr. with the",
-   "status": "draft_only",
+   "text": "* שָׁאַר obsol. root, kindr. with the",
+   "status": "adjudicated",
    "draft": "* שָׂאַר obsol. root, kindr. with the",
-   "reread": null,
-   "needs_review": true
+   "reread": "* שָׁאַר obsol. root, kindr. with the",
+   "verdict": "b",
+   "note": "The dot over the shin is printed above the right arm (shin dot), not the left (sin dot); Reading A's שָׂ is wrong. Vowels (qamets under shin, patach under aleph) match both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "verbs שָׂעַר, סִיר q. v. to become hot, to",
-   "status": "draft_only",
+   "text": "verbs שָׂאַר, סִיר q. v. to become hot, to",
+   "status": "adjudicated",
    "draft": "verbs שָׂעַר, סִיר q. v. to become hot, to",
-   "reread": null,
-   "needs_review": true
+   "reread": "verbs שָׂאַר, סִיר q. v. to become hot, to",
+   "verdict": "b",
+   "note": "The second Hebrew letter is printed as aleph (א, with its diagonal stroke and two feet), not ayin; it matches the headword שָׂאַר on line 1. Patah under aleph, qamets under shin, סִיר with hireq and yod as both readings have.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "ferment; comp. Arab. ثار to boil up, to",
-   "status": "draft_only",
-   "draft": "ferment ; comp. Arab. ثار to boil up, to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "break out, as an ulcer. In the western",
-   "status": "draft_only",
-   "draft": "break out, as an ulcer. In the western",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "languages we find from the same stock,",
-   "status": "draft_only",
-   "draft": "languages we find from the same stock,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Germ. in Ottfr. suar, Anglosax. sur,",
-   "status": "draft_only",
-   "draft": "Germ. in Ottfr. suar, Anglosax. sur,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Germ. sauer, Engl. sour.—Hence",
-   "status": "draft_only",
-   "draft": "Germ. sauer, Engl. sour.—Hence",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7.",
-   "status": "draft_only",
-   "draft": "שְׂאֹר m. leaven, Ex. 12, 15. 19. 13, 7.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Lev. 2, 11. Deut. 16, 4. Chald. סְאֹר id.",
-   "status": "draft_only",
-   "draft": "Lev. 2, 11. Deut. 16, 4. Chald. סְאֹר id.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for",
-   "status": "draft_only",
-   "draft": "שְׂאֵת pr. inf. fem. of the verb נָשָׂא (for",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job",
-   "status": "draft_only",
-   "draft": "שְׂאֶת), c. suff. שְׂאֵתִי, once contr. שֵׂתוֹ Job",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "41, 17, where other Mss. have שאתו.",
-   "status": "draft_only",
+   "text": "41, 17, where other Mss. have שׂאתו.",
+   "status": "adjudicated",
    "draft": "41, 17, where other Mss. have שאתו.",
-   "reread": null,
+   "reread": "41, 17, where other Mss. have שֵׂאתוֹ.",
+   "verdict": "neither",
+   "note": "The word is printed without vowel points (no tsere, no holam — B is wrong), but a sin dot is visible at the upper left of the shin (A omits it): שׂאתו.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "1. a lifting up, Job 41, 17 [25]; so of",
-   "status": "draft_only",
-   "draft": "1. a lifting up, Job 41, 17 [25]; so of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "the countenance, elation, cheerfulness,",
-   "status": "draft_only",
-   "draft": "the countenance, elation, cheerfulness,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Gen. 4, 7. See the root נָשָׂא no. 1. c.",
-   "status": "draft_only",
-   "draft": "Gen. 4, 7.   See the root נָשָׂא no. 1. c.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "2. elevation, a rising in the skin, hence",
-   "status": "draft_only",
-   "draft": "2. elevation, a rising in the skin, hence",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43.",
-   "status": "draft_only",
-   "draft": "genr. a spot, Lev. 13, 2. 10. 19. 28. 43.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "14, 56; so too where more than skin",
-   "status": "draft_only",
-   "draft": "14, 56; so too where more than skin",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "deep, comp. Lev. 13, 2 with v. 3. 4.",
-   "status": "draft_only",
-   "draft": "deep, comp. Lev. 13, 2 with v. 3. 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "3. exaltation, dignity, majesty, Gen.",
-   "status": "draft_only",
-   "draft": "3. exaltation, dignity, majesty, Gen.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "49, 3. Ps. 62, 5; of God Job 13, 11. 31,",
-   "status": "draft_only",
-   "draft": "49, 3.  Ps. 62, 5; of God Job 13, 11. 31,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "23. Here too we may refer Hab. 1, 7",
-   "status": "draft_only",
-   "draft": "23.  Here too we may refer Hab. 1, 7",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "from himself go forth his law and his",
-   "status": "draft_only",
-   "draft": "from himself go forth his law and his",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "dignity, i. e. he acknowledges no law",
-   "status": "draft_only",
-   "draft": "dignity, i. e. he acknowledges no law",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "and no dignity but his own.",
-   "status": "draft_only",
-   "draft": "and no dignity but his own.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "שָׂב an old man, see in r. שִׂיב.",
-   "status": "draft_only",
-   "draft": "שָׂב an old man, see in r. שִׂיב.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "* שָׂבַךְ to interweave, to braid, i. q.",
-   "status": "draft_only",
-   "draft": "* שָׂבַךְ to interweave, to braid, i. q.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
-   "text": "סָבַךְ. Hence שׂוֹבֶךְ, שְׂבָכָה, שָׂבָךְ.",
-   "status": "draft_only",
+   "text": "סָבַךְ. Hence שֹׂבֶךְ, שְׂבָכָה, שׂוֹבֶךְ.",
+   "status": "adjudicated",
    "draft": "סָבַךְ. Hence שׂוֹבֶךְ, שְׂבָכָה, שָׂבָךְ.",
-   "reread": null,
-   "needs_review": true
+   "reread": "סָבַךְ. Hence שֹׂבֶךְ, שְׂבָכָה, שׂוֹבֶךְ.",
+   "verdict": "b",
+   "note": "The first derivative after \"Hence\" is printed defectively (שֹׂבֶךְ, no vav) and the last one plene (שׂוֹבֶךְ, vav clearly visible); Reading A swaps the plene form to first position and gives a non-existent שָׂבָךְ as the third item.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
-   "text": "שָׂבָךְ m. only plur. שְׂבָכִים lattices, ba-",
-   "status": "draft_only",
+   "text": "שְׂבָךְ m. only plur. שְׂבָכִים lattices, ba-",
+   "status": "adjudicated",
    "draft": "שָׂבָךְ m. only plur. שְׂבָכִים lattices, ba-",
-   "reread": null,
+   "reread": "שֹׂבֶךְ m. only plur. שְׂבָכִים lattices, ba-",
+   "verdict": "neither",
+   "note": "Under the sin of the headword the print shows a shewa (two vertical dots, matching the first item in line 3 \"Hence שְׂבָךְ\"), not a qamets (A) and not a holem (B); the single dot above is the sin dot only. Rest of the line is as both readings give.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "lusters, around the capitals of columns,",
-   "status": "draft_only",
-   "draft": "lusters, around the capitals of columns,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "1 K. 7, 17. See in שְׂבָכָה.",
-   "status": "draft_only",
-   "draft": "1 K. 7, 17. See in שְׂבָכָה.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "שַׂבְּכָא sambuca, see סַבְּכָא.",
-   "status": "draft_only",
-   "draft": "שַׂבְּכָא sambuca, see סַבְּכָא.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8.",
-   "status": "draft_only",
-   "draft": "שְׂבָכָה f. (r. שָׂבַךְ) 1. a net Job 18, 8.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "2. lattice, lattice-work, balustrade, es-",
-   "status": "draft_only",
-   "draft": "2. lattice, lattice-work, balustrade, es-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "pec. upon or around the capitals of col-",
-   "status": "draft_only",
-   "draft": "pec. upon or around the capitals of col-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer.",
-   "status": "draft_only",
-   "draft": "umns, 1 K. 7, 18. 20. 42. 2 K. 25, 17. Jer.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42.",
-   "status": "draft_only",
-   "draft": "52, 22. 23; plur. שְׂבָכוֹת 1 K. 7, 41. 42.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "2 Chr. 4, 12. 13. Also before a window",
-   "status": "draft_only",
-   "draft": "2 Chr. 4, 12. 13. Also before a window",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "or balcony, 2 K. 1, 2.",
-   "status": "draft_only",
-   "draft": "or balcony, 2 K. 1, 2.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 0,
-  "adjudicated": 0,
-  "draft_only": 88,
-  "reread_only": 0,
+  "agreed": 71,
+  "adjudicated": 16,
+  "draft_only": 1,
+  "reread_only": 1,
   "unresolved": 0,
-  "needs_review": 88
+  "needs_review": 9
  },
- "errors": 26,
- "cost_usd_list_total": 0.0
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.0478
 }

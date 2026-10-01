@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-09-24T09:59:22+00:00",
+ "generated_at": "2026-10-01T20:16:25+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -45,9 +45,27 @@
      "image_sha256": "965e67c965c0e93d977af026cbf4e1656443d498ce7510f731c92756fe82085c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"910b4109-6201-4f57-9916-067e0d48ee94\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "עִיר 775 עִיר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "07bfc340-1594-4ab9-81da-b468901b1d23",
+      "duration_api_ms": 11229,
+      "cost_usd_list": 0.01176,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 5280,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 208
      },
      "lines": [
+      {
+       "draft": null,
+       "reread": "עִיר 775 עִיר",
+       "status": "reread_only",
+       "band_id": "header-b00",
+       "text": "עִיר 775 עִיר"
+      },
       {
        "draft": "עִיר",
        "reread": null,
@@ -110,92 +128,46 @@
      "image_sha256": "4d15add85d85bb9947e7fdef83de8d5be1516d1bdfd002eb027f5ac11f3950ff",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a288565c-d6a9-4c7c-9bce-1a4538052296\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "lages around that city, elsewhere בְּנוֹת",
+       "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1.",
+       "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1.",
+       "—Proverbially Ecc. 10, 15 the labour of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1250b6be-8419-4962-be32-2600a3427261",
+      "duration_api_ms": 16083,
+      "cost_usd_list": 0.054988,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6392,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 1061
      },
      "lines": [
       {
        "draft": "lages around that city, elsewhere בְּנוֹת",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "lages around that city, elsewhere בְּנוֹת",
+       "status": "agreed",
        "text": "lages around that city, elsewhere בְּנוֹת"
       },
       {
        "draft": "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1.",
+       "status": "agreed",
        "text": "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1."
       },
       {
        "draft": "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1.",
+       "status": "agreed",
        "text": "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1."
       },
       {
        "draft": "—Proverbially Ecc. 10, 15 the labour of",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "—Proverbially Ecc. 10, 15 the labour of",
+       "status": "agreed",
        "text": "—Proverbially Ecc. 10, 15 the labour of"
-      },
-      {
-       "draft": "the foolish wearieth him, because he",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the foolish wearieth him, because he"
-      },
-      {
-       "draft": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,"
-      },
-      {
-       "draft": "i. e. cannot find his way to the city ; the",
-       "reread": null,
-       "status": "draft_only",
-       "text": "i. e. cannot find his way to the city; the"
-      },
-      {
-       "draft": "figure being taken from an awkward",
-       "reread": null,
-       "status": "draft_only",
-       "text": "figure being taken from an awkward"
-      },
-      {
-       "draft": "rustic who loses his way on the most",
-       "reread": null,
-       "status": "draft_only",
-       "text": "rustic who loses his way on the most"
-      },
-      {
-       "draft": "beaten road ; comp. Germ. ‘ er weiss sich",
-       "reread": null,
-       "status": "draft_only",
-       "text": "beaten road; comp. Germ. ‘ er weiss sich"
-      },
-      {
-       "draft": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
-       "reread": null,
-       "status": "draft_only",
-       "text": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is"
-      },
-      {
-       "draft": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec."
-      },
-      {
-       "draft": "עִיר is also put :",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִיר is also put:"
-      },
-      {
-       "draft": "a) For a part of a larger city, espec.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a) For a part of a larger city, espec."
       }
      ]
     },
@@ -212,8 +184,48 @@
      "image_sha256": "bcb8db2d7fb4eea77698b39f89f6f823a72afd7511f190125d0f267ed0333b74",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"be3aa6f7-3289-408a-85b1-1aadae55c5c5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "the foolish wearieth him, because he",
+       "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,",
+       "i. e. cannot find his way to the city ; the",
+       "figure being taken from an awkward"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "30b9ecdd-51f7-4886-8f81-e092049db457",
+      "duration_api_ms": 11472,
+      "cost_usd_list": 0.0211605,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6082,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 386
+     },
+     "lines": [
+      {
+       "draft": "the foolish wearieth him, because he",
+       "reread": "the foolish wearieth him, because he",
+       "status": "agreed",
+       "text": "the foolish wearieth him, because he"
+      },
+      {
+       "draft": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,",
+       "reread": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,",
+       "status": "agreed",
+       "text": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,"
+      },
+      {
+       "draft": "i. e. cannot find his way to the city ; the",
+       "reread": "i. e. cannot find his way to the city ; the",
+       "status": "agreed",
+       "text": "i. e. cannot find his way to the city; the"
+      },
+      {
+       "draft": "figure being taken from an awkward",
+       "reread": "figure being taken from an awkward",
+       "status": "agreed",
+       "text": "figure being taken from an awkward"
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b02",
@@ -228,8 +240,48 @@
      "image_sha256": "bd1eb3c551c132f617d200a6b3d5b7325c2216f0e2e37292ba3ac79f4d5a99ad",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"b45766c1-c63d-4b31-b201-9d605d35ed57\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "rustic who loses his way on the most",
+       "beaten road ; comp. Germ. ‘ er weiss sich",
+       "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
+       "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6a2afaa1-2dc8-4c14-9b63-60b0540dc411",
+      "duration_api_ms": 7320,
+      "cost_usd_list": 0.021476,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6144,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 392
+     },
+     "lines": [
+      {
+       "draft": "rustic who loses his way on the most",
+       "reread": "rustic who loses his way on the most",
+       "status": "agreed",
+       "text": "rustic who loses his way on the most"
+      },
+      {
+       "draft": "beaten road ; comp. Germ. ‘ er weiss sich",
+       "reread": "beaten road ; comp. Germ. ‘ er weiss sich",
+       "status": "agreed",
+       "text": "beaten road; comp. Germ. ‘ er weiss sich"
+      },
+      {
+       "draft": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
+       "reread": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
+       "status": "agreed",
+       "text": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is"
+      },
+      {
+       "draft": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec.",
+       "reread": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec.",
+       "status": "agreed",
+       "text": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec."
+      }
+     ]
     },
     {
      "band_id": "c0-r00-b03",
@@ -244,8 +296,34 @@
      "image_sha256": "ba8ecbb12df31da4f38bb532abd7f77f76aabcbf5c10d4d003a09d5969d9477c",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"170f7953-2f73-4131-8068-cb936044e3d5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "עִיר is also put :",
+       "a) For a part of a larger city, espec."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5641da10-69d6-4eb8-8b0c-c244cb96fcfe",
+      "duration_api_ms": 8517,
+      "cost_usd_list": 0.011752,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5648,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 200
+     },
+     "lines": [
+      {
+       "draft": "עִיר is also put :",
+       "reread": "עִיר is also put :",
+       "status": "agreed",
+       "text": "עִיר is also put:"
+      },
+      {
+       "draft": "a) For a part of a larger city, espec.",
+       "reread": "a) For a part of a larger city, espec.",
+       "status": "agreed",
+       "text": "a) For a part of a larger city, espec."
+      }
+     ]
     }
    ]
   },
@@ -286,74 +364,46 @@
      "image_sha256": "63ab9fe945de1265605c6265d308632a1a6c6c2f90c8c577878820a8e85c8ace",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f53eba90-4457-4952-bef5-f6a101af7f10\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "as fortified by a separate wall ; like Gr.",
+       "πόλις see Passow, Engl. Old city, New",
+       "city. So עִיר דָּוִד the city of David, i. e.",
+       "the citadel on Zion, a part of Jerusalem,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0ce9600b-6be0-47b0-b53d-fb040c68dcf9",
+      "duration_api_ms": 10195,
+      "cost_usd_list": 0.014876750000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6147,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 260
      },
      "lines": [
       {
        "draft": "as fortified by a separate wall ; like Gr.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "as fortified by a separate wall ; like Gr.",
+       "status": "agreed",
        "text": "as fortified by a separate wall; like Gr."
       },
       {
        "draft": "πόλις see Passow, Engl. Old city, New",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "πόλις see Passow, Engl. Old city, New",
+       "status": "agreed",
        "text": "πόλις see Passow, Engl. Old city, New"
       },
       {
        "draft": "city. So עִיר דָּוִד the city of David, i. e.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "city. So עִיר דָּוִד the city of David, i. e.",
+       "status": "agreed",
        "text": "city. So עִיר דָּוִד the city of David, i. e."
       },
       {
        "draft": "the citadel on Zion, a part of Jerusalem,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "the citadel on Zion, a part of Jerusalem,",
+       "status": "agreed",
        "text": "the citadel on Zion, a part of Jerusalem,"
-      },
-      {
-       "draft": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12."
-      },
-      {
-       "draft": "[Later the name city of David seems to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "[Later the name city of David seems to"
-      },
-      {
-       "draft": "have sometimes included the whole of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "have sometimes included the whole of"
-      },
-      {
-       "draft": "Jerusalem ; see Biblioth. Sacr. 1843, p.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Jerusalem; see Biblioth. Sacr. 1843, p."
-      },
-      {
-       "draft": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר",
-       "reread": null,
-       "status": "draft_only",
-       "text": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר"
-      },
-      {
-       "draft": "הַתִּיכוֹנָה the middle city, the middle part",
-       "reread": null,
-       "status": "draft_only",
-       "text": "הַתִּיכוֹנָה the middle city, the middle part"
-      },
-      {
-       "draft": "of Jerusalem, 2 K. 20, 4 Cheth. where",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of Jerusalem, 2 K. 20, 4 Cheth. where"
       }
      ]
     },
@@ -370,8 +420,48 @@
      "image_sha256": "829ddb6cc33d2dc15b37b9ab84321fd3e7f194a38a9b04958eb5131d219677e3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4d4ff141-c5e6-4dad-9729-b6fcfcc422a6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12.",
+       "[Later the name city of David seems to",
+       "have sometimes included the whole of",
+       "Jerusalem ; see Biblioth. Sacr. 1843, p."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9c5b1a7d-5f06-44b9-839b-49e71a6657ef",
+      "duration_api_ms": 9218,
+      "cost_usd_list": 0.015311250000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12.",
+       "reread": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12.",
+       "status": "agreed",
+       "text": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12."
+      },
+      {
+       "draft": "[Later the name city of David seems to",
+       "reread": "[Later the name city of David seems to",
+       "status": "agreed",
+       "text": "[Later the name city of David seems to"
+      },
+      {
+       "draft": "have sometimes included the whole of",
+       "reread": "have sometimes included the whole of",
+       "status": "agreed",
+       "text": "have sometimes included the whole of"
+      },
+      {
+       "draft": "Jerusalem ; see Biblioth. Sacr. 1843, p.",
+       "reread": "Jerusalem ; see Biblioth. Sacr. 1843, p.",
+       "status": "agreed",
+       "text": "Jerusalem; see Biblioth. Sacr. 1843, p."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -386,8 +476,56 @@
      "image_sha256": "2245884de5d012395b1df62ef0d1e576a134f27d898fb4cdcfe45e3a5a7fd2bd",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"6821af17-0094-48e2-9d63-ab6208b2d763\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר",
+       "הַתִּיכוֹנָה the middle city, the middle part",
+       "of Jerusalem, 2 K. 20. 4 Cheth. where"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c82dc54a-298a-465f-833e-2daf5ff452b3",
+      "duration_api_ms": 7678,
+      "cost_usd_list": 0.024699250000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5837,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 458
+     },
+     "lines": [
+      {
+       "draft": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר",
+       "reread": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר",
+       "status": "agreed",
+       "text": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר"
+      },
+      {
+       "draft": "הַתִּיכוֹנָה the middle city, the middle part",
+       "reread": "הַתִּיכוֹנָה the middle city, the middle part",
+       "status": "agreed",
+       "text": "הַתִּיכוֹנָה the middle city, the middle part"
+      },
+      {
+       "draft": "of Jerusalem, 2 K. 20, 4 Cheth. where",
+       "reread": "of Jerusalem, 2 K. 20. 4 Cheth. where",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "of Jerusalem, 2 K. 20. 4 Cheth. where",
+        "verdict": "b",
+        "note": "The mark after \"20\" is a round dot sitting on the baseline with no descending tail — a period, not a comma — so Reading B is correct (even though a comma would be the lexicon's usual chapter/verse convention).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ca57ccf3-a300-47ca-a9a3-3597249745e6",
+        "duration_api_ms": 16542,
+        "cost_usd_list": 0.02688375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 5775,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 502
+       },
+       "text": "of Jerusalem, 2 K. 20. 4 Cheth. where"
+      }
+     ]
     }
    ]
   },
@@ -432,98 +570,46 @@
      "image_sha256": "f53433b0f6bc21ed6d8cf5a6fe8727da8e90143787fcdfeb9ef2cf75eb1d0818",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0799ef7f-14fd-463b-8a07-cdd74743c233\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "Keri has חָצֵר. So עִיר הַמַּיִם the water-",
+       "city, part of the city Rabbah, 2 Sam. 12,",
+       "27 ; עִיר בֵּית הַבַּעַל the city of the house",
+       "of Baal, a part of Samaria so called"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e0a99ab2-e579-4376-afe4-0e502c4b336a",
+      "duration_api_ms": 11818,
+      "cost_usd_list": 0.01551125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 273
      },
      "lines": [
       {
        "draft": "Keri has חָצֵר. So עִיר הַמַּיִם the water-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Keri has חָצֵר. So עִיר הַמַּיִם the water-",
+       "status": "agreed",
        "text": "Keri has חָצֵר. So עִיר הַמַּיִם the water-"
       },
       {
        "draft": "city, part of the city Rabbah, 2 Sam. 12,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "city, part of the city Rabbah, 2 Sam. 12,",
+       "status": "agreed",
        "text": "city, part of the city Rabbah, 2 Sam. 12,"
       },
       {
        "draft": "27 ; עִיר בֵּית הַבַּעַל the city of the house",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "27 ; עִיר בֵּית הַבַּעַל the city of the house",
+       "status": "agreed",
        "text": "27; עִיר בֵּית הַבַּעַל the city of the house"
       },
       {
        "draft": "of Baal, a part of Samaria so called",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "of Baal, a part of Samaria so called",
+       "status": "agreed",
        "text": "of Baal, a part of Samaria so called"
-      },
-      {
-       "draft": "from the temple of Baal, prob. the enclo-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from the temple of Baal, prob. the enclo-"
-      },
-      {
-       "draft": "sure of the temple, τέμενος. 2 K. 10, 25.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "sure of the temple, τέμενος. 2 K. 10, 25."
-      },
-      {
-       "draft": "b) As in Engl. the city for its inhabi-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "b) As in Engl. the city for its inhabi-"
-      },
-      {
-       "draft": "tants, the people of a city ; 1 Sam. 4, 13",
-       "reread": null,
-       "status": "draft_only",
-       "text": "tants, the people of a city; 1 Sam. 4, 13"
-      },
-      {
-       "draft": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is."
-      },
-      {
-       "draft": "14, 31. Here too belongs the phrase",
-       "reread": null,
-       "status": "draft_only",
-       "text": "14, 31. Here too belongs the phrase"
-      },
-      {
-       "draft": "עִיר מְתִים the city of men, i. e. the multi-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִיר מְתִים the city of men, i. e. the multi-"
-      },
-      {
-       "draft": "tude, crowd of men, Deut. 2, 34. 3, 6.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "tude, crowd of men, Deut. 2, 34. 3, 6."
-      },
-      {
-       "draft": "Job 20, 48. (24, 12) ; also Judg. 20, 48",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Job 20, 48. (24, 12); also Judg. 20, 48"
-      },
-      {
-       "draft": "where read מְתִם for מְתֹם. See Thesaur.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "where read מְתִם for מְתֹם. See Thesaur."
-      },
-      {
-       "draft": "p. 830, and עִיר II. b.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "p. 830, and עִיר II. b."
       }
      ]
     },
@@ -540,8 +626,48 @@
      "image_sha256": "7640bd9cc15dde0fd292af7ba9628672d6c57268c4c6efcb827048ecca00746d",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3695cc74-01a3-4986-8f87-a2804ab34b66\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "from the temple of Baal, prob. the enclo-",
+       "sure of the temple, τέμενος. 2 K. 10, 25.",
+       "b) As in Engl. the city for its inhabi-",
+       "tants, the people of a city ; 1 Sam. 4, 13"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe788b4d-5700-4e3c-8061-165b4e8f832f",
+      "duration_api_ms": 4455,
+      "cost_usd_list": 0.01507675,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6147,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "from the temple of Baal, prob. the enclo-",
+       "reread": "from the temple of Baal, prob. the enclo-",
+       "status": "agreed",
+       "text": "from the temple of Baal, prob. the enclo-"
+      },
+      {
+       "draft": "sure of the temple, τέμενος. 2 K. 10, 25.",
+       "reread": "sure of the temple, τέμενος. 2 K. 10, 25.",
+       "status": "agreed",
+       "text": "sure of the temple, τέμενος. 2 K. 10, 25."
+      },
+      {
+       "draft": "b) As in Engl. the city for its inhabi-",
+       "reread": "b) As in Engl. the city for its inhabi-",
+       "status": "agreed",
+       "text": "b) As in Engl. the city for its inhabi-"
+      },
+      {
+       "draft": "tants, the people of a city ; 1 Sam. 4, 13",
+       "reread": "tants, the people of a city ; 1 Sam. 4, 13",
+       "status": "agreed",
+       "text": "tants, the people of a city; 1 Sam. 4, 13"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -556,8 +682,48 @@
      "image_sha256": "1335989cb41de37a7ba0d5e4abc5dc5e2276a186a18405a0e22086aabe6461e3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f47e078b-3892-4f56-914b-3dce4308c8ed\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is.",
+       "14, 31.  Here too belongs the phrase",
+       "עִיר מְתִים the city of men, i. e. the multi-",
+       "tude, crowd of men, Deut. 2, 34.  3, 6."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "84a3a3eb-c8df-4f8a-9440-9d06ac3be5cd",
+      "duration_api_ms": 7016,
+      "cost_usd_list": 0.02256125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 414
+     },
+     "lines": [
+      {
+       "draft": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is.",
+       "reread": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is.",
+       "status": "agreed",
+       "text": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is."
+      },
+      {
+       "draft": "14, 31. Here too belongs the phrase",
+       "reread": "14, 31.  Here too belongs the phrase",
+       "status": "agreed",
+       "text": "14, 31. Here too belongs the phrase"
+      },
+      {
+       "draft": "עִיר מְתִים the city of men, i. e. the multi-",
+       "reread": "עִיר מְתִים the city of men, i. e. the multi-",
+       "status": "agreed",
+       "text": "עִיר מְתִים the city of men, i. e. the multi-"
+      },
+      {
+       "draft": "tude, crowd of men, Deut. 2, 34. 3, 6.",
+       "reread": "tude, crowd of men, Deut. 2, 34.  3, 6.",
+       "status": "agreed",
+       "text": "tude, crowd of men, Deut. 2, 34. 3, 6."
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b03",
@@ -572,8 +738,56 @@
      "image_sha256": "fc92fca2f8d2a3a5834fe0c3b18ea9a08349485adbcf56e2a47d71c4258014bd",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e8e81f9e-c64f-4ef3-b03a-82491f9c4404\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Job 20, 48. (24, 12) ; also Judg. 20, 48",
+       "where read מֵהֶם for מֵחֹם. See Thesaur.",
+       "p. 830, and עִיר II. b."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9162b384-64ac-442c-a33e-d548d72e40ff",
+      "duration_api_ms": 16137,
+      "cost_usd_list": 0.030114750000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5899,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 566
+     },
+     "lines": [
+      {
+       "draft": "Job 20, 48. (24, 12) ; also Judg. 20, 48",
+       "reread": "Job 20, 48. (24, 12) ; also Judg. 20, 48",
+       "status": "agreed",
+       "text": "Job 20, 48. (24, 12); also Judg. 20, 48"
+      },
+      {
+       "draft": "where read מְתִם for מְתֹם. See Thesaur.",
+       "reread": "where read מֵהֶם for מֵחֹם. See Thesaur.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "where read מְתִם for מְתֹם. See Thesaur.",
+        "verdict": "a",
+        "note": "Under the first word the mem carries a vertical two-dot sheva (not a horizontal tsere) and the middle letter has a single dot (hiriq) beneath it; the middle letter in both words is tav with a left foot, not he/heth. Second word has holem over tav. Matches Reading A and the article's context (מְתִים, Judg. 20:48 מְתֹם, cross-ref to עִיר II. b).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2fd89a47-5812-4ff8-a694-35fd651617c5",
+        "duration_api_ms": 29801,
+        "cost_usd_list": 0.1108715,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3526,
+        "cache_creation_input_tokens": 2305,
+        "output_tokens": 1271
+       },
+       "text": "where read מְתִם for מְתֹם. See Thesaur."
+      },
+      {
+       "draft": "p. 830, and עִיר II. b.",
+       "reread": "p. 830, and עִיר II. b.",
+       "status": "agreed",
+       "text": "p. 830, and עִיר II. b."
+      }
+     ]
     }
    ]
   },
@@ -618,98 +832,46 @@
      "image_sha256": "190f614f3f5446b059517bdfbf27c2a09dca3f2a5257eb621e00887b30e6afa3",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"09d1354d-772e-4076-b994-7263523b9181\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "c) With genit. of a people or country,",
+       "the chief city, metropolis ; as עִיר יְהוּדָה",
+       "the city of Judah, i. e. Jerusalem, 2 Chr.",
+       "25, 28 ; ע׳ עֲמָלֵק 1 Sam. 15, 5 ; ע׳ מוֹאָב"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a392fa9d-de31-4976-8575-7245ba7ca11b",
+      "duration_api_ms": 7115,
+      "cost_usd_list": 0.01652675,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6147,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 293
      },
      "lines": [
       {
        "draft": "c) With genit. of a people or country,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "c) With genit. of a people or country,",
+       "status": "agreed",
        "text": "c) With genit. of a people or country,"
       },
       {
        "draft": "the chief city, metropolis ; as עִיר יְהוּדָה",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "the chief city, metropolis ; as עִיר יְהוּדָה",
+       "status": "agreed",
        "text": "the chief city, metropolis; as עִיר יְהוּדָה"
       },
       {
        "draft": "the city of Judah, i. e. Jerusalem, 2 Chr.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "the city of Judah, i. e. Jerusalem, 2 Chr.",
+       "status": "agreed",
        "text": "the city of Judah, i. e. Jerusalem, 2 Chr."
       },
       {
        "draft": "25, 28 ; ע׳ עֲמָלֵק 1 Sam. 15, 5 ; ע׳ מוֹאָב",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "25, 28 ; ע׳ עֲמָלֵק 1 Sam. 15, 5 ; ע׳ מוֹאָב",
+       "status": "agreed",
        "text": "25, 28; ע׳ עֲמָלֵק 1 Sam. 15, 5; ע׳ מוֹאָב"
-      },
-      {
-       "draft": "Num. 22, 36.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Num. 22, 36."
-      },
-      {
-       "draft": "Proper names of cities are : aa) עִיר",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Proper names of cities are: aa) עִיר"
-      },
-      {
-       "draft": "הַמֶּלַח the City of Salt in the desert of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "הַמֶּלַח the City of Salt in the desert of"
-      },
-      {
-       "draft": "Judah, near the Dead Sea, Josh. 15, 62.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Judah, near the Dead Sea, Josh. 15, 62."
-      },
-      {
-       "draft": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-"
-      },
-      {
-       "draft": "hash, the site of which is unknown, 1",
-       "reread": null,
-       "status": "draft_only",
-       "text": "hash, the site of which is unknown, 1"
-      },
-      {
-       "draft": "Chr. 4, 12.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Chr. 4, 12."
-      },
-      {
-       "draft": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-"
-      },
-      {
-       "draft": "mesh, in the territory of Dan, Josh. 19,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "mesh, in the territory of Dan, Josh. 19,"
-      },
-      {
-       "draft": "51. Prob. the same with Beth-shemesh ;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "51. Prob. the same with Beth-shemesh;"
-      },
-      {
-       "draft": "see Bibl. Res. in Palest. III. p. 19.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "see Bibl. Res. in Palest. III. p. 19."
       }
      ]
     },
@@ -726,8 +888,48 @@
      "image_sha256": "1f5a706354a7ae6f6b4ec1ae4546978f57eafefc7ca5a30b6746124bfef177cd",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f094ec30-1f27-4e76-91f5-d5ba86fe708b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Num. 22, 36.",
+       "Proper names of cities are :  aa) עִיר",
+       "הַמֶּלַח the City of Salt in the desert of",
+       "Judah, near the Dead Sea, Josh. 15, 62."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7e0be3f5-26be-4e59-8835-b75a1dab922f",
+      "duration_api_ms": 13275,
+      "cost_usd_list": 0.026111250000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 485
+     },
+     "lines": [
+      {
+       "draft": "Num. 22, 36.",
+       "reread": "Num. 22, 36.",
+       "status": "agreed",
+       "text": "Num. 22, 36."
+      },
+      {
+       "draft": "Proper names of cities are : aa) עִיר",
+       "reread": "Proper names of cities are :  aa) עִיר",
+       "status": "agreed",
+       "text": "Proper names of cities are: aa) עִיר"
+      },
+      {
+       "draft": "הַמֶּלַח the City of Salt in the desert of",
+       "reread": "הַמֶּלַח the City of Salt in the desert of",
+       "status": "agreed",
+       "text": "הַמֶּלַח the City of Salt in the desert of"
+      },
+      {
+       "draft": "Judah, near the Dead Sea, Josh. 15, 62.",
+       "reread": "Judah, near the Dead Sea, Josh. 15, 62.",
+       "status": "agreed",
+       "text": "Judah, near the Dead Sea, Josh. 15, 62."
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b02",
@@ -742,8 +944,48 @@
      "image_sha256": "6ff4c9791ba289669fd3fccb4c1c75391807d5943b2319364f92e88a676f5cde",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d297b329-06de-4237-a314-726bbcc3c117\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "bb) עִיר נָחָשׁ (city of serpents) Ir-na-",
+       "hash, the site of which is unknown, 1",
+       "Chr. 4, 12.",
+       "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d9e32fc-bdb8-4771-bc2e-a2694f8743a7",
+      "duration_api_ms": 13212,
+      "cost_usd_list": 0.031211250000000003,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 587
+     },
+     "lines": [
+      {
+       "draft": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-",
+       "reread": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-",
+       "status": "agreed",
+       "text": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-"
+      },
+      {
+       "draft": "hash, the site of which is unknown, 1",
+       "reread": "hash, the site of which is unknown, 1",
+       "status": "agreed",
+       "text": "hash, the site of which is unknown, 1"
+      },
+      {
+       "draft": "Chr. 4, 12.",
+       "reread": "Chr. 4, 12.",
+       "status": "agreed",
+       "text": "Chr. 4, 12."
+      },
+      {
+       "draft": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-",
+       "reread": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-",
+       "status": "agreed",
+       "text": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-"
+      }
+     ]
     },
     {
      "band_id": "c0-r03-b03",
@@ -758,8 +1000,41 @@
      "image_sha256": "c9d846897c8986d2902868c004017cc02aeb3ab9d93882c09a137983d545c519",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"68cbc2d9-eacd-4965-a9d2-27d925aa98d7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "mesh, in the territory of Dan, Josh. 19,",
+       "51. Prob. the same with Beth-shemesh ;",
+       "see Bibl. Res. in Palest. III. p. 19."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e23513b3-6118-4f62-a4d8-4b832327ca00",
+      "duration_api_ms": 10776,
+      "cost_usd_list": 0.01384925,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5837,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "mesh, in the territory of Dan, Josh. 19,",
+       "reread": "mesh, in the territory of Dan, Josh. 19,",
+       "status": "agreed",
+       "text": "mesh, in the territory of Dan, Josh. 19,"
+      },
+      {
+       "draft": "51. Prob. the same with Beth-shemesh ;",
+       "reread": "51. Prob. the same with Beth-shemesh ;",
+       "status": "agreed",
+       "text": "51. Prob. the same with Beth-shemesh;"
+      },
+      {
+       "draft": "see Bibl. Res. in Palest. III. p. 19.",
+       "reread": "see Bibl. Res. in Palest. III. p. 19.",
+       "status": "agreed",
+       "text": "see Bibl. Res. in Palest. III. p. 19."
+      }
+     ]
     }
    ]
   },
@@ -800,74 +1075,46 @@
      "image_sha256": "657148981cf354386cddcf34197517da70a89e2e60347181ff167d24251c14d9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"71b43fca-8d8f-4a3d-83ec-035c4c9ad4a4\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "dd) עִיר הַתְּמָרִים the City of palm-trees,",
+       "i. q. יְרִיחוֹ Jericho, so called from the",
+       "multitude of palm-trees growing there,",
+       "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "09de97bd-aef7-4621-855b-b3d54fa7b899",
+      "duration_api_ms": 9631,
+      "cost_usd_list": 0.0323725,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6330,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 609
      },
      "lines": [
       {
        "draft": "dd) עִיר הַתְּמָרִים the City of palm-trees,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "dd) עִיר הַתְּמָרִים the City of palm-trees,",
+       "status": "agreed",
        "text": "dd) עִיר הַתְּמָרִים the City of palm-trees,"
       },
       {
        "draft": "i. q. יְרִיחוֹ Jericho, so called from the",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "i. q. יְרִיחוֹ Jericho, so called from the",
+       "status": "agreed",
        "text": "i. q. יְרִיחוֹ Jericho, so called from the"
       },
       {
        "draft": "multitude of palm-trees growing there,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "multitude of palm-trees growing there,",
+       "status": "agreed",
        "text": "multitude of palm-trees growing there,"
       },
       {
        "draft": "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6.",
+       "status": "agreed",
        "text": "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6."
-      },
-      {
-       "draft": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15."
-      },
-      {
-       "draft": "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ee) For עִיר הַהֶרֶס see under הֶרֶס."
-      },
-      {
-       "draft": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for"
-      },
-      {
-       "draft": "which in v. 7 עִירִי.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "which in v. 7 עִירִי."
-      },
-      {
-       "draft": "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "II. עִיר m. (r. עִיר) heat, i. e. a) an-"
-      },
-      {
-       "draft": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I"
-      },
-      {
-       "draft": "will not come in wrath. b) Of mind,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "will not come in wrath. b) Of mind,"
       }
      ]
     },
@@ -884,8 +1131,48 @@
      "image_sha256": "d573d75a22dcc4926247a3015e825e5f8f7776594d89344c8b6810851b96f3f0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"679ad22e-0215-4ebc-adfd-aaf3cdf9123b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
+       "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
+       "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
+       "which in v. 7 עִירִי."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "999b83ab-81a8-46b8-8224-b9ba56e8325a",
+      "duration_api_ms": 14800,
+      "cost_usd_list": 0.0271605,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6082,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 506
+     },
+     "lines": [
+      {
+       "draft": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
+       "reread": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
+       "status": "agreed",
+       "text": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15."
+      },
+      {
+       "draft": "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
+       "reread": "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
+       "status": "agreed",
+       "text": "ee) For עִיר הַהֶרֶס see under הֶרֶס."
+      },
+      {
+       "draft": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
+       "reread": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
+       "status": "agreed",
+       "text": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for"
+      },
+      {
+       "draft": "which in v. 7 עִירִי.",
+       "reread": "which in v. 7 עִירִי.",
+       "status": "agreed",
+       "text": "which in v. 7 עִירִי."
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b02",
@@ -900,8 +1187,41 @@
      "image_sha256": "ba22bf59d51b85efb7ee36e827b4474cb14ee72445e8d3bee57a7c4b44497cb1",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a76e8baf-c912-46e2-bf55-9c835e0bced3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
+       "ger, wrath ; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
+       "will not come in wrath. b) Of mind,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "474eb794-fa1e-4130-b56e-501b53f90c4c",
+      "duration_api_ms": 7449,
+      "cost_usd_list": 0.0242295,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5958,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 448
+     },
+     "lines": [
+      {
+       "draft": "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
+       "reread": "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
+       "status": "agreed",
+       "text": "II. עִיר m. (r. עִיר) heat, i. e. a) an-"
+      },
+      {
+       "draft": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
+       "reread": "ger, wrath ; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
+       "status": "agreed",
+       "text": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I"
+      },
+      {
+       "draft": "will not come in wrath. b) Of mind,",
+       "reread": "will not come in wrath. b) Of mind,",
+       "status": "agreed",
+       "text": "will not come in wrath. b) Of mind,"
+      }
+     ]
     }
    ]
   },
@@ -946,98 +1266,61 @@
      "image_sha256": "8a51d2116436a395f7a232a86a7375d0b8a1072d80e014e830116fa6ea7a1e01",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"11735e65-9f9e-420e-89da-3467c45ae95c\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "anxiety, anguish, terror; Jer. 15, 18",
+       "הִפַּלְתִּי עָלֶיהָ פִּתְאֹם עִיר וּבֶהָלוֹת, Sept.",
+       "ἐπέῤῥιψα ἐπ’ αὐτὴν ἐξαίφνης τρόμον καὶ",
+       "σπουδήν. Here too we may refer Job"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "18d45dc8-0bfd-42f4-8f47-ca7e0d84324b",
+      "duration_api_ms": 9564,
+      "cost_usd_list": 0.028475999999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6144,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 532
      },
      "lines": [
       {
        "draft": "anxiety, anguish, terror; Jer. 15, 18",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "anxiety, anguish, terror; Jer. 15, 18",
+       "status": "agreed",
        "text": "anxiety, anguish, terror; Jer. 15, 18"
       },
       {
        "draft": "הִפַּלְתִּי עָלֶיהָ פִּתְאֹם עִיר וּבֶהָלוֹת, Sept.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "הִפַּלְתִּי עָלֶיהָ פִּתְאֹם עִיר וּבֶהָלוֹת, Sept.",
+       "status": "agreed",
        "text": "הִפַּלְתִּי עָלֶיהָ פִּתְאֹם עִיר וּבֶהָלוֹת, Sept."
       },
       {
        "draft": "ἐπέῤῥιψα ἐπ᾿ αὐτὴν ἐξαίφνης τρόμον καὶ",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ἐπέῤῥιψα ἐπ᾿ αὐτὴν ἐξαίφνης τρόμον καὶ"
+       "reread": "ἐπέῤῥιψα ἐπ’ αὐτὴν ἐξαίφνης τρόμον καὶ",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "ἐπέῤῥιψα ἐπ’ αὐτὴν ἐξαίφνης τρόμον καὶ",
+        "verdict": "b",
+        "note": "Only difference is the elision mark after ἐπ: A uses U+1FBF (spacing psili), B uses U+2019. The printed glyph is the normal koronis-style apostrophe, visually identical for either code point; U+2019 is the standard encoding for Greek elision, so B. All letters, breathings (ἐπέῤῥιψα, αὐτὴν) and accents (ἐξαίφνης, τρόμον, καὶ) match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "251294bb-9dfc-4177-ab06-e02eee260677",
+        "duration_api_ms": 21073,
+        "cost_usd_list": 0.126362,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2594,
+        "output_tokens": 1465
+       },
+       "text": "ἐπέῤῥιψα ἐπ’ αὐτὴν ἐξαίφνης τρόμον καὶ"
       },
       {
        "draft": "σπουδήν. Here too we may refer Job",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "σπουδήν. Here too we may refer Job",
+       "status": "agreed",
        "text": "σπουδήν. Here too we may refer Job"
-      },
-      {
-       "draft": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for",
-       "reread": null,
-       "status": "draft_only",
-       "text": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for"
-      },
-      {
-       "draft": "מְתִים men we read מֵתִים the dying, i. e.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "מְתִים men we read מֵתִים the dying, i. e."
-      },
-      {
-       "draft": "from anguish do the dying groan.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "from anguish do the dying groan."
-      },
-      {
-       "draft": "עִיר Chald. m. (r. עוּר) a watcher, a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִיר Chald. m. (r. עוּר) a watcher, a"
-      },
-      {
-       "draft": "name for angels in the later Hebrew, as",
-       "reread": null,
-       "status": "draft_only",
-       "text": "name for angels in the later Hebrew, as"
-      },
-      {
-       "draft": "keeping watch over the affairs of men,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "keeping watch over the affairs of men,"
-      },
-      {
-       "draft": "Dan. 4, 10. 14. 20.—In the Syrian litur-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Dan. 4, 10. 14. 20.—In the Syrian litur-"
-      },
-      {
-       "draft": "gies it is also used for the archangels,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "gies it is also used for the archangels,"
-      },
-      {
-       "draft": "as of Gabriel; elsewhere ܥܺܝ̈ܪܶܐ and",
-       "reread": null,
-       "status": "draft_only",
-       "text": "as of Gabriel; elsewhere ܥܺܝ̈ܪܶܐ and"
-      },
-      {
-       "draft": "Gr. ἐγρήγοροι of evil angels. In Lib.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Gr. ἐγρήγοροι of evil angels. In Lib."
-      },
-      {
-       "draft": "Henoch. Eth. ትጉሃን watchers, is spok-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Henoch. Eth. ትጉሃን watchers, is spok-"
       }
      ]
     },
@@ -1054,8 +1337,48 @@
      "image_sha256": "71ac5f22ebe5c17e7a1ccf454abc9d43fedc936e379087d30287063a3bfe290b",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"948e1acb-5d7e-4fda-b31b-d5a1177c78af\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for",
+       "מְתִים men we read מֵתִים the dying, i. e.",
+       "from anguish do the dying groan.",
+       "עִיר Chald. m. (r. עוּר) a watcher, a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e630f6a0-0d11-479e-822b-0f8396be6964",
+      "duration_api_ms": 9689,
+      "cost_usd_list": 0.03209225,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6209,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 604
+     },
+     "lines": [
+      {
+       "draft": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for",
+       "reread": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for",
+       "status": "agreed",
+       "text": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for"
+      },
+      {
+       "draft": "מְתִים men we read מֵתִים the dying, i. e.",
+       "reread": "מְתִים men we read מֵתִים the dying, i. e.",
+       "status": "agreed",
+       "text": "מְתִים men we read מֵתִים the dying, i. e."
+      },
+      {
+       "draft": "from anguish do the dying groan.",
+       "reread": "from anguish do the dying groan.",
+       "status": "agreed",
+       "text": "from anguish do the dying groan."
+      },
+      {
+       "draft": "עִיר Chald. m. (r. עוּר) a watcher, a",
+       "reread": "עִיר Chald. m. (r. עוּר) a watcher, a",
+       "status": "agreed",
+       "text": "עִיר Chald. m. (r. עוּר) a watcher, a"
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -1070,8 +1393,48 @@
      "image_sha256": "8e660e9ed9a4124f0b4d49900c53f9e8cb78a2dc9b62c07a831b975ff4181c25",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0d32b64f-f11d-4082-a51a-97fdf6cf24ff\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "name for angels in the later Hebrew, as",
+       "keeping watch over the affairs of men,",
+       "Dan. 4, 10. 14. 20.—In the Syrian litur-",
+       "gies it is also used for the archangels,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7cc7d6a3-b079-4ebb-9ded-2e1dc745b262",
+      "duration_api_ms": 11459,
+      "cost_usd_list": 0.014311250000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "name for angels in the later Hebrew, as",
+       "reread": "name for angels in the later Hebrew, as",
+       "status": "agreed",
+       "text": "name for angels in the later Hebrew, as"
+      },
+      {
+       "draft": "keeping watch over the affairs of men,",
+       "reread": "keeping watch over the affairs of men,",
+       "status": "agreed",
+       "text": "keeping watch over the affairs of men,"
+      },
+      {
+       "draft": "Dan. 4, 10. 14. 20.—In the Syrian litur-",
+       "reread": "Dan. 4, 10. 14. 20.—In the Syrian litur-",
+       "status": "agreed",
+       "text": "Dan. 4, 10. 14. 20.—In the Syrian litur-"
+      },
+      {
+       "draft": "gies it is also used for the archangels,",
+       "reread": "gies it is also used for the archangels,",
+       "status": "agreed",
+       "text": "gies it is also used for the archangels,"
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b03",
@@ -1086,8 +1449,56 @@
      "image_sha256": "d151a494cf4d2ecee52ba68ed1b022a7b3e6b5e1f151ab49186ee0e509b3ee1f",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8ef0e513-4c74-43c3-9576-6385073317b5\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "as of Gabriel ; elsewhere ܥܺܝܪ̈ܶܐ and",
+       "Gr. ἐγρήγοροι of evil angels. In Lib.",
+       "Henoch. Eth. ትጉሃን watchers, is spok-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f1bb35ed-36cf-418d-ab3d-d822293ea817",
+      "duration_api_ms": 16400,
+      "cost_usd_list": 0.03098025,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5961,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 583
+     },
+     "lines": [
+      {
+       "draft": "as of Gabriel; elsewhere ܥܺܝ̈ܪܶܐ and",
+       "reread": "as of Gabriel ; elsewhere ܥܺܝܪ̈ܶܐ and",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "as of Gabriel ; elsewhere ܥܺܝܪ̈ܶܐ and",
+        "verdict": "b",
+        "note": "The seyame (two dots) sits over the middle of the word, above the resh (merging with the resh dot, as is standard: ܪ̈), not over the yod; the yod carries no marks above. The print also has a thin space before the semicolon after \"Gabriel\", as in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a006738f-d73d-4841-95a7-cb9973d5163d",
+        "duration_api_ms": 23403,
+        "cost_usd_list": 0.07302225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 5929,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 1424
+       },
+       "text": "as of Gabriel; elsewhere ܥܺܝܪ̈ܶܐ and"
+      },
+      {
+       "draft": "Gr. ἐγρήγοροι of evil angels. In Lib.",
+       "reread": "Gr. ἐγρήγοροι of evil angels. In Lib.",
+       "status": "agreed",
+       "text": "Gr. ἐγρήγοροι of evil angels. In Lib."
+      },
+      {
+       "draft": "Henoch. Eth. ትጉሃን watchers, is spok-",
+       "reread": "Henoch. Eth. ትጉሃን watchers, is spok-",
+       "status": "agreed",
+       "text": "Henoch. Eth. ትጉሃን watchers, is spok-"
+      }
+     ]
     }
    ]
   },
@@ -1131,92 +1542,46 @@
      "image_sha256": "ef287938adcba0609a33a3a7b321469f5116dffe091b1894ef678f3767d792ec",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"29ede938-aab8-4b46-855c-94ac54d91ed0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "en of good angels 12, 2. 4. 92, 16 ; of",
+       "fallen angels 10, 13. 12, 5. al. Suicer",
+       "Thes. Eccl. art. ἐγρήγορος. Castelli",
+       "Lex. Syr. ed. Mich. p. 649."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "32569f4e-c396-4431-9256-26bdade0d689",
+      "duration_api_ms": 9300,
+      "cost_usd_list": 0.015561250000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6085,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 274
      },
      "lines": [
       {
        "draft": "en of good angels 12, 2. 4. 92, 16 ; of",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "en of good angels 12, 2. 4. 92, 16 ; of",
+       "status": "agreed",
        "text": "en of good angels 12, 2. 4. 92, 16; of"
       },
       {
        "draft": "fallen angels 10, 13. 12, 5. al. Suicer",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "fallen angels 10, 13. 12, 5. al. Suicer",
+       "status": "agreed",
        "text": "fallen angels 10, 13. 12, 5. al. Suicer"
       },
       {
        "draft": "Thes. Eccl. art. ἐγρήγορος. Castelli",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Thes. Eccl. art. ἐγρήγορος. Castelli",
+       "status": "agreed",
        "text": "Thes. Eccl. art. ἐγρήγορος. Castelli"
       },
       {
        "draft": "Lex. Syr. ed. Mich. p. 649.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Lex. Syr. ed. Mich. p. 649.",
+       "status": "agreed",
        "text": "Lex. Syr. ed. Mich. p. 649."
-      },
-      {
-       "draft": "עִיר see before r. עִיר, p. 774.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִיר see before r. עִיר, p. 774."
-      },
-      {
-       "draft": "עִירָא (wakeful, r. עוּר I) Ira, pr. n. m.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִירָא (wakeful, r. עוּר I) Ira, pr. n. m."
-      },
-      {
-       "draft": "a) A priest under David, 2 Sam. 20, 26.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "a) A priest under David, 2 Sam. 20, 26."
-      },
-      {
-       "draft": "b) Two of David's warriors 2 Sam. 23,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "b) Two of David's warriors 2 Sam. 23,"
-      },
-      {
-       "draft": "26. 28.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "26. 28."
-      },
-      {
-       "draft": "עִירָד pr. n. m. Irad, an antediluvian",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִירָד pr. n. m. Irad, an antediluvian"
-      },
-      {
-       "draft": "patriarch, son of Enoch and grandson",
-       "reread": null,
-       "status": "draft_only",
-       "text": "patriarch, son of Enoch and grandson"
-      },
-      {
-       "draft": "of Cain, Gen. 4, 18.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of Cain, Gen. 4, 18."
-      },
-      {
-       "draft": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,"
-      },
-      {
-       "draft": "15.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "15."
       }
      ]
     },
@@ -1233,8 +1598,78 @@
      "image_sha256": "4afe8eab4563af5a8dc15da8012c0429918629dd974ce62867bda3694f324114",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"105ad5b9-eb8d-43d4-9a55-b86110d2169d\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "עַיִר see before r. עִיר, p. 774.",
+       "עִירָא (wakeful, r. עוּר I ) Ira, pr. n. m.",
+       "a) A priest under David, 2 Sam. 20, 26.",
+       "b) Two of David’s warriors 2 Sam. 23,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6e901111-3efb-4425-a681-24e0315b6e6e",
+      "duration_api_ms": 13779,
+      "cost_usd_list": 0.02525775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6271,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 467
+     },
+     "lines": [
+      {
+       "draft": "עִיר see before r. עִיר, p. 774.",
+       "reread": "עַיִר see before r. עִיר, p. 774.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "עַיִר see before r. עִיר, p. 774.",
+        "verdict": "b",
+        "note": "The headword has a patach (horizontal bar) under ayin and a hireq dot under yod — עַיִר — not hireq under ayin; the second word עִיר (hireq under ayin, no vowel under yod) is as both readings give.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "77d65581-41fd-4b7c-b394-142db5cad354",
+        "duration_api_ms": 12812,
+        "cost_usd_list": 0.02543575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6183,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 471
+       },
+       "text": "עַיִר see before r. עִיר, p. 774."
+      },
+      {
+       "draft": "עִירָא (wakeful, r. עוּר I) Ira, pr. n. m.",
+       "reread": "עִירָא (wakeful, r. עוּר I ) Ira, pr. n. m.",
+       "status": "agreed",
+       "text": "עִירָא (wakeful, r. עוּר I) Ira, pr. n. m."
+      },
+      {
+       "draft": "a) A priest under David, 2 Sam. 20, 26.",
+       "reread": "a) A priest under David, 2 Sam. 20, 26.",
+       "status": "agreed",
+       "text": "a) A priest under David, 2 Sam. 20, 26."
+      },
+      {
+       "draft": "b) Two of David's warriors 2 Sam. 23,",
+       "reread": "b) Two of David’s warriors 2 Sam. 23,",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "b) Two of David’s warriors 2 Sam. 23,",
+        "verdict": "b",
+        "note": "Only difference is the apostrophe in \"David's\": the print shows the typographic curly apostrophe (’), as in Reading B, not an ASCII straight quote. All other characters match in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c1d948fb-e7c1-4aa4-8b0f-7198b162a21b",
+        "duration_api_ms": 6623,
+        "cost_usd_list": 0.050735999999999996,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 4784,
+        "cache_creation_input_tokens": 1445,
+        "output_tokens": 406
+       },
+       "text": "b) Two of David’s warriors 2 Sam. 23,"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1249,8 +1684,48 @@
      "image_sha256": "c7e03bd6cef573764b45ca746c18a302e176be6f4d8a2c7920f52e8cc9b4f6cb",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"cd7da955-186a-4512-a5ab-f85ab9edcfb3\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "26. 28.",
+       "עִירָד pr. n. m. Irad, an antediluvian",
+       "patriarch, son of Enoch and grandson",
+       "of Cain, Gen. 4, 18."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0e8aa7db-1584-45a8-8a6a-6e01cec98f05",
+      "duration_api_ms": 11167,
+      "cost_usd_list": 0.01664225,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6209,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 295
+     },
+     "lines": [
+      {
+       "draft": "26. 28.",
+       "reread": "26. 28.",
+       "status": "agreed",
+       "text": "26. 28."
+      },
+      {
+       "draft": "עִירָד pr. n. m. Irad, an antediluvian",
+       "reread": "עִירָד pr. n. m. Irad, an antediluvian",
+       "status": "agreed",
+       "text": "עִירָד pr. n. m. Irad, an antediluvian"
+      },
+      {
+       "draft": "patriarch, son of Enoch and grandson",
+       "reread": "patriarch, son of Enoch and grandson",
+       "status": "agreed",
+       "text": "patriarch, son of Enoch and grandson"
+      },
+      {
+       "draft": "of Cain, Gen. 4, 18.",
+       "reread": "of Cain, Gen. 4, 18.",
+       "status": "agreed",
+       "text": "of Cain, Gen. 4, 18."
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b03",
@@ -1265,8 +1740,34 @@
      "image_sha256": "29abb09b7afa48254c29874fa3d8ca2987230faa7bd26ff6afff5e172e5d5bf0",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3260877a-4752-496f-880e-7123d6f2efd7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,",
+       "15."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ca7e3f6f-c7c3-43f9-8b85-9ff6098c4ef6",
+      "duration_api_ms": 8449,
+      "cost_usd_list": 0.01260275,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5651,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,",
+       "reread": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,",
+       "status": "agreed",
+       "text": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,"
+      },
+      {
+       "draft": "15.",
+       "reread": "15.",
+       "status": "agreed",
+       "text": "15."
+      }
+     ]
     }
    ]
   },
@@ -1307,74 +1808,46 @@
      "image_sha256": "e4ace8dfca2d74c65c123c7fa8b62dfed556265f519f95ecadc068a7a944ecae",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"d985f974-e5cd-40aa-a24b-a8bcc1a05f7b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
+      "lines": [
+       "עִירִי (urbanus) Iri, pr. n. see עִיר I. 2.",
+       "עִירָם (urbanus) Iram, pr. n. of a phy-",
+       "larch or head of a tribe among the Edom-",
+       "ites, Gen. 36, 43."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9ba7cb6f-de43-4ff5-9334-3fbf79f775c3",
+      "duration_api_ms": 17524,
+      "cost_usd_list": 0.026192250000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6209,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 486
      },
      "lines": [
       {
        "draft": "עִירִי (urbanus) Iri, pr. n. see עִיר I. 2.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "עִירִי (urbanus) Iri, pr. n. see עִיר I. 2.",
+       "status": "agreed",
        "text": "עִירִי (urbanus) Iri, pr. n. see עִיר I. 2."
       },
       {
        "draft": "עִירָם (urbanus) Iram, pr. n. of a phy-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "עִירָם (urbanus) Iram, pr. n. of a phy-",
+       "status": "agreed",
        "text": "עִירָם (urbanus) Iram, pr. n. of a phy-"
       },
       {
        "draft": "larch or head of a tribe among the Edom-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "larch or head of a tribe among the Edom-",
+       "status": "agreed",
        "text": "larch or head of a tribe among the Edom-"
       },
       {
        "draft": "ites, Gen. 36, 43.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "ites, Gen. 36, 43.",
+       "status": "agreed",
        "text": "ites, Gen. 36, 43."
-      },
-      {
-       "draft": "עֵירֹם and עֵרֹם m. (r. עָרַם I) plur.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עֵירֹם and עֵרֹם m. (r. עָרַם I) plur."
-      },
-      {
-       "draft": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,"
-      },
-      {
-       "draft": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-"
-      },
-      {
-       "draft": "ness and need. i. e. most naked and with-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ness and need. i. e. most naked and with-"
-      },
-      {
-       "draft": "out help. v. 22. 39. 23, 29. Concr. naked,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "out help. v. 22. 39. 23, 29. Concr. naked,"
-      },
-      {
-       "draft": "Gen. 3, 10. 11. Ez. 18, 7. 16 ; and so plur.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Gen. 3, 10. 11. Ez. 18, 7. 16; and so plur."
-      },
-      {
-       "draft": "עֵירֻמִּים naked Gen. 3, 7.—The form is",
-       "reread": null,
-       "status": "draft_only",
-       "text": "עֵירֻמִּים naked Gen. 3, 7.—The form is"
       }
      ]
     },
@@ -1391,8 +1864,48 @@
      "image_sha256": "e2bde3a6fca9f05e02f4027e34bab5cfe0d228ee266c513aada1706ac4c83159",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ddabb9f0-e521-438f-bd44-39d45c508be6\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "עֵירֹם and עֵרֹם m. (r. עָרַם I ) plur.",
+       "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,",
+       "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-",
+       "ness and need. i. e. most naked and with-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b428a1b5-e41f-47d2-93c6-2546da92b177",
+      "duration_api_ms": 9798,
+      "cost_usd_list": 0.034176750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6147,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 646
+     },
+     "lines": [
+      {
+       "draft": "עֵירֹם and עֵרֹם m. (r. עָרַם I) plur.",
+       "reread": "עֵירֹם and עֵרֹם m. (r. עָרַם I ) plur.",
+       "status": "agreed",
+       "text": "עֵירֹם and עֵרֹם m. (r. עָרַם I) plur."
+      },
+      {
+       "draft": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,",
+       "reread": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,",
+       "status": "agreed",
+       "text": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,"
+      },
+      {
+       "draft": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-",
+       "reread": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-",
+       "status": "agreed",
+       "text": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-"
+      },
+      {
+       "draft": "ness and need. i. e. most naked and with-",
+       "reread": "ness and need. i. e. most naked and with-",
+       "status": "agreed",
+       "text": "ness and need. i. e. most naked and with-"
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1407,13 +1920,55 @@
      "image_sha256": "c8175ce5798148c116c270a7d72de5873326fffa1a978a4f0f4bd4f9a84762db",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2fd19ce2-544f-4ae1-b6c3-5cdf04e629c7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\"},\""
-     }
+      "lines": [
+       "out help. v. 22. 39. 23, 29. Concr. naked,",
+       "Gen. 3, 10. 11. Ez. 18, 7. 16 ; and so plur.",
+       "עֵירֻמִּים naked Gen. 3, 7.—The form is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "20150bb4-b289-435b-917a-0da13225b4bc",
+      "duration_api_ms": 20050,
+      "cost_usd_list": 0.02391475,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5899,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 442
+     },
+     "lines": [
+      {
+       "draft": "out help. v. 22. 39. 23, 29. Concr. naked,",
+       "reread": "out help. v. 22. 39. 23, 29. Concr. naked,",
+       "status": "agreed",
+       "text": "out help. v. 22. 39. 23, 29. Concr. naked,"
+      },
+      {
+       "draft": "Gen. 3, 10. 11. Ez. 18, 7. 16 ; and so plur.",
+       "reread": "Gen. 3, 10. 11. Ez. 18, 7. 16 ; and so plur.",
+       "status": "agreed",
+       "text": "Gen. 3, 10. 11. Ez. 18, 7. 16; and so plur."
+      },
+      {
+       "draft": "עֵירֻמִּים naked Gen. 3, 7.—The form is",
+       "reread": "עֵירֻמִּים naked Gen. 3, 7.—The form is",
+       "status": "agreed",
+       "text": "עֵירֻמִּים naked Gen. 3, 7.—The form is"
+      }
+     ]
     }
    ]
   }
  ],
  "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "עִיר 775 עִיר",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "עִיר 775 עִיר",
+   "needs_review": true
+  },
   {
    "chunk_id": "header",
    "column": -1,
@@ -1445,965 +2000,679 @@
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "lages around that city, elsewhere בְּנוֹת",
-   "status": "draft_only",
-   "draft": "lages around that city, elsewhere בְּנוֹת",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1.",
-   "status": "draft_only",
-   "draft": "הָעִיר; as עָרֵי חֶשְׁבּוֹן Josh. 13, 17. Jer. 34, 1.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1.",
-   "status": "draft_only",
-   "draft": "But עָרֵי עֲרוֹעֵר Is. 17, 2, see in עֲרוֹעֵר no. 1.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "—Proverbially Ecc. 10, 15 the labour of",
-   "status": "draft_only",
-   "draft": "—Proverbially Ecc. 10, 15 the labour of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "the foolish wearieth him, because he",
-   "status": "draft_only",
-   "draft": "the foolish wearieth him, because he",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,",
-   "status": "draft_only",
-   "draft": "knoweth not לָלֶכֶת אֶל־עִיר to go to the city,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "i. e. cannot find his way to the city; the",
-   "status": "draft_only",
-   "draft": "i. e. cannot find his way to the city ; the",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "figure being taken from an awkward",
-   "status": "draft_only",
-   "draft": "figure being taken from an awkward",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "rustic who loses his way on the most",
-   "status": "draft_only",
-   "draft": "rustic who loses his way on the most",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "beaten road; comp. Germ. ‘ er weiss sich",
-   "status": "draft_only",
-   "draft": "beaten road ; comp. Germ. ‘ er weiss sich",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
-   "status": "draft_only",
-   "draft": "nicht zu finden.’ In Ps. 73, 20 בָּעִיר is",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec.",
-   "status": "draft_only",
-   "draft": "for בְּהָעִיר inf. Hiph. of r. עוּר I.—Spec.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "עִיר is also put:",
-   "status": "draft_only",
-   "draft": "עִיר is also put :",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "a) For a part of a larger city, espec.",
-   "status": "draft_only",
-   "draft": "a) For a part of a larger city, espec.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "as fortified by a separate wall; like Gr.",
-   "status": "draft_only",
-   "draft": "as fortified by a separate wall ; like Gr.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "πόλις see Passow, Engl. Old city, New",
-   "status": "draft_only",
-   "draft": "πόλις see Passow, Engl. Old city, New",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "city. So עִיר דָּוִד the city of David, i. e.",
-   "status": "draft_only",
-   "draft": "city. So עִיר דָּוִד the city of David, i. e.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "the citadel on Zion, a part of Jerusalem,",
-   "status": "draft_only",
-   "draft": "the citadel on Zion, a part of Jerusalem,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12.",
-   "status": "draft_only",
-   "draft": "ἡ ἄνω πόλις, 2 Sam. 5, 7. 9. 6, 10. 12.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "[Later the name city of David seems to",
-   "status": "draft_only",
-   "draft": "[Later the name city of David seems to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "have sometimes included the whole of",
-   "status": "draft_only",
-   "draft": "have sometimes included the whole of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Jerusalem; see Biblioth. Sacr. 1843, p.",
-   "status": "draft_only",
-   "draft": "Jerusalem ; see Biblioth. Sacr. 1843, p.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר",
-   "status": "draft_only",
-   "draft": "97 sq. ib. 1846, p. 633 sq.—R.] הָעִיר",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "הַתִּיכוֹנָה the middle city, the middle part",
-   "status": "draft_only",
-   "draft": "הַתִּיכוֹנָה the middle city, the middle part",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "of Jerusalem, 2 K. 20, 4 Cheth. where",
-   "status": "draft_only",
+   "text": "of Jerusalem, 2 K. 20. 4 Cheth. where",
+   "status": "adjudicated",
    "draft": "of Jerusalem, 2 K. 20, 4 Cheth. where",
-   "reread": null,
-   "needs_review": true
+   "reread": "of Jerusalem, 2 K. 20. 4 Cheth. where",
+   "verdict": "b",
+   "note": "The mark after \"20\" is a round dot sitting on the baseline with no descending tail — a period, not a comma — so Reading B is correct (even though a comma would be the lexicon's usual chapter/verse convention).",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Keri has חָצֵר. So עִיר הַמַּיִם the water-",
-   "status": "draft_only",
-   "draft": "Keri has חָצֵר. So עִיר הַמַּיִם the water-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "city, part of the city Rabbah, 2 Sam. 12,",
-   "status": "draft_only",
-   "draft": "city, part of the city Rabbah, 2 Sam. 12,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "27; עִיר בֵּית הַבַּעַל the city of the house",
-   "status": "draft_only",
-   "draft": "27 ; עִיר בֵּית הַבַּעַל the city of the house",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "of Baal, a part of Samaria so called",
-   "status": "draft_only",
-   "draft": "of Baal, a part of Samaria so called",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "from the temple of Baal, prob. the enclo-",
-   "status": "draft_only",
-   "draft": "from the temple of Baal, prob. the enclo-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "sure of the temple, τέμενος. 2 K. 10, 25.",
-   "status": "draft_only",
-   "draft": "sure of the temple, τέμενος. 2 K. 10, 25.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "b) As in Engl. the city for its inhabi-",
-   "status": "draft_only",
-   "draft": "b) As in Engl. the city for its inhabi-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "tants, the people of a city; 1 Sam. 4, 13",
-   "status": "draft_only",
-   "draft": "tants, the people of a city ; 1 Sam. 4, 13",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is.",
-   "status": "draft_only",
-   "draft": "וַתִּזְעַק כָּל־הָעִיר all the city cried out. Is.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "14, 31. Here too belongs the phrase",
-   "status": "draft_only",
-   "draft": "14, 31. Here too belongs the phrase",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "עִיר מְתִים the city of men, i. e. the multi-",
-   "status": "draft_only",
-   "draft": "עִיר מְתִים the city of men, i. e. the multi-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "tude, crowd of men, Deut. 2, 34. 3, 6.",
-   "status": "draft_only",
-   "draft": "tude, crowd of men, Deut. 2, 34. 3, 6.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Job 20, 48. (24, 12); also Judg. 20, 48",
-   "status": "draft_only",
-   "draft": "Job 20, 48. (24, 12) ; also Judg. 20, 48",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "where read מְתִם for מְתֹם. See Thesaur.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "where read מְתִם for מְתֹם. See Thesaur.",
-   "reread": null,
-   "needs_review": true
+   "reread": "where read מֵהֶם for מֵחֹם. See Thesaur.",
+   "verdict": "a",
+   "note": "Under the first word the mem carries a vertical two-dot sheva (not a horizontal tsere) and the middle letter has a single dot (hiriq) beneath it; the middle letter in both words is tav with a left foot, not he/heth. Second word has holem over tav. Matches Reading A and the article's context (מְתִים, Judg. 20:48 מְתֹם, cross-ref to עִיר II. b).",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "p. 830, and עִיר II. b.",
-   "status": "draft_only",
-   "draft": "p. 830, and עִיר II. b.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "c) With genit. of a people or country,",
-   "status": "draft_only",
-   "draft": "c) With genit. of a people or country,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "the chief city, metropolis; as עִיר יְהוּדָה",
-   "status": "draft_only",
-   "draft": "the chief city, metropolis ; as עִיר יְהוּדָה",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "the city of Judah, i. e. Jerusalem, 2 Chr.",
-   "status": "draft_only",
-   "draft": "the city of Judah, i. e. Jerusalem, 2 Chr.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "25, 28; ע׳ עֲמָלֵק 1 Sam. 15, 5; ע׳ מוֹאָב",
-   "status": "draft_only",
-   "draft": "25, 28 ; ע׳ עֲמָלֵק 1 Sam. 15, 5 ; ע׳ מוֹאָב",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Num. 22, 36.",
-   "status": "draft_only",
-   "draft": "Num. 22, 36.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Proper names of cities are: aa) עִיר",
-   "status": "draft_only",
-   "draft": "Proper names of cities are : aa) עִיר",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "הַמֶּלַח the City of Salt in the desert of",
-   "status": "draft_only",
-   "draft": "הַמֶּלַח the City of Salt in the desert of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Judah, near the Dead Sea, Josh. 15, 62.",
-   "status": "draft_only",
-   "draft": "Judah, near the Dead Sea, Josh. 15, 62.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-",
-   "status": "draft_only",
-   "draft": "bb) עִיר נָחָשׁ (city of serpents) Ir-na-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "hash, the site of which is unknown, 1",
-   "status": "draft_only",
-   "draft": "hash, the site of which is unknown, 1",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "Chr. 4, 12.",
-   "status": "draft_only",
-   "draft": "Chr. 4, 12.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-",
-   "status": "draft_only",
-   "draft": "cc) עִיר שֶׁמֶשׁ (city of the sun) Ir-she-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "mesh, in the territory of Dan, Josh. 19,",
-   "status": "draft_only",
-   "draft": "mesh, in the territory of Dan, Josh. 19,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "51. Prob. the same with Beth-shemesh;",
-   "status": "draft_only",
-   "draft": "51. Prob. the same with Beth-shemesh ;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "see Bibl. Res. in Palest. III. p. 19.",
-   "status": "draft_only",
-   "draft": "see Bibl. Res. in Palest. III. p. 19.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "dd) עִיר הַתְּמָרִים the City of palm-trees,",
-   "status": "draft_only",
-   "draft": "dd) עִיר הַתְּמָרִים the City of palm-trees,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "i. q. יְרִיחוֹ Jericho, so called from the",
-   "status": "draft_only",
-   "draft": "i. q. יְרִיחוֹ Jericho, so called from the",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "multitude of palm-trees growing there,",
-   "status": "draft_only",
-   "draft": "multitude of palm-trees growing there,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6.",
-   "status": "draft_only",
-   "draft": "see Plin. H. N. 5. 14. Tacit. Hist. 5. 6.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
-   "status": "draft_only",
-   "draft": "Deut. 34, 3. Judg. 1, 16. 2 Chr. 28, 15.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
-   "status": "draft_only",
-   "draft": "ee) For עִיר הַהֶרֶס see under הֶרֶס.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
-   "status": "draft_only",
-   "draft": "2. Ir, pr. n. of a man 1 Chr. 7, 12; for",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "which in v. 7 עִירִי.",
-   "status": "draft_only",
-   "draft": "which in v. 7 עִירִי.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
-   "status": "draft_only",
-   "draft": "II. עִיר m. (r. עִיר) heat, i. e. a) an-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
-   "status": "draft_only",
-   "draft": "ger, wrath; Hos. 11, 9 לֹא אָבוֹא בְּעִיר I",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "will not come in wrath. b) Of mind,",
-   "status": "draft_only",
-   "draft": "will not come in wrath. b) Of mind,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "anxiety, anguish, terror; Jer. 15, 18",
-   "status": "draft_only",
-   "draft": "anxiety, anguish, terror; Jer. 15, 18",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "הִפַּלְתִּי עָלֶיהָ פִּתְאֹם עִיר וּבֶהָלוֹת, Sept.",
-   "status": "draft_only",
-   "draft": "הִפַּלְתִּי עָלֶיהָ פִּתְאֹם עִיר וּבֶהָלוֹת, Sept.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "ἐπέῤῥιψα ἐπ᾿ αὐτὴν ἐξαίφνης τρόμον καὶ",
-   "status": "draft_only",
+   "text": "ἐπέῤῥιψα ἐπ’ αὐτὴν ἐξαίφνης τρόμον καὶ",
+   "status": "adjudicated",
    "draft": "ἐπέῤῥιψα ἐπ᾿ αὐτὴν ἐξαίφνης τρόμον καὶ",
-   "reread": null,
-   "needs_review": true
+   "reread": "ἐπέῤῥιψα ἐπ’ αὐτὴν ἐξαίφνης τρόμον καὶ",
+   "verdict": "b",
+   "note": "Only difference is the elision mark after ἐπ: A uses U+1FBF (spacing psili), B uses U+2019. The printed glyph is the normal koronis-style apostrophe, visually identical for either code point; U+2019 is the standard encoding for Greek elision, so B. All letters, breathings (ἐπέῤῥιψα, αὐτὴν) and accents (ἐξαίφνης, τρόμον, καὶ) match the print.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "σπουδήν. Here too we may refer Job",
-   "status": "draft_only",
-   "draft": "σπουδήν. Here too we may refer Job",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for",
-   "status": "draft_only",
-   "draft": "24, 12 מֵעִיר מְתִים יִנְאָקוּ, if with Syr. for",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "מְתִים men we read מֵתִים the dying, i. e.",
-   "status": "draft_only",
-   "draft": "מְתִים men we read מֵתִים the dying, i. e.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "from anguish do the dying groan.",
-   "status": "draft_only",
-   "draft": "from anguish do the dying groan.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "עִיר Chald. m. (r. עוּר) a watcher, a",
-   "status": "draft_only",
-   "draft": "עִיר Chald. m. (r. עוּר) a watcher, a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "name for angels in the later Hebrew, as",
-   "status": "draft_only",
-   "draft": "name for angels in the later Hebrew, as",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "keeping watch over the affairs of men,",
-   "status": "draft_only",
-   "draft": "keeping watch over the affairs of men,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Dan. 4, 10. 14. 20.—In the Syrian litur-",
-   "status": "draft_only",
-   "draft": "Dan. 4, 10. 14. 20.—In the Syrian litur-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "gies it is also used for the archangels,",
-   "status": "draft_only",
-   "draft": "gies it is also used for the archangels,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "as of Gabriel; elsewhere ܥܺܝ̈ܪܶܐ and",
-   "status": "draft_only",
+   "text": "as of Gabriel; elsewhere ܥܺܝܪ̈ܶܐ and",
+   "status": "adjudicated",
    "draft": "as of Gabriel; elsewhere ܥܺܝ̈ܪܶܐ and",
-   "reread": null,
+   "reread": "as of Gabriel ; elsewhere ܥܺܝܪ̈ܶܐ and",
+   "verdict": "b",
+   "note": "The seyame (two dots) sits over the middle of the word, above the resh (merging with the resh dot, as is standard: ܪ̈), not over the yod; the yod carries no marks above. The print also has a thin space before the semicolon after \"Gabriel\", as in B.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Gr. ἐγρήγοροι of evil angels. In Lib.",
-   "status": "draft_only",
-   "draft": "Gr. ἐγρήγοροι of evil angels. In Lib.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Henoch. Eth. ትጉሃን watchers, is spok-",
-   "status": "draft_only",
-   "draft": "Henoch. Eth. ትጉሃን watchers, is spok-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "en of good angels 12, 2. 4. 92, 16; of",
-   "status": "draft_only",
-   "draft": "en of good angels 12, 2. 4. 92, 16 ; of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "fallen angels 10, 13. 12, 5. al. Suicer",
-   "status": "draft_only",
-   "draft": "fallen angels 10, 13. 12, 5. al. Suicer",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Thes. Eccl. art. ἐγρήγορος. Castelli",
-   "status": "draft_only",
-   "draft": "Thes. Eccl. art. ἐγρήγορος. Castelli",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Lex. Syr. ed. Mich. p. 649.",
-   "status": "draft_only",
-   "draft": "Lex. Syr. ed. Mich. p. 649.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "עִיר see before r. עִיר, p. 774.",
-   "status": "draft_only",
+   "text": "עַיִר see before r. עִיר, p. 774.",
+   "status": "adjudicated",
    "draft": "עִיר see before r. עִיר, p. 774.",
-   "reread": null,
-   "needs_review": true
+   "reread": "עַיִר see before r. עִיר, p. 774.",
+   "verdict": "b",
+   "note": "The headword has a patach (horizontal bar) under ayin and a hireq dot under yod — עַיִר — not hireq under ayin; the second word עִיר (hireq under ayin, no vowel under yod) is as both readings give.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "עִירָא (wakeful, r. עוּר I) Ira, pr. n. m.",
-   "status": "draft_only",
-   "draft": "עִירָא (wakeful, r. עוּר I) Ira, pr. n. m.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "a) A priest under David, 2 Sam. 20, 26.",
-   "status": "draft_only",
-   "draft": "a) A priest under David, 2 Sam. 20, 26.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "b) Two of David's warriors 2 Sam. 23,",
-   "status": "draft_only",
+   "text": "b) Two of David’s warriors 2 Sam. 23,",
+   "status": "adjudicated",
    "draft": "b) Two of David's warriors 2 Sam. 23,",
-   "reread": null,
-   "needs_review": true
+   "reread": "b) Two of David’s warriors 2 Sam. 23,",
+   "verdict": "b",
+   "note": "Only difference is the apostrophe in \"David's\": the print shows the typographic curly apostrophe (’), as in Reading B, not an ASCII straight quote. All other characters match in both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "26. 28.",
-   "status": "draft_only",
-   "draft": "26. 28.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "עִירָד pr. n. m. Irad, an antediluvian",
-   "status": "draft_only",
-   "draft": "עִירָד pr. n. m. Irad, an antediluvian",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "patriarch, son of Enoch and grandson",
-   "status": "draft_only",
-   "draft": "patriarch, son of Enoch and grandson",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "of Cain, Gen. 4, 18.",
-   "status": "draft_only",
-   "draft": "of Cain, Gen. 4, 18.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,",
-   "status": "draft_only",
-   "draft": "עִירוּ (fr. עִיר) Iru, pr. n. m. 1 Chr. 4,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "15.",
-   "status": "draft_only",
-   "draft": "15.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "עִירִי (urbanus) Iri, pr. n. see עִיר I. 2.",
-   "status": "draft_only",
-   "draft": "עִירִי (urbanus) Iri, pr. n. see עִיר I. 2.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "עִירָם (urbanus) Iram, pr. n. of a phy-",
-   "status": "draft_only",
-   "draft": "עִירָם (urbanus) Iram, pr. n. of a phy-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "larch or head of a tribe among the Edom-",
-   "status": "draft_only",
-   "draft": "larch or head of a tribe among the Edom-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "ites, Gen. 36, 43.",
-   "status": "draft_only",
-   "draft": "ites, Gen. 36, 43.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "עֵירֹם and עֵרֹם m. (r. עָרַם I) plur.",
-   "status": "draft_only",
-   "draft": "עֵירֹם and עֵרֹם m. (r. עָרַם I) plur.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,",
-   "status": "draft_only",
-   "draft": "עֵירֻמִּים, nakedness, Deut. 28, 48. Ez. 16,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-",
-   "status": "draft_only",
-   "draft": "7 וְאַתְּ עֵרֹם וְעֶרְיָה but thou shalt be naked-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "ness and need. i. e. most naked and with-",
-   "status": "draft_only",
-   "draft": "ness and need. i. e. most naked and with-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "out help. v. 22. 39. 23, 29. Concr. naked,",
-   "status": "draft_only",
-   "draft": "out help. v. 22. 39. 23, 29. Concr. naked,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Gen. 3, 10. 11. Ez. 18, 7. 16; and so plur.",
-   "status": "draft_only",
-   "draft": "Gen. 3, 10. 11. Ez. 18, 7. 16 ; and so plur.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "עֵירֻמִּים naked Gen. 3, 7.—The form is",
-   "status": "draft_only",
-   "draft": "עֵירֻמִּים naked Gen. 3, 7.—The form is",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 0,
-  "adjudicated": 0,
-  "draft_only": 109,
-  "reread_only": 0,
+  "agreed": 100,
+  "adjudicated": 6,
+  "draft_only": 3,
+  "reread_only": 1,
   "unresolved": 0,
-  "needs_review": 109
+  "needs_review": 5
  },
- "errors": 30,
- "cost_usd_list_total": 0.0
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 1.1043
 }
