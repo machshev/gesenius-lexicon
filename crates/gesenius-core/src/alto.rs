@@ -515,13 +515,15 @@ fn parse_entries_with_hypotheses_continuing_mode(
         // heading opens the page (LEXICON. over the first letter) or falls
         // mid-page. A page whose heading was never transcribed is recognised by
         // the introduction's first line naming the letter.
+        let lexicon_title = mode == BoundaryMode::Transcribed && is_lexicon_title_text(&line.text);
         let letter_heading = mode == BoundaryMode::Transcribed
             && is_letter_heading_text(&line.text)
+            && (is_title_region(&region.id) || region.lines.len() <= 3)
             && !previous_line.is_some_and(|(_, previous)| is_lexicon_title_text(&previous.text));
         let letter_introduction_start = mode == BoundaryMode::Transcribed
             && !in_letter_introduction
             && is_letter_introduction_start(&line.text);
-        let opens_letter_introduction = letter_heading || letter_introduction_start;
+        let opens_letter_introduction = lexicon_title || letter_heading || letter_introduction_start;
         let starts_entry = opens_letter_introduction
             || (!stem_heading
             && (entries.is_empty()
@@ -538,7 +540,7 @@ fn parse_entries_with_hypotheses_continuing_mode(
         if starts_entry {
             in_letter_introduction = opens_letter_introduction;
         }
-        let block_kind = if letter_heading || is_heading_line(line, region, canonical) {
+        let block_kind = if lexicon_title || letter_heading || is_heading_line(line, region, canonical) {
             BlockKind::Heading
         } else {
             BlockKind::Paragraph
@@ -663,11 +665,44 @@ fn is_hebrew_base_letter(character: char) -> bool {
     ('\u{05D0}'..='\u{05EA}').contains(&character)
 }
 
-fn is_hebrew_mark(character: char) -> bool {
-    ('\u{0591}'..='\u{05C7}').contains(&character)
+/// Hebrew names of the letters, without points, for the introduction check.
+fn is_letter_name(letter: char, word: &str) -> bool {
+    let word: String = word.chars().filter(|c| is_hebrew_base_letter(*c)).collect();
+    let names: &[&str] = match letter {
+        '\u{05D0}' => &["אלף"],
+        '\u{05D1}' => &["בית", "בת"],
+        '\u{05D2}' => &["גימל", "גמל"],
+        '\u{05D3}' => &["דלת", "דלית"],
+        '\u{05D4}' => &["הא", "הי", "ה"],
+        '\u{05D5}' => &["ויו", "וו", "ואו"],
+        '\u{05D6}' => &["זין", "זיין"],
+        '\u{05D7}' => &["חית", "חת"],
+        '\u{05D8}' => &["טית", "טת"],
+        '\u{05D9}' => &["יוד", "יד"],
+        '\u{05DB}' => &["כף", "כפ"],
+        '\u{05DC}' => &["למד", "למדה"],
+        '\u{05DE}' => &["מם", "מים"],
+        '\u{05E0}' => &["נון"],
+        '\u{05E1}' => &["סמך"],
+        '\u{05E2}' => &["עין"],
+        '\u{05E4}' => &["פא", "פה"],
+        '\u{05E6}' => &["צדי", "צדה"],
+        '\u{05E7}' => &["קוף", "קף"],
+        '\u{05E8}' => &["ריש", "רש"],
+        '\u{05E9}' => &["שין", "שן", "סין"],
+        '\u{05EA}' => &["תו", "תיו"],
+        _ => &[],
+    };
+    names.contains(&word.as_str())
 }
 
-/// A line that is one Hebrew letter, possibly with `LEXICON.` before it.
+/// A section or running-head region, as opposed to a column of entries.
+fn is_title_region(id: &str) -> bool {
+    id == "header" || id.starts_with("section")
+}
+
+/// A line that is one bare Hebrew letter, possibly with `LEXICON.` before it.
+/// A pointed letter (`בְּ`) is a headword, not a heading.
 fn is_letter_heading_text(text: &str) -> bool {
     let mut rest = text.trim();
     if rest.len() >= "LEXICON".len() && rest.is_char_boundary("LEXICON".len()) {
@@ -677,7 +712,7 @@ fn is_letter_heading_text(text: &str) -> bool {
         }
     }
     let mut characters = rest.chars().filter(|character| !character.is_whitespace());
-    characters.next().is_some_and(is_hebrew_base_letter) && characters.all(is_hebrew_mark)
+    characters.next().is_some_and(is_hebrew_base_letter) && characters.next().is_none()
 }
 
 /// The Hebrew letter that a Latin letter name introduces.
@@ -710,7 +745,8 @@ fn letter_for_name(name: &str) -> Option<char> {
 }
 
 /// First line of a letter introduction whose heading was not transcribed:
-/// the letter's name, a comma, then the letter's own Hebrew name, as in
+/// the letter's name, a comma, then the letter's own Hebrew name (not any
+/// word that starts with the letter, which a cross-reference would be), as in
 /// `Gimel, גִּימֶל`.
 fn is_letter_introduction_start(text: &str) -> bool {
     let text = text.trim_start();
@@ -718,7 +754,11 @@ fn is_letter_introduction_start(text: &str) -> bool {
         return false;
     };
     name.chars().all(|character| character.is_ascii_alphabetic())
-        && letter_for_name(name).is_some_and(|letter| rest.starts_with(letter))
+        && letter_for_name(name).is_some_and(|letter| {
+            rest.split_whitespace()
+                .next()
+                .is_some_and(|word| is_letter_name(letter, word))
+        })
 }
 
 fn is_heading_line(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
@@ -2489,13 +2529,27 @@ fn is_isolated_page_artifact(line: &AltoLine, region: &AltoRegion, page: &AltoPa
 /// column, so the width is not used.
 fn is_signature_mark(line: &AltoLine, region: &AltoRegion, page: &AltoPage) -> bool {
     let text = line.text.trim();
-    let digits = text.chars().filter(char::is_ascii_digit).count();
     let (_, y, _, _) = polygon_bounds(&line.polygon);
-    (1..=3).contains(&digits)
-        && text
-            .chars()
-            .all(|character| character.is_ascii_digit() || character.is_ascii_punctuation())
-        && text.chars().count() <= 5
+    let digits_only = (1..=3).contains(&text.chars().count())
+        && text.chars().all(|character| character.is_ascii_digit());
+    // A verse number wrapped onto its own line follows a citation fragment
+    // (`Gen. 1,` or `Gen.`); a signature interrupts ordinary text.
+    let after_citation = region
+        .lines
+        .iter()
+        .position(|candidate| candidate.id == line.id)
+        .and_then(|index| index.checked_sub(1))
+        .map(|index| region.lines[index].text.trim())
+        .is_some_and(|previous| {
+            previous.ends_with([',', '-', '\u{2010}', '\u{2013}', ';', ':'])
+                || previous.rsplit(' ').next().is_some_and(|word| {
+                    word.ends_with('.')
+                        && word.chars().count() <= 5
+                        && word.chars().next().is_some_and(char::is_uppercase)
+                })
+        });
+    digits_only
+        && !after_citation
         && region.lines.last().is_some_and(|last| last.id == line.id)
         && y as f32 >= page.height as f32 * 0.9
 }
@@ -3392,6 +3446,79 @@ mod tests {
                 .assignments
                 .iter()
                 .any(|(_, id, a)| id == "a2" && matches!(a, LineAssignment::Entry(_))));
+        }
+
+        #[test]
+        fn a_pointed_letter_headword_is_not_a_letter_heading() {
+            let regions = vec![region(
+                "column-1",
+                vec![
+                    line("a1", 120.0, 300.0, "אֶתְנַן n. m. a gift,"),
+                    line("a2", 40.0, 340.0, "hire of a harlot."),
+                    line("a3", 120.0, 380.0, "בְּ"),
+                    line("a4", 40.0, 420.0, "prep. in, at."),
+                    line("a5", 40.0, 460.0, "with the article."),
+                    line("a6", 40.0, 500.0, "and so on."),
+                ],
+            )];
+            let entries = summary(&parse(regions));
+            assert_eq!(entries.len(), 2, "{entries:?}");
+            assert_eq!(entries[1].0.as_deref(), Some("בְּ"));
+        }
+
+        #[test]
+        fn a_cross_reference_is_not_an_introduction_start() {
+            let mut regions = mid_page("section-1", "ב");
+            regions.remove(1);
+            regions[1].lines[0] = line("b1", 40.0, 800.0, "Beth, בְּתוּאֵל, see above");
+            let entries = summary(&parse(regions));
+            assert!(entries.iter().all(|e| e.1 != "b1" || e.0.is_some()), "{entries:?}");
+            assert_eq!(entries.len(), 3, "{entries:?}");
+        }
+
+        #[test]
+        fn a_wrapped_verse_number_is_not_a_signature() {
+            for (previous, number) in [("Gen. 1,", "15"), ("see Gen.", "15"), ("Gen. 1, 15", "16.")] {
+                let regions = vec![region(
+                    "column-1",
+                    vec![
+                        line("a1", 120.0, 300.0, "אֶתְנַן n. m. a gift,"),
+                        line("a2", 40.0, 1800.0, previous),
+                        line("v", 40.0, 1850.0, number),
+                    ],
+                )];
+                let parsed = parse(regions);
+                assert!(
+                    parsed.assignments.iter().any(|(_, id, a)| id == "v" && matches!(a, LineAssignment::Entry(_))),
+                    "{previous} {number}"
+                );
+            }
+        }
+
+        #[test]
+        fn a_signature_may_interrupt_a_sentence() {
+            let regions = vec![region(
+                "column-1",
+                vec![
+                    line("a1", 120.0, 300.0, "אֶתְנַן n. m. a gift,"),
+                    line("a2", 40.0, 1800.0, "violence, e. g. a"),
+                    line("v", 40.0, 1850.0, "28"),
+                ],
+            )];
+            assert!(parse(regions).assignments.iter().any(|(_, id, a)| id == "v" && *a == LineAssignment::Unparsed));
+        }
+
+        #[test]
+        fn a_separate_lexicon_title_closes_the_open_entry() {
+            let mut regions = mid_page("section-1", "ב");
+            regions[1] = region(
+                "section-1",
+                vec![line("t1", 300.0, 600.0, "LEXICON."), line("t2", 600.0, 600.0, "ב")],
+            );
+            let entries = summary(&parse(regions));
+            assert_eq!(entries.len(), 4, "{entries:?}");
+            assert_eq!(entries[1].2, "a4");
+            assert_eq!(entries[2], (None, "t1".into(), "b2".into()));
         }
     }
 }
