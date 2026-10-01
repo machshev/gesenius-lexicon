@@ -218,7 +218,9 @@ def gutter_ink_counts(ink: np.ndarray, columns: list[tuple[int, int]]) -> np.nda
     return gutter[:, ~rule].sum(axis=1)
 
 
-def detect_section_breaks(ink: np.ndarray, columns: list[tuple[int, int]], body_top: int) -> list[tuple[int, int]]:
+def detect_section_breaks(
+    ink: np.ndarray, columns: list[tuple[int, int]], body_top: int, glyph_only: list | None = None
+) -> list[tuple[int, int]]:
     """Return [y0, y1) rows of headings set across the gutter below the page header.
 
     A new letter of the alphabet begins mid-page under a centred heading, and
@@ -247,6 +249,8 @@ def detect_section_breaks(ink: np.ndarray, columns: list[tuple[int, int]], body_
     for y0, y1 in detect_gutter_glyphs(ink, columns):
         if y0 >= body_top + 100 and not any(y0 < b1 and b0 < y1 for b0, b1 in breaks):
             breaks.append((y0, y1))
+            if glyph_only is not None:
+                glyph_only.append((y0, y1))
     return sorted(breaks)
 
 
@@ -293,9 +297,15 @@ def plan_chunks(raster: pathlib.Path, target: int, maximum: int, pad: int) -> tu
     chunks: list[dict] = []
     columns = detect_columns(ink)
 
-    def full_width(chunk_id: str, rows: tuple[int, int], tier: int) -> None:
+    def full_width(chunk_id: str, rows: tuple[int, int], tier: int, narrow: bool = False) -> None:
         y0, y1 = header_crop_rows(ink, columns, rows)
         x0, x1 = columns[0][0], columns[-1][1]
+        if narrow:
+            # A lone small letter in a page-wide crop is read as a stray mark
+            # and returned as no text, so crop around the glyph instead.
+            xs = np.flatnonzero(ink[rows[0] : rows[1], x0:x1].any(axis=0)) + x0
+            centre = int((xs[0] + xs[-1]) // 2)
+            x0, x1 = max(x0, centre - 150), min(x1, centre + 150)
         bx0, bx1 = max(0, x0 - pad), min(w, x1 + pad)
         by0, by1 = max(0, y0 - 6), min(h, y1 + 6)
         chunks.append(
@@ -313,7 +323,8 @@ def plan_chunks(raster: pathlib.Path, target: int, maximum: int, pad: int) -> tu
     if header is not None:
         full_width("header", header, 0)
         body_top = header[1]
-    breaks = detect_section_breaks(ink, columns, body_top)
+    glyph_only: list[tuple[int, int]] = []
+    breaks = detect_section_breaks(ink, columns, body_top, glyph_only)
     tiers = []
     top = body_top
     for y0, y1 in breaks:
@@ -322,7 +333,7 @@ def plan_chunks(raster: pathlib.Path, target: int, maximum: int, pad: int) -> tu
     tiers.append((top, h))
     for tier, (t0, t1) in enumerate(tiers):
         if tier > 0:
-            full_width(f"section-{tier}", breaks[tier - 1], tier)
+            full_width(f"section-{tier}", breaks[tier - 1], tier, breaks[tier - 1] in glyph_only)
         prefix = "" if tier == 0 else f"t{tier}-"
         for ci, (x0, x1) in enumerate(columns):
             col_ink = ink[t0:t1, x0:x1]
