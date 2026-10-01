@@ -803,6 +803,76 @@ mod tests {
         }
     }
 
+    /// Scores a pass 2 derived frontier ALTO page against its whole-page gold
+    /// fixture (development page PDF 66; never use the held-out PDF 266 or 791).
+    /// Pins coordinate alignment in the 400 dpi frontier raster frame.
+    #[test]
+    fn frontier_pass2_alto_scores_against_whole_page_gold() {
+        let root = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../");
+        let benchmark =
+            GoldBenchmark::load(&root.join("benchmarks/gold/robinson-1854-pdf0066-full.json"))
+                .expect("load whole-page gold fixture");
+        let record: serde_json::Value = serde_json::from_slice(
+            &fs::read(root.join("corpus/frontier/robinson-1854/alto/pdf-0066.json"))
+                .expect("read frontier ALTO record"),
+        )
+        .expect("parse frontier ALTO record");
+        assert_eq!(record["pass"], 2, "ALTO must derive from pass 2");
+        let page: AltoPage =
+            serde_json::from_value(record["page"].clone()).expect("parse ALTO page");
+
+        let frame = benchmark
+            .source_image
+            .as_ref()
+            .expect("whole-page gold carries a source image")
+            .coordinate_frame
+            .clone();
+        assert!(frame.ends_with(record["raster_sha256"].as_str().unwrap()));
+        assert_eq!(
+            (
+                benchmark.source_image.as_ref().unwrap().width,
+                benchmark.source_image.as_ref().unwrap().height
+            ),
+            (page.width, page.height)
+        );
+        assert!(benchmark.lines.iter().all(|line| line.source.is_some()));
+
+        let identity = SourceIdentity {
+            edition: benchmark.edition.clone(),
+            source_page: benchmark.source_page,
+            source_sha256: benchmark.source_sha256.clone(),
+            coordinate_frame: Some(frame),
+        };
+        let result = evaluate_alto_with_identity(&benchmark, &page, Some(&identity))
+            .expect("score against whole-page gold");
+        eprintln!(
+            "pdf66 scores: cer {} wer {} nfc {:?} lines {} missing {:?} alignment {:?}",
+            result.metrics.cer,
+            result.metrics.wer,
+            result.metrics.canonical_equivalence,
+            benchmark.lines.len(),
+            result.missing_lines,
+            result.alignment
+        );
+
+        assert_eq!(result.source_identity, SourceIdentityVerification::Verified);
+        assert_eq!(result.alignment, AlignmentMethod::SourceCoordinates);
+        // Anchors match lines: every gold line overlaps some ALTO line.
+        assert!(
+            result.missing_lines.is_empty(),
+            "{:?}",
+            result.missing_lines
+        );
+        assert!(result.metrics.reference_characters > 500);
+        assert!(result.metrics.reference_words > 100);
+        assert!(result.metrics.cer_by_script.contains_key("Hebr"));
+        // Gold is derived from pass 2 with independent review, so pass 2 is
+        // near but not necessarily at zero error (measured cer 0.0005, wer 0.0027); guard against misalignment
+        // (which would push CER toward 1) rather than demanding exactness.
+        assert!(result.metrics.cer < 0.01, "cer {}", result.metrics.cer);
+        assert!(result.metrics.wer < 0.02, "wer {}", result.metrics.wer);
+    }
+
     fn coordinate_benchmark() -> GoldBenchmark {
         GoldBenchmark {
             id: "fixture".to_owned(),
