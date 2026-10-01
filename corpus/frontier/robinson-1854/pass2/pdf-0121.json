@@ -1,0 +1,2593 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 121,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0121.png",
+ "raster_sha256": "a3fa1853191e211de95d7ff70bdee111605141e75a69497c9e89604b707475d0",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0121.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-01T19:48:55+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 68,
+    "y": 95,
+    "width": 1778,
+    "height": 68
+   },
+   "draft_lines": [
+    "אתנ",
+    "105",
+    "ב"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 68,
+      "y": 87,
+      "width": 1778,
+      "height": 78
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/header-b00-1778x78+68+87-x2.png",
+     "image_sha256": "fbc54effa18abe196fbc04610e15124555d63641b96c413e7f748da3e5756c47",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אתנ 105 ב"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "535a955f-94dd-4c4d-a496-49b4000acd64",
+      "duration_api_ms": 4400,
+      "cost_usd_list": 0.048960000000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3520,
+      "cache_creation_input_tokens": 1832,
+      "output_tokens": 228
+     },
+     "lines": [
+      {
+       "draft": "אתנ",
+       "reread": "אתנ 105 ב",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אתנ 105 ב",
+        "verdict": "b",
+        "note": "Header line prints three items left to right: catchword אתנ, page number 105, and catchword ב (no vowel points). Reading A drops the page number and the ב.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a4a89cbc-a01f-44b6-93e3-63914e869bc4",
+        "duration_api_ms": 10378,
+        "cost_usd_list": 0.0752,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 2360,
+        "cache_creation_input_tokens": 2856,
+        "output_tokens": 349
+       },
+       "text": "אתנ 105 ב"
+      },
+      {
+       "draft": "105",
+       "reread": null,
+       "status": "draft_only",
+       "text": "105"
+      },
+      {
+       "draft": "ב",
+       "reread": null,
+       "status": "draft_only",
+       "text": "ב"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 68,
+    "y": 141,
+    "width": 876,
+    "height": 899
+   },
+   "draft_lines": [
+    "אֶתְנַן Ez. 16, 34. 41, and אֶתְנָן m. (for",
+    "תְּנָן, Aleph. prosthet. from r. תָּנָה,) c.",
+    "suff. אֶתְנַנִּי .",
+    "1. a gift, hire, e. g. of a harlot, absol.",
+    "Ez. 16, 31. 34; and with זוֹנָה added",
+    "Deut. 23, 19. Metaph. of fruits and pro-",
+    "duce of the fields, regarded by idolaters",
+    "as gifts from the idols, Hos. 9, 1. Mic. 1,",
+    "7; comp. Is. 23, 17. 18.",
+    "2. Ethnan, pr. n. m. 1 Chr. 4, 7.",
+    "* אֲתַר Chald. subst. m. c. suff. אַתְרֵהּ .",
+    "1. a place, Dan. 2, 35. Ezra 5, 15. 6, 5.",
+    "7. In the Targums freq. Syr. et Samar.",
+    "ܐܰܬܪܳܐ id.—Hence אֲתַר דִּי the place where"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 68,
+      "y": 133,
+      "width": 876,
+      "height": 309
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c0-r00-b00-876x309+68+133-x2.png",
+     "image_sha256": "a274de2849aa7983541232f7253d2ad5b34e84f6b764d4b0fca0ce4ef5f2dc62",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶתְנַן Ez. 16, 34. 41, and אֶתְנָן m. (for",
+       "תְּנָן, Aleph. prosthet. from r. תָּנָה,) c.",
+       "suff. אֶתְנַנִּי.",
+       "1. a gift, hire, e. g. of a harlot, absol."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0e080f0e-7968-483a-9b05-9f9e399d8e96",
+      "duration_api_ms": 19187,
+      "cost_usd_list": 0.10255075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2954,
+      "output_tokens": 845
+     },
+     "lines": [
+      {
+       "draft": "אֶתְנַן Ez. 16, 34. 41, and אֶתְנָן m. (for",
+       "reread": "אֶתְנַן Ez. 16, 34. 41, and אֶתְנָן m. (for",
+       "status": "agreed",
+       "text": "אֶתְנַן Ez. 16, 34. 41, and אֶתְנָן m. (for"
+      },
+      {
+       "draft": "תְּנָן, Aleph. prosthet. from r. תָּנָה,) c.",
+       "reread": "תְּנָן, Aleph. prosthet. from r. תָּנָה,) c.",
+       "status": "agreed",
+       "text": "תְּנָן, Aleph. prosthet. from r. תָּנָה,) c."
+      },
+      {
+       "draft": "suff. אֶתְנַנִּי .",
+       "reread": "suff. אֶתְנַנִּי.",
+       "status": "agreed",
+       "text": "suff. אֶתְנַנִּי."
+      },
+      {
+       "draft": "1. a gift, hire, e. g. of a harlot, absol.",
+       "reread": "1. a gift, hire, e. g. of a harlot, absol.",
+       "status": "agreed",
+       "text": "1. a gift, hire, e. g. of a harlot, absol."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 68,
+      "y": 426,
+      "width": 876,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c0-r00-b01-876x237+68+426-x2.png",
+     "image_sha256": "9481bed655b94d2775998551c3b54f23ea8ce3276afc40a30902c60f0e03b02d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ez. 16, 31. 34 ; and with זוֹנָה added",
+       "Deut. 23, 19. Metaph. of fruits and pro-",
+       "duce of the fields, regarded by idolaters",
+       "as gifts from the idols, Hos. 9, 1. Mic. 1,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d05dbacf-9933-4692-b0fe-43777a754bc2",
+      "duration_api_ms": 6230,
+      "cost_usd_list": 0.06824074999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2576,
+      "output_tokens": 310
+     },
+     "lines": [
+      {
+       "draft": "Ez. 16, 31. 34; and with זוֹנָה added",
+       "reread": "Ez. 16, 31. 34 ; and with זוֹנָה added",
+       "status": "agreed",
+       "text": "Ez. 16, 31. 34; and with זוֹנָה added"
+      },
+      {
+       "draft": "Deut. 23, 19. Metaph. of fruits and pro-",
+       "reread": "Deut. 23, 19. Metaph. of fruits and pro-",
+       "status": "agreed",
+       "text": "Deut. 23, 19. Metaph. of fruits and pro-"
+      },
+      {
+       "draft": "duce of the fields, regarded by idolaters",
+       "reread": "duce of the fields, regarded by idolaters",
+       "status": "agreed",
+       "text": "duce of the fields, regarded by idolaters"
+      },
+      {
+       "draft": "as gifts from the idols, Hos. 9, 1. Mic. 1,",
+       "reread": "as gifts from the idols, Hos. 9, 1. Mic. 1,",
+       "status": "agreed",
+       "text": "as gifts from the idols, Hos. 9, 1. Mic. 1,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 68,
+      "y": 647,
+      "width": 876,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c0-r00-b02-876x269+68+647-x2.png",
+     "image_sha256": "d8e006246e40d5ca0400c0a48504ff811c844b8a0fb4328ab2c0d8a48f03a49d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "7 ; comp. Is. 23, 17. 18.",
+       "2. Ethnan, pr. n. m. 1 Chr. 4, 7.",
+       "* אֲתַר Chald. subst. m. c. suff. אַתְרֵהּ .",
+       "1. a place, Dan. 2, 35. Ezra 5, 15. 6, 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "804e10c7-60f7-4b70-a7d6-2ea6943ab95e",
+      "duration_api_ms": 8641,
+      "cost_usd_list": 0.08447075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2765,
+      "output_tokens": 559
+     },
+     "lines": [
+      {
+       "draft": "7; comp. Is. 23, 17. 18.",
+       "reread": "7 ; comp. Is. 23, 17. 18.",
+       "status": "agreed",
+       "text": "7; comp. Is. 23, 17. 18."
+      },
+      {
+       "draft": "2. Ethnan, pr. n. m. 1 Chr. 4, 7.",
+       "reread": "2. Ethnan, pr. n. m. 1 Chr. 4, 7.",
+       "status": "agreed",
+       "text": "2. Ethnan, pr. n. m. 1 Chr. 4, 7."
+      },
+      {
+       "draft": "* אֲתַר Chald. subst. m. c. suff. אַתְרֵהּ .",
+       "reread": "* אֲתַר Chald. subst. m. c. suff. אַתְרֵהּ .",
+       "status": "agreed",
+       "text": "* אֲתַר Chald. subst. m. c. suff. אַתְרֵהּ."
+      },
+      {
+       "draft": "1. a place, Dan. 2, 35. Ezra 5, 15. 6, 5.",
+       "reread": "1. a place, Dan. 2, 35. Ezra 5, 15. 6, 5.",
+       "status": "agreed",
+       "text": "1. a place, Dan. 2, 35. Ezra 5, 15. 6, 5."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 68,
+      "y": 900,
+      "width": 876,
+      "height": 142
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c0-r00-b03-876x142+68+900-x2.png",
+     "image_sha256": "e64de6aee16ab89600c64803f4a79023cc8db04d8d2044fd15bfd7fd0aedfffd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "7. In the Targums freq. Syr. et Samar.",
+       "ܐܰܬܰܪ id.—Hence אֲתַר דִּי the place where"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e60be333-4f42-4e14-a15f-867975a66b5f",
+      "duration_api_ms": 11953,
+      "cost_usd_list": 0.07578075000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2198,
+      "output_tokens": 612
+     },
+     "lines": [
+      {
+       "draft": "7. In the Targums freq. Syr. et Samar.",
+       "reread": "7. In the Targums freq. Syr. et Samar.",
+       "status": "agreed",
+       "text": "7. In the Targums freq. Syr. et Samar."
+      },
+      {
+       "draft": "ܐܰܬܪܳܐ id.—Hence אֲתַר דִּי the place where",
+       "reread": "ܐܰܬܰܪ id.—Hence אֲתַר דִּי the place where",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "ܐܰܬܪܳܐ id.—Hence אֲתַר דִּי the place where",
+        "verdict": "a",
+        "note": "The Syriac word has four letters: olaph at both ends with taw and resh between (ܐܬܪܐ, i.e. atrā), as Reading A gives; Reading B drops the final olaph and misplaces the vowels. Syriac vowel points are printed (a point above the first olaph, a point under the taw, the resh dot, and a mark by the final olaph); the Hebrew אֲתַר דִּי and the English match in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "175f16a7-3f67-4e21-a45e-ff37c80bf70d",
+        "duration_api_ms": 16712,
+        "cost_usd_list": 0.1189035,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2414,
+        "cache_creation_input_tokens": 3273,
+        "output_tokens": 1050
+       },
+       "text": "ܐܰܬܪܳܐ id.—Hence אֲתַר דִּי the place where"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 964,
+    "y": 141,
+    "width": 882,
+    "height": 953
+   },
+   "draft_lines": [
+    "Ezra 6, 3, i. q. where, a pleonasm very",
+    "common in Aramæan, Syr. ܐܰܬܰܪ ܕ; comp.",
+    "מָקוֹם אֲשֶׁר, in מָקוֹם.",
+    "2. Perh. track, i. q. Arab. أَثْر, إِثْر,",
+    "Ethiop. አሠር. Hence בָּאתַר for בְּאַתַר",
+    "Dan. 7, 6. 7, after, i. q. عَلَى اثر, فِي اثر,",
+    "pr. in the track; with aff. בָּתְרָךְ after",
+    "thee Dan. 2, 39. Syr. and Samar.",
+    "ܒܳܬܰܪ.",
+    "אֲתָרִים (places, regions) Atharim, pr.",
+    "n. of a place in the south of Palestine.",
+    "Num. 21, 1 דֶּרֶךְ הָאֲתָרִים by the way of",
+    "Atharim."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 964,
+      "y": 133,
+      "width": 882,
+      "height": 404
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c1-r00-b00-882x404+964+133-x2.png",
+     "image_sha256": "78caa40702d1472bdb72d1006b6aadd411f6d3d1773ba81db3366cd8b338d205",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ezra 6, 3, i. q. where, a pleonasm very",
+       "common in Aramæan, Syr. ܐܰܬܰܪ ܕ; comp.",
+       "מְקוֹם אֲשֶׁר, in מְקוֹם.",
+       "2. Perh. track, i. q. Arab. إِثْرٌ, أَثَرٌ,",
+       "Ethiop. አሠር. Hence בַּאֲתַר for בְּאַתַר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13632b52-9cf0-465f-b9a7-230cf5927ce5",
+      "duration_api_ms": 20835,
+      "cost_usd_list": 0.10921075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 3332,
+      "output_tokens": 827
+     },
+     "lines": [
+      {
+       "draft": "Ezra 6, 3, i. q. where, a pleonasm very",
+       "reread": "Ezra 6, 3, i. q. where, a pleonasm very",
+       "status": "agreed",
+       "text": "Ezra 6, 3, i. q. where, a pleonasm very"
+      },
+      {
+       "draft": "common in Aramæan, Syr. ܐܰܬܰܪ ܕ; comp.",
+       "reread": "common in Aramæan, Syr. ܐܰܬܰܪ ܕ; comp.",
+       "status": "agreed",
+       "text": "common in Aramæan, Syr. ܐܰܬܰܪ ܕ; comp."
+      },
+      {
+       "draft": "מָקוֹם אֲשֶׁר, in מָקוֹם.",
+       "reread": "מְקוֹם אֲשֶׁר, in מְקוֹם.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "מְקוֹם אֲשֶׁר, in מְקוֹם.",
+        "verdict": "b",
+        "note": "Under the mem of both מְקוֹם the print shows two vertically stacked dots (shewa), not a qamets; the construct form מְקוֹם אֲשֶׁר is also what the context (Ezra 6:3 'the place where') requires.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1c5bb35e-bfa9-4d91-b614-1ba37f7e94a8",
+        "duration_api_ms": 15095,
+        "cost_usd_list": 0.0898125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3530,
+        "cache_creation_input_tokens": 3267,
+        "output_tokens": 465
+       },
+       "text": "מְקוֹם אֲשֶׁר, in מְקוֹם."
+      },
+      {
+       "draft": "2. Perh. track, i. q. Arab. أَثْر, إِثْر,",
+       "reread": "2. Perh. track, i. q. Arab. إِثْرٌ, أَثَرٌ,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "2. Perh. track, i. q. Arab. إِثْرٌ, أَثَرٌ,",
+        "verdict": "b",
+        "note": "Print shows إِثْرٌ (hamza below, kasra, sukūn, tanwīn ḍamma) first, then أَثَرٌ (hamza above, fatḥa, fatḥa, tanwīn ḍamma); A reverses the order, drops the tanwīn and wrongly puts sukūn on the second word.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "34ac738c-06c1-4a30-a33d-2d1f4a348068",
+        "duration_api_ms": 19823,
+        "cost_usd_list": 0.10285549999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3542,
+        "cache_creation_input_tokens": 3279,
+        "output_tokens": 721
+       },
+       "text": "2. Perh. track, i. q. Arab. إِثْرٌ, أَثَرٌ,"
+      },
+      {
+       "draft": "Ethiop. አሠር. Hence בָּאתַר for בְּאַתַר",
+       "reread": "Ethiop. አሠር. Hence בַּאֲתַר for בְּאַתַר",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "Ethiop. አሠር. Hence בָּאתַר for בְּאַתַר",
+        "verdict": "a",
+        "note": "The first Hebrew form shows a T-shaped qamets under the dageshed bet and no vowel under the quiescent aleph (contracted form), not patah + hataf-patah as in B; the Ethiopic and the second form are identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ddd54f6c-a281-4bc4-8f3c-d05374cabf7c",
+        "duration_api_ms": 32581,
+        "cost_usd_list": 0.123615,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3540,
+        "cache_creation_input_tokens": 3277,
+        "output_tokens": 1137
+       },
+       "text": "Ethiop. አሠር. Hence בָּאתַר for בְּאַתַר"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 964,
+      "y": 521,
+      "width": 882,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c1-r00-b01-882x263+964+521-x2.png",
+     "image_sha256": "ba478f35d33a86f8f786e7eea45c8972e1ead5c5d90e24ff0a0759c6d4e9427e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Dan. 7, 6. 7, after, i. q. فِي اثْرِ, عَلَى اثْرِ,",
+       "pr. in the track; with aff. בָּתְרָךְ after",
+       "thee Dan. 2, 39. Syr. and Samar.",
+       "ܒܳܬܰܪ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bf7dd8ee-097f-42b3-9e63-60bd5018b896",
+      "duration_api_ms": 31037,
+      "cost_usd_list": 0.12646075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2702,
+      "output_tokens": 1424
+     },
+     "lines": [
+      {
+       "draft": "Dan. 7, 6. 7, after, i. q. عَلَى اثر, فِي اثر,",
+       "reread": "Dan. 7, 6. 7, after, i. q. فِي اثْرِ, عَلَى اثْرِ,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "Dan. 7, 6. 7, after, i. q. فِي اثر, عَلَى اثر,",
+        "verdict": "neither",
+        "note": "Printed left-to-right order is في اثر first (immediately after \"i. q.\"), then a comma, then على اثر, then the line-final comma — Reading B's order, not A's. But اثر is printed bare both times (ث has only its three dots; no sukun or kasra visible), so B's اثْرِ is over-pointed. Fatha on ع/ل of على and kasra on ف are visible.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a0ea63c7-f27c-4710-bea6-336700f38706",
+        "duration_api_ms": 41628,
+        "cost_usd_list": 0.12979849999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3554,
+        "cache_creation_input_tokens": 2661,
+        "output_tokens": 1507
+       },
+       "text": "Dan. 7, 6. 7, after, i. q. فِي اثر, عَلَى اثر,"
+      },
+      {
+       "draft": "pr. in the track; with aff. בָּתְרָךְ after",
+       "reread": "pr. in the track; with aff. בָּתְרָךְ after",
+       "status": "agreed",
+       "text": "pr. in the track; with aff. בָּתְרָךְ after"
+      },
+      {
+       "draft": "thee Dan. 2, 39. Syr. and Samar.",
+       "reread": "thee Dan. 2, 39. Syr. and Samar.",
+       "status": "agreed",
+       "text": "thee Dan. 2, 39. Syr. and Samar."
+      },
+      {
+       "draft": "ܒܳܬܰܪ.",
+       "reread": "ܒܳܬܰܪ.",
+       "status": "agreed",
+       "text": "ܒܳܬܰܪ."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 964,
+      "y": 768,
+      "width": 882,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/c1-r00-b02-882x269+964+768-x2.png",
+     "image_sha256": "bc9850e6ffb8aae342040ad374752b20e738c222e2b0725664e601a4b9958c07",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲתָרִים (places, regions) Atharim, pr.",
+       "n. of a place in the south of Palestine.",
+       "Num. 21, 1 דֶּרֶךְ הָאֲתָרִים by the way of",
+       "Atharim."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e1ee2393-2533-47c2-a7d5-6d512e570883",
+      "duration_api_ms": 11426,
+      "cost_usd_list": 0.07382074999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3523,
+      "cache_creation_input_tokens": 2765,
+      "output_tokens": 346
+     },
+     "lines": [
+      {
+       "draft": "אֲתָרִים (places, regions) Atharim, pr.",
+       "reread": "אֲתָרִים (places, regions) Atharim, pr.",
+       "status": "agreed",
+       "text": "אֲתָרִים (places, regions) Atharim, pr."
+      },
+      {
+       "draft": "n. of a place in the south of Palestine.",
+       "reread": "n. of a place in the south of Palestine.",
+       "status": "agreed",
+       "text": "n. of a place in the south of Palestine."
+      },
+      {
+       "draft": "Num. 21, 1 דֶּרֶךְ הָאֲתָרִים by the way of",
+       "reread": "Num. 21, 1 דֶּרֶךְ הָאֲתָרִים by the way of",
+       "status": "agreed",
+       "text": "Num. 21, 1 דֶּרֶךְ הָאֲתָרִים by the way of"
+      },
+      {
+       "draft": "Atharim.",
+       "reread": "Atharim.",
+       "status": "agreed",
+       "text": "Atharim."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 964,
+    "y": 1082,
+    "width": 882,
+    "height": 156
+   },
+   "draft_lines": [],
+   "bands": []
+  },
+  {
+   "chunk_id": "section-1",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 68,
+    "y": 1274,
+    "width": 1778,
+    "height": 54
+   },
+   "draft_lines": [
+    "ב"
+   ],
+   "bands": [],
+   "unbanded_lines": [
+    {
+     "draft": "ב",
+     "reread": null,
+     "status": "draft_only",
+     "text": "ב"
+    }
+   ]
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 68,
+    "y": 1399,
+    "width": 876,
+    "height": 772
+   },
+   "draft_lines": [
+    "Beth, בֵּית, the second letter of the",
+    "Hebrew alphabet; as a numeral denot-",
+    "ing 2. The Hebrew name is contracted",
+    "from בַּיִת, house, tent, to which the ear-",
+    "liest form of this letter seems to have",
+    "borne a resemblance. See Heb. Gr. p.",
+    "291. edit. 13. Monumm. Phœn. p. 21.",
+    "It passes over into the other labials,",
+    "e. g. a) Into פ, as בָּזַר and פָּזַר to dis-",
+    "perse; בָּקַע and فَقَعَ to cleave; בַּרְזֶל",
+    "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَجَرَ",
+    "to be weak. b) Rarely into ו, as רַבְרַב,",
+    "رَبُوبٌ, great; also into ו quiescent, as"
+   ],
+   "bands": [
+    {
+     "band_id": "t1-c0-r00-b00",
+     "bounds": {
+      "x": 68,
+      "y": 1397,
+      "width": 876,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r00-b00-876x230+68+1397-x2.png",
+     "image_sha256": "b56392d8350c39b40b4e25bd43a17459d954818c4061680e27cd71e32aae10b6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Beth, בֵּית, the second letter of the",
+       "Hebrew alphabet; as a numeral denot-",
+       "ing 2. The Hebrew name is contracted",
+       "from בַּיִת, house, tent, to which the ear-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9188ceba-5673-4e25-98a7-db62fbb535f0",
+      "duration_api_ms": 12210,
+      "cost_usd_list": 0.07150175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2584,
+      "output_tokens": 372
+     },
+     "lines": [
+      {
+       "draft": "Beth, בֵּית, the second letter of the",
+       "reread": "Beth, בֵּית, the second letter of the",
+       "status": "agreed",
+       "text": "Beth, בֵּית, the second letter of the"
+      },
+      {
+       "draft": "Hebrew alphabet; as a numeral denot-",
+       "reread": "Hebrew alphabet; as a numeral denot-",
+       "status": "agreed",
+       "text": "Hebrew alphabet; as a numeral denot-"
+      },
+      {
+       "draft": "ing 2. The Hebrew name is contracted",
+       "reread": "ing 2. The Hebrew name is contracted",
+       "status": "agreed",
+       "text": "ing 2. The Hebrew name is contracted"
+      },
+      {
+       "draft": "from בַּיִת, house, tent, to which the ear-",
+       "reread": "from בַּיִת, house, tent, to which the ear-",
+       "status": "agreed",
+       "text": "from בַּיִת, house, tent, to which the ear-"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c0-r00-b01",
+     "bounds": {
+      "x": 68,
+      "y": 1611,
+      "width": 876,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r00-b01-876x238+68+1611-x2.png",
+     "image_sha256": "3516731366ab42eddd2f21af6c2faf64856d4fc8fdfde09b066cae6719261fd8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "liest form of this letter seems to have",
+       "borne a resemblance. See Heb. Gr. p.",
+       "291. edit. 13. Monumm. Phœn. p. 21.",
+       "It passes over into the other labials,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bc2bf53a-ac47-49db-a4e9-a8b7bdd78bae",
+      "duration_api_ms": 11108,
+      "cost_usd_list": 0.06540175000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2584,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "liest form of this letter seems to have",
+       "reread": "liest form of this letter seems to have",
+       "status": "agreed",
+       "text": "liest form of this letter seems to have"
+      },
+      {
+       "draft": "borne a resemblance. See Heb. Gr. p.",
+       "reread": "borne a resemblance. See Heb. Gr. p.",
+       "status": "agreed",
+       "text": "borne a resemblance. See Heb. Gr. p."
+      },
+      {
+       "draft": "291. edit. 13. Monumm. Phœn. p. 21.",
+       "reread": "291. edit. 13. Monumm. Phœn. p. 21.",
+       "status": "agreed",
+       "text": "291. edit. 13. Monumm. Phœn. p. 21."
+      },
+      {
+       "draft": "It passes over into the other labials,",
+       "reread": "It passes over into the other labials,",
+       "status": "agreed",
+       "text": "It passes over into the other labials,"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c0-r00-b02",
+     "bounds": {
+      "x": 68,
+      "y": 1833,
+      "width": 876,
+      "height": 285
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r00-b02-876x285+68+1833-x2.png",
+     "image_sha256": "fa97371145ced625b762b1383eb660ea136c92809e684485327cb4d1a6e94723",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "e. g.   a) Into פ, as בָּזַר and פָּזַר to dis-",
+       "perse; בָּקַע and فَقَعَ to cleave; בַּרְזֶל",
+       "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَتَرَ",
+       "to be weak.   b) Rarely into ו, as רִבְרַב,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7592356a-79d4-4ea6-b3ac-703fc833df40",
+      "duration_api_ms": 20082,
+      "cost_usd_list": 0.09614175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2836,
+      "output_tokens": 764
+     },
+     "lines": [
+      {
+       "draft": "e. g. a) Into פ, as בָּזַר and פָּזַר to dis-",
+       "reread": "e. g.   a) Into פ, as בָּזַר and פָּזַר to dis-",
+       "status": "agreed",
+       "text": "e. g. a) Into פ, as בָּזַר and פָּזַר to dis-"
+      },
+      {
+       "draft": "perse; בָּקַע and فَقَعَ to cleave; בַּרְזֶל",
+       "reread": "perse; בָּקַע and فَقَعَ to cleave; בַּרְזֶל",
+       "status": "agreed",
+       "text": "perse; בָּקַע and فَقَعَ to cleave; בַּרְזֶל"
+      },
+      {
+       "draft": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَجَرَ",
+       "reread": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَتَرَ",
+       "status": "adjudicated",
+       "band_id": "t1-c0-r00-b02",
+       "judgement": {
+        "text": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَتَرَ",
+        "verdict": "b",
+        "note": "The decisive point is the middle letter of the Arabic word: the print shows a short tooth (ت) with fatha above, not the looped ج of فجر; and the gloss on the next line, \"to be weak\", matches فَتَرَ (to be languid), not فجر. The Hebrew and Syriac items are identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6eef2f32-19c0-46e2-8c05-747225e1e097",
+        "duration_api_ms": 35173,
+        "cost_usd_list": 0.1070845,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3578,
+        "cache_creation_input_tokens": 2815,
+        "output_tokens": 991
+       },
+       "text": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَتَرَ"
+      },
+      {
+       "draft": "to be weak. b) Rarely into ו, as רַבְרַב,",
+       "reread": "to be weak.   b) Rarely into ו, as רִבְרַב,",
+       "status": "adjudicated",
+       "band_id": "t1-c0-r00-b02",
+       "judgement": {
+        "text": "to be weak.   b) Rarely into ו, as רַבְרַב,",
+        "verdict": "a",
+        "note": "Under the first resh the print shows a horizontal stroke (patach), not a single dot (hireq); so רַבְרַב as in A, matching the Aramaic reduplicated form of רַב. The rest of the line (shva under first bet, patach under second resh, trailing comma) is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e3d92a6b-ce34-444a-babb-64718a7d099c",
+        "duration_api_ms": 11895,
+        "cost_usd_list": 0.09503274999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3531,
+        "cache_creation_input_tokens": 2768,
+        "output_tokens": 769
+       },
+       "text": "to be weak. b) Rarely into ו, as רַבְרַב,"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c0-r00-b03",
+     "bounds": {
+      "x": 68,
+      "y": 2102,
+      "width": 876,
+      "height": 65
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r00-b03-876x65+68+2102-x2.png",
+     "image_sha256": "4d53be38759228d2dac2288f22e4a0aef7375f7d69490c25523b5368243c229c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܪܘܪܒ, great; also into י quiescent, as"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "972c85a2-857e-4b50-b9e8-346f514ad5d6",
+      "duration_api_ms": 21934,
+      "cost_usd_list": 0.06438175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 1828,
+      "output_tokens": 532
+     },
+     "lines": [
+      {
+       "draft": "رَبُوبٌ, great; also into ו quiescent, as",
+       "reread": "ܪܘܪܒ, great; also into י quiescent, as",
+       "status": "adjudicated",
+       "band_id": "t1-c0-r00-b03",
+       "judgement": {
+        "text": "ܪܘܪܒ, great; also into ו quiescent, as",
+        "verdict": "neither",
+        "note": "The word is Syriac (ܪܘܪܒ, with only the inherent rish dots, no separate vowel points) as in B, but the Hebrew letter after \"into\" is a tall vav ו (as in A), not a yod; so each reading has one error.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "81192f91-3b07-4c82-b7f3-a9ac869c89ef",
+        "duration_api_ms": 16748,
+        "cost_usd_list": 0.0697215,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3526,
+        "cache_creation_input_tokens": 1755,
+        "output_tokens": 668
+       },
+       "text": "ܪܘܪܒ, great; also into ו quiescent, as"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 68,
+    "y": 2159,
+    "width": 876,
+    "height": 852
+   },
+   "draft_lines": [
+    "בַּת־שׁוּעַ for בַּת־שֶׁבַע ; comp. in the occi-",
+    "dental languages βόσκω vescor, pascor ;",
+    "βάδω vado. c) Into מ, the sounds of",
+    "these two letters being very nearly re-",
+    "lated in the mouth of an oriental ; e. g.",
+    "בְּרִיא and מְרִיא fat ; בְּרֹאדַךְ and מְרֹאדַךְ",
+    "pr. n. of a Babylonish idol ; محن בָּחַן to",
+    "try ; زَمَن זְמָן time ; زَبَر זָמַר to prune a",
+    "vine ; דִּיבוֹן and דִּימוֹן pr. n. of a stream ;",
+    "מִכְתָּם i. q. מִכְתָּב a writing, poem ; Arab.",
+    "بَكَّة for مَكَّة Mecca. Comp. βλίττω for",
+    "μελίττω from μέλι mel, honey ; scamnum,",
+    "scabellum ; marmor, Fr. marbre, Engl.",
+    "marble, etc."
+   ],
+   "bands": [
+    {
+     "band_id": "t1-c0-r01-b00",
+     "bounds": {
+      "x": 68,
+      "y": 2163,
+      "width": 876,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r01-b00-876x229+68+2163-x2.png",
+     "image_sha256": "d9a9b818d1971a5da44904a0db4071035e8a21a5582c50143386bc16b41f4aa3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בַּת־שׁוּעַ for בַּת־שֶׁבַע ; comp. in the occi-",
+       "dental languages βόσκω vescor, pascor ;",
+       "βάδω vado. c) Into מ, the sounds of",
+       "these two letters being very nearly re-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d2e6fdcc-eb3f-43e4-802d-70f5eb80076e",
+      "duration_api_ms": 7417,
+      "cost_usd_list": 0.07225175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2584,
+      "output_tokens": 387
+     },
+     "lines": [
+      {
+       "draft": "בַּת־שׁוּעַ for בַּת־שֶׁבַע ; comp. in the occi-",
+       "reread": "בַּת־שׁוּעַ for בַּת־שֶׁבַע ; comp. in the occi-",
+       "status": "agreed",
+       "text": "בַּת־שׁוּעַ for בַּת־שֶׁבַע; comp. in the occi-"
+      },
+      {
+       "draft": "dental languages βόσκω vescor, pascor ;",
+       "reread": "dental languages βόσκω vescor, pascor ;",
+       "status": "agreed",
+       "text": "dental languages βόσκω vescor, pascor;"
+      },
+      {
+       "draft": "βάδω vado. c) Into מ, the sounds of",
+       "reread": "βάδω vado. c) Into מ, the sounds of",
+       "status": "agreed",
+       "text": "βάδω vado. c) Into מ, the sounds of"
+      },
+      {
+       "draft": "these two letters being very nearly re-",
+       "reread": "these two letters being very nearly re-",
+       "status": "agreed",
+       "text": "these two letters being very nearly re-"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c0-r01-b01",
+     "bounds": {
+      "x": 68,
+      "y": 2376,
+      "width": 876,
+      "height": 328
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r01-b01-876x328+68+2376-x2.png",
+     "image_sha256": "80c5ef00674e8759aad63c9531898964ed396715cf300da1ae3bda9e855701a7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lated in the mouth of an oriental ; e. g.",
+       "בְּרִיא and מְרִיא fat ; מְרֹאדַךְ and בְּרֹאדַךְ",
+       "pr. n. of a Babylonish idol ; محن בָּחַן to",
+       "try ; זְמָן زَمَن time ; זָמַר زبر to prune a",
+       "vine ; דִּיבוֹן and דִּימוֹן pr. n. of a stream ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "63eec24b-bcf3-44eb-842e-6e7c63595af6",
+      "duration_api_ms": 15208,
+      "cost_usd_list": 0.10107175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 3025,
+      "output_tokens": 787
+     },
+     "lines": [
+      {
+       "draft": "lated in the mouth of an oriental ; e. g.",
+       "reread": "lated in the mouth of an oriental ; e. g.",
+       "status": "agreed",
+       "text": "lated in the mouth of an oriental; e. g."
+      },
+      {
+       "draft": "בְּרִיא and מְרִיא fat ; בְּרֹאדַךְ and מְרֹאדַךְ",
+       "reread": "בְּרִיא and מְרִיא fat ; מְרֹאדַךְ and בְּרֹאדַךְ",
+       "status": "adjudicated",
+       "band_id": "t1-c0-r01-b01",
+       "judgement": {
+        "text": "בְּרִיא and מְרִיא fat ; מְרֹאדַךְ and בְּרֹאדַךְ",
+        "verdict": "b",
+        "note": "After \"fat ;\" the first word is printed with initial מְ (plain mem, sheva) and the word at the far right of the line begins with בְּ (bet with dagesh); so the order is מְרֹאדַךְ and בְּרֹאדַךְ, as in Reading B. Reading A swaps them. All vowel points otherwise match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a647ad8d-3aef-4934-a8c3-421d72198c73",
+        "duration_api_ms": 18117,
+        "cost_usd_list": 0.09957149999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2992,
+        "output_tokens": 770
+       },
+       "text": "בְּרִיא and מְרִיא fat; מְרֹאדַךְ and בְּרֹאדַךְ"
+      },
+      {
+       "draft": "pr. n. of a Babylonish idol ; محن בָּחַן to",
+       "reread": "pr. n. of a Babylonish idol ; محن בָּחַן to",
+       "status": "agreed",
+       "text": "pr. n. of a Babylonish idol; محن בָּחַן to"
+      },
+      {
+       "draft": "try ; زَمَن זְמָן time ; زَبَر זָמַר to prune a",
+       "reread": "try ; זְמָן زَمَن time ; זָמַר زبر to prune a",
+       "status": "adjudicated",
+       "band_id": "t1-c0-r01-b01",
+       "judgement": {
+        "text": "try ; זְמָן زَمَن time ; זָמַר زبر to prune a",
+        "verdict": "b",
+        "note": "In both pairs the Hebrew word is printed to the left of (before) the Arabic, as in Reading B, not Arabic-first as in A. The first Arabic زَمَن does carry visible fathas; the second (زبر) shows no vowel marks in print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b7e10c01-55ce-4d8c-8ada-a447bfbe4c62",
+        "duration_api_ms": 20100,
+        "cost_usd_list": 0.120945,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3540,
+        "cache_creation_input_tokens": 2966,
+        "output_tokens": 1208
+       },
+       "text": "try; זְמָן زَمَن time; זָמַר زبر to prune a"
+      },
+      {
+       "draft": "vine ; דִּיבוֹן and דִּימוֹן pr. n. of a stream ;",
+       "reread": "vine ; דִּיבוֹן and דִּימוֹן pr. n. of a stream ;",
+       "status": "agreed",
+       "text": "vine; דִּיבוֹן and דִּימוֹן pr. n. of a stream;"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c0-r01-b02",
+     "bounds": {
+      "x": 68,
+      "y": 2688,
+      "width": 876,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r01-b02-876x267+68+2688-x2.png",
+     "image_sha256": "3015dc49002c14d8cac9ef60573460c5bde42418baa720c28edee60c47bc01cc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "מִכְתָּם i. q. מִכְתָּב a writing, poem; Arab.",
+       "بكَّة for مكَّة Mecca.   Comp. βλίττω for",
+       "μελίττω from μέλι mel, honey ; scamnum,",
+       "scabellum ; marmor, Fr. marbre, Engl."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d004cb48-bc7a-4ade-92a3-17d71a8e78b6",
+      "duration_api_ms": 26690,
+      "cost_usd_list": 0.09838175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2773,
+      "output_tokens": 834
+     },
+     "lines": [
+      {
+       "draft": "מִכְתָּם i. q. מִכְתָּב a writing, poem ; Arab.",
+       "reread": "מִכְתָּם i. q. מִכְתָּב a writing, poem; Arab.",
+       "status": "agreed",
+       "text": "מִכְתָּם i. q. מִכְתָּב a writing, poem; Arab."
+      },
+      {
+       "draft": "بَكَّة for مَكَّة Mecca. Comp. βλίττω for",
+       "reread": "بكَّة for مكَّة Mecca.   Comp. βλίττω for",
+       "status": "adjudicated",
+       "band_id": "t1-c0-r01-b02",
+       "judgement": {
+        "text": "بكَّة for مكَّة Mecca. Comp. βλίττω for",
+        "verdict": "b",
+        "note": "On both Arabic words the only vocalisation printed is a shadda with a fatha riding above it on the kāf; there is no fatha over the initial bāʾ or mīm as Reading A gives. Reading B's Arabic matches the print; its triple space after \"Mecca.\" is just the wide justification gap, rendered here as a single space.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1aeec2a7-bf50-42d7-8789-fdc71500f9b5",
+        "duration_api_ms": 23884,
+        "cost_usd_list": 0.10169424999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3537,
+        "cache_creation_input_tokens": 2711,
+        "output_tokens": 925
+       },
+       "text": "بكَّة for مكَّة Mecca. Comp. βλίττω for"
+      },
+      {
+       "draft": "μελίττω from μέλι mel, honey ; scamnum,",
+       "reread": "μελίττω from μέλι mel, honey ; scamnum,",
+       "status": "agreed",
+       "text": "μελίττω from μέλι mel, honey; scamnum,"
+      },
+      {
+       "draft": "scabellum ; marmor, Fr. marbre, Engl.",
+       "reread": "scabellum ; marmor, Fr. marbre, Engl.",
+       "status": "agreed",
+       "text": "scabellum; marmor, Fr. marbre, Engl."
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c0-r01-b03",
+     "bounds": {
+      "x": 68,
+      "y": 2939,
+      "width": 876,
+      "height": 60
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r01-b03-876x60+68+2939-x2.png",
+     "image_sha256": "9d361e501d2e6e5749fc168028276dee699f55218d8d04461aa1e38d6cbc10c2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "marble, etc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7033b514-a327-4a73-8fe2-68ea1d177030",
+      "duration_api_ms": 12418,
+      "cost_usd_list": 0.04883175000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 1828,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "marble, etc.",
+       "reread": "marble, etc.",
+       "status": "agreed",
+       "text": "marble, etc."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 68,
+    "y": 2999,
+    "width": 876,
+    "height": 266
+   },
+   "draft_lines": [
+    "בְּ, before monosyllables sometimes בָּ",
+    "(see Heb. Gr. § 100), c. suff. בִּי; בְּךָ,",
+    "rarely בְּכָה Ps. 141, 8, in Pause and fem.",
+    "בָּךְ; בּוֹ, בָּהּ; בָּנוּ; בָּכֶם, בָּכֶן; בָּהֶם, בָּם,"
+   ],
+   "bands": [
+    {
+     "band_id": "t1-c0-r02-b00",
+     "bounds": {
+      "x": 68,
+      "y": 3008,
+      "width": 876,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c0-r02-b00-876x259+68+3008-x2.png",
+     "image_sha256": "27a8515a275a6fd0f89eebcc509f680f8cb7331fa9c321d72f16b787181248bc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בְּ, before monosyllables sometimes בָּ",
+       "(see Heb. Gr. § 100), c. suff. בִּי ; בְּךָ,",
+       "rarely בְּכָה Ps. 141, 8, in Pause and fem.",
+       "בָּךְ ; בּוֹ, בָּהּ ; בָּנוּ ; בָּכֶם, בָּכֶן ; בָּהֶם, בָּם,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1d71256c-212a-4ba3-b07b-c9081bf75a66",
+      "duration_api_ms": 11623,
+      "cost_usd_list": 0.09567175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2710,
+      "output_tokens": 805
+     },
+     "lines": [
+      {
+       "draft": "בְּ, before monosyllables sometimes בָּ",
+       "reread": "בְּ, before monosyllables sometimes בָּ",
+       "status": "agreed",
+       "text": "בְּ, before monosyllables sometimes בָּ"
+      },
+      {
+       "draft": "(see Heb. Gr. § 100), c. suff. בִּי; בְּךָ,",
+       "reread": "(see Heb. Gr. § 100), c. suff. בִּי ; בְּךָ,",
+       "status": "agreed",
+       "text": "(see Heb. Gr. § 100), c. suff. בִּי; בְּךָ,"
+      },
+      {
+       "draft": "rarely בְּכָה Ps. 141, 8, in Pause and fem.",
+       "reread": "rarely בְּכָה Ps. 141, 8, in Pause and fem.",
+       "status": "agreed",
+       "text": "rarely בְּכָה Ps. 141, 8, in Pause and fem."
+      },
+      {
+       "draft": "בָּךְ; בּוֹ, בָּהּ; בָּנוּ; בָּכֶם, בָּכֶן; בָּהֶם, בָּם,",
+       "reread": "בָּךְ ; בּוֹ, בָּהּ ; בָּנוּ ; בָּכֶם, בָּכֶן ; בָּהֶם, בָּם,",
+       "status": "agreed",
+       "text": "בָּךְ; בּוֹ, בָּהּ; בָּנוּ; בָּכֶם, בָּכֶן; בָּהֶם, בָּם,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 964,
+    "y": 1399,
+    "width": 882,
+    "height": 1005
+   },
+   "draft_lines": [
+    "f. בָּהֵן ; Arab. بِ, rarely بَ ; Ethiop.",
+    "በ ; rarely ብ ; Syr. ܒ ; a prefix Prepo-",
+    "sition, for the origin of which see the",
+    "note at the end of the article ; primarily",
+    "denoting the being and remaining in a",
+    "place, Gr. ἐν, Lat. in ; then transferred",
+    "to the ideas of nearness and society or",
+    "accompaniment, at, by, with ; and coupled",
+    "also with verbs of motion.",
+    "A) Pr. in, Lat. in c. abl. Gr. ἐν.—Spec.",
+    "1. in, pr. of the being in a place,",
+    "(which might be more fully and pre-",
+    "cisely expressed by בְּתוֹךְ, בְּקֶרֶב,) as",
+    "בָּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+    "in the pit, בָּאָרֶץ in the land or province,",
+    "בַּאֲשֶׁר in (the place) which, i. q. where.—",
+    "Here belong also the following: a)"
+   ],
+   "bands": [
+    {
+     "band_id": "t1-c1-r00-b00",
+     "bounds": {
+      "x": 964,
+      "y": 1397,
+      "width": 882,
+      "height": 286
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r00-b00-882x286+964+1397-x2.png",
+     "image_sha256": "2ef31c833c9e56182ab1b749f86a961d7543a49759f70283f32456ad13b10e26",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "f. בְּהֵן; Arab. بِ, rarely بَ; Ethiop.",
+       "በ; rarely ቢ; Syr. ܒ; a prefix Prepo-",
+       "sition, for the origin of which see the",
+       "note at the end of the article; primarily"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f4e3b81d-9518-4f4e-9052-fb859a5e9d05",
+      "duration_api_ms": 11905,
+      "cost_usd_list": 0.07759175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2836,
+      "output_tokens": 393
+     },
+     "lines": [
+      {
+       "draft": "f. בָּהֵן ; Arab. بِ, rarely بَ ; Ethiop.",
+       "reread": "f. בְּהֵן; Arab. بِ, rarely بَ; Ethiop.",
+       "status": "adjudicated",
+       "band_id": "t1-c1-r00-b00",
+       "judgement": {
+        "text": "f. בְּהֵן; Arab. بِ, rarely بَ; Ethiop.",
+        "verdict": "b",
+        "note": "Under the dageshed bet the print shows two vertically stacked dots (shewa), not a qamets stroke; also the semicolons are set tight against the Hebrew and Arabic (no preceding space), matching Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a52246dd-d79d-4218-9ab0-da36fabdbb7a",
+        "duration_api_ms": 17353,
+        "cost_usd_list": 0.11233649999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3546,
+        "cache_creation_input_tokens": 2783,
+        "output_tokens": 1109
+       },
+       "text": "f. בְּהֵן; Arab. بِ, rarely بَ; Ethiop."
+      },
+      {
+       "draft": "በ ; rarely ብ ; Syr. ܒ ; a prefix Prepo-",
+       "reread": "በ; rarely ቢ; Syr. ܒ; a prefix Prepo-",
+       "status": "adjudicated",
+       "band_id": "t1-c1-r00-b00",
+       "judgement": {
+        "text": "በ; rarely ብ ; Syr. ܒ ; a prefix Prepo-",
+        "verdict": "a",
+        "note": "The second Ethiopic glyph has its mark at the upper-left (ብ, sixth order), not at the lower-right as ቢ would; Syriac beth is printed bare with no points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "420e4c82-5f1b-43dd-bd0b-d4def5cfe3be",
+        "duration_api_ms": 21838,
+        "cost_usd_list": 0.1030055,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3542,
+        "cache_creation_input_tokens": 2789,
+        "output_tokens": 920
+       },
+       "text": "በ; rarely ብ; Syr. ܒ; a prefix Prepo-"
+      },
+      {
+       "draft": "sition, for the origin of which see the",
+       "reread": "sition, for the origin of which see the",
+       "status": "agreed",
+       "text": "sition, for the origin of which see the"
+      },
+      {
+       "draft": "note at the end of the article ; primarily",
+       "reread": "note at the end of the article; primarily",
+       "status": "agreed",
+       "text": "note at the end of the article; primarily"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r00-b01",
+     "bounds": {
+      "x": 964,
+      "y": 1667,
+      "width": 882,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r00-b01-882x237+964+1667-x2.png",
+     "image_sha256": "f30e9ad798befdb8c3769a8f6a49f76ed2ccb1bcd1efe781eaa9a8b04229e716",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "denoting the being and remaining in a",
+       "place, Gr. ἐν, Lat. in ; then transferred",
+       "to the ideas of nearness and society or",
+       "accompaniment, at, by, with ; and coupled"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bb596d5e-4583-43c7-8717-6a4934eecb3f",
+      "duration_api_ms": 4493,
+      "cost_usd_list": 0.06535175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2584,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "denoting the being and remaining in a",
+       "reread": "denoting the being and remaining in a",
+       "status": "agreed",
+       "text": "denoting the being and remaining in a"
+      },
+      {
+       "draft": "place, Gr. ἐν, Lat. in ; then transferred",
+       "reread": "place, Gr. ἐν, Lat. in ; then transferred",
+       "status": "agreed",
+       "text": "place, Gr. ἐν, Lat. in; then transferred"
+      },
+      {
+       "draft": "to the ideas of nearness and society or",
+       "reread": "to the ideas of nearness and society or",
+       "status": "agreed",
+       "text": "to the ideas of nearness and society or"
+      },
+      {
+       "draft": "accompaniment, at, by, with ; and coupled",
+       "reread": "accompaniment, at, by, with ; and coupled",
+       "status": "agreed",
+       "text": "accompaniment, at, by, with; and coupled"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r00-b02",
+     "bounds": {
+      "x": 964,
+      "y": 1888,
+      "width": 882,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r00-b02-882x238+964+1888-x2.png",
+     "image_sha256": "00d97be0f02f48a20883d468428904a3d74991936be990c5d5e4a3603d82e09d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "also with verbs of motion.",
+       "A) Pr. in, Lat. in c. abl. Gr. ἐν.—Spec.",
+       "1. in, pr. of the being in a place,",
+       "(which might be more fully and pre-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9cf46c00-92d3-4bf8-9747-4edf988fb4d9",
+      "duration_api_ms": 4194,
+      "cost_usd_list": 0.06555175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2584,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "also with verbs of motion.",
+       "reread": "also with verbs of motion.",
+       "status": "agreed",
+       "text": "also with verbs of motion."
+      },
+      {
+       "draft": "A) Pr. in, Lat. in c. abl. Gr. ἐν.—Spec.",
+       "reread": "A) Pr. in, Lat. in c. abl. Gr. ἐν.—Spec.",
+       "status": "agreed",
+       "text": "A) Pr. in, Lat. in c. abl. Gr. ἐν.—Spec."
+      },
+      {
+       "draft": "1. in, pr. of the being in a place,",
+       "reread": "1. in, pr. of the being in a place,",
+       "status": "agreed",
+       "text": "1. in, pr. of the being in a place,"
+      },
+      {
+       "draft": "(which might be more fully and pre-",
+       "reread": "(which might be more fully and pre-",
+       "status": "agreed",
+       "text": "(which might be more fully and pre-"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r00-b03",
+     "bounds": {
+      "x": 964,
+      "y": 2110,
+      "width": 882,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r00-b03-882x240+964+2110-x2.png",
+     "image_sha256": "e3c517f13522a8975c6e1106cf9bfdbad890edef30f6ff73a1b363a3cd689c08",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cisely expressed by בְּתוֹךְ, בְּקֶרֶב,) as",
+       "בְּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+       "in the pit, בְּאֶרֶץ in the land or province,",
+       "בַּאֲשֶׁר in (the place) which, i. q. where.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "733243dc-648a-4bc2-89a2-819cf09a03ec",
+      "duration_api_ms": 12606,
+      "cost_usd_list": 0.07796175000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 476
+     },
+     "lines": [
+      {
+       "draft": "cisely expressed by בְּתוֹךְ, בְּקֶרֶב,) as",
+       "reread": "cisely expressed by בְּתוֹךְ, בְּקֶרֶב,) as",
+       "status": "agreed",
+       "text": "cisely expressed by בְּתוֹךְ, בְּקֶרֶב,) as"
+      },
+      {
+       "draft": "בָּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+       "reread": "בְּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+       "status": "adjudicated",
+       "band_id": "t1-c1-r00-b03",
+       "judgement": {
+        "text": "בָּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+        "verdict": "a",
+        "note": "Under the bet of the first word the print shows a qamets (horizontal bar with a descending stroke), not a shewa; so בָּעִיר (A), not בְּעִיר (B). Rest of the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "825946ac-62ad-4569-9c04-5732eaf972a3",
+        "duration_api_ms": 19410,
+        "cost_usd_list": 0.084747,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3548,
+        "cache_creation_input_tokens": 2596,
+        "output_tokens": 632
+       },
+       "text": "בָּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר"
+      },
+      {
+       "draft": "in the pit, בָּאָרֶץ in the land or province,",
+       "reread": "in the pit, בְּאֶרֶץ in the land or province,",
+       "status": "adjudicated",
+       "band_id": "t1-c1-r00-b03",
+       "judgement": {
+        "text": "in the pit, בָּאָרֶץ in the land or province,",
+        "verdict": "a",
+        "note": "The vowels under bet and aleph are both qamets (T-shaped, with a vertical tick below the horizontal), not sheva and segol; the bet also carries a dagesh. This is the form with the article (בָּאָרֶץ), matching Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d2ba31e6-0c87-44e4-9505-fd5767e30892",
+        "duration_api_ms": 9236,
+        "cost_usd_list": 0.08193125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3525,
+        "cache_creation_input_tokens": 2573,
+        "output_tokens": 585
+       },
+       "text": "in the pit, בָּאָרֶץ in the land or province,"
+      },
+      {
+       "draft": "בַּאֲשֶׁר in (the place) which, i. q. where.—",
+       "reread": "בַּאֲשֶׁר in (the place) which, i. q. where.—",
+       "status": "agreed",
+       "text": "בַּאֲשֶׁר in (the place) which, i. q. where.—"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r00-b04",
+     "bounds": {
+      "x": 964,
+      "y": 2334,
+      "width": 882,
+      "height": 78
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r00-b04-882x78+964+2334-x2.png",
+     "image_sha256": "7ff15bd767a3456a8f20976c53e7a726f5cf1e4e9d96809ea232f8dd6f43c9d1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Here belong also the following: a)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "925a0c31-dd98-4dad-9a3d-5bafa4bbd017",
+      "duration_api_ms": 3733,
+      "cost_usd_list": 0.049891750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 1891,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "Here belong also the following: a)",
+       "reread": "Here belong also the following: a)",
+       "status": "agreed",
+       "text": "Here belong also the following: a)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 964,
+    "y": 2392,
+    "width": 882,
+    "height": 873
+   },
+   "draft_lines": [
+    "The formulas בְּעֵינֵי in the eyes (pr. in",
+    "the sight of the eyes), בְּאָזְנֵי, בִּפְנֵי;",
+    "comp. ἐν ὀφθαλμοῖς Hom. Il. 2. 587, in",
+    "oculis Q. Curt. 9. 4.  b) The idiom",
+    "שָׁתָה בְּ ‘ to drink in a cup,’ as in Engl. i. e.",
+    "to drink what is in a cup, for ‘ to drink out",
+    "of a cup,’ Gen. 44, 5. Am. 6, 6, comp.",
+    "Chald. Dan. 5, 2.  So Gr. ἐν χρυσῷ, ἐν",
+    "ποτηρίοις πίνειν Xen. Anab. 6. 1. 4.  Fr.",
+    "‘ boire dans une tasse,’ ‘ puiser dans une",
+    "fontaine.’  The analogy of these other",
+    "languages speaks decidedly against the",
+    "explanation of Fāsi, that the vessel is",
+    "here to be conceived of as an instru",
+    "ment, q. d. to drink with a cup."
+   ],
+   "bands": [
+    {
+     "band_id": "t1-c1-r01-b00",
+     "bounds": {
+      "x": 964,
+      "y": 2384,
+      "width": 882,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r01-b00-882x248+964+2384-x2.png",
+     "image_sha256": "2eef99cfc98853d83e1b69352bf244ed1df76999a900a069d7d5f99311e29740",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "The formulas בְּעֵינֵי in the eyes (pr. in",
+       "the sight of the eyes), בְּאָזְנֵי, בִּפְנֵי;",
+       "comp. ἐν ὀφθαλμοῖς Hom. Il. 2. 587, in",
+       "oculis Q. Curt. 9. 4.   b) The idiom"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c76d0c12-bddf-46b3-95c3-15113ef06e9f",
+      "duration_api_ms": 5564,
+      "cost_usd_list": 0.06891175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 295
+     },
+     "lines": [
+      {
+       "draft": "The formulas בְּעֵינֵי in the eyes (pr. in",
+       "reread": "The formulas בְּעֵינֵי in the eyes (pr. in",
+       "status": "agreed",
+       "text": "The formulas בְּעֵינֵי in the eyes (pr. in"
+      },
+      {
+       "draft": "the sight of the eyes), בְּאָזְנֵי, בִּפְנֵי;",
+       "reread": "the sight of the eyes), בְּאָזְנֵי, בִּפְנֵי;",
+       "status": "agreed",
+       "text": "the sight of the eyes), בְּאָזְנֵי, בִּפְנֵי;"
+      },
+      {
+       "draft": "comp. ἐν ὀφθαλμοῖς Hom. Il. 2. 587, in",
+       "reread": "comp. ἐν ὀφθαλμοῖς Hom. Il. 2. 587, in",
+       "status": "agreed",
+       "text": "comp. ἐν ὀφθαλμοῖς Hom. Il. 2. 587, in"
+      },
+      {
+       "draft": "oculis Q. Curt. 9. 4.  b) The idiom",
+       "reread": "oculis Q. Curt. 9. 4.   b) The idiom",
+       "status": "agreed",
+       "text": "oculis Q. Curt. 9. 4. b) The idiom"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r01-b01",
+     "bounds": {
+      "x": 964,
+      "y": 2616,
+      "width": 882,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r01-b01-882x251+964+2616-x2.png",
+     "image_sha256": "5dc34f9755232126d9601a184b9c425cb8b0836c9503f4296a76ccba7c2738a9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "שָׁתָה בְּ ‘ to drink in a cup,’ as in Engl. i. e.",
+       "to drink what is in a cup, for ‘ to drink out",
+       "of a cup,’ Gen. 44, 5. Am. 6, 6, comp.",
+       "Chald. Dan. 5, 2. So Gr. ἐν χρυσῷ, ἐν"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8614d446-1f40-48fe-9e28-90667fc9882d",
+      "duration_api_ms": 6190,
+      "cost_usd_list": 0.06941175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 305
+     },
+     "lines": [
+      {
+       "draft": "שָׁתָה בְּ ‘ to drink in a cup,’ as in Engl. i. e.",
+       "reread": "שָׁתָה בְּ ‘ to drink in a cup,’ as in Engl. i. e.",
+       "status": "agreed",
+       "text": "שָׁתָה בְּ ‘ to drink in a cup,’ as in Engl. i. e."
+      },
+      {
+       "draft": "to drink what is in a cup, for ‘ to drink out",
+       "reread": "to drink what is in a cup, for ‘ to drink out",
+       "status": "agreed",
+       "text": "to drink what is in a cup, for ‘ to drink out"
+      },
+      {
+       "draft": "of a cup,’ Gen. 44, 5. Am. 6, 6, comp.",
+       "reread": "of a cup,’ Gen. 44, 5. Am. 6, 6, comp.",
+       "status": "agreed",
+       "text": "of a cup,’ Gen. 44, 5. Am. 6, 6, comp."
+      },
+      {
+       "draft": "Chald. Dan. 5, 2.  So Gr. ἐν χρυσῷ, ἐν",
+       "reread": "Chald. Dan. 5, 2. So Gr. ἐν χρυσῷ, ἐν",
+       "status": "agreed",
+       "text": "Chald. Dan. 5, 2. So Gr. ἐν χρυσῷ, ἐν"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r01-b02",
+     "bounds": {
+      "x": 964,
+      "y": 2851,
+      "width": 882,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r01-b02-882x248+964+2851-x2.png",
+     "image_sha256": "71f1287893c2c221dfe6af8c117f32660d5a7a86f45072ca077655309ef8e9e6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ποτηρίοις πίνειν Xen. Anab. 6. 1. 4. Fr.",
+       "‘boire dans une tasse,’ ‘puiser dans une",
+       "fontaine.’ The analogy of these other",
+       "languages speaks decidedly against the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "364aa0a6-4477-4a0d-b1e9-f1ed3b6eac1f",
+      "duration_api_ms": 11397,
+      "cost_usd_list": 0.06756175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "ποτηρίοις πίνειν Xen. Anab. 6. 1. 4.  Fr.",
+       "reread": "ποτηρίοις πίνειν Xen. Anab. 6. 1. 4. Fr.",
+       "status": "agreed",
+       "text": "ποτηρίοις πίνειν Xen. Anab. 6. 1. 4. Fr."
+      },
+      {
+       "draft": "‘ boire dans une tasse,’ ‘ puiser dans une",
+       "reread": "‘boire dans une tasse,’ ‘puiser dans une",
+       "status": "adjudicated",
+       "band_id": "t1-c1-r01-b02",
+       "judgement": {
+        "text": "‘boire dans une tasse,’ ‘puiser dans une",
+        "verdict": "b",
+        "note": "The only difference is spacing: the opening single quotes sit directly against \"boire\" and \"puiser\" with no word space (only normal letter-fitting), so Reading B's ‘boire / ‘puiser is correct; Reading A's inserted spaces are not printed. Everything else (italic \"dans\" ×2, \"tasse,’\" with comma inside the closing quote) matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c60b5c6e-6a37-4090-b050-903afeb768cc",
+        "duration_api_ms": 7866,
+        "cost_usd_list": 0.0766825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3530,
+        "cache_creation_input_tokens": 2578,
+        "output_tokens": 478
+       },
+       "text": "‘boire dans une tasse,’ ‘puiser dans une"
+      },
+      {
+       "draft": "fontaine.’  The analogy of these other",
+       "reread": "fontaine.’ The analogy of these other",
+       "status": "agreed",
+       "text": "fontaine.’ The analogy of these other"
+      },
+      {
+       "draft": "languages speaks decidedly against the",
+       "reread": "languages speaks decidedly against the",
+       "status": "agreed",
+       "text": "languages speaks decidedly against the"
+      }
+     ]
+    },
+    {
+     "band_id": "t1-c1-r01-b03",
+     "bounds": {
+      "x": 964,
+      "y": 3083,
+      "width": 882,
+      "height": 184
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0121/pass2/t1-c1-r01-b03-882x184+964+3083-x2.png",
+     "image_sha256": "5b2affd59e6e1af1e3f47bdf1496deea8d17bff826f040bac520fe35b751041c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "explanation of Fâsi, that the vessel is",
+       "here to be conceived of as an instru",
+       "ment, q. d. to drink with a cup."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2a18d967-c3a8-4727-b3a4-5ce79f2ce765",
+      "duration_api_ms": 12653,
+      "cost_usd_list": 0.06747175,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3527,
+      "cache_creation_input_tokens": 2395,
+      "output_tokens": 367
+     },
+     "lines": [
+      {
+       "draft": "explanation of Fāsi, that the vessel is",
+       "reread": "explanation of Fâsi, that the vessel is",
+       "status": "adjudicated",
+       "band_id": "t1-c1-r01-b03",
+       "judgement": {
+        "text": "explanation of Fāsi, that the vessel is",
+        "verdict": "a",
+        "note": "The mark over the a in Fāsi is a flat horizontal stroke (macron), not a pointed circumflex; the i's dot is faint/worn but the letter is i.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d39ea518-716b-4f27-9acf-382e9bef581a",
+        "duration_api_ms": 10138,
+        "cost_usd_list": 0.0756685,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3514,
+        "cache_creation_input_tokens": 2310,
+        "output_tokens": 565
+       },
+       "text": "explanation of Fāsi, that the vessel is"
+      },
+      {
+       "draft": "here to be conceived of as an instru",
+       "reread": "here to be conceived of as an instru",
+       "status": "agreed",
+       "text": "here to be conceived of as an instru"
+      },
+      {
+       "draft": "ment, q. d. to drink with a cup.",
+       "reread": "ment, q. d. to drink with a cup.",
+       "status": "agreed",
+       "text": "ment, q. d. to drink with a cup."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אתנ 105 ב",
+   "status": "adjudicated",
+   "draft": "אתנ",
+   "reread": "אתנ 105 ב",
+   "verdict": "b",
+   "note": "Header line prints three items left to right: catchword אתנ, page number 105, and catchword ב (no vowel points). Reading A drops the page number and the ב.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "105",
+   "status": "draft_only",
+   "draft": "105",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "ב",
+   "status": "draft_only",
+   "draft": "ב",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֶתְנַן Ez. 16, 34. 41, and אֶתְנָן m. (for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תְּנָן, Aleph. prosthet. from r. תָּנָה,) c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "suff. אֶתְנַנִּי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. a gift, hire, e. g. of a harlot, absol.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ez. 16, 31. 34; and with זוֹנָה added",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deut. 23, 19. Metaph. of fruits and pro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "duce of the fields, regarded by idolaters",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "as gifts from the idols, Hos. 9, 1. Mic. 1,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "7; comp. Is. 23, 17. 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Ethnan, pr. n. m. 1 Chr. 4, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* אֲתַר Chald. subst. m. c. suff. אַתְרֵהּ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. a place, Dan. 2, 35. Ezra 5, 15. 6, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "7. In the Targums freq. Syr. et Samar.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ܐܰܬܪܳܐ id.—Hence אֲתַר דִּי the place where",
+   "status": "adjudicated",
+   "draft": "ܐܰܬܪܳܐ id.—Hence אֲתַר דִּי the place where",
+   "reread": "ܐܰܬܰܪ id.—Hence אֲתַר דִּי the place where",
+   "verdict": "a",
+   "note": "The Syriac word has four letters: olaph at both ends with taw and resh between (ܐܬܪܐ, i.e. atrā), as Reading A gives; Reading B drops the final olaph and misplaces the vowels. Syriac vowel points are printed (a point above the first olaph, a point under the taw, the resh dot, and a mark by the final olaph); the Hebrew אֲתַר דִּי and the English match in both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Ezra 6, 3, i. q. where, a pleonasm very",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "common in Aramæan, Syr. ܐܰܬܰܪ ܕ; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "מְקוֹם אֲשֶׁר, in מְקוֹם.",
+   "status": "adjudicated",
+   "draft": "מָקוֹם אֲשֶׁר, in מָקוֹם.",
+   "reread": "מְקוֹם אֲשֶׁר, in מְקוֹם.",
+   "verdict": "b",
+   "note": "Under the mem of both מְקוֹם the print shows two vertically stacked dots (shewa), not a qamets; the construct form מְקוֹם אֲשֶׁר is also what the context (Ezra 6:3 'the place where') requires.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. Perh. track, i. q. Arab. إِثْرٌ, أَثَرٌ,",
+   "status": "adjudicated",
+   "draft": "2. Perh. track, i. q. Arab. أَثْر, إِثْر,",
+   "reread": "2. Perh. track, i. q. Arab. إِثْرٌ, أَثَرٌ,",
+   "verdict": "b",
+   "note": "Print shows إِثْرٌ (hamza below, kasra, sukūn, tanwīn ḍamma) first, then أَثَرٌ (hamza above, fatḥa, fatḥa, tanwīn ḍamma); A reverses the order, drops the tanwīn and wrongly puts sukūn on the second word.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Ethiop. አሠር. Hence בָּאתַר for בְּאַתַר",
+   "status": "adjudicated",
+   "draft": "Ethiop. አሠር. Hence בָּאתַר for בְּאַתַר",
+   "reread": "Ethiop. አሠር. Hence בַּאֲתַר for בְּאַתַר",
+   "verdict": "a",
+   "note": "The first Hebrew form shows a T-shaped qamets under the dageshed bet and no vowel under the quiescent aleph (contracted form), not patah + hataf-patah as in B; the Ethiopic and the second form are identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Dan. 7, 6. 7, after, i. q. فِي اثر, عَلَى اثر,",
+   "status": "adjudicated",
+   "draft": "Dan. 7, 6. 7, after, i. q. عَلَى اثر, فِي اثر,",
+   "reread": "Dan. 7, 6. 7, after, i. q. فِي اثْرِ, عَلَى اثْرِ,",
+   "verdict": "neither",
+   "note": "Printed left-to-right order is في اثر first (immediately after \"i. q.\"), then a comma, then على اثر, then the line-final comma — Reading B's order, not A's. But اثر is printed bare both times (ث has only its three dots; no sukun or kasra visible), so B's اثْرِ is over-pointed. Fatha on ع/ل of على and kasra on ف are visible.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pr. in the track; with aff. בָּתְרָךְ after",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "thee Dan. 2, 39. Syr. and Samar.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ܒܳܬܰܪ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲתָרִים (places, regions) Atharim, pr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "n. of a place in the south of Palestine.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Num. 21, 1 דֶּרֶךְ הָאֲתָרִים by the way of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Atharim.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "section-1",
+   "column": -1,
+   "text": "ב",
+   "status": "draft_only",
+   "draft": "ב",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "Beth, בֵּית, the second letter of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "Hebrew alphabet; as a numeral denot-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "ing 2. The Hebrew name is contracted",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "from בַּיִת, house, tent, to which the ear-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "liest form of this letter seems to have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "borne a resemblance. See Heb. Gr. p.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "291. edit. 13. Monumm. Phœn. p. 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "It passes over into the other labials,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "e. g. a) Into פ, as בָּזַר and פָּזַר to dis-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "perse; בָּקַע and فَقَعَ to cleave; בַּרְזֶל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَتَرَ",
+   "status": "adjudicated",
+   "draft": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَجَرَ",
+   "reread": "Aram. פַּרְזֶל, ܦܰܪܙܠܳܐ, iron; פָּגַר and فَتَرَ",
+   "verdict": "b",
+   "note": "The decisive point is the middle letter of the Arabic word: the print shows a short tooth (ت) with fatha above, not the looped ج of فجر; and the gloss on the next line, \"to be weak\", matches فَتَرَ (to be languid), not فجر. The Hebrew and Syriac items are identical in both readings and match the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "to be weak. b) Rarely into ו, as רַבְרַב,",
+   "status": "adjudicated",
+   "draft": "to be weak. b) Rarely into ו, as רַבְרַב,",
+   "reread": "to be weak.   b) Rarely into ו, as רִבְרַב,",
+   "verdict": "a",
+   "note": "Under the first resh the print shows a horizontal stroke (patach), not a single dot (hireq); so רַבְרַב as in A, matching the Aramaic reduplicated form of רַב. The rest of the line (shva under first bet, patach under second resh, trailing comma) is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "t1-c0-r00",
+   "column": 0,
+   "text": "ܪܘܪܒ, great; also into ו quiescent, as",
+   "status": "adjudicated",
+   "draft": "رَبُوبٌ, great; also into ו quiescent, as",
+   "reread": "ܪܘܪܒ, great; also into י quiescent, as",
+   "verdict": "neither",
+   "note": "The word is Syriac (ܪܘܪܒ, with only the inherent rish dots, no separate vowel points) as in B, but the Hebrew letter after \"into\" is a tall vav ו (as in A), not a yod; so each reading has one error.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "בַּת־שׁוּעַ for בַּת־שֶׁבַע; comp. in the occi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "dental languages βόσκω vescor, pascor;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "βάδω vado. c) Into מ, the sounds of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "these two letters being very nearly re-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "lated in the mouth of an oriental; e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "בְּרִיא and מְרִיא fat; מְרֹאדַךְ and בְּרֹאדַךְ",
+   "status": "adjudicated",
+   "draft": "בְּרִיא and מְרִיא fat ; בְּרֹאדַךְ and מְרֹאדַךְ",
+   "reread": "בְּרִיא and מְרִיא fat ; מְרֹאדַךְ and בְּרֹאדַךְ",
+   "verdict": "b",
+   "note": "After \"fat ;\" the first word is printed with initial מְ (plain mem, sheva) and the word at the far right of the line begins with בְּ (bet with dagesh); so the order is מְרֹאדַךְ and בְּרֹאדַךְ, as in Reading B. Reading A swaps them. All vowel points otherwise match both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "pr. n. of a Babylonish idol; محن בָּחַן to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "try; זְמָן زَمَن time; זָמַר زبر to prune a",
+   "status": "adjudicated",
+   "draft": "try ; زَمَن זְמָן time ; زَبَر זָמַר to prune a",
+   "reread": "try ; זְמָן زَمَن time ; זָמַר زبر to prune a",
+   "verdict": "b",
+   "note": "In both pairs the Hebrew word is printed to the left of (before) the Arabic, as in Reading B, not Arabic-first as in A. The first Arabic زَمَن does carry visible fathas; the second (زبر) shows no vowel marks in print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "vine; דִּיבוֹן and דִּימוֹן pr. n. of a stream;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "מִכְתָּם i. q. מִכְתָּב a writing, poem; Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "بكَّة for مكَّة Mecca. Comp. βλίττω for",
+   "status": "adjudicated",
+   "draft": "بَكَّة for مَكَّة Mecca. Comp. βλίττω for",
+   "reread": "بكَّة for مكَّة Mecca.   Comp. βλίττω for",
+   "verdict": "b",
+   "note": "On both Arabic words the only vocalisation printed is a shadda with a fatha riding above it on the kāf; there is no fatha over the initial bāʾ or mīm as Reading A gives. Reading B's Arabic matches the print; its triple space after \"Mecca.\" is just the wide justification gap, rendered here as a single space.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "μελίττω from μέλι mel, honey; scamnum,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "scabellum; marmor, Fr. marbre, Engl.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r01",
+   "column": 0,
+   "text": "marble, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "בְּ, before monosyllables sometimes בָּ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "(see Heb. Gr. § 100), c. suff. בִּי; בְּךָ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "rarely בְּכָה Ps. 141, 8, in Pause and fem.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c0-r02",
+   "column": 0,
+   "text": "בָּךְ; בּוֹ, בָּהּ; בָּנוּ; בָּכֶם, בָּכֶן; בָּהֶם, בָּם,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "f. בְּהֵן; Arab. بِ, rarely بَ; Ethiop.",
+   "status": "adjudicated",
+   "draft": "f. בָּהֵן ; Arab. بِ, rarely بَ ; Ethiop.",
+   "reread": "f. בְּהֵן; Arab. بِ, rarely بَ; Ethiop.",
+   "verdict": "b",
+   "note": "Under the dageshed bet the print shows two vertically stacked dots (shewa), not a qamets stroke; also the semicolons are set tight against the Hebrew and Arabic (no preceding space), matching Reading B.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "በ; rarely ብ; Syr. ܒ; a prefix Prepo-",
+   "status": "adjudicated",
+   "draft": "በ ; rarely ብ ; Syr. ܒ ; a prefix Prepo-",
+   "reread": "በ; rarely ቢ; Syr. ܒ; a prefix Prepo-",
+   "verdict": "a",
+   "note": "The second Ethiopic glyph has its mark at the upper-left (ብ, sixth order), not at the lower-right as ቢ would; Syriac beth is printed bare with no points.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "sition, for the origin of which see the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "note at the end of the article; primarily",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "denoting the being and remaining in a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "place, Gr. ἐν, Lat. in; then transferred",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "to the ideas of nearness and society or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "accompaniment, at, by, with; and coupled",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "also with verbs of motion.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "A) Pr. in, Lat. in c. abl. Gr. ἐν.—Spec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "1. in, pr. of the being in a place,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "(which might be more fully and pre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "cisely expressed by בְּתוֹךְ, בְּקֶרֶב,) as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "בָּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+   "status": "adjudicated",
+   "draft": "בָּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+   "reread": "בְּעִיר in the city, בַּבַּיִת in the house, בַּבּוֹר",
+   "verdict": "a",
+   "note": "Under the bet of the first word the print shows a qamets (horizontal bar with a descending stroke), not a shewa; so בָּעִיר (A), not בְּעִיר (B). Rest of the line is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "in the pit, בָּאָרֶץ in the land or province,",
+   "status": "adjudicated",
+   "draft": "in the pit, בָּאָרֶץ in the land or province,",
+   "reread": "in the pit, בְּאֶרֶץ in the land or province,",
+   "verdict": "a",
+   "note": "The vowels under bet and aleph are both qamets (T-shaped, with a vertical tick below the horizontal), not sheva and segol; the bet also carries a dagesh. This is the form with the article (בָּאָרֶץ), matching Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "בַּאֲשֶׁר in (the place) which, i. q. where.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r00",
+   "column": 1,
+   "text": "Here belong also the following: a)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "The formulas בְּעֵינֵי in the eyes (pr. in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "the sight of the eyes), בְּאָזְנֵי, בִּפְנֵי;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "comp. ἐν ὀφθαλμοῖς Hom. Il. 2. 587, in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "oculis Q. Curt. 9. 4. b) The idiom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "שָׁתָה בְּ ‘ to drink in a cup,’ as in Engl. i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "to drink what is in a cup, for ‘ to drink out",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "of a cup,’ Gen. 44, 5. Am. 6, 6, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "Chald. Dan. 5, 2. So Gr. ἐν χρυσῷ, ἐν",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "ποτηρίοις πίνειν Xen. Anab. 6. 1. 4. Fr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "‘boire dans une tasse,’ ‘puiser dans une",
+   "status": "adjudicated",
+   "draft": "‘ boire dans une tasse,’ ‘ puiser dans une",
+   "reread": "‘boire dans une tasse,’ ‘puiser dans une",
+   "verdict": "b",
+   "note": "The only difference is spacing: the opening single quotes sit directly against \"boire\" and \"puiser\" with no word space (only normal letter-fitting), so Reading B's ‘boire / ‘puiser is correct; Reading A's inserted spaces are not printed. Everything else (italic \"dans\" ×2, \"tasse,’\" with comma inside the closing quote) matches both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "fontaine.’ The analogy of these other",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "languages speaks decidedly against the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "explanation of Fāsi, that the vessel is",
+   "status": "adjudicated",
+   "draft": "explanation of Fāsi, that the vessel is",
+   "reread": "explanation of Fâsi, that the vessel is",
+   "verdict": "a",
+   "note": "The mark over the a in Fāsi is a flat horizontal stroke (macron), not a pointed circumflex; the i's dot is faint/worn but the letter is i.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "here to be conceived of as an instru",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "t1-c1-r01",
+   "column": 1,
+   "text": "ment, q. d. to drink with a cup.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 73,
+  "adjudicated": 18,
+  "draft_only": 3,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 12
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.7814
+}

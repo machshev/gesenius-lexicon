@@ -1,0 +1,2454 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 185,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0185.png",
+ "raster_sha256": "9d02140fe181bb85d9b712dd9540d3dcf5986c98ef33d51542d9031b2c3a7bda",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0185.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-01T20:00:53+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 56,
+    "y": 121,
+    "width": 1764,
+    "height": 65
+   },
+   "draft_lines": [
+    "בתת.",
+    "169",
+    "גאר"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 56,
+      "y": 119,
+      "width": 1764,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/header-b00-1764x69+56+119-x2.png",
+     "image_sha256": "51c311f597082be9e6c9d2c961c37c9ae1f8e9cd547948313f7ade1784bed816",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בתת 169 גאל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d78ac6b7-2032-4b52-bb77-6c821bc1f57e",
+      "duration_api_ms": 8536,
+      "cost_usd_list": 0.01051,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 5280,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 183
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "בתת 169 גאל",
+       "status": "reread_only",
+       "band_id": "header-b00",
+       "text": "בתת 169 גאל"
+      },
+      {
+       "draft": "בתת.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "בתת."
+      },
+      {
+       "draft": "169",
+       "reread": null,
+       "status": "draft_only",
+       "text": "169"
+      },
+      {
+       "draft": "גאר",
+       "reread": null,
+       "status": "draft_only",
+       "text": "גאר"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 56,
+    "y": 166,
+    "width": 871,
+    "height": 743
+   },
+   "draft_lines": [
+    "have been derived from the nature of",
+    "the place.",
+    "* בָּתַת obsol. root, Arab. بَتَّ I, IV, to",
+    "cut, to cut off, to break off, comp. under",
+    "r. בָּדַד I; بَتَاتٌ something broken off,",
+    "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 56,
+      "y": 158,
+      "width": 871,
+      "height": 344
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r00-b00-871x344+56+158-x2.png",
+     "image_sha256": "f4dbab201cfef818461d09ea96c6ddf25dd5e9b4141b0bc78b837b0dd47f328a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "have been derived from the nature of",
+       "the place.",
+       "* בָּתַת obsol. root, Arab. بَتَّ I, IV, to",
+       "cut, to cut off, to break off, comp. under"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "db4e1607-e76d-4ea5-b344-37c3abab4d2f",
+      "duration_api_ms": 12169,
+      "cost_usd_list": 0.023590749999999997,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6603,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 432
+     },
+     "lines": [
+      {
+       "draft": "have been derived from the nature of",
+       "reread": "have been derived from the nature of",
+       "status": "agreed",
+       "text": "have been derived from the nature of"
+      },
+      {
+       "draft": "the place.",
+       "reread": "the place.",
+       "status": "agreed",
+       "text": "the place."
+      },
+      {
+       "draft": "* בָּתַת obsol. root, Arab. بَتَّ I, IV, to",
+       "reread": "* בָּתַת obsol. root, Arab. بَتَّ I, IV, to",
+       "status": "agreed",
+       "text": "* בָּתַת obsol. root, Arab. بَتَّ I, IV, to"
+      },
+      {
+       "draft": "cut, to cut off, to break off, comp. under",
+       "reread": "cut, to cut off, to break off, comp. under",
+       "status": "agreed",
+       "text": "cut, to cut off, to break off, comp. under"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 56,
+      "y": 486,
+      "width": 871,
+      "height": 197
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r00-b01-871x197+56+486-x2.png",
+     "image_sha256": "68458b4c9f615af9e09c62fbe2e9b092ce26220e61ba5fc9688c17371819e0f0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "r. בָּדַד I; بَتَاتٌ something broken off,",
+       "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88cc4be8-9abb-4ae2-951f-c973e61de3e8",
+      "duration_api_ms": 18040,
+      "cost_usd_list": 0.03098325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5973,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 583
+     },
+     "lines": [
+      {
+       "draft": "r. בָּדַד I; بَتَاتٌ something broken off,",
+       "reread": "r. בָּדַד I; بَتَاتٌ something broken off,",
+       "status": "agreed",
+       "text": "r. בָּדַד I; بَتَاتٌ something broken off,"
+      },
+      {
+       "draft": "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-",
+       "reread": "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-",
+       "status": "agreed",
+       "text": "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 56,
+    "y": 897,
+    "width": 871,
+    "height": 849
+   },
+   "draft_lines": [
+    "Gimel, גִּימֶל, the third letter of the",
+    "Hebrew alphabet; as a numeral denot-",
+    "ing 3. Its name differs only in form",
+    "from גָּמָל camel ; and its figure in Pheni-",
+    "cian inscriptions (Λ , Λ,) bears a cer-",
+    "tain resemblance to the camel's hump",
+    "or neck ; see Monumen. Phœn. p. 22.",
+    "As the softest of the palatal letters",
+    "(גיכק) except Yod, it is often inter-",
+    "changed: a) With the harder palatals",
+    "כ and ק, both in the Hebrew itself,",
+    "and in the corresponding forms of the"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 56,
+      "y": 949,
+      "width": 871,
+      "height": 331
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r01-b00-871x331+56+949-x2.png",
+     "image_sha256": "c1357ad5053766655828dbb28783318c1f8ce269263387418bec1a0084b91c6c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gimel, גִּימֶל, the third letter of the",
+       "Hebrew alphabet; as a numeral denot-",
+       "ing 3. Its name differs only in form",
+       "from גָּמָל camel; and its figure in Pheni-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1c10add8-28c0-4e90-acbd-35cdd114ceb0",
+      "duration_api_ms": 20998,
+      "cost_usd_list": 0.029775,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6540,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 556
+     },
+     "lines": [
+      {
+       "draft": "Gimel, גִּימֶל, the third letter of the",
+       "reread": "Gimel, גִּימֶל, the third letter of the",
+       "status": "agreed",
+       "text": "Gimel, גִּימֶל, the third letter of the"
+      },
+      {
+       "draft": "Hebrew alphabet; as a numeral denot-",
+       "reread": "Hebrew alphabet; as a numeral denot-",
+       "status": "agreed",
+       "text": "Hebrew alphabet; as a numeral denot-"
+      },
+      {
+       "draft": "ing 3. Its name differs only in form",
+       "reread": "ing 3. Its name differs only in form",
+       "status": "agreed",
+       "text": "ing 3. Its name differs only in form"
+      },
+      {
+       "draft": "from גָּמָל camel ; and its figure in Pheni-",
+       "reread": "from גָּמָל camel; and its figure in Pheni-",
+       "status": "agreed",
+       "text": "from גָּמָל camel; and its figure in Pheni-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 56,
+      "y": 1264,
+      "width": 871,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r01-b01-871x244+56+1264-x2.png",
+     "image_sha256": "e6abc2864aa8fd7f43c58c57ec7fe8ce7eea28099692b86e97cfe719f3a57cd0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cian inscriptions (Λ, Λ,) bears a cer-",
+       "tain resemblance to the camel's hump",
+       "or neck; see Monumen. Phœn. p. 22.",
+       "As the softest of the palatal letters"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6ba18af1-25c6-4c1c-82cc-68ab2836c796",
+      "duration_api_ms": 4878,
+      "cost_usd_list": 0.01443125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6165,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 251
+     },
+     "lines": [
+      {
+       "draft": "cian inscriptions (Λ , Λ,) bears a cer-",
+       "reread": "cian inscriptions (Λ, Λ,) bears a cer-",
+       "status": "agreed",
+       "text": "cian inscriptions (Λ, Λ,) bears a cer-"
+      },
+      {
+       "draft": "tain resemblance to the camel's hump",
+       "reread": "tain resemblance to the camel's hump",
+       "status": "agreed",
+       "text": "tain resemblance to the camel's hump"
+      },
+      {
+       "draft": "or neck ; see Monumen. Phœn. p. 22.",
+       "reread": "or neck; see Monumen. Phœn. p. 22.",
+       "status": "agreed",
+       "text": "or neck; see Monumen. Phœn. p. 22."
+      },
+      {
+       "draft": "As the softest of the palatal letters",
+       "reread": "As the softest of the palatal letters",
+       "status": "agreed",
+       "text": "As the softest of the palatal letters"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 56,
+      "y": 1492,
+      "width": 871,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r01-b02-871x248+56+1492-x2.png",
+     "image_sha256": "8c28c08d06c818de06b6f10ffca0525af892dc8e3cf6c959db40569a02d3c533",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(גיכק) except Yod, it is often inter-",
+       "changed: a) With the harder palatals",
+       "כ and ק, both in the Hebrew itself,",
+       "and in the corresponding forms of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cc308878-7196-4e27-92b5-29a209f85913",
+      "duration_api_ms": 6456,
+      "cost_usd_list": 0.02133125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6165,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 389
+     },
+     "lines": [
+      {
+       "draft": "(גיכק) except Yod, it is often inter-",
+       "reread": "(גיכק) except Yod, it is often inter-",
+       "status": "agreed",
+       "text": "(גיכק) except Yod, it is often inter-"
+      },
+      {
+       "draft": "changed: a) With the harder palatals",
+       "reread": "changed: a) With the harder palatals",
+       "status": "agreed",
+       "text": "changed: a) With the harder palatals"
+      },
+      {
+       "draft": "כ and ק, both in the Hebrew itself,",
+       "reread": "כ and ק, both in the Hebrew itself,",
+       "status": "agreed",
+       "text": "כ and ק, both in the Hebrew itself,"
+      },
+      {
+       "draft": "and in the corresponding forms of the",
+       "reread": "and in the corresponding forms of the",
+       "status": "agreed",
+       "text": "and in the corresponding forms of the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 56,
+    "y": 1734,
+    "width": 871,
+    "height": 808
+   },
+   "draft_lines": [
+    "kindred dialects; e. g. גָּדִישׁ, جُدْس,",
+    "كَدِيس, a heap of sheaves; גָּפְרִית.",
+    "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן",
+    "to cover, to protect; גָּנַז and כָּנַס, كنز,",
+    "to collect, to heap up: רָגַל and רָכַל to run",
+    "up and down, גָּבִיעַ, قُبَعَة, calix of flow-",
+    "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,",
+    "שֵׁגֵד, ܫܶܓܕܳܐ, an almond-tree.",
+    "b) More rarely with the gutturals; as",
+    "ע, e. g. נָבַע, Chald. נְבַע, נָבַג, to burst"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 56,
+      "y": 1741,
+      "width": 871,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r02-b00-871x270+56+1741-x2.png",
+     "image_sha256": "3b0cf751cb177a11f927b4b2c81a5619145a9a1b987af0adf8da95d03fbf5740",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "kindred dialects; e. g. גָּדִישׁ, جُدْس,",
+       "كَدِيس, a heap of sheaves; גָּפְרִית,",
+       "كِبْرِيت, sulphur; גָּבַן and כָּבַן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0668d5a6-3343-4e32-930a-b1d9c58d0cf4",
+      "duration_api_ms": 27770,
+      "cost_usd_list": 0.06091275000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6291,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 1180
+     },
+     "lines": [
+      {
+       "draft": "kindred dialects; e. g. גָּדִישׁ, جُدْس,",
+       "reread": "kindred dialects; e. g. גָּדִישׁ, جُدْس,",
+       "status": "agreed",
+       "text": "kindred dialects; e. g. גָּדִישׁ, جُدْس,"
+      },
+      {
+       "draft": "كَدِيس, a heap of sheaves; גָּפְרִית.",
+       "reread": "كَدِيس, a heap of sheaves; גָּפְרִית,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "كَدِيس, a heap of sheaves; גָּפְרִית,",
+        "verdict": "b",
+        "note": "The mark after גָּפְרִית is a comma with a descending tail, not a period; the list continues onto the next line with كِبْرِيت, sulphur. Everything else (Arabic كَدِيس with its points, the Hebrew vowels, dagesh in gimel, plene yod) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8ea8802e-7fa9-4638-a2c0-38b46d84ab96",
+        "duration_api_ms": 13227,
+        "cost_usd_list": 0.039897249999999995,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6229,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 760
+       },
+       "text": "كَدِيس, a heap of sheaves; גָּפְרִית,"
+      },
+      {
+       "draft": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן",
+       "reread": "كِبْرِيت, sulphur; גָּבַן and כָּבַן",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן",
+        "verdict": "a",
+        "note": "The line begins with a pointed Syriac word (visible at far left, with vowel points printed) which Reading B omits; and the Hebrew pair is גָּנַן / כָּנַן — the middle letter is a narrow nun, not bet.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "80c4b01e-fb27-4a92-8b34-3ea49316b1fe",
+        "duration_api_ms": 19527,
+        "cost_usd_list": 0.1064785,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3554,
+        "cache_creation_input_tokens": 2725,
+        "output_tokens": 1015
+       },
+       "text": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 56,
+      "y": 1995,
+      "width": 871,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r02-b01-871x259+56+1995-x2.png",
+     "image_sha256": "746f833b1b2051d10dab121324af9b1dca0a0df9b2529e155af84a56cc0e818a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to cover, to protect ; גָּנַז and כָּנַס, كنز,",
+       "to collect, to heap up: רָגַל and רָכַל to run",
+       "up and down, גָּבִיעַ, قُبْعَة, calix of flow-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f6343be0-27af-4783-90ac-e4a085dc90b9",
+      "duration_api_ms": 19562,
+      "cost_usd_list": 0.034546999999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6228,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 653
+     },
+     "lines": [
+      {
+       "draft": "to cover, to protect; גָּנַז and כָּנַס, كنز,",
+       "reread": "to cover, to protect ; גָּנַז and כָּנַס, كنز,",
+       "status": "agreed",
+       "text": "to cover, to protect; גָּנַז and כָּנַס, كنز,"
+      },
+      {
+       "draft": "to collect, to heap up: רָגַל and רָכַל to run",
+       "reread": "to collect, to heap up: רָגַל and רָכַל to run",
+       "status": "agreed",
+       "text": "to collect, to heap up: רָגַל and רָכַל to run"
+      },
+      {
+       "draft": "up and down, גָּבִיעַ, قُبَعَة, calix of flow-",
+       "reread": "up and down, גָּבִיעַ, قُبْعَة, calix of flow-",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "up and down, גָּבִיעַ, قُبْعَة, calix of flow-",
+        "verdict": "b",
+        "note": "Over the Arabic bāʾ the print shows a small circle (sukūn), not a fatḥa; the fatḥa sits over the ʿayn. So قُبْعَة (Reading B), not قُبَعَة.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "69854f62-103c-4eb4-86b9-92ae1fb4ccc7",
+        "duration_api_ms": 7107,
+        "cost_usd_list": 0.023284500000000003,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6178,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 428
+       },
+       "text": "up and down, גָּבִיעַ, قُبْعَة, calix of flow-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 56,
+      "y": 2238,
+      "width": 871,
+      "height": 312
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r02-b02-871x312+56+2238-x2.png",
+     "image_sha256": "a125f036829d0853ea4ac9618057f9744e763cb92c617aa7ce0e952c75aee7d1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,",
+       "שִׁגֵּד, ܫܶܓܕܳܐ, an almond-tree.",
+       "b) More rarely with the gutturals; as",
+       "ע, e. g. נָבַע, Chald. נְבַע, נְבַג, to burst"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "16cbad6c-036a-480a-bd9b-97dbba6e045e",
+      "duration_api_ms": 17210,
+      "cost_usd_list": 0.048459999999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6480,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 930
+     },
+     "lines": [
+      {
+       "draft": "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,",
+       "reread": "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,",
+       "status": "agreed",
+       "text": "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,"
+      },
+      {
+       "draft": "שֵׁגֵד, ܫܶܓܕܳܐ, an almond-tree.",
+       "reread": "שִׁגֵּד, ܫܶܓܕܳܐ, an almond-tree.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "שִׁגֵּד, ܫܶܓܕܳܐ, an almond-tree.",
+        "verdict": "b",
+        "note": "Shin has a single dot beneath (hiriq, not tsere) and the gimel carries a dagesh with tsere; Syriac ܫܶܓܕܳܐ is printed with points as both readings give.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2b91b8f9-740c-48b1-85ae-f8bd67bc558f",
+        "duration_api_ms": 11333,
+        "cost_usd_list": 0.04065150000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6446,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 774
+       },
+       "text": "שִׁגֵּד, ܫܶܓܕܳܐ, an almond-tree."
+      },
+      {
+       "draft": "b) More rarely with the gutturals; as",
+       "reread": "b) More rarely with the gutturals; as",
+       "status": "agreed",
+       "text": "b) More rarely with the gutturals; as"
+      },
+      {
+       "draft": "ע, e. g. נָבַע, Chald. נְבַע, נָבַג, to burst",
+       "reread": "ע, e. g. נָבַע, Chald. נְבַע, נְבַג, to burst",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "ע, e. g. נָבַע, Chald. נְבַע, נְבַג, to burst",
+        "verdict": "b",
+        "note": "Under the nun of the third Hebrew word (נְבַג) the print shows two vertical dots (shewa), matching the preceding Chaldee נְבַע — not a qamets as Reading A has. Both are Chaldee forms, so the shewa is expected; the first word נָבַע does carry a qamets.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "372ab04f-d85e-4f8c-82dc-41e53173df0c",
+        "duration_api_ms": 11315,
+        "cost_usd_list": 0.04145150000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6446,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 790
+       },
+       "text": "ע, e. g. נָבַע, Chald. נְבַע, נְבַג, to burst"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 56,
+    "y": 2530,
+    "width": 871,
+    "height": 794
+   },
+   "draft_lines": [
+    "forth; גִּדָּה, Arab. غَرِيَ to provoke; also ה,",
+    "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;",
+    "comp. אֶחַח.",
+    "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e.",
+    "haughty, proud, Is. 16, 6.",
+    "* גָּאָה fut. יִגְאֶה, a poetic word.",
+    "1. to lift up oneself, to rise, to increase,",
+    "e. g. of rising waters Ez. 47, 5; of a",
+    "plant growing Job 8, 11.—Job 10, 16",
+    "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself",
+    "(sc. my head) thou huntest me as a lion.",
+    "15"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 56,
+      "y": 2528,
+      "width": 871,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r03-b00-871x255+56+2528-x2.png",
+     "image_sha256": "bbf83cf986724c9b21bf7fb110b9a7ddba5fa07d8899c85dcd29f9f44b6a4555",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "forth; גָּרָה, Arab. غَرِىَ to provoke ; also ח,",
+       "e. g. אֶפְרֹחַ, ܦܰܪܽܘܚܬܳܐ, young of birds ;",
+       "comp. אֶחָח."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "69598bb1-0944-41f1-bc5c-c139e0727535",
+      "duration_api_ms": 27621,
+      "cost_usd_list": 0.042997,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6228,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 822
+     },
+     "lines": [
+      {
+       "draft": "forth; גִּדָּה, Arab. غَرِيَ to provoke; also ה,",
+       "reread": "forth; גָּרָה, Arab. غَرِىَ to provoke ; also ח,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "forth; גָּרָה, Arab. غَرِىَ to provoke ; also ח,",
+        "verdict": "b",
+        "note": "The Hebrew is גָּרָה with a resh (rounded shoulder, no dagesh in the second letter), not גִּדָּה; the Arabic final letter is printed dotless (ى) with fatha, and the last Hebrew letter is ח (closed top-left corner), not ה. There is a space before the semicolon in \"provoke ;\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eb4a258c-5cef-432c-bcfb-c0ab7d639d60",
+        "duration_api_ms": 37782,
+        "cost_usd_list": 0.10533749999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6190,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 2069
+       },
+       "text": "forth; גָּרָה, Arab. غَرِىَ to provoke; also ח,"
+      },
+      {
+       "draft": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;",
+       "reread": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܚܬܳܐ, young of birds ;",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds ;",
+        "verdict": "neither",
+        "note": "Syriac 4th letter is gamal ܓ (long down-left tail), not ܚܬ — A's word is right; but the print has a space before the final semicolon (\"birds ;\") as in B. Hebrew אֶפְרֹחַ identical in both and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "66e494d7-06e5-46cf-8a16-64e01621b4a4",
+        "duration_api_ms": 16186,
+        "cost_usd_list": 0.1021305,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3562,
+        "cache_creation_input_tokens": 2670,
+        "output_tokens": 950
+       },
+       "text": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;"
+      },
+      {
+       "draft": "comp. אֶחַח.",
+       "reread": "comp. אֶחָח.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "comp. אֶחָח.",
+        "verdict": "b",
+        "note": "The vowel under the middle ח is a qamets (horizontal bar with a short descending stem, T-shaped), not a patach (plain horizontal bar); segol under א is printed as both readings have it, and no other points or dagesh are present.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b813c634-88c2-4925-bedc-1c1ff6ae28b8",
+        "duration_api_ms": 18460,
+        "cost_usd_list": 0.034016500000000005,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6106,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 643
+       },
+       "text": "comp. אֶחָח."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 56,
+      "y": 2767,
+      "width": 871,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r03-b01-871x295+56+2767-x2.png",
+     "image_sha256": "f53659524c3cb88b67888a31c8ea267e7c32381ca5bca006176b5c9c755733fe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e.",
+       "haughty, proud, Is. 16, 6.",
+       "* גָּאָה fut. יִגְאֶה, a poetic word.",
+       "1. to lift up oneself, to rise, to increase,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02061250-87e6-4eaf-8280-16bbe9bb56df",
+      "duration_api_ms": 12218,
+      "cost_usd_list": 0.02979425,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6417,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 557
+     },
+     "lines": [
+      {
+       "draft": "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e.",
+       "reread": "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e.",
+       "status": "agreed",
+       "text": "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e."
+      },
+      {
+       "draft": "haughty, proud, Is. 16, 6.",
+       "reread": "haughty, proud, Is. 16, 6.",
+       "status": "agreed",
+       "text": "haughty, proud, Is. 16, 6."
+      },
+      {
+       "draft": "* גָּאָה fut. יִגְאֶה, a poetic word.",
+       "reread": "* גָּאָה fut. יִגְאֶה, a poetic word.",
+       "status": "agreed",
+       "text": "* גָּאָה fut. יִגְאֶה, a poetic word."
+      },
+      {
+       "draft": "1. to lift up oneself, to rise, to increase,",
+       "reread": "1. to lift up oneself, to rise, to increase,",
+       "status": "agreed",
+       "text": "1. to lift up oneself, to rise, to increase,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 56,
+      "y": 3046,
+      "width": 871,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r03-b02-871x240+56+3046-x2.png",
+     "image_sha256": "c6f69a36198989bde50fa5e04509527cf3852054c244a64267005dcd62390365",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "e. g. of rising waters Ez. 47, 5; of a",
+       "plant growing Job 8, 11.—Job 10, 16",
+       "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself",
+       "(sc. my head) thou huntest me as a lion."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13ab72c7-61f9-4fba-9a47-30d831c9cf61",
+      "duration_api_ms": 7693,
+      "cost_usd_list": 0.02078125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6165,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 378
+     },
+     "lines": [
+      {
+       "draft": "e. g. of rising waters Ez. 47, 5; of a",
+       "reread": "e. g. of rising waters Ez. 47, 5; of a",
+       "status": "agreed",
+       "text": "e. g. of rising waters Ez. 47, 5; of a"
+      },
+      {
+       "draft": "plant growing Job 8, 11.—Job 10, 16",
+       "reread": "plant growing Job 8, 11.—Job 10, 16",
+       "status": "agreed",
+       "text": "plant growing Job 8, 11.—Job 10, 16"
+      },
+      {
+       "draft": "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself",
+       "reread": "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself",
+       "status": "agreed",
+       "text": "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself"
+      },
+      {
+       "draft": "(sc. my head) thou huntest me as a lion.",
+       "reread": "(sc. my head) thou huntest me as a lion.",
+       "status": "agreed",
+       "text": "(sc. my head) thou huntest me as a lion."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 56,
+      "y": 3270,
+      "width": 871,
+      "height": 56
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c0-r03-b03-871x56+56+3270-x2.png",
+     "image_sha256": "8c9eeb05838ae1efcbfb98eeedbf75cf1bf955ef887db0c532927f667942210b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "15"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2714cd32-6e0a-40b1-9150-648de3367e19",
+      "duration_api_ms": 10797,
+      "cost_usd_list": 0.012760750000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5283,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "15",
+       "reread": "15",
+       "status": "agreed",
+       "text": "15"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 945,
+    "y": 166,
+    "width": 875,
+    "height": 746
+   },
+   "draft_lines": [
+    "ly, entirely. In Hebrew it seems to",
+    "have signified :",
+    "1. to cut or mark out, to define, and",
+    "hence to measure ; whence בַּת II, as a",
+    "measure of liquids.",
+    "2. to cut off any thing, to make an end",
+    "of, to lay wholly waste, i. q. בִּלָּה ; whence",
+    "בַּתָּה, בָּתָה."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 945,
+      "y": 158,
+      "width": 875,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r00-b00-875x248+945+158-x2.png",
+     "image_sha256": "c6c12199fd97a71df37d8e1ea27a6a44f4540d9183013076255d5501e1482b64",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ly, entirely. In Hebrew it seems to",
+       "have signified:",
+       "1. to cut or mark out, to define, and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "69167347-9c93-413d-b1d3-1abd29fcc13f",
+      "duration_api_ms": 4549,
+      "cost_usd_list": 0.0145805,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6162,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 254
+     },
+     "lines": [
+      {
+       "draft": "ly, entirely. In Hebrew it seems to",
+       "reread": "ly, entirely. In Hebrew it seems to",
+       "status": "agreed",
+       "text": "ly, entirely. In Hebrew it seems to"
+      },
+      {
+       "draft": "have signified :",
+       "reread": "have signified:",
+       "status": "agreed",
+       "text": "have signified:"
+      },
+      {
+       "draft": "1. to cut or mark out, to define, and",
+       "reread": "1. to cut or mark out, to define, and",
+       "status": "agreed",
+       "text": "1. to cut or mark out, to define, and"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 945,
+      "y": 390,
+      "width": 875,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r00-b01-875x234+945+390-x2.png",
+     "image_sha256": "ccd91a86e3aa507c2142eb150913132e60139ce6fbe625c8449d6aedc94e0061",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hence to measure ; whence בַּת II, as a",
+       "measure of liquids.",
+       "2. to cut off any thing, to make an end",
+       "of, to lay wholly waste, i. q. כָּלָה ; whence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "813334e9-6963-48bf-a631-165410457164",
+      "duration_api_ms": 6574,
+      "cost_usd_list": 0.02116475,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6099,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 386
+     },
+     "lines": [
+      {
+       "draft": "hence to measure ; whence בַּת II, as a",
+       "reread": "hence to measure ; whence בַּת II, as a",
+       "status": "agreed",
+       "text": "hence to measure; whence בַּת II, as a"
+      },
+      {
+       "draft": "measure of liquids.",
+       "reread": "measure of liquids.",
+       "status": "agreed",
+       "text": "measure of liquids."
+      },
+      {
+       "draft": "2. to cut off any thing, to make an end",
+       "reread": "2. to cut off any thing, to make an end",
+       "status": "agreed",
+       "text": "2. to cut off any thing, to make an end"
+      },
+      {
+       "draft": "of, to lay wholly waste, i. q. בִּלָּה ; whence",
+       "reread": "of, to lay wholly waste, i. q. כָּלָה ; whence",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "of, to lay wholly waste, i. q. כִּלָּה ; whence",
+        "verdict": "neither",
+        "note": "The first letter is a rounded kaf (not bet, as in A), but it carries hiriq with dagesh (כִּ), not qamets as in B; the lamed has dagesh and qamets. Piel כִּלָּה \"make an end of\" fits the gloss.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1bd27d89-c7eb-42d2-8082-14cb3e7fc110",
+        "duration_api_ms": 12077,
+        "cost_usd_list": 0.08872225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3529,
+        "cache_creation_input_tokens": 2510,
+        "output_tokens": 746
+       },
+       "text": "of, to lay wholly waste, i. q. כִּלָּה; whence"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 945,
+      "y": 608,
+      "width": 875,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r00-b02-875x72+945+608-x2.png",
+     "image_sha256": "257f4605e1a0b479cd8ee19d19046d91be8bb9d33b34c3e77918422367e4fe4a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בָּתָה, בַּתָּה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2d2b3de4-5552-4b97-9e05-fd46129bbd87",
+      "duration_api_ms": 9086,
+      "cost_usd_list": 0.0279415,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5406,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 525
+     },
+     "lines": [
+      {
+       "draft": "בַּתָּה, בָּתָה.",
+       "reread": "בָּתָה, בַּתָּה.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "בָּתָה, בַּתָּה.",
+        "verdict": "b",
+        "note": "Order is decisive: the rightmost (first) printed word has qamets under bet and no dagesh in tav (בָּתָה); the leftmost (second) word has patah under bet and a dagesh dot in the tav (בַּתָּה). Reading A reverses the two items.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "092bce0e-9a03-4b17-8c95-5ca694a45993",
+        "duration_api_ms": 28515,
+        "cost_usd_list": 0.09933700000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3508,
+        "cache_creation_input_tokens": 1796,
+        "output_tokens": 1244
+       },
+       "text": "בָּתָה, בַּתָּה."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 945,
+    "y": 900,
+    "width": 875,
+    "height": 966
+   },
+   "draft_lines": [
+    "2. Metaph. to be exalted, majestic,",
+    "glorious, spoken of God, Ex. 15, 1. 21.—",
+    "Hence in the derivatives also:",
+    "3. to be eminent, excellent, splendid;",
+    "see deriv. גָּאוֹן no. 2.",
+    "4. to be elated, i. e. haughty, proud;",
+    "see deriv. גֵּאָה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+    "Syr. Pa. ܓܰܐܺܝ to decorate, to make",
+    "splendid, magnificent; Ethpa. to boast",
+    "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝܳܐ decorated, elegant,",
+    "magnificent. In the signif. of pride it",
+    "corresponds with Gr. γαίω.",
+    "Deriv. גֵּא, גֵּוָה I, and those here fol-",
+    "lowing."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 945,
+      "y": 935,
+      "width": 875,
+      "height": 334
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r01-b00-875x334+945+935-x2.png",
+     "image_sha256": "2373872701eec2320801b198b1fcc1b4af672f922571894e3209c7abc2425c82",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Metaph. to be exalted, majestic,",
+       "glorious, spoken of God, Ex. 15, 1. 21.—",
+       "Hence in the derivatives also:",
+       "3. to be eminent, excellent, splendid ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88b87a6a-e6d2-44e0-95b4-4805f049823a",
+      "duration_api_ms": 18042,
+      "cost_usd_list": 0.017625,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6540,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 313
+     },
+     "lines": [
+      {
+       "draft": "2. Metaph. to be exalted, majestic,",
+       "reread": "2. Metaph. to be exalted, majestic,",
+       "status": "agreed",
+       "text": "2. Metaph. to be exalted, majestic,"
+      },
+      {
+       "draft": "glorious, spoken of God, Ex. 15, 1. 21.—",
+       "reread": "glorious, spoken of God, Ex. 15, 1. 21.—",
+       "status": "agreed",
+       "text": "glorious, spoken of God, Ex. 15, 1. 21.—"
+      },
+      {
+       "draft": "Hence in the derivatives also:",
+       "reread": "Hence in the derivatives also:",
+       "status": "agreed",
+       "text": "Hence in the derivatives also:"
+      },
+      {
+       "draft": "3. to be eminent, excellent, splendid;",
+       "reread": "3. to be eminent, excellent, splendid ;",
+       "status": "agreed",
+       "text": "3. to be eminent, excellent, splendid;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 945,
+      "y": 1253,
+      "width": 875,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r01-b01-875x254+945+1253-x2.png",
+     "image_sha256": "9c3d6b7df21fbfe30b5ac215bcd55bffb383c9b097dd6e2c7ed5c0356502ecde",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "see deriv. גָּאוֹן no. 2.",
+       "4. to be elated, i. e. haughty, proud ;",
+       "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+       "Syr. Pa. ܓܰܐܺܝ to decorate, to make"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "233c9196-687f-42fa-9b9b-bb1ba8b4a995",
+      "duration_api_ms": 10631,
+      "cost_usd_list": 0.031497,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6228,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 592
+     },
+     "lines": [
+      {
+       "draft": "see deriv. גָּאוֹן no. 2.",
+       "reread": "see deriv. גָּאוֹן no. 2.",
+       "status": "agreed",
+       "text": "see deriv. גָּאוֹן no. 2."
+      },
+      {
+       "draft": "4. to be elated, i. e. haughty, proud;",
+       "reread": "4. to be elated, i. e. haughty, proud ;",
+       "status": "agreed",
+       "text": "4. to be elated, i. e. haughty, proud;"
+      },
+      {
+       "draft": "see deriv. גֵּאָה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+       "reread": "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+        "verdict": "b",
+        "note": "Under the aleph of the first word the print shows three dots in a triangle (segol), not the two of a qamets/tsere — גֵּאֶה, matching the adjective cross-referenced at no. 2. Reading A's גֵּאָה is wrong; everything else in both readings matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4496e7c5-0a98-4029-9065-b2f0455c0b11",
+        "duration_api_ms": 10231,
+        "cost_usd_list": 0.030647,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 6228,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 575
+       },
+       "text": "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3."
+      },
+      {
+       "draft": "Syr. Pa. ܓܰܐܺܝ to decorate, to make",
+       "reread": "Syr. Pa. ܓܰܐܺܝ to decorate, to make",
+       "status": "agreed",
+       "text": "Syr. Pa. ܓܰܐܺܝ to decorate, to make"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 945,
+      "y": 1491,
+      "width": 875,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r01-b02-875x254+945+1491-x2.png",
+     "image_sha256": "d7f28ce2c248a8add5026b176e259785927c26323d7818c8a14e3ecc6343e00d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "splendid, magnificent; Ethpa. to boast",
+       "oneself; ܓܰܐ̣ܐ, ܓܰܐܝܳܐ decorated, elegant,",
+       "magnificent. In the signif. of pride it",
+       "corresponds with Gr. γαίω."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "429ba8e3-c795-4681-9b8d-b83f054d5b7e",
+      "duration_api_ms": 31080,
+      "cost_usd_list": 0.07509700000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6228,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 1464
+     },
+     "lines": [
+      {
+       "draft": "splendid, magnificent; Ethpa. to boast",
+       "reread": "splendid, magnificent; Ethpa. to boast",
+       "status": "agreed",
+       "text": "splendid, magnificent; Ethpa. to boast"
+      },
+      {
+       "draft": "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝܳܐ decorated, elegant,",
+       "reread": "oneself; ܓܰܐ̣ܐ, ܓܰܐܝܳܐ decorated, elegant,",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "oneself; ܓܰܐܳܐ, ܓܰܐܝܳܐ decorated, elegant,",
+        "verdict": "neither",
+        "note": "The decisive point is letter count: the first Syriac word is printed with three letters (gomal + two alaphs, no yod) and the second with four (gomal, alaph, small yod, alaph), so Reading A's extra yods are wrong. Reading B has the right letters but its dot-below on the first word's alaph is not printed; the mark there sits above the alaphs (a two-dot vowel). The second word carries two vowel marks (over gomal and over the first alaph); exact vowel identities at this resolution are a best reading.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "58a1259d-30bb-41e7-8384-61966906214f",
+        "duration_api_ms": 41692,
+        "cost_usd_list": 0.15790075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3563,
+        "cache_creation_input_tokens": 2671,
+        "output_tokens": 2065
+       },
+       "text": "oneself; ܓܰܐܳܐ, ܓܰܐܝܳܐ decorated, elegant,"
+      },
+      {
+       "draft": "magnificent. In the signif. of pride it",
+       "reread": "magnificent. In the signif. of pride it",
+       "status": "agreed",
+       "text": "magnificent. In the signif. of pride it"
+      },
+      {
+       "draft": "corresponds with Gr. γαίω.",
+       "reread": "corresponds with Gr. γαίω.",
+       "status": "agreed",
+       "text": "corresponds with Gr. γαίω."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 945,
+      "y": 1729,
+      "width": 875,
+      "height": 126
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r01-b03-875x126+945+1729-x2.png",
+     "image_sha256": "570d24001ad0679b5cab7c55a9ec49d57fb974700b870263fabde17c7b640fbf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Deriv. גֵּא, גֵּוָה I, and those here fol-",
+       "lowing."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "709f88a4-2c69-43db-bc25-c368939e8293",
+      "duration_api_ms": 10032,
+      "cost_usd_list": 0.0121895,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5598,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 209
+     },
+     "lines": [
+      {
+       "draft": "Deriv. גֵּא, גֵּוָה I, and those here fol-",
+       "reread": "Deriv. גֵּא, גֵּוָה I, and those here fol-",
+       "status": "agreed",
+       "text": "Deriv. גֵּא, גֵּוָה I, and those here fol-"
+      },
+      {
+       "draft": "lowing.",
+       "reread": "lowing.",
+       "status": "agreed",
+       "text": "lowing."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 945,
+    "y": 1854,
+    "width": 875,
+    "height": 651
+   },
+   "draft_lines": [
+    "גֵּאֶה adj. 1. lifted up, high, lofty,",
+    "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה",
+    "וְהַשְׁפִּילֵהוּ look upon every high thing",
+    "and bring it low.",
+    "2. elated, i. e. proud, haughty, Jer. 48,",
+    "29. Plur. גֵּאִים the proud, often with the",
+    "accessory notion of impiety, ungodli-",
+    "ness; as elsewhere gentleness and hu-",
+    "mility include also the idea of piety, see",
+    "עָנָו. Ps. 94, 2. 140, 6. Prov. 15, 25. 16,",
+    "19. Sept. ὑπερήφανοι, ὑβρισταί."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 945,
+      "y": 1865,
+      "width": 875,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r02-b00-875x187+945+1865-x2.png",
+     "image_sha256": "78b6ab75df10e51b4dd2bda5105370ab6171a3a68007efc853712e0e05a7eca4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גֵּאֶה adj. 1. lifted up, high, lofty,",
+       "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה",
+       "וְהַשְׁפִּילֵהוּ look upon every high thing"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92a4364f-3381-4010-a05d-dedb811b5234",
+      "duration_api_ms": 13414,
+      "cost_usd_list": 0.027668250000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5913,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 517
+     },
+     "lines": [
+      {
+       "draft": "גֵּאֶה adj. 1. lifted up, high, lofty,",
+       "reread": "גֵּאֶה adj. 1. lifted up, high, lofty,",
+       "status": "agreed",
+       "text": "גֵּאֶה adj. 1. lifted up, high, lofty,"
+      },
+      {
+       "draft": "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה",
+       "reread": "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה",
+       "status": "agreed",
+       "text": "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה"
+      },
+      {
+       "draft": "וְהַשְׁפִּילֵהוּ look upon every high thing",
+       "reread": "וְהַשְׁפִּילֵהוּ look upon every high thing",
+       "status": "agreed",
+       "text": "וְהַשְׁפִּילֵהוּ look upon every high thing"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 945,
+      "y": 2036,
+      "width": 875,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r02-b01-875x238+945+2036-x2.png",
+     "image_sha256": "21bd1e9107a40ff2fa7433333a2600c1ddbe50b8b3da42a768f968c7ec690986",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and bring it low.",
+       "2. elated, i. e. proud, haughty, Jer. 48,",
+       "29. Plur. גֵּאִים the proud, often with the",
+       "accessory notion of impiety, ungodli-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4af00ec4-4cd4-4e89-97b5-61fbe9d8ae9c",
+      "duration_api_ms": 10058,
+      "cost_usd_list": 0.016015500000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 283
+     },
+     "lines": [
+      {
+       "draft": "and bring it low.",
+       "reread": "and bring it low.",
+       "status": "agreed",
+       "text": "and bring it low."
+      },
+      {
+       "draft": "2. elated, i. e. proud, haughty, Jer. 48,",
+       "reread": "2. elated, i. e. proud, haughty, Jer. 48,",
+       "status": "agreed",
+       "text": "2. elated, i. e. proud, haughty, Jer. 48,"
+      },
+      {
+       "draft": "29. Plur. גֵּאִים the proud, often with the",
+       "reread": "29. Plur. גֵּאִים the proud, often with the",
+       "status": "agreed",
+       "text": "29. Plur. גֵּאִים the proud, often with the"
+      },
+      {
+       "draft": "accessory notion of impiety, ungodli-",
+       "reread": "accessory notion of impiety, ungodli-",
+       "status": "agreed",
+       "text": "accessory notion of impiety, ungodli-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 945,
+      "y": 2258,
+      "width": 875,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r02-b02-875x236+945+2258-x2.png",
+     "image_sha256": "49ded7c7c9de3c2b481f951785e79b94dcc12cebacaca0ba4d2bc496bdf325c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ness; as elsewhere gentleness and hu-",
+       "mility include also the idea of piety, see",
+       "עָנָו . Ps. 94, 2. 140, 6. Prov. 15, 25. 16,",
+       "19. Sept. ὑπερήφανοι, ὑβρισταί."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8dadde65-9883-4aa2-a457-15b1e2296946",
+      "duration_api_ms": 10648,
+      "cost_usd_list": 0.0155155,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 273
+     },
+     "lines": [
+      {
+       "draft": "ness; as elsewhere gentleness and hu-",
+       "reread": "ness; as elsewhere gentleness and hu-",
+       "status": "agreed",
+       "text": "ness; as elsewhere gentleness and hu-"
+      },
+      {
+       "draft": "mility include also the idea of piety, see",
+       "reread": "mility include also the idea of piety, see",
+       "status": "agreed",
+       "text": "mility include also the idea of piety, see"
+      },
+      {
+       "draft": "עָנָו. Ps. 94, 2. 140, 6. Prov. 15, 25. 16,",
+       "reread": "עָנָו . Ps. 94, 2. 140, 6. Prov. 15, 25. 16,",
+       "status": "agreed",
+       "text": "עָנָו. Ps. 94, 2. 140, 6. Prov. 15, 25. 16,"
+      },
+      {
+       "draft": "19. Sept. ὑπερήφανοι, ὑβρισταί.",
+       "reread": "19. Sept. ὑπερήφανοι, ὑβρισταί.",
+       "status": "agreed",
+       "text": "19. Sept. ὑπερήφανοι, ὑβρισταί."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 945,
+    "y": 2493,
+    "width": 875,
+    "height": 796
+   },
+   "draft_lines": [
+    "גֵּאָה f. pride, haughtiness, Prov. 8, 13.",
+    "גְּאוּאֵל (majesty of God) Geuel pr. n.",
+    "m. Num. 13, 15.",
+    "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-",
+    "tion; hence",
+    "1. majesty, glory, as of God, Deut. 33",
+    "26. Ps. 68, 35.",
+    "2. ornament, excellency, splendour,",
+    "Job 41, 7. Deut. 33, 29.",
+    "3. pride, haughtiness; Ps. 73, 6 לָכֵן",
+    "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth",
+    "them like a neck-chain; i. e. clothes their",
+    "neck, as being the seat of pride. Ps. 31."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 945,
+      "y": 2505,
+      "width": 875,
+      "height": 292
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r03-b00-875x292+945+2505-x2.png",
+     "image_sha256": "2abeaaf6fee63e1064e08a5409da0a95efae93a36700fb4e010504dda9e9c168",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "גֵּאָה f. pride, haughtiness, Prov. 8, 13.",
+       "גְּאוּאֵל (majesty of God) Geuel pr. n.",
+       "m. Num. 13, 15.",
+       "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2f6e0e99-291e-41f2-9c72-eef57e76ce21",
+      "duration_api_ms": 9958,
+      "cost_usd_list": 0.031478500000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6354,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 591
+     },
+     "lines": [
+      {
+       "draft": "גֵּאָה f. pride, haughtiness, Prov. 8, 13.",
+       "reread": "גֵּאָה f. pride, haughtiness, Prov. 8, 13.",
+       "status": "agreed",
+       "text": "גֵּאָה f. pride, haughtiness, Prov. 8, 13."
+      },
+      {
+       "draft": "גְּאוּאֵל (majesty of God) Geuel pr. n.",
+       "reread": "גְּאוּאֵל (majesty of God) Geuel pr. n.",
+       "status": "agreed",
+       "text": "גְּאוּאֵל (majesty of God) Geuel pr. n."
+      },
+      {
+       "draft": "m. Num. 13, 15.",
+       "reread": "m. Num. 13, 15.",
+       "status": "agreed",
+       "text": "m. Num. 13, 15."
+      },
+      {
+       "draft": "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-",
+       "reread": "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-",
+       "status": "agreed",
+       "text": "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 945,
+      "y": 2781,
+      "width": 875,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r03-b01-875x236+945+2781-x2.png",
+     "image_sha256": "d077cb087b20d85c4996be6e3f23162ee0e09de5ce797a3fda704aeee6c6718b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tion; hence",
+       "1. majesty, glory, as of God, Deut. 33",
+       "26. Ps. 68, 35.",
+       "2. ornament, excellency, splendour,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e2c021a2-2662-497b-9bab-5a9283fa4fcb",
+      "duration_api_ms": 9043,
+      "cost_usd_list": 0.013565500000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 6102,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 234
+     },
+     "lines": [
+      {
+       "draft": "tion; hence",
+       "reread": "tion; hence",
+       "status": "agreed",
+       "text": "tion; hence"
+      },
+      {
+       "draft": "1. majesty, glory, as of God, Deut. 33",
+       "reread": "1. majesty, glory, as of God, Deut. 33",
+       "status": "agreed",
+       "text": "1. majesty, glory, as of God, Deut. 33"
+      },
+      {
+       "draft": "26. Ps. 68, 35.",
+       "reread": "26. Ps. 68, 35.",
+       "status": "agreed",
+       "text": "26. Ps. 68, 35."
+      },
+      {
+       "draft": "2. ornament, excellency, splendour,",
+       "reread": "2. ornament, excellency, splendour,",
+       "status": "agreed",
+       "text": "2. ornament, excellency, splendour,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 945,
+      "y": 3001,
+      "width": 875,
+      "height": 186
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r03-b02-875x186+945+3001-x2.png",
+     "image_sha256": "334102079991c05fa5a91cc4d1de6b4b613a3a00a6258e42e6d59664897d0968",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Job 41, 7. Deut. 33, 29.",
+       "3. pride, haughtiness; Ps. 73, 6 לָכֵן",
+       "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "72e2310a-0cde-45ba-a26b-15e4a09e6abc",
+      "duration_api_ms": 19519,
+      "cost_usd_list": 0.028268249999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5913,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 529
+     },
+     "lines": [
+      {
+       "draft": "Job 41, 7. Deut. 33, 29.",
+       "reread": "Job 41, 7. Deut. 33, 29.",
+       "status": "agreed",
+       "text": "Job 41, 7. Deut. 33, 29."
+      },
+      {
+       "draft": "3. pride, haughtiness; Ps. 73, 6 לָכֵן",
+       "reread": "3. pride, haughtiness; Ps. 73, 6 לָכֵן",
+       "status": "agreed",
+       "text": "3. pride, haughtiness; Ps. 73, 6 לָכֵן"
+      },
+      {
+       "draft": "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth",
+       "reread": "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth",
+       "status": "agreed",
+       "text": "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 945,
+      "y": 3171,
+      "width": 875,
+      "height": 120
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0185/pass2/c1-r03-b03-875x120+945+3171-x2.png",
+     "image_sha256": "02592a2e110ed6dd16b6885a61bc37fa366818f1f52db8b307d2cf31fe6b6efe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "them like a neck-chain; i. e. clothes their",
+       "neck, as being the seat of pride. Ps. 31,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f7531ace-c086-4394-a0cd-6043a23bb52a",
+      "duration_api_ms": 4174,
+      "cost_usd_list": 0.0125395,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 5598,
+      "cache_creation_input_tokens": 0,
+      "output_tokens": 216
+     },
+     "lines": [
+      {
+       "draft": "them like a neck-chain; i. e. clothes their",
+       "reread": "them like a neck-chain; i. e. clothes their",
+       "status": "agreed",
+       "text": "them like a neck-chain; i. e. clothes their"
+      },
+      {
+       "draft": "neck, as being the seat of pride. Ps. 31.",
+       "reread": "neck, as being the seat of pride. Ps. 31,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b03",
+       "judgement": {
+        "text": "neck, as being the seat of pride. Ps. 31,",
+        "verdict": "b",
+        "note": "The final mark after \"31\" has a curved tail descending below the baseline (compare the round dots after \"pride\" and \"Ps\"), so it is a comma, not a full stop — Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ecc4e29b-2c5b-4d90-b31e-30843fa990d5",
+        "duration_api_ms": 22289,
+        "cost_usd_list": 0.030568,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 5512,
+        "cache_creation_input_tokens": 0,
+        "output_tokens": 577
+       },
+       "text": "neck, as being the seat of pride. Ps. 31,"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "בתת 169 גאל",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "בתת 169 גאל",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "בתת.",
+   "status": "draft_only",
+   "draft": "בתת.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "169",
+   "status": "draft_only",
+   "draft": "169",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "גאר",
+   "status": "draft_only",
+   "draft": "גאר",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "have been derived from the nature of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the place.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* בָּתַת obsol. root, Arab. بَتَّ I, IV, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "cut, to cut off, to break off, comp. under",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "r. בָּדַד I; بَتَاتٌ something broken off,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "finished, destroyed, بَتَّةً and الْبَتَّةَ whol-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gimel, גִּימֶל, the third letter of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Hebrew alphabet; as a numeral denot-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ing 3. Its name differs only in form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "from גָּמָל camel; and its figure in Pheni-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "cian inscriptions (Λ, Λ,) bears a cer-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "tain resemblance to the camel's hump",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "or neck; see Monumen. Phœn. p. 22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "As the softest of the palatal letters",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "(גיכק) except Yod, it is often inter-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "changed: a) With the harder palatals",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "כ and ק, both in the Hebrew itself,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and in the corresponding forms of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "kindred dialects; e. g. גָּדִישׁ, جُدْس,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "كَدِيس, a heap of sheaves; גָּפְרִית,",
+   "status": "adjudicated",
+   "draft": "كَدِيس, a heap of sheaves; גָּפְרִית.",
+   "reread": "كَدِيس, a heap of sheaves; גָּפְרִית,",
+   "verdict": "b",
+   "note": "The mark after גָּפְרִית is a comma with a descending tail, not a period; the list continues onto the next line with كِبْرِيت, sulphur. Everything else (Arabic كَدِيس with its points, the Hebrew vowels, dagesh in gimel, plene yod) is identical in both readings and matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן",
+   "status": "adjudicated",
+   "draft": "ܟܶܒܪܺܝܬܳܐ, كِبْرِيت, sulphur; גָּנַן and כָּנַן",
+   "reread": "كِبْرِيت, sulphur; גָּבַן and כָּבַן",
+   "verdict": "a",
+   "note": "The line begins with a pointed Syriac word (visible at far left, with vowel points printed) which Reading B omits; and the Hebrew pair is גָּנַן / כָּנַן — the middle letter is a narrow nun, not bet.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to cover, to protect; גָּנַז and כָּנַס, كنز,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to collect, to heap up: רָגַל and רָכַל to run",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "up and down, גָּבִיעַ, قُبْعَة, calix of flow-",
+   "status": "adjudicated",
+   "draft": "up and down, גָּבִיעַ, قُبَعَة, calix of flow-",
+   "reread": "up and down, גָּבִיעַ, قُبْعَة, calix of flow-",
+   "verdict": "b",
+   "note": "Over the Arabic bāʾ the print shows a small circle (sukūn), not a fatḥa; the fatḥa sits over the ʿayn. So قُبْعَة (Reading B), not قُبَعَة.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ers; גָּדַד, جَلَّ and قَلَّ to cut; שָׁקֵד,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "שִׁגֵּד, ܫܶܓܕܳܐ, an almond-tree.",
+   "status": "adjudicated",
+   "draft": "שֵׁגֵד, ܫܶܓܕܳܐ, an almond-tree.",
+   "reread": "שִׁגֵּד, ܫܶܓܕܳܐ, an almond-tree.",
+   "verdict": "b",
+   "note": "Shin has a single dot beneath (hiriq, not tsere) and the gimel carries a dagesh with tsere; Syriac ܫܶܓܕܳܐ is printed with points as both readings give.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "b) More rarely with the gutturals; as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ע, e. g. נָבַע, Chald. נְבַע, נְבַג, to burst",
+   "status": "adjudicated",
+   "draft": "ע, e. g. נָבַע, Chald. נְבַע, נָבַג, to burst",
+   "reread": "ע, e. g. נָבַע, Chald. נְבַע, נְבַג, to burst",
+   "verdict": "b",
+   "note": "Under the nun of the third Hebrew word (נְבַג) the print shows two vertical dots (shewa), matching the preceding Chaldee נְבַע — not a qamets as Reading A has. Both are Chaldee forms, so the shewa is expected; the first word נָבַע does carry a qamets.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "forth; גָּרָה, Arab. غَرِىَ to provoke; also ח,",
+   "status": "adjudicated",
+   "draft": "forth; גִּדָּה, Arab. غَرِيَ to provoke; also ה,",
+   "reread": "forth; גָּרָה, Arab. غَرِىَ to provoke ; also ח,",
+   "verdict": "b",
+   "note": "The Hebrew is גָּרָה with a resh (rounded shoulder, no dagesh in the second letter), not גִּדָּה; the Arabic final letter is printed dotless (ى) with fatha, and the last Hebrew letter is ח (closed top-left corner), not ה. There is a space before the semicolon in \"provoke ;\".",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;",
+   "status": "adjudicated",
+   "draft": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܓܳܐ, young of birds;",
+   "reread": "e. g. אֶפְרֹחַ, ܦܰܪܽܘܚܬܳܐ, young of birds ;",
+   "verdict": "neither",
+   "note": "Syriac 4th letter is gamal ܓ (long down-left tail), not ܚܬ — A's word is right; but the print has a space before the final semicolon (\"birds ;\") as in B. Hebrew אֶפְרֹחַ identical in both and matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "comp. אֶחָח.",
+   "status": "adjudicated",
+   "draft": "comp. אֶחַח.",
+   "reread": "comp. אֶחָח.",
+   "verdict": "b",
+   "note": "The vowel under the middle ח is a qamets (horizontal bar with a short descending stem, T-shaped), not a patach (plain horizontal bar); segol under א is printed as both readings have it, and no other points or dagesh are present.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "גֵּא m. adj. for גֵּאֶה (r. גָּאָה) elated, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "haughty, proud, Is. 16, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* גָּאָה fut. יִגְאֶה, a poetic word.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1. to lift up oneself, to rise, to increase,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "e. g. of rising waters Ez. 47, 5; of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "plant growing Job 8, 11.—Job 10, 16",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "וְיִגְאֶה כַּשַּׁחַל תְּצוּדֵנִי and if it lift up itself",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "(sc. my head) thou huntest me as a lion.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "15",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ly, entirely. In Hebrew it seems to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "have signified:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. to cut or mark out, to define, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "hence to measure; whence בַּת II, as a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "measure of liquids.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. to cut off any thing, to make an end",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of, to lay wholly waste, i. q. כִּלָּה; whence",
+   "status": "adjudicated",
+   "draft": "of, to lay wholly waste, i. q. בִּלָּה ; whence",
+   "reread": "of, to lay wholly waste, i. q. כָּלָה ; whence",
+   "verdict": "neither",
+   "note": "The first letter is a rounded kaf (not bet, as in A), but it carries hiriq with dagesh (כִּ), not qamets as in B; the lamed has dagesh and qamets. Piel כִּלָּה \"make an end of\" fits the gloss.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "בָּתָה, בַּתָּה.",
+   "status": "adjudicated",
+   "draft": "בַּתָּה, בָּתָה.",
+   "reread": "בָּתָה, בַּתָּה.",
+   "verdict": "b",
+   "note": "Order is decisive: the rightmost (first) printed word has qamets under bet and no dagesh in tav (בָּתָה); the leftmost (second) word has patah under bet and a dagesh dot in the tav (בַּתָּה). Reading A reverses the two items.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. Metaph. to be exalted, majestic,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "glorious, spoken of God, Ex. 15, 1. 21.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Hence in the derivatives also:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. to be eminent, excellent, splendid;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "see deriv. גָּאוֹן no. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4. to be elated, i. e. haughty, proud;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+   "status": "adjudicated",
+   "draft": "see deriv. גֵּאָה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+   "reread": "see deriv. גֵּאֶה no. 2, גַּאֲוָה and גָּאוֹן no. 3.",
+   "verdict": "b",
+   "note": "Under the aleph of the first word the print shows three dots in a triangle (segol), not the two of a qamets/tsere — גֵּאֶה, matching the adjective cross-referenced at no. 2. Reading A's גֵּאָה is wrong; everything else in both readings matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Syr. Pa. ܓܰܐܺܝ to decorate, to make",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "splendid, magnificent; Ethpa. to boast",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "oneself; ܓܰܐܳܐ, ܓܰܐܝܳܐ decorated, elegant,",
+   "status": "adjudicated",
+   "draft": "oneself; ܓܰܐܝܳܐ, ܓܰܐܺܝܳܐ decorated, elegant,",
+   "reread": "oneself; ܓܰܐ̣ܐ, ܓܰܐܝܳܐ decorated, elegant,",
+   "verdict": "neither",
+   "note": "The decisive point is letter count: the first Syriac word is printed with three letters (gomal + two alaphs, no yod) and the second with four (gomal, alaph, small yod, alaph), so Reading A's extra yods are wrong. Reading B has the right letters but its dot-below on the first word's alaph is not printed; the mark there sits above the alaphs (a two-dot vowel). The second word carries two vowel marks (over gomal and over the first alaph); exact vowel identities at this resolution are a best reading.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "magnificent. In the signif. of pride it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "corresponds with Gr. γαίω.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Deriv. גֵּא, גֵּוָה I, and those here fol-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "lowing.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "גֵּאֶה adj. 1. lifted up, high, lofty,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Is. 2, 12. Job 40, 11. 12 רְאֵה כָל־גֵּאֶה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "וְהַשְׁפִּילֵהוּ look upon every high thing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "and bring it low.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. elated, i. e. proud, haughty, Jer. 48,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "29. Plur. גֵּאִים the proud, often with the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "accessory notion of impiety, ungodli-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ness; as elsewhere gentleness and hu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "mility include also the idea of piety, see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "עָנָו. Ps. 94, 2. 140, 6. Prov. 15, 25. 16,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "19. Sept. ὑπερήφανοι, ὑβρισταί.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "גֵּאָה f. pride, haughtiness, Prov. 8, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "גְּאוּאֵל (majesty of God) Geuel pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "m. Num. 13, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "גַּאֲוָה f. (r. גָּאָה) pr. elevation, exalta-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "tion; hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1. majesty, glory, as of God, Deut. 33",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "26. Ps. 68, 35.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. ornament, excellency, splendour,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Job 41, 7. Deut. 33, 29.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "3. pride, haughtiness; Ps. 73, 6 לָכֵן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "עֲנָקַתְמוֹ גַאֲוָה therefore pride surroundeth",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "them like a neck-chain; i. e. clothes their",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "neck, as being the seat of pride. Ps. 31,",
+   "status": "adjudicated",
+   "draft": "neck, as being the seat of pride. Ps. 31.",
+   "reread": "neck, as being the seat of pride. Ps. 31,",
+   "verdict": "b",
+   "note": "The final mark after \"31\" has a curved tail descending below the baseline (compare the round dots after \"pride\" and \"Ps\"), so it is a comma, not a full stop — Reading B is correct.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 73,
+  "adjudicated": 13,
+  "draft_only": 3,
+  "reread_only": 1,
+  "unresolved": 0,
+  "needs_review": 12
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 1.6264
+}
