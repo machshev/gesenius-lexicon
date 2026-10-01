@@ -347,7 +347,7 @@ pub fn parse_entries_with_hypotheses_continuing(
         hypotheses,
         context,
         continuation,
-        false,
+        BoundaryMode::Ocr,
     )
 }
 
@@ -365,8 +365,40 @@ pub fn parse_index_entries_with_hypotheses_continuing(
         hypotheses,
         context,
         continuation,
-        true,
+        BoundaryMode::Index,
     )
+}
+
+/// Parses a page whose text is a verified transcription rather than raw OCR.
+///
+/// The OCR heuristics compensate for misread headwords and unreliable
+/// regions. With clean text the printed convention can be applied directly:
+/// an entry begins on an indented line whose first word is Hebrew, optionally
+/// after a star, dagger or homograph Roman numeral. A region boundary alone
+/// never starts an entry, because a transcribed region is a whole column.
+pub fn parse_transcribed_entries_continuing(
+    canonical: &AltoPage,
+    hypotheses: &[(&AltoPage, &EngineIdentity)],
+    context: &ParseContext<'_>,
+    continuation: Option<CorpusEntry>,
+) -> ParsedPage {
+    parse_entries_with_hypotheses_continuing_mode(
+        canonical,
+        hypotheses,
+        context,
+        continuation,
+        BoundaryMode::Transcribed,
+    )
+}
+
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+enum BoundaryMode {
+    /// Full OCR pages with layout, grammar and structural cues.
+    Ocr,
+    /// Fast index pages: a boundary needs an indented, valid Hebrew headword.
+    Index,
+    /// Verified transcriptions: an indented line opening with a Hebrew word.
+    Transcribed,
 }
 
 fn parse_entries_with_hypotheses_continuing_mode(
@@ -374,7 +406,7 @@ fn parse_entries_with_hypotheses_continuing_mode(
     hypotheses: &[(&AltoPage, &EngineIdentity)],
     context: &ParseContext<'_>,
     continuation: Option<CorpusEntry>,
-    require_valid_hebrew_boundary: bool,
+    mode: BoundaryMode,
 ) -> ParsedPage {
     let layout = PageLayout::from_page(canonical);
     let aligned_hypotheses: Vec<_> = hypotheses
@@ -470,15 +502,22 @@ fn parse_entries_with_hypotheses_continuing_mode(
                 })
                 .is_some_and(|word| begins_with_hebrew_headword(&word.text));
         let detected_boundary = grammar_boundary || structural_boundary || hebrew_boundary;
+        // Measured from the column's median left edge: a paragraph indent is
+        // about 2.2% of the page width, jitter of body lines under 0.5%.
+        let transcribed_boundary = mode == BoundaryMode::Transcribed
+            && layout.indent(line).is_some_and(|indent| indent as f32 >= canonical.width as f32 * 0.012)
+            && begins_with_marked_hebrew_headword(&line.text);
         let starts_entry = !stem_heading
             && (entries.is_empty()
-                || if require_valid_hebrew_boundary {
+                || match mode {
                     // Page OCR often makes every physical line its own ALTO
                     // region. Do not mistake that incidental region boundary
                     // for lexicon indentation.
-                    indented && detected_boundary && valid_hebrew_candidate
-                } else {
-                    detected_boundary
+                    BoundaryMode::Index => {
+                        indented && detected_boundary && valid_hebrew_candidate
+                    }
+                    BoundaryMode::Ocr => detected_boundary,
+                    BoundaryMode::Transcribed => transcribed_boundary,
                 });
         let block_kind = if is_heading_line(line, region, canonical) {
             BlockKind::Heading
@@ -507,7 +546,12 @@ fn parse_entries_with_hypotheses_continuing_mode(
             .collect();
         let span_index = entry.blocks.iter().map(|block| block.spans.len()).sum();
         let span = make_span(entry, line, region, line_hypotheses, context, span_index);
-        if starts_entry && entry.headword.is_none() && !is_nonlexical_title(line, block_kind) {
+        if mode == BoundaryMode::Transcribed {
+            // A page that opens mid-entry has no headword on its first line.
+            if transcribed_boundary && entry.headword.is_none() {
+                entry.headword = extract_headword(&span, line);
+            }
+        } else if starts_entry && entry.headword.is_none() && !is_nonlexical_title(line, block_kind) {
             entry.headword = canonical_grammar_candidate
                 .and_then(|candidate_index| {
                     extract_candidate_headword_at(&span, line, candidate_index)
@@ -678,6 +722,13 @@ impl PageLayout {
             page_width: page.width,
             column_starts,
         }
+    }
+
+    /// Signed distance of the line's left edge from its column's median start.
+    fn indent(&self, line: &AltoLine) -> Option<i64> {
+        let (line_x, _, _, _) = polygon_bounds(&line.polygon);
+        self.column_starts[line_column(line, self.page_width)]
+            .map(|column_start| i64::from(line_x) - i64::from(column_start))
     }
 
     fn is_indented(&self, line: &AltoLine) -> bool {
@@ -2284,6 +2335,20 @@ fn begins_with_hebrew(text: &str) -> bool {
     text.chars()
         .find(|character| character.is_alphanumeric())
         .is_some_and(|character| character.script() == Script::Hebrew)
+}
+
+/// Whether a transcribed line opens with a Hebrew word, allowing a leading
+/// star or dagger and a homograph Roman numeral such as `II.`.
+fn begins_with_marked_hebrew_headword(text: &str) -> bool {
+    let mut rest = text.trim_start_matches(|c: char| c == '*' || c == '†' || c.is_whitespace());
+    if let Some((numeral, tail)) = rest.split_once('.') {
+        if !numeral.is_empty() && numeral.len() <= 5 && numeral.chars().all(|c| "IVX".contains(c)) {
+            rest = tail;
+        }
+    }
+    let rest = rest.trim_start_matches(|c: char| c == '*' || c == '†' || c.is_whitespace());
+    rest.chars().next().is_some_and(|c| c.script() == unicode_script::Script::Hebrew)
+        && begins_with_hebrew_headword(rest)
 }
 
 fn begins_with_hebrew_headword(text: &str) -> bool {

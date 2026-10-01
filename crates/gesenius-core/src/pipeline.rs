@@ -800,7 +800,7 @@ fn run_mode(
     })
 }
 
-fn merge_parsed_pages(
+pub(crate) fn merge_parsed_pages(
     base_entries: &[CorpusEntry],
     selected_pages: &BTreeSet<u32>,
     parsed_pages: &[ParsedPage],
@@ -2400,7 +2400,7 @@ fn recognize_kraken(
     Ok(output)
 }
 
-fn write_page_parse(page_path: &Path, parsed: &ParsedPage) -> Result<()> {
+pub(crate) fn write_page_parse(page_path: &Path, parsed: &ParsedPage) -> Result<()> {
     let mut json = serde_json::to_vec_pretty(parsed)?;
     json.push(b'\n');
     let output = page_path.join("parsed.json");
@@ -2580,7 +2580,7 @@ fn image_dimensions(path: &Path) -> Result<[u32; 2]> {
     Ok([width, height])
 }
 
-fn printed_page(source: &SourceRecord, pdf_page: u32) -> (String, bool) {
+pub(crate) fn printed_page(source: &SourceRecord, pdf_page: u32) -> (String, bool) {
     if let Some(label) = source.printed_page_labels.get(&pdf_page) {
         return (label.clone(), false);
     }
@@ -2592,7 +2592,7 @@ fn printed_page(source: &SourceRecord, pdf_page: u32) -> (String, bool) {
     }
 }
 
-fn content_hash(parts: &[&str]) -> String {
+pub(crate) fn content_hash(parts: &[&str]) -> String {
     let mut hasher = Sha256::new();
     for part in parts {
         hasher.update(part.len().to_le_bytes());

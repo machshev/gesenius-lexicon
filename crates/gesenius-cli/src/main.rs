@@ -59,6 +59,14 @@ enum Commands {
     },
     /// Run selected PDF pages through rasterization, OCR, and parsing.
     Run(RunArguments),
+    /// Parse converted frontier transcriptions into the machine corpus.
+    ImportFrontier {
+        #[arg(long)]
+        edition: String,
+        /// Pages written by tool/frontier-to-alto.py.
+        #[arg(required = true)]
+        pages: Vec<PathBuf>,
+    },
     /// Measure an ALTO hypothesis against immutable human/frontier gold lines.
     Benchmark(BenchmarkArguments),
     /// Compare named ALTO stages on one immutable gold sample.
@@ -296,6 +304,15 @@ fn main() -> Result<()> {
         Commands::Setup(arguments) => setup_command(&cli, arguments),
         Commands::Source { command } => source_command(&cli.catalogue, &cli.cache, command),
         Commands::Run(arguments) => run_command(&cli, arguments),
+        Commands::ImportFrontier { edition, pages } => print_json(
+            &gesenius_core::frontier::import_frontier(&gesenius_core::frontier::FrontierImportOptions {
+                edition,
+                pages,
+                catalogue_path: &cli.catalogue,
+                cache_root: &cli.cache,
+                corpus_root: &cli.corpus,
+            })?,
+        ),
         Commands::Benchmark(arguments) => benchmark_command(arguments),
         Commands::BenchmarkStages(arguments) => {
             let comparison = compare_manifest(&arguments.manifest)?;

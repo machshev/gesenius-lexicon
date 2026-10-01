@@ -4,6 +4,7 @@ pub mod alto;
 pub mod benchmark;
 pub mod corpus_io;
 pub mod export;
+pub mod frontier;
 pub mod headwords;
 pub mod index;
 pub mod language;
