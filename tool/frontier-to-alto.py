@@ -74,10 +74,27 @@ def detect_rows(ink: np.ndarray) -> list[tuple[int, int]]:
 
 
 def row_extent(ink: np.ndarray, y0: int, y1: int) -> tuple[int, int] | None:
-    cols = np.flatnonzero(ink[y0:y1].sum(axis=0) >= 2)
+    """Return the [x0, x1) ink extent of a row, ignoring specks at either end.
+
+    Paper specks beside the first letter would hide a paragraph indent, so
+    ink clusters at the ends that are separated from the rest by a gap and
+    hold fewer than 40 ink pixels are dropped; the smallest printed mark at
+    a line start, an asterisk, holds several hundred.
+    """
+    profile = ink[y0:y1].sum(axis=0)
+    cols = np.flatnonzero(profile >= 2)
     if cols.size == 0:
         return None
-    return int(cols[0]), int(cols[-1]) + 1
+    breaks = np.flatnonzero(np.diff(cols) > 6)
+    starts = np.concatenate(([0], breaks + 1))
+    ends = np.concatenate((breaks, [cols.size - 1]))
+    mass = [int(profile[cols[s] : cols[e] + 1].sum()) for s, e in zip(starts, ends)]
+    lo, hi = 0, len(mass) - 1
+    while lo < hi and mass[lo] < 40:
+        lo += 1
+    while hi > lo and mass[hi] < 40:
+        hi -= 1
+    return int(cols[starts[lo]]), int(cols[ends[hi]]) + 1
 
 
 def align(lengths: list[float], widths: list[float]) -> list[int]:
