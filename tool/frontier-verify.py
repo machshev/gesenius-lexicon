@@ -264,6 +264,38 @@ def judge_line(path: pathlib.Path, index: int, count: int, a: str, b: str, model
     }
 
 
+def similarity(a: str, b: str) -> float:
+    """Line similarity that forgives a reordered list of words (e.g. a comp. list)."""
+    return max(ratio(a, b), ratio(" ".join(sorted(a.split())), " ".join(sorted(b.split()))))
+
+
+def join_split_lines(draft: list[str], reread: list[str]) -> list[str]:
+    """Join consecutive draft lines that the re-read reads as one line.
+
+    Pass 1 can split a running head ("אשר", "100", "אשת") into one line per
+    item while the band re-read gives it as a single line. Left alone, the
+    re-read line pairs with none of them and the head is emitted twice.
+    """
+    key_r = [nfc(x) for x in reread]
+    key_d = [nfc(x) for x in draft]
+    unmatched = [max((similarity(d, r) for r in key_r), default=0) < 0.8 for d in key_d]
+    out: list[str] = []
+    i = 0
+    while i < len(draft):
+        end = i
+        while end < len(draft) and unmatched[end]:
+            end += 1
+        if end - i >= 2:
+            joined = " ".join(key_d[i:end])
+            if any(similarity(joined, r) >= 0.6 for r in key_r):
+                out.append(" ".join(draft[i:end]))
+                i = end
+                continue
+        out.append(draft[i])
+        i += 1
+    return out
+
+
 def align(draft: list[str], reread: list[str]) -> list[tuple[int | None, int | None]]:
     """Pair draft and re-read line indices; None marks a line only one pass produced."""
     key_d = [nfc(x) for x in draft]
@@ -278,7 +310,7 @@ def align(draft: list[str], reread: list[str]) -> list[tuple[int | None, int | N
             di = list(range(i1, i2))
             rj = list(range(j1, j2))
             while di and rj:
-                best = max(((ratio(key_d[i], key_r[j]), i, j) for i in di for j in rj), key=lambda t: t[0])
+                best = max(((similarity(key_d[i], key_r[j]), i, j) for i in di for j in rj), key=lambda t: t[0])
                 if best[0] < 0.5:
                     break
                 pairs.append((best[1], best[2]))
@@ -389,7 +421,9 @@ def verify_page(
             if "error" in band["reread"]:
                 continue
             reread_lines.extend((band, line) for line in band["reread"]["lines"])
-        pairs = align(draft, [text for _, text in reread_lines])
+        reread_texts = [text for _, text in reread_lines]
+        draft = join_split_lines(draft, reread_texts)
+        pairs = align(draft, reread_texts)
         for di, rj in pairs:
             band = reread_lines[rj][0] if rj is not None else None
             line = {
