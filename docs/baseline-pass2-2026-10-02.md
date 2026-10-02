@@ -32,20 +32,20 @@ Per page (exact Unicode CER/WER, aligned by source coordinates):
 | 66 | 95 | 0 | 3795 | 734 | 0.0005 | 0.0027 | 0.0005 |
 | 116 | 101 | 0 | 3872 | 724 | 0.0015 | 0.0041 | 0.0015 |
 | 341 | 97 | 0 | 3726 | 722 | 0.0003 | 0.0028 | 0.0003 |
-| 716 | 90 | 0 | 3304 | 658 | 0.0012 | 0.0030 | 0.0012 |
+| 716 | 90 | 0 | 3304 | 658 | 0.0015 | 0.0046 | 0.0015 |
 | 191 | 91 | 0 | 3477 | 636 | 0.0017 | 0.0079 | 0.0017 |
 | 491 | 98 | 0 | 3905 | 747 | 0.0003 | 0.0027 | 0.0003 |
 | 641 | 97 | 0 | 3585 | 672 | 0.0008 | 0.0045 | 0.0008 |
 | 941 | 90 | 0 | 3242 | 628 | 0.0006 | 0.0016 | 0.0006 |
 | 1091 | 93 | 0 | 3668 | 753 | 0.0019 | 0.0053 | 0.0019 |
-| **total** | 929 | 0 | 35531 | 6809 | 0.0009 | 0.0037 | |
+| **total** | 929 | 0 | 35531 | 6809 | 0.0010 | 0.0038 | |
 
 Per script, totals over all pages (aligned character counts; CER = (sub+del+ins)/ref chars; Latn includes English and transliteration; Zyyy is digits/punctuation/space; token accuracy is exact foreign-containing-token accuracy, not defined for Latn):
 
 | script | ref chars | sub | del | ins | CER | ref tokens | token acc |
 |---|---|---|---|---|---|---|---|
 | Latn | 19689 | 0 | 0 | 0 | 0.0000 |  | n/a |
-| Hebr | 3507 | 10 | 3 | 15 | 0.0080 | 560 | 0.9714 |
+| Hebr | 3507 | 11 | 3 | 15 | 0.0083 | 560 | 0.9696 |
 | Grek | 286 | 0 | 0 | 0 | 0.0000 | 52 | 1.0000 |
 | Arab | 113 | 0 | 0 | 0 | 0.0000 | 24 | 1.0000 |
 | Syrc | 61 | 0 | 0 | 0 | 0.0000 | 11 | 1.0000 |
@@ -59,7 +59,7 @@ Per page per script CER (aligned; ref chars in brackets):
 | 66 | 0.0000 [2188] | 0.0050 [402] | 0.0000 [29] | 0.0000 [19] | 0.0000 [3] |
 | 116 | 0.0000 [2501] | 0.0261 [230] | 0.0000 [18] | 0.0000 [5] | - |
 | 341 | 0.0000 [2072] | 0.0000 [354] | 0.0000 [16] | 0.0000 [15] | - |
-| 716 | 0.0000 [1613] | 0.0102 [393] | 0.0000 [9] | 0.0000 [20] | 0.0000 [8] |
+| 716 | 0.0000 [1613] | 0.0127 [393] | 0.0000 [9] | 0.0000 [20] | 0.0000 [8] |
 | 191 | 0.0000 [1895] | 0.0096 [415] | 0.0000 [46] | 0.0000 [19] | 0.0000 [7] |
 | 491 | 0.0000 [2156] | 0.0000 [391] | 0.0000 [73] | 0.0000 [3] | - |
 | 641 | 0.0000 [1823] | 0.0050 [402] | 0.0000 [44] | 0.0000 [3] | - |
@@ -69,6 +69,15 @@ Per page per script CER (aligned; ref chars in brackets):
 ## Notes
 
 - Latin, Greek, Arabic and Syriac are error-free on these kept lines; all error is in pointed Hebrew
-  (10 substitutions, 3 deletions, 15 insertions over 3507 characters, token accuracy 0.971).
+  (11 substitutions, 3 deletions, 15 insertions over 3507 characters, token accuracy 0.970).
 - Highest Hebrew CER: pdf 1091 (0.0222) and pdf 116 (0.0261), both on small Hebrew samples.
 - Zyyy (digits, punctuation, spaces) has 5 insertions in total.
+
+## Change log
+
+- 2026-10-02, gold correction: `pdf0716-c2-019` now reads `the root שָׁמַם.` (patah; the scan shows patah, the
+  earlier gold had tsere). Pass 2 has tsere there, so pdf 716 moves from CER 0.0012 to 0.0015 and WER 0.0030 to
+  0.0046, Hebrew CER on 716 from 0.0102 to 0.0127; overall CER 0.0009 to 0.0010, WER 0.0037 to 0.0038. No other
+  page changed. The pass 2 records were not touched: the alignment fix to `tool/frontier-verify.py` (running heads
+  and reordered word lists no longer emitted twice) was not applied to the stored records, because rewriting
+  them would invalidate the gold-review sidecars and needs paid adjudication for several pages.
