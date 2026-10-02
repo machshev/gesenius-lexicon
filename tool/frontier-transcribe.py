@@ -71,13 +71,25 @@ SCHEMA = json.dumps(
 )
 
 
+PRINTED_RULE_V4 = PRINTED_RULE + (
+    " "
+    "Never add a vowel point, dagesh, accent or other mark that is not printed, and never "
+    "drop one that is printed. This includes Arabic tanwin and other Arabic vowel marks, "
+    "Syriac vowels and seyame, and the Hebrew meteg. If a word is printed unpointed, leave "
+    "it unpointed. Never change a word's script, and never transliterate or normalise "
+    "letters. The running head is a single line: write it once, as one line, keeping shin "
+    "and sin dots exactly as printed. Keep the order in which the words appear on the line; "
+    "do not reorder phrases to an expected reading order."
+)
+
+
 def select_prompt_version(version: int) -> None:
-    """Version 2 is the default; 3 adds the exact-as-printed rule (PRINTED_RULE)."""
+    """Version 2 is the default; 3 adds the exact-as-printed rule, 4 adds the marks/script/order rules (PRINTED_RULE)."""
     global PROMPT_VERSION, PROMPT
-    if version not in (2, 3):
+    if version not in (2, 3, 4):
         raise SystemExit(f"unknown prompt version {version}")
     PROMPT_VERSION = version
-    PROMPT = PROMPT_V2 + (PRINTED_RULE if version >= 3 else "")
+    PROMPT = PROMPT_V2 + {2: "", 3: PRINTED_RULE, 4: PRINTED_RULE_V4}[version]
 
 
 def sha256_file(path: pathlib.Path) -> str:
@@ -539,7 +551,7 @@ def main() -> int:
     ap.add_argument("--max-height", type=int, default=1000)
     ap.add_argument("--pad", type=int, default=24)
     ap.add_argument("--timeout", type=int, default=600)
-    ap.add_argument("--prompt-version", type=int, default=int(os.environ.get("GESENIUS_PROMPT_VERSION", PROMPT_VERSION)), help="2 (default) or 3 (exact-as-printed rule)")
+    ap.add_argument("--prompt-version", type=int, default=int(os.environ.get("GESENIUS_PROMPT_VERSION", PROMPT_VERSION)), help="2 (default), 3 (exact-as-printed rule) or 4 (v3 plus marks/script/order rules)")
     ap.add_argument("--plan-only", action="store_true", help="write chunk images and geometry without calling the model")
     args = ap.parse_args()
     select_prompt_version(args.prompt_version)

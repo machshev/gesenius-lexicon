@@ -114,13 +114,25 @@ JUDGE_SCHEMA = json.dumps(
 )
 
 
+PRINTED_RULE_V4 = PRINTED_RULE + (
+    " "
+    "Never add a vowel point, dagesh, accent or other mark that is not printed, and never "
+    "drop one that is printed. This includes Arabic tanwin and other Arabic vowel marks, "
+    "Syriac vowels and seyame, and the Hebrew meteg. If a word is printed unpointed, leave "
+    "it unpointed. Never change a word's script, and never transliterate or normalise "
+    "letters. The running head is a single line: write it once, as one line, keeping shin "
+    "and sin dots exactly as printed. Keep the order in which the words appear on the line; "
+    "do not reorder phrases to an expected reading order."
+)
+
+
 def select_prompt_version(version: int) -> None:
-    """Version 2 is the default; 3 adds the exact-as-printed rule to both prompts."""
+    """Version 2 is the default; 3 adds the exact-as-printed rule, 4 adds the marks/script/order rules to both prompts."""
     global PROMPT_VERSION, READ_PROMPT, JUDGE_PROMPT
-    if version not in (2, 3):
+    if version not in (2, 3, 4):
         raise SystemExit(f"unknown prompt version {version}")
     PROMPT_VERSION = version
-    rule = PRINTED_RULE if version >= 3 else ""
+    rule = {2: "", 3: PRINTED_RULE, 4: PRINTED_RULE_V4}[version]
     READ_PROMPT = READ_PROMPT_V2 + rule
     JUDGE_PROMPT = JUDGE_PROMPT_V2.replace("\nLine {index}", rule + "\nLine {index}", 1)
 
@@ -575,7 +587,7 @@ def main() -> int:
     ap.add_argument("--scale", type=int, default=2)
     ap.add_argument("--pad", type=int, default=8)
     ap.add_argument("--timeout", type=int, default=600)
-    ap.add_argument("--prompt-version", type=int, default=int(os.environ.get("GESENIUS_PROMPT_VERSION", PROMPT_VERSION)), help="2 (default) or 3 (exact-as-printed rule)")
+    ap.add_argument("--prompt-version", type=int, default=int(os.environ.get("GESENIUS_PROMPT_VERSION", PROMPT_VERSION)), help="2 (default), 3 (exact-as-printed rule) or 4 (v3 plus marks/script/order rules)")
     args = ap.parse_args()
     select_prompt_version(args.prompt_version)
     incomplete = []
