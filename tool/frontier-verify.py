@@ -48,7 +48,7 @@ ft = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(ft)  # type: ignore[union-attr]
 
 PROMPT_VERSION = 2  # 2: lean CLI system prompt
-READ_PROMPT = (
+READ_PROMPT_V2 = (
     "Read the image file {path}. It is an enlarged crop of a few printed lines from "
     "one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). "
     "Transcribe every complete printed text line exactly, one array element per "
@@ -67,7 +67,7 @@ READ_PROMPT = (
     "anything that is fully visible. If the crop contains no text, return an "
     "empty array."
 )
-JUDGE_PROMPT = (
+JUDGE_PROMPT_V2 = (
     "Read the image file {path}. It is an enlarged crop of a few printed lines from "
     "one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). "
     "Two independent transcriptions of the same printed line disagree. Compare each "
@@ -82,6 +82,15 @@ JUDGE_PROMPT = (
     "Line {index} of {count} in the crop, counting only complete lines.\n"
     "Reading A: {a}\n"
     "Reading B: {b}"
+)
+READ_PROMPT = READ_PROMPT_V2
+JUDGE_PROMPT = JUDGE_PROMPT_V2
+PRINTED_RULE = (
+    " "
+    "Transcribe exactly what is printed, character for character, including vowel "
+    "points and accents as printed, not the expected or standard lexical form, even if "
+    "the print looks unusual or wrong. Running heads are printed unpointed; do not add "
+    "pointing to them."
 )
 CLI_MODE = "lean-system-prompt-v1"
 CLI_SYSTEM_PROMPT = "You transcribe printed text from images exactly, following the user's instructions."
@@ -103,6 +112,17 @@ JUDGE_SCHEMA = json.dumps(
         "required": ["text", "verdict", "note"],
     }
 )
+
+
+def select_prompt_version(version: int) -> None:
+    """Version 2 is the default; 3 adds the exact-as-printed rule to both prompts."""
+    global PROMPT_VERSION, READ_PROMPT, JUDGE_PROMPT
+    if version not in (2, 3):
+        raise SystemExit(f"unknown prompt version {version}")
+    PROMPT_VERSION = version
+    rule = PRINTED_RULE if version >= 3 else ""
+    READ_PROMPT = READ_PROMPT_V2 + rule
+    JUDGE_PROMPT = JUDGE_PROMPT_V2.replace("\nLine {index}", rule + "\nLine {index}", 1)
 
 
 RETRIES = 4
@@ -521,7 +541,9 @@ def main() -> int:
     ap.add_argument("--scale", type=int, default=2)
     ap.add_argument("--pad", type=int, default=8)
     ap.add_argument("--timeout", type=int, default=600)
+    ap.add_argument("--prompt-version", type=int, default=int(os.environ.get("GESENIUS_PROMPT_VERSION", PROMPT_VERSION)), help="2 (default) or 3 (exact-as-printed rule)")
     args = ap.parse_args()
+    select_prompt_version(args.prompt_version)
     incomplete = []
     for transcription in args.transcription:
         path, complete = verify_page(

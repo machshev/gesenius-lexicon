@@ -36,7 +36,7 @@ import numpy as np
 from PIL import Image
 
 PROMPT_VERSION = 2
-PROMPT = (
+PROMPT_V2 = (
     "Read the image file {path}. It is a crop of one column of a printed 1854 "
     "Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every "
     "complete printed text line exactly, one array element per printed line, top "
@@ -52,6 +52,14 @@ PROMPT = (
     "reorder, translate, normalise or omit anything that is fully visible. If the "
     "crop contains no text, return an empty array."
 )
+PROMPT = PROMPT_V2
+PRINTED_RULE = (
+    " "
+    "Transcribe exactly what is printed, character for character, including vowel "
+    "points and accents as printed, not the expected or standard lexical form, even if "
+    "the print looks unusual or wrong. Running heads are printed unpointed; do not add "
+    "pointing to them."
+)
 CLI_MODE = "lean-system-prompt-v1"
 CLI_SYSTEM_PROMPT = "You transcribe printed text from images exactly, following the user's instructions."
 SCHEMA = json.dumps(
@@ -61,6 +69,15 @@ SCHEMA = json.dumps(
         "required": ["lines"],
     }
 )
+
+
+def select_prompt_version(version: int) -> None:
+    """Version 2 is the default; 3 adds the exact-as-printed rule (PRINTED_RULE)."""
+    global PROMPT_VERSION, PROMPT
+    if version not in (2, 3):
+        raise SystemExit(f"unknown prompt version {version}")
+    PROMPT_VERSION = version
+    PROMPT = PROMPT_V2 + (PRINTED_RULE if version >= 3 else "")
 
 
 def sha256_file(path: pathlib.Path) -> str:
@@ -522,8 +539,10 @@ def main() -> int:
     ap.add_argument("--max-height", type=int, default=1000)
     ap.add_argument("--pad", type=int, default=24)
     ap.add_argument("--timeout", type=int, default=600)
+    ap.add_argument("--prompt-version", type=int, default=int(os.environ.get("GESENIUS_PROMPT_VERSION", PROMPT_VERSION)), help="2 (default) or 3 (exact-as-printed rule)")
     ap.add_argument("--plan-only", action="store_true", help="write chunk images and geometry without calling the model")
     args = ap.parse_args()
+    select_prompt_version(args.prompt_version)
 
     chunk_dir = args.chunk_dir or (args.raster[0].parent.parent / "chunks")
     for raster in args.raster:
