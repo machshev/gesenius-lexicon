@@ -117,12 +117,8 @@ def cmpkey(text: str) -> str:
 
 
 def strip_head_points(text: str) -> str:
-    """Running heads are printed unpointed: drop Hebrew vowel points, dagesh and accents; keep shin/sin dots."""
-    out = [
-        c for c in unicodedata.normalize("NFD", text)
-        if not ("\u0591" <= c <= "\u05c7" and c not in HEBREW_KEEP and c != "\u05be")
-    ]
-    return unicodedata.normalize("NFC", "".join(out))
+    """Running heads are printed unpointed; one rule shared with tool/frontier-to-alto.py."""
+    return alto.unpoint_running_head(text)
 
 
 def hebrew_tokens(text: str) -> list[str]:

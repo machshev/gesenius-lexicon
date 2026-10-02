@@ -172,5 +172,20 @@ class TierOrderTests(unittest.TestCase):
         self.assertEqual(module.region_id_for(self.chunk("header", -1, 0, 0)), "header")
 
 
+class RunningHeadTests(unittest.TestCase):
+    def test_points_dagesh_meteg_and_accents_go_but_shin_dots_stay(self):
+        f = module.unpoint_running_head
+        self.assertEqual(f("נָשָׁה 700 נָשַׁק"), "נשׁה 700 נשׁק")
+        self.assertEqual(f("שָׂרַף"), "שׂרף")
+        self.assertEqual(f("נָֽשֶׁךְ"), "נשׁך")
+        self.assertEqual(f("בּ\u05c7\u0591"), "ב")
+
+    def test_other_text_is_untouched(self):
+        self.assertEqual(module.unpoint_running_head("LEXICON. 100 ā"), "LEXICON. 100 ā")
+
+    def test_result_is_nfc_and_keeps_maqaf(self):
+        self.assertEqual(module.unpoint_running_head("אֵל־שַׁדַּי"), "אל־שׁדי")
+
+
 if __name__ == '__main__':
     unittest.main()

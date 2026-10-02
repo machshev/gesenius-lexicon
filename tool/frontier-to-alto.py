@@ -188,6 +188,21 @@ def chunk_tier(chunk: dict) -> int:
     return int(m.group(1)) if m else 0
 
 
+HEAD_KEEP = {"\u05c1", "\u05c2"}  # shin and sin dot are printed even in running heads
+
+
+def unpoint_running_head(text: str) -> str:
+    """Running heads are printed unpointed. Drop Hebrew vowel points, dagesh,
+    meteg, qamats qatan and accents (U+0591 to U+05C7) but keep the shin and
+    sin dots and the maqaf. NFC. Applied to the header region only, after
+    pass 2, so cached records need no new calls."""
+    out = [
+        c for c in unicodedata.normalize("NFD", text)
+        if not ("\u0591" <= c <= "\u05c7" and c not in HEAD_KEEP and c != "\u05be")
+    ]
+    return unicodedata.normalize("NFC", "".join(out))
+
+
 def is_full_width(chunk: dict) -> bool:
     return chunk["column"] < 0
 
@@ -284,6 +299,8 @@ def build(record: dict) -> dict:
             elif line.get("verdict") == "neither":
                 confidence = min(confidence, 0.85)
             text = printed_glyphs(line["text"])
+            if region_id == "header":
+                text = unpoint_running_head(text)
             region["lines"].append(
                 {
                     "id": line_id,
@@ -308,6 +325,8 @@ def build(record: dict) -> dict:
             # produced have no draft and are left out of the hypothesis.
             draft = line.get("draft", text) if pass2 else text
             draft = printed_glyphs(draft) if draft is not None else None
+            if draft is not None and region_id == "header":
+                draft = unpoint_running_head(draft)
             if draft is not None:
                 draft_region["lines"].append(
                     {
