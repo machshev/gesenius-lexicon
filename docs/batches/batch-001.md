@@ -3,9 +3,9 @@
 Status: stopped_quota
 Pages: 19-70 (50 planned)
 
-- Done: 27
+- Done: 43
 - Failed: 0
-- Wall time per page: mean 164 s, max 213 s (total 74 min over pages run this session)
+- Wall time per page: mean 171 s, max 288 s (total 123 min over pages run this session)
 
 ## Reruns
 - none

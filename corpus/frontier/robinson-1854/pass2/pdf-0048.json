@@ -1,0 +1,2679 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 48,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0048.png",
+ "raster_sha256": "ec55010a20a72b8f6d9062ba480961e43b3228373a65a36b7dfb8742aa85d8d2",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0048.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:06:16+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 205,
+    "y": 129,
+    "width": 1764,
+    "height": 70
+   },
+   "draft_lines": [
+    "אחז 32 אחז"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 205,
+      "y": 127,
+      "width": 1764,
+      "height": 74
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/header-b00-1764x74+205+127-x2.png",
+     "image_sha256": "5e2572385ba600e7541114c3c8b3df7514c826ae6868b53ee28be89db94b7e78",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אחז 32 אחז"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b47e96bc-2c5a-44bb-8c70-8cbdea85a369",
+      "duration_api_ms": 4541,
+      "cost_usd_list": 0.0479325,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 216
+     },
+     "lines": [
+      {
+       "draft": "אחז 32 אחז",
+       "reread": "אחז 32 אחז",
+       "status": "agreed",
+       "text": "אחז 32 אחז"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 205,
+    "y": 175,
+    "width": 872,
+    "height": 796
+   },
+   "draft_lines": [
+    "אֶחָד a prophet, a certain prophet, προφή-",
+    "της τις. Dan. 8, 3 אַיִל אֶחָד a ram. 1 K.",
+    "19, 4. Also where אֶחָד precedes ; e. g.",
+    "אֶחָד קָדוֹשׁ a holy one, a certain angel, τὶς",
+    "ἄγγελος, Dan. 8, 13. Sometimes also in",
+    "the earlier books, as Ex. 29, 3. 1 Sam.",
+    "1, 1 ; seq. gen. as אַחַד הַבֹּרוֹת one of the",
+    "cisterns, i. e. a cistern, Gen. 37, 20 ; comp.",
+    "Job 2, 10.",
+    "5. one only of its kind, i. q. only, alone,",
+    "sole, Job 23, 13. Ez. 7, 5. Cant. 6, 9. Arab.",
+    "وَاحِد unique, incomparable, وَحِيد id."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 205,
+      "y": 167,
+      "width": 872,
+      "height": 310
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r00-b00-872x310+205+167-x2.png",
+     "image_sha256": "2755060be70176ad7cbebeead73f379302be85976da6748a2d7741b755eef3cb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶחָד a prophet, a certain prophet, προφή-",
+       "της τις. Dan. 8, 3 אַיִל אֶחָד a ram. 1 K.",
+       "19, 4. Also where אֶחָד precedes ; e. g.",
+       "קָדוֹשׁ אֶחָד a holy one, a certain angel, τὶς"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "04861308-0dff-4b02-9ddb-2ebc79af950f",
+      "duration_api_ms": 8533,
+      "cost_usd_list": 0.08731324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3004,
+      "output_tokens": 520
+     },
+     "lines": [
+      {
+       "draft": "אֶחָד a prophet, a certain prophet, προφή-",
+       "reread": "אֶחָד a prophet, a certain prophet, προφή-",
+       "status": "agreed",
+       "text": "אֶחָד a prophet, a certain prophet, προφή-"
+      },
+      {
+       "draft": "της τις. Dan. 8, 3 אַיִל אֶחָד a ram. 1 K.",
+       "reread": "της τις. Dan. 8, 3 אַיִל אֶחָד a ram. 1 K.",
+       "status": "agreed",
+       "text": "της τις. Dan. 8, 3 אַיִל אֶחָד a ram. 1 K."
+      },
+      {
+       "draft": "19, 4. Also where אֶחָד precedes ; e. g.",
+       "reread": "19, 4. Also where אֶחָד precedes ; e. g.",
+       "status": "agreed",
+       "text": "19, 4. Also where אֶחָד precedes; e. g."
+      },
+      {
+       "draft": "אֶחָד קָדוֹשׁ a holy one, a certain angel, τὶς",
+       "reread": "קָדוֹשׁ אֶחָד a holy one, a certain angel, τὶς",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "אֶחָד קָדוֹשׁ a holy one, a certain angel, τὶς",
+        "verdict": "a",
+        "note": "Printed order: אֶחָד stands to the right of קָדוֹשׁ, so in RTL logical order אֶחָד comes first — matching the preceding \"Also where אֶחָד precedes\". Reading B reverses the two words. Points as in A: אֶחָד with segol/qamets, קָדוֹשׁ plene with holem-vav and shin dot.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e6dd60b1-da6d-45f3-8a0e-7c96c1f4c0ff",
+        "duration_api_ms": 10534,
+        "cost_usd_list": 0.0920675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2949,
+        "output_tokens": 637
+       },
+       "text": "אֶחָד קָדוֹשׁ a holy one, a certain angel, τὶς"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 205,
+      "y": 461,
+      "width": 872,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r00-b01-872x231+205+461-x2.png",
+     "image_sha256": "6f9c46fc7994a9f06f4416adac2bec8068e84756ed85580adf82d8bdeada9c9e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ἄγγελος, Dan. 8, 13.  Sometimes also in",
+       "the earlier books, as Ex. 29, 3. 1 Sam.",
+       "1, 1; seq. gen. as אַחַד הַבֹּרוֹת one of the",
+       "cisterns, i. e. a cistern, Gen. 37, 20; comp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dfd98de7-d30c-4f48-9335-a5675df826cc",
+      "duration_api_ms": 9186,
+      "cost_usd_list": 0.06825324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 290
+     },
+     "lines": [
+      {
+       "draft": "ἄγγελος, Dan. 8, 13. Sometimes also in",
+       "reread": "ἄγγελος, Dan. 8, 13.  Sometimes also in",
+       "status": "agreed",
+       "text": "ἄγγελος, Dan. 8, 13. Sometimes also in"
+      },
+      {
+       "draft": "the earlier books, as Ex. 29, 3. 1 Sam.",
+       "reread": "the earlier books, as Ex. 29, 3. 1 Sam.",
+       "status": "agreed",
+       "text": "the earlier books, as Ex. 29, 3. 1 Sam."
+      },
+      {
+       "draft": "1, 1 ; seq. gen. as אַחַד הַבֹּרוֹת one of the",
+       "reread": "1, 1; seq. gen. as אַחַד הַבֹּרוֹת one of the",
+       "status": "agreed",
+       "text": "1, 1; seq. gen. as אַחַד הַבֹּרוֹת one of the"
+      },
+      {
+       "draft": "cisterns, i. e. a cistern, Gen. 37, 20 ; comp.",
+       "reread": "cisterns, i. e. a cistern, Gen. 37, 20; comp.",
+       "status": "agreed",
+       "text": "cisterns, i. e. a cistern, Gen. 37, 20; comp."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 205,
+      "y": 676,
+      "width": 872,
+      "height": 216
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r00-b02-872x216+205+676-x2.png",
+     "image_sha256": "c90c11682bce56a32087b96412a7ebdc1e38d470c216a897052110f68b0a477c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Job 2, 10.",
+       "5. one only of its kind, i. q. only, alone,",
+       "sole, Job 23, 13. Ez. 7, 5. Cant. 6, 9. Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6ec3b7d4-3442-4592-bd54-b55667310237",
+      "duration_api_ms": 9906,
+      "cost_usd_list": 0.06649325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2563,
+      "output_tokens": 280
+     },
+     "lines": [
+      {
+       "draft": "Job 2, 10.",
+       "reread": "Job 2, 10.",
+       "status": "agreed",
+       "text": "Job 2, 10."
+      },
+      {
+       "draft": "5. one only of its kind, i. q. only, alone,",
+       "reread": "5. one only of its kind, i. q. only, alone,",
+       "status": "agreed",
+       "text": "5. one only of its kind, i. q. only, alone,"
+      },
+      {
+       "draft": "sole, Job 23, 13. Ez. 7, 5. Cant. 6, 9. Arab.",
+       "reread": "sole, Job 23, 13. Ez. 7, 5. Cant. 6, 9. Arab.",
+       "status": "agreed",
+       "text": "sole, Job 23, 13. Ez. 7, 5. Cant. 6, 9. Arab."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 205,
+      "y": 876,
+      "width": 872,
+      "height": 87
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r00-b03-872x87+205+876-x2.png",
+     "image_sha256": "d8eee657f80785884aea2d4f48316935c6556b0d7b7c6007d329e3f77dbe4cba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "وَاحِد unique, incomparable, وَحِيد id."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c7af6220-9c20-4615-9e03-4b341cfa4b03",
+      "duration_api_ms": 9974,
+      "cost_usd_list": 0.05850324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1996,
+      "output_tokens": 347
+     },
+     "lines": [
+      {
+       "draft": "وَاحِد unique, incomparable, وَحِيد id.",
+       "reread": "وَاحِد unique, incomparable, وَحِيد id.",
+       "status": "agreed",
+       "text": "وَاحِد unique, incomparable, وَحِيد id."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 205,
+    "y": 959,
+    "width": 872,
+    "height": 842
+   },
+   "draft_lines": [
+    "A. Schultens ad Job l. c. et 9, 5.",
+    "6. Repeated, אֶחָד—אֶחָד, one—ano-",
+    "ther, unus—alter, Ex. 17, 12. 18, 3. Also",
+    "thrice, 1 Sam. 10, 3. 13, 17. 18. In like",
+    "manner distributively, Num. 13, 2 אִישׁ",
+    "אֶחָד אִישׁ אֶחָד one man to a tribe shall ye",
+    "send, i. e. a man for every tribe. 34, 18.",
+    "7. כְּאֶחָד as one, i. e. together, at once,",
+    "Ezra 2, 64 כָּל־הַקָּהָל כְּאֶחָד the whole con-",
+    "gregation together. 3, 9. 6, 20. Eccl. 11, 6",
+    "שְׁנֵיהֶם כְּאֶחָד both together, both alike.",
+    "Also together, in company, Is. 65, 25.—",
+    "In the same sense is used כְּאִישׁ אֶחָד",
+    "Judg. 20, 8. 1 Sam. 11, 7. Chald. כַּחֲדָא.",
+    "8. Fem. אַחַת ellipt. for פַּעַם אַחַת one"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 205,
+      "y": 967,
+      "width": 872,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r01-b00-872x228+205+967-x2.png",
+     "image_sha256": "2ff9a32ccb1795640aeebcbb8c1f30fedc9138a315eca9fb53b5153eb70eade2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "A. Schultens ad Job l. c. et 9, 5.",
+       "6. Repeated, אֶחָד—אֶחָד, one—ano-",
+       "ther, unus—alter, Ex. 17, 12. 18, 3. Also",
+       "thrice, 1 Sam. 10, 3. 13, 17. 18. In like"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "57bc9636-390f-4122-a10b-d0dbadb495de",
+      "duration_api_ms": 9695,
+      "cost_usd_list": 0.07220325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 369
+     },
+     "lines": [
+      {
+       "draft": "A. Schultens ad Job l. c. et 9, 5.",
+       "reread": "A. Schultens ad Job l. c. et 9, 5.",
+       "status": "agreed",
+       "text": "A. Schultens ad Job l. c. et 9, 5."
+      },
+      {
+       "draft": "6. Repeated, אֶחָד—אֶחָד, one—ano-",
+       "reread": "6. Repeated, אֶחָד—אֶחָד, one—ano-",
+       "status": "agreed",
+       "text": "6. Repeated, אֶחָד—אֶחָד, one—ano-"
+      },
+      {
+       "draft": "ther, unus—alter, Ex. 17, 12. 18, 3. Also",
+       "reread": "ther, unus—alter, Ex. 17, 12. 18, 3. Also",
+       "status": "agreed",
+       "text": "ther, unus—alter, Ex. 17, 12. 18, 3. Also"
+      },
+      {
+       "draft": "thrice, 1 Sam. 10, 3. 13, 17. 18. In like",
+       "reread": "thrice, 1 Sam. 10, 3. 13, 17. 18. In like",
+       "status": "agreed",
+       "text": "thrice, 1 Sam. 10, 3. 13, 17. 18. In like"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 205,
+      "y": 1179,
+      "width": 872,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r01-b01-872x234+205+1179-x2.png",
+     "image_sha256": "db804783c33ceb3a64d0cb7261ca7ec0e5ebf3f019a3aab909445b81343f26b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "manner distributively, Num. 13, 2 אִישׁ",
+       "אֶחָד אִישׁ אֶחָד one man to a tribe shall ye",
+       "send, i. e. a man for every tribe. 34, 18.",
+       "7. כְּאֶחָד as one, i. e. together, at once,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "576aee36-d17f-4e87-9b4c-e2884103d111",
+      "duration_api_ms": 11381,
+      "cost_usd_list": 0.0676435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "manner distributively, Num. 13, 2 אִישׁ",
+       "reread": "manner distributively, Num. 13, 2 אִישׁ",
+       "status": "agreed",
+       "text": "manner distributively, Num. 13, 2 אִישׁ"
+      },
+      {
+       "draft": "אֶחָד אִישׁ אֶחָד one man to a tribe shall ye",
+       "reread": "אֶחָד אִישׁ אֶחָד one man to a tribe shall ye",
+       "status": "agreed",
+       "text": "אֶחָד אִישׁ אֶחָד one man to a tribe shall ye"
+      },
+      {
+       "draft": "send, i. e. a man for every tribe. 34, 18.",
+       "reread": "send, i. e. a man for every tribe. 34, 18.",
+       "status": "agreed",
+       "text": "send, i. e. a man for every tribe. 34, 18."
+      },
+      {
+       "draft": "7. כְּאֶחָד as one, i. e. together, at once,",
+       "reread": "7. כְּאֶחָד as one, i. e. together, at once,",
+       "status": "agreed",
+       "text": "7. כְּאֶחָד as one, i. e. together, at once,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 205,
+      "y": 1397,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r01-b02-872x238+205+1397-x2.png",
+     "image_sha256": "459052c414e20363939ff00e9af9651ac3493d567fcc7000db580c8965afa8aa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ezra 2, 64 כָּל־הַקָּהָל כְּאֶחָד the whole con-",
+       "gregation together. 3, 9. 6, 20. Eccl. 11, 6",
+       "שְׁנֵיהֶם כְּאֶחָד both together, both alike.",
+       "Also together, in company, Is. 65, 25.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5219d532-16c1-46df-a617-ad1bc6502683",
+      "duration_api_ms": 13144,
+      "cost_usd_list": 0.0840435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 605
+     },
+     "lines": [
+      {
+       "draft": "Ezra 2, 64 כָּל־הַקָּהָל כְּאֶחָד the whole con-",
+       "reread": "Ezra 2, 64 כָּל־הַקָּהָל כְּאֶחָד the whole con-",
+       "status": "agreed",
+       "text": "Ezra 2, 64 כָּל־הַקָּהָל כְּאֶחָד the whole con-"
+      },
+      {
+       "draft": "gregation together. 3, 9. 6, 20. Eccl. 11, 6",
+       "reread": "gregation together. 3, 9. 6, 20. Eccl. 11, 6",
+       "status": "agreed",
+       "text": "gregation together. 3, 9. 6, 20. Eccl. 11, 6"
+      },
+      {
+       "draft": "שְׁנֵיהֶם כְּאֶחָד both together, both alike.",
+       "reread": "שְׁנֵיהֶם כְּאֶחָד both together, both alike.",
+       "status": "agreed",
+       "text": "שְׁנֵיהֶם כְּאֶחָד both together, both alike."
+      },
+      {
+       "draft": "Also together, in company, Is. 65, 25.—",
+       "reread": "Also together, in company, Is. 65, 25.—",
+       "status": "agreed",
+       "text": "Also together, in company, Is. 65, 25.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 205,
+      "y": 1619,
+      "width": 872,
+      "height": 190
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r01-b03-872x190+205+1619-x2.png",
+     "image_sha256": "a76a424b74d2e978a4398e8ed06427a3fdc9389ec08f48cb8a4e59bcbe82f35e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "In the same sense is used כְּאִישׁ אֶחָד",
+       "Judg. 20, 8. 1 Sam. 11, 7. Chald. כַּחֲדָא.",
+       "8. Fem. אַחַת ellipt. for פַּעַם אַחַת one"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "31457f6f-6196-435f-9654-2278c5f2aa0e",
+      "duration_api_ms": 9625,
+      "cost_usd_list": 0.0635135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "In the same sense is used כְּאִישׁ אֶחָד",
+       "reread": "In the same sense is used כְּאִישׁ אֶחָד",
+       "status": "agreed",
+       "text": "In the same sense is used כְּאִישׁ אֶחָד"
+      },
+      {
+       "draft": "Judg. 20, 8. 1 Sam. 11, 7. Chald. כַּחֲדָא.",
+       "reread": "Judg. 20, 8. 1 Sam. 11, 7. Chald. כַּחֲדָא.",
+       "status": "agreed",
+       "text": "Judg. 20, 8. 1 Sam. 11, 7. Chald. כַּחֲדָא."
+      },
+      {
+       "draft": "8. Fem. אַחַת ellipt. for פַּעַם אַחַת one",
+       "reread": "8. Fem. אַחַת ellipt. for פַּעַם אַחַת one",
+       "status": "agreed",
+       "text": "8. Fem. אַחַת ellipt. for פַּעַם אַחַת one"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 205,
+    "y": 1789,
+    "width": 872,
+    "height": 839
+   },
+   "draft_lines": [
+    "time, once, 2 K. 6, 10. Ps. 62, 12.",
+    "9. בְּאַחַת a) i. q. אַחַת no. 8. Num. 10,",
+    "4. b) at once, i. e. suddenly, Prov. 28, 18.",
+    "c) i.q. כְּאֶחָד together, altogether, Jer.10, 8.",
+    "10. לְאַחַד אֶחָד one after another, one by",
+    "one, Is. 27, 12 ; and so Ecc. 7, 27 אַחַת",
+    "לְאַחַת.",
+    "Note. In the difficult and vexed pas-",
+    "sage Is. 66, 17, the common signification",
+    "is to be retained : those who sanctify and",
+    "purify themselves in or for the [idol-]",
+    "groves אַחַר אֶחָד after one, i. e. following",
+    "and imitating the one priest who directed",
+    "the sacred ceremonies. Comp. Com-",
+    "ment. on Is. l. c."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 205,
+      "y": 1781,
+      "width": 872,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r02-b00-872x241+205+1781-x2.png",
+     "image_sha256": "8cabc9a2251e11ce6ff813d4fe7aa3e3c1727e55c693c8e8ab23a9ed2fb794d9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "time, once, 2 K. 6, 10. Ps. 62, 12.",
+       "9. בְּאַחַת a) i. q. אַחַת no. 8. Num. 10,",
+       "4. b) at once, i. e. suddenly, Prov. 28, 18.",
+       "c) i.q. כְּאֶחָד together, altogether, Jer. 10, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe716476-89c9-405a-9cda-4279dd9a72b0",
+      "duration_api_ms": 12269,
+      "cost_usd_list": 0.0833035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 565
+     },
+     "lines": [
+      {
+       "draft": "time, once, 2 K. 6, 10. Ps. 62, 12.",
+       "reread": "time, once, 2 K. 6, 10. Ps. 62, 12.",
+       "status": "agreed",
+       "text": "time, once, 2 K. 6, 10. Ps. 62, 12."
+      },
+      {
+       "draft": "9. בְּאַחַת a) i. q. אַחַת no. 8. Num. 10,",
+       "reread": "9. בְּאַחַת a) i. q. אַחַת no. 8. Num. 10,",
+       "status": "agreed",
+       "text": "9. בְּאַחַת a) i. q. אַחַת no. 8. Num. 10,"
+      },
+      {
+       "draft": "4. b) at once, i. e. suddenly, Prov. 28, 18.",
+       "reread": "4. b) at once, i. e. suddenly, Prov. 28, 18.",
+       "status": "agreed",
+       "text": "4. b) at once, i. e. suddenly, Prov. 28, 18."
+      },
+      {
+       "draft": "c) i.q. כְּאֶחָד together, altogether, Jer.10, 8.",
+       "reread": "c) i.q. כְּאֶחָד together, altogether, Jer. 10, 8.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "c) i.q. כְּאֶחָד together, altogether, Jer.10, 8.",
+        "verdict": "a",
+        "note": "The only difference is spacing in the reference: the print sets \"Jer.10,\" tight with no visible space after the period (the line is crowded, as \"i.q.\" also shows), so Reading A matches; the Hebrew כְּאֶחָד (kaf with dagesh and shewa, segol, qamets, no vav/yod) is identical in both and correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "01b32381-4f22-471a-a7ac-555cedee0d33",
+        "duration_api_ms": 11163,
+        "cost_usd_list": 0.08583750000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2635,
+        "output_tokens": 638
+       },
+       "text": "c) i.q. כְּאֶחָד together, altogether, Jer.10, 8."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 205,
+      "y": 2006,
+      "width": 872,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r02-b01-872x239+205+2006-x2.png",
+     "image_sha256": "5bc0d58b7b472e96a8ee4b6ec6fa7910180aed7f7db617a7d40b0c6e8237b17f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "10. אֶחָד לְאֶחָד one after another, one by",
+       "one, Is. 27, 12 ; and so Ecc. 7, 27 אַחַת",
+       "לְאַחַת.",
+       "Note. In the difficult and vexed pas-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1d815a28-2ccc-43d9-b387-2c4945a5129c",
+      "duration_api_ms": 17327,
+      "cost_usd_list": 0.09000349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 699
+     },
+     "lines": [
+      {
+       "draft": "10. לְאַחַד אֶחָד one after another, one by",
+       "reread": "10. אֶחָד לְאֶחָד one after another, one by",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "10. לְאַחַד אֶחָד one after another, one by",
+        "verdict": "a",
+        "note": "Rightmost Hebrew word (first in logical order) is לְאַחַד with patach under both aleph and chet (not segol), and אֶחָד stands to its left — matching MT Is 27:12 and Reading A; Reading B reverses the order and misreads the vowel as segol.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0d0bdc1e-0cc1-487b-9a7d-cf2c25a57baf",
+        "duration_api_ms": 21772,
+        "cost_usd_list": 0.1289635,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2619,
+        "output_tokens": 1507
+       },
+       "text": "10. לְאַחַד אֶחָד one after another, one by"
+      },
+      {
+       "draft": "one, Is. 27, 12 ; and so Ecc. 7, 27 אַחַת",
+       "reread": "one, Is. 27, 12 ; and so Ecc. 7, 27 אַחַת",
+       "status": "agreed",
+       "text": "one, Is. 27, 12; and so Ecc. 7, 27 אַחַת"
+      },
+      {
+       "draft": "לְאַחַת.",
+       "reread": "לְאַחַת.",
+       "status": "agreed",
+       "text": "לְאַחַת."
+      },
+      {
+       "draft": "Note. In the difficult and vexed pas-",
+       "reread": "Note. In the difficult and vexed pas-",
+       "status": "agreed",
+       "text": "Note. In the difficult and vexed pas-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 205,
+      "y": 2229,
+      "width": 872,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r02-b02-872x236+205+2229-x2.png",
+     "image_sha256": "1e1801ae657bd608635226239fd4522d9058d2fea6542283bbaef96b1c651247",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sage Is. 66, 17, the common signification",
+       "is to be retained: those who sanctify and",
+       "purify themselves in or for the [idol-]",
+       "groves אַחַר אַחַד after one, i. e. following"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bf392e73-3ddf-46c9-822e-73c39ea2bbda",
+      "duration_api_ms": 12921,
+      "cost_usd_list": 0.0782435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 489
+     },
+     "lines": [
+      {
+       "draft": "sage Is. 66, 17, the common signification",
+       "reread": "sage Is. 66, 17, the common signification",
+       "status": "agreed",
+       "text": "sage Is. 66, 17, the common signification"
+      },
+      {
+       "draft": "is to be retained : those who sanctify and",
+       "reread": "is to be retained: those who sanctify and",
+       "status": "agreed",
+       "text": "is to be retained: those who sanctify and"
+      },
+      {
+       "draft": "purify themselves in or for the [idol-]",
+       "reread": "purify themselves in or for the [idol-]",
+       "status": "agreed",
+       "text": "purify themselves in or for the [idol-]"
+      },
+      {
+       "draft": "groves אַחַר אֶחָד after one, i. e. following",
+       "reread": "groves אַחַר אַחַד after one, i. e. following",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "groves אַחַר אֶחָד after one, i. e. following",
+        "verdict": "a",
+        "note": "Second Hebrew word is printed אֶחָד: segol (three dots) under aleph and qamets (T-shaped) under chet, not patach–patach as in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "49a2e7dc-14b8-4df7-a7d6-67f6109b29e9",
+        "duration_api_ms": 14828,
+        "cost_usd_list": 0.0876725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2552,
+        "output_tokens": 708
+       },
+       "text": "groves אַחַר אֶחָד after one, i. e. following"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 205,
+      "y": 2449,
+      "width": 872,
+      "height": 168
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r02-b03-872x168+205+2449-x2.png",
+     "image_sha256": "98dae42d22e6b4d508b72122a1e411f96adab4d8aa7ca2b7b2d436c4d07cc232",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and imitating the one priest who directed",
+       "the sacred ceremonies. Comp. Com-",
+       "ment. on Is. l. c."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "44953d48-e0a2-41ba-b0b2-980877a3e9b8",
+      "duration_api_ms": 7646,
+      "cost_usd_list": 0.0584935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2313,
+      "output_tokens": 220
+     },
+     "lines": [
+      {
+       "draft": "and imitating the one priest who directed",
+       "reread": "and imitating the one priest who directed",
+       "status": "agreed",
+       "text": "and imitating the one priest who directed"
+      },
+      {
+       "draft": "the sacred ceremonies. Comp. Com-",
+       "reread": "the sacred ceremonies. Comp. Com-",
+       "status": "agreed",
+       "text": "the sacred ceremonies. Comp. Com-"
+      },
+      {
+       "draft": "ment. on Is. l. c.",
+       "reread": "ment. on Is. l. c.",
+       "status": "agreed",
+       "text": "ment. on Is. l. c."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 205,
+    "y": 2616,
+    "width": 872,
+    "height": 658
+   },
+   "draft_lines": [
+    "Plur. אֲחָדִים 1. the same, Gen. 11, 1.",
+    "Comp. Lat. uni, e.g. ‘unis moribus vivere’",
+    "Cic. pro Flacco 26. Terent. Eun. 2. 3. 75.",
+    "2. joined in one, united, Ez. 37, 17",
+    "וְהָיוּ לַאֲחָדִים and they (the two sticks)",
+    "shall become one.",
+    "3. some, a few, Gen. 27, 44. 29, 20.",
+    "Deriv. the verb אָחַד, also pr. n. אֵחוּד.",
+    "אָחוּ (Milêl) an Egyptian word signify-",
+    "ing marsh-grass, reeds, bulrushes, sedge,",
+    "every thing green which grows in wet"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 205,
+      "y": 2627,
+      "width": 872,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r03-b00-872x228+205+2627-x2.png",
+     "image_sha256": "df27b1a814002465cacbf52c74c1c17cde0cb247d572faf941b53fadb4fffc7f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "PLUR. אֲחָדִים 1. the same, Gen. 11, 1.",
+       "Comp. Lat. uni, e.g. ‘unis moribus vivere’",
+       "Cic. pro Flacco 26. Terent. Eun. 2. 3. 75.",
+       "2. joined in one, united, Ez. 37, 17"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c51f1d7d-a6e4-4edd-85a9-f9947cc6d29e",
+      "duration_api_ms": 10464,
+      "cost_usd_list": 0.07124349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 349
+     },
+     "lines": [
+      {
+       "draft": "Plur. אֲחָדִים 1. the same, Gen. 11, 1.",
+       "reread": "PLUR. אֲחָדִים 1. the same, Gen. 11, 1.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "PLUR. אֲחָדִים 1. the same, Gen. 11, 1.",
+        "verdict": "b",
+        "note": "The word is printed in small capitals (full-height P, small-cap LUR) — all capital letterforms, so PLUR. not Plur. Hebrew אֲחָדִים (ḥaṭeph pataḥ, qameṣ, ḥireq, plene yod, final mem) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8e53f234-4ec5-412b-a71b-9caa324bc066",
+        "duration_api_ms": 16452,
+        "cost_usd_list": 0.09304649999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2568,
+        "output_tokens": 809
+       },
+       "text": "PLUR. אֲחָדִים 1. the same, Gen. 11, 1."
+      },
+      {
+       "draft": "Comp. Lat. uni, e.g. ‘unis moribus vivere’",
+       "reread": "Comp. Lat. uni, e.g. ‘unis moribus vivere’",
+       "status": "agreed",
+       "text": "Comp. Lat. uni, e.g. ‘unis moribus vivere’"
+      },
+      {
+       "draft": "Cic. pro Flacco 26. Terent. Eun. 2. 3. 75.",
+       "reread": "Cic. pro Flacco 26. Terent. Eun. 2. 3. 75.",
+       "status": "agreed",
+       "text": "Cic. pro Flacco 26. Terent. Eun. 2. 3. 75."
+      },
+      {
+       "draft": "2. joined in one, united, Ez. 37, 17",
+       "reread": "2. joined in one, united, Ez. 37, 17",
+       "status": "agreed",
+       "text": "2. joined in one, united, Ez. 37, 17"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 205,
+      "y": 2839,
+      "width": 872,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r03-b01-872x244+205+2839-x2.png",
+     "image_sha256": "c3a702500676e3b3943eef7732d84faa5b69f409e67e027ce81b95625dbf1120",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "וְהָיוּ לַאֲחָדִים and they (the two sticks)",
+       "shall become one.",
+       "3. some, a few, Gen. 27, 44. 29, 20.",
+       "Deriv. the verb אָחַד, also pr. n. אֵחוּד."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0fd34a6b-f85a-4f21-90d5-92af3d1a7cb5",
+      "duration_api_ms": 12067,
+      "cost_usd_list": 0.0808035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 515
+     },
+     "lines": [
+      {
+       "draft": "וְהָיוּ לַאֲחָדִים and they (the two sticks)",
+       "reread": "וְהָיוּ לַאֲחָדִים and they (the two sticks)",
+       "status": "agreed",
+       "text": "וְהָיוּ לַאֲחָדִים and they (the two sticks)"
+      },
+      {
+       "draft": "shall become one.",
+       "reread": "shall become one.",
+       "status": "agreed",
+       "text": "shall become one."
+      },
+      {
+       "draft": "3. some, a few, Gen. 27, 44. 29, 20.",
+       "reread": "3. some, a few, Gen. 27, 44. 29, 20.",
+       "status": "agreed",
+       "text": "3. some, a few, Gen. 27, 44. 29, 20."
+      },
+      {
+       "draft": "Deriv. the verb אָחַד, also pr. n. אֵחוּד.",
+       "reread": "Deriv. the verb אָחַד, also pr. n. אֵחוּד.",
+       "status": "agreed",
+       "text": "Deriv. the verb אָחַד, also pr. n. אֵחוּד."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 205,
+      "y": 3067,
+      "width": 872,
+      "height": 209
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c0-r03-b02-872x209+205+3067-x2.png",
+     "image_sha256": "dffe7afc1435c375297bba76d5b47cb4a6d9140b5e06a003ef3f77254908b389",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָחוּ (Milêl) an Egyptian word signify-",
+       "ing marsh-grass, reeds, bulrushes, sedge,",
+       "every thing green which grows in wet"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8914b466-8517-4692-8c71-c42e57a0a6d6",
+      "duration_api_ms": 9663,
+      "cost_usd_list": 0.0659235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 293
+     },
+     "lines": [
+      {
+       "draft": "אָחוּ (Milêl) an Egyptian word signify-",
+       "reread": "אָחוּ (Milêl) an Egyptian word signify-",
+       "status": "agreed",
+       "text": "אָחוּ (Milêl) an Egyptian word signify-"
+      },
+      {
+       "draft": "ing marsh-grass, reeds, bulrushes, sedge,",
+       "reread": "ing marsh-grass, reeds, bulrushes, sedge,",
+       "status": "agreed",
+       "text": "ing marsh-grass, reeds, bulrushes, sedge,"
+      },
+      {
+       "draft": "every thing green which grows in wet",
+       "reread": "every thing green which grows in wet",
+       "status": "agreed",
+       "text": "every thing green which grows in wet"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1093,
+    "y": 175,
+    "width": 876,
+    "height": 856
+   },
+   "draft_lines": [
+    "grounds, Gen. 41, 2. 18. Job 8, 11. The",
+    "word was adopted not only into the He-",
+    "brew, but also into the Greek idiom of",
+    "Alexandria, where it is written ἄχι, ἄχει,",
+    "see Sept. Gen. 41, 2. 18. Is. 19, 7 ; like-",
+    "wise in Ecclus. 40, 16, the author of which",
+    "lived in Egypt. Jerome in his Comment.",
+    "on Is. l. c. says : “ quum ab eruditis",
+    "quærerem, quid hic sermo significaret,",
+    "audivi ab Ægyptiis hoc nomine lingua",
+    "eorum omne quod in palude virens nasci-",
+    "tur appellari.” The Coptic translator has",
+    "retained the same word, writing for the",
+    "Gr. ἄχει of the Sept. ⲡⲓ-ⲁϧⲓ. Comp."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1093,
+      "y": 167,
+      "width": 876,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r00-b00-876x297+1093+167-x2.png",
+     "image_sha256": "c497685d93421ab39078c545c89bb755ca0a7e3b7aa1199e398128c32752906c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "grounds, Gen. 41, 2. 18. Job 8, 11. The",
+       "word was adopted not only into the He-",
+       "brew, but also into the Greek idiom of",
+       "Alexandria, where it is written ἄχι, ἄχει,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "71f3071f-4fd9-411c-be80-339030c73df9",
+      "duration_api_ms": 11268,
+      "cost_usd_list": 0.0729435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "grounds, Gen. 41, 2. 18. Job 8, 11. The",
+       "reread": "grounds, Gen. 41, 2. 18. Job 8, 11. The",
+       "status": "agreed",
+       "text": "grounds, Gen. 41, 2. 18. Job 8, 11. The"
+      },
+      {
+       "draft": "word was adopted not only into the He-",
+       "reread": "word was adopted not only into the He-",
+       "status": "agreed",
+       "text": "word was adopted not only into the He-"
+      },
+      {
+       "draft": "brew, but also into the Greek idiom of",
+       "reread": "brew, but also into the Greek idiom of",
+       "status": "agreed",
+       "text": "brew, but also into the Greek idiom of"
+      },
+      {
+       "draft": "Alexandria, where it is written ἄχι, ἄχει,",
+       "reread": "Alexandria, where it is written ἄχι, ἄχει,",
+       "status": "agreed",
+       "text": "Alexandria, where it is written ἄχι, ἄχει,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1093,
+      "y": 448,
+      "width": 876,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r00-b01-876x236+1093+448-x2.png",
+     "image_sha256": "b02fab3e4f0b8e95030ca3941b3cebc6254d6cdcd92b9ccbbd845abddfef00a4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "see Sept. Gen. 41, 2. 18. Is. 19, 7 ; like-",
+       "wise in Ecclus. 40,16, the author of which",
+       "lived in Egypt. Jerome in his Comment.",
+       "on Is. l. c. says : “ quum ab eruditis"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "54b0c8d0-f861-41ac-984a-13cc03aa4f92",
+      "duration_api_ms": 13792,
+      "cost_usd_list": 0.0673435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "see Sept. Gen. 41, 2. 18. Is. 19, 7 ; like-",
+       "reread": "see Sept. Gen. 41, 2. 18. Is. 19, 7 ; like-",
+       "status": "agreed",
+       "text": "see Sept. Gen. 41, 2. 18. Is. 19, 7; like-"
+      },
+      {
+       "draft": "wise in Ecclus. 40, 16, the author of which",
+       "reread": "wise in Ecclus. 40,16, the author of which",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "wise in Ecclus. 40,16, the author of which",
+        "verdict": "b",
+        "note": "The line is very tightly set; \"40,16\" is printed with no space after the comma (contrast \"41, 2\" on the line above), so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e41186c6-a918-4c0f-b24b-1bf85ac79b66",
+        "duration_api_ms": 10658,
+        "cost_usd_list": 0.07244149999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2548,
+        "output_tokens": 405
+       },
+       "text": "wise in Ecclus. 40,16, the author of which"
+      },
+      {
+       "draft": "lived in Egypt. Jerome in his Comment.",
+       "reread": "lived in Egypt. Jerome in his Comment.",
+       "status": "agreed",
+       "text": "lived in Egypt. Jerome in his Comment."
+      },
+      {
+       "draft": "on Is. l. c. says : “ quum ab eruditis",
+       "reread": "on Is. l. c. says : “ quum ab eruditis",
+       "status": "agreed",
+       "text": "on Is. l. c. says: “ quum ab eruditis"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1093,
+      "y": 668,
+      "width": 876,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r00-b02-876x237+1093+668-x2.png",
+     "image_sha256": "d2ed64e0173663525534f4675aef6d633ea51f71aa1549db2d43d20599170350",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "quærerem, quid hic sermo significaret,",
+       "audivi ab Ægyptiis hoc nomine lingua",
+       "eorum omne quod in palude virens nasci-",
+       "tur appellari.” The Coptic translator has"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e37af646-d679-47a5-bcae-9fc42242336d",
+      "duration_api_ms": 10627,
+      "cost_usd_list": 0.0663935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "quærerem, quid hic sermo significaret,",
+       "reread": "quærerem, quid hic sermo significaret,",
+       "status": "agreed",
+       "text": "quærerem, quid hic sermo significaret,"
+      },
+      {
+       "draft": "audivi ab Ægyptiis hoc nomine lingua",
+       "reread": "audivi ab Ægyptiis hoc nomine lingua",
+       "status": "agreed",
+       "text": "audivi ab Ægyptiis hoc nomine lingua"
+      },
+      {
+       "draft": "eorum omne quod in palude virens nasci-",
+       "reread": "eorum omne quod in palude virens nasci-",
+       "status": "agreed",
+       "text": "eorum omne quod in palude virens nasci-"
+      },
+      {
+       "draft": "tur appellari.” The Coptic translator has",
+       "reread": "tur appellari.” The Coptic translator has",
+       "status": "agreed",
+       "text": "tur appellari.” The Coptic translator has"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1093,
+      "y": 889,
+      "width": 876,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r00-b03-876x135+1093+889-x2.png",
+     "image_sha256": "5d7dc793ca6572a4444d3b3a613fc53150aad0307d63ab1d7c4dca47add10137",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "retained the same word, writing for the",
+       "Gr. ἄχει of the Sept. ⲡⲓ-ⲁϧⲓ. Comp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ddff2cd6-a406-498f-887b-3b174e1709b5",
+      "duration_api_ms": 14980,
+      "cost_usd_list": 0.0691735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 484
+     },
+     "lines": [
+      {
+       "draft": "retained the same word, writing for the",
+       "reread": "retained the same word, writing for the",
+       "status": "agreed",
+       "text": "retained the same word, writing for the"
+      },
+      {
+       "draft": "Gr. ἄχει of the Sept. ⲡⲓ-ⲁϧⲓ. Comp.",
+       "reread": "Gr. ἄχει of the Sept. ⲡⲓ-ⲁϧⲓ. Comp.",
+       "status": "agreed",
+       "text": "Gr. ἄχει of the Sept. ⲡⲓ-ⲁϧⲓ. Comp."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1093,
+    "y": 1019,
+    "width": 876,
+    "height": 816
+   },
+   "draft_lines": [
+    "the same in Num. 11, 5. Kindred are",
+    "ⲁⲕⲉ, ⲟⲕⲉ, bulrush, reed. See De",
+    "Rossii Etymol. Ægypt. p. 24. Jablonski",
+    "Opusc. ed. te Water T. I. p. 45. T. II. p.",
+    "160. Peyron Lex. p. 16.",
+    "אֵחוּד (for אִחוּד union, from אֶחָד) Ehud,",
+    "pr. n. of a son of Benjamin, 1 Chr. 8, 6 ;",
+    "called in the parallel passage Gen. 46,",
+    "21 אֵחִי.",
+    "אַחְוָה f. declaration of one's mind, Job",
+    "13, 17. It is a verbal of Hiph. from r.",
+    "חָוָה, used in Hebrew only in Piel, but in",
+    "Chaldee also in Hiph."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1093,
+      "y": 1026,
+      "width": 876,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r01-b00-876x251+1093+1026-x2.png",
+     "image_sha256": "bbb615803b6f57029a0e8d4d0657ba1032b9edd1c495494708afb59a75f04f49",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the same in Num. 11, 5. Kindred are",
+       "ⲁⲕⲉ, ⲟⲕⲉ, bulrush, reed. See De",
+       "Rossii Etymol. Ægypt. p. 24. Jablonski",
+       "Opusc. ed. te Water T. I. p. 45. T. II. p."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "09f63e18-fc4b-4d1b-ac6d-a0ca55eb2b18",
+      "duration_api_ms": 13764,
+      "cost_usd_list": 0.07264375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 351
+     },
+     "lines": [
+      {
+       "draft": "the same in Num. 11, 5. Kindred are",
+       "reread": "the same in Num. 11, 5. Kindred are",
+       "status": "agreed",
+       "text": "the same in Num. 11, 5. Kindred are"
+      },
+      {
+       "draft": "ⲁⲕⲉ, ⲟⲕⲉ, bulrush, reed. See De",
+       "reread": "ⲁⲕⲉ, ⲟⲕⲉ, bulrush, reed. See De",
+       "status": "agreed",
+       "text": "ⲁⲕⲉ, ⲟⲕⲉ, bulrush, reed. See De"
+      },
+      {
+       "draft": "Rossii Etymol. Ægypt. p. 24. Jablonski",
+       "reread": "Rossii Etymol. Ægypt. p. 24. Jablonski",
+       "status": "agreed",
+       "text": "Rossii Etymol. Ægypt. p. 24. Jablonski"
+      },
+      {
+       "draft": "Opusc. ed. te Water T. I. p. 45. T. II. p.",
+       "reread": "Opusc. ed. te Water T. I. p. 45. T. II. p.",
+       "status": "agreed",
+       "text": "Opusc. ed. te Water T. I. p. 45. T. II. p."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1093,
+      "y": 1261,
+      "width": 876,
+      "height": 266
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r01-b01-876x266+1093+1261-x2.png",
+     "image_sha256": "9413f50dc2e52bef9b2c97fa2fb7de8e1b868683f6f877907b811639a6f82418",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "160. Peyron Lex. p. 16.",
+       "אֵחוּד (for אִחוּד union, from אֶחָד) Ehud,",
+       "pr. n. of a son of Benjamin, 1 Chr. 8, 6 ;",
+       "called in the parallel passage Gen. 46,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a7034870-f5d8-41af-ad2b-5de3b96e3348",
+      "duration_api_ms": 13680,
+      "cost_usd_list": 0.08170375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 507
+     },
+     "lines": [
+      {
+       "draft": "160. Peyron Lex. p. 16.",
+       "reread": "160. Peyron Lex. p. 16.",
+       "status": "agreed",
+       "text": "160. Peyron Lex. p. 16."
+      },
+      {
+       "draft": "אֵחוּד (for אִחוּד union, from אֶחָד) Ehud,",
+       "reread": "אֵחוּד (for אִחוּד union, from אֶחָד) Ehud,",
+       "status": "agreed",
+       "text": "אֵחוּד (for אִחוּד union, from אֶחָד) Ehud,"
+      },
+      {
+       "draft": "pr. n. of a son of Benjamin, 1 Chr. 8, 6 ;",
+       "reread": "pr. n. of a son of Benjamin, 1 Chr. 8, 6 ;",
+       "status": "agreed",
+       "text": "pr. n. of a son of Benjamin, 1 Chr. 8, 6;"
+      },
+      {
+       "draft": "called in the parallel passage Gen. 46,",
+       "reread": "called in the parallel passage Gen. 46,",
+       "status": "agreed",
+       "text": "called in the parallel passage Gen. 46,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1093,
+      "y": 1511,
+      "width": 876,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r01-b02-876x261+1093+1511-x2.png",
+     "image_sha256": "27d3cc6fd560ab0208b10b0a03dbe1831a85ae416b7a6c7c657cdd64854c3ece",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "21 אַחֲרֵי.",
+       "אַחֲוָה f. declaration of one's mind, Job",
+       "13, 17. It is a verbal of Hiph. from r.",
+       "חָוָה, used in Hebrew only in Piel, but in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "283da8e6-37a8-47ca-bee5-5c4d3231cd02",
+      "duration_api_ms": 16484,
+      "cost_usd_list": 0.08450375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 563
+     },
+     "lines": [
+      {
+       "draft": "21 אֵחִי.",
+       "reread": "21 אַחֲרֵי.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "21 אַחִי.",
+        "verdict": "neither",
+        "note": "Three letters א-ח-י are printed (no resh, no fourth letter), ruling out B; under the aleph is a single horizontal bar (patach), not the two dots of tsere in A. Chet carries hiriq. Printed: אַחִי.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4fe87407-58b7-4761-b7e2-d5998a9eca9f",
+        "duration_api_ms": 13426,
+        "cost_usd_list": 0.08441825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3553,
+        "cache_creation_input_tokens": 2662,
+        "output_tokens": 599
+       },
+       "text": "21 אַחִי."
+      },
+      {
+       "draft": "אַחְוָה f. declaration of one's mind, Job",
+       "reread": "אַחֲוָה f. declaration of one's mind, Job",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "אַחֲוָה f. declaration of one's mind, Job",
+        "verdict": "b",
+        "note": "Under the ḥet the print shows a composite ḥataf‑pataḥ (shewa dots plus a horizontal pataḥ stroke), not a plain shewa; Reading B's אַחֲוָה matches, Reading A's אַחְוָה does not. Rest of the line is identical in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "27fd7a39-f700-4961-b1d2-4d51b78fb731",
+        "duration_api_ms": 13612,
+        "cost_usd_list": 0.08383275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3571,
+        "cache_creation_input_tokens": 2680,
+        "output_tokens": 580
+       },
+       "text": "אַחֲוָה f. declaration of one's mind, Job"
+      },
+      {
+       "draft": "13, 17. It is a verbal of Hiph. from r.",
+       "reread": "13, 17. It is a verbal of Hiph. from r.",
+       "status": "agreed",
+       "text": "13, 17. It is a verbal of Hiph. from r."
+      },
+      {
+       "draft": "חָוָה, used in Hebrew only in Piel, but in",
+       "reread": "חָוָה, used in Hebrew only in Piel, but in",
+       "status": "agreed",
+       "text": "חָוָה, used in Hebrew only in Piel, but in"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1093,
+      "y": 1756,
+      "width": 876,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r01-b03-876x69+1093+1756-x2.png",
+     "image_sha256": "2fc4425909af76e8ca091b3c90258c95156ac068c292054dbaff9c5d43733116",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Chaldee also in Hiph."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "16e2bbfa-73d0-441b-8650-6e2d388f2d4a",
+      "duration_api_ms": 7971,
+      "cost_usd_list": 0.05141375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1874,
+      "output_tokens": 254
+     },
+     "lines": [
+      {
+       "draft": "Chaldee also in Hiph.",
+       "reread": "Chaldee also in Hiph.",
+       "status": "agreed",
+       "text": "Chaldee also in Hiph."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1093,
+    "y": 1823,
+    "width": 876,
+    "height": 648
+   },
+   "draft_lines": [
+    "אַחֲוָה f. brotherhood, Zech. 11, 14.",
+    "Denom. from אָח q. v.",
+    "אֲחוֹחַ Ahoah pr. n. 1 Chr. 8, 4, for which",
+    "v. 7 אֲחִיָּה.—Patronymic אֲחֹחִי Ahohite,",
+    "2 Sam. 23, 9. 28.",
+    "אַחֲוָיָה Chald. a declaration, showing,",
+    "explanation, Dan. 5, 12. Strictly inf.",
+    "Aph. from חֲוָה.",
+    "אֲחוּמַי (brother of water, i. e. dwelling",
+    "near it) Ahumai, pr. n. m. 1 Chr. 4, 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1093,
+      "y": 1833,
+      "width": 876,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r02-b00-876x257+1093+1833-x2.png",
+     "image_sha256": "adaecedc1a78ac13e0a8975b18d5a2f90776180410512ec2268cb9c13927c158",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַחֲוָה f. brotherhood, Zech. 11, 14.",
+       "Denom. from אָח q. v.",
+       "אֲחוֹחַ Ahoah pr. n. 1 Chr. 8, 4, for which",
+       "v. 7 אֲחִיָּה.—Patronymic אֲחֹחִי Ahohite,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7090e1d7-f9fb-4ce4-83a0-22100da3f7db",
+      "duration_api_ms": 12503,
+      "cost_usd_list": 0.08635375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 600
+     },
+     "lines": [
+      {
+       "draft": "אַחֲוָה f. brotherhood, Zech. 11, 14.",
+       "reread": "אַחֲוָה f. brotherhood, Zech. 11, 14.",
+       "status": "agreed",
+       "text": "אַחֲוָה f. brotherhood, Zech. 11, 14."
+      },
+      {
+       "draft": "Denom. from אָח q. v.",
+       "reread": "Denom. from אָח q. v.",
+       "status": "agreed",
+       "text": "Denom. from אָח q. v."
+      },
+      {
+       "draft": "אֲחוֹחַ Ahoah pr. n. 1 Chr. 8, 4, for which",
+       "reread": "אֲחוֹחַ Ahoah pr. n. 1 Chr. 8, 4, for which",
+       "status": "agreed",
+       "text": "אֲחוֹחַ Ahoah pr. n. 1 Chr. 8, 4, for which"
+      },
+      {
+       "draft": "v. 7 אֲחִיָּה.—Patronymic אֲחֹחִי Ahohite,",
+       "reread": "v. 7 אֲחִיָּה.—Patronymic אֲחֹחִי Ahohite,",
+       "status": "agreed",
+       "text": "v. 7 אֲחִיָּה.—Patronymic אֲחֹחִי Ahohite,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1093,
+      "y": 2074,
+      "width": 876,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r02-b01-876x260+1093+2074-x2.png",
+     "image_sha256": "b7982790df4198f3be796dc14389a0cb5b21e3f36b81822189ede1aba9bed0bf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2 Sam. 23, 9. 28.",
+       "אַחֲוָיָה Chald. a declaration, showing,",
+       "explanation, Dan. 5, 12. Strictly inf.",
+       "Aph. from חֲוָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8f88d3ec-6175-40e4-8623-3e109c70c3a5",
+      "duration_api_ms": 12545,
+      "cost_usd_list": 0.07560375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 385
+     },
+     "lines": [
+      {
+       "draft": "2 Sam. 23, 9. 28.",
+       "reread": "2 Sam. 23, 9. 28.",
+       "status": "agreed",
+       "text": "2 Sam. 23, 9. 28."
+      },
+      {
+       "draft": "אַחֲוָיָה Chald. a declaration, showing,",
+       "reread": "אַחֲוָיָה Chald. a declaration, showing,",
+       "status": "agreed",
+       "text": "אַחֲוָיָה Chald. a declaration, showing,"
+      },
+      {
+       "draft": "explanation, Dan. 5, 12. Strictly inf.",
+       "reread": "explanation, Dan. 5, 12. Strictly inf.",
+       "status": "agreed",
+       "text": "explanation, Dan. 5, 12. Strictly inf."
+      },
+      {
+       "draft": "Aph. from חֲוָה.",
+       "reread": "Aph. from חֲוָה.",
+       "status": "agreed",
+       "text": "Aph. from חֲוָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1093,
+      "y": 2318,
+      "width": 876,
+      "height": 146
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r02-b02-876x146+1093+2318-x2.png",
+     "image_sha256": "35f82bcf6f0d52e108a7726f48913415c30e1e0f135273f2db6c27fb73e151ff",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲחוּמַי (brother of water, i. e. dwelling",
+       "near it) Ahumai, pr. n. m. 1 Chr. 4, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fecd706b-e313-4d78-b1b3-e16115b1940e",
+      "duration_api_ms": 9365,
+      "cost_usd_list": 0.06117375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2252,
+      "output_tokens": 298
+     },
+     "lines": [
+      {
+       "draft": "אֲחוּמַי (brother of water, i. e. dwelling",
+       "reread": "אֲחוּמַי (brother of water, i. e. dwelling",
+       "status": "agreed",
+       "text": "אֲחוּמַי (brother of water, i. e. dwelling"
+      },
+      {
+       "draft": "near it) Ahumai, pr. n. m. 1 Chr. 4, 2.",
+       "reread": "near it) Ahumai, pr. n. m. 1 Chr. 4, 2.",
+       "status": "agreed",
+       "text": "near it) Ahumai, pr. n. m. 1 Chr. 4, 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1093,
+    "y": 2459,
+    "width": 876,
+    "height": 843
+   },
+   "draft_lines": [
+    "אָחוֹר m. (r. אָחַר) 1. the hinder part,",
+    "back-side, rear. Arab. أُخُرٌ id. Hence",
+    "a) מֵאָחוֹר from behind, i. e. behind, in the",
+    "rear, opp. מִפָּנִים, 2 Sam. 19, 9. Arab.",
+    "مِنْ أُخُرٍ. b) לְאָחוֹר backward, back,",
+    "Ps. 114, 3. 5; with averted face, Jer. 7,",
+    "24. c) בְּאָחוֹר backward, back. Prov.",
+    "29, 11 a fool uttereth all his anger, וְחָכָם",
+    "בְּאָחוֹר יְשַׁבְּחֶנָּה but a wise man keepeth",
+    "it back, q. d. drives it backward, so that",
+    "it comes back to himself. d) אָחוֹר in acc.",
+    "as Adverb, Arab. أُخُرًا, behind, on the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1093,
+      "y": 2467,
+      "width": 876,
+      "height": 223
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r03-b00-876x223+1093+2467-x2.png",
+     "image_sha256": "9d3ac688e85fbd90fa654ae05136427b018476addb9b8cf847309d96f0056615",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָחוֹר m. (r. אָחַר)   1. the hinder part,",
+       "back-side, rear.   Arab. أُخْرٌ id.   Hence",
+       "a) מֵאָחוֹר from behind, i. e. behind, in the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "67657321-b306-4aae-b816-f09e7df76898",
+      "duration_api_ms": 10845,
+      "cost_usd_list": 0.07252375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2567,
+      "output_tokens": 399
+     },
+     "lines": [
+      {
+       "draft": "אָחוֹר m. (r. אָחַר) 1. the hinder part,",
+       "reread": "אָחוֹר m. (r. אָחַר)   1. the hinder part,",
+       "status": "agreed",
+       "text": "אָחוֹר m. (r. אָחַר) 1. the hinder part,"
+      },
+      {
+       "draft": "back-side, rear. Arab. أُخُرٌ id. Hence",
+       "reread": "back-side, rear.   Arab. أُخْرٌ id.   Hence",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "back-side, rear. Arab. أُخُرٌ id. Hence",
+        "verdict": "a",
+        "note": "The mark above the khāʾ is a comma-shaped damma (ـُ), not a sukūn circle; the word is أُخُرٌ (ʾukhur), as Reading A has. Reading B's sukūn is wrong. All else (Latin text, punctuation) is identical.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2818d5a6-d3ab-4578-b7a4-050804dafbcf",
+        "duration_api_ms": 15605,
+        "cost_usd_list": 0.087335,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2500,
+        "output_tokens": 722
+       },
+       "text": "back-side, rear. Arab. أُخُرٌ id. Hence"
+      },
+      {
+       "draft": "a) מֵאָחוֹר from behind, i. e. behind, in the",
+       "reread": "a) מֵאָחוֹר from behind, i. e. behind, in the",
+       "status": "agreed",
+       "text": "a) מֵאָחוֹר from behind, i. e. behind, in the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1093,
+      "y": 2674,
+      "width": 876,
+      "height": 298
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r03-b01-876x298+1093+2674-x2.png",
+     "image_sha256": "9e25949618cabfd19c6ab27e1f0efa2eea22dbce5df26e29100c536427d9addb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "rear, opp. מִפָּנִים, 2 Sam. 19, 9. Arab.",
+       "مِنْ أُخُرٍ. b) לְאָחוֹר backward, back,",
+       "Ps. 114, 3. 5; with averted face, Jer. 7,",
+       "24. c) בְּאָחוֹר backward, back. Prov."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b78aba6b-4d58-4a7d-ba23-05a9e21f25d0",
+      "duration_api_ms": 9802,
+      "cost_usd_list": 0.09068375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2945,
+      "output_tokens": 611
+     },
+     "lines": [
+      {
+       "draft": "rear, opp. מִפָּנִים, 2 Sam. 19, 9. Arab.",
+       "reread": "rear, opp. מִפָּנִים, 2 Sam. 19, 9. Arab.",
+       "status": "agreed",
+       "text": "rear, opp. מִפָּנִים, 2 Sam. 19, 9. Arab."
+      },
+      {
+       "draft": "مِنْ أُخُرٍ. b) לְאָחוֹר backward, back,",
+       "reread": "مِنْ أُخُرٍ. b) לְאָחוֹר backward, back,",
+       "status": "agreed",
+       "text": "مِنْ أُخُرٍ. b) לְאָחוֹר backward, back,"
+      },
+      {
+       "draft": "Ps. 114, 3. 5; with averted face, Jer. 7,",
+       "reread": "Ps. 114, 3. 5; with averted face, Jer. 7,",
+       "status": "agreed",
+       "text": "Ps. 114, 3. 5; with averted face, Jer. 7,"
+      },
+      {
+       "draft": "24. c) בְּאָחוֹר backward, back. Prov.",
+       "reread": "24. c) בְּאָחוֹר backward, back. Prov.",
+       "status": "agreed",
+       "text": "24. c) בְּאָחוֹר backward, back. Prov."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1093,
+      "y": 2956,
+      "width": 876,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r03-b02-876x243+1093+2956-x2.png",
+     "image_sha256": "10c13231f13dfd06ab8de080e101af051956d53a2ccfe323b5e61d277ae35c91",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "29, 11 a fool uttereth all his anger, וְחָכָם",
+       "בְּאָחוֹר יְשַׁבְּחֶנָּה but a wise man keepeth",
+       "it back, q. d. drives it backward, so that",
+       "it comes back to himself. d) אָחוֹר in acc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e240c806-3c5b-49e5-a757-b53c6f3c8743",
+      "duration_api_ms": 14268,
+      "cost_usd_list": 0.08219375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 542
+     },
+     "lines": [
+      {
+       "draft": "29, 11 a fool uttereth all his anger, וְחָכָם",
+       "reread": "29, 11 a fool uttereth all his anger, וְחָכָם",
+       "status": "agreed",
+       "text": "29, 11 a fool uttereth all his anger, וְחָכָם"
+      },
+      {
+       "draft": "בְּאָחוֹר יְשַׁבְּחֶנָּה but a wise man keepeth",
+       "reread": "בְּאָחוֹר יְשַׁבְּחֶנָּה but a wise man keepeth",
+       "status": "agreed",
+       "text": "בְּאָחוֹר יְשַׁבְּחֶנָּה but a wise man keepeth"
+      },
+      {
+       "draft": "it back, q. d. drives it backward, so that",
+       "reread": "it back, q. d. drives it backward, so that",
+       "status": "agreed",
+       "text": "it back, q. d. drives it backward, so that"
+      },
+      {
+       "draft": "it comes back to himself. d) אָחוֹר in acc.",
+       "reread": "it comes back to himself. d) אָחוֹר in acc.",
+       "status": "agreed",
+       "text": "it comes back to himself. d) אָחוֹר in acc."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1093,
+      "y": 3183,
+      "width": 876,
+      "height": 121
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0048/pass2/c1-r03-b03-876x121+1093+3183-x2.png",
+     "image_sha256": "3de3c4c2ac007d98c87d000450a32193f06c92275ae5fa561a187dbdd0aee67d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "as Adverb, Arab. أُخْرًا, behind, on the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f4415d56-f98a-493d-8b41-6fcd02cce2be",
+      "duration_api_ms": 9463,
+      "cost_usd_list": 0.057653750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2126,
+      "output_tokens": 278
+     },
+     "lines": [
+      {
+       "draft": "as Adverb, Arab. أُخُرًا, behind, on the",
+       "reread": "as Adverb, Arab. أُخْرًا, behind, on the",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b03",
+       "judgement": {
+        "text": "as Adverb, Arab. أُخُرًا, behind, on the",
+        "verdict": "a",
+        "note": "The mark printed above the khāʾ is a comma‑shaped ḍamma (ـُ), not a ring‑shaped sukūn (ـْ), so the word reads أُخُرًا (ukhuran) as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0123bc27-2dff-43a9-a01e-ce63c52450e7",
+        "duration_api_ms": 15989,
+        "cost_usd_list": 0.075734,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3576,
+        "cache_creation_input_tokens": 2055,
+        "output_tokens": 668
+       },
+       "text": "as Adverb, Arab. أُخُرًا, behind, on the"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אחז 32 אחז",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֶחָד a prophet, a certain prophet, προφή-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "της τις. Dan. 8, 3 אַיִל אֶחָד a ram. 1 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "19, 4. Also where אֶחָד precedes; e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֶחָד קָדוֹשׁ a holy one, a certain angel, τὶς",
+   "status": "adjudicated",
+   "draft": "אֶחָד קָדוֹשׁ a holy one, a certain angel, τὶς",
+   "reread": "קָדוֹשׁ אֶחָד a holy one, a certain angel, τὶς",
+   "verdict": "a",
+   "note": "Printed order: אֶחָד stands to the right of קָדוֹשׁ, so in RTL logical order אֶחָד comes first — matching the preceding \"Also where אֶחָד precedes\". Reading B reverses the two words. Points as in A: אֶחָד with segol/qamets, קָדוֹשׁ plene with holem-vav and shin dot.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ἄγγελος, Dan. 8, 13. Sometimes also in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the earlier books, as Ex. 29, 3. 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1, 1; seq. gen. as אַחַד הַבֹּרוֹת one of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "cisterns, i. e. a cistern, Gen. 37, 20; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Job 2, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "5. one only of its kind, i. q. only, alone,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "sole, Job 23, 13. Ez. 7, 5. Cant. 6, 9. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "وَاحِد unique, incomparable, وَحِيد id.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "A. Schultens ad Job l. c. et 9, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "6. Repeated, אֶחָד—אֶחָד, one—ano-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ther, unus—alter, Ex. 17, 12. 18, 3. Also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thrice, 1 Sam. 10, 3. 13, 17. 18. In like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "manner distributively, Num. 13, 2 אִישׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֶחָד אִישׁ אֶחָד one man to a tribe shall ye",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "send, i. e. a man for every tribe. 34, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "7. כְּאֶחָד as one, i. e. together, at once,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ezra 2, 64 כָּל־הַקָּהָל כְּאֶחָד the whole con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "gregation together. 3, 9. 6, 20. Eccl. 11, 6",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "שְׁנֵיהֶם כְּאֶחָד both together, both alike.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Also together, in company, Is. 65, 25.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "In the same sense is used כְּאִישׁ אֶחָד",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Judg. 20, 8. 1 Sam. 11, 7. Chald. כַּחֲדָא.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "8. Fem. אַחַת ellipt. for פַּעַם אַחַת one",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "time, once, 2 K. 6, 10. Ps. 62, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "9. בְּאַחַת a) i. q. אַחַת no. 8. Num. 10,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4. b) at once, i. e. suddenly, Prov. 28, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "c) i.q. כְּאֶחָד together, altogether, Jer.10, 8.",
+   "status": "adjudicated",
+   "draft": "c) i.q. כְּאֶחָד together, altogether, Jer.10, 8.",
+   "reread": "c) i.q. כְּאֶחָד together, altogether, Jer. 10, 8.",
+   "verdict": "a",
+   "note": "The only difference is spacing in the reference: the print sets \"Jer.10,\" tight with no visible space after the period (the line is crowded, as \"i.q.\" also shows), so Reading A matches; the Hebrew כְּאֶחָד (kaf with dagesh and shewa, segol, qamets, no vav/yod) is identical in both and correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "10. לְאַחַד אֶחָד one after another, one by",
+   "status": "adjudicated",
+   "draft": "10. לְאַחַד אֶחָד one after another, one by",
+   "reread": "10. אֶחָד לְאֶחָד one after another, one by",
+   "verdict": "a",
+   "note": "Rightmost Hebrew word (first in logical order) is לְאַחַד with patach under both aleph and chet (not segol), and אֶחָד stands to its left — matching MT Is 27:12 and Reading A; Reading B reverses the order and misreads the vowel as segol.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "one, Is. 27, 12; and so Ecc. 7, 27 אַחַת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "לְאַחַת.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Note. In the difficult and vexed pas-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "sage Is. 66, 17, the common signification",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "is to be retained: those who sanctify and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "purify themselves in or for the [idol-]",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "groves אַחַר אֶחָד after one, i. e. following",
+   "status": "adjudicated",
+   "draft": "groves אַחַר אֶחָד after one, i. e. following",
+   "reread": "groves אַחַר אַחַד after one, i. e. following",
+   "verdict": "a",
+   "note": "Second Hebrew word is printed אֶחָד: segol (three dots) under aleph and qamets (T-shaped) under chet, not patach–patach as in B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and imitating the one priest who directed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the sacred ceremonies. Comp. Com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ment. on Is. l. c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "PLUR. אֲחָדִים 1. the same, Gen. 11, 1.",
+   "status": "adjudicated",
+   "draft": "Plur. אֲחָדִים 1. the same, Gen. 11, 1.",
+   "reread": "PLUR. אֲחָדִים 1. the same, Gen. 11, 1.",
+   "verdict": "b",
+   "note": "The word is printed in small capitals (full-height P, small-cap LUR) — all capital letterforms, so PLUR. not Plur. Hebrew אֲחָדִים (ḥaṭeph pataḥ, qameṣ, ḥireq, plene yod, final mem) is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Comp. Lat. uni, e.g. ‘unis moribus vivere’",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Cic. pro Flacco 26. Terent. Eun. 2. 3. 75.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. joined in one, united, Ez. 37, 17",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "וְהָיוּ לַאֲחָדִים and they (the two sticks)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "shall become one.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "3. some, a few, Gen. 27, 44. 29, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Deriv. the verb אָחַד, also pr. n. אֵחוּד.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אָחוּ (Milêl) an Egyptian word signify-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ing marsh-grass, reeds, bulrushes, sedge,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "every thing green which grows in wet",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "grounds, Gen. 41, 2. 18. Job 8, 11. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "word was adopted not only into the He-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "brew, but also into the Greek idiom of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Alexandria, where it is written ἄχι, ἄχει,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "see Sept. Gen. 41, 2. 18. Is. 19, 7; like-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "wise in Ecclus. 40,16, the author of which",
+   "status": "adjudicated",
+   "draft": "wise in Ecclus. 40, 16, the author of which",
+   "reread": "wise in Ecclus. 40,16, the author of which",
+   "verdict": "b",
+   "note": "The line is very tightly set; \"40,16\" is printed with no space after the comma (contrast \"41, 2\" on the line above), so Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lived in Egypt. Jerome in his Comment.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "on Is. l. c. says: “ quum ab eruditis",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "quærerem, quid hic sermo significaret,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "audivi ab Ægyptiis hoc nomine lingua",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "eorum omne quod in palude virens nasci-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tur appellari.” The Coptic translator has",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "retained the same word, writing for the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Gr. ἄχει of the Sept. ⲡⲓ-ⲁϧⲓ. Comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the same in Num. 11, 5. Kindred are",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ⲁⲕⲉ, ⲟⲕⲉ, bulrush, reed. See De",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Rossii Etymol. Ægypt. p. 24. Jablonski",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Opusc. ed. te Water T. I. p. 45. T. II. p.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "160. Peyron Lex. p. 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֵחוּד (for אִחוּד union, from אֶחָד) Ehud,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "pr. n. of a son of Benjamin, 1 Chr. 8, 6;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "called in the parallel passage Gen. 46,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "21 אַחִי.",
+   "status": "adjudicated",
+   "draft": "21 אֵחִי.",
+   "reread": "21 אַחֲרֵי.",
+   "verdict": "neither",
+   "note": "Three letters א-ח-י are printed (no resh, no fourth letter), ruling out B; under the aleph is a single horizontal bar (patach), not the two dots of tsere in A. Chet carries hiriq. Printed: אַחִי.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַחֲוָה f. declaration of one's mind, Job",
+   "status": "adjudicated",
+   "draft": "אַחְוָה f. declaration of one's mind, Job",
+   "reread": "אַחֲוָה f. declaration of one's mind, Job",
+   "verdict": "b",
+   "note": "Under the ḥet the print shows a composite ḥataf‑pataḥ (shewa dots plus a horizontal pataḥ stroke), not a plain shewa; Reading B's אַחֲוָה matches, Reading A's אַחְוָה does not. Rest of the line is identical in both.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "13, 17. It is a verbal of Hiph. from r.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "חָוָה, used in Hebrew only in Piel, but in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Chaldee also in Hiph.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַחֲוָה f. brotherhood, Zech. 11, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Denom. from אָח q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲחוֹחַ Ahoah pr. n. 1 Chr. 8, 4, for which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "v. 7 אֲחִיָּה.—Patronymic אֲחֹחִי Ahohite,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2 Sam. 23, 9. 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַחֲוָיָה Chald. a declaration, showing,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "explanation, Dan. 5, 12. Strictly inf.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Aph. from חֲוָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲחוּמַי (brother of water, i. e. dwelling",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "near it) Ahumai, pr. n. m. 1 Chr. 4, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָחוֹר m. (r. אָחַר) 1. the hinder part,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "back-side, rear. Arab. أُخُرٌ id. Hence",
+   "status": "adjudicated",
+   "draft": "back-side, rear. Arab. أُخُرٌ id. Hence",
+   "reread": "back-side, rear.   Arab. أُخْرٌ id.   Hence",
+   "verdict": "a",
+   "note": "The mark above the khāʾ is a comma-shaped damma (ـُ), not a sukūn circle; the word is أُخُرٌ (ʾukhur), as Reading A has. Reading B's sukūn is wrong. All else (Latin text, punctuation) is identical.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "a) מֵאָחוֹר from behind, i. e. behind, in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "rear, opp. מִפָּנִים, 2 Sam. 19, 9. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "مِنْ أُخُرٍ. b) לְאָחוֹר backward, back,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Ps. 114, 3. 5; with averted face, Jer. 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "24. c) בְּאָחוֹר backward, back. Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "29, 11 a fool uttereth all his anger, וְחָכָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "בְּאָחוֹר יְשַׁבְּחֶנָּה but a wise man keepeth",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "it back, q. d. drives it backward, so that",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "it comes back to himself. d) אָחוֹר in acc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "as Adverb, Arab. أُخُرًا, behind, on the",
+   "status": "adjudicated",
+   "draft": "as Adverb, Arab. أُخُرًا, behind, on the",
+   "reread": "as Adverb, Arab. أُخْرًا, behind, on the",
+   "verdict": "a",
+   "note": "The mark printed above the khāʾ is a comma‑shaped ḍamma (ـُ), not a ring‑shaped sukūn (ـْ), so the word reads أُخُرًا (ukhuran) as in Reading A.",
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 93,
+  "adjudicated": 10,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 3
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.1276
+}

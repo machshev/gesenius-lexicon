@@ -1,0 +1,2564 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 54,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0054.png",
+ "raster_sha256": "1650b13064c0d65a44f528b222c1669b0a7ccc08cda32decc52352e8fe1d4ca1",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0054.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:25:16+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 179,
+    "y": 138,
+    "width": 1882,
+    "height": 72
+   },
+   "draft_lines": [
+    "אֶחָד 38 אטל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 179,
+      "y": 136,
+      "width": 1882,
+      "height": 76
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/header-b00-1882x76+179+136-x2.png",
+     "image_sha256": "6020f92e4a2649964ca47f4e30d27d685166231d3c41e86cbd17310ebc44f534",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַחַר 38 אטר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2651c63e-6508-4544-b821-67740a63dbdb",
+      "duration_api_ms": 12961,
+      "cost_usd_list": 0.0587325,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 432
+     },
+     "lines": [
+      {
+       "draft": "אֶחָד 38 אטל",
+       "reread": "אַחַר 38 אטר",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אַחַר 38 אטר",
+        "verdict": "b",
+        "note": "The left header word ends in resh, not dalet (no right-angle shoulder/foot), and the middle letter is a het with its gap at the top, not a tav: אַחַר. The right header word is unpointed and its final letter is a resh (rounded top, straight descender), not a lamed — no ascender above the line: אטר. Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1a7fa3cc-d07e-477d-bb48-38fc297baaec",
+        "duration_api_ms": 19246,
+        "cost_usd_list": 0.066797,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3548,
+        "cache_creation_input_tokens": 1716,
+        "output_tokens": 631
+       },
+       "text": "אַחַר 38 אטר"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 179,
+    "y": 181,
+    "width": 873,
+    "height": 652
+   },
+   "draft_lines": [
+    "2. Concr. those who come after, de-",
+    "scendants, posterity, Ps. 109, 13. Am. 4,",
+    "2. 9, 1. Dan. 11, 4.",
+    "אַחֲרִית Chald. f. i. q. Heb. אַחֲרִית no.",
+    "1. b. Dan. 2, 28.",
+    "אָחֳרָן Chald. adj. another, alius, Dan.",
+    "2, 11.",
+    "אֲחֹרַנִּית adv. (r. אָחַר) backwards,",
+    "Gen. 9, 23. 1 Sam. 4, 18. Comp. אָחוֹר."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 179,
+      "y": 173,
+      "width": 873,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r00-b00-873x255+179+173-x2.png",
+     "image_sha256": "66e38605c5cba7d728d54a80038d5aca251f73ccc543b5752c5fea52019ddae4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Concr. those who come after, de-",
+       "scendants, posterity, Ps. 109, 13. Am. 4,",
+       "2. 9, 1. Dan. 11, 4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a6e4c279-8491-4b8e-88c3-a7d2e770fa83",
+      "duration_api_ms": 5057,
+      "cost_usd_list": 0.06992324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 273
+     },
+     "lines": [
+      {
+       "draft": "2. Concr. those who come after, de-",
+       "reread": "2. Concr. those who come after, de-",
+       "status": "agreed",
+       "text": "2. Concr. those who come after, de-"
+      },
+      {
+       "draft": "scendants, posterity, Ps. 109, 13. Am. 4,",
+       "reread": "scendants, posterity, Ps. 109, 13. Am. 4,",
+       "status": "agreed",
+       "text": "scendants, posterity, Ps. 109, 13. Am. 4,"
+      },
+      {
+       "draft": "2. 9, 1. Dan. 11, 4.",
+       "reread": "2. 9, 1. Dan. 11, 4.",
+       "status": "agreed",
+       "text": "2. 9, 1. Dan. 11, 4."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 179,
+      "y": 412,
+      "width": 873,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r00-b01-873x284+179+412-x2.png",
+     "image_sha256": "17ac460516965ffa4de026050ccca7e13b8e5b8ecfcd8acd7bbd73a58fa96ce1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַחֲרִית Chald. f. i. q. Heb. אַחֲרִית no.",
+       "1. b. Dan. 2, 28.",
+       "אָחֳרָן Chald. adj. another, alius, Dan.",
+       "2, 11."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "341dd811-8201-4b30-86bd-8a65b340df82",
+      "duration_api_ms": 11114,
+      "cost_usd_list": 0.07909325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 406
+     },
+     "lines": [
+      {
+       "draft": "אַחֲרִית Chald. f. i. q. Heb. אַחֲרִית no.",
+       "reread": "אַחֲרִית Chald. f. i. q. Heb. אַחֲרִית no.",
+       "status": "agreed",
+       "text": "אַחֲרִית Chald. f. i. q. Heb. אַחֲרִית no."
+      },
+      {
+       "draft": "1. b. Dan. 2, 28.",
+       "reread": "1. b. Dan. 2, 28.",
+       "status": "agreed",
+       "text": "1. b. Dan. 2, 28."
+      },
+      {
+       "draft": "אָחֳרָן Chald. adj. another, alius, Dan.",
+       "reread": "אָחֳרָן Chald. adj. another, alius, Dan.",
+       "status": "agreed",
+       "text": "אָחֳרָן Chald. adj. another, alius, Dan."
+      },
+      {
+       "draft": "2, 11.",
+       "reread": "2, 11.",
+       "status": "agreed",
+       "text": "2, 11."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 179,
+      "y": 680,
+      "width": 873,
+      "height": 161
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r00-b02-873x161+179+680-x2.png",
+     "image_sha256": "60f722e31baafe66d2bf900ae0d6cd4a61b5b5f26e12fffae4244532233344a8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲחֹרַנִּית adv. (r. אָחַר) backwards,",
+       "Gen. 9, 23. 1 Sam. 4, 18. Comp. אָחוֹר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7fa24e86-4d72-42bb-9eab-e3290e24b6f4",
+      "duration_api_ms": 12174,
+      "cost_usd_list": 0.06895325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2311,
+      "output_tokens": 430
+     },
+     "lines": [
+      {
+       "draft": "אֲחֹרַנִּית adv. (r. אָחַר) backwards,",
+       "reread": "אֲחֹרַנִּית adv. (r. אָחַר) backwards,",
+       "status": "agreed",
+       "text": "אֲחֹרַנִּית adv. (r. אָחַר) backwards,"
+      },
+      {
+       "draft": "Gen. 9, 23. 1 Sam. 4, 18. Comp. אָחוֹר.",
+       "reread": "Gen. 9, 23. 1 Sam. 4, 18. Comp. אָחוֹר.",
+       "status": "agreed",
+       "text": "Gen. 9, 23. 1 Sam. 4, 18. Comp. אָחוֹר."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 179,
+    "y": 821,
+    "width": 873,
+    "height": 972
+   },
+   "draft_lines": [
+    "אֲחַשְׁדַּרְפְּנִים m. plur. Esth. 3, 12. 8, 9.",
+    "9, 3. Ezra 8, 36, satraps, the governors",
+    "or viceroys of the large provinces among",
+    "the ancient Persians, possessing both",
+    "civil and military power, and being in",
+    "the provinces the representatives of the",
+    "sovereign, whose state and splendour",
+    "they also rivalled. Single parts or sub-",
+    "divisions of these provinces were under",
+    "procurators or prefects, פַּחוֹת; the sa-",
+    "traps governed only whole provinces.",
+    "See Brisson de regio Pers. principatu I.",
+    "§ 168. Heeren Ideen T. I. p. 489 sq. ed.",
+    "4.—The genuine form of this name,",
+    "which has lately been found in the",
+    "inscriptions of ancient India, is kśatrapa",
+    "i. e. warrior of the host; see Benfey in"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 179,
+      "y": 813,
+      "width": 873,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r01-b00-873x261+179+813-x2.png",
+     "image_sha256": "2a0eb1fd4c852672383ec3c9a1f75b9ae799eb803ad551ba181744d25d73c6ce",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲחַשְׁדַּרְפְּנִים m. plur. Esth. 3, 12. 8, 9.",
+       "9, 3. Ezra 8, 36, satraps, the governors",
+       "or viceroys of the large provinces among",
+       "the ancient Persians, possessing both"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "06d95deb-ce43-47fd-a468-b4a711209308",
+      "duration_api_ms": 10524,
+      "cost_usd_list": 0.07647324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 404
+     },
+     "lines": [
+      {
+       "draft": "אֲחַשְׁדַּרְפְּנִים m. plur. Esth. 3, 12. 8, 9.",
+       "reread": "אֲחַשְׁדַּרְפְּנִים m. plur. Esth. 3, 12. 8, 9.",
+       "status": "agreed",
+       "text": "אֲחַשְׁדַּרְפְּנִים m. plur. Esth. 3, 12. 8, 9."
+      },
+      {
+       "draft": "9, 3. Ezra 8, 36, satraps, the governors",
+       "reread": "9, 3. Ezra 8, 36, satraps, the governors",
+       "status": "agreed",
+       "text": "9, 3. Ezra 8, 36, satraps, the governors"
+      },
+      {
+       "draft": "or viceroys of the large provinces among",
+       "reread": "or viceroys of the large provinces among",
+       "status": "agreed",
+       "text": "or viceroys of the large provinces among"
+      },
+      {
+       "draft": "the ancient Persians, possessing both",
+       "reread": "the ancient Persians, possessing both",
+       "status": "agreed",
+       "text": "the ancient Persians, possessing both"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 179,
+      "y": 1058,
+      "width": 873,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r01-b01-873x239+179+1058-x2.png",
+     "image_sha256": "32bdbdd19888c470c482654d629d0b4053df2ddc9ab7f5d4dceba7ab2f36e434",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "civil and military power, and being in",
+       "the provinces the representatives of the",
+       "sovereign, whose state and splendour",
+       "they also rivalled. Single parts or sub-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f7d54262-6ded-4672-9697-0b0bdd7ca65c",
+      "duration_api_ms": 11272,
+      "cost_usd_list": 0.06655349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 230
+     },
+     "lines": [
+      {
+       "draft": "civil and military power, and being in",
+       "reread": "civil and military power, and being in",
+       "status": "agreed",
+       "text": "civil and military power, and being in"
+      },
+      {
+       "draft": "the provinces the representatives of the",
+       "reread": "the provinces the representatives of the",
+       "status": "agreed",
+       "text": "the provinces the representatives of the"
+      },
+      {
+       "draft": "sovereign, whose state and splendour",
+       "reread": "sovereign, whose state and splendour",
+       "status": "agreed",
+       "text": "sovereign, whose state and splendour"
+      },
+      {
+       "draft": "they also rivalled. Single parts or sub-",
+       "reread": "they also rivalled. Single parts or sub-",
+       "status": "agreed",
+       "text": "they also rivalled. Single parts or sub-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 179,
+      "y": 1281,
+      "width": 873,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r01-b02-873x233+179+1281-x2.png",
+     "image_sha256": "8b9c3dc426d5ef8ea5bd437bb5192fe0c37f94c8f7528b2f09cec2390c9bda2d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "divisions of these provinces were under",
+       "procurators or prefects, פַּחוֹת; the sa-",
+       "traps governed only whole provinces.",
+       "See Brisson de regio Pers. principatu I."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "71a9e0d6-e3c3-4308-9fbe-babdce40688a",
+      "duration_api_ms": 4180,
+      "cost_usd_list": 0.0658935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "divisions of these provinces were under",
+       "reread": "divisions of these provinces were under",
+       "status": "agreed",
+       "text": "divisions of these provinces were under"
+      },
+      {
+       "draft": "procurators or prefects, פַּחוֹת; the sa-",
+       "reread": "procurators or prefects, פַּחוֹת; the sa-",
+       "status": "agreed",
+       "text": "procurators or prefects, פַּחוֹת; the sa-"
+      },
+      {
+       "draft": "traps governed only whole provinces.",
+       "reread": "traps governed only whole provinces.",
+       "status": "agreed",
+       "text": "traps governed only whole provinces."
+      },
+      {
+       "draft": "See Brisson de regio Pers. principatu I.",
+       "reread": "See Brisson de regio Pers. principatu I.",
+       "status": "agreed",
+       "text": "See Brisson de regio Pers. principatu I."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 179,
+      "y": 1498,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r01-b03-873x237+179+1498-x2.png",
+     "image_sha256": "825c3f2d5ef8cc5a3251a1ffbd753e67fdabec34bada0a91df282b30d8f2f7fe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "§ 168. Heeren Ideen T. I. p. 489 sq. ed.",
+       "4.—The genuine form of this name,",
+       "which has lately been found in the",
+       "inscriptions of ancient India, is kśatrapa"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b17974a0-65b9-473d-9477-b356a843b0ce",
+      "duration_api_ms": 8868,
+      "cost_usd_list": 0.0662935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "§ 168. Heeren Ideen T. I. p. 489 sq. ed.",
+       "reread": "§ 168. Heeren Ideen T. I. p. 489 sq. ed.",
+       "status": "agreed",
+       "text": "§ 168. Heeren Ideen T. I. p. 489 sq. ed."
+      },
+      {
+       "draft": "4.—The genuine form of this name,",
+       "reread": "4.—The genuine form of this name,",
+       "status": "agreed",
+       "text": "4.—The genuine form of this name,"
+      },
+      {
+       "draft": "which has lately been found in the",
+       "reread": "which has lately been found in the",
+       "status": "agreed",
+       "text": "which has lately been found in the"
+      },
+      {
+       "draft": "inscriptions of ancient India, is kśatrapa",
+       "reread": "inscriptions of ancient India, is kśatrapa",
+       "status": "agreed",
+       "text": "inscriptions of ancient India, is kśatrapa"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b04",
+     "bounds": {
+      "x": 179,
+      "y": 1719,
+      "width": 873,
+      "height": 82
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r01-b04-873x82+179+1719-x2.png",
+     "image_sha256": "29a004d04050c076ec846ff753860b194e7908ea020a3b547c210d920d85727e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. warrior of the host; see Benfey in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "35403ab1-d4bb-4e20-8c44-171d3b664880",
+      "duration_api_ms": 17752,
+      "cost_usd_list": 0.051283499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 227
+     },
+     "lines": [
+      {
+       "draft": "i. e. warrior of the host; see Benfey in",
+       "reread": "i. e. warrior of the host; see Benfey in",
+       "status": "agreed",
+       "text": "i. e. warrior of the host; see Benfey in"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 179,
+    "y": 1781,
+    "width": 873,
+    "height": 999
+   },
+   "draft_lines": [
+    "Gött. Gel. Anz. 1839. p. 805 sq. Lassen",
+    "Zeitschr. f. d. Morgenl. III. p. 161. To",
+    "this harsher form corresponds the Greek",
+    "ἐξατράπης, ἐξαιθράπης, (Boeckh Corp.",
+    "Inscr. no. 2691. c,) whence arose by",
+    "degrees the softer σατράπης. The ־ָן is",
+    "appended. Comp. אֲחַשְׁתְּרָנִים.",
+    "אֲחַשְׁדַּרְפְּנִין Chald. m. plur. i. q. Heb.",
+    "Dan. 3, 2. 3. 27. 6, 2. 3.",
+    "אֲחַשְׁוֵרוֹשׁ Ahasuerus, the Hebrew",
+    "form of the name Xerxes, as it would",
+    "seem. It is found Esth. 1, 1, and often",
+    "in this book; also Ezra 4, 6, where the",
+    "order of time would require it to be un-",
+    "derstood of Cambyses; and further in",
+    "Dan. 9, 1, where it stands for Astyages,",
+    "the father of Darius the Mede. The true"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 179,
+      "y": 1773,
+      "width": 873,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r02-b00-873x241+179+1773-x2.png",
+     "image_sha256": "fdd325a3d10ac383888343a77d7b5ccc737b55d833fdff5a157ed5dcfa296898",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gött. Gel. Anz. 1839. p. 805 sq. Lassen",
+       "Zeitschr. f. d. Morgenl. III. p. 161. To",
+       "this harsher form corresponds the Greek",
+       "ἐξατράπης, ἐξαιθράπης, (Boeckh Corp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6af7e250-4bc3-43bd-b923-d0fb2b178cd7",
+      "duration_api_ms": 8388,
+      "cost_usd_list": 0.0690035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 279
+     },
+     "lines": [
+      {
+       "draft": "Gött. Gel. Anz. 1839. p. 805 sq. Lassen",
+       "reread": "Gött. Gel. Anz. 1839. p. 805 sq. Lassen",
+       "status": "agreed",
+       "text": "Gött. Gel. Anz. 1839. p. 805 sq. Lassen"
+      },
+      {
+       "draft": "Zeitschr. f. d. Morgenl. III. p. 161. To",
+       "reread": "Zeitschr. f. d. Morgenl. III. p. 161. To",
+       "status": "agreed",
+       "text": "Zeitschr. f. d. Morgenl. III. p. 161. To"
+      },
+      {
+       "draft": "this harsher form corresponds the Greek",
+       "reread": "this harsher form corresponds the Greek",
+       "status": "agreed",
+       "text": "this harsher form corresponds the Greek"
+      },
+      {
+       "draft": "ἐξατράπης, ἐξαιθράπης, (Boeckh Corp.",
+       "reread": "ἐξατράπης, ἐξαιθράπης, (Boeckh Corp.",
+       "status": "agreed",
+       "text": "ἐξατράπης, ἐξαιθράπης, (Boeckh Corp."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 179,
+      "y": 1998,
+      "width": 873,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r02-b01-873x263+179+1998-x2.png",
+     "image_sha256": "10e1cf07c2b355ce74c2db1e51bddd01077728f59ebfaefd235a53be346ba490",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Inscr. no. 2691. c,) whence arose by",
+       "degrees the softer σατράπης. The ָן is",
+       "appended. Comp. אֲחַשְׁתְּרָנִים.",
+       "אֲחַשְׁדַּרְפְּנִין Chald. m. plur. i. q. Heb."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1c121ff2-0575-4be9-a900-6209c6b047f3",
+      "duration_api_ms": 17424,
+      "cost_usd_list": 0.09596350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 793
+     },
+     "lines": [
+      {
+       "draft": "Inscr. no. 2691. c,) whence arose by",
+       "reread": "Inscr. no. 2691. c,) whence arose by",
+       "status": "agreed",
+       "text": "Inscr. no. 2691. c,) whence arose by"
+      },
+      {
+       "draft": "degrees the softer σατράπης. The ־ָן is",
+       "reread": "degrees the softer σατράπης. The ָן is",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "degrees the softer σατράπης. The ־ָן is",
+        "verdict": "a",
+        "note": "The printed line shows a short horizontal stroke (maqaf-style affix dash) preceding the qamats and final nun, marking ־ָן as a suffix; Reading B omits this dash.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "85476c38-07dc-47a8-8b6d-6647250d35dd",
+        "duration_api_ms": 17685,
+        "cost_usd_list": 0.07579125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3565,
+        "cache_creation_input_tokens": 2673,
+        "output_tokens": 422
+       },
+       "text": "degrees the softer σατράπης. The ־ָן is"
+      },
+      {
+       "draft": "appended. Comp. אֲחַשְׁתְּרָנִים.",
+       "reread": "appended. Comp. אֲחַשְׁתְּרָנִים.",
+       "status": "agreed",
+       "text": "appended. Comp. אֲחַשְׁתְּרָנִים."
+      },
+      {
+       "draft": "אֲחַשְׁדַּרְפְּנִין Chald. m. plur. i. q. Heb.",
+       "reread": "אֲחַשְׁדַּרְפְּנִין Chald. m. plur. i. q. Heb.",
+       "status": "agreed",
+       "text": "אֲחַשְׁדַּרְפְּנִין Chald. m. plur. i. q. Heb."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 179,
+      "y": 2245,
+      "width": 873,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r02-b02-873x257+179+2245-x2.png",
+     "image_sha256": "84c06aac5c5d13dcd79a07936f39ebfe0fc54486ed3f547180ae41038ff5411c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Dan. 3, 2. 3. 27. 6, 2. 3.",
+       "אֲחַשְׁוֵרוֹשׁ Ahasuerus, the Hebrew",
+       "form of the name Xerxes, as it would",
+       "seem. It is found Esth. 1, 1, and often"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "275ea9f5-3868-4907-9e7d-4cd73cc07a23",
+      "duration_api_ms": 11183,
+      "cost_usd_list": 0.0795635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 465
+     },
+     "lines": [
+      {
+       "draft": "Dan. 3, 2. 3. 27. 6, 2. 3.",
+       "reread": "Dan. 3, 2. 3. 27. 6, 2. 3.",
+       "status": "agreed",
+       "text": "Dan. 3, 2. 3. 27. 6, 2. 3."
+      },
+      {
+       "draft": "אֲחַשְׁוֵרוֹשׁ Ahasuerus, the Hebrew",
+       "reread": "אֲחַשְׁוֵרוֹשׁ Ahasuerus, the Hebrew",
+       "status": "agreed",
+       "text": "אֲחַשְׁוֵרוֹשׁ Ahasuerus, the Hebrew"
+      },
+      {
+       "draft": "form of the name Xerxes, as it would",
+       "reread": "form of the name Xerxes, as it would",
+       "status": "agreed",
+       "text": "form of the name Xerxes, as it would"
+      },
+      {
+       "draft": "seem. It is found Esth. 1, 1, and often",
+       "reread": "seem. It is found Esth. 1, 1, and often",
+       "status": "agreed",
+       "text": "seem. It is found Esth. 1, 1, and often"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 179,
+      "y": 2486,
+      "width": 873,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r02-b03-873x243+179+2486-x2.png",
+     "image_sha256": "1583ca0fc83b2f0014dc1f2ce887f540ae025b115ab2e7c66599d636e095a58c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in this book ; also Ezra 4, 6, where the",
+       "order of time would require it to be un-",
+       "derstood of Cambyses; and further in",
+       "Dan. 9, 1, where it stands for Astyages,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6295b4ac-1259-4f38-b627-6a7be9f01f81",
+      "duration_api_ms": 19126,
+      "cost_usd_list": 0.06730349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "in this book; also Ezra 4, 6, where the",
+       "reread": "in this book ; also Ezra 4, 6, where the",
+       "status": "agreed",
+       "text": "in this book; also Ezra 4, 6, where the"
+      },
+      {
+       "draft": "order of time would require it to be un-",
+       "reread": "order of time would require it to be un-",
+       "status": "agreed",
+       "text": "order of time would require it to be un-"
+      },
+      {
+       "draft": "derstood of Cambyses; and further in",
+       "reread": "derstood of Cambyses; and further in",
+       "status": "agreed",
+       "text": "derstood of Cambyses; and further in"
+      },
+      {
+       "draft": "Dan. 9, 1, where it stands for Astyages,",
+       "reread": "Dan. 9, 1, where it stands for Astyages,",
+       "status": "agreed",
+       "text": "Dan. 9, 1, where it stands for Astyages,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b04",
+     "bounds": {
+      "x": 179,
+      "y": 2713,
+      "width": 873,
+      "height": 59
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r02-b04-873x59+179+2713-x2.png",
+     "image_sha256": "ea2616d78359ad0dcbe1dbdde65387097a2e9275efef5e7cda8c63c5dece1986",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the father of Darius the Mede. The true"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c0c366e7-fdcf-45a6-87f9-f37fe4af9260",
+      "duration_api_ms": 8091,
+      "cost_usd_list": 0.0497235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "the father of Darius the Mede. The true",
+       "reread": "the father of Darius the Mede. The true",
+       "status": "agreed",
+       "text": "the father of Darius the Mede. The true"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 179,
+    "y": 2768,
+    "width": 873,
+    "height": 523
+   },
+   "draft_lines": [
+    "native orthography of the name Xerxes",
+    "has recently been brought to light from",
+    "the cuneiform inscriptions; where it is",
+    "written kh-sh-y-â-r-sh-â, which seems",
+    "to correspond to the modern Persian",
+    "شيرشاه i. e. lion-king; since it is cer-",
+    "tain that for the softer pronunciation of",
+    "s and sh, as uttered by the modern Per-",
+    "sians, the ancient Persians had far harsh-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 179,
+      "y": 2776,
+      "width": 873,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r03-b00-873x227+179+2776-x2.png",
+     "image_sha256": "aea7e4f3619064e3b2f9547990b02ed3fc502172a8fb73a000191dc907df6680",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "native orthography of the name Xerxes",
+       "has recently been brought to light from",
+       "the cuneiform inscriptions; where it is",
+       "written kh-sh-y-â-r-sh-â, which seems"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9ea828e5-add6-4a05-88e2-df3ba0062fb1",
+      "duration_api_ms": 9488,
+      "cost_usd_list": 0.0658435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "native orthography of the name Xerxes",
+       "reread": "native orthography of the name Xerxes",
+       "status": "agreed",
+       "text": "native orthography of the name Xerxes"
+      },
+      {
+       "draft": "has recently been brought to light from",
+       "reread": "has recently been brought to light from",
+       "status": "agreed",
+       "text": "has recently been brought to light from"
+      },
+      {
+       "draft": "the cuneiform inscriptions; where it is",
+       "reread": "the cuneiform inscriptions; where it is",
+       "status": "agreed",
+       "text": "the cuneiform inscriptions; where it is"
+      },
+      {
+       "draft": "written kh-sh-y-â-r-sh-â, which seems",
+       "reread": "written kh-sh-y-â-r-sh-â, which seems",
+       "status": "agreed",
+       "text": "written kh-sh-y-â-r-sh-â, which seems"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 179,
+      "y": 2987,
+      "width": 873,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r03-b01-873x250+179+2987-x2.png",
+     "image_sha256": "f5e69586a2da43728e9ab67d7e0af8c8a477f5808ea4a43a81566ccb47aecf92",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to correspond to the modern Persian",
+       "شيرشاه i. e. lion-king ; since it is cer-",
+       "tain that for the softer pronunciation of",
+       "s and sh, as uttered by the modern Per-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "725d15bf-6308-4c17-806e-acfad6bf5e94",
+      "duration_api_ms": 21598,
+      "cost_usd_list": 0.0697535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 294
+     },
+     "lines": [
+      {
+       "draft": "to correspond to the modern Persian",
+       "reread": "to correspond to the modern Persian",
+       "status": "agreed",
+       "text": "to correspond to the modern Persian"
+      },
+      {
+       "draft": "شيرشاه i. e. lion-king; since it is cer-",
+       "reread": "شيرشاه i. e. lion-king ; since it is cer-",
+       "status": "agreed",
+       "text": "شيرشاه i. e. lion-king; since it is cer-"
+      },
+      {
+       "draft": "tain that for the softer pronunciation of",
+       "reread": "tain that for the softer pronunciation of",
+       "status": "agreed",
+       "text": "tain that for the softer pronunciation of"
+      },
+      {
+       "draft": "s and sh, as uttered by the modern Per-",
+       "reread": "s and sh, as uttered by the modern Per-",
+       "status": "agreed",
+       "text": "s and sh, as uttered by the modern Per-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 179,
+      "y": 3221,
+      "width": 873,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c0-r03-b02-873x72+179+3221-x2.png",
+     "image_sha256": "44a17ff04c47935db8b5eedcaff28823ec4ef1bb7366469ca1f59d36a8b68ebd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sians, the ancient Persians had far harsh-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5391ff08-a334-4966-ae12-598e32203e36",
+      "duration_api_ms": 15341,
+      "cost_usd_list": 0.0496335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 194
+     },
+     "lines": [
+      {
+       "draft": "sians, the ancient Persians had far harsh-",
+       "reread": "sians, the ancient Persians had far harsh-",
+       "status": "agreed",
+       "text": "sians, the ancient Persians had far harsh-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1065,
+    "y": 181,
+    "width": 996,
+    "height": 623
+   },
+   "draft_lines": [
+    "er sounds, as in the words khshayathiya",
+    "i. q. Shah king, khshatrap i. q. Satrap.",
+    "From this ancient harsher form, the",
+    "Hebrews, by prefixing their prosthetic",
+    "Aleph, made אֲחַשְׁוֵרוֹשׁ Ahashverosh, and",
+    "the Greeks Ξέρξης. See St. Martin in",
+    "Journal Asiatique III. p. 85. Champol-",
+    "lion Précis du Système hiéroglyphique,",
+    "Tableau général, Tab. 7. 2. p. 24. Las-",
+    "sen üb. d. Keilschrift p. 165 ; also in Zeit-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1065,
+      "y": 173,
+      "width": 996,
+      "height": 299
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r00-b00-996x299+1065+173-x2.png",
+     "image_sha256": "8e1d808ee8dfb4f6d1f26666fdcb12b0906569294a13ffb44479543b3674b96d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "er sounds, as in the words khshayathiya",
+       "i. q. Shah king, khshatrap i. q. Satrap.",
+       "From this ancient harsher form, the",
+       "Hebrews, by prefixing their prosthetic"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e69f0f25-c367-46e4-8eb3-9cff148a9022",
+      "duration_api_ms": 12885,
+      "cost_usd_list": 0.07840349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3141,
+      "output_tokens": 287
+     },
+     "lines": [
+      {
+       "draft": "er sounds, as in the words khshayathiya",
+       "reread": "er sounds, as in the words khshayathiya",
+       "status": "agreed",
+       "text": "er sounds, as in the words khshayathiya"
+      },
+      {
+       "draft": "i. q. Shah king, khshatrap i. q. Satrap.",
+       "reread": "i. q. Shah king, khshatrap i. q. Satrap.",
+       "status": "agreed",
+       "text": "i. q. Shah king, khshatrap i. q. Satrap."
+      },
+      {
+       "draft": "From this ancient harsher form, the",
+       "reread": "From this ancient harsher form, the",
+       "status": "agreed",
+       "text": "From this ancient harsher form, the"
+      },
+      {
+       "draft": "Hebrews, by prefixing their prosthetic",
+       "reread": "Hebrews, by prefixing their prosthetic",
+       "status": "agreed",
+       "text": "Hebrews, by prefixing their prosthetic"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1065,
+      "y": 456,
+      "width": 996,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r00-b01-996x236+1065+456-x2.png",
+     "image_sha256": "1a18cf04af81d93ffa0a1319163a55baa6003a325f8af9beb75e9f3f863acae2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Aleph, made אֲחַשְׁוֵרוֹשׁ Ahashverosh, and",
+       "the Greeks Ξέρξης. See St. Martin in",
+       "Journal Asiatique III. p. 85. Champol-",
+       "lion Précis du Système hiéroglyphique,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3fcf6384-7747-4124-9057-4fd14bbf1ce2",
+      "duration_api_ms": 14222,
+      "cost_usd_list": 0.07745350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2781,
+      "output_tokens": 412
+     },
+     "lines": [
+      {
+       "draft": "Aleph, made אֲחַשְׁוֵרוֹשׁ Ahashverosh, and",
+       "reread": "Aleph, made אֲחַשְׁוֵרוֹשׁ Ahashverosh, and",
+       "status": "agreed",
+       "text": "Aleph, made אֲחַשְׁוֵרוֹשׁ Ahashverosh, and"
+      },
+      {
+       "draft": "the Greeks Ξέρξης. See St. Martin in",
+       "reread": "the Greeks Ξέρξης. See St. Martin in",
+       "status": "agreed",
+       "text": "the Greeks Ξέρξης. See St. Martin in"
+      },
+      {
+       "draft": "Journal Asiatique III. p. 85. Champol-",
+       "reread": "Journal Asiatique III. p. 85. Champol-",
+       "status": "agreed",
+       "text": "Journal Asiatique III. p. 85. Champol-"
+      },
+      {
+       "draft": "lion Précis du Système hiéroglyphique,",
+       "reread": "lion Précis du Système hiéroglyphique,",
+       "status": "agreed",
+       "text": "lion Précis du Système hiéroglyphique,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1065,
+      "y": 676,
+      "width": 996,
+      "height": 136
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r00-b02-996x136+1065+676-x2.png",
+     "image_sha256": "4fecb526763e5615861415fcc293ad27e561855b7100e9feed803ae3aaf8ab8a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Tableau général, Tab. 7. 2. p. 24. Las-",
+       "sen üb. d. Keilschrift p. 165 ; also in Zeit-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5938dbb6-07c0-4ce3-ac42-2dd41fa93c63",
+      "duration_api_ms": 9227,
+      "cost_usd_list": 0.05832349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2277,
+      "output_tokens": 231
+     },
+     "lines": [
+      {
+       "draft": "Tableau général, Tab. 7. 2. p. 24. Las-",
+       "reread": "Tableau général, Tab. 7. 2. p. 24. Las-",
+       "status": "agreed",
+       "text": "Tableau général, Tab. 7. 2. p. 24. Las-"
+      },
+      {
+       "draft": "sen üb. d. Keilschrift p. 165 ; also in Zeit-",
+       "reread": "sen üb. d. Keilschrift p. 165 ; also in Zeit-",
+       "status": "agreed",
+       "text": "sen üb. d. Keilschrift p. 165; also in Zeit-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1065,
+    "y": 792,
+    "width": 996,
+    "height": 700
+   },
+   "draft_lines": [
+    "schr. f. Kunde des Morgenl. VI. p. 124 sq.",
+    "אֲחַשְׁרֹשׁ Esth. 10, 1 in Chethib, for",
+    "אֲחַשְׁוֵרוֹשׁ.",
+    "אֲחַשְׁתָּרִי (prob. mule-driver, a name",
+    "of Persian origin, see next art.) pr. n. m.",
+    "Ahashtari, 1 Chr. 4, 6.",
+    "אֲחַשְׁתְּרָנִים plur. m. mules, Pers. استار",
+    "estâr, استر ester, a mule, Sanscr. açwa-",
+    "tara. Esth. 8, 10, where it is rendered",
+    "definite by the addition sons of mares.—",
+    "The ָן is appended, as in אֲחַשְׁדַּרְפְּנִים."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1065,
+      "y": 784,
+      "width": 996,
+      "height": 287
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r01-b00-996x287+1065+784-x2.png",
+     "image_sha256": "50a13ce1243ecd862f7d079aff80864fcc3dbe037862c3447d2d2331d6505851",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "schr. f. Kunde des Morgenl. VI. p. 124 sq.",
+       "אֲחַשְׁרֹשׁ Esth. 10, 1 in Chethib, for",
+       "אֲחַשְׁוֵרוֹשׁ.",
+       "אֲחַשְׁתְּרִי (prob. mule-driver, a name"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "833971fd-9519-4ee3-b6aa-774e5f832d81",
+      "duration_api_ms": 14064,
+      "cost_usd_list": 0.0924635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3069,
+      "output_tokens": 597
+     },
+     "lines": [
+      {
+       "draft": "schr. f. Kunde des Morgenl. VI. p. 124 sq.",
+       "reread": "schr. f. Kunde des Morgenl. VI. p. 124 sq.",
+       "status": "agreed",
+       "text": "schr. f. Kunde des Morgenl. VI. p. 124 sq."
+      },
+      {
+       "draft": "אֲחַשְׁרֹשׁ Esth. 10, 1 in Chethib, for",
+       "reread": "אֲחַשְׁרֹשׁ Esth. 10, 1 in Chethib, for",
+       "status": "agreed",
+       "text": "אֲחַשְׁרֹשׁ Esth. 10, 1 in Chethib, for"
+      },
+      {
+       "draft": "אֲחַשְׁוֵרוֹשׁ.",
+       "reread": "אֲחַשְׁוֵרוֹשׁ.",
+       "status": "agreed",
+       "text": "אֲחַשְׁוֵרוֹשׁ."
+      },
+      {
+       "draft": "אֲחַשְׁתָּרִי (prob. mule-driver, a name",
+       "reread": "אֲחַשְׁתְּרִי (prob. mule-driver, a name",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "אֲחַשְׁתָּרִי (prob. mule-driver, a name",
+        "verdict": "a",
+        "note": "Under the tav the print shows a T-shaped qamets (bar with stem), not two stacked sheva dots; sheva is under the shin only. Reading A matches; B misreads qamets as sheva.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "61e42e6e-dcd0-4a75-ba9d-c6ce1184f96e",
+        "duration_api_ms": 13754,
+        "cost_usd_list": 0.09225575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3583,
+        "cache_creation_input_tokens": 3006,
+        "output_tokens": 618
+       },
+       "text": "אֲחַשְׁתָּרִי (prob. mule-driver, a name"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1065,
+      "y": 1055,
+      "width": 996,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r01-b01-996x263+1065+1055-x2.png",
+     "image_sha256": "73283fa52858e27d26db0fb5570cda2c3f0c7713880165ef0a245570575d0108",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of Persian origin, see next art.) pr. n. m.",
+       "Ahashtari, 1 Chr. 4, 6.",
+       "אֲחַשְׁתְּרָנִים plur. m. mules, Pers. استار",
+       "estâr, استر ester, a mule, Sanscr. açwa-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13a31b3f-a386-4bad-898c-7b74a6bc542a",
+      "duration_api_ms": 13097,
+      "cost_usd_list": 0.08017375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2927,
+      "output_tokens": 408
+     },
+     "lines": [
+      {
+       "draft": "of Persian origin, see next art.) pr. n. m.",
+       "reread": "of Persian origin, see next art.) pr. n. m.",
+       "status": "agreed",
+       "text": "of Persian origin, see next art.) pr. n. m."
+      },
+      {
+       "draft": "Ahashtari, 1 Chr. 4, 6.",
+       "reread": "Ahashtari, 1 Chr. 4, 6.",
+       "status": "agreed",
+       "text": "Ahashtari, 1 Chr. 4, 6."
+      },
+      {
+       "draft": "אֲחַשְׁתְּרָנִים plur. m. mules, Pers. استار",
+       "reread": "אֲחַשְׁתְּרָנִים plur. m. mules, Pers. استار",
+       "status": "agreed",
+       "text": "אֲחַשְׁתְּרָנִים plur. m. mules, Pers. استار"
+      },
+      {
+       "draft": "estâr, استر ester, a mule, Sanscr. açwa-",
+       "reread": "estâr, استر ester, a mule, Sanscr. açwa-",
+       "status": "agreed",
+       "text": "estâr, استر ester, a mule, Sanscr. açwa-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1065,
+      "y": 1302,
+      "width": 996,
+      "height": 198
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r01-b02-996x198+1065+1302-x2.png",
+     "image_sha256": "56587a7bf4c41c4ccdd4a3be47e0d1deb996c56e1c0ad3294f5bb751d8a4e553",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tara. Esth. 8, 10, where it is rendered",
+       "definite by the addition sons of mares.—",
+       "The ־ָן is appended, as in אֲחַשְׁדַּרְפְּנִים."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e63798d2-9a3a-43de-b5d5-ad4f1ab8df27",
+      "duration_api_ms": 14512,
+      "cost_usd_list": 0.08716375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2639,
+      "output_tokens": 663
+     },
+     "lines": [
+      {
+       "draft": "tara. Esth. 8, 10, where it is rendered",
+       "reread": "tara. Esth. 8, 10, where it is rendered",
+       "status": "agreed",
+       "text": "tara. Esth. 8, 10, where it is rendered"
+      },
+      {
+       "draft": "definite by the addition sons of mares.—",
+       "reread": "definite by the addition sons of mares.—",
+       "status": "agreed",
+       "text": "definite by the addition sons of mares.—"
+      },
+      {
+       "draft": "The ָן is appended, as in אֲחַשְׁדַּרְפְּנִים.",
+       "reread": "The ־ָן is appended, as in אֲחַשְׁדַּרְפְּנִים.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "The ־ָן is appended, as in אֲחַשְׁדַּרְפְּנִים.",
+        "verdict": "b",
+        "note": "The print shows a horizontal placeholder stroke (maqaf-like dash) carrying the qamets before the final nun, i.e. \"־ָן\", not a bare qamets on the nun; the Hebrew word's points otherwise match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8d34df05-8791-4dd6-a69d-1fd891483ad1",
+        "duration_api_ms": 12436,
+        "cost_usd_list": 0.07800850000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2586,
+        "output_tokens": 501
+       },
+       "text": "The ־ָן is appended, as in אֲחַשְׁדַּרְפְּנִים."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1065,
+    "y": 1480,
+    "width": 996,
+    "height": 992
+   },
+   "draft_lines": [
+    "אַחַת see אֶחָד.",
+    "אַט subst. m. (r. אָטַט) 1. a gentle",
+    "sound, murmur, whisper, and plur. אִטִּים",
+    "concr. mutterers, whisperers, i. e. νεκρο-",
+    "μάντεις, necromancers, ventriloquists, im-",
+    "itating artificially the supposed murmur",
+    "or thin voice of the shades or manes, Is.",
+    "19, 3. See under אוֹב.",
+    "2. a going softly, gentle motion;",
+    "whence often adverbially, אַט, לְאַט, לָאַט,",
+    "softly, gently, slowly, e. g. of the still slow",
+    "gait of a mourner, 1 K. 21, 27; of water",
+    "gently flowing, Is. 8, 6. So לְאִטִּי pr. in",
+    "my slow gait, slowly, at my convenience,",
+    "Gen. 33, 14.—Also of the manner of act-",
+    "ing and speaking; 2 Sam. 18, 5 לְאַט לִי",
+    "לַנַּעַר (deal) gently with the young man"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1065,
+      "y": 1472,
+      "width": 996,
+      "height": 339
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r02-b00-996x339+1065+1472-x2.png",
+     "image_sha256": "066f9b4684b2d5f0fc2ae0e764890235ad344cab8ab6349684cca2194c3ac1ca",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַחַת see אֶחָד.",
+       "אַט subst. m. (r. אָטַט) 1. a gentle",
+       "sound, murmur, whisper, and plur. אִטִּים",
+       "concr. mutterers, whisperers, i. e. νεκρο-",
+       "μάντεις, necromancers, ventriloquists, im-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1da91d1e-e703-4f1c-b3ef-ed3ab5d99169",
+      "duration_api_ms": 12345,
+      "cost_usd_list": 0.09391375000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 3359,
+      "output_tokens": 510
+     },
+     "lines": [
+      {
+       "draft": "אַחַת see אֶחָד.",
+       "reread": "אַחַת see אֶחָד.",
+       "status": "agreed",
+       "text": "אַחַת see אֶחָד."
+      },
+      {
+       "draft": "אַט subst. m. (r. אָטַט) 1. a gentle",
+       "reread": "אַט subst. m. (r. אָטַט) 1. a gentle",
+       "status": "agreed",
+       "text": "אַט subst. m. (r. אָטַט) 1. a gentle"
+      },
+      {
+       "draft": "sound, murmur, whisper, and plur. אִטִּים",
+       "reread": "sound, murmur, whisper, and plur. אִטִּים",
+       "status": "agreed",
+       "text": "sound, murmur, whisper, and plur. אִטִּים"
+      },
+      {
+       "draft": "concr. mutterers, whisperers, i. e. νεκρο-",
+       "reread": "concr. mutterers, whisperers, i. e. νεκρο-",
+       "status": "agreed",
+       "text": "concr. mutterers, whisperers, i. e. νεκρο-"
+      },
+      {
+       "draft": "μάντεις, necromancers, ventriloquists, im-",
+       "reread": "μάντεις, necromancers, ventriloquists, im-",
+       "status": "agreed",
+       "text": "μάντεις, necromancers, ventriloquists, im-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1065,
+      "y": 1795,
+      "width": 996,
+      "height": 296
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r02-b01-996x296+1065+1795-x2.png",
+     "image_sha256": "537c71f225171e07d8d7cf8ab10afd0b61df7c60d9e89b06c81e32248475c510",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "itating artificially the supposed murmur",
+       "or thin voice of the shades or manes, Is.",
+       "19, 3. See under אוֹב.",
+       "2. a going softly, gentle motion;",
+       "whence often adverbially, אַט, לְאַט, לָאַט,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b4cb412e-01ba-43fd-b197-981ae3c54570",
+      "duration_api_ms": 8752,
+      "cost_usd_list": 0.08834375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 3143,
+      "output_tokens": 485
+     },
+     "lines": [
+      {
+       "draft": "itating artificially the supposed murmur",
+       "reread": "itating artificially the supposed murmur",
+       "status": "agreed",
+       "text": "itating artificially the supposed murmur"
+      },
+      {
+       "draft": "or thin voice of the shades or manes, Is.",
+       "reread": "or thin voice of the shades or manes, Is.",
+       "status": "agreed",
+       "text": "or thin voice of the shades or manes, Is."
+      },
+      {
+       "draft": "19, 3. See under אוֹב.",
+       "reread": "19, 3. See under אוֹב.",
+       "status": "agreed",
+       "text": "19, 3. See under אוֹב."
+      },
+      {
+       "draft": "2. a going softly, gentle motion;",
+       "reread": "2. a going softly, gentle motion;",
+       "status": "agreed",
+       "text": "2. a going softly, gentle motion;"
+      },
+      {
+       "draft": "whence often adverbially, אַט, לְאַט, לָאַט,",
+       "reread": "whence often adverbially, אַט, לְאַט, לָאַט,",
+       "status": "agreed",
+       "text": "whence often adverbially, אַט, לְאַט, לָאַט,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1065,
+      "y": 2075,
+      "width": 996,
+      "height": 405
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r02-b02-996x405+1065+2075-x2.png",
+     "image_sha256": "2b98184f000e040866dcd5c919a575f6d5e588c26ddf5090afb762101ce539f4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "softly, gently, slowly, e. g. of the still slow",
+       "gait of a mourner, 1 K. 21, 27 ; of water",
+       "gently flowing, Is. 8, 6. So לְאִטִּי pr. in",
+       "my slow gait, slowly, at my convenience,",
+       "Gen. 33, 14.—Also of the manner of act-",
+       "ing and speaking ; 2 Sam. 18, 5 לְאַט לִי",
+       "לַנַּעַר (deal) gently with the young man"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "48e194d2-afd6-4f4a-8a83-4445d80c71bb",
+      "duration_api_ms": 14608,
+      "cost_usd_list": 0.10297375000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 3647,
+      "output_tokens": 576
+     },
+     "lines": [
+      {
+       "draft": "softly, gently, slowly, e. g. of the still slow",
+       "reread": "softly, gently, slowly, e. g. of the still slow",
+       "status": "agreed",
+       "text": "softly, gently, slowly, e. g. of the still slow"
+      },
+      {
+       "draft": "gait of a mourner, 1 K. 21, 27; of water",
+       "reread": "gait of a mourner, 1 K. 21, 27 ; of water",
+       "status": "agreed",
+       "text": "gait of a mourner, 1 K. 21, 27; of water"
+      },
+      {
+       "draft": "gently flowing, Is. 8, 6. So לְאִטִּי pr. in",
+       "reread": "gently flowing, Is. 8, 6. So לְאִטִּי pr. in",
+       "status": "agreed",
+       "text": "gently flowing, Is. 8, 6. So לְאִטִּי pr. in"
+      },
+      {
+       "draft": "my slow gait, slowly, at my convenience,",
+       "reread": "my slow gait, slowly, at my convenience,",
+       "status": "agreed",
+       "text": "my slow gait, slowly, at my convenience,"
+      },
+      {
+       "draft": "Gen. 33, 14.—Also of the manner of act-",
+       "reread": "Gen. 33, 14.—Also of the manner of act-",
+       "status": "agreed",
+       "text": "Gen. 33, 14.—Also of the manner of act-"
+      },
+      {
+       "draft": "ing and speaking; 2 Sam. 18, 5 לְאַט לִי",
+       "reread": "ing and speaking ; 2 Sam. 18, 5 לְאַט לִי",
+       "status": "agreed",
+       "text": "ing and speaking; 2 Sam. 18, 5 לְאַט לִי"
+      },
+      {
+       "draft": "לַנַּעַר (deal) gently with the young man",
+       "reread": "לַנַּעַר (deal) gently with the young man",
+       "status": "agreed",
+       "text": "לַנַּעַר (deal) gently with the young man"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1065,
+    "y": 2460,
+    "width": 996,
+    "height": 1008
+   },
+   "draft_lines": [
+    "for my sake ! Job 15, 11 וְדָבָר לָאַט עִמָּךְ",
+    "and words gently (spoken) towards thee.",
+    "* אָטַד a root not in use; Arab. to be",
+    "fast, firm; Conj. II, to make fast, to",
+    "confirm.—Hence",
+    "אָטָד m. the southern buckthorn, Christ's",
+    "thorn, Rhamnus paliurus Linn. so called",
+    "from the firmness of its roots, Judg. 9, 14.",
+    "15. Ps. 58, 10. Arab. أَطَلٌ, i. q. the more",
+    "usual عَوْسَجٌ.",
+    "אֵטוּן m. (by Syriasm for אָטוּן, r. אָטַן)",
+    "thread, yarn, of linen or cotton; in Chald."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1065,
+      "y": 2452,
+      "width": 996,
+      "height": 279
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r03-b00-996x279+1065+2452-x2.png",
+     "image_sha256": "a88e33a3430f3b8b6aac430a81d07feb4ddeb9489f432e63b67591eaa36b3ab1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for my sake ! Job 15, 11 וְדָבָר לָאַט עִמָּךְ",
+       "and words gently (spoken) towards thee.",
+       "* אָטַד a root not in use ; Arab. to be",
+       "fast, firm ; Conj. II, to make fast, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b9a49ec-1753-481e-a9c8-c0b97fecd91f",
+      "duration_api_ms": 13125,
+      "cost_usd_list": 0.09016375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2999,
+      "output_tokens": 579
+     },
+     "lines": [
+      {
+       "draft": "for my sake ! Job 15, 11 וְדָבָר לָאַט עִמָּךְ",
+       "reread": "for my sake ! Job 15, 11 וְדָבָר לָאַט עִמָּךְ",
+       "status": "agreed",
+       "text": "for my sake! Job 15, 11 וְדָבָר לָאַט עִמָּךְ"
+      },
+      {
+       "draft": "and words gently (spoken) towards thee.",
+       "reread": "and words gently (spoken) towards thee.",
+       "status": "agreed",
+       "text": "and words gently (spoken) towards thee."
+      },
+      {
+       "draft": "* אָטַד a root not in use; Arab. to be",
+       "reread": "* אָטַד a root not in use ; Arab. to be",
+       "status": "agreed",
+       "text": "* אָטַד a root not in use; Arab. to be"
+      },
+      {
+       "draft": "fast, firm; Conj. II, to make fast, to",
+       "reread": "fast, firm ; Conj. II, to make fast, to",
+       "status": "agreed",
+       "text": "fast, firm; Conj. II, to make fast, to"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1065,
+      "y": 2715,
+      "width": 996,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r03-b01-996x256+1065+2715-x2.png",
+     "image_sha256": "f32703032ebc6bdf1ee8c0d988a7253c7ce36ff8a865e8415d1c552c125c589a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "confirm.—Hence",
+       "אָטָד m. the southern buckthorn, Christ's",
+       "thorn, Rhamnus paliurus Linn. so called",
+       "from the firmness of its roots, Judg. 9, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dbfca229-d33f-43d9-a64b-b20919b09532",
+      "duration_api_ms": 9330,
+      "cost_usd_list": 0.07237375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2927,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "confirm.—Hence",
+       "reread": "confirm.—Hence",
+       "status": "agreed",
+       "text": "confirm.—Hence"
+      },
+      {
+       "draft": "אָטָד m. the southern buckthorn, Christ's",
+       "reread": "אָטָד m. the southern buckthorn, Christ's",
+       "status": "agreed",
+       "text": "אָטָד m. the southern buckthorn, Christ's"
+      },
+      {
+       "draft": "thorn, Rhamnus paliurus Linn. so called",
+       "reread": "thorn, Rhamnus paliurus Linn. so called",
+       "status": "agreed",
+       "text": "thorn, Rhamnus paliurus Linn. so called"
+      },
+      {
+       "draft": "from the firmness of its roots, Judg. 9, 14.",
+       "reread": "from the firmness of its roots, Judg. 9, 14.",
+       "status": "agreed",
+       "text": "from the firmness of its roots, Judg. 9, 14."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1065,
+      "y": 2955,
+      "width": 996,
+      "height": 221
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r03-b02-996x221+1065+2955-x2.png",
+     "image_sha256": "75f0232d80777be5d912702f61813f37391aebfb34372fc0623a811ebb0ad09a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "15. Ps. 58, 10. Arab. أَطَلٌ, i. q. the more",
+       "usual عَوْسَجٌ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "76c68bd1-22de-4036-aca3-ec184ca000ae",
+      "duration_api_ms": 14852,
+      "cost_usd_list": 0.08050375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 501
+     },
+     "lines": [
+      {
+       "draft": "15. Ps. 58, 10. Arab. أَطَلٌ, i. q. the more",
+       "reread": "15. Ps. 58, 10. Arab. أَطَلٌ, i. q. the more",
+       "status": "agreed",
+       "text": "15. Ps. 58, 10. Arab. أَطَلٌ, i. q. the more"
+      },
+      {
+       "draft": "usual عَوْسَجٌ.",
+       "reread": "usual عَوْسَجٌ.",
+       "status": "agreed",
+       "text": "usual عَوْسَجٌ."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1065,
+      "y": 3160,
+      "width": 996,
+      "height": 316
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0054/pass2/c1-r03-b03-996x316+1065+3160-x2.png",
+     "image_sha256": "e4abca5a66a45915790a7d9f59eab69dacba45660281a366a35f1884789faf87",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵטוּן m. (by Syriasm for אֲטוּן, r. אָטַן)",
+       "thread, yarn, of linen or cotton; in Chald."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "db763677-a66b-430a-8edc-3f694443aa6f",
+      "duration_api_ms": 18630,
+      "cost_usd_list": 0.09948375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 3215,
+      "output_tokens": 679
+     },
+     "lines": [
+      {
+       "draft": "אֵטוּן m. (by Syriasm for אָטוּן, r. אָטַן)",
+       "reread": "אֵטוּן m. (by Syriasm for אֲטוּן, r. אָטַן)",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b03",
+       "judgement": {
+        "text": "אֵטוּן m. (by Syriasm for אֲטוּן, r. אָטַן)",
+        "verdict": "b",
+        "note": "The decisive difference is the vowel under the aleph of the second Hebrew word: the print shows a compound shewa (two vertical dots plus a short bar = hataf patah, אֲ), not a plain qamets as in Reading A. First word has tsere (two horizontal dots), root has qamets + patah; both readings agree there.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9980aed6-7d3e-4358-9d8e-1c1178257fc6",
+        "duration_api_ms": 15293,
+        "cost_usd_list": 0.09834875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3595,
+        "cache_creation_input_tokens": 3163,
+        "output_tokens": 677
+       },
+       "text": "אֵטוּן m. (by Syriasm for אֲטוּן, r. אָטַן)"
+      },
+      {
+       "draft": "thread, yarn, of linen or cotton; in Chald.",
+       "reread": "thread, yarn, of linen or cotton; in Chald.",
+       "status": "agreed",
+       "text": "thread, yarn, of linen or cotton; in Chald."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "row": 4,
+   "bounds": {
+    "x": 1065,
+    "y": 3456,
+    "width": 996,
+    "height": 32
+   },
+   "draft_lines": [],
+   "bands": []
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אַחַר 38 אטר",
+   "status": "adjudicated",
+   "draft": "אֶחָד 38 אטל",
+   "reread": "אַחַר 38 אטר",
+   "verdict": "b",
+   "note": "The left header word ends in resh, not dalet (no right-angle shoulder/foot), and the middle letter is a het with its gap at the top, not a tav: אַחַר. The right header word is unpointed and its final letter is a resh (rounded top, straight descender), not a lamed — no ascender above the line: אטר. Reading B matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Concr. those who come after, de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "scendants, posterity, Ps. 109, 13. Am. 4,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. 9, 1. Dan. 11, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אַחֲרִית Chald. f. i. q. Heb. אַחֲרִית no.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. b. Dan. 2, 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אָחֳרָן Chald. adj. another, alius, Dan.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲחֹרַנִּית adv. (r. אָחַר) backwards,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Gen. 9, 23. 1 Sam. 4, 18. Comp. אָחוֹר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲחַשְׁדַּרְפְּנִים m. plur. Esth. 3, 12. 8, 9.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "9, 3. Ezra 8, 36, satraps, the governors",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "or viceroys of the large provinces among",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the ancient Persians, possessing both",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "civil and military power, and being in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the provinces the representatives of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "sovereign, whose state and splendour",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "they also rivalled. Single parts or sub-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "divisions of these provinces were under",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "procurators or prefects, פַּחוֹת; the sa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "traps governed only whole provinces.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "See Brisson de regio Pers. principatu I.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "§ 168. Heeren Ideen T. I. p. 489 sq. ed.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4.—The genuine form of this name,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "which has lately been found in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "inscriptions of ancient India, is kśatrapa",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "i. e. warrior of the host; see Benfey in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gött. Gel. Anz. 1839. p. 805 sq. Lassen",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Zeitschr. f. d. Morgenl. III. p. 161. To",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "this harsher form corresponds the Greek",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ἐξατράπης, ἐξαιθράπης, (Boeckh Corp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Inscr. no. 2691. c,) whence arose by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "degrees the softer σατράπης. The ־ָן is",
+   "status": "adjudicated",
+   "draft": "degrees the softer σατράπης. The ־ָן is",
+   "reread": "degrees the softer σατράπης. The ָן is",
+   "verdict": "a",
+   "note": "The printed line shows a short horizontal stroke (maqaf-style affix dash) preceding the qamats and final nun, marking ־ָן as a suffix; Reading B omits this dash.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "appended. Comp. אֲחַשְׁתְּרָנִים.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲחַשְׁדַּרְפְּנִין Chald. m. plur. i. q. Heb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Dan. 3, 2. 3. 27. 6, 2. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲחַשְׁוֵרוֹשׁ Ahasuerus, the Hebrew",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "form of the name Xerxes, as it would",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "seem. It is found Esth. 1, 1, and often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "in this book; also Ezra 4, 6, where the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "order of time would require it to be un-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "derstood of Cambyses; and further in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Dan. 9, 1, where it stands for Astyages,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the father of Darius the Mede. The true",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "native orthography of the name Xerxes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "has recently been brought to light from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the cuneiform inscriptions; where it is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "written kh-sh-y-â-r-sh-â, which seems",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to correspond to the modern Persian",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "شيرشاه i. e. lion-king; since it is cer-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tain that for the softer pronunciation of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "s and sh, as uttered by the modern Per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sians, the ancient Persians had far harsh-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "er sounds, as in the words khshayathiya",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. q. Shah king, khshatrap i. q. Satrap.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "From this ancient harsher form, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Hebrews, by prefixing their prosthetic",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Aleph, made אֲחַשְׁוֵרוֹשׁ Ahashverosh, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the Greeks Ξέρξης. See St. Martin in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Journal Asiatique III. p. 85. Champol-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lion Précis du Système hiéroglyphique,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Tableau général, Tab. 7. 2. p. 24. Las-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "sen üb. d. Keilschrift p. 165; also in Zeit-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "schr. f. Kunde des Morgenl. VI. p. 124 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲחַשְׁרֹשׁ Esth. 10, 1 in Chethib, for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲחַשְׁוֵרוֹשׁ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲחַשְׁתָּרִי (prob. mule-driver, a name",
+   "status": "adjudicated",
+   "draft": "אֲחַשְׁתָּרִי (prob. mule-driver, a name",
+   "reread": "אֲחַשְׁתְּרִי (prob. mule-driver, a name",
+   "verdict": "a",
+   "note": "Under the tav the print shows a T-shaped qamets (bar with stem), not two stacked sheva dots; sheva is under the shin only. Reading A matches; B misreads qamets as sheva.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of Persian origin, see next art.) pr. n. m.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ahashtari, 1 Chr. 4, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲחַשְׁתְּרָנִים plur. m. mules, Pers. استار",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "estâr, استر ester, a mule, Sanscr. açwa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "tara. Esth. 8, 10, where it is rendered",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "definite by the addition sons of mares.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "The ־ָן is appended, as in אֲחַשְׁדַּרְפְּנִים.",
+   "status": "adjudicated",
+   "draft": "The ָן is appended, as in אֲחַשְׁדַּרְפְּנִים.",
+   "reread": "The ־ָן is appended, as in אֲחַשְׁדַּרְפְּנִים.",
+   "verdict": "b",
+   "note": "The print shows a horizontal placeholder stroke (maqaf-like dash) carrying the qamets before the final nun, i.e. \"־ָן\", not a bare qamets on the nun; the Hebrew word's points otherwise match both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַחַת see אֶחָד.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַט subst. m. (r. אָטַט) 1. a gentle",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "sound, murmur, whisper, and plur. אִטִּים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "concr. mutterers, whisperers, i. e. νεκρο-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "μάντεις, necromancers, ventriloquists, im-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "itating artificially the supposed murmur",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "or thin voice of the shades or manes, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "19, 3. See under אוֹב.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. a going softly, gentle motion;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "whence often adverbially, אַט, לְאַט, לָאַט,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "softly, gently, slowly, e. g. of the still slow",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "gait of a mourner, 1 K. 21, 27; of water",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "gently flowing, Is. 8, 6. So לְאִטִּי pr. in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "my slow gait, slowly, at my convenience,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Gen. 33, 14.—Also of the manner of act-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ing and speaking; 2 Sam. 18, 5 לְאַט לִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "לַנַּעַר (deal) gently with the young man",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "for my sake! Job 15, 11 וְדָבָר לָאַט עִמָּךְ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "and words gently (spoken) towards thee.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אָטַד a root not in use; Arab. to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "fast, firm; Conj. II, to make fast, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "confirm.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָטָד m. the southern buckthorn, Christ's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "thorn, Rhamnus paliurus Linn. so called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "from the firmness of its roots, Judg. 9, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "15. Ps. 58, 10. Arab. أَطَلٌ, i. q. the more",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "usual عَوْسَجٌ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֵטוּן m. (by Syriasm for אֲטוּן, r. אָטַן)",
+   "status": "adjudicated",
+   "draft": "אֵטוּן m. (by Syriasm for אָטוּן, r. אָטַן)",
+   "reread": "אֵטוּן m. (by Syriasm for אֲטוּן, r. אָטַן)",
+   "verdict": "b",
+   "note": "The decisive difference is the vowel under the aleph of the second Hebrew word: the print shows a compound shewa (two vertical dots plus a short bar = hataf patah, אֲ), not a plain qamets as in Reading A. First word has tsere (two horizontal dots), root has qamets + patah; both readings agree there.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "thread, yarn, of linen or cotton; in Chald.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 98,
+  "adjudicated": 5,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 0
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.6629
+}

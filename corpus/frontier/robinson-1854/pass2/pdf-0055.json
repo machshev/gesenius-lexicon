@@ -1,0 +1,2731 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 55,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0055.png",
+ "raster_sha256": "18fd9fcf819823d59a375a304114bae34093455dec6c724f9470c6c4b5da7dd8",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0055.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:28:50+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 89,
+    "y": 111,
+    "width": 1776,
+    "height": 67
+   },
+   "draft_lines": [
+    "אטם",
+    "39",
+    "אי"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 89,
+      "y": 109,
+      "width": 1776,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/header-b00-1776x71+89+109-x2.png",
+     "image_sha256": "e3440969ae97c983d0fe214a303f36374ec299a814dd1c33446d45322187b847",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אטט 39 אי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6deb551a-1fdc-419b-8fbb-474b62a3f9c8",
+      "duration_api_ms": 5112,
+      "cost_usd_list": 0.0481325,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 220
+     },
+     "lines": [
+      {
+       "draft": "אטם 39 אי",
+       "reread": "אטט 39 אי",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אטט 39 אי",
+        "verdict": "b",
+        "note": "The leftmost letter of the left header word is printed with the open top and inward curl of a tet, identical to the middle letter, not the closed square of a final mem; the header reads אטט (apparent typesetting error for אטם) — Reading B matches what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4afc2f19-b061-4d0a-926c-0d7244221105",
+        "duration_api_ms": 12451,
+        "cost_usd_list": 0.07090524999999999,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3541,
+        "cache_creation_input_tokens": 1709,
+        "output_tokens": 716
+       },
+       "text": "אטט 39 אי"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 89,
+    "y": 157,
+    "width": 874,
+    "height": 837
+   },
+   "draft_lines": [
+    "sinew, string. Once Prov. 7, 16 tapes-",
+    "try, coverings, of Egyptian yarn, which",
+    "was distinguished for its firmness and",
+    "beauty. Comp. Celsii Hierob. I. 89 sq.",
+    "A. Schultens compares Gr. ὀθόνη, ὀθό-",
+    "νιον, linen cloth.",
+    "* אָטַט a root not in use. 1. i. q. أَطَّ",
+    "to utter a gentle sound, to murmur,",
+    "spoken of the sighing of the camel when",
+    "weary ; also of the rumbling of the",
+    "bowels when one is hungry, τρύζειν.",
+    "See Comment. on Is. 19, 3.",
+    "2. to go softly, gently, see אַט no. 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 89,
+      "y": 149,
+      "width": 874,
+      "height": 303
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r00-b00-874x303+89+149-x2.png",
+     "image_sha256": "07784f7dd378816ef910e1cc1259893e35cecf10c7eb009d12e2ce54e9020575",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sinew, string. Once Prov. 7, 16 tapes-",
+       "try, coverings, of Egyptian yarn, which",
+       "was distinguished for its firmness and",
+       "beauty. Comp. Celsii Hierob. I. 89 sq."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "750822ad-4727-486f-bd81-e00de6642749",
+      "duration_api_ms": 12293,
+      "cost_usd_list": 0.07290325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "sinew, string. Once Prov. 7, 16 tapes-",
+       "reread": "sinew, string. Once Prov. 7, 16 tapes-",
+       "status": "agreed",
+       "text": "sinew, string. Once Prov. 7, 16 tapes-"
+      },
+      {
+       "draft": "try, coverings, of Egyptian yarn, which",
+       "reread": "try, coverings, of Egyptian yarn, which",
+       "status": "agreed",
+       "text": "try, coverings, of Egyptian yarn, which"
+      },
+      {
+       "draft": "was distinguished for its firmness and",
+       "reread": "was distinguished for its firmness and",
+       "status": "agreed",
+       "text": "was distinguished for its firmness and"
+      },
+      {
+       "draft": "beauty. Comp. Celsii Hierob. I. 89 sq.",
+       "reread": "beauty. Comp. Celsii Hierob. I. 89 sq.",
+       "status": "agreed",
+       "text": "beauty. Comp. Celsii Hierob. I. 89 sq."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 89,
+      "y": 436,
+      "width": 874,
+      "height": 220
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r00-b01-874x220+89+436-x2.png",
+     "image_sha256": "291ac4aa7cbcd30e259fad478dbbc1b8bb755130ae03813d18a5275b033d5dda",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "A. Schultens compares Gr. ὀθόνη, ὀθό-",
+       "νιον, linen cloth.",
+       "* אָטַט a root not in use. 1. i. q. أَطَّ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a31c8659-e9d0-4108-8340-1e0f32ce86c9",
+      "duration_api_ms": 17498,
+      "cost_usd_list": 0.07594324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2563,
+      "output_tokens": 469
+     },
+     "lines": [
+      {
+       "draft": "A. Schultens compares Gr. ὀθόνη, ὀθό-",
+       "reread": "A. Schultens compares Gr. ὀθόνη, ὀθό-",
+       "status": "agreed",
+       "text": "A. Schultens compares Gr. ὀθόνη, ὀθό-"
+      },
+      {
+       "draft": "νιον, linen cloth.",
+       "reread": "νιον, linen cloth.",
+       "status": "agreed",
+       "text": "νιον, linen cloth."
+      },
+      {
+       "draft": "* אָטַט a root not in use. 1. i. q. أَطَّ",
+       "reread": "* אָטַט a root not in use. 1. i. q. أَطَّ",
+       "status": "agreed",
+       "text": "* אָטַט a root not in use. 1. i. q. أَطَّ"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 89,
+      "y": 640,
+      "width": 874,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r00-b02-874x234+89+640-x2.png",
+     "image_sha256": "f098f8e40a275d0f1bf2cb5d2771152b186d33904859470d7d2289427263b53e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to utter a gentle sound, to murmur,",
+       "spoken of the sighing of the camel when",
+       "weary ; also of the rumbling of the",
+       "bowels when one is hungry, τρύζειν."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5ac4945e-325a-4523-99f0-d2763adea597",
+      "duration_api_ms": 9789,
+      "cost_usd_list": 0.06575325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "to utter a gentle sound, to murmur,",
+       "reread": "to utter a gentle sound, to murmur,",
+       "status": "agreed",
+       "text": "to utter a gentle sound, to murmur,"
+      },
+      {
+       "draft": "spoken of the sighing of the camel when",
+       "reread": "spoken of the sighing of the camel when",
+       "status": "agreed",
+       "text": "spoken of the sighing of the camel when"
+      },
+      {
+       "draft": "weary ; also of the rumbling of the",
+       "reread": "weary ; also of the rumbling of the",
+       "status": "agreed",
+       "text": "weary; also of the rumbling of the"
+      },
+      {
+       "draft": "bowels when one is hungry, τρύζειν.",
+       "reread": "bowels when one is hungry, τρύζειν.",
+       "status": "agreed",
+       "text": "bowels when one is hungry, τρύζειν."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 89,
+      "y": 858,
+      "width": 874,
+      "height": 129
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r00-b03-874x129+89+858-x2.png",
+     "image_sha256": "cbb3a4fd60db1bc9298c9532a4d7a1a835667ef30b22a1c7d04e77de833ceecb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "See Comment. on Is. 19, 3.",
+       "2. to go softly, gently, see אַט no. 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "799df6a6-988e-43ca-842b-2d31f9f7dad9",
+      "duration_api_ms": 9618,
+      "cost_usd_list": 0.05553324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2185,
+      "output_tokens": 212
+     },
+     "lines": [
+      {
+       "draft": "See Comment. on Is. 19, 3.",
+       "reread": "See Comment. on Is. 19, 3.",
+       "status": "agreed",
+       "text": "See Comment. on Is. 19, 3."
+      },
+      {
+       "draft": "2. to go softly, gently, see אַט no. 2.",
+       "reread": "2. to go softly, gently, see אַט no. 2.",
+       "status": "agreed",
+       "text": "2. to go softly, gently, see אַט no. 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 89,
+    "y": 982,
+    "width": 874,
+    "height": 658
+   },
+   "draft_lines": [
+    "* אָטַם to shut, to close, to stop, e. g.",
+    "the mouth, the ears, Prov. 17, 28. 21, 13.",
+    "חַלּוֹנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+    "windows closed, sc. with bars or lattices,",
+    "which being let into the walls or beams",
+    "could not be opened and shut at pleas-",
+    "ure. Sept. θυρίδες δικτυωταί, Symm.",
+    "τοξικαί. Comp. 1 K. 6, 4. Kindr. is Arab.",
+    "أَطَمَ to cover a window with a curtain.",
+    "Hiph. id. Ps. 58, 5."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 89,
+      "y": 989,
+      "width": 874,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r01-b00-874x241+89+989-x2.png",
+     "image_sha256": "26ffaac10fed1e22ccd972a0eed28fb4a9a5c20ee1673261fd43596268b27db0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָטַם to shut, to close, to stop, e. g.",
+       "the mouth, the ears, Prov. 17, 28. 21, 13.",
+       "חַלֹּנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+       "windows closed, sc. with bars or lattices,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f0ffc83a-bdb7-4c72-b1ca-16a6e69ecb70",
+      "duration_api_ms": 24186,
+      "cost_usd_list": 0.10231325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 946
+     },
+     "lines": [
+      {
+       "draft": "* אָטַם to shut, to close, to stop, e. g.",
+       "reread": "* אָטַם to shut, to close, to stop, e. g.",
+       "status": "agreed",
+       "text": "* אָטַם to shut, to close, to stop, e. g."
+      },
+      {
+       "draft": "the mouth, the ears, Prov. 17, 28. 21, 13.",
+       "reread": "the mouth, the ears, Prov. 17, 28. 21, 13.",
+       "status": "agreed",
+       "text": "the mouth, the ears, Prov. 17, 28. 21, 13."
+      },
+      {
+       "draft": "חַלּוֹנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+       "reread": "חַלֹּנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "חַלֹּנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+        "verdict": "b",
+        "note": "The first word is printed defectively: after the dageshed lamed there is a holem dot directly above it, and the only vav in the word is the one before the final tav — five letters (ח ל נ ו ת), not six. Reading A's extra vav (חַלּוֹנוֹת) is not on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c81569a9-43a7-4b2f-ac6f-7337c89400d5",
+        "duration_api_ms": 17157,
+        "cost_usd_list": 0.08779275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3611,
+        "cache_creation_input_tokens": 2655,
+        "output_tokens": 669
+       },
+       "text": "חַלֹּנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,"
+      },
+      {
+       "draft": "windows closed, sc. with bars or lattices,",
+       "reread": "windows closed, sc. with bars or lattices,",
+       "status": "agreed",
+       "text": "windows closed, sc. with bars or lattices,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 89,
+      "y": 1214,
+      "width": 874,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r01-b01-874x243+89+1214-x2.png",
+     "image_sha256": "02a8c871b6da1a87685bd6b249da576b280a7fbcba112e8ad1a0a81f1cc381c9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which being let into the walls or beams",
+       "could not be opened and shut at pleas-",
+       "ure. Sept. θυρίδες δικτυωταί, Symm.",
+       "τοξικαί. Comp. 1 K. 6, 4. Kindr. is Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "30ece689-0465-4f0c-a5c0-ad5681de036e",
+      "duration_api_ms": 10441,
+      "cost_usd_list": 0.0682035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "which being let into the walls or beams",
+       "reread": "which being let into the walls or beams",
+       "status": "agreed",
+       "text": "which being let into the walls or beams"
+      },
+      {
+       "draft": "could not be opened and shut at pleas-",
+       "reread": "could not be opened and shut at pleas-",
+       "status": "agreed",
+       "text": "could not be opened and shut at pleas-"
+      },
+      {
+       "draft": "ure. Sept. θυρίδες δικτυωταί, Symm.",
+       "reread": "ure. Sept. θυρίδες δικτυωταί, Symm.",
+       "status": "agreed",
+       "text": "ure. Sept. θυρίδες δικτυωταί, Symm."
+      },
+      {
+       "draft": "τοξικαί. Comp. 1 K. 6, 4. Kindr. is Arab.",
+       "reread": "τοξικαί. Comp. 1 K. 6, 4. Kindr. is Arab.",
+       "status": "agreed",
+       "text": "τοξικαί. Comp. 1 K. 6, 4. Kindr. is Arab."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 89,
+      "y": 1441,
+      "width": 874,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r01-b02-874x188+89+1441-x2.png",
+     "image_sha256": "3fe3831f69293d1c074b40b054e16cd5861668878315805f12c65be442cf0477",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "أَطَّمَ to cover a window with a curtain.",
+       "Hiph. id. Ps. 58, 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "220344b7-d47b-4432-a27a-811b56662d20",
+      "duration_api_ms": 9823,
+      "cost_usd_list": 0.0655135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 310
+     },
+     "lines": [
+      {
+       "draft": "أَطَمَ to cover a window with a curtain.",
+       "reread": "أَطَّمَ to cover a window with a curtain.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "أَطَمَ to cover a window with a curtain.",
+        "verdict": "a",
+        "note": "The mark over the ṭāʾ is a plain fatḥa stroke, with no shadda printed; Reading B's doubled ṭāʾ (أَطَّمَ) is not in the image. Form I أَطَمَ as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3a5fb65d-7420-4235-85ed-c7ff8e899d38",
+        "duration_api_ms": 15426,
+        "cost_usd_list": 0.08401149999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2359,
+        "output_tokens": 712
+       },
+       "text": "أَطَمَ to cover a window with a curtain."
+      },
+      {
+       "draft": "Hiph. id. Ps. 58, 5.",
+       "reread": "Hiph. id. Ps. 58, 5.",
+       "status": "agreed",
+       "text": "Hiph. id. Ps. 58, 5."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 89,
+    "y": 1628,
+    "width": 874,
+    "height": 676
+   },
+   "draft_lines": [
+    "* אָטַן obsol. root, perh. to bind, to bind",
+    "together, kindr. with אָטַם. Arab. أَطُنٌ",
+    "tent-cords.—Hence אֵטוּן.",
+    "* אָטַר fut. יֶאְטַר, to shut, to close,",
+    "once Ps. 69, 16. Arab. أَطَرَ to shut",
+    "in, to enclose. Kindred roots are אָצַר,",
+    "חָצַר, עָצַר.—Hence the two following:",
+    "אָטֵר (shut up, bound, perh. dumb)",
+    "Ater, pr. n. m. a) Ezra 2, 16. Neh. 7,",
+    "21. b) Ezra 2, 42. Neh. 7, 45."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 89,
+      "y": 1639,
+      "width": 874,
+      "height": 300
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r02-b00-874x300+89+1639-x2.png",
+     "image_sha256": "9047136c8e56131846302ba6421008e029de68d3c6e8d37da089d70724019827",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָטַן obsol. root, perh. to bind, to bind",
+       "together, kindr. with אָטַם. Arab. أُطُنْ",
+       "tent-cords.—Hence אֵטוּן.",
+       "* אָטַר fut. יֶאְטַר, to shut, to close,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bbcf2d5d-3a84-4cb4-95e6-a490061146b9",
+      "duration_api_ms": 26428,
+      "cost_usd_list": 0.1159935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 1118
+     },
+     "lines": [
+      {
+       "draft": "* אָטַן obsol. root, perh. to bind, to bind",
+       "reread": "* אָטַן obsol. root, perh. to bind, to bind",
+       "status": "agreed",
+       "text": "* אָטַן obsol. root, perh. to bind, to bind"
+      },
+      {
+       "draft": "together, kindr. with אָטַם. Arab. أَطُنٌ",
+       "reread": "together, kindr. with אָטַם. Arab. أُطُنْ",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "together, kindr. with אָטַם. Arab. أَطُنٌ",
+        "verdict": "a",
+        "note": "Final nūn carries the printed double-ḍamma tanwīn (ٌ), not a sukūn as in B; the hamza over the alif has a fatḥa stroke, not a ḍamma. A matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0c50483f-c46d-4f58-bed9-273db25150c7",
+        "duration_api_ms": 40015,
+        "cost_usd_list": 0.1709345,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3578,
+        "cache_creation_input_tokens": 2875,
+        "output_tokens": 2244
+       },
+       "text": "together, kindr. with אָטַם. Arab. أَطُنٌ"
+      },
+      {
+       "draft": "tent-cords.—Hence אֵטוּן.",
+       "reread": "tent-cords.—Hence אֵטוּן.",
+       "status": "agreed",
+       "text": "tent-cords.—Hence אֵטוּן."
+      },
+      {
+       "draft": "* אָטַר fut. יֶאְטַר, to shut, to close,",
+       "reread": "* אָטַר fut. יֶאְטַר, to shut, to close,",
+       "status": "agreed",
+       "text": "* אָטַר fut. יֶאְטַר, to shut, to close,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 89,
+      "y": 1923,
+      "width": 874,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r02-b01-874x263+89+1923-x2.png",
+     "image_sha256": "f295b45608f6db76522f889aaa2a822cc8cc27b30b1a948639ff5811b5a4781e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "once Ps. 69, 16. Arab. أطر to shut",
+       "in, to enclose. Kindred roots are אָצַר,",
+       "חָצַר, עָצַר.—Hence the two following:",
+       "אִטֵּר (shut up, bound, perh. dumb)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "96701cac-defc-4b26-ba51-9b7cf8a4f494",
+      "duration_api_ms": 10191,
+      "cost_usd_list": 0.08256349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 525
+     },
+     "lines": [
+      {
+       "draft": "once Ps. 69, 16. Arab. أَطَرَ to shut",
+       "reread": "once Ps. 69, 16. Arab. أطر to shut",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "once Ps. 69, 16. Arab. أطر to shut",
+        "verdict": "b",
+        "note": "The Arabic is printed with hamza on the alif (أطر) but no fatḥa vowel marks over ṭā or rā; Reading A's fully vocalised أَطَرَ adds vowels not on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "46a452ed-4456-435f-a3b8-37a2a8cf62f5",
+        "duration_api_ms": 13867,
+        "cost_usd_list": 0.08514374999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3575,
+        "cache_creation_input_tokens": 2683,
+        "output_tokens": 605
+       },
+       "text": "once Ps. 69, 16. Arab. أطر to shut"
+      },
+      {
+       "draft": "in, to enclose. Kindred roots are אָצַר,",
+       "reread": "in, to enclose. Kindred roots are אָצַר,",
+       "status": "agreed",
+       "text": "in, to enclose. Kindred roots are אָצַר,"
+      },
+      {
+       "draft": "חָצַר, עָצַר.—Hence the two following:",
+       "reread": "חָצַר, עָצַר.—Hence the two following:",
+       "status": "agreed",
+       "text": "חָצַר, עָצַר.—Hence the two following:"
+      },
+      {
+       "draft": "אָטֵר (shut up, bound, perh. dumb)",
+       "reread": "אִטֵּר (shut up, bound, perh. dumb)",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "אָטֵר (shut up, bound, perh. dumb)",
+        "verdict": "a",
+        "note": "Under the aleph the print shows a qamets (short vertical stroke with a bar), not a single hireq dot; the tet carries a two-dot tsere and no visible dagesh. Reading A matches the printed form (even though the expected lemma is אִטֵּר, Judg. 3:15).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8b6ea455-88f1-4661-9968-333a8b3cf6ae",
+        "duration_api_ms": 19890,
+        "cost_usd_list": 0.101633,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2680,
+        "output_tokens": 936
+       },
+       "text": "אָטֵר (shut up, bound, perh. dumb)"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 89,
+      "y": 2170,
+      "width": 874,
+      "height": 128
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r02-b02-874x128+89+2170-x2.png",
+     "image_sha256": "ffae87ea7c26b93064192362c2cfe226398bdf40e5989a9c731744413823afab",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ater, pr. n. m.   a) Ezra 2, 16. Neh. 7,",
+       "21.   b) Ezra 2, 42. Neh. 7, 45."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3d294d88-e6a8-43c4-8854-9b20e0f2bd3a",
+      "duration_api_ms": 7775,
+      "cost_usd_list": 0.056723499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "Ater, pr. n. m. a) Ezra 2, 16. Neh. 7,",
+       "reread": "Ater, pr. n. m.   a) Ezra 2, 16. Neh. 7,",
+       "status": "agreed",
+       "text": "Ater, pr. n. m. a) Ezra 2, 16. Neh. 7,"
+      },
+      {
+       "draft": "21. b) Ezra 2, 42. Neh. 7, 45.",
+       "reread": "21.   b) Ezra 2, 42. Neh. 7, 45.",
+       "status": "agreed",
+       "text": "21. b) Ezra 2, 42. Neh. 7, 45."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 89,
+    "y": 2292,
+    "width": 874,
+    "height": 986
+   },
+   "draft_lines": [
+    "אִטֵּר m. adj. (r. אָטַר) shut up, bound,",
+    "i. e. impeded. Judg. 3, 15. 20, 16 אִטֵּר",
+    "יַד יְמִינוֹ impeded as to his right hand,",
+    "i. e. who cannot use the right hand free-",
+    "ly, and hence i. q. left-handed. Arab.",
+    "أَطَرَ Conj. V, to be impeded ; comp.",
+    "عقل to bind, to tie, transferred also to",
+    "the tongue, like Engl. tongue-tied.",
+    "* אַי, constr. אֵי 1. Interrog. adverb,",
+    "where? c. suff. אַיֶּכָּה where art thou?",
+    "Gen. 3, 9. אַיּוֹ where is he? Ex. 2, 20.",
+    "אַיָּם where are they? Is. 19, 12. More",
+    "freq. with He parag. אַיֵּה q. v.—This",
+    "particle seems to have arisen by drop-",
+    "ping the Nun from אַיִן II, (q. v. in מֵאַיִן",
+    "whence?) and this again seems to have"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 89,
+      "y": 2298,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r03-b00-874x240+89+2298-x2.png",
+     "image_sha256": "f3031f68aa309be1eb58679abdddf933de679c19e4eed4f48ccee60ecddbcce8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִטֵּר m. adj. (r. אָטַר) shut up, bound,",
+       "i. e. impeded. Judg. 3, 15. 20, 16 אִטֵּר",
+       "יַד יְמִינוֹ impeded as to his right hand,",
+       "i. e. who cannot use the right hand free-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "44f32e3d-02d4-435e-b310-3974b7689ff8",
+      "duration_api_ms": 8906,
+      "cost_usd_list": 0.0808535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 516
+     },
+     "lines": [
+      {
+       "draft": "אִטֵּר m. adj. (r. אָטַר) shut up, bound,",
+       "reread": "אִטֵּר m. adj. (r. אָטַר) shut up, bound,",
+       "status": "agreed",
+       "text": "אִטֵּר m. adj. (r. אָטַר) shut up, bound,"
+      },
+      {
+       "draft": "i. e. impeded. Judg. 3, 15. 20, 16 אִטֵּר",
+       "reread": "i. e. impeded. Judg. 3, 15. 20, 16 אִטֵּר",
+       "status": "agreed",
+       "text": "i. e. impeded. Judg. 3, 15. 20, 16 אִטֵּר"
+      },
+      {
+       "draft": "יַד יְמִינוֹ impeded as to his right hand,",
+       "reread": "יַד יְמִינוֹ impeded as to his right hand,",
+       "status": "agreed",
+       "text": "יַד יְמִינוֹ impeded as to his right hand,"
+      },
+      {
+       "draft": "i. e. who cannot use the right hand free-",
+       "reread": "i. e. who cannot use the right hand free-",
+       "status": "agreed",
+       "text": "i. e. who cannot use the right hand free-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 89,
+      "y": 2522,
+      "width": 874,
+      "height": 289
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r03-b01-874x289+89+2522-x2.png",
+     "image_sha256": "e110daf5c4125e5ac9edb5d62e559a53065e1e77193c3dd3eca162eb92566ddb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ly, and hence i. q. left-handed. Arab.",
+       "أَطَرَ Conj. V, to be impeded; comp.",
+       "عقل to bind, to tie, transferred also to",
+       "the tongue, like Engl. tongue-tied."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8b527ec3-113b-4ea7-9f8f-d5d954f980f5",
+      "duration_api_ms": 15227,
+      "cost_usd_list": 0.09028349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 629
+     },
+     "lines": [
+      {
+       "draft": "ly, and hence i. q. left-handed. Arab.",
+       "reread": "ly, and hence i. q. left-handed. Arab.",
+       "status": "agreed",
+       "text": "ly, and hence i. q. left-handed. Arab."
+      },
+      {
+       "draft": "أَطَرَ Conj. V, to be impeded ; comp.",
+       "reread": "أَطَرَ Conj. V, to be impeded; comp.",
+       "status": "agreed",
+       "text": "أَطَرَ Conj. V, to be impeded; comp."
+      },
+      {
+       "draft": "عقل to bind, to tie, transferred also to",
+       "reread": "عقل to bind, to tie, transferred also to",
+       "status": "agreed",
+       "text": "عقل to bind, to tie, transferred also to"
+      },
+      {
+       "draft": "the tongue, like Engl. tongue-tied.",
+       "reread": "the tongue, like Engl. tongue-tied.",
+       "status": "agreed",
+       "text": "the tongue, like Engl. tongue-tied."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 89,
+      "y": 2795,
+      "width": 874,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r03-b02-874x256+89+2795-x2.png",
+     "image_sha256": "1fc0132253bc223848525082c0dec6c8a942553a6c71b69d8064e0a790165657",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אַי, constr. אֵי 1. Interrog. adverb,",
+       "where? c. suff. אַיֶּכָּה where art thou?",
+       "Gen. 3, 9. אַיּוֹ where is he? Ex. 2, 20.",
+       "אַיָּם where are they? Is. 19, 12. More"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fbd47e5c-787c-4195-afa5-0e2df96e1938",
+      "duration_api_ms": 13052,
+      "cost_usd_list": 0.0798635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 471
+     },
+     "lines": [
+      {
+       "draft": "* אַי, constr. אֵי 1. Interrog. adverb,",
+       "reread": "* אַי, constr. אֵי 1. Interrog. adverb,",
+       "status": "agreed",
+       "text": "* אַי, constr. אֵי 1. Interrog. adverb,"
+      },
+      {
+       "draft": "where? c. suff. אַיֶּכָּה where art thou?",
+       "reread": "where? c. suff. אַיֶּכָּה where art thou?",
+       "status": "agreed",
+       "text": "where? c. suff. אַיֶּכָּה where art thou?"
+      },
+      {
+       "draft": "Gen. 3, 9. אַיּוֹ where is he? Ex. 2, 20.",
+       "reread": "Gen. 3, 9. אַיּוֹ where is he? Ex. 2, 20.",
+       "status": "agreed",
+       "text": "Gen. 3, 9. אַיּוֹ where is he? Ex. 2, 20."
+      },
+      {
+       "draft": "אַיָּם where are they? Is. 19, 12. More",
+       "reread": "אַיָּם where are they? Is. 19, 12. More",
+       "status": "agreed",
+       "text": "אַיָּם where are they? Is. 19, 12. More"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 89,
+      "y": 3035,
+      "width": 874,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c0-r03-b03-874x244+89+3035-x2.png",
+     "image_sha256": "308e5134d88c2d57d89127f995893447ba4bd25ff7b181edf6b2a2dbb4a36d0f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "freq. with He parag. אַיֵּה q. v.—This",
+       "particle seems to have arisen by drop-",
+       "ping the Nun from אַיִן II, (q. v. in מֵאַיִן",
+       "whence?) and this again seems to have"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "45efd3ad-7bdb-4958-9580-592c19a12f78",
+      "duration_api_ms": 9427,
+      "cost_usd_list": 0.0679035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 257
+     },
+     "lines": [
+      {
+       "draft": "freq. with He parag. אַיֵּה q. v.—This",
+       "reread": "freq. with He parag. אַיֵּה q. v.—This",
+       "status": "agreed",
+       "text": "freq. with He parag. אַיֵּה q. v.—This"
+      },
+      {
+       "draft": "particle seems to have arisen by drop-",
+       "reread": "particle seems to have arisen by drop-",
+       "status": "agreed",
+       "text": "particle seems to have arisen by drop-"
+      },
+      {
+       "draft": "ping the Nun from אַיִן II, (q. v. in מֵאַיִן",
+       "reread": "ping the Nun from אַיִן II, (q. v. in מֵאַיִן",
+       "status": "agreed",
+       "text": "ping the Nun from אַיִן II, (q. v. in מֵאַיִן"
+      },
+      {
+       "draft": "whence?) and this again seems to have",
+       "reread": "whence?) and this again seems to have",
+       "status": "agreed",
+       "text": "whence?) and this again seems to have"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 986,
+    "y": 157,
+    "width": 879,
+    "height": 934
+   },
+   "draft_lines": [
+    "been originally the same as the nega-",
+    "tive אַיִן I ; just as many other negative",
+    "words have also passed over to an in-",
+    "terrogative power ; comp. Lat. ne, Germ.",
+    "nicht wahr ? Engl. not so ? Hence אַיִן",
+    "pr. he is not there, not present, i. q. אֵינֶנּוּ,",
+    "comp. Job 14, 10 ; and interrog. is he not",
+    "there ? q. d. where is he ? In this way",
+    "אַיִן no. I and II become closely related.",
+    "Comp. Heb. Gram. § 150. no. 1 ult. In",
+    "Arabic أَيٌّ has passed over into an in-",
+    "terrog. pron. who ? f. أَيَّةٌ ; and the same",
+    "also is Eth. አይ. Comp. Germ. wo ?",
+    "Engl. who ?"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 986,
+      "y": 149,
+      "width": 879,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r00-b00-879x242+986+149-x2.png",
+     "image_sha256": "7d3a652d887f1ab33eae69549869c819c8613022988d74c08853acf16c7c6551",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "been originally the same as the nega-",
+       "tive אַיִן I ; just as many other negative",
+       "words have also passed over to an in-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4741d968-99fc-404c-bc48-8eda2fbd8ae5",
+      "duration_api_ms": 5619,
+      "cost_usd_list": 0.06931324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 286
+     },
+     "lines": [
+      {
+       "draft": "been originally the same as the nega-",
+       "reread": "been originally the same as the nega-",
+       "status": "agreed",
+       "text": "been originally the same as the nega-"
+      },
+      {
+       "draft": "tive אַיִן I ; just as many other negative",
+       "reread": "tive אַיִן I ; just as many other negative",
+       "status": "agreed",
+       "text": "tive אַיִן I; just as many other negative"
+      },
+      {
+       "draft": "words have also passed over to an in-",
+       "reread": "words have also passed over to an in-",
+       "status": "agreed",
+       "text": "words have also passed over to an in-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 986,
+      "y": 375,
+      "width": 879,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r00-b01-879x240+986+375-x2.png",
+     "image_sha256": "c357cffff876f4aba7c470559fc0d7217d9fa9f1fa45ea51121b004043ea3f41",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "terrogative power ; comp. Lat. ne, Germ.",
+       "nicht wahr ? Engl. not so ? Hence אַיִן",
+       "pr. he is not there, not present, i. q. אֵינֶנּוּ,",
+       "comp. Job 14, 10 ; and interrog. is he not"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c7cf6316-db5f-4562-b00d-d1e3eac186f9",
+      "duration_api_ms": 10027,
+      "cost_usd_list": 0.08311325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 562
+     },
+     "lines": [
+      {
+       "draft": "terrogative power ; comp. Lat. ne, Germ.",
+       "reread": "terrogative power ; comp. Lat. ne, Germ.",
+       "status": "agreed",
+       "text": "terrogative power; comp. Lat. ne, Germ."
+      },
+      {
+       "draft": "nicht wahr ? Engl. not so ? Hence אַיִן",
+       "reread": "nicht wahr ? Engl. not so ? Hence אַיִן",
+       "status": "agreed",
+       "text": "nicht wahr? Engl. not so? Hence אַיִן"
+      },
+      {
+       "draft": "pr. he is not there, not present, i. q. אֵינֶנּוּ,",
+       "reread": "pr. he is not there, not present, i. q. אֵינֶנּוּ,",
+       "status": "agreed",
+       "text": "pr. he is not there, not present, i. q. אֵינֶנּוּ,"
+      },
+      {
+       "draft": "comp. Job 14, 10 ; and interrog. is he not",
+       "reread": "comp. Job 14, 10 ; and interrog. is he not",
+       "status": "agreed",
+       "text": "comp. Job 14, 10; and interrog. is he not"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 986,
+      "y": 599,
+      "width": 879,
+      "height": 282
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r00-b02-879x282+986+599-x2.png",
+     "image_sha256": "6e2c0a8d0d28baded3488bc06043be352e0dd63198cc29fbaf6ca211c0e48cc2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "there? q. d. where is he? In this way",
+       "אַיֵּה no. I and II become closely related.",
+       "Comp. Heb. Gram. § 150. no. 1 ult. In",
+       "Arabic أَيُّ has passed over into an in-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2bc28918-eb25-4fcf-82c4-2cbd8371eccf",
+      "duration_api_ms": 17584,
+      "cost_usd_list": 0.08169325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 458
+     },
+     "lines": [
+      {
+       "draft": "there ? q. d. where is he ? In this way",
+       "reread": "there? q. d. where is he? In this way",
+       "status": "agreed",
+       "text": "there? q. d. where is he? In this way"
+      },
+      {
+       "draft": "אַיִן no. I and II become closely related.",
+       "reread": "אַיֵּה no. I and II become closely related.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "אַיֵּה no. I and II become closely related.",
+        "verdict": "b",
+        "note": "The final letter is he (ה, open top-left corner, flat top bar), not final nun (ן); two dots under the yod (tsere) rather than hiriq. Context (“where is he?”) confirms אַיֵּה “where?”.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e043f8e9-c851-4394-a9aa-6e1ce41b2384",
+        "duration_api_ms": 17473,
+        "cost_usd_list": 0.08229,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2793,
+        "output_tokens": 504
+       },
+       "text": "אַיֵּה no. I and II become closely related."
+      },
+      {
+       "draft": "Comp. Heb. Gram. § 150. no. 1 ult. In",
+       "reread": "Comp. Heb. Gram. § 150. no. 1 ult. In",
+       "status": "agreed",
+       "text": "Comp. Heb. Gram. § 150. no. 1 ult. In"
+      },
+      {
+       "draft": "Arabic أَيٌّ has passed over into an in-",
+       "reread": "Arabic أَيُّ has passed over into an in-",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "Arabic أَيٌّ has passed over into an in-",
+        "verdict": "a",
+        "note": "The mark above the shadda over ي has a hooked tail (two-stroke damma form), i.e. dammatan ٌ, not a plain damma ُ — so Reading A (أَيٌّ, ayyun) matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0f1ada30-695d-4c5b-bf1f-798de206e3bc",
+        "duration_api_ms": 28009,
+        "cost_usd_list": 0.12964125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3565,
+        "cache_creation_input_tokens": 2798,
+        "output_tokens": 1449
+       },
+       "text": "Arabic أَيٌّ has passed over into an in-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 986,
+      "y": 865,
+      "width": 879,
+      "height": 220
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r00-b03-879x220+986+865-x2.png",
+     "image_sha256": "12cb4323182b49a9c8fe758df323945e5dfc02810bbb8c7e897dad49a597ee63",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "terrog. pron. who? f. أَيَّةُ; and the same",
+       "also is Eth. አይ፡ Comp. Germ. wo?",
+       "Engl. who?"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a8efb995-6705-47d8-8eb9-0d5f2544ae67",
+      "duration_api_ms": 19954,
+      "cost_usd_list": 0.08024324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2563,
+      "output_tokens": 555
+     },
+     "lines": [
+      {
+       "draft": "terrog. pron. who ? f. أَيَّةٌ ; and the same",
+       "reread": "terrog. pron. who? f. أَيَّةُ; and the same",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b03",
+       "judgement": {
+        "text": "terrog. pron. who ? f. أَيَّةٌ ; and the same",
+        "verdict": "a",
+        "note": "The final ta marbuta carries tanwin damm (ٌ, the damma with a tail), not a plain damma; the print also spaces \"who ?\" and \" ;\" as in A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ed01f12a-eea0-4fc7-b987-0b140cf49791",
+        "duration_api_ms": 14808,
+        "cost_usd_list": 0.08388425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3577,
+        "cache_creation_input_tokens": 2495,
+        "output_tokens": 655
+       },
+       "text": "terrog. pron. who? f. أَيَّةٌ; and the same"
+      },
+      {
+       "draft": "also is Eth. አይ. Comp. Germ. wo ?",
+       "reread": "also is Eth. አይ፡ Comp. Germ. wo?",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b03",
+       "judgement": {
+        "text": "also is Eth. አይ. Comp. Germ. wo ?",
+        "verdict": "a",
+        "note": "After the Ethiopic አይ only a single dot is printed (a full stop), not the two-dot Ethiopic word separator ፡ of Reading B; the question mark after \"wo\" is spaced as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "371e2db0-5213-40b2-9aa5-70dc71a75469",
+        "duration_api_ms": 15592,
+        "cost_usd_list": 0.08790325,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2491,
+        "output_tokens": 737
+       },
+       "text": "also is Eth. አይ. Comp. Germ. wo?"
+      },
+      {
+       "draft": "Engl. who ?",
+       "reread": "Engl. who?",
+       "status": "agreed",
+       "text": "Engl. who?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 986,
+    "y": 1079,
+    "width": 879,
+    "height": 797
+   },
+   "draft_lines": [
+    "2. As a mere sign of interrogation, put",
+    "before adverbs and pronouns in order to",
+    "give them an interrogative power; just",
+    "as אֲשֶׁר gives them a relative sense.",
+    "Comp. Germ. wovon? for von welchem?",
+    "Engl. wherefore? i. q. for what? Hence",
+    "a) אֵי זֶה, which? what? but always with",
+    "reference to place (except in Ecc. 11,",
+    "6), 1 K. 13, 12 אֵי זֶה הַדֶּרֶךְ הָלַךְ what way",
+    "went he? (Or perh. i. q. Lat. ubi viæ?",
+    "quorsum viæ? see under אֵי מִזֶּה in lett.",
+    "b.) 2 K. 3, 8. 2 Chr. 18, 23. Job 38, 24.",
+    "Also without interrogation, Jer. 6, 16.",
+    "Ecc. 11, 6. Elsewhere i. q. where?"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 986,
+      "y": 1086,
+      "width": 879,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r01-b00-879x232+986+1086-x2.png",
+     "image_sha256": "cce2ac7ed35b4e86458357af2e49f69922847a1b55654e866ba4db732be58f59",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. As a mere sign of interrogation, put",
+       "before adverbs and pronouns in order to",
+       "give them an interrogative power; just",
+       "as אֲשֶׁר gives them a relative sense."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f032e43d-87d7-46a1-8463-3c2bba901a8b",
+      "duration_api_ms": 14767,
+      "cost_usd_list": 0.0657935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "2. As a mere sign of interrogation, put",
+       "reread": "2. As a mere sign of interrogation, put",
+       "status": "agreed",
+       "text": "2. As a mere sign of interrogation, put"
+      },
+      {
+       "draft": "before adverbs and pronouns in order to",
+       "reread": "before adverbs and pronouns in order to",
+       "status": "agreed",
+       "text": "before adverbs and pronouns in order to"
+      },
+      {
+       "draft": "give them an interrogative power; just",
+       "reread": "give them an interrogative power; just",
+       "status": "agreed",
+       "text": "give them an interrogative power; just"
+      },
+      {
+       "draft": "as אֲשֶׁר gives them a relative sense.",
+       "reread": "as אֲשֶׁר gives them a relative sense.",
+       "status": "agreed",
+       "text": "as אֲשֶׁר gives them a relative sense."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 986,
+      "y": 1302,
+      "width": 879,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r01-b01-879x238+986+1302-x2.png",
+     "image_sha256": "f0e830ddb243ecbb4159c2f4dcca6541d2db64a1ed3aa57f8993741cc602b4b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Comp. Germ. wovon? for von welchem?",
+       "Engl. wherefore? i. q. for what? Hence",
+       "a) אֵי זֶה, which? what? but always with",
+       "reference to place (except in Ecc. 11,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "439f86be-801b-4dd5-b426-4b593ddb5cc6",
+      "duration_api_ms": 10218,
+      "cost_usd_list": 0.06649349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 254
+     },
+     "lines": [
+      {
+       "draft": "Comp. Germ. wovon? for von welchem?",
+       "reread": "Comp. Germ. wovon? for von welchem?",
+       "status": "agreed",
+       "text": "Comp. Germ. wovon? for von welchem?"
+      },
+      {
+       "draft": "Engl. wherefore? i. q. for what? Hence",
+       "reread": "Engl. wherefore? i. q. for what? Hence",
+       "status": "agreed",
+       "text": "Engl. wherefore? i. q. for what? Hence"
+      },
+      {
+       "draft": "a) אֵי זֶה, which? what? but always with",
+       "reread": "a) אֵי זֶה, which? what? but always with",
+       "status": "agreed",
+       "text": "a) אֵי זֶה, which? what? but always with"
+      },
+      {
+       "draft": "reference to place (except in Ecc. 11,",
+       "reread": "reference to place (except in Ecc. 11,",
+       "status": "agreed",
+       "text": "reference to place (except in Ecc. 11,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 986,
+      "y": 1524,
+      "width": 879,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r01-b02-879x239+986+1524-x2.png",
+     "image_sha256": "440184c96d4416a3fb8f5408df30652b9d47d8cdf1965b8d6d29cbd645960afa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "6), 1 K. 13, 12 אֵי זֶה הַדֶּרֶךְ הָלַךְ what way",
+       "went he? (Or perh. i. q. Lat. ubi viæ?",
+       "quorsum viæ? see under אֵי מִזֶּה in lett.",
+       "b.) 2 K. 3, 8. 2 Chr. 18, 23. Job 38, 24."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5e371fa9-85e0-44ef-ac6a-d889f08643d7",
+      "duration_api_ms": 12581,
+      "cost_usd_list": 0.0795535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 490
+     },
+     "lines": [
+      {
+       "draft": "6), 1 K. 13, 12 אֵי זֶה הַדֶּרֶךְ הָלַךְ what way",
+       "reread": "6), 1 K. 13, 12 אֵי זֶה הַדֶּרֶךְ הָלַךְ what way",
+       "status": "agreed",
+       "text": "6), 1 K. 13, 12 אֵי זֶה הַדֶּרֶךְ הָלַךְ what way"
+      },
+      {
+       "draft": "went he? (Or perh. i. q. Lat. ubi viæ?",
+       "reread": "went he? (Or perh. i. q. Lat. ubi viæ?",
+       "status": "agreed",
+       "text": "went he? (Or perh. i. q. Lat. ubi viæ?"
+      },
+      {
+       "draft": "quorsum viæ? see under אֵי מִזֶּה in lett.",
+       "reread": "quorsum viæ? see under אֵי מִזֶּה in lett.",
+       "status": "agreed",
+       "text": "quorsum viæ? see under אֵי מִזֶּה in lett."
+      },
+      {
+       "draft": "b.) 2 K. 3, 8. 2 Chr. 18, 23. Job 38, 24.",
+       "reread": "b.) 2 K. 3, 8. 2 Chr. 18, 23. Job 38, 24.",
+       "status": "agreed",
+       "text": "b.) 2 K. 3, 8. 2 Chr. 18, 23. Job 38, 24."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 986,
+      "y": 1747,
+      "width": 879,
+      "height": 137
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r01-b03-879x137+986+1747-x2.png",
+     "image_sha256": "12553e03aa88905e07d07848609ea4c9848cb841405eaa07e880439a5227d912",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Also without interrogation, Jer. 6, 16.",
+       "Ecc. 11, 6. Elsewhere i. q. where?"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "994ab3f5-1153-4d7c-9619-979700d253a2",
+      "duration_api_ms": 7844,
+      "cost_usd_list": 0.0560235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "Also without interrogation, Jer. 6, 16.",
+       "reread": "Also without interrogation, Jer. 6, 16.",
+       "status": "agreed",
+       "text": "Also without interrogation, Jer. 6, 16."
+      },
+      {
+       "draft": "Ecc. 11, 6. Elsewhere i. q. where?",
+       "reread": "Ecc. 11, 6. Elsewhere i. q. where?",
+       "status": "agreed",
+       "text": "Ecc. 11, 6. Elsewhere i. q. where?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 986,
+    "y": 1864,
+    "width": 879,
+    "height": 684
+   },
+   "draft_lines": [
+    "(from זֶה here,) Job 28, 12. Esth. 7, 5.",
+    "Sometimes written in one word, אֵיזֶה,",
+    "q. v. b) אֵי מִזֶּה from what? whence?",
+    "(from מִזֶּה thence,) Gen. 16, 8. 1 Sam.",
+    "30, 13. Jon. 1, 8 אֵי מִזֶּה עַם אַתָּה from",
+    "what people art thou? 2 Sam. 15, 2 אֵי",
+    "מִזֶּה עִיר אַתָּה from what city art thou?",
+    "strictly Lat. ‘undenam populi? undenam",
+    "urbis?’ as Plaut. unde gentium? Odyss.",
+    "1. 170 πόθεν ἀνδρῶν. c) אֵי לָזֹאת where-",
+    "fore? why? from לָזֹאת therefore, Jer. 5, 7.",
+    "Note. With certain other particles"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 986,
+      "y": 1856,
+      "width": 879,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r02-b00-879x246+986+1856-x2.png",
+     "image_sha256": "1d017411cbfcd4c54a5afbe81f16d1d65aab0f8a6b24dc248041e57a7beca2b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(from זֶה here,) Job 28, 12. Esth. 7, 5.",
+       "Sometimes written in one word, אֵיזֶה,",
+       "q. v.   b) אֵי מִזֶּה from what? whence?",
+       "(from מִזֶּה thence,) Gen. 16, 8. 1 Sam."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e61311d2-2beb-4b11-95d8-2f5e1496d3d3",
+      "duration_api_ms": 14799,
+      "cost_usd_list": 0.0717035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 333
+     },
+     "lines": [
+      {
+       "draft": "(from זֶה here,) Job 28, 12. Esth. 7, 5.",
+       "reread": "(from זֶה here,) Job 28, 12. Esth. 7, 5.",
+       "status": "agreed",
+       "text": "(from זֶה here,) Job 28, 12. Esth. 7, 5."
+      },
+      {
+       "draft": "Sometimes written in one word, אֵיזֶה,",
+       "reread": "Sometimes written in one word, אֵיזֶה,",
+       "status": "agreed",
+       "text": "Sometimes written in one word, אֵיזֶה,"
+      },
+      {
+       "draft": "q. v. b) אֵי מִזֶּה from what? whence?",
+       "reread": "q. v.   b) אֵי מִזֶּה from what? whence?",
+       "status": "agreed",
+       "text": "q. v. b) אֵי מִזֶּה from what? whence?"
+      },
+      {
+       "draft": "(from מִזֶּה thence,) Gen. 16, 8. 1 Sam.",
+       "reread": "(from מִזֶּה thence,) Gen. 16, 8. 1 Sam.",
+       "status": "agreed",
+       "text": "(from מִזֶּה thence,) Gen. 16, 8. 1 Sam."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 986,
+      "y": 2086,
+      "width": 879,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r02-b01-879x236+986+2086-x2.png",
+     "image_sha256": "cb0fd5800ac4cf5ba30816a31591fb7539d214c3e8e56c31b289e47ae1f83aef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "30, 13. Jon. 1, 8 אֵי מִזֶּה עָם אָתָּה from",
+       "what people art thou? 2 Sam. 15, 2 אֵי",
+       "מִזֶּה עִיר אָתָּה from what city art thou?",
+       "strictly Lat. ‘undenam populi? undenam"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ab5766d2-da75-4fc1-991c-5c6ab43da91a",
+      "duration_api_ms": 16444,
+      "cost_usd_list": 0.0926935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 778
+     },
+     "lines": [
+      {
+       "draft": "30, 13. Jon. 1, 8 אֵי מִזֶּה עַם אַתָּה from",
+       "reread": "30, 13. Jon. 1, 8 אֵי מִזֶּה עָם אָתָּה from",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "30, 13. Jon. 1, 8 אֵי מִזֶּה עָם אַתָּה from",
+        "verdict": "neither",
+        "note": "Printed has qamets under ע of עָם (B right, A wrong) but patach under א of אַתָּה (A right, B wrong); neither reading matches both points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "16beb8ec-3b94-4ad0-922e-1a75b332c618",
+        "duration_api_ms": 14064,
+        "cost_usd_list": 0.08394075000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3603,
+        "cache_creation_input_tokens": 2585,
+        "output_tokens": 620
+       },
+       "text": "30, 13. Jon. 1, 8 אֵי מִזֶּה עָם אַתָּה from"
+      },
+      {
+       "draft": "what people art thou? 2 Sam. 15, 2 אֵי",
+       "reread": "what people art thou? 2 Sam. 15, 2 אֵי",
+       "status": "agreed",
+       "text": "what people art thou? 2 Sam. 15, 2 אֵי"
+      },
+      {
+       "draft": "מִזֶּה עִיר אַתָּה from what city art thou?",
+       "reread": "מִזֶּה עִיר אָתָּה from what city art thou?",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "מִזֶּה עִיר אַתָּה from what city art thou?",
+        "verdict": "a",
+        "note": "The vowel under the aleph of אַתָּה is a short horizontal patach (same form as in line 1's אַתָּה), not a qamets with a descending stem; Reading B's אָתָּה is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d9c136fa-c0c8-4772-97ee-9d51e57e5a96",
+        "duration_api_ms": 11342,
+        "cost_usd_list": 0.07441424999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3577,
+        "cache_creation_input_tokens": 2559,
+        "output_tokens": 440
+       },
+       "text": "מִזֶּה עִיר אַתָּה from what city art thou?"
+      },
+      {
+       "draft": "strictly Lat. ‘undenam populi? undenam",
+       "reread": "strictly Lat. ‘undenam populi? undenam",
+       "status": "agreed",
+       "text": "strictly Lat. ‘undenam populi? undenam"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 986,
+      "y": 2306,
+      "width": 879,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r02-b02-879x250+986+2306-x2.png",
+     "image_sha256": "5df515dc6ae6d23bec322351a3b115a35360fddfc97b3e48fdbb67271318e9c5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "urbis?’ as Plaut. unde gentium? Odyss.",
+       "1. 170 πόθεν ἀνδρῶν. c) אֵי לָזֹאת where-",
+       "fore? why? from לָזֹאת therefore, Jer. 5, 7.",
+       "Note. With certain other particles"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "45c2bd7c-be4b-4406-adbf-0c0d66a4f6d1",
+      "duration_api_ms": 10493,
+      "cost_usd_list": 0.0689535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 278
+     },
+     "lines": [
+      {
+       "draft": "urbis?’ as Plaut. unde gentium? Odyss.",
+       "reread": "urbis?’ as Plaut. unde gentium? Odyss.",
+       "status": "agreed",
+       "text": "urbis?’ as Plaut. unde gentium? Odyss."
+      },
+      {
+       "draft": "1. 170 πόθεν ἀνδρῶν. c) אֵי לָזֹאת where-",
+       "reread": "1. 170 πόθεν ἀνδρῶν. c) אֵי לָזֹאת where-",
+       "status": "agreed",
+       "text": "1. 170 πόθεν ἀνδρῶν. c) אֵי לָזֹאת where-"
+      },
+      {
+       "draft": "fore? why? from לָזֹאת therefore, Jer. 5, 7.",
+       "reread": "fore? why? from לָזֹאת therefore, Jer. 5, 7.",
+       "status": "agreed",
+       "text": "fore? why? from לָזֹאת therefore, Jer. 5, 7."
+      },
+      {
+       "draft": "Note. With certain other particles",
+       "reread": "Note. With certain other particles",
+       "status": "agreed",
+       "text": "Note. With certain other particles"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 986,
+    "y": 2536,
+    "width": 879,
+    "height": 749
+   },
+   "draft_lines": [
+    "אֵי is joined more closely, so as to coa-",
+    "lesce with them into one word, as אֵיךְ,",
+    "אֵיכָה, אֵיכֹה, אֵיפֹה, q. v. The same use",
+    "of this particle is found in Syr. ܐܰܝܟܰܢܳܐ",
+    "in what way ? how ? ܐܰܝܡܶܟܳܐ whence ?",
+    "ܐܰܝܢܳܐ who ? Chald. אֵידֵין who then ? אֵידָם",
+    "id. Eth. አይቴ where ? how ?—In Prov.",
+    "31, 4 Keri וּלְרוֹזְנִים אֵי שֵׁכָר, render : nor",
+    "for princes [to say], Where is strong",
+    "drink ? See in אַי no. 1.",
+    "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, רִי",
+    "for רְוִי, comp. Lehrg. p. 510,) m. perhaps"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 986,
+      "y": 2528,
+      "width": 879,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r03-b00-879x251+986+2528-x2.png",
+     "image_sha256": "6ab073d10839cd156516660862d035830b329ce5c4edda72eca870c17b4d3064",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵי is joined more closely, so as to coa-",
+       "lesce with them into one word, as אֵיךְ,",
+       "אֵיכָה, אֵיכֹה, אֵיפֹה, q. v. The same use",
+       "of this particle is found in Syr. ܐܰܝܟܰܢܳܐ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9b61c82c-8190-4739-accd-5ebaae8ad204",
+      "duration_api_ms": 20844,
+      "cost_usd_list": 0.10485349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 996
+     },
+     "lines": [
+      {
+       "draft": "אֵי is joined more closely, so as to coa-",
+       "reread": "אֵי is joined more closely, so as to coa-",
+       "status": "agreed",
+       "text": "אֵי is joined more closely, so as to coa-"
+      },
+      {
+       "draft": "lesce with them into one word, as אֵיךְ,",
+       "reread": "lesce with them into one word, as אֵיךְ,",
+       "status": "agreed",
+       "text": "lesce with them into one word, as אֵיךְ,"
+      },
+      {
+       "draft": "אֵיכָה, אֵיכֹה, אֵיפֹה, q. v. The same use",
+       "reread": "אֵיכָה, אֵיכֹה, אֵיפֹה, q. v. The same use",
+       "status": "agreed",
+       "text": "אֵיכָה, אֵיכֹה, אֵיפֹה, q. v. The same use"
+      },
+      {
+       "draft": "of this particle is found in Syr. ܐܰܝܟܰܢܳܐ",
+       "reread": "of this particle is found in Syr. ܐܰܝܟܰܢܳܐ",
+       "status": "agreed",
+       "text": "of this particle is found in Syr. ܐܰܝܟܰܢܳܐ"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 986,
+      "y": 2763,
+      "width": 879,
+      "height": 277
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r03-b01-879x277+986+2763-x2.png",
+     "image_sha256": "0760719cf0356208a423e082c446d00952dde2cbb1d9b3d47d9eaaa2af54eb97",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in what way ? how ? ܐܲܝܡܸܟܵܐ whence ?",
+       "ܐܲܝܢܵܐ who ? Chald. אֵידַיִן who then ? אֵידָם",
+       "id. Eth. አይቴ where ? how ?—In Prov.",
+       "31, 4 Keri וּלְרוֹזְנִים אֵי שֵׁכָר, render : nor"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9bfed3fb-a84c-42e2-9716-1cd6f6a41a5e",
+      "duration_api_ms": 25610,
+      "cost_usd_list": 0.1142735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 1134
+     },
+     "lines": [
+      {
+       "draft": "in what way ? how ? ܐܰܝܡܶܟܳܐ whence ?",
+       "reread": "in what way ? how ? ܐܲܝܡܸܟܵܐ whence ?",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "in what way ? how ? ܐܰܝܡܶܟܳܐ whence ?",
+        "verdict": "a",
+        "note": "The Syriac word is printed in Serto with Western Greek-style vowel glyphs (ptāḥā ܰ on olaph, rbāṣā ܶ on mim, the small \"o\"-shaped zqāphā ܳ on kaph/final olaph), not the Eastern dot-vowels of Reading B. Letters ܐܝܡܟܐ agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4bd994c4-06fb-4565-910c-c76448bcb7c2",
+        "duration_api_ms": 15689,
+        "cost_usd_list": 0.09878725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3589,
+        "cache_creation_input_tokens": 2760,
+        "output_tokens": 847
+       },
+       "text": "in what way? how? ܐܰܝܡܶܟܳܐ whence?"
+      },
+      {
+       "draft": "ܐܰܝܢܳܐ who ? Chald. אֵידֵין who then ? אֵידָם",
+       "reread": "ܐܲܝܢܵܐ who ? Chald. אֵידַיִן who then ? אֵידָם",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "ܐܰܝܢܳܐ who ? Chald. אֵידַיִן who then ? אֵידָם",
+        "verdict": "neither",
+        "note": "The Syriac is printed in Serto with Western vowel signs (wedge-shaped pthaha over the first alef, ring-shaped zqapha over nun), matching Reading A, not B's Eastern points. But the Chaldee word is clearly printed plene with five letters, אֵידַיִן (a yod with hiriq visible between dalet and nun), matching Reading B, not A's אֵידֵין.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a3266d84-13a7-4b39-ad0f-7ed0cd6842b0",
+        "duration_api_ms": 22563,
+        "cost_usd_list": 0.11143150000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3606,
+        "cache_creation_input_tokens": 2777,
+        "output_tokens": 1093
+       },
+       "text": "ܐܰܝܢܳܐ who? Chald. אֵידַיִן who then? אֵידָם"
+      },
+      {
+       "draft": "id. Eth. አይቴ where ? how ?—In Prov.",
+       "reread": "id. Eth. አይቴ where ? how ?—In Prov.",
+       "status": "agreed",
+       "text": "id. Eth. አይቴ where? how?—In Prov."
+      },
+      {
+       "draft": "31, 4 Keri וּלְרוֹזְנִים אֵי שֵׁכָר, render : nor",
+       "reread": "31, 4 Keri וּלְרוֹזְנִים אֵי שֵׁכָר, render : nor",
+       "status": "agreed",
+       "text": "31, 4 Keri וּלְרוֹזְנִים אֵי שֵׁכָר, render: nor"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 986,
+      "y": 3024,
+      "width": 879,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0055/pass2/c1-r03-b02-879x263+986+3024-x2.png",
+     "image_sha256": "0f6b46c08811315bb42021b8557c752505c0eda0a39979a19868b7edcf25b6b9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for princes [to say], Where is strong",
+       "drink?   See in אַי no. 1.",
+       "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, דַּי",
+       "for דְּוַי, comp. Lehrg. p. 510,) m. perhaps"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bd154ce9-7e62-4a84-a082-4d0736e198b5",
+      "duration_api_ms": 20067,
+      "cost_usd_list": 0.09586349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 791
+     },
+     "lines": [
+      {
+       "draft": "for princes [to say], Where is strong",
+       "reread": "for princes [to say], Where is strong",
+       "status": "agreed",
+       "text": "for princes [to say], Where is strong"
+      },
+      {
+       "draft": "drink ? See in אַי no. 1.",
+       "reread": "drink?   See in אַי no. 1.",
+       "status": "agreed",
+       "text": "drink? See in אַי no. 1."
+      },
+      {
+       "draft": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, רִי",
+       "reread": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, דַּי",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, דִּי",
+        "verdict": "neither",
+        "note": "Final word: the letter is dalet (top bar projects right past the stem, matching the דְּוִי on the next line), so A's resh is wrong; but the vowel beneath is a single dot (hiriq), not a patah, so B's דַּי is also wrong. Printed is דִּי (dagesh dot visible in the dalet), parallel to the following \"for דְּוִי\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4aec1d97-b240-4921-88a9-76c5067420a0",
+        "duration_api_ms": 23522,
+        "cost_usd_list": 0.119819,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3596,
+        "cache_creation_input_tokens": 2704,
+        "output_tokens": 1290
+       },
+       "text": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, דִּי"
+      },
+      {
+       "draft": "for רְוִי, comp. Lehrg. p. 510,) m. perhaps",
+       "reread": "for דְּוַי, comp. Lehrg. p. 510,) m. perhaps",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "for דְּוַי, comp. Lehrg. p. 510,) m. perhaps",
+        "verdict": "b",
+        "note": "The first Hebrew letter carries a dagesh (dot inside) and sheva, so it is דּ not ר, and the vav has a patach (horizontal stroke) beneath it, not a hiriq — matching Reading B and completing \"דַּי for דְּוַי\" begun at the end of line 3.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "497b56e4-f621-4f02-9f44-18a102d10e07",
+        "duration_api_ms": 16599,
+        "cost_usd_list": 0.0893165,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2694,
+        "output_tokens": 684
+       },
+       "text": "for דְּוַי, comp. Lehrg. p. 510,) m. perhaps"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אטט 39 אי",
+   "status": "adjudicated",
+   "draft": "אטם 39 אי",
+   "reread": "אטט 39 אי",
+   "verdict": "b",
+   "note": "The leftmost letter of the left header word is printed with the open top and inward curl of a tet, identical to the middle letter, not the closed square of a final mem; the header reads אטט (apparent typesetting error for אטם) — Reading B matches what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "sinew, string. Once Prov. 7, 16 tapes-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "try, coverings, of Egyptian yarn, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "was distinguished for its firmness and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "beauty. Comp. Celsii Hierob. I. 89 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "A. Schultens compares Gr. ὀθόνη, ὀθό-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "νιον, linen cloth.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* אָטַט a root not in use. 1. i. q. أَطَّ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to utter a gentle sound, to murmur,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "spoken of the sighing of the camel when",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "weary; also of the rumbling of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "bowels when one is hungry, τρύζειν.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "See Comment. on Is. 19, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. to go softly, gently, see אַט no. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אָטַם to shut, to close, to stop, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the mouth, the ears, Prov. 17, 28. 21, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "חַלֹּנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+   "status": "adjudicated",
+   "draft": "חַלּוֹנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+   "reread": "חַלֹּנוֹת אֲטֻמוֹת Ez. 40, 16. 41, 16. 26,",
+   "verdict": "b",
+   "note": "The first word is printed defectively: after the dageshed lamed there is a holem dot directly above it, and the only vav in the word is the one before the final tav — five letters (ח ל נ ו ת), not six. Reading A's extra vav (חַלּוֹנוֹת) is not on the page.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "windows closed, sc. with bars or lattices,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "which being let into the walls or beams",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "could not be opened and shut at pleas-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ure. Sept. θυρίδες δικτυωταί, Symm.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "τοξικαί. Comp. 1 K. 6, 4. Kindr. is Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "أَطَمَ to cover a window with a curtain.",
+   "status": "adjudicated",
+   "draft": "أَطَمَ to cover a window with a curtain.",
+   "reread": "أَطَّمَ to cover a window with a curtain.",
+   "verdict": "a",
+   "note": "The mark over the ṭāʾ is a plain fatḥa stroke, with no shadda printed; Reading B's doubled ṭāʾ (أَطَّمَ) is not in the image. Form I أَطَمَ as in Reading A.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Hiph. id. Ps. 58, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָטַן obsol. root, perh. to bind, to bind",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "together, kindr. with אָטַם. Arab. أَطُنٌ",
+   "status": "adjudicated",
+   "draft": "together, kindr. with אָטַם. Arab. أَطُنٌ",
+   "reread": "together, kindr. with אָטַם. Arab. أُطُنْ",
+   "verdict": "a",
+   "note": "Final nūn carries the printed double-ḍamma tanwīn (ٌ), not a sukūn as in B; the hamza over the alif has a fatḥa stroke, not a ḍamma. A matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tent-cords.—Hence אֵטוּן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָטַר fut. יֶאְטַר, to shut, to close,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "once Ps. 69, 16. Arab. أطر to shut",
+   "status": "adjudicated",
+   "draft": "once Ps. 69, 16. Arab. أَطَرَ to shut",
+   "reread": "once Ps. 69, 16. Arab. أطر to shut",
+   "verdict": "b",
+   "note": "The Arabic is printed with hamza on the alif (أطر) but no fatḥa vowel marks over ṭā or rā; Reading A's fully vocalised أَطَرَ adds vowels not on the page.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "in, to enclose. Kindred roots are אָצַר,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "חָצַר, עָצַר.—Hence the two following:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָטֵר (shut up, bound, perh. dumb)",
+   "status": "adjudicated",
+   "draft": "אָטֵר (shut up, bound, perh. dumb)",
+   "reread": "אִטֵּר (shut up, bound, perh. dumb)",
+   "verdict": "a",
+   "note": "Under the aleph the print shows a qamets (short vertical stroke with a bar), not a single hireq dot; the tet carries a two-dot tsere and no visible dagesh. Reading A matches the printed form (even though the expected lemma is אִטֵּר, Judg. 3:15).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ater, pr. n. m. a) Ezra 2, 16. Neh. 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "21. b) Ezra 2, 42. Neh. 7, 45.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אִטֵּר m. adj. (r. אָטַר) shut up, bound,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "i. e. impeded. Judg. 3, 15. 20, 16 אִטֵּר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "יַד יְמִינוֹ impeded as to his right hand,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "i. e. who cannot use the right hand free-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ly, and hence i. q. left-handed. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "أَطَرَ Conj. V, to be impeded; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "عقل to bind, to tie, transferred also to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the tongue, like Engl. tongue-tied.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אַי, constr. אֵי 1. Interrog. adverb,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "where? c. suff. אַיֶּכָּה where art thou?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Gen. 3, 9. אַיּוֹ where is he? Ex. 2, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אַיָּם where are they? Is. 19, 12. More",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "freq. with He parag. אַיֵּה q. v.—This",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "particle seems to have arisen by drop-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ping the Nun from אַיִן II, (q. v. in מֵאַיִן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "whence?) and this again seems to have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "been originally the same as the nega-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tive אַיִן I; just as many other negative",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "words have also passed over to an in-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "terrogative power; comp. Lat. ne, Germ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "nicht wahr? Engl. not so? Hence אַיִן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pr. he is not there, not present, i. q. אֵינֶנּוּ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "comp. Job 14, 10; and interrog. is he not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "there? q. d. where is he? In this way",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַיֵּה no. I and II become closely related.",
+   "status": "adjudicated",
+   "draft": "אַיִן no. I and II become closely related.",
+   "reread": "אַיֵּה no. I and II become closely related.",
+   "verdict": "b",
+   "note": "The final letter is he (ה, open top-left corner, flat top bar), not final nun (ן); two dots under the yod (tsere) rather than hiriq. Context (“where is he?”) confirms אַיֵּה “where?”.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Comp. Heb. Gram. § 150. no. 1 ult. In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Arabic أَيٌّ has passed over into an in-",
+   "status": "adjudicated",
+   "draft": "Arabic أَيٌّ has passed over into an in-",
+   "reread": "Arabic أَيُّ has passed over into an in-",
+   "verdict": "a",
+   "note": "The mark above the shadda over ي has a hooked tail (two-stroke damma form), i.e. dammatan ٌ, not a plain damma ُ — so Reading A (أَيٌّ, ayyun) matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "terrog. pron. who? f. أَيَّةٌ; and the same",
+   "status": "adjudicated",
+   "draft": "terrog. pron. who ? f. أَيَّةٌ ; and the same",
+   "reread": "terrog. pron. who? f. أَيَّةُ; and the same",
+   "verdict": "a",
+   "note": "The final ta marbuta carries tanwin damm (ٌ, the damma with a tail), not a plain damma; the print also spaces \"who ?\" and \" ;\" as in A.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "also is Eth. አይ. Comp. Germ. wo?",
+   "status": "adjudicated",
+   "draft": "also is Eth. አይ. Comp. Germ. wo ?",
+   "reread": "also is Eth. አይ፡ Comp. Germ. wo?",
+   "verdict": "a",
+   "note": "After the Ethiopic አይ only a single dot is printed (a full stop), not the two-dot Ethiopic word separator ፡ of Reading B; the question mark after \"wo\" is spaced as in Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Engl. who?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. As a mere sign of interrogation, put",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "before adverbs and pronouns in order to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "give them an interrogative power; just",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as אֲשֶׁר gives them a relative sense.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Comp. Germ. wovon? for von welchem?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Engl. wherefore? i. q. for what? Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "a) אֵי זֶה, which? what? but always with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "reference to place (except in Ecc. 11,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "6), 1 K. 13, 12 אֵי זֶה הַדֶּרֶךְ הָלַךְ what way",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "went he? (Or perh. i. q. Lat. ubi viæ?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "quorsum viæ? see under אֵי מִזֶּה in lett.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "b.) 2 K. 3, 8. 2 Chr. 18, 23. Job 38, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Also without interrogation, Jer. 6, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ecc. 11, 6. Elsewhere i. q. where?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(from זֶה here,) Job 28, 12. Esth. 7, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Sometimes written in one word, אֵיזֶה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "q. v. b) אֵי מִזֶּה from what? whence?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(from מִזֶּה thence,) Gen. 16, 8. 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "30, 13. Jon. 1, 8 אֵי מִזֶּה עָם אַתָּה from",
+   "status": "adjudicated",
+   "draft": "30, 13. Jon. 1, 8 אֵי מִזֶּה עַם אַתָּה from",
+   "reread": "30, 13. Jon. 1, 8 אֵי מִזֶּה עָם אָתָּה from",
+   "verdict": "neither",
+   "note": "Printed has qamets under ע of עָם (B right, A wrong) but patach under א of אַתָּה (A right, B wrong); neither reading matches both points.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "what people art thou? 2 Sam. 15, 2 אֵי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "מִזֶּה עִיר אַתָּה from what city art thou?",
+   "status": "adjudicated",
+   "draft": "מִזֶּה עִיר אַתָּה from what city art thou?",
+   "reread": "מִזֶּה עִיר אָתָּה from what city art thou?",
+   "verdict": "a",
+   "note": "The vowel under the aleph of אַתָּה is a short horizontal patach (same form as in line 1's אַתָּה), not a qamets with a descending stem; Reading B's אָתָּה is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "strictly Lat. ‘undenam populi? undenam",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "urbis?’ as Plaut. unde gentium? Odyss.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1. 170 πόθεν ἀνδρῶν. c) אֵי לָזֹאת where-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "fore? why? from לָזֹאת therefore, Jer. 5, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Note. With certain other particles",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֵי is joined more closely, so as to coa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "lesce with them into one word, as אֵיךְ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֵיכָה, אֵיכֹה, אֵיפֹה, q. v. The same use",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of this particle is found in Syr. ܐܰܝܟܰܢܳܐ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in what way? how? ܐܰܝܡܶܟܳܐ whence?",
+   "status": "adjudicated",
+   "draft": "in what way ? how ? ܐܰܝܡܶܟܳܐ whence ?",
+   "reread": "in what way ? how ? ܐܲܝܡܸܟܵܐ whence ?",
+   "verdict": "a",
+   "note": "The Syriac word is printed in Serto with Western Greek-style vowel glyphs (ptāḥā ܰ on olaph, rbāṣā ܶ on mim, the small \"o\"-shaped zqāphā ܳ on kaph/final olaph), not the Eastern dot-vowels of Reading B. Letters ܐܝܡܟܐ agree in both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ܐܰܝܢܳܐ who? Chald. אֵידַיִן who then? אֵידָם",
+   "status": "adjudicated",
+   "draft": "ܐܰܝܢܳܐ who ? Chald. אֵידֵין who then ? אֵידָם",
+   "reread": "ܐܲܝܢܵܐ who ? Chald. אֵידַיִן who then ? אֵידָם",
+   "verdict": "neither",
+   "note": "The Syriac is printed in Serto with Western vowel signs (wedge-shaped pthaha over the first alef, ring-shaped zqapha over nun), matching Reading A, not B's Eastern points. But the Chaldee word is clearly printed plene with five letters, אֵידַיִן (a yod with hiriq visible between dalet and nun), matching Reading B, not A's אֵידֵין.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "id. Eth. አይቴ where? how?—In Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "31, 4 Keri וּלְרוֹזְנִים אֵי שֵׁכָר, render: nor",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "for princes [to say], Where is strong",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "drink? See in אַי no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, דִּי",
+   "status": "adjudicated",
+   "draft": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, רִי",
+   "reread": "I. אִי contr. for אֱוִי, (as כִּי for כְּוִי, דַּי",
+   "verdict": "neither",
+   "note": "Final word: the letter is dalet (top bar projects right past the stem, matching the דְּוִי on the next line), so A's resh is wrong; but the vowel beneath is a single dot (hiriq), not a patah, so B's דַּי is also wrong. Printed is דִּי (dagesh dot visible in the dalet), parallel to the following \"for דְּוִי\".",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "for דְּוַי, comp. Lehrg. p. 510,) m. perhaps",
+   "status": "adjudicated",
+   "draft": "for רְוִי, comp. Lehrg. p. 510,) m. perhaps",
+   "reread": "for דְּוַי, comp. Lehrg. p. 510,) m. perhaps",
+   "verdict": "b",
+   "note": "The first Hebrew letter carries a dagesh (dot inside) and sheva, so it is דּ not ר, and the vav has a patach (horizontal stroke) beneath it, not a hiriq — matching Reading B and completing \"דַּי for דְּוַי\" begun at the end of line 3.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 86,
+  "adjudicated": 16,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 9
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.8209
+}

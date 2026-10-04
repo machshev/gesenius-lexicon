@@ -1,0 +1,2700 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 59,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0059.png",
+ "raster_sha256": "85ae128e307cd73be5196bf356d882a14f939a8f62852ab8d1cfb831418ff95b",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0059.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:41:05+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 163,
+    "y": 118,
+    "width": 1767,
+    "height": 89
+   },
+   "draft_lines": [
+    "אֵין",
+    "43",
+    "אֵין"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 163,
+      "y": 116,
+      "width": 1767,
+      "height": 93
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/header-b00-1767x93+163+116-x2.png",
+     "image_sha256": "15a7e12d47fd468380788753fbfb0c24b90a46ef8996294bba86c956689f3079",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵין 43 אֵין"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b25ee5a6-b469-42df-b659-b5994cf77051",
+      "duration_api_ms": 12440,
+      "cost_usd_list": 0.047822500000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 185
+     },
+     "lines": [
+      {
+       "draft": "אֵין 43 אֵין",
+       "reread": "אֵין 43 אֵין",
+       "status": "agreed",
+       "text": "אֵין 43 אֵין"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 163,
+    "y": 158,
+    "width": 877,
+    "height": 801
+   },
+   "draft_lines": [
+    "3. Emim, pr. n. of an ancient people",
+    "who originally inhabited the land of",
+    "Moab, Gen. 14, 5. Deut. 2, 11.",
+    "* אִין obsol. root, i. q. אוּן q. v. Hence",
+    "I. אַיִן constr. אֵין, pr. subst. nothing,",
+    "nothingness. Is. 40, 23 הַנֹּתֵן רוֹזְנִים לְאָיִן",
+    "who bringeth princes to nothing. Hence",
+    "adverbially:",
+    "1. nothing, nought, usually including",
+    "the idea of the subst. verb to be, e. g.",
+    "1 K. 8, 9 אֵין בָּאָרוֹן רַק שְׁנֵי לֻחוֹת הָאֲבָנִים",
+    "nothing was in the ark save the two ta-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 163,
+      "y": 150,
+      "width": 877,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r00-b00-877x255+163+150-x2.png",
+     "image_sha256": "fee6e9f699ddbf98ef49e73d1617e4b97cdbbd4e4eff7ab4aca61dfe9d440651",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Emim, pr. n. of an ancient people",
+       "who originally inhabited the land of",
+       "Moab, Gen. 14, 5. Deut. 2, 11."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "004d5741-a2ab-41ba-88d2-3c9721f75608",
+      "duration_api_ms": 13748,
+      "cost_usd_list": 0.06907325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "3. Emim, pr. n. of an ancient people",
+       "reread": "3. Emim, pr. n. of an ancient people",
+       "status": "agreed",
+       "text": "3. Emim, pr. n. of an ancient people"
+      },
+      {
+       "draft": "who originally inhabited the land of",
+       "reread": "who originally inhabited the land of",
+       "status": "agreed",
+       "text": "who originally inhabited the land of"
+      },
+      {
+       "draft": "Moab, Gen. 14, 5. Deut. 2, 11.",
+       "reread": "Moab, Gen. 14, 5. Deut. 2, 11.",
+       "status": "agreed",
+       "text": "Moab, Gen. 14, 5. Deut. 2, 11."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 163,
+      "y": 389,
+      "width": 877,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r00-b01-877x295+163+389-x2.png",
+     "image_sha256": "fd5e3f7608d014b8172f5e7a7d6343371728620569bef3bf4e3e224b67e92160",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָיִן obsol. root, i. q. אוּן q. v. Hence",
+       "I. אַיִן constr. אֵין, pr. subst. nothing,",
+       "nothingness. Is. 40, 23 הַנֹּתֵן רוֹזְנִים לְאָיִן",
+       "who bringeth princes to nothing. Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4a4b5cc0-7c1d-435e-ba39-9d8fdb8ef7d1",
+      "duration_api_ms": 15990,
+      "cost_usd_list": 0.09620324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 723
+     },
+     "lines": [
+      {
+       "draft": "* אִין obsol. root, i. q. אוּן q. v. Hence",
+       "reread": "* אָיִן obsol. root, i. q. אוּן q. v. Hence",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "* אִין obsol. root, i. q. אוּן q. v. Hence",
+        "verdict": "a",
+        "note": "The headword carries a single dot (hiriq) under the aleph and nothing under the yod — אִין, as in A. B's אָיִן (qamets + hiriq under yod) is not what is printed; contrast line 2's אַיִן, which visibly has points under both letters. אוּן with shureq matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0fa6bc57-e186-4ab1-8356-1a7d5820fefc",
+        "duration_api_ms": 9971,
+        "cost_usd_list": 0.083205,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2876,
+        "output_tokens": 489
+       },
+       "text": "* אִין obsol. root, i. q. אוּן q. v. Hence"
+      },
+      {
+       "draft": "I. אַיִן constr. אֵין, pr. subst. nothing,",
+       "reread": "I. אַיִן constr. אֵין, pr. subst. nothing,",
+       "status": "agreed",
+       "text": "I. אַיִן constr. אֵין, pr. subst. nothing,"
+      },
+      {
+       "draft": "nothingness. Is. 40, 23 הַנֹּתֵן רוֹזְנִים לְאָיִן",
+       "reread": "nothingness. Is. 40, 23 הַנֹּתֵן רוֹזְנִים לְאָיִן",
+       "status": "agreed",
+       "text": "nothingness. Is. 40, 23 הַנֹּתֵן רוֹזְנִים לְאָיִן"
+      },
+      {
+       "draft": "who bringeth princes to nothing. Hence",
+       "reread": "who bringeth princes to nothing. Hence",
+       "status": "agreed",
+       "text": "who bringeth princes to nothing. Hence"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 163,
+      "y": 668,
+      "width": 877,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r00-b02-877x242+163+668-x2.png",
+     "image_sha256": "cb7382b3873593655c2fb4c78749506a0ff4a1eef6304e8b528fbde6ed3a2469",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "adverbially:",
+       "1. nothing, nought, usually including",
+       "the idea of the subst. verb to be, e. g.",
+       "1 K. 8, 9 אֵין בָּאָרוֹן רַק שְׁנֵי לֻחוֹת הָאֲבָנִים"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6f614680-2028-47cc-8cc3-078f3fc944b8",
+      "duration_api_ms": 11211,
+      "cost_usd_list": 0.06851325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "adverbially:",
+       "reread": "adverbially:",
+       "status": "agreed",
+       "text": "adverbially:"
+      },
+      {
+       "draft": "1. nothing, nought, usually including",
+       "reread": "1. nothing, nought, usually including",
+       "status": "agreed",
+       "text": "1. nothing, nought, usually including"
+      },
+      {
+       "draft": "the idea of the subst. verb to be, e. g.",
+       "reread": "the idea of the subst. verb to be, e. g.",
+       "status": "agreed",
+       "text": "the idea of the subst. verb to be, e. g."
+      },
+      {
+       "draft": "1 K. 8, 9 אֵין בָּאָרוֹן רַק שְׁנֵי לֻחוֹת הָאֲבָנִים",
+       "reread": "1 K. 8, 9 אֵין בָּאָרוֹן רַק שְׁנֵי לֻחוֹת הָאֲבָנִים",
+       "status": "agreed",
+       "text": "1 K. 8, 9 אֵין בָּאָרוֹן רַק שְׁנֵי לֻחוֹת הָאֲבָנִים"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 163,
+      "y": 894,
+      "width": 877,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r00-b03-877x73+163+894-x2.png",
+     "image_sha256": "132c63f0cb0fc59c0c0297369a9cc5618018c1586da00415e173cd6819d17507",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "nothing was in the ark save the two ta-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43364b98-14d2-46c8-bcaa-4135ee6b4418",
+      "duration_api_ms": 8288,
+      "cost_usd_list": 0.049443249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1933,
+      "output_tokens": 191
+     },
+     "lines": [
+      {
+       "draft": "nothing was in the ark save the two ta-",
+       "reread": "nothing was in the ark save the two ta-",
+       "status": "agreed",
+       "text": "nothing was in the ark save the two ta-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 163,
+    "y": 947,
+    "width": 877,
+    "height": 830
+   },
+   "draft_lines": [
+    "bles of stone. Ps. 19, 7. Ex. 22, 2. So",
+    "2 Sam. 19, 7 אֵין לְךָ שָׂרִים וַעֲבָדִים nought",
+    "to thee are princes and servants.",
+    "2. no, not, including the idea of the",
+    "subst. verb, there is not, was not; there",
+    "are not, were not, etc. i. q. לֹא יֵשׁ, Arab.",
+    "لَيْسَ, Aram. ܠܰܝܬ, לֵית, לַיִת, አልቦ.",
+    "Num. 14, 42 כִּי אֵין יְהוָֹה בְּקִרְבְּכֶם for",
+    "Jehovah is not among you. Judg. 21, 25",
+    "in those days אֵין מֶלֶךְ בְּיִשְׂרָאֵל there was",
+    "no king in Israel. Gen. 37, 29 אֵין יוֹסֵף",
+    "בַּבּוֹר Joseph was not in the cistern. Ps.",
+    "10, 4. Ex. 12, 30. Lev. 13, 31. In the",
+    "same phrases where יֵשׁ is said affirma-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 163,
+      "y": 939,
+      "width": 877,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r01-b00-877x242+163+939-x2.png",
+     "image_sha256": "98a778642a268023c586a1508cd5ff688abcd08fde64ed7aa2a77cc0896c8bac",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "bles of stone. Ps. 19, 7. Ex. 22, 2. So",
+       "2 Sam. 19, 7 אֵין לְךָ שָׂרִים וַעֲבָדִים nought",
+       "to thee are princes and servants.",
+       "2. no, not, including the idea of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6e9fbe21-e059-4b3d-a64e-7c2d5e027be2",
+      "duration_api_ms": 12617,
+      "cost_usd_list": 0.07641324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 428
+     },
+     "lines": [
+      {
+       "draft": "bles of stone. Ps. 19, 7. Ex. 22, 2. So",
+       "reread": "bles of stone. Ps. 19, 7. Ex. 22, 2. So",
+       "status": "agreed",
+       "text": "bles of stone. Ps. 19, 7. Ex. 22, 2. So"
+      },
+      {
+       "draft": "2 Sam. 19, 7 אֵין לְךָ שָׂרִים וַעֲבָדִים nought",
+       "reread": "2 Sam. 19, 7 אֵין לְךָ שָׂרִים וַעֲבָדִים nought",
+       "status": "agreed",
+       "text": "2 Sam. 19, 7 אֵין לְךָ שָׂרִים וַעֲבָדִים nought"
+      },
+      {
+       "draft": "to thee are princes and servants.",
+       "reread": "to thee are princes and servants.",
+       "status": "agreed",
+       "text": "to thee are princes and servants."
+      },
+      {
+       "draft": "2. no, not, including the idea of the",
+       "reread": "2. no, not, including the idea of the",
+       "status": "agreed",
+       "text": "2. no, not, including the idea of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 163,
+      "y": 1165,
+      "width": 877,
+      "height": 268
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r01-b01-877x268+163+1165-x2.png",
+     "image_sha256": "68aed61af79d15e76e6ac8925863cedc75a9df48cb34d6a5d51f67eaadcd12e7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "subst. verb, there is not, was not ; there",
+       "are not, were not, etc. i. q. לֹא יֵשׁ, Arab.",
+       "لَيْسَ, Aram. ܠܰܝܬ, לֵית, לַיִת, አልቦ.",
+       "Num. 14, 42 כִּי אֵין יְהוָה בְּקִרְבְּכֶם for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8516482a-f180-4d9d-b36e-d04d5a5d0db6",
+      "duration_api_ms": 25469,
+      "cost_usd_list": 0.10967350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 1042
+     },
+     "lines": [
+      {
+       "draft": "subst. verb, there is not, was not; there",
+       "reread": "subst. verb, there is not, was not ; there",
+       "status": "agreed",
+       "text": "subst. verb, there is not, was not; there"
+      },
+      {
+       "draft": "are not, were not, etc. i. q. לֹא יֵשׁ, Arab.",
+       "reread": "are not, were not, etc. i. q. לֹא יֵשׁ, Arab.",
+       "status": "agreed",
+       "text": "are not, were not, etc. i. q. לֹא יֵשׁ, Arab."
+      },
+      {
+       "draft": "لَيْسَ, Aram. ܠܰܝܬ, לֵית, לַיִת, አልቦ.",
+       "reread": "لَيْسَ, Aram. ܠܰܝܬ, לֵית, לַיִת, አልቦ.",
+       "status": "agreed",
+       "text": "لَيْسَ, Aram. ܠܰܝܬ, לֵית, לַיִת, አልቦ."
+      },
+      {
+       "draft": "Num. 14, 42 כִּי אֵין יְהוָֹה בְּקִרְבְּכֶם for",
+       "reread": "Num. 14, 42 כִּי אֵין יְהוָה בְּקִרְבְּכֶם for",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "Num. 14, 42 כִּי אֵין יְהוָֹה בְּקִרְבְּכֶם for",
+        "verdict": "a",
+        "note": "The sole difference is the holem over the vav of the Tetragrammaton: a small dot is printed above the vav (יְהוָֹה), as is Robinson's normal full pointing; Reading B drops it. All else (defective אֵין, בְּקִרְבְּכֶם, numerals, italic \"for\") matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6e61060b-f488-4a85-b31c-2983719efe0a",
+        "duration_api_ms": 18382,
+        "cost_usd_list": 0.09280174999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3607,
+        "cache_creation_input_tokens": 2778,
+        "output_tokens": 720
+       },
+       "text": "Num. 14, 42 כִּי אֵין יְהוָֹה בְּקִרְבְּכֶם for"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 163,
+      "y": 1417,
+      "width": 877,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r01-b02-877x193+163+1417-x2.png",
+     "image_sha256": "df8acd428c25332c97858affbff57d9dcf5393ec913ef8f563d5d684ea12d5da",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Jehovah is not among you. Judg. 21, 25",
+       "in those days אֵין מֶלֶךְ בְּיִשְׂרָאֵל there was",
+       "no king in Israel. Gen. 37, 29 אֵין יוֹסֵף"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e4fc9195-a708-4c99-9897-faac03bca150",
+      "duration_api_ms": 11850,
+      "cost_usd_list": 0.0695135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 390
+     },
+     "lines": [
+      {
+       "draft": "Jehovah is not among you. Judg. 21, 25",
+       "reread": "Jehovah is not among you. Judg. 21, 25",
+       "status": "agreed",
+       "text": "Jehovah is not among you. Judg. 21, 25"
+      },
+      {
+       "draft": "in those days אֵין מֶלֶךְ בְּיִשְׂרָאֵל there was",
+       "reread": "in those days אֵין מֶלֶךְ בְּיִשְׂרָאֵל there was",
+       "status": "agreed",
+       "text": "in those days אֵין מֶלֶךְ בְּיִשְׂרָאֵל there was"
+      },
+      {
+       "draft": "no king in Israel. Gen. 37, 29 אֵין יוֹסֵף",
+       "reread": "no king in Israel. Gen. 37, 29 אֵין יוֹסֵף",
+       "status": "agreed",
+       "text": "no king in Israel. Gen. 37, 29 אֵין יוֹסֵף"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 163,
+      "y": 1594,
+      "width": 877,
+      "height": 191
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r01-b03-877x191+163+1594-x2.png",
+     "image_sha256": "3159884e63df96e2d91082b1b99ef8add74785fdf10d95bb10c07f9af45d6d18",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בַּבּוֹר Joseph was not in the cistern. Ps.",
+       "10, 4. Ex. 12, 30. Lev. 13, 31. In the",
+       "same phrases where יֵשׁ is said affirma-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d649b7c-ca61-4b24-ae6a-4358c5b065f8",
+      "duration_api_ms": 7084,
+      "cost_usd_list": 0.0686135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 372
+     },
+     "lines": [
+      {
+       "draft": "בַּבּוֹר Joseph was not in the cistern. Ps.",
+       "reread": "בַּבּוֹר Joseph was not in the cistern. Ps.",
+       "status": "agreed",
+       "text": "בַּבּוֹר Joseph was not in the cistern. Ps."
+      },
+      {
+       "draft": "10, 4. Ex. 12, 30. Lev. 13, 31. In the",
+       "reread": "10, 4. Ex. 12, 30. Lev. 13, 31. In the",
+       "status": "agreed",
+       "text": "10, 4. Ex. 12, 30. Lev. 13, 31. In the"
+      },
+      {
+       "draft": "same phrases where יֵשׁ is said affirma-",
+       "reread": "same phrases where יֵשׁ is said affirma-",
+       "status": "agreed",
+       "text": "same phrases where יֵשׁ is said affirma-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 163,
+    "y": 1765,
+    "width": 877,
+    "height": 675
+   },
+   "draft_lines": [
+    "tively, אֵין is also used negatively, as",
+    "אֵין לְאֵל יָדִי Gen. 31, 29, and יֶשׁ לְאֵל יָדֵנוּ",
+    "Neh. 5, 5. Further: a) Where the sub-",
+    "ject of a sentence is a personal pronoun,",
+    "this latter is often appended as a suffix",
+    "to the word אֵין; e. g. אֵינֶנִּי I am not,",
+    "etc. אֵינְךָ thou art not, etc. אֵינֶךָּ, אֵינֶנּוּ,",
+    "אֵינֶנָּה, אֵינְכֶם, אֵינָם; and also with plur.",
+    "form (as if from אֵינִים), אֵינֵימוֹ, אֵינֵמוֹ",
+    "Ps. 59, 14. 73, 5. b) The substantive",
+    "verb being implied in this negative par-",
+    "ticle, as above, the latter is almost al-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 163,
+      "y": 1757,
+      "width": 877,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r02-b00-877x241+163+1757-x2.png",
+     "image_sha256": "096262943d21b3c9ef2ff546c3a825a7347a59aaa6c2532ff037fc3322ca8dde",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tively, אֵין is also used negatively, as",
+       "יֶשׁ לְאֵל יָדִי Gen. 31, 29, and אֵין לְאֵל יָדֵנוּ",
+       "Neh. 5, 5. Further: a) Where the sub-",
+       "ject of a sentence is a personal pronoun,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0e601dfb-0603-4105-900f-78fa01397efe",
+      "duration_api_ms": 21006,
+      "cost_usd_list": 0.08980350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 695
+     },
+     "lines": [
+      {
+       "draft": "tively, אֵין is also used negatively, as",
+       "reread": "tively, אֵין is also used negatively, as",
+       "status": "agreed",
+       "text": "tively, אֵין is also used negatively, as"
+      },
+      {
+       "draft": "אֵין לְאֵל יָדִי Gen. 31, 29, and יֶשׁ לְאֵל יָדֵנוּ",
+       "reread": "יֶשׁ לְאֵל יָדִי Gen. 31, 29, and אֵין לְאֵל יָדֵנוּ",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "יֶשׁ לְאֵל יָדִי Gen. 31, 29, and אֵין לְאֵל יָדֵנוּ",
+        "verdict": "b",
+        "note": "The first Hebrew group (left of \"Gen. 31, 29\") begins with יֶשׁ (segol, shin dot visible) and the second group (after \"and\") begins with אֵין; Reading A has the two phrases swapped. Vowel points in B match the print (יָדִי defective, יָדֵנוּ with tsere and shureq).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a535ccdf-f216-477e-9b61-283f2751ff54",
+        "duration_api_ms": 14330,
+        "cost_usd_list": 0.08819625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3625,
+        "cache_creation_input_tokens": 2670,
+        "output_tokens": 671
+       },
+       "text": "יֶשׁ לְאֵל יָדִי Gen. 31, 29, and אֵין לְאֵל יָדֵנוּ"
+      },
+      {
+       "draft": "Neh. 5, 5. Further: a) Where the sub-",
+       "reread": "Neh. 5, 5. Further: a) Where the sub-",
+       "status": "agreed",
+       "text": "Neh. 5, 5. Further: a) Where the sub-"
+      },
+      {
+       "draft": "ject of a sentence is a personal pronoun,",
+       "reread": "ject of a sentence is a personal pronoun,",
+       "status": "agreed",
+       "text": "ject of a sentence is a personal pronoun,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 163,
+      "y": 1982,
+      "width": 877,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r02-b01-877x239+163+1982-x2.png",
+     "image_sha256": "62d37cede199885c8071d888feba3a3c5b999bd0d52c44de30a81c9a2d5c5827",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "this latter is often appended as a suffix",
+       "to the word אֵין ; e. g. אֵינֶנִּי I am not,",
+       "etc. אֵינְךָ thou art not, etc. אֵינֵךְ , אֵינֶנּוּ ,",
+       "אֵינֶנָּה , אֵינְכֶם , אֵינָם ; and also with plur."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "caa7fd78-d18c-424b-a61e-9646311caec4",
+      "duration_api_ms": 15821,
+      "cost_usd_list": 0.08625350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 624
+     },
+     "lines": [
+      {
+       "draft": "this latter is often appended as a suffix",
+       "reread": "this latter is often appended as a suffix",
+       "status": "agreed",
+       "text": "this latter is often appended as a suffix"
+      },
+      {
+       "draft": "to the word אֵין; e. g. אֵינֶנִּי I am not,",
+       "reread": "to the word אֵין ; e. g. אֵינֶנִּי I am not,",
+       "status": "agreed",
+       "text": "to the word אֵין; e. g. אֵינֶנִּי I am not,"
+      },
+      {
+       "draft": "etc. אֵינְךָ thou art not, etc. אֵינֶךָּ, אֵינֶנּוּ,",
+       "reread": "etc. אֵינְךָ thou art not, etc. אֵינֵךְ , אֵינֶנּוּ ,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "etc. אֵינְךָ thou art not, etc. אֵינֶךָּ, אֵינֶנּוּ,",
+        "verdict": "a",
+        "note": "The third Hebrew word is printed אֵינֶךָּ: segol under the nun and a final kaf carrying dagesh with qamets beneath (the standard pausal/2ms form), not Reading B's tsere + shewa אֵינֵךְ. Commas follow the words directly with no preceding space.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e836d264-8e3b-494c-aa8e-835932763bc7",
+        "duration_api_ms": 38843,
+        "cost_usd_list": 0.09035325,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3613,
+        "cache_creation_input_tokens": 2658,
+        "output_tokens": 719
+       },
+       "text": "etc. אֵינְךָ thou art not, etc. אֵינֶךָּ, אֵינֶנּוּ,"
+      },
+      {
+       "draft": "אֵינֶנָּה, אֵינְכֶם, אֵינָם; and also with plur.",
+       "reread": "אֵינֶנָּה , אֵינְכֶם , אֵינָם ; and also with plur.",
+       "status": "agreed",
+       "text": "אֵינֶנָּה, אֵינְכֶם, אֵינָם; and also with plur."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 163,
+      "y": 2205,
+      "width": 877,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r02-b02-877x243+163+2205-x2.png",
+     "image_sha256": "159cc6c64fee6a1fbb7def95ee835d28f851727e54fbea37855f4a92dff93f2d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "form (as if from אֵינִים), אֵינֵימוֹ, אֵינֵמוֹ",
+       "Ps. 59, 14. 73, 5. b) The substantive",
+       "verb being implied in this negative par-",
+       "ticle, as above, the latter is almost al-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6d92e924-456b-4fa7-aaf6-f045cd300a12",
+      "duration_api_ms": 15374,
+      "cost_usd_list": 0.0875035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 649
+     },
+     "lines": [
+      {
+       "draft": "form (as if from אֵינִים), אֵינֵימוֹ, אֵינֵמוֹ",
+       "reread": "form (as if from אֵינִים), אֵינֵימוֹ, אֵינֵמוֹ",
+       "status": "agreed",
+       "text": "form (as if from אֵינִים), אֵינֵימוֹ, אֵינֵמוֹ"
+      },
+      {
+       "draft": "Ps. 59, 14. 73, 5. b) The substantive",
+       "reread": "Ps. 59, 14. 73, 5. b) The substantive",
+       "status": "agreed",
+       "text": "Ps. 59, 14. 73, 5. b) The substantive"
+      },
+      {
+       "draft": "verb being implied in this negative par-",
+       "reread": "verb being implied in this negative par-",
+       "status": "agreed",
+       "text": "verb being implied in this negative par-"
+      },
+      {
+       "draft": "ticle, as above, the latter is almost al-",
+       "reread": "ticle, as above, the latter is almost al-",
+       "status": "agreed",
+       "text": "ticle, as above, the latter is almost al-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 163,
+    "y": 2428,
+    "width": 877,
+    "height": 837
+   },
+   "draft_lines": [
+    "ways joined with a participle; e. g. Dan.",
+    "8, 5 behold, a he-goat came from the west",
+    "over the face of the whole earth, וְאֵין נֹגֵעַ",
+    "בָּאָרֶץ and touched not the ground, i. q.",
+    "לֹא נָגַע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+    "5, 16 תֶּבֶן אֵין נִתָּן straw there is none giv-",
+    "en, i. q. לֹא נִתַּן. It often in this way",
+    "forms a periphrasis for no one, none, ne-",
+    "mo, Josh. 6, 1 אֵין יוֹצֵא וְאֵין בָּא none went",
+    "out, and none came in. Lev. 26, 6. Is. 5,",
+    "29. Rarely joined with a finite verb,",
+    "Ex. 3, 2. Ecc. 8, 11. Jer. 38, 5 כִּי אֵין הַמֶּלֶךְ",
+    "יוּכַל אֶתְכֶם דָּבָר for the king cannot do",
+    "any thing against you. Job 35, 15; and",
+    "so with the particle יֵשׁ, Ps. 135, 17 אֵין־"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 163,
+      "y": 2420,
+      "width": 877,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r03-b00-877x247+163+2420-x2.png",
+     "image_sha256": "f8b7793028ee0bd86a91dc31b11650fe98c4e951e5bbbea8d9494f8f8f18b310",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ways joined with a participle; e. g. Dan.",
+       "8, 5 behold, a he-goat came from the west",
+       "over the face of the whole earth, וְאֵין נֹגֵעַ",
+       "בָּאָרֶץ and touched not the ground, i. q."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "989eea70-ad89-4232-8828-c003fe492fc0",
+      "duration_api_ms": 14343,
+      "cost_usd_list": 0.0826035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 551
+     },
+     "lines": [
+      {
+       "draft": "ways joined with a participle; e. g. Dan.",
+       "reread": "ways joined with a participle; e. g. Dan.",
+       "status": "agreed",
+       "text": "ways joined with a participle; e. g. Dan."
+      },
+      {
+       "draft": "8, 5 behold, a he-goat came from the west",
+       "reread": "8, 5 behold, a he-goat came from the west",
+       "status": "agreed",
+       "text": "8, 5 behold, a he-goat came from the west"
+      },
+      {
+       "draft": "over the face of the whole earth, וְאֵין נֹגֵעַ",
+       "reread": "over the face of the whole earth, וְאֵין נֹגֵעַ",
+       "status": "agreed",
+       "text": "over the face of the whole earth, וְאֵין נֹגֵעַ"
+      },
+      {
+       "draft": "בָּאָרֶץ and touched not the ground, i. q.",
+       "reread": "בָּאָרֶץ and touched not the ground, i. q.",
+       "status": "agreed",
+       "text": "בָּאָרֶץ and touched not the ground, i. q."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 163,
+      "y": 2651,
+      "width": 877,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r03-b01-877x231+163+2651-x2.png",
+     "image_sha256": "f3e5dbc2ec89b2c78c879336762a5275fe7710e244e557b039cccc7f6f3872b4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "לֹא נִגָּע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+       "5, 16 תֶּבֶן אֵין נִתָּן straw there is none giv-",
+       "en, i. q. לֹא נִתַּן. It often in this way",
+       "forms a periphrasis for no one, none, ne-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d582e2ec-e14b-4736-aeae-9ac1bc4ca3fc",
+      "duration_api_ms": 27875,
+      "cost_usd_list": 0.0812435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 549
+     },
+     "lines": [
+      {
+       "draft": "לֹא נָגַע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+       "reread": "לֹא נִגָּע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "לֹא נִגָּע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+        "verdict": "b",
+        "note": "Under the nun the print shows a single dot (hiriq), not a qamets, and the gimel carries a dagesh with qamets beneath — the Niphal participle נִגָּע, matching the passive-participle pattern (נִתָּן) of the surrounding passage. Reading A's Qal נָגַע is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6eef158f-9b55-4126-a311-91f4cb0ab6f7",
+        "duration_api_ms": 21457,
+        "cost_usd_list": 0.0980325,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3610,
+        "cache_creation_input_tokens": 2592,
+        "output_tokens": 899
+       },
+       "text": "לֹא נִגָּע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex."
+      },
+      {
+       "draft": "5, 16 תֶּבֶן אֵין נִתָּן straw there is none giv-",
+       "reread": "5, 16 תֶּבֶן אֵין נִתָּן straw there is none giv-",
+       "status": "agreed",
+       "text": "5, 16 תֶּבֶן אֵין נִתָּן straw there is none giv-"
+      },
+      {
+       "draft": "en, i. q. לֹא נִתַּן. It often in this way",
+       "reread": "en, i. q. לֹא נִתַּן. It often in this way",
+       "status": "agreed",
+       "text": "en, i. q. לֹא נִתַּן. It often in this way"
+      },
+      {
+       "draft": "forms a periphrasis for no one, none, ne-",
+       "reread": "forms a periphrasis for no one, none, ne-",
+       "status": "agreed",
+       "text": "forms a periphrasis for no one, none, ne-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 163,
+      "y": 2866,
+      "width": 877,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r03-b02-877x241+163+2866-x2.png",
+     "image_sha256": "6a2e8a6adafdf1991569dc824164bbfdb025cc204d3876f198964e4ae8d54b98",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mo, Josh. 6, 1 אֵין יוֹצֵא וְאֵין בָּא none went",
+       "out, and none came in. Lev. 26, 6. Is. 5,",
+       "29. Rarely joined with a finite verb,",
+       "Ex. 3, 2. Ecc. 8, 11. Jer. 38, 5 כִּי אֵין הַמֶּלֶךְ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a054d16c-8c79-462a-9d7e-e6715efdab04",
+      "duration_api_ms": 10194,
+      "cost_usd_list": 0.0750535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 400
+     },
+     "lines": [
+      {
+       "draft": "mo, Josh. 6, 1 אֵין יוֹצֵא וְאֵין בָּא none went",
+       "reread": "mo, Josh. 6, 1 אֵין יוֹצֵא וְאֵין בָּא none went",
+       "status": "agreed",
+       "text": "mo, Josh. 6, 1 אֵין יוֹצֵא וְאֵין בָּא none went"
+      },
+      {
+       "draft": "out, and none came in. Lev. 26, 6. Is. 5,",
+       "reread": "out, and none came in. Lev. 26, 6. Is. 5,",
+       "status": "agreed",
+       "text": "out, and none came in. Lev. 26, 6. Is. 5,"
+      },
+      {
+       "draft": "29. Rarely joined with a finite verb,",
+       "reread": "29. Rarely joined with a finite verb,",
+       "status": "agreed",
+       "text": "29. Rarely joined with a finite verb,"
+      },
+      {
+       "draft": "Ex. 3, 2. Ecc. 8, 11. Jer. 38, 5 כִּי אֵין הַמֶּלֶךְ",
+       "reread": "Ex. 3, 2. Ecc. 8, 11. Jer. 38, 5 כִּי אֵין הַמֶּלֶךְ",
+       "status": "agreed",
+       "text": "Ex. 3, 2. Ecc. 8, 11. Jer. 38, 5 כִּי אֵין הַמֶּלֶךְ"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 163,
+      "y": 3091,
+      "width": 877,
+      "height": 176
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c0-r03-b03-877x176+163+3091-x2.png",
+     "image_sha256": "b0a1a90eba15552afacb04512f0c3eed42d14fee40fb3dd7d399aa1ec5f8bc66",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "יוּכַל אֶתְכֶם דָּבָר for the king cannot do",
+       "any thing against you. Job 35, 15; and",
+       "so with the particle יֵשׁ, Ps. 135, 17 אֵין־"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13ad3b43-5208-495f-b651-b9d20863f346",
+      "duration_api_ms": 18002,
+      "cost_usd_list": 0.0777535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 580
+     },
+     "lines": [
+      {
+       "draft": "יוּכַל אֶתְכֶם דָּבָר for the king cannot do",
+       "reread": "יוּכַל אֶתְכֶם דָּבָר for the king cannot do",
+       "status": "agreed",
+       "text": "יוּכַל אֶתְכֶם דָּבָר for the king cannot do"
+      },
+      {
+       "draft": "any thing against you. Job 35, 15; and",
+       "reread": "any thing against you. Job 35, 15; and",
+       "status": "agreed",
+       "text": "any thing against you. Job 35, 15; and"
+      },
+      {
+       "draft": "so with the particle יֵשׁ, Ps. 135, 17 אֵין־",
+       "reread": "so with the particle יֵשׁ, Ps. 135, 17 אֵין־",
+       "status": "agreed",
+       "text": "so with the particle יֵשׁ, Ps. 135, 17 אֵין־"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1054,
+    "y": 158,
+    "width": 876,
+    "height": 757
+   },
+   "draft_lines": [
+    "יֶשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+    "their mouth. In both these passages לֹא",
+    "would be more correct. In like manner",
+    "the modern Arabs write ليس for لا.",
+    "c) אֵין לִי there is not to me, i. e. I have",
+    "not, I had not, etc. Lev. 11, 10. 1 Sam.",
+    "1, 2. So Arab. ليس لى. Before an",
+    "infin. it is often i. q. non licet, it is not",
+    "lawful, not permitted, like οὐκ ἔστιν for",
+    "οὐκ ἔξεστιν, and Arab. كان لى est mihi",
+    "for licet mihi, Cor. 4, 94. ib. 10, 100. So",
+    "Esth. 4, 2 אֵין לָבוֹא it is not lawful to en-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1054,
+      "y": 150,
+      "width": 876,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r00-b00-876x238+1054+150-x2.png",
+     "image_sha256": "eb3b0a0e1b364b86b787bd2a18df1d1c0f2ea2768bccc9a54bd0014a9836a080",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵין",
+       "יֵשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+       "their mouth. In both these passages לֹא",
+       "would be more correct. In like manner"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "93f92b40-5a32-4fd0-8866-281321ce0fcc",
+      "duration_api_ms": 18369,
+      "cost_usd_list": 0.07734349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 471
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "אֵין",
+       "status": "reread_only",
+       "band_id": "c1-r00-b00",
+       "text": "אֵין"
+      },
+      {
+       "draft": "יֶשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+       "reread": "יֵשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "יֵשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+        "verdict": "b",
+        "note": "The vowel under the yod of יש is two horizontal dots (tsere), not three (segol); Reading B's יֵשׁ matches the print. Rest of the line is identical in both readings and matches.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b19eede6-d148-4201-92ff-8859c5f94a67",
+        "duration_api_ms": 18536,
+        "cost_usd_list": 0.09814775,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3591,
+        "cache_creation_input_tokens": 2573,
+        "output_tokens": 909
+       },
+       "text": "יֵשׁ רוּחַ בְּפִיהֶם nor is there any breath in"
+      },
+      {
+       "draft": "their mouth. In both these passages לֹא",
+       "reread": "their mouth. In both these passages לֹא",
+       "status": "agreed",
+       "text": "their mouth. In both these passages לֹא"
+      },
+      {
+       "draft": "would be more correct. In like manner",
+       "reread": "would be more correct. In like manner",
+       "status": "agreed",
+       "text": "would be more correct. In like manner"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1054,
+      "y": 372,
+      "width": 876,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r00-b01-876x264+1054+372-x2.png",
+     "image_sha256": "d42e97c84409f0325b15bdf9346328fd48e436ece79ec7365a8868e494f4cc8a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the modern Arabs write ليس for لا.",
+       "c) אֵין לִי there is not to me, i. e. I have",
+       "not, I had not, etc. Lev. 11, 10. 1 Sam.",
+       "1, 2. So Arab. ليس لى. Before an"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "102bb307-e927-4b9e-863c-55cb903385de",
+      "duration_api_ms": 13561,
+      "cost_usd_list": 0.08176349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 509
+     },
+     "lines": [
+      {
+       "draft": "the modern Arabs write ليس for لا.",
+       "reread": "the modern Arabs write ليس for لا.",
+       "status": "agreed",
+       "text": "the modern Arabs write ليس for لا."
+      },
+      {
+       "draft": "c) אֵין לִי there is not to me, i. e. I have",
+       "reread": "c) אֵין לִי there is not to me, i. e. I have",
+       "status": "agreed",
+       "text": "c) אֵין לִי there is not to me, i. e. I have"
+      },
+      {
+       "draft": "not, I had not, etc. Lev. 11, 10. 1 Sam.",
+       "reread": "not, I had not, etc. Lev. 11, 10. 1 Sam.",
+       "status": "agreed",
+       "text": "not, I had not, etc. Lev. 11, 10. 1 Sam."
+      },
+      {
+       "draft": "1, 2. So Arab. ليس لى. Before an",
+       "reread": "1, 2. So Arab. ليس لى. Before an",
+       "status": "agreed",
+       "text": "1, 2. So Arab. ليس لى. Before an"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1054,
+      "y": 620,
+      "width": 876,
+      "height": 303
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r00-b02-876x303+1054+620-x2.png",
+     "image_sha256": "1f57279811e813536cce01f08646e74f0c7978b7d4b4418cf76e2d56afcdf63b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "infin. it is often i. q. non licet, it is not",
+       "lawful, not permitted, like οὐκ ἔστιν for",
+       "οὐκ ἔξεστιν, and Arab. كان لى est mihi",
+       "for licet mihi, Cor. 4, 94. ib. 10, 100. So",
+       "Esth. 4, 2 אֵין לָבוֹא it is not lawful to en-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7c459e92-50a2-4be8-8979-499b168e43e1",
+      "duration_api_ms": 10583,
+      "cost_usd_list": 0.09214349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 641
+     },
+     "lines": [
+      {
+       "draft": "infin. it is often i. q. non licet, it is not",
+       "reread": "infin. it is often i. q. non licet, it is not",
+       "status": "agreed",
+       "text": "infin. it is often i. q. non licet, it is not"
+      },
+      {
+       "draft": "lawful, not permitted, like οὐκ ἔστιν for",
+       "reread": "lawful, not permitted, like οὐκ ἔστιν for",
+       "status": "agreed",
+       "text": "lawful, not permitted, like οὐκ ἔστιν for"
+      },
+      {
+       "draft": "οὐκ ἔξεστιν, and Arab. كان لى est mihi",
+       "reread": "οὐκ ἔξεστιν, and Arab. كان لى est mihi",
+       "status": "agreed",
+       "text": "οὐκ ἔξεστιν, and Arab. كان لى est mihi"
+      },
+      {
+       "draft": "for licet mihi, Cor. 4, 94. ib. 10, 100. So",
+       "reread": "for licet mihi, Cor. 4, 94. ib. 10, 100. So",
+       "status": "agreed",
+       "text": "for licet mihi, Cor. 4, 94. ib. 10, 100. So"
+      },
+      {
+       "draft": "Esth. 4, 2 אֵין לָבוֹא it is not lawful to en-",
+       "reread": "Esth. 4, 2 אֵין לָבוֹא it is not lawful to en-",
+       "status": "agreed",
+       "text": "Esth. 4, 2 אֵין לָבוֹא it is not lawful to en-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1054,
+    "y": 903,
+    "width": 876,
+    "height": 849
+   },
+   "draft_lines": [
+    "ter, none might enter. Ruth 4, 4. Ps. 40, 6",
+    "אֵין עֲרֹךְ אֵלֶיךָ there is nothing to compare",
+    "unto thee, i. e. nothing which can rightly",
+    "be compared, where עֲרֹךְ is poetic for",
+    "לַעֲרֹךְ. d) Joined with various words:",
+    "אֵין אִישׁ there is no man, Gen. 31, 50. Ex.",
+    "2, 12. אֵין דָּבָר Ex. 5, 11, and אֵין מְאוּמָה",
+    "1 K. 18, 43, there is not any thing. אֵין כֹּל",
+    "there is nothing at all, Ecc. 1, 9.",
+    "3. As יֵשׁ is sometimes i. q. to be pre-",
+    "sent, to be here or at hand, so אֵין is not",
+    "to be present, not to be here or at hand,",
+    "etc. Fr. il n'y a pas. Num. 21, 5 כִּי אֵין",
+    "לֶחֶם וְאֵין מַיִם for there is no bread here,",
+    "nor water. 1 Sam. 9, 4. 10, 14 and we"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1054,
+      "y": 895,
+      "width": 876,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r01-b00-876x242+1054+895-x2.png",
+     "image_sha256": "dfe7fe0a687d11dbf9d0e2a659734dcf56616fac565db8f1bc547ab8383a2f76",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ter, none might enter. Ruth 4, 4. Ps. 40, 6",
+       "אֵין עֲרֹךְ אֵלֶיךָ there is nothing to compare",
+       "unto thee, i. e. nothing which can rightly",
+       "be compared, where עֲרֹךְ is poetic for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d0cbc42f-3f59-4ca9-8dcd-4c1f635111cf",
+      "duration_api_ms": 11341,
+      "cost_usd_list": 0.0744035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 387
+     },
+     "lines": [
+      {
+       "draft": "ter, none might enter. Ruth 4, 4. Ps. 40, 6",
+       "reread": "ter, none might enter. Ruth 4, 4. Ps. 40, 6",
+       "status": "agreed",
+       "text": "ter, none might enter. Ruth 4, 4. Ps. 40, 6"
+      },
+      {
+       "draft": "אֵין עֲרֹךְ אֵלֶיךָ there is nothing to compare",
+       "reread": "אֵין עֲרֹךְ אֵלֶיךָ there is nothing to compare",
+       "status": "agreed",
+       "text": "אֵין עֲרֹךְ אֵלֶיךָ there is nothing to compare"
+      },
+      {
+       "draft": "unto thee, i. e. nothing which can rightly",
+       "reread": "unto thee, i. e. nothing which can rightly",
+       "status": "agreed",
+       "text": "unto thee, i. e. nothing which can rightly"
+      },
+      {
+       "draft": "be compared, where עֲרֹךְ is poetic for",
+       "reread": "be compared, where עֲרֹךְ is poetic for",
+       "status": "agreed",
+       "text": "be compared, where עֲרֹךְ is poetic for"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1054,
+      "y": 1121,
+      "width": 876,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r01-b01-876x236+1054+1121-x2.png",
+     "image_sha256": "6e0927b8560644951320ff449cf713665c3b3db88090ece65f91c76d08db71fb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "לְצָרֵךְ. d) Joined with various words:",
+       "אֵין אִישׁ there is no man, Gen. 31, 50. Ex.",
+       "2, 12. אֵין דָּבָר Ex. 5, 11, and אֵין מְאוּמָה",
+       "1 K. 18, 43, there is not any thing. אֵין כֹּל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba11113d-30bc-4859-9fec-d6b83dd765fb",
+      "duration_api_ms": 22259,
+      "cost_usd_list": 0.09733375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 870
+     },
+     "lines": [
+      {
+       "draft": "לַעֲרֹךְ. d) Joined with various words:",
+       "reread": "לְצָרֵךְ. d) Joined with various words:",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "לַעֲרֹךְ. d) Joined with various words:",
+        "verdict": "a",
+        "note": "Second letter is ע with ḥaṭeph‑pataḥ (not צ+qamets) and third letter רֹ has a ḥolem above, not tsere; final ךְ with sheva. Reads לַעֲרֹךְ \"to arrange\" (Ps. 40:6 context), matching Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "64f1dc6e-4df7-42b4-b26e-757295b2bc57",
+        "duration_api_ms": 15958,
+        "cost_usd_list": 0.09686275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3571,
+        "cache_creation_input_tokens": 2554,
+        "output_tokens": 891
+       },
+       "text": "לַעֲרֹךְ. d) Joined with various words:"
+      },
+      {
+       "draft": "אֵין אִישׁ there is no man, Gen. 31, 50. Ex.",
+       "reread": "אֵין אִישׁ there is no man, Gen. 31, 50. Ex.",
+       "status": "agreed",
+       "text": "אֵין אִישׁ there is no man, Gen. 31, 50. Ex."
+      },
+      {
+       "draft": "2, 12. אֵין דָּבָר Ex. 5, 11, and אֵין מְאוּמָה",
+       "reread": "2, 12. אֵין דָּבָר Ex. 5, 11, and אֵין מְאוּמָה",
+       "status": "agreed",
+       "text": "2, 12. אֵין דָּבָר Ex. 5, 11, and אֵין מְאוּמָה"
+      },
+      {
+       "draft": "1 K. 18, 43, there is not any thing. אֵין כֹּל",
+       "reread": "1 K. 18, 43, there is not any thing. אֵין כֹּל",
+       "status": "agreed",
+       "text": "1 K. 18, 43, there is not any thing. אֵין כֹּל"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1054,
+      "y": 1341,
+      "width": 876,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r01-b02-876x244+1054+1341-x2.png",
+     "image_sha256": "e506e7bc567c9cf15a897be16288239da340eec612f6b6ed5f1df5ba875cb6b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "there is nothing at all, Ecc. 1, 9.",
+       "3. As יֵשׁ is sometimes i. q. to be pre-",
+       "sent, to be here or at hand, so אֵין is not",
+       "to be present, not to be here or at hand,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6944702c-99d2-46d2-84b3-8b178713f1df",
+      "duration_api_ms": 12249,
+      "cost_usd_list": 0.06804375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "there is nothing at all, Ecc. 1, 9.",
+       "reread": "there is nothing at all, Ecc. 1, 9.",
+       "status": "agreed",
+       "text": "there is nothing at all, Ecc. 1, 9."
+      },
+      {
+       "draft": "3. As יֵשׁ is sometimes i. q. to be pre-",
+       "reread": "3. As יֵשׁ is sometimes i. q. to be pre-",
+       "status": "agreed",
+       "text": "3. As יֵשׁ is sometimes i. q. to be pre-"
+      },
+      {
+       "draft": "sent, to be here or at hand, so אֵין is not",
+       "reread": "sent, to be here or at hand, so אֵין is not",
+       "status": "agreed",
+       "text": "sent, to be here or at hand, so אֵין is not"
+      },
+      {
+       "draft": "to be present, not to be here or at hand,",
+       "reread": "to be present, not to be here or at hand,",
+       "status": "agreed",
+       "text": "to be present, not to be here or at hand,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1054,
+      "y": 1569,
+      "width": 876,
+      "height": 191
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r01-b03-876x191+1054+1569-x2.png",
+     "image_sha256": "be1f82de77d526a603991240901057588dd634153dfada94a36dcc1983ae78ee",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "etc. Fr. il n'y a pas. Num. 21, 5 כִּי אֵין",
+       "לֶחֶם וְאֵין מַיִם for there is no bread here,",
+       "nor water. 1 Sam. 9, 4. 10, 14 and we"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9cd49f6a-d06c-4d92-9e5a-4253f47a23ba",
+      "duration_api_ms": 12450,
+      "cost_usd_list": 0.06335375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "etc. Fr. il n'y a pas. Num. 21, 5 כִּי אֵין",
+       "reread": "etc. Fr. il n'y a pas. Num. 21, 5 כִּי אֵין",
+       "status": "agreed",
+       "text": "etc. Fr. il n'y a pas. Num. 21, 5 כִּי אֵין"
+      },
+      {
+       "draft": "לֶחֶם וְאֵין מַיִם for there is no bread here,",
+       "reread": "לֶחֶם וְאֵין מַיִם for there is no bread here,",
+       "status": "agreed",
+       "text": "לֶחֶם וְאֵין מַיִם for there is no bread here,"
+      },
+      {
+       "draft": "nor water. 1 Sam. 9, 4. 10, 14 and we",
+       "reread": "nor water. 1 Sam. 9, 4. 10, 14 and we",
+       "status": "agreed",
+       "text": "nor water. 1 Sam. 9, 4. 10, 14 and we"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1054,
+    "y": 1740,
+    "width": 876,
+    "height": 684
+   },
+   "draft_lines": [
+    "saw כִּי אַיִן that they were nowhere. Gen.",
+    "2, 5. Num. 20, 5. Gen. 5, 24 of Enoch:",
+    "וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים. 1 K. 20, 40",
+    "וְהוּא אֵינֶנּוּ lo! he was not, i. e. he was",
+    "gone. So of death, Ps. 39, 14.",
+    "4. Sometimes it may be rendered",
+    "without, i. q. בְּאֵין; but the examples",
+    "strictly fall back under no. 2; e. g. Joel",
+    "1, 6 strong and without number, pr. ‘and",
+    "there is no number.’ Deut. 32, 4.",
+    "5. With prefixes: a) בְּאֵין pr. in not,",
+    "in there not being, in defect of: α) i. q."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1054,
+      "y": 1732,
+      "width": 876,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r02-b00-876x246+1054+1732-x2.png",
+     "image_sha256": "c2e6bd869081ad0e3e772b1f0f956a7db6b305fef6300b07f24769cecace8f90",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "saw כִּי אַיִן that they were nowhere. Gen.",
+       "2, 5. Num. 20, 5. Gen. 5, 24 of Enoch:",
+       "וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים. 1 K. 20, 40",
+       "וְהוּא אֵינֶנּוּ lo! he was not, i. e. he was"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "999bc0d4-a27b-4136-b0d6-ec639170e7dc",
+      "duration_api_ms": 12711,
+      "cost_usd_list": 0.07099375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 318
+     },
+     "lines": [
+      {
+       "draft": "saw כִּי אַיִן that they were nowhere. Gen.",
+       "reread": "saw כִּי אַיִן that they were nowhere. Gen.",
+       "status": "agreed",
+       "text": "saw כִּי אַיִן that they were nowhere. Gen."
+      },
+      {
+       "draft": "2, 5. Num. 20, 5. Gen. 5, 24 of Enoch:",
+       "reread": "2, 5. Num. 20, 5. Gen. 5, 24 of Enoch:",
+       "status": "agreed",
+       "text": "2, 5. Num. 20, 5. Gen. 5, 24 of Enoch:"
+      },
+      {
+       "draft": "וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים. 1 K. 20, 40",
+       "reread": "וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים. 1 K. 20, 40",
+       "status": "agreed",
+       "text": "וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים. 1 K. 20, 40"
+      },
+      {
+       "draft": "וְהוּא אֵינֶנּוּ lo! he was not, i. e. he was",
+       "reread": "וְהוּא אֵינֶנּוּ lo! he was not, i. e. he was",
+       "status": "agreed",
+       "text": "וְהוּא אֵינֶנּוּ lo! he was not, i. e. he was"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1054,
+      "y": 1962,
+      "width": 876,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r02-b01-876x239+1054+1962-x2.png",
+     "image_sha256": "e5ff661914908c75ec699d013583e6968c49b028f4c3178bb49f052200a5473c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "gone. So of death, Ps. 39, 14.",
+       "4. Sometimes it may be rendered",
+       "without, i. q. בְּאֵין; but the examples",
+       "strictly fall back under no. 2; e. g. Joel"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cada25a7-b12b-4894-a60d-3834cc168f0e",
+      "duration_api_ms": 9547,
+      "cost_usd_list": 0.06769375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "gone. So of death, Ps. 39, 14.",
+       "reread": "gone. So of death, Ps. 39, 14.",
+       "status": "agreed",
+       "text": "gone. So of death, Ps. 39, 14."
+      },
+      {
+       "draft": "4. Sometimes it may be rendered",
+       "reread": "4. Sometimes it may be rendered",
+       "status": "agreed",
+       "text": "4. Sometimes it may be rendered"
+      },
+      {
+       "draft": "without, i. q. בְּאֵין; but the examples",
+       "reread": "without, i. q. בְּאֵין; but the examples",
+       "status": "agreed",
+       "text": "without, i. q. בְּאֵין; but the examples"
+      },
+      {
+       "draft": "strictly fall back under no. 2; e. g. Joel",
+       "reread": "strictly fall back under no. 2; e. g. Joel",
+       "status": "agreed",
+       "text": "strictly fall back under no. 2; e. g. Joel"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1054,
+      "y": 2185,
+      "width": 876,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r02-b02-876x247+1054+2185-x2.png",
+     "image_sha256": "9e141cc72acdd6aa245b21093034acfda2c64337ac05d8b4263632a851bbcebd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1, 6 strong and without number, pr. ‘and",
+       "there is no number.’ Deut. 32, 4.",
+       "5. With prefixes: a) בְּאֵין pr. in not,",
+       "in there not being, in defect of: α) i. q."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "38dee6bd-c455-4b95-bbbc-7e2741ed93bb",
+      "duration_api_ms": 10318,
+      "cost_usd_list": 0.06799375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "1, 6 strong and without number, pr. ‘and",
+       "reread": "1, 6 strong and without number, pr. ‘and",
+       "status": "agreed",
+       "text": "1, 6 strong and without number, pr. ‘and"
+      },
+      {
+       "draft": "there is no number.’ Deut. 32, 4.",
+       "reread": "there is no number.’ Deut. 32, 4.",
+       "status": "agreed",
+       "text": "there is no number.’ Deut. 32, 4."
+      },
+      {
+       "draft": "5. With prefixes: a) בְּאֵין pr. in not,",
+       "reread": "5. With prefixes: a) בְּאֵין pr. in not,",
+       "status": "agreed",
+       "text": "5. With prefixes: a) בְּאֵין pr. in not,"
+      },
+      {
+       "draft": "in there not being, in defect of: α) i. q.",
+       "reread": "in there not being, in defect of: α) i. q.",
+       "status": "agreed",
+       "text": "in there not being, in defect of: α) i. q."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1054,
+    "y": 2412,
+    "width": 876,
+    "height": 853
+   },
+   "draft_lines": [
+    "‘when there was not,’ Prov. 8, 24 בְּאֵין",
+    "תְּהוֹמוֹת when there were no deeps, i. e. be-",
+    "fore the floods were yet created; comp.",
+    "בְּטֶרֶם. β) Often i. q. בְּלֹא, without. Ez.",
+    "38, 11 בְּאֵין חוֹמָה without a wall. Prov.",
+    "5, 23. 11, 14.",
+    "b) כְּאֵין as nothing, nothing wanting,",
+    "i. e. almost, well-nigh, Ps. 73, 2. Comp.",
+    "כִּמְעַט little wanting, i. e. almost; see",
+    "מְעַט.",
+    "c) לְאֵין α) For לַאֲשֶׁר אֵין to whom",
+    "there is no, nothing, Is. 40, 29. Neh. 8,",
+    "10. β) For לְלֹא הֱיוֹת so that there should",
+    "be no, etc. Ezra 9, 14.",
+    "d) מֵאֵין pr. from there being no, i. q"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1054,
+      "y": 2404,
+      "width": 876,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r03-b00-876x246+1054+2404-x2.png",
+     "image_sha256": "50b81553ce95102b61a46d7f52e795327b686aef5d7cc0fbf77ad35e4b83da82",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "‘when there was not,’ Prov. 8, 24 בְּאֵין",
+       "תְּהוֹמוֹת when there were no deeps, i. e. be-",
+       "fore the floods were yet created; comp.",
+       "בְּטֶרֶם. β) Often i. q. בְּלֹא, without. Ez."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b5b91d74-f095-4f73-91f7-d6fb1ca1508c",
+      "duration_api_ms": 11480,
+      "cost_usd_list": 0.06919375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 282
+     },
+     "lines": [
+      {
+       "draft": "‘when there was not,’ Prov. 8, 24 בְּאֵין",
+       "reread": "‘when there was not,’ Prov. 8, 24 בְּאֵין",
+       "status": "agreed",
+       "text": "‘when there was not,’ Prov. 8, 24 בְּאֵין"
+      },
+      {
+       "draft": "תְּהוֹמוֹת when there were no deeps, i. e. be-",
+       "reread": "תְּהוֹמוֹת when there were no deeps, i. e. be-",
+       "status": "agreed",
+       "text": "תְּהוֹמוֹת when there were no deeps, i. e. be-"
+      },
+      {
+       "draft": "fore the floods were yet created; comp.",
+       "reread": "fore the floods were yet created; comp.",
+       "status": "agreed",
+       "text": "fore the floods were yet created; comp."
+      },
+      {
+       "draft": "בְּטֶרֶם. β) Often i. q. בְּלֹא, without. Ez.",
+       "reread": "בְּטֶרֶם. β) Often i. q. בְּלֹא, without. Ez.",
+       "status": "agreed",
+       "text": "בְּטֶרֶם. β) Often i. q. בְּלֹא, without. Ez."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1054,
+      "y": 2634,
+      "width": 876,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r03-b01-876x235+1054+2634-x2.png",
+     "image_sha256": "c4d9f9cfd27d399c45a1ecf5e930c4e723ea0423c0d53bda2dc2dbef9b8ce68f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "38, 11 בְּאֵין חוֹמָה without a wall. Prov.",
+       "5, 23. 11, 14.",
+       "b) כְּאַיִן as nothing, nothing wanting,",
+       "i. e. almost, well-nigh, Ps. 73, 2. Comp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "017b6e15-2f91-4928-9bb4-78187ac77eb3",
+      "duration_api_ms": 9106,
+      "cost_usd_list": 0.06743375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 272
+     },
+     "lines": [
+      {
+       "draft": "38, 11 בְּאֵין חוֹמָה without a wall. Prov.",
+       "reread": "38, 11 בְּאֵין חוֹמָה without a wall. Prov.",
+       "status": "agreed",
+       "text": "38, 11 בְּאֵין חוֹמָה without a wall. Prov."
+      },
+      {
+       "draft": "5, 23. 11, 14.",
+       "reread": "5, 23. 11, 14.",
+       "status": "agreed",
+       "text": "5, 23. 11, 14."
+      },
+      {
+       "draft": "b) כְּאֵין as nothing, nothing wanting,",
+       "reread": "b) כְּאַיִן as nothing, nothing wanting,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "b) כְּאַיִן as nothing, nothing wanting,",
+        "verdict": "b",
+        "note": "The printed word has a patach under aleph and a hiriq dot under the yod (כְּאַיִן), unlike the tsere-pointed בְּאֵין on the line above; Reading A's כְּאֵין misses the hiriq.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5510c876-f82d-4244-a415-c07db41dc79a",
+        "duration_api_ms": 11537,
+        "cost_usd_list": 0.07650325000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2556,
+        "output_tokens": 483
+       },
+       "text": "b) כְּאַיִן as nothing, nothing wanting,"
+      },
+      {
+       "draft": "i. e. almost, well-nigh, Ps. 73, 2. Comp.",
+       "reread": "i. e. almost, well-nigh, Ps. 73, 2. Comp.",
+       "status": "agreed",
+       "text": "i. e. almost, well-nigh, Ps. 73, 2. Comp."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1054,
+      "y": 2853,
+      "width": 876,
+      "height": 302
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r03-b02-876x302+1054+2853-x2.png",
+     "image_sha256": "d967148527488cddb927f88910a1b5b0a5980a6610d65819a329a2869f258b39",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כִּמְעַט little wanting, i. e. almost; see",
+       "מְעַט.",
+       "c) לְאֵין α) For לַאֲשֶׁר אֵין to whom",
+       "there is no, nothing, Is. 40, 29. Neh. 8,",
+       "10. β) For לְלֹא הֱיוֹת so that there should"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2f8e5685-1e64-45c4-905c-cd8ea3e47fe2",
+      "duration_api_ms": 15220,
+      "cost_usd_list": 0.08903375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2945,
+      "output_tokens": 578
+     },
+     "lines": [
+      {
+       "draft": "כִּמְעַט little wanting, i. e. almost; see",
+       "reread": "כִּמְעַט little wanting, i. e. almost; see",
+       "status": "agreed",
+       "text": "כִּמְעַט little wanting, i. e. almost; see"
+      },
+      {
+       "draft": "מְעַט.",
+       "reread": "מְעַט.",
+       "status": "agreed",
+       "text": "מְעַט."
+      },
+      {
+       "draft": "c) לְאֵין α) For לַאֲשֶׁר אֵין to whom",
+       "reread": "c) לְאֵין α) For לַאֲשֶׁר אֵין to whom",
+       "status": "agreed",
+       "text": "c) לְאֵין α) For לַאֲשֶׁר אֵין to whom"
+      },
+      {
+       "draft": "there is no, nothing, Is. 40, 29. Neh. 8,",
+       "reread": "there is no, nothing, Is. 40, 29. Neh. 8,",
+       "status": "agreed",
+       "text": "there is no, nothing, Is. 40, 29. Neh. 8,"
+      },
+      {
+       "draft": "10. β) For לְלֹא הֱיוֹת so that there should",
+       "reread": "10. β) For לְלֹא הֱיוֹת so that there should",
+       "status": "agreed",
+       "text": "10. β) For לְלֹא הֱיוֹת so that there should"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1054,
+      "y": 3139,
+      "width": 876,
+      "height": 134
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0059/pass2/c1-r03-b03-876x134+1054+3139-x2.png",
+     "image_sha256": "e833bf35167bb22260463fbc188c3c79fc0871d07d8f32e62d76b725aad70529",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "be no, etc. Ezra 9, 14.",
+       "d) מֵאֵין pr. from there being no, i. q"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f2e4d374-dd79-479e-a79f-d63cf36a0a2d",
+      "duration_api_ms": 16107,
+      "cost_usd_list": 0.06361375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2189,
+      "output_tokens": 372
+     },
+     "lines": [
+      {
+       "draft": "be no, etc. Ezra 9, 14.",
+       "reread": "be no, etc. Ezra 9, 14.",
+       "status": "agreed",
+       "text": "be no, etc. Ezra 9, 14."
+      },
+      {
+       "draft": "d) מֵאֵין pr. from there being no, i. q",
+       "reread": "d) מֵאֵין pr. from there being no, i. q",
+       "status": "agreed",
+       "text": "d) מֵאֵין pr. from there being no, i. q"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אֵין 43 אֵין",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. Emim, pr. n. of an ancient people",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "who originally inhabited the land of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Moab, Gen. 14, 5. Deut. 2, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* אִין obsol. root, i. q. אוּן q. v. Hence",
+   "status": "adjudicated",
+   "draft": "* אִין obsol. root, i. q. אוּן q. v. Hence",
+   "reread": "* אָיִן obsol. root, i. q. אוּן q. v. Hence",
+   "verdict": "a",
+   "note": "The headword carries a single dot (hiriq) under the aleph and nothing under the yod — אִין, as in A. B's אָיִן (qamets + hiriq under yod) is not what is printed; contrast line 2's אַיִן, which visibly has points under both letters. אוּן with shureq matches both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "I. אַיִן constr. אֵין, pr. subst. nothing,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "nothingness. Is. 40, 23 הַנֹּתֵן רוֹזְנִים לְאָיִן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "who bringeth princes to nothing. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "adverbially:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. nothing, nought, usually including",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the idea of the subst. verb to be, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1 K. 8, 9 אֵין בָּאָרוֹן רַק שְׁנֵי לֻחוֹת הָאֲבָנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "nothing was in the ark save the two ta-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "bles of stone. Ps. 19, 7. Ex. 22, 2. So",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2 Sam. 19, 7 אֵין לְךָ שָׂרִים וַעֲבָדִים nought",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to thee are princes and servants.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. no, not, including the idea of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "subst. verb, there is not, was not; there",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "are not, were not, etc. i. q. לֹא יֵשׁ, Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "لَيْسَ, Aram. ܠܰܝܬ, לֵית, לַיִת, አልቦ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Num. 14, 42 כִּי אֵין יְהוָֹה בְּקִרְבְּכֶם for",
+   "status": "adjudicated",
+   "draft": "Num. 14, 42 כִּי אֵין יְהוָֹה בְּקִרְבְּכֶם for",
+   "reread": "Num. 14, 42 כִּי אֵין יְהוָה בְּקִרְבְּכֶם for",
+   "verdict": "a",
+   "note": "The sole difference is the holem over the vav of the Tetragrammaton: a small dot is printed above the vav (יְהוָֹה), as is Robinson's normal full pointing; Reading B drops it. All else (defective אֵין, בְּקִרְבְּכֶם, numerals, italic \"for\") matches both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Jehovah is not among you. Judg. 21, 25",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "in those days אֵין מֶלֶךְ בְּיִשְׂרָאֵל there was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "no king in Israel. Gen. 37, 29 אֵין יוֹסֵף",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "בַּבּוֹר Joseph was not in the cistern. Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "10, 4. Ex. 12, 30. Lev. 13, 31. In the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "same phrases where יֵשׁ is said affirma-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tively, אֵין is also used negatively, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "יֶשׁ לְאֵל יָדִי Gen. 31, 29, and אֵין לְאֵל יָדֵנוּ",
+   "status": "adjudicated",
+   "draft": "אֵין לְאֵל יָדִי Gen. 31, 29, and יֶשׁ לְאֵל יָדֵנוּ",
+   "reread": "יֶשׁ לְאֵל יָדִי Gen. 31, 29, and אֵין לְאֵל יָדֵנוּ",
+   "verdict": "b",
+   "note": "The first Hebrew group (left of \"Gen. 31, 29\") begins with יֶשׁ (segol, shin dot visible) and the second group (after \"and\") begins with אֵין; Reading A has the two phrases swapped. Vowel points in B match the print (יָדִי defective, יָדֵנוּ with tsere and shureq).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Neh. 5, 5. Further: a) Where the sub-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ject of a sentence is a personal pronoun,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "this latter is often appended as a suffix",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to the word אֵין; e. g. אֵינֶנִּי I am not,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "etc. אֵינְךָ thou art not, etc. אֵינֶךָּ, אֵינֶנּוּ,",
+   "status": "adjudicated",
+   "draft": "etc. אֵינְךָ thou art not, etc. אֵינֶךָּ, אֵינֶנּוּ,",
+   "reread": "etc. אֵינְךָ thou art not, etc. אֵינֵךְ , אֵינֶנּוּ ,",
+   "verdict": "a",
+   "note": "The third Hebrew word is printed אֵינֶךָּ: segol under the nun and a final kaf carrying dagesh with qamets beneath (the standard pausal/2ms form), not Reading B's tsere + shewa אֵינֵךְ. Commas follow the words directly with no preceding space.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵינֶנָּה, אֵינְכֶם, אֵינָם; and also with plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "form (as if from אֵינִים), אֵינֵימוֹ, אֵינֵמוֹ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ps. 59, 14. 73, 5. b) The substantive",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "verb being implied in this negative par-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ticle, as above, the latter is almost al-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ways joined with a participle; e. g. Dan.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "8, 5 behold, a he-goat came from the west",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "over the face of the whole earth, וְאֵין נֹגֵעַ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "בָּאָרֶץ and touched not the ground, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "לֹא נִגָּע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+   "status": "adjudicated",
+   "draft": "לֹא נָגַע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+   "reread": "לֹא נִגָּע. Esth. 3, 8. 7, 4. Ezra 3, 13. Ex.",
+   "verdict": "b",
+   "note": "Under the nun the print shows a single dot (hiriq), not a qamets, and the gimel carries a dagesh with qamets beneath — the Niphal participle נִגָּע, matching the passive-participle pattern (נִתָּן) of the surrounding passage. Reading A's Qal נָגַע is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5, 16 תֶּבֶן אֵין נִתָּן straw there is none giv-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "en, i. q. לֹא נִתַּן. It often in this way",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "forms a periphrasis for no one, none, ne-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mo, Josh. 6, 1 אֵין יוֹצֵא וְאֵין בָּא none went",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "out, and none came in. Lev. 26, 6. Is. 5,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "29. Rarely joined with a finite verb,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ex. 3, 2. Ecc. 8, 11. Jer. 38, 5 כִּי אֵין הַמֶּלֶךְ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "יוּכַל אֶתְכֶם דָּבָר for the king cannot do",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "any thing against you. Job 35, 15; and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "so with the particle יֵשׁ, Ps. 135, 17 אֵין־",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֵין",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "אֵין",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "יֵשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+   "status": "adjudicated",
+   "draft": "יֶשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+   "reread": "יֵשׁ רוּחַ בְּפִיהֶם nor is there any breath in",
+   "verdict": "b",
+   "note": "The vowel under the yod of יש is two horizontal dots (tsere), not three (segol); Reading B's יֵשׁ matches the print. Rest of the line is identical in both readings and matches.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "their mouth. In both these passages לֹא",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "would be more correct. In like manner",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the modern Arabs write ليس for لا.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "c) אֵין לִי there is not to me, i. e. I have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "not, I had not, etc. Lev. 11, 10. 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1, 2. So Arab. ليس لى. Before an",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "infin. it is often i. q. non licet, it is not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lawful, not permitted, like οὐκ ἔστιν for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "οὐκ ἔξεστιν, and Arab. كان لى est mihi",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "for licet mihi, Cor. 4, 94. ib. 10, 100. So",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Esth. 4, 2 אֵין לָבוֹא it is not lawful to en-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ter, none might enter. Ruth 4, 4. Ps. 40, 6",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֵין עֲרֹךְ אֵלֶיךָ there is nothing to compare",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "unto thee, i. e. nothing which can rightly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "be compared, where עֲרֹךְ is poetic for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "לַעֲרֹךְ. d) Joined with various words:",
+   "status": "adjudicated",
+   "draft": "לַעֲרֹךְ. d) Joined with various words:",
+   "reread": "לְצָרֵךְ. d) Joined with various words:",
+   "verdict": "a",
+   "note": "Second letter is ע with ḥaṭeph‑pataḥ (not צ+qamets) and third letter רֹ has a ḥolem above, not tsere; final ךְ with sheva. Reads לַעֲרֹךְ \"to arrange\" (Ps. 40:6 context), matching Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֵין אִישׁ there is no man, Gen. 31, 50. Ex.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2, 12. אֵין דָּבָר Ex. 5, 11, and אֵין מְאוּמָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1 K. 18, 43, there is not any thing. אֵין כֹּל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "there is nothing at all, Ecc. 1, 9.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. As יֵשׁ is sometimes i. q. to be pre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sent, to be here or at hand, so אֵין is not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "to be present, not to be here or at hand,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "etc. Fr. il n'y a pas. Num. 21, 5 כִּי אֵין",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "לֶחֶם וְאֵין מַיִם for there is no bread here,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "nor water. 1 Sam. 9, 4. 10, 14 and we",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "saw כִּי אַיִן that they were nowhere. Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2, 5. Num. 20, 5. Gen. 5, 24 of Enoch:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "וְאֵינֶנּוּ כִּי לָקַח אֹתוֹ אֱלֹהִים. 1 K. 20, 40",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "וְהוּא אֵינֶנּוּ lo! he was not, i. e. he was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "gone. So of death, Ps. 39, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4. Sometimes it may be rendered",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "without, i. q. בְּאֵין; but the examples",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "strictly fall back under no. 2; e. g. Joel",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1, 6 strong and without number, pr. ‘and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "there is no number.’ Deut. 32, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "5. With prefixes: a) בְּאֵין pr. in not,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "in there not being, in defect of: α) i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "‘when there was not,’ Prov. 8, 24 בְּאֵין",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "תְּהוֹמוֹת when there were no deeps, i. e. be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "fore the floods were yet created; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "בְּטֶרֶם. β) Often i. q. בְּלֹא, without. Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "38, 11 בְּאֵין חוֹמָה without a wall. Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "5, 23. 11, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "b) כְּאַיִן as nothing, nothing wanting,",
+   "status": "adjudicated",
+   "draft": "b) כְּאֵין as nothing, nothing wanting,",
+   "reread": "b) כְּאַיִן as nothing, nothing wanting,",
+   "verdict": "b",
+   "note": "The printed word has a patach under aleph and a hiriq dot under the yod (כְּאַיִן), unlike the tsere-pointed בְּאֵין on the line above; Reading A's כְּאֵין misses the hiriq.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "i. e. almost, well-nigh, Ps. 73, 2. Comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "כִּמְעַט little wanting, i. e. almost; see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "מְעַט.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "c) לְאֵין α) For לַאֲשֶׁר אֵין to whom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "there is no, nothing, Is. 40, 29. Neh. 8,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "10. β) For לְלֹא הֱיוֹת so that there should",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "be no, etc. Ezra 9, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "d) מֵאֵין pr. from there being no, i. q",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 100,
+  "adjudicated": 8,
+  "draft_only": 0,
+  "reread_only": 1,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.0099
+}

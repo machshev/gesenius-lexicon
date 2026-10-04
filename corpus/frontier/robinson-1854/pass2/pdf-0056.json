@@ -1,0 +1,2688 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 56,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0056.png",
+ "raster_sha256": "dee998d7cd52267915be719904c4a07fe0779990d1da705b98efc2c3f93cb361",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0056.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:31:53+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 178,
+    "y": 72,
+    "width": 1773,
+    "height": 67
+   },
+   "draft_lines": [
+    "אִי 40 אֵיה"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 178,
+      "y": 71,
+      "width": 1773,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/header-b00-1773x70+178+71-x2.png",
+     "image_sha256": "7541f59d92c940117dc8332f4b465be657216ba94b71dbfd78414dc2615423ba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אי 40 איה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "95b638c2-5e94-42f6-8f6a-e50bd606354f",
+      "duration_api_ms": 8879,
+      "cost_usd_list": 0.0476825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 211
+     },
+     "lines": [
+      {
+       "draft": "אִי 40 אֵיה",
+       "reread": "אי 40 איה",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אי 40 איה",
+        "verdict": "b",
+        "note": "The running-head catchwords are printed unpointed: no hiriq under the alef of אי and no tsere under the alef of איה. Reading A adds vowels not present in the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3796f604-3fb5-493f-8c01-6fa348762939",
+        "duration_api_ms": 9423,
+        "cost_usd_list": 0.05104575,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1711,
+        "output_tokens": 318
+       },
+       "text": "אי 40 איה"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 178,
+    "y": 119,
+    "width": 874,
+    "height": 744
+   },
+   "draft_lines": [
+    "fem. Is. 23, 2 ; plur. אִיִּים, once אִיִּין Ez.",
+    "26, 18. R. אָוָה I.",
+    "1. Pr. habitable ground, dry land, opp.",
+    "to water, the sea, rivers; see the root",
+    "no. 1. Is. 42, 15 שַׂמְתִּי נְהָרוֹת לְאִיִּים I will",
+    "make the rivers dry lands ; comp. 43, 19.",
+    "50, 2. Hence",
+    "2. terra maritima, land adjacent to",
+    "the sea, sea-coast, whether on the shore",
+    "of the main land, or an island; like the",
+    "East-Indian Dvipa, which signifies both",
+    "coast and island. Spec. a) the coast,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 178,
+      "y": 111,
+      "width": 874,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r00-b00-874x247+178+111-x2.png",
+     "image_sha256": "b7a8dc6c698c3c58b9a34b1f0701bb4afdf99aedb5a1f52d6f5499044a678275",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "fem. Is. 23, 2 ; plur. אִיִּים, once אִיִּין Ez.",
+       "26, 18.   R. אָוָה I.",
+       "1. Pr. habitable ground, dry land, opp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b37b9ae3-c6d0-4f19-988b-14522d926941",
+      "duration_api_ms": 11637,
+      "cost_usd_list": 0.07846324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 469
+     },
+     "lines": [
+      {
+       "draft": "fem. Is. 23, 2 ; plur. אִיִּים, once אִיִּין Ez.",
+       "reread": "fem. Is. 23, 2 ; plur. אִיִּים, once אִיִּין Ez.",
+       "status": "agreed",
+       "text": "fem. Is. 23, 2; plur. אִיִּים, once אִיִּין Ez."
+      },
+      {
+       "draft": "26, 18. R. אָוָה I.",
+       "reread": "26, 18.   R. אָוָה I.",
+       "status": "agreed",
+       "text": "26, 18. R. אָוָה I."
+      },
+      {
+       "draft": "1. Pr. habitable ground, dry land, opp.",
+       "reread": "1. Pr. habitable ground, dry land, opp.",
+       "status": "agreed",
+       "text": "1. Pr. habitable ground, dry land, opp."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 178,
+      "y": 342,
+      "width": 874,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r00-b01-874x239+178+342-x2.png",
+     "image_sha256": "2d3594c494ed2e7381e69fc9a33b5f11d2f5a92fe648a499947c1ba3dbbeebac",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to water, the sea, rivers; see the root",
+       "no. 1. Is. 42, 15 שַׂמְתִּי נְהָרוֹת לְאִיִּים I will",
+       "make the rivers dry lands ; comp. 43, 19.",
+       "50, 2. Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0ab12d4e-b3d1-43b5-b749-242c6df1a14c",
+      "duration_api_ms": 13912,
+      "cost_usd_list": 0.07731325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 446
+     },
+     "lines": [
+      {
+       "draft": "to water, the sea, rivers; see the root",
+       "reread": "to water, the sea, rivers; see the root",
+       "status": "agreed",
+       "text": "to water, the sea, rivers; see the root"
+      },
+      {
+       "draft": "no. 1. Is. 42, 15 שַׂמְתִּי נְהָרוֹת לְאִיִּים I will",
+       "reread": "no. 1. Is. 42, 15 שַׂמְתִּי נְהָרוֹת לְאִיִּים I will",
+       "status": "agreed",
+       "text": "no. 1. Is. 42, 15 שַׂמְתִּי נְהָרוֹת לְאִיִּים I will"
+      },
+      {
+       "draft": "make the rivers dry lands ; comp. 43, 19.",
+       "reread": "make the rivers dry lands ; comp. 43, 19.",
+       "status": "agreed",
+       "text": "make the rivers dry lands; comp. 43, 19."
+      },
+      {
+       "draft": "50, 2. Hence",
+       "reread": "50, 2. Hence",
+       "status": "agreed",
+       "text": "50, 2. Hence"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 178,
+      "y": 565,
+      "width": 874,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r00-b02-874x241+178+565-x2.png",
+     "image_sha256": "8a7d440f95bdefa88166034b362b2c24ebd0bd3efd22eca5992b835303785993",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. terra maritima, land adjacent to",
+       "the sea, sea-coast, whether on the shore",
+       "of the main land, or an island; like the",
+       "East-Indian Dvipa, which signifies both"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5506d368-5e91-4240-ae84-a5fe1bb18be6",
+      "duration_api_ms": 9072,
+      "cost_usd_list": 0.06701325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "2. terra maritima, land adjacent to",
+       "reread": "2. terra maritima, land adjacent to",
+       "status": "agreed",
+       "text": "2. terra maritima, land adjacent to"
+      },
+      {
+       "draft": "the sea, sea-coast, whether on the shore",
+       "reread": "the sea, sea-coast, whether on the shore",
+       "status": "agreed",
+       "text": "the sea, sea-coast, whether on the shore"
+      },
+      {
+       "draft": "of the main land, or an island; like the",
+       "reread": "of the main land, or an island; like the",
+       "status": "agreed",
+       "text": "of the main land, or an island; like the"
+      },
+      {
+       "draft": "East-Indian Dvipa, which signifies both",
+       "reread": "East-Indian Dvipa, which signifies both",
+       "status": "agreed",
+       "text": "East-Indian Dvipa, which signifies both"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 178,
+      "y": 790,
+      "width": 874,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r00-b03-874x81+178+790-x2.png",
+     "image_sha256": "4ce23f950972a6b76e3034f72de3203107d63e24c024a30323550ec67a1d8545",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "coast and island. Spec. a) the coast,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "270cd2ae-8434-46ed-9a22-876fecaae554",
+      "duration_api_ms": 12517,
+      "cost_usd_list": 0.049493249999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1933,
+      "output_tokens": 192
+     },
+     "lines": [
+      {
+       "draft": "coast and island. Spec. a) the coast,",
+       "reread": "coast and island. Spec. a) the coast,",
+       "status": "agreed",
+       "text": "coast and island. Spec. a) the coast,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 178,
+    "y": 851,
+    "width": 874,
+    "height": 843
+   },
+   "draft_lines": [
+    "the sea-coast, Is. 20, 6. 23, 2. 6. Ez. 27,",
+    "7 אִיֵּי אֱלִישָׁה the coast of Elishah, i. e. of",
+    "Peloponnesus or Greece. b) an island,",
+    "Jer. 47 ,4 אִי כַּפְתּוֹר the isle of Caphtor, i. e.",
+    "Crete. אִיֵּי כִּתִּים the isles of Chittim, Ez.",
+    "27, 6. Jer. 2, 10 ; comp. Esth. 10, 1, where",
+    "אִיֵּי הַיָּם are put in antith. with the main",
+    "land, continent. c) Plur. אִיִּים very often",
+    "for coasts, maritime regions, espec. be-",
+    "yond sea, as in Jer. 25, 22 is added by",
+    "way of epexegesis הָאִי אֲשֶׁר בְּעֵבֶר הַיָּם.",
+    "Hence genr. of coasts and islands far",
+    "remote, Is. 24, 15. 40, 15. 41, 1. 5. 42, 4.",
+    "10. 12. 49, 1. 51, 5 ; espec. those of the",
+    "Mediterranean Ps. 72, 10. Dan. 11, 18,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 178,
+      "y": 843,
+      "width": 874,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r01-b00-874x244+178+843-x2.png",
+     "image_sha256": "2a177ec945af5f22edef718272ef29ea29b1a49d135f363325655c4bb0ebdbd4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the sea-coast, Is. 20, 6. 23, 2. 6. Ez. 27,",
+       "7 אִיֵּי אֱלִישָׁה the coast of Elishah, i. e. of",
+       "Peloponnesus or Greece. b) an island,",
+       "Jer. 47 ,4 אִי כַּפְתֹּר the isle of Caphtor, i. e."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3039f8dc-6876-4946-bcda-01b947670b89",
+      "duration_api_ms": 22044,
+      "cost_usd_list": 0.10781325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 1056
+     },
+     "lines": [
+      {
+       "draft": "the sea-coast, Is. 20, 6. 23, 2. 6. Ez. 27,",
+       "reread": "the sea-coast, Is. 20, 6. 23, 2. 6. Ez. 27,",
+       "status": "agreed",
+       "text": "the sea-coast, Is. 20, 6. 23, 2. 6. Ez. 27,"
+      },
+      {
+       "draft": "7 אִיֵּי אֱלִישָׁה the coast of Elishah, i. e. of",
+       "reread": "7 אִיֵּי אֱלִישָׁה the coast of Elishah, i. e. of",
+       "status": "agreed",
+       "text": "7 אִיֵּי אֱלִישָׁה the coast of Elishah, i. e. of"
+      },
+      {
+       "draft": "Peloponnesus or Greece. b) an island,",
+       "reread": "Peloponnesus or Greece. b) an island,",
+       "status": "agreed",
+       "text": "Peloponnesus or Greece. b) an island,"
+      },
+      {
+       "draft": "Jer. 47 ,4 אִי כַּפְתּוֹר the isle of Caphtor, i. e.",
+       "reread": "Jer. 47 ,4 אִי כַּפְתֹּר the isle of Caphtor, i. e.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "Jer. 47 ,4 אִי כַּפְתֹּר the isle of Caphtor, i. e.",
+        "verdict": "b",
+        "note": "Only four Hebrew letters are printed in the place-name (כ פ ת ר); there is no vav between the tav and resh — the holam is a single dot above the tav/resh join, so the spelling is defective כַּפְתֹּר, not plene כַּפְתּוֹר as in Reading A. Everything else (Jer. 47 ,4 with the transposed comma, אִי, the English) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1a070912-ea7d-4c6d-b7a1-0da794c10ef8",
+        "duration_api_ms": 25792,
+        "cost_usd_list": 0.09127125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3605,
+        "cache_creation_input_tokens": 2649,
+        "output_tokens": 741
+       },
+       "text": "Jer. 47,4 אִי כַּפְתֹּר the isle of Caphtor, i. e."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 178,
+      "y": 1071,
+      "width": 874,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r01-b01-874x233+178+1071-x2.png",
+     "image_sha256": "c2eb9737c34218c6d1a6457d428ea2847182fbdf9644da2b25ec5907385621ca",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Crete. אִיֵּי כִּתִּים the isles of Chittim, Ez.",
+       "27, 6. Jer. 2, 10 ; comp. Esth. 10, 1, where",
+       "אִיֵּי הַיָּם are put in antith. with the main",
+       "land, continent. c) Plur. אִיִּים very often"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13566776-879e-4684-999b-a2764564d942",
+      "duration_api_ms": 17901,
+      "cost_usd_list": 0.09009349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 726
+     },
+     "lines": [
+      {
+       "draft": "Crete. אִיֵּי כִּתִּים the isles of Chittim, Ez.",
+       "reread": "Crete. אִיֵּי כִּתִּים the isles of Chittim, Ez.",
+       "status": "agreed",
+       "text": "Crete. אִיֵּי כִּתִּים the isles of Chittim, Ez."
+      },
+      {
+       "draft": "27, 6. Jer. 2, 10 ; comp. Esth. 10, 1, where",
+       "reread": "27, 6. Jer. 2, 10 ; comp. Esth. 10, 1, where",
+       "status": "agreed",
+       "text": "27, 6. Jer. 2, 10; comp. Esth. 10, 1, where"
+      },
+      {
+       "draft": "אִיֵּי הַיָּם are put in antith. with the main",
+       "reread": "אִיֵּי הַיָּם are put in antith. with the main",
+       "status": "agreed",
+       "text": "אִיֵּי הַיָּם are put in antith. with the main"
+      },
+      {
+       "draft": "land, continent. c) Plur. אִיִּים very often",
+       "reread": "land, continent. c) Plur. אִיִּים very often",
+       "status": "agreed",
+       "text": "land, continent. c) Plur. אִיִּים very often"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 178,
+      "y": 1288,
+      "width": 874,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r01-b02-874x238+178+1288-x2.png",
+     "image_sha256": "c34c5d0807a24b62dc8125f09e1a7fcaa1dd9cc5e9ede8695696efafe4e6541f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for coasts, maritime regions, espec. be-",
+       "yond sea, as in Jer. 25, 22 is added by",
+       "way of epexegesis הָאִי אֲשֶׁר בְּעֵבֶר הַיָּם.",
+       "Hence genr. of coasts and islands far"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a00ad70-bf83-4ad9-b552-e10c0d48bbad",
+      "duration_api_ms": 12156,
+      "cost_usd_list": 0.0756935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 438
+     },
+     "lines": [
+      {
+       "draft": "for coasts, maritime regions, espec. be-",
+       "reread": "for coasts, maritime regions, espec. be-",
+       "status": "agreed",
+       "text": "for coasts, maritime regions, espec. be-"
+      },
+      {
+       "draft": "yond sea, as in Jer. 25, 22 is added by",
+       "reread": "yond sea, as in Jer. 25, 22 is added by",
+       "status": "agreed",
+       "text": "yond sea, as in Jer. 25, 22 is added by"
+      },
+      {
+       "draft": "way of epexegesis הָאִי אֲשֶׁר בְּעֵבֶר הַיָּם.",
+       "reread": "way of epexegesis הָאִי אֲשֶׁר בְּעֵבֶר הַיָּם.",
+       "status": "agreed",
+       "text": "way of epexegesis הָאִי אֲשֶׁר בְּעֵבֶר הַיָּם."
+      },
+      {
+       "draft": "Hence genr. of coasts and islands far",
+       "reread": "Hence genr. of coasts and islands far",
+       "status": "agreed",
+       "text": "Hence genr. of coasts and islands far"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 178,
+      "y": 1510,
+      "width": 874,
+      "height": 192
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r01-b03-874x192+178+1510-x2.png",
+     "image_sha256": "c04d7c8ef9ca86293888faa55038cd275a72252fb74906fb0380480505f5d83c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "remote, Is. 24, 15. 40, 15. 41, 1. 5. 42, 4.",
+       "10. 12. 49, 1. 51, 5; espec. those of the",
+       "Mediterranean Ps. 72, 10. Dan. 11, 18,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d85af7bc-b56e-43ea-932a-7b3d53fa877f",
+      "duration_api_ms": 16224,
+      "cost_usd_list": 0.07116349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "remote, Is. 24, 15. 40, 15. 41, 1. 5. 42, 4.",
+       "reread": "remote, Is. 24, 15. 40, 15. 41, 1. 5. 42, 4.",
+       "status": "agreed",
+       "text": "remote, Is. 24, 15. 40, 15. 41, 1. 5. 42, 4."
+      },
+      {
+       "draft": "10. 12. 49, 1. 51, 5 ; espec. those of the",
+       "reread": "10. 12. 49, 1. 51, 5; espec. those of the",
+       "status": "agreed",
+       "text": "10. 12. 49, 1. 51, 5; espec. those of the"
+      },
+      {
+       "draft": "Mediterranean Ps. 72, 10. Dan. 11, 18,",
+       "reread": "Mediterranean Ps. 72, 10. Dan. 11, 18,",
+       "status": "agreed",
+       "text": "Mediterranean Ps. 72, 10. Dan. 11, 18,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 178,
+    "y": 1682,
+    "width": 874,
+    "height": 753
+   },
+   "draft_lines": [
+    "which also are called more definitely",
+    "אִיֵּי הַיָּם Is. 11, 11, and אִיֵּי הַגּוֹיִם Gen.",
+    "10, 5. Zeph. 2, 11.—In Ez. 27, 15 the",
+    "Indian Archipelago is to be understood.",
+    "II. אִי contr. for אֱוִי (r. אָוָה II, see in",
+    "אִי I ) pr. a howling, wailing cry. Hence",
+    "1. Concr. the howler, i. e. the jackal,",
+    "Arab. ابن آوى, plur. بنات آوى, son,",
+    "daughters of howling, Pers. شغال,",
+    "whence Germ. Schakal, Engl. jackal.",
+    "So called from its nocturnal cry or howl,",
+    "which resembles the scream of a child."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 178,
+      "y": 1674,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r02-b00-874x240+178+1674-x2.png",
+     "image_sha256": "2f67f7fcd3c84662023b19d1cf927b31689b0ee17bf22cef6dc83362d17926c1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which also are called more definitely",
+       "אִיֵּי הַיָּם Is. 11, 11, and אִיֵּי הַגּוֹיִם Gen.",
+       "10, 5. Zeph. 2, 11.—In Ez. 27, 15 the",
+       "Indian Archipelago is to be understood."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "957eb253-4a97-413a-a19c-1cff6fcbc5a0",
+      "duration_api_ms": 10987,
+      "cost_usd_list": 0.07510349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 401
+     },
+     "lines": [
+      {
+       "draft": "which also are called more definitely",
+       "reread": "which also are called more definitely",
+       "status": "agreed",
+       "text": "which also are called more definitely"
+      },
+      {
+       "draft": "אִיֵּי הַיָּם Is. 11, 11, and אִיֵּי הַגּוֹיִם Gen.",
+       "reread": "אִיֵּי הַיָּם Is. 11, 11, and אִיֵּי הַגּוֹיִם Gen.",
+       "status": "agreed",
+       "text": "אִיֵּי הַיָּם Is. 11, 11, and אִיֵּי הַגּוֹיִם Gen."
+      },
+      {
+       "draft": "10, 5. Zeph. 2, 11.—In Ez. 27, 15 the",
+       "reread": "10, 5. Zeph. 2, 11.—In Ez. 27, 15 the",
+       "status": "agreed",
+       "text": "10, 5. Zeph. 2, 11.—In Ez. 27, 15 the"
+      },
+      {
+       "draft": "Indian Archipelago is to be understood.",
+       "reread": "Indian Archipelago is to be understood.",
+       "status": "agreed",
+       "text": "Indian Archipelago is to be understood."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 178,
+      "y": 1898,
+      "width": 874,
+      "height": 316
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r02-b01-874x316+178+1898-x2.png",
+     "image_sha256": "3da8e85d3100716e905c633d93b6e21f5c5a5eef1dbfb6ef7b47ce2f4bc686a8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "II. אִי contr. for אֱוִי (r. אָוָה II, see in",
+       "אִי I ) pr. a howling, wailing cry. Hence",
+       "1. Concr. the howler, i. e. the jackal,",
+       "Arab. ابن آوى, piur. بنات آوى, son,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a4b50e34-0373-498b-be3e-5cf17f49ed45",
+      "duration_api_ms": 14668,
+      "cost_usd_list": 0.09585350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3006,
+      "output_tokens": 690
+     },
+     "lines": [
+      {
+       "draft": "II. אִי contr. for אֱוִי (r. אָוָה II, see in",
+       "reread": "II. אִי contr. for אֱוִי (r. אָוָה II, see in",
+       "status": "agreed",
+       "text": "II. אִי contr. for אֱוִי (r. אָוָה II, see in"
+      },
+      {
+       "draft": "אִי I ) pr. a howling, wailing cry. Hence",
+       "reread": "אִי I ) pr. a howling, wailing cry. Hence",
+       "status": "agreed",
+       "text": "אִי I) pr. a howling, wailing cry. Hence"
+      },
+      {
+       "draft": "1. Concr. the howler, i. e. the jackal,",
+       "reread": "1. Concr. the howler, i. e. the jackal,",
+       "status": "agreed",
+       "text": "1. Concr. the howler, i. e. the jackal,"
+      },
+      {
+       "draft": "Arab. ابن آوى, plur. بنات آوى, son,",
+       "reread": "Arab. ابن آوى, piur. بنات آوى, son,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "Arab. ابن آوى, piur. بنات آوى, son,",
+        "verdict": "b",
+        "note": "The second letter of the abbreviation after the first Arabic phrase is printed as a short dotted \"i\", not a tall \"l\" — the type reads \"piur.\" (a printer's error or broken sort for \"plur.\"). Both Arabic phrases (ابن آوى, بنات آوى) and their order match in A and B and in the image.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4d926e2f-26a5-423a-8f19-e735d09b4394",
+        "duration_api_ms": 13807,
+        "cost_usd_list": 0.08998375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3575,
+        "cache_creation_input_tokens": 2935,
+        "output_tokens": 601
+       },
+       "text": "Arab. ابن آوى, piur. بنات آوى, son,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 178,
+      "y": 2198,
+      "width": 874,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r02-b02-874x229+178+2198-x2.png",
+     "image_sha256": "9f8be2a47df292f670a22b96593012093fb453299734d08011d452f394134ec8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "daughters of howling, Pers. شغال,",
+       "whence Germ. Schakal, Engl. jackal.",
+       "So called from its nocturnal cry or howl,",
+       "which resembles the scream of a child."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "71d270c3-5acb-470c-a870-6d48b67cae9c",
+      "duration_api_ms": 5592,
+      "cost_usd_list": 0.06769349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 278
+     },
+     "lines": [
+      {
+       "draft": "daughters of howling, Pers. شغال,",
+       "reread": "daughters of howling, Pers. شغال,",
+       "status": "agreed",
+       "text": "daughters of howling, Pers. شغال,"
+      },
+      {
+       "draft": "whence Germ. Schakal, Engl. jackal.",
+       "reread": "whence Germ. Schakal, Engl. jackal.",
+       "status": "agreed",
+       "text": "whence Germ. Schakal, Engl. jackal."
+      },
+      {
+       "draft": "So called from its nocturnal cry or howl,",
+       "reread": "So called from its nocturnal cry or howl,",
+       "status": "agreed",
+       "text": "So called from its nocturnal cry or howl,"
+      },
+      {
+       "draft": "which resembles the scream of a child.",
+       "reread": "which resembles the scream of a child.",
+       "status": "agreed",
+       "text": "which resembles the scream of a child."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 178,
+    "y": 2423,
+    "width": 874,
+    "height": 814
+   },
+   "draft_lines": [
+    "Damiri ap. Bochart. Hieroz. I. p. 843.",
+    "Found only in plur. אִיִּים, Is. 13, 22. 34,",
+    "14.",
+    "2. Interj. i. q. אוֹי ah ! alas ! wo ! c.",
+    "dat. Ecc. 10, 16. 4, 10 אִי לוֹ, which seve-",
+    "ral editt. read in one word, אִילוֹ wo to",
+    "him !",
+    "III. אִי adv. not, non, found Job 22, 30,",
+    "and in the pr. names אִי־כָבוֹד (inglorious)",
+    "Ichabod 1 Sam. 4, 21, and אִיזֶבֶל Jeze-",
+    "bel. It is much more freq. in Rabbinic,",
+    "espec. as prefixed to adjective forms",
+    "with a privative signification, like Engl.",
+    "in, un, in the same usage ; and also in"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 178,
+      "y": 2431,
+      "width": 874,
+      "height": 274
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r03-b00-874x274+178+2431-x2.png",
+     "image_sha256": "298e05033e031018a640ef4613354369753f108a829adc1bdc2674f5b3693446",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Damiri ap. Bochart. Hieroz. I. p. 843.",
+       "Found only in plur. אִיִּים, Is. 13, 22. 34,",
+       "14.",
+       "2. Interj. i. q. אוֹי ah ! alas ! wo ! c.",
+       "dat. Ecc. 10, 16. 4, 10 אִי לוֹ, which seve-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "83fdcbb2-d6d3-4c1e-b384-f097f3feaefd",
+      "duration_api_ms": 8751,
+      "cost_usd_list": 0.07262350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 301
+     },
+     "lines": [
+      {
+       "draft": "Damiri ap. Bochart. Hieroz. I. p. 843.",
+       "reread": "Damiri ap. Bochart. Hieroz. I. p. 843.",
+       "status": "agreed",
+       "text": "Damiri ap. Bochart. Hieroz. I. p. 843."
+      },
+      {
+       "draft": "Found only in plur. אִיִּים, Is. 13, 22. 34,",
+       "reread": "Found only in plur. אִיִּים, Is. 13, 22. 34,",
+       "status": "agreed",
+       "text": "Found only in plur. אִיִּים, Is. 13, 22. 34,"
+      },
+      {
+       "draft": "14.",
+       "reread": "14.",
+       "status": "agreed",
+       "text": "14."
+      },
+      {
+       "draft": "2. Interj. i. q. אוֹי ah ! alas ! wo ! c.",
+       "reread": "2. Interj. i. q. אוֹי ah ! alas ! wo ! c.",
+       "status": "agreed",
+       "text": "2. Interj. i. q. אוֹי ah! alas! wo! c."
+      },
+      {
+       "draft": "dat. Ecc. 10, 16. 4, 10 אִי לוֹ, which seve-",
+       "reread": "dat. Ecc. 10, 16. 4, 10 אִי לוֹ, which seve-",
+       "status": "agreed",
+       "text": "dat. Ecc. 10, 16. 4, 10 אִי לוֹ, which seve-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 178,
+      "y": 2689,
+      "width": 874,
+      "height": 272
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r03-b01-874x272+178+2689-x2.png",
+     "image_sha256": "5a75d3d2020e2d1635d78dd230d4c642c6b17cd03ca1ab98c0e9e440d11b42c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ral editt. read in one word, אִילוֹ wo to",
+       "him !",
+       "III. אִי adv. not, non, found Job 22, 30,",
+       "and in the pr. names אִי־כָבוֹד (inglorious)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "85ccf5ba-45cc-4481-ac2a-cebb108d4ebf",
+      "duration_api_ms": 13759,
+      "cost_usd_list": 0.0840735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 530
+     },
+     "lines": [
+      {
+       "draft": "ral editt. read in one word, אִילוֹ wo to",
+       "reread": "ral editt. read in one word, אִילוֹ wo to",
+       "status": "agreed",
+       "text": "ral editt. read in one word, אִילוֹ wo to"
+      },
+      {
+       "draft": "him !",
+       "reread": "him !",
+       "status": "agreed",
+       "text": "him!"
+      },
+      {
+       "draft": "III. אִי adv. not, non, found Job 22, 30,",
+       "reread": "III. אִי adv. not, non, found Job 22, 30,",
+       "status": "agreed",
+       "text": "III. אִי adv. not, non, found Job 22, 30,"
+      },
+      {
+       "draft": "and in the pr. names אִי־כָבוֹד (inglorious)",
+       "reread": "and in the pr. names אִי־כָבוֹד (inglorious)",
+       "status": "agreed",
+       "text": "and in the pr. names אִי־כָבוֹד (inglorious)"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 178,
+      "y": 2945,
+      "width": 874,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r03-b02-874x238+178+2945-x2.png",
+     "image_sha256": "e8bf1be6516e561ff360a3d68790366d875066223e0794e280782baac085746c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ichabod 1 Sam. 4, 21, and אִיזֶבֶל Jeze-",
+       "bel. It is much more freq. in Rabbinic,",
+       "espec. as prefixed to adjective forms",
+       "with a privative signification, like Engl."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d1694434-0c50-4c2f-b30b-c749aa7a93f7",
+      "duration_api_ms": 19745,
+      "cost_usd_list": 0.07359349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 396
+     },
+     "lines": [
+      {
+       "draft": "Ichabod 1 Sam. 4, 21, and אִיזֶבֶל Jeze-",
+       "reread": "Ichabod 1 Sam. 4, 21, and אִיזֶבֶל Jeze-",
+       "status": "agreed",
+       "text": "Ichabod 1 Sam. 4, 21, and אִיזֶבֶל Jeze-"
+      },
+      {
+       "draft": "bel. It is much more freq. in Rabbinic,",
+       "reread": "bel. It is much more freq. in Rabbinic,",
+       "status": "agreed",
+       "text": "bel. It is much more freq. in Rabbinic,"
+      },
+      {
+       "draft": "espec. as prefixed to adjective forms",
+       "reread": "espec. as prefixed to adjective forms",
+       "status": "agreed",
+       "text": "espec. as prefixed to adjective forms"
+      },
+      {
+       "draft": "with a privative signification, like Engl.",
+       "reread": "with a privative signification, like Engl.",
+       "status": "agreed",
+       "text": "with a privative signification, like Engl."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 178,
+      "y": 3167,
+      "width": 874,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c0-r03-b03-874x72+178+3167-x2.png",
+     "image_sha256": "e6c6e7c162fad5f9a50bd67b8986178bd56a7e89fc8599fd84ee88e3a15136a2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in, un, in the same usage ; and also in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e1273046-3979-43f7-b34a-217c7fb38fc4",
+      "duration_api_ms": 10010,
+      "cost_usd_list": 0.049533499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 192
+     },
+     "lines": [
+      {
+       "draft": "in, un, in the same usage ; and also in",
+       "reread": "in, un, in the same usage ; and also in",
+       "status": "agreed",
+       "text": "in, un, in the same usage; and also in"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1071,
+    "y": 119,
+    "width": 880,
+    "height": 807
+   },
+   "draft_lines": [
+    "Ethiopic, where ኢ is prefixed also to",
+    "verbs.   It is doubtless an abridged form",
+    "from אַיִן, see r. אוּן, אִין ; like the Greek",
+    "and Sanscr. a priv. from an.",
+    "אִי־כָבוֹד (inglorious) Ichabod, pr. n.",
+    "1 Sam. 4, 21.   See in אִי III.",
+    "* אָיַב to be an adversary, enemy, to",
+    "any one ; to persecute, to hate.   The",
+    "primary idea is prob. to be sought in",
+    "breathing, blowing, puffing at or upon",
+    "any one, which is often referred to anger",
+    "and hatred, Germ. anschnauben.   Kin-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1071,
+      "y": 111,
+      "width": 880,
+      "height": 309
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r00-b00-880x309+1071+111-x2.png",
+     "image_sha256": "c0405a407522528c345fffe398c35c4957c0480db474f301100774af7e3f4b4e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ethiopic, where ኢ is prefixed also to",
+       "verbs. It is doubtless an abridged form",
+       "from אֵין, see r. אוּן, אַיִן ; like the Greek",
+       "and Sanscr. a priv. from an."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b76b54d3-0ab2-49ee-87d2-d2d41144ade0",
+      "duration_api_ms": 8765,
+      "cost_usd_list": 0.0838035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3006,
+      "output_tokens": 449
+     },
+     "lines": [
+      {
+       "draft": "Ethiopic, where ኢ is prefixed also to",
+       "reread": "Ethiopic, where ኢ is prefixed also to",
+       "status": "agreed",
+       "text": "Ethiopic, where ኢ is prefixed also to"
+      },
+      {
+       "draft": "verbs.   It is doubtless an abridged form",
+       "reread": "verbs. It is doubtless an abridged form",
+       "status": "agreed",
+       "text": "verbs. It is doubtless an abridged form"
+      },
+      {
+       "draft": "from אַיִן, see r. אוּן, אִין ; like the Greek",
+       "reread": "from אֵין, see r. אוּן, אַיִן ; like the Greek",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "from אַיִן, see r. אוּן, אִין ; like the Greek",
+        "verdict": "a",
+        "note": "The first word shows a patach under aleph and hiriq under yod (אַיִן); the third item has only a hiriq under aleph with no point under the yod (אִין, the root entry cross-referenced alongside אוּן). Reading B swaps these pointings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b7130140-ec7a-4d77-af92-2efc49fc9761",
+        "duration_api_ms": 16979,
+        "cost_usd_list": 0.09853500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2940,
+        "output_tokens": 770
+       },
+       "text": "from אַיִן, see r. אוּן, אִין; like the Greek"
+      },
+      {
+       "draft": "and Sanscr. a priv. from an.",
+       "reread": "and Sanscr. a priv. from an.",
+       "status": "agreed",
+       "text": "and Sanscr. a priv. from an."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1071,
+      "y": 404,
+      "width": 880,
+      "height": 300
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r00-b01-880x300+1071+404-x2.png",
+     "image_sha256": "78036199a2d25cba27ca6a6399e9b4af94e6f4f57ce516de13a0e7161b19c55d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִי־כָבוֹד (inglorious) Ichabod, pr. n.",
+       "1 Sam. 4, 21.  See in אִי III.",
+       "* אָיַב to be an adversary, enemy, to",
+       "any one ; to persecute, to hate.  The"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "abcc2d6b-8327-4b2e-9f1a-732500665a61",
+      "duration_api_ms": 14620,
+      "cost_usd_list": 0.08514349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 501
+     },
+     "lines": [
+      {
+       "draft": "אִי־כָבוֹד (inglorious) Ichabod, pr. n.",
+       "reread": "אִי־כָבוֹד (inglorious) Ichabod, pr. n.",
+       "status": "agreed",
+       "text": "אִי־כָבוֹד (inglorious) Ichabod, pr. n."
+      },
+      {
+       "draft": "1 Sam. 4, 21.   See in אִי III.",
+       "reread": "1 Sam. 4, 21.  See in אִי III.",
+       "status": "agreed",
+       "text": "1 Sam. 4, 21. See in אִי III."
+      },
+      {
+       "draft": "* אָיַב to be an adversary, enemy, to",
+       "reread": "* אָיַב to be an adversary, enemy, to",
+       "status": "agreed",
+       "text": "* אָיַב to be an adversary, enemy, to"
+      },
+      {
+       "draft": "any one ; to persecute, to hate.   The",
+       "reread": "any one ; to persecute, to hate.  The",
+       "status": "agreed",
+       "text": "any one; to persecute, to hate. The"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1071,
+      "y": 688,
+      "width": 880,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r00-b02-880x246+1071+688-x2.png",
+     "image_sha256": "869964c7dbcef3964be63f17ecd4af820663fdea36a02005823ffaa6126528ed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "primary idea is prob. to be sought in",
+       "breathing, blowing, puffing at or upon",
+       "any one, which is often referred to anger",
+       "and hatred, Germ. anschnauben. Kin-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9abdea0a-e948-44e5-93f2-44e630c9a46f",
+      "duration_api_ms": 9297,
+      "cost_usd_list": 0.0671535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "primary idea is prob. to be sought in",
+       "reread": "primary idea is prob. to be sought in",
+       "status": "agreed",
+       "text": "primary idea is prob. to be sought in"
+      },
+      {
+       "draft": "breathing, blowing, puffing at or upon",
+       "reread": "breathing, blowing, puffing at or upon",
+       "status": "agreed",
+       "text": "breathing, blowing, puffing at or upon"
+      },
+      {
+       "draft": "any one, which is often referred to anger",
+       "reread": "any one, which is often referred to anger",
+       "status": "agreed",
+       "text": "any one, which is often referred to anger"
+      },
+      {
+       "draft": "and hatred, Germ. anschnauben.   Kin-",
+       "reread": "and hatred, Germ. anschnauben. Kin-",
+       "status": "agreed",
+       "text": "and hatred, Germ. anschnauben. Kin-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1071,
+    "y": 914,
+    "width": 880,
+    "height": 631
+   },
+   "draft_lines": [
+    "dred is אָהַב, in which the idea of breath-",
+    "ing after passes over into that of desire",
+    "and love. The finite verb occurs only",
+    "once, Ex. 23, 22; but very freq. is Part.",
+    "אוֹיֵב as subst. an adversary, enemy, Gen.",
+    "22, 17. 49, 8. al. Sometimes it retains",
+    "the construction of a participle, 1 Sam.",
+    "18, 29 אוֹיֵב אֶת־דָּוִד an enemy to David.",
+    "—Fem. אוֹיֶבֶת collect. enemies, Mic. 7,",
+    "8. 10. Comp. Lehrg. p. 477.",
+    "Deriv. אִיּוֹב, and"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1071,
+      "y": 906,
+      "width": 880,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r01-b00-880x242+1071+906-x2.png",
+     "image_sha256": "3f846407bfba30b19ca8d7f1b4e9c55b0d9ee1009c21aa3d2299c8f8a744cb6c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "dred is אָהַב, in which the idea of breath-",
+       "ing after passes over into that of desire",
+       "and love. The finite verb occurs only",
+       "once, Ex. 23, 22; but very freq. is Part."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "06bb3da7-a127-46d9-9344-dc4df355bf61",
+      "duration_api_ms": 6072,
+      "cost_usd_list": 0.0696035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 291
+     },
+     "lines": [
+      {
+       "draft": "dred is אָהַב, in which the idea of breath-",
+       "reread": "dred is אָהַב, in which the idea of breath-",
+       "status": "agreed",
+       "text": "dred is אָהַב, in which the idea of breath-"
+      },
+      {
+       "draft": "ing after passes over into that of desire",
+       "reread": "ing after passes over into that of desire",
+       "status": "agreed",
+       "text": "ing after passes over into that of desire"
+      },
+      {
+       "draft": "and love. The finite verb occurs only",
+       "reread": "and love. The finite verb occurs only",
+       "status": "agreed",
+       "text": "and love. The finite verb occurs only"
+      },
+      {
+       "draft": "once, Ex. 23, 22; but very freq. is Part.",
+       "reread": "once, Ex. 23, 22; but very freq. is Part.",
+       "status": "agreed",
+       "text": "once, Ex. 23, 22; but very freq. is Part."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1071,
+      "y": 1132,
+      "width": 880,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r01-b01-880x241+1071+1132-x2.png",
+     "image_sha256": "230e51d9123a8a1c42633f1e5cf2a727176219690d7f0ba46f2d515d8dbfb732",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹיֵב as subst. an adversary, enemy, Gen.",
+       "22, 17. 49, 8. al. Sometimes it retains",
+       "the construction of a participle, 1 Sam.",
+       "18, 29 אוֹיֵב אֶת־דָּוִד an enemy to David."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a7b37a3b-597d-4142-bc03-32b4bc8364cf",
+      "duration_api_ms": 9176,
+      "cost_usd_list": 0.06889375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 276
+     },
+     "lines": [
+      {
+       "draft": "אוֹיֵב as subst. an adversary, enemy, Gen.",
+       "reread": "אוֹיֵב as subst. an adversary, enemy, Gen.",
+       "status": "agreed",
+       "text": "אוֹיֵב as subst. an adversary, enemy, Gen."
+      },
+      {
+       "draft": "22, 17. 49, 8. al. Sometimes it retains",
+       "reread": "22, 17. 49, 8. al. Sometimes it retains",
+       "status": "agreed",
+       "text": "22, 17. 49, 8. al. Sometimes it retains"
+      },
+      {
+       "draft": "the construction of a participle, 1 Sam.",
+       "reread": "the construction of a participle, 1 Sam.",
+       "status": "agreed",
+       "text": "the construction of a participle, 1 Sam."
+      },
+      {
+       "draft": "18, 29 אוֹיֵב אֶת־דָּוִד an enemy to David.",
+       "reread": "18, 29 אוֹיֵב אֶת־דָּוִד an enemy to David.",
+       "status": "agreed",
+       "text": "18, 29 אוֹיֵב אֶת־דָּוִד an enemy to David."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1071,
+      "y": 1357,
+      "width": 880,
+      "height": 176
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r01-b02-880x176+1071+1357-x2.png",
+     "image_sha256": "aa52489cb396dba509f30ca322ec2d3dd6fe17eeab01b7ff785e37f368e2545a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "—Fem. אוֹיֶבֶת collect. enemies, Mic. 7,",
+       "8. 10. Comp. Lehrg. p. 477.",
+       "Deriv. אִיּוֹב, and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7366bf6a-34e5-4cfd-833d-b0918b7b808f",
+      "duration_api_ms": 15395,
+      "cost_usd_list": 0.07349375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2378,
+      "output_tokens": 494
+     },
+     "lines": [
+      {
+       "draft": "—Fem. אוֹיֶבֶת collect. enemies, Mic. 7,",
+       "reread": "—Fem. אוֹיֶבֶת collect. enemies, Mic. 7,",
+       "status": "agreed",
+       "text": "—Fem. אוֹיֶבֶת collect. enemies, Mic. 7,"
+      },
+      {
+       "draft": "8. 10. Comp. Lehrg. p. 477.",
+       "reread": "8. 10. Comp. Lehrg. p. 477.",
+       "status": "agreed",
+       "text": "8. 10. Comp. Lehrg. p. 477."
+      },
+      {
+       "draft": "Deriv. אִיּוֹב, and",
+       "reread": "Deriv. אִיּוֹב, and",
+       "status": "agreed",
+       "text": "Deriv. אִיּוֹב, and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1071,
+    "y": 1533,
+    "width": 880,
+    "height": 665
+   },
+   "draft_lines": [
+    "אֵיבָה f. (contr. for אֲיָבָה, as אֵימָה for",
+    "אֲיָמָה) enmity, hostility, Gen. 3, 15. Num.",
+    "35, 21.",
+    "אֵיד m. pr. a load, burden, by which",
+    "one is oppressed, crushed ; from r. אוּד",
+    "no. 2. Hence",
+    "1. misfortune, calamity, Ps. 18, 19. Job",
+    "21, 30.",
+    "2. destruction, ruin, Job 18, 12. 21, 17.",
+    "30, 12. אֵיד אֵל destruction from God,",
+    "Job 31, 23."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1071,
+      "y": 1545,
+      "width": 880,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r02-b00-880x255+1071+1545-x2.png",
+     "image_sha256": "061890dd5d4db6a0451e0c0c0d15ace8cfa131d78550e8baf2199abbaa147348",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵיבָה f. (contr. for אֲיֵבָה, as אֵימָה for",
+       "אֲיֵמָה) enmity, hostility, Gen. 3, 15. Num.",
+       "35, 21.",
+       "אֵיד m. pr. a load, burden, by which"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "29d76588-da01-4b9f-97c4-6e1777c54b5b",
+      "duration_api_ms": 16601,
+      "cost_usd_list": 0.08860375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 645
+     },
+     "lines": [
+      {
+       "draft": "אֵיבָה f. (contr. for אֲיָבָה, as אֵימָה for",
+       "reread": "אֵיבָה f. (contr. for אֲיֵבָה, as אֵימָה for",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אֵיבָה f. (contr. for אֲיֵבָה, as אֵימָה for",
+        "verdict": "b",
+        "note": "Under the yod of the second word the print shows two side-by-side dots (tsere), not qamets — the uncontracted form is אֲיֵבָה, matching the parallel אֲיֵמָה printed at the start of line 2. Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9c058ded-5fee-4069-87df-f87ba88c8148",
+        "duration_api_ms": 15308,
+        "cost_usd_list": 0.08877825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3593,
+        "cache_creation_input_tokens": 2702,
+        "output_tokens": 670
+       },
+       "text": "אֵיבָה f. (contr. for אֲיֵבָה, as אֵימָה for"
+      },
+      {
+       "draft": "אֲיָמָה) enmity, hostility, Gen. 3, 15. Num.",
+       "reread": "אֲיֵמָה) enmity, hostility, Gen. 3, 15. Num.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אֲיֵמָה) enmity, hostility, Gen. 3, 15. Num.",
+        "verdict": "b",
+        "note": "Under the yod of the first word two horizontal dots (tsere) are printed, not a qamets; this matches the parallel uncontracted form אֲיֵבָה on line 1 (hataf-patah under alef, tsere under yod). Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "35a5f397-d002-438b-b1c4-0af7c3b7ac62",
+        "duration_api_ms": 14011,
+        "cost_usd_list": 0.08868775000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3591,
+        "cache_creation_input_tokens": 2700,
+        "output_tokens": 669
+       },
+       "text": "אֲיֵמָה) enmity, hostility, Gen. 3, 15. Num."
+      },
+      {
+       "draft": "35, 21.",
+       "reread": "35, 21.",
+       "status": "agreed",
+       "text": "35, 21."
+      },
+      {
+       "draft": "אֵיד m. pr. a load, burden, by which",
+       "reread": "אֵיד m. pr. a load, burden, by which",
+       "status": "agreed",
+       "text": "אֵיד m. pr. a load, burden, by which"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1071,
+      "y": 1784,
+      "width": 880,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r02-b01-880x231+1071+1784-x2.png",
+     "image_sha256": "d783956352a5921cac105c4d79c697967059baafb0aadbe23cf1ad9b13d3f432",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "one is oppressed, crushed ; from r. אוּד",
+       "no. 2.   Hence",
+       "1. misfortune, calamity, Ps. 18, 19. Job",
+       "21, 30."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "404a47fd-65e7-41b3-ac57-e40be5ec0944",
+      "duration_api_ms": 10082,
+      "cost_usd_list": 0.06583375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "one is oppressed, crushed ; from r. אוּד",
+       "reread": "one is oppressed, crushed ; from r. אוּד",
+       "status": "agreed",
+       "text": "one is oppressed, crushed; from r. אוּד"
+      },
+      {
+       "draft": "no. 2. Hence",
+       "reread": "no. 2.   Hence",
+       "status": "agreed",
+       "text": "no. 2. Hence"
+      },
+      {
+       "draft": "1. misfortune, calamity, Ps. 18, 19. Job",
+       "reread": "1. misfortune, calamity, Ps. 18, 19. Job",
+       "status": "agreed",
+       "text": "1. misfortune, calamity, Ps. 18, 19. Job"
+      },
+      {
+       "draft": "21, 30.",
+       "reread": "21, 30.",
+       "status": "agreed",
+       "text": "21, 30."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1071,
+      "y": 1999,
+      "width": 880,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r02-b02-880x188+1071+1999-x2.png",
+     "image_sha256": "de8d0eb6494381403e99abd013da14f2e86c358a59a2519c6058916976753c49",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. destruction, ruin, Job 18, 12. 21, 17.",
+       "30, 12. אֵיד אֵל destruction from God,",
+       "Job 31, 23."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "670ed74a-1265-4f33-9323-9b6e96bb2cba",
+      "duration_api_ms": 9439,
+      "cost_usd_list": 0.06525375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 304
+     },
+     "lines": [
+      {
+       "draft": "2. destruction, ruin, Job 18, 12. 21, 17.",
+       "reread": "2. destruction, ruin, Job 18, 12. 21, 17.",
+       "status": "agreed",
+       "text": "2. destruction, ruin, Job 18, 12. 21, 17."
+      },
+      {
+       "draft": "30, 12. אֵיד אֵל destruction from God,",
+       "reread": "30, 12. אֵיד אֵל destruction from God,",
+       "status": "agreed",
+       "text": "30, 12. אֵיד אֵל destruction from God,"
+      },
+      {
+       "draft": "Job 31, 23.",
+       "reread": "Job 31, 23.",
+       "status": "agreed",
+       "text": "Job 31, 23."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1071,
+    "y": 2186,
+    "width": 880,
+    "height": 925
+   },
+   "draft_lines": [
+    "אַיָּה f. (for אַוְיָה, r. אָוָה II ) pr. cry, cla-",
+    "mour ; hence",
+    "1. As the name of a clamorous bird",
+    "of prey, unclean, Lev. 11, 14. Deut. 14,",
+    "13 ; also keen-sighted, Job 28, 7. Sept.",
+    "and Vulg. sometimes vulture, sometimes",
+    "kite. The opinion of Bochart is not im-",
+    "probable, Hieroz. II. p. 193 sq. that it is",
+    "the species of falcon called by the Arabs",
+    "يُويُو yûyu, i. e. falco æsalon, called also",
+    "smirle, emerillon, Engl. merlin. Or",
+    "perhaps the Heb. word is a general term",
+    "for hawk, falcon, etc. whence in Lev.",
+    "and Deut. ll. cc. is added לְמִינָהּ .",
+    "2. Ajah, pr. n. m. a) Gen. 36, 24.",
+    "b) 2 Sam. 3, 7. 21, 8."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1071,
+      "y": 2197,
+      "width": 880,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r03-b00-880x234+1071+2197-x2.png",
+     "image_sha256": "588e50bae818ec82a8c2e44539b314f05c6266e59faef0b62940418c31c3d01f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַיָּה f. (for אַוְיָה, r. אָוָה II ) pr. cry, cla-",
+       "mour ; hence",
+       "1. As the name of a clamorous bird",
+       "of prey, unclean, Lev. 11, 14. Deut. 14,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7d701035-e918-4a88-bab8-802fca879310",
+      "duration_api_ms": 12588,
+      "cost_usd_list": 0.07403375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 404
+     },
+     "lines": [
+      {
+       "draft": "אַיָּה f. (for אַוְיָה, r. אָוָה II ) pr. cry, cla-",
+       "reread": "אַיָּה f. (for אַוְיָה, r. אָוָה II ) pr. cry, cla-",
+       "status": "agreed",
+       "text": "אַיָּה f. (for אַוְיָה, r. אָוָה II) pr. cry, cla-"
+      },
+      {
+       "draft": "mour ; hence",
+       "reread": "mour ; hence",
+       "status": "agreed",
+       "text": "mour; hence"
+      },
+      {
+       "draft": "1. As the name of a clamorous bird",
+       "reread": "1. As the name of a clamorous bird",
+       "status": "agreed",
+       "text": "1. As the name of a clamorous bird"
+      },
+      {
+       "draft": "of prey, unclean, Lev. 11, 14. Deut. 14,",
+       "reread": "of prey, unclean, Lev. 11, 14. Deut. 14,",
+       "status": "agreed",
+       "text": "of prey, unclean, Lev. 11, 14. Deut. 14,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1071,
+      "y": 2415,
+      "width": 880,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r03-b01-880x236+1071+2415-x2.png",
+     "image_sha256": "43ad72b040807fc98a4a4a2075154b930ec25668d3b4ae3a2e57d119ee8c241d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "13; also keen-sighted, Job 28, 7. Sept.",
+       "and Vulg. sometimes vulture, sometimes",
+       "kite. The opinion of Bochart is not im-",
+       "probable, Hieroz. II. p. 193 sq. that it is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e2c48721-2d4c-4af8-b083-2c93f2dbcf78",
+      "duration_api_ms": 26981,
+      "cost_usd_list": 0.06698375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "13 ; also keen-sighted, Job 28, 7. Sept.",
+       "reread": "13; also keen-sighted, Job 28, 7. Sept.",
+       "status": "agreed",
+       "text": "13; also keen-sighted, Job 28, 7. Sept."
+      },
+      {
+       "draft": "and Vulg. sometimes vulture, sometimes",
+       "reread": "and Vulg. sometimes vulture, sometimes",
+       "status": "agreed",
+       "text": "and Vulg. sometimes vulture, sometimes"
+      },
+      {
+       "draft": "kite. The opinion of Bochart is not im-",
+       "reread": "kite. The opinion of Bochart is not im-",
+       "status": "agreed",
+       "text": "kite. The opinion of Bochart is not im-"
+      },
+      {
+       "draft": "probable, Hieroz. II. p. 193 sq. that it is",
+       "reread": "probable, Hieroz. II. p. 193 sq. that it is",
+       "status": "agreed",
+       "text": "probable, Hieroz. II. p. 193 sq. that it is"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1071,
+      "y": 2635,
+      "width": 880,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r03-b02-880x242+1071+2635-x2.png",
+     "image_sha256": "64846471702b98ad71f3b1cf4d09f7e479789b24c43892141a8d1e13b67895ea",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the species of falcon called by the Arabs",
+       "يويو yûyu, i. e. falco æsalon, called also",
+       "smirle, emerillon, Engl. merlin. Or",
+       "perhaps the Heb. word is a general term"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "97bdfc6d-02b6-4100-8204-4a3475af1d44",
+      "duration_api_ms": 10915,
+      "cost_usd_list": 0.07384375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 375
+     },
+     "lines": [
+      {
+       "draft": "the species of falcon called by the Arabs",
+       "reread": "the species of falcon called by the Arabs",
+       "status": "agreed",
+       "text": "the species of falcon called by the Arabs"
+      },
+      {
+       "draft": "يُويُو yûyu, i. e. falco æsalon, called also",
+       "reread": "يويو yûyu, i. e. falco æsalon, called also",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "يُويُو yûyu, i. e. falco æsalon, called also",
+        "verdict": "a",
+        "note": "The Arabic word is printed with vowel points: a damma is visible above each yāʾ (matching the transliteration yûyu), so Reading A's pointed يُويُو is correct; Reading B drops the dammas.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7b4676db-5e70-43ee-a401-65a6e8fa4baf",
+        "duration_api_ms": 12827,
+        "cost_usd_list": 0.0782335,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2620,
+        "output_tokens": 492
+       },
+       "text": "يُويُو yûyu, i. e. falco æsalon, called also"
+      },
+      {
+       "draft": "smirle, emerillon, Engl. merlin. Or",
+       "reread": "smirle, emerillon, Engl. merlin. Or",
+       "status": "agreed",
+       "text": "smirle, emerillon, Engl. merlin. Or"
+      },
+      {
+       "draft": "perhaps the Heb. word is a general term",
+       "reread": "perhaps the Heb. word is a general term",
+       "status": "agreed",
+       "text": "perhaps the Heb. word is a general term"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1071,
+      "y": 2861,
+      "width": 880,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r03-b03-880x258+1071+2861-x2.png",
+     "image_sha256": "4273acd8e28930c5fc36f668297ec5c7324a6d8c45bac05ac498e789a26a9436",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for hawk, falcon, etc. whence in Lev.",
+       "and Deut. ll. cc. is added לְמִינָהּ.",
+       "2. Ajah, pr. n. m. a) Gen. 36, 24.",
+       "b) 2 Sam. 3, 7. 21, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0fa60b27-d13c-4339-ab65-e5fac7e69697",
+      "duration_api_ms": 11124,
+      "cost_usd_list": 0.07645375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 402
+     },
+     "lines": [
+      {
+       "draft": "for hawk, falcon, etc. whence in Lev.",
+       "reread": "for hawk, falcon, etc. whence in Lev.",
+       "status": "agreed",
+       "text": "for hawk, falcon, etc. whence in Lev."
+      },
+      {
+       "draft": "and Deut. ll. cc. is added לְמִינָהּ .",
+       "reread": "and Deut. ll. cc. is added לְמִינָהּ.",
+       "status": "agreed",
+       "text": "and Deut. ll. cc. is added לְמִינָהּ."
+      },
+      {
+       "draft": "2. Ajah, pr. n. m. a) Gen. 36, 24.",
+       "reread": "2. Ajah, pr. n. m. a) Gen. 36, 24.",
+       "status": "agreed",
+       "text": "2. Ajah, pr. n. m. a) Gen. 36, 24."
+      },
+      {
+       "draft": "b) 2 Sam. 3, 7. 21, 8.",
+       "reread": "b) 2 Sam. 3, 7. 21, 8.",
+       "status": "agreed",
+       "text": "b) 2 Sam. 3, 7. 21, 8."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "row": 4,
+   "bounds": {
+    "x": 1071,
+    "y": 3099,
+    "width": 880,
+    "height": 134
+   },
+   "draft_lines": [
+    "אַיֵּה i. q. אֵי where? with הָ parag.",
+    "as הֵנָּה from הֵן, Gen. 3, 9. 18, 9. al. Also"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r04-b00",
+     "bounds": {
+      "x": 1071,
+      "y": 3096,
+      "width": 880,
+      "height": 144
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0056/pass2/c1-r04-b00-880x144+1071+3096-x2.png",
+     "image_sha256": "86ad53b52e618e959f54af5dce574c90fad78288987a13b674a0ebabd21494eb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַיֵּה i. q. אַי where? with ־ֶה parag.",
+       "as הִנֵּה from הֵן, Gen. 3, 9. 18, 9. al. Also"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b6313fd-51be-4877-b6f5-a671505f043f",
+      "duration_api_ms": 18227,
+      "cost_usd_list": 0.05832375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2252,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "אַיֵּה i. q. אֵי where? with הָ parag.",
+       "reread": "אַיֵּה i. q. אַי where? with ־ֶה parag.",
+       "status": "adjudicated",
+       "band_id": "c1-r04-b00",
+       "judgement": {
+        "text": "אַיֵּה i. q. אַי where? with ־ֶה parag.",
+        "verdict": "b",
+        "note": "The second Hebrew word carries a patach (horizontal bar) under the aleph, not a tsere (two dots), so אַי; and the paragogic ending is printed as a dash-with-segol plus he (־ֶה), not הָ with qamets. Reading B matches on both points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "99ed65eb-da05-45f9-92f9-eec205cf61ed",
+        "duration_api_ms": 14809,
+        "cost_usd_list": 0.074285,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2185,
+        "output_tokens": 587
+       },
+       "text": "אַיֵּה i. q. אַי where? with ־ֶה parag."
+      },
+      {
+       "draft": "as הֵנָּה from הֵן, Gen. 3, 9. 18, 9. al. Also",
+       "reread": "as הִנֵּה from הֵן, Gen. 3, 9. 18, 9. al. Also",
+       "status": "adjudicated",
+       "band_id": "c1-r04-b00",
+       "judgement": {
+        "text": "as הֵנָּה from הֵן, Gen. 3, 9. 18, 9. al. Also",
+        "verdict": "a",
+        "note": "The first he carries a tsere (two horizontal dots) and the nun a qamets with dagesh, giving הֵנָּה \"hither\" (the paragogic-he example parallel to אַיֵּה from אַי), not הִנֵּה; Reading A matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "78e19dad-8932-4080-bdd9-2a018d316ace",
+        "duration_api_ms": 19867,
+        "cost_usd_list": 0.0782495,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3598,
+        "cache_creation_input_tokens": 2203,
+        "output_tokens": 659
+       },
+       "text": "as הֵנָּה from הֵן, Gen. 3, 9. 18, 9. al. Also"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אי 40 איה",
+   "status": "adjudicated",
+   "draft": "אִי 40 אֵיה",
+   "reread": "אי 40 איה",
+   "verdict": "b",
+   "note": "The running-head catchwords are printed unpointed: no hiriq under the alef of אי and no tsere under the alef of איה. Reading A adds vowels not present in the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "fem. Is. 23, 2; plur. אִיִּים, once אִיִּין Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "26, 18. R. אָוָה I.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. Pr. habitable ground, dry land, opp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to water, the sea, rivers; see the root",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "no. 1. Is. 42, 15 שַׂמְתִּי נְהָרוֹת לְאִיִּים I will",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "make the rivers dry lands; comp. 43, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "50, 2. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. terra maritima, land adjacent to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the sea, sea-coast, whether on the shore",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of the main land, or an island; like the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "East-Indian Dvipa, which signifies both",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "coast and island. Spec. a) the coast,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the sea-coast, Is. 20, 6. 23, 2. 6. Ez. 27,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "7 אִיֵּי אֱלִישָׁה the coast of Elishah, i. e. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Peloponnesus or Greece. b) an island,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Jer. 47,4 אִי כַּפְתֹּר the isle of Caphtor, i. e.",
+   "status": "adjudicated",
+   "draft": "Jer. 47 ,4 אִי כַּפְתּוֹר the isle of Caphtor, i. e.",
+   "reread": "Jer. 47 ,4 אִי כַּפְתֹּר the isle of Caphtor, i. e.",
+   "verdict": "b",
+   "note": "Only four Hebrew letters are printed in the place-name (כ פ ת ר); there is no vav between the tav and resh — the holam is a single dot above the tav/resh join, so the spelling is defective כַּפְתֹּר, not plene כַּפְתּוֹר as in Reading A. Everything else (Jer. 47 ,4 with the transposed comma, אִי, the English) is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Crete. אִיֵּי כִּתִּים the isles of Chittim, Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "27, 6. Jer. 2, 10; comp. Esth. 10, 1, where",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִיֵּי הַיָּם are put in antith. with the main",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "land, continent. c) Plur. אִיִּים very often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "for coasts, maritime regions, espec. be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "yond sea, as in Jer. 25, 22 is added by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "way of epexegesis הָאִי אֲשֶׁר בְּעֵבֶר הַיָּם.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Hence genr. of coasts and islands far",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "remote, Is. 24, 15. 40, 15. 41, 1. 5. 42, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "10. 12. 49, 1. 51, 5; espec. those of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Mediterranean Ps. 72, 10. Dan. 11, 18,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "which also are called more definitely",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אִיֵּי הַיָּם Is. 11, 11, and אִיֵּי הַגּוֹיִם Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "10, 5. Zeph. 2, 11.—In Ez. 27, 15 the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Indian Archipelago is to be understood.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "II. אִי contr. for אֱוִי (r. אָוָה II, see in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אִי I) pr. a howling, wailing cry. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. Concr. the howler, i. e. the jackal,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Arab. ابن آوى, piur. بنات آوى, son,",
+   "status": "adjudicated",
+   "draft": "Arab. ابن آوى, plur. بنات آوى, son,",
+   "reread": "Arab. ابن آوى, piur. بنات آوى, son,",
+   "verdict": "b",
+   "note": "The second letter of the abbreviation after the first Arabic phrase is printed as a short dotted \"i\", not a tall \"l\" — the type reads \"piur.\" (a printer's error or broken sort for \"plur.\"). Both Arabic phrases (ابن آوى, بنات آوى) and their order match in A and B and in the image.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "daughters of howling, Pers. شغال,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "whence Germ. Schakal, Engl. jackal.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "So called from its nocturnal cry or howl,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "which resembles the scream of a child.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Damiri ap. Bochart. Hieroz. I. p. 843.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Found only in plur. אִיִּים, Is. 13, 22. 34,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. Interj. i. q. אוֹי ah! alas! wo! c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "dat. Ecc. 10, 16. 4, 10 אִי לוֹ, which seve-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ral editt. read in one word, אִילוֹ wo to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "him!",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "III. אִי adv. not, non, found Job 22, 30,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and in the pr. names אִי־כָבוֹד (inglorious)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ichabod 1 Sam. 4, 21, and אִיזֶבֶל Jeze-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "bel. It is much more freq. in Rabbinic,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "espec. as prefixed to adjective forms",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "with a privative signification, like Engl.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "in, un, in the same usage; and also in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Ethiopic, where ኢ is prefixed also to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "verbs. It is doubtless an abridged form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "from אַיִן, see r. אוּן, אִין; like the Greek",
+   "status": "adjudicated",
+   "draft": "from אַיִן, see r. אוּן, אִין ; like the Greek",
+   "reread": "from אֵין, see r. אוּן, אַיִן ; like the Greek",
+   "verdict": "a",
+   "note": "The first word shows a patach under aleph and hiriq under yod (אַיִן); the third item has only a hiriq under aleph with no point under the yod (אִין, the root entry cross-referenced alongside אוּן). Reading B swaps these pointings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and Sanscr. a priv. from an.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אִי־כָבוֹד (inglorious) Ichabod, pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1 Sam. 4, 21. See in אִי III.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "* אָיַב to be an adversary, enemy, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "any one; to persecute, to hate. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "primary idea is prob. to be sought in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "breathing, blowing, puffing at or upon",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "any one, which is often referred to anger",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and hatred, Germ. anschnauben. Kin-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "dred is אָהַב, in which the idea of breath-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ing after passes over into that of desire",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and love. The finite verb occurs only",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "once, Ex. 23, 22; but very freq. is Part.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אוֹיֵב as subst. an adversary, enemy, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "22, 17. 49, 8. al. Sometimes it retains",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the construction of a participle, 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "18, 29 אוֹיֵב אֶת־דָּוִד an enemy to David.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "—Fem. אוֹיֶבֶת collect. enemies, Mic. 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "8. 10. Comp. Lehrg. p. 477.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Deriv. אִיּוֹב, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֵיבָה f. (contr. for אֲיֵבָה, as אֵימָה for",
+   "status": "adjudicated",
+   "draft": "אֵיבָה f. (contr. for אֲיָבָה, as אֵימָה for",
+   "reread": "אֵיבָה f. (contr. for אֲיֵבָה, as אֵימָה for",
+   "verdict": "b",
+   "note": "Under the yod of the second word the print shows two side-by-side dots (tsere), not qamets — the uncontracted form is אֲיֵבָה, matching the parallel אֲיֵמָה printed at the start of line 2. Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲיֵמָה) enmity, hostility, Gen. 3, 15. Num.",
+   "status": "adjudicated",
+   "draft": "אֲיָמָה) enmity, hostility, Gen. 3, 15. Num.",
+   "reread": "אֲיֵמָה) enmity, hostility, Gen. 3, 15. Num.",
+   "verdict": "b",
+   "note": "Under the yod of the first word two horizontal dots (tsere) are printed, not a qamets; this matches the parallel uncontracted form אֲיֵבָה on line 1 (hataf-patah under alef, tsere under yod). Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "35, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֵיד m. pr. a load, burden, by which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "one is oppressed, crushed; from r. אוּד",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "no. 2. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1. misfortune, calamity, Ps. 18, 19. Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "21, 30.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. destruction, ruin, Job 18, 12. 21, 17.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "30, 12. אֵיד אֵל destruction from God,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Job 31, 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַיָּה f. (for אַוְיָה, r. אָוָה II) pr. cry, cla-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "mour; hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1. As the name of a clamorous bird",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of prey, unclean, Lev. 11, 14. Deut. 14,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "13; also keen-sighted, Job 28, 7. Sept.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "and Vulg. sometimes vulture, sometimes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "kite. The opinion of Bochart is not im-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "probable, Hieroz. II. p. 193 sq. that it is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the species of falcon called by the Arabs",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "يُويُو yûyu, i. e. falco æsalon, called also",
+   "status": "adjudicated",
+   "draft": "يُويُو yûyu, i. e. falco æsalon, called also",
+   "reread": "يويو yûyu, i. e. falco æsalon, called also",
+   "verdict": "a",
+   "note": "The Arabic word is printed with vowel points: a damma is visible above each yāʾ (matching the transliteration yûyu), so Reading A's pointed يُويُو is correct; Reading B drops the dammas.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "smirle, emerillon, Engl. merlin. Or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "perhaps the Heb. word is a general term",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "for hawk, falcon, etc. whence in Lev.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "and Deut. ll. cc. is added לְמִינָהּ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. Ajah, pr. n. m. a) Gen. 36, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "b) 2 Sam. 3, 7. 21, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "אַיֵּה i. q. אַי where? with ־ֶה parag.",
+   "status": "adjudicated",
+   "draft": "אַיֵּה i. q. אֵי where? with הָ parag.",
+   "reread": "אַיֵּה i. q. אַי where? with ־ֶה parag.",
+   "verdict": "b",
+   "note": "The second Hebrew word carries a patach (horizontal bar) under the aleph, not a tsere (two dots), so אַי; and the paragogic ending is printed as a dash-with-segol plus he (־ֶה), not הָ with qamets. Reading B matches on both points.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "as הֵנָּה from הֵן, Gen. 3, 9. 18, 9. al. Also",
+   "status": "adjudicated",
+   "draft": "as הֵנָּה from הֵן, Gen. 3, 9. 18, 9. al. Also",
+   "reread": "as הִנֵּה from הֵן, Gen. 3, 9. 18, 9. al. Also",
+   "verdict": "a",
+   "note": "The first he carries a tsere (two horizontal dots) and the nun a qamets with dagesh, giving הֵנָּה \"hither\" (the paragogic-he example parallel to אַיֵּה from אַי), not הִנֵּה; Reading A matches the print.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 97,
+  "adjudicated": 9,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.9397
+}

@@ -1,0 +1,2655 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 62,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0062.png",
+ "raster_sha256": "c802dc74482e4cbd1a22912484377a1120a57a7b6981b725926efc121603e011",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0062.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:50:29+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 0,
+    "y": 100,
+    "width": 1943,
+    "height": 82
+   },
+   "draft_lines": [
+    "אית 46 אך"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 0,
+      "y": 98,
+      "width": 1943,
+      "height": 86
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/header-b00-1943x86+0+98-x2.png",
+     "image_sha256": "c9400150d46998a09b6b309cacb0954653adf2cdeb34522a3dd3b06170ceed5a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִית 46 אַךְ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7cb59a01-656e-42b5-a2b2-2f4f63601865",
+      "duration_api_ms": 10369,
+      "cost_usd_list": 0.0492225,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 213
+     },
+     "lines": [
+      {
+       "draft": "אית 46 אך",
+       "reread": "אִית 46 אַךְ",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אִית 46 אַךְ",
+        "verdict": "b",
+        "note": "The running header is pointed: a ḥireq dot is visible under the aleph of אִית (left) and a pataḥ under the aleph plus a shewa inside the final kaf of אַךְ (right). Reading A omits all points; Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f64c5de9-03a8-4b46-9fa9-ece19ba02f6d",
+        "duration_api_ms": 13476,
+        "cost_usd_list": 0.06373575000000001,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1783,
+        "output_tokens": 543
+       },
+       "text": "אִית 46 אַךְ"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 0,
+    "y": 146,
+    "width": 1052,
+    "height": 821
+   },
+   "draft_lines": [
+    "come, to enter. In Chethibh the letter",
+    "Yod is transposed so as to read יאתון.",
+    "אִיתַי Chald. i. q. Heb. יֵשׁ there is,",
+    "from which it is derived. Arab. أَيْسَ,",
+    "but only in a few phrases ; Syr. ܐܺܝܬ, in",
+    "Targg. אִית, Talmud. איתא.—Dan. 5, 11",
+    "אִיתַי גְּבַר בְּמַלְכוּתָךְ there is a man in thy",
+    "kingdom. 2, 28. 30. 3, 25. With a nega-",
+    "tive partic. לָא אִיתַי Dan. 2, 10. 11. 3, 29.",
+    "With plur. Dan. 3, 12. In order to ex-",
+    "press the various persons of the substan-",
+    "tive verb to be, pronouns are suffixed,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 0,
+      "y": 138,
+      "width": 1052,
+      "height": 352
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r00-b00-1052x352+0+138-x2.png",
+     "image_sha256": "6b019e3169e50fdb39d645a4f21b81d8e240dd8669780fa9dfd0e0186f068cb7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "come, to enter. In Chethibh the letter",
+       "Yod is transposed so as to read יֵאתוֹן.",
+       "אִיתַי Chald. i. q. Heb. יֵשׁ there is,",
+       "from which it is derived. Arab. أَيْسٌ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "17b3683e-7e26-44f9-89be-160ee797b3ae",
+      "duration_api_ms": 14025,
+      "cost_usd_list": 0.09458349999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3330,
+      "output_tokens": 541
+     },
+     "lines": [
+      {
+       "draft": "come, to enter. In Chethibh the letter",
+       "reread": "come, to enter. In Chethibh the letter",
+       "status": "agreed",
+       "text": "come, to enter. In Chethibh the letter"
+      },
+      {
+       "draft": "Yod is transposed so as to read יאתון.",
+       "reread": "Yod is transposed so as to read יֵאתוֹן.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "Yod is transposed so as to read יֵאתוֹן.",
+        "verdict": "b",
+        "note": "The printed Hebrew is pointed: a tsere (two dots) is visible beneath the yod and a holem dot above the vav, so יֵאתוֹן (Reading B); Reading A drops the vowel points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4e5b3027-7fed-4cc2-b821-b366d8c96a5b",
+        "duration_api_ms": 17525,
+        "cost_usd_list": 0.0913815,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 3250,
+        "output_tokens": 509
+       },
+       "text": "Yod is transposed so as to read יֵאתוֹן."
+      },
+      {
+       "draft": "אִיתַי Chald. i. q. Heb. יֵשׁ there is,",
+       "reread": "אִיתַי Chald. i. q. Heb. יֵשׁ there is,",
+       "status": "agreed",
+       "text": "אִיתַי Chald. i. q. Heb. יֵשׁ there is,"
+      },
+      {
+       "draft": "from which it is derived. Arab. أَيْسَ,",
+       "reread": "from which it is derived. Arab. أَيْسٌ,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "from which it is derived. Arab. أَيْسٌ,",
+        "verdict": "b",
+        "note": "The mark over the final sin is the stacked double-damma (tanwin, ٌ), not a bare fatha: the sequence of superscript marks reads fatha (alif), sukun (ya), dammatan (sin), as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "43528b0b-acc4-4ae7-b654-ea505ef66349",
+        "duration_api_ms": 16588,
+        "cost_usd_list": 0.09682199999999999,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 3252,
+        "output_tokens": 617
+       },
+       "text": "from which it is derived. Arab. أَيْسٌ,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 0,
+      "y": 474,
+      "width": 1052,
+      "height": 222
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r00-b01-1052x222+0+474-x2.png",
+     "image_sha256": "dac2363350edfef08adaa265edd10e9ba68d168d66e225c18856bfbf873245fa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "but only in a few phrases ; Syr. ܐܺܝܬ, in",
+       "Targg. אִית, Talmud. איתא.—Dan. 5, 11",
+       "אִיתַי גְּבַר בְּמַלְכוּתָךְ there is a man in thy"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "871bc8b8-c7fc-4002-99bc-805519f4e2fa",
+      "duration_api_ms": 12761,
+      "cost_usd_list": 0.07751349999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 430
+     },
+     "lines": [
+      {
+       "draft": "but only in a few phrases ; Syr. ܐܺܝܬ, in",
+       "reread": "but only in a few phrases ; Syr. ܐܺܝܬ, in",
+       "status": "agreed",
+       "text": "but only in a few phrases; Syr. ܐܺܝܬ, in"
+      },
+      {
+       "draft": "Targg. אִית, Talmud. איתא.—Dan. 5, 11",
+       "reread": "Targg. אִית, Talmud. איתא.—Dan. 5, 11",
+       "status": "agreed",
+       "text": "Targg. אִית, Talmud. איתא.—Dan. 5, 11"
+      },
+      {
+       "draft": "אִיתַי גְּבַר בְּמַלְכוּתָךְ there is a man in thy",
+       "reread": "אִיתַי גְּבַר בְּמַלְכוּתָךְ there is a man in thy",
+       "status": "agreed",
+       "text": "אִיתַי גְּבַר בְּמַלְכוּתָךְ there is a man in thy"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 0,
+      "y": 680,
+      "width": 1052,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r00-b02-1052x232+0+680-x2.png",
+     "image_sha256": "56cad1b3be58b2627fe730cf639e051088255c75b33f5a918908e6138f74b2e8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "kingdom. 2, 28. 30. 3, 25. With a nega-",
+       "tive partic. לָא אִיתַי Dan. 2, 10. 11. 3, 29.",
+       "With plur. Dan. 3, 12. In order to ex-",
+       "press the various persons of the substan-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7134269c-6650-43d5-8138-963a52d7fd05",
+      "duration_api_ms": 8356,
+      "cost_usd_list": 0.0696135,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 272
+     },
+     "lines": [
+      {
+       "draft": "kingdom. 2, 28. 30. 3, 25. With a nega-",
+       "reread": "kingdom. 2, 28. 30. 3, 25. With a nega-",
+       "status": "agreed",
+       "text": "kingdom. 2, 28. 30. 3, 25. With a nega-"
+      },
+      {
+       "draft": "tive partic. לָא אִיתַי Dan. 2, 10. 11. 3, 29.",
+       "reread": "tive partic. לָא אִיתַי Dan. 2, 10. 11. 3, 29.",
+       "status": "agreed",
+       "text": "tive partic. לָא אִיתַי Dan. 2, 10. 11. 3, 29."
+      },
+      {
+       "draft": "With plur. Dan. 3, 12. In order to ex-",
+       "reread": "With plur. Dan. 3, 12. In order to ex-",
+       "status": "agreed",
+       "text": "With plur. Dan. 3, 12. In order to ex-"
+      },
+      {
+       "draft": "press the various persons of the substan-",
+       "reread": "press the various persons of the substan-",
+       "status": "agreed",
+       "text": "press the various persons of the substan-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 0,
+      "y": 896,
+      "width": 1052,
+      "height": 79
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r00-b03-1052x79+0+896-x2.png",
+     "image_sha256": "125097a1005396b8fcf0a52d850a266cc565a5bd2fd0c31ceb5a946b288f12a5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tive verb to be, pronouns are suffixed,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4052691a-b532-4e40-9181-26ce4a88207c",
+      "duration_api_ms": 7670,
+      "cost_usd_list": 0.0513635,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2034,
+      "output_tokens": 195
+     },
+     "lines": [
+      {
+       "draft": "tive verb to be, pronouns are suffixed,",
+       "reread": "tive verb to be, pronouns are suffixed,",
+       "status": "agreed",
+       "text": "tive verb to be, pronouns are suffixed,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 0,
+    "y": 955,
+    "width": 1052,
+    "height": 992
+   },
+   "draft_lines": [
+    "mostly in the plural: אִיתוֹהִי he is Dan.",
+    "2, 11 ; אִיתָנָא we are 3, 18 ; אִיתָיךְ thou",
+    "art 2, 26 ; אִיתֵיכוֹן ye are 3, 14. These",
+    "forms construed with a participle, consti-",
+    "tute a periphrasis for the finite verb, e. g.",
+    "Dan. 3, 18 לָא אִיתָנָא פָּלְחִין we worship",
+    "not. Where it stands absolutely, it is",
+    "sometimes to be rendered there is, there",
+    "exists, il y a, Dan. 2, 10. 11. With dat.",
+    "אִיתַי לְ there is to any one, he has, Ezra",
+    "4, 16.",
+    "אִיתַי pr. n. see אִתַּי.",
+    "אִיתִיאֵל (for אִתִּי אֵל, God with me)",
+    "pr. n. m. Ithiel, Prov. 30, 1. Ithiel and",
+    "Ucal seem to have been children or dis-",
+    "ciples of Agur, to whom he addressed",
+    "his maxims."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 0,
+      "y": 947,
+      "width": 1052,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r01-b00-1052x237+0+947-x2.png",
+     "image_sha256": "10e21277a440104fb38f736c2ed6c533dbddaa2d7bf8c03dab2abcfb6795f642",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mostly in the plural: אִיתוֹהִי he is Dan.",
+       "2, 11 ; אִיתַנָא we are 3, 18 ; אִיתָיךְ thou",
+       "art 2, 26 ; אִיתֵיכוֹן ye are 3, 14. These",
+       "forms construed with a participle, consti-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9624dc1d-7dd7-4f1b-a134-3c721b820b6f",
+      "duration_api_ms": 10639,
+      "cost_usd_list": 0.07180349999999999,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2826,
+      "output_tokens": 287
+     },
+     "lines": [
+      {
+       "draft": "mostly in the plural: אִיתוֹהִי he is Dan.",
+       "reread": "mostly in the plural: אִיתוֹהִי he is Dan.",
+       "status": "agreed",
+       "text": "mostly in the plural: אִיתוֹהִי he is Dan."
+      },
+      {
+       "draft": "2, 11 ; אִיתָנָא we are 3, 18 ; אִיתָיךְ thou",
+       "reread": "2, 11 ; אִיתַנָא we are 3, 18 ; אִיתָיךְ thou",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "2, 11 ; אִיתָנָא we are 3, 18 ; אִיתָיךְ thou",
+        "verdict": "a",
+        "note": "Under the tav of אִיתָנָא the printed point has a vertical stem below the horizontal stroke (T-shape), i.e. qamets, matching the qamets under the following nun; it is not a flat patach as in Reading B. All other characters agree in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "aba898d8-fdc4-433e-bf2a-86c5603b49ec",
+        "duration_api_ms": 17059,
+        "cost_usd_list": 0.09161074999999999,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3603,
+        "cache_creation_input_tokens": 2836,
+        "output_tokens": 679
+       },
+       "text": "2, 11; אִיתָנָא we are 3, 18; אִיתָיךְ thou"
+      },
+      {
+       "draft": "art 2, 26 ; אִיתֵיכוֹן ye are 3, 14. These",
+       "reread": "art 2, 26 ; אִיתֵיכוֹן ye are 3, 14. These",
+       "status": "agreed",
+       "text": "art 2, 26; אִיתֵיכוֹן ye are 3, 14. These"
+      },
+      {
+       "draft": "forms construed with a participle, consti-",
+       "reread": "forms construed with a participle, consti-",
+       "status": "agreed",
+       "text": "forms construed with a participle, consti-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 0,
+      "y": 1168,
+      "width": 1052,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r01-b01-1052x233+0+1168-x2.png",
+     "image_sha256": "2a904152d03db8cf8110c7081b7fdd485ec5ff9ed10f5d58782fc5c7a54775a8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tute a periphrasis for the finite verb, e. g.",
+       "Dan. 3, 18 לָא אִיתַנָא פָּלְחִין we worship",
+       "not. Where it stands absolutely, it is",
+       "sometimes to be rendered there is, there"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "440013cd-4b75-48b0-9137-237cae2c6ef4",
+      "duration_api_ms": 10178,
+      "cost_usd_list": 0.07095375000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 298
+     },
+     "lines": [
+      {
+       "draft": "tute a periphrasis for the finite verb, e. g.",
+       "reread": "tute a periphrasis for the finite verb, e. g.",
+       "status": "agreed",
+       "text": "tute a periphrasis for the finite verb, e. g."
+      },
+      {
+       "draft": "Dan. 3, 18 לָא אִיתָנָא פָּלְחִין we worship",
+       "reread": "Dan. 3, 18 לָא אִיתַנָא פָּלְחִין we worship",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "Dan. 3, 18 לָא אִיתָנָא פָּלְחִין we worship",
+        "verdict": "a",
+        "note": "Decisive point: the vowel under the tav of איתנא. The printed mark has a short vertical stem below the horizontal bar, i.e. qamets (ָ), matching Reading A; Reading B's patach (ַ) would be a plain bar with no stem.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ebf4af88-d76a-4d89-a788-44dabff46448",
+        "duration_api_ms": 16330,
+        "cost_usd_list": 0.0927985,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2703,
+        "output_tokens": 756
+       },
+       "text": "Dan. 3, 18 לָא אִיתָנָא פָּלְחִין we worship"
+      },
+      {
+       "draft": "not. Where it stands absolutely, it is",
+       "reread": "not. Where it stands absolutely, it is",
+       "status": "agreed",
+       "text": "not. Where it stands absolutely, it is"
+      },
+      {
+       "draft": "sometimes to be rendered there is, there",
+       "reread": "sometimes to be rendered there is, there",
+       "status": "agreed",
+       "text": "sometimes to be rendered there is, there"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 0,
+      "y": 1385,
+      "width": 1052,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r01-b02-1052x261+0+1385-x2.png",
+     "image_sha256": "0095c8f8faf65a8be656433b61072bfd7373f49520f10bcb72c124a4e6e02811",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "exists, il y a, Dan. 2, 10. 11. With dat.",
+       "אִיתַי לְ there is to any one, he has, Ezra",
+       "4, 16.",
+       "אִיתַי pr. n. see אִתַּי."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a87b4ef0-e82b-4204-9dde-ddb6d9f8221d",
+      "duration_api_ms": 13063,
+      "cost_usd_list": 0.07163375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2900,
+      "output_tokens": 254
+     },
+     "lines": [
+      {
+       "draft": "exists, il y a, Dan. 2, 10. 11. With dat.",
+       "reread": "exists, il y a, Dan. 2, 10. 11. With dat.",
+       "status": "agreed",
+       "text": "exists, il y a, Dan. 2, 10. 11. With dat."
+      },
+      {
+       "draft": "אִיתַי לְ there is to any one, he has, Ezra",
+       "reread": "אִיתַי לְ there is to any one, he has, Ezra",
+       "status": "agreed",
+       "text": "אִיתַי לְ there is to any one, he has, Ezra"
+      },
+      {
+       "draft": "4, 16.",
+       "reread": "4, 16.",
+       "status": "agreed",
+       "text": "4, 16."
+      },
+      {
+       "draft": "אִיתַי pr. n. see אִתַּי.",
+       "reread": "אִיתַי pr. n. see אִתַּי.",
+       "status": "agreed",
+       "text": "אִיתַי pr. n. see אִתַּי."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 0,
+      "y": 1630,
+      "width": 1052,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r01-b03-1052x258+0+1630-x2.png",
+     "image_sha256": "43dea9c72ae7455d16ccf20181c0c1541488808914406fb9208578b0aed34cb0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִיתִיאֵל (for אִתִּי אֵל, God with me)",
+       "pr. n. m. Ithiel, Prov. 30, 1. Ithiel and",
+       "Ucal seem to have been children or dis-",
+       "ciples of Agur, to whom he addressed"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3d965d0a-ddc8-4385-8b35-8f48296f5e70",
+      "duration_api_ms": 9798,
+      "cost_usd_list": 0.07243375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2900,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "אִיתִיאֵל (for אִתִּי אֵל, God with me)",
+       "reread": "אִיתִיאֵל (for אִתִּי אֵל, God with me)",
+       "status": "agreed",
+       "text": "אִיתִיאֵל (for אִתִּי אֵל, God with me)"
+      },
+      {
+       "draft": "pr. n. m. Ithiel, Prov. 30, 1. Ithiel and",
+       "reread": "pr. n. m. Ithiel, Prov. 30, 1. Ithiel and",
+       "status": "agreed",
+       "text": "pr. n. m. Ithiel, Prov. 30, 1. Ithiel and"
+      },
+      {
+       "draft": "Ucal seem to have been children or dis-",
+       "reread": "Ucal seem to have been children or dis-",
+       "status": "agreed",
+       "text": "Ucal seem to have been children or dis-"
+      },
+      {
+       "draft": "ciples of Agur, to whom he addressed",
+       "reread": "ciples of Agur, to whom he addressed",
+       "status": "agreed",
+       "text": "ciples of Agur, to whom he addressed"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b04",
+     "bounds": {
+      "x": 0,
+      "y": 1872,
+      "width": 1052,
+      "height": 59
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r01-b04-1052x59+0+1872-x2.png",
+     "image_sha256": "d8b359783869905c3f208ab5ee40795ee5aa56896cd1b7f6292931a872adccd1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "his maxims."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e6e9ff54-dc5b-4d47-8143-325366b3c213",
+      "duration_api_ms": 9789,
+      "cost_usd_list": 0.04892375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1892,
+      "output_tokens": 203
+     },
+     "lines": [
+      {
+       "draft": "his maxims.",
+       "reread": "his maxims.",
+       "status": "agreed",
+       "text": "his maxims."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 0,
+    "y": 1935,
+    "width": 1052,
+    "height": 865
+   },
+   "draft_lines": [
+    "אִיתָמָר (palm-coast) Ithamar, pr. n.",
+    "of the youngest son of Aaron, Ex. 6, 23.",
+    "28, 1.",
+    "אֵיתָן, also אֵתָן Job 33, 19, for יְתָן",
+    "with Aleph prosthet. from r. יָתַן to be",
+    "perennial, constant.",
+    "1. perennity, perpetuity, spoken espec.",
+    "of water. Ex. 14, 27 the sea returned",
+    "לְאֵיתָנוֹ to its perpetuity i. e. to its perpet-",
+    "ual, ceaseless flow. Num. 24, 21 אֵיתָן",
+    "מוֹשָׁבֶךָ perpetuity (perpetual) is thy habi-",
+    "tation. Joined in the genit. with other",
+    "nouns; as נַהֲרוֹת אֵיתָן perennial streams",
+    "Ps. 74, 15; נְוֵה אֵיתָן perennial pasture",
+    "i. e. ever verdant, Jer. 49, 19. 50, 44;"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 0,
+      "y": 1951,
+      "width": 1052,
+      "height": 306
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r02-b00-1052x306+0+1951-x2.png",
+     "image_sha256": "b3681e944e82d879cfe94ba199a5aedcf989f08bdae5870f02ac7c287cbc950f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִיתָמָר (palm-coast) Ithamar, pr. n.",
+       "of the youngest son of Aaron, Ex. 6, 23.",
+       "28, 1.",
+       "אֵיתָן, also אֵתָן Job 33, 19, for יְתָן",
+       "with Aleph prosthet. from r. יָתַן to be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2c445576-4d15-4b9d-88b3-697b44460449",
+      "duration_api_ms": 11597,
+      "cost_usd_list": 0.07770375000000002,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 3116,
+      "output_tokens": 289
+     },
+     "lines": [
+      {
+       "draft": "אִיתָמָר (palm-coast) Ithamar, pr. n.",
+       "reread": "אִיתָמָר (palm-coast) Ithamar, pr. n.",
+       "status": "agreed",
+       "text": "אִיתָמָר (palm-coast) Ithamar, pr. n."
+      },
+      {
+       "draft": "of the youngest son of Aaron, Ex. 6, 23.",
+       "reread": "of the youngest son of Aaron, Ex. 6, 23.",
+       "status": "agreed",
+       "text": "of the youngest son of Aaron, Ex. 6, 23."
+      },
+      {
+       "draft": "28, 1.",
+       "reread": "28, 1.",
+       "status": "agreed",
+       "text": "28, 1."
+      },
+      {
+       "draft": "אֵיתָן, also אֵתָן Job 33, 19, for יְתָן",
+       "reread": "אֵיתָן, also אֵתָן Job 33, 19, for יְתָן",
+       "status": "agreed",
+       "text": "אֵיתָן, also אֵתָן Job 33, 19, for יְתָן"
+      },
+      {
+       "draft": "with Aleph prosthet. from r. יָתַן to be",
+       "reread": "with Aleph prosthet. from r. יָתַן to be",
+       "status": "agreed",
+       "text": "with Aleph prosthet. from r. יָתַן to be"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 0,
+      "y": 2241,
+      "width": 1052,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r02-b01-1052x237+0+2241-x2.png",
+     "image_sha256": "ad8c1bb5e2c47ed16648e214077680c6da3bd91e1823d843b4d1658208abe532",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "perennial, constant.",
+       "1. perennity, perpetuity, spoken espec.",
+       "of water. Ex. 14, 27 the sea returned",
+       "לְאֵיתָנוֹ to its perpetuity i. e. to its perpet-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9d275e18-0b77-441f-a115-de0245bead2e",
+      "duration_api_ms": 10143,
+      "cost_usd_list": 0.07039375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2828,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "perennial, constant.",
+       "reread": "perennial, constant.",
+       "status": "agreed",
+       "text": "perennial, constant."
+      },
+      {
+       "draft": "1. perennity, perpetuity, spoken espec.",
+       "reread": "1. perennity, perpetuity, spoken espec.",
+       "status": "agreed",
+       "text": "1. perennity, perpetuity, spoken espec."
+      },
+      {
+       "draft": "of water. Ex. 14, 27 the sea returned",
+       "reread": "of water. Ex. 14, 27 the sea returned",
+       "status": "agreed",
+       "text": "of water. Ex. 14, 27 the sea returned"
+      },
+      {
+       "draft": "לְאֵיתָנוֹ to its perpetuity i. e. to its perpet-",
+       "reread": "לְאֵיתָנוֹ to its perpetuity i. e. to its perpet-",
+       "status": "agreed",
+       "text": "לְאֵיתָנוֹ to its perpetuity i. e. to its perpet-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 0,
+      "y": 2462,
+      "width": 1052,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r02-b02-1052x232+0+2462-x2.png",
+     "image_sha256": "e1a08907310797cfa9df2834fe63d3190e195b028a8ca5b9657e60b238c618fe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ual, ceaseless flow. Num. 24, 21 אֵיתָן",
+       "מוֹשָׁבֶךָ perpetuity (perpetual) is thy habi-",
+       "tation. Joined in the genit. with other",
+       "nouns; as נַהֲרוֹת אֵיתָן perennial streams"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5d1fd925-1cc7-4a37-a886-04e4eeb6e0b1",
+      "duration_api_ms": 5101,
+      "cost_usd_list": 0.07020375000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 283
+     },
+     "lines": [
+      {
+       "draft": "ual, ceaseless flow. Num. 24, 21 אֵיתָן",
+       "reread": "ual, ceaseless flow. Num. 24, 21 אֵיתָן",
+       "status": "agreed",
+       "text": "ual, ceaseless flow. Num. 24, 21 אֵיתָן"
+      },
+      {
+       "draft": "מוֹשָׁבֶךָ perpetuity (perpetual) is thy habi-",
+       "reread": "מוֹשָׁבֶךָ perpetuity (perpetual) is thy habi-",
+       "status": "agreed",
+       "text": "מוֹשָׁבֶךָ perpetuity (perpetual) is thy habi-"
+      },
+      {
+       "draft": "tation. Joined in the genit. with other",
+       "reread": "tation. Joined in the genit. with other",
+       "status": "agreed",
+       "text": "tation. Joined in the genit. with other"
+      },
+      {
+       "draft": "nouns; as נַהֲרוֹת אֵיתָן perennial streams",
+       "reread": "nouns; as נַהֲרוֹת אֵיתָן perennial streams",
+       "status": "agreed",
+       "text": "nouns; as נַהֲרוֹת אֵיתָן perennial streams"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 0,
+      "y": 2678,
+      "width": 1052,
+      "height": 130
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r02-b03-1052x130+0+2678-x2.png",
+     "image_sha256": "305d9f9996e929f923147979cf6aa1ee07f5306cbfc00ac7db1fb098d22e2236",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ps. 74, 15; נְוֵה אֵיתָן perennial pasture",
+       "i. e. ever verdant, Jer. 49, 19. 50, 44 ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "30e823a0-ed64-4381-b2df-a143ea28150e",
+      "duration_api_ms": 8848,
+      "cost_usd_list": 0.05787375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2252,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "Ps. 74, 15; נְוֵה אֵיתָן perennial pasture",
+       "reread": "Ps. 74, 15; נְוֵה אֵיתָן perennial pasture",
+       "status": "agreed",
+       "text": "Ps. 74, 15; נְוֵה אֵיתָן perennial pasture"
+      },
+      {
+       "draft": "i. e. ever verdant, Jer. 49, 19. 50, 44;",
+       "reread": "i. e. ever verdant, Jer. 49, 19. 50, 44 ;",
+       "status": "agreed",
+       "text": "i. e. ever verdant, Jer. 49, 19. 50, 44;"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 0,
+    "y": 2788,
+    "width": 1052,
+    "height": 452
+   },
+   "draft_lines": [
+    "נַחַל אֵיתָן a perennial brook, ever flowing,",
+    "never failing, Deut. 21, 4. Am. 5, 24; and",
+    "so without נַחַל, 1 K. 8, 2 יֶרַח הָאֵיתָנִים",
+    "the month of flowing brooks, elsewhere",
+    "called Tisri, the seventh month of the",
+    "Heb. year, from the new moon of October",
+    "to the new moon of November. Prov.",
+    "13, 15 the way of transgressors אֵיתָן is a"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 0,
+      "y": 2791,
+      "width": 1052,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r03-b00-1052x232+0+2791-x2.png",
+     "image_sha256": "acbba82593dbbe57cd16c6a8f4ecfbf870e006d11128d8cde8844224303b14fb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "נַחַל אֵיתָן a perennial brook, ever flowing,",
+       "never failing, Deut. 21, 4. Am. 5, 24 ; and",
+       "so without נַחַל, 1 K. 8, 2 יֶרַח הָאֵיתָנִים",
+       "the month of flowing brooks, elsewhere"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b49a6504-266a-4871-b5a3-9466e3d918dc",
+      "duration_api_ms": 12619,
+      "cost_usd_list": 0.07040375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 287
+     },
+     "lines": [
+      {
+       "draft": "נַחַל אֵיתָן a perennial brook, ever flowing,",
+       "reread": "נַחַל אֵיתָן a perennial brook, ever flowing,",
+       "status": "agreed",
+       "text": "נַחַל אֵיתָן a perennial brook, ever flowing,"
+      },
+      {
+       "draft": "never failing, Deut. 21, 4. Am. 5, 24; and",
+       "reread": "never failing, Deut. 21, 4. Am. 5, 24 ; and",
+       "status": "agreed",
+       "text": "never failing, Deut. 21, 4. Am. 5, 24; and"
+      },
+      {
+       "draft": "so without נַחַל, 1 K. 8, 2 יֶרַח הָאֵיתָנִים",
+       "reread": "so without נַחַל, 1 K. 8, 2 יֶרַח הָאֵיתָנִים",
+       "status": "agreed",
+       "text": "so without נַחַל, 1 K. 8, 2 יֶרַח הָאֵיתָנִים"
+      },
+      {
+       "draft": "the month of flowing brooks, elsewhere",
+       "reread": "the month of flowing brooks, elsewhere",
+       "status": "agreed",
+       "text": "the month of flowing brooks, elsewhere"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 0,
+      "y": 3007,
+      "width": 1052,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c0-r03-b01-1052x235+0+3007-x2.png",
+     "image_sha256": "f963552e67feae390c306854d69aaeca3ee61760a23566374e2a66532cef2620",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "called Tisri, the seventh month of the",
+       "Heb. year, from the new moon of October",
+       "to the new moon of November. Prov.",
+       "13, 15 the way of transgressors אֵיתָן is a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13142328-95a9-47fa-b2a1-93b8fc50e681",
+      "duration_api_ms": 10695,
+      "cost_usd_list": 0.06825375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 244
+     },
+     "lines": [
+      {
+       "draft": "called Tisri, the seventh month of the",
+       "reread": "called Tisri, the seventh month of the",
+       "status": "agreed",
+       "text": "called Tisri, the seventh month of the"
+      },
+      {
+       "draft": "Heb. year, from the new moon of October",
+       "reread": "Heb. year, from the new moon of October",
+       "status": "agreed",
+       "text": "Heb. year, from the new moon of October"
+      },
+      {
+       "draft": "to the new moon of November. Prov.",
+       "reread": "to the new moon of November. Prov.",
+       "status": "agreed",
+       "text": "to the new moon of November. Prov."
+      },
+      {
+       "draft": "13, 15 the way of transgressors אֵיתָן is a",
+       "reread": "13, 15 the way of transgressors אֵיתָן is a",
+       "status": "agreed",
+       "text": "13, 15 the way of transgressors אֵיתָן is a"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1067,
+    "y": 146,
+    "width": 876,
+    "height": 864
+   },
+   "draft_lines": [
+    "perennial stream, full of water, by which",
+    "one may easily be borne away and over-",
+    "whelmed.—Job 33, 19 וְרִיב עֲצָמָיו אֵתָן",
+    "and the strife in his bones is perpetuity,",
+    "perpetual.",
+    "2. firmness, strength. Gen. 49, 24 תֵּשֶׁב",
+    "בְּאֵיתָן קַשְׁתּוֹ his bow abides in strength,",
+    "i. e. is strong, firm. Jer. 5, 15 גּוֹי אֵיתָן",
+    "a people of strength, i. e. strong, mighty.",
+    "Plur. אֵיתָנִים the strong, the mighty, Vulg.",
+    "optimates, Job 12, 19.",
+    "3. Ethan, pr. n. an Ezrahite, (see",
+    "אֶזְרָחִי,) a wise man 1 K. 5, 11; to whom",
+    "Ps. 89 is attributed in the inscription."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1067,
+      "y": 138,
+      "width": 876,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r00-b00-876x297+1067+138-x2.png",
+     "image_sha256": "d40cfc53fe3ceee2d480b6b1f65610f96522217a6f093d9211c4621e6bf8feaa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "perennial stream, full of water, by which",
+       "one may easily be borne away and over-",
+       "whelmed.—Job 33, 19 וְרִיב עֲצָמָיו אֵתָן",
+       "and the strife in his bones is perpetuity,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cb97eb61-aa31-421a-b0cb-d85d984586b0",
+      "duration_api_ms": 12182,
+      "cost_usd_list": 0.0829435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 457
+     },
+     "lines": [
+      {
+       "draft": "perennial stream, full of water, by which",
+       "reread": "perennial stream, full of water, by which",
+       "status": "agreed",
+       "text": "perennial stream, full of water, by which"
+      },
+      {
+       "draft": "one may easily be borne away and over-",
+       "reread": "one may easily be borne away and over-",
+       "status": "agreed",
+       "text": "one may easily be borne away and over-"
+      },
+      {
+       "draft": "whelmed.—Job 33, 19 וְרִיב עֲצָמָיו אֵתָן",
+       "reread": "whelmed.—Job 33, 19 וְרִיב עֲצָמָיו אֵתָן",
+       "status": "agreed",
+       "text": "whelmed.—Job 33, 19 וְרִיב עֲצָמָיו אֵתָן"
+      },
+      {
+       "draft": "and the strife in his bones is perpetuity,",
+       "reread": "and the strife in his bones is perpetuity,",
+       "status": "agreed",
+       "text": "and the strife in his bones is perpetuity,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1067,
+      "y": 419,
+      "width": 876,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r00-b01-876x241+1067+419-x2.png",
+     "image_sha256": "1e1148a71552799eb13a8434499e10394809135573fee243f06b715c92ffead9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "perpetual.",
+       "2. firmness, strength. Gen. 49, 24 תֵּשֶׁב",
+       "בְּאֵיתָן קַשְׁתּוֹ his bow abides in strength,",
+       "i. e. is strong, firm. Jer. 5, 15 גּוֹי אֵיתָן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "46d5b853-14f7-48ba-82f8-c0317a750edc",
+      "duration_api_ms": 16641,
+      "cost_usd_list": 0.0959035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 817
+     },
+     "lines": [
+      {
+       "draft": "perpetual.",
+       "reread": "perpetual.",
+       "status": "agreed",
+       "text": "perpetual."
+      },
+      {
+       "draft": "2. firmness, strength. Gen. 49, 24 תֵּשֶׁב",
+       "reread": "2. firmness, strength. Gen. 49, 24 תֵּשֶׁב",
+       "status": "agreed",
+       "text": "2. firmness, strength. Gen. 49, 24 תֵּשֶׁב"
+      },
+      {
+       "draft": "בְּאֵיתָן קַשְׁתּוֹ his bow abides in strength,",
+       "reread": "בְּאֵיתָן קַשְׁתּוֹ his bow abides in strength,",
+       "status": "agreed",
+       "text": "בְּאֵיתָן קַשְׁתּוֹ his bow abides in strength,"
+      },
+      {
+       "draft": "i. e. is strong, firm. Jer. 5, 15 גּוֹי אֵיתָן",
+       "reread": "i. e. is strong, firm. Jer. 5, 15 גּוֹי אֵיתָן",
+       "status": "agreed",
+       "text": "i. e. is strong, firm. Jer. 5, 15 גּוֹי אֵיתָן"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1067,
+      "y": 644,
+      "width": 876,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r00-b02-876x242+1067+644-x2.png",
+     "image_sha256": "bdb8710f4a8abe95071febe5f8da7012346b64bc9d65ce26048ada620462daf0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a people of strength, i. e. strong, mighty.",
+       "Plur. אֵיתָנִים the strong, the mighty, Vulg.",
+       "optimates, Job 12, 19.",
+       "3. Ethan, pr. n. an Ezrahite, (see"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f749de43-c5ad-48c5-934f-620dc8ee5611",
+      "duration_api_ms": 11900,
+      "cost_usd_list": 0.0730535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 360
+     },
+     "lines": [
+      {
+       "draft": "a people of strength, i. e. strong, mighty.",
+       "reread": "a people of strength, i. e. strong, mighty.",
+       "status": "agreed",
+       "text": "a people of strength, i. e. strong, mighty."
+      },
+      {
+       "draft": "Plur. אֵיתָנִים the strong, the mighty, Vulg.",
+       "reread": "Plur. אֵיתָנִים the strong, the mighty, Vulg.",
+       "status": "agreed",
+       "text": "Plur. אֵיתָנִים the strong, the mighty, Vulg."
+      },
+      {
+       "draft": "optimates, Job 12, 19.",
+       "reread": "optimates, Job 12, 19.",
+       "status": "agreed",
+       "text": "optimates, Job 12, 19."
+      },
+      {
+       "draft": "3. Ethan, pr. n. an Ezrahite, (see",
+       "reread": "3. Ethan, pr. n. an Ezrahite, (see",
+       "status": "agreed",
+       "text": "3. Ethan, pr. n. an Ezrahite, (see"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1067,
+      "y": 870,
+      "width": 876,
+      "height": 125
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r00-b03-876x125+1067+870-x2.png",
+     "image_sha256": "2bdaee928747d3fd25731948c2b268c1195aaf80b9f5092f5346a64b1708c03e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶזְרָחִי,) a wise man 1 K. 5, 11; to whom",
+       "Ps. 89 is attributed in the inscription."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1f204a92-1ae6-4011-b012-6d166e4bbb79",
+      "duration_api_ms": 15130,
+      "cost_usd_list": 0.060613499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 338
+     },
+     "lines": [
+      {
+       "draft": "אֶזְרָחִי,) a wise man 1 K. 5, 11; to whom",
+       "reread": "אֶזְרָחִי,) a wise man 1 K. 5, 11; to whom",
+       "status": "agreed",
+       "text": "אֶזְרָחִי,) a wise man 1 K. 5, 11; to whom"
+      },
+      {
+       "draft": "Ps. 89 is attributed in the inscription.",
+       "reread": "Ps. 89 is attributed in the inscription.",
+       "status": "agreed",
+       "text": "Ps. 89 is attributed in the inscription."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1067,
+    "y": 998,
+    "width": 876,
+    "height": 859
+   },
+   "draft_lines": [
+    "אַךְ 1. Part. of affirmation, yea, sure-",
+    "ly, certainly, without doubt. Kindr. are",
+    "אָכֵן, כֵּן, כִּי, see Hupfeld in Zeitschr. f. d.",
+    "Morgenl. II. 143.—Gen. 44, 28 אַךְ טָרֹף",
+    "טֹרָף surely-he is torn in pieces. Judg. 3,",
+    "24. 1 K. 22, 32. 2 K. 24, 3. Ps. 58, 12. Job",
+    "18, 21.—Hence",
+    "2. Adv. of restriction, limitation, only,",
+    "merely. Ex. 10, 17 אַךְ הַפַּעַם only this once.",
+    "Lev. 11,21 אַךְ אֶת־זֶה תֹּאכְלוּ only these may",
+    "ye eat. Ps. 37, 8 be thou not angry (which",
+    "is) only for doing evil, i. e. anger is the",
+    "frequent source of evil. Prov. 14, 23",
+    "empty talk אַךְ לְמַחְסוֹר (tendeth) only to",
+    "penury. 11, 24. 21, 5.—Spec. a) Before"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1067,
+      "y": 1014,
+      "width": 876,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r01-b00-876x237+1067+1014-x2.png",
+     "image_sha256": "6b44c7f2cd0adc9fde8f07b50b493916e70a5105a235ac2ab2ddf4d70a703f11",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַךְ 1. Part. of affirmation, yea, sure-",
+       "ly, certainly, without doubt. Kindr. are",
+       "כִּי, כֵּן, אָכֵן, see Hupfeld in Zeitschr. f. d.",
+       "Morgenl. II. 143.—Gen. 44, 28 אַךְ טָרֹף"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9b40e74f-09a3-4348-bb1f-215b26a18b60",
+      "duration_api_ms": 13653,
+      "cost_usd_list": 0.08528375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 629
+     },
+     "lines": [
+      {
+       "draft": "אַךְ 1. Part. of affirmation, yea, sure-",
+       "reread": "אַךְ 1. Part. of affirmation, yea, sure-",
+       "status": "agreed",
+       "text": "אַךְ 1. Part. of affirmation, yea, sure-"
+      },
+      {
+       "draft": "ly, certainly, without doubt. Kindr. are",
+       "reread": "ly, certainly, without doubt. Kindr. are",
+       "status": "agreed",
+       "text": "ly, certainly, without doubt. Kindr. are"
+      },
+      {
+       "draft": "אָכֵן, כֵּן, כִּי, see Hupfeld in Zeitschr. f. d.",
+       "reread": "כִּי, כֵּן, אָכֵן, see Hupfeld in Zeitschr. f. d.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "כִּי, כֵּן, אָכֵן, see Hupfeld in Zeitschr. f. d.",
+        "verdict": "b",
+        "note": "Decisive difference is the printed left-to-right order of the three Hebrew items: the leftmost is כִּי, then כֵּן, then אָכֵן (immediately before \", see\"). Reading A reverses the list. Vowel points (dagesh in both כ initials, hiriq/tsere, qamets on א, no dagesh in the כ of אָכֵן) match Reading B as printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "aad60fd6-082d-4fd7-896b-bdbbe186b775",
+        "duration_api_ms": 15248,
+        "cost_usd_list": 0.08628100000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3604,
+        "cache_creation_input_tokens": 2587,
+        "output_tokens": 666
+       },
+       "text": "כִּי, כֵּן, אָכֵן, see Hupfeld in Zeitschr. f. d."
+      },
+      {
+       "draft": "Morgenl. II. 143.—Gen. 44, 28 אַךְ טָרֹף",
+       "reread": "Morgenl. II. 143.—Gen. 44, 28 אַךְ טָרֹף",
+       "status": "agreed",
+       "text": "Morgenl. II. 143.—Gen. 44, 28 אַךְ טָרֹף"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1067,
+      "y": 1235,
+      "width": 876,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r01-b01-876x235+1067+1235-x2.png",
+     "image_sha256": "b7fe2e8b22319439d54028a15fdf11448ea13c00ac36da27d1f82e5a5cf53e3a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "טֹרָף surely-he is torn in pieces. Judg. 3,",
+       "24. 1 K. 22, 32. 2 K. 24, 3. Ps. 58, 12. Job",
+       "18, 21.—Hence",
+       "2. Adv. of restriction, limitation, only,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c84f97f2-589a-45f5-ba06-c1c8960a27d3",
+      "duration_api_ms": 11677,
+      "cost_usd_list": 0.07653375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 454
+     },
+     "lines": [
+      {
+       "draft": "טֹרָף surely-he is torn in pieces. Judg. 3,",
+       "reread": "טֹרָף surely-he is torn in pieces. Judg. 3,",
+       "status": "agreed",
+       "text": "טֹרָף surely-he is torn in pieces. Judg. 3,"
+      },
+      {
+       "draft": "24. 1 K. 22, 32. 2 K. 24, 3. Ps. 58, 12. Job",
+       "reread": "24. 1 K. 22, 32. 2 K. 24, 3. Ps. 58, 12. Job",
+       "status": "agreed",
+       "text": "24. 1 K. 22, 32. 2 K. 24, 3. Ps. 58, 12. Job"
+      },
+      {
+       "draft": "18, 21.—Hence",
+       "reread": "18, 21.—Hence",
+       "status": "agreed",
+       "text": "18, 21.—Hence"
+      },
+      {
+       "draft": "2. Adv. of restriction, limitation, only,",
+       "reread": "2. Adv. of restriction, limitation, only,",
+       "status": "agreed",
+       "text": "2. Adv. of restriction, limitation, only,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1067,
+      "y": 1454,
+      "width": 876,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r01-b02-876x235+1067+1454-x2.png",
+     "image_sha256": "513231560874c868862199aeabddc5109259bc9a68129a50dbb98b92dbc738ef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "merely. Ex. 10, 17 אַךְ הַפַּעַם only this once.",
+       "Lev. 11,21 אַךְ אֶת־זֶה תֹּאכְלוּ only these may",
+       "ye eat. Ps. 37, 8 be thou not angry (which",
+       "is) only for doing evil, i. e. anger is the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4311b174-0cfa-4815-84fa-f7d3d39e1f1a",
+      "duration_api_ms": 15048,
+      "cost_usd_list": 0.08493375000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 622
+     },
+     "lines": [
+      {
+       "draft": "merely. Ex. 10, 17 אַךְ הַפַּעַם only this once.",
+       "reread": "merely. Ex. 10, 17 אַךְ הַפַּעַם only this once.",
+       "status": "agreed",
+       "text": "merely. Ex. 10, 17 אַךְ הַפַּעַם only this once."
+      },
+      {
+       "draft": "Lev. 11,21 אַךְ אֶת־זֶה תֹּאכְלוּ only these may",
+       "reread": "Lev. 11,21 אַךְ אֶת־זֶה תֹּאכְלוּ only these may",
+       "status": "agreed",
+       "text": "Lev. 11,21 אַךְ אֶת־זֶה תֹּאכְלוּ only these may"
+      },
+      {
+       "draft": "ye eat. Ps. 37, 8 be thou not angry (which",
+       "reread": "ye eat. Ps. 37, 8 be thou not angry (which",
+       "status": "agreed",
+       "text": "ye eat. Ps. 37, 8 be thou not angry (which"
+      },
+      {
+       "draft": "is) only for doing evil, i. e. anger is the",
+       "reread": "is) only for doing evil, i. e. anger is the",
+       "status": "agreed",
+       "text": "is) only for doing evil, i. e. anger is the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1067,
+      "y": 1673,
+      "width": 876,
+      "height": 192
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r01-b03-876x192+1067+1673-x2.png",
+     "image_sha256": "df127af4614e2af7befb7de505dc2330eb1d878a750b90794b45bf24c61c7406",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "frequent source of evil. Prov. 14, 23",
+       "empty talk אַךְ לְמַחְסוֹר (tendeth) only to",
+       "penury. 11, 24. 21, 5.—Spec. a) Before"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9743d4db-f9b9-4a27-bc96-d89956ce7ab0",
+      "duration_api_ms": 6756,
+      "cost_usd_list": 0.06695375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 338
+     },
+     "lines": [
+      {
+       "draft": "frequent source of evil. Prov. 14, 23",
+       "reread": "frequent source of evil. Prov. 14, 23",
+       "status": "agreed",
+       "text": "frequent source of evil. Prov. 14, 23"
+      },
+      {
+       "draft": "empty talk אַךְ לְמַחְסוֹר (tendeth) only to",
+       "reread": "empty talk אַךְ לְמַחְסוֹר (tendeth) only to",
+       "status": "agreed",
+       "text": "empty talk אַךְ לְמַחְסוֹר (tendeth) only to"
+      },
+      {
+       "draft": "penury. 11, 24. 21, 5.—Spec. a) Before",
+       "reread": "penury. 11, 24. 21, 5.—Spec. a) Before",
+       "status": "agreed",
+       "text": "penury. 11, 24. 21, 5.—Spec. a) Before"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1067,
+    "y": 1845,
+    "width": 876,
+    "height": 998
+   },
+   "draft_lines": [
+    "adjectives, where only is equiv. to wholly,",
+    "altogether. Deut. 16, 15 וְהָיִיתָ אַךְ שָׂמֵחַ",
+    "and thou shalt be only joyful, i. e. shalt",
+    "wholly rejoice. Is. 16, 7 אַךְ נְכָאִים wholly",
+    "contrite. 19, 11. b) Before substantives,",
+    "only, nothing but, where we may render",
+    "it alone, merely. Ps. 139, 11 אַךְ חֹשֶׁךְ the",
+    "darkness alone, i. e. nothing but the dark-",
+    "ness. Ps. 39, 12 אַךְ הֶבֶל nothing but",
+    "vanity, merely vanity. c) Before ad-",
+    "verbs and verbs, only, i. q. wholly, comp.",
+    "above in lett. a. Ps. 73, 13 אַךְ רִיק only in",
+    "vain, i. e. wholly in vain. 1 Sam. 25, 21.",
+    "Job 19, 13 יֹדְעַי אַךְ זָרוּ מִמֶּנִּי mine ac-",
+    "quaintance are wholly estranged from me.",
+    "Judg. 20, 39. Job 23, 6. Comp. Ex. 12, 15",
+    "אַךְ בַּיּוֹם הָרִאשׁוֹן wholly the first day, i. e.",
+    "the very first day, on no other but the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1067,
+      "y": 1837,
+      "width": 876,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r02-b00-876x241+1067+1837-x2.png",
+     "image_sha256": "b60b6d7f82c725216511049c81ef598be631e35d164828e95f7a5ddc24dc39e8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "adjectives, where only is equiv. to wholly,",
+       "altogether. Deut. 16, 15 וְהָיִיתָ אַךְ שָׂמֵחַ",
+       "and thou shalt be only joyful, i. e. shalt",
+       "wholly rejoice. Is. 16, 7 אַךְ נְכָאִים wholly"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba62d471-260a-4ceb-a027-9eb37e1870ce",
+      "duration_api_ms": 11189,
+      "cost_usd_list": 0.06969375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "adjectives, where only is equiv. to wholly,",
+       "reread": "adjectives, where only is equiv. to wholly,",
+       "status": "agreed",
+       "text": "adjectives, where only is equiv. to wholly,"
+      },
+      {
+       "draft": "altogether. Deut. 16, 15 וְהָיִיתָ אַךְ שָׂמֵחַ",
+       "reread": "altogether. Deut. 16, 15 וְהָיִיתָ אַךְ שָׂמֵחַ",
+       "status": "agreed",
+       "text": "altogether. Deut. 16, 15 וְהָיִיתָ אַךְ שָׂמֵחַ"
+      },
+      {
+       "draft": "and thou shalt be only joyful, i. e. shalt",
+       "reread": "and thou shalt be only joyful, i. e. shalt",
+       "status": "agreed",
+       "text": "and thou shalt be only joyful, i. e. shalt"
+      },
+      {
+       "draft": "wholly rejoice. Is. 16, 7 אַךְ נְכָאִים wholly",
+       "reread": "wholly rejoice. Is. 16, 7 אַךְ נְכָאִים wholly",
+       "status": "agreed",
+       "text": "wholly rejoice. Is. 16, 7 אַךְ נְכָאִים wholly"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1067,
+      "y": 2062,
+      "width": 876,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r02-b01-876x232+1067+2062-x2.png",
+     "image_sha256": "3ea2123203f131444414575c25d8c5eb3545e07df7fc8e503d3c1a116a88aa1b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "contrite. 19, 11.    b) Before substantives,",
+       "only, nothing but, where we may render",
+       "it alone, merely. Ps. 139, 11 אַךְ חֹשֶׁךְ the",
+       "darkness alone, i. e. nothing but the dark-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f909b716-8a84-4252-944a-992a2c411ccb",
+      "duration_api_ms": 10853,
+      "cost_usd_list": 0.07188375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 361
+     },
+     "lines": [
+      {
+       "draft": "contrite. 19, 11. b) Before substantives,",
+       "reread": "contrite. 19, 11.    b) Before substantives,",
+       "status": "agreed",
+       "text": "contrite. 19, 11. b) Before substantives,"
+      },
+      {
+       "draft": "only, nothing but, where we may render",
+       "reread": "only, nothing but, where we may render",
+       "status": "agreed",
+       "text": "only, nothing but, where we may render"
+      },
+      {
+       "draft": "it alone, merely. Ps. 139, 11 אַךְ חֹשֶׁךְ the",
+       "reread": "it alone, merely. Ps. 139, 11 אַךְ חֹשֶׁךְ the",
+       "status": "agreed",
+       "text": "it alone, merely. Ps. 139, 11 אַךְ חֹשֶׁךְ the"
+      },
+      {
+       "draft": "darkness alone, i. e. nothing but the dark-",
+       "reread": "darkness alone, i. e. nothing but the dark-",
+       "status": "agreed",
+       "text": "darkness alone, i. e. nothing but the dark-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1067,
+      "y": 2278,
+      "width": 876,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r02-b02-876x239+1067+2278-x2.png",
+     "image_sha256": "8784fbc226b4814884bfd82067dcfe92e462fc53afdf53437ebb7897491a697a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ness. Ps. 39, 12 אַךְ הֶבֶל nothing but",
+       "vanity, merely vanity. c) Before ad-",
+       "verbs and verbs, only, i. q. wholly, comp.",
+       "above in lett. a. Ps. 73, 13 אַךְ רִיק only in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1fbc9db6-a47a-4005-aa5f-145625c8f74c",
+      "duration_api_ms": 23292,
+      "cost_usd_list": 0.06909375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 280
+     },
+     "lines": [
+      {
+       "draft": "ness. Ps. 39, 12 אַךְ הֶבֶל nothing but",
+       "reread": "ness. Ps. 39, 12 אַךְ הֶבֶל nothing but",
+       "status": "agreed",
+       "text": "ness. Ps. 39, 12 אַךְ הֶבֶל nothing but"
+      },
+      {
+       "draft": "vanity, merely vanity. c) Before ad-",
+       "reread": "vanity, merely vanity. c) Before ad-",
+       "status": "agreed",
+       "text": "vanity, merely vanity. c) Before ad-"
+      },
+      {
+       "draft": "verbs and verbs, only, i. q. wholly, comp.",
+       "reread": "verbs and verbs, only, i. q. wholly, comp.",
+       "status": "agreed",
+       "text": "verbs and verbs, only, i. q. wholly, comp."
+      },
+      {
+       "draft": "above in lett. a. Ps. 73, 13 אַךְ רִיק only in",
+       "reread": "above in lett. a. Ps. 73, 13 אַךְ רִיק only in",
+       "status": "agreed",
+       "text": "above in lett. a. Ps. 73, 13 אַךְ רִיק only in"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1067,
+      "y": 2501,
+      "width": 876,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r02-b03-876x231+1067+2501-x2.png",
+     "image_sha256": "ea80f4bbf8bce1391d036987931ac0b7393a7d9ddbb9bcdf6d33896c531386f2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "vain, i. e. wholly in vain. 1 Sam. 25, 21.",
+       "Job 19, 13 יֹדְעַי אַךְ זָרוּ מִמֶּנִּי mine ac-",
+       "quaintance are wholly estranged from me.",
+       "Judg. 20, 39. Job 23, 6. Comp. Ex. 12, 15"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8be84b77-62b8-47a0-8815-25953b1d1abd",
+      "duration_api_ms": 10735,
+      "cost_usd_list": 0.07373375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 398
+     },
+     "lines": [
+      {
+       "draft": "vain, i. e. wholly in vain. 1 Sam. 25, 21.",
+       "reread": "vain, i. e. wholly in vain. 1 Sam. 25, 21.",
+       "status": "agreed",
+       "text": "vain, i. e. wholly in vain. 1 Sam. 25, 21."
+      },
+      {
+       "draft": "Job 19, 13 יֹדְעַי אַךְ זָרוּ מִמֶּנִּי mine ac-",
+       "reread": "Job 19, 13 יֹדְעַי אַךְ זָרוּ מִמֶּנִּי mine ac-",
+       "status": "agreed",
+       "text": "Job 19, 13 יֹדְעַי אַךְ זָרוּ מִמֶּנִּי mine ac-"
+      },
+      {
+       "draft": "quaintance are wholly estranged from me.",
+       "reread": "quaintance are wholly estranged from me.",
+       "status": "agreed",
+       "text": "quaintance are wholly estranged from me."
+      },
+      {
+       "draft": "Judg. 20, 39. Job 23, 6. Comp. Ex. 12, 15",
+       "reread": "Judg. 20, 39. Job 23, 6. Comp. Ex. 12, 15",
+       "status": "agreed",
+       "text": "Judg. 20, 39. Job 23, 6. Comp. Ex. 12, 15"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b04",
+     "bounds": {
+      "x": 1067,
+      "y": 2716,
+      "width": 876,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r02-b04-876x135+1067+2716-x2.png",
+     "image_sha256": "48d73baf06fe65dd098c18bdf5c015e9c7bdd7072dcdfacac6f144bf4bf5b96b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַךְ בַּיּוֹם הָרִאשׁוֹן wholly the first day, i. e.",
+       "the very first day, on no other but the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "727e0525-c70a-4057-a214-475cb65e4269",
+      "duration_api_ms": 12241,
+      "cost_usd_list": 0.06336375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2189,
+      "output_tokens": 367
+     },
+     "lines": [
+      {
+       "draft": "אַךְ בַּיּוֹם הָרִאשׁוֹן wholly the first day, i. e.",
+       "reread": "אַךְ בַּיּוֹם הָרִאשׁוֹן wholly the first day, i. e.",
+       "status": "agreed",
+       "text": "אַךְ בַּיּוֹם הָרִאשׁוֹן wholly the first day, i. e."
+      },
+      {
+       "draft": "the very first day, on no other but the",
+       "reread": "the very first day, on no other but the",
+       "status": "agreed",
+       "text": "the very first day, on no other but the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1067,
+    "y": 2831,
+    "width": 876,
+    "height": 405
+   },
+   "draft_lines": [
+    "first day.",
+    "3. As a particle of exception, only, but,",
+    "Gen. 20, 12 אַךְ לֹא בַת אִמִּי only not",
+    "(μονονουχί) the daughter of my mother,",
+    "i. e. but not. Lev. 11, 4. Num. 26, 55.",
+    "Deut. 18, 20. Josh. 3, 4.",
+    "4. Of time, only now, i. e. just now,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1067,
+      "y": 2823,
+      "width": 876,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r03-b00-876x243+1067+2823-x2.png",
+     "image_sha256": "0e2b0d0bfdd19500b2349d4c87b3ea4e0ba746d8d0111bb74c8fb305f3d6b23d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "first day.",
+       "3. As a particle of exception, only, but,",
+       "Gen. 20, 12 אַךְ לֹא בַת אִמִּי only not",
+       "(μονονουχί) the daughter of my mother,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e2b8f5a2-8f4f-4fee-aa13-f79c5e42e30d",
+      "duration_api_ms": 6934,
+      "cost_usd_list": 0.07164375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 331
+     },
+     "lines": [
+      {
+       "draft": "first day.",
+       "reread": "first day.",
+       "status": "agreed",
+       "text": "first day."
+      },
+      {
+       "draft": "3. As a particle of exception, only, but,",
+       "reread": "3. As a particle of exception, only, but,",
+       "status": "agreed",
+       "text": "3. As a particle of exception, only, but,"
+      },
+      {
+       "draft": "Gen. 20, 12 אַךְ לֹא בַת אִמִּי only not",
+       "reread": "Gen. 20, 12 אַךְ לֹא בַת אִמִּי only not",
+       "status": "agreed",
+       "text": "Gen. 20, 12 אַךְ לֹא בַת אִמִּי only not"
+      },
+      {
+       "draft": "(μονονουχί) the daughter of my mother,",
+       "reread": "(μονονουχί) the daughter of my mother,",
+       "status": "agreed",
+       "text": "(μονονουχί) the daughter of my mother,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1067,
+      "y": 3050,
+      "width": 876,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0062/pass2/c1-r03-b01-876x188+1067+3050-x2.png",
+     "image_sha256": "093333cb1ce8f7070969388826b26c8aff19e3914893e31b00b0a97c91544f56",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. but not. Lev. 11, 4. Num. 26, 55.",
+       "Deut. 18, 20. Josh. 3, 4.",
+       "4. Of time, only now, i. e. just now,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b58db75f-00c3-4641-beb2-67b0159f6793",
+      "duration_api_ms": 11799,
+      "cost_usd_list": 0.062303750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "i. e. but not. Lev. 11, 4. Num. 26, 55.",
+       "reread": "i. e. but not. Lev. 11, 4. Num. 26, 55.",
+       "status": "agreed",
+       "text": "i. e. but not. Lev. 11, 4. Num. 26, 55."
+      },
+      {
+       "draft": "Deut. 18, 20. Josh. 3, 4.",
+       "reread": "Deut. 18, 20. Josh. 3, 4.",
+       "status": "agreed",
+       "text": "Deut. 18, 20. Josh. 3, 4."
+      },
+      {
+       "draft": "4. Of time, only now, i. e. just now,",
+       "reread": "4. Of time, only now, i. e. just now,",
+       "status": "agreed",
+       "text": "4. Of time, only now, i. e. just now,"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אִית 46 אַךְ",
+   "status": "adjudicated",
+   "draft": "אית 46 אך",
+   "reread": "אִית 46 אַךְ",
+   "verdict": "b",
+   "note": "The running header is pointed: a ḥireq dot is visible under the aleph of אִית (left) and a pataḥ under the aleph plus a shewa inside the final kaf of אַךְ (right). Reading A omits all points; Reading B matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "come, to enter. In Chethibh the letter",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Yod is transposed so as to read יֵאתוֹן.",
+   "status": "adjudicated",
+   "draft": "Yod is transposed so as to read יאתון.",
+   "reread": "Yod is transposed so as to read יֵאתוֹן.",
+   "verdict": "b",
+   "note": "The printed Hebrew is pointed: a tsere (two dots) is visible beneath the yod and a holem dot above the vav, so יֵאתוֹן (Reading B); Reading A drops the vowel points.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִיתַי Chald. i. q. Heb. יֵשׁ there is,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "from which it is derived. Arab. أَيْسٌ,",
+   "status": "adjudicated",
+   "draft": "from which it is derived. Arab. أَيْسَ,",
+   "reread": "from which it is derived. Arab. أَيْسٌ,",
+   "verdict": "b",
+   "note": "The mark over the final sin is the stacked double-damma (tanwin, ٌ), not a bare fatha: the sequence of superscript marks reads fatha (alif), sukun (ya), dammatan (sin), as in Reading B.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "but only in a few phrases; Syr. ܐܺܝܬ, in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Targg. אִית, Talmud. איתא.—Dan. 5, 11",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִיתַי גְּבַר בְּמַלְכוּתָךְ there is a man in thy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "kingdom. 2, 28. 30. 3, 25. With a nega-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tive partic. לָא אִיתַי Dan. 2, 10. 11. 3, 29.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "With plur. Dan. 3, 12. In order to ex-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "press the various persons of the substan-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tive verb to be, pronouns are suffixed,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "mostly in the plural: אִיתוֹהִי he is Dan.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2, 11; אִיתָנָא we are 3, 18; אִיתָיךְ thou",
+   "status": "adjudicated",
+   "draft": "2, 11 ; אִיתָנָא we are 3, 18 ; אִיתָיךְ thou",
+   "reread": "2, 11 ; אִיתַנָא we are 3, 18 ; אִיתָיךְ thou",
+   "verdict": "a",
+   "note": "Under the tav of אִיתָנָא the printed point has a vertical stem below the horizontal stroke (T-shape), i.e. qamets, matching the qamets under the following nun; it is not a flat patach as in Reading B. All other characters agree in both readings and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "art 2, 26; אִיתֵיכוֹן ye are 3, 14. These",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "forms construed with a participle, consti-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "tute a periphrasis for the finite verb, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Dan. 3, 18 לָא אִיתָנָא פָּלְחִין we worship",
+   "status": "adjudicated",
+   "draft": "Dan. 3, 18 לָא אִיתָנָא פָּלְחִין we worship",
+   "reread": "Dan. 3, 18 לָא אִיתַנָא פָּלְחִין we worship",
+   "verdict": "a",
+   "note": "Decisive point: the vowel under the tav of איתנא. The printed mark has a short vertical stem below the horizontal bar, i.e. qamets (ָ), matching Reading A; Reading B's patach (ַ) would be a plain bar with no stem.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "not. Where it stands absolutely, it is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "sometimes to be rendered there is, there",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "exists, il y a, Dan. 2, 10. 11. With dat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִיתַי לְ there is to any one, he has, Ezra",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִיתַי pr. n. see אִתַּי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִיתִיאֵל (for אִתִּי אֵל, God with me)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "pr. n. m. Ithiel, Prov. 30, 1. Ithiel and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ucal seem to have been children or dis-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ciples of Agur, to whom he addressed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "his maxims.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אִיתָמָר (palm-coast) Ithamar, pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of the youngest son of Aaron, Ex. 6, 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "28, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵיתָן, also אֵתָן Job 33, 19, for יְתָן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with Aleph prosthet. from r. יָתַן to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "perennial, constant.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. perennity, perpetuity, spoken espec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of water. Ex. 14, 27 the sea returned",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "לְאֵיתָנוֹ to its perpetuity i. e. to its perpet-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ual, ceaseless flow. Num. 24, 21 אֵיתָן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "מוֹשָׁבֶךָ perpetuity (perpetual) is thy habi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tation. Joined in the genit. with other",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nouns; as נַהֲרוֹת אֵיתָן perennial streams",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ps. 74, 15; נְוֵה אֵיתָן perennial pasture",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "i. e. ever verdant, Jer. 49, 19. 50, 44;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "נַחַל אֵיתָן a perennial brook, ever flowing,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "never failing, Deut. 21, 4. Am. 5, 24; and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "so without נַחַל, 1 K. 8, 2 יֶרַח הָאֵיתָנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the month of flowing brooks, elsewhere",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "called Tisri, the seventh month of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Heb. year, from the new moon of October",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to the new moon of November. Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "13, 15 the way of transgressors אֵיתָן is a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "perennial stream, full of water, by which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "one may easily be borne away and over-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "whelmed.—Job 33, 19 וְרִיב עֲצָמָיו אֵתָן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and the strife in his bones is perpetuity,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "perpetual.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. firmness, strength. Gen. 49, 24 תֵּשֶׁב",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "בְּאֵיתָן קַשְׁתּוֹ his bow abides in strength,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. is strong, firm. Jer. 5, 15 גּוֹי אֵיתָן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "a people of strength, i. e. strong, mighty.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Plur. אֵיתָנִים the strong, the mighty, Vulg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "optimates, Job 12, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "3. Ethan, pr. n. an Ezrahite, (see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֶזְרָחִי,) a wise man 1 K. 5, 11; to whom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Ps. 89 is attributed in the inscription.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַךְ 1. Part. of affirmation, yea, sure-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ly, certainly, without doubt. Kindr. are",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "כִּי, כֵּן, אָכֵן, see Hupfeld in Zeitschr. f. d.",
+   "status": "adjudicated",
+   "draft": "אָכֵן, כֵּן, כִּי, see Hupfeld in Zeitschr. f. d.",
+   "reread": "כִּי, כֵּן, אָכֵן, see Hupfeld in Zeitschr. f. d.",
+   "verdict": "b",
+   "note": "Decisive difference is the printed left-to-right order of the three Hebrew items: the leftmost is כִּי, then כֵּן, then אָכֵן (immediately before \", see\"). Reading A reverses the list. Vowel points (dagesh in both כ initials, hiriq/tsere, qamets on א, no dagesh in the כ of אָכֵן) match Reading B as printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Morgenl. II. 143.—Gen. 44, 28 אַךְ טָרֹף",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "טֹרָף surely-he is torn in pieces. Judg. 3,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "24. 1 K. 22, 32. 2 K. 24, 3. Ps. 58, 12. Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "18, 21.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. Adv. of restriction, limitation, only,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "merely. Ex. 10, 17 אַךְ הַפַּעַם only this once.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Lev. 11,21 אַךְ אֶת־זֶה תֹּאכְלוּ only these may",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ye eat. Ps. 37, 8 be thou not angry (which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "is) only for doing evil, i. e. anger is the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "frequent source of evil. Prov. 14, 23",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "empty talk אַךְ לְמַחְסוֹר (tendeth) only to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "penury. 11, 24. 21, 5.—Spec. a) Before",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "adjectives, where only is equiv. to wholly,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "altogether. Deut. 16, 15 וְהָיִיתָ אַךְ שָׂמֵחַ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "and thou shalt be only joyful, i. e. shalt",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "wholly rejoice. Is. 16, 7 אַךְ נְכָאִים wholly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "contrite. 19, 11. b) Before substantives,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "only, nothing but, where we may render",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "it alone, merely. Ps. 139, 11 אַךְ חֹשֶׁךְ the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "darkness alone, i. e. nothing but the dark-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ness. Ps. 39, 12 אַךְ הֶבֶל nothing but",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "vanity, merely vanity. c) Before ad-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "verbs and verbs, only, i. q. wholly, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "above in lett. a. Ps. 73, 13 אַךְ רִיק only in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "vain, i. e. wholly in vain. 1 Sam. 25, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Job 19, 13 יֹדְעַי אַךְ זָרוּ מִמֶּנִּי mine ac-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "quaintance are wholly estranged from me.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Judg. 20, 39. Job 23, 6. Comp. Ex. 12, 15",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַךְ בַּיּוֹם הָרִאשׁוֹן wholly the first day, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the very first day, on no other but the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "first day.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "3. As a particle of exception, only, but,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Gen. 20, 12 אַךְ לֹא בַת אִמִּי only not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "(μονονουχί) the daughter of my mother,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "i. e. but not. Lev. 11, 4. Num. 26, 55.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Deut. 18, 20. Josh. 3, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "4. Of time, only now, i. e. just now,",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 101,
+  "adjudicated": 6,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.7234
+}

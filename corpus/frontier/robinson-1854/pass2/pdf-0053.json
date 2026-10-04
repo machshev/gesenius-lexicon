@@ -1,0 +1,2611 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 53,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0053.png",
+ "raster_sha256": "ad982de97cce11ba0551a9c52eca500542de4ffcf4bb1795fd5b105868d17892",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0053.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:22:26+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 89,
+    "y": 142,
+    "width": 1771,
+    "height": 66
+   },
+   "draft_lines": [
+    "אהר",
+    "37",
+    "אהר"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 89,
+      "y": 140,
+      "width": 1771,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/header-b00-1771x70+89+140-x2.png",
+     "image_sha256": "22b10a2f6535dd1d254d3ed76620357f0683e09eaf0c53da7630d6bfa8b50f75",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אהר 37 אהר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "21f5a696-2cc2-49a9-b1ea-37cae7821711",
+      "duration_api_ms": 8885,
+      "cost_usd_list": 0.048682500000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 231
+     },
+     "lines": [
+      {
+       "draft": "אהר 37 אהר",
+       "reread": "אהר 37 אהר",
+       "status": "agreed",
+       "text": "אהר 37 אהר"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 89,
+    "y": 188,
+    "width": 872,
+    "height": 979
+   },
+   "draft_lines": [
+    "Note. Instead of the sing. אַחַר, the",
+    "plur. אַחֲרֵי is far more frequently used ;",
+    "see below. With suffixes the plur. form",
+    "is always used.",
+    "Plur. אֲחָרִים, only in constr. אַחֲרֵי, c.",
+    "suff. אַחֲרַי, אַחֲרֵיכֶם, אַחֲרֵיהֶם, etc.",
+    "1. Subst. the hinder parts, 2 Sam. 2,",
+    "23 בְּאַחֲרֵי הַחֲנִית with the hinder end of",
+    "the spear.",
+    "2. Prep. a) Of place, behind, Judg.",
+    "18, 12 where it is i. q. on the west of, see",
+    "in אָחוֹר no. 2. More freq. after, behind",
+    "any one, Lev. 26, 33. 1 Sam. 14, 37.",
+    "2 K. 19, 21. (אֲשֶׁר) אַחֲרֵיהֶם those who",
+    "go after them, their flatterers, parasites,",
+    "Ps. 49, 14. Hence, with verbs of going,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 89,
+      "y": 180,
+      "width": 872,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r00-b00-872x242+89+180-x2.png",
+     "image_sha256": "c6b2f4eb96f9ca415c1ed0491b543e4ba5936780b224bd671b45ba14a7beb17a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Note. Instead of the sing. אַחַר, the",
+       "plur. אַחֲרֵי is far more frequently used ;",
+       "see below. With suffixes the plur. form"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2213f6c3-7297-48f1-bbbe-dc9c368e6b01",
+      "duration_api_ms": 11222,
+      "cost_usd_list": 0.07516324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 403
+     },
+     "lines": [
+      {
+       "draft": "Note. Instead of the sing. אַחַר, the",
+       "reread": "Note. Instead of the sing. אַחַר, the",
+       "status": "agreed",
+       "text": "Note. Instead of the sing. אַחַר, the"
+      },
+      {
+       "draft": "plur. אַחֲרֵי is far more frequently used ;",
+       "reread": "plur. אַחֲרֵי is far more frequently used ;",
+       "status": "agreed",
+       "text": "plur. אַחֲרֵי is far more frequently used;"
+      },
+      {
+       "draft": "see below. With suffixes the plur. form",
+       "reread": "see below. With suffixes the plur. form",
+       "status": "agreed",
+       "text": "see below. With suffixes the plur. form"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 89,
+      "y": 406,
+      "width": 872,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r00-b01-872x256+89+406-x2.png",
+     "image_sha256": "63d71248544dfd0142ddb2dae8a86740b7284fea18f2f6c33736c120de119b8f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is always used.",
+       "Plur. אֲחָרִים, only in constr. אַחֲרֵי, c.",
+       "suff. אַחֲרַי, אַחֲרֵיכֶם, אַחֲרֵיהֶם, etc.",
+       "1. Subst. the hinder parts, 2 Sam. 2,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ef088caf-2a0c-44cb-b47c-f20b2556efd6",
+      "duration_api_ms": 10734,
+      "cost_usd_list": 0.07972325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 469
+     },
+     "lines": [
+      {
+       "draft": "is always used.",
+       "reread": "is always used.",
+       "status": "agreed",
+       "text": "is always used."
+      },
+      {
+       "draft": "Plur. אֲחָרִים, only in constr. אַחֲרֵי, c.",
+       "reread": "Plur. אֲחָרִים, only in constr. אַחֲרֵי, c.",
+       "status": "agreed",
+       "text": "Plur. אֲחָרִים, only in constr. אַחֲרֵי, c."
+      },
+      {
+       "draft": "suff. אַחֲרַי, אַחֲרֵיכֶם, אַחֲרֵיהֶם, etc.",
+       "reread": "suff. אַחֲרַי, אַחֲרֵיכֶם, אַחֲרֵיהֶם, etc.",
+       "status": "agreed",
+       "text": "suff. אַחֲרַי, אַחֲרֵיכֶם, אַחֲרֵיהֶם, etc."
+      },
+      {
+       "draft": "1. Subst. the hinder parts, 2 Sam. 2,",
+       "reread": "1. Subst. the hinder parts, 2 Sam. 2,",
+       "status": "agreed",
+       "text": "1. Subst. the hinder parts, 2 Sam. 2,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 89,
+      "y": 646,
+      "width": 872,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r00-b02-872x243+89+646-x2.png",
+     "image_sha256": "ed875a0aa491d83c9c35e0c3b024af98601a4249d98acfba22d7f224236cddbb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "23 בְּאַחֲרֵי הַחֲנִית with the hinder end of",
+       "the spear.",
+       "2. Prep. a) Of place, behind, Judg.",
+       "18, 12 where it is i. q. on the west of, see"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6a41f142-5e29-4dba-bcdb-55ee55ecd92b",
+      "duration_api_ms": 16785,
+      "cost_usd_list": 0.07391324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 378
+     },
+     "lines": [
+      {
+       "draft": "23 בְּאַחֲרֵי הַחֲנִית with the hinder end of",
+       "reread": "23 בְּאַחֲרֵי הַחֲנִית with the hinder end of",
+       "status": "agreed",
+       "text": "23 בְּאַחֲרֵי הַחֲנִית with the hinder end of"
+      },
+      {
+       "draft": "the spear.",
+       "reread": "the spear.",
+       "status": "agreed",
+       "text": "the spear."
+      },
+      {
+       "draft": "2. Prep. a) Of place, behind, Judg.",
+       "reread": "2. Prep. a) Of place, behind, Judg.",
+       "status": "agreed",
+       "text": "2. Prep. a) Of place, behind, Judg."
+      },
+      {
+       "draft": "18, 12 where it is i. q. on the west of, see",
+       "reread": "18, 12 where it is i. q. on the west of, see",
+       "status": "agreed",
+       "text": "18, 12 where it is i. q. on the west of, see"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 89,
+      "y": 873,
+      "width": 872,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r00-b03-872x242+89+873-x2.png",
+     "image_sha256": "8fa88ea05a6265fb357e574825b5faf82a4ccc1f1fb9800668b74460d4de199b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in אָחוֹר no. 2. More freq. after, behind",
+       "any one, Lev. 26, 33. 1 Sam. 14, 37.",
+       "2 K. 19, 21. אַחֲרֵיהֶם (אֲשֶׁר) those who",
+       "go after them, their flatterers, parasites,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "36822cd8-9f71-473f-863f-d71c2801a843",
+      "duration_api_ms": 8763,
+      "cost_usd_list": 0.08171324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 534
+     },
+     "lines": [
+      {
+       "draft": "in אָחוֹר no. 2. More freq. after, behind",
+       "reread": "in אָחוֹר no. 2. More freq. after, behind",
+       "status": "agreed",
+       "text": "in אָחוֹר no. 2. More freq. after, behind"
+      },
+      {
+       "draft": "any one, Lev. 26, 33. 1 Sam. 14, 37.",
+       "reread": "any one, Lev. 26, 33. 1 Sam. 14, 37.",
+       "status": "agreed",
+       "text": "any one, Lev. 26, 33. 1 Sam. 14, 37."
+      },
+      {
+       "draft": "2 K. 19, 21. (אֲשֶׁר) אַחֲרֵיהֶם those who",
+       "reread": "2 K. 19, 21. אַחֲרֵיהֶם (אֲשֶׁר) those who",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "2 K. 19, 21. (אֲשֶׁר) אַחֲרֵיהֶם those who",
+        "verdict": "a",
+        "note": "Only the order differs. Printed visual order left→right is אַחֲרֵיהֶם then (אֲשֶׁר); as one RTL run the rightmost (אֲשֶׁר) is logically first, giving Reading A's order (אֲשֶׁר) אַחֲרֵיהֶם. Reading B puts the parenthesis logically second, which would render visually reversed. All vowel points, shin dot and the yod in אַחֲרֵיהֶם are as both readings have them.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b441cf25-c719-4c87-8ca9-97806c19a85a",
+        "duration_api_ms": 32697,
+        "cost_usd_list": 0.1452605,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3602,
+        "cache_creation_input_tokens": 2646,
+        "output_tokens": 1822
+       },
+       "text": "2 K. 19, 21. (אֲשֶׁר) אַחֲרֵיהֶם those who"
+      },
+      {
+       "draft": "go after them, their flatterers, parasites,",
+       "reread": "go after them, their flatterers, parasites,",
+       "status": "agreed",
+       "text": "go after them, their flatterers, parasites,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b04",
+     "bounds": {
+      "x": 89,
+      "y": 1099,
+      "width": 872,
+      "height": 76
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r00-b04-872x76+89+1099-x2.png",
+     "image_sha256": "106f9f35e8d36975d41a662526d47e9963e54301ca5f37b852e3be404bc279e6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ps. 49, 14.  Hence, with verbs of going,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e361368c-d937-4240-a97a-123737ae1c5c",
+      "duration_api_ms": 7182,
+      "cost_usd_list": 0.0499335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 200
+     },
+     "lines": [
+      {
+       "draft": "Ps. 49, 14. Hence, with verbs of going,",
+       "reread": "Ps. 49, 14.  Hence, with verbs of going,",
+       "status": "agreed",
+       "text": "Ps. 49, 14. Hence, with verbs of going,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 89,
+    "y": 1155,
+    "width": 872,
+    "height": 732
+   },
+   "draft_lines": [
+    "to follow; also הָיָה אַחֲרֵי פ׳ to be after,",
+    "to go after any one, i. q. to follow, to be",
+    "on one's side, Ex. 23, 2. 2 Sam. 2, 10.",
+    "Comp. 1 K. 1, 7. Prov. 28, 23 מוֹכִיחַ אָדָם",
+    "אַחֲרַי חֵן יִמְצָא he that rebuketh a man",
+    "after me (i. e. after my precepts) shall",
+    "find favour. b) Of time, after, Gen.",
+    "16, 13. 17, 8. With inf. after that, after,",
+    "Gen. 5, 4.",
+    "3. Conj. אַחֲרֵי אֲשֶׁר after that, Deut.",
+    "24, 4. Josh. 9, 16. 23, 1; rarely with אֲשֶׁר",
+    "omitted, Lev. 25, 48. Once אַחֲרֵי כַּאֲשֶׁר",
+    "Josh. 2, 7."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 89,
+      "y": 1147,
+      "width": 872,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r01-b00-872x246+89+1147-x2.png",
+     "image_sha256": "8071c7417697cbd1fe695d7be3ae78be19e682d780770262c70fe03ff46204b0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to follow ; also הָיָה אַחֲרֵי פ׳ to be after,",
+       "to go after any one, i. q. to follow, to be",
+       "on one's side, Ex. 23, 2. 2 Sam. 2, 10.",
+       "Comp. 1 K. 1, 7. Prov. 28, 23 מוֹכִיחַ אָדָם"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bfe03b59-3cfe-425b-acd1-008a91847d2c",
+      "duration_api_ms": 14847,
+      "cost_usd_list": 0.08070350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 513
+     },
+     "lines": [
+      {
+       "draft": "to follow; also הָיָה אַחֲרֵי פ׳ to be after,",
+       "reread": "to follow ; also הָיָה אַחֲרֵי פ׳ to be after,",
+       "status": "agreed",
+       "text": "to follow; also הָיָה אַחֲרֵי פ׳ to be after,"
+      },
+      {
+       "draft": "to go after any one, i. q. to follow, to be",
+       "reread": "to go after any one, i. q. to follow, to be",
+       "status": "agreed",
+       "text": "to go after any one, i. q. to follow, to be"
+      },
+      {
+       "draft": "on one's side, Ex. 23, 2. 2 Sam. 2, 10.",
+       "reread": "on one's side, Ex. 23, 2. 2 Sam. 2, 10.",
+       "status": "agreed",
+       "text": "on one's side, Ex. 23, 2. 2 Sam. 2, 10."
+      },
+      {
+       "draft": "Comp. 1 K. 1, 7. Prov. 28, 23 מוֹכִיחַ אָדָם",
+       "reread": "Comp. 1 K. 1, 7. Prov. 28, 23 מוֹכִיחַ אָדָם",
+       "status": "agreed",
+       "text": "Comp. 1 K. 1, 7. Prov. 28, 23 מוֹכִיחַ אָדָם"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 89,
+      "y": 1377,
+      "width": 872,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r01-b01-872x236+89+1377-x2.png",
+     "image_sha256": "5e3b5aaafe55c5da90f54bbca58bc81d9cf287455e5468ec1f2e032ddae8f29c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַחֲרַי חֵן יִמְצָא he that rebuketh a man",
+       "after me (i. e. after my precepts) shall",
+       "find favour. b) Of time, after, Gen.",
+       "16, 13. 17, 8. With inf. after that, after,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "21dc2279-3e16-43e0-a979-34f14391dedc",
+      "duration_api_ms": 11994,
+      "cost_usd_list": 0.07454349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 415
+     },
+     "lines": [
+      {
+       "draft": "אַחֲרַי חֵן יִמְצָא he that rebuketh a man",
+       "reread": "אַחֲרַי חֵן יִמְצָא he that rebuketh a man",
+       "status": "agreed",
+       "text": "אַחֲרַי חֵן יִמְצָא he that rebuketh a man"
+      },
+      {
+       "draft": "after me (i. e. after my precepts) shall",
+       "reread": "after me (i. e. after my precepts) shall",
+       "status": "agreed",
+       "text": "after me (i. e. after my precepts) shall"
+      },
+      {
+       "draft": "find favour. b) Of time, after, Gen.",
+       "reread": "find favour. b) Of time, after, Gen.",
+       "status": "agreed",
+       "text": "find favour. b) Of time, after, Gen."
+      },
+      {
+       "draft": "16, 13. 17, 8. With inf. after that, after,",
+       "reread": "16, 13. 17, 8. With inf. after that, after,",
+       "status": "agreed",
+       "text": "16, 13. 17, 8. With inf. after that, after,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 89,
+      "y": 1597,
+      "width": 872,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r01-b02-872x241+89+1597-x2.png",
+     "image_sha256": "0897d0c7b3c5ed110e3e0f8d7203e33de3cd182f7d79f82d5da88cac1bca657b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gen. 5, 4.",
+       "3. Conj. אַחֲרֵי אֲשֶׁר after that, Deut.",
+       "24, 4. Josh. 9, 16. 23, 1; rarely with אֲשֶׁר",
+       "omitted, Lev. 25, 48. Once אַחֲרֵי כַּאֲשֶׁר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b60affb-a13d-45e0-8fe9-7d1eb417ade7",
+      "duration_api_ms": 5763,
+      "cost_usd_list": 0.0698535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 296
+     },
+     "lines": [
+      {
+       "draft": "Gen. 5, 4.",
+       "reread": "Gen. 5, 4.",
+       "status": "agreed",
+       "text": "Gen. 5, 4."
+      },
+      {
+       "draft": "3. Conj. אַחֲרֵי אֲשֶׁר after that, Deut.",
+       "reread": "3. Conj. אַחֲרֵי אֲשֶׁר after that, Deut.",
+       "status": "agreed",
+       "text": "3. Conj. אַחֲרֵי אֲשֶׁר after that, Deut."
+      },
+      {
+       "draft": "24, 4. Josh. 9, 16. 23, 1; rarely with אֲשֶׁר",
+       "reread": "24, 4. Josh. 9, 16. 23, 1; rarely with אֲשֶׁר",
+       "status": "agreed",
+       "text": "24, 4. Josh. 9, 16. 23, 1; rarely with אֲשֶׁר"
+      },
+      {
+       "draft": "omitted, Lev. 25, 48. Once אַחֲרֵי כַּאֲשֶׁר",
+       "reread": "omitted, Lev. 25, 48. Once אַחֲרֵי כַּאֲשֶׁר",
+       "status": "agreed",
+       "text": "omitted, Lev. 25, 48. Once אַחֲרֵי כַּאֲשֶׁר"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 89,
+      "y": 1822,
+      "width": 872,
+      "height": 59
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r01-b03-872x59+89+1822-x2.png",
+     "image_sha256": "6d78dd5af87616cc2fa6a4bfbedd9ed03afd64f9972b118625f860a74cfbaa7b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Josh. 2, 7."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e7a55da9-3da8-49ec-80a5-d2e29e6da2bd",
+      "duration_api_ms": 7920,
+      "cost_usd_list": 0.050373499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 234
+     },
+     "lines": [
+      {
+       "draft": "Josh. 2, 7.",
+       "reread": "Josh. 2, 7.",
+       "status": "agreed",
+       "text": "Josh. 2, 7."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 89,
+    "y": 1875,
+    "width": 872,
+    "height": 642
+   },
+   "draft_lines": [
+    "4. אַחֲרֵי־כֵן pr. after so, after it had so",
+    "happened, i. e. afterwards, Gen. 6, 4.",
+    "15, 14. 23, 19. 25, 26. al. Comp. Syr.",
+    "ܒܳܬܰܪܟܶܢ and ܒܳܬܰܪ ܗܳܟܰܢ. With אֲשֶׁר added",
+    "it becomes a conjunction, i. q. אַחֲרֵי אֲשֶׁר",
+    "after that, like Lat. posteaquam for post-",
+    "quam, Deut. 24, 4. 2 Sam. 24, 10. In the",
+    "later Hebrew we find also אַחֲרֵי זֹאת",
+    "after this, afterwards, Job 42, 16. Ezra",
+    "9, 10. Comp. Chald. אַחֲרֵי דְנָה Dan. 2,",
+    "29. 45."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 89,
+      "y": 1882,
+      "width": 872,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r02-b00-872x194+89+1882-x2.png",
+     "image_sha256": "1127abe48115131479fc02e24a976c9b119fe54d44384d83030d6adbdda9b7d3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "4. אַחֲרֵי־כֵן pr. after so, after it had so",
+       "happened, i. e. afterwards, Gen. 6, 4.",
+       "15, 14. 23, 19. 25, 26. al. Comp. Syr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2a76f576-07e5-4f57-a1a4-a259d50fb938",
+      "duration_api_ms": 13939,
+      "cost_usd_list": 0.0718635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 437
+     },
+     "lines": [
+      {
+       "draft": "4. אַחֲרֵי־כֵן pr. after so, after it had so",
+       "reread": "4. אַחֲרֵי־כֵן pr. after so, after it had so",
+       "status": "agreed",
+       "text": "4. אַחֲרֵי־כֵן pr. after so, after it had so"
+      },
+      {
+       "draft": "happened, i. e. afterwards, Gen. 6, 4.",
+       "reread": "happened, i. e. afterwards, Gen. 6, 4.",
+       "status": "agreed",
+       "text": "happened, i. e. afterwards, Gen. 6, 4."
+      },
+      {
+       "draft": "15, 14. 23, 19. 25, 26. al. Comp. Syr.",
+       "reread": "15, 14. 23, 19. 25, 26. al. Comp. Syr.",
+       "status": "agreed",
+       "text": "15, 14. 23, 19. 25, 26. al. Comp. Syr."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 89,
+      "y": 2060,
+      "width": 872,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r02-b01-872x239+89+2060-x2.png",
+     "image_sha256": "0babab392bf7a50f25a7e7778e87aa5bb63b58e79f987ed3f736fbc01db3a3bb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܒܳܬܰܪܟܶܢ and ܒܳܬܰܪ ܗܳܟܰܢ. With אֲשֶׁר added",
+       "it becomes a conjunction, i. q. אַחֲרֵי אֲשֶׁר",
+       "after that, like Lat. posteaquam for post-",
+       "quam, Deut. 24, 4. 2 Sam. 24, 10. In the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4cb212b0-0856-4df0-9acf-dfcd75958c55",
+      "duration_api_ms": 29079,
+      "cost_usd_list": 0.10215350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 942
+     },
+     "lines": [
+      {
+       "draft": "ܒܳܬܰܪܟܶܢ and ܒܳܬܰܪ ܗܳܟܰܢ. With אֲשֶׁר added",
+       "reread": "ܒܳܬܰܪܟܶܢ and ܒܳܬܰܪ ܗܳܟܰܢ. With אֲשֶׁר added",
+       "status": "agreed",
+       "text": "ܒܳܬܰܪܟܶܢ and ܒܳܬܰܪ ܗܳܟܰܢ. With אֲשֶׁר added"
+      },
+      {
+       "draft": "it becomes a conjunction, i. q. אַחֲרֵי אֲשֶׁר",
+       "reread": "it becomes a conjunction, i. q. אַחֲרֵי אֲשֶׁר",
+       "status": "agreed",
+       "text": "it becomes a conjunction, i. q. אַחֲרֵי אֲשֶׁר"
+      },
+      {
+       "draft": "after that, like Lat. posteaquam for post-",
+       "reread": "after that, like Lat. posteaquam for post-",
+       "status": "agreed",
+       "text": "after that, like Lat. posteaquam for post-"
+      },
+      {
+       "draft": "quam, Deut. 24, 4. 2 Sam. 24, 10. In the",
+       "reread": "quam, Deut. 24, 4. 2 Sam. 24, 10. In the",
+       "status": "agreed",
+       "text": "quam, Deut. 24, 4. 2 Sam. 24, 10. In the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 89,
+      "y": 2283,
+      "width": 872,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r02-b02-872x226+89+2283-x2.png",
+     "image_sha256": "27daca5de750a61f4f3a0b12743c1d065ff3d035de8e041c5d4ca582767dcff8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "later Hebrew we find also אַחֲרֵי זֹאת",
+       "after this, afterwards, Job 42, 16. Ezra",
+       "9, 10.  Comp. Chald. אַחֲרֵי דְנָה Dan. 2,",
+       "29. 45."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "05c0afe7-0b73-4f78-a584-b6dab723879b",
+      "duration_api_ms": 12503,
+      "cost_usd_list": 0.0670935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "later Hebrew we find also אַחֲרֵי זֹאת",
+       "reread": "later Hebrew we find also אַחֲרֵי זֹאת",
+       "status": "agreed",
+       "text": "later Hebrew we find also אַחֲרֵי זֹאת"
+      },
+      {
+       "draft": "after this, afterwards, Job 42, 16. Ezra",
+       "reread": "after this, afterwards, Job 42, 16. Ezra",
+       "status": "agreed",
+       "text": "after this, afterwards, Job 42, 16. Ezra"
+      },
+      {
+       "draft": "9, 10. Comp. Chald. אַחֲרֵי דְנָה Dan. 2,",
+       "reread": "9, 10.  Comp. Chald. אַחֲרֵי דְנָה Dan. 2,",
+       "status": "agreed",
+       "text": "9, 10. Comp. Chald. אַחֲרֵי דְנָה Dan. 2,"
+      },
+      {
+       "draft": "29. 45.",
+       "reread": "29. 45.",
+       "status": "agreed",
+       "text": "29. 45."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 89,
+    "y": 2505,
+    "width": 872,
+    "height": 828
+   },
+   "draft_lines": [
+    "5. With other prepositions:",
+    "a) מֵאַחֲרֵי, once מִן אַחֲרֵי 1 Chr. 17, 7,",
+    "pr. from after, from behind, from going",
+    "or following after; chiefly used of those",
+    "who abandon a person or party whom",
+    "they have before followed, Num. 14, 43.",
+    "Deut. 7, 4. 2 Sam. 20, 2. Also at or on",
+    "the back, behind, after, (comp. מִן no. 3.",
+    "h,) Josh. 8, 2. Ex. 14, 19. Jer. 9, 21.—",
+    "Of time, after, Ecc. 10, 14; and in Neh.",
+    "4, 7 מֵאַחֲרֵי לְ, in the same sense. Hence",
+    "מֵאַחֲרֵי כֵן pr. after so, i. e. afterwards,",
+    "2 Sam. 3, 28. 15, 1.",
+    "b) אֶל־אַחֲרֵי after, with verbs of mo-",
+    "4"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 89,
+      "y": 2514,
+      "width": 872,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r03-b00-872x229+89+2514-x2.png",
+     "image_sha256": "f6550b0504c4bacdbd978c3c45ed95358168330f241c69383444771a2a32c59c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5. With other prepositions:",
+       "a) מֵאַחֲרֵי, once מִן אַחֲרֵי 1 Chr. 17, 7,",
+       "pr. from after, from behind, from going",
+       "or following after ; chiefly used of those"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b745ace7-b341-4aa2-995e-38f36dad5f7e",
+      "duration_api_ms": 10007,
+      "cost_usd_list": 0.06669349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "5. With other prepositions:",
+       "reread": "5. With other prepositions:",
+       "status": "agreed",
+       "text": "5. With other prepositions:"
+      },
+      {
+       "draft": "a) מֵאַחֲרֵי, once מִן אַחֲרֵי 1 Chr. 17, 7,",
+       "reread": "a) מֵאַחֲרֵי, once מִן אַחֲרֵי 1 Chr. 17, 7,",
+       "status": "agreed",
+       "text": "a) מֵאַחֲרֵי, once מִן אַחֲרֵי 1 Chr. 17, 7,"
+      },
+      {
+       "draft": "pr. from after, from behind, from going",
+       "reread": "pr. from after, from behind, from going",
+       "status": "agreed",
+       "text": "pr. from after, from behind, from going"
+      },
+      {
+       "draft": "or following after; chiefly used of those",
+       "reread": "or following after ; chiefly used of those",
+       "status": "agreed",
+       "text": "or following after; chiefly used of those"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 89,
+      "y": 2727,
+      "width": 872,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r03-b01-872x237+89+2727-x2.png",
+     "image_sha256": "e9a7be2000c081844dfaf397e12e139584532723dd082945949310eb1b6ad8d2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "who abandon a person or party whom",
+       "they have before followed, Num. 14, 43.",
+       "Deut. 7, 4. 2 Sam. 20, 2. Also at or on",
+       "the back, behind, after, (comp. מִן no. 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "200278f1-9964-4202-a170-7baa02f3bf84",
+      "duration_api_ms": 10879,
+      "cost_usd_list": 0.0665935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "who abandon a person or party whom",
+       "reread": "who abandon a person or party whom",
+       "status": "agreed",
+       "text": "who abandon a person or party whom"
+      },
+      {
+       "draft": "they have before followed, Num. 14, 43.",
+       "reread": "they have before followed, Num. 14, 43.",
+       "status": "agreed",
+       "text": "they have before followed, Num. 14, 43."
+      },
+      {
+       "draft": "Deut. 7, 4. 2 Sam. 20, 2. Also at or on",
+       "reread": "Deut. 7, 4. 2 Sam. 20, 2. Also at or on",
+       "status": "agreed",
+       "text": "Deut. 7, 4. 2 Sam. 20, 2. Also at or on"
+      },
+      {
+       "draft": "the back, behind, after, (comp. מִן no. 3.",
+       "reread": "the back, behind, after, (comp. מִן no. 3.",
+       "status": "agreed",
+       "text": "the back, behind, after, (comp. מִן no. 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 89,
+      "y": 2948,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r03-b02-872x238+89+2948-x2.png",
+     "image_sha256": "84dceb56cc9ce1bc8ff7dfad46ccb47833fb9793d77cdb0c9b94588a4f65b723",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "h,) Josh. 8, 2. Ex. 14, 19. Jer. 9, 21.—",
+       "Of time, after, Ecc. 10, 14; and in Neh.",
+       "4, 7 מֵאַחֲרֵי לְ, in the same sense.  Hence",
+       "מֵאַחֲרֵי כֵן pr. after so, i. e. afterwards,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0782af31-afe2-45ec-90fd-6a153c69ade4",
+      "duration_api_ms": 12312,
+      "cost_usd_list": 0.0766435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 457
+     },
+     "lines": [
+      {
+       "draft": "h,) Josh. 8, 2. Ex. 14, 19. Jer. 9, 21.—",
+       "reread": "h,) Josh. 8, 2. Ex. 14, 19. Jer. 9, 21.—",
+       "status": "agreed",
+       "text": "h,) Josh. 8, 2. Ex. 14, 19. Jer. 9, 21.—"
+      },
+      {
+       "draft": "Of time, after, Ecc. 10, 14; and in Neh.",
+       "reread": "Of time, after, Ecc. 10, 14; and in Neh.",
+       "status": "agreed",
+       "text": "Of time, after, Ecc. 10, 14; and in Neh."
+      },
+      {
+       "draft": "4, 7 מֵאַחֲרֵי לְ, in the same sense. Hence",
+       "reread": "4, 7 מֵאַחֲרֵי לְ, in the same sense.  Hence",
+       "status": "agreed",
+       "text": "4, 7 מֵאַחֲרֵי לְ, in the same sense. Hence"
+      },
+      {
+       "draft": "מֵאַחֲרֵי כֵן pr. after so, i. e. afterwards,",
+       "reread": "מֵאַחֲרֵי כֵן pr. after so, i. e. afterwards,",
+       "status": "agreed",
+       "text": "מֵאַחֲרֵי כֵן pr. after so, i. e. afterwards,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 89,
+      "y": 3170,
+      "width": 872,
+      "height": 165
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c0-r03-b03-872x165+89+3170-x2.png",
+     "image_sha256": "a7e507ea439209bc2d418bf4b2c8c9b1ed28cf7f6cd9eff0408899ea10b20f09",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2 Sam. 3, 28. 15, 1.",
+       "b) אֶל־אַחֲרֵי after, with verbs of mo-",
+       "4"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c41f8777-6363-48a9-895c-dd6f16ca9ffe",
+      "duration_api_ms": 11234,
+      "cost_usd_list": 0.0670935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2313,
+      "output_tokens": 392
+     },
+     "lines": [
+      {
+       "draft": "2 Sam. 3, 28. 15, 1.",
+       "reread": "2 Sam. 3, 28. 15, 1.",
+       "status": "agreed",
+       "text": "2 Sam. 3, 28. 15, 1."
+      },
+      {
+       "draft": "b) אֶל־אַחֲרֵי after, with verbs of mo-",
+       "reread": "b) אֶל־אַחֲרֵי after, with verbs of mo-",
+       "status": "agreed",
+       "text": "b) אֶל־אַחֲרֵי after, with verbs of mo-"
+      },
+      {
+       "draft": "4",
+       "reread": "4",
+       "status": "agreed",
+       "text": "4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 981,
+    "y": 188,
+    "width": 879,
+    "height": 828
+   },
+   "draft_lines": [
+    "tion. 2 K. 9, 18 סֹב אֶל־אַחֲרַי turn thee",
+    "after me, behind me, 2 Sam. 5, 23.",
+    "c) עַל־אַחֲרֵי i. q. אַחֲרֵי, Ez. 41, 15.",
+    "Comp. עַל no. 3. b.",
+    "אַחַר Chald. plur. constr. אַחֲרֵי, after,",
+    "Dan. 2, 29; but by Hebraism. The",
+    "pure Chaldee preposit. is בָּתַר.",
+    "אַחֲרוֹן, fem. אַחֲרֹנָה, from אַחַר with",
+    "the adj. ending וֹן.",
+    "1. hinder, hindermost, latter, opp. to",
+    "foremost, former, (רִאשׁוֹן,) Gen. 33, 2.",
+    "Ex. 4, 8. Deut. 24, 3. הַיָּם הָאַחֲרוֹן the",
+    "hinder sea, i. e. western, the Mediterra-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 981,
+      "y": 180,
+      "width": 879,
+      "height": 292
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r00-b00-879x292+981+180-x2.png",
+     "image_sha256": "260e75df69c0a61a92542a0372d5155562642a652756257451caf4d98bba1f13",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tion. 2 K. 9, 18 סֹב אֶל־אַחֲרַי turn thee",
+       "after me, behind me, 2 Sam. 5, 23.",
+       "c) עַל־אַחֲרֵי i. q. אַחֲרֵי, Ez. 41, 15.",
+       "Comp. עַל no. 3. b."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fade22da-6ea1-4b74-999a-c2e8ac2a3855",
+      "duration_api_ms": 13161,
+      "cost_usd_list": 0.08954324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 615
+     },
+     "lines": [
+      {
+       "draft": "tion. 2 K. 9, 18 סֹב אֶל־אַחֲרַי turn thee",
+       "reread": "tion. 2 K. 9, 18 סֹב אֶל־אַחֲרַי turn thee",
+       "status": "agreed",
+       "text": "tion. 2 K. 9, 18 סֹב אֶל־אַחֲרַי turn thee"
+      },
+      {
+       "draft": "after me, behind me, 2 Sam. 5, 23.",
+       "reread": "after me, behind me, 2 Sam. 5, 23.",
+       "status": "agreed",
+       "text": "after me, behind me, 2 Sam. 5, 23."
+      },
+      {
+       "draft": "c) עַל־אַחֲרֵי i. q. אַחֲרֵי, Ez. 41, 15.",
+       "reread": "c) עַל־אַחֲרֵי i. q. אַחֲרֵי, Ez. 41, 15.",
+       "status": "agreed",
+       "text": "c) עַל־אַחֲרֵי i. q. אַחֲרֵי, Ez. 41, 15."
+      },
+      {
+       "draft": "Comp. עַל no. 3. b.",
+       "reread": "Comp. עַל no. 3. b.",
+       "status": "agreed",
+       "text": "Comp. עַל no. 3. b."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 981,
+      "y": 456,
+      "width": 879,
+      "height": 286
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r00-b01-879x286+981+456-x2.png",
+     "image_sha256": "16de336ad785f2abf30e631afc3e1e66c69f5e132fa3ecd929a45ac1bb3fd698",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַחַר Chald. plur. constr. אַחֲרֵי, after,",
+       "Dan. 2, 29 ; but by Hebraism. The",
+       "pure Chaldee preposit. is בָּתַר.",
+       "אַחֲרוֹן, fem. אַחֲרֹנָה, from אַחַר with"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9a62b633-4354-435f-966c-f51c278a5416",
+      "duration_api_ms": 12963,
+      "cost_usd_list": 0.08449324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 514
+     },
+     "lines": [
+      {
+       "draft": "אַחַר Chald. plur. constr. אַחֲרֵי, after,",
+       "reread": "אַחַר Chald. plur. constr. אַחֲרֵי, after,",
+       "status": "agreed",
+       "text": "אַחַר Chald. plur. constr. אַחֲרֵי, after,"
+      },
+      {
+       "draft": "Dan. 2, 29; but by Hebraism. The",
+       "reread": "Dan. 2, 29 ; but by Hebraism. The",
+       "status": "agreed",
+       "text": "Dan. 2, 29; but by Hebraism. The"
+      },
+      {
+       "draft": "pure Chaldee preposit. is בָּתַר.",
+       "reread": "pure Chaldee preposit. is בָּתַר.",
+       "status": "agreed",
+       "text": "pure Chaldee preposit. is בָּתַר."
+      },
+      {
+       "draft": "אַחֲרוֹן, fem. אַחֲרֹנָה, from אַחַר with",
+       "reread": "אַחֲרוֹן, fem. אַחֲרֹנָה, from אַחַר with",
+       "status": "agreed",
+       "text": "אַחֲרוֹן, fem. אַחֲרֹנָה, from אַחַר with"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 981,
+      "y": 726,
+      "width": 879,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r00-b02-879x239+981+726-x2.png",
+     "image_sha256": "e89662dfc38796199b998347835f9f65d330e8f53902c0f15794d8198b024148",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the adj. ending וֹן.",
+       "1. hinder, hindermost, latter, opp. to",
+       "foremost, former, (רִאשׁוֹן,) Gen. 33, 2.",
+       "Ex. 4, 8. Deut. 24, 3. הַיָּם הָאַחֲרוֹן the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f0d08b53-c150-4852-a041-4fdd75a0080d",
+      "duration_api_ms": 16639,
+      "cost_usd_list": 0.08606325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 621
+     },
+     "lines": [
+      {
+       "draft": "the adj. ending וֹן.",
+       "reread": "the adj. ending וֹן.",
+       "status": "agreed",
+       "text": "the adj. ending וֹן."
+      },
+      {
+       "draft": "1. hinder, hindermost, latter, opp. to",
+       "reread": "1. hinder, hindermost, latter, opp. to",
+       "status": "agreed",
+       "text": "1. hinder, hindermost, latter, opp. to"
+      },
+      {
+       "draft": "foremost, former, (רִאשׁוֹן,) Gen. 33, 2.",
+       "reread": "foremost, former, (רִאשׁוֹן,) Gen. 33, 2.",
+       "status": "agreed",
+       "text": "foremost, former, (רִאשׁוֹן,) Gen. 33, 2."
+      },
+      {
+       "draft": "Ex. 4, 8. Deut. 24, 3. הַיָּם הָאַחֲרוֹן the",
+       "reread": "Ex. 4, 8. Deut. 24, 3. הַיָּם הָאַחֲרוֹן the",
+       "status": "agreed",
+       "text": "Ex. 4, 8. Deut. 24, 3. הַיָּם הָאַחֲרוֹן the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 981,
+      "y": 949,
+      "width": 879,
+      "height": 66
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r00-b03-879x66+981+949-x2.png",
+     "image_sha256": "49cafcd126e01bbddbc474404e2a435e43a13a9459324acb65560da08e2129c9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hinder sea, i. e. western, the Mediterra-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "12395e4e-a455-4fb9-a38c-8876a7b4d977",
+      "duration_api_ms": 6939,
+      "cost_usd_list": 0.04843325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1870,
+      "output_tokens": 196
+     },
+     "lines": [
+      {
+       "draft": "hinder sea, i. e. western, the Mediterra-",
+       "reread": "hinder sea, i. e. western, the Mediterra-",
+       "status": "agreed",
+       "text": "hinder sea, i. e. western, the Mediterra-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 981,
+    "y": 1004,
+    "width": 879,
+    "height": 963
+   },
+   "draft_lines": [
+    "nean, Deut. 11, 24. 34, 2. Joel 2, 20.",
+    "2. after, later, following, as דּוֹר אַחֲרוֹן",
+    "Ps. 48, 14. יוֹם אַחֲרוֹן after time, future,",
+    "Prov. 31, 25. Is. 30, 8. Plur. אַחֲרֹנִים",
+    "those after, posterity, Job 18, 20.",
+    "3. the last, latest, Neh. 8, 18. Is. 44, 6",
+    "I [Jehovah] am the first, and I the last.",
+    "Job 19, 25.—Fem. אַחֲרֹנָה adv. last, the",
+    "last, Dan. 11, 29. Also בָּאַחֲרֹנָה Deut.",
+    "13, 10. 1 K. 17, 13, and לָאַחֲרֹנָה Num. 2,",
+    "31. Ecc. 1, 11, at last, last.",
+    "אַחְרַח (for אַחֲרֵאָח, after the brother,)",
+    "Aharah, pr. n. 1 Chr. 8, 1.",
+    "אֲחַרְחֵל (behind the breast-work sc.",
+    "born) Aharhel, pr. n. m. 1 Chr. 4, 8.",
+    "אַחֲרֵי Chald. constr. see אַחַר Chald."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 981,
+      "y": 998,
+      "width": 879,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r01-b00-879x239+981+998-x2.png",
+     "image_sha256": "f6bde275173451a8e3b7445f4cfb721ec06a455a45dd58006307b2e6a6b76edf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "nean, Deut. 11, 24. 34, 2. Joel 2, 20.",
+       "2. after, later, following, as דּוֹר אַחֲרוֹן",
+       "Ps. 48, 14. יוֹם אַחֲרוֹן after time, future,",
+       "Prov. 31, 25. Is. 30, 8. Plur. אַחֲרֹנִים"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c3b29e5b-20ac-4062-8419-9301989d0f3d",
+      "duration_api_ms": 9916,
+      "cost_usd_list": 0.07001325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 300
+     },
+     "lines": [
+      {
+       "draft": "nean, Deut. 11, 24. 34, 2. Joel 2, 20.",
+       "reread": "nean, Deut. 11, 24. 34, 2. Joel 2, 20.",
+       "status": "agreed",
+       "text": "nean, Deut. 11, 24. 34, 2. Joel 2, 20."
+      },
+      {
+       "draft": "2. after, later, following, as דּוֹר אַחֲרוֹן",
+       "reread": "2. after, later, following, as דּוֹר אַחֲרוֹן",
+       "status": "agreed",
+       "text": "2. after, later, following, as דּוֹר אַחֲרוֹן"
+      },
+      {
+       "draft": "Ps. 48, 14. יוֹם אַחֲרוֹן after time, future,",
+       "reread": "Ps. 48, 14. יוֹם אַחֲרוֹן after time, future,",
+       "status": "agreed",
+       "text": "Ps. 48, 14. יוֹם אַחֲרוֹן after time, future,"
+      },
+      {
+       "draft": "Prov. 31, 25. Is. 30, 8. Plur. אַחֲרֹנִים",
+       "reread": "Prov. 31, 25. Is. 30, 8. Plur. אַחֲרֹנִים",
+       "status": "agreed",
+       "text": "Prov. 31, 25. Is. 30, 8. Plur. אַחֲרֹנִים"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 981,
+      "y": 1221,
+      "width": 879,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r01-b01-879x242+981+1221-x2.png",
+     "image_sha256": "af5609ea0cbc3c56ca36c02d258b294b03c543c1f64e22604d62b7dcaf0a765b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "those after, posterity, Job 18, 20.",
+       "3. the last, latest, Neh. 8, 18. Is. 44, 6",
+       "I [Jehovah] am the first, and I the last.",
+       "Job 19, 25.—Fem. אַחֲרֹנָה adv. last, the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "540ac31c-7ec7-4864-b518-ca588dc5858c",
+      "duration_api_ms": 10268,
+      "cost_usd_list": 0.07180349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 335
+     },
+     "lines": [
+      {
+       "draft": "those after, posterity, Job 18, 20.",
+       "reread": "those after, posterity, Job 18, 20.",
+       "status": "agreed",
+       "text": "those after, posterity, Job 18, 20."
+      },
+      {
+       "draft": "3. the last, latest, Neh. 8, 18. Is. 44, 6",
+       "reread": "3. the last, latest, Neh. 8, 18. Is. 44, 6",
+       "status": "agreed",
+       "text": "3. the last, latest, Neh. 8, 18. Is. 44, 6"
+      },
+      {
+       "draft": "I [Jehovah] am the first, and I the last.",
+       "reread": "I [Jehovah] am the first, and I the last.",
+       "status": "agreed",
+       "text": "I [Jehovah] am the first, and I the last."
+      },
+      {
+       "draft": "Job 19, 25.—Fem. אַחֲרֹנָה adv. last, the",
+       "reread": "Job 19, 25.—Fem. אַחֲרֹנָה adv. last, the",
+       "status": "agreed",
+       "text": "Job 19, 25.—Fem. אַחֲרֹנָה adv. last, the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 981,
+      "y": 1447,
+      "width": 879,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r01-b02-879x258+981+1447-x2.png",
+     "image_sha256": "3e8029f345e23edf1af8a0bf37a9c54b3cf49aec0b770165f50a8f39f633d2c6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "last, Dan. 11, 29. Also בָּאַחֲרֹנָה Deut.",
+       "13, 10. 1 K. 17, 13, and לָאַחֲרֹנָה Num. 2,",
+       "31. Ecc. 1, 11, at last, last.",
+       "אַחְרַח (for אַחְרְאַח, after the brother,)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "89c704ad-89d0-456d-b2f9-0be8ea462aa1",
+      "duration_api_ms": 13480,
+      "cost_usd_list": 0.0902135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 678
+     },
+     "lines": [
+      {
+       "draft": "last, Dan. 11, 29. Also בָּאַחֲרֹנָה Deut.",
+       "reread": "last, Dan. 11, 29. Also בָּאַחֲרֹנָה Deut.",
+       "status": "agreed",
+       "text": "last, Dan. 11, 29. Also בָּאַחֲרֹנָה Deut."
+      },
+      {
+       "draft": "13, 10. 1 K. 17, 13, and לָאַחֲרֹנָה Num. 2,",
+       "reread": "13, 10. 1 K. 17, 13, and לָאַחֲרֹנָה Num. 2,",
+       "status": "agreed",
+       "text": "13, 10. 1 K. 17, 13, and לָאַחֲרֹנָה Num. 2,"
+      },
+      {
+       "draft": "31. Ecc. 1, 11, at last, last.",
+       "reread": "31. Ecc. 1, 11, at last, last.",
+       "status": "agreed",
+       "text": "31. Ecc. 1, 11, at last, last."
+      },
+      {
+       "draft": "אַחְרַח (for אַחֲרֵאָח, after the brother,)",
+       "reread": "אַחְרַח (for אַחְרְאַח, after the brother,)",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "אַחְרַח (for אַחְרְאַח, after the brother,)",
+        "verdict": "b",
+        "note": "In the parenthetical form the print has shva (vertical dots) under ח and under ר, and a plain patach (not qamets) under the second א; Reading A's hataf-patach, tsere and qamets are not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "94059ee3-a0b2-4707-95ec-3644a203543b",
+        "duration_api_ms": 20292,
+        "cost_usd_list": 0.09186525000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3581,
+        "cache_creation_input_tokens": 2689,
+        "output_tokens": 737
+       },
+       "text": "אַחְרַח (for אַחְרְאַח, after the brother,)"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 981,
+      "y": 1689,
+      "width": 879,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r01-b03-879x269+981+1689-x2.png",
+     "image_sha256": "8efcc7814146db7b6ef4c950c6be17cd32ec53c3d2e4d3ed08613434f7fa6e8c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Aharah, pr. n. 1 Chr. 8, 1.",
+       "אֲחַרְחֵל (behind the breast-work sc.",
+       "born) Aharhel, pr. n. m. 1 Chr. 4, 8.",
+       "אַחֲרֵי Chald. constr. see אַחַר Chald."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7c03449f-8fa8-42f4-ad08-c758861c0008",
+      "duration_api_ms": 13061,
+      "cost_usd_list": 0.08672350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 583
+     },
+     "lines": [
+      {
+       "draft": "Aharah, pr. n. 1 Chr. 8, 1.",
+       "reread": "Aharah, pr. n. 1 Chr. 8, 1.",
+       "status": "agreed",
+       "text": "Aharah, pr. n. 1 Chr. 8, 1."
+      },
+      {
+       "draft": "אֲחַרְחֵל (behind the breast-work sc.",
+       "reread": "אֲחַרְחֵל (behind the breast-work sc.",
+       "status": "agreed",
+       "text": "אֲחַרְחֵל (behind the breast-work sc."
+      },
+      {
+       "draft": "born) Aharhel, pr. n. m. 1 Chr. 4, 8.",
+       "reread": "born) Aharhel, pr. n. m. 1 Chr. 4, 8.",
+       "status": "agreed",
+       "text": "born) Aharhel, pr. n. m. 1 Chr. 4, 8."
+      },
+      {
+       "draft": "אַחֲרֵי Chald. constr. see אַחַר Chald.",
+       "reread": "אַחֲרֵי Chald. constr. see אַחַר Chald.",
+       "status": "agreed",
+       "text": "אַחֲרֵי Chald. constr. see אַחַר Chald."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 981,
+    "y": 1955,
+    "width": 879,
+    "height": 957
+   },
+   "draft_lines": [
+    "אָחֳרִי Chald. adj. fem. another, alia,",
+    "Dan. 2, 39. 7, 5. 6; for the common",
+    "אָחֳרִית, the ת of the fem. gender being",
+    "dropped by apocope, like רֵאשִׁי for",
+    "מַלְכוּת, מַלְכוּ for רֵאשִׁית.",
+    "אָחֳרֵין Chald. adj. (fr. אַחַר הֵן) Dan.",
+    "4, 5 עַד־אָחֳרֵין pr. at the last, at last, at",
+    "length; the עַד being pleonastic, see עַד",
+    "Chald. A. 2.—Keri אָחֳרָן.",
+    "אַחֲרִית f. (r. אָחַר) 1. the last or",
+    "extreme part, uttermost part, Ps. 139, 9.",
+    "—Oftener of time: a) the end of a pe-",
+    "riod, Deut. 11, 12; the end, event of any",
+    "course of things, latter state, final lot,",
+    "Job 8, 7. 42, 12. Prov. 5, 4 אַחֲרִיתָהּ מָרָה",
+    "her end is bitter, i. e. the final lot of"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 981,
+      "y": 1964,
+      "width": 879,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r02-b00-879x236+981+1964-x2.png",
+     "image_sha256": "970ddd72cd659c9cf297d7bbb05c0e3f1e4522fc61120639b85872c16354883f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָחֳרִי Chald. adj. fem. another, alia,",
+       "Dan. 2, 39. 7, 5. 6; for the common",
+       "אָחֳרִית, the ת of the fem. gender being",
+       "dropped by apocope, like רֵאשִׁי for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f1336e71-9c05-4d15-b399-71462e12c045",
+      "duration_api_ms": 15905,
+      "cost_usd_list": 0.0794435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 513
+     },
+     "lines": [
+      {
+       "draft": "אָחֳרִי Chald. adj. fem. another, alia,",
+       "reread": "אָחֳרִי Chald. adj. fem. another, alia,",
+       "status": "agreed",
+       "text": "אָחֳרִי Chald. adj. fem. another, alia,"
+      },
+      {
+       "draft": "Dan. 2, 39. 7, 5. 6; for the common",
+       "reread": "Dan. 2, 39. 7, 5. 6; for the common",
+       "status": "agreed",
+       "text": "Dan. 2, 39. 7, 5. 6; for the common"
+      },
+      {
+       "draft": "אָחֳרִית, the ת of the fem. gender being",
+       "reread": "אָחֳרִית, the ת of the fem. gender being",
+       "status": "agreed",
+       "text": "אָחֳרִית, the ת of the fem. gender being"
+      },
+      {
+       "draft": "dropped by apocope, like רֵאשִׁי for",
+       "reread": "dropped by apocope, like רֵאשִׁי for",
+       "status": "agreed",
+       "text": "dropped by apocope, like רֵאשִׁי for"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 981,
+      "y": 2184,
+      "width": 879,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r02-b01-879x260+981+2184-x2.png",
+     "image_sha256": "13ec2db3e0818ce1af0a14f420c0d018b95a5b17942b4f70219913839c9e0d24",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "רֵאשִׁית, מַלְכוּ for מַלְכוּת.",
+       "אָחֳרֵין Chald. adj. (fr. אַחַר הֵן) Dan.",
+       "4, 5 עַד־אָחֳרֵין pr. at the last, at last, at",
+       "length; the עַד being pleonastic, see עַד"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "58cab2f7-61ef-49b3-98bf-702908e79785",
+      "duration_api_ms": 25595,
+      "cost_usd_list": 0.1296135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 1466
+     },
+     "lines": [
+      {
+       "draft": "מַלְכוּת, מַלְכוּ for רֵאשִׁית.",
+       "reread": "רֵאשִׁית, מַלְכוּ for מַלְכוּת.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "רֵאשִׁית, מַלְכוּ for מַלְכוּת.",
+        "verdict": "b",
+        "note": "Printed left-to-right order is רֵאשִׁית (leftmost, after the comma-separated pair) … for מַלְכוּת (rightmost); Reading A swaps the first and last words. Vowel points agree with both readings; the line also ends with a full stop after מַלְכוּת.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "47da8806-be5f-4977-9c9e-71798921cc03",
+        "duration_api_ms": 15472,
+        "cost_usd_list": 0.08979625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2693,
+        "output_tokens": 694
+       },
+       "text": "רֵאשִׁית, מַלְכוּ for מַלְכוּת."
+      },
+      {
+       "draft": "אָחֳרֵין Chald. adj. (fr. אַחַר הֵן) Dan.",
+       "reread": "אָחֳרֵין Chald. adj. (fr. אַחַר הֵן) Dan.",
+       "status": "agreed",
+       "text": "אָחֳרֵין Chald. adj. (fr. אַחַר הֵן) Dan."
+      },
+      {
+       "draft": "4, 5 עַד־אָחֳרֵין pr. at the last, at last, at",
+       "reread": "4, 5 עַד־אָחֳרֵין pr. at the last, at last, at",
+       "status": "agreed",
+       "text": "4, 5 עַד־אָחֳרֵין pr. at the last, at last, at"
+      },
+      {
+       "draft": "length; the עַד being pleonastic, see עַד",
+       "reread": "length; the עַד being pleonastic, see עַד",
+       "status": "agreed",
+       "text": "length; the עַד being pleonastic, see עַד"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 981,
+      "y": 2428,
+      "width": 879,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r02-b02-879x259+981+2428-x2.png",
+     "image_sha256": "ef818f336c1bc063cc1b566e3f2b01356f1f4d21a87858860f882f359425e081",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Chald. A. 2.—Keri אָחֳרָן.",
+       "אַחֲרִית f. (r. אָחַר) 1. the last or",
+       "extreme part, uttermost part, Ps. 139, 9.",
+       "—Oftener of time: a) the end of a pe-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d1f8e279-dfda-424d-a45e-35a16b6a8c94",
+      "duration_api_ms": 13774,
+      "cost_usd_list": 0.0844635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 563
+     },
+     "lines": [
+      {
+       "draft": "Chald. A. 2.—Keri אָחֳרָן.",
+       "reread": "Chald. A. 2.—Keri אָחֳרָן.",
+       "status": "agreed",
+       "text": "Chald. A. 2.—Keri אָחֳרָן."
+      },
+      {
+       "draft": "אַחֲרִית f. (r. אָחַר) 1. the last or",
+       "reread": "אַחֲרִית f. (r. אָחַר) 1. the last or",
+       "status": "agreed",
+       "text": "אַחֲרִית f. (r. אָחַר) 1. the last or"
+      },
+      {
+       "draft": "extreme part, uttermost part, Ps. 139, 9.",
+       "reread": "extreme part, uttermost part, Ps. 139, 9.",
+       "status": "agreed",
+       "text": "extreme part, uttermost part, Ps. 139, 9."
+      },
+      {
+       "draft": "—Oftener of time: a) the end of a pe-",
+       "reread": "—Oftener of time: a) the end of a pe-",
+       "status": "agreed",
+       "text": "—Oftener of time: a) the end of a pe-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 981,
+      "y": 2671,
+      "width": 879,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r02-b03-879x249+981+2671-x2.png",
+     "image_sha256": "c23edcbdf3842ae7a006c6b37f5afef725d66b15a768b156786899bebcc3df91",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "riod, Deut. 11, 12 ; the end, event of any",
+       "course of things, latter state, final lot,",
+       "Job 8, 7. 42, 12. Prov. 5, 4 אַחֲרִיתָהּ מָרָה",
+       "her end is bitter, i. e. the final lot of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "09ddfe5f-e922-4615-a1ba-4af1bed4ad2d",
+      "duration_api_ms": 12529,
+      "cost_usd_list": 0.06880349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 275
+     },
+     "lines": [
+      {
+       "draft": "riod, Deut. 11, 12; the end, event of any",
+       "reread": "riod, Deut. 11, 12 ; the end, event of any",
+       "status": "agreed",
+       "text": "riod, Deut. 11, 12; the end, event of any"
+      },
+      {
+       "draft": "course of things, latter state, final lot,",
+       "reread": "course of things, latter state, final lot,",
+       "status": "agreed",
+       "text": "course of things, latter state, final lot,"
+      },
+      {
+       "draft": "Job 8, 7. 42, 12. Prov. 5, 4 אַחֲרִיתָהּ מָרָה",
+       "reread": "Job 8, 7. 42, 12. Prov. 5, 4 אַחֲרִיתָהּ מָרָה",
+       "status": "agreed",
+       "text": "Job 8, 7. 42, 12. Prov. 5, 4 אַחֲרִיתָהּ מָרָה"
+      },
+      {
+       "draft": "her end is bitter, i. e. the final lot of",
+       "reread": "her end is bitter, i. e. the final lot of",
+       "status": "agreed",
+       "text": "her end is bitter, i. e. the final lot of"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 981,
+    "y": 2900,
+    "width": 879,
+    "height": 393
+   },
+   "draft_lines": [
+    "those whom the adultress seduces;",
+    "comp. 23, 32. Sometimes of a happy",
+    "end or result, Prov. 23, 18. 24, 14. b)",
+    "after-time, the future, espec. in the pro-",
+    "phetic formula בְּאַחֲרִית הַיָּמִים in future",
+    "time, in the last days, Is. 2, 2. Gen. 49, 1.",
+    "Mic. 4, 1. Num. 24, 14. Dan. 10, 14."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 981,
+      "y": 2903,
+      "width": 879,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r03-b00-879x228+981+2903-x2.png",
+     "image_sha256": "bddec95f3f00088da5fbd55698b3951cceb60b4abc43c3c9448bef40930956c0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "those whom the adultress seduces;",
+       "comp. 23, 32. Sometimes of a happy",
+       "end or result, Prov. 23, 18. 24, 14. b)",
+       "after-time, the future, espec. in the pro-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "418d1887-84ec-4ede-b21c-f92431d22ebe",
+      "duration_api_ms": 8808,
+      "cost_usd_list": 0.0662935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "those whom the adultress seduces;",
+       "reread": "those whom the adultress seduces;",
+       "status": "agreed",
+       "text": "those whom the adultress seduces;"
+      },
+      {
+       "draft": "comp. 23, 32. Sometimes of a happy",
+       "reread": "comp. 23, 32. Sometimes of a happy",
+       "status": "agreed",
+       "text": "comp. 23, 32. Sometimes of a happy"
+      },
+      {
+       "draft": "end or result, Prov. 23, 18. 24, 14. b)",
+       "reread": "end or result, Prov. 23, 18. 24, 14. b)",
+       "status": "agreed",
+       "text": "end or result, Prov. 23, 18. 24, 14. b)"
+      },
+      {
+       "draft": "after-time, the future, espec. in the pro-",
+       "reread": "after-time, the future, espec. in the pro-",
+       "status": "agreed",
+       "text": "after-time, the future, espec. in the pro-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 981,
+      "y": 3115,
+      "width": 879,
+      "height": 180
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0053/pass2/c1-r03-b01-879x180+981+3115-x2.png",
+     "image_sha256": "1bb0ee703b9bdfc514f891045a13f62daeb12f61091decd680909061ba1db01c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "phetic formula בְּאַחֲרִית הַיָּמִים in future",
+       "time, in the last days, Is. 2, 2. Gen. 49, 1.",
+       "Mic. 4, 1. Num. 24, 14. Dan. 10, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "51deebfe-f17b-4d07-8400-6a5cd39e0534",
+      "duration_api_ms": 10871,
+      "cost_usd_list": 0.06805349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 386
+     },
+     "lines": [
+      {
+       "draft": "phetic formula בְּאַחֲרִית הַיָּמִים in future",
+       "reread": "phetic formula בְּאַחֲרִית הַיָּמִים in future",
+       "status": "agreed",
+       "text": "phetic formula בְּאַחֲרִית הַיָּמִים in future"
+      },
+      {
+       "draft": "time, in the last days, Is. 2, 2. Gen. 49, 1.",
+       "reread": "time, in the last days, Is. 2, 2. Gen. 49, 1.",
+       "status": "agreed",
+       "text": "time, in the last days, Is. 2, 2. Gen. 49, 1."
+      },
+      {
+       "draft": "Mic. 4, 1. Num. 24, 14. Dan. 10, 14.",
+       "reread": "Mic. 4, 1. Num. 24, 14. Dan. 10, 14.",
+       "status": "agreed",
+       "text": "Mic. 4, 1. Num. 24, 14. Dan. 10, 14."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אהר 37 אהר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Note. Instead of the sing. אַחַר, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "plur. אַחֲרֵי is far more frequently used;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "see below. With suffixes the plur. form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "is always used.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Plur. אֲחָרִים, only in constr. אַחֲרֵי, c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "suff. אַחֲרַי, אַחֲרֵיכֶם, אַחֲרֵיהֶם, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. Subst. the hinder parts, 2 Sam. 2,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "23 בְּאַחֲרֵי הַחֲנִית with the hinder end of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the spear.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Prep. a) Of place, behind, Judg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "18, 12 where it is i. q. on the west of, see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "in אָחוֹר no. 2. More freq. after, behind",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "any one, Lev. 26, 33. 1 Sam. 14, 37.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2 K. 19, 21. (אֲשֶׁר) אַחֲרֵיהֶם those who",
+   "status": "adjudicated",
+   "draft": "2 K. 19, 21. (אֲשֶׁר) אַחֲרֵיהֶם those who",
+   "reread": "2 K. 19, 21. אַחֲרֵיהֶם (אֲשֶׁר) those who",
+   "verdict": "a",
+   "note": "Only the order differs. Printed visual order left→right is אַחֲרֵיהֶם then (אֲשֶׁר); as one RTL run the rightmost (אֲשֶׁר) is logically first, giving Reading A's order (אֲשֶׁר) אַחֲרֵיהֶם. Reading B puts the parenthesis logically second, which would render visually reversed. All vowel points, shin dot and the yod in אַחֲרֵיהֶם are as both readings have them.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "go after them, their flatterers, parasites,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ps. 49, 14. Hence, with verbs of going,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to follow; also הָיָה אַחֲרֵי פ׳ to be after,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to go after any one, i. q. to follow, to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "on one's side, Ex. 23, 2. 2 Sam. 2, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Comp. 1 K. 1, 7. Prov. 28, 23 מוֹכִיחַ אָדָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַחֲרַי חֵן יִמְצָא he that rebuketh a man",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "after me (i. e. after my precepts) shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "find favour. b) Of time, after, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "16, 13. 17, 8. With inf. after that, after,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gen. 5, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. Conj. אַחֲרֵי אֲשֶׁר after that, Deut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "24, 4. Josh. 9, 16. 23, 1; rarely with אֲשֶׁר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "omitted, Lev. 25, 48. Once אַחֲרֵי כַּאֲשֶׁר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Josh. 2, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4. אַחֲרֵי־כֵן pr. after so, after it had so",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "happened, i. e. afterwards, Gen. 6, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "15, 14. 23, 19. 25, 26. al. Comp. Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ܒܳܬܰܪܟܶܢ and ܒܳܬܰܪ ܗܳܟܰܢ. With אֲשֶׁר added",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "it becomes a conjunction, i. q. אַחֲרֵי אֲשֶׁר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "after that, like Lat. posteaquam for post-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "quam, Deut. 24, 4. 2 Sam. 24, 10. In the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "later Hebrew we find also אַחֲרֵי זֹאת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "after this, afterwards, Job 42, 16. Ezra",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "9, 10. Comp. Chald. אַחֲרֵי דְנָה Dan. 2,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "29. 45.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5. With other prepositions:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "a) מֵאַחֲרֵי, once מִן אַחֲרֵי 1 Chr. 17, 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pr. from after, from behind, from going",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "or following after; chiefly used of those",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "who abandon a person or party whom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "they have before followed, Num. 14, 43.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Deut. 7, 4. 2 Sam. 20, 2. Also at or on",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the back, behind, after, (comp. מִן no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "h,) Josh. 8, 2. Ex. 14, 19. Jer. 9, 21.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Of time, after, Ecc. 10, 14; and in Neh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "4, 7 מֵאַחֲרֵי לְ, in the same sense. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "מֵאַחֲרֵי כֵן pr. after so, i. e. afterwards,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2 Sam. 3, 28. 15, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "b) אֶל־אַחֲרֵי after, with verbs of mo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "4",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tion. 2 K. 9, 18 סֹב אֶל־אַחֲרַי turn thee",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "after me, behind me, 2 Sam. 5, 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "c) עַל־אַחֲרֵי i. q. אַחֲרֵי, Ez. 41, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Comp. עַל no. 3. b.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַחַר Chald. plur. constr. אַחֲרֵי, after,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Dan. 2, 29; but by Hebraism. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pure Chaldee preposit. is בָּתַר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַחֲרוֹן, fem. אַחֲרֹנָה, from אַחַר with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the adj. ending וֹן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. hinder, hindermost, latter, opp. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "foremost, former, (רִאשׁוֹן,) Gen. 33, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Ex. 4, 8. Deut. 24, 3. הַיָּם הָאַחֲרוֹן the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "hinder sea, i. e. western, the Mediterra-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "nean, Deut. 11, 24. 34, 2. Joel 2, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. after, later, following, as דּוֹר אַחֲרוֹן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ps. 48, 14. יוֹם אַחֲרוֹן after time, future,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Prov. 31, 25. Is. 30, 8. Plur. אַחֲרֹנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "those after, posterity, Job 18, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. the last, latest, Neh. 8, 18. Is. 44, 6",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "I [Jehovah] am the first, and I the last.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Job 19, 25.—Fem. אַחֲרֹנָה adv. last, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "last, Dan. 11, 29. Also בָּאַחֲרֹנָה Deut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "13, 10. 1 K. 17, 13, and לָאַחֲרֹנָה Num. 2,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "31. Ecc. 1, 11, at last, last.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַחְרַח (for אַחְרְאַח, after the brother,)",
+   "status": "adjudicated",
+   "draft": "אַחְרַח (for אַחֲרֵאָח, after the brother,)",
+   "reread": "אַחְרַח (for אַחְרְאַח, after the brother,)",
+   "verdict": "b",
+   "note": "In the parenthetical form the print has shva (vertical dots) under ח and under ר, and a plain patach (not qamets) under the second א; Reading A's hataf-patach, tsere and qamets are not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Aharah, pr. n. 1 Chr. 8, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲחַרְחֵל (behind the breast-work sc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "born) Aharhel, pr. n. m. 1 Chr. 4, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַחֲרֵי Chald. constr. see אַחַר Chald.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָחֳרִי Chald. adj. fem. another, alia,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Dan. 2, 39. 7, 5. 6; for the common",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָחֳרִית, the ת of the fem. gender being",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "dropped by apocope, like רֵאשִׁי for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "רֵאשִׁית, מַלְכוּ for מַלְכוּת.",
+   "status": "adjudicated",
+   "draft": "מַלְכוּת, מַלְכוּ for רֵאשִׁית.",
+   "reread": "רֵאשִׁית, מַלְכוּ for מַלְכוּת.",
+   "verdict": "b",
+   "note": "Printed left-to-right order is רֵאשִׁית (leftmost, after the comma-separated pair) … for מַלְכוּת (rightmost); Reading A swaps the first and last words. Vowel points agree with both readings; the line also ends with a full stop after מַלְכוּת.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָחֳרֵין Chald. adj. (fr. אַחַר הֵן) Dan.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4, 5 עַד־אָחֳרֵין pr. at the last, at last, at",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "length; the עַד being pleonastic, see עַד",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Chald. A. 2.—Keri אָחֳרָן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַחֲרִית f. (r. אָחַר) 1. the last or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "extreme part, uttermost part, Ps. 139, 9.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "—Oftener of time: a) the end of a pe-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "riod, Deut. 11, 12; the end, event of any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "course of things, latter state, final lot,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Job 8, 7. 42, 12. Prov. 5, 4 אַחֲרִיתָהּ מָרָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "her end is bitter, i. e. the final lot of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "those whom the adultress seduces;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "comp. 23, 32. Sometimes of a happy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "end or result, Prov. 23, 18. 24, 14. b)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "after-time, the future, espec. in the pro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "phetic formula בְּאַחֲרִית הַיָּמִים in future",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "time, in the last days, Is. 2, 2. Gen. 49, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Mic. 4, 1. Num. 24, 14. Dan. 10, 14.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 105,
+  "adjudicated": 3,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 0
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.6536
+}

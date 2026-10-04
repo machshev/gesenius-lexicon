@@ -1,0 +1,2762 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 61,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0061.png",
+ "raster_sha256": "814e4cb1644a42b6c1151ab139dc5c516ec9a12693c1614604cc8e5330396406",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0061.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:48:03+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 107,
+    "y": 110,
+    "width": 1780,
+    "height": 66
+   },
+   "draft_lines": [
+    "אישׁ 45 אית"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 107,
+      "y": 108,
+      "width": 1780,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/header-b00-1780x70+107+108-x2.png",
+     "image_sha256": "50123114e3462e6a2544c48502de3349f3e5430bd9148851ed929d88384358a9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישׁ 45 אִית"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "15263460-abad-45b0-b454-5d7078d7c35a",
+      "duration_api_ms": 8557,
+      "cost_usd_list": 0.0486325,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 230
+     },
+     "lines": [
+      {
+       "draft": "אישׁ 45 אית",
+       "reread": "אִישׁ 45 אִית",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אִישׁ 45 אִית",
+        "verdict": "b",
+        "note": "A hireq dot is visibly printed under the aleph of both running-header words (אִישׁ and אִית); Reading A drops these vowel points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6def5d83-c441-45a2-a293-192eff27068f",
+        "duration_api_ms": 9378,
+        "cost_usd_list": 0.05102675,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3547,
+        "cache_creation_input_tokens": 1715,
+        "output_tokens": 316
+       },
+       "text": "אִישׁ 45 אִית"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 107,
+    "y": 156,
+    "width": 881,
+    "height": 899
+   },
+   "draft_lines": [
+    "man of God, i. q. servant and minister",
+    "of God ; spoken of angels Judg. 13, 6. 8 ;",
+    "of prophets 1 Sam. 2, 27 ; of Moses",
+    "Deut. 33, 1 ; of David 2 Chr. 8, 14.   k)",
+    "With genit. of an attribute, quality, vir-",
+    "tue, vice, etc. it denotes one possess-",
+    "ing that attribute or quality ; and in",
+    "this way the Hebrews form a peri-",
+    "phrasis for an adjective ; e. g. אִישׁ תֹּאַר",
+    "a man of form, i. e. handsome ; אִישׁ דָּמִים",
+    "a man of blood, bloody ; אַנְשֵׁי לֵבָב intel-",
+    "ligent, see in לֵב no. 1. e ; אַנְשֵׁי הַשֵּׁם men",
+    "of name, famous, Gen. 6, 4 ; comp. אִישׁ",
+    "הָאֲדָמָה a husbandman, Gen. 9, 20.   l)",
+    "Collect. for men, i. e. soldiers, troops, Is."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 107,
+      "y": 148,
+      "width": 881,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r00-b00-881x295+107+148-x2.png",
+     "image_sha256": "afdd75d4871a2e62c7b679fa4de52d62b44c97d0729f327a29839f9ae30338fc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "man of God, i. q. servant and minister",
+       "of God; spoken of angels Judg. 13, 6. 8;",
+       "of prophets 1 Sam. 2, 27; of Moses",
+       "Deut. 33, 1; of David 2 Chr. 8, 14. k)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "35e27067-f672-46b2-b72b-fe87d3dbfc06",
+      "duration_api_ms": 5329,
+      "cost_usd_list": 0.07335325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "man of God, i. q. servant and minister",
+       "reread": "man of God, i. q. servant and minister",
+       "status": "agreed",
+       "text": "man of God, i. q. servant and minister"
+      },
+      {
+       "draft": "of God ; spoken of angels Judg. 13, 6. 8 ;",
+       "reread": "of God; spoken of angels Judg. 13, 6. 8;",
+       "status": "agreed",
+       "text": "of God; spoken of angels Judg. 13, 6. 8;"
+      },
+      {
+       "draft": "of prophets 1 Sam. 2, 27 ; of Moses",
+       "reread": "of prophets 1 Sam. 2, 27; of Moses",
+       "status": "agreed",
+       "text": "of prophets 1 Sam. 2, 27; of Moses"
+      },
+      {
+       "draft": "Deut. 33, 1 ; of David 2 Chr. 8, 14.   k)",
+       "reread": "Deut. 33, 1; of David 2 Chr. 8, 14. k)",
+       "status": "agreed",
+       "text": "Deut. 33, 1; of David 2 Chr. 8, 14. k)"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 107,
+      "y": 427,
+      "width": 881,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r00-b01-881x241+107+427-x2.png",
+     "image_sha256": "171e8893d01724a39b65fb9bbda435ba24051dd1139eacd8dddf325bccb40c30",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "With genit. of an attribute, quality, vir-",
+       "tue, vice, etc. it denotes one possess-",
+       "ing that attribute or quality; and in",
+       "this way the Hebrews form a peri-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b38a0679-c675-4b05-b54e-3fbc933e85f0",
+      "duration_api_ms": 8948,
+      "cost_usd_list": 0.06706324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "With genit. of an attribute, quality, vir-",
+       "reread": "With genit. of an attribute, quality, vir-",
+       "status": "agreed",
+       "text": "With genit. of an attribute, quality, vir-"
+      },
+      {
+       "draft": "tue, vice, etc. it denotes one possess-",
+       "reread": "tue, vice, etc. it denotes one possess-",
+       "status": "agreed",
+       "text": "tue, vice, etc. it denotes one possess-"
+      },
+      {
+       "draft": "ing that attribute or quality ; and in",
+       "reread": "ing that attribute or quality; and in",
+       "status": "agreed",
+       "text": "ing that attribute or quality; and in"
+      },
+      {
+       "draft": "this way the Hebrews form a peri-",
+       "reread": "this way the Hebrews form a peri-",
+       "status": "agreed",
+       "text": "this way the Hebrews form a peri-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 107,
+      "y": 652,
+      "width": 881,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r00-b02-881x239+107+652-x2.png",
+     "image_sha256": "c4f9aed82365ae7a0813a6ba7ee1010b9d5daa30d8e62a25cc0f79c7f31f9a90",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "phrasis for an adjective ; e. g. אִישׁ תֹּאַר",
+       "a man of form, i. e. handsome ; אִישׁ דָּמִים",
+       "a man of blood, bloody ; אַנְשֵׁי לֵבָב intel-",
+       "ligent, see in לֵב no. 1. e ; אַנְשֵׁי הַשֵּׁם men"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13daa790-e954-43ac-8e73-16fb9da39bf6",
+      "duration_api_ms": 12519,
+      "cost_usd_list": 0.07916324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 483
+     },
+     "lines": [
+      {
+       "draft": "phrasis for an adjective ; e. g. אִישׁ תֹּאַר",
+       "reread": "phrasis for an adjective ; e. g. אִישׁ תֹּאַר",
+       "status": "agreed",
+       "text": "phrasis for an adjective; e. g. אִישׁ תֹּאַר"
+      },
+      {
+       "draft": "a man of form, i. e. handsome ; אִישׁ דָּמִים",
+       "reread": "a man of form, i. e. handsome ; אִישׁ דָּמִים",
+       "status": "agreed",
+       "text": "a man of form, i. e. handsome; אִישׁ דָּמִים"
+      },
+      {
+       "draft": "a man of blood, bloody ; אַנְשֵׁי לֵבָב intel-",
+       "reread": "a man of blood, bloody ; אַנְשֵׁי לֵבָב intel-",
+       "status": "agreed",
+       "text": "a man of blood, bloody; אַנְשֵׁי לֵבָב intel-"
+      },
+      {
+       "draft": "ligent, see in לֵב no. 1. e ; אַנְשֵׁי הַשֵּׁם men",
+       "reread": "ligent, see in לֵב no. 1. e ; אַנְשֵׁי הַשֵּׁם men",
+       "status": "agreed",
+       "text": "ligent, see in לֵב no. 1. e; אַנְשֵׁי הַשֵּׁם men"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 107,
+      "y": 875,
+      "width": 881,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r00-b03-881x188+107+875-x2.png",
+     "image_sha256": "e1d366a714b22555ff04862cc09beef0a625d49c2b1958672ebadaadb82f4a7c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of name, famous, Gen. 6, 4 ; comp. אִישׁ",
+       "הָאֲדָמָה a husbandman, Gen. 9, 20.   1)",
+       "Collect. for men, i. e. soldiers, troops, Is."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a4e1d10b-8445-4e23-948a-1355fac1103c",
+      "duration_api_ms": 12131,
+      "cost_usd_list": 0.07457325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2437,
+      "output_tokens": 492
+     },
+     "lines": [
+      {
+       "draft": "of name, famous, Gen. 6, 4 ; comp. אִישׁ",
+       "reread": "of name, famous, Gen. 6, 4 ; comp. אִישׁ",
+       "status": "agreed",
+       "text": "of name, famous, Gen. 6, 4; comp. אִישׁ"
+      },
+      {
+       "draft": "הָאֲדָמָה a husbandman, Gen. 9, 20.   l)",
+       "reread": "הָאֲדָמָה a husbandman, Gen. 9, 20.   1)",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "הָאֲדָמָה a husbandman, Gen. 9, 20.   1)",
+        "verdict": "b",
+        "note": "The final glyph before \")\" is the numeral 1 (angled top flag, foot serif), beginning the sense number \"1) Collect. for men…\" continued on the next line; not a lowercase l. Hebrew word and the rest are identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6f416e90-fe7f-47c4-8cf5-94b12d5f218e",
+        "duration_api_ms": 21465,
+        "cost_usd_list": 0.0770465,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2378,
+        "output_tokens": 565
+       },
+       "text": "הָאֲדָמָה a husbandman, Gen. 9, 20. 1)"
+      },
+      {
+       "draft": "Collect. for men, i. e. soldiers, troops, Is.",
+       "reread": "Collect. for men, i. e. soldiers, troops, Is.",
+       "status": "agreed",
+       "text": "Collect. for men, i. e. soldiers, troops, Is."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 107,
+    "y": 1043,
+    "width": 881,
+    "height": 734
+   },
+   "draft_lines": [
+    "21, 9. Comp. אָדָם Is. 22, 6. m) אִישׁ",
+    "marks also a man of rank, a great man,",
+    "noble, as opp. to אָדָם a man of low con-",
+    "dition ; see in אָדָם no. 1. b. n) As joined",
+    "with numerals, we find after numerals",
+    "below ten אֲנָשִׁים, as שְׁלֹשָׁה אֲנָשִׁים Gen.",
+    "18, 2 ; between ten and twenty some-",
+    "times אִישׁ, Num. 1, 44 ; and above twen-",
+    "ty always אִישׁ, 1 Sam. 14, 14. 22, 2. 18.",
+    "al. sæp.",
+    "2. With אָח or רֵעַ, one—another ; see",
+    "אָח and רֵעַ.",
+    "3. Put for any man, i. e. one, some one,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 107,
+      "y": 1035,
+      "width": 881,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r01-b00-881x243+107+1035-x2.png",
+     "image_sha256": "7aab18e0ab0ff50fde2b74190794df29a730b72dfd66d2d6437201df848c0848",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "21, 9. Comp. אָדָם Is. 22, 6. m) אִישׁ",
+       "marks also a man of rank, a great man,",
+       "noble, as opp. to אָדָם a man of low con-",
+       "dition; see in אָדָם no. 1. b. n) As joined"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2ed7b4eb-9eb8-462b-8452-50dbf4e12aba",
+      "duration_api_ms": 9145,
+      "cost_usd_list": 0.0685035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "21, 9. Comp. אָדָם Is. 22, 6. m) אִישׁ",
+       "reread": "21, 9. Comp. אָדָם Is. 22, 6. m) אִישׁ",
+       "status": "agreed",
+       "text": "21, 9. Comp. אָדָם Is. 22, 6. m) אִישׁ"
+      },
+      {
+       "draft": "marks also a man of rank, a great man,",
+       "reread": "marks also a man of rank, a great man,",
+       "status": "agreed",
+       "text": "marks also a man of rank, a great man,"
+      },
+      {
+       "draft": "noble, as opp. to אָדָם a man of low con-",
+       "reread": "noble, as opp. to אָדָם a man of low con-",
+       "status": "agreed",
+       "text": "noble, as opp. to אָדָם a man of low con-"
+      },
+      {
+       "draft": "dition ; see in אָדָם no. 1. b. n) As joined",
+       "reread": "dition; see in אָדָם no. 1. b. n) As joined",
+       "status": "agreed",
+       "text": "dition; see in אָדָם no. 1. b. n) As joined"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 107,
+      "y": 1262,
+      "width": 881,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r01-b01-881x233+107+1262-x2.png",
+     "image_sha256": "624bfe16869bb6ccfb2c3cfe6c4aef4690ebf1d42b76addbf3fe4fd63b281eef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "with numerals, we find after numerals",
+       "below ten אֲנָשִׁים, as שְׁלֹשָׁה אֲנָשִׁים Gen.",
+       "18, 2 ; between ten and twenty some-",
+       "times אִישׁ, Num. 1, 44 ; and above twen-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "64796606-b6f1-4b12-b288-2a8400c6c9e1",
+      "duration_api_ms": 29978,
+      "cost_usd_list": 0.07454349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 415
+     },
+     "lines": [
+      {
+       "draft": "with numerals, we find after numerals",
+       "reread": "with numerals, we find after numerals",
+       "status": "agreed",
+       "text": "with numerals, we find after numerals"
+      },
+      {
+       "draft": "below ten אֲנָשִׁים, as שְׁלֹשָׁה אֲנָשִׁים Gen.",
+       "reread": "below ten אֲנָשִׁים, as שְׁלֹשָׁה אֲנָשִׁים Gen.",
+       "status": "agreed",
+       "text": "below ten אֲנָשִׁים, as שְׁלֹשָׁה אֲנָשִׁים Gen."
+      },
+      {
+       "draft": "18, 2 ; between ten and twenty some-",
+       "reread": "18, 2 ; between ten and twenty some-",
+       "status": "agreed",
+       "text": "18, 2; between ten and twenty some-"
+      },
+      {
+       "draft": "times אִישׁ, Num. 1, 44 ; and above twen-",
+       "reread": "times אִישׁ, Num. 1, 44 ; and above twen-",
+       "status": "agreed",
+       "text": "times אִישׁ, Num. 1, 44; and above twen-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 107,
+      "y": 1479,
+      "width": 881,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r01-b02-881x227+107+1479-x2.png",
+     "image_sha256": "bec0ef3890c0937d9ff53738ee4683710ef79bd0845043011b49023401357930",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ty always אִישׁ, 1 Sam. 14, 14. 22, 2. 18.",
+       "al. sæp.",
+       "2. With אָח or רֵעַ, one—another ; see",
+       "אָח and רֵעַ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ef277a29-b371-4d78-8449-fb381f70bc44",
+      "duration_api_ms": 13385,
+      "cost_usd_list": 0.07734349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 471
+     },
+     "lines": [
+      {
+       "draft": "ty always אִישׁ, 1 Sam. 14, 14. 22, 2. 18.",
+       "reread": "ty always אִישׁ, 1 Sam. 14, 14. 22, 2. 18.",
+       "status": "agreed",
+       "text": "ty always אִישׁ, 1 Sam. 14, 14. 22, 2. 18."
+      },
+      {
+       "draft": "al. sæp.",
+       "reread": "al. sæp.",
+       "status": "agreed",
+       "text": "al. sæp."
+      },
+      {
+       "draft": "2. With אָח or רֵעַ, one—another ; see",
+       "reread": "2. With אָח or רֵעַ, one—another ; see",
+       "status": "agreed",
+       "text": "2. With אָח or רֵעַ, one—another; see"
+      },
+      {
+       "draft": "אָח and רֵעַ.",
+       "reread": "אָח and רֵעַ.",
+       "status": "agreed",
+       "text": "אָח and רֵעַ."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 107,
+      "y": 1690,
+      "width": 881,
+      "height": 95
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r01-b03-881x95+107+1690-x2.png",
+     "image_sha256": "454489e450f5ea0096d9fa6b35964c7c21fdd96f499bd21a37125873739580f1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Put for any man, i. e. one, some one,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0aeb854d-c754-4842-94fe-fb5089787601",
+      "duration_api_ms": 14594,
+      "cost_usd_list": 0.052393499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1998,
+      "output_tokens": 224
+     },
+     "lines": [
+      {
+       "draft": "3. Put for any man, i. e. one, some one,",
+       "reread": "3. Put for any man, i. e. one, some one,",
+       "status": "agreed",
+       "text": "3. Put for any man, i. e. one, some one,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 107,
+    "y": 1765,
+    "width": 881,
+    "height": 999
+   },
+   "draft_lines": [
+    "any one, Gen. 13, 16. Ex. 16, 29. Cant.",
+    "8, 7. So Syr. ܐ݇ܢܳܫ for τὶς, e. g. ܝܗܘܕܝܐ",
+    "ܐ݇ܢܳܫ a certain Jew. Plur. אֲנָשִׁים men,",
+    "certain men, like Syr. ܐ݇ܢܳܫܺܝ̈ܢ, 1 K. 20,",
+    "17. Jer. 37, 10.",
+    "4. each, every one. 1 K. 20, 20 וַיַּכּוּ",
+    "אִישׁ אִישׁוֹ and they slew every one his",
+    "man. אִישׁ וְאִישׁ this and that man, each",
+    "and every one, Ps. 87, 5. Esth. 1, 8.",
+    "Once like כֹּל prefixed to another subst.",
+    "Gen. 15, 10 וַיִּתֵּן אִישׁ־בִּתְרוֹ לִקְרַאת רֵעֵהוּ",
+    "and laid each part of each (animal) one",
+    "over against the other, where אִישׁ־בִּתְרוֹ",
+    "is i. q. כָּל־בִּתְרוֹ, but the sacred writer",
+    "puts אִישׁ for כֹּל in order to correspond",
+    "with the following רֵעֵהוּ. So too אִישׁ",
+    "אָחִיו Gen. 9, 5."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 107,
+      "y": 1757,
+      "width": 881,
+      "height": 278
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r02-b00-881x278+107+1757-x2.png",
+     "image_sha256": "0c684b42a3be5fb109aa6af386d94a7ee1bbbd632f37af0af6a9c4ab861f1235",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "any one, Gen. 13, 16. Ex. 16, 29. Cant.",
+       "8, 7.  So Syr. ܐ̱ܢܳܫ for τὶς, e. g. ܝܗܘܕܳܝܐ",
+       "ܐ̱ܢܳܫ a certain Jew.  Plur. אֲנָשִׁים men,",
+       "certain men, like Syr. ܐ̱ܢܳܫ̈ܝܢ, 1 K. 20,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "837027f0-c561-45c9-abdc-fdb2ef4d1c77",
+      "duration_api_ms": 20038,
+      "cost_usd_list": 0.1007235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 863
+     },
+     "lines": [
+      {
+       "draft": "any one, Gen. 13, 16. Ex. 16, 29. Cant.",
+       "reread": "any one, Gen. 13, 16. Ex. 16, 29. Cant.",
+       "status": "agreed",
+       "text": "any one, Gen. 13, 16. Ex. 16, 29. Cant."
+      },
+      {
+       "draft": "8, 7. So Syr. ܐ݇ܢܳܫ for τὶς, e. g. ܝܗܘܕܝܐ",
+       "reread": "8, 7.  So Syr. ܐ̱ܢܳܫ for τὶς, e. g. ܝܗܘܕܳܝܐ",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "8, 7. So Syr. ܐ̱ܢܳܫ for τὶς, e. g. ܝܗܘܕܳܝܐ",
+        "verdict": "b",
+        "note": "The final Syriac word is printed with a zqapha mark above the dalath (ܝܗܘܕܳܝܐ, Yehūdāyā), which Reading A omits; the line under the alaph of ܐ̱ܢܳܫ is a flat horizontal linea occultans, better matched by B's combining macron below than A's oblique line.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9ab5fc41-ba7c-42cd-8d37-c4f177572cc1",
+        "duration_api_ms": 27755,
+        "cost_usd_list": 0.1270175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3630,
+        "cache_creation_input_tokens": 2801,
+        "output_tokens": 1395
+       },
+       "text": "8, 7. So Syr. ܐ̱ܢܳܫ for τὶς, e. g. ܝܗܘܕܳܝܐ"
+      },
+      {
+       "draft": "ܐ݇ܢܳܫ a certain Jew. Plur. אֲנָשִׁים men,",
+       "reread": "ܐ̱ܢܳܫ a certain Jew.  Plur. אֲנָשִׁים men,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "ܐܢܫ a certain Jew. Plur. אֲנָשִׁים men,",
+        "verdict": "neither",
+        "note": "The Syriac ܐܢܫ at the start of line 3 is printed without any points: no zqapha over the nun and no linea occultans under the alaph (contrast line 2, where both are printed). Both readings add vowel/occultans marks that are not on the page. The Hebrew אֲנָשִׁים and the rest of the line agree with both readings; single space after \"Jew.\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9dde6a69-7e46-416f-bd54-5d731c63ca87",
+        "duration_api_ms": 21141,
+        "cost_usd_list": 0.098291,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3604,
+        "cache_creation_input_tokens": 2775,
+        "output_tokens": 831
+       },
+       "text": "ܐܢܫ a certain Jew. Plur. אֲנָשִׁים men,"
+      },
+      {
+       "draft": "certain men, like Syr. ܐ݇ܢܳܫܺܝ̈ܢ, 1 K. 20,",
+       "reread": "certain men, like Syr. ܐ̱ܢܳܫ̈ܝܢ, 1 K. 20,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "certain men, like Syr. ܐ̱ܢܳܫ̈ܝܢ, 1 K. 20,",
+        "verdict": "b",
+        "note": "The printed Syriac shows only three marks: a line below the alaph (linea occultans), a zqapha above the nun, and a two-stroke seyame above the shin/yod region. There is no hbasa dot under the shin as Reading A has, and A's U+0747 places the alaph line above rather than below; Reading B matches the printed points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "03c2af24-c0a7-4767-84a1-30203cf82423",
+        "duration_api_ms": 24922,
+        "cost_usd_list": 0.12893275000000004,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3611,
+        "cache_creation_input_tokens": 2782,
+        "output_tokens": 1441
+       },
+       "text": "certain men, like Syr. ܐ̱ܢܳܫ̈ܝܢ, 1 K. 20,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 107,
+      "y": 2019,
+      "width": 881,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r02-b01-881x247+107+2019-x2.png",
+     "image_sha256": "76718bc065c47e84aba4a279381d4bbd923cc9ab78cc222b32562192d858a19a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "17. Jer. 37, 10.",
+       "4. each, every one. 1 K. 20, 20 וַיַּכּוּ",
+       "אִישׁ אִישׁוֹ and they slew every one his",
+       "man. אִישׁ וְאִישׁ this and that man, each"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e7058fd6-37bf-487e-af07-ae251d8237ab",
+      "duration_api_ms": 11249,
+      "cost_usd_list": 0.0752535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 404
+     },
+     "lines": [
+      {
+       "draft": "17. Jer. 37, 10.",
+       "reread": "17. Jer. 37, 10.",
+       "status": "agreed",
+       "text": "17. Jer. 37, 10."
+      },
+      {
+       "draft": "4. each, every one. 1 K. 20, 20 וַיַּכּוּ",
+       "reread": "4. each, every one. 1 K. 20, 20 וַיַּכּוּ",
+       "status": "agreed",
+       "text": "4. each, every one. 1 K. 20, 20 וַיַּכּוּ"
+      },
+      {
+       "draft": "אִישׁ אִישׁוֹ and they slew every one his",
+       "reread": "אִישׁ אִישׁוֹ and they slew every one his",
+       "status": "agreed",
+       "text": "אִישׁ אִישׁוֹ and they slew every one his"
+      },
+      {
+       "draft": "man. אִישׁ וְאִישׁ this and that man, each",
+       "reread": "man. אִישׁ וְאִישׁ this and that man, each",
+       "status": "agreed",
+       "text": "man. אִישׁ וְאִישׁ this and that man, each"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 107,
+      "y": 2250,
+      "width": 881,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r02-b02-881x236+107+2250-x2.png",
+     "image_sha256": "04ace0432b8ca9fb28f73a3c8cc46c17f8a7550fc466c23e90c231e32bfe6283",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and every one, Ps. 87, 5. Esth. 1, 8.",
+       "Once like כֹּל prefixed to another subst.",
+       "Gen. 15, 10 וַיִּתֵּן אִישׁ־בִּתְרוֹ לִקְרַאת רֵעֵהוּ",
+       "and laid each part of each (animal) one"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2d10a2a9-6354-4439-83bd-1cad34b6f551",
+      "duration_api_ms": 11612,
+      "cost_usd_list": 0.0751435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 427
+     },
+     "lines": [
+      {
+       "draft": "and every one, Ps. 87, 5. Esth. 1, 8.",
+       "reread": "and every one, Ps. 87, 5. Esth. 1, 8.",
+       "status": "agreed",
+       "text": "and every one, Ps. 87, 5. Esth. 1, 8."
+      },
+      {
+       "draft": "Once like כֹּל prefixed to another subst.",
+       "reread": "Once like כֹּל prefixed to another subst.",
+       "status": "agreed",
+       "text": "Once like כֹּל prefixed to another subst."
+      },
+      {
+       "draft": "Gen. 15, 10 וַיִּתֵּן אִישׁ־בִּתְרוֹ לִקְרַאת רֵעֵהוּ",
+       "reread": "Gen. 15, 10 וַיִּתֵּן אִישׁ־בִּתְרוֹ לִקְרַאת רֵעֵהוּ",
+       "status": "agreed",
+       "text": "Gen. 15, 10 וַיִּתֵּן אִישׁ־בִּתְרוֹ לִקְרַאת רֵעֵהוּ"
+      },
+      {
+       "draft": "and laid each part of each (animal) one",
+       "reread": "and laid each part of each (animal) one",
+       "status": "agreed",
+       "text": "and laid each part of each (animal) one"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 107,
+      "y": 2470,
+      "width": 881,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r02-b03-881x238+107+2470-x2.png",
+     "image_sha256": "0091f842fa974125893c61d222e795d5f0b1f9e2a5af7b35e830f716e7301118",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "over against the other, where אִישׁ־בִּתְרוֹ",
+       "is i. q. כָּל־בִּתְרוֹ, but the sacred writer",
+       "puts אִישׁ for כֹּל in order to correspond",
+       "with the following רֵעֵהוּ. So too אִישׁ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ec7df8df-be8c-41a0-ae5a-9896c2c618a4",
+      "duration_api_ms": 9487,
+      "cost_usd_list": 0.0676435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "over against the other, where אִישׁ־בִּתְרוֹ",
+       "reread": "over against the other, where אִישׁ־בִּתְרוֹ",
+       "status": "agreed",
+       "text": "over against the other, where אִישׁ־בִּתְרוֹ"
+      },
+      {
+       "draft": "is i. q. כָּל־בִּתְרוֹ, but the sacred writer",
+       "reread": "is i. q. כָּל־בִּתְרוֹ, but the sacred writer",
+       "status": "agreed",
+       "text": "is i. q. כָּל־בִּתְרוֹ, but the sacred writer"
+      },
+      {
+       "draft": "puts אִישׁ for כֹּל in order to correspond",
+       "reread": "puts אִישׁ for כֹּל in order to correspond",
+       "status": "agreed",
+       "text": "puts אִישׁ for כֹּל in order to correspond"
+      },
+      {
+       "draft": "with the following רֵעֵהוּ. So too אִישׁ",
+       "reread": "with the following רֵעֵהוּ. So too אִישׁ",
+       "status": "agreed",
+       "text": "with the following רֵעֵהוּ. So too אִישׁ"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b04",
+     "bounds": {
+      "x": 107,
+      "y": 2692,
+      "width": 881,
+      "height": 67
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r02-b04-881x67+107+2692-x2.png",
+     "image_sha256": "bebfaa5b61a9182b54c7be9be0c894e65aebbb611c729c22b4ab2aca474a3d45",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָחִיו Gen. 9, 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d4c3fc0f-1138-4eb6-9f07-72c460920cbe",
+      "duration_api_ms": 11009,
+      "cost_usd_list": 0.0524235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 275
+     },
+     "lines": [
+      {
+       "draft": "אָחִיו Gen. 9, 5.",
+       "reread": "אָחִיו Gen. 9, 5.",
+       "status": "agreed",
+       "text": "אָחִיו Gen. 9, 5."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 107,
+    "y": 2752,
+    "width": 881,
+    "height": 520
+   },
+   "draft_lines": [
+    "5. Impers. like Germ. man, Fr. on,",
+    "Engl. one, plur. men, e. g. one says, men",
+    "say, etc. 1 Sam. 9, 9 לְפָנִים בְּיִשְׂרָאֵל כֹּה",
+    "אָמַר אִישׁ formerly in Israel men said",
+    "thus, i. q. it was said.",
+    "6. בְּנֵי אִישׁ sons of men, as a peri-",
+    "phrastic plur. for men simply, Ps. 4, 3;",
+    "like בְּנֵי אָדָם, see אָדָם no. 5.—Sometimes",
+    "emphat. for the noble, the high, opp. to"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 107,
+      "y": 2757,
+      "width": 881,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r03-b00-881x230+107+2757-x2.png",
+     "image_sha256": "c49a48b0f4a45921f33904f26023065081e54b952745d3c404050a31cd178b34",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5. Impers. like Germ. man, Fr. on,",
+       "Engl. one, plur. men, e. g. one says, men",
+       "say, etc. 1 Sam. 9, 9 לְפָנִים בְּיִשְׂרָאֵל כֹּה",
+       "אָמַר אִישׁ formerly in Israel men said"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5dc122e2-180b-444f-a3b6-e35debfc6993",
+      "duration_api_ms": 10394,
+      "cost_usd_list": 0.0681435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 287
+     },
+     "lines": [
+      {
+       "draft": "5. Impers. like Germ. man, Fr. on,",
+       "reread": "5. Impers. like Germ. man, Fr. on,",
+       "status": "agreed",
+       "text": "5. Impers. like Germ. man, Fr. on,"
+      },
+      {
+       "draft": "Engl. one, plur. men, e. g. one says, men",
+       "reread": "Engl. one, plur. men, e. g. one says, men",
+       "status": "agreed",
+       "text": "Engl. one, plur. men, e. g. one says, men"
+      },
+      {
+       "draft": "say, etc. 1 Sam. 9, 9 לְפָנִים בְּיִשְׂרָאֵל כֹּה",
+       "reread": "say, etc. 1 Sam. 9, 9 לְפָנִים בְּיִשְׂרָאֵל כֹּה",
+       "status": "agreed",
+       "text": "say, etc. 1 Sam. 9, 9 לְפָנִים בְּיִשְׂרָאֵל כֹּה"
+      },
+      {
+       "draft": "אָמַר אִישׁ formerly in Israel men said",
+       "reread": "אָמַר אִישׁ formerly in Israel men said",
+       "status": "agreed",
+       "text": "אָמַר אִישׁ formerly in Israel men said"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 107,
+      "y": 2971,
+      "width": 881,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r03-b01-881x244+107+2971-x2.png",
+     "image_sha256": "75b7dfe104219830bbaa3745223cc97c2c212e3e1c4ad7f44c6cf8125d0927a3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "thus, i. q. it was said.",
+       "6. בְּנֵי אִישׁ sons of men, as a peri-",
+       "phrastic plur. for men simply, Ps. 4, 3 ;",
+       "like בְּנֵי אָדָם, see אָדָם no. 5.—Sometimes"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e76f9c8b-0b8c-4860-aa28-d85289c38303",
+      "duration_api_ms": 9467,
+      "cost_usd_list": 0.06880349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 275
+     },
+     "lines": [
+      {
+       "draft": "thus, i. q. it was said.",
+       "reread": "thus, i. q. it was said.",
+       "status": "agreed",
+       "text": "thus, i. q. it was said."
+      },
+      {
+       "draft": "6. בְּנֵי אִישׁ sons of men, as a peri-",
+       "reread": "6. בְּנֵי אִישׁ sons of men, as a peri-",
+       "status": "agreed",
+       "text": "6. בְּנֵי אִישׁ sons of men, as a peri-"
+      },
+      {
+       "draft": "phrastic plur. for men simply, Ps. 4, 3;",
+       "reread": "phrastic plur. for men simply, Ps. 4, 3 ;",
+       "status": "agreed",
+       "text": "phrastic plur. for men simply, Ps. 4, 3;"
+      },
+      {
+       "draft": "like בְּנֵי אָדָם, see אָדָם no. 5.—Sometimes",
+       "reread": "like בְּנֵי אָדָם, see אָדָם no. 5.—Sometimes",
+       "status": "agreed",
+       "text": "like בְּנֵי אָדָם, see אָדָם no. 5.—Sometimes"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 107,
+      "y": 3199,
+      "width": 881,
+      "height": 75
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c0-r03-b02-881x75+107+3199-x2.png",
+     "image_sha256": "17e3ed50c6ddb8559c312961d38de63d6fbea77505741c4575c834a87837f479",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "emphat. for the noble, the high, opp. to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "363aad4a-f053-42a4-b592-941cb6724a33",
+      "duration_api_ms": 10387,
+      "cost_usd_list": 0.0496335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 194
+     },
+     "lines": [
+      {
+       "draft": "emphat. for the noble, the high, opp. to",
+       "reread": "emphat. for the noble, the high, opp. to",
+       "status": "agreed",
+       "text": "emphat. for the noble, the high, opp. to"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1002,
+    "y": 156,
+    "width": 885,
+    "height": 667
+   },
+   "draft_lines": [
+    "בְּנֵי אָדָם, Ps. 49, 3. Prov. 8, 4 ; see no. 1.",
+    "m, and אָדָם no. 1. b.",
+    "Note. As to the etymology, we hold",
+    "אִישׁ to be a primitive word ; yet soft-",
+    "ened from the harsher form אֱנָשׁ (אָנַשׁ)",
+    "q. v. whence also אִשָּׁה for אִנְשָׁה, and",
+    "plur. אֲנָשִׁים . In like manner the Arabic",
+    "has إِنْسَانٌ and إِيسَانٌ .",
+    "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בּשֶׁת,",
+    "also"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1002,
+      "y": 148,
+      "width": 885,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r00-b00-885x244+1002+148-x2.png",
+     "image_sha256": "55660658d15de7024a3ee05d77a4907faccb0c03259d7e4b730c84759bfe8bd3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בְּנֵי אָדָם, Ps. 49, 3. Prov. 8, 4 ; see no. 1.",
+       "m, and אָדָם no. 1. b.",
+       "Note. As to the etymology, we hold"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4cd33c74-3c5e-4d9c-8954-16e2fb862c2a",
+      "duration_api_ms": 13720,
+      "cost_usd_list": 0.0702635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 297
+     },
+     "lines": [
+      {
+       "draft": "בְּנֵי אָדָם, Ps. 49, 3. Prov. 8, 4 ; see no. 1.",
+       "reread": "בְּנֵי אָדָם, Ps. 49, 3. Prov. 8, 4 ; see no. 1.",
+       "status": "agreed",
+       "text": "בְּנֵי אָדָם, Ps. 49, 3. Prov. 8, 4; see no. 1."
+      },
+      {
+       "draft": "m, and אָדָם no. 1. b.",
+       "reread": "m, and אָדָם no. 1. b.",
+       "status": "agreed",
+       "text": "m, and אָדָם no. 1. b."
+      },
+      {
+       "draft": "Note. As to the etymology, we hold",
+       "reread": "Note. As to the etymology, we hold",
+       "status": "agreed",
+       "text": "Note. As to the etymology, we hold"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1002,
+      "y": 376,
+      "width": 885,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r00-b01-885x236+1002+376-x2.png",
+     "image_sha256": "727b1b30540219580d617d44826016de3a63aba29ea9afc0982b857a35566b12",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישׁ to be a primitive word; yet soft-",
+       "ened from the harsher form אֱנַשׁ (אֱנָשׁ)",
+       "q. v. whence also אִשָּׁה for אִנְשָׁה, and",
+       "plur. אֲנָשִׁים. In like manner the Arabic"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bf42a836-836d-4000-beec-14d3e461917d",
+      "duration_api_ms": 18389,
+      "cost_usd_list": 0.10018350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2645,
+      "output_tokens": 921
+     },
+     "lines": [
+      {
+       "draft": "אִישׁ to be a primitive word ; yet soft-",
+       "reread": "אִישׁ to be a primitive word; yet soft-",
+       "status": "agreed",
+       "text": "אִישׁ to be a primitive word; yet soft-"
+      },
+      {
+       "draft": "ened from the harsher form אֱנָשׁ (אָנַשׁ)",
+       "reread": "ened from the harsher form אֱנַשׁ (אֱנָשׁ)",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "ened from the harsher form אֱנַשׁ (אֱנָשׁ)",
+        "verdict": "b",
+        "note": "Both alephs show ḥaṭef segol; first word has pataḥ under nun, the parenthesised word has qameṣ — matching B. A reverses the vowels and gives the parenthesised aleph a plain qameṣ/ḥaṭef pataḥ that is not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "390565d7-161b-407d-b2a9-ced98067f5bb",
+        "duration_api_ms": 18911,
+        "cost_usd_list": 0.08824599999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3584,
+        "cache_creation_input_tokens": 2583,
+        "output_tokens": 707
+       },
+       "text": "ened from the harsher form אֱנַשׁ (אֱנָשׁ)"
+      },
+      {
+       "draft": "q. v. whence also אִשָּׁה for אִנְשָׁה, and",
+       "reread": "q. v. whence also אִשָּׁה for אִנְשָׁה, and",
+       "status": "agreed",
+       "text": "q. v. whence also אִשָּׁה for אִנְשָׁה, and"
+      },
+      {
+       "draft": "plur. אֲנָשִׁים . In like manner the Arabic",
+       "reread": "plur. אֲנָשִׁים. In like manner the Arabic",
+       "status": "agreed",
+       "text": "plur. אֲנָשִׁים. In like manner the Arabic"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1002,
+      "y": 596,
+      "width": 885,
+      "height": 217
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r00-b02-885x217+1002+596-x2.png",
+     "image_sha256": "81408bdce5d169f7c35d0043bc127e185a5f838b05247720c6c887a3f08fcc15",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "has إِنْسَانٌ and إِيْسَانٌ.",
+       "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בֹּשֶׁת,",
+       "also"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aa407c41-6de1-48b3-9ebf-54ce919fe1e3",
+      "duration_api_ms": 21570,
+      "cost_usd_list": 0.0965535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2581,
+      "output_tokens": 874
+     },
+     "lines": [
+      {
+       "draft": "has إِنْسَانٌ and إِيسَانٌ .",
+       "reread": "has إِنْسَانٌ and إِيْسَانٌ.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "has إِنْسَانٌ and إِيْسَانٌ.",
+        "verdict": "b",
+        "note": "The second Arabic word prints a sukūn (small circle) above the yā — إِيْسَانٌ as in B; A omits it. The period also follows directly with no preceding space, as in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "20afe6fe-886f-4322-a352-c42c8a4a09a9",
+        "duration_api_ms": 12058,
+        "cost_usd_list": 0.07251350000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2509,
+        "output_tokens": 422
+       },
+       "text": "has إِنْسَانٌ and إِيْسَانٌ."
+      },
+      {
+       "draft": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בּשֶׁת,",
+       "reread": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בֹּשֶׁת,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בֹּשֶׁת,",
+        "verdict": "b",
+        "note": "In בֹּשֶׁת a holem dot is printed above the bet (distinct from the shin dot to its left), so the vowel is present; A omits it. All other items are identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9ab749db-bd27-43c7-ba1c-7eb8778c7665",
+        "duration_api_ms": 23055,
+        "cost_usd_list": 0.10358675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3627,
+        "cache_creation_input_tokens": 2562,
+        "output_tokens": 1022
+       },
+       "text": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בֹּשֶׁת,"
+      },
+      {
+       "draft": "also",
+       "reread": "also",
+       "status": "agreed",
+       "text": "also"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1002,
+    "y": 811,
+    "width": 885,
+    "height": 723
+   },
+   "draft_lines": [
+    "אִישׁ denom. verb, only in Hithpal.",
+    "הִתְאוֹשֵׁשׁ to show oneself a man, ἀνδρί-",
+    "ζεσθαι; Is. 46, 8 הִתְאֹשָׁשׁוּ show your-",
+    "selves men, be men, i. e. be wise, cast",
+    "away the childish trifles of idolaters.",
+    "Chald. הִתְאַשֵּׁשׁ and הִתְאֹשֵׁשׁ id.",
+    "אִישׁ־בֹּשֶׁת (man of shame, i. e. sham-",
+    "ing himself, perh. bashful,) pr. n. Ishbo-",
+    "sheth, the son of Saul, who for two years",
+    "after the death of his father and brothers",
+    "reigned over eleven tribes in opposition",
+    "to David. 2 Sam. c. 2–4."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1002,
+      "y": 822,
+      "width": 885,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r01-b00-885x247+1002+822-x2.png",
+     "image_sha256": "2e7c077dba700dc20c8f3dfc991809fad71d031760602997cd8ce4ebc8b5bfca",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישׁ denom. verb, only in Hithpal.",
+       "הִתְאוֹשֵׁשׁ to show oneself a man, ἀνδρί-",
+       "ζεσθαι ; Is. 46, 8 הִתְאֹשָׁשׁוּ show your-",
+       "selves men, be men, i. e. be wise, cast"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b329f6b-b425-4b48-babc-7897c03f6bbc",
+      "duration_api_ms": 14080,
+      "cost_usd_list": 0.08476349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 587
+     },
+     "lines": [
+      {
+       "draft": "אִישׁ denom. verb, only in Hithpal.",
+       "reread": "אִישׁ denom. verb, only in Hithpal.",
+       "status": "agreed",
+       "text": "אִישׁ denom. verb, only in Hithpal."
+      },
+      {
+       "draft": "הִתְאוֹשֵׁשׁ to show oneself a man, ἀνδρί-",
+       "reread": "הִתְאוֹשֵׁשׁ to show oneself a man, ἀνδρί-",
+       "status": "agreed",
+       "text": "הִתְאוֹשֵׁשׁ to show oneself a man, ἀνδρί-"
+      },
+      {
+       "draft": "ζεσθαι; Is. 46, 8 הִתְאֹשָׁשׁוּ show your-",
+       "reread": "ζεσθαι ; Is. 46, 8 הִתְאֹשָׁשׁוּ show your-",
+       "status": "agreed",
+       "text": "ζεσθαι; Is. 46, 8 הִתְאֹשָׁשׁוּ show your-"
+      },
+      {
+       "draft": "selves men, be men, i. e. be wise, cast",
+       "reread": "selves men, be men, i. e. be wise, cast",
+       "status": "agreed",
+       "text": "selves men, be men, i. e. be wise, cast"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1002,
+      "y": 1053,
+      "width": 885,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r01-b01-885x259+1002+1053-x2.png",
+     "image_sha256": "3422c569d86df4b2e1dc53346f342f03666a01d2b31a6205a7b582ef08f9a795",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "away the childish trifles of idolaters.",
+       "Chald. הִתְאֹשַׁשׁ and הִתְאַשַּׁשׁ id.",
+       "אִישׁ־בֹּשֶׁת (man of shame, i. e. sham-",
+       "ing himself, perh. bashful,) pr. n. Ishbo-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ef8848e6-aeab-45e7-99cb-6519d4011e21",
+      "duration_api_ms": 17858,
+      "cost_usd_list": 0.09188375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2775,
+      "output_tokens": 703
+     },
+     "lines": [
+      {
+       "draft": "away the childish trifles of idolaters.",
+       "reread": "away the childish trifles of idolaters.",
+       "status": "agreed",
+       "text": "away the childish trifles of idolaters."
+      },
+      {
+       "draft": "Chald. הִתְאַשֵּׁשׁ and הִתְאֹשֵׁשׁ id.",
+       "reread": "Chald. הִתְאֹשַׁשׁ and הִתְאַשַּׁשׁ id.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "Chald. הִתְאַשֵּׁשׁ and הִתְאֹשֵׁשׁ id.",
+        "verdict": "a",
+        "note": "The first printed word has patach under aleph and dagesh + tsere (two dots) under the first shin; the second word has holem above aleph and tsere under the first shin. Reading B swaps the word order and prints patach where the image clearly shows two-dot tsere.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b4177ac4-3ff3-4ea2-82c8-5641c5bd3cfe",
+        "duration_api_ms": 18210,
+        "cost_usd_list": 0.1033715,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3606,
+        "cache_creation_input_tokens": 2734,
+        "output_tokens": 949
+       },
+       "text": "Chald. הִתְאַשֵּׁשׁ and הִתְאֹשֵׁשׁ id."
+      },
+      {
+       "draft": "אִישׁ־בֹּשֶׁת (man of shame, i. e. sham-",
+       "reread": "אִישׁ־בֹּשֶׁת (man of shame, i. e. sham-",
+       "status": "agreed",
+       "text": "אִישׁ־בֹּשֶׁת (man of shame, i. e. sham-"
+      },
+      {
+       "draft": "ing himself, perh. bashful,) pr. n. Ishbo-",
+       "reread": "ing himself, perh. bashful,) pr. n. Ishbo-",
+       "status": "agreed",
+       "text": "ing himself, perh. bashful,) pr. n. Ishbo-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1002,
+      "y": 1296,
+      "width": 885,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r01-b02-885x227+1002+1296-x2.png",
+     "image_sha256": "96470e26052a2bf9d8479ff2e53280cf52e7070823a8502d408bc48f3552f6f1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sheth, the son of Saul, who for two years",
+       "after the death of his father and brothers",
+       "reigned over eleven tribes in opposition",
+       "to David. 2 Sam. c. 2–4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1d9d1f7a-2c66-4ca3-b3b2-d8059b7b8675",
+      "duration_api_ms": 10434,
+      "cost_usd_list": 0.06617375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "sheth, the son of Saul, who for two years",
+       "reread": "sheth, the son of Saul, who for two years",
+       "status": "agreed",
+       "text": "sheth, the son of Saul, who for two years"
+      },
+      {
+       "draft": "after the death of his father and brothers",
+       "reread": "after the death of his father and brothers",
+       "status": "agreed",
+       "text": "after the death of his father and brothers"
+      },
+      {
+       "draft": "reigned over eleven tribes in opposition",
+       "reread": "reigned over eleven tribes in opposition",
+       "status": "agreed",
+       "text": "reigned over eleven tribes in opposition"
+      },
+      {
+       "draft": "to David. 2 Sam. c. 2–4.",
+       "reread": "to David. 2 Sam. c. 2–4.",
+       "status": "agreed",
+       "text": "to David. 2 Sam. c. 2–4."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1002,
+    "y": 1522,
+    "width": 885,
+    "height": 616
+   },
+   "draft_lines": [
+    "אִישְׁהוֹד (man of glory) Ishhod, pr. n.",
+    "m. 1 Chr. 7, 18.",
+    "אִישׁוֹן m. (dimin. from אִישׁ) 1. a",
+    "little man, manikin, homunculus, and",
+    "with עַיִן the little man of the eye, i. e. the",
+    "pupil, apple of the eye, in which, as in",
+    "a mirror, a person sees his own image",
+    "reflected in miniature. Deut. 32, 10.",
+    "Prov. 7, 2. This pleasing image is",
+    "found in several languages; e. g. Arab."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1002,
+      "y": 1533,
+      "width": 885,
+      "height": 265
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r02-b00-885x265+1002+1533-x2.png",
+     "image_sha256": "ed7e11762c7a449c42b339896479313e54460b29a228d1e27638b09f9873da0d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישְׁהוֹד (man of glory) Ishhod, pr. n.",
+       "m. 1 Chr. 7, 18.",
+       "אִישׁוֹן m. (dimin. from אִישׁ) 1. a",
+       "little man, manikin, homunculus, and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1ca77ccd-5f57-464c-9e26-9e4ca78abb3e",
+      "duration_api_ms": 9282,
+      "cost_usd_list": 0.07018375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2775,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "אִישְׁהוֹד (man of glory) Ishhod, pr. n.",
+       "reread": "אִישְׁהוֹד (man of glory) Ishhod, pr. n.",
+       "status": "agreed",
+       "text": "אִישְׁהוֹד (man of glory) Ishhod, pr. n."
+      },
+      {
+       "draft": "m. 1 Chr. 7, 18.",
+       "reread": "m. 1 Chr. 7, 18.",
+       "status": "agreed",
+       "text": "m. 1 Chr. 7, 18."
+      },
+      {
+       "draft": "אִישׁוֹן m. (dimin. from אִישׁ) 1. a",
+       "reread": "אִישׁוֹן m. (dimin. from אִישׁ) 1. a",
+       "status": "agreed",
+       "text": "אִישׁוֹן m. (dimin. from אִישׁ) 1. a"
+      },
+      {
+       "draft": "little man, manikin, homunculus, and",
+       "reread": "little man, manikin, homunculus, and",
+       "status": "agreed",
+       "text": "little man, manikin, homunculus, and"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1002,
+      "y": 1782,
+      "width": 885,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r02-b01-885x237+1002+1782-x2.png",
+     "image_sha256": "e516ffde58178a331d8d7034266de3e4ce25de85c6809a7d92da7f4f7da8995c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "with עַיִן the little man of the eye, i. e. the",
+       "pupil, apple of the eye, in which, as in",
+       "a mirror, a person sees his own image",
+       "reflected in miniature. Deut. 32, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5afcc42f-ced3-4005-a768-bff9b143e61b",
+      "duration_api_ms": 8099,
+      "cost_usd_list": 0.06662375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "with עַיִן the little man of the eye, i. e. the",
+       "reread": "with עַיִן the little man of the eye, i. e. the",
+       "status": "agreed",
+       "text": "with עַיִן the little man of the eye, i. e. the"
+      },
+      {
+       "draft": "pupil, apple of the eye, in which, as in",
+       "reread": "pupil, apple of the eye, in which, as in",
+       "status": "agreed",
+       "text": "pupil, apple of the eye, in which, as in"
+      },
+      {
+       "draft": "a mirror, a person sees his own image",
+       "reread": "a mirror, a person sees his own image",
+       "status": "agreed",
+       "text": "a mirror, a person sees his own image"
+      },
+      {
+       "draft": "reflected in miniature. Deut. 32, 10.",
+       "reread": "reflected in miniature. Deut. 32, 10.",
+       "status": "agreed",
+       "text": "reflected in miniature. Deut. 32, 10."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1002,
+      "y": 2003,
+      "width": 885,
+      "height": 128
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r02-b02-885x128+1002+2003-x2.png",
+     "image_sha256": "2ad4d11a3fd4f5d8c790bf9e092e17a7c4c1dd8f0cd3666e7a707cb020ad9712",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Prov. 7, 2. This pleasing image is",
+       "found in several languages ; e. g. Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9ef10126-6f34-4aa7-9500-64ecf89c9432",
+      "duration_api_ms": 9965,
+      "cost_usd_list": 0.05581375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2199,
+      "output_tokens": 212
+     },
+     "lines": [
+      {
+       "draft": "Prov. 7, 2. This pleasing image is",
+       "reread": "Prov. 7, 2. This pleasing image is",
+       "status": "agreed",
+       "text": "Prov. 7, 2. This pleasing image is"
+      },
+      {
+       "draft": "found in several languages; e. g. Arab.",
+       "reread": "found in several languages ; e. g. Arab.",
+       "status": "agreed",
+       "text": "found in several languages; e. g. Arab."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1002,
+    "y": 2126,
+    "width": 885,
+    "height": 896
+   },
+   "draft_lines": [
+    "إِنْسَانُ ٱلْعَيْنِ homunculus oculi, Gr.",
+    "κόρη, κοράσιον, κορασίδιον, Lat. pupa,",
+    "pupula, pupilla, Pers. مردك ; see more",
+    "in Thesaur. p. 86.—More fully Ps. 17, 8",
+    "אִישׁוֹן בַּת עַיִן i. e. the pupil, daughter of",
+    "the eye ; see in בַּת no. 7.",
+    "2. Metaph. the middle, the midst of",
+    "any thing, like Arab. نُونُو apple of the",
+    "eye, for the midst, the summit.—Hence",
+    "Prov. 7, 9 in the eye-ball (pupil) of the",
+    "night, i. e. at midnight. 20, 20 in the very",
+    "eye-ball of darkness, i. e. in the midst of",
+    "darkness ; where in Keri is read בֶּאֱשׁוּן ח׳",
+    "in the darkness of night."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1002,
+      "y": 2134,
+      "width": 885,
+      "height": 294
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r03-b00-885x294+1002+2134-x2.png",
+     "image_sha256": "e9b7506cb4c877199101693ebb316013df5d48ee50a5bea47d56ae1407d2bc11",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "إِنْسَانُ ٱلْعَيْنِ homunculus oculi, Gr.",
+       "κόρη, κοράσιον, κορασίδιον, Lat. pupa,",
+       "pupula, pupilla, Pers. مردك ; see more",
+       "in Thesaur. p. 86.—More fully Ps. 17, 8"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "56881423-5429-40b1-9c67-9c55ca1cf30f",
+      "duration_api_ms": 14064,
+      "cost_usd_list": 0.08344375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2903,
+      "output_tokens": 483
+     },
+     "lines": [
+      {
+       "draft": "إِنْسَانُ ٱلْعَيْنِ homunculus oculi, Gr.",
+       "reread": "إِنْسَانُ ٱلْعَيْنِ homunculus oculi, Gr.",
+       "status": "agreed",
+       "text": "إِنْسَانُ ٱلْعَيْنِ homunculus oculi, Gr."
+      },
+      {
+       "draft": "κόρη, κοράσιον, κορασίδιον, Lat. pupa,",
+       "reread": "κόρη, κοράσιον, κορασίδιον, Lat. pupa,",
+       "status": "agreed",
+       "text": "κόρη, κοράσιον, κορασίδιον, Lat. pupa,"
+      },
+      {
+       "draft": "pupula, pupilla, Pers. مردك ; see more",
+       "reread": "pupula, pupilla, Pers. مردك ; see more",
+       "status": "agreed",
+       "text": "pupula, pupilla, Pers. مردك; see more"
+      },
+      {
+       "draft": "in Thesaur. p. 86.—More fully Ps. 17, 8",
+       "reread": "in Thesaur. p. 86.—More fully Ps. 17, 8",
+       "status": "agreed",
+       "text": "in Thesaur. p. 86.—More fully Ps. 17, 8"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1002,
+      "y": 2412,
+      "width": 885,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r03-b01-885x273+1002+2412-x2.png",
+     "image_sha256": "49fdfad8537a2c40120dc4c3fe4e4724d8e3d8c2338572feed2d6731c892fe95",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישׁוֹן בַּת עַיִן i. e. the pupil, daughter of",
+       "the eye ; see in בַּת no. 7.",
+       "2. Metaph. the middle, the midst of",
+       "any thing, like Arab. نُؤْنُؤ apple of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "98fbde4c-b98e-4007-b4b3-aa2cbf88b76d",
+      "duration_api_ms": 14901,
+      "cost_usd_list": 0.08881375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2839,
+      "output_tokens": 616
+     },
+     "lines": [
+      {
+       "draft": "אִישׁוֹן בַּת עַיִן i. e. the pupil, daughter of",
+       "reread": "אִישׁוֹן בַּת עַיִן i. e. the pupil, daughter of",
+       "status": "agreed",
+       "text": "אִישׁוֹן בַּת עַיִן i. e. the pupil, daughter of"
+      },
+      {
+       "draft": "the eye ; see in בַּת no. 7.",
+       "reread": "the eye ; see in בַּת no. 7.",
+       "status": "agreed",
+       "text": "the eye; see in בַּת no. 7."
+      },
+      {
+       "draft": "2. Metaph. the middle, the midst of",
+       "reread": "2. Metaph. the middle, the midst of",
+       "status": "agreed",
+       "text": "2. Metaph. the middle, the midst of"
+      },
+      {
+       "draft": "any thing, like Arab. نُونُو apple of the",
+       "reread": "any thing, like Arab. نُؤْنُؤ apple of the",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "any thing, like Arab. نُؤْنُؤ apple of the",
+        "verdict": "b",
+        "note": "The superscript cluster over the Arabic word shows hamza signs (ء) over both wāws with ḍammas and a sukūn between, not plain wāws with ḍammas — nuʾnuʾ \"pupil\", as in Gesenius' Thesaurus. Reading A drops the hamzas.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "116e125d-8ee0-4631-9a7a-57e0aa07535b",
+        "duration_api_ms": 14347,
+        "cost_usd_list": 0.08644275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3571,
+        "cache_creation_input_tokens": 2763,
+        "output_tokens": 599
+       },
+       "text": "any thing, like Arab. نُؤْنُؤ apple of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1002,
+      "y": 2669,
+      "width": 885,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r03-b02-885x238+1002+2669-x2.png",
+     "image_sha256": "ab1a56192b747691904f4332af033456d9a73b71078f0043628ca0b84125f503",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "eye, for the midst, the summit.—Hence",
+       "Prov. 7, 9 in the eye-ball (pupil) of the",
+       "night, i. e. at midnight. 20, 20 in the very",
+       "eye-ball of darkness, i. e. in the midst of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bc4bc09c-84f2-4c1d-a3e7-1fc3544a548c",
+      "duration_api_ms": 15988,
+      "cost_usd_list": 0.06737375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "eye, for the midst, the summit.—Hence",
+       "reread": "eye, for the midst, the summit.—Hence",
+       "status": "agreed",
+       "text": "eye, for the midst, the summit.—Hence"
+      },
+      {
+       "draft": "Prov. 7, 9 in the eye-ball (pupil) of the",
+       "reread": "Prov. 7, 9 in the eye-ball (pupil) of the",
+       "status": "agreed",
+       "text": "Prov. 7, 9 in the eye-ball (pupil) of the"
+      },
+      {
+       "draft": "night, i. e. at midnight. 20, 20 in the very",
+       "reread": "night, i. e. at midnight. 20, 20 in the very",
+       "status": "agreed",
+       "text": "night, i. e. at midnight. 20, 20 in the very"
+      },
+      {
+       "draft": "eye-ball of darkness, i. e. in the midst of",
+       "reread": "eye-ball of darkness, i. e. in the midst of",
+       "status": "agreed",
+       "text": "eye-ball of darkness, i. e. in the midst of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1002,
+      "y": 2891,
+      "width": 885,
+      "height": 139
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r03-b03-885x139+1002+2891-x2.png",
+     "image_sha256": "fb4d16243bff66eef99a4da1368502d9f3c1721562c46f7ba255ac7e6749242e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "darkness; where in Keri is read בְּאֶשׁוּן ח׳",
+       "in the darkness of night."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba70b2fe-2586-44db-8e70-6b550946f28a",
+      "duration_api_ms": 14180,
+      "cost_usd_list": 0.06461375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2199,
+      "output_tokens": 388
+     },
+     "lines": [
+      {
+       "draft": "darkness ; where in Keri is read בֶּאֱשׁוּן ח׳",
+       "reread": "darkness; where in Keri is read בְּאֶשׁוּן ח׳",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b03",
+       "judgement": {
+        "text": "darkness; where in Keri is read בְּאֶשׁוּן ח׳",
+        "verdict": "b",
+        "note": "Under the bet are two vertical dots (shewa), and under the aleph a three-dot triangle (segol), not a hataf-segol cluster — so בְּאֶשׁוּן as in B, not בֶּאֱשׁוּן as in A. Shin dot and shureq dot are both printed; ח׳ abbreviation follows.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0b62115a-792f-428f-a1f4-bbfe827a257e",
+        "duration_api_ms": 19156,
+        "cost_usd_list": 0.0927965,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2138,
+        "output_tokens": 976
+       },
+       "text": "darkness; where in Keri is read בְּאֶשׁוּן ח׳"
+      },
+      {
+       "draft": "in the darkness of night.",
+       "reread": "in the darkness of night.",
+       "status": "agreed",
+       "text": "in the darkness of night."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "row": 4,
+   "bounds": {
+    "x": 1002,
+    "y": 3010,
+    "width": 885,
+    "height": 426
+   },
+   "draft_lines": [
+    "אִישַׁי Chald. for יִשַׁי Jesse, 1 Chr. 2,",
+    "13.",
+    "אִיתוֹן for אָתִיוֹן m. Ez. 40, 15 Keri,",
+    "an entrance, from r. אָתָה i. q. בּוֹא to"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r04-b00",
+     "bounds": {
+      "x": 1002,
+      "y": 3002,
+      "width": 885,
+      "height": 436
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0061/pass2/c1-r04-b00-885x436+1002+3002-x2.png",
+     "image_sha256": "97c0a968655860a668cba07badc6250acab82a6b1f71222caa8a319986a40eba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישַׁי Chald. for יִשַׁי Jesse, 1 Chr. 2,",
+       "13.",
+       "אִיתוֹן for אִתְיוֹן m. Ez. 40, 15 Keri,",
+       "an entrance, from r. אָתָה i. q. בּוֹא to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b9e4fa0a-a6f2-409a-9bf3-de7dc674c955",
+      "duration_api_ms": 14019,
+      "cost_usd_list": 0.10487375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 3607,
+      "output_tokens": 630
+     },
+     "lines": [
+      {
+       "draft": "אִישַׁי Chald. for יִשַׁי Jesse, 1 Chr. 2,",
+       "reread": "אִישַׁי Chald. for יִשַׁי Jesse, 1 Chr. 2,",
+       "status": "agreed",
+       "text": "אִישַׁי Chald. for יִשַׁי Jesse, 1 Chr. 2,"
+      },
+      {
+       "draft": "13.",
+       "reread": "13.",
+       "status": "agreed",
+       "text": "13."
+      },
+      {
+       "draft": "אִיתוֹן for אָתִיוֹן m. Ez. 40, 15 Keri,",
+       "reread": "אִיתוֹן for אִתְיוֹן m. Ez. 40, 15 Keri,",
+       "status": "adjudicated",
+       "band_id": "c1-r04-b00",
+       "judgement": {
+        "text": "אִיתוֹן for אִתְיוֹן m. Ez. 40, 15 Keri,",
+        "verdict": "b",
+        "note": "Second word is printed אִתְיוֹן: hiriq under aleph and sheva under tav (yod unpointed), not kamets + hiriq as in A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3c001676-7b23-47b7-aa53-fe116bdd1e1c",
+        "duration_api_ms": 14843,
+        "cost_usd_list": 0.10459950000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3598,
+        "cache_creation_input_tokens": 3558,
+        "output_tokens": 644
+       },
+       "text": "אִיתוֹן for אִתְיוֹן m. Ez. 40, 15 Keri,"
+      },
+      {
+       "draft": "an entrance, from r. אָתָה i. q. בּוֹא to",
+       "reread": "an entrance, from r. אָתָה i. q. בּוֹא to",
+       "status": "agreed",
+       "text": "an entrance, from r. אָתָה i. q. בּוֹא to"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אִישׁ 45 אִית",
+   "status": "adjudicated",
+   "draft": "אישׁ 45 אית",
+   "reread": "אִישׁ 45 אִית",
+   "verdict": "b",
+   "note": "A hireq dot is visibly printed under the aleph of both running-header words (אִישׁ and אִית); Reading A drops these vowel points.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "man of God, i. q. servant and minister",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of God; spoken of angels Judg. 13, 6. 8;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of prophets 1 Sam. 2, 27; of Moses",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deut. 33, 1; of David 2 Chr. 8, 14. k)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "With genit. of an attribute, quality, vir-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tue, vice, etc. it denotes one possess-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ing that attribute or quality; and in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "this way the Hebrews form a peri-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "phrasis for an adjective; e. g. אִישׁ תֹּאַר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a man of form, i. e. handsome; אִישׁ דָּמִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a man of blood, bloody; אַנְשֵׁי לֵבָב intel-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ligent, see in לֵב no. 1. e; אַנְשֵׁי הַשֵּׁם men",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of name, famous, Gen. 6, 4; comp. אִישׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "הָאֲדָמָה a husbandman, Gen. 9, 20. 1)",
+   "status": "adjudicated",
+   "draft": "הָאֲדָמָה a husbandman, Gen. 9, 20.   l)",
+   "reread": "הָאֲדָמָה a husbandman, Gen. 9, 20.   1)",
+   "verdict": "b",
+   "note": "The final glyph before \")\" is the numeral 1 (angled top flag, foot serif), beginning the sense number \"1) Collect. for men…\" continued on the next line; not a lowercase l. Hebrew word and the rest are identical in both readings and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Collect. for men, i. e. soldiers, troops, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "21, 9. Comp. אָדָם Is. 22, 6. m) אִישׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "marks also a man of rank, a great man,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "noble, as opp. to אָדָם a man of low con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "dition; see in אָדָם no. 1. b. n) As joined",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "with numerals, we find after numerals",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "below ten אֲנָשִׁים, as שְׁלֹשָׁה אֲנָשִׁים Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "18, 2; between ten and twenty some-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "times אִישׁ, Num. 1, 44; and above twen-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ty always אִישׁ, 1 Sam. 14, 14. 22, 2. 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "al. sæp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. With אָח or רֵעַ, one—another; see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אָח and רֵעַ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. Put for any man, i. e. one, some one,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "any one, Gen. 13, 16. Ex. 16, 29. Cant.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "8, 7. So Syr. ܐ̱ܢܳܫ for τὶς, e. g. ܝܗܘܕܳܝܐ",
+   "status": "adjudicated",
+   "draft": "8, 7. So Syr. ܐ݇ܢܳܫ for τὶς, e. g. ܝܗܘܕܝܐ",
+   "reread": "8, 7.  So Syr. ܐ̱ܢܳܫ for τὶς, e. g. ܝܗܘܕܳܝܐ",
+   "verdict": "b",
+   "note": "The final Syriac word is printed with a zqapha mark above the dalath (ܝܗܘܕܳܝܐ, Yehūdāyā), which Reading A omits; the line under the alaph of ܐ̱ܢܳܫ is a flat horizontal linea occultans, better matched by B's combining macron below than A's oblique line.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ܐܢܫ a certain Jew. Plur. אֲנָשִׁים men,",
+   "status": "adjudicated",
+   "draft": "ܐ݇ܢܳܫ a certain Jew. Plur. אֲנָשִׁים men,",
+   "reread": "ܐ̱ܢܳܫ a certain Jew.  Plur. אֲנָשִׁים men,",
+   "verdict": "neither",
+   "note": "The Syriac ܐܢܫ at the start of line 3 is printed without any points: no zqapha over the nun and no linea occultans under the alaph (contrast line 2, where both are printed). Both readings add vowel/occultans marks that are not on the page. The Hebrew אֲנָשִׁים and the rest of the line agree with both readings; single space after \"Jew.\".",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "certain men, like Syr. ܐ̱ܢܳܫ̈ܝܢ, 1 K. 20,",
+   "status": "adjudicated",
+   "draft": "certain men, like Syr. ܐ݇ܢܳܫܺܝ̈ܢ, 1 K. 20,",
+   "reread": "certain men, like Syr. ܐ̱ܢܳܫ̈ܝܢ, 1 K. 20,",
+   "verdict": "b",
+   "note": "The printed Syriac shows only three marks: a line below the alaph (linea occultans), a zqapha above the nun, and a two-stroke seyame above the shin/yod region. There is no hbasa dot under the shin as Reading A has, and A's U+0747 places the alaph line above rather than below; Reading B matches the printed points.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "17. Jer. 37, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4. each, every one. 1 K. 20, 20 וַיַּכּוּ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אִישׁ אִישׁוֹ and they slew every one his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "man. אִישׁ וְאִישׁ this and that man, each",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and every one, Ps. 87, 5. Esth. 1, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Once like כֹּל prefixed to another subst.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gen. 15, 10 וַיִּתֵּן אִישׁ־בִּתְרוֹ לִקְרַאת רֵעֵהוּ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and laid each part of each (animal) one",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "over against the other, where אִישׁ־בִּתְרוֹ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "is i. q. כָּל־בִּתְרוֹ, but the sacred writer",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "puts אִישׁ for כֹּל in order to correspond",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with the following רֵעֵהוּ. So too אִישׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָחִיו Gen. 9, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5. Impers. like Germ. man, Fr. on,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Engl. one, plur. men, e. g. one says, men",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "say, etc. 1 Sam. 9, 9 לְפָנִים בְּיִשְׂרָאֵל כֹּה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אָמַר אִישׁ formerly in Israel men said",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "thus, i. q. it was said.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "6. בְּנֵי אִישׁ sons of men, as a peri-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "phrastic plur. for men simply, Ps. 4, 3;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "like בְּנֵי אָדָם, see אָדָם no. 5.—Sometimes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "emphat. for the noble, the high, opp. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "בְּנֵי אָדָם, Ps. 49, 3. Prov. 8, 4; see no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "m, and אָדָם no. 1. b.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Note. As to the etymology, we hold",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אִישׁ to be a primitive word; yet soft-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ened from the harsher form אֱנַשׁ (אֱנָשׁ)",
+   "status": "adjudicated",
+   "draft": "ened from the harsher form אֱנָשׁ (אָנַשׁ)",
+   "reread": "ened from the harsher form אֱנַשׁ (אֱנָשׁ)",
+   "verdict": "b",
+   "note": "Both alephs show ḥaṭef segol; first word has pataḥ under nun, the parenthesised word has qameṣ — matching B. A reverses the vowels and gives the parenthesised aleph a plain qameṣ/ḥaṭef pataḥ that is not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "q. v. whence also אִשָּׁה for אִנְשָׁה, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "plur. אֲנָשִׁים. In like manner the Arabic",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "has إِنْسَانٌ and إِيْسَانٌ.",
+   "status": "adjudicated",
+   "draft": "has إِنْسَانٌ and إِيسَانٌ .",
+   "reread": "has إِنْسَانٌ and إِيْسَانٌ.",
+   "verdict": "b",
+   "note": "The second Arabic word prints a sukūn (small circle) above the yā — إِيْسَانٌ as in B; A omits it. The period also follows directly with no preceding space, as in B.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בֹּשֶׁת,",
+   "status": "adjudicated",
+   "draft": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בּשֶׁת,",
+   "reread": "Deriv. אִישׁוֹן, pr. n. אִישְׁהוֹד, אִישׁ־בֹּשֶׁת,",
+   "verdict": "b",
+   "note": "In בֹּשֶׁת a holem dot is printed above the bet (distinct from the shin dot to its left), so the vowel is present; A omits it. All other items are identical in both readings and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אִישׁ denom. verb, only in Hithpal.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "הִתְאוֹשֵׁשׁ to show oneself a man, ἀνδρί-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ζεσθαι; Is. 46, 8 הִתְאֹשָׁשׁוּ show your-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "selves men, be men, i. e. be wise, cast",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "away the childish trifles of idolaters.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Chald. הִתְאַשֵּׁשׁ and הִתְאֹשֵׁשׁ id.",
+   "status": "adjudicated",
+   "draft": "Chald. הִתְאַשֵּׁשׁ and הִתְאֹשֵׁשׁ id.",
+   "reread": "Chald. הִתְאֹשַׁשׁ and הִתְאַשַּׁשׁ id.",
+   "verdict": "a",
+   "note": "The first printed word has patach under aleph and dagesh + tsere (two dots) under the first shin; the second word has holem above aleph and tsere under the first shin. Reading B swaps the word order and prints patach where the image clearly shows two-dot tsere.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אִישׁ־בֹּשֶׁת (man of shame, i. e. sham-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ing himself, perh. bashful,) pr. n. Ishbo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sheth, the son of Saul, who for two years",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "after the death of his father and brothers",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "reigned over eleven tribes in opposition",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "to David. 2 Sam. c. 2–4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אִישְׁהוֹד (man of glory) Ishhod, pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "m. 1 Chr. 7, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אִישׁוֹן m. (dimin. from אִישׁ) 1. a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "little man, manikin, homunculus, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "with עַיִן the little man of the eye, i. e. the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "pupil, apple of the eye, in which, as in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a mirror, a person sees his own image",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "reflected in miniature. Deut. 32, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Prov. 7, 2. This pleasing image is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "found in several languages; e. g. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "إِنْسَانُ ٱلْعَيْنِ homunculus oculi, Gr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "κόρη, κοράσιον, κορασίδιον, Lat. pupa,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "pupula, pupilla, Pers. مردك; see more",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in Thesaur. p. 86.—More fully Ps. 17, 8",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אִישׁוֹן בַּת עַיִן i. e. the pupil, daughter of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the eye; see in בַּת no. 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. Metaph. the middle, the midst of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "any thing, like Arab. نُؤْنُؤ apple of the",
+   "status": "adjudicated",
+   "draft": "any thing, like Arab. نُونُو apple of the",
+   "reread": "any thing, like Arab. نُؤْنُؤ apple of the",
+   "verdict": "b",
+   "note": "The superscript cluster over the Arabic word shows hamza signs (ء) over both wāws with ḍammas and a sukūn between, not plain wāws with ḍammas — nuʾnuʾ \"pupil\", as in Gesenius' Thesaurus. Reading A drops the hamzas.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "eye, for the midst, the summit.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Prov. 7, 9 in the eye-ball (pupil) of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "night, i. e. at midnight. 20, 20 in the very",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "eye-ball of darkness, i. e. in the midst of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "darkness; where in Keri is read בְּאֶשׁוּן ח׳",
+   "status": "adjudicated",
+   "draft": "darkness ; where in Keri is read בֶּאֱשׁוּן ח׳",
+   "reread": "darkness; where in Keri is read בְּאֶשׁוּן ח׳",
+   "verdict": "b",
+   "note": "Under the bet are two vertical dots (shewa), and under the aleph a three-dot triangle (segol), not a hataf-segol cluster — so בְּאֶשׁוּן as in B, not בֶּאֱשׁוּן as in A. Shin dot and shureq dot are both printed; ח׳ abbreviation follows.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in the darkness of night.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "אִישַׁי Chald. for יִשַׁי Jesse, 1 Chr. 2,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "אִיתוֹן for אִתְיוֹן m. Ez. 40, 15 Keri,",
+   "status": "adjudicated",
+   "draft": "אִיתוֹן for אָתִיוֹן m. Ez. 40, 15 Keri,",
+   "reread": "אִיתוֹן for אִתְיוֹן m. Ez. 40, 15 Keri,",
+   "verdict": "b",
+   "note": "Second word is printed אִתְיוֹן: hiriq under aleph and sheva under tav (yod unpointed), not kamets + hiriq as in A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "an entrance, from r. אָתָה i. q. בּוֹא to",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 93,
+  "adjudicated": 12,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 5
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.4188
+}

@@ -1,0 +1,2751 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 60,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0060.png",
+ "raster_sha256": "c601360fd80607b98029da547aff2f71610432f8537acb895e9c2da2daa4c49e",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0060.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:44:55+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 138,
+    "y": 123,
+    "width": 1769,
+    "height": 92
+   },
+   "draft_lines": [
+    "אין 44 איש"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 138,
+      "y": 121,
+      "width": 1769,
+      "height": 96
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/header-b00-1769x96+138+121-x2.png",
+     "image_sha256": "7992545e31a22c31f1aa4d8a5d5b3d9570e34eee5fd04670a9bfb095ff4e11e4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אין 44 אישׁ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "37b291b2-5161-4341-90a4-0c8d3fd72ec2",
+      "duration_api_ms": 5857,
+      "cost_usd_list": 0.049572500000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 220
+     },
+     "lines": [
+      {
+       "draft": "אין 44 איש",
+       "reread": "אין 44 אישׁ",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אין 44 איש",
+        "verdict": "a",
+        "note": "The shin in the right‑hand header word איש is printed without a shin dot (header is unpointed); Reading B's שׁ adds a dot not on the page. Order and letters otherwise identical.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b5569e6f-5475-4d11-8dc4-c4b70be656ec",
+        "duration_api_ms": 16422,
+        "cost_usd_list": 0.0656655,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3542,
+        "cache_creation_input_tokens": 1782,
+        "output_tokens": 582
+       },
+       "text": "אין 44 איש"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 138,
+    "y": 167,
+    "width": 878,
+    "height": 648
+   },
+   "draft_lines": [
+    "אַיִן, but intensive, none, not one ; see on",
+    "this idiom in מִן 1. b. ב. Jer. 10, 6. 7. 30,",
+    "7. So מֵאֵין יוֹשֵׁב i. q. אֵין יוֹשֵׁב, Is. 5, 9.",
+    "6, 11. 50, 2.",
+    "Note. The absol. form אַיִן stands",
+    "only at the end of a clause ; while",
+    "the constr. אֵין everywhere depends on",
+    "something following; e. g. Num. 20, 5",
+    "אֵין מַיִם there is no water, for which",
+    "might also be said מַיִם אַיִן."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 138,
+      "y": 159,
+      "width": 878,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r00-b00-878x258+138+159-x2.png",
+     "image_sha256": "244e4cdc8ceb43f9d8471046915f06d0b8b73c29d040228d074e935f3a250420",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַיִן, but intensive, none, not one ; see on",
+       "this idiom in מִן 1. b. ב. Jer. 10, 6. 7. 30,",
+       "7. So מֵאֵין יוֹשֵׁב i. q. אֵין יוֹשֵׁב, Is. 5, 9."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "38f17844-8310-4059-99f5-bce705c40340",
+      "duration_api_ms": 27369,
+      "cost_usd_list": 0.08367325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 548
+     },
+     "lines": [
+      {
+       "draft": "אַיִן, but intensive, none, not one ; see on",
+       "reread": "אַיִן, but intensive, none, not one ; see on",
+       "status": "agreed",
+       "text": "אַיִן, but intensive, none, not one; see on"
+      },
+      {
+       "draft": "this idiom in מִן 1. b. ב. Jer. 10, 6. 7. 30,",
+       "reread": "this idiom in מִן 1. b. ב. Jer. 10, 6. 7. 30,",
+       "status": "agreed",
+       "text": "this idiom in מִן 1. b. ב. Jer. 10, 6. 7. 30,"
+      },
+      {
+       "draft": "7. So מֵאֵין יוֹשֵׁב i. q. אֵין יוֹשֵׁב, Is. 5, 9.",
+       "reread": "7. So מֵאֵין יוֹשֵׁב i. q. אֵין יוֹשֵׁב, Is. 5, 9.",
+       "status": "agreed",
+       "text": "7. So מֵאֵין יוֹשֵׁב i. q. אֵין יוֹשֵׁב, Is. 5, 9."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 138,
+      "y": 401,
+      "width": 878,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r00-b01-878x233+138+401-x2.png",
+     "image_sha256": "2ea32b620168a406a07c35a74acaceeeff54508b54a54c3162db4900d54d3047",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "6, 11. 50, 2.",
+       "Note. The absol. form אַיִן stands",
+       "only at the end of a clause ; while",
+       "the constr. אֵין everywhere depends on"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "62052d5e-25b9-4a97-9973-86f8a3de830e",
+      "duration_api_ms": 10626,
+      "cost_usd_list": 0.06550325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "6, 11. 50, 2.",
+       "reread": "6, 11. 50, 2.",
+       "status": "agreed",
+       "text": "6, 11. 50, 2."
+      },
+      {
+       "draft": "Note. The absol. form אַיִן stands",
+       "reread": "Note. The absol. form אַיִן stands",
+       "status": "agreed",
+       "text": "Note. The absol. form אַיִן stands"
+      },
+      {
+       "draft": "only at the end of a clause ; while",
+       "reread": "only at the end of a clause ; while",
+       "status": "agreed",
+       "text": "only at the end of a clause; while"
+      },
+      {
+       "draft": "the constr. אֵין everywhere depends on",
+       "reread": "the constr. אֵין everywhere depends on",
+       "status": "agreed",
+       "text": "the constr. אֵין everywhere depends on"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 138,
+      "y": 618,
+      "width": 878,
+      "height": 205
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r00-b02-878x205+138+618-x2.png",
+     "image_sha256": "71a708d1e59e999258c4e7751f5ff42fbbdbba954ebef583d72d569733e33597",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "something following; e. g. Num. 20, 5",
+       "מַיִם אַיִן there is no water, for which",
+       "might also be said אֵין מַיִם."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f496154c-edb5-4cc5-91c8-8c36b531b63c",
+      "duration_api_ms": 11339,
+      "cost_usd_list": 0.07393325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2500,
+      "output_tokens": 454
+     },
+     "lines": [
+      {
+       "draft": "something following; e. g. Num. 20, 5",
+       "reread": "something following; e. g. Num. 20, 5",
+       "status": "agreed",
+       "text": "something following; e. g. Num. 20, 5"
+      },
+      {
+       "draft": "אֵין מַיִם there is no water, for which",
+       "reread": "מַיִם אַיִן there is no water, for which",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "מַיִם אַיִן there is no water, for which",
+        "verdict": "b",
+        "note": "Printed order (right-to-left) is מַיִם then אַיִן (the pausal form from Num. 20:5, with patah under aleph and hiriq under yod), not אֵין מַיִם — that tsere form appears only on line 3.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "809649bb-0a91-4663-a26c-7866837a9ab6",
+        "duration_api_ms": 9835,
+        "cost_usd_list": 0.07740025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3561,
+        "cache_creation_input_tokens": 2416,
+        "output_tokens": 557
+       },
+       "text": "מַיִם אַיִן there is no water, for which"
+      },
+      {
+       "draft": "might also be said מַיִם אַיִן.",
+       "reread": "might also be said אֵין מַיִם.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "might also be said אֵין מַיִם.",
+        "verdict": "b",
+        "note": "The printed order is אֵין first (rightmost), then מַיִם, i.e. the construct form אֵין (tsere) placed before the noun — the point of the contrast with line 2's מַיִם אַיִן. Reading A inverts the order and gives patach instead of tsere.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c07e368b-b85d-40d6-927c-43b8533e157b",
+        "duration_api_ms": 13995,
+        "cost_usd_list": 0.07626925000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3557,
+        "cache_creation_input_tokens": 2412,
+        "output_tokens": 536
+       },
+       "text": "might also be said אֵין מַיִם."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 138,
+    "y": 803,
+    "width": 878,
+    "height": 745
+   },
+   "draft_lines": [
+    "II. אַיִן adv. of interrog. where? Arab.",
+    "أَيْنَ; found only with מִן prefixed, מֵאַיִן",
+    "whence? Gen. 29, 4. Nah. 3, 7. al.—Ori-",
+    "ginally this was the same with the",
+    "negat. אַיִן I, and passed over into the",
+    "interrogative sense; hence by apoc. אֵי,",
+    "אַיֵּ, אִי III. See in אֵי no. 1. Heb.",
+    "Gram. § 150. 1. fin.",
+    "אֵין 1 Sam. 21, 9, i. q. אַיִן, but inter-",
+    "rogatively for הֲאֵין.",
+    "אִיעֶזֶר see אֲבִיעֶזֶר."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 138,
+      "y": 795,
+      "width": 878,
+      "height": 350
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r01-b00-878x350+138+795-x2.png",
+     "image_sha256": "10cd94636809b8bfaee30cc6ae24d1c66fa81a44998bdec0990cfa118c34f706",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "II. אַיִן adv. of interrog. where? Arab.",
+       "أَيْنَ; found only with מִן prefixed, מֵאַיִן",
+       "whence? Gen. 29, 4. Nah. 3, 7. al.—Ori-",
+       "ginally this was the same with the",
+       "negat. אַיִן I, and passed over into the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9e7f9721-16b9-44e7-8f44-387e34d0b39b",
+      "duration_api_ms": 11522,
+      "cost_usd_list": 0.08628325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3130,
+      "output_tokens": 449
+     },
+     "lines": [
+      {
+       "draft": "II. אַיִן adv. of interrog. where? Arab.",
+       "reread": "II. אַיִן adv. of interrog. where? Arab.",
+       "status": "agreed",
+       "text": "II. אַיִן adv. of interrog. where? Arab."
+      },
+      {
+       "draft": "أَيْنَ; found only with מִן prefixed, מֵאַיִן",
+       "reread": "أَيْنَ; found only with מִן prefixed, מֵאַיִן",
+       "status": "agreed",
+       "text": "أَيْنَ; found only with מִן prefixed, מֵאַיִן"
+      },
+      {
+       "draft": "whence? Gen. 29, 4. Nah. 3, 7. al.—Ori-",
+       "reread": "whence? Gen. 29, 4. Nah. 3, 7. al.—Ori-",
+       "status": "agreed",
+       "text": "whence? Gen. 29, 4. Nah. 3, 7. al.—Ori-"
+      },
+      {
+       "draft": "ginally this was the same with the",
+       "reread": "ginally this was the same with the",
+       "status": "agreed",
+       "text": "ginally this was the same with the"
+      },
+      {
+       "draft": "negat. אַיִן I, and passed over into the",
+       "reread": "negat. אַיִן I, and passed over into the",
+       "status": "agreed",
+       "text": "negat. אַיִן I, and passed over into the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 138,
+      "y": 1129,
+      "width": 878,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r01-b01-878x264+138+1129-x2.png",
+     "image_sha256": "ed0de0307221a2591b4cf9d662428e1ab7198fe99d34a268947165ada7bfc617",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "interrogative sense; hence by apoc. אַי,",
+       "אֵי, אִי III. See in אַי no. 1. Heb.",
+       "Gram. § 150. 1. fin.",
+       "אִין 1 Sam. 21, 9, i. q. אֵין, but inter-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "48cb4cde-70c4-4e80-8f5d-8328554827f8",
+      "duration_api_ms": 11892,
+      "cost_usd_list": 0.07951349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 464
+     },
+     "lines": [
+      {
+       "draft": "interrogative sense; hence by apoc. אֵי,",
+       "reread": "interrogative sense; hence by apoc. אַי,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "interrogative sense; hence by apoc. אַי,",
+        "verdict": "b",
+        "note": "The vowel under the final aleph on line 1 is a horizontal bar (patach), not two dots (tsere); the tsere form אֵי is the first item of line 2, so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0661bede-1797-4593-904c-458ce8abb9d1",
+        "duration_api_ms": 17229,
+        "cost_usd_list": 0.0930115,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2674,
+        "output_tokens": 766
+       },
+       "text": "interrogative sense; hence by apoc. אַי,"
+      },
+      {
+       "draft": "אַיֵּ, אִי III. See in אֵי no. 1. Heb.",
+       "reread": "אֵי, אִי III. See in אַי no. 1. Heb.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "אֵי, אִי III. See in אַי no. 1. Heb.",
+        "verdict": "b",
+        "note": "First word has tsere (two dots) under aleph and no dagesh in the yod; the word after \"See in\" has patach (אַי), matching the אַי at the end of line 1 — Reading A's dagesh and tsere there are not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2fb96562-d082-47d0-a952-f2f9fb764aed",
+        "duration_api_ms": 18579,
+        "cost_usd_list": 0.09016525,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3581,
+        "cache_creation_input_tokens": 2689,
+        "output_tokens": 703
+       },
+       "text": "אֵי, אִי III. See in אַי no. 1. Heb."
+      },
+      {
+       "draft": "Gram. § 150. 1. fin.",
+       "reread": "Gram. § 150. 1. fin.",
+       "status": "agreed",
+       "text": "Gram. § 150. 1. fin."
+      },
+      {
+       "draft": "אֵין 1 Sam. 21, 9, i. q. אַיִן, but inter-",
+       "reread": "אִין 1 Sam. 21, 9, i. q. אֵין, but inter-",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "אִין 1 Sam. 21, 9, i. q. אַיִן, but inter-",
+        "verdict": "neither",
+        "note": "Headword has a single hiriq dot under the aleph (אִין, as in B), but the second word is printed with patah under aleph and hiriq under yod (אַיִן, as in A) — each reading got one word right.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "069f9ad7-5477-4cfb-bc18-539a9f5f67c0",
+        "duration_api_ms": 17851,
+        "cost_usd_list": 0.08537725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3589,
+        "cache_creation_input_tokens": 2707,
+        "output_tokens": 600
+       },
+       "text": "אִין 1 Sam. 21, 9, i. q. אַיִן, but inter-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 138,
+      "y": 1377,
+      "width": 878,
+      "height": 158
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r01-b02-878x158+138+1377-x2.png",
+     "image_sha256": "e1795c934f5e4ec43ba85dfc68c6b9099c31c7ad920713a144062941a766a648",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "rogatively for הֲאֵין.",
+       "אִיעֶזֶר see אֲבִיעֶזֶר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8badc133-1187-4579-9cf7-6b0a2c03cad5",
+      "duration_api_ms": 10445,
+      "cost_usd_list": 0.0680435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2313,
+      "output_tokens": 411
+     },
+     "lines": [
+      {
+       "draft": "rogatively for הֲאֵין.",
+       "reread": "rogatively for הֲאֵין.",
+       "status": "agreed",
+       "text": "rogatively for הֲאֵין."
+      },
+      {
+       "draft": "אִיעֶזֶר see אֲבִיעֶזֶר.",
+       "reread": "אִיעֶזֶר see אֲבִיעֶזֶר.",
+       "status": "agreed",
+       "text": "אִיעֶזֶר see אֲבִיעֶזֶר."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 138,
+    "y": 1536,
+    "width": 878,
+    "height": 743
+   },
+   "draft_lines": [
+    "אֵיפָה, rarely אֵפָה, f. an ephah, a",
+    "measure of grain, containing three seahs,",
+    "סְאָה, or ten omers, עֹמֶר, Ex. 16, 36.",
+    "According to Josephus, Ant. 8. 2. 9, the",
+    "ephah contained 72 sextarii, equal to the",
+    "Attic (liquid) metretes, or 1993.95 Paris",
+    "cubic inches, about 1 ⅑ bush. English ;",
+    "see Boeckh Metrolog. Untersuch. pp.",
+    "259, 278. This is also confirmed by",
+    "other testimony ; so that there is doubt-",
+    "less an error in another passage of Jose-",
+    "phus, Ant. 15. 9. 2, where the ephah",
+    "seems to be equal to 96 sextarii, or the"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 138,
+      "y": 1549,
+      "width": 878,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r02-b00-878x233+138+1549-x2.png",
+     "image_sha256": "18c88204eb586903661a4e28bb7d0fc8e4d2ea5204fe645a444d9012cf9225f3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵיפָה, rarely אֵפָה, f. an ephah, a",
+       "measure of grain, containing three seahs,",
+       "סְאָה, or ten omers, עֹמֶר, Ex. 16, 36.",
+       "According to Josephus, Ant. 8. 2. 9, the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5bdaf9f1-4cd9-419b-a4ce-c73e2b7ae012",
+      "duration_api_ms": 9629,
+      "cost_usd_list": 0.06749349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "אֵיפָה, rarely אֵפָה, f. an ephah, a",
+       "reread": "אֵיפָה, rarely אֵפָה, f. an ephah, a",
+       "status": "agreed",
+       "text": "אֵיפָה, rarely אֵפָה, f. an ephah, a"
+      },
+      {
+       "draft": "measure of grain, containing three seahs,",
+       "reread": "measure of grain, containing three seahs,",
+       "status": "agreed",
+       "text": "measure of grain, containing three seahs,"
+      },
+      {
+       "draft": "סְאָה, or ten omers, עֹמֶר, Ex. 16, 36.",
+       "reread": "סְאָה, or ten omers, עֹמֶר, Ex. 16, 36.",
+       "status": "agreed",
+       "text": "סְאָה, or ten omers, עֹמֶר, Ex. 16, 36."
+      },
+      {
+       "draft": "According to Josephus, Ant. 8. 2. 9, the",
+       "reread": "According to Josephus, Ant. 8. 2. 9, the",
+       "status": "agreed",
+       "text": "According to Josephus, Ant. 8. 2. 9, the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 138,
+      "y": 1766,
+      "width": 878,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r02-b01-878x237+138+1766-x2.png",
+     "image_sha256": "50f9710672eb9684ae340420e42f438788cde38e6753ad855da1407b009b90b6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ephah contained 72 sextarii, equal to the",
+       "Attic (liquid) metretes, or 1993.95 Paris",
+       "cubic inches, about 1 ⅑ bush. English ;",
+       "see Boeckh Metrolog. Untersuch. pp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ec829adc-f37e-4198-89a9-ece7bc01b105",
+      "duration_api_ms": 8375,
+      "cost_usd_list": 0.06699349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "ephah contained 72 sextarii, equal to the",
+       "reread": "ephah contained 72 sextarii, equal to the",
+       "status": "agreed",
+       "text": "ephah contained 72 sextarii, equal to the"
+      },
+      {
+       "draft": "Attic (liquid) metretes, or 1993.95 Paris",
+       "reread": "Attic (liquid) metretes, or 1993.95 Paris",
+       "status": "agreed",
+       "text": "Attic (liquid) metretes, or 1993.95 Paris"
+      },
+      {
+       "draft": "cubic inches, about 1 ⅑ bush. English ;",
+       "reread": "cubic inches, about 1 ⅑ bush. English ;",
+       "status": "agreed",
+       "text": "cubic inches, about 1 ⅑ bush. English;"
+      },
+      {
+       "draft": "see Boeckh Metrolog. Untersuch. pp.",
+       "reread": "see Boeckh Metrolog. Untersuch. pp.",
+       "status": "agreed",
+       "text": "see Boeckh Metrolog. Untersuch. pp."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 138,
+      "y": 1987,
+      "width": 878,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r02-b02-878x236+138+1987-x2.png",
+     "image_sha256": "a3d2565cb217c84223640e17994ae5dd11fbc15e897d5743c866f41fb31cec09",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "259, 278. This is also confirmed by",
+       "other testimony ; so that there is doubt-",
+       "less an error in another passage of Jose-",
+       "phus, Ant. 15. 9. 2, where the ephah"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "50644203-b696-4b54-a98d-dae35a1efa69",
+      "duration_api_ms": 9935,
+      "cost_usd_list": 0.0659935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 244
+     },
+     "lines": [
+      {
+       "draft": "259, 278. This is also confirmed by",
+       "reread": "259, 278. This is also confirmed by",
+       "status": "agreed",
+       "text": "259, 278. This is also confirmed by"
+      },
+      {
+       "draft": "other testimony ; so that there is doubt-",
+       "reread": "other testimony ; so that there is doubt-",
+       "status": "agreed",
+       "text": "other testimony; so that there is doubt-"
+      },
+      {
+       "draft": "less an error in another passage of Jose-",
+       "reread": "less an error in another passage of Jose-",
+       "status": "agreed",
+       "text": "less an error in another passage of Jose-"
+      },
+      {
+       "draft": "phus, Ant. 15. 9. 2, where the ephah",
+       "reread": "phus, Ant. 15. 9. 2, where the ephah",
+       "status": "agreed",
+       "text": "phus, Ant. 15. 9. 2, where the ephah"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 138,
+      "y": 2207,
+      "width": 878,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r02-b03-878x69+138+2207-x2.png",
+     "image_sha256": "c9567b7524a66bac75608e230a6cdffe881455f6935b01510609e59ff36b16f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "seems to be equal to 96 sextarii, or the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5eb7a8c9-6971-498c-ace4-f1fc6abbeaff",
+      "duration_api_ms": 7484,
+      "cost_usd_list": 0.048423499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 195
+     },
+     "lines": [
+      {
+       "draft": "seems to be equal to 96 sextarii, or the",
+       "reread": "seems to be equal to 96 sextarii, or the",
+       "status": "agreed",
+       "text": "seems to be equal to 96 sextarii, or the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 138,
+    "y": 2267,
+    "width": 878,
+    "height": 767
+   },
+   "draft_lines": [
+    "Attic medimnus. 1 Sam. 17, 17. Zech.",
+    "5, 6 sq. Judg. 6, 19. Ruth 2, 17. Also",
+    "אֵיפָה וְאֵיפָה a double ephah, one just,",
+    "the other false, Prov. 20, 10. Deut. 25,",
+    "14. Am. 8, 5.—The origin of this word",
+    "is to be sought in the Egyptian lan-",
+    "guage; where the Heb. אֵיפָה corre-",
+    "sponds to ⲱⲓⲡⲓ measure, spec. of corn,",
+    "modius, from r. ⲱⲡ, ⲏⲡ, to number;",
+    "whence Sept. οἰφί, Arab. وَيبه, an Egyp-",
+    "tian measure. See Rödiger in Allg.",
+    "Encyclop. art. Epha. Thes. Ling. Heb.",
+    "in Append."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 138,
+      "y": 2259,
+      "width": 878,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r03-b00-878x237+138+2259-x2.png",
+     "image_sha256": "dbe9f0f484e8c1a0da4bd915478d9a615a960e85856af61d1acf6ad3d29f7407",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Attic medimnus. 1 Sam. 17, 17. Zech.",
+       "5, 6 sq. Judg. 6, 19. Ruth 2, 17. Also",
+       "אֵיפָה וְאֵיפָה a double ephah, one just,",
+       "the other false, Prov. 20, 10. Deut. 25,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "14f14b79-2bf0-4836-a8fa-54be45a2dc70",
+      "duration_api_ms": 7136,
+      "cost_usd_list": 0.0720935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 366
+     },
+     "lines": [
+      {
+       "draft": "Attic medimnus. 1 Sam. 17, 17. Zech.",
+       "reread": "Attic medimnus. 1 Sam. 17, 17. Zech.",
+       "status": "agreed",
+       "text": "Attic medimnus. 1 Sam. 17, 17. Zech."
+      },
+      {
+       "draft": "5, 6 sq. Judg. 6, 19. Ruth 2, 17. Also",
+       "reread": "5, 6 sq. Judg. 6, 19. Ruth 2, 17. Also",
+       "status": "agreed",
+       "text": "5, 6 sq. Judg. 6, 19. Ruth 2, 17. Also"
+      },
+      {
+       "draft": "אֵיפָה וְאֵיפָה a double ephah, one just,",
+       "reread": "אֵיפָה וְאֵיפָה a double ephah, one just,",
+       "status": "agreed",
+       "text": "אֵיפָה וְאֵיפָה a double ephah, one just,"
+      },
+      {
+       "draft": "the other false, Prov. 20, 10. Deut. 25,",
+       "reread": "the other false, Prov. 20, 10. Deut. 25,",
+       "status": "agreed",
+       "text": "the other false, Prov. 20, 10. Deut. 25,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 138,
+      "y": 2480,
+      "width": 878,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r03-b01-878x247+138+2480-x2.png",
+     "image_sha256": "b01531e156c9262ef186337f84362b042c76736d74d1b140fca75f376df88001",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "14. Am. 8, 5.—The origin of this word",
+       "is to be sought in the Egyptian lan-",
+       "guage ; where the Heb. אֵיפָה corre-",
+       "sponds to ⲱⲓⲡⲓ measure, spec. of corn,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a70df763-3db7-45f6-9253-97f0ec36004e",
+      "duration_api_ms": 8815,
+      "cost_usd_list": 0.0800035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 499
+     },
+     "lines": [
+      {
+       "draft": "14. Am. 8, 5.—The origin of this word",
+       "reread": "14. Am. 8, 5.—The origin of this word",
+       "status": "agreed",
+       "text": "14. Am. 8, 5.—The origin of this word"
+      },
+      {
+       "draft": "is to be sought in the Egyptian lan-",
+       "reread": "is to be sought in the Egyptian lan-",
+       "status": "agreed",
+       "text": "is to be sought in the Egyptian lan-"
+      },
+      {
+       "draft": "guage; where the Heb. אֵיפָה corre-",
+       "reread": "guage ; where the Heb. אֵיפָה corre-",
+       "status": "agreed",
+       "text": "guage; where the Heb. אֵיפָה corre-"
+      },
+      {
+       "draft": "sponds to ⲱⲓⲡⲓ measure, spec. of corn,",
+       "reread": "sponds to ⲱⲓⲡⲓ measure, spec. of corn,",
+       "status": "agreed",
+       "text": "sponds to ⲱⲓⲡⲓ measure, spec. of corn,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 138,
+      "y": 2711,
+      "width": 878,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r03-b02-878x264+138+2711-x2.png",
+     "image_sha256": "f1677499f48c4b57d824ad4a2f74844e9a425f5121c3726a771db87cec52b18c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "modius, from r. ⲱⲡ, ⲏⲡ, to number ;",
+       "whence Sept. οἰφί, Arab. ويبة, an Egyp-",
+       "tian measure. See Rödiger in Allg.",
+       "Encyclop. art. Epha. Thes. Ling. Heb."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d42a39c1-ca3b-4f18-9e9c-690be6d468cb",
+      "duration_api_ms": 11709,
+      "cost_usd_list": 0.0768135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 410
+     },
+     "lines": [
+      {
+       "draft": "modius, from r. ⲱⲡ, ⲏⲡ, to number;",
+       "reread": "modius, from r. ⲱⲡ, ⲏⲡ, to number ;",
+       "status": "agreed",
+       "text": "modius, from r. ⲱⲡ, ⲏⲡ, to number;"
+      },
+      {
+       "draft": "whence Sept. οἰφί, Arab. وَيبه, an Egyp-",
+       "reread": "whence Sept. οἰφί, Arab. ويبة, an Egyp-",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "whence Sept. οἰφί, Arab. ويبة, an Egyp-",
+        "verdict": "b",
+        "note": "The Arabic word ends in tā' marbūṭa (ة, two dots clearly printed above the final round letter), not plain hā' (ه) as in A; and no fatḥa is printed over the initial wāw — the only marks are the consonant dots of ي, ب and ة. Reading B matches the print exactly.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "225a1eeb-a8fc-47f2-a120-199c90580927",
+        "duration_api_ms": 15309,
+        "cost_usd_list": 0.088326,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3584,
+        "cache_creation_input_tokens": 2692,
+        "output_tokens": 665
+       },
+       "text": "whence Sept. οἰφί, Arab. ويبة, an Egyp-"
+      },
+      {
+       "draft": "tian measure. See Rödiger in Allg.",
+       "reread": "tian measure. See Rödiger in Allg.",
+       "status": "agreed",
+       "text": "tian measure. See Rödiger in Allg."
+      },
+      {
+       "draft": "Encyclop. art. Epha. Thes. Ling. Heb.",
+       "reread": "Encyclop. art. Epha. Thes. Ling. Heb.",
+       "status": "agreed",
+       "text": "Encyclop. art. Epha. Thes. Ling. Heb."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 138,
+      "y": 2959,
+      "width": 878,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r03-b03-878x69+138+2959-x2.png",
+     "image_sha256": "ade1765628942ba2d41aac368d7d61f629191766cded98055b9b4ca90595ccae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in Append."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "606dad0b-67aa-41de-9141-c12f25057383",
+      "duration_api_ms": 8278,
+      "cost_usd_list": 0.049173499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 210
+     },
+     "lines": [
+      {
+       "draft": "in Append.",
+       "reread": "in Append.",
+       "status": "agreed",
+       "text": "in Append."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r04",
+   "column": 0,
+   "row": 4,
+   "bounds": {
+    "x": 138,
+    "y": 3022,
+    "width": 878,
+    "height": 260
+   },
+   "draft_lines": [
+    "אֵיפֹה (from אֵי and פֹּה here) where?",
+    "Is. 49, 21. Ruth 2, 19; how? what kind",
+    "of? Judg. 8, 18. In an indirect inquiry,",
+    "Jer. 36, 19."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r04-b00",
+     "bounds": {
+      "x": 138,
+      "y": 3029,
+      "width": 878,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c0-r04-b00-878x255+138+3029-x2.png",
+     "image_sha256": "abf73be3fbf281fe7b0d2bf7ae8a2ee88a34aa90d6b1190ef6013570d61aa700",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵיפֹה (from אֵי and פֹּה here) where?",
+       "Is. 49, 21. Ruth 2, 19; how? what kind",
+       "of? Judg. 8, 18. In an indirect inquiry,",
+       "Jer. 36, 19."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b706d983-ba01-4207-b082-8e2e8bdf375a",
+      "duration_api_ms": 11279,
+      "cost_usd_list": 0.0694635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "אֵיפֹה (from אֵי and פֹּה here) where?",
+       "reread": "אֵיפֹה (from אֵי and פֹּה here) where?",
+       "status": "agreed",
+       "text": "אֵיפֹה (from אֵי and פֹּה here) where?"
+      },
+      {
+       "draft": "Is. 49, 21. Ruth 2, 19; how? what kind",
+       "reread": "Is. 49, 21. Ruth 2, 19; how? what kind",
+       "status": "agreed",
+       "text": "Is. 49, 21. Ruth 2, 19; how? what kind"
+      },
+      {
+       "draft": "of? Judg. 8, 18. In an indirect inquiry,",
+       "reread": "of? Judg. 8, 18. In an indirect inquiry,",
+       "status": "agreed",
+       "text": "of? Judg. 8, 18. In an indirect inquiry,"
+      },
+      {
+       "draft": "Jer. 36, 19.",
+       "reread": "Jer. 36, 19.",
+       "status": "agreed",
+       "text": "Jer. 36, 19."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1026,
+    "y": 167,
+    "width": 881,
+    "height": 712
+   },
+   "draft_lines": [
+    "אֵיפוֹא i. q. אֵפוֹא, q. v.",
+    "* אִישׁ, c. suff. אִישִׁי, אִישֵׁךְ, אִישָׁהּ;",
+    "Plur. אִישִׁים only thrice, Ps. 141, 4. Prov.",
+    "8, 4. Is. 53, 3 ; instead of which the com-",
+    "mon usage has substituted אֲנָשִׁים (from",
+    "obsol. sing. אֱנָשׁ), constr. אַנְשֵׁי, c. suff.",
+    "אֲנָשָׁיו, אַנְשֵׁיהֶם ; also as periphrastic plur.",
+    "בְּנֵי אִישׁ, comp. no. 6.",
+    "1. a man. Spec. a) a male, opp. to",
+    "a female ; Gen. 4, 1 I have gotten a man",
+    "with the Lord, i. e. a man-child. 1 Sam."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1026,
+      "y": 159,
+      "width": 881,
+      "height": 333
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r00-b00-881x333+1026+159-x2.png",
+     "image_sha256": "f1e7e141448fd13034a6e6b12d28f35b743dffeff6c06f909ea4251d99ad4429",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵיפֹא i. q. אֵפוֹא , q. v.",
+       "* אִישׁ , c. suff. אִישִׁי , אִישֵׁךְ , אִישָׁהּ ;",
+       "Plur. אִישִׁים only thrice, Ps. 141, 4. Prov.",
+       "8, 4. Is. 53, 3 ; instead of which the com-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5a717a7b-ced5-4ebf-a8c2-3f21290fce06",
+      "duration_api_ms": 14089,
+      "cost_usd_list": 0.0897635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3069,
+      "output_tokens": 543
+     },
+     "lines": [
+      {
+       "draft": "אֵיפוֹא i. q. אֵפוֹא, q. v.",
+       "reread": "אֵיפֹא i. q. אֵפוֹא , q. v.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "אֵיפוֹא i. q. אֵפוֹא , q. v.",
+        "verdict": "neither",
+        "note": "Headword is plene אֵיפוֹא — a distinct vav stroke carries the ḥolem between פ and א (A right, B wrong); but the comma after אֵפוֹא is printed with a space before it (B right, A wrong).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bff41393-e909-4281-b00a-9cee0007ba37",
+        "duration_api_ms": 21683,
+        "cost_usd_list": 0.10924500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 3003,
+        "output_tokens": 959
+       },
+       "text": "אֵיפוֹא i. q. אֵפוֹא, q. v."
+      },
+      {
+       "draft": "* אִישׁ, c. suff. אִישִׁי, אִישֵׁךְ, אִישָׁהּ;",
+       "reread": "* אִישׁ , c. suff. אִישִׁי , אִישֵׁךְ , אִישָׁהּ ;",
+       "status": "agreed",
+       "text": "* אִישׁ, c. suff. אִישִׁי, אִישֵׁךְ, אִישָׁהּ;"
+      },
+      {
+       "draft": "Plur. אִישִׁים only thrice, Ps. 141, 4. Prov.",
+       "reread": "Plur. אִישִׁים only thrice, Ps. 141, 4. Prov.",
+       "status": "agreed",
+       "text": "Plur. אִישִׁים only thrice, Ps. 141, 4. Prov."
+      },
+      {
+       "draft": "8, 4. Is. 53, 3 ; instead of which the com-",
+       "reread": "8, 4. Is. 53, 3 ; instead of which the com-",
+       "status": "agreed",
+       "text": "8, 4. Is. 53, 3; instead of which the com-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1026,
+      "y": 476,
+      "width": 881,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r00-b01-881x240+1026+476-x2.png",
+     "image_sha256": "7bc845ac69333a7d4698035da4f0b9391c5948933d8922eddfa72851754fc367",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mon usage has substituted אֲנָשִׁים (from",
+       "obsol. sing. אֱנָשׁ), constr. אַנְשֵׁי , c. suff.",
+       "אֲנָשָׁיו, אַנְשֵׁיהֶם ; also as periphrastic plur.",
+       "בְּנֵי אִישׁ , comp. no. 6."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ca2050dd-74bc-463e-a4ae-9abd4135cf26",
+      "duration_api_ms": 16931,
+      "cost_usd_list": 0.10165350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 932
+     },
+     "lines": [
+      {
+       "draft": "mon usage has substituted אֲנָשִׁים (from",
+       "reread": "mon usage has substituted אֲנָשִׁים (from",
+       "status": "agreed",
+       "text": "mon usage has substituted אֲנָשִׁים (from"
+      },
+      {
+       "draft": "obsol. sing. אֱנָשׁ), constr. אַנְשֵׁי, c. suff.",
+       "reread": "obsol. sing. אֱנָשׁ), constr. אַנְשֵׁי , c. suff.",
+       "status": "agreed",
+       "text": "obsol. sing. אֱנָשׁ), constr. אַנְשֵׁי, c. suff."
+      },
+      {
+       "draft": "אֲנָשָׁיו, אַנְשֵׁיהֶם ; also as periphrastic plur.",
+       "reread": "אֲנָשָׁיו, אַנְשֵׁיהֶם ; also as periphrastic plur.",
+       "status": "agreed",
+       "text": "אֲנָשָׁיו, אַנְשֵׁיהֶם; also as periphrastic plur."
+      },
+      {
+       "draft": "בְּנֵי אִישׁ, comp. no. 6.",
+       "reread": "בְּנֵי אִישׁ , comp. no. 6.",
+       "status": "agreed",
+       "text": "בְּנֵי אִישׁ, comp. no. 6."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1026,
+      "y": 700,
+      "width": 881,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r00-b02-881x187+1026+700-x2.png",
+     "image_sha256": "927ee700499fd6f60a1d011f27f97311dccbcb2a6dc8aceb93b6de4cb2a13ce4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1. a man. Spec. a) a male, opp. to",
+       "a female ; Gen. 4, 1 I have gotten a man",
+       "with the Lord, i. e. a man-child. 1 Sam."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "10238dad-1941-438e-a990-8c2d330c847a",
+      "duration_api_ms": 14082,
+      "cost_usd_list": 0.062113499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "1. a man. Spec. a) a male, opp. to",
+       "reread": "1. a man. Spec. a) a male, opp. to",
+       "status": "agreed",
+       "text": "1. a man. Spec. a) a male, opp. to"
+      },
+      {
+       "draft": "a female ; Gen. 4, 1 I have gotten a man",
+       "reread": "a female ; Gen. 4, 1 I have gotten a man",
+       "status": "agreed",
+       "text": "a female; Gen. 4, 1 I have gotten a man"
+      },
+      {
+       "draft": "with the Lord, i. e. a man-child. 1 Sam.",
+       "reread": "with the Lord, i. e. a man-child. 1 Sam.",
+       "status": "agreed",
+       "text": "with the Lord, i. e. a man-child. 1 Sam."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1026,
+    "y": 867,
+    "width": 881,
+    "height": 734
+   },
+   "draft_lines": [
+    "1, 11. So even of brutes, Gen. 7, 2;",
+    "comp. 1, 27. 6, 19. So Lat. vir of beasts,",
+    "Virg. Eclog. 7, 7. b) a husband, opp.",
+    "to a wife, Ruth 1, 11. Gen. 3, 6. 29, 32.",
+    "34. With suff. אֲנָשֵׁינוּ our men, i. e. our",
+    "husbands, Jer. 44, 19. So Gr ἀνήρ Il.",
+    "18. 291; Lat. vir Hor. Sat. 1. 2. 127. c)",
+    "As opp. to an old man, one of manly age,",
+    "vigour, 1 Sam. 2, 33. d) Emphat. of",
+    "manliness, warlike valour, comp. Hithpa.",
+    "below. 1 Sam. 4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים",
+    "be strong, and be ye men! 1 K. 2, 2.",
+    "Comp. Hom. Il. 5. 529. e) a man, mor-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1026,
+      "y": 859,
+      "width": 881,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r01-b00-881x241+1026+859-x2.png",
+     "image_sha256": "bc7f4e69946743f68f241d55a8f5caae610c8d1559a17073fcbfe8c49ea3d259",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1, 11. So even of brutes, Gen. 7, 2;",
+       "comp. 1, 27. 6, 19. So Lat. vir of beasts,",
+       "Virg. Eclog. 7, 7. b) a husband, opp.",
+       "to a wife, Ruth 1, 11. Gen. 3, 6. 29, 32."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "513759fa-6656-4bca-ba24-134e1bafc427",
+      "duration_api_ms": 13624,
+      "cost_usd_list": 0.0694035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 287
+     },
+     "lines": [
+      {
+       "draft": "1, 11. So even of brutes, Gen. 7, 2;",
+       "reread": "1, 11. So even of brutes, Gen. 7, 2;",
+       "status": "agreed",
+       "text": "1, 11. So even of brutes, Gen. 7, 2;"
+      },
+      {
+       "draft": "comp. 1, 27. 6, 19. So Lat. vir of beasts,",
+       "reread": "comp. 1, 27. 6, 19. So Lat. vir of beasts,",
+       "status": "agreed",
+       "text": "comp. 1, 27. 6, 19. So Lat. vir of beasts,"
+      },
+      {
+       "draft": "Virg. Eclog. 7, 7. b) a husband, opp.",
+       "reread": "Virg. Eclog. 7, 7. b) a husband, opp.",
+       "status": "agreed",
+       "text": "Virg. Eclog. 7, 7. b) a husband, opp."
+      },
+      {
+       "draft": "to a wife, Ruth 1, 11. Gen. 3, 6. 29, 32.",
+       "reread": "to a wife, Ruth 1, 11. Gen. 3, 6. 29, 32.",
+       "status": "agreed",
+       "text": "to a wife, Ruth 1, 11. Gen. 3, 6. 29, 32."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1026,
+      "y": 1084,
+      "width": 881,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r01-b01-881x240+1026+1084-x2.png",
+     "image_sha256": "78faf583687511e6df93116d8c491ee58b2ad00624b7758450148718ca302b06",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "34. With suff. אֲנָשֵׁינוּ our men, i. e. our",
+       "husbands, Jer. 44, 19. So Gr ἀνήρ Il.",
+       "18. 291 ; Lat. vir Hor. Sat. 1. 2. 127. c)",
+       "As opp. to an old man, one of manly age,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4d8ea5d7-9570-4ae9-be9c-ca479d36c325",
+      "duration_api_ms": 12318,
+      "cost_usd_list": 0.07404375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 379
+     },
+     "lines": [
+      {
+       "draft": "34. With suff. אֲנָשֵׁינוּ our men, i. e. our",
+       "reread": "34. With suff. אֲנָשֵׁינוּ our men, i. e. our",
+       "status": "agreed",
+       "text": "34. With suff. אֲנָשֵׁינוּ our men, i. e. our"
+      },
+      {
+       "draft": "husbands, Jer. 44, 19. So Gr ἀνήρ Il.",
+       "reread": "husbands, Jer. 44, 19. So Gr ἀνήρ Il.",
+       "status": "agreed",
+       "text": "husbands, Jer. 44, 19. So Gr ἀνήρ Il."
+      },
+      {
+       "draft": "18. 291; Lat. vir Hor. Sat. 1. 2. 127. c)",
+       "reread": "18. 291 ; Lat. vir Hor. Sat. 1. 2. 127. c)",
+       "status": "agreed",
+       "text": "18. 291; Lat. vir Hor. Sat. 1. 2. 127. c)"
+      },
+      {
+       "draft": "As opp. to an old man, one of manly age,",
+       "reread": "As opp. to an old man, one of manly age,",
+       "status": "agreed",
+       "text": "As opp. to an old man, one of manly age,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1026,
+      "y": 1308,
+      "width": 881,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r01-b02-881x236+1026+1308-x2.png",
+     "image_sha256": "a17a20eac90cc041d5e2b88e6bb20639c28b662d436a261cef26ad5862f5d6a5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "vigour, 1 Sam. 2, 33. d) Emphat. of",
+       "manliness, warlike valour, comp. Hithpa.",
+       "below. 1 Sam. 4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים",
+       "be strong, and be ye men! 1 K. 2, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4aeb7138-817d-4d90-b310-91d4985e0949",
+      "duration_api_ms": 13660,
+      "cost_usd_list": 0.07668375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 457
+     },
+     "lines": [
+      {
+       "draft": "vigour, 1 Sam. 2, 33. d) Emphat. of",
+       "reread": "vigour, 1 Sam. 2, 33. d) Emphat. of",
+       "status": "agreed",
+       "text": "vigour, 1 Sam. 2, 33. d) Emphat. of"
+      },
+      {
+       "draft": "manliness, warlike valour, comp. Hithpa.",
+       "reread": "manliness, warlike valour, comp. Hithpa.",
+       "status": "agreed",
+       "text": "manliness, warlike valour, comp. Hithpa."
+      },
+      {
+       "draft": "below. 1 Sam. 4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים",
+       "reread": "below. 1 Sam. 4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים",
+       "status": "agreed",
+       "text": "below. 1 Sam. 4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים"
+      },
+      {
+       "draft": "be strong, and be ye men! 1 K. 2, 2.",
+       "reread": "be strong, and be ye men! 1 K. 2, 2.",
+       "status": "agreed",
+       "text": "be strong, and be ye men! 1 K. 2, 2."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1026,
+      "y": 1528,
+      "width": 881,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r01-b03-881x81+1026+1528-x2.png",
+     "image_sha256": "7ff7436c18443094a575d91d6f44a6976d0ea3784be419257b17f44b3e3b05ec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Comp. Hom. Il. 5. 529.   e) a man, mor-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7005bbc2-e2aa-41f7-a061-b127b7087c63",
+      "duration_api_ms": 7645,
+      "cost_usd_list": 0.050223750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 205
+     },
+     "lines": [
+      {
+       "draft": "Comp. Hom. Il. 5. 529. e) a man, mor-",
+       "reread": "Comp. Hom. Il. 5. 529.   e) a man, mor-",
+       "status": "agreed",
+       "text": "Comp. Hom. Il. 5. 529. e) a man, mor-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1026,
+    "y": 1589,
+    "width": 881,
+    "height": 677
+   },
+   "draft_lines": [
+    "tal, opp. to God, Job 9, 32. 12, 10. Is. 31,",
+    "8 ; espec. in plur. Gen. 32, 29. Is. 7, 13.",
+    "Comp. Hom. πατὴρ ἀνδρῶν τε θεῶν τε.",
+    "Opp. to beasts, Ex. 11, 7. Gen. 49, 6.",
+    "f) Joined in apposition with other sub-",
+    "stantives, as אִישׁ סָרִיס a man a eunuch",
+    "i. e. a eunuch Jer. 38, 7 ; אִישׁ כֹּהֵן a",
+    "priest Lev. 21, 9 ; espec. with gentile",
+    "names, e. g. אִישׁ עִבְרִי a Hebrew Gen.",
+    "39, 14. Comp. Gr. ἄνδρες Γαλιλαῖοι, ἄν-",
+    "δρες Ἰσραηλῖται, Acts 1, 11. 3, 12. g)",
+    "With genit. of a city, land, people, it de-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1026,
+      "y": 1581,
+      "width": 881,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r02-b00-881x241+1026+1581-x2.png",
+     "image_sha256": "5e81c6067c3fc4b68f3e736dda940f355fc2f33c2f89ad8326596b31cb32a6c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tal, opp. to God, Job 9, 32. 12, 10. Is. 31,",
+       "8 ; espec. in plur. Gen. 32, 29. Is. 7, 13.",
+       "Comp. Hom. πατὴρ ἀνδρῶν τε θεῶν τε.",
+       "Opp. to beasts, Ex. 11, 7. Gen. 49, 6."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "392c22e6-84fc-44a6-a270-e4aa72045117",
+      "duration_api_ms": 9815,
+      "cost_usd_list": 0.07034375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 305
+     },
+     "lines": [
+      {
+       "draft": "tal, opp. to God, Job 9, 32. 12, 10. Is. 31,",
+       "reread": "tal, opp. to God, Job 9, 32. 12, 10. Is. 31,",
+       "status": "agreed",
+       "text": "tal, opp. to God, Job 9, 32. 12, 10. Is. 31,"
+      },
+      {
+       "draft": "8 ; espec. in plur. Gen. 32, 29. Is. 7, 13.",
+       "reread": "8 ; espec. in plur. Gen. 32, 29. Is. 7, 13.",
+       "status": "agreed",
+       "text": "8; espec. in plur. Gen. 32, 29. Is. 7, 13."
+      },
+      {
+       "draft": "Comp. Hom. πατὴρ ἀνδρῶν τε θεῶν τε.",
+       "reread": "Comp. Hom. πατὴρ ἀνδρῶν τε θεῶν τε.",
+       "status": "agreed",
+       "text": "Comp. Hom. πατὴρ ἀνδρῶν τε θεῶν τε."
+      },
+      {
+       "draft": "Opp. to beasts, Ex. 11, 7. Gen. 49, 6.",
+       "reread": "Opp. to beasts, Ex. 11, 7. Gen. 49, 6.",
+       "status": "agreed",
+       "text": "Opp. to beasts, Ex. 11, 7. Gen. 49, 6."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1026,
+      "y": 1806,
+      "width": 881,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r02-b01-881x237+1026+1806-x2.png",
+     "image_sha256": "c5c9581f5ad18b1f04ca5ae7fda29e3959b8450e2332b91cb18aa8adb105923b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "f) Joined in apposition with other sub-",
+       "stantives, as אִישׁ סָרִיס a man a eunuch",
+       "i. e. a eunuch Jer. 38, 7 ; אִישׁ כֹּהֵן a",
+       "priest Lev. 21, 9 ; espec. with gentile"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "65bf63c0-b8cc-4f96-bff6-101fbe328ead",
+      "duration_api_ms": 11110,
+      "cost_usd_list": 0.06783375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 280
+     },
+     "lines": [
+      {
+       "draft": "f) Joined in apposition with other sub-",
+       "reread": "f) Joined in apposition with other sub-",
+       "status": "agreed",
+       "text": "f) Joined in apposition with other sub-"
+      },
+      {
+       "draft": "stantives, as אִישׁ סָרִיס a man a eunuch",
+       "reread": "stantives, as אִישׁ סָרִיס a man a eunuch",
+       "status": "agreed",
+       "text": "stantives, as אִישׁ סָרִיס a man a eunuch"
+      },
+      {
+       "draft": "i. e. a eunuch Jer. 38, 7 ; אִישׁ כֹּהֵן a",
+       "reread": "i. e. a eunuch Jer. 38, 7 ; אִישׁ כֹּהֵן a",
+       "status": "agreed",
+       "text": "i. e. a eunuch Jer. 38, 7; אִישׁ כֹּהֵן a"
+      },
+      {
+       "draft": "priest Lev. 21, 9 ; espec. with gentile",
+       "reread": "priest Lev. 21, 9 ; espec. with gentile",
+       "status": "agreed",
+       "text": "priest Lev. 21, 9; espec. with gentile"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1026,
+      "y": 2027,
+      "width": 881,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r02-b02-881x247+1026+2027-x2.png",
+     "image_sha256": "d0f26211d593f855ce023c48061a566624fa45546227dc75bdf5f1ca1f7f6201",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "names, e. g. אִישׁ עִבְרִי a Hebrew Gen.",
+       "39, 14. Comp. Gr. ἄνδρες Γαλιλαῖοι, ἄν-",
+       "δρες Ἰσραηλῖται, Acts 1, 11. 3, 12. g)",
+       "With genit. of a city, land, people, it de-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e80df930-58ef-447d-a6bc-38bf1f5610c8",
+      "duration_api_ms": 14688,
+      "cost_usd_list": 0.07434375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 385
+     },
+     "lines": [
+      {
+       "draft": "names, e. g. אִישׁ עִבְרִי a Hebrew Gen.",
+       "reread": "names, e. g. אִישׁ עִבְרִי a Hebrew Gen.",
+       "status": "agreed",
+       "text": "names, e. g. אִישׁ עִבְרִי a Hebrew Gen."
+      },
+      {
+       "draft": "39, 14. Comp. Gr. ἄνδρες Γαλιλαῖοι, ἄν-",
+       "reread": "39, 14. Comp. Gr. ἄνδρες Γαλιλαῖοι, ἄν-",
+       "status": "agreed",
+       "text": "39, 14. Comp. Gr. ἄνδρες Γαλιλαῖοι, ἄν-"
+      },
+      {
+       "draft": "δρες Ἰσραηλῖται, Acts 1, 11. 3, 12. g)",
+       "reread": "δρες Ἰσραηλῖται, Acts 1, 11. 3, 12. g)",
+       "status": "agreed",
+       "text": "δρες Ἰσραηλῖται, Acts 1, 11. 3, 12. g)"
+      },
+      {
+       "draft": "With genit. of a city, land, people, it de-",
+       "reread": "With genit. of a city, land, people, it de-",
+       "status": "agreed",
+       "text": "With genit. of a city, land, people, it de-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1026,
+    "y": 2254,
+    "width": 881,
+    "height": 908
+   },
+   "draft_lines": [
+    "notes a citizen, inhabitant, etc. e. g. אִישׁ",
+    "יִשְׂרָאֵל a man of Israel, i. e. Israelite ;",
+    "אַנְשֵׁי יְהוּדָה 1 Sam. 7, 11 ; אַנְשֵׁי יִשְׂרָאֵל",
+    "2 Sam. 19, 42 ; also אַנְשֵׁי הָעִיר Gen. 24,",
+    "13. In this signif. the sing. אִישׁ is mostly",
+    "put collectively, as אִישׁ יִשְׂרָאֵל for אַנְשֵׁי",
+    "יִשְׂרָאֵל Josh. 9, 6. 7. 10, 24. Judg. 7, 8. 8,",
+    "22. al. h) With genit. of a king, leader,",
+    "military chief, master, etc. the men of",
+    "any one, for his companions, followers,",
+    "soldiers, his people, 1 Sam. 23, 3. 12. 24,",
+    "5. 8. 28, 1. Once perhaps spoken of",
+    "relatives and near friends, like Syr.",
+    "ܐܢܫ̈ܐ ܕܝܠܗ , e. g. Ez. 24, 17. 22, where",
+    "לֶחֶם אֲנָשִׁים the bread of men, is the food",
+    "which relatives and friends were accus-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1026,
+      "y": 2246,
+      "width": 881,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r03-b00-881x242+1026+2246-x2.png",
+     "image_sha256": "031b82cdd366f2963b3c1986456a3b81a74c9d087fcc718b09dbb04c51eb1d14",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "notes a citizen, inhabitant, etc. e. g. אִישׁ",
+       "יִשְׂרָאֵל a man of Israel, i. e. Israelite ;",
+       "אַנְשֵׁי יִשְׂרָאֵל 1 Sam. 7, 11 ; אַנְשֵׁי יְהוּדָה",
+       "2 Sam. 19, 42 ; also אַנְשֵׁי הָעִיר Gen. 24,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "07f7d070-dd45-4e85-bb1c-9ec8f800cea9",
+      "duration_api_ms": 14627,
+      "cost_usd_list": 0.09004375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 699
+     },
+     "lines": [
+      {
+       "draft": "notes a citizen, inhabitant, etc. e. g. אִישׁ",
+       "reread": "notes a citizen, inhabitant, etc. e. g. אִישׁ",
+       "status": "agreed",
+       "text": "notes a citizen, inhabitant, etc. e. g. אִישׁ"
+      },
+      {
+       "draft": "יִשְׂרָאֵל a man of Israel, i. e. Israelite ;",
+       "reread": "יִשְׂרָאֵל a man of Israel, i. e. Israelite ;",
+       "status": "agreed",
+       "text": "יִשְׂרָאֵל a man of Israel, i. e. Israelite;"
+      },
+      {
+       "draft": "אַנְשֵׁי יְהוּדָה 1 Sam. 7, 11 ; אַנְשֵׁי יִשְׂרָאֵל",
+       "reread": "אַנְשֵׁי יִשְׂרָאֵל 1 Sam. 7, 11 ; אַנְשֵׁי יְהוּדָה",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "אַנְשֵׁי יִשְׂרָאֵל 1 Sam. 7, 11 ; אַנְשֵׁי יְהוּדָה",
+        "verdict": "b",
+        "note": "Printed left-to-right order: אַנְשֵׁי יִשְׂרָאֵל stands at the left (line start), then \"1 Sam. 7, 11 ;\", then אַנְשֵׁי יְהוּדָה at the right edge (continuing to \"2 Sam. 19, 42\" on the next line). Reading A swaps the two phrases; Reading B matches. Pointing in both is otherwise identical and correct (shin dot in אַנְשֵׁי, sin dot in יִשְׂרָאֵל, shureq in יְהוּדָה).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f3184624-f672-43c1-a6c0-87f9b629c427",
+        "duration_api_ms": 15155,
+        "cost_usd_list": 0.09137,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3640,
+        "cache_creation_input_tokens": 2686,
+        "output_tokens": 728
+       },
+       "text": "אַנְשֵׁי יִשְׂרָאֵל 1 Sam. 7, 11; אַנְשֵׁי יְהוּדָה"
+      },
+      {
+       "draft": "2 Sam. 19, 42 ; also אַנְשֵׁי הָעִיר Gen. 24,",
+       "reread": "2 Sam. 19, 42 ; also אַנְשֵׁי הָעִיר Gen. 24,",
+       "status": "agreed",
+       "text": "2 Sam. 19, 42; also אַנְשֵׁי הָעִיר Gen. 24,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1026,
+      "y": 2472,
+      "width": 881,
+      "height": 285
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r03-b01-881x285+1026+2472-x2.png",
+     "image_sha256": "00d109c36596e23f18d5aeb56efbc7e739179517b212bf6fc27d8d796686f614",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "13. In this signif. the sing. אִישׁ is mostly",
+       "put collectively, as אִישׁ יִשְׂרָאֵל for אַנְשֵׁי",
+       "יִשְׂרָאֵל Josh. 9, 6. 7. 10, 24. Judg. 7, 8. 8,",
+       "22. al. h) With genit. of a king, leader,",
+       "military chief, master, etc. the men of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "21763e4b-8b37-4198-abbd-0ca8b3c624dd",
+      "duration_api_ms": 15532,
+      "cost_usd_list": 0.09017375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2882,
+      "output_tokens": 626
+     },
+     "lines": [
+      {
+       "draft": "13. In this signif. the sing. אִישׁ is mostly",
+       "reread": "13. In this signif. the sing. אִישׁ is mostly",
+       "status": "agreed",
+       "text": "13. In this signif. the sing. אִישׁ is mostly"
+      },
+      {
+       "draft": "put collectively, as אִישׁ יִשְׂרָאֵל for אַנְשֵׁי",
+       "reread": "put collectively, as אִישׁ יִשְׂרָאֵל for אַנְשֵׁי",
+       "status": "agreed",
+       "text": "put collectively, as אִישׁ יִשְׂרָאֵל for אַנְשֵׁי"
+      },
+      {
+       "draft": "יִשְׂרָאֵל Josh. 9, 6. 7. 10, 24. Judg. 7, 8. 8,",
+       "reread": "יִשְׂרָאֵל Josh. 9, 6. 7. 10, 24. Judg. 7, 8. 8,",
+       "status": "agreed",
+       "text": "יִשְׂרָאֵל Josh. 9, 6. 7. 10, 24. Judg. 7, 8. 8,"
+      },
+      {
+       "draft": "22. al. h) With genit. of a king, leader,",
+       "reread": "22. al. h) With genit. of a king, leader,",
+       "status": "agreed",
+       "text": "22. al. h) With genit. of a king, leader,"
+      },
+      {
+       "draft": "military chief, master, etc. the men of",
+       "reread": "military chief, master, etc. the men of",
+       "status": "agreed",
+       "text": "military chief, master, etc. the men of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1026,
+      "y": 2741,
+      "width": 881,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r03-b02-881x232+1026+2741-x2.png",
+     "image_sha256": "a6176997e09c69b46b2326062583bd99a6afde085a11c110dc20b972f858dea5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "any one, for his companions, followers,",
+       "soldiers, his people, 1 Sam. 23, 3. 12. 24,",
+       "5. 8. 28, 1. Once perhaps spoken of",
+       "relatives and near friends, like Syr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0b4f692c-9aad-4c14-b867-f0615116225d",
+      "duration_api_ms": 13342,
+      "cost_usd_list": 0.06663375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "any one, for his companions, followers,",
+       "reread": "any one, for his companions, followers,",
+       "status": "agreed",
+       "text": "any one, for his companions, followers,"
+      },
+      {
+       "draft": "soldiers, his people, 1 Sam. 23, 3. 12. 24,",
+       "reread": "soldiers, his people, 1 Sam. 23, 3. 12. 24,",
+       "status": "agreed",
+       "text": "soldiers, his people, 1 Sam. 23, 3. 12. 24,"
+      },
+      {
+       "draft": "5. 8. 28, 1. Once perhaps spoken of",
+       "reread": "5. 8. 28, 1. Once perhaps spoken of",
+       "status": "agreed",
+       "text": "5. 8. 28, 1. Once perhaps spoken of"
+      },
+      {
+       "draft": "relatives and near friends, like Syr.",
+       "reread": "relatives and near friends, like Syr.",
+       "status": "agreed",
+       "text": "relatives and near friends, like Syr."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1026,
+      "y": 2957,
+      "width": 881,
+      "height": 213
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r03-b03-881x213+1026+2957-x2.png",
+     "image_sha256": "c86b5fef812e7483d1076d935e50cd291239714905759f9113136c4819c1b17d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܠܰܚܡܐ ܕܐܢ̈ܫܳܐ , e. g. Ez. 24, 17. 22, where",
+       "לֶחֶם אֲנָשִׁים the bread of men, is the food",
+       "which relatives and friends were accus-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1f3c6ee1-a887-44d2-bdb8-6503898651f1",
+      "duration_api_ms": 29840,
+      "cost_usd_list": 0.12592375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2567,
+      "output_tokens": 1467
+     },
+     "lines": [
+      {
+       "draft": "ܐܢܫ̈ܐ ܕܝܠܗ , e. g. Ez. 24, 17. 22, where",
+       "reread": "ܠܰܚܡܐ ܕܐܢ̈ܫܳܐ , e. g. Ez. 24, 17. 22, where",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b03",
+       "judgement": {
+        "text": "ܐܢ̈ܫܳܐ ܕܝܠܗ , e. g. Ez. 24, 17. 22, where",
+        "verdict": "a",
+        "note": "The printed Syriac is two words, ܐܢܫܐ (right, with seyame) followed by ܕܝܠܗ (left) — \"his men/relatives\", not ܠܚܡܐ ܕܐܢܫܐ; no initial lamadh‑ḥeth‑mim word is printed. Reading A has the correct words; Reading B invented the \"bread of men\" phrase (that is the Hebrew on line 2). Pointing on the right word is sparse (seyame plus a zqapha-like mark); other small marks are too faint to read with confidence.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "430b745c-c286-4159-82f3-a1f1a238e354",
+        "duration_api_ms": 51117,
+        "cost_usd_list": 0.1604355,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3622,
+        "cache_creation_input_tokens": 2542,
+        "output_tokens": 2167
+       },
+       "text": "ܐܢ̈ܫܳܐ ܕܝܠܗ, e. g. Ez. 24, 17. 22, where"
+      },
+      {
+       "draft": "לֶחֶם אֲנָשִׁים the bread of men, is the food",
+       "reread": "לֶחֶם אֲנָשִׁים the bread of men, is the food",
+       "status": "agreed",
+       "text": "לֶחֶם אֲנָשִׁים the bread of men, is the food"
+      },
+      {
+       "draft": "which relatives and friends were accus-",
+       "reread": "which relatives and friends were accus-",
+       "status": "agreed",
+       "text": "which relatives and friends were accus-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "row": 4,
+   "bounds": {
+    "x": 1026,
+    "y": 3150,
+    "width": 881,
+    "height": 131
+   },
+   "draft_lines": [
+    "tomed to send to mourners. i) So too",
+    "אִישׁ אֱלֹהִים and with art, אִישׁ הָאֱלֹהִים,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r04-b00",
+     "bounds": {
+      "x": 1026,
+      "y": 3142,
+      "width": 881,
+      "height": 141
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0060/pass2/c1-r04-b00-881x141+1026+3142-x2.png",
+     "image_sha256": "1c8b85637d858a1436ee880c31d71046d8d1a95ff59298ade394afc347ebaab9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tomed to send to mourners.   i) So too",
+       "אִישׁ אֱלֹהִים and with art, אִישׁ הָאֱלֹהִים,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4d87c5a5-f7b9-4840-a417-9ecf973495cc",
+      "duration_api_ms": 6825,
+      "cost_usd_list": 0.05792375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2252,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "tomed to send to mourners. i) So too",
+       "reread": "tomed to send to mourners.   i) So too",
+       "status": "agreed",
+       "text": "tomed to send to mourners. i) So too"
+      },
+      {
+       "draft": "אִישׁ אֱלֹהִים and with art, אִישׁ הָאֱלֹהִים,",
+       "reread": "אִישׁ אֱלֹהִים and with art, אִישׁ הָאֱלֹהִים,",
+       "status": "agreed",
+       "text": "אִישׁ אֱלֹהִים and with art, אִישׁ הָאֱלֹהִים,"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אין 44 איש",
+   "status": "adjudicated",
+   "draft": "אין 44 איש",
+   "reread": "אין 44 אישׁ",
+   "verdict": "a",
+   "note": "The shin in the right‑hand header word איש is printed without a shin dot (header is unpointed); Reading B's שׁ adds a dot not on the page. Order and letters otherwise identical.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אַיִן, but intensive, none, not one; see on",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "this idiom in מִן 1. b. ב. Jer. 10, 6. 7. 30,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "7. So מֵאֵין יוֹשֵׁב i. q. אֵין יוֹשֵׁב, Is. 5, 9.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "6, 11. 50, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Note. The absol. form אַיִן stands",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "only at the end of a clause; while",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the constr. אֵין everywhere depends on",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "something following; e. g. Num. 20, 5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "מַיִם אַיִן there is no water, for which",
+   "status": "adjudicated",
+   "draft": "אֵין מַיִם there is no water, for which",
+   "reread": "מַיִם אַיִן there is no water, for which",
+   "verdict": "b",
+   "note": "Printed order (right-to-left) is מַיִם then אַיִן (the pausal form from Num. 20:5, with patah under aleph and hiriq under yod), not אֵין מַיִם — that tsere form appears only on line 3.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "might also be said אֵין מַיִם.",
+   "status": "adjudicated",
+   "draft": "might also be said מַיִם אַיִן.",
+   "reread": "might also be said אֵין מַיִם.",
+   "verdict": "b",
+   "note": "The printed order is אֵין first (rightmost), then מַיִם, i.e. the construct form אֵין (tsere) placed before the noun — the point of the contrast with line 2's מַיִם אַיִן. Reading A inverts the order and gives patach instead of tsere.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "II. אַיִן adv. of interrog. where? Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "أَيْنَ; found only with מִן prefixed, מֵאַיִן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "whence? Gen. 29, 4. Nah. 3, 7. al.—Ori-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ginally this was the same with the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "negat. אַיִן I, and passed over into the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "interrogative sense; hence by apoc. אַי,",
+   "status": "adjudicated",
+   "draft": "interrogative sense; hence by apoc. אֵי,",
+   "reread": "interrogative sense; hence by apoc. אַי,",
+   "verdict": "b",
+   "note": "The vowel under the final aleph on line 1 is a horizontal bar (patach), not two dots (tsere); the tsere form אֵי is the first item of line 2, so Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵי, אִי III. See in אַי no. 1. Heb.",
+   "status": "adjudicated",
+   "draft": "אַיֵּ, אִי III. See in אֵי no. 1. Heb.",
+   "reread": "אֵי, אִי III. See in אַי no. 1. Heb.",
+   "verdict": "b",
+   "note": "First word has tsere (two dots) under aleph and no dagesh in the yod; the word after \"See in\" has patach (אַי), matching the אַי at the end of line 1 — Reading A's dagesh and tsere there are not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gram. § 150. 1. fin.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִין 1 Sam. 21, 9, i. q. אַיִן, but inter-",
+   "status": "adjudicated",
+   "draft": "אֵין 1 Sam. 21, 9, i. q. אַיִן, but inter-",
+   "reread": "אִין 1 Sam. 21, 9, i. q. אֵין, but inter-",
+   "verdict": "neither",
+   "note": "Headword has a single hiriq dot under the aleph (אִין, as in B), but the second word is printed with patah under aleph and hiriq under yod (אַיִן, as in A) — each reading got one word right.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "rogatively for הֲאֵין.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִיעֶזֶר see אֲבִיעֶזֶר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵיפָה, rarely אֵפָה, f. an ephah, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "measure of grain, containing three seahs,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "סְאָה, or ten omers, עֹמֶר, Ex. 16, 36.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "According to Josephus, Ant. 8. 2. 9, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ephah contained 72 sextarii, equal to the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Attic (liquid) metretes, or 1993.95 Paris",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cubic inches, about 1 ⅑ bush. English;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "see Boeckh Metrolog. Untersuch. pp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "259, 278. This is also confirmed by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "other testimony; so that there is doubt-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "less an error in another passage of Jose-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "phus, Ant. 15. 9. 2, where the ephah",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "seems to be equal to 96 sextarii, or the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Attic medimnus. 1 Sam. 17, 17. Zech.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5, 6 sq. Judg. 6, 19. Ruth 2, 17. Also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֵיפָה וְאֵיפָה a double ephah, one just,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the other false, Prov. 20, 10. Deut. 25,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "14. Am. 8, 5.—The origin of this word",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "is to be sought in the Egyptian lan-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "guage; where the Heb. אֵיפָה corre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sponds to ⲱⲓⲡⲓ measure, spec. of corn,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "modius, from r. ⲱⲡ, ⲏⲡ, to number;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "whence Sept. οἰφί, Arab. ويبة, an Egyp-",
+   "status": "adjudicated",
+   "draft": "whence Sept. οἰφί, Arab. وَيبه, an Egyp-",
+   "reread": "whence Sept. οἰφί, Arab. ويبة, an Egyp-",
+   "verdict": "b",
+   "note": "The Arabic word ends in tā' marbūṭa (ة, two dots clearly printed above the final round letter), not plain hā' (ه) as in A; and no fatḥa is printed over the initial wāw — the only marks are the consonant dots of ي, ب and ة. Reading B matches the print exactly.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tian measure. See Rödiger in Allg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Encyclop. art. Epha. Thes. Ling. Heb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "in Append.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r04",
+   "column": 0,
+   "text": "אֵיפֹה (from אֵי and פֹּה here) where?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r04",
+   "column": 0,
+   "text": "Is. 49, 21. Ruth 2, 19; how? what kind",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r04",
+   "column": 0,
+   "text": "of? Judg. 8, 18. In an indirect inquiry,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r04",
+   "column": 0,
+   "text": "Jer. 36, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֵיפוֹא i. q. אֵפוֹא, q. v.",
+   "status": "adjudicated",
+   "draft": "אֵיפוֹא i. q. אֵפוֹא, q. v.",
+   "reread": "אֵיפֹא i. q. אֵפוֹא , q. v.",
+   "verdict": "neither",
+   "note": "Headword is plene אֵיפוֹא — a distinct vav stroke carries the ḥolem between פ and א (A right, B wrong); but the comma after אֵפוֹא is printed with a space before it (B right, A wrong).",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "* אִישׁ, c. suff. אִישִׁי, אִישֵׁךְ, אִישָׁהּ;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Plur. אִישִׁים only thrice, Ps. 141, 4. Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "8, 4. Is. 53, 3; instead of which the com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "mon usage has substituted אֲנָשִׁים (from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "obsol. sing. אֱנָשׁ), constr. אַנְשֵׁי, c. suff.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲנָשָׁיו, אַנְשֵׁיהֶם; also as periphrastic plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "בְּנֵי אִישׁ, comp. no. 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. a man. Spec. a) a male, opp. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "a female; Gen. 4, 1 I have gotten a man",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "with the Lord, i. e. a man-child. 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1, 11. So even of brutes, Gen. 7, 2;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "comp. 1, 27. 6, 19. So Lat. vir of beasts,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Virg. Eclog. 7, 7. b) a husband, opp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "to a wife, Ruth 1, 11. Gen. 3, 6. 29, 32.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "34. With suff. אֲנָשֵׁינוּ our men, i. e. our",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "husbands, Jer. 44, 19. So Gr ἀνήρ Il.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "18. 291; Lat. vir Hor. Sat. 1. 2. 127. c)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "As opp. to an old man, one of manly age,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "vigour, 1 Sam. 2, 33. d) Emphat. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "manliness, warlike valour, comp. Hithpa.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "below. 1 Sam. 4, 9 הִתְחַזְּקוּ וִהְיוּ לַאֲנָשִׁים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "be strong, and be ye men! 1 K. 2, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Comp. Hom. Il. 5. 529. e) a man, mor-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "tal, opp. to God, Job 9, 32. 12, 10. Is. 31,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8; espec. in plur. Gen. 32, 29. Is. 7, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Comp. Hom. πατὴρ ἀνδρῶν τε θεῶν τε.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Opp. to beasts, Ex. 11, 7. Gen. 49, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "f) Joined in apposition with other sub-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "stantives, as אִישׁ סָרִיס a man a eunuch",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "i. e. a eunuch Jer. 38, 7; אִישׁ כֹּהֵן a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "priest Lev. 21, 9; espec. with gentile",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "names, e. g. אִישׁ עִבְרִי a Hebrew Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "39, 14. Comp. Gr. ἄνδρες Γαλιλαῖοι, ἄν-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "δρες Ἰσραηλῖται, Acts 1, 11. 3, 12. g)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "With genit. of a city, land, people, it de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "notes a citizen, inhabitant, etc. e. g. אִישׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "יִשְׂרָאֵל a man of Israel, i. e. Israelite;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַנְשֵׁי יִשְׂרָאֵל 1 Sam. 7, 11; אַנְשֵׁי יְהוּדָה",
+   "status": "adjudicated",
+   "draft": "אַנְשֵׁי יְהוּדָה 1 Sam. 7, 11 ; אַנְשֵׁי יִשְׂרָאֵל",
+   "reread": "אַנְשֵׁי יִשְׂרָאֵל 1 Sam. 7, 11 ; אַנְשֵׁי יְהוּדָה",
+   "verdict": "b",
+   "note": "Printed left-to-right order: אַנְשֵׁי יִשְׂרָאֵל stands at the left (line start), then \"1 Sam. 7, 11 ;\", then אַנְשֵׁי יְהוּדָה at the right edge (continuing to \"2 Sam. 19, 42\" on the next line). Reading A swaps the two phrases; Reading B matches. Pointing in both is otherwise identical and correct (shin dot in אַנְשֵׁי, sin dot in יִשְׂרָאֵל, shureq in יְהוּדָה).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2 Sam. 19, 42; also אַנְשֵׁי הָעִיר Gen. 24,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "13. In this signif. the sing. אִישׁ is mostly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "put collectively, as אִישׁ יִשְׂרָאֵל for אַנְשֵׁי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "יִשְׂרָאֵל Josh. 9, 6. 7. 10, 24. Judg. 7, 8. 8,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "22. al. h) With genit. of a king, leader,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "military chief, master, etc. the men of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "any one, for his companions, followers,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "soldiers, his people, 1 Sam. 23, 3. 12. 24,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "5. 8. 28, 1. Once perhaps spoken of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "relatives and near friends, like Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ܐܢ̈ܫܳܐ ܕܝܠܗ, e. g. Ez. 24, 17. 22, where",
+   "status": "adjudicated",
+   "draft": "ܐܢܫ̈ܐ ܕܝܠܗ , e. g. Ez. 24, 17. 22, where",
+   "reread": "ܠܰܚܡܐ ܕܐܢ̈ܫܳܐ , e. g. Ez. 24, 17. 22, where",
+   "verdict": "a",
+   "note": "The printed Syriac is two words, ܐܢܫܐ (right, with seyame) followed by ܕܝܠܗ (left) — \"his men/relatives\", not ܠܚܡܐ ܕܐܢܫܐ; no initial lamadh‑ḥeth‑mim word is printed. Reading A has the correct words; Reading B invented the \"bread of men\" phrase (that is the Hebrew on line 2). Pointing on the right word is sparse (seyame plus a zqapha-like mark); other small marks are too faint to read with confidence.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "לֶחֶם אֲנָשִׁים the bread of men, is the food",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "which relatives and friends were accus-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "tomed to send to mourners. i) So too",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "אִישׁ אֱלֹהִים and with art, אִישׁ הָאֱלֹהִים,",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 96,
+  "adjudicated": 10,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 4
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.2073
+}

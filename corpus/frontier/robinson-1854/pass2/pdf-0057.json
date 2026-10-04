@@ -1,0 +1,2633 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 57,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0057.png",
+ "raster_sha256": "cc146eec12f66b1970510a1f3442cbb851bac3e9b17e006f4fb327097957495a",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0057.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T13:34:58+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 99,
+    "width": 1771,
+    "height": 70
+   },
+   "draft_lines": [
+    "איך",
+    "41",
+    "איל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 148,
+      "y": 97,
+      "width": 1771,
+      "height": 74
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/header-b00-1771x74+148+97-x2.png",
+     "image_sha256": "57e7c7f2dc236d1191e959a4a2c4cc04707b25601277c90c91d74746eaf62ca6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "איך 41 איל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dac7daaa-578b-49eb-b8d3-7e80f40f7917",
+      "duration_api_ms": 8045,
+      "cost_usd_list": 0.0461825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "איך 41 איל",
+       "reread": "איך 41 איל",
+       "status": "agreed",
+       "text": "איך 41 איל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 148,
+    "y": 149,
+    "width": 872,
+    "height": 836
+   },
+   "draft_lines": [
+    "without interrogation, Job 15, 23 he wan-",
+    "dereth about for bread, אַיֵּה where-ever",
+    "it may be.",
+    "אִיּוֹב pr. n. Job, an Arab of Uz or",
+    "Ausitis, distinguished for wealth and",
+    "also for piety and virtue, but tried of God",
+    "with the heaviest calamities. Besides",
+    "the book of Job, he is also mentioned in",
+    "Ez. 14, 14. 20. Sept, Ἰώβ, Arab. أَيُّوب.",
+    "The name signifies pr. one persecuted,",
+    "from r. אָיַב, as יִלּוֹד one born, from יָלַד;",
+    "and refers to the calamities by which",
+    "he was afflicted.—Others render it: serio"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 148,
+      "y": 141,
+      "width": 872,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r00-b00-872x241+148+141-x2.png",
+     "image_sha256": "96429170b02b5bdcdcb24f2d5be5c96d657fd8d8fd86af5a5b2e6916bfbf9165",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "without interrogation, Job 15, 23 he wan-",
+       "dereth about for bread, אַיֵּה where-ever",
+       "it may be."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bec40c74-2f30-4fb1-9f75-f2cbf26e13b7",
+      "duration_api_ms": 11637,
+      "cost_usd_list": 0.06976325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 295
+     },
+     "lines": [
+      {
+       "draft": "without interrogation, Job 15, 23 he wan-",
+       "reread": "without interrogation, Job 15, 23 he wan-",
+       "status": "agreed",
+       "text": "without interrogation, Job 15, 23 he wan-"
+      },
+      {
+       "draft": "dereth about for bread, אַיֵּה where-ever",
+       "reread": "dereth about for bread, אַיֵּה where-ever",
+       "status": "agreed",
+       "text": "dereth about for bread, אַיֵּה where-ever"
+      },
+      {
+       "draft": "it may be.",
+       "reread": "it may be.",
+       "status": "agreed",
+       "text": "it may be."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 148,
+      "y": 366,
+      "width": 872,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r00-b01-872x249+148+366-x2.png",
+     "image_sha256": "c0664af4eceb3b63c940dbb9ce32c41f3f9d1b2998fe2b4d74922d3a8b5b98f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִיּוֹב pr. n. Job, an Arab of Uz or",
+       "Ausitis, distinguished for wealth and",
+       "also for piety and virtue, but tried of God",
+       "with the heaviest calamities. Besides"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4936c496-9155-4606-a88e-eac2fb52df84",
+      "duration_api_ms": 9153,
+      "cost_usd_list": 0.06751325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "אִיּוֹב pr. n. Job, an Arab of Uz or",
+       "reread": "אִיּוֹב pr. n. Job, an Arab of Uz or",
+       "status": "agreed",
+       "text": "אִיּוֹב pr. n. Job, an Arab of Uz or"
+      },
+      {
+       "draft": "Ausitis, distinguished for wealth and",
+       "reread": "Ausitis, distinguished for wealth and",
+       "status": "agreed",
+       "text": "Ausitis, distinguished for wealth and"
+      },
+      {
+       "draft": "also for piety and virtue, but tried of God",
+       "reread": "also for piety and virtue, but tried of God",
+       "status": "agreed",
+       "text": "also for piety and virtue, but tried of God"
+      },
+      {
+       "draft": "with the heaviest calamities. Besides",
+       "reread": "with the heaviest calamities. Besides",
+       "status": "agreed",
+       "text": "with the heaviest calamities. Besides"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 148,
+      "y": 599,
+      "width": 872,
+      "height": 281
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r00-b02-872x281+148+599-x2.png",
+     "image_sha256": "1e3b94669b5b35bd36d8c9ebb5e93f30cc51f8c769fc13a5f337dbbc8ea4c515",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the book of Job, he is also mentioned in",
+       "Ez. 14, 14. 20. Sept, Ἰώβ, Arab. أَيُّوب.",
+       "The name signifies pr. one persecuted,",
+       "from r. אָיַב, as יִלּוֹד one born, from יָלַד;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5d54d165-62de-4d38-95da-50a8f695c575",
+      "duration_api_ms": 26377,
+      "cost_usd_list": 0.07779325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 380
+     },
+     "lines": [
+      {
+       "draft": "the book of Job, he is also mentioned in",
+       "reread": "the book of Job, he is also mentioned in",
+       "status": "agreed",
+       "text": "the book of Job, he is also mentioned in"
+      },
+      {
+       "draft": "Ez. 14, 14. 20. Sept, Ἰώβ, Arab. أَيُّوب.",
+       "reread": "Ez. 14, 14. 20. Sept, Ἰώβ, Arab. أَيُّوب.",
+       "status": "agreed",
+       "text": "Ez. 14, 14. 20. Sept, Ἰώβ, Arab. أَيُّوب."
+      },
+      {
+       "draft": "The name signifies pr. one persecuted,",
+       "reread": "The name signifies pr. one persecuted,",
+       "status": "agreed",
+       "text": "The name signifies pr. one persecuted,"
+      },
+      {
+       "draft": "from r. אָיַב, as יִלּוֹד one born, from יָלַד;",
+       "reread": "from r. אָיַב, as יִלּוֹד one born, from יָלַד;",
+       "status": "agreed",
+       "text": "from r. אָיַב, as יִלּוֹד one born, from יָלַד;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 148,
+      "y": 864,
+      "width": 872,
+      "height": 117
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r00-b03-872x117+148+864-x2.png",
+     "image_sha256": "82d0ffdd6e720cd7a08304645d1a55aaf8487e0fdf8c1f87b9e1c1231d401ba9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and refers to the calamities by which",
+       "he was afflicted.—Others render it: serio"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5f08b7b-ca43-4c27-857e-5b99aff6b586",
+      "duration_api_ms": 13013,
+      "cost_usd_list": 0.05517324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2122,
+      "output_tokens": 230
+     },
+     "lines": [
+      {
+       "draft": "and refers to the calamities by which",
+       "reread": "and refers to the calamities by which",
+       "status": "agreed",
+       "text": "and refers to the calamities by which"
+      },
+      {
+       "draft": "he was afflicted.—Others render it: serio",
+       "reread": "he was afflicted.—Others render it: serio",
+       "status": "agreed",
+       "text": "he was afflicted.—Others render it: serio"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 148,
+    "y": 973,
+    "width": 872,
+    "height": 950
+   },
+   "draft_lines": [
+    "resipiscens, i. q. Arab. أَوَّابٌ, from r. אוּב,",
+    "آبَ, to return, to convert, comp. Cor.",
+    "Sur. 38. 40–44 ; but see against this,",
+    "Thesaur. Ling. Heb. p. 81. col. 1.",
+    "אִיזֶבֶל f. (pr. non-cohabited, i. e. ἄλο-",
+    "χος Plat. p. 249. B, Lat. intacta, chaste,",
+    "comp. Agnes ; an appropriate female",
+    "name, and not to be estimated from the",
+    "character and conduct of Ahab's queen ;)",
+    "Jezebel, Isabella, pr. n. of a notorious",
+    "woman, the daughter of Ethbaal king",
+    "of Tyre, and wife of Ahab king of Israel,",
+    "infamous for her idolatry and cruel per-",
+    "secution of the prophets. 1 K. 16, 31.",
+    "18, 4. 13. 21, 5 sq. 2 K. 9, 7 sq."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 148,
+      "y": 978,
+      "width": 872,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r01-b00-872x243+148+978-x2.png",
+     "image_sha256": "428d8b3fc7101300bc2497aa1eedacc2d517eeb3ea165d4020b7b6048b200c3a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "resipiscens, i. q. Arab. أَوَّابٌ, from r. אוּב,",
+       "آبَ, to return, to convert, comp. Cor.",
+       "Sur. 38. 40–44 ; but see against this,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "35bf6197-b39a-498a-a649-e5607b6c85fe",
+      "duration_api_ms": 13204,
+      "cost_usd_list": 0.07946324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 489
+     },
+     "lines": [
+      {
+       "draft": "resipiscens, i. q. Arab. أَوَّابٌ, from r. אוּב,",
+       "reread": "resipiscens, i. q. Arab. أَوَّابٌ, from r. אוּב,",
+       "status": "agreed",
+       "text": "resipiscens, i. q. Arab. أَوَّابٌ, from r. אוּב,"
+      },
+      {
+       "draft": "آبَ, to return, to convert, comp. Cor.",
+       "reread": "آبَ, to return, to convert, comp. Cor.",
+       "status": "agreed",
+       "text": "آبَ, to return, to convert, comp. Cor."
+      },
+      {
+       "draft": "Sur. 38. 40–44 ; but see against this,",
+       "reread": "Sur. 38. 40–44 ; but see against this,",
+       "status": "agreed",
+       "text": "Sur. 38. 40–44; but see against this,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 148,
+      "y": 1205,
+      "width": 872,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r01-b01-872x264+148+1205-x2.png",
+     "image_sha256": "0e2e43c6c2ffda3461461bea7e95592d58f2fcbde63154e86fee26b5f8c5aea7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Thesaur. Ling. Heb. p. 81. col. 1.",
+       "אִיזֶבֶל f. (pr. non-cohabited, i. e. ἄλο-",
+       "χος Plat. p. 249. B, Lat. intacta, chaste,",
+       "comp. Agnes ; an appropriate female"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "891c3305-3ed7-411e-a643-9ca30a7c1f4e",
+      "duration_api_ms": 10434,
+      "cost_usd_list": 0.0751135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 376
+     },
+     "lines": [
+      {
+       "draft": "Thesaur. Ling. Heb. p. 81. col. 1.",
+       "reread": "Thesaur. Ling. Heb. p. 81. col. 1.",
+       "status": "agreed",
+       "text": "Thesaur. Ling. Heb. p. 81. col. 1."
+      },
+      {
+       "draft": "אִיזֶבֶל f. (pr. non-cohabited, i. e. ἄλο-",
+       "reread": "אִיזֶבֶל f. (pr. non-cohabited, i. e. ἄλο-",
+       "status": "agreed",
+       "text": "אִיזֶבֶל f. (pr. non-cohabited, i. e. ἄλο-"
+      },
+      {
+       "draft": "χος Plat. p. 249. B, Lat. intacta, chaste,",
+       "reread": "χος Plat. p. 249. B, Lat. intacta, chaste,",
+       "status": "agreed",
+       "text": "χος Plat. p. 249. B, Lat. intacta, chaste,"
+      },
+      {
+       "draft": "comp. Agnes ; an appropriate female",
+       "reread": "comp. Agnes ; an appropriate female",
+       "status": "agreed",
+       "text": "comp. Agnes; an appropriate female"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 148,
+      "y": 1453,
+      "width": 872,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r01-b02-872x236+148+1453-x2.png",
+     "image_sha256": "b08b6b21e2781eae0b8ee00498dbd9f831f97eaa51faad7ca23e27544e5aa442",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "name, and not to be estimated from the",
+       "character and conduct of Ahab's queen;)",
+       "Jezebel, Isabella, pr. n. of a notorious",
+       "woman, the daughter of Ethbaal king"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ae085de5-19e3-49ee-a68b-c9cac093397c",
+      "duration_api_ms": 10102,
+      "cost_usd_list": 0.0660935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 246
+     },
+     "lines": [
+      {
+       "draft": "name, and not to be estimated from the",
+       "reread": "name, and not to be estimated from the",
+       "status": "agreed",
+       "text": "name, and not to be estimated from the"
+      },
+      {
+       "draft": "character and conduct of Ahab's queen ;)",
+       "reread": "character and conduct of Ahab's queen;)",
+       "status": "agreed",
+       "text": "character and conduct of Ahab's queen;)"
+      },
+      {
+       "draft": "Jezebel, Isabella, pr. n. of a notorious",
+       "reread": "Jezebel, Isabella, pr. n. of a notorious",
+       "status": "agreed",
+       "text": "Jezebel, Isabella, pr. n. of a notorious"
+      },
+      {
+       "draft": "woman, the daughter of Ethbaal king",
+       "reread": "woman, the daughter of Ethbaal king",
+       "status": "agreed",
+       "text": "woman, the daughter of Ethbaal king"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 148,
+      "y": 1673,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r01-b03-872x238+148+1673-x2.png",
+     "image_sha256": "caf98c3594e3d4f084d4258058418ae5c39a0781edc9f9963d0161df7d1a108a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of Tyre, and wife of Ahab king of Israel,",
+       "infamous for her idolatry and cruel per-",
+       "secution of the prophets. 1 K. 16, 31.",
+       "18, 4. 13. 21, 5 sq. 2 K. 9, 7 sq."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2047f3a0-d5b2-485e-9b36-3d61bb996c4c",
+      "duration_api_ms": 12109,
+      "cost_usd_list": 0.06719349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "of Tyre, and wife of Ahab king of Israel,",
+       "reread": "of Tyre, and wife of Ahab king of Israel,",
+       "status": "agreed",
+       "text": "of Tyre, and wife of Ahab king of Israel,"
+      },
+      {
+       "draft": "infamous for her idolatry and cruel per-",
+       "reread": "infamous for her idolatry and cruel per-",
+       "status": "agreed",
+       "text": "infamous for her idolatry and cruel per-"
+      },
+      {
+       "draft": "secution of the prophets. 1 K. 16, 31.",
+       "reread": "secution of the prophets. 1 K. 16, 31.",
+       "status": "agreed",
+       "text": "secution of the prophets. 1 K. 16, 31."
+      },
+      {
+       "draft": "18, 4. 13. 21, 5 sq. 2 K. 9, 7 sq.",
+       "reread": "18, 4. 13. 21, 5 sq. 2 K. 9, 7 sq.",
+       "status": "agreed",
+       "text": "18, 4. 13. 21, 5 sq. 2 K. 9, 7 sq."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 148,
+    "y": 1911,
+    "width": 872,
+    "height": 903
+   },
+   "draft_lines": [
+    "אֵיזֶה where? Job 38, 19. 24. Com-",
+    "pounded from the interrog. part. אֵי, אַי",
+    "q. v. no. 2, and זֶה here.",
+    "אֵיךְ how? apoc. from אֵיכָה, Gen. 26,",
+    "9. Without interrogation, Ruth 3, 18.",
+    "2 K. 17, 28.—Often as an exclamation",
+    "of pain or grief, how! Ps. 73, 19. Is. 14,",
+    "4. Ecc. 2, 16.",
+    "אֵיכָה from אֵי no. 2, and כָּה i. q. כֹּה",
+    "so, here.",
+    "1. how? in what way? Deut. 1, 12.",
+    "Without interrogation, Deut. 12, 30.",
+    "2. where? Cant. 1, 7.",
+    "3. Often as an exclamation of pain or",
+    "grief, how! like אֵיךְ, Is. 1, 21. Lam. 1, 1."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 148,
+      "y": 1922,
+      "width": 872,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r02-b00-872x258+148+1922-x2.png",
+     "image_sha256": "a0881993ec31cc7152e319a8ef4a9b1497b78c9ea098f3b3c84601a5cc3b5fe8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵי־זֶה where? Job 38, 19. 24. Com-",
+       "pounded from the interrog. part. אֵי, אַי",
+       "q. v. no. 2, and זֶה here.",
+       "אֵיךְ how? apoc. from אֵיכָה, Gen. 26,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a93e6796-c91b-44a5-8616-f41f8eedcfc5",
+      "duration_api_ms": 15809,
+      "cost_usd_list": 0.07996349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 473
+     },
+     "lines": [
+      {
+       "draft": "אֵיזֶה where? Job 38, 19. 24. Com-",
+       "reread": "אֵי־זֶה where? Job 38, 19. 24. Com-",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "אֵי־זֶה where? Job 38, 19. 24. Com-",
+        "verdict": "b",
+        "note": "A maqqef is printed between אֵי and זֶה (the top bar runs continuously from the yod into the zayin); Reading A omits it. Vowels (tsere under alef, segol under zayin) and the rest of the line agree with both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b5ee6755-db6b-44c3-909f-a51865a0ec53",
+        "duration_api_ms": 20039,
+        "cost_usd_list": 0.1055045,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3578,
+        "cache_creation_input_tokens": 2686,
+        "output_tokens": 1011
+       },
+       "text": "אֵי־זֶה where? Job 38, 19. 24. Com-"
+      },
+      {
+       "draft": "pounded from the interrog. part. אֵי, אַי",
+       "reread": "pounded from the interrog. part. אֵי, אַי",
+       "status": "agreed",
+       "text": "pounded from the interrog. part. אֵי, אַי"
+      },
+      {
+       "draft": "q. v. no. 2, and זֶה here.",
+       "reread": "q. v. no. 2, and זֶה here.",
+       "status": "agreed",
+       "text": "q. v. no. 2, and זֶה here."
+      },
+      {
+       "draft": "אֵיךְ how? apoc. from אֵיכָה, Gen. 26,",
+       "reread": "אֵיךְ how? apoc. from אֵיכָה, Gen. 26,",
+       "status": "agreed",
+       "text": "אֵיךְ how? apoc. from אֵיכָה, Gen. 26,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 148,
+      "y": 2164,
+      "width": 872,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r02-b01-872x226+148+2164-x2.png",
+     "image_sha256": "c2d7a26ff375731bce7df1350f71ec1b019bcb950cf0f148c928ab8abd7f8e2a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "9. Without interrogation, Ruth 3, 18.",
+       "2 K. 17, 28.—Often as an exclamation",
+       "of pain or grief, how ! Ps. 73, 19. Is. 14,",
+       "4. Ecc. 2, 16."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3d831846-a87f-4136-becb-d131715c30e0",
+      "duration_api_ms": 12460,
+      "cost_usd_list": 0.06679349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "9. Without interrogation, Ruth 3, 18.",
+       "reread": "9. Without interrogation, Ruth 3, 18.",
+       "status": "agreed",
+       "text": "9. Without interrogation, Ruth 3, 18."
+      },
+      {
+       "draft": "2 K. 17, 28.—Often as an exclamation",
+       "reread": "2 K. 17, 28.—Often as an exclamation",
+       "status": "agreed",
+       "text": "2 K. 17, 28.—Often as an exclamation"
+      },
+      {
+       "draft": "of pain or grief, how! Ps. 73, 19. Is. 14,",
+       "reread": "of pain or grief, how ! Ps. 73, 19. Is. 14,",
+       "status": "agreed",
+       "text": "of pain or grief, how! Ps. 73, 19. Is. 14,"
+      },
+      {
+       "draft": "4. Ecc. 2, 16.",
+       "reread": "4. Ecc. 2, 16.",
+       "status": "agreed",
+       "text": "4. Ecc. 2, 16."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 148,
+      "y": 2374,
+      "width": 872,
+      "height": 265
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r02-b02-872x265+148+2374-x2.png",
+     "image_sha256": "9e2528186fdc77a9183b2ac9a4578e827c350670571df18642c8a64c6f98ee65",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵיכָה from אֵי no. 2, and כָּה i. q. כֹּה",
+       "so, here.",
+       "1. how ? in what way ? Deut. 1, 12.",
+       "Without interrogation, Deut. 12, 30."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4a9ccbfc-2336-4fd2-8c10-529249a787dd",
+      "duration_api_ms": 7942,
+      "cost_usd_list": 0.07801349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 434
+     },
+     "lines": [
+      {
+       "draft": "אֵיכָה from אֵי no. 2, and כָּה i. q. כֹּה",
+       "reread": "אֵיכָה from אֵי no. 2, and כָּה i. q. כֹּה",
+       "status": "agreed",
+       "text": "אֵיכָה from אֵי no. 2, and כָּה i. q. כֹּה"
+      },
+      {
+       "draft": "so, here.",
+       "reread": "so, here.",
+       "status": "agreed",
+       "text": "so, here."
+      },
+      {
+       "draft": "1. how? in what way? Deut. 1, 12.",
+       "reread": "1. how ? in what way ? Deut. 1, 12.",
+       "status": "agreed",
+       "text": "1. how? in what way? Deut. 1, 12."
+      },
+      {
+       "draft": "Without interrogation, Deut. 12, 30.",
+       "reread": "Without interrogation, Deut. 12, 30.",
+       "status": "agreed",
+       "text": "Without interrogation, Deut. 12, 30."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 148,
+      "y": 2623,
+      "width": 872,
+      "height": 186
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r02-b03-872x186+148+2623-x2.png",
+     "image_sha256": "7b4f8eadafc490b221fdc244d09baa5d5fe8c9a2b37abaefaf866decf4aa1b63",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. where ?   Cant. 1, 7.",
+       "3. Often as an exclamation of pain or",
+       "grief, how !  like אֵיךְ, Is. 1, 21. Lam. 1, 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9a36c66e-8b9b-4396-ac73-423f3cb070d4",
+      "duration_api_ms": 10293,
+      "cost_usd_list": 0.0677135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 354
+     },
+     "lines": [
+      {
+       "draft": "2. where? Cant. 1, 7.",
+       "reread": "2. where ?   Cant. 1, 7.",
+       "status": "agreed",
+       "text": "2. where? Cant. 1, 7."
+      },
+      {
+       "draft": "3. Often as an exclamation of pain or",
+       "reread": "3. Often as an exclamation of pain or",
+       "status": "agreed",
+       "text": "3. Often as an exclamation of pain or"
+      },
+      {
+       "draft": "grief, how! like אֵיךְ, Is. 1, 21. Lam. 1, 1.",
+       "reread": "grief, how !  like אֵיךְ, Is. 1, 21. Lam. 1, 1.",
+       "status": "agreed",
+       "text": "grief, how! like אֵיךְ, Is. 1, 21. Lam. 1, 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 148,
+    "y": 2802,
+    "width": 872,
+    "height": 504
+   },
+   "draft_lines": [
+    "אֵיכֹה (id.) where, not interrogative,",
+    "once 2 K. 6, 13, where Keri has אֵיכוֹ id.",
+    "אֵיכָכָה (Milêl) how ? Cant. 5, 3. Esth.",
+    "8, 6. From אֵי and כָּכָה i. q. כֹּה, כֹּה, so.",
+    "אַיִל see r. אוּל.",
+    "אַיִל m. 1. a ram, so called from his",
+    "twisted horns, q. d. rolled up ; see r. אוּל.",
+    "4*"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 148,
+      "y": 2807,
+      "width": 872,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r03-b00-872x267+148+2807-x2.png",
+     "image_sha256": "d70efc61dc632c819eb8642f3354b8d21ff475afc7601b3d057a6052284b1652",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵיכֹה (id.) where, not interrogative,",
+       "once 2 K. 6, 13, where Keri has אֵיכוֹ id.",
+       "אֵיכָכָה (Milêl) how ? Cant. 5, 3. Esth.",
+       "8, 6. From אֵי and כָּכָה i. q. כָּה, כֹּה, so."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4f88683b-f64e-4775-aa22-b36f24b77c9a",
+      "duration_api_ms": 9613,
+      "cost_usd_list": 0.0868235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 585
+     },
+     "lines": [
+      {
+       "draft": "אֵיכֹה (id.) where, not interrogative,",
+       "reread": "אֵיכֹה (id.) where, not interrogative,",
+       "status": "agreed",
+       "text": "אֵיכֹה (id.) where, not interrogative,"
+      },
+      {
+       "draft": "once 2 K. 6, 13, where Keri has אֵיכוֹ id.",
+       "reread": "once 2 K. 6, 13, where Keri has אֵיכוֹ id.",
+       "status": "agreed",
+       "text": "once 2 K. 6, 13, where Keri has אֵיכוֹ id."
+      },
+      {
+       "draft": "אֵיכָכָה (Milêl) how ? Cant. 5, 3. Esth.",
+       "reread": "אֵיכָכָה (Milêl) how ? Cant. 5, 3. Esth.",
+       "status": "agreed",
+       "text": "אֵיכָכָה (Milêl) how? Cant. 5, 3. Esth."
+      },
+      {
+       "draft": "8, 6. From אֵי and כָּכָה i. q. כֹּה, כֹּה, so.",
+       "reread": "8, 6. From אֵי and כָּכָה i. q. כָּה, כֹּה, so.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "8, 6. From אֵי and כָּכָה i. q. כָּה, כֹּה, so.",
+        "verdict": "b",
+        "note": "The first word after \"i. q.\" has a qamets under the dageshed kaph (כָּה), not a holam; only the second word carries the holam (כֹּה). Reading A wrongly repeats כֹּה twice.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4a508113-df48-460d-a1ee-289fa7b10d64",
+        "duration_api_ms": 16121,
+        "cost_usd_list": 0.08401,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2771,
+        "output_tokens": 547
+       },
+       "text": "8, 6. From אֵי and כָּכָה i. q. כָּה, כֹּה, so."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 148,
+      "y": 3058,
+      "width": 872,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c0-r03-b01-872x250+148+3058-x2.png",
+     "image_sha256": "afa96c90c158d2d2f5a15321e820cbc8c2624387e50857772ca5e0a04b392b8f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱיָל see r. אוּל.",
+       "אַיִל m.  1. a ram, so called from his",
+       "twisted horns, q. d. rolled up ; see r. אוּל.",
+       "4*"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a78345c-f19f-4031-930b-763f9fe8bee9",
+      "duration_api_ms": 15407,
+      "cost_usd_list": 0.0891035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 681
+     },
+     "lines": [
+      {
+       "draft": "אַיִל see r. אוּל.",
+       "reread": "אֱיָל see r. אוּל.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "אֱיָל see r. אוּל.",
+        "verdict": "b",
+        "note": "Aleph carries hataf-segol (two vertical dots + stroke) and yod carries a T-shaped qamets; the patach/hireq form אַיִל is the headword of line 2 (\"a ram\"), not line 1.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8e286c9d-8618-487b-b4c2-8122b0dd7fa3",
+        "duration_api_ms": 15429,
+        "cost_usd_list": 0.089299,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3556,
+        "cache_creation_input_tokens": 2601,
+        "output_tokens": 721
+       },
+       "text": "אֱיָל see r. אוּל."
+      },
+      {
+       "draft": "אַיִל m. 1. a ram, so called from his",
+       "reread": "אַיִל m.  1. a ram, so called from his",
+       "status": "agreed",
+       "text": "אַיִל m. 1. a ram, so called from his"
+      },
+      {
+       "draft": "twisted horns, q. d. rolled up ; see r. אוּל.",
+       "reread": "twisted horns, q. d. rolled up ; see r. אוּל.",
+       "status": "agreed",
+       "text": "twisted horns, q. d. rolled up; see r. אוּל."
+      },
+      {
+       "draft": "4*",
+       "reread": "4*",
+       "status": "agreed",
+       "text": "4*"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1044,
+    "y": 149,
+    "width": 875,
+    "height": 717
+   },
+   "draft_lines": [
+    "Gen. 15, 9.  Plur. אֵילִים Ex. 25, 5, and",
+    "אֵלִים Job 42, 8.—Hence intens. אַיָּל q. v.",
+    "2. A term of architecture, referring,",
+    "as it would seem, to a projection in a la-",
+    "teral wall, serving as a post or column,",
+    "i. e. a pilaster ; either from r. אוּל no. 3,",
+    "or like Lat. aries, capreolus, Germ. Bock,",
+    "used for a buttress. 1 K. 6, 31. Ez. 41,",
+    "3.  Plur. אֵילִים, Ez. 41, 1. 40, 10. 14. 16.",
+    "38 ; comp. v. 26. 31. 34. 37.  The ancient",
+    "versions render it sometimes posts, some-",
+    "times columns.  See Boettcher's Proben"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 141,
+      "width": 875,
+      "height": 287
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r00-b00-875x287+1044+141-x2.png",
+     "image_sha256": "cd483cbf932131101d2b77f0ff18848dbe4a512b591c4f3c6105eee93b2a3584",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gen. 15, 9.   Plur. אֵילִים Ex. 25, 5, and",
+       "אֵלִים Job 42, 8.—Hence intens. אַיִל q. v.",
+       "2. A term of architecture, referring,",
+       "as it would seem, to a projection in a la-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e4977821-d1b1-4f6f-8639-b984a97fe235",
+      "duration_api_ms": 14295,
+      "cost_usd_list": 0.0866335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 556
+     },
+     "lines": [
+      {
+       "draft": "Gen. 15, 9.  Plur. אֵילִים Ex. 25, 5, and",
+       "reread": "Gen. 15, 9.   Plur. אֵילִים Ex. 25, 5, and",
+       "status": "agreed",
+       "text": "Gen. 15, 9. Plur. אֵילִים Ex. 25, 5, and"
+      },
+      {
+       "draft": "אֵלִים Job 42, 8.—Hence intens. אַיָּל q. v.",
+       "reread": "אֵלִים Job 42, 8.—Hence intens. אַיִל q. v.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "אֵלִים Job 42, 8.—Hence intens. אַיָּל q. v.",
+        "verdict": "a",
+        "note": "The last Hebrew word shows a dagesh dot in the yod and a qamets (T-shaped) beneath it, not a hireq: אַיָּל (the intensive form \"stag\"), as in Reading A; Reading B's אַיִל would merely repeat the headword.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5b3b90b2-8067-411e-ba42-0a893b5c8613",
+        "duration_api_ms": 21062,
+        "cost_usd_list": 0.0821675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2824,
+        "output_tokens": 489
+       },
+       "text": "אֵלִים Job 42, 8.—Hence intens. אַיָּל q. v."
+      },
+      {
+       "draft": "2. A term of architecture, referring,",
+       "reread": "2. A term of architecture, referring,",
+       "status": "agreed",
+       "text": "2. A term of architecture, referring,"
+      },
+      {
+       "draft": "as it would seem, to a projection in a la-",
+       "reread": "as it would seem, to a projection in a la-",
+       "status": "agreed",
+       "text": "as it would seem, to a projection in a la-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 412,
+      "width": 875,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r00-b01-875x237+1044+412-x2.png",
+     "image_sha256": "1d546a407e32230695280cdf69a83eb19b54a2c6481ffcac9b9cb75a77f25090",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "teral wall, serving as a post or column,",
+       "i. e. a pilaster ; either from r. אוּל no. 3,",
+       "or like Lat. aries, capreolus, Germ. Bock,",
+       "used for a buttress. 1 K. 6, 31. Ez. 41,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7dfc5319-2670-4e64-8657-73ef97c82777",
+      "duration_api_ms": 11581,
+      "cost_usd_list": 0.0701435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 327
+     },
+     "lines": [
+      {
+       "draft": "teral wall, serving as a post or column,",
+       "reread": "teral wall, serving as a post or column,",
+       "status": "agreed",
+       "text": "teral wall, serving as a post or column,"
+      },
+      {
+       "draft": "i. e. a pilaster ; either from r. אוּל no. 3,",
+       "reread": "i. e. a pilaster ; either from r. אוּל no. 3,",
+       "status": "agreed",
+       "text": "i. e. a pilaster; either from r. אוּל no. 3,"
+      },
+      {
+       "draft": "or like Lat. aries, capreolus, Germ. Bock,",
+       "reread": "or like Lat. aries, capreolus, Germ. Bock,",
+       "status": "agreed",
+       "text": "or like Lat. aries, capreolus, Germ. Bock,"
+      },
+      {
+       "draft": "used for a buttress. 1 K. 6, 31. Ez. 41,",
+       "reread": "used for a buttress. 1 K. 6, 31. Ez. 41,",
+       "status": "agreed",
+       "text": "used for a buttress. 1 K. 6, 31. Ez. 41,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 633,
+      "width": 875,
+      "height": 225
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r00-b02-875x225+1044+633-x2.png",
+     "image_sha256": "3a9d00985142b625ed2d119e14148ae0c3fd04127cd475c9b463e966e9a58726",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Plur. אֵילִ֫ים, Ez. 41, 1. 40, 10. 14. 16.",
+       "38 ; comp. v. 26. 31. 34. 37. The ancient",
+       "versions render it sometimes posts, some-",
+       "times columns. See Boettcher's Proben"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9309f982-dae7-4e82-bbf3-8f54624f4e21",
+      "duration_api_ms": 13335,
+      "cost_usd_list": 0.08029349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 530
+     },
+     "lines": [
+      {
+       "draft": "3.  Plur. אֵילִים, Ez. 41, 1. 40, 10. 14. 16.",
+       "reread": "3. Plur. אֵילִ֫ים, Ez. 41, 1. 40, 10. 14. 16.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "3.  Plur. אֵילִים, Ez. 41, 1. 40, 10. 14. 16.",
+        "verdict": "a",
+        "note": "No accent is printed on the lamed — the only stroke above it is the lamed's own ascender; the word is plain אֵילִים (tsere, yod, hiriq, yod, mem), so Reading B's ֫ is spurious. Rest of the line identical in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9a0a4d35-d207-4e27-b480-a859e3297c3a",
+        "duration_api_ms": 22426,
+        "cost_usd_list": 0.1015515,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3606,
+        "cache_creation_input_tokens": 2588,
+        "output_tokens": 971
+       },
+       "text": "3. Plur. אֵילִים, Ez. 41, 1. 40, 10. 14. 16."
+      },
+      {
+       "draft": "38 ; comp. v. 26. 31. 34. 37.  The ancient",
+       "reread": "38 ; comp. v. 26. 31. 34. 37. The ancient",
+       "status": "agreed",
+       "text": "38; comp. v. 26. 31. 34. 37. The ancient"
+      },
+      {
+       "draft": "versions render it sometimes posts, some-",
+       "reread": "versions render it sometimes posts, some-",
+       "status": "agreed",
+       "text": "versions render it sometimes posts, some-"
+      },
+      {
+       "draft": "times columns.  See Boettcher's Proben",
+       "reread": "times columns. See Boettcher's Proben",
+       "status": "agreed",
+       "text": "times columns. See Boettcher's Proben"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1044,
+    "y": 854,
+    "width": 875,
+    "height": 972
+   },
+   "draft_lines": [
+    "alttestamtl. Schrifterkl. p. 302.",
+    "אַיָּל m. a stag, hart, male deer, Deut.",
+    "12, 15. 14, 5. Is. 35, 6. Plur. ־ִים Cant.",
+    "2, 9. 17. Always masc. but in Ps. 42, 2",
+    "joined with a fem. in the manner of",
+    "comm. gend. thus denoting a hind, which",
+    "elsewhere has the specific name אַיָּלָה,",
+    "אַיֶּלֶת. Chald. and Syr. id. Arab. إِيَّل",
+    "wild goat, mountain-goat, chamois. Eth.",
+    "ሃየል, by which orthography the affinity",
+    "of the roots אול and חול is distinctly con-",
+    "firmed.—As to the etymology, אַיָּל is a",
+    "sort of intensive of אַיִל, therefore pr. a",
+    "large ram or buck, and אַיָּלָה a large she-",
+    "goat or the like. Indeed the Hebrews",
+    "would seem to have called all the va-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 862,
+      "width": 875,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r01-b00-875x254+1044+862-x2.png",
+     "image_sha256": "21c49666bc6621569ea531874a04c90eeb889509f5acee309008642761fd7a6e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "alttestamtl. Schrifterkl. p. 302.",
+       "אַיָּל m. a stag, hart, male deer, Deut.",
+       "12, 15. 14, 5. Is. 35, 6. Plur. ־ִים Cant.",
+       "2, 9. 17. Always masc. but in Ps. 42, 2"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "489ee8d0-2ca9-4a38-9360-62a4010e2398",
+      "duration_api_ms": 13301,
+      "cost_usd_list": 0.0768135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 410
+     },
+     "lines": [
+      {
+       "draft": "alttestamtl. Schrifterkl. p. 302.",
+       "reread": "alttestamtl. Schrifterkl. p. 302.",
+       "status": "agreed",
+       "text": "alttestamtl. Schrifterkl. p. 302."
+      },
+      {
+       "draft": "אַיָּל m. a stag, hart, male deer, Deut.",
+       "reread": "אַיָּל m. a stag, hart, male deer, Deut.",
+       "status": "agreed",
+       "text": "אַיָּל m. a stag, hart, male deer, Deut."
+      },
+      {
+       "draft": "12, 15. 14, 5. Is. 35, 6. Plur. ־ִים Cant.",
+       "reread": "12, 15. 14, 5. Is. 35, 6. Plur. ־ִים Cant.",
+       "status": "agreed",
+       "text": "12, 15. 14, 5. Is. 35, 6. Plur. ־ִים Cant."
+      },
+      {
+       "draft": "2, 9. 17. Always masc. but in Ps. 42, 2",
+       "reread": "2, 9. 17. Always masc. but in Ps. 42, 2",
+       "status": "agreed",
+       "text": "2, 9. 17. Always masc. but in Ps. 42, 2"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 1100,
+      "width": 875,
+      "height": 279
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r01-b01-875x279+1044+1100-x2.png",
+     "image_sha256": "a7602862fb9894811f6a77be3149201f4a44263f50d26d2764d9cdc10154508d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "joined with a fem. in the manner of",
+       "comm. gend. thus denoting a hind, which",
+       "elsewhere has the specific name אַיָּלָה,",
+       "אַיֶּלֶת. Chald. and Syr. id. Arab. اِيَّل"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e30a586f-ca70-4ba2-bbfa-5ea0057507e2",
+      "duration_api_ms": 12733,
+      "cost_usd_list": 0.08151375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 478
+     },
+     "lines": [
+      {
+       "draft": "joined with a fem. in the manner of",
+       "reread": "joined with a fem. in the manner of",
+       "status": "agreed",
+       "text": "joined with a fem. in the manner of"
+      },
+      {
+       "draft": "comm. gend. thus denoting a hind, which",
+       "reread": "comm. gend. thus denoting a hind, which",
+       "status": "agreed",
+       "text": "comm. gend. thus denoting a hind, which"
+      },
+      {
+       "draft": "elsewhere has the specific name אַיָּלָה,",
+       "reread": "elsewhere has the specific name אַיָּלָה,",
+       "status": "agreed",
+       "text": "elsewhere has the specific name אַיָּלָה,"
+      },
+      {
+       "draft": "אַיֶּלֶת. Chald. and Syr. id. Arab. إِيَّل",
+       "reread": "אַיֶּלֶת. Chald. and Syr. id. Arab. اِيَّل",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "אַיֶּלֶת. Chald. and Syr. id. Arab. أَيَّل",
+        "verdict": "neither",
+        "note": "The Arabic alif carries its hamza (with fatha) ABOVE the letter, not below, and no kasra is printed under it; shadda+fatha on the yā'. Reading A puts hamza below with kasra, B drops the hamza — both wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "049fdd28-5721-4172-a98e-0a6ab4b5d974",
+        "duration_api_ms": 32879,
+        "cost_usd_list": 0.1431085,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2766,
+        "output_tokens": 1731
+       },
+       "text": "אַיֶּלֶת. Chald. and Syr. id. Arab. أَيَّل"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 1363,
+      "width": 875,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r01-b02-875x245+1044+1363-x2.png",
+     "image_sha256": "41fc44f522669ad015cf0ea1e55fce173cd8646b86f374ab5ce2f0fb8b204f28",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "wild goat, mountain-goat, chamois. Eth.",
+       "ኀየል, by which orthography the affinity",
+       "of the roots אוּל and חוּל is distinctly con-",
+       "firmed.—As to the etymology, אַיִל is a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "820085f1-ef8b-4cb0-9193-d5b6ad9cc82f",
+      "duration_api_ms": 17555,
+      "cost_usd_list": 0.10229375000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 944
+     },
+     "lines": [
+      {
+       "draft": "wild goat, mountain-goat, chamois. Eth.",
+       "reread": "wild goat, mountain-goat, chamois. Eth.",
+       "status": "agreed",
+       "text": "wild goat, mountain-goat, chamois. Eth."
+      },
+      {
+       "draft": "ሃየል, by which orthography the affinity",
+       "reread": "ኀየል, by which orthography the affinity",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "ኀየል, by which orthography the affinity",
+        "verdict": "b",
+        "note": "The first Ethiopic glyph is printed with a top bar, a slanted stroke and a barred vertical stem — the shape of ኀ (ḫa), not the open U-shape of ሃ (hā). The rest (የል and the English) is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "069b5810-fa84-4288-aff0-47fa81a213b8",
+        "duration_api_ms": 18610,
+        "cost_usd_list": 0.0958,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2606,
+        "output_tokens": 849
+       },
+       "text": "ኀየል, by which orthography the affinity"
+      },
+      {
+       "draft": "of the roots אול and חול is distinctly con-",
+       "reread": "of the roots אוּל and חוּל is distinctly con-",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "of the roots אוּל and חוּל is distinctly con-",
+        "verdict": "b",
+        "note": "Both vavs carry a visible shureq dot in the print (אוּל, חוּל); Reading A omits them.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ab529c8f-1483-4a1d-8687-8481527f2a12",
+        "duration_api_ms": 10858,
+        "cost_usd_list": 0.07032150000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2612,
+        "output_tokens": 337
+       },
+       "text": "of the roots אוּל and חוּל is distinctly con-"
+      },
+      {
+       "draft": "firmed.—As to the etymology, אַיָּל is a",
+       "reread": "firmed.—As to the etymology, אַיִל is a",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "firmed.—As to the etymology, אַיָּל is a",
+        "verdict": "a",
+        "note": "The vowel under yod is printed as a qamets (bar with stem) with a dagesh in the yod, giving אַיָּל (stag), not hireq אַיִל (ram) as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cfadea61-743c-48cf-a015-37b05585ef94",
+        "duration_api_ms": 22361,
+        "cost_usd_list": 0.09888225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3569,
+        "cache_creation_input_tokens": 2615,
+        "output_tokens": 907
+       },
+       "text": "firmed.—As to the etymology, אַיָּל is a"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1044,
+      "y": 1592,
+      "width": 875,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r01-b03-875x227+1044+1592-x2.png",
+     "image_sha256": "e8b7171bf86f1274a0c880121fcfe0fd751dfdf6b3bca538bf28ae8beff235d9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sort of intensive of אַיִל, therefore pr. a",
+       "large ram or buck, and אַיָּלָה a large she-",
+       "goat or the like.  Indeed the Hebrews",
+       "would seem to have called all the va-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02f73588-0505-4aa2-85ad-8a33aa27e5df",
+      "duration_api_ms": 10356,
+      "cost_usd_list": 0.07263375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 376
+     },
+     "lines": [
+      {
+       "draft": "sort of intensive of אַיִל, therefore pr. a",
+       "reread": "sort of intensive of אַיִל, therefore pr. a",
+       "status": "agreed",
+       "text": "sort of intensive of אַיִל, therefore pr. a"
+      },
+      {
+       "draft": "large ram or buck, and אַיָּלָה a large she-",
+       "reread": "large ram or buck, and אַיָּלָה a large she-",
+       "status": "agreed",
+       "text": "large ram or buck, and אַיָּלָה a large she-"
+      },
+      {
+       "draft": "goat or the like. Indeed the Hebrews",
+       "reread": "goat or the like.  Indeed the Hebrews",
+       "status": "agreed",
+       "text": "goat or the like. Indeed the Hebrews"
+      },
+      {
+       "draft": "would seem to have called all the va-",
+       "reread": "would seem to have called all the va-",
+       "status": "agreed",
+       "text": "would seem to have called all the va-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1044,
+    "y": 1814,
+    "width": 875,
+    "height": 639
+   },
+   "draft_lines": [
+    "rious species of deer and antelopes, which",
+    "in part are furnished with twisted horns",
+    "like the ram, by the general name of",
+    "large rams or wild rams; just as the",
+    "Germans call the same animals Berg-",
+    "ziegen, wilde Ziegen, and the Latins",
+    "capreæ, from their general resemblance",
+    "to a goat, capra. Sept. every where",
+    "ἔλαφος.",
+    "אֱיָל m. strength, might, once Ps. 88, 5.",
+    "R. אוּל no. 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 1821,
+      "width": 875,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r02-b00-875x232+1044+1821-x2.png",
+     "image_sha256": "6501696c3fe98e3ee024649fccd5b8f1de264e19ad67a2338207b819d17e43c7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "rious species of deer and antelopes, which",
+       "in part are furnished with twisted horns",
+       "like the ram, by the general name of",
+       "large rams or wild rams; just as the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6e2bd7a2-3c6a-446d-94d6-b0fac0a4afc0",
+      "duration_api_ms": 8156,
+      "cost_usd_list": 0.06543375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 232
+     },
+     "lines": [
+      {
+       "draft": "rious species of deer and antelopes, which",
+       "reread": "rious species of deer and antelopes, which",
+       "status": "agreed",
+       "text": "rious species of deer and antelopes, which"
+      },
+      {
+       "draft": "in part are furnished with twisted horns",
+       "reread": "in part are furnished with twisted horns",
+       "status": "agreed",
+       "text": "in part are furnished with twisted horns"
+      },
+      {
+       "draft": "like the ram, by the general name of",
+       "reread": "like the ram, by the general name of",
+       "status": "agreed",
+       "text": "like the ram, by the general name of"
+      },
+      {
+       "draft": "large rams or wild rams; just as the",
+       "reread": "large rams or wild rams; just as the",
+       "status": "agreed",
+       "text": "large rams or wild rams; just as the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 2037,
+      "width": 875,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r02-b01-875x239+1044+2037-x2.png",
+     "image_sha256": "6542a261bb9b319479ba244900f4cc67bf1c7238cec4700f9ccf0bb51558fe2e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Germans call the same animals Berg-",
+       "ziegen, wilde Ziegen, and the Latins",
+       "capreæ, from their general resemblance",
+       "to a goat, capra. Sept. every where"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5faa18ff-6be5-403c-9a9f-8810a8cfc193",
+      "duration_api_ms": 13065,
+      "cost_usd_list": 0.06719375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "Germans call the same animals Berg-",
+       "reread": "Germans call the same animals Berg-",
+       "status": "agreed",
+       "text": "Germans call the same animals Berg-"
+      },
+      {
+       "draft": "ziegen, wilde Ziegen, and the Latins",
+       "reread": "ziegen, wilde Ziegen, and the Latins",
+       "status": "agreed",
+       "text": "ziegen, wilde Ziegen, and the Latins"
+      },
+      {
+       "draft": "capreæ, from their general resemblance",
+       "reread": "capreæ, from their general resemblance",
+       "status": "agreed",
+       "text": "capreæ, from their general resemblance"
+      },
+      {
+       "draft": "to a goat, capra. Sept. every where",
+       "reread": "to a goat, capra. Sept. every where",
+       "status": "agreed",
+       "text": "to a goat, capra. Sept. every where"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 2260,
+      "width": 875,
+      "height": 186
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r02-b02-875x186+1044+2260-x2.png",
+     "image_sha256": "67bfd693036c046e3c1d96d47ed6cad4a0fc3d4249635891f412b09ed0110a79",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ἔλαφος.",
+       "אֱיָל m. strength, might, once Ps. 88, 5.",
+       "R. אוּל no. 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28b405c2-28e7-4ea6-b496-4b5eb2ae3308",
+      "duration_api_ms": 10625,
+      "cost_usd_list": 0.07030375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 405
+     },
+     "lines": [
+      {
+       "draft": "ἔλαφος.",
+       "reread": "ἔλαφος.",
+       "status": "agreed",
+       "text": "ἔλαφος."
+      },
+      {
+       "draft": "אֱיָל m. strength, might, once Ps. 88, 5.",
+       "reread": "אֱיָל m. strength, might, once Ps. 88, 5.",
+       "status": "agreed",
+       "text": "אֱיָל m. strength, might, once Ps. 88, 5."
+      },
+      {
+       "draft": "R. אוּל no. 2.",
+       "reread": "R. אוּל no. 2.",
+       "status": "agreed",
+       "text": "R. אוּל no. 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1044,
+    "y": 2441,
+    "width": 875,
+    "height": 826
+   },
+   "draft_lines": [
+    "אַיִל m. (r. אוּל) plur. אֵילִים, pr. strong,",
+    "stout, mighty.",
+    "1. Plur. the mighty, the powerful, the",
+    "nobles of a state, city, Ex. 15, 15. Ez. 17,",
+    "13. 2 K. 24, 15 Keri.",
+    "2. a strong, stout, mighty tree, like δρῦς,",
+    "spec. the oak, terebinth, and sometimes",
+    "also the palm, i. q. אֵלָה, אַלּוֹן, which is",
+    "more usual. Sing. once Gen. 14, 6 in",
+    "the pr. n. אֵיל פָּארָן, Sept. τερέβινθος τῆς",
+    "Φαράν. Plur. אֵילִים, אֵלִים Is. 1, 29. 57,",
+    "5. 61, 3.",
+    "אַיָּלָה f. a hind, female deer, and perh.",
+    "also caprea, wild she-goat, these two ani-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1044,
+      "y": 2448,
+      "width": 875,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r03-b00-875x250+1044+2448-x2.png",
+     "image_sha256": "aceda40b15993128b7f66d0ddf694014b021d255e6823632dd2f5e902ae43aef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַיִל m. (r. אוּל) plur. אֵילִים, pr. strong,",
+       "stout, mighty.",
+       "1. Plur. the mighty, the powerful, the",
+       "nobles of a state, city, Ex. 15, 15. Ez. 17,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6fbef748-61df-4eff-99bb-072b2f1c6575",
+      "duration_api_ms": 12800,
+      "cost_usd_list": 0.08064375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 511
+     },
+     "lines": [
+      {
+       "draft": "אַיִל m. (r. אוּל) plur. אֵילִים, pr. strong,",
+       "reread": "אַיִל m. (r. אוּל) plur. אֵילִים, pr. strong,",
+       "status": "agreed",
+       "text": "אַיִל m. (r. אוּל) plur. אֵילִים, pr. strong,"
+      },
+      {
+       "draft": "stout, mighty.",
+       "reread": "stout, mighty.",
+       "status": "agreed",
+       "text": "stout, mighty."
+      },
+      {
+       "draft": "1. Plur. the mighty, the powerful, the",
+       "reread": "1. Plur. the mighty, the powerful, the",
+       "status": "agreed",
+       "text": "1. Plur. the mighty, the powerful, the"
+      },
+      {
+       "draft": "nobles of a state, city, Ex. 15, 15. Ez. 17,",
+       "reread": "nobles of a state, city, Ex. 15, 15. Ez. 17,",
+       "status": "agreed",
+       "text": "nobles of a state, city, Ex. 15, 15. Ez. 17,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1044,
+      "y": 2682,
+      "width": 875,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r03-b01-875x239+1044+2682-x2.png",
+     "image_sha256": "9615134a7446565564d9bd32d8dab5cd18d3b7e5d15c3bccc78036ff9e147782",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "13. 2 K. 24, 15 Keri.",
+       "2. a strong, stout, mighty tree, like δρῦς,",
+       "spec. the oak, terebinth, and sometimes",
+       "also the palm, i. q. אֵלָה, אַלּוֹן, which is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5b07894b-eebd-462c-a932-ba06ccceba24",
+      "duration_api_ms": 8960,
+      "cost_usd_list": 0.06849375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "13. 2 K. 24, 15 Keri.",
+       "reread": "13. 2 K. 24, 15 Keri.",
+       "status": "agreed",
+       "text": "13. 2 K. 24, 15 Keri."
+      },
+      {
+       "draft": "2. a strong, stout, mighty tree, like δρῦς,",
+       "reread": "2. a strong, stout, mighty tree, like δρῦς,",
+       "status": "agreed",
+       "text": "2. a strong, stout, mighty tree, like δρῦς,"
+      },
+      {
+       "draft": "spec. the oak, terebinth, and sometimes",
+       "reread": "spec. the oak, terebinth, and sometimes",
+       "status": "agreed",
+       "text": "spec. the oak, terebinth, and sometimes"
+      },
+      {
+       "draft": "also the palm, i. q. אֵלָה, אַלּוֹן, which is",
+       "reread": "also the palm, i. q. אֵלָה, אַלּוֹן, which is",
+       "status": "agreed",
+       "text": "also the palm, i. q. אֵלָה, אַלּוֹן, which is"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1044,
+      "y": 2905,
+      "width": 875,
+      "height": 222
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r03-b02-875x222+1044+2905-x2.png",
+     "image_sha256": "3490c526e74b91fed8d79cdcde7448586e3bcb43d5b292be3267077e73a504d4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "more usual. Sing. once Gen. 14, 6 in",
+       "the pr. n. אֵיל פָּארָן, Sept. τερέβινθος τῆς",
+       "Φαράν. Plur. אֵילִים, אֵלִים Is. 1, 29. 57,",
+       "5. 61, 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9586a95f-b51d-4e00-8ab3-bd6c29ea7634",
+      "duration_api_ms": 10757,
+      "cost_usd_list": 0.07357375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2567,
+      "output_tokens": 420
+     },
+     "lines": [
+      {
+       "draft": "more usual. Sing. once Gen. 14, 6 in",
+       "reread": "more usual. Sing. once Gen. 14, 6 in",
+       "status": "agreed",
+       "text": "more usual. Sing. once Gen. 14, 6 in"
+      },
+      {
+       "draft": "the pr. n. אֵיל פָּארָן, Sept. τερέβινθος τῆς",
+       "reread": "the pr. n. אֵיל פָּארָן, Sept. τερέβινθος τῆς",
+       "status": "agreed",
+       "text": "the pr. n. אֵיל פָּארָן, Sept. τερέβινθος τῆς"
+      },
+      {
+       "draft": "Φαράν. Plur. אֵילִים, אֵלִים Is. 1, 29. 57,",
+       "reread": "Φαράν. Plur. אֵילִים, אֵלִים Is. 1, 29. 57,",
+       "status": "agreed",
+       "text": "Φαράν. Plur. אֵילִים, אֵלִים Is. 1, 29. 57,"
+      },
+      {
+       "draft": "5. 61, 3.",
+       "reread": "5. 61, 3.",
+       "status": "agreed",
+       "text": "5. 61, 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1044,
+      "y": 3111,
+      "width": 875,
+      "height": 161
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0057/pass2/c1-r03-b03-875x161+1044+3111-x2.png",
+     "image_sha256": "6837df74846b7366b2f3bf656944b8ba755494c6807f996bf3579c3fff4f361a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַיָּלָה f. a hind, female deer, and perh.",
+       "also caprea, wild she-goat, these two ani-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4edc73e1-46af-4917-954a-ee0844435e7a",
+      "duration_api_ms": 9782,
+      "cost_usd_list": 0.06393375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2315,
+      "output_tokens": 328
+     },
+     "lines": [
+      {
+       "draft": "אַיָּלָה f. a hind, female deer, and perh.",
+       "reread": "אַיָּלָה f. a hind, female deer, and perh.",
+       "status": "agreed",
+       "text": "אַיָּלָה f. a hind, female deer, and perh."
+      },
+      {
+       "draft": "also caprea, wild she-goat, these two ani-",
+       "reread": "also caprea, wild she-goat, these two ani-",
+       "status": "agreed",
+       "text": "also caprea, wild she-goat, these two ani-"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "איך 41 איל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "without interrogation, Job 15, 23 he wan-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "dereth about for bread, אַיֵּה where-ever",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "it may be.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִיּוֹב pr. n. Job, an Arab of Uz or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ausitis, distinguished for wealth and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "also for piety and virtue, but tried of God",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "with the heaviest calamities. Besides",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the book of Job, he is also mentioned in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ez. 14, 14. 20. Sept, Ἰώβ, Arab. أَيُّوب.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "The name signifies pr. one persecuted,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "from r. אָיַב, as יִלּוֹד one born, from יָלַד;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "and refers to the calamities by which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "he was afflicted.—Others render it: serio",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "resipiscens, i. q. Arab. أَوَّابٌ, from r. אוּב,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "آبَ, to return, to convert, comp. Cor.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Sur. 38. 40–44; but see against this,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Thesaur. Ling. Heb. p. 81. col. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אִיזֶבֶל f. (pr. non-cohabited, i. e. ἄλο-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "χος Plat. p. 249. B, Lat. intacta, chaste,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "comp. Agnes; an appropriate female",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "name, and not to be estimated from the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "character and conduct of Ahab's queen;)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Jezebel, Isabella, pr. n. of a notorious",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "woman, the daughter of Ethbaal king",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of Tyre, and wife of Ahab king of Israel,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "infamous for her idolatry and cruel per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "secution of the prophets. 1 K. 16, 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "18, 4. 13. 21, 5 sq. 2 K. 9, 7 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵי־זֶה where? Job 38, 19. 24. Com-",
+   "status": "adjudicated",
+   "draft": "אֵיזֶה where? Job 38, 19. 24. Com-",
+   "reread": "אֵי־זֶה where? Job 38, 19. 24. Com-",
+   "verdict": "b",
+   "note": "A maqqef is printed between אֵי and זֶה (the top bar runs continuously from the yod into the zayin); Reading A omits it. Vowels (tsere under alef, segol under zayin) and the rest of the line agree with both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pounded from the interrog. part. אֵי, אַי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "q. v. no. 2, and זֶה here.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵיךְ how? apoc. from אֵיכָה, Gen. 26,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "9. Without interrogation, Ruth 3, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2 K. 17, 28.—Often as an exclamation",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of pain or grief, how! Ps. 73, 19. Is. 14,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4. Ecc. 2, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵיכָה from אֵי no. 2, and כָּה i. q. כֹּה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "so, here.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. how? in what way? Deut. 1, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Without interrogation, Deut. 12, 30.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. where? Cant. 1, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "3. Often as an exclamation of pain or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "grief, how! like אֵיךְ, Is. 1, 21. Lam. 1, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֵיכֹה (id.) where, not interrogative,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "once 2 K. 6, 13, where Keri has אֵיכוֹ id.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֵיכָכָה (Milêl) how? Cant. 5, 3. Esth.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "8, 6. From אֵי and כָּכָה i. q. כָּה, כֹּה, so.",
+   "status": "adjudicated",
+   "draft": "8, 6. From אֵי and כָּכָה i. q. כֹּה, כֹּה, so.",
+   "reread": "8, 6. From אֵי and כָּכָה i. q. כָּה, כֹּה, so.",
+   "verdict": "b",
+   "note": "The first word after \"i. q.\" has a qamets under the dageshed kaph (כָּה), not a holam; only the second word carries the holam (כֹּה). Reading A wrongly repeats כֹּה twice.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֱיָל see r. אוּל.",
+   "status": "adjudicated",
+   "draft": "אַיִל see r. אוּל.",
+   "reread": "אֱיָל see r. אוּל.",
+   "verdict": "b",
+   "note": "Aleph carries hataf-segol (two vertical dots + stroke) and yod carries a T-shaped qamets; the patach/hireq form אַיִל is the headword of line 2 (\"a ram\"), not line 1.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אַיִל m. 1. a ram, so called from his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "twisted horns, q. d. rolled up; see r. אוּל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "4*",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Gen. 15, 9. Plur. אֵילִים Ex. 25, 5, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֵלִים Job 42, 8.—Hence intens. אַיָּל q. v.",
+   "status": "adjudicated",
+   "draft": "אֵלִים Job 42, 8.—Hence intens. אַיָּל q. v.",
+   "reread": "אֵלִים Job 42, 8.—Hence intens. אַיִל q. v.",
+   "verdict": "a",
+   "note": "The last Hebrew word shows a dagesh dot in the yod and a qamets (T-shaped) beneath it, not a hireq: אַיָּל (the intensive form \"stag\"), as in Reading A; Reading B's אַיִל would merely repeat the headword.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. A term of architecture, referring,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "as it would seem, to a projection in a la-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "teral wall, serving as a post or column,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. a pilaster; either from r. אוּל no. 3,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "or like Lat. aries, capreolus, Germ. Bock,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "used for a buttress. 1 K. 6, 31. Ez. 41,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "3. Plur. אֵילִים, Ez. 41, 1. 40, 10. 14. 16.",
+   "status": "adjudicated",
+   "draft": "3.  Plur. אֵילִים, Ez. 41, 1. 40, 10. 14. 16.",
+   "reread": "3. Plur. אֵילִ֫ים, Ez. 41, 1. 40, 10. 14. 16.",
+   "verdict": "a",
+   "note": "No accent is printed on the lamed — the only stroke above it is the lamed's own ascender; the word is plain אֵילִים (tsere, yod, hiriq, yod, mem), so Reading B's ֫ is spurious. Rest of the line identical in both.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "38; comp. v. 26. 31. 34. 37. The ancient",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "versions render it sometimes posts, some-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "times columns. See Boettcher's Proben",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "alttestamtl. Schrifterkl. p. 302.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַיָּל m. a stag, hart, male deer, Deut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "12, 15. 14, 5. Is. 35, 6. Plur. ־ִים Cant.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2, 9. 17. Always masc. but in Ps. 42, 2",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "joined with a fem. in the manner of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "comm. gend. thus denoting a hind, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "elsewhere has the specific name אַיָּלָה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַיֶּלֶת. Chald. and Syr. id. Arab. أَيَّل",
+   "status": "adjudicated",
+   "draft": "אַיֶּלֶת. Chald. and Syr. id. Arab. إِيَّل",
+   "reread": "אַיֶּלֶת. Chald. and Syr. id. Arab. اِيَّل",
+   "verdict": "neither",
+   "note": "The Arabic alif carries its hamza (with fatha) ABOVE the letter, not below, and no kasra is printed under it; shadda+fatha on the yā'. Reading A puts hamza below with kasra, B drops the hamza — both wrong.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "wild goat, mountain-goat, chamois. Eth.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ኀየል, by which orthography the affinity",
+   "status": "adjudicated",
+   "draft": "ሃየል, by which orthography the affinity",
+   "reread": "ኀየል, by which orthography the affinity",
+   "verdict": "b",
+   "note": "The first Ethiopic glyph is printed with a top bar, a slanted stroke and a barred vertical stem — the shape of ኀ (ḫa), not the open U-shape of ሃ (hā). The rest (የል and the English) is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of the roots אוּל and חוּל is distinctly con-",
+   "status": "adjudicated",
+   "draft": "of the roots אול and חול is distinctly con-",
+   "reread": "of the roots אוּל and חוּל is distinctly con-",
+   "verdict": "b",
+   "note": "Both vavs carry a visible shureq dot in the print (אוּל, חוּל); Reading A omits them.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "firmed.—As to the etymology, אַיָּל is a",
+   "status": "adjudicated",
+   "draft": "firmed.—As to the etymology, אַיָּל is a",
+   "reread": "firmed.—As to the etymology, אַיִל is a",
+   "verdict": "a",
+   "note": "The vowel under yod is printed as a qamets (bar with stem) with a dagesh in the yod, giving אַיָּל (stag), not hireq אַיִל (ram) as in Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sort of intensive of אַיִל, therefore pr. a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "large ram or buck, and אַיָּלָה a large she-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "goat or the like. Indeed the Hebrews",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "would seem to have called all the va-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "rious species of deer and antelopes, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "in part are furnished with twisted horns",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "like the ram, by the general name of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "large rams or wild rams; just as the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Germans call the same animals Berg-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ziegen, wilde Ziegen, and the Latins",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "capreæ, from their general resemblance",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to a goat, capra. Sept. every where",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ἔλαφος.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֱיָל m. strength, might, once Ps. 88, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "R. אוּל no. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַיִל m. (r. אוּל) plur. אֵילִים, pr. strong,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "stout, mighty.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1. Plur. the mighty, the powerful, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "nobles of a state, city, Ex. 15, 15. Ez. 17,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "13. 2 K. 24, 15 Keri.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. a strong, stout, mighty tree, like δρῦς,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "spec. the oak, terebinth, and sometimes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "also the palm, i. q. אֵלָה, אַלּוֹן, which is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "more usual. Sing. once Gen. 14, 6 in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the pr. n. אֵיל פָּארָן, Sept. τερέβινθος τῆς",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Φαράν. Plur. אֵילִים, אֵלִים Is. 1, 29. 57,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "5. 61, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַיָּלָה f. a hind, female deer, and perh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "also caprea, wild she-goat, these two ani-",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 96,
+  "adjudicated": 9,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.0032
+}
