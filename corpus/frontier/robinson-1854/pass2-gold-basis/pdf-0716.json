@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-10-04T08:13:45+00:00",
+ "generated_at": "2026-10-01T20:12:05+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -60,25 +60,37 @@
      },
      "lines": [
       {
-       "draft": "נָשָׁה 700 נָשַׁת",
+       "draft": "נָשָׁה",
        "reread": "נָשָׁה 700 נָשַׁק",
        "status": "adjudicated",
        "band_id": "header-b00",
        "judgement": {
         "text": "נָשָׁה 700 נָשַׁק",
         "verdict": "b",
-        "note": "Final letter of the right-hand headword has a clear descender below the baseline: ק, not ת (which would sit on the baseline). Reading B is correct.",
+        "note": "The crop is a full running header with three items: Reading A omits the page number 700 and the right-hand catchword נָשַׁק (shin with patach, final qof), which are clearly printed.",
         "model": "claude-fable-5-1",
         "cli_mode": "lean-system-prompt-v1",
-        "session_id": "b281ea13-4d6d-4028-86bb-48b7ca13333a",
-        "duration_api_ms": 12901,
-        "cost_usd_list": 0.06165975,
+        "session_id": "f2d45ce4-3225-4760-8133-b011d6d8ae2c",
+        "duration_api_ms": 13831,
+        "cost_usd_list": 0.05569475,
         "input_tokens": 4,
-        "cache_read_input_tokens": 3559,
-        "cache_creation_input_tokens": 1799,
-        "output_tokens": 495
+        "cache_read_input_tokens": 3499,
+        "cache_creation_input_tokens": 1739,
+        "output_tokens": 400
        },
        "text": "נָשָׁה 700 נָשַׁק"
+      },
+      {
+       "draft": "700",
+       "reread": null,
+       "status": "draft_only",
+       "text": "700"
+      },
+      {
+       "draft": "נָשַׁת",
+       "reread": null,
+       "status": "draft_only",
+       "text": "נָשַׁת"
       }
      ]
     }
@@ -1996,11 +2008,29 @@
    "column": -1,
    "text": "נָשָׁה 700 נָשַׁק",
    "status": "adjudicated",
-   "draft": "נָשָׁה 700 נָשַׁת",
+   "draft": "נָשָׁה",
    "reread": "נָשָׁה 700 נָשַׁק",
    "verdict": "b",
-   "note": "Final letter of the right-hand headword has a clear descender below the baseline: ק, not ת (which would sit on the baseline). Reading B is correct.",
+   "note": "The crop is a full running header with three items: Reading A omits the page number 700 and the right-hand catchword נָשַׁק (shin with patach, final qof), which are clearly printed.",
    "needs_review": false
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "700",
+   "status": "draft_only",
+   "draft": "700",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "נָשַׁת",
+   "status": "draft_only",
+   "draft": "נָשַׁת",
+   "reread": null,
+   "needs_review": true
   },
   {
    "chunk_id": "c0-r00",
@@ -2667,13 +2697,13 @@
  "counts": {
   "agreed": 90,
   "adjudicated": 12,
-  "draft_only": 0,
+  "draft_only": 2,
   "reread_only": 0,
   "unresolved": 0,
-  "needs_review": 5
+  "needs_review": 7
  },
  "status": "complete",
  "errors": 0,
  "judge_errors": 0,
- "cost_usd_list_total": 1.5743
+ "cost_usd_list_total": 1.5683
 }

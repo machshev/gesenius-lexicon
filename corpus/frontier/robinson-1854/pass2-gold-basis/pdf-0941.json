@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-10-04T08:13:46+00:00",
+ "generated_at": "2026-10-01T20:31:28+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -60,10 +60,29 @@
      },
      "lines": [
       {
-       "draft": "קיט 925 קיק",
+       "draft": null,
        "reread": "קיט 925 קיק",
-       "status": "agreed",
+       "status": "reread_only",
+       "band_id": "header-b00",
        "text": "קיט 925 קיק"
+      },
+      {
+       "draft": "קיט",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קיט"
+      },
+      {
+       "draft": "925",
+       "reread": null,
+       "status": "draft_only",
+       "text": "925"
+      },
+      {
+       "draft": "קיק",
+       "reread": null,
+       "status": "draft_only",
+       "text": "קיק"
       }
      ]
     }
@@ -1945,7 +1964,37 @@
    "chunk_id": "header",
    "column": -1,
    "text": "קיט 925 קיק",
-   "status": "agreed"
+   "status": "reread_only",
+   "draft": null,
+   "reread": "קיט 925 קיק",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "קיט",
+   "status": "draft_only",
+   "draft": "קיט",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "925",
+   "status": "draft_only",
+   "draft": "925",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "קיק",
+   "status": "draft_only",
+   "draft": "קיק",
+   "reread": null,
+   "needs_review": true
   },
   {
    "chunk_id": "c0-r00",
@@ -2611,12 +2660,12 @@
   }
  ],
  "counts": {
-  "agreed": 93,
+  "agreed": 92,
   "adjudicated": 10,
-  "draft_only": 0,
-  "reread_only": 0,
+  "draft_only": 3,
+  "reread_only": 1,
   "unresolved": 0,
-  "needs_review": 2
+  "needs_review": 6
  },
  "status": "complete",
  "errors": 0,
