@@ -12,6 +12,7 @@ Usage:
     tool/run-batch.py --batch 1 --next 50        # plan the first 50 undone content pages
     tool/run-batch.py --batch 2 --pages 100-130,140
     tool/run-batch.py --batch 1                  # resume: reuses the page list in docs/batches/batch-001.json
+    tool/run-batch.py --check-layout 19-70       # layout guard over existing records, no model calls
     tool/run-batch.py --status                   # content range, done and remaining counts
 
 The default prompt version (2) is always used; the driver never passes
@@ -152,6 +153,36 @@ def looks_like_quota(texts):
     return any(QUOTA.search(t or "") for t in texts)
 
 
+# Layout guard. A column chunk wider than WIDE_CHUNK_PX (at 400 dpi a column
+# chunk is about 900 px; the full text width is about 1,750) means the
+# chunker found no gutter on a two-column page (pdf 33), so lines are
+# interleaved. UNVERIFIED_MAX is the most draft_only+reread_only lines
+# allowed in pass 2. Across the 76 records so far, ordinary pages have 0-4
+# (pdf 33, the failure, has 59); 8 is twice the worst ordinary page.
+# Applies to content pages only: the front-matter pages 5, 9 and 15 are
+# genuinely single-column.
+WIDE_CHUNK_PX = 1200
+UNVERIFIED_MAX = 8
+
+
+def layout_problems(p):
+    """Return reasons page p's records look like a silent layout or pass 2 failure (empty if fine)."""
+    if not CONTENT_FIRST <= p <= CONTENT_LAST:
+        return []
+    out = []
+    rec1 = load(pass1_path(p))
+    if rec1:
+        wide = [c["chunk_id"] for c in rec1.get("chunks", []) if c.get("column", -1) >= 0 and c["bounds"]["width"] > WIDE_CHUNK_PX]
+        if wide:
+            out.append(f"{len(wide)} full-width column chunk(s) ({', '.join(wide[:4])}): gutter not found")
+    rec2 = load(pass2_path(p))
+    if rec2:
+        n = sum(1 for ln in rec2.get("lines", []) if ln.get("status") in ("draft_only", "reread_only"))
+        if n > UNVERIFIED_MAX:
+            out.append(f"{n} lines unverified by pass 2 (draft_only/reread_only; limit {UNVERIFIED_MAX})")
+    return out
+
+
 class QuotaStop(Exception):
     pass
 
@@ -176,7 +207,7 @@ def run_page(p, log):
     rep = {"page": p, "bands_rerun": [], "pass1_rerun": False, "pass2_rerun": False}
     t0 = time.time()
     raster = ensure_raster(p, log)
-    if alto_path(p).exists() and pass2_state(p)[0] and not pass1_errors(p):
+    if alto_path(p).exists() and pass2_state(p)[0] and not pass1_errors(p) and not layout_problems(p):
         rep["note"] = "resumed: complete records and ALTO already present"
         rep["seconds"] = 0.0
         return rep
@@ -210,6 +241,9 @@ def run_page(p, log):
             raise PageFailed(f"pass 2 still incomplete after one rerun: {(texts or ['?'])[0][:200]}")
     # A first-attempt failure that the rerun repaired is still recorded above.
 
+    problems = layout_problems(p)
+    if problems:
+        raise PageFailed("layout guard: " + "; ".join(problems))
     rc, out = sh([sys.executable, "tool/frontier-to-alto.py", "--transcription", pass2_path(p).relative_to(ROOT), "--output", (FRONTIER / "alto").relative_to(ROOT)], log)
     if rc or not alto_path(p).exists():
         raise PageFailed(f"ALTO conversion failed: {out[-300:]}")
@@ -330,10 +364,20 @@ def main():
     ap.add_argument("--pages", help="pdf pages, e.g. 19-30,32-65")
     ap.add_argument("--next", type=int, help="take the first N content pages not yet in the corpus")
     ap.add_argument("--status", action="store_true")
+    ap.add_argument("--check-layout", metavar="PAGES", help="run the layout guard over existing records for these pdf pages (no model calls)")
     ap.add_argument("--no-import", action="store_true", help="stop after ALTO (no import, validate or export)")
     args = ap.parse_args()
     if args.status:
         return status_cmd()
+    if args.check_layout:
+        flagged = 0
+        for p in parse_pages(args.check_layout):
+            probs = layout_problems(p)
+            flagged += bool(probs)
+            if probs:
+                print(f"pdf {p}: " + "; ".join(probs))
+        print(f"{flagged} page(s) flagged")
+        return 1 if flagged else 0
     if args.batch is None:
         ap.error("--batch is required")
     name = f"batch-{args.batch:03d}"
