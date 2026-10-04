@@ -427,7 +427,9 @@ def main():
         verrs = len(verrs) if isinstance(verrs, list) else verrs
         vwarn = len(vwarn) if isinstance(vwarn, list) else vwarn
     except ValueError:
-        pass
+        m = re.search(r"(\d+) errors?, (\d+) warnings?", vout)
+        if m:
+            verrs, vwarn = int(m.group(1)), int(m.group(2))
     exports = {}
     for fmt in ("jsonl", "tei", "sqlite"):
         erc, _ = sh([BIN, "export", "--format", fmt, "--output", f"artifacts/{fmt}"], log)
@@ -442,7 +444,7 @@ def main():
         "finished": dt.datetime.now().isoformat(timespec="seconds"),
         "import": {"pages_imported": import_pages, "entries_before": entries_before, "entries_after": after,
                    "validate_exit": vrc, "validate_errors": verrs, "validate_warnings": vwarn,
-                   "summary": out.strip().splitlines()[-1] if out.strip() else "", "exports": exports},
+                   "summary": next((l for l in reversed(out.strip().splitlines()) if re.search(r"[A-Za-z0-9]", l)), ""), "exports": exports},
         "entries_per_page": per_page, "segmentation_flags": flags,
         "samples_file": str(sfile.relative_to(ROOT)), "sample_count": len(samples),
     })

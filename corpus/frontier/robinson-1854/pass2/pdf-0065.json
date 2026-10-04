@@ -1,0 +1,2673 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 65,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0065.png",
+ "raster_sha256": "8757739b22dcc3deccd129425911b18d1dbbec1f602c40a66a0e261d109440f4",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0065.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T18:10:20+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 78,
+    "y": 151,
+    "width": 1776,
+    "height": 71
+   },
+   "draft_lines": [
+    "אכר 49 אל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 78,
+      "y": 149,
+      "width": 1776,
+      "height": 75
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/header-b00-1776x75+78+149-x2.png",
+     "image_sha256": "72f58ce685b2ebfcab097076637886c2d2ed7cd512e6338dd4a829684b848f0d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אכר 49 אל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f9d87675-6942-4c9f-acc7-a230dd8796ef",
+      "duration_api_ms": 7805,
+      "cost_usd_list": 0.0470825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 199
+     },
+     "lines": [
+      {
+       "draft": "אכר 49 אל",
+       "reread": "אכר 49 אל",
+       "status": "agreed",
+       "text": "אכר 49 אל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 78,
+    "y": 198,
+    "width": 874,
+    "height": 746
+   },
+   "draft_lines": [
+    "whence أُكْرٌ, أُكْرَةٌ, a pit, ditch. Kindr.",
+    "roots are כָּרָה, כּוּר, קוּר, נָקַר.—Hence",
+    "אִכָּר m. a digger, husbandman, Jer.",
+    "51, 23. Am. 5, 16. Plur. אִכָּרִים, c. suff.",
+    "אִכָּרֵיכֶם 2 Chr. 26, 10. Joel 1, 11. Is. 61, 5.",
+    "Chald. id. Syr. and Zab. ܐܰܟܳܪܳܐ. Arab.",
+    "أَكَّارٌ. Perh. from the same stock may",
+    "come Gr. ἀγρός, Lat. ager, Goth. akr,",
+    "Germ. Acker, whence Engl. acre as a",
+    "measure of land."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 78,
+      "y": 190,
+      "width": 874,
+      "height": 371
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r00-b00-874x371+78+190-x2.png",
+     "image_sha256": "7f9bdda2370a69305a25b98f7ced816686575c8347aa10ff87de1b712e91ad22",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "whence أُكْرٌ, أُكْرَةٌ, a pit, ditch. Kindr.",
+       "roots are כָּרָה, כּוּר, קוּר, נָקַר.—Hence",
+       "אִכָּר m. a digger, husbandman, Jer.",
+       "51, 23. Am. 5, 16. Plur. אִכָּרִים, c. suff."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7151583e-1e3b-462a-a2e8-ff44611ec356",
+      "duration_api_ms": 13352,
+      "cost_usd_list": 0.10365325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3256,
+      "output_tokens": 746
+     },
+     "lines": [
+      {
+       "draft": "whence أُكْرٌ, أُكْرَةٌ, a pit, ditch. Kindr.",
+       "reread": "whence أُكْرٌ, أُكْرَةٌ, a pit, ditch. Kindr.",
+       "status": "agreed",
+       "text": "whence أُكْرٌ, أُكْرَةٌ, a pit, ditch. Kindr."
+      },
+      {
+       "draft": "roots are כָּרָה, כּוּר, קוּר, נָקַר.—Hence",
+       "reread": "roots are כָּרָה, כּוּר, קוּר, נָקַר.—Hence",
+       "status": "agreed",
+       "text": "roots are כָּרָה, כּוּר, קוּר, נָקַר.—Hence"
+      },
+      {
+       "draft": "אִכָּר m. a digger, husbandman, Jer.",
+       "reread": "אִכָּר m. a digger, husbandman, Jer.",
+       "status": "agreed",
+       "text": "אִכָּר m. a digger, husbandman, Jer."
+      },
+      {
+       "draft": "51, 23. Am. 5, 16. Plur. אִכָּרִים, c. suff.",
+       "reread": "51, 23. Am. 5, 16. Plur. אִכָּרִים, c. suff.",
+       "status": "agreed",
+       "text": "51, 23. Am. 5, 16. Plur. אִכָּרִים, c. suff."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 78,
+      "y": 545,
+      "width": 874,
+      "height": 283
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r00-b01-874x283+78+545-x2.png",
+     "image_sha256": "9856c21a411a59deeb1ded5ed5f783ae30dc00742fedcb9948e8e5703f971148",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִכָּרֵיכֶם 2 Chr. 26, 10. Joel 1, 11. Is. 61, 5.",
+       "Chald. id. Syr. and Zab. ܐܰܟܳܪܳܐ. Arab.",
+       "أَكَّار. Perh. from the same stock may",
+       "come Gr. ἀγρός, Lat. ager, Goth. akr,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "300294d6-a0fa-44b1-9a90-a96880dfb918",
+      "duration_api_ms": 10737,
+      "cost_usd_list": 0.08429324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 510
+     },
+     "lines": [
+      {
+       "draft": "אִכָּרֵיכֶם 2 Chr. 26, 10. Joel 1, 11. Is. 61, 5.",
+       "reread": "אִכָּרֵיכֶם 2 Chr. 26, 10. Joel 1, 11. Is. 61, 5.",
+       "status": "agreed",
+       "text": "אִכָּרֵיכֶם 2 Chr. 26, 10. Joel 1, 11. Is. 61, 5."
+      },
+      {
+       "draft": "Chald. id. Syr. and Zab. ܐܰܟܳܪܳܐ. Arab.",
+       "reread": "Chald. id. Syr. and Zab. ܐܰܟܳܪܳܐ. Arab.",
+       "status": "agreed",
+       "text": "Chald. id. Syr. and Zab. ܐܰܟܳܪܳܐ. Arab."
+      },
+      {
+       "draft": "أَكَّارٌ. Perh. from the same stock may",
+       "reread": "أَكَّار. Perh. from the same stock may",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "أَكَّارٌ. Perh. from the same stock may",
+        "verdict": "a",
+        "note": "A small s-shaped ḍammatān (ٌ) is clearly printed above the final rā of the Arabic word; Reading B drops it. The rest is identical.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "962cdf97-4e02-4dcc-9c3c-62bfae5f8467",
+        "duration_api_ms": 10281,
+        "cost_usd_list": 0.08949125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3565,
+        "cache_creation_input_tokens": 2798,
+        "output_tokens": 646
+       },
+       "text": "أَكَّارٌ. Perh. from the same stock may"
+      },
+      {
+       "draft": "come Gr. ἀγρός, Lat. ager, Goth. akr,",
+       "reread": "come Gr. ἀγρός, Lat. ager, Goth. akr,",
+       "status": "agreed",
+       "text": "come Gr. ἀγρός, Lat. ager, Goth. akr,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 78,
+      "y": 812,
+      "width": 874,
+      "height": 117
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r00-b02-874x117+78+812-x2.png",
+     "image_sha256": "ac006123269459f207a9404a198ead89a40a0b4c9fed72b0c837ceef42374997",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Germ. Acker, whence Engl. acre as a",
+       "measure of land."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4f99f1b5-4721-49ca-b332-157fcb746761",
+      "duration_api_ms": 7297,
+      "cost_usd_list": 0.05372325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2122,
+      "output_tokens": 201
+     },
+     "lines": [
+      {
+       "draft": "Germ. Acker, whence Engl. acre as a",
+       "reread": "Germ. Acker, whence Engl. acre as a",
+       "status": "agreed",
+       "text": "Germ. Acker, whence Engl. acre as a"
+      },
+      {
+       "draft": "measure of land.",
+       "reread": "measure of land.",
+       "status": "agreed",
+       "text": "measure of land."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 78,
+    "y": 932,
+    "width": 874,
+    "height": 890
+   },
+   "draft_lines": [
+    "* אָכַשׁ a root not in use, Syr. ܐܟܫ to",
+    "be angry. Hence אַכְשָׁף.",
+    "אַכְשָׁף (fascination, r. כָּשַׁף) Achshaph,",
+    "pr. n. of a city in the tribe of Asher,",
+    "Josh. 12, 20. 19, 25.",
+    "* I. אַל a negative word, like the",
+    "kindr. לֹא, לָא, לַי, לָא, לַי.",
+    "1. Subst. nothing, nought. Job 24, 25",
+    "who will bring my speech to nought?",
+    "2. Conj. in the sense of prohibiting,",
+    "dehorting, deprecating, i. e. of wishing",
+    "that not, that something may not be done.",
+    "Joined always with the future, viz. with",
+    "fut. apoc. where this exists, and with 1"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 78,
+      "y": 948,
+      "width": 874,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r01-b00-874x284+78+948-x2.png",
+     "image_sha256": "66b42ff74515321ee279826d87d3ac96e002eb25db2c7baab34c886052f72deb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָכַשׁ a root not in use, Syr. ܐܟܫ to",
+       "be angry. Hence אָכִישׁ.",
+       "אַכְשָׁף (fascination, r. כָּשַׁף) Achshaph,",
+       "pr. n. of a city in the tribe of Asher,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3d0961de-0992-4edf-a357-af7087cc2441",
+      "duration_api_ms": 21475,
+      "cost_usd_list": 0.11414325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 1107
+     },
+     "lines": [
+      {
+       "draft": "* אָכַשׁ a root not in use, Syr. ܐܟܫ to",
+       "reread": "* אָכַשׁ a root not in use, Syr. ܐܟܫ to",
+       "status": "agreed",
+       "text": "* אָכַשׁ a root not in use, Syr. ܐܟܫ to"
+      },
+      {
+       "draft": "be angry. Hence אַכְשָׁף.",
+       "reread": "be angry. Hence אָכִישׁ.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "be angry. Hence אָכִישׁ.",
+        "verdict": "b",
+        "note": "The printed word is four letters א־כ־י־שׁ (aleph with qamats, kaf with hiriq, yod, shin) — Achish — with no final pe; the pe-final אַכְשָׁף of Reading A belongs to the next entry (Achshaph), not this line.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e835f9a2-77e8-4214-86da-0eb22049b545",
+        "duration_api_ms": 18473,
+        "cost_usd_list": 0.08126025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3561,
+        "cache_creation_input_tokens": 2794,
+        "output_tokens": 483
+       },
+       "text": "be angry. Hence אָכִישׁ."
+      },
+      {
+       "draft": "אַכְשָׁף (fascination, r. כָּשַׁף) Achshaph,",
+       "reread": "אַכְשָׁף (fascination, r. כָּשַׁף) Achshaph,",
+       "status": "agreed",
+       "text": "אַכְשָׁף (fascination, r. כָּשַׁף) Achshaph,"
+      },
+      {
+       "draft": "pr. n. of a city in the tribe of Asher,",
+       "reread": "pr. n. of a city in the tribe of Asher,",
+       "status": "agreed",
+       "text": "pr. n. of a city in the tribe of Asher,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 78,
+      "y": 1216,
+      "width": 874,
+      "height": 272
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r01-b01-874x272+78+1216-x2.png",
+     "image_sha256": "1fbf4793db3cd3b84cac0a8c23961e57929dd067ac745bcf4b6bef9f6fe0c128",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Josh. 12, 20. 19, 25.",
+       "* I. אַל a negative word, like the",
+       "kindr. לֹא, לָא, לַי, לֵא, לֵי.",
+       "1. Subst. nothing, nought. Job 24, 25"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c227722b-837c-4a6c-aaca-43354165e684",
+      "duration_api_ms": 10956,
+      "cost_usd_list": 0.08892349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 627
+     },
+     "lines": [
+      {
+       "draft": "Josh. 12, 20. 19, 25.",
+       "reread": "Josh. 12, 20. 19, 25.",
+       "status": "agreed",
+       "text": "Josh. 12, 20. 19, 25."
+      },
+      {
+       "draft": "* I. אַל a negative word, like the",
+       "reread": "* I. אַל a negative word, like the",
+       "status": "agreed",
+       "text": "* I. אַל a negative word, like the"
+      },
+      {
+       "draft": "kindr. לֹא, לָא, לַי, לָא, לַי.",
+       "reread": "kindr. לֹא, לָא, לַי, לֵא, לֵי.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "kindr. לֹא, לָא, לַי, לֵא, לֵי.",
+        "verdict": "b",
+        "note": "The 4th and 5th items carry two horizontal dots (tsere) under the lamed, not qamets/patach as in Reading A; the first three items (holem, qamets, patach) agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cbbda30a-95a3-4239-b3ba-f39054824de9",
+        "duration_api_ms": 8222,
+        "cost_usd_list": 0.08012525000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3581,
+        "cache_creation_input_tokens": 2752,
+        "output_tokens": 477
+       },
+       "text": "kindr. לֹא, לָא, לַי, לֵא, לֵי."
+      },
+      {
+       "draft": "1. Subst. nothing, nought. Job 24, 25",
+       "reread": "1. Subst. nothing, nought. Job 24, 25",
+       "status": "agreed",
+       "text": "1. Subst. nothing, nought. Job 24, 25"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 78,
+      "y": 1472,
+      "width": 874,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r01-b02-874x241+78+1472-x2.png",
+     "image_sha256": "60e3ef48160dc9aa312d891040f013662319c6071a04151c4ba792e2d91d783e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "who will bring my speech to nought ?",
+       "2. Conj. in the sense of prohibiting,",
+       "dehorting, deprecating, i. e. of wishing",
+       "that not, that something may not be done."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "94ade0ea-7bfc-4d68-af53-5c3a80aa5926",
+      "duration_api_ms": 9359,
+      "cost_usd_list": 0.06705349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "who will bring my speech to nought?",
+       "reread": "who will bring my speech to nought ?",
+       "status": "agreed",
+       "text": "who will bring my speech to nought?"
+      },
+      {
+       "draft": "2. Conj. in the sense of prohibiting,",
+       "reread": "2. Conj. in the sense of prohibiting,",
+       "status": "agreed",
+       "text": "2. Conj. in the sense of prohibiting,"
+      },
+      {
+       "draft": "dehorting, deprecating, i. e. of wishing",
+       "reread": "dehorting, deprecating, i. e. of wishing",
+       "status": "agreed",
+       "text": "dehorting, deprecating, i. e. of wishing"
+      },
+      {
+       "draft": "that not, that something may not be done.",
+       "reread": "that not, that something may not be done.",
+       "status": "agreed",
+       "text": "that not, that something may not be done."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 78,
+      "y": 1697,
+      "width": 874,
+      "height": 121
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r01-b03-874x121+78+1697-x2.png",
+     "image_sha256": "ede7b4bf2bab2d71a33cf87a858952a7a536bd972013dfc0b90ca5e31161fdb0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Joined always with the future, viz. with",
+       "fut. apoc. where this exists, and with 1"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cec1818c-6ffe-4b5d-a640-764c13afa94d",
+      "duration_api_ms": 7427,
+      "cost_usd_list": 0.054113499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 208
+     },
+     "lines": [
+      {
+       "draft": "Joined always with the future, viz. with",
+       "reread": "Joined always with the future, viz. with",
+       "status": "agreed",
+       "text": "Joined always with the future, viz. with"
+      },
+      {
+       "draft": "fut. apoc. where this exists, and with 1",
+       "reread": "fut. apoc. where this exists, and with 1",
+       "status": "agreed",
+       "text": "fut. apoc. where this exists, and with 1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 78,
+    "y": 1810,
+    "width": 874,
+    "height": 901
+   },
+   "draft_lines": [
+    "pers. paragog. Ex. 16, 29 אַל־יֵצֵא אִישׁ let",
+    "no man go out. 1 Sam. 26, 20. In 2 pers.",
+    "Gen. 22, 12 אַל־תִּשְׁלַח יָדְךָ stretch not",
+    "forth thine hand. אַל־תִּירָאוּ fear ye not",
+    "43, 23. Jer. 7, 4. In 1 pers. Ps. 25, 2",
+    "אַל־אֵבוֹשָׁה let me not be ashamed, i. e.",
+    "God grant that I may not be put to",
+    "shame. Rarely is it separated from the",
+    "verb, Ps. 6, 2 אַל־בְּאַפְּךָ תוֹכִיחֵנִי not in",
+    "thine anger reprove me. Also in impre-",
+    "cation, Gen. 49, 4 אַל־תּוֹתַר excel thou",
+    "not ! thou shalt have no privilege. In",
+    "entreaties נָא is added, Gen. 13, 8 אַל־נָא",
+    "תְהִי let there not be now, I pray thee.",
+    "18, 3. 30. 32.—The partic. לֹא construed",
+    "with the fut. is a direct and absolute"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 78,
+      "y": 1814,
+      "width": 874,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r02-b00-874x236+78+1814-x2.png",
+     "image_sha256": "75dd0e5e1c1495f71566e90feb43cdf00ee3018f66ecf160924f7571200490c2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pers. paragog. Ex. 16, 29 אַל־יֵצֵא אִישׁ let",
+       "no man go out. 1 Sam. 26, 20. In 2 pers.",
+       "Gen. 22, 12 אַל־תִּשְׁלַח יָדְךָ stretch not",
+       "forth thine hand. אַל־תִּירְאוּ fear ye not"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f6971352-4a2f-45b2-8987-cb76cf46e721",
+      "duration_api_ms": 15225,
+      "cost_usd_list": 0.0814435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 553
+     },
+     "lines": [
+      {
+       "draft": "pers. paragog. Ex. 16, 29 אַל־יֵצֵא אִישׁ let",
+       "reread": "pers. paragog. Ex. 16, 29 אַל־יֵצֵא אִישׁ let",
+       "status": "agreed",
+       "text": "pers. paragog. Ex. 16, 29 אַל־יֵצֵא אִישׁ let"
+      },
+      {
+       "draft": "no man go out. 1 Sam. 26, 20. In 2 pers.",
+       "reread": "no man go out. 1 Sam. 26, 20. In 2 pers.",
+       "status": "agreed",
+       "text": "no man go out. 1 Sam. 26, 20. In 2 pers."
+      },
+      {
+       "draft": "Gen. 22, 12 אַל־תִּשְׁלַח יָדְךָ stretch not",
+       "reread": "Gen. 22, 12 אַל־תִּשְׁלַח יָדְךָ stretch not",
+       "status": "agreed",
+       "text": "Gen. 22, 12 אַל־תִּשְׁלַח יָדְךָ stretch not"
+      },
+      {
+       "draft": "forth thine hand. אַל־תִּירָאוּ fear ye not",
+       "reread": "forth thine hand. אַל־תִּירְאוּ fear ye not",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "forth thine hand. אַל־תִּירְאוּ fear ye not",
+        "verdict": "b",
+        "note": "Under the resh of תִּירְאוּ the print shows a vertical two-dot shewa (standard form before the alef + shureq), not a qamets; Reading B matches, Reading A does not.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9d43cba9-089f-48b6-b2b2-eff3293c1050",
+        "duration_api_ms": 14456,
+        "cost_usd_list": 0.08190475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2561,
+        "output_tokens": 589
+       },
+       "text": "forth thine hand. אַל־תִּירְאוּ fear ye not"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 78,
+      "y": 2034,
+      "width": 874,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r02-b01-874x236+78+2034-x2.png",
+     "image_sha256": "e3829383d9a8c0ce9f298c0c35a68c8fabc3cbbd28547255611ee2835de0fcbc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "43, 23. Jer. 7, 4. In 1 pers. Ps. 25, 2",
+       "אַל־אֵבוֹשָׁה let me not be ashamed, i. e.",
+       "God grant that I may not be put to",
+       "shame. Rarely is it separated from the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "408dd197-55d9-43ae-9b74-f184b622feb3",
+      "duration_api_ms": 12748,
+      "cost_usd_list": 0.0731435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 387
+     },
+     "lines": [
+      {
+       "draft": "43, 23. Jer. 7, 4. In 1 pers. Ps. 25, 2",
+       "reread": "43, 23. Jer. 7, 4. In 1 pers. Ps. 25, 2",
+       "status": "agreed",
+       "text": "43, 23. Jer. 7, 4. In 1 pers. Ps. 25, 2"
+      },
+      {
+       "draft": "אַל־אֵבוֹשָׁה let me not be ashamed, i. e.",
+       "reread": "אַל־אֵבוֹשָׁה let me not be ashamed, i. e.",
+       "status": "agreed",
+       "text": "אַל־אֵבוֹשָׁה let me not be ashamed, i. e."
+      },
+      {
+       "draft": "God grant that I may not be put to",
+       "reread": "God grant that I may not be put to",
+       "status": "agreed",
+       "text": "God grant that I may not be put to"
+      },
+      {
+       "draft": "shame. Rarely is it separated from the",
+       "reread": "shame. Rarely is it separated from the",
+       "status": "agreed",
+       "text": "shame. Rarely is it separated from the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 78,
+      "y": 2254,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r02-b02-874x240+78+2254-x2.png",
+     "image_sha256": "6e8fa981dd87832834a2c156fbc45b122093207a9b8fceb76501bd1a8b17b1c4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "verb, Ps. 6, 2 אַל־בְּאַפְּךָ תוֹכִיחֵנִי not in",
+       "thine anger reprove me. Also in impre-",
+       "cation, Gen. 49, 4 אַל־תּוֹתַר excel thou",
+       "not ! thou shalt have no privilege. In"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "947a0853-33d7-414c-b28f-eaee2d59e7f7",
+      "duration_api_ms": 18419,
+      "cost_usd_list": 0.08625350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 624
+     },
+     "lines": [
+      {
+       "draft": "verb, Ps. 6, 2 אַל־בְּאַפְּךָ תוֹכִיחֵנִי not in",
+       "reread": "verb, Ps. 6, 2 אַל־בְּאַפְּךָ תוֹכִיחֵנִי not in",
+       "status": "agreed",
+       "text": "verb, Ps. 6, 2 אַל־בְּאַפְּךָ תוֹכִיחֵנִי not in"
+      },
+      {
+       "draft": "thine anger reprove me. Also in impre-",
+       "reread": "thine anger reprove me. Also in impre-",
+       "status": "agreed",
+       "text": "thine anger reprove me. Also in impre-"
+      },
+      {
+       "draft": "cation, Gen. 49, 4 אַל־תּוֹתַר excel thou",
+       "reread": "cation, Gen. 49, 4 אַל־תּוֹתַר excel thou",
+       "status": "agreed",
+       "text": "cation, Gen. 49, 4 אַל־תּוֹתַר excel thou"
+      },
+      {
+       "draft": "not ! thou shalt have no privilege. In",
+       "reread": "not ! thou shalt have no privilege. In",
+       "status": "agreed",
+       "text": "not! thou shalt have no privilege. In"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 78,
+      "y": 2478,
+      "width": 874,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r02-b03-874x241+78+2478-x2.png",
+     "image_sha256": "f9cbdb485e14c4db2b88a94a68fd9162631c17ca8405fd3f778e1d399fdf0f26",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "entreaties נָא is added, Gen. 13, 8 אַל־נָא",
+       "תְהִי let there not be now, I pray thee.",
+       "18, 3. 30. 32.—The partic. לֹא construed",
+       "with the fut. is a direct and absolute"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d2a1987-7db9-4d00-9582-ee6173d4f2bf",
+      "duration_api_ms": 8991,
+      "cost_usd_list": 0.0682035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "entreaties נָא is added, Gen. 13, 8 אַל־נָא",
+       "reread": "entreaties נָא is added, Gen. 13, 8 אַל־נָא",
+       "status": "agreed",
+       "text": "entreaties נָא is added, Gen. 13, 8 אַל־נָא"
+      },
+      {
+       "draft": "תְהִי let there not be now, I pray thee.",
+       "reread": "תְהִי let there not be now, I pray thee.",
+       "status": "agreed",
+       "text": "תְהִי let there not be now, I pray thee."
+      },
+      {
+       "draft": "18, 3. 30. 32.—The partic. לֹא construed",
+       "reread": "18, 3. 30. 32.—The partic. לֹא construed",
+       "status": "agreed",
+       "text": "18, 3. 30. 32.—The partic. לֹא construed"
+      },
+      {
+       "draft": "with the fut. is a direct and absolute",
+       "reread": "with the fut. is a direct and absolute",
+       "status": "agreed",
+       "text": "with the fut. is a direct and absolute"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 78,
+    "y": 2699,
+    "width": 874,
+    "height": 663
+   },
+   "draft_lines": [
+    "negative ; פֶּן ne forte, lest perhaps, im-",
+    "plies milder dissuasion.—But  a) As the",
+    "fut. apoc. which properly expresses an",
+    "optative, subjunctive, or imperative idea,",
+    "is also put poetically for the simple fu-",
+    "ture (Heb. Gr. § 126. 2), so אַל with",
+    "the fut. is put not only prohibitively,",
+    "but sometimes also poetically for the",
+    "simple idea of time future. So אַל־יֵרֶא",
+    "pr. a command, let him not see, ne vi-",
+    "deat, but poet. for simple fut. he will",
+    "5"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 78,
+      "y": 2691,
+      "width": 874,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r03-b00-874x243+78+2691-x2.png",
+     "image_sha256": "f306badf1c6ec4f25bb68927bdb821719ebc2b6b65089f38abee6f191bcd7838",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "negative; פֶּן ne forte, lest perhaps, im-",
+       "plies milder dissuasion.—But a) As the",
+       "fut. apoc. which properly expresses an",
+       "optative, subjunctive, or imperative idea,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5357c72e-16b4-498f-8246-78cf8bba4af4",
+      "duration_api_ms": 5497,
+      "cost_usd_list": 0.0676535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "negative ; פֶּן ne forte, lest perhaps, im-",
+       "reread": "negative; פֶּן ne forte, lest perhaps, im-",
+       "status": "agreed",
+       "text": "negative; פֶּן ne forte, lest perhaps, im-"
+      },
+      {
+       "draft": "plies milder dissuasion.—But  a) As the",
+       "reread": "plies milder dissuasion.—But a) As the",
+       "status": "agreed",
+       "text": "plies milder dissuasion.—But a) As the"
+      },
+      {
+       "draft": "fut. apoc. which properly expresses an",
+       "reread": "fut. apoc. which properly expresses an",
+       "status": "agreed",
+       "text": "fut. apoc. which properly expresses an"
+      },
+      {
+       "draft": "optative, subjunctive, or imperative idea,",
+       "reread": "optative, subjunctive, or imperative idea,",
+       "status": "agreed",
+       "text": "optative, subjunctive, or imperative idea,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 78,
+      "y": 2918,
+      "width": 874,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r03-b01-874x235+78+2918-x2.png",
+     "image_sha256": "df3372c919e505a4356c56520b6b85185754fa4a238c82511b4a01a39fa71937",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is also put poetically for the simple fu-",
+       "ture (Heb. Gr. § 126. 2), so אַל with",
+       "the fut. is put not only prohibitively,",
+       "but sometimes also poetically for the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b4e4752-773e-4474-93a7-e1e81baa8d39",
+      "duration_api_ms": 8470,
+      "cost_usd_list": 0.0660435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "is also put poetically for the simple fu-",
+       "reread": "is also put poetically for the simple fu-",
+       "status": "agreed",
+       "text": "is also put poetically for the simple fu-"
+      },
+      {
+       "draft": "ture (Heb. Gr. § 126. 2), so אַל with",
+       "reread": "ture (Heb. Gr. § 126. 2), so אַל with",
+       "status": "agreed",
+       "text": "ture (Heb. Gr. § 126. 2), so אַל with"
+      },
+      {
+       "draft": "the fut. is put not only prohibitively,",
+       "reread": "the fut. is put not only prohibitively,",
+       "status": "agreed",
+       "text": "the fut. is put not only prohibitively,"
+      },
+      {
+       "draft": "but sometimes also poetically for the",
+       "reread": "but sometimes also poetically for the",
+       "status": "agreed",
+       "text": "but sometimes also poetically for the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 78,
+      "y": 3137,
+      "width": 874,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c0-r03-b02-874x227+78+3137-x2.png",
+     "image_sha256": "2d3f26aee95da9ab7fab2d33abf3fe48eeec858099457f5d093c4226b0197cca",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "simple idea of time future. So אַל־יֵרֶא",
+       "pr. a command, let him not see, ne vi-",
+       "deat, but poet. for simple fut. he will",
+       "5"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "375e6755-9ed2-4b0b-b145-99495744ab24",
+      "duration_api_ms": 33455,
+      "cost_usd_list": 0.07404349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 405
+     },
+     "lines": [
+      {
+       "draft": "simple idea of time future. So אַל־יֵרֶא",
+       "reread": "simple idea of time future. So אַל־יֵרֶא",
+       "status": "agreed",
+       "text": "simple idea of time future. So אַל־יֵרֶא"
+      },
+      {
+       "draft": "pr. a command, let him not see, ne vi-",
+       "reread": "pr. a command, let him not see, ne vi-",
+       "status": "agreed",
+       "text": "pr. a command, let him not see, ne vi-"
+      },
+      {
+       "draft": "deat, but poet. for simple fut. he will",
+       "reread": "deat, but poet. for simple fut. he will",
+       "status": "agreed",
+       "text": "deat, but poet. for simple fut. he will"
+      },
+      {
+       "draft": "5",
+       "reread": "5",
+       "status": "agreed",
+       "text": "5"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 968,
+    "y": 198,
+    "width": 886,
+    "height": 800
+   },
+   "draft_lines": [
+    "not see, non videbit, Job 20, 17; comp. for",
+    "a similar use of the imperat. Heb. Gr.",
+    "§ 127. 1. So אַל־יֶחֱרַשׁ will not keep",
+    "silence Ps. 50, 3, comp. 41, 3. 2 K. 6, 27",
+    "אַל־יוֹשִׁיעֵךְ יְהוָֹה Jehovah will not save",
+    "thee. Job 5, 22 אַל־תִּירָא thou shalt (wilt)",
+    "not fear, there will be nothing to fear.",
+    "b) The verb is sometimes omitted,",
+    "whether it has preceded or not. Am. 5,",
+    "14 seek good וְאַל רָע and not (seek) evil.",
+    "2 Sam. 1, 21 אַל־טַל וְאַל מָטָר עֲלֵיכֶם no",
+    "dew and no rain (descend) upon you!",
+    "c) Absol. nay! not so! like μή for μὴ"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 968,
+      "y": 190,
+      "width": 886,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r00-b00-886x252+968+190-x2.png",
+     "image_sha256": "dcd6775532341c3ed98bc9dfa5ea3c72af580e04cfcc744384091309139c34aa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "not see, non videbit, Job 20, 17; comp. for",
+       "a similar use of the imperat. Heb. Gr.",
+       "§ 127. 1. So אַל־יֶחֱרַשׁ will not keep"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7742d0ce-e70f-4181-afb6-b6c26f6acb95",
+      "duration_api_ms": 19581,
+      "cost_usd_list": 0.07572324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2707,
+      "output_tokens": 407
+     },
+     "lines": [
+      {
+       "draft": "not see, non videbit, Job 20, 17; comp. for",
+       "reread": "not see, non videbit, Job 20, 17; comp. for",
+       "status": "agreed",
+       "text": "not see, non videbit, Job 20, 17; comp. for"
+      },
+      {
+       "draft": "a similar use of the imperat. Heb. Gr.",
+       "reread": "a similar use of the imperat. Heb. Gr.",
+       "status": "agreed",
+       "text": "a similar use of the imperat. Heb. Gr."
+      },
+      {
+       "draft": "§ 127. 1. So אַל־יֶחֱרַשׁ will not keep",
+       "reread": "§ 127. 1. So אַל־יֶחֱרַשׁ will not keep",
+       "status": "agreed",
+       "text": "§ 127. 1. So אַל־יֶחֱרַשׁ will not keep"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 968,
+      "y": 426,
+      "width": 886,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r00-b01-886x234+968+426-x2.png",
+     "image_sha256": "f2179e90d0f7f8b7e6559f019f8fbd06b8e274be420be30be54bf11d12f9bdbd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "silence Ps. 50, 3, comp. 41, 3. 2 K. 6, 27",
+       "אַל־יוֹשִׁעֲךָ יְהוָֹה Jehovah will not save",
+       "thee. Job 5, 22 אַל־תִּירָא thou shalt (wilt)",
+       "not fear, there will be nothing to fear."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "282fd016-17b7-4030-952a-e8774ceea0b5",
+      "duration_api_ms": 16421,
+      "cost_usd_list": 0.09064325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 731
+     },
+     "lines": [
+      {
+       "draft": "silence Ps. 50, 3, comp. 41, 3. 2 K. 6, 27",
+       "reread": "silence Ps. 50, 3, comp. 41, 3. 2 K. 6, 27",
+       "status": "agreed",
+       "text": "silence Ps. 50, 3, comp. 41, 3. 2 K. 6, 27"
+      },
+      {
+       "draft": "אַל־יוֹשִׁיעֵךְ יְהוָֹה Jehovah will not save",
+       "reread": "אַל־יוֹשִׁעֲךָ יְהוָֹה Jehovah will not save",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "אַל־יוֹשִׁיעֵךְ יְהוָֹה Jehovah will not save",
+        "verdict": "a",
+        "note": "The print shows a yod between shin and ayin (plene יוֹשִׁיעֵ), tsere (two horizontal dots) under the ayin, and a sheva (two vertical dots) inside the final kaf — not hataf-patah and kamats as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "735e71d9-f1b6-4139-84ae-5732374d6c37",
+        "duration_api_ms": 12143,
+        "cost_usd_list": 0.09623925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3597,
+        "cache_creation_input_tokens": 2595,
+        "output_tokens": 862
+       },
+       "text": "אַל־יוֹשִׁיעֵךְ יְהוָֹה Jehovah will not save"
+      },
+      {
+       "draft": "thee. Job 5, 22 אַל־תִּירָא thou shalt (wilt)",
+       "reread": "thee. Job 5, 22 אַל־תִּירָא thou shalt (wilt)",
+       "status": "agreed",
+       "text": "thee. Job 5, 22 אַל־תִּירָא thou shalt (wilt)"
+      },
+      {
+       "draft": "not fear, there will be nothing to fear.",
+       "reread": "not fear, there will be nothing to fear.",
+       "status": "agreed",
+       "text": "not fear, there will be nothing to fear."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 968,
+      "y": 644,
+      "width": 886,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r00-b02-886x229+968+644-x2.png",
+     "image_sha256": "e30e8560d63f8f1be1500f356eba966b2aa1954ca420adda36ab82ff0898a6a4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "b) The verb is sometimes omitted,",
+       "whether it has preceded or not. Am. 5,",
+       "14 seek good וְאַל רָע and not (seek) evil.",
+       "2 Sam. 1, 21 אַל־טַל וְאַל מָטָר עֲלֵיכֶם no"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a57a5433-253d-4ced-ae91-86a5d253ebfe",
+      "duration_api_ms": 11675,
+      "cost_usd_list": 0.08509325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2643,
+      "output_tokens": 620
+     },
+     "lines": [
+      {
+       "draft": "b) The verb is sometimes omitted,",
+       "reread": "b) The verb is sometimes omitted,",
+       "status": "agreed",
+       "text": "b) The verb is sometimes omitted,"
+      },
+      {
+       "draft": "whether it has preceded or not. Am. 5,",
+       "reread": "whether it has preceded or not. Am. 5,",
+       "status": "agreed",
+       "text": "whether it has preceded or not. Am. 5,"
+      },
+      {
+       "draft": "14 seek good וְאַל רָע and not (seek) evil.",
+       "reread": "14 seek good וְאַל רָע and not (seek) evil.",
+       "status": "agreed",
+       "text": "14 seek good וְאַל רָע and not (seek) evil."
+      },
+      {
+       "draft": "2 Sam. 1, 21 אַל־טַל וְאַל מָטָר עֲלֵיכֶם no",
+       "reread": "2 Sam. 1, 21 אַל־טַל וְאַל מָטָר עֲלֵיכֶם no",
+       "status": "agreed",
+       "text": "2 Sam. 1, 21 אַל־טַל וְאַל מָטָר עֲלֵיכֶם no"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 968,
+      "y": 857,
+      "width": 886,
+      "height": 149
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r00-b03-886x149+968+857-x2.png",
+     "image_sha256": "4dbffa3d3eea8f171d9a4b900ed8977795b8f3ea2e9801bf4b1147e4704463ee",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "dew and no rain (descend) upon you!",
+       "c) Absol. nay! not so! like μή for μὴ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bfa56ae4-7a0f-4ce1-9339-52976c30beb2",
+      "duration_api_ms": 9032,
+      "cost_usd_list": 0.060163249999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2259,
+      "output_tokens": 275
+     },
+     "lines": [
+      {
+       "draft": "dew and no rain (descend) upon you!",
+       "reread": "dew and no rain (descend) upon you!",
+       "status": "agreed",
+       "text": "dew and no rain (descend) upon you!"
+      },
+      {
+       "draft": "c) Absol. nay! not so! like μή for μὴ",
+       "reread": "c) Absol. nay! not so! like μή for μὴ",
+       "status": "agreed",
+       "text": "c) Absol. nay! not so! like μή for μὴ"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 968,
+    "y": 986,
+    "width": 886,
+    "height": 994
+   },
+   "draft_lines": [
+    "τοῦτο γένηται (Aristoph. Acharn. 458) ;",
+    "as Gen. 19, 18 אַל־נָא אֲדֹנָי not so now,",
+    "my lord ! Ruth 1, 13 אַל בְּנֹתַי not so, my",
+    "daughters ! i. e. let it not be.",
+    "3. Interrog. like Gr. μή, i. q. Lat.",
+    "num, whether, presupposing a negative",
+    "answer ; see Passow Lex. μή lett. C.",
+    "Buttm. Gr. Gram. § 148. 5. Once, 1 Sam.",
+    "27, 10 אַל־פְּשַׁטְתֶּם הַיּוֹם ye have then not",
+    "made any incursion in these days ? The",
+    "reply is : No, for on every side dwell the",
+    "Hebrews, my countrymen.",
+    "Deriv. perh. אֱלִיל, since the assumed",
+    "root אָלַל I, is quite doubtful.",
+    "אַל Chald. i. q. Heb. no. 3, but found",
+    "only in the biblical Chaldee, Dan. 2, 24.",
+    "4, 16. 5, 10."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 968,
+      "y": 978,
+      "width": 886,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r01-b00-886x239+968+978-x2.png",
+     "image_sha256": "3722549a0f74a075b027aeb01c2d1cf816d5f6e46b6030300129e29725e1bc54",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "τοῦτο γένηται (Aristoph. Acharn. 458) ;",
+       "as Gen. 19, 18 אַל־נָא אֲדֹנָי not so now,",
+       "my lord ! Ruth 1, 13 אַל בְּנֹתַי not so, my",
+       "daughters ! i. e. let it not be."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "49290618-a354-4639-abb4-06502a0f375a",
+      "duration_api_ms": 10617,
+      "cost_usd_list": 0.06962325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2707,
+      "output_tokens": 285
+     },
+     "lines": [
+      {
+       "draft": "τοῦτο γένηται (Aristoph. Acharn. 458) ;",
+       "reread": "τοῦτο γένηται (Aristoph. Acharn. 458) ;",
+       "status": "agreed",
+       "text": "τοῦτο γένηται (Aristoph. Acharn. 458);"
+      },
+      {
+       "draft": "as Gen. 19, 18 אַל־נָא אֲדֹנָי not so now,",
+       "reread": "as Gen. 19, 18 אַל־נָא אֲדֹנָי not so now,",
+       "status": "agreed",
+       "text": "as Gen. 19, 18 אַל־נָא אֲדֹנָי not so now,"
+      },
+      {
+       "draft": "my lord ! Ruth 1, 13 אַל בְּנֹתַי not so, my",
+       "reread": "my lord ! Ruth 1, 13 אַל בְּנֹתַי not so, my",
+       "status": "agreed",
+       "text": "my lord! Ruth 1, 13 אַל בְּנֹתַי not so, my"
+      },
+      {
+       "draft": "daughters ! i. e. let it not be.",
+       "reread": "daughters ! i. e. let it not be.",
+       "status": "agreed",
+       "text": "daughters! i. e. let it not be."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 968,
+      "y": 1201,
+      "width": 886,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r01-b01-886x243+968+1201-x2.png",
+     "image_sha256": "7d7d0823e663c8f158aceed49970e289573551fa7e4958f6c2c8544fb84ae0ed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Interrog. like Gr. μή, i. q. Lat.",
+       "num, whether, presupposing a negative",
+       "answer; see Passow Lex. μή lett. C.",
+       "Buttm. Gr. Gram. § 148. 5. Once, 1 Sam."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ce168ed6-b156-414a-95ff-624bafeb8603",
+      "duration_api_ms": 8947,
+      "cost_usd_list": 0.0687135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "3. Interrog. like Gr. μή, i. q. Lat.",
+       "reread": "3. Interrog. like Gr. μή, i. q. Lat.",
+       "status": "agreed",
+       "text": "3. Interrog. like Gr. μή, i. q. Lat."
+      },
+      {
+       "draft": "num, whether, presupposing a negative",
+       "reread": "num, whether, presupposing a negative",
+       "status": "agreed",
+       "text": "num, whether, presupposing a negative"
+      },
+      {
+       "draft": "answer ; see Passow Lex. μή lett. C.",
+       "reread": "answer; see Passow Lex. μή lett. C.",
+       "status": "agreed",
+       "text": "answer; see Passow Lex. μή lett. C."
+      },
+      {
+       "draft": "Buttm. Gr. Gram. § 148. 5. Once, 1 Sam.",
+       "reread": "Buttm. Gr. Gram. § 148. 5. Once, 1 Sam.",
+       "status": "agreed",
+       "text": "Buttm. Gr. Gram. § 148. 5. Once, 1 Sam."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 968,
+      "y": 1428,
+      "width": 886,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r01-b02-886x238+968+1428-x2.png",
+     "image_sha256": "68d4ba75a35f7a5569106e558bfe028b0721522d237d401ec51e0b6c7cf0a8b5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "27, 10 אַל־פְּשַׁטְתֶּם הַיּוֹם ye have then not",
+       "made any incursion in these days? The",
+       "reply is: No, for on every side dwell the",
+       "Hebrews, my countrymen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c975d0a8-0a77-4dd6-bed0-51a3f965d28e",
+      "duration_api_ms": 10521,
+      "cost_usd_list": 0.0734335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2645,
+      "output_tokens": 386
+     },
+     "lines": [
+      {
+       "draft": "27, 10 אַל־פְּשַׁטְתֶּם הַיּוֹם ye have then not",
+       "reread": "27, 10 אַל־פְּשַׁטְתֶּם הַיּוֹם ye have then not",
+       "status": "agreed",
+       "text": "27, 10 אַל־פְּשַׁטְתֶּם הַיּוֹם ye have then not"
+      },
+      {
+       "draft": "made any incursion in these days ? The",
+       "reread": "made any incursion in these days? The",
+       "status": "agreed",
+       "text": "made any incursion in these days? The"
+      },
+      {
+       "draft": "reply is : No, for on every side dwell the",
+       "reread": "reply is: No, for on every side dwell the",
+       "status": "agreed",
+       "text": "reply is: No, for on every side dwell the"
+      },
+      {
+       "draft": "Hebrews, my countrymen.",
+       "reread": "Hebrews, my countrymen.",
+       "status": "agreed",
+       "text": "Hebrews, my countrymen."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 968,
+      "y": 1650,
+      "width": 886,
+      "height": 268
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r01-b03-886x268+968+1650-x2.png",
+     "image_sha256": "0c83ab5b70821c7e0671c80e929ceafa1706cc0351ef7673e7a281cddf79ceb7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Deriv. perh. אֱלִיל, since the assumed",
+       "root אָלַל I, is quite doubtful.",
+       "אַל Chald. i. q. Heb. no. 3, but found",
+       "only in the biblical Chaldee, Dan. 2, 24."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe2c9ea4-231e-432d-9356-f3bd8a023238",
+      "duration_api_ms": 9499,
+      "cost_usd_list": 0.0751735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2837,
+      "output_tokens": 344
+     },
+     "lines": [
+      {
+       "draft": "Deriv. perh. אֱלִיל, since the assumed",
+       "reread": "Deriv. perh. אֱלִיל, since the assumed",
+       "status": "agreed",
+       "text": "Deriv. perh. אֱלִיל, since the assumed"
+      },
+      {
+       "draft": "root אָלַל I, is quite doubtful.",
+       "reread": "root אָלַל I, is quite doubtful.",
+       "status": "agreed",
+       "text": "root אָלַל I, is quite doubtful."
+      },
+      {
+       "draft": "אַל Chald. i. q. Heb. no. 3, but found",
+       "reread": "אַל Chald. i. q. Heb. no. 3, but found",
+       "status": "agreed",
+       "text": "אַל Chald. i. q. Heb. no. 3, but found"
+      },
+      {
+       "draft": "only in the biblical Chaldee, Dan. 2, 24.",
+       "reread": "only in the biblical Chaldee, Dan. 2, 24.",
+       "status": "agreed",
+       "text": "only in the biblical Chaldee, Dan. 2, 24."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 968,
+      "y": 1902,
+      "width": 886,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r01-b04-886x71+968+1902-x2.png",
+     "image_sha256": "0e9cc99608d8101fe50a49d094b104ec39344e9f214204e1bf737459be994b6f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "4, 16. 5, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "82504edd-f43f-4248-ab71-7e1de1dacac7",
+      "duration_api_ms": 8601,
+      "cost_usd_list": 0.05100349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1941,
+      "output_tokens": 219
+     },
+     "lines": [
+      {
+       "draft": "4, 16. 5, 10.",
+       "reread": "4, 16. 5, 10.",
+       "status": "agreed",
+       "text": "4, 16. 5, 10."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 968,
+    "y": 1968,
+    "width": 886,
+    "height": 917
+   },
+   "draft_lines": [
+    "* II. אַל the Arabic article, i. q. Heb.",
+    "הַל, prefixed to a few Hebrew words in the",
+    "O. T. which are either of Arabic origin,",
+    "or at least have been received through",
+    "the Arabic into the Hebrew; see אֶלְגָּבִישׁ,",
+    "אַלְמֻגִּים, אַלְמוֹדָד, אַלְקוּם. Kindred is the",
+    "demonstr. pron. plur. אֵל, אֵלֶּה, q. v.",
+    "I. אֵל m. 1. Particip. of the verb",
+    "אוּל, אִיל, no. 2, strong, mighty, a mighty",
+    "one, hero, champion; comp. אַיִל no. 1.",
+    "(See note.) Sing. Ez. 31, 11 אֵל גּוֹיִם",
+    "the mighty one, hero, among the nations,",
+    "i. e. Nebuchadnezzar; Sept. ἄρχων ἐθνῶν.",
+    "(Many Mss. read איל גוים, and so espec.",
+    "Babylonish copies.) Is. 9, 5 אֵל גִּבּוֹר the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 968,
+      "y": 1976,
+      "width": 886,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r02-b00-886x261+968+1976-x2.png",
+     "image_sha256": "cf3e8dfadc66430c497228ab556d8aa65675cdb28324147dcc2e8d1a468b9492",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* II. אַל the Arabic article, i. q. Heb.",
+       "הַל, prefixed to a few Hebrew words in the",
+       "O. T. which are either of Arabic origin,",
+       "or at least have been received through"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ac0593f2-c59b-4ac6-8551-564def95f235",
+      "duration_api_ms": 8297,
+      "cost_usd_list": 0.06899349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2773,
+      "output_tokens": 246
+     },
+     "lines": [
+      {
+       "draft": "* II. אַל the Arabic article, i. q. Heb.",
+       "reread": "* II. אַל the Arabic article, i. q. Heb.",
+       "status": "agreed",
+       "text": "* II. אַל the Arabic article, i. q. Heb."
+      },
+      {
+       "draft": "הַל, prefixed to a few Hebrew words in the",
+       "reread": "הַל, prefixed to a few Hebrew words in the",
+       "status": "agreed",
+       "text": "הַל, prefixed to a few Hebrew words in the"
+      },
+      {
+       "draft": "O. T. which are either of Arabic origin,",
+       "reread": "O. T. which are either of Arabic origin,",
+       "status": "agreed",
+       "text": "O. T. which are either of Arabic origin,"
+      },
+      {
+       "draft": "or at least have been received through",
+       "reread": "or at least have been received through",
+       "status": "agreed",
+       "text": "or at least have been received through"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 968,
+      "y": 2221,
+      "width": 886,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r02-b01-886x269+968+2221-x2.png",
+     "image_sha256": "1e2314ca9d4bc96315c334d81ca7726e80b551279494138f7983d87adc5ccc28",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the Arabic into the Hebrew; see אֶלְגָּבִישׁ,",
+       "אַלְמֻגִּים, אַלְמוֹדָד, אַלְקוּם. Kindred is the",
+       "demonstr. pron. plur. אֵל, אֵלֶּה, q. v.",
+       "I. אַל m. 1. Particip. of the verb"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fd38e70d-5524-4ea8-af7b-cb029720e1ec",
+      "duration_api_ms": 15314,
+      "cost_usd_list": 0.09772349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2837,
+      "output_tokens": 795
+     },
+     "lines": [
+      {
+       "draft": "the Arabic into the Hebrew; see אֶלְגָּבִישׁ,",
+       "reread": "the Arabic into the Hebrew; see אֶלְגָּבִישׁ,",
+       "status": "agreed",
+       "text": "the Arabic into the Hebrew; see אֶלְגָּבִישׁ,"
+      },
+      {
+       "draft": "אַלְמֻגִּים, אַלְמוֹדָד, אַלְקוּם. Kindred is the",
+       "reread": "אַלְמֻגִּים, אַלְמוֹדָד, אַלְקוּם. Kindred is the",
+       "status": "agreed",
+       "text": "אַלְמֻגִּים, אַלְמוֹדָד, אַלְקוּם. Kindred is the"
+      },
+      {
+       "draft": "demonstr. pron. plur. אֵל, אֵלֶּה, q. v.",
+       "reread": "demonstr. pron. plur. אֵל, אֵלֶּה, q. v.",
+       "status": "agreed",
+       "text": "demonstr. pron. plur. אֵל, אֵלֶּה, q. v."
+      },
+      {
+       "draft": "I. אֵל m. 1. Particip. of the verb",
+       "reread": "I. אַל m. 1. Particip. of the verb",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "I. אֵל m. 1. Particip. of the verb",
+        "verdict": "a",
+        "note": "Under the aleph the print shows two side-by-side dots (tsere), not a horizontal stroke (patach); Reading A's אֵל matches the headword (the entry for אֵל \"God/mighty one\", participle of אול).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "cd0ae7be-c85e-4927-87c7-b580caa16aff",
+        "duration_api_ms": 17452,
+        "cost_usd_list": 0.07762150000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2757,
+        "output_tokens": 425
+       },
+       "text": "I. אֵל m. 1. Particip. of the verb"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 968,
+      "y": 2474,
+      "width": 886,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r02-b02-886x241+968+2474-x2.png",
+     "image_sha256": "cd2c40189bf49379162221a616c95d421babaf3b80b86266102888eb2574cef9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּל, אֵיל, no. 2, strong, mighty, a mighty",
+       "one, hero, champion ; comp. אֵיל no. 1.",
+       "(See note.)  Sing. Ez. 31, 11 אֵל גּוֹיִם",
+       "the mighty one, hero, among the nations,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "81d073dd-1b63-426d-b9d8-58ba56bc8f97",
+      "duration_api_ms": 13711,
+      "cost_usd_list": 0.0833135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 558
+     },
+     "lines": [
+      {
+       "draft": "אוּל, אִיל, no. 2, strong, mighty, a mighty",
+       "reread": "אוּל, אֵיל, no. 2, strong, mighty, a mighty",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "אוּל, אֵיל, no. 2, strong, mighty, a mighty",
+        "verdict": "b",
+        "note": "The second Hebrew word carries two side-by-side dots under the aleph (tsere, אֵיל), not a single dot (hiriq); Reading B is correct. Both readings otherwise match the print (אוּל with shureq, order אוּל then אֵיל).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7a8e9123-830f-4fb5-bfea-74797b44a405",
+        "duration_api_ms": 12530,
+        "cost_usd_list": 0.0820355,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3582,
+        "cache_creation_input_tokens": 2645,
+        "output_tokens": 558
+       },
+       "text": "אוּל, אֵיל, no. 2, strong, mighty, a mighty"
+      },
+      {
+       "draft": "one, hero, champion; comp. אַיִל no. 1.",
+       "reread": "one, hero, champion ; comp. אֵיל no. 1.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "one, hero, champion ; comp. אֵיל no. 1.",
+        "verdict": "b",
+        "note": "Under the aleph the vowel is two dots side by side (tsere, אֵיל — matching the same word in line 1), not pathach+hireq as in Reading A; there is also a visible thin space before the semicolon, as Reading B has.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ab531656-e2df-4d98-99b1-e1db8b9c451e",
+        "duration_api_ms": 15932,
+        "cost_usd_list": 0.07853299999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2635,
+        "output_tokens": 492
+       },
+       "text": "one, hero, champion; comp. אֵיל no. 1."
+      },
+      {
+       "draft": "(See note.) Sing. Ez. 31, 11 אֵל גּוֹיִם",
+       "reread": "(See note.)  Sing. Ez. 31, 11 אֵל גּוֹיִם",
+       "status": "agreed",
+       "text": "(See note.) Sing. Ez. 31, 11 אֵל גּוֹיִם"
+      },
+      {
+       "draft": "the mighty one, hero, among the nations,",
+       "reread": "the mighty one, hero, among the nations,",
+       "status": "agreed",
+       "text": "the mighty one, hero, among the nations,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 968,
+      "y": 2699,
+      "width": 886,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r02-b03-886x194+968+2699-x2.png",
+     "image_sha256": "4ce044a607c6e5d66ee6f7cf51c8aeb181431073cecb962e08a58cf08470ba90",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. Nebuchadnezzar; Sept. ἄρχων ἐθνῶν.",
+       "(Many Mss. read איל גוים, and so espec.",
+       "Babylonish copies.) Is. 9, 5 אֵל גִּבּוֹר the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8145472f-8286-48f0-b494-f073290be51c",
+      "duration_api_ms": 12766,
+      "cost_usd_list": 0.07524349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2453,
+      "output_tokens": 499
+     },
+     "lines": [
+      {
+       "draft": "i. e. Nebuchadnezzar; Sept. ἄρχων ἐθνῶν.",
+       "reread": "i. e. Nebuchadnezzar; Sept. ἄρχων ἐθνῶν.",
+       "status": "agreed",
+       "text": "i. e. Nebuchadnezzar; Sept. ἄρχων ἐθνῶν."
+      },
+      {
+       "draft": "(Many Mss. read איל גוים, and so espec.",
+       "reread": "(Many Mss. read איל גוים, and so espec.",
+       "status": "agreed",
+       "text": "(Many Mss. read איל גוים, and so espec."
+      },
+      {
+       "draft": "Babylonish copies.) Is. 9, 5 אֵל גִּבּוֹר the",
+       "reread": "Babylonish copies.) Is. 9, 5 אֵל גִּבּוֹר the",
+       "status": "agreed",
+       "text": "Babylonish copies.) Is. 9, 5 אֵל גִּבּוֹר the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 968,
+    "y": 2873,
+    "width": 886,
+    "height": 455
+   },
+   "draft_lines": [
+    "mighty hero, i. e. the Messiah. Is. 10, 21",
+    "of God. Kindred to this is the phrase",
+    "in Plur. Ez. 32, 21 אֵלֵי גִבּוֹרִים (23 Mss.",
+    "אֵילֵי) pr. the mighty among the heroes,",
+    "i. e. the mightiest heroes, comp. Lehrg.",
+    "p. 678. So Job 41, 17 אֵלִים, where many",
+    "Mss. and editions read אֵילִים.",
+    "2. strength, might, power, comp. אֲבִיאֵל"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 968,
+      "y": 2865,
+      "width": 886,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r03-b00-886x239+968+2865-x2.png",
+     "image_sha256": "3dd151a8752820ee02d662c246299b1e7a7bd7847ed7cba51fda35652560fe9d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mighty hero, i. e. the Messiah. Is. 10, 21",
+       "of God. Kindred to this is the phrase",
+       "in Plur. Ez. 32, 21 אֵלֵי גִבּוֹרִים (23 Mss.",
+       "אילי) pr. the mighty among the heroes,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "062675dc-e3f4-47e7-9bf7-4accc68e2b9a",
+      "duration_api_ms": 15531,
+      "cost_usd_list": 0.0798635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 489
+     },
+     "lines": [
+      {
+       "draft": "mighty hero, i. e. the Messiah. Is. 10, 21",
+       "reread": "mighty hero, i. e. the Messiah. Is. 10, 21",
+       "status": "agreed",
+       "text": "mighty hero, i. e. the Messiah. Is. 10, 21"
+      },
+      {
+       "draft": "of God. Kindred to this is the phrase",
+       "reread": "of God. Kindred to this is the phrase",
+       "status": "agreed",
+       "text": "of God. Kindred to this is the phrase"
+      },
+      {
+       "draft": "in Plur. Ez. 32, 21 אֵלֵי גִבּוֹרִים (23 Mss.",
+       "reread": "in Plur. Ez. 32, 21 אֵלֵי גִבּוֹרִים (23 Mss.",
+       "status": "agreed",
+       "text": "in Plur. Ez. 32, 21 אֵלֵי גִבּוֹרִים (23 Mss."
+      },
+      {
+       "draft": "אֵילֵי) pr. the mighty among the heroes,",
+       "reread": "אילי) pr. the mighty among the heroes,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "אילי) pr. the mighty among the heroes,",
+        "verdict": "b",
+        "note": "The MS-variant אילי at the start of line 4 is printed unpointed (plene yod, no tsere under alef or lamed), unlike the pointed אֵלֵי on the line above; Reading A's vowels are not on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fd6411f9-d7a4-4403-9bca-ff447b001483",
+        "duration_api_ms": 8770,
+        "cost_usd_list": 0.07753175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3567,
+        "cache_creation_input_tokens": 2630,
+        "output_tokens": 474
+       },
+       "text": "אילי) pr. the mighty among the heroes,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 968,
+      "y": 3088,
+      "width": 886,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0065/pass2/c1-r03-b01-886x242+968+3088-x2.png",
+     "image_sha256": "60a612e5951b46c994b55df674556dcf44eaf9a466d064bd13a3a8b6b9797249",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. the mightiest heroes, comp. Lehrg.",
+       "p. 678. So Job 41, 17 אֵלִים, where many",
+       "Mss. and editions read אֵילִים.",
+       "2. strength, might, power, comp. אֲבִיאֵל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3332038a-94ff-47de-aee3-7090d1cf094e",
+      "duration_api_ms": 16277,
+      "cost_usd_list": 0.08931349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 678
+     },
+     "lines": [
+      {
+       "draft": "i. e. the mightiest heroes, comp. Lehrg.",
+       "reread": "i. e. the mightiest heroes, comp. Lehrg.",
+       "status": "agreed",
+       "text": "i. e. the mightiest heroes, comp. Lehrg."
+      },
+      {
+       "draft": "p. 678. So Job 41, 17 אֵלִים, where many",
+       "reread": "p. 678. So Job 41, 17 אֵלִים, where many",
+       "status": "agreed",
+       "text": "p. 678. So Job 41, 17 אֵלִים, where many"
+      },
+      {
+       "draft": "Mss. and editions read אֵילִים.",
+       "reread": "Mss. and editions read אֵילִים.",
+       "status": "agreed",
+       "text": "Mss. and editions read אֵילִים."
+      },
+      {
+       "draft": "2. strength, might, power, comp. אֲבִיאֵל",
+       "reread": "2. strength, might, power, comp. אֲבִיאֵל",
+       "status": "agreed",
+       "text": "2. strength, might, power, comp. אֲבִיאֵל"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אכר 49 אל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "whence أُكْرٌ, أُكْرَةٌ, a pit, ditch. Kindr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "roots are כָּרָה, כּוּר, קוּר, נָקַר.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִכָּר m. a digger, husbandman, Jer.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "51, 23. Am. 5, 16. Plur. אִכָּרִים, c. suff.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִכָּרֵיכֶם 2 Chr. 26, 10. Joel 1, 11. Is. 61, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Chald. id. Syr. and Zab. ܐܰܟܳܪܳܐ. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "أَكَّارٌ. Perh. from the same stock may",
+   "status": "adjudicated",
+   "draft": "أَكَّارٌ. Perh. from the same stock may",
+   "reread": "أَكَّار. Perh. from the same stock may",
+   "verdict": "a",
+   "note": "A small s-shaped ḍammatān (ٌ) is clearly printed above the final rā of the Arabic word; Reading B drops it. The rest is identical.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "come Gr. ἀγρός, Lat. ager, Goth. akr,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Germ. Acker, whence Engl. acre as a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "measure of land.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אָכַשׁ a root not in use, Syr. ܐܟܫ to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "be angry. Hence אָכִישׁ.",
+   "status": "adjudicated",
+   "draft": "be angry. Hence אַכְשָׁף.",
+   "reread": "be angry. Hence אָכִישׁ.",
+   "verdict": "b",
+   "note": "The printed word is four letters א־כ־י־שׁ (aleph with qamats, kaf with hiriq, yod, shin) — Achish — with no final pe; the pe-final אַכְשָׁף of Reading A belongs to the next entry (Achshaph), not this line.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַכְשָׁף (fascination, r. כָּשַׁף) Achshaph,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "pr. n. of a city in the tribe of Asher,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Josh. 12, 20. 19, 25.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* I. אַל a negative word, like the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "kindr. לֹא, לָא, לַי, לֵא, לֵי.",
+   "status": "adjudicated",
+   "draft": "kindr. לֹא, לָא, לַי, לָא, לַי.",
+   "reread": "kindr. לֹא, לָא, לַי, לֵא, לֵי.",
+   "verdict": "b",
+   "note": "The 4th and 5th items carry two horizontal dots (tsere) under the lamed, not qamets/patach as in Reading A; the first three items (holem, qamets, patach) agree in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1. Subst. nothing, nought. Job 24, 25",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "who will bring my speech to nought?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. Conj. in the sense of prohibiting,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "dehorting, deprecating, i. e. of wishing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "that not, that something may not be done.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Joined always with the future, viz. with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "fut. apoc. where this exists, and with 1",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pers. paragog. Ex. 16, 29 אַל־יֵצֵא אִישׁ let",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "no man go out. 1 Sam. 26, 20. In 2 pers.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gen. 22, 12 אַל־תִּשְׁלַח יָדְךָ stretch not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "forth thine hand. אַל־תִּירְאוּ fear ye not",
+   "status": "adjudicated",
+   "draft": "forth thine hand. אַל־תִּירָאוּ fear ye not",
+   "reread": "forth thine hand. אַל־תִּירְאוּ fear ye not",
+   "verdict": "b",
+   "note": "Under the resh of תִּירְאוּ the print shows a vertical two-dot shewa (standard form before the alef + shureq), not a qamets; Reading B matches, Reading A does not.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "43, 23. Jer. 7, 4. In 1 pers. Ps. 25, 2",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַל־אֵבוֹשָׁה let me not be ashamed, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "God grant that I may not be put to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "shame. Rarely is it separated from the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "verb, Ps. 6, 2 אַל־בְּאַפְּךָ תוֹכִיחֵנִי not in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "thine anger reprove me. Also in impre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cation, Gen. 49, 4 אַל־תּוֹתַר excel thou",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "not! thou shalt have no privilege. In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "entreaties נָא is added, Gen. 13, 8 אַל־נָא",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "תְהִי let there not be now, I pray thee.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "18, 3. 30. 32.—The partic. לֹא construed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with the fut. is a direct and absolute",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "negative; פֶּן ne forte, lest perhaps, im-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "plies milder dissuasion.—But a) As the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "fut. apoc. which properly expresses an",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "optative, subjunctive, or imperative idea,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "is also put poetically for the simple fu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ture (Heb. Gr. § 126. 2), so אַל with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the fut. is put not only prohibitively,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "but sometimes also poetically for the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "simple idea of time future. So אַל־יֵרֶא",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pr. a command, let him not see, ne vi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "deat, but poet. for simple fut. he will",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "not see, non videbit, Job 20, 17; comp. for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "a similar use of the imperat. Heb. Gr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "§ 127. 1. So אַל־יֶחֱרַשׁ will not keep",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "silence Ps. 50, 3, comp. 41, 3. 2 K. 6, 27",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַל־יוֹשִׁיעֵךְ יְהוָֹה Jehovah will not save",
+   "status": "adjudicated",
+   "draft": "אַל־יוֹשִׁיעֵךְ יְהוָֹה Jehovah will not save",
+   "reread": "אַל־יוֹשִׁעֲךָ יְהוָֹה Jehovah will not save",
+   "verdict": "a",
+   "note": "The print shows a yod between shin and ayin (plene יוֹשִׁיעֵ), tsere (two horizontal dots) under the ayin, and a sheva (two vertical dots) inside the final kaf — not hataf-patah and kamats as in Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "thee. Job 5, 22 אַל־תִּירָא thou shalt (wilt)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "not fear, there will be nothing to fear.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "b) The verb is sometimes omitted,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "whether it has preceded or not. Am. 5,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "14 seek good וְאַל רָע and not (seek) evil.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2 Sam. 1, 21 אַל־טַל וְאַל מָטָר עֲלֵיכֶם no",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "dew and no rain (descend) upon you!",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "c) Absol. nay! not so! like μή for μὴ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "τοῦτο γένηται (Aristoph. Acharn. 458);",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as Gen. 19, 18 אַל־נָא אֲדֹנָי not so now,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "my lord! Ruth 1, 13 אַל בְּנֹתַי not so, my",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "daughters! i. e. let it not be.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. Interrog. like Gr. μή, i. q. Lat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "num, whether, presupposing a negative",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "answer; see Passow Lex. μή lett. C.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Buttm. Gr. Gram. § 148. 5. Once, 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "27, 10 אַל־פְּשַׁטְתֶּם הַיּוֹם ye have then not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "made any incursion in these days? The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "reply is: No, for on every side dwell the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Hebrews, my countrymen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Deriv. perh. אֱלִיל, since the assumed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "root אָלַל I, is quite doubtful.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַל Chald. i. q. Heb. no. 3, but found",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "only in the biblical Chaldee, Dan. 2, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4, 16. 5, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* II. אַל the Arabic article, i. q. Heb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "הַל, prefixed to a few Hebrew words in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "O. T. which are either of Arabic origin,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "or at least have been received through",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the Arabic into the Hebrew; see אֶלְגָּבִישׁ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַלְמֻגִּים, אַלְמוֹדָד, אַלְקוּם. Kindred is the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "demonstr. pron. plur. אֵל, אֵלֶּה, q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "I. אֵל m. 1. Particip. of the verb",
+   "status": "adjudicated",
+   "draft": "I. אֵל m. 1. Particip. of the verb",
+   "reread": "I. אַל m. 1. Particip. of the verb",
+   "verdict": "a",
+   "note": "Under the aleph the print shows two side-by-side dots (tsere), not a horizontal stroke (patach); Reading A's אֵל matches the headword (the entry for אֵל \"God/mighty one\", participle of אול).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אוּל, אֵיל, no. 2, strong, mighty, a mighty",
+   "status": "adjudicated",
+   "draft": "אוּל, אִיל, no. 2, strong, mighty, a mighty",
+   "reread": "אוּל, אֵיל, no. 2, strong, mighty, a mighty",
+   "verdict": "b",
+   "note": "The second Hebrew word carries two side-by-side dots under the aleph (tsere, אֵיל), not a single dot (hiriq); Reading B is correct. Both readings otherwise match the print (אוּל with shureq, order אוּל then אֵיל).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "one, hero, champion; comp. אֵיל no. 1.",
+   "status": "adjudicated",
+   "draft": "one, hero, champion; comp. אַיִל no. 1.",
+   "reread": "one, hero, champion ; comp. אֵיל no. 1.",
+   "verdict": "b",
+   "note": "Under the aleph the vowel is two dots side by side (tsere, אֵיל — matching the same word in line 1), not pathach+hireq as in Reading A; there is also a visible thin space before the semicolon, as Reading B has.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(See note.) Sing. Ez. 31, 11 אֵל גּוֹיִם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the mighty one, hero, among the nations,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "i. e. Nebuchadnezzar; Sept. ἄρχων ἐθνῶν.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(Many Mss. read איל גוים, and so espec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Babylonish copies.) Is. 9, 5 אֵל גִּבּוֹר the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "mighty hero, i. e. the Messiah. Is. 10, 21",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of God. Kindred to this is the phrase",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in Plur. Ez. 32, 21 אֵלֵי גִבּוֹרִים (23 Mss.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אילי) pr. the mighty among the heroes,",
+   "status": "adjudicated",
+   "draft": "אֵילֵי) pr. the mighty among the heroes,",
+   "reread": "אילי) pr. the mighty among the heroes,",
+   "verdict": "b",
+   "note": "The MS-variant אילי at the start of line 4 is printed unpointed (plene yod, no tsere under alef or lamed), unlike the pointed אֵלֵי on the line above; Reading A's vowels are not on the page.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "i. e. the mightiest heroes, comp. Lehrg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "p. 678. So Job 41, 17 אֵלִים, where many",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Mss. and editions read אֵילִים.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. strength, might, power, comp. אֲבִיאֵל",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 97,
+  "adjudicated": 9,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.0185
+}

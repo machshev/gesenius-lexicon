@@ -14,7 +14,7 @@
  "prompt_version": 2,
  "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
  "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
- "generated_at": "2026-10-04T14:10:02+00:00",
+ "generated_at": "2026-10-04T18:03:50+00:00",
  "chunks": [
   {
    "chunk_id": "header",
@@ -204,10 +204,21 @@
       {
        "draft": "* אָכַד obsol. root, i. q. עָקַד, אָגַד, to",
        "reread": "* אָבַךְ obsol. root, i. q. עָבַד, אָגַד, to",
-       "status": "unresolved",
+       "status": "adjudicated",
        "band_id": "c0-r00-b01",
        "judgement": {
-        "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e437fe90-2169-4a88-9036-d0e3efc35c50\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+        "text": "* אָכַד obsol. root, i. q. עָקַד, אָגַד, to",
+        "verdict": "a",
+        "note": "Headword middle letter is a rounded כ (not ב with a right-projecting foot) and ends in plain ד, not final ךְ; the second comparandum's middle letter has a descender below the baseline, so it is ק (עָקַד), not ב. Matches Gesenius's entry for the root of אַכָּד \"to bind\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1c10bf67-f7d5-4546-a253-ea98290e5ef4",
+        "duration_api_ms": 11735,
+        "cost_usd_list": 0.111275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2460,
+        "cache_creation_input_tokens": 3886,
+        "output_tokens": 652
        },
        "text": "* אָכַד obsol. root, i. q. עָקַד, אָגַד, to"
       }
@@ -400,66 +411,6 @@
        "reread": "failing torrent, soon drying up and dis-",
        "status": "agreed",
        "text": "failing torrent, soon drying up and dis-"
-      },
-      {
-       "draft": "appointing the hope of the traveller,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "appointing the hope of the traveller,"
-      },
-      {
-       "draft": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-"
-      },
-      {
-       "draft": "ennial stream. Comp. Lat. fundus men-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ennial stream. Comp. Lat. fundus men-"
-      },
-      {
-       "draft": "dax Hor. Carm. 3. 1. 30.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "dax Hor. Carm. 3. 1. 30."
-      },
-      {
-       "draft": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n. a)",
-       "reread": null,
-       "status": "draft_only",
-       "text": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n. a)"
-      },
-      {
-       "draft": "A city on the sea-coast of Asher, be-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "A city on the sea-coast of Asher, be-"
-      },
-      {
-       "draft": "tween Acco and Tyre, Gr. Ecdippa; now",
-       "reread": null,
-       "status": "draft_only",
-       "text": "tween Acco and Tyre, Gr. Ecdippa; now"
-      },
-      {
-       "draft": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31."
-      },
-      {
-       "draft": "b) A city in the tribe of Judah, Josh.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "b) A city in the tribe of Judah, Josh."
-      },
-      {
-       "draft": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזֵבָה.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזֵבָה."
       }
      ]
     },
@@ -476,8 +427,48 @@
      "image_sha256": "10809c952370e405e5012033824e135a1c2402ced4f48c4cbcbde47b8a61c267",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"13e7914c-a2ac-4c1a-800e-a87e87b5a70a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "appointing the hope of the traveller,",
+       "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-",
+       "ennial stream. Comp. Lat. fundus men-",
+       "dax Hor. Carm. 3. 1. 30."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "faeb3a97-acfd-49be-91b9-ec06f0945a76",
+      "duration_api_ms": 9598,
+      "cost_usd_list": 0.09095049999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2482,
+      "cache_creation_input_tokens": 3657,
+      "output_tokens": 337
+     },
+     "lines": [
+      {
+       "draft": "appointing the hope of the traveller,",
+       "reread": "appointing the hope of the traveller,",
+       "status": "agreed",
+       "text": "appointing the hope of the traveller,"
+      },
+      {
+       "draft": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-",
+       "reread": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-",
+       "status": "agreed",
+       "text": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-"
+      },
+      {
+       "draft": "ennial stream. Comp. Lat. fundus men-",
+       "reread": "ennial stream. Comp. Lat. fundus men-",
+       "status": "agreed",
+       "text": "ennial stream. Comp. Lat. fundus men-"
+      },
+      {
+       "draft": "dax Hor. Carm. 3. 1. 30.",
+       "reread": "dax Hor. Carm. 3. 1. 30.",
+       "status": "agreed",
+       "text": "dax Hor. Carm. 3. 1. 30."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b02",
@@ -492,8 +483,63 @@
      "image_sha256": "379a51a6d556d84115d15afa532f22d4d8559b6ccc0ac3a14157119c0335f967",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"a6aca40a-dff0-4c91-9e3f-5fe87f573b18\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n.    a)",
+       "A city on the sea-coast of Asher, be-",
+       "tween Acco and Tyre, Gr. Ecdippa, now",
+       "called ez-Zîb. Josh. 19, 29. Judg. 1, 31."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "80bfd8b1-5665-49e0-abd5-3334e953e261",
+      "duration_api_ms": 11881,
+      "cost_usd_list": 0.1027305,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2482,
+      "cache_creation_input_tokens": 3846,
+      "output_tokens": 497
+     },
+     "lines": [
+      {
+       "draft": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n. a)",
+       "reread": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n.    a)",
+       "status": "agreed",
+       "text": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n. a)"
+      },
+      {
+       "draft": "A city on the sea-coast of Asher, be-",
+       "reread": "A city on the sea-coast of Asher, be-",
+       "status": "agreed",
+       "text": "A city on the sea-coast of Asher, be-"
+      },
+      {
+       "draft": "tween Acco and Tyre, Gr. Ecdippa; now",
+       "reread": "tween Acco and Tyre, Gr. Ecdippa, now",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "tween Acco and Tyre, Gr. Ecdippa, now",
+        "verdict": "b",
+        "note": "The mark after \"Ecdippa\" is a single comma sitting on the baseline (the italic a's tail runs into it); there is no upper dot forming a semicolon, so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "53789420-02a7-4a8f-9697-fb6193fd93e7",
+        "duration_api_ms": 17903,
+        "cost_usd_list": 0.11287175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2447,
+        "cache_creation_input_tokens": 3811,
+        "output_tokens": 714
+       },
+       "text": "tween Acco and Tyre, Gr. Ecdippa, now"
+      },
+      {
+       "draft": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31.",
+       "reread": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31.",
+       "status": "agreed",
+       "text": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31."
+      }
+     ]
     },
     {
      "band_id": "c0-r01-b03",
@@ -508,8 +554,49 @@
      "image_sha256": "420dee2beccdbffa405d0055fbf7c7dbf4d881718ed6060a55efacbe6ca61cf9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"01880230-7ec5-4902-8fae-7b8ffc0cac1a\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "b) A city in the tribe of Judah, Josh.",
+       "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזְבָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dad38a9f-e37e-47ff-8e38-d35859101715",
+      "duration_api_ms": 15629,
+      "cost_usd_list": 0.09494050000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2482,
+      "cache_creation_input_tokens": 3279,
+      "output_tokens": 568
+     },
+     "lines": [
+      {
+       "draft": "b) A city in the tribe of Judah, Josh.",
+       "reread": "b) A city in the tribe of Judah, Josh.",
+       "status": "agreed",
+       "text": "b) A city in the tribe of Judah, Josh."
+      },
+      {
+       "draft": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזֵבָה.",
+       "reread": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזְבָה.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b03",
+       "judgement": {
+        "text": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזְבָה.",
+        "verdict": "b",
+        "note": "Under the zayin of the last word the print shows two vertically stacked dots (shewa), not a horizontal tsere; so כֹּזְבָה, matching Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1c5a4e10-6cf5-40c0-97c4-701518ad9614",
+        "duration_api_ms": 18459,
+        "cost_usd_list": 0.0914595,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2478,
+        "cache_creation_input_tokens": 3275,
+        "output_tokens": 500
+       },
+       "text": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזְבָה."
+      }
+     ]
     }
    ]
   },
@@ -554,98 +641,46 @@
      "image_sha256": "e1bd90752748c3a1f1812dca0709cacae2fd037deb5856f3038fdb553cd49655",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"842cdda2-4613-4b72-ab36-0da1ad5a358b\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+      "lines": [
+       "אַכְזָר m. (r. כָּזַר) pr. violence, but every",
+       "where as concr. violent, Lam. 4, 3. Job",
+       "30, 21. Of poison, violent, deadly, Deut.",
+       "32, 33.—Once in a good sense for bold,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "19b74f4f-ab6b-45c4-81ba-27458485808d",
+      "duration_api_ms": 11844,
+      "cost_usd_list": 0.08881049999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2482,
+      "cache_creation_input_tokens": 3720,
+      "output_tokens": 269
      },
      "lines": [
       {
        "draft": "אַכְזָר m. (r. כָּזַר) pr. violence, but every",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "אַכְזָר m. (r. כָּזַר) pr. violence, but every",
+       "status": "agreed",
        "text": "אַכְזָר m. (r. כָּזַר) pr. violence, but every"
       },
       {
        "draft": "where as concr. violent, Lam. 4, 3. Job",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "where as concr. violent, Lam. 4, 3. Job",
+       "status": "agreed",
        "text": "where as concr. violent, Lam. 4, 3. Job"
       },
       {
        "draft": "30, 21. Of poison, violent, deadly, Deut.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "30, 21. Of poison, violent, deadly, Deut.",
+       "status": "agreed",
        "text": "30, 21. Of poison, violent, deadly, Deut."
       },
       {
        "draft": "32, 33.—Once in a good sense for bold,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "32, 33.—Once in a good sense for bold,",
+       "status": "agreed",
        "text": "32, 33.—Once in a good sense for bold,"
-      },
-      {
-       "draft": "brave, Job 41, 2.—Hence",
-       "reread": null,
-       "status": "draft_only",
-       "text": "brave, Job 41, 2.—Hence"
-      },
-      {
-       "draft": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,"
-      },
-      {
-       "draft": "23. Also cruel, terrible; Prov. 17, 11 a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "23. Also cruel, terrible; Prov. 17, 11 a"
-      },
-      {
-       "draft": "terrible messenger, who brings fatal tid-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "terrible messenger, who brings fatal tid-"
-      },
-      {
-       "draft": "ings, as of a sentence of death. Is. 13, 9.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ings, as of a sentence of death. Is. 13, 9."
-      },
-      {
-       "draft": "Jer. 30, 14.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Jer. 30, 14."
-      },
-      {
-       "draft": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-"
-      },
-      {
-       "draft": "ing וּת, see Heb. Gram. § 85. 6,) fierce-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ing וּת, see Heb. Gram. § 85. 6,) fierce-"
-      },
-      {
-       "draft": "ness, cruelty. of wrath Prov. 27, 4.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ness, cruelty. of wrath Prov. 27, 4."
-      },
-      {
-       "draft": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8."
-      },
-      {
-       "draft": "R. אָכַל .",
-       "reread": null,
-       "status": "draft_only",
-       "text": "R. אָכַל."
       }
      ]
     },
@@ -662,8 +697,48 @@
      "image_sha256": "a9fb7ddfb8392aa94c060a4f0b6c5bc945dc9843345f441ea5c6f7c214d99f96",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"f95ba94a-8882-46f8-8d43-86becd269306\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "brave, Job 41, 2.—Hence",
+       "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,",
+       "23. Also cruel, terrible; Prov. 17, 11 a",
+       "terrible messenger, who brings fatal tid-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5305203e-65f7-4b5c-9aa2-75b8f81327c5",
+      "duration_api_ms": 12124,
+      "cost_usd_list": 0.09478049999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2482,
+      "cache_creation_input_tokens": 3846,
+      "output_tokens": 338
+     },
+     "lines": [
+      {
+       "draft": "brave, Job 41, 2.—Hence",
+       "reread": "brave, Job 41, 2.—Hence",
+       "status": "agreed",
+       "text": "brave, Job 41, 2.—Hence"
+      },
+      {
+       "draft": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,",
+       "reread": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,",
+       "status": "agreed",
+       "text": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,"
+      },
+      {
+       "draft": "23. Also cruel, terrible; Prov. 17, 11 a",
+       "reread": "23. Also cruel, terrible; Prov. 17, 11 a",
+       "status": "agreed",
+       "text": "23. Also cruel, terrible; Prov. 17, 11 a"
+      },
+      {
+       "draft": "terrible messenger, who brings fatal tid-",
+       "reread": "terrible messenger, who brings fatal tid-",
+       "status": "agreed",
+       "text": "terrible messenger, who brings fatal tid-"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b02",
@@ -678,8 +753,48 @@
      "image_sha256": "f777f80ee228ad2ebe5b98d4849a6686fb3a9bfc67ad48896e83621ae655c581",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"79341534-7eff-4717-a73e-99791bf28570\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "ings, as of a sentence of death. Is. 13, 9.",
+       "Jer. 30, 14.",
+       "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-",
+       "ing וּת, see Heb. Gram. § 85. 6,) fierce-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "70a912e9-ac87-4ce9-abbb-7dcc5bebb38e",
+      "duration_api_ms": 15418,
+      "cost_usd_list": 0.11318049999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 2482,
+      "cache_creation_input_tokens": 3846,
+      "output_tokens": 706
+     },
+     "lines": [
+      {
+       "draft": "ings, as of a sentence of death. Is. 13, 9.",
+       "reread": "ings, as of a sentence of death. Is. 13, 9.",
+       "status": "agreed",
+       "text": "ings, as of a sentence of death. Is. 13, 9."
+      },
+      {
+       "draft": "Jer. 30, 14.",
+       "reread": "Jer. 30, 14.",
+       "status": "agreed",
+       "text": "Jer. 30, 14."
+      },
+      {
+       "draft": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-",
+       "reread": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-",
+       "status": "agreed",
+       "text": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-"
+      },
+      {
+       "draft": "ing וּת, see Heb. Gram. § 85. 6,) fierce-",
+       "reread": "ing וּת, see Heb. Gram. § 85. 6,) fierce-",
+       "status": "agreed",
+       "text": "ing וּת, see Heb. Gram. § 85. 6,) fierce-"
+      }
+     ]
     },
     {
      "band_id": "c0-r02-b03",
@@ -694,8 +809,41 @@
      "image_sha256": "59b223fafc01a12a717e32fb6086e754bde1ef507aaef8f2cde5b07196560739",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"2a7bccf4-7ddb-4ae7-aca4-18ae01419bd7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "ness, cruelty. of wrath Prov. 27, 4.",
+       "אֲכִילָה f. an eating, a meal, 1 K. 19, 8.",
+       "R. אָכַל ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "424844ad-2955-46ea-9568-8d5193b20b8a",
+      "duration_api_ms": 10685,
+      "cost_usd_list": 0.0726735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 428
+     },
+     "lines": [
+      {
+       "draft": "ness, cruelty. of wrath Prov. 27, 4.",
+       "reread": "ness, cruelty. of wrath Prov. 27, 4.",
+       "status": "agreed",
+       "text": "ness, cruelty. of wrath Prov. 27, 4."
+      },
+      {
+       "draft": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8.",
+       "reread": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8.",
+       "status": "agreed",
+       "text": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8."
+      },
+      {
+       "draft": "R. אָכַל .",
+       "reread": "R. אָכַל .",
+       "status": "agreed",
+       "text": "R. אָכַל."
+      }
+     ]
     }
    ]
   },
@@ -732,50 +880,83 @@
      "image_sha256": "a4ad4bf34309e7a78dcfacd38e6959f0ade60c1709036c4fb738211559e0aa32",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"c5081853-13a5-4688-8846-436c92cd9de4\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+      "lines": [
+       "אָכִישׁ (r. אָבַשׁ) Achish, pr. n. of a king",
+       "of the Philistines in Gath, 1 Sam. 21, 11.",
+       "27, 2. 1 K. 2, 39.",
+       "* אָכַל inf. constr. אֱכֹל, with pref. לֶאֱכֹל,",
+       "בֶּאֱכֹל, c. suff. אָכְלְךָ, אָכְלוֹ; fut. יֹאכַל, in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c802ab85-142c-427d-8177-da467444ae95",
+      "duration_api_ms": 15476,
+      "cost_usd_list": 0.1117735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3132,
+      "output_tokens": 958
      },
      "lines": [
       {
        "draft": "אָכִישׁ (r. אָבַשׁ) Achish, pr. n. of a king",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "אָכִישׁ (r. אָבַשׁ) Achish, pr. n. of a king",
+       "status": "agreed",
        "text": "אָכִישׁ (r. אָבַשׁ) Achish, pr. n. of a king"
       },
       {
        "draft": "of the Philistines in Gath. 1 Sam. 21, 11.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "of the Philistines in Gath. 1 Sam. 21, 11."
+       "reread": "of the Philistines in Gath, 1 Sam. 21, 11.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "of the Philistines in Gath, 1 Sam. 21, 11.",
+        "verdict": "b",
+        "note": "The punctuation after \"Gath\" has a visible tail descending below the baseline, so it is a comma (Reading B), not a period (Reading A).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "12ffbf67-e1d3-4d40-944a-5db0014ecc01",
+        "duration_api_ms": 12276,
+        "cost_usd_list": 0.10802225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2449,
+        "cache_creation_input_tokens": 4191,
+        "output_tokens": 465
+       },
+       "text": "of the Philistines in Gath, 1 Sam. 21, 11."
       },
       {
        "draft": "27, 2. 1 K. 2, 39.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "27, 2. 1 K. 2, 39.",
+       "status": "agreed",
        "text": "27, 2. 1 K. 2, 39."
       },
       {
        "draft": "* אָכַל inf. constr. אֱכֹל, with pref. לֶאֱכֹל,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "* אָכַל inf. constr. אֱכֹל, with pref. לֶאֱכֹל,",
+       "status": "agreed",
        "text": "* אָכַל inf. constr. אֱכֹל, with pref. לֶאֱכֹל,"
       },
       {
        "draft": "בֶּאֱכֹל, c. suff. אֲכָלְךָ, אָכְלוֹ; fut. יֹאכַל, in",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "בֶּאֱכֹל, c. suff. אָכְלְךָ, אָכְלוֹ; fut. יֹאכַל, in",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "בֶּאֱכֹל, c. suff. אֲכָלְךָ, אָכְלוֹ; fut. יֹאכַל, in",
+        "verdict": "a",
+        "note": "First suffixed form: the aleph carries a hateph-pathah (two vertical dots plus stroke) and the kaph a qamets, i.e. אֲכָלְךָ (Reading A); the following form אָכְלוֹ has qamets under aleph and shva under kaph, which is what Reading B wrongly copied onto the first word.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "05dc78a1-e344-4e1b-b39f-7b6366d872dd",
+        "duration_api_ms": 12925,
+        "cost_usd_list": 0.129355,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2500,
+        "cache_creation_input_tokens": 4242,
+        "output_tokens": 871
+       },
        "text": "בֶּאֱכֹל, c. suff. אֲכָלְךָ, אָכְלוֹ; fut. יֹאכַל, in"
-      },
-      {
-       "draft": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5."
-      },
-      {
-       "draft": "1. to eat, to eat up, to devour; absol.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1. to eat, to eat up, to devour; absol."
       }
      ]
     },
@@ -792,8 +973,34 @@
      "image_sha256": "2ef231bc33853c3034b2444537c8442e2150d81f07b0ff962de43b626dfc8f80",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e9fbca33-4565-4935-9407-5f9804a231cb\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5.",
+       "1. to eat, to eat up, to devour; absol."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "633b3f3c-5b16-4ea4-af8f-2588781f4f46",
+      "duration_api_ms": 11896,
+      "cost_usd_list": 0.0645135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 416
+     },
+     "lines": [
+      {
+       "draft": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5.",
+       "reread": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5.",
+       "status": "agreed",
+       "text": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5."
+      },
+      {
+       "draft": "1. to eat, to eat up, to devour; absol.",
+       "reread": "1. to eat, to eat up, to devour; absol.",
+       "status": "agreed",
+       "text": "1. to eat, to eat up, to devour; absol."
+      }
+     ]
     }
    ]
   },
@@ -832,62 +1039,61 @@
      "image_sha256": "8fa0c9654454af535bd3c3c7ec173b443eadbb9fa4af6744ced4d2a730800800",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"3dcfedfc-be45-4f08-94fa-3c432918581f\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+      "lines": [
+       "Deut. 27, 7. 1 Sam. 9, 13; oftener with",
+       "acc. of food; rarely לְ Lam. 4, 5; בְּ Ex.",
+       "12, 43–45. Lev. 22, 11; מִן Lev. 7, 21.",
+       "25, 22. Num. 15, 19, comp. ἐσθίειν τινός."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "931ca211-a2ce-4a7d-9f29-85b0cb4b4f82",
+      "duration_api_ms": 9850,
+      "cost_usd_list": 0.07665325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 332
      },
      "lines": [
       {
        "draft": "Deut. 27, 7. 1 Sam. 9, 13; oftener with",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Deut. 27, 7. 1 Sam. 9, 13; oftener with",
+       "status": "agreed",
        "text": "Deut. 27, 7. 1 Sam. 9, 13; oftener with"
       },
       {
        "draft": "acc. of food; rarely לְ Lam. 4, 5; בְּ Ex.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "acc. of food; rarely לְ Lam. 4, 5; בְּ Ex.",
+       "status": "agreed",
        "text": "acc. of food; rarely לְ Lam. 4, 5; בְּ Ex."
       },
       {
        "draft": "12, 43-45. Lev. 22, 11; מִן Lev. 7, 21.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "12, 43–45. Lev. 22, 11; מִן Lev. 7, 21.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "12, 43-45. Lev. 22, 11; מִן Lev. 7, 21.",
+        "verdict": "a",
+        "note": "The only disagreement is the dash in 43-45: the printed stroke is short (narrower than a digit), a hyphen, not an en dash. Everything else (מִן with hireq, no yod; punctuation) agrees with both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8390e55f-c013-4d04-b9a0-bc0106f9a724",
+        "duration_api_ms": 13121,
+        "cost_usd_list": 0.11053550000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 2462,
+        "cache_creation_input_tokens": 4014,
+        "output_tokens": 586
+       },
        "text": "12, 43-45. Lev. 22, 11; מִן Lev. 7, 21."
       },
       {
        "draft": "25, 22. Num. 15, 19, comp. ἐσθίειν τινός.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "25, 22. Num. 15, 19, comp. ἐσθίειν τινός.",
+       "status": "agreed",
        "text": "25, 22. Num. 15, 19, comp. ἐσθίειν τινός."
-      },
-      {
-       "draft": "Spoken not only very frequently of",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Spoken not only very frequently of"
-      },
-      {
-       "draft": "men, but also of beasts, Is. 11, 7; whence",
-       "reread": null,
-       "status": "draft_only",
-       "text": "men, but also of beasts, Is. 11, 7; whence"
-      },
-      {
-       "draft": "הָאֹכֵל the eater, in Samson's riddle",
-       "reread": null,
-       "status": "draft_only",
-       "text": "הָאֹכֵל the eater, in Samson's riddle"
-      },
-      {
-       "draft": "Judg. 14, 14, is the lion, comp. Arab.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Judg. 14, 14, is the lion, comp. Arab."
-      },
-      {
-       "draft": "الآكِل.—The following phrases are to be",
-       "reread": null,
-       "status": "draft_only",
-       "text": "الآكِل.—The following phrases are to be"
       }
      ]
     },
@@ -904,8 +1110,48 @@
      "image_sha256": "c1c65dfc50afd302cadda828329fc0ace581779290a2c0ec02d5ae39be0e21fc",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"52256c64-55c1-46bb-b6ef-09e12a62c4a1\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "Spoken not only very frequently of",
+       "men, but also of beasts, Is. 11, 7; whence",
+       "הָאֹכֵל the eater, in Samson's riddle",
+       "Judg. 14, 14, is the lion, comp. Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "87a77539-0efc-4c19-824e-44d77d261dbe",
+      "duration_api_ms": 9442,
+      "cost_usd_list": 0.06925324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 310
+     },
+     "lines": [
+      {
+       "draft": "Spoken not only very frequently of",
+       "reread": "Spoken not only very frequently of",
+       "status": "agreed",
+       "text": "Spoken not only very frequently of"
+      },
+      {
+       "draft": "men, but also of beasts, Is. 11, 7; whence",
+       "reread": "men, but also of beasts, Is. 11, 7; whence",
+       "status": "agreed",
+       "text": "men, but also of beasts, Is. 11, 7; whence"
+      },
+      {
+       "draft": "הָאֹכֵל the eater, in Samson's riddle",
+       "reread": "הָאֹכֵל the eater, in Samson's riddle",
+       "status": "agreed",
+       "text": "הָאֹכֵל the eater, in Samson's riddle"
+      },
+      {
+       "draft": "Judg. 14, 14, is the lion, comp. Arab.",
+       "reread": "Judg. 14, 14, is the lion, comp. Arab.",
+       "status": "agreed",
+       "text": "Judg. 14, 14, is the lion, comp. Arab."
+      }
+     ]
     },
     {
      "band_id": "c1-r00-b02",
@@ -920,8 +1166,42 @@
      "image_sha256": "f92391a74c6d09afc513d068fe35151187cb4821f144f442379323521eb0b6f2",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"96b05e78-8406-41c1-94ff-bf38dc3436e0\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "الآكِلُ.—The following phrases are to be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "22bcd7b7-3a1b-4f32-86ea-35e7b402f6b5",
+      "duration_api_ms": 9407,
+      "cost_usd_list": 0.05677325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2122,
+      "output_tokens": 262
+     },
+     "lines": [
+      {
+       "draft": "الآكِل.—The following phrases are to be",
+       "reread": "الآكِلُ.—The following phrases are to be",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "الآكِلُ.—The following phrases are to be",
+        "verdict": "b",
+        "note": "A damma is printed above the final lām (a small hook above the tall lām stroke at the far left), so the word ends ـلُ; Reading A omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d97a7ba0-5b9e-4d41-91b2-95bd29496cd2",
+        "duration_api_ms": 10225,
+        "cost_usd_list": 0.05992,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2037,
+        "output_tokens": 359
+       },
+       "text": "الآكِلُ.—The following phrases are to be"
+      }
+     ]
     }
    ]
   },
@@ -965,92 +1245,61 @@
      "image_sha256": "69a4d4a1bf918c61bb25fcb2ef6a8e2777cf606102b1609f28eb590ea4a07fb8",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"68f8934d-1ccc-4570-a82a-d20d807215e7\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+      "lines": [
+       "noted : a) to eat of a land, a field, a vine,",
+       "i. e. to eat the fruit of them, Gen. 3, 17.",
+       "Is. 1, 7. 36, 16, comp. 37, 30. b) to de-",
+       "vour sacrifices; spoken of idols in allusion"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5c44a53c-4bbb-48d7-869d-e101918825d4",
+      "duration_api_ms": 8788,
+      "cost_usd_list": 0.06740325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 273
      },
      "lines": [
       {
        "draft": "noted : a) to eat of a land, a field, a vine,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "noted : a) to eat of a land, a field, a vine,",
+       "status": "agreed",
        "text": "noted: a) to eat of a land, a field, a vine,"
       },
       {
        "draft": "i. e. to eat the fruit of them, Gen. 3, 17.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "i. e. to eat the fruit of them, Gen. 3, 17.",
+       "status": "agreed",
        "text": "i. e. to eat the fruit of them, Gen. 3, 17."
       },
       {
        "draft": "Is. 1, 7. 36, 16, comp. 37, 30. b) to de-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Is. 1, 7. 36, 16, comp. 37, 30. b) to de-",
+       "status": "agreed",
        "text": "Is. 1, 7. 36, 16, comp. 37, 30. b) to de-"
       },
       {
        "draft": "vour sacrifices, spoken of idols in allusion",
-       "reread": null,
-       "status": "draft_only",
-       "text": "vour sacrifices, spoken of idols in allusion"
-      },
-      {
-       "draft": "to the lectisternia, Deut. 32, 38. Ez.16,20.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "to the lectisternia, Deut. 32, 38. Ez.16,20."
-      },
-      {
-       "draft": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,"
-      },
-      {
-       "draft": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to"
-      },
-      {
-       "draft": "take food, to fast, 1 Sam. 28, 20. 30, 12.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "take food, to fast, 1 Sam. 28, 20. 30, 12."
-      },
-      {
-       "draft": "Also, to take a meal, to dine or sup. to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Also, to take a meal, to dine or sup. to"
-      },
-      {
-       "draft": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;"
-      },
-      {
-       "draft": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-"
-      },
-      {
-       "draft": "times אָכַל לֶחֶם is simply i. q. to live, Am.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "times אָכַל לֶחֶם is simply i. q. to live, Am."
-      },
-      {
-       "draft": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before",
-       "reread": null,
-       "status": "draft_only",
-       "text": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before"
-      },
-      {
-       "draft": "Jehovah, spoken of the sacrificial feasts",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Jehovah, spoken of the sacrificial feasts"
+       "reread": "vour sacrifices; spoken of idols in allusion",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "vour sacrifices; spoken of idols in allusion",
+        "verdict": "b",
+        "note": "After \"sacrifices\" the mark has a dot above the comma tail — a semicolon, not a plain comma, so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5ddf44bd-7522-41f2-885c-5b184f7bb6c9",
+        "duration_api_ms": 9436,
+        "cost_usd_list": 0.070381,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3564,
+        "cache_creation_input_tokens": 2545,
+        "output_tokens": 365
+       },
+       "text": "vour sacrifices; spoken of idols in allusion"
       }
      ]
     },
@@ -1067,8 +1316,63 @@
      "image_sha256": "bb830a78d1cf7c373a24f42a5eadb70b20a5b59db2d52199b0183c66c7306487",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"cced09e2-5ce5-481f-8daf-2fc901033841\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "to the lectisternia, Deut. 32, 38. Ez. 16, 20.",
+       "c) אָכַל לֶחֶם to eat bread, i. q. to take food,",
+       "1 K. 21, 7. Ps. 102, 5; with לֹא, not to",
+       "take food, to fast, 1 Sam. 28, 20. 30, 12."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "65290459-9b08-445d-bbb6-f588d85cf7a9",
+      "duration_api_ms": 9211,
+      "cost_usd_list": 0.06835325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "to the lectisternia, Deut. 32, 38. Ez.16,20.",
+       "reread": "to the lectisternia, Deut. 32, 38. Ez. 16, 20.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "to the lectisternia, Deut. 32, 38. Ez.16,20.",
+        "verdict": "a",
+        "note": "The two readings differ only in spacing within the final reference. The print is set tight at line end: \"Ez.16,20.\" has no visible space after \"Ez.\" or after the comma, whereas \"Deut. 32, 38.\" does have spaces. Reading A reproduces the printed spacing; B normalises it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2cb3e772-c5c1-4874-aff5-9e21e7c3d3d3",
+        "duration_api_ms": 8476,
+        "cost_usd_list": 0.07559550000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3582,
+        "cache_creation_input_tokens": 2563,
+        "output_tokens": 462
+       },
+       "text": "to the lectisternia, Deut. 32, 38. Ez.16,20."
+      },
+      {
+       "draft": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,",
+       "reread": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,",
+       "status": "agreed",
+       "text": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,"
+      },
+      {
+       "draft": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to",
+       "reread": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to",
+       "status": "agreed",
+       "text": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to"
+      },
+      {
+       "draft": "take food, to fast, 1 Sam. 28, 20. 30, 12.",
+       "reread": "take food, to fast, 1 Sam. 28, 20. 30, 12.",
+       "status": "agreed",
+       "text": "take food, to fast, 1 Sam. 28, 20. 30, 12."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b02",
@@ -1083,8 +1387,48 @@
      "image_sha256": "98f0267126379ec561cc43dc0051a6c45cf5cfb6f2af6fd1cd645a2ce688744b",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"4d106e84-4786-4423-a259-23700261c7fc\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "Also, to take a meal, to dine or sup. to",
+       "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;",
+       "comp. φαγεῖν ἄρτον Luke 14, 1. Some-",
+       "times אָכַל לֶחֶם is simply i. q. to live, Am."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d25c22be-fe61-482e-b04e-ee9f005f1b78",
+      "duration_api_ms": 8350,
+      "cost_usd_list": 0.07745350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 448
+     },
+     "lines": [
+      {
+       "draft": "Also, to take a meal, to dine or sup. to",
+       "reread": "Also, to take a meal, to dine or sup. to",
+       "status": "agreed",
+       "text": "Also, to take a meal, to dine or sup. to"
+      },
+      {
+       "draft": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;",
+       "reread": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;",
+       "status": "agreed",
+       "text": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;"
+      },
+      {
+       "draft": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-",
+       "reread": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-",
+       "status": "agreed",
+       "text": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-"
+      },
+      {
+       "draft": "times אָכַל לֶחֶם is simply i. q. to live, Am.",
+       "reread": "times אָכַל לֶחֶם is simply i. q. to live, Am.",
+       "status": "agreed",
+       "text": "times אָכַל לֶחֶם is simply i. q. to live, Am."
+      }
+     ]
     },
     {
      "band_id": "c1-r01-b03",
@@ -1099,8 +1443,34 @@
      "image_sha256": "8ba340e6c74afad02050f071f2ad4899e4e7a824bcbaae8b76017827f52eee8a",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"27036a30-b10d-4839-8d99-f3a7b4ae1e60\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before",
+       "Jehovah, spoken of the sacrificial feasts"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ff939a86-6e2a-4b0b-aca6-4b491eecef89",
+      "duration_api_ms": 4163,
+      "cost_usd_list": 0.0565235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 231
+     },
+     "lines": [
+      {
+       "draft": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before",
+       "reread": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before",
+       "status": "agreed",
+       "text": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before"
+      },
+      {
+       "draft": "Jehovah, spoken of the sacrificial feasts",
+       "reread": "Jehovah, spoken of the sacrificial feasts",
+       "status": "agreed",
+       "text": "Jehovah, spoken of the sacrificial feasts"
+      }
+     ]
     }
    ]
   },
@@ -1145,98 +1515,46 @@
      "image_sha256": "f437170e177edbd3e9a09e4a6fa5161ef6bddf68bf59347048626adc67bfd6e9",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"33a88cf4-ea05-4453-bfa0-a25c911dbbce\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+      "lines": [
+       "held in the temple, Deut. 12, 7. 18. 14, 23.",
+       "Ex. 18, 12.   e) to eat the flesh of any one,",
+       "Ps. 27, 2, spoken of fierce and cruel ene-",
+       "mies, thirsting for one's blood.—Differ-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4a3383aa-e6c1-46bd-90f8-877304fe5fb2",
+      "duration_api_ms": 11006,
+      "cost_usd_list": 0.06880349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 275
      },
      "lines": [
       {
        "draft": "held in the temple, Deut. 12, 7. 18. 14, 23.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "held in the temple, Deut. 12, 7. 18. 14, 23.",
+       "status": "agreed",
        "text": "held in the temple, Deut. 12, 7. 18. 14, 23."
       },
       {
        "draft": "Ex. 18, 12.   e) to eat the flesh of any one,",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Ex. 18, 12.   e) to eat the flesh of any one,",
+       "status": "agreed",
        "text": "Ex. 18, 12. e) to eat the flesh of any one,"
       },
       {
        "draft": "Ps. 27, 2, spoken of fierce and cruel ene-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Ps. 27, 2, spoken of fierce and cruel ene-",
+       "status": "agreed",
        "text": "Ps. 27, 2, spoken of fierce and cruel ene-"
       },
       {
        "draft": "mies, thirsting for one's blood.—Differ-",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "mies, thirsting for one's blood.—Differ-",
+       "status": "agreed",
        "text": "mies, thirsting for one's blood.—Differ-"
-      },
-      {
-       "draft": "ent is   f ) to eat one's own flesh, Eccl. 4, 5,",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ent is f) to eat one's own flesh, Eccl. 4, 5,"
-      },
-      {
-       "draft": "spoken of the fool devoured by envy.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "spoken of the fool devoured by envy."
-      },
-      {
-       "draft": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων."
-      },
-      {
-       "draft": "g) אֲכַל הָעָם, עֲנִיִּים, to eat up or devour a",
-       "reread": null,
-       "status": "draft_only",
-       "text": "g) אֲכַל הָעָם, עֲנִיִּים, to eat up or devour a"
-      },
-      {
-       "draft": "people, the poor, spoken of rulers or no-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "people, the poor, spoken of rulers or no-"
-      },
-      {
-       "draft": "bles who consume the wealth of a peo-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "bles who consume the wealth of a peo-"
-      },
-      {
-       "draft": "ple by oppression and extortion, Ps. 14, 4.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ple by oppression and extortion, Ps. 14, 4."
-      },
-      {
-       "draft": "Prov. 30, 14. Hab. 3, 15.  Comp. δημοβό-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Prov. 30, 14. Hab. 3, 15. Comp. δημοβό-"
-      },
-      {
-       "draft": "ρος βασιλεύς Il. 1. 231.   So also to devour",
-       "reread": null,
-       "status": "draft_only",
-       "text": "ρος βασιλεύς Il. 1. 231. So also to devour"
-      },
-      {
-       "draft": "the flesh of a people id. Mic. 3, 3.   Else-",
-       "reread": null,
-       "status": "draft_only",
-       "text": "the flesh of a people id. Mic. 3, 3. Else-"
-      },
-      {
-       "draft": "where to eat, to devour, is i. q. to consume",
-       "reread": null,
-       "status": "draft_only",
-       "text": "where to eat, to devour, is i. q. to consume"
       }
      ]
     },
@@ -1253,8 +1571,63 @@
      "image_sha256": "1663be56b29d226f5cb2d370f4494217dc5f0d612dd372630144ad69bd493ddb",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"ff64e07c-30fd-494a-8f44-15daa6c63161\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "ent is   f) to eat one's own flesh, Eccl. 4, 5,",
+       "spoken of the fool devoured by envy.",
+       "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων.",
+       "g) עֲנִיִּים, אֲכַל הָעָם, to eat up or devour a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "22dc7198-3aee-4f28-a3e5-132ff1e838b2",
+      "duration_api_ms": 11200,
+      "cost_usd_list": 0.09000349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 699
+     },
+     "lines": [
+      {
+       "draft": "ent is   f ) to eat one's own flesh, Eccl. 4, 5,",
+       "reread": "ent is   f) to eat one's own flesh, Eccl. 4, 5,",
+       "status": "agreed",
+       "text": "ent is f) to eat one's own flesh, Eccl. 4, 5,"
+      },
+      {
+       "draft": "spoken of the fool devoured by envy.",
+       "reread": "spoken of the fool devoured by envy.",
+       "status": "agreed",
+       "text": "spoken of the fool devoured by envy."
+      },
+      {
+       "draft": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων.",
+       "reread": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων.",
+       "status": "agreed",
+       "text": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων."
+      },
+      {
+       "draft": "g) אֲכַל הָעָם, עֲנִיִּים, to eat up or devour a",
+       "reread": "g) עֲנִיִּים, אֲכַל הָעָם, to eat up or devour a",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "g) עֲנִיִּים, אֲכַל הָעָם, to eat up or devour a",
+        "verdict": "b",
+        "note": "The decisive difference is item order: printed left-to-right the first Hebrew item after \"g)\" is עֲנִיִּים (with dagesh in the yod), followed by a comma, then אֲכַל הָעָם, comma — Reading B's order. Reading A swaps the two items. Vowel points otherwise match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9096eeb9-771a-4932-96ae-5a553eb142cd",
+        "duration_api_ms": 33430,
+        "cost_usd_list": 0.12099825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3593,
+        "cache_creation_input_tokens": 2638,
+        "output_tokens": 1340
+       },
+       "text": "g) עֲנִיִּים, אֲכַל הָעָם, to eat up or devour a"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b02",
@@ -1269,8 +1642,48 @@
      "image_sha256": "1ded1b812b11abaabdef7790d8607237e8163a5a5fe323f44d1b94f1a2aa4a34",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"0c27b16f-5338-4b7b-bf28-cc6c25ca23fe\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "people, the poor, spoken of rulers or no-",
+       "bles who consume the wealth of a peo-",
+       "ple by oppression and extortion, Ps. 14, 4.",
+       "Prov. 30, 14. Hab. 3, 15. Comp. δημοβό-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ccc3a9ae-7e72-4a77-a898-2731c00e889a",
+      "duration_api_ms": 8071,
+      "cost_usd_list": 0.0670435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 265
+     },
+     "lines": [
+      {
+       "draft": "people, the poor, spoken of rulers or no-",
+       "reread": "people, the poor, spoken of rulers or no-",
+       "status": "agreed",
+       "text": "people, the poor, spoken of rulers or no-"
+      },
+      {
+       "draft": "bles who consume the wealth of a peo-",
+       "reread": "bles who consume the wealth of a peo-",
+       "status": "agreed",
+       "text": "bles who consume the wealth of a peo-"
+      },
+      {
+       "draft": "ple by oppression and extortion, Ps. 14, 4.",
+       "reread": "ple by oppression and extortion, Ps. 14, 4.",
+       "status": "agreed",
+       "text": "ple by oppression and extortion, Ps. 14, 4."
+      },
+      {
+       "draft": "Prov. 30, 14. Hab. 3, 15.  Comp. δημοβό-",
+       "reread": "Prov. 30, 14. Hab. 3, 15. Comp. δημοβό-",
+       "status": "agreed",
+       "text": "Prov. 30, 14. Hab. 3, 15. Comp. δημοβό-"
+      }
+     ]
     },
     {
      "band_id": "c1-r02-b03",
@@ -1285,8 +1698,41 @@
      "image_sha256": "d19c66d4880f02021b2d47172691903d4151a3d5aece5be3a4358a360184e148",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"8888f4a6-ea95-4265-a54f-590571380cca\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "ρος βασιλεύς Il. 1. 231. So also to devour",
+       "the flesh of a people id. Mic. 3, 3. Else-",
+       "where to eat, to devour, is i. q. to consume"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f8e91eec-2e53-4e9b-8454-e922b46b2ca3",
+      "duration_api_ms": 11050,
+      "cost_usd_list": 0.0622635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "ρος βασιλεύς Il. 1. 231.   So also to devour",
+       "reread": "ρος βασιλεύς Il. 1. 231. So also to devour",
+       "status": "agreed",
+       "text": "ρος βασιλεύς Il. 1. 231. So also to devour"
+      },
+      {
+       "draft": "the flesh of a people id. Mic. 3, 3.   Else-",
+       "reread": "the flesh of a people id. Mic. 3, 3. Else-",
+       "status": "agreed",
+       "text": "the flesh of a people id. Mic. 3, 3. Else-"
+      },
+      {
+       "draft": "where to eat, to devour, is i. q. to consume",
+       "reread": "where to eat, to devour, is i. q. to consume",
+       "status": "agreed",
+       "text": "where to eat, to devour, is i. q. to consume"
+      }
+     ]
     }
    ]
   },
@@ -1332,104 +1778,46 @@
      "image_sha256": "6e86691d8c15b2f73e56159409db2c718ccd818c1f120c7a82b73554ac807437",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"cfbdadf4-586b-4185-975e-b9b876244239\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
+      "lines": [
+       "in war, by slaughter, Hos. 7, 7. Is. 9, 11.",
+       "Deut. 7, 16. Jer. 10, 25. 30, 16. 50, 7. 17.",
+       "51, 34. Comp. Judith 5, 24. h) to eat",
+       "or devour the words of any one, i. e. to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c181aa17-f929-4a04-b771-2de3e2c7bb1c",
+      "duration_api_ms": 4913,
+      "cost_usd_list": 0.0692535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 284
      },
      "lines": [
       {
        "draft": "in war, by slaughter, Hos. 7, 7. Is. 9, 11.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "in war, by slaughter, Hos. 7, 7. Is. 9, 11.",
+       "status": "agreed",
        "text": "in war, by slaughter, Hos. 7, 7. Is. 9, 11."
       },
       {
        "draft": "Deut. 7, 16. Jer. 10, 25. 30, 16. 50, 7. 17.",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "Deut. 7, 16. Jer. 10, 25. 30, 16. 50, 7. 17.",
+       "status": "agreed",
        "text": "Deut. 7, 16. Jer. 10, 25. 30, 16. 50, 7. 17."
       },
       {
        "draft": "51, 34. Comp. Judith 5, 24. h) to eat",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "51, 34. Comp. Judith 5, 24. h) to eat",
+       "status": "agreed",
        "text": "51, 34. Comp. Judith 5, 24. h) to eat"
       },
       {
        "draft": "or devour the words of any one, i. e. to",
-       "reread": null,
-       "status": "draft_only",
+       "reread": "or devour the words of any one, i. e. to",
+       "status": "agreed",
        "text": "or devour the words of any one, i. e. to"
-      },
-      {
-       "draft": "receive them greedily, to listen eagerly;",
-       "reread": null,
-       "status": "draft_only",
-       "text": "receive them greedily, to listen eagerly;"
-      },
-      {
-       "draft": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut."
-      },
-      {
-       "draft": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ",
-       "reread": null,
-       "status": "draft_only",
-       "text": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ"
-      },
-      {
-       "draft": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to",
-       "reread": null,
-       "status": "draft_only",
-       "text": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to"
-      },
-      {
-       "draft": "me, and I did eat them, i. e. devoured",
-       "reread": null,
-       "status": "draft_only",
-       "text": "me, and I did eat them, i. e. devoured"
-      },
-      {
-       "draft": "them eagerly, made them wholly mine.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "them eagerly, made them wholly mine."
-      },
-      {
-       "draft": "(Comp. ad Carm. Samarit. 4. 16.) Hence",
-       "reread": null,
-       "status": "draft_only",
-       "text": "(Comp. ad Carm. Samarit. 4. 16.) Hence"
-      },
-      {
-       "draft": "is to be explained the vision of the roll",
-       "reread": null,
-       "status": "draft_only",
-       "text": "is to be explained the vision of the roll"
-      },
-      {
-       "draft": "or volume given to the prophet to be",
-       "reread": null,
-       "status": "draft_only",
-       "text": "or volume given to the prophet to be"
-      },
-      {
-       "draft": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev."
-      },
-      {
-       "draft": "10, 9. 10.",
-       "reread": null,
-       "status": "draft_only",
-       "text": "10, 9. 10."
-      },
-      {
-       "draft": "2. to devour, to consume, often spoken",
-       "reread": null,
-       "status": "draft_only",
-       "text": "2. to devour, to consume, often spoken"
       }
      ]
     },
@@ -1446,8 +1834,48 @@
      "image_sha256": "6b8589093123e178c519a25957776cced187561f76803725cf152c699d9b9cb6",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"e99ed876-e224-415f-a306-dfcc304c75c8\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "receive them greedily, to listen eagerly ;",
+       "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut.",
+       "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ",
+       "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6d41f5d-5830-4a87-aba9-65eeeb87cbb4",
+      "duration_api_ms": 10085,
+      "cost_usd_list": 0.08020350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 503
+     },
+     "lines": [
+      {
+       "draft": "receive them greedily, to listen eagerly;",
+       "reread": "receive them greedily, to listen eagerly ;",
+       "status": "agreed",
+       "text": "receive them greedily, to listen eagerly;"
+      },
+      {
+       "draft": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut.",
+       "reread": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut.",
+       "status": "agreed",
+       "text": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut."
+      },
+      {
+       "draft": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ",
+       "reread": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ",
+       "status": "agreed",
+       "text": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ"
+      },
+      {
+       "draft": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to",
+       "reread": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to",
+       "status": "agreed",
+       "text": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to"
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b02",
@@ -1462,8 +1890,48 @@
      "image_sha256": "b85e62bd7826b8b4254b8b5a2cd3938c9ed6bb9e5a33db27d57f76a8d531bc7a",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"bb749fe2-6e44-4eab-8e5a-dde99938da15\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "me, and I did eat them, i. e. devoured",
+       "them eagerly, made them wholly mine.",
+       "(Comp. ad Carm. Samarit. 4. 16.) Hence",
+       "is to be explained the vision of the roll"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e1284fa4-29e5-4639-8cbe-0e6afa6da954",
+      "duration_api_ms": 9442,
+      "cost_usd_list": 0.0663935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "me, and I did eat them, i. e. devoured",
+       "reread": "me, and I did eat them, i. e. devoured",
+       "status": "agreed",
+       "text": "me, and I did eat them, i. e. devoured"
+      },
+      {
+       "draft": "them eagerly, made them wholly mine.",
+       "reread": "them eagerly, made them wholly mine.",
+       "status": "agreed",
+       "text": "them eagerly, made them wholly mine."
+      },
+      {
+       "draft": "(Comp. ad Carm. Samarit. 4. 16.) Hence",
+       "reread": "(Comp. ad Carm. Samarit. 4. 16.) Hence",
+       "status": "agreed",
+       "text": "(Comp. ad Carm. Samarit. 4. 16.) Hence"
+      },
+      {
+       "draft": "is to be explained the vision of the roll",
+       "reread": "is to be explained the vision of the roll",
+       "status": "agreed",
+       "text": "is to be explained the vision of the roll"
+      }
+     ]
     },
     {
      "band_id": "c1-r03-b03",
@@ -1478,8 +1946,48 @@
      "image_sha256": "3e849c61d9294df1047eddc565c13fa376b06c56969c5f41ec458f9a18266631",
      "prompt_version": 2,
      "reread": {
-      "error": "claude exited 1: {\"duration_api_ms\":0,\"stop_reason\":\"stop_sequence\",\"session_id\":\"fe5223cb-66d9-48f0-8907-b3a1e2b34310\",\"total_cost_usd\":0,\"usage\":{\"output_tokens_details\":{\"thinking_tokens\":0},\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"service_tier\":\"standard\",\"cache_creation\":{\"ephemeral_1h_input_tokens\":0,\"ephemeral_5m_input_tokens\":0},\"inference_geo\":\"\",\"iterations\":[],\"speed\":\"standard\",\"f"
-     }
+      "lines": [
+       "or volume given to the prophet to be",
+       "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev.",
+       "10, 9. 10.",
+       "2. to devour, to consume, often spoken"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a18fd34b-7a31-4e7c-b964-c92611a6adee",
+      "duration_api_ms": 4485,
+      "cost_usd_list": 0.0661435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 247
+     },
+     "lines": [
+      {
+       "draft": "or volume given to the prophet to be",
+       "reread": "or volume given to the prophet to be",
+       "status": "agreed",
+       "text": "or volume given to the prophet to be"
+      },
+      {
+       "draft": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev.",
+       "reread": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev.",
+       "status": "agreed",
+       "text": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev."
+      },
+      {
+       "draft": "10, 9. 10.",
+       "reread": "10, 9. 10.",
+       "status": "agreed",
+       "text": "10, 9. 10."
+      },
+      {
+       "draft": "2. to devour, to consume, often spoken",
+       "reread": "2. to devour, to consume, often spoken",
+       "status": "agreed",
+       "text": "2. to devour, to consume, often spoken"
+      }
+     ]
     }
    ]
   }
@@ -1537,10 +2045,12 @@
    "chunk_id": "c0-r00",
    "column": 0,
    "text": "* אָכַד obsol. root, i. q. עָקַד, אָגַד, to",
-   "status": "unresolved",
+   "status": "adjudicated",
    "draft": "* אָכַד obsol. root, i. q. עָקַד, אָגַד, to",
    "reread": "* אָבַךְ obsol. root, i. q. עָבַד, אָגַד, to",
-   "needs_review": true
+   "verdict": "a",
+   "note": "Headword middle letter is a rounded כ (not ב with a right-projecting foot) and ends in plain ד, not final ךְ; the second comparandum's middle letter has a descender below the baseline, so it is ק (עָקַד), not ב. Matches Gesenius's entry for the root of אַכָּד \"to bind\".",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r00",
@@ -1612,787 +2122,574 @@
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "appointing the hope of the traveller,",
-   "status": "draft_only",
-   "draft": "appointing the hope of the traveller,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-",
-   "status": "draft_only",
-   "draft": "Jer. 15, 18. Mic. 1, 14. Opp. אֵיתָן a per-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "ennial stream. Comp. Lat. fundus men-",
-   "status": "draft_only",
-   "draft": "ennial stream. Comp. Lat. fundus men-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "dax Hor. Carm. 3. 1. 30.",
-   "status": "draft_only",
-   "draft": "dax Hor. Carm. 3. 1. 30.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n. a)",
-   "status": "draft_only",
-   "draft": "אַכְזִיב (i. q. אַכְזָב) Achzib, pr. n. a)",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "A city on the sea-coast of Asher, be-",
-   "status": "draft_only",
-   "draft": "A city on the sea-coast of Asher, be-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "tween Acco and Tyre, Gr. Ecdippa; now",
-   "status": "draft_only",
+   "text": "tween Acco and Tyre, Gr. Ecdippa, now",
+   "status": "adjudicated",
    "draft": "tween Acco and Tyre, Gr. Ecdippa; now",
-   "reread": null,
-   "needs_review": true
+   "reread": "tween Acco and Tyre, Gr. Ecdippa, now",
+   "verdict": "b",
+   "note": "The mark after \"Ecdippa\" is a single comma sitting on the baseline (the italic a's tail runs into it); there is no upper dot forming a semicolon, so Reading B is correct.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31.",
-   "status": "draft_only",
-   "draft": "called ez-Zîb. Josh. 19, 29. Judg. 1, 31.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
    "text": "b) A city in the tribe of Judah, Josh.",
-   "status": "draft_only",
-   "draft": "b) A city in the tribe of Judah, Josh.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r01",
    "column": 0,
-   "text": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזֵבָה.",
-   "status": "draft_only",
+   "text": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזְבָה.",
+   "status": "adjudicated",
    "draft": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזֵבָה.",
-   "reread": null,
-   "needs_review": true
+   "reread": "15, 44. Mic. 1, 14. Comp. כְּזִיב and כֹּזְבָה.",
+   "verdict": "b",
+   "note": "Under the zayin of the last word the print shows two vertically stacked dots (shewa), not a horizontal tsere; so כֹּזְבָה, matching Reading B.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "אַכְזָר m. (r. כָּזַר) pr. violence, but every",
-   "status": "draft_only",
-   "draft": "אַכְזָר m. (r. כָּזַר) pr. violence, but every",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "where as concr. violent, Lam. 4, 3. Job",
-   "status": "draft_only",
-   "draft": "where as concr. violent, Lam. 4, 3. Job",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "30, 21. Of poison, violent, deadly, Deut.",
-   "status": "draft_only",
-   "draft": "30, 21. Of poison, violent, deadly, Deut.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "32, 33.—Once in a good sense for bold,",
-   "status": "draft_only",
-   "draft": "32, 33.—Once in a good sense for bold,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "brave, Job 41, 2.—Hence",
-   "status": "draft_only",
-   "draft": "brave, Job 41, 2.—Hence",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,",
-   "status": "draft_only",
-   "draft": "אַכְזָרִי fierce, cruel, Prov. 5, 9. Jer. 6,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "23. Also cruel, terrible; Prov. 17, 11 a",
-   "status": "draft_only",
-   "draft": "23. Also cruel, terrible; Prov. 17, 11 a",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "terrible messenger, who brings fatal tid-",
-   "status": "draft_only",
-   "draft": "terrible messenger, who brings fatal tid-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "ings, as of a sentence of death. Is. 13, 9.",
-   "status": "draft_only",
-   "draft": "ings, as of a sentence of death. Is. 13, 9.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "Jer. 30, 14.",
-   "status": "draft_only",
-   "draft": "Jer. 30, 14.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-",
-   "status": "draft_only",
-   "draft": "אַכְזְרִיּוּת f. (from אַכְזָרִי with the end-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "ing וּת, see Heb. Gram. § 85. 6,) fierce-",
-   "status": "draft_only",
-   "draft": "ing וּת, see Heb. Gram. § 85. 6,) fierce-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "ness, cruelty. of wrath Prov. 27, 4.",
-   "status": "draft_only",
-   "draft": "ness, cruelty. of wrath Prov. 27, 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8.",
-   "status": "draft_only",
-   "draft": "אֲכִילָה f. an eating, a meal, 1 K. 19, 8.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r02",
    "column": 0,
    "text": "R. אָכַל.",
-   "status": "draft_only",
-   "draft": "R. אָכַל .",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "אָכִישׁ (r. אָבַשׁ) Achish, pr. n. of a king",
-   "status": "draft_only",
-   "draft": "אָכִישׁ (r. אָבַשׁ) Achish, pr. n. of a king",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
-   "text": "of the Philistines in Gath. 1 Sam. 21, 11.",
-   "status": "draft_only",
+   "text": "of the Philistines in Gath, 1 Sam. 21, 11.",
+   "status": "adjudicated",
    "draft": "of the Philistines in Gath. 1 Sam. 21, 11.",
-   "reread": null,
-   "needs_review": true
+   "reread": "of the Philistines in Gath, 1 Sam. 21, 11.",
+   "verdict": "b",
+   "note": "The punctuation after \"Gath\" has a visible tail descending below the baseline, so it is a comma (Reading B), not a period (Reading A).",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "27, 2. 1 K. 2, 39.",
-   "status": "draft_only",
-   "draft": "27, 2. 1 K. 2, 39.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "* אָכַל inf. constr. אֱכֹל, with pref. לֶאֱכֹל,",
-   "status": "draft_only",
-   "draft": "* אָכַל inf. constr. אֱכֹל, with pref. לֶאֱכֹל,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "בֶּאֱכֹל, c. suff. אֲכָלְךָ, אָכְלוֹ; fut. יֹאכַל, in",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "בֶּאֱכֹל, c. suff. אֲכָלְךָ, אָכְלוֹ; fut. יֹאכַל, in",
-   "reread": null,
-   "needs_review": true
+   "reread": "בֶּאֱכֹל, c. suff. אָכְלְךָ, אָכְלוֹ; fut. יֹאכַל, in",
+   "verdict": "a",
+   "note": "First suffixed form: the aleph carries a hateph-pathah (two vertical dots plus stroke) and the kaph a qamets, i.e. אֲכָלְךָ (Reading A); the following form אָכְלוֹ has qamets under aleph and shva under kaph, which is what Reading B wrongly copied onto the first word.",
+   "needs_review": false
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5.",
-   "status": "draft_only",
-   "draft": "pause יֹאכֵל, once יוֹכְלוּ Ez. 42, 5.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c0-r03",
    "column": 0,
    "text": "1. to eat, to eat up, to devour; absol.",
-   "status": "draft_only",
-   "draft": "1. to eat, to eat up, to devour; absol.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Deut. 27, 7. 1 Sam. 9, 13; oftener with",
-   "status": "draft_only",
-   "draft": "Deut. 27, 7. 1 Sam. 9, 13; oftener with",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "acc. of food; rarely לְ Lam. 4, 5; בְּ Ex.",
-   "status": "draft_only",
-   "draft": "acc. of food; rarely לְ Lam. 4, 5; בְּ Ex.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "12, 43-45. Lev. 22, 11; מִן Lev. 7, 21.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "12, 43-45. Lev. 22, 11; מִן Lev. 7, 21.",
-   "reread": null,
-   "needs_review": true
+   "reread": "12, 43–45. Lev. 22, 11; מִן Lev. 7, 21.",
+   "verdict": "a",
+   "note": "The only disagreement is the dash in 43-45: the printed stroke is short (narrower than a digit), a hyphen, not an en dash. Everything else (מִן with hireq, no yod; punctuation) agrees with both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "25, 22. Num. 15, 19, comp. ἐσθίειν τινός.",
-   "status": "draft_only",
-   "draft": "25, 22. Num. 15, 19, comp. ἐσθίειν τινός.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Spoken not only very frequently of",
-   "status": "draft_only",
-   "draft": "Spoken not only very frequently of",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "men, but also of beasts, Is. 11, 7; whence",
-   "status": "draft_only",
-   "draft": "men, but also of beasts, Is. 11, 7; whence",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "הָאֹכֵל the eater, in Samson's riddle",
-   "status": "draft_only",
-   "draft": "הָאֹכֵל the eater, in Samson's riddle",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
    "text": "Judg. 14, 14, is the lion, comp. Arab.",
-   "status": "draft_only",
-   "draft": "Judg. 14, 14, is the lion, comp. Arab.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r00",
    "column": 1,
-   "text": "الآكِل.—The following phrases are to be",
-   "status": "draft_only",
+   "text": "الآكِلُ.—The following phrases are to be",
+   "status": "adjudicated",
    "draft": "الآكِل.—The following phrases are to be",
-   "reread": null,
+   "reread": "الآكِلُ.—The following phrases are to be",
+   "verdict": "b",
+   "note": "A damma is printed above the final lām (a small hook above the tall lām stroke at the far left), so the word ends ـلُ; Reading A omits it.",
    "needs_review": true
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "noted: a) to eat of a land, a field, a vine,",
-   "status": "draft_only",
-   "draft": "noted : a) to eat of a land, a field, a vine,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "i. e. to eat the fruit of them, Gen. 3, 17.",
-   "status": "draft_only",
-   "draft": "i. e. to eat the fruit of them, Gen. 3, 17.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Is. 1, 7. 36, 16, comp. 37, 30. b) to de-",
-   "status": "draft_only",
-   "draft": "Is. 1, 7. 36, 16, comp. 37, 30. b) to de-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
-   "text": "vour sacrifices, spoken of idols in allusion",
-   "status": "draft_only",
+   "text": "vour sacrifices; spoken of idols in allusion",
+   "status": "adjudicated",
    "draft": "vour sacrifices, spoken of idols in allusion",
-   "reread": null,
-   "needs_review": true
+   "reread": "vour sacrifices; spoken of idols in allusion",
+   "verdict": "b",
+   "note": "After \"sacrifices\" the mark has a dot above the comma tail — a semicolon, not a plain comma, so Reading B is correct.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "to the lectisternia, Deut. 32, 38. Ez.16,20.",
-   "status": "draft_only",
+   "status": "adjudicated",
    "draft": "to the lectisternia, Deut. 32, 38. Ez.16,20.",
-   "reread": null,
-   "needs_review": true
+   "reread": "to the lectisternia, Deut. 32, 38. Ez. 16, 20.",
+   "verdict": "a",
+   "note": "The two readings differ only in spacing within the final reference. The print is set tight at line end: \"Ez.16,20.\" has no visible space after \"Ez.\" or after the comma, whereas \"Deut. 32, 38.\" does have spaces. Reading A reproduces the printed spacing; B normalises it.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,",
-   "status": "draft_only",
-   "draft": "c) אָכַל לֶחֶם to eat bread, i. q. to take food,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to",
-   "status": "draft_only",
-   "draft": "1 K. 21, 7. Ps. 102, 5; with לֹא, not to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "take food, to fast, 1 Sam. 28, 20. 30, 12.",
-   "status": "draft_only",
-   "draft": "take food, to fast, 1 Sam. 28, 20. 30, 12.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Also, to take a meal, to dine or sup. to",
-   "status": "draft_only",
-   "draft": "Also, to take a meal, to dine or sup. to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;",
-   "status": "draft_only",
-   "draft": "feast, Gen. 31, 54. 43, 16. Jer. 41, 1. 52, 33;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-",
-   "status": "draft_only",
-   "draft": "comp. φαγεῖν ἄρτον Luke 14, 1. Some-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "times אָכַל לֶחֶם is simply i. q. to live, Am.",
-   "status": "draft_only",
-   "draft": "times אָכַל לֶחֶם is simply i. q. to live, Am.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before",
-   "status": "draft_only",
-   "draft": "7, 12. d) אָכַל לִפְנֵי יְהוָֹה to eat before",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r01",
    "column": 1,
    "text": "Jehovah, spoken of the sacrificial feasts",
-   "status": "draft_only",
-   "draft": "Jehovah, spoken of the sacrificial feasts",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "held in the temple, Deut. 12, 7. 18. 14, 23.",
-   "status": "draft_only",
-   "draft": "held in the temple, Deut. 12, 7. 18. 14, 23.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Ex. 18, 12. e) to eat the flesh of any one,",
-   "status": "draft_only",
-   "draft": "Ex. 18, 12.   e) to eat the flesh of any one,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Ps. 27, 2, spoken of fierce and cruel ene-",
-   "status": "draft_only",
-   "draft": "Ps. 27, 2, spoken of fierce and cruel ene-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "mies, thirsting for one's blood.—Differ-",
-   "status": "draft_only",
-   "draft": "mies, thirsting for one's blood.—Differ-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "ent is f) to eat one's own flesh, Eccl. 4, 5,",
-   "status": "draft_only",
-   "draft": "ent is   f ) to eat one's own flesh, Eccl. 4, 5,",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "spoken of the fool devoured by envy.",
-   "status": "draft_only",
-   "draft": "spoken of the fool devoured by envy.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων.",
-   "status": "draft_only",
-   "draft": "Comp. Hom. Il. 6. 202 ὃν θυμὸν κατέδων.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
-   "text": "g) אֲכַל הָעָם, עֲנִיִּים, to eat up or devour a",
-   "status": "draft_only",
+   "text": "g) עֲנִיִּים, אֲכַל הָעָם, to eat up or devour a",
+   "status": "adjudicated",
    "draft": "g) אֲכַל הָעָם, עֲנִיִּים, to eat up or devour a",
-   "reread": null,
-   "needs_review": true
+   "reread": "g) עֲנִיִּים, אֲכַל הָעָם, to eat up or devour a",
+   "verdict": "b",
+   "note": "The decisive difference is item order: printed left-to-right the first Hebrew item after \"g)\" is עֲנִיִּים (with dagesh in the yod), followed by a comma, then אֲכַל הָעָם, comma — Reading B's order. Reading A swaps the two items. Vowel points otherwise match both readings.",
+   "needs_review": false
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "people, the poor, spoken of rulers or no-",
-   "status": "draft_only",
-   "draft": "people, the poor, spoken of rulers or no-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "bles who consume the wealth of a peo-",
-   "status": "draft_only",
-   "draft": "bles who consume the wealth of a peo-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "ple by oppression and extortion, Ps. 14, 4.",
-   "status": "draft_only",
-   "draft": "ple by oppression and extortion, Ps. 14, 4.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "Prov. 30, 14. Hab. 3, 15. Comp. δημοβό-",
-   "status": "draft_only",
-   "draft": "Prov. 30, 14. Hab. 3, 15.  Comp. δημοβό-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "ρος βασιλεύς Il. 1. 231. So also to devour",
-   "status": "draft_only",
-   "draft": "ρος βασιλεύς Il. 1. 231.   So also to devour",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "the flesh of a people id. Mic. 3, 3. Else-",
-   "status": "draft_only",
-   "draft": "the flesh of a people id. Mic. 3, 3.   Else-",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r02",
    "column": 1,
    "text": "where to eat, to devour, is i. q. to consume",
-   "status": "draft_only",
-   "draft": "where to eat, to devour, is i. q. to consume",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "in war, by slaughter, Hos. 7, 7. Is. 9, 11.",
-   "status": "draft_only",
-   "draft": "in war, by slaughter, Hos. 7, 7. Is. 9, 11.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Deut. 7, 16. Jer. 10, 25. 30, 16. 50, 7. 17.",
-   "status": "draft_only",
-   "draft": "Deut. 7, 16. Jer. 10, 25. 30, 16. 50, 7. 17.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "51, 34. Comp. Judith 5, 24. h) to eat",
-   "status": "draft_only",
-   "draft": "51, 34. Comp. Judith 5, 24. h) to eat",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "or devour the words of any one, i. e. to",
-   "status": "draft_only",
-   "draft": "or devour the words of any one, i. e. to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "receive them greedily, to listen eagerly;",
-   "status": "draft_only",
-   "draft": "receive them greedily, to listen eagerly;",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut.",
-   "status": "draft_only",
-   "draft": "Gr. φαγεῖν ῥήματα, dicta devorare, Plaut.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ",
-   "status": "draft_only",
-   "draft": "Asin. 3. 3. 59. So Jer. 15, 16 נִמְצְאוּ",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to",
-   "status": "draft_only",
-   "draft": "דְבָרֶיךָ וָאֹכְלֵם thy words were brought to",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "me, and I did eat them, i. e. devoured",
-   "status": "draft_only",
-   "draft": "me, and I did eat them, i. e. devoured",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "them eagerly, made them wholly mine.",
-   "status": "draft_only",
-   "draft": "them eagerly, made them wholly mine.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "(Comp. ad Carm. Samarit. 4. 16.) Hence",
-   "status": "draft_only",
-   "draft": "(Comp. ad Carm. Samarit. 4. 16.) Hence",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "is to be explained the vision of the roll",
-   "status": "draft_only",
-   "draft": "is to be explained the vision of the roll",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "or volume given to the prophet to be",
-   "status": "draft_only",
-   "draft": "or volume given to the prophet to be",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev.",
-   "status": "draft_only",
-   "draft": "devoured, Ez. 2, 8. 3, 1 sq. comp. Rev.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "10, 9. 10.",
-   "status": "draft_only",
-   "draft": "10, 9. 10.",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   },
   {
    "chunk_id": "c1-r03",
    "column": 1,
    "text": "2. to devour, to consume, often spoken",
-   "status": "draft_only",
-   "draft": "2. to devour, to consume, often spoken",
-   "reread": null,
-   "needs_review": true
+   "status": "agreed"
   }
  ],
  "counts": {
-  "agreed": 19,
-  "adjudicated": 0,
-  "draft_only": 86,
+  "agreed": 96,
+  "adjudicated": 10,
+  "draft_only": 0,
   "reread_only": 0,
-  "unresolved": 1,
-  "needs_review": 87
+  "unresolved": 0,
+  "needs_review": 1
  },
- "status": "incomplete",
- "errors": 24,
- "judge_errors": 1,
- "cost_usd_list_total": 0.468
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.3353
 }

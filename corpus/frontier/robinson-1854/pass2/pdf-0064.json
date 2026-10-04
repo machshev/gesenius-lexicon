@@ -1,0 +1,2673 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 64,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0064.png",
+ "raster_sha256": "c8ebbf9181e1efc8aae67730f78915b5cd44bced56e5e30799e4ba796be913d5",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0064.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T18:07:23+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 196,
+    "y": 101,
+    "width": 1753,
+    "height": 72
+   },
+   "draft_lines": [
+    "אבל",
+    "48",
+    "אבר"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 196,
+      "y": 99,
+      "width": 1753,
+      "height": 76
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/header-b00-1753x76+196+99-x2.png",
+     "image_sha256": "e0aaf52230115193731cf44842e9a3a6b718581d0e2c9252f64e1182933a0a47",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אבל 48 אבר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2b3c917b-9496-4706-83a3-570dc644bfa3",
+      "duration_api_ms": 7011,
+      "cost_usd_list": 0.0477225,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 183
+     },
+     "lines": [
+      {
+       "draft": "אבל 48 אבר",
+       "reread": "אבל 48 אבר",
+       "status": "agreed",
+       "text": "אבל 48 אבר"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 196,
+    "y": 154,
+    "width": 865,
+    "height": 623
+   },
+   "draft_lines": [
+    "of inanimate things, e. g. fire, Num. 16,",
+    "35. 21, 28. 26, 10. Job 1, 16. al. With בְּ",
+    "Zech. 11, 1; comp. ignis edax, Virg.",
+    "Æn. 2. 758; πάντας πῦρ ἐσθίει Il. 23.",
+    "182. Also of the sword, 2 Sam. 2, 26.",
+    "18, 8. Deut. 32, 42; of famine and pesti-",
+    "lence Ez. 7, 15; of deadly disease Job",
+    "18, 13; of the wrath of God Ex. 15, 7;",
+    "of a curse Is. 24, 6; of heat and cold",
+    "Gen. 31, 40; of ardent zeal Ps. 69, 10."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 196,
+      "y": 146,
+      "width": 865,
+      "height": 294
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r00-b00-865x294+196+146-x2.png",
+     "image_sha256": "6a07abdd9aedee6fe594488940c265121e18f5f2a2557e1d314fa2c5b9ed384c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of inanimate things, e. g. fire, Num. 16,",
+       "35. 21, 28. 26, 10. Job 1, 16. al. With בְּ",
+       "Zech. 11, 1; comp. ignis edax, Virg.",
+       "Æn. 2. 758; πάντας πῦρ ἐσθίει Il. 23."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0f2a8dec-5456-4d21-a13e-c4f67997ad06",
+      "duration_api_ms": 10134,
+      "cost_usd_list": 0.07597324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2857,
+      "output_tokens": 352
+     },
+     "lines": [
+      {
+       "draft": "of inanimate things, e. g. fire, Num. 16,",
+       "reread": "of inanimate things, e. g. fire, Num. 16,",
+       "status": "agreed",
+       "text": "of inanimate things, e. g. fire, Num. 16,"
+      },
+      {
+       "draft": "35. 21, 28. 26, 10. Job 1, 16. al. With בְּ",
+       "reread": "35. 21, 28. 26, 10. Job 1, 16. al. With בְּ",
+       "status": "agreed",
+       "text": "35. 21, 28. 26, 10. Job 1, 16. al. With בְּ"
+      },
+      {
+       "draft": "Zech. 11, 1; comp. ignis edax, Virg.",
+       "reread": "Zech. 11, 1; comp. ignis edax, Virg.",
+       "status": "agreed",
+       "text": "Zech. 11, 1; comp. ignis edax, Virg."
+      },
+      {
+       "draft": "Æn. 2. 758; πάντας πῦρ ἐσθίει Il. 23.",
+       "reread": "Æn. 2. 758; πάντας πῦρ ἐσθίει Il. 23.",
+       "status": "agreed",
+       "text": "Æn. 2. 758; πάντας πῦρ ἐσθίει Il. 23."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 196,
+      "y": 424,
+      "width": 865,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r00-b01-865x238+196+424-x2.png",
+     "image_sha256": "96c22305163ae2ae3803665f15cecba404bca04ca7fe0fc1ca236f0e19a691fb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "182. Also of the sword, 2 Sam. 2, 26.",
+       "18, 8. Deut. 32, 42; of famine and pesti-",
+       "lence Ez. 7, 15; of deadly disease Job",
+       "18, 13; of the wrath of God Ex. 15, 7;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43e8ce18-1ed5-4f1d-b987-6f9e923661b2",
+      "duration_api_ms": 10532,
+      "cost_usd_list": 0.06691325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "182. Also of the sword, 2 Sam. 2, 26.",
+       "reread": "182. Also of the sword, 2 Sam. 2, 26.",
+       "status": "agreed",
+       "text": "182. Also of the sword, 2 Sam. 2, 26."
+      },
+      {
+       "draft": "18, 8. Deut. 32, 42; of famine and pesti-",
+       "reread": "18, 8. Deut. 32, 42; of famine and pesti-",
+       "status": "agreed",
+       "text": "18, 8. Deut. 32, 42; of famine and pesti-"
+      },
+      {
+       "draft": "lence Ez. 7, 15; of deadly disease Job",
+       "reread": "lence Ez. 7, 15; of deadly disease Job",
+       "status": "agreed",
+       "text": "lence Ez. 7, 15; of deadly disease Job"
+      },
+      {
+       "draft": "18, 13; of the wrath of God Ex. 15, 7;",
+       "reread": "18, 13; of the wrath of God Ex. 15, 7;",
+       "status": "agreed",
+       "text": "18, 13; of the wrath of God Ex. 15, 7;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 196,
+      "y": 646,
+      "width": 865,
+      "height": 126
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r00-b02-865x126+196+646-x2.png",
+     "image_sha256": "3edf1cd7b75644f5aa3575336d4e6bb89b21bdf30ce35e7118772a5eea06f098",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of a curse Is. 24, 6; of heat and cold",
+       "Gen. 31, 40; of ardent zeal Ps. 69, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1b9c6d8a-a505-4f09-a9ae-634d7ae3b8f0",
+      "duration_api_ms": 7546,
+      "cost_usd_list": 0.05469325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2113,
+      "output_tokens": 224
+     },
+     "lines": [
+      {
+       "draft": "of a curse Is. 24, 6; of heat and cold",
+       "reread": "of a curse Is. 24, 6; of heat and cold",
+       "status": "agreed",
+       "text": "of a curse Is. 24, 6; of heat and cold"
+      },
+      {
+       "draft": "Gen. 31, 40; of ardent zeal Ps. 69, 10.",
+       "reread": "Gen. 31, 40; of ardent zeal Ps. 69, 10.",
+       "status": "agreed",
+       "text": "Gen. 31, 40; of ardent zeal Ps. 69, 10."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 196,
+    "y": 765,
+    "width": 865,
+    "height": 856
+   },
+   "draft_lines": [
+    "3. i. q. to enjoy any thing, e. g. good,",
+    "good-fortune, c. בְּ Job 21, 25; the fruits",
+    "of good or bad actions, sensual pleasures,",
+    "Prov. 30, 20; comp. 9, 17. So Lat. vesci",
+    "voluptatibus Cic. Fin. 5. 20.",
+    "4. Perh. to taste, to have the sense of",
+    "taste, Deut. 4, 28.",
+    "5. to eat off, i. e. to take from, to di-",
+    "minish. Ez. 42, 5 the upper chambers",
+    "were shorter, כִּי יוֹכְלוּ אַתִּיקִים מֵהֵנָה for",
+    "the galleries took away from them, i. e.",
+    "occupied part of the space.",
+    "Niph. נֶאֱכַל, fut. יֵאָכֵל, to be eaten, Ex.",
+    "12, 46. 13, 3. 7; also of what may be eat-",
+    "en, to be fit for food, Gen. 6, 21. Metaph."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 196,
+      "y": 771,
+      "width": 865,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r01-b00-865x226+196+771-x2.png",
+     "image_sha256": "d01d82085cfadd1f7eaa9c11c8c539251d9e4bc4916c1c6d04584805520a032f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. i. q. to enjoy any thing, e. g. good,",
+       "good-fortune, c. בְּ Job 21, 25; the fruits",
+       "of good or bad actions, sensual pleasures,",
+       "Prov. 30, 20; comp. 9, 17. So Lat. vesci"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1e948766-2ed6-47df-bb5e-f6d1ca9dd839",
+      "duration_api_ms": 10390,
+      "cost_usd_list": 0.06871325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 306
+     },
+     "lines": [
+      {
+       "draft": "3. i. q. to enjoy any thing, e. g. good,",
+       "reread": "3. i. q. to enjoy any thing, e. g. good,",
+       "status": "agreed",
+       "text": "3. i. q. to enjoy any thing, e. g. good,"
+      },
+      {
+       "draft": "good-fortune, c. בְּ Job 21, 25; the fruits",
+       "reread": "good-fortune, c. בְּ Job 21, 25; the fruits",
+       "status": "agreed",
+       "text": "good-fortune, c. בְּ Job 21, 25; the fruits"
+      },
+      {
+       "draft": "of good or bad actions, sensual pleasures,",
+       "reread": "of good or bad actions, sensual pleasures,",
+       "status": "agreed",
+       "text": "of good or bad actions, sensual pleasures,"
+      },
+      {
+       "draft": "Prov. 30, 20; comp. 9, 17. So Lat. vesci",
+       "reread": "Prov. 30, 20; comp. 9, 17. So Lat. vesci",
+       "status": "agreed",
+       "text": "Prov. 30, 20; comp. 9, 17. So Lat. vesci"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 196,
+      "y": 981,
+      "width": 865,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r01-b01-865x249+196+981-x2.png",
+     "image_sha256": "82b2e662a657336d8fd42127c16e8232e5e8c276644412ab1e14bb304edc8d9d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "voluptatibus Cic. Fin. 5. 20.",
+       "4. Perh. to taste, to have the sense of",
+       "taste, Deut. 4, 28.",
+       "5. to eat off, i. e. to take from, to di-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1f8e48e1-e6d4-4407-9c30-a705eeac5c3a",
+      "duration_api_ms": 18745,
+      "cost_usd_list": 0.06715325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "voluptatibus Cic. Fin. 5. 20.",
+       "reread": "voluptatibus Cic. Fin. 5. 20.",
+       "status": "agreed",
+       "text": "voluptatibus Cic. Fin. 5. 20."
+      },
+      {
+       "draft": "4. Perh. to taste, to have the sense of",
+       "reread": "4. Perh. to taste, to have the sense of",
+       "status": "agreed",
+       "text": "4. Perh. to taste, to have the sense of"
+      },
+      {
+       "draft": "taste, Deut. 4, 28.",
+       "reread": "taste, Deut. 4, 28.",
+       "status": "agreed",
+       "text": "taste, Deut. 4, 28."
+      },
+      {
+       "draft": "5. to eat off, i. e. to take from, to di-",
+       "reread": "5. to eat off, i. e. to take from, to di-",
+       "status": "agreed",
+       "text": "5. to eat off, i. e. to take from, to di-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 196,
+      "y": 1214,
+      "width": 865,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r01-b02-865x235+196+1214-x2.png",
+     "image_sha256": "aa69f0763f6c9d6d4261ebea7fb0c0e601869fffd92d3bf4304531a21b1df67e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "minish. Ez. 42, 5 the upper chambers",
+       "were shorter, כִּי יוֹכְלוּ אַתִּיקִים מֵהֵנָה for",
+       "the galleries took away from them, i. e.",
+       "occupied part of the space."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f480e06f-a9a8-48d3-a5bd-c47fe118f59b",
+      "duration_api_ms": 14409,
+      "cost_usd_list": 0.08190349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 569
+     },
+     "lines": [
+      {
+       "draft": "minish. Ez. 42, 5 the upper chambers",
+       "reread": "minish. Ez. 42, 5 the upper chambers",
+       "status": "agreed",
+       "text": "minish. Ez. 42, 5 the upper chambers"
+      },
+      {
+       "draft": "were shorter, כִּי יוֹכְלוּ אַתִּיקִים מֵהֵנָה for",
+       "reread": "were shorter, כִּי יוֹכְלוּ אַתִּיקִים מֵהֵנָה for",
+       "status": "agreed",
+       "text": "were shorter, כִּי יוֹכְלוּ אַתִּיקִים מֵהֵנָה for"
+      },
+      {
+       "draft": "the galleries took away from them, i. e.",
+       "reread": "the galleries took away from them, i. e.",
+       "status": "agreed",
+       "text": "the galleries took away from them, i. e."
+      },
+      {
+       "draft": "occupied part of the space.",
+       "reread": "occupied part of the space.",
+       "status": "agreed",
+       "text": "occupied part of the space."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 196,
+      "y": 1433,
+      "width": 865,
+      "height": 196
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r01-b03-865x196+196+1433-x2.png",
+     "image_sha256": "7f51870d5c9111292eaf7cb6a6e5551010a81e6c919c2cfa6870a9608211c081",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Niph. נֶאֱכַל, fut. יֵאָכֵל, to be eaten, Ex.",
+       "12, 46. 13, 3. 7 ; also of what may be eat-",
+       "en, to be fit for food, Gen. 6, 21. Metaph."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b2374c2f-c153-43d0-8958-00840576d91d",
+      "duration_api_ms": 13003,
+      "cost_usd_list": 0.0752835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 511
+     },
+     "lines": [
+      {
+       "draft": "Niph. נֶאֱכַל, fut. יֵאָכֵל, to be eaten, Ex.",
+       "reread": "Niph. נֶאֱכַל, fut. יֵאָכֵל, to be eaten, Ex.",
+       "status": "agreed",
+       "text": "Niph. נֶאֱכַל, fut. יֵאָכֵל, to be eaten, Ex."
+      },
+      {
+       "draft": "12, 46. 13, 3. 7; also of what may be eat-",
+       "reread": "12, 46. 13, 3. 7 ; also of what may be eat-",
+       "status": "agreed",
+       "text": "12, 46. 13, 3. 7; also of what may be eat-"
+      },
+      {
+       "draft": "en, to be fit for food, Gen. 6, 21. Metaph.",
+       "reread": "en, to be fit for food, Gen. 6, 21. Metaph.",
+       "status": "agreed",
+       "text": "en, to be fit for food, Gen. 6, 21. Metaph."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 196,
+    "y": 1609,
+    "width": 865,
+    "height": 852
+   },
+   "draft_lines": [
+    "to be devoured by fire, Zech. 9, 4.",
+    "Piel אִכֵּל i. q. Kal, like Arab. أَكَّلَ,",
+    "to eat up, to consume. Job 20, 26 תְּאָכְלֵהוּ",
+    "אֵשׁ a fire consumes him, for תְּאַכְּלֵהוּ.",
+    "The Dagesh forte extruded is com-",
+    "pensated by the long vowel Kamets;",
+    "though some Mss. read תְּאַכְּלֵהוּ. See",
+    "Lehrg. § 72. n. 2. p. 251.",
+    "Pual to be consumed, with fire Neh.",
+    "2, 3. 13; by the sword Is. 1, 20.",
+    "Hiph. הֶאֱכִיל, fut. יַאֲכִיל, once 1 pers.",
+    "אוֹכִיל Hos. 11, 4; inf. הָכִיל for הַאֲכִיל Ez.",
+    "21, 33; pr. to make eat up or consume,",
+    "e. g. the sword Ez. 21, 33. Spec. to",
+    "give to eat, to feed with any thing, with"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 196,
+      "y": 1601,
+      "width": 865,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r02-b00-865x249+196+1601-x2.png",
+     "image_sha256": "e6b7a0c151faca0a53a73c6e0374834e4cc12a43841eb5d527a04f0470f8532a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to be devoured by fire, Zech. 9, 4.",
+       "Piel אִכֵּל i. q. Kal, like Arab. أَكَّلَ,",
+       "to eat up, to consume. Job 20, 26 תְּאָכְלֵהוּ",
+       "אֵשׁ a fire consumes him, for תְּאַכְּלֵהוּ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5697194c-3a8c-42cd-b5ce-d509df0c3127",
+      "duration_api_ms": 18665,
+      "cost_usd_list": 0.0927935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 762
+     },
+     "lines": [
+      {
+       "draft": "to be devoured by fire, Zech. 9, 4.",
+       "reread": "to be devoured by fire, Zech. 9, 4.",
+       "status": "agreed",
+       "text": "to be devoured by fire, Zech. 9, 4."
+      },
+      {
+       "draft": "Piel אִכֵּל i. q. Kal, like Arab. أَكَّلَ,",
+       "reread": "Piel אִכֵּל i. q. Kal, like Arab. أَكَّلَ,",
+       "status": "agreed",
+       "text": "Piel אִכֵּל i. q. Kal, like Arab. أَكَّلَ,"
+      },
+      {
+       "draft": "to eat up, to consume. Job 20, 26 תְּאָכְלֵהוּ",
+       "reread": "to eat up, to consume. Job 20, 26 תְּאָכְלֵהוּ",
+       "status": "agreed",
+       "text": "to eat up, to consume. Job 20, 26 תְּאָכְלֵהוּ"
+      },
+      {
+       "draft": "אֵשׁ a fire consumes him, for תְּאַכְּלֵהוּ.",
+       "reread": "אֵשׁ a fire consumes him, for תְּאַכְּלֵהוּ.",
+       "status": "agreed",
+       "text": "אֵשׁ a fire consumes him, for תְּאַכְּלֵהוּ."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 196,
+      "y": 1834,
+      "width": 865,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r02-b01-865x229+196+1834-x2.png",
+     "image_sha256": "7520e68af8354db4a1918ede9d7e93492c4f0a896f99f6a031dd7f5c36e41f53",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "The Dagesh forte extruded is com-",
+       "pensated by the long vowel Kamets;",
+       "though some Mss. read תְּאַכְלֵהוּ. See",
+       "Lehrg. § 72. n. 2. p. 251."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fda18e91-2d34-4bfa-866a-4b55e97b40d9",
+      "duration_api_ms": 15781,
+      "cost_usd_list": 0.0741535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 414
+     },
+     "lines": [
+      {
+       "draft": "The Dagesh forte extruded is com-",
+       "reread": "The Dagesh forte extruded is com-",
+       "status": "agreed",
+       "text": "The Dagesh forte extruded is com-"
+      },
+      {
+       "draft": "pensated by the long vowel Kamets;",
+       "reread": "pensated by the long vowel Kamets;",
+       "status": "agreed",
+       "text": "pensated by the long vowel Kamets;"
+      },
+      {
+       "draft": "though some Mss. read תְּאַכְּלֵהוּ. See",
+       "reread": "though some Mss. read תְּאַכְלֵהוּ. See",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "though some Mss. read תְּאַכְּלֵהוּ. See",
+        "verdict": "a",
+        "note": "The kaf is printed with a dagesh (dot visible inside the letter), as the context requires — the Mss. retain the Dagesh forte rather than compensating with Kamets — so תְּאַכְּלֵהוּ, not the defective-dagesh form in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6ffe8dc2-eb37-4e08-bc58-70eee81e770b",
+        "duration_api_ms": 10227,
+        "cost_usd_list": 0.08135400000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3576,
+        "cache_creation_input_tokens": 2541,
+        "output_tokens": 586
+       },
+       "text": "though some Mss. read תְּאַכְּלֵהוּ. See"
+      },
+      {
+       "draft": "Lehrg. § 72. n. 2. p. 251.",
+       "reread": "Lehrg. § 72. n. 2. p. 251.",
+       "status": "agreed",
+       "text": "Lehrg. § 72. n. 2. p. 251."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 196,
+      "y": 2047,
+      "width": 865,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r02-b02-865x251+196+2047-x2.png",
+     "image_sha256": "880ce9a87a875d17e424e8d4b48f0146ae20c74a7dd48f47731923d39fd43b89",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Pual to be consumed, with fire Neh.",
+       "2, 3. 13; by the sword Is. 1, 20.",
+       "Hiph. הֶאֱכִיל, fut. יַאֲכִיל, once 1 pers.",
+       "אוֹכִיל Hos. 11, 4; inf. הָכִיל for הַאֲכִיל Ez."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "201a5929-1891-4663-9efb-2e35698116b9",
+      "duration_api_ms": 16943,
+      "cost_usd_list": 0.0883935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 674
+     },
+     "lines": [
+      {
+       "draft": "Pual to be consumed, with fire Neh.",
+       "reread": "Pual to be consumed, with fire Neh.",
+       "status": "agreed",
+       "text": "Pual to be consumed, with fire Neh."
+      },
+      {
+       "draft": "2, 3. 13; by the sword Is. 1, 20.",
+       "reread": "2, 3. 13; by the sword Is. 1, 20.",
+       "status": "agreed",
+       "text": "2, 3. 13; by the sword Is. 1, 20."
+      },
+      {
+       "draft": "Hiph. הֶאֱכִיל, fut. יַאֲכִיל, once 1 pers.",
+       "reread": "Hiph. הֶאֱכִיל, fut. יַאֲכִיל, once 1 pers.",
+       "status": "agreed",
+       "text": "Hiph. הֶאֱכִיל, fut. יַאֲכִיל, once 1 pers."
+      },
+      {
+       "draft": "אוֹכִיל Hos. 11, 4; inf. הָכִיל for הַאֲכִיל Ez.",
+       "reread": "אוֹכִיל Hos. 11, 4; inf. הָכִיל for הַאֲכִיל Ez.",
+       "status": "agreed",
+       "text": "אוֹכִיל Hos. 11, 4; inf. הָכִיל for הַאֲכִיל Ez."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 196,
+      "y": 2282,
+      "width": 865,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r02-b03-865x187+196+2282-x2.png",
+     "image_sha256": "db92fcf8b4560b9eb80a7f5cbbcd6149232fd2191e251295bef7d8a9fe79e03a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "21, 33; pr. to make eat up or consume,",
+       "e. g. the sword Ez. 21, 33. Spec. to",
+       "give to eat, to feed with any thing, with"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b235d64-9566-41e9-a937-5e78a09dcf33",
+      "duration_api_ms": 15691,
+      "cost_usd_list": 0.061483499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "21, 33; pr. to make eat up or consume,",
+       "reread": "21, 33; pr. to make eat up or consume,",
+       "status": "agreed",
+       "text": "21, 33; pr. to make eat up or consume,"
+      },
+      {
+       "draft": "e. g. the sword Ez. 21, 33. Spec. to",
+       "reread": "e. g. the sword Ez. 21, 33. Spec. to",
+       "status": "agreed",
+       "text": "e. g. the sword Ez. 21, 33. Spec. to"
+      },
+      {
+       "draft": "give to eat, to feed with any thing, with",
+       "reread": "give to eat, to feed with any thing, with",
+       "status": "agreed",
+       "text": "give to eat, to feed with any thing, with"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 196,
+    "y": 2449,
+    "width": 865,
+    "height": 787
+   },
+   "draft_lines": [
+    "two acc. of pers. and thing, Ex. 16, 32.",
+    "Num. 11, 18. Deut. 8, 16.. Is. 49, 26 ;",
+    "with מִן of food, Ps. 81, 17.",
+    "Deriv. the four following, and אֲכִילָה,",
+    "מַכֹּלֶת, מַאֲכֹלֶת, מַאֲכָל .",
+    "אֲכַל Chald. fut. יֵאכֻל, i. q. Heb. to eat,",
+    "to devour. אֲכַל קַרְצוֹהִי דִּי pr. to eat the",
+    "pieces of any one, to eat him up piece-",
+    "meal, metaph. for to slander, to accuse",
+    "falsely, to inform against, Dan. 3, 8. 6,",
+    "25. So in Targg. אֲכַל קוּרְצִין for Heb.",
+    "הָלַךְ רָכִיל, רָגַל. Syr. ܐܶܟܰܠ ܩܰܪ̈ܨܶܐ for Gr.",
+    "διαβάλλω Luke 16, 1 ; whence part. ܐܳܟܶܠ"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 196,
+      "y": 2441,
+      "width": 865,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r03-b00-865x235+196+2441-x2.png",
+     "image_sha256": "2fe05972912f52f6281feb2273522206297a40643a9fb759b5a0a7e25bf2861d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "two acc. of pers. and thing, Ex. 16, 32.",
+       "Num. 11, 18. Deut. 8, 16. Is. 49, 26 ;",
+       "with מִן of food, Ps. 81, 17.",
+       "Deriv. the four following, and אֲכִילָה,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "39fe5370-47c3-49bb-b08a-a369a708bb25",
+      "duration_api_ms": 12518,
+      "cost_usd_list": 0.07065350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 344
+     },
+     "lines": [
+      {
+       "draft": "two acc. of pers. and thing, Ex. 16, 32.",
+       "reread": "two acc. of pers. and thing, Ex. 16, 32.",
+       "status": "agreed",
+       "text": "two acc. of pers. and thing, Ex. 16, 32."
+      },
+      {
+       "draft": "Num. 11, 18. Deut. 8, 16.. Is. 49, 26 ;",
+       "reread": "Num. 11, 18. Deut. 8, 16. Is. 49, 26 ;",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "Num. 11, 18. Deut. 8, 16.. Is. 49, 26 ;",
+        "verdict": "a",
+        "note": "Two separate dots are actually printed after \"16\" before \"Is.\" (a typographical doubled period), so Reading A matches the print; B silently normalises it to one.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c33aff7b-8a00-40ec-9e55-c937d05e99b5",
+        "duration_api_ms": 10912,
+        "cost_usd_list": 0.0700375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2555,
+        "output_tokens": 354
+       },
+       "text": "Num. 11, 18. Deut. 8, 16.. Is. 49, 26;"
+      },
+      {
+       "draft": "with מִן of food, Ps. 81, 17.",
+       "reread": "with מִן of food, Ps. 81, 17.",
+       "status": "agreed",
+       "text": "with מִן of food, Ps. 81, 17."
+      },
+      {
+       "draft": "Deriv. the four following, and אֲכִילָה,",
+       "reread": "Deriv. the four following, and אֲכִילָה,",
+       "status": "agreed",
+       "text": "Deriv. the four following, and אֲכִילָה,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 196,
+      "y": 2660,
+      "width": 865,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r03-b01-865x284+196+2660-x2.png",
+     "image_sha256": "4db704ec5db7cf04bf1ed6c3822323f2b450f11f50ffa5072195dfacbe0d517d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "מַכֹּלֶת, מַאֲכֹלֶת, מַאֲכֶלֶת, מַאֲכָל.",
+       "אֲכַל Chald. fut. יֵאכֻל, i. q. Heb. to eat,",
+       "to devour. אֲכַל קַרְצוֹהִי דִּי pr. to eat the",
+       "pieces of any one, to eat him up piece-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "06c50ae7-1f12-45a5-b0c8-4104579434c9",
+      "duration_api_ms": 26501,
+      "cost_usd_list": 0.1434635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2859,
+      "output_tokens": 1701
+     },
+     "lines": [
+      {
+       "draft": "מַכֹּלֶת, מַאֲכֹלֶת, מַאֲכָל .",
+       "reread": "מַכֹּלֶת, מַאֲכֹלֶת, מַאֲכֶלֶת, מַאֲכָל.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "מַאֲכָל, מַאֲכֶלֶת, מַאֲכֹלֶת, מַכֹּלֶת.",
+        "verdict": "neither",
+        "note": "Four items are printed (A drops מַאֲכֶלֶת, the segol-form), but B lists them in reversed order: in print, left to right, the sequence is מַאֲכָל, מַאֲכֶלֶת, מַאֲכֹלֶת, מַכֹּלֶת, with the full stop at the far right after מַכֹּלֶת (dagesh in kaf confirmed).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f17481dd-0c85-4b52-a663-ac7cc8b665d9",
+        "duration_api_ms": 23037,
+        "cost_usd_list": 0.12266200000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3608,
+        "cache_creation_input_tokens": 2821,
+        "output_tokens": 1300
+       },
+       "text": "מַאֲכָל, מַאֲכֶלֶת, מַאֲכֹלֶת, מַכֹּלֶת."
+      },
+      {
+       "draft": "אֲכַל Chald. fut. יֵאכֻל, i. q. Heb. to eat,",
+       "reread": "אֲכַל Chald. fut. יֵאכֻל, i. q. Heb. to eat,",
+       "status": "agreed",
+       "text": "אֲכַל Chald. fut. יֵאכֻל, i. q. Heb. to eat,"
+      },
+      {
+       "draft": "to devour. אֲכַל קַרְצוֹהִי דִּי pr. to eat the",
+       "reread": "to devour. אֲכַל קַרְצוֹהִי דִּי pr. to eat the",
+       "status": "agreed",
+       "text": "to devour. אֲכַל קַרְצוֹהִי דִּי pr. to eat the"
+      },
+      {
+       "draft": "pieces of any one, to eat him up piece-",
+       "reread": "pieces of any one, to eat him up piece-",
+       "status": "agreed",
+       "text": "pieces of any one, to eat him up piece-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 196,
+      "y": 2928,
+      "width": 865,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r03-b02-865x257+196+2928-x2.png",
+     "image_sha256": "4964821dffb0a7b21b86c52f4fc142276b7021383e1873725a4e6efdb4bc93b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "meal, metaph. for to slander, to accuse",
+       "falsely, to inform against, Dan. 3, 8. 6,",
+       "25. So in Targg. אֲכַל קוּרְצִין for Heb.",
+       "רָגַל, הָלַךְ רָכִיל. Syr. ܐܶܟܰܠ ܩܰܪܨܶܐ for Gr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aa212992-8623-4cc8-83f4-867eb7644da3",
+      "duration_api_ms": 16813,
+      "cost_usd_list": 0.1027335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 936
+     },
+     "lines": [
+      {
+       "draft": "meal, metaph. for to slander, to accuse",
+       "reread": "meal, metaph. for to slander, to accuse",
+       "status": "agreed",
+       "text": "meal, metaph. for to slander, to accuse"
+      },
+      {
+       "draft": "falsely, to inform against, Dan. 3, 8. 6,",
+       "reread": "falsely, to inform against, Dan. 3, 8. 6,",
+       "status": "agreed",
+       "text": "falsely, to inform against, Dan. 3, 8. 6,"
+      },
+      {
+       "draft": "25. So in Targg. אֲכַל קוּרְצִין for Heb.",
+       "reread": "25. So in Targg. אֲכַל קוּרְצִין for Heb.",
+       "status": "agreed",
+       "text": "25. So in Targg. אֲכַל קוּרְצִין for Heb."
+      },
+      {
+       "draft": "הָלַךְ רָכִיל, רָגַל. Syr. ܐܶܟܰܠ ܩܰܪ̈ܨܶܐ for Gr.",
+       "reread": "רָגַל, הָלַךְ רָכִיל. Syr. ܐܶܟܰܠ ܩܰܪܨܶܐ for Gr.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "הָלַךְ רָכִיל, רָגַל. Syr. ܐܶܟܰܠ ܩܰܪ̈ܨܶܐ for Gr.",
+        "verdict": "a",
+        "note": "Visually the line runs left→right: רָגַל , הָלַךְ רָכִיל . — so the Hebrew run in logical (RTL) order begins with הָלַךְ רָכִיל, then the comma, then רָגַל, as in Reading A; Reading B inverted the item order. The Syriac second word carries a two-dot seyame over rish (plural, matching Targ. קוּרְצִין), which B omitted. Vowel points as in A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e93b4373-34bb-49fd-af6d-7eddc3f6d7d6",
+        "duration_api_ms": 48406,
+        "cost_usd_list": 0.19884075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3643,
+        "cache_creation_input_tokens": 2732,
+        "output_tokens": 2859
+       },
+       "text": "הָלַךְ רָכִיל, רָגַל. Syr. ܐܶܟܰܠ ܩܰܪ̈ܨܶܐ for Gr."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 196,
+      "y": 3169,
+      "width": 865,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c0-r03-b03-865x69+196+3169-x2.png",
+     "image_sha256": "0cd678c7880ce250bfe1995eec03d8b69cec23b4a0a21ddb4e0683ce36d6bf64",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "διαβάλλω Luke 16, 1; whence part. ܐܳܟܶܠ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f0e7d6bf-c2fb-4f4f-8eb8-e818e4c6422b",
+      "duration_api_ms": 22849,
+      "cost_usd_list": 0.0888735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1867,
+      "output_tokens": 1006
+     },
+     "lines": [
+      {
+       "draft": "διαβάλλω Luke 16, 1 ; whence part. ܐܳܟܶܠ",
+       "reread": "διαβάλλω Luke 16, 1; whence part. ܐܳܟܶܠ",
+       "status": "agreed",
+       "text": "διαβάλλω Luke 16, 1; whence part. ܐܳܟܶܠ"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1084,
+    "y": 154,
+    "width": 865,
+    "height": 742
+   },
+   "draft_lines": [
+    "مُنْزِا diabolus, Arab. أَكَلَ لحم فلَان id.",
+    "See also in Chald. קְרַץ.",
+    "אֹכֶל m. c. suff. אָכְלוֹ 1. an eating,",
+    "devouring, i. e. act of eating, Ex. 12, 4",
+    "אִישׁ לְפִי אָכְלוֹ every one according to his",
+    "eating. 16, 16. 18. 21. Job 20, 21.",
+    "2. food, spec. a) grain, fruits, pro-",
+    "duce, provision, Gen. 14, 11. 41, 35 sq.",
+    "42, 7 sq. 43, 2 sq. 44, 1. b) prey, meat,",
+    "of wild animals, Job 9, 26. 39, 3. 32. [38,",
+    "41. 39, 29.]"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1084,
+      "y": 146,
+      "width": 865,
+      "height": 358
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r00-b00-865x358+1084+146-x2.png",
+     "image_sha256": "b4310a3b0d3b1c58bda8ecf55bc9fbca4759005088654c57f124bbbcca1640bf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܩܰܪܨܳܐ diabolus, Arab. أَكَلَ لحم فلان id.",
+       "See also in Chald. קְרַץ.",
+       "אֹכֶל m. c. suff. אָכְלוֹ 1. an eating,",
+       "devouring, i. e. act of eating, Ex. 12, 4"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7c10f435-1191-4741-88d6-00a0a2534110",
+      "duration_api_ms": 31232,
+      "cost_usd_list": 0.1404135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3169,
+      "output_tokens": 1516
+     },
+     "lines": [
+      {
+       "draft": "مُنْزِا diabolus, Arab. أَكَلَ لحم فلَان id.",
+       "reread": "ܩܰܪܨܳܐ diabolus, Arab. أَكَلَ لحم فلان id.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "ܩܰܪܨܳܐ diabolus, Arab. أَكَلَ لحم فلان id.",
+        "verdict": "b",
+        "note": "The first word is Syriac Serto ܩܪܨܐ (qarṣā, completing ܐܟܠ ܩܪܨܐ \"diabolus\" from the previous line), with a pthaha printed over qoph and a zqapha over the end; Reading A misread the Serto letters as Arabic مُنْزِا. In the Arabic phrase, فلان carries no fatha on the lam.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c5ffe513-29bc-4c42-aa88-bb6daccf0517",
+        "duration_api_ms": 25857,
+        "cost_usd_list": 0.12602975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3599,
+        "cache_creation_input_tokens": 3122,
+        "output_tokens": 1247
+       },
+       "text": "ܩܰܪܨܳܐ diabolus, Arab. أَكَلَ لحم فلان id."
+      },
+      {
+       "draft": "See also in Chald. קְרַץ.",
+       "reread": "See also in Chald. קְרַץ.",
+       "status": "agreed",
+       "text": "See also in Chald. קְרַץ."
+      },
+      {
+       "draft": "אֹכֶל m. c. suff. אָכְלוֹ 1. an eating,",
+       "reread": "אֹכֶל m. c. suff. אָכְלוֹ 1. an eating,",
+       "status": "agreed",
+       "text": "אֹכֶל m. c. suff. אָכְלוֹ 1. an eating,"
+      },
+      {
+       "draft": "devouring, i. e. act of eating, Ex. 12, 4",
+       "reread": "devouring, i. e. act of eating, Ex. 12, 4",
+       "status": "agreed",
+       "text": "devouring, i. e. act of eating, Ex. 12, 4"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1084,
+      "y": 488,
+      "width": 865,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r00-b01-865x238+1084+488-x2.png",
+     "image_sha256": "142ee6cb0e0cdcb743e99525c9a36d9c52589b25c14e8eadd2827ad3e6a62a17",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִישׁ לְפִי אָכְלוֹ every one according to his",
+       "eating. 16, 16. 18. 21. Job 20, 21.",
+       "2. food, spec. a) grain, fruits, pro-",
+       "duce, provision, Gen. 14, 11. 41, 35 sq."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "468300cf-d6d6-4673-9d8f-f27b41e6f004",
+      "duration_api_ms": 13938,
+      "cost_usd_list": 0.07820350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 495
+     },
+     "lines": [
+      {
+       "draft": "אִישׁ לְפִי אָכְלוֹ every one according to his",
+       "reread": "אִישׁ לְפִי אָכְלוֹ every one according to his",
+       "status": "agreed",
+       "text": "אִישׁ לְפִי אָכְלוֹ every one according to his"
+      },
+      {
+       "draft": "eating. 16, 16. 18. 21. Job 20, 21.",
+       "reread": "eating. 16, 16. 18. 21. Job 20, 21.",
+       "status": "agreed",
+       "text": "eating. 16, 16. 18. 21. Job 20, 21."
+      },
+      {
+       "draft": "2. food, spec. a) grain, fruits, pro-",
+       "reread": "2. food, spec. a) grain, fruits, pro-",
+       "status": "agreed",
+       "text": "2. food, spec. a) grain, fruits, pro-"
+      },
+      {
+       "draft": "duce, provision, Gen. 14, 11. 41, 35 sq.",
+       "reread": "duce, provision, Gen. 14, 11. 41, 35 sq.",
+       "status": "agreed",
+       "text": "duce, provision, Gen. 14, 11. 41, 35 sq."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1084,
+      "y": 710,
+      "width": 865,
+      "height": 179
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r00-b02-865x179+1084+710-x2.png",
+     "image_sha256": "44746e003099603140b818db3d5a75ff457ae9babffcab25cfebc84ce10e6b71",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "42, 7 sq. 43, 2 sq. 44, 1.   b) prey, meat,",
+       "of wild animals, Job 9, 26. 39, 3. 32. [38,",
+       "41. 39, 29.]"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6c131e8f-6395-4777-a371-9bd6f3027057",
+      "duration_api_ms": 12279,
+      "cost_usd_list": 0.0609435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2363,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "42, 7 sq. 43, 2 sq. 44, 1. b) prey, meat,",
+       "reread": "42, 7 sq. 43, 2 sq. 44, 1.   b) prey, meat,",
+       "status": "agreed",
+       "text": "42, 7 sq. 43, 2 sq. 44, 1. b) prey, meat,"
+      },
+      {
+       "draft": "of wild animals, Job 9, 26. 39, 3. 32. [38,",
+       "reread": "of wild animals, Job 9, 26. 39, 3. 32. [38,",
+       "status": "agreed",
+       "text": "of wild animals, Job 9, 26. 39, 3. 32. [38,"
+      },
+      {
+       "draft": "41. 39, 29.]",
+       "reread": "41. 39, 29.]",
+       "status": "agreed",
+       "text": "41. 39, 29.]"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1084,
+    "y": 884,
+    "width": 865,
+    "height": 923
+   },
+   "draft_lines": [
+    "אֻכָל or אֻכָּל pr. n. m. Ucal, Prov. 30, 1;",
+    "see in אִיתִיאֵל.",
+    "אָכְלָה f. (r. אָכַל) food, Gen. 1, 29. 6,",
+    "21; so of the meat or prey of animals",
+    "Jer. 12, 9; food i. e. fuel of fire Ez. 15,",
+    "4. 6.",
+    "אָכֵן adv. pr. inf. absol. Hiph. from r.",
+    "כּוּן, for הָכֵן, הָכִין; firmly, Josh. 3, 17.",
+    "4, 3. Chald. הָכִין, הָכֵי. Others, i. q.",
+    "כֵּן with א prosthetic.",
+    "1. Strongly affirming, surely! truly!",
+    "of a certain truth! Gen. 28, 16. Ex. 2,",
+    "14. Jer. 8, 8.",
+    "2. Adversat. but, yet, Ps. 31, 23. Is. 49,",
+    "4. 53, 4."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1084,
+      "y": 892,
+      "width": 865,
+      "height": 275
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r01-b00-865x275+1084+892-x2.png",
+     "image_sha256": "7fcfbd334f14821d3aa883e5e9c7913d153428b4257fcf3f9e52681b07181189",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֻכָל or אֻכָּל pr. n. m. Ucal, Prov. 30, 1;",
+       "see in אִיתִיאֵל.",
+       "אָכְלָה f. (r. אָכַל) food, Gen. 1, 29. 6,",
+       "21; so of the meat or prey of animals"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2b22f86b-7364-47ae-9b53-6461859630d9",
+      "duration_api_ms": 24523,
+      "cost_usd_list": 0.08722350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 601
+     },
+     "lines": [
+      {
+       "draft": "אֻכָל or אֻכָּל pr. n. m. Ucal, Prov. 30, 1;",
+       "reread": "אֻכָל or אֻכָּל pr. n. m. Ucal, Prov. 30, 1;",
+       "status": "agreed",
+       "text": "אֻכָל or אֻכָּל pr. n. m. Ucal, Prov. 30, 1;"
+      },
+      {
+       "draft": "see in אִיתִיאֵל.",
+       "reread": "see in אִיתִיאֵל.",
+       "status": "agreed",
+       "text": "see in אִיתִיאֵל."
+      },
+      {
+       "draft": "אָכְלָה f. (r. אָכַל) food, Gen. 1, 29. 6,",
+       "reread": "אָכְלָה f. (r. אָכַל) food, Gen. 1, 29. 6,",
+       "status": "agreed",
+       "text": "אָכְלָה f. (r. אָכַל) food, Gen. 1, 29. 6,"
+      },
+      {
+       "draft": "21; so of the meat or prey of animals",
+       "reread": "21; so of the meat or prey of animals",
+       "status": "agreed",
+       "text": "21; so of the meat or prey of animals"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1084,
+      "y": 1151,
+      "width": 865,
+      "height": 315
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r01-b01-865x315+1084+1151-x2.png",
+     "image_sha256": "ce8e4bbf4caac22afbabb2aea2d860c55cbc79aff0d8ffe92d72d27dc4ebace8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Jer. 12, 9 ; food i. e. fuel of fire Ez. 15,",
+       "4. 6.",
+       "אָכֵן adv. pr. inf. absol. Hiph. from r.",
+       "כּוּן, for הָכֵן, הָכִין ; firmly, Josh. 3, 17.",
+       "4, 3. Chald. הָכִין, הָכֵי. Others, i. q."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "be861493-849d-4ff0-9f15-d61194812537",
+      "duration_api_ms": 12959,
+      "cost_usd_list": 0.09258375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2985,
+      "output_tokens": 633
+     },
+     "lines": [
+      {
+       "draft": "Jer. 12, 9; food i. e. fuel of fire Ez. 15,",
+       "reread": "Jer. 12, 9 ; food i. e. fuel of fire Ez. 15,",
+       "status": "agreed",
+       "text": "Jer. 12, 9; food i. e. fuel of fire Ez. 15,"
+      },
+      {
+       "draft": "4. 6.",
+       "reread": "4. 6.",
+       "status": "agreed",
+       "text": "4. 6."
+      },
+      {
+       "draft": "אָכֵן adv. pr. inf. absol. Hiph. from r.",
+       "reread": "אָכֵן adv. pr. inf. absol. Hiph. from r.",
+       "status": "agreed",
+       "text": "אָכֵן adv. pr. inf. absol. Hiph. from r."
+      },
+      {
+       "draft": "כּוּן, for הָכֵן, הָכִין; firmly, Josh. 3, 17.",
+       "reread": "כּוּן, for הָכֵן, הָכִין ; firmly, Josh. 3, 17.",
+       "status": "agreed",
+       "text": "כּוּן, for הָכֵן, הָכִין; firmly, Josh. 3, 17."
+      },
+      {
+       "draft": "4, 3. Chald. הָכִין, הָכֵי. Others, i. q.",
+       "reread": "4, 3. Chald. הָכִין, הָכֵי. Others, i. q.",
+       "status": "agreed",
+       "text": "4, 3. Chald. הָכִין, הָכֵי. Others, i. q."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1084,
+      "y": 1450,
+      "width": 865,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r01-b02-865x232+1084+1450-x2.png",
+     "image_sha256": "a20f08a5b945da495972df0bb956150a7978bf4b23aa2d9e507badca6ae9c38b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כֵּן with א prosthetic.",
+       "1. Strongly affirming, surely! truly!",
+       "of a certain truth! Gen. 28, 16. Ex. 2,",
+       "14. Jer. 8, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a27c8cbf-8a07-4b0c-82bb-0771f54324c5",
+      "duration_api_ms": 11622,
+      "cost_usd_list": 0.07329375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 396
+     },
+     "lines": [
+      {
+       "draft": "כֵּן with א prosthetic.",
+       "reread": "כֵּן with א prosthetic.",
+       "status": "agreed",
+       "text": "כֵּן with א prosthetic."
+      },
+      {
+       "draft": "1. Strongly affirming, surely! truly!",
+       "reread": "1. Strongly affirming, surely! truly!",
+       "status": "agreed",
+       "text": "1. Strongly affirming, surely! truly!"
+      },
+      {
+       "draft": "of a certain truth! Gen. 28, 16. Ex. 2,",
+       "reread": "of a certain truth! Gen. 28, 16. Ex. 2,",
+       "status": "agreed",
+       "text": "of a certain truth! Gen. 28, 16. Ex. 2,"
+      },
+      {
+       "draft": "14. Jer. 8, 8.",
+       "reread": "14. Jer. 8, 8.",
+       "status": "agreed",
+       "text": "14. Jer. 8, 8."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1084,
+      "y": 1666,
+      "width": 865,
+      "height": 126
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r01-b03-865x126+1084+1666-x2.png",
+     "image_sha256": "98d2b856739ab2633e86872a6a6ade5a60a2486dfaeee7441113ddd693151fc5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Adversat. but, yet, Ps. 31, 23. Is. 49,",
+       "4. 53, 4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7d728465-3c51-4bf9-b429-32c424be0f76",
+      "duration_api_ms": 22553,
+      "cost_usd_list": 0.054373750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2117,
+      "output_tokens": 216
+     },
+     "lines": [
+      {
+       "draft": "2. Adversat. but, yet, Ps. 31, 23. Is. 49,",
+       "reread": "2. Adversat. but, yet, Ps. 31, 23. Is. 49,",
+       "status": "agreed",
+       "text": "2. Adversat. but, yet, Ps. 31, 23. Is. 49,"
+      },
+      {
+       "draft": "4. 53, 4.",
+       "reread": "4. 53, 4.",
+       "status": "agreed",
+       "text": "4. 53, 4."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1084,
+    "y": 1795,
+    "width": 865,
+    "height": 824
+   },
+   "draft_lines": [
+    "* אָכַף 1. to load up a beast of bur-",
+    "den, pr. prob. to bend, to make bow down",
+    "under a load, kindr. with כָּפַף q. v. Arab.",
+    "أَكَفَ II, to bind fast the pack-saddle ;",
+    "IV, to put on the pack-saddle. See de-",
+    "riv. אֶכֶף.—Hence",
+    "2. to impel to labour, to urge on, like",
+    "Syr. ܐܶܟܰܦ. Once Prov. 16, 26 כִּי אָכַף",
+    "עָלָיו פִּיהוּ for his mouth urges him on,",
+    "i. e. his hunger drives him to labour.",
+    "The construction with עַל is to be ex-",
+    "plained from the primary signif. of lay-",
+    "ing on a load."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1084,
+      "y": 1810,
+      "width": 865,
+      "height": 276
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r02-b00-865x276+1084+1810-x2.png",
+     "image_sha256": "f1993fda33355de49cf2d7d99153e1471324d46b79f990cf3e0b12cee44f7cf1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָבַךְ 1. to load up a beast of bur-",
+       "den, pr. prob. to bend, to make bow down",
+       "under a load, kindr. with כָּפַף q. v. Arab.",
+       "أَكَّفَ II, to bind fast the pack-saddle ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c36f6992-13a5-4407-9928-5bbbd8bdeb77",
+      "duration_api_ms": 12692,
+      "cost_usd_list": 0.07796375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 415
+     },
+     "lines": [
+      {
+       "draft": "* אָכַף 1. to load up a beast of bur-",
+       "reread": "* אָבַךְ 1. to load up a beast of bur-",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "* אָכַף 1. to load up a beast of bur-",
+        "verdict": "a",
+        "note": "The final letter is final pe (ף), not final kaf with sheva (ךְ): there is no sheva beneath it, and the shape has the inward-curling pe stroke. The middle letter is a rounded kaf (no bet heel), matching the root אכף confirmed by the kindred כָּפַף and Arabic أكف on the following lines. Reading A is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "44b0fdd2-eb56-47b6-b992-3d9ac8a6c9de",
+        "duration_api_ms": 10078,
+        "cost_usd_list": 0.0823725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2722,
+        "output_tokens": 534
+       },
+       "text": "* אָכַף 1. to load up a beast of bur-"
+      },
+      {
+       "draft": "den, pr. prob. to bend, to make bow down",
+       "reread": "den, pr. prob. to bend, to make bow down",
+       "status": "agreed",
+       "text": "den, pr. prob. to bend, to make bow down"
+      },
+      {
+       "draft": "under a load, kindr. with כָּפַף q. v. Arab.",
+       "reread": "under a load, kindr. with כָּפַף q. v. Arab.",
+       "status": "agreed",
+       "text": "under a load, kindr. with כָּפַף q. v. Arab."
+      },
+      {
+       "draft": "أَكَفَ II, to bind fast the pack-saddle ;",
+       "reread": "أَكَّفَ II, to bind fast the pack-saddle ;",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "أَكَّفَ II, to bind fast the pack-saddle ;",
+        "verdict": "b",
+        "note": "The kāf carries a shadda (the ع-shaped mark) with fatḥa above it, as expected for a form II verb — Reading A omits the shadda.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "df7823d1-3b4a-4e5c-9b3a-9ee04cff3695",
+        "duration_api_ms": 13536,
+        "cost_usd_list": 0.08241425000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3577,
+        "cache_creation_input_tokens": 2739,
+        "output_tokens": 528
+       },
+       "text": "أَكَّفَ II, to bind fast the pack-saddle;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1084,
+      "y": 2070,
+      "width": 865,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r02-b01-865x252+1084+2070-x2.png",
+     "image_sha256": "e1efef38531f3683d6fcbb79e705963a05315c05d0323101991f4ab6d2328c71",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "IV, to put on the pack-saddle.  See de-",
+       "riv. אֶכֶף.—Hence",
+       "2. to impel to labour, to urge on, like",
+       "Syr. ܐܳܟ̇ܦ.  Once Prov. 16, 26 כִּי אָכַף"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dca2b91a-cde6-4969-b0b9-1fbc752c96b0",
+      "duration_api_ms": 16510,
+      "cost_usd_list": 0.09968375000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2675,
+      "output_tokens": 899
+     },
+     "lines": [
+      {
+       "draft": "IV, to put on the pack-saddle. See de-",
+       "reread": "IV, to put on the pack-saddle.  See de-",
+       "status": "agreed",
+       "text": "IV, to put on the pack-saddle. See de-"
+      },
+      {
+       "draft": "riv. אֶכֶף.—Hence",
+       "reread": "riv. אֶכֶף.—Hence",
+       "status": "agreed",
+       "text": "riv. אֶכֶף.—Hence"
+      },
+      {
+       "draft": "2. to impel to labour, to urge on, like",
+       "reread": "2. to impel to labour, to urge on, like",
+       "status": "agreed",
+       "text": "2. to impel to labour, to urge on, like"
+      },
+      {
+       "draft": "Syr. ܐܶܟܰܦ. Once Prov. 16, 26 כִּי אָכַף",
+       "reread": "Syr. ܐܳܟ̇ܦ.  Once Prov. 16, 26 כִּי אָכַף",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "Syr. ܐܶܟܰܦ. Once Prov. 16, 26 כִּי אָכַף",
+        "verdict": "a",
+        "note": "The Syriac word carries two Western vowel signs, one above the alaph (rbasa) and a second distinct sign above the kaph (pthaha), with no plain dot anywhere; Reading B's zqapha on alaph plus a bare dot over kaph does not match the two shaped vowel marks printed. The Hebrew אָכַף (qamets, patah) is identical in both and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bc887f1e-5284-4bcd-8ac6-d1930cda89e7",
+        "duration_api_ms": 36636,
+        "cost_usd_list": 0.14778225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3609,
+        "cache_creation_input_tokens": 2637,
+        "output_tokens": 1876
+       },
+       "text": "Syr. ܐܶܟܰܦ. Once Prov. 16, 26 כִּי אָכַף"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1084,
+      "y": 2306,
+      "width": 865,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r02-b02-865x243+1084+2306-x2.png",
+     "image_sha256": "bd8539499d3f485971033083b6d6751900dc6ec5c861dd34f7fec04b7728b44f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "עָלָיו פִּיהוּ for his mouth urges him on,",
+       "i. e. his hunger drives him to labour.",
+       "The construction with עַל is to be ex-",
+       "plained from the primary signif. of lay-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aed41556-23e9-492f-8c77-30b9891da852",
+      "duration_api_ms": 12166,
+      "cost_usd_list": 0.07743375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2675,
+      "output_tokens": 454
+     },
+     "lines": [
+      {
+       "draft": "עָלָיו פִּיהוּ for his mouth urges him on,",
+       "reread": "עָלָיו פִּיהוּ for his mouth urges him on,",
+       "status": "agreed",
+       "text": "עָלָיו פִּיהוּ for his mouth urges him on,"
+      },
+      {
+       "draft": "i. e. his hunger drives him to labour.",
+       "reread": "i. e. his hunger drives him to labour.",
+       "status": "agreed",
+       "text": "i. e. his hunger drives him to labour."
+      },
+      {
+       "draft": "The construction with עַל is to be ex-",
+       "reread": "The construction with עַל is to be ex-",
+       "status": "agreed",
+       "text": "The construction with עַל is to be ex-"
+      },
+      {
+       "draft": "plained from the primary signif. of lay-",
+       "reread": "plained from the primary signif. of lay-",
+       "status": "agreed",
+       "text": "plained from the primary signif. of lay-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1084,
+      "y": 2533,
+      "width": 865,
+      "height": 78
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r02-b03-865x78+1084+2533-x2.png",
+     "image_sha256": "bd315664b876f6c5cbda8d718b16e3c313b8f1655162f9b80e3e8097d6f95866",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ing on a load."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6524a91e-4503-4b34-8856-0a9595b80bce",
+      "duration_api_ms": 16030,
+      "cost_usd_list": 0.05075375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1931,
+      "output_tokens": 218
+     },
+     "lines": [
+      {
+       "draft": "ing on a load.",
+       "reread": "ing on a load.",
+       "status": "agreed",
+       "text": "ing on a load."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1084,
+    "y": 2607,
+    "width": 865,
+    "height": 659
+   },
+   "draft_lines": [
+    "אֶכֶף m. a load, burden; hence me-",
+    "taph. weight, dignity, authority, like",
+    "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבָּד and",
+    "my dignity shall not weigh heavy upon",
+    "thee. So Chald. Syr. But Sept. ἡ χείρ",
+    "μου, and so Kimchi, regarding אֶכֶף i. q.",
+    "כַּף in the similar passage Job 13, 21.",
+    "The former sense is to be preferred.",
+    "* אָכַר a root not in use, i. q. Arab.",
+    "أَكَرَ Conj. V, to dig, espec. the earth;"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1084,
+      "y": 2615,
+      "width": 865,
+      "height": 184
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r03-b00-865x184+1084+2615-x2.png",
+     "image_sha256": "a950dbb34e95c67c7e89b1197be465521adcfe5663c43b0ad9dc8b5c0e9cd750",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶכֶף m. a load, burden; hence me-",
+       "taph. weight, dignity, authority, like",
+       "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבַּד and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "60a0cf93-6295-41d1-81ee-09dd9349e214",
+      "duration_api_ms": 17134,
+      "cost_usd_list": 0.08232375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2427,
+      "output_tokens": 651
+     },
+     "lines": [
+      {
+       "draft": "אֶכֶף m. a load, burden; hence me-",
+       "reread": "אֶכֶף m. a load, burden; hence me-",
+       "status": "agreed",
+       "text": "אֶכֶף m. a load, burden; hence me-"
+      },
+      {
+       "draft": "taph. weight, dignity, authority, like",
+       "reread": "taph. weight, dignity, authority, like",
+       "status": "agreed",
+       "text": "taph. weight, dignity, authority, like"
+      },
+      {
+       "draft": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבָּד and",
+       "reread": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבַּד and",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבָּד and",
+        "verdict": "a",
+        "note": "The vowel under the dageshed bet of the last Hebrew word is a qamets (horizontal with a descending tick), not a pathach; this matches the Masoretic reading יִכְבָּד in Job 33:7. All other points agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "92b9c906-d26e-4b98-bde3-02ddff3b86b3",
+        "duration_api_ms": 15780,
+        "cost_usd_list": 0.081007,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3628,
+        "cache_creation_input_tokens": 2408,
+        "output_tokens": 632
+       },
+       "text": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבָּד and"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1084,
+      "y": 2783,
+      "width": 865,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r03-b01-865x228+1084+2783-x2.png",
+     "image_sha256": "599947baca2c03c39b6601301825388188c68fa93156ce5382d818528b0d28f8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "my dignity shall not weigh heavy upon",
+       "thee. So Chald. Syr. But Sept. ἡ χείρ",
+       "μου, and so Kimchi, regarding אֶכֶף i. q.",
+       "כַּף in the similar passage Job 13, 21."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "54e02822-1344-4bfb-b79a-7de262d7bf34",
+      "duration_api_ms": 16566,
+      "cost_usd_list": 0.08449375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 620
+     },
+     "lines": [
+      {
+       "draft": "my dignity shall not weigh heavy upon",
+       "reread": "my dignity shall not weigh heavy upon",
+       "status": "agreed",
+       "text": "my dignity shall not weigh heavy upon"
+      },
+      {
+       "draft": "thee. So Chald. Syr. But Sept. ἡ χείρ",
+       "reread": "thee. So Chald. Syr. But Sept. ἡ χείρ",
+       "status": "agreed",
+       "text": "thee. So Chald. Syr. But Sept. ἡ χείρ"
+      },
+      {
+       "draft": "μου, and so Kimchi, regarding אֶכֶף i. q.",
+       "reread": "μου, and so Kimchi, regarding אֶכֶף i. q.",
+       "status": "agreed",
+       "text": "μου, and so Kimchi, regarding אֶכֶף i. q."
+      },
+      {
+       "draft": "כַּף in the similar passage Job 13, 21.",
+       "reread": "כַּף in the similar passage Job 13, 21.",
+       "status": "agreed",
+       "text": "כַּף in the similar passage Job 13, 21."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1084,
+      "y": 2995,
+      "width": 865,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0064/pass2/c1-r03-b02-865x273+1084+2995-x2.png",
+     "image_sha256": "7291f833b0a293cfd7371185773e29e5f8051473e48b2d2edbf4037b254a3af0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "The former sense is to be preferred.",
+       "* אָבַר a root not in use, i. q. Arab.",
+       "تَأَكَّرَ Conj. V, to dig, espec. the earth;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2664a887-d339-43d2-9c13-74f2ea9f98b4",
+      "duration_api_ms": 12158,
+      "cost_usd_list": 0.07301375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 316
+     },
+     "lines": [
+      {
+       "draft": "The former sense is to be preferred.",
+       "reread": "The former sense is to be preferred.",
+       "status": "agreed",
+       "text": "The former sense is to be preferred."
+      },
+      {
+       "draft": "* אָכַר a root not in use, i. q. Arab.",
+       "reread": "* אָבַר a root not in use, i. q. Arab.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "* אָכַר a root not in use, i. q. Arab.",
+        "verdict": "a",
+        "note": "Second letter is a kaf: its base is flush with the top stroke with no rightward heel protruding past the body as a bet would have; this agrees with the following Arabic cognate أكر (kaf) and the entry’s sense “to dig” (אִכָּר husbandman).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d7d23ac2-f71a-4a57-8e66-099caf9cc3d2",
+        "duration_api_ms": 26873,
+        "cost_usd_list": 0.1397225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2722,
+        "output_tokens": 1681
+       },
+       "text": "* אָכַר a root not in use, i. q. Arab."
+      },
+      {
+       "draft": "أَكَرَ Conj. V, to dig, espec. the earth;",
+       "reread": "تَأَكَّرَ Conj. V, to dig, espec. the earth;",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "أَكَرَ Conj. V, to dig, espec. the earth;",
+        "verdict": "a",
+        "note": "The printed Arabic has only three letters — alif (with hamza and fatha), kaf, ra — with simple fathas above; there is no initial tāʾ and no shadda on the kāf, so Reading B's تَأَكَّرَ is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "adaa1346-9752-43c4-9e75-5bab142aa35d",
+        "duration_api_ms": 16824,
+        "cost_usd_list": 0.07954525,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3581,
+        "cache_creation_input_tokens": 2733,
+        "output_tokens": 473
+       },
+       "text": "أَكَرَ Conj. V, to dig, espec. the earth;"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אבל 48 אבר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of inanimate things, e. g. fire, Num. 16,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "35. 21, 28. 26, 10. Job 1, 16. al. With בְּ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Zech. 11, 1; comp. ignis edax, Virg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Æn. 2. 758; πάντας πῦρ ἐσθίει Il. 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "182. Also of the sword, 2 Sam. 2, 26.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "18, 8. Deut. 32, 42; of famine and pesti-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "lence Ez. 7, 15; of deadly disease Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "18, 13; of the wrath of God Ex. 15, 7;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of a curse Is. 24, 6; of heat and cold",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Gen. 31, 40; of ardent zeal Ps. 69, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. i. q. to enjoy any thing, e. g. good,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "good-fortune, c. בְּ Job 21, 25; the fruits",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of good or bad actions, sensual pleasures,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Prov. 30, 20; comp. 9, 17. So Lat. vesci",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "voluptatibus Cic. Fin. 5. 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4. Perh. to taste, to have the sense of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "taste, Deut. 4, 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "5. to eat off, i. e. to take from, to di-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "minish. Ez. 42, 5 the upper chambers",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "were shorter, כִּי יוֹכְלוּ אַתִּיקִים מֵהֵנָה for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the galleries took away from them, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "occupied part of the space.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Niph. נֶאֱכַל, fut. יֵאָכֵל, to be eaten, Ex.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "12, 46. 13, 3. 7; also of what may be eat-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "en, to be fit for food, Gen. 6, 21. Metaph.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to be devoured by fire, Zech. 9, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Piel אִכֵּל i. q. Kal, like Arab. أَكَّلَ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to eat up, to consume. Job 20, 26 תְּאָכְלֵהוּ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵשׁ a fire consumes him, for תְּאַכְּלֵהוּ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "The Dagesh forte extruded is com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pensated by the long vowel Kamets;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "though some Mss. read תְּאַכְּלֵהוּ. See",
+   "status": "adjudicated",
+   "draft": "though some Mss. read תְּאַכְּלֵהוּ. See",
+   "reread": "though some Mss. read תְּאַכְלֵהוּ. See",
+   "verdict": "a",
+   "note": "The kaf is printed with a dagesh (dot visible inside the letter), as the context requires — the Mss. retain the Dagesh forte rather than compensating with Kamets — so תְּאַכְּלֵהוּ, not the defective-dagesh form in B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Lehrg. § 72. n. 2. p. 251.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Pual to be consumed, with fire Neh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2, 3. 13; by the sword Is. 1, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hiph. הֶאֱכִיל, fut. יַאֲכִיל, once 1 pers.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹכִיל Hos. 11, 4; inf. הָכִיל for הַאֲכִיל Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "21, 33; pr. to make eat up or consume,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "e. g. the sword Ez. 21, 33. Spec. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "give to eat, to feed with any thing, with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "two acc. of pers. and thing, Ex. 16, 32.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Num. 11, 18. Deut. 8, 16.. Is. 49, 26;",
+   "status": "adjudicated",
+   "draft": "Num. 11, 18. Deut. 8, 16.. Is. 49, 26 ;",
+   "reread": "Num. 11, 18. Deut. 8, 16. Is. 49, 26 ;",
+   "verdict": "a",
+   "note": "Two separate dots are actually printed after \"16\" before \"Is.\" (a typographical doubled period), so Reading A matches the print; B silently normalises it to one.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "with מִן of food, Ps. 81, 17.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Deriv. the four following, and אֲכִילָה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "מַאֲכָל, מַאֲכֶלֶת, מַאֲכֹלֶת, מַכֹּלֶת.",
+   "status": "adjudicated",
+   "draft": "מַכֹּלֶת, מַאֲכֹלֶת, מַאֲכָל .",
+   "reread": "מַכֹּלֶת, מַאֲכֹלֶת, מַאֲכֶלֶת, מַאֲכָל.",
+   "verdict": "neither",
+   "note": "Four items are printed (A drops מַאֲכֶלֶת, the segol-form), but B lists them in reversed order: in print, left to right, the sequence is מַאֲכָל, מַאֲכֶלֶת, מַאֲכֹלֶת, מַכֹּלֶת, with the full stop at the far right after מַכֹּלֶת (dagesh in kaf confirmed).",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲכַל Chald. fut. יֵאכֻל, i. q. Heb. to eat,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to devour. אֲכַל קַרְצוֹהִי דִּי pr. to eat the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pieces of any one, to eat him up piece-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "meal, metaph. for to slander, to accuse",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "falsely, to inform against, Dan. 3, 8. 6,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "25. So in Targg. אֲכַל קוּרְצִין for Heb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "הָלַךְ רָכִיל, רָגַל. Syr. ܐܶܟܰܠ ܩܰܪ̈ܨܶܐ for Gr.",
+   "status": "adjudicated",
+   "draft": "הָלַךְ רָכִיל, רָגַל. Syr. ܐܶܟܰܠ ܩܰܪ̈ܨܶܐ for Gr.",
+   "reread": "רָגַל, הָלַךְ רָכִיל. Syr. ܐܶܟܰܠ ܩܰܪܨܶܐ for Gr.",
+   "verdict": "a",
+   "note": "Visually the line runs left→right: רָגַל , הָלַךְ רָכִיל . — so the Hebrew run in logical (RTL) order begins with הָלַךְ רָכִיל, then the comma, then רָגַל, as in Reading A; Reading B inverted the item order. The Syriac second word carries a two-dot seyame over rish (plural, matching Targ. קוּרְצִין), which B omitted. Vowel points as in A.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "διαβάλλω Luke 16, 1; whence part. ܐܳܟܶܠ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ܩܰܪܨܳܐ diabolus, Arab. أَكَلَ لحم فلان id.",
+   "status": "adjudicated",
+   "draft": "مُنْزِا diabolus, Arab. أَكَلَ لحم فلَان id.",
+   "reread": "ܩܰܪܨܳܐ diabolus, Arab. أَكَلَ لحم فلان id.",
+   "verdict": "b",
+   "note": "The first word is Syriac Serto ܩܪܨܐ (qarṣā, completing ܐܟܠ ܩܪܨܐ \"diabolus\" from the previous line), with a pthaha printed over qoph and a zqapha over the end; Reading A misread the Serto letters as Arabic مُنْزِا. In the Arabic phrase, فلان carries no fatha on the lam.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "See also in Chald. קְרַץ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֹכֶל m. c. suff. אָכְלוֹ 1. an eating,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "devouring, i. e. act of eating, Ex. 12, 4",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אִישׁ לְפִי אָכְלוֹ every one according to his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "eating. 16, 16. 18. 21. Job 20, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. food, spec. a) grain, fruits, pro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "duce, provision, Gen. 14, 11. 41, 35 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "42, 7 sq. 43, 2 sq. 44, 1. b) prey, meat,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of wild animals, Job 9, 26. 39, 3. 32. [38,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "41. 39, 29.]",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֻכָל or אֻכָּל pr. n. m. Ucal, Prov. 30, 1;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "see in אִיתִיאֵל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אָכְלָה f. (r. אָכַל) food, Gen. 1, 29. 6,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "21; so of the meat or prey of animals",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Jer. 12, 9; food i. e. fuel of fire Ez. 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4. 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אָכֵן adv. pr. inf. absol. Hiph. from r.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "כּוּן, for הָכֵן, הָכִין; firmly, Josh. 3, 17.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4, 3. Chald. הָכִין, הָכֵי. Others, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "כֵּן with א prosthetic.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1. Strongly affirming, surely! truly!",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of a certain truth! Gen. 28, 16. Ex. 2,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "14. Jer. 8, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. Adversat. but, yet, Ps. 31, 23. Is. 49,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4. 53, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָכַף 1. to load up a beast of bur-",
+   "status": "adjudicated",
+   "draft": "* אָכַף 1. to load up a beast of bur-",
+   "reread": "* אָבַךְ 1. to load up a beast of bur-",
+   "verdict": "a",
+   "note": "The final letter is final pe (ף), not final kaf with sheva (ךְ): there is no sheva beneath it, and the shape has the inward-curling pe stroke. The middle letter is a rounded kaf (no bet heel), matching the root אכף confirmed by the kindred כָּפַף and Arabic أكف on the following lines. Reading A is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "den, pr. prob. to bend, to make bow down",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "under a load, kindr. with כָּפַף q. v. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "أَكَّفَ II, to bind fast the pack-saddle;",
+   "status": "adjudicated",
+   "draft": "أَكَفَ II, to bind fast the pack-saddle ;",
+   "reread": "أَكَّفَ II, to bind fast the pack-saddle ;",
+   "verdict": "b",
+   "note": "The kāf carries a shadda (the ع-shaped mark) with fatḥa above it, as expected for a form II verb — Reading A omits the shadda.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "IV, to put on the pack-saddle. See de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "riv. אֶכֶף.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. to impel to labour, to urge on, like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Syr. ܐܶܟܰܦ. Once Prov. 16, 26 כִּי אָכַף",
+   "status": "adjudicated",
+   "draft": "Syr. ܐܶܟܰܦ. Once Prov. 16, 26 כִּי אָכַף",
+   "reread": "Syr. ܐܳܟ̇ܦ.  Once Prov. 16, 26 כִּי אָכַף",
+   "verdict": "a",
+   "note": "The Syriac word carries two Western vowel signs, one above the alaph (rbasa) and a second distinct sign above the kaph (pthaha), with no plain dot anywhere; Reading B's zqapha on alaph plus a bare dot over kaph does not match the two shaped vowel marks printed. The Hebrew אָכַף (qamets, patah) is identical in both and matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "עָלָיו פִּיהוּ for his mouth urges him on,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "i. e. his hunger drives him to labour.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "The construction with עַל is to be ex-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "plained from the primary signif. of lay-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ing on a load.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֶכֶף m. a load, burden; hence me-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "taph. weight, dignity, authority, like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבָּד and",
+   "status": "adjudicated",
+   "draft": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבָּד and",
+   "reread": "כָּבוֹד. Job 33, 7 וְאַכְפִּי עָלֶיךָ לֹא יִכְבַּד and",
+   "verdict": "a",
+   "note": "The vowel under the dageshed bet of the last Hebrew word is a qamets (horizontal with a descending tick), not a pathach; this matches the Masoretic reading יִכְבָּד in Job 33:7. All other points agree in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "my dignity shall not weigh heavy upon",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "thee. So Chald. Syr. But Sept. ἡ χείρ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "μου, and so Kimchi, regarding אֶכֶף i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "כַּף in the similar passage Job 13, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "The former sense is to be preferred.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אָכַר a root not in use, i. q. Arab.",
+   "status": "adjudicated",
+   "draft": "* אָכַר a root not in use, i. q. Arab.",
+   "reread": "* אָבַר a root not in use, i. q. Arab.",
+   "verdict": "a",
+   "note": "Second letter is a kaf: its base is flush with the top stroke with no rightward heel protruding past the body as a bet would have; this agrees with the following Arabic cognate أكر (kaf) and the entry’s sense “to dig” (אִכָּר husbandman).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "أَكَرَ Conj. V, to dig, espec. the earth;",
+   "status": "adjudicated",
+   "draft": "أَكَرَ Conj. V, to dig, espec. the earth;",
+   "reread": "تَأَكَّرَ Conj. V, to dig, espec. the earth;",
+   "verdict": "a",
+   "note": "The printed Arabic has only three letters — alif (with hamza and fatha), kaf, ra — with simple fathas above; there is no initial tāʾ and no shadda on the kāf, so Reading B's تَأَكَّرَ is not what is printed.",
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 92,
+  "adjudicated": 11,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 6
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.6054
+}

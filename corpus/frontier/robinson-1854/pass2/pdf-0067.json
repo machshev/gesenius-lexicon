@@ -1,0 +1,2605 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 67,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0067.png",
+ "raster_sha256": "7a5fb6c263c08bfeca9ba136fe9e9827e47b9eb53a4155f5c3fc57919793f501",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0067.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T18:13:12+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 92,
+    "y": 112,
+    "width": 1764,
+    "height": 67
+   },
+   "draft_lines": [
+    "אל",
+    "51",
+    "אל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 92,
+      "y": 110,
+      "width": 1764,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/header-b00-1764x71+92+110-x2.png",
+     "image_sha256": "d1dbd8fbc85eab3b945e8eb3ef74ab8a7c3e2075e7529ca11c4caac46a176bae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אל 51 אל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "acfa635b-0c00-4263-be7f-49f8053868ab",
+      "duration_api_ms": 7880,
+      "cost_usd_list": 0.046122500000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1807,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "אל 51 אל",
+       "reread": "אל 51 אל",
+       "status": "agreed",
+       "text": "אל 51 אל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 92,
+    "y": 159,
+    "width": 867,
+    "height": 963
+   },
+   "draft_lines": [
+    "place, but in common usage always",
+    "passing over into a preposition.",
+    "A) Prep. signifying in general to tend",
+    "or verge to or towards a place, whether",
+    "one reaches and so enters that place, or",
+    "not ; whether spoken of motion or direc-",
+    "tion of the body, or of the mind, thoughts,",
+    "attention, etc. i. q. to, into, towards ; Lat.",
+    "ad, versus, in ; Germ. zu, gen ; Greek",
+    "πρός, εἰς. It differs from לְ, which is",
+    "abridged from it, chiefly in being more",
+    "commonly used in the physical and pro-",
+    "per sense ; see under לְ.—Spec.",
+    "1. Of motion to a place, to, unto, to-",
+    "wards ; espec. with verbs of going, הָלַךְ,",
+    "בּוֹא, שׁוּב Gen. 8, 9, יָרַד 2 K. 1, 15, עָלָה"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 92,
+      "y": 151,
+      "width": 867,
+      "height": 298
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r00-b00-867x298+92+151-x2.png",
+     "image_sha256": "29a1d260b8a18815aeae2280e198249a64a0805a0c02bbb18bd67666c1ed6e06",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "place, but in common usage always",
+       "passing over into a preposition.",
+       "A) Prep. signifying in general to tend",
+       "or verge to or towards a place, whether"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d4b5757c-e389-4c95-b09c-2a30e11da831",
+      "duration_api_ms": 9598,
+      "cost_usd_list": 0.07256325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2919,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "place, but in common usage always",
+       "reread": "place, but in common usage always",
+       "status": "agreed",
+       "text": "place, but in common usage always"
+      },
+      {
+       "draft": "passing over into a preposition.",
+       "reread": "passing over into a preposition.",
+       "status": "agreed",
+       "text": "passing over into a preposition."
+      },
+      {
+       "draft": "A) Prep. signifying in general to tend",
+       "reread": "A) Prep. signifying in general to tend",
+       "status": "agreed",
+       "text": "A) Prep. signifying in general to tend"
+      },
+      {
+       "draft": "or verge to or towards a place, whether",
+       "reread": "or verge to or towards a place, whether",
+       "status": "agreed",
+       "text": "or verge to or towards a place, whether"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 92,
+      "y": 433,
+      "width": 867,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r00-b01-867x239+92+433-x2.png",
+     "image_sha256": "305b98b4b4f1b36e3341971b1fb187fa39cae08fad6758fc342ae4429d6586c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "one reaches and so enters that place, or",
+       "not ; whether spoken of motion or direc-",
+       "tion of the body, or of the mind, thoughts,",
+       "attention, etc. i. q. to, into, towards ; Lat."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cb61620b-1512-44d0-a1b9-efead0de4836",
+      "duration_api_ms": 13814,
+      "cost_usd_list": 0.06705325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 248
+     },
+     "lines": [
+      {
+       "draft": "one reaches and so enters that place, or",
+       "reread": "one reaches and so enters that place, or",
+       "status": "agreed",
+       "text": "one reaches and so enters that place, or"
+      },
+      {
+       "draft": "not ; whether spoken of motion or direc-",
+       "reread": "not ; whether spoken of motion or direc-",
+       "status": "agreed",
+       "text": "not; whether spoken of motion or direc-"
+      },
+      {
+       "draft": "tion of the body, or of the mind, thoughts,",
+       "reread": "tion of the body, or of the mind, thoughts,",
+       "status": "agreed",
+       "text": "tion of the body, or of the mind, thoughts,"
+      },
+      {
+       "draft": "attention, etc. i. q. to, into, towards ; Lat.",
+       "reread": "attention, etc. i. q. to, into, towards ; Lat.",
+       "status": "agreed",
+       "text": "attention, etc. i. q. to, into, towards; Lat."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 92,
+      "y": 656,
+      "width": 867,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r00-b02-867x240+92+656-x2.png",
+     "image_sha256": "c4bb853f41b47ffe3b6aed832b122fd4efd6f9154e9c6f7cff10ac148cb5a268",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ad, versus, in; Germ. zu, gen; Greek",
+       "πρός, εἰς. It differs from לְ, which is",
+       "abridged from it, chiefly in being more",
+       "commonly used in the physical and pro-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8ebd3c17-faaa-458a-8ad0-c7d9e228ba07",
+      "duration_api_ms": 12598,
+      "cost_usd_list": 0.06985325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 304
+     },
+     "lines": [
+      {
+       "draft": "ad, versus, in ; Germ. zu, gen ; Greek",
+       "reread": "ad, versus, in; Germ. zu, gen; Greek",
+       "status": "agreed",
+       "text": "ad, versus, in; Germ. zu, gen; Greek"
+      },
+      {
+       "draft": "πρός, εἰς. It differs from לְ, which is",
+       "reread": "πρός, εἰς. It differs from לְ, which is",
+       "status": "agreed",
+       "text": "πρός, εἰς. It differs from לְ, which is"
+      },
+      {
+       "draft": "abridged from it, chiefly in being more",
+       "reread": "abridged from it, chiefly in being more",
+       "status": "agreed",
+       "text": "abridged from it, chiefly in being more"
+      },
+      {
+       "draft": "commonly used in the physical and pro-",
+       "reread": "commonly used in the physical and pro-",
+       "status": "agreed",
+       "text": "commonly used in the physical and pro-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 92,
+      "y": 880,
+      "width": 867,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r00-b03-867x250+92+880-x2.png",
+     "image_sha256": "79d283ea1d870fa571603097297f9b36901ea641e93b11ff4f79039d6b904219",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "per sense ; see under לְ.—Spec.",
+       "1. Of motion to a place, to, unto, to-",
+       "wards ; espec. with verbs of going, הָלַךְ,",
+       "בּוֹא, שׁוּב Gen. 8, 9, יָרַד 2 K. 1, 15, עָלָה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5d1fea70-0222-431e-97f4-7f1f1402ac83",
+      "duration_api_ms": 15721,
+      "cost_usd_list": 0.08545325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 616
+     },
+     "lines": [
+      {
+       "draft": "per sense ; see under לְ.—Spec.",
+       "reread": "per sense ; see under לְ.—Spec.",
+       "status": "agreed",
+       "text": "per sense; see under לְ.—Spec."
+      },
+      {
+       "draft": "1. Of motion to a place, to, unto, to-",
+       "reread": "1. Of motion to a place, to, unto, to-",
+       "status": "agreed",
+       "text": "1. Of motion to a place, to, unto, to-"
+      },
+      {
+       "draft": "wards ; espec. with verbs of going, הָלַךְ,",
+       "reread": "wards ; espec. with verbs of going, הָלַךְ,",
+       "status": "agreed",
+       "text": "wards; espec. with verbs of going, הָלַךְ,"
+      },
+      {
+       "draft": "בּוֹא, שׁוּב Gen. 8, 9, יָרַד 2 K. 1, 15, עָלָה",
+       "reread": "בּוֹא, שׁוּב Gen. 8, 9, יָרַד 2 K. 1, 15, עָלָה",
+       "status": "agreed",
+       "text": "בּוֹא, שׁוּב Gen. 8, 9, יָרַד 2 K. 1, 15, עָלָה"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 92,
+    "y": 1110,
+    "width": 867,
+    "height": 843
+   },
+   "draft_lines": [
+    "Deut. 17, 8, רוּץ Gen. 24, 29, קָרַב Ex. 14,",
+    "20 ; of placing, casting, 1 Sam. 6, 11. Lev.",
+    "1, 16. Is. 5, 14 ; also of giving, delivering",
+    "over, Ex. 25, 16. 21 ; of selling, Joel 4, 8 ;",
+    "and with other like verbs, where the Lat.",
+    "and Germ. use the dative, the French",
+    "and Engl. à, to. Sometimes in construc-",
+    "tio prægnans, as זָנָה אֶל to commit whore-",
+    "dom (by going in) unto, Num. 25, 1. Ez.",
+    "16, 29 ; דָּרַשׁ אֶל to seek an oracle (in",
+    "turning) unto any one Is. 8, 19. Opp. is",
+    "מִן, as מִן־הַקָּצֶה אֶל־הַקָּצֶה from end to",
+    "end Ex. 26, 28 ; מִפֶּה אֶל־פֶּה Ezra 9, 11.",
+    "Of time, מִיּוֹם אֶל־יוֹם from day to day,",
+    "Num. 30, 15. 1 Chr. 9, 25."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 92,
+      "y": 1102,
+      "width": 867,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r01-b00-867x239+92+1102-x2.png",
+     "image_sha256": "9aa04123467ef74e24694c3862e93ca138b7d2d19c0089f7de76e02001d105f6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Deut. 17, 8, רוּץ Gen. 24, 29, קָרַב Ex. 14,",
+       "20; of placing, casting, 1 Sam. 6, 11. Lev.",
+       "1, 16. Is. 5, 14; also of giving, delivering",
+       "over, Ex. 25, 16. 21; of selling, Joel 4, 8;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2acc4727-c531-499c-b49a-0c45a05c7c98",
+      "duration_api_ms": 12547,
+      "cost_usd_list": 0.0796935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 500
+     },
+     "lines": [
+      {
+       "draft": "Deut. 17, 8, רוּץ Gen. 24, 29, קָרַב Ex. 14,",
+       "reread": "Deut. 17, 8, רוּץ Gen. 24, 29, קָרַב Ex. 14,",
+       "status": "agreed",
+       "text": "Deut. 17, 8, רוּץ Gen. 24, 29, קָרַב Ex. 14,"
+      },
+      {
+       "draft": "20 ; of placing, casting, 1 Sam. 6, 11. Lev.",
+       "reread": "20; of placing, casting, 1 Sam. 6, 11. Lev.",
+       "status": "agreed",
+       "text": "20; of placing, casting, 1 Sam. 6, 11. Lev."
+      },
+      {
+       "draft": "1, 16. Is. 5, 14 ; also of giving, delivering",
+       "reread": "1, 16. Is. 5, 14; also of giving, delivering",
+       "status": "agreed",
+       "text": "1, 16. Is. 5, 14; also of giving, delivering"
+      },
+      {
+       "draft": "over, Ex. 25, 16. 21 ; of selling, Joel 4, 8 ;",
+       "reread": "over, Ex. 25, 16. 21; of selling, Joel 4, 8;",
+       "status": "agreed",
+       "text": "over, Ex. 25, 16. 21; of selling, Joel 4, 8;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 92,
+      "y": 1325,
+      "width": 867,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r01-b01-867x242+92+1325-x2.png",
+     "image_sha256": "4ab88ef49c619f1f03d5f1fb39dfde474df5e9df6381fb5119c7e02b0e1ba03d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and with other like verbs, where the Lat.",
+       "and Germ. use the dative, the French",
+       "and Engl. à, to. Sometimes in construc-",
+       "tio prægnans, as זָנָה אֶל to commit whore-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cead5052-c1b7-47f5-a521-f131fe83b315",
+      "duration_api_ms": 13648,
+      "cost_usd_list": 0.0715935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 338
+     },
+     "lines": [
+      {
+       "draft": "and with other like verbs, where the Lat.",
+       "reread": "and with other like verbs, where the Lat.",
+       "status": "agreed",
+       "text": "and with other like verbs, where the Lat."
+      },
+      {
+       "draft": "and Germ. use the dative, the French",
+       "reread": "and Germ. use the dative, the French",
+       "status": "agreed",
+       "text": "and Germ. use the dative, the French"
+      },
+      {
+       "draft": "and Engl. à, to. Sometimes in construc-",
+       "reread": "and Engl. à, to. Sometimes in construc-",
+       "status": "agreed",
+       "text": "and Engl. à, to. Sometimes in construc-"
+      },
+      {
+       "draft": "tio prægnans, as זָנָה אֶל to commit whore-",
+       "reread": "tio prægnans, as זָנָה אֶל to commit whore-",
+       "status": "agreed",
+       "text": "tio prægnans, as זָנָה אֶל to commit whore-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 92,
+      "y": 1551,
+      "width": 867,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r01-b02-867x237+92+1551-x2.png",
+     "image_sha256": "65322c09f13ec2336c7240dc18b004a605fdce1ab9f09e6d116b652db1b0dfa1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "dom (by going in) unto, Num. 25, 1. Ez.",
+       "16, 29; דָּרַשׁ אֶל to seek an oracle (in",
+       "turning) unto any one Is. 8, 19. Opp. is",
+       "מִן, as מִן־הַקָּצֶה אֶל־הַקָּצֶה from end to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a487ad66-352d-4885-9e8c-af9771bca31d",
+      "duration_api_ms": 5906,
+      "cost_usd_list": 0.0679535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 290
+     },
+     "lines": [
+      {
+       "draft": "dom (by going in) unto, Num. 25, 1. Ez.",
+       "reread": "dom (by going in) unto, Num. 25, 1. Ez.",
+       "status": "agreed",
+       "text": "dom (by going in) unto, Num. 25, 1. Ez."
+      },
+      {
+       "draft": "16, 29 ; דָּרַשׁ אֶל to seek an oracle (in",
+       "reread": "16, 29; דָּרַשׁ אֶל to seek an oracle (in",
+       "status": "agreed",
+       "text": "16, 29; דָּרַשׁ אֶל to seek an oracle (in"
+      },
+      {
+       "draft": "turning) unto any one Is. 8, 19. Opp. is",
+       "reread": "turning) unto any one Is. 8, 19. Opp. is",
+       "status": "agreed",
+       "text": "turning) unto any one Is. 8, 19. Opp. is"
+      },
+      {
+       "draft": "מִן, as מִן־הַקָּצֶה אֶל־הַקָּצֶה from end to",
+       "reread": "מִן, as מִן־הַקָּצֶה אֶל־הַקָּצֶה from end to",
+       "status": "agreed",
+       "text": "מִן, as מִן־הַקָּצֶה אֶל־הַקָּצֶה from end to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 92,
+      "y": 1772,
+      "width": 867,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r01-b03-867x189+92+1772-x2.png",
+     "image_sha256": "df8bcfa3bb6211dad2159d21f594129cff43f9a786a1ca71c91c6dac9499b1a4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "end Ex. 26, 28; מִפֶּה אֶל־פֶּה Ezra 9, 11.",
+       "Of time, מִיּוֹם אֶל־יוֹם from day to day,",
+       "Num. 30, 15. 1 Chr. 9, 25."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2a19965b-0ea4-42bd-b8ac-71947131f5f2",
+      "duration_api_ms": 14524,
+      "cost_usd_list": 0.0730335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 466
+     },
+     "lines": [
+      {
+       "draft": "end Ex. 26, 28 ; מִפֶּה אֶל־פֶּה Ezra 9, 11.",
+       "reread": "end Ex. 26, 28; מִפֶּה אֶל־פֶּה Ezra 9, 11.",
+       "status": "agreed",
+       "text": "end Ex. 26, 28; מִפֶּה אֶל־פֶּה Ezra 9, 11."
+      },
+      {
+       "draft": "Of time, מִיּוֹם אֶל־יוֹם from day to day,",
+       "reread": "Of time, מִיּוֹם אֶל־יוֹם from day to day,",
+       "status": "agreed",
+       "text": "Of time, מִיּוֹם אֶל־יוֹם from day to day,"
+      },
+      {
+       "draft": "Num. 30, 15. 1 Chr. 9, 25.",
+       "reread": "Num. 30, 15. 1 Chr. 9, 25.",
+       "status": "agreed",
+       "text": "Num. 30, 15. 1 Chr. 9, 25."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 92,
+    "y": 1941,
+    "width": 867,
+    "height": 954
+   },
+   "draft_lines": [
+    "2. Of a turning or direction to or to-",
+    "wards any thing, e. g. a) Of the body,",
+    "as after verbs of turning, Is. 38, 2; of",
+    "looking, beholding, Gen. 4, 4. 5. Ex. 3, 6;",
+    "of speaking, 19, 9; of commanding,",
+    "Num. 36, 13. b) Of the mind, as after",
+    "verbs of desiring, Lam. 4, 17; of expect-",
+    "ing, Hos. 12, 7; of accustoming oneself,",
+    "Jer. 10, 2.",
+    "3. Where the motion or direction is",
+    "hostile, against, contra, like εἰς, πρός,",
+    "oftener ἐπί. Gen. 4, 8 וַיָּקָם קַיִן אֶל־הֶבֶל",
+    "אָחִיו and Cain rose up against Abel his",
+    "brother. Is. 3, 8 לְשׁוֹנָם וּמַעַלְלֵיהֶם אֶל יי׳",
+    "their tongue and their doings were",
+    "against Jehovah. 2, 4. Josh. 10, 6. Judg.",
+    "12, 3. 20, 30. Hence after a verb of con-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 92,
+      "y": 1933,
+      "width": 867,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r02-b00-867x241+92+1933-x2.png",
+     "image_sha256": "e5a9c215174c5e9f28d099209d01890f7266e54ac8a90812b883a87ea640ecfa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Of a turning or direction to or to-",
+       "wards any thing, e. g. a) Of the body,",
+       "as after verbs of turning, Is. 38, 2; of",
+       "looking, beholding, Gen. 4, 4. 5. Ex. 3, 6;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "70e8852b-84b2-4b18-be7f-97a53c027e7e",
+      "duration_api_ms": 8535,
+      "cost_usd_list": 0.0678935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "2. Of a turning or direction to or to-",
+       "reread": "2. Of a turning or direction to or to-",
+       "status": "agreed",
+       "text": "2. Of a turning or direction to or to-"
+      },
+      {
+       "draft": "wards any thing, e. g. a) Of the body,",
+       "reread": "wards any thing, e. g. a) Of the body,",
+       "status": "agreed",
+       "text": "wards any thing, e. g. a) Of the body,"
+      },
+      {
+       "draft": "as after verbs of turning, Is. 38, 2; of",
+       "reread": "as after verbs of turning, Is. 38, 2; of",
+       "status": "agreed",
+       "text": "as after verbs of turning, Is. 38, 2; of"
+      },
+      {
+       "draft": "looking, beholding, Gen. 4, 4. 5. Ex. 3, 6;",
+       "reread": "looking, beholding, Gen. 4, 4. 5. Ex. 3, 6;",
+       "status": "agreed",
+       "text": "looking, beholding, Gen. 4, 4. 5. Ex. 3, 6;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 92,
+      "y": 2158,
+      "width": 867,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r02-b01-867x238+92+2158-x2.png",
+     "image_sha256": "4c509ca6e09844f0daf37c9a0c43f8644eabaa4326ba3887feabeeae96b0b0ae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of speaking, 19, 9; of commanding,",
+       "Num. 36, 13. b) Of the mind, as after",
+       "verbs of desiring, Lam. 4, 17; of expect-",
+       "ing, Hos. 12, 7; of accustoming oneself,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1c0bbee3-e593-4c8c-bc0f-05653dac034c",
+      "duration_api_ms": 8303,
+      "cost_usd_list": 0.0666035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "of speaking, 19, 9; of commanding,",
+       "reread": "of speaking, 19, 9; of commanding,",
+       "status": "agreed",
+       "text": "of speaking, 19, 9; of commanding,"
+      },
+      {
+       "draft": "Num. 36, 13. b) Of the mind, as after",
+       "reread": "Num. 36, 13. b) Of the mind, as after",
+       "status": "agreed",
+       "text": "Num. 36, 13. b) Of the mind, as after"
+      },
+      {
+       "draft": "verbs of desiring, Lam. 4, 17; of expect-",
+       "reread": "verbs of desiring, Lam. 4, 17; of expect-",
+       "status": "agreed",
+       "text": "verbs of desiring, Lam. 4, 17; of expect-"
+      },
+      {
+       "draft": "ing, Hos. 12, 7; of accustoming oneself,",
+       "reread": "ing, Hos. 12, 7; of accustoming oneself,",
+       "status": "agreed",
+       "text": "ing, Hos. 12, 7; of accustoming oneself,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 92,
+      "y": 2380,
+      "width": 867,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r02-b02-867x242+92+2380-x2.png",
+     "image_sha256": "c5a141dfacda7afd31b7e0515d0ddc23eb5da45bf4551fc1fc5a6ccbfd50cfed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Jer. 10, 2.",
+       "3. Where the motion or direction is",
+       "hostile, against, contra, like εἰς, πρός,",
+       "oftener ἐπί. Gen. 4, 8 וַיָּקָם קַיִן אֶל־הֶבֶל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dbee3369-50c6-4d55-ac8d-f682f586bf1f",
+      "duration_api_ms": 9627,
+      "cost_usd_list": 0.0680935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "Jer. 10, 2.",
+       "reread": "Jer. 10, 2.",
+       "status": "agreed",
+       "text": "Jer. 10, 2."
+      },
+      {
+       "draft": "3. Where the motion or direction is",
+       "reread": "3. Where the motion or direction is",
+       "status": "agreed",
+       "text": "3. Where the motion or direction is"
+      },
+      {
+       "draft": "hostile, against, contra, like εἰς, πρός,",
+       "reread": "hostile, against, contra, like εἰς, πρός,",
+       "status": "agreed",
+       "text": "hostile, against, contra, like εἰς, πρός,"
+      },
+      {
+       "draft": "oftener ἐπί. Gen. 4, 8 וַיָּקָם קַיִן אֶל־הֶבֶל",
+       "reread": "oftener ἐπί. Gen. 4, 8 וַיָּקָם קַיִן אֶל־הֶבֶל",
+       "status": "agreed",
+       "text": "oftener ἐπί. Gen. 4, 8 וַיָּקָם קַיִן אֶל־הֶבֶל"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 92,
+      "y": 2606,
+      "width": 867,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r02-b03-867x233+92+2606-x2.png",
+     "image_sha256": "ea2130cf854240eb303bb0fe7afe4acfd33d245860499b43141b40ac3daf3612",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָחִיו and Cain rose up against Abel his",
+       "brother. Is. 3, 8 לְשׁוֹנָם וּמַעַלְלֵיהֶם אֶל יי׳",
+       "their tongue and their doings were",
+       "against Jehovah. 2, 4. Josh. 10, 6. Judg."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "929c2aeb-b06f-40a5-aa47-fddb40c09ff6",
+      "duration_api_ms": 16113,
+      "cost_usd_list": 0.08520349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 635
+     },
+     "lines": [
+      {
+       "draft": "אָחִיו and Cain rose up against Abel his",
+       "reread": "אָחִיו and Cain rose up against Abel his",
+       "status": "agreed",
+       "text": "אָחִיו and Cain rose up against Abel his"
+      },
+      {
+       "draft": "brother. Is. 3, 8 לְשׁוֹנָם וּמַעַלְלֵיהֶם אֶל יי׳",
+       "reread": "brother. Is. 3, 8 לְשׁוֹנָם וּמַעַלְלֵיהֶם אֶל יי׳",
+       "status": "agreed",
+       "text": "brother. Is. 3, 8 לְשׁוֹנָם וּמַעַלְלֵיהֶם אֶל יי׳"
+      },
+      {
+       "draft": "their tongue and their doings were",
+       "reread": "their tongue and their doings were",
+       "status": "agreed",
+       "text": "their tongue and their doings were"
+      },
+      {
+       "draft": "against Jehovah. 2, 4. Josh. 10, 6. Judg.",
+       "reread": "against Jehovah. 2, 4. Josh. 10, 6. Judg.",
+       "status": "agreed",
+       "text": "against Jehovah. 2, 4. Josh. 10, 6. Judg."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b04",
+     "bounds": {
+      "x": 92,
+      "y": 2823,
+      "width": 867,
+      "height": 80
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r02-b04-867x80+92+2823-x2.png",
+     "image_sha256": "4611ea0a8d81876783e384c9b9e3f0bc0090c5eb0126cf49ff8420cd2d31ceca",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "12, 3. 20, 30. Hence after a verb of con-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f3dc36ad-93b5-4f06-a8e0-782a9e77fd2b",
+      "duration_api_ms": 7901,
+      "cost_usd_list": 0.049763499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1929,
+      "output_tokens": 199
+     },
+     "lines": [
+      {
+       "draft": "12, 3. 20, 30. Hence after a verb of con-",
+       "reread": "12, 3. 20, 30. Hence after a verb of con-",
+       "status": "agreed",
+       "text": "12, 3. 20, 30. Hence after a verb of con-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 92,
+    "y": 2883,
+    "width": 867,
+    "height": 399
+   },
+   "draft_lines": [
+    "tending, fighting, Hos. 12, 5. Espec. be-",
+    "longs here the phrase הִנְנִי אֲלֵיכֶם lo ! I",
+    "am against you, (Targ. ecce mitto iram",
+    "meam contra vos,) Ez. 13, 8. 21, 8. 34, 10.",
+    "Jer. 50, 31. 51, 25. Nah. 2, 14; which also",
+    "very rarely is taken in the opp. sense,",
+    "lo ! I am for you, Ez. 36, 9.—So too אֶל"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 92,
+      "y": 2886,
+      "width": 867,
+      "height": 219
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r03-b00-867x219+92+2886-x2.png",
+     "image_sha256": "86332f8b121cb9a45bcd8155d73a433ad6cda8c44705a08a6c9c7f47ec7b6b72",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tending, fighting, Hos. 12, 5. Espec. be-",
+       "longs here the phrase הִנְנִי אֲלֵיכֶם lo ! I",
+       "am against you, (Targ. ecce mitto iram",
+       "meam contra vos,) Ez. 13, 8. 21, 8. 34, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7775d8f6-5033-4ea2-8060-239a37062b6f",
+      "duration_api_ms": 11390,
+      "cost_usd_list": 0.0715635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2549,
+      "output_tokens": 387
+     },
+     "lines": [
+      {
+       "draft": "tending, fighting, Hos. 12, 5. Espec. be-",
+       "reread": "tending, fighting, Hos. 12, 5. Espec. be-",
+       "status": "agreed",
+       "text": "tending, fighting, Hos. 12, 5. Espec. be-"
+      },
+      {
+       "draft": "longs here the phrase הִנְנִי אֲלֵיכֶם lo ! I",
+       "reread": "longs here the phrase הִנְנִי אֲלֵיכֶם lo ! I",
+       "status": "agreed",
+       "text": "longs here the phrase הִנְנִי אֲלֵיכֶם lo! I"
+      },
+      {
+       "draft": "am against you, (Targ. ecce mitto iram",
+       "reread": "am against you, (Targ. ecce mitto iram",
+       "status": "agreed",
+       "text": "am against you, (Targ. ecce mitto iram"
+      },
+      {
+       "draft": "meam contra vos,) Ez. 13, 8. 21, 8. 34, 10.",
+       "reread": "meam contra vos,) Ez. 13, 8. 21, 8. 34, 10.",
+       "status": "agreed",
+       "text": "meam contra vos,) Ez. 13, 8. 21, 8. 34, 10."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 92,
+      "y": 3089,
+      "width": 867,
+      "height": 195
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c0-r03-b01-867x195+92+3089-x2.png",
+     "image_sha256": "9b5ba81acf66646fa9d088143381c26e99f8c12290f42ccec237148caecc8a25",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Jer. 50, 31. 51, 25. Nah. 2, 14; which also",
+       "very rarely is taken in the opp. sense,",
+       "lo! I am for you, Ez. 36, 9.—So too אֶל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ea484eb3-d8d1-4024-8073-afa171e63bfe",
+      "duration_api_ms": 17474,
+      "cost_usd_list": 0.0622335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "Jer. 50, 31. 51, 25. Nah. 2, 14; which also",
+       "reread": "Jer. 50, 31. 51, 25. Nah. 2, 14; which also",
+       "status": "agreed",
+       "text": "Jer. 50, 31. 51, 25. Nah. 2, 14; which also"
+      },
+      {
+       "draft": "very rarely is taken in the opp. sense,",
+       "reread": "very rarely is taken in the opp. sense,",
+       "status": "agreed",
+       "text": "very rarely is taken in the opp. sense,"
+      },
+      {
+       "draft": "lo ! I am for you, Ez. 36, 9.—So too אֶל",
+       "reread": "lo! I am for you, Ez. 36, 9.—So too אֶל",
+       "status": "agreed",
+       "text": "lo! I am for you, Ez. 36, 9.—So too אֶל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 985,
+    "y": 159,
+    "width": 871,
+    "height": 912
+   },
+   "draft_lines": [
+    "is taken in a sense of favour, towards,",
+    "2 Chr. 16, 9 לְבָבָם שָׁלֵם אֵלָיו their heart",
+    "is upright toward him. 2 Sam. 3, 8.",
+    "Comp. Ex. 14, 5.",
+    "4. Denoting also the reaching or at-",
+    "taining to any term, limit, object, even to,",
+    "usque ad, i. q. עַד. Jer. 51, 9 his judgment",
+    "(punishment) reacheth אֶל־הַשָּׁמַיִם even",
+    "unto heaven. אֶל־פִּיהוּ even unto his mouth",
+    "Job 40, 23. Metaph. Hos. 9, 1 rejoice",
+    "not, Israel, אֶל־גִּיל even unto joy. Job 3,",
+    "22. To these latter examples may not",
+    "unaptly be applied the remark of the",
+    "Arabian Grammarians, that إِلَى includes",
+    "what is of the same kind, but excludes"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 985,
+      "y": 151,
+      "width": 871,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r00-b00-871x246+985+151-x2.png",
+     "image_sha256": "90b1fc96bccd974c114e4eee18841c5b950e1258aaaa2249d70f99596f559a60",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is taken in a sense of favour, towards,",
+       "2 Chr. 16, 9 לְבָבָם שָׁלֵם אֵלָיו their heart",
+       "is upright toward him. 2 Sam. 3, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "98ba2b59-e55e-46b3-a074-8d26a5ae29c6",
+      "duration_api_ms": 13698,
+      "cost_usd_list": 0.08036325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 507
+     },
+     "lines": [
+      {
+       "draft": "is taken in a sense of favour, towards,",
+       "reread": "is taken in a sense of favour, towards,",
+       "status": "agreed",
+       "text": "is taken in a sense of favour, towards,"
+      },
+      {
+       "draft": "2 Chr. 16, 9 לְבָבָם שָׁלֵם אֵלָיו their heart",
+       "reread": "2 Chr. 16, 9 לְבָבָם שָׁלֵם אֵלָיו their heart",
+       "status": "agreed",
+       "text": "2 Chr. 16, 9 לְבָבָם שָׁלֵם אֵלָיו their heart"
+      },
+      {
+       "draft": "is upright toward him. 2 Sam. 3, 8.",
+       "reread": "is upright toward him. 2 Sam. 3, 8.",
+       "status": "agreed",
+       "text": "is upright toward him. 2 Sam. 3, 8."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 985,
+      "y": 381,
+      "width": 871,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r00-b01-871x244+985+381-x2.png",
+     "image_sha256": "4a2221fac07200a6246355c5864c0a8f7db7e65c1fbc3b4abbc8036a0ee1ca1c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Comp. Ex. 14, 5.",
+       "4. Denoting also the reaching or at-",
+       "taining to any term, limit, object, even to,",
+       "usque ad, i. q. עַד. Jer. 51, 9 his judgment"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b678f2f6-edd0-4e00-b1b0-f9869fa40033",
+      "duration_api_ms": 8330,
+      "cost_usd_list": 0.06761324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "Comp. Ex. 14, 5.",
+       "reread": "Comp. Ex. 14, 5.",
+       "status": "agreed",
+       "text": "Comp. Ex. 14, 5."
+      },
+      {
+       "draft": "4. Denoting also the reaching or at-",
+       "reread": "4. Denoting also the reaching or at-",
+       "status": "agreed",
+       "text": "4. Denoting also the reaching or at-"
+      },
+      {
+       "draft": "taining to any term, limit, object, even to,",
+       "reread": "taining to any term, limit, object, even to,",
+       "status": "agreed",
+       "text": "taining to any term, limit, object, even to,"
+      },
+      {
+       "draft": "usque ad, i. q. עַד. Jer. 51, 9 his judgment",
+       "reread": "usque ad, i. q. עַד. Jer. 51, 9 his judgment",
+       "status": "agreed",
+       "text": "usque ad, i. q. עַד. Jer. 51, 9 his judgment"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 985,
+      "y": 609,
+      "width": 871,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r00-b02-871x239+985+609-x2.png",
+     "image_sha256": "3ee6d4db2907f5cdba8e089f662ca1372c08103a99eaf1b915569f0bcaeefb35",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(punishment) reacheth אֶל־הַשָּׁמַיִם even",
+       "unto heaven. אֶל־פִּיהוּ even unto his mouth",
+       "Job 40, 23. Metaph. Hos. 9, 1 rejoice",
+       "not, Israel, אֶל־גִּיל even unto joy. Job 3,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ed6fa400-937a-472b-9415-90a9c0506164",
+      "duration_api_ms": 13582,
+      "cost_usd_list": 0.08671324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 634
+     },
+     "lines": [
+      {
+       "draft": "(punishment) reacheth אֶל־הַשָּׁמַיִם even",
+       "reread": "(punishment) reacheth אֶל־הַשָּׁמַיִם even",
+       "status": "agreed",
+       "text": "(punishment) reacheth אֶל־הַשָּׁמַיִם even"
+      },
+      {
+       "draft": "unto heaven. אֶל־פִּיהוּ even unto his mouth",
+       "reread": "unto heaven. אֶל־פִּיהוּ even unto his mouth",
+       "status": "agreed",
+       "text": "unto heaven. אֶל־פִּיהוּ even unto his mouth"
+      },
+      {
+       "draft": "Job 40, 23. Metaph. Hos. 9, 1 rejoice",
+       "reread": "Job 40, 23. Metaph. Hos. 9, 1 rejoice",
+       "status": "agreed",
+       "text": "Job 40, 23. Metaph. Hos. 9, 1 rejoice"
+      },
+      {
+       "draft": "not, Israel, אֶל־גִּיל even unto joy. Job 3,",
+       "reread": "not, Israel, אֶל־גִּיל even unto joy. Job 3,",
+       "status": "agreed",
+       "text": "not, Israel, אֶל־גִּיל even unto joy. Job 3,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 985,
+      "y": 832,
+      "width": 871,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r00-b03-871x235+985+832-x2.png",
+     "image_sha256": "e15d7863ef97f55f984161317f3a94a1626003642bf3c44e853b92d0e937370d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "22. To these latter examples may not",
+       "unaptly be applied the remark of the",
+       "Arabian Grammarians, that إِلى includes",
+       "what is of the same kind, but excludes"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "852ac4a9-ae4b-43e7-8fb0-cfe1ae482f8d",
+      "duration_api_ms": 16214,
+      "cost_usd_list": 0.07995325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 524
+     },
+     "lines": [
+      {
+       "draft": "22. To these latter examples may not",
+       "reread": "22. To these latter examples may not",
+       "status": "agreed",
+       "text": "22. To these latter examples may not"
+      },
+      {
+       "draft": "unaptly be applied the remark of the",
+       "reread": "unaptly be applied the remark of the",
+       "status": "agreed",
+       "text": "unaptly be applied the remark of the"
+      },
+      {
+       "draft": "Arabian Grammarians, that إِلَى includes",
+       "reread": "Arabian Grammarians, that إِلى includes",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b03",
+       "judgement": {
+        "text": "Arabian Grammarians, that إِلى includes",
+        "verdict": "b",
+        "note": "The printed Arabic shows only a kasra under the initial alif; there is no fatha printed above the lām, so Reading A's لَ is not supported by the image.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6d069b8d-ab22-4619-9f3b-e4f9a83e9ea3",
+        "duration_api_ms": 9000,
+        "cost_usd_list": 0.07736075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3563,
+        "cache_creation_input_tokens": 2544,
+        "output_tokens": 505
+       },
+       "text": "Arabian Grammarians, that إِلى includes"
+      },
+      {
+       "draft": "what is of the same kind, but excludes",
+       "reread": "what is of the same kind, but excludes",
+       "status": "agreed",
+       "text": "what is of the same kind, but excludes"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 985,
+    "y": 1059,
+    "width": 871,
+    "height": 748
+   },
+   "draft_lines": [
+    "what is of a different kind; see Cent.",
+    "Reg. p. 44, 45.—Here belongs also the",
+    "use of אֶל: a) As denoting measure,",
+    "e. g. אֶל־אַמָּה Gen. 6, 16, even to a cubit,",
+    "a cubit long; comp. Gr. εἰς ἐνιαυτόν till",
+    "the completion of a year, a year long;",
+    "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12, 13.",
+    "Schaef Ellips. p. 108. b) Compounded,",
+    "אֶל־מִן even out of. Job 5, 5 וְאֶל־מִצִּנִּים",
+    "יִקָּחֵהוּ and taketh it even out of the thorns,",
+    "i. e. thorn-hedges which enclose fields,",
+    "etc. Comp. the like use of לְ Deut. 24,",
+    "5; also עַד Judg. 4, 16. In Arabic we"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 985,
+      "y": 1066,
+      "width": 871,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r01-b00-871x232+985+1066-x2.png",
+     "image_sha256": "b5b8868e1f482034816c886588a88d81a28d79fdf4787c87273fcccb99523844",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "what is of a different kind; see Cent.",
+       "Reg. p. 44, 45.—Here belongs also the",
+       "use of אֶל: a) As denoting measure,",
+       "e. g. אֶל־אַמָּה Gen. 6, 16, even to a cubit,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6dfd487b-c5de-4d88-8cf5-8ce4ec0c668c",
+      "duration_api_ms": 10327,
+      "cost_usd_list": 0.0670435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 265
+     },
+     "lines": [
+      {
+       "draft": "what is of a different kind; see Cent.",
+       "reread": "what is of a different kind; see Cent.",
+       "status": "agreed",
+       "text": "what is of a different kind; see Cent."
+      },
+      {
+       "draft": "Reg. p. 44, 45.—Here belongs also the",
+       "reread": "Reg. p. 44, 45.—Here belongs also the",
+       "status": "agreed",
+       "text": "Reg. p. 44, 45.—Here belongs also the"
+      },
+      {
+       "draft": "use of אֶל: a) As denoting measure,",
+       "reread": "use of אֶל: a) As denoting measure,",
+       "status": "agreed",
+       "text": "use of אֶל: a) As denoting measure,"
+      },
+      {
+       "draft": "e. g. אֶל־אַמָּה Gen. 6, 16, even to a cubit,",
+       "reread": "e. g. אֶל־אַמָּה Gen. 6, 16, even to a cubit,",
+       "status": "agreed",
+       "text": "e. g. אֶל־אַמָּה Gen. 6, 16, even to a cubit,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 985,
+      "y": 1282,
+      "width": 871,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r01-b01-871x236+985+1282-x2.png",
+     "image_sha256": "bbbf330c5fbc842558d579aaa02d1e20116cbb7692fb681b8cd2f733e9ebbeb2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a cubit long ; comp. Gr. εἰς ἐνιαυτόν till",
+       "the completion of a year, a year long ;",
+       "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12,13.",
+       "Schaef Ellips. p. 108.   b) Compounded,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f599536d-58d0-46db-afb0-6313f205db6c",
+      "duration_api_ms": 8939,
+      "cost_usd_list": 0.06794349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 283
+     },
+     "lines": [
+      {
+       "draft": "a cubit long; comp. Gr. εἰς ἐνιαυτόν till",
+       "reread": "a cubit long ; comp. Gr. εἰς ἐνιαυτόν till",
+       "status": "agreed",
+       "text": "a cubit long; comp. Gr. εἰς ἐνιαυτόν till"
+      },
+      {
+       "draft": "the completion of a year, a year long;",
+       "reread": "the completion of a year, a year long ;",
+       "status": "agreed",
+       "text": "the completion of a year, a year long;"
+      },
+      {
+       "draft": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12, 13.",
+       "reread": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12,13.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12,13.",
+        "verdict": "b",
+        "note": "The only difference is spacing in the page reference: the comma in \"12,13\" is set tight against the following \"13\" with no visible space (compare the clear word-space in \"p. 12\"), so Reading B matches the print. The Greek is identical in both and correct as printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8e5ae50c-63cf-4dfa-b9e1-9a6b219fb0c4",
+        "duration_api_ms": 20218,
+        "cost_usd_list": 0.0797205,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3602,
+        "cache_creation_input_tokens": 2584,
+        "output_tokens": 536
+       },
+       "text": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12,13."
+      },
+      {
+       "draft": "Schaef Ellips. p. 108. b) Compounded,",
+       "reread": "Schaef Ellips. p. 108.   b) Compounded,",
+       "status": "agreed",
+       "text": "Schaef Ellips. p. 108. b) Compounded,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 985,
+      "y": 1502,
+      "width": 871,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r01-b02-871x243+985+1502-x2.png",
+     "image_sha256": "80248d283ea60986bc720ade86e90159dce6eb87d9064e0e9c49681241db6d46",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶל־מִן even out of. Job 5, 5 וְאֶל־מִצִּנִּים",
+       "יִקָּחֵהוּ and taketh it even out of the thorns,",
+       "i. e. thorn-hedges which enclose fields,",
+       "etc. Comp. the like use of לְ Deut. 24,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4a02291f-5aee-46c6-af21-f4c7b4d45a10",
+      "duration_api_ms": 14322,
+      "cost_usd_list": 0.0876535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 652
+     },
+     "lines": [
+      {
+       "draft": "אֶל־מִן even out of. Job 5, 5 וְאֶל־מִצִּנִּים",
+       "reread": "אֶל־מִן even out of. Job 5, 5 וְאֶל־מִצִּנִּים",
+       "status": "agreed",
+       "text": "אֶל־מִן even out of. Job 5, 5 וְאֶל־מִצִּנִּים"
+      },
+      {
+       "draft": "יִקָּחֵהוּ and taketh it even out of the thorns,",
+       "reread": "יִקָּחֵהוּ and taketh it even out of the thorns,",
+       "status": "agreed",
+       "text": "יִקָּחֵהוּ and taketh it even out of the thorns,"
+      },
+      {
+       "draft": "i. e. thorn-hedges which enclose fields,",
+       "reread": "i. e. thorn-hedges which enclose fields,",
+       "status": "agreed",
+       "text": "i. e. thorn-hedges which enclose fields,"
+      },
+      {
+       "draft": "etc. Comp. the like use of לְ Deut. 24,",
+       "reread": "etc. Comp. the like use of לְ Deut. 24,",
+       "status": "agreed",
+       "text": "etc. Comp. the like use of לְ Deut. 24,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 985,
+      "y": 1729,
+      "width": 871,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r01-b03-871x70+985+1729-x2.png",
+     "image_sha256": "34261168d8c280c19d892d88d4a4a12a9f8e41a910f509b9fb0090bc579904f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5 ; also עַד Judg. 4, 16.  In Arabic we"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ffc13027-dde4-4942-81bb-6f60e960cac1",
+      "duration_api_ms": 10226,
+      "cost_usd_list": 0.0548235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 323
+     },
+     "lines": [
+      {
+       "draft": "5; also עַד Judg. 4, 16. In Arabic we",
+       "reread": "5 ; also עַד Judg. 4, 16.  In Arabic we",
+       "status": "agreed",
+       "text": "5; also עַד Judg. 4, 16. In Arabic we"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 985,
+    "y": 1795,
+    "width": 871,
+    "height": 804
+   },
+   "draft_lines": [
+    "may compare لَمِنْ utique ex, Cor. 26,",
+    "41, pr. adeo ex. Indeed لَ seems to",
+    "have been derived from this signification",
+    "of אֶל.",
+    "5. As implying the entering or passing",
+    "into a term, limit, object, into, εἰς, i. q.",
+    "the fuller אֶל־תּוֹךְ. Deut. 23, 25 אֶל־כֶּלְיְךָ",
+    "לֹא תִתֵּן thou shalt not put (grapes) into",
+    "thy vessel. בּוֹא אֶל־הַתֵּבָה to come into the",
+    "ark Gen. 6, 18. 7, 1. 8, 9; אֶל־הַבַּיִת into",
+    "the house Gen. 19, 3. 2 Sam. 5, 8; אֶל־הַיָּם",
+    "(to cast) into the sea Jon. 1, 5; אֶל־הָאָרֶץ",
+    "into the land Deut. 11, 29.—Hence, where"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 985,
+      "y": 1805,
+      "width": 871,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r02-b00-871x273+985+1805-x2.png",
+     "image_sha256": "8719a196cde02e5bda27b31ac54e8fbd7c00d02195d88a3f8a47cd6ba1b746bf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "may compare لَمِنْ utique ex, Cor. 26,",
+       "41, pr. adeo ex. Indeed لَ seems to",
+       "have been derived from this signification",
+       "of אֶל."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fc7ece74-f7ee-4ad1-9827-ea4549c1a952",
+      "duration_api_ms": 9149,
+      "cost_usd_list": 0.0733235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 315
+     },
+     "lines": [
+      {
+       "draft": "may compare لَمِنْ utique ex, Cor. 26,",
+       "reread": "may compare لَمِنْ utique ex, Cor. 26,",
+       "status": "agreed",
+       "text": "may compare لَمِنْ utique ex, Cor. 26,"
+      },
+      {
+       "draft": "41, pr. adeo ex. Indeed لَ seems to",
+       "reread": "41, pr. adeo ex. Indeed لَ seems to",
+       "status": "agreed",
+       "text": "41, pr. adeo ex. Indeed لَ seems to"
+      },
+      {
+       "draft": "have been derived from this signification",
+       "reread": "have been derived from this signification",
+       "status": "agreed",
+       "text": "have been derived from this signification"
+      },
+      {
+       "draft": "of אֶל.",
+       "reread": "of אֶל.",
+       "status": "agreed",
+       "text": "of אֶל."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 985,
+      "y": 2062,
+      "width": 871,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r02-b01-871x257+985+2062-x2.png",
+     "image_sha256": "937402db9054a3ad19ae4e6918c15e4d9eac9c8fd918fbc175e7535caac89963",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5. As implying the entering or passing",
+       "into a term, limit, object, into, εἰς, i. q.",
+       "the fuller אֶל־תּוֹךְ. Deut. 23, 25 אֶל־כֶּלְיְךָ",
+       "לֹא תִתֵּן thou shalt not put (grapes) into"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bd2b0ab5-3c8b-49cc-ba7a-c82432a47847",
+      "duration_api_ms": 13888,
+      "cost_usd_list": 0.0864635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 603
+     },
+     "lines": [
+      {
+       "draft": "5. As implying the entering or passing",
+       "reread": "5. As implying the entering or passing",
+       "status": "agreed",
+       "text": "5. As implying the entering or passing"
+      },
+      {
+       "draft": "into a term, limit, object, into, εἰς, i. q.",
+       "reread": "into a term, limit, object, into, εἰς, i. q.",
+       "status": "agreed",
+       "text": "into a term, limit, object, into, εἰς, i. q."
+      },
+      {
+       "draft": "the fuller אֶל־תּוֹךְ. Deut. 23, 25 אֶל־כֶּלְיְךָ",
+       "reread": "the fuller אֶל־תּוֹךְ. Deut. 23, 25 אֶל־כֶּלְיְךָ",
+       "status": "agreed",
+       "text": "the fuller אֶל־תּוֹךְ. Deut. 23, 25 אֶל־כֶּלְיְךָ"
+      },
+      {
+       "draft": "לֹא תִתֵּן thou shalt not put (grapes) into",
+       "reread": "לֹא תִתֵּן thou shalt not put (grapes) into",
+       "status": "agreed",
+       "text": "לֹא תִתֵּן thou shalt not put (grapes) into"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 985,
+      "y": 2303,
+      "width": 871,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r02-b02-871x243+985+2303-x2.png",
+     "image_sha256": "8f261a9c7877042c2f0074cbfee2fe1c71febc8dbaf8094a3ec3e8bca945f423",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "thy vessel. בּוֹא אֶל־הַתֵּבָה to come into the",
+       "ark Gen. 6, 18. 7, 1. 8, 9 ; אֶל־הַבַּיִת into",
+       "the house Gen. 19, 3. 2 Sam. 5, 8 ; אֶל־הַיָּם",
+       "(to cast) into the sea Jon. 1, 5 ; אֶל־הָאָרֶץ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c8f0728f-e608-4e38-9735-970c43f65448",
+      "duration_api_ms": 15109,
+      "cost_usd_list": 0.08855350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 670
+     },
+     "lines": [
+      {
+       "draft": "thy vessel. בּוֹא אֶל־הַתֵּבָה to come into the",
+       "reread": "thy vessel. בּוֹא אֶל־הַתֵּבָה to come into the",
+       "status": "agreed",
+       "text": "thy vessel. בּוֹא אֶל־הַתֵּבָה to come into the"
+      },
+      {
+       "draft": "ark Gen. 6, 18. 7, 1. 8, 9; אֶל־הַבַּיִת into",
+       "reread": "ark Gen. 6, 18. 7, 1. 8, 9 ; אֶל־הַבַּיִת into",
+       "status": "agreed",
+       "text": "ark Gen. 6, 18. 7, 1. 8, 9; אֶל־הַבַּיִת into"
+      },
+      {
+       "draft": "the house Gen. 19, 3. 2 Sam. 5, 8; אֶל־הַיָּם",
+       "reread": "the house Gen. 19, 3. 2 Sam. 5, 8 ; אֶל־הַיָּם",
+       "status": "agreed",
+       "text": "the house Gen. 19, 3. 2 Sam. 5, 8; אֶל־הַיָּם"
+      },
+      {
+       "draft": "(to cast) into the sea Jon. 1, 5; אֶל־הָאָרֶץ",
+       "reread": "(to cast) into the sea Jon. 1, 5 ; אֶל־הָאָרֶץ",
+       "status": "agreed",
+       "text": "(to cast) into the sea Jon. 1, 5; אֶל־הָאָרֶץ"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 985,
+      "y": 2530,
+      "width": 871,
+      "height": 77
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r02-b03-871x77+985+2530-x2.png",
+     "image_sha256": "23ac1c9de0297245e54d3d7f3768c0f84f058b8e19da4ebb37a15df75636cbbd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "into the land Deut. 11, 29.—Hence, where"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cc2b3577-2209-4dbb-89e1-78864f2df8db",
+      "duration_api_ms": 10772,
+      "cost_usd_list": 0.049783499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 197
+     },
+     "lines": [
+      {
+       "draft": "into the land Deut. 11, 29.—Hence, where",
+       "reread": "into the land Deut. 11, 29.—Hence, where",
+       "status": "agreed",
+       "text": "into the land Deut. 11, 29.—Hence, where"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 985,
+    "y": 2587,
+    "width": 871,
+    "height": 718
+   },
+   "draft_lines": [
+    "spoken of a number or multitude, it may",
+    "be rendered among, i. q. the fuller אֶל־בֵּין.",
+    "Jer. 4, 3 sow not אֶל־קוֹצִים among thorns.",
+    "1 Sam. 10, 22 lo, he hath hid himself",
+    "אֶל־הַכֵּלִים among the baggage.",
+    "6. As we have seen above (no. 1)",
+    "that אֶל is used to denote giving, so also",
+    "it expresses an adding, superadding,",
+    "(comp. הוֹסִיף אֶל 1 K. 10, 7,) to, i. e. in",
+    "addition to, together with, besides; comp.",
+    "Gr. ἐπὶ τοῖσι besides these, and Arab.",
+    "إلى for مع Cor. 4, 2. Cent. Reg. p. 43."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 985,
+      "y": 2579,
+      "width": 871,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r03-b00-871x239+985+2579-x2.png",
+     "image_sha256": "11ab7b1fa15cb31e3e22dcb85c9939c2c363d4a289fe513dd8bb327cb5f3a745",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "spoken of a number or multitude, it may",
+       "be rendered among, i. q. the fuller אֶל־בֵּין.",
+       "Jer. 4, 3 sow not אֶל־קוֹצִים among thorns.",
+       "1 Sam. 10, 22 lo, he hath hid himself"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a3226b72-dfe0-4926-bdc5-50b295033d55",
+      "duration_api_ms": 13548,
+      "cost_usd_list": 0.0687535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "spoken of a number or multitude, it may",
+       "reread": "spoken of a number or multitude, it may",
+       "status": "agreed",
+       "text": "spoken of a number or multitude, it may"
+      },
+      {
+       "draft": "be rendered among, i. q. the fuller אֶל־בֵּין.",
+       "reread": "be rendered among, i. q. the fuller אֶל־בֵּין.",
+       "status": "agreed",
+       "text": "be rendered among, i. q. the fuller אֶל־בֵּין."
+      },
+      {
+       "draft": "Jer. 4, 3 sow not אֶל־קוֹצִים among thorns.",
+       "reread": "Jer. 4, 3 sow not אֶל־קוֹצִים among thorns.",
+       "status": "agreed",
+       "text": "Jer. 4, 3 sow not אֶל־קוֹצִים among thorns."
+      },
+      {
+       "draft": "1 Sam. 10, 22 lo, he hath hid himself",
+       "reread": "1 Sam. 10, 22 lo, he hath hid himself",
+       "status": "agreed",
+       "text": "1 Sam. 10, 22 lo, he hath hid himself"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 985,
+      "y": 2802,
+      "width": 871,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r03-b01-871x249+985+2802-x2.png",
+     "image_sha256": "0f1621c32102a13dccbf05fbe423e9c3537d972aad569d8a908c22a9d97a5815",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶל־הַכֵּלִים among the baggage.",
+       "6. As we have seen above (no. 1)",
+       "that אֶל is used to denote giving, so also",
+       "it expresses an adding, superadding,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d9f0776-9774-400f-9fbd-7ea36eb143b2",
+      "duration_api_ms": 14440,
+      "cost_usd_list": 0.06730349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "אֶל־הַכֵּלִים among the baggage.",
+       "reread": "אֶל־הַכֵּלִים among the baggage.",
+       "status": "agreed",
+       "text": "אֶל־הַכֵּלִים among the baggage."
+      },
+      {
+       "draft": "6. As we have seen above (no. 1)",
+       "reread": "6. As we have seen above (no. 1)",
+       "status": "agreed",
+       "text": "6. As we have seen above (no. 1)"
+      },
+      {
+       "draft": "that אֶל is used to denote giving, so also",
+       "reread": "that אֶל is used to denote giving, so also",
+       "status": "agreed",
+       "text": "that אֶל is used to denote giving, so also"
+      },
+      {
+       "draft": "it expresses an adding, superadding,",
+       "reread": "it expresses an adding, superadding,",
+       "status": "agreed",
+       "text": "it expresses an adding, superadding,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 985,
+      "y": 3035,
+      "width": 871,
+      "height": 272
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0067/pass2/c1-r03-b02-871x272+985+3035-x2.png",
+     "image_sha256": "3a08596adb71cd5db9bbc098f571bfa9b33107a45f194f18a6e74cb703c82232",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(comp. הוֹסִיף אֶל 1 K. 10, 7,) to, i. e. in",
+       "addition to, together with, besides ; comp.",
+       "Gr. ἐπὶ τοῖσι besides these, and Arab.",
+       "إلى for مع Cor. 4, 2. Cent. Reg. p. 43."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b462b151-df6d-42f8-9059-04060232446d",
+      "duration_api_ms": 22926,
+      "cost_usd_list": 0.0832735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 514
+     },
+     "lines": [
+      {
+       "draft": "(comp. הוֹסִיף אֶל 1 K. 10, 7,) to, i. e. in",
+       "reread": "(comp. הוֹסִיף אֶל 1 K. 10, 7,) to, i. e. in",
+       "status": "agreed",
+       "text": "(comp. הוֹסִיף אֶל 1 K. 10, 7,) to, i. e. in"
+      },
+      {
+       "draft": "addition to, together with, besides; comp.",
+       "reread": "addition to, together with, besides ; comp.",
+       "status": "agreed",
+       "text": "addition to, together with, besides; comp."
+      },
+      {
+       "draft": "Gr. ἐπὶ τοῖσι besides these, and Arab.",
+       "reread": "Gr. ἐπὶ τοῖσι besides these, and Arab.",
+       "status": "agreed",
+       "text": "Gr. ἐπὶ τοῖσι besides these, and Arab."
+      },
+      {
+       "draft": "إلى for مع Cor. 4, 2. Cent. Reg. p. 43.",
+       "reread": "إلى for مع Cor. 4, 2. Cent. Reg. p. 43.",
+       "status": "agreed",
+       "text": "إلى for مع Cor. 4, 2. Cent. Reg. p. 43."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אל 51 אל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "place, but in common usage always",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "passing over into a preposition.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "A) Prep. signifying in general to tend",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "or verge to or towards a place, whether",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "one reaches and so enters that place, or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "not; whether spoken of motion or direc-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tion of the body, or of the mind, thoughts,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "attention, etc. i. q. to, into, towards; Lat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ad, versus, in; Germ. zu, gen; Greek",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "πρός, εἰς. It differs from לְ, which is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "abridged from it, chiefly in being more",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "commonly used in the physical and pro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "per sense; see under לְ.—Spec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. Of motion to a place, to, unto, to-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "wards; espec. with verbs of going, הָלַךְ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "בּוֹא, שׁוּב Gen. 8, 9, יָרַד 2 K. 1, 15, עָלָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Deut. 17, 8, רוּץ Gen. 24, 29, קָרַב Ex. 14,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "20; of placing, casting, 1 Sam. 6, 11. Lev.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1, 16. Is. 5, 14; also of giving, delivering",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "over, Ex. 25, 16. 21; of selling, Joel 4, 8;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and with other like verbs, where the Lat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and Germ. use the dative, the French",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and Engl. à, to. Sometimes in construc-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "tio prægnans, as זָנָה אֶל to commit whore-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "dom (by going in) unto, Num. 25, 1. Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "16, 29; דָּרַשׁ אֶל to seek an oracle (in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "turning) unto any one Is. 8, 19. Opp. is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מִן, as מִן־הַקָּצֶה אֶל־הַקָּצֶה from end to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "end Ex. 26, 28; מִפֶּה אֶל־פֶּה Ezra 9, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Of time, מִיּוֹם אֶל־יוֹם from day to day,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Num. 30, 15. 1 Chr. 9, 25.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. Of a turning or direction to or to-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "wards any thing, e. g. a) Of the body,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "as after verbs of turning, Is. 38, 2; of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "looking, beholding, Gen. 4, 4. 5. Ex. 3, 6;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of speaking, 19, 9; of commanding,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Num. 36, 13. b) Of the mind, as after",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "verbs of desiring, Lam. 4, 17; of expect-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ing, Hos. 12, 7; of accustoming oneself,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Jer. 10, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "3. Where the motion or direction is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "hostile, against, contra, like εἰς, πρός,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "oftener ἐπί. Gen. 4, 8 וַיָּקָם קַיִן אֶל־הֶבֶל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָחִיו and Cain rose up against Abel his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "brother. Is. 3, 8 לְשׁוֹנָם וּמַעַלְלֵיהֶם אֶל יי׳",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "their tongue and their doings were",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "against Jehovah. 2, 4. Josh. 10, 6. Judg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "12, 3. 20, 30. Hence after a verb of con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tending, fighting, Hos. 12, 5. Espec. be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "longs here the phrase הִנְנִי אֲלֵיכֶם lo! I",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "am against you, (Targ. ecce mitto iram",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "meam contra vos,) Ez. 13, 8. 21, 8. 34, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Jer. 50, 31. 51, 25. Nah. 2, 14; which also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "very rarely is taken in the opp. sense,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "lo! I am for you, Ez. 36, 9.—So too אֶל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "is taken in a sense of favour, towards,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2 Chr. 16, 9 לְבָבָם שָׁלֵם אֵלָיו their heart",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "is upright toward him. 2 Sam. 3, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Comp. Ex. 14, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "4. Denoting also the reaching or at-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "taining to any term, limit, object, even to,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "usque ad, i. q. עַד. Jer. 51, 9 his judgment",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "(punishment) reacheth אֶל־הַשָּׁמַיִם even",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "unto heaven. אֶל־פִּיהוּ even unto his mouth",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Job 40, 23. Metaph. Hos. 9, 1 rejoice",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "not, Israel, אֶל־גִּיל even unto joy. Job 3,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "22. To these latter examples may not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "unaptly be applied the remark of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Arabian Grammarians, that إِلى includes",
+   "status": "adjudicated",
+   "draft": "Arabian Grammarians, that إِلَى includes",
+   "reread": "Arabian Grammarians, that إِلى includes",
+   "verdict": "b",
+   "note": "The printed Arabic shows only a kasra under the initial alif; there is no fatha printed above the lām, so Reading A's لَ is not supported by the image.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "what is of the same kind, but excludes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "what is of a different kind; see Cent.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Reg. p. 44, 45.—Here belongs also the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "use of אֶל: a) As denoting measure,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "e. g. אֶל־אַמָּה Gen. 6, 16, even to a cubit,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "a cubit long; comp. Gr. εἰς ἐνιαυτόν till",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the completion of a year, a year long;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12,13.",
+   "status": "adjudicated",
+   "draft": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12, 13.",
+   "reread": "εἰς τρίτην ἡμέραν, Bast. Ep. Crit. p. 12,13.",
+   "verdict": "b",
+   "note": "The only difference is spacing in the page reference: the comma in \"12,13\" is set tight against the following \"13\" with no visible space (compare the clear word-space in \"p. 12\"), so Reading B matches the print. The Greek is identical in both and correct as printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Schaef Ellips. p. 108. b) Compounded,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֶל־מִן even out of. Job 5, 5 וְאֶל־מִצִּנִּים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "יִקָּחֵהוּ and taketh it even out of the thorns,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "i. e. thorn-hedges which enclose fields,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "etc. Comp. the like use of לְ Deut. 24,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "5; also עַד Judg. 4, 16. In Arabic we",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "may compare لَمِنْ utique ex, Cor. 26,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "41, pr. adeo ex. Indeed لَ seems to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "have been derived from this signification",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of אֶל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "5. As implying the entering or passing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "into a term, limit, object, into, εἰς, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the fuller אֶל־תּוֹךְ. Deut. 23, 25 אֶל־כֶּלְיְךָ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "לֹא תִתֵּן thou shalt not put (grapes) into",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "thy vessel. בּוֹא אֶל־הַתֵּבָה to come into the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ark Gen. 6, 18. 7, 1. 8, 9; אֶל־הַבַּיִת into",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the house Gen. 19, 3. 2 Sam. 5, 8; אֶל־הַיָּם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(to cast) into the sea Jon. 1, 5; אֶל־הָאָרֶץ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "into the land Deut. 11, 29.—Hence, where",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "spoken of a number or multitude, it may",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "be rendered among, i. q. the fuller אֶל־בֵּין.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Jer. 4, 3 sow not אֶל־קוֹצִים among thorns.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1 Sam. 10, 22 lo, he hath hid himself",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֶל־הַכֵּלִים among the baggage.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "6. As we have seen above (no. 1)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "that אֶל is used to denote giving, so also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "it expresses an adding, superadding,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "(comp. הוֹסִיף אֶל 1 K. 10, 7,) to, i. e. in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "addition to, together with, besides; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Gr. ἐπὶ τοῖσι besides these, and Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "إلى for مع Cor. 4, 2. Cent. Reg. p. 43.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 107,
+  "adjudicated": 2,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.3713
+}
