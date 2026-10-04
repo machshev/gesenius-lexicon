@@ -53,5 +53,25 @@ class SectionBreaks(unittest.TestCase):
         self.assertEqual(ft.detect_section_breaks(page(glyph=True), COLUMNS, 400), [])
 
 
+class NarrowGutter(unittest.TestCase):
+    def two_col(self):
+        # 20 px valley between the columns, inked at 0.04 (a skewed rule's
+        # smear), so detect_columns' 0.03 gap is under 25 px wide.
+        ink = np.zeros((1000, 400), dtype=bool)
+        ink[::7, 20:190] = True
+        ink[::7, 210:380] = True
+        ink[::25, 190:210] = True  # 0.04
+        return ink
+
+    def test_inked_narrow_valley_splits(self):
+        cols = ft.detect_columns(self.two_col())
+        self.assertEqual(len(cols), 2)
+
+    def test_single_column_is_not_split(self):
+        ink = np.zeros((1000, 400), dtype=bool)
+        ink[::7, 20:380] = True
+        self.assertEqual(len(ft.detect_columns(ink)), 1)
+
+
 if __name__ == "__main__":
     unittest.main()

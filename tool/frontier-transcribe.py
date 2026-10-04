@@ -149,10 +149,34 @@ def detect_columns(ink: np.ndarray) -> list[tuple[int, int]]:
         centre = (a1 + b0) / 2
         if b0 - a1 >= 25 and 0.35 <= (centre - left) / width <= 0.65:
             gutters.append((a1, b0))
+    if not gutters:
+        gutters = narrow_gutter(col_ink, left, right)
     if len(gutters) != 1:
         return [(left, right)]
     g0, g1 = gutters[0]
     return [(left, g0), (g1, right)]
+
+
+def narrow_gutter(col_ink: np.ndarray, left: int, right: int) -> list[tuple[int, int]]:
+    """Fallback for a gutter too narrow or too smeared to clear detect_columns' 0.03 gap.
+
+    pdf 33 has a 15 px gap at 0.03 (under the 25 px minimum) because the
+    scan's skewed column rule and tight setting keep the valley inked. Look
+    for the widest run of low density, at most 0.06, in the middle band, and
+    accept it only when both sides are dense text (mean over 0.08) and the run
+    is at least 10 px wide. Returns [] or one gutter.
+    """
+    width = right - left
+    lo, hi = left + int(width * 0.35), left + int(width * 0.65)
+    best = None
+    for a, b in runs(col_ink[lo:hi] <= 0.06, 10):
+        if best is None or b - a > best[1] - best[0]:
+            best = (a + lo, b + lo)
+    if best is None:
+        return []
+    if col_ink[left : best[0]].mean() < 0.08 or col_ink[best[1] : right].mean() < 0.08:
+        return []
+    return [best]
 
 
 def chunk_rows(ink_col: np.ndarray, target: int, maximum: int) -> list[tuple[int, int]]:
