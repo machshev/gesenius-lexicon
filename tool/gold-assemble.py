@@ -51,7 +51,7 @@ def authority(review: dict, record: dict, excluded: int, total: int) -> str:
         f"{review['generated_at'][:10]}. A line is included only where two of three readers (pass 2, blind, second reader) agree on the final text "
         f"under the comparison key; {excluded} of {total} "
         "lines were contested or unreviewed and are excluded (listed in the review sidecar "
-        f"{review['pass2'].replace('corpus/frontier', 'benchmarks/gold-review').replace('/pass2/', '/')}). "
+        f"{review['pass2'].replace('corpus/frontier', 'benchmarks/gold-review').replace('/pass2-gold-basis/', '/').replace('/pass2/', '/')}). "
         "Text follows docs/ocr-metric-policy.md, section Gold conventions and provenance."
     )
 
