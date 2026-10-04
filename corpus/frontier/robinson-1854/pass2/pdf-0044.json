@@ -1,0 +1,2665 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 44,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0044.png",
+ "raster_sha256": "36d6ad47bb89f0dece3bf71bdc9a15dd023b3d395fc6cc577e4d0c8d0bf10582",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0044.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:38:33+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 211,
+    "y": 131,
+    "width": 1759,
+    "height": 71
+   },
+   "draft_lines": [
+    "אזא 28 אזל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 211,
+      "y": 129,
+      "width": 1759,
+      "height": 75
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/header-b00-1759x75+211+129-x2.png",
+     "image_sha256": "5105e558fe9da88661da93ead160324397ca72d93c021098059f622ed4267fb0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אדא 28 אדל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "948da437-d99e-4404-968a-fe0ea3255ada",
+      "duration_api_ms": 7502,
+      "cost_usd_list": 0.0440025,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 183
+     },
+     "lines": [
+      {
+       "draft": "אזא 28 אזל",
+       "reread": "אדא 28 אדל",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אדא 28 אדל",
+        "verdict": "b",
+        "note": "Middle letter in both header words is dalet (wide flat top bar, leg set back from the right corner), not zayin; matches the lexicon's page-28 range אדא–אדל.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "36c0270c-302a-4c90-a6b6-c2409f6f8814",
+        "duration_api_ms": 12108,
+        "cost_usd_list": 0.05111575,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1783,
+        "output_tokens": 365
+       },
+       "text": "אדא 28 אדל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 211,
+    "y": 183,
+    "width": 865,
+    "height": 856
+   },
+   "draft_lines": [
+    "in that place, there, kindred with זֶה,",
+    "Arab. إِنْ ecce ! Then",
+    "1. Part. demonstr. of time, at that time,",
+    "then, Chald. אֱדַיִן. Spoken: a) Of time",
+    "past, Arab. إِنْ, Gen. 12, 6. Josh. 10, 12.",
+    "14, 11. With præt. 1 K. 8, 12. 2 Chr.",
+    "6, 1. 8, 12. 17; also with fut. in præter",
+    "sense, Josh. l. c. Ex. 15, 1. Deut. 4, 41.",
+    "Comp. Lehrg. p. 773. b) Of a future",
+    "time, then, thereupon, after that; with",
+    "fut. in fut. sense, Ps. 96, 12 אָז יְרַנְּנוּ then",
+    "shall they rejoice. Sometimes also with",
+    "præt. in a future sense, where a future"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 211,
+      "y": 175,
+      "width": 865,
+      "height": 277
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r00-b00-865x277+211+175-x2.png",
+     "image_sha256": "b15f25c5376dce69e5d034127e679413b0465ba8a89f63183cb98498206f44dc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in that place, there, kindred with זֶה,",
+       "Arab. إِنْ ecce !  Then",
+       "1. Part. demonstr. of time, at that time,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0e5fce35-22c3-42c1-93ca-fbf54fc3438e",
+      "duration_api_ms": 9827,
+      "cost_usd_list": 0.06143825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2795,
+      "output_tokens": 297
+     },
+     "lines": [
+      {
+       "draft": "in that place, there, kindred with זֶה,",
+       "reread": "in that place, there, kindred with זֶה,",
+       "status": "agreed",
+       "text": "in that place, there, kindred with זֶה,"
+      },
+      {
+       "draft": "Arab. إِنْ ecce ! Then",
+       "reread": "Arab. إِنْ ecce !  Then",
+       "status": "agreed",
+       "text": "Arab. إِنْ ecce! Then"
+      },
+      {
+       "draft": "1. Part. demonstr. of time, at that time,",
+       "reread": "1. Part. demonstr. of time, at that time,",
+       "status": "agreed",
+       "text": "1. Part. demonstr. of time, at that time,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 211,
+      "y": 436,
+      "width": 865,
+      "height": 216
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r00-b01-865x216+211+436-x2.png",
+     "image_sha256": "a9ac0d8b676b40b9ae3044903d5d77bce25914c26e23e1f9be902174a4f69b36",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "then, Chald. אֱדַיִן. Spoken: a) Of time",
+       "past, Arab. إِذَنْ, Gen. 12, 6. Josh. 10, 12.",
+       "14, 11. With præt. 1 K. 8, 12. 2 Chr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9539c028-af6e-4d4e-a68f-134beee8710f",
+      "duration_api_ms": 11985,
+      "cost_usd_list": 0.06608824999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2547,
+      "output_tokens": 452
+     },
+     "lines": [
+      {
+       "draft": "then, Chald. אֱדַיִן. Spoken: a) Of time",
+       "reread": "then, Chald. אֱדַיִן. Spoken: a) Of time",
+       "status": "agreed",
+       "text": "then, Chald. אֱדַיִן. Spoken: a) Of time"
+      },
+      {
+       "draft": "past, Arab. إِنْ, Gen. 12, 6. Josh. 10, 12.",
+       "reread": "past, Arab. إِذَنْ, Gen. 12, 6. Josh. 10, 12.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "past, Arab. إِذْ, Gen. 12, 6. Josh. 10, 12.",
+        "verdict": "neither",
+        "note": "The Arabic word is two letters only: alif with kasra, then a shallow-bowled dhāl (dot above) with sukūn — إِذْ, the expected cognate of אָז. Reading A misreads the dhāl as a final nūn (إِنْ); Reading B inserts an extra fatḥa and nūn (إِذَنْ) that are not printed. The faint marks below the word are bleed-through, not points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2ac89cf4-242d-4263-842e-ae3891f56c34",
+        "duration_api_ms": 19463,
+        "cost_usd_list": 0.0935735,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2496,
+        "output_tokens": 1022
+       },
+       "text": "past, Arab. إِذْ, Gen. 12, 6. Josh. 10, 12."
+      },
+      {
+       "draft": "14, 11. With præt. 1 K. 8, 12. 2 Chr.",
+       "reread": "14, 11. With præt. 1 K. 8, 12. 2 Chr.",
+       "status": "agreed",
+       "text": "14, 11. With præt. 1 K. 8, 12. 2 Chr."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 211,
+      "y": 636,
+      "width": 865,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r00-b02-865x236+211+636-x2.png",
+     "image_sha256": "a31c176158f438bd37527a5cee4f4d4f3dff2f8a3e69021d54a2cdbc3aeac14a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "6, 1. 8, 12. 17 ; also with fut. in præter",
+       "sense, Josh. l. c. Ex. 15, 1. Deut. 4, 41.",
+       "Comp. Lehrg. p. 773.  b) Of a future",
+       "time, then, thereupon, after that ; with"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b232048-7749-4b40-af26-66b08ba8f2ca",
+      "duration_api_ms": 8337,
+      "cost_usd_list": 0.057963249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "6, 1. 8, 12. 17; also with fut. in præter",
+       "reread": "6, 1. 8, 12. 17 ; also with fut. in præter",
+       "status": "agreed",
+       "text": "6, 1. 8, 12. 17; also with fut. in præter"
+      },
+      {
+       "draft": "sense, Josh. l. c. Ex. 15, 1. Deut. 4, 41.",
+       "reread": "sense, Josh. l. c. Ex. 15, 1. Deut. 4, 41.",
+       "status": "agreed",
+       "text": "sense, Josh. l. c. Ex. 15, 1. Deut. 4, 41."
+      },
+      {
+       "draft": "Comp. Lehrg. p. 773. b) Of a future",
+       "reread": "Comp. Lehrg. p. 773.  b) Of a future",
+       "status": "agreed",
+       "text": "Comp. Lehrg. p. 773. b) Of a future"
+      },
+      {
+       "draft": "time, then, thereupon, after that; with",
+       "reread": "time, then, thereupon, after that ; with",
+       "status": "agreed",
+       "text": "time, then, thereupon, after that; with"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 211,
+      "y": 856,
+      "width": 865,
+      "height": 191
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r00-b03-865x191+211+856-x2.png",
+     "image_sha256": "74c5b8f114c796b40f1de545f3fa30f7a69eeb95e01c7d5b26ffd2dae48ec38d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "fut. in fut. sense, Ps. 96, 12 אָז יְרַנְּנוּ then",
+       "shall they rejoice. Sometimes also with",
+       "præt. in a future sense, where a future"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9aba9131-731d-4289-b262-3cf9c6216b33",
+      "duration_api_ms": 9297,
+      "cost_usd_list": 0.06013824999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2423,
+      "output_tokens": 364
+     },
+     "lines": [
+      {
+       "draft": "fut. in fut. sense, Ps. 96, 12 אָז יְרַנְּנוּ then",
+       "reread": "fut. in fut. sense, Ps. 96, 12 אָז יְרַנְּנוּ then",
+       "status": "agreed",
+       "text": "fut. in fut. sense, Ps. 96, 12 אָז יְרַנְּנוּ then"
+      },
+      {
+       "draft": "shall they rejoice. Sometimes also with",
+       "reread": "shall they rejoice. Sometimes also with",
+       "status": "agreed",
+       "text": "shall they rejoice. Sometimes also with"
+      },
+      {
+       "draft": "præt. in a future sense, where a future",
+       "reread": "præt. in a future sense, where a future",
+       "status": "agreed",
+       "text": "præt. in a future sense, where a future"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 211,
+    "y": 1027,
+    "width": 865,
+    "height": 834
+   },
+   "draft_lines": [
+    "precedes, Judg. 5, 11. Ex. 15, 15.",
+    "2. Part. illat. then, for thence, there-",
+    "fore, on that account, Jer. 22, 15. Ps.",
+    "40, 8. 69, 5.",
+    "3. With pref. מֵאָז and מִן־אָז, pr. from",
+    "that time, from then ; hence a) Adv.",
+    "from ancient times, of old, long since,",
+    "2 Sam. 15, 34. Is. 16, 13. 44, 8. 45, 21.",
+    "48, 3. 5. 7. b) Prep. and Conj. from the",
+    "time, from when, since, Fr. depuis, dès-",
+    "lors, c. inf. Ex. 4, 10 מֵאָז דַּבֶּרְךָ since",
+    "thou hast spoken. Josh. 14, 10. With",
+    "subst. Ruth 2, 7 מֵאָז הַבֹּקֶר from the time",
+    "of morning, since morning. Ps. 76, 8",
+    "מֵאָז אַפֶּךָ from the time of thy anger, i. e."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 211,
+      "y": 1019,
+      "width": 865,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r01-b00-865x236+211+1019-x2.png",
+     "image_sha256": "f05856faaea1c482bfee57a529eb549d0e892542e2b80b2e5a40dad6d0146646",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "precedes, Judg. 5, 11. Ex. 15, 15.",
+       "2. Part. illat. then, for thence, there-",
+       "fore, on that account, Jer. 22, 15. Ps.",
+       "40, 8. 69, 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "622a3cae-eda9-49e3-95f3-818e1ec79e7d",
+      "duration_api_ms": 7621,
+      "cost_usd_list": 0.057046,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 255
+     },
+     "lines": [
+      {
+       "draft": "precedes, Judg. 5, 11. Ex. 15, 15.",
+       "reread": "precedes, Judg. 5, 11. Ex. 15, 15.",
+       "status": "agreed",
+       "text": "precedes, Judg. 5, 11. Ex. 15, 15."
+      },
+      {
+       "draft": "2. Part. illat. then, for thence, there-",
+       "reread": "2. Part. illat. then, for thence, there-",
+       "status": "agreed",
+       "text": "2. Part. illat. then, for thence, there-"
+      },
+      {
+       "draft": "fore, on that account, Jer. 22, 15. Ps.",
+       "reread": "fore, on that account, Jer. 22, 15. Ps.",
+       "status": "agreed",
+       "text": "fore, on that account, Jer. 22, 15. Ps."
+      },
+      {
+       "draft": "40, 8. 69, 5.",
+       "reread": "40, 8. 69, 5.",
+       "status": "agreed",
+       "text": "40, 8. 69, 5."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 211,
+      "y": 1239,
+      "width": 865,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r01-b01-865x236+211+1239-x2.png",
+     "image_sha256": "723c48133b1119bd70485d023bcbc2b1cbc85761b4e365858103631852231075",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. With pref. מֵאָז and מִן־אָז, pr. from",
+       "that time, from then ; hence  a) Adv.",
+       "from ancient times, of old, long since,",
+       "2 Sam. 15, 34. Is. 16, 13. 44, 8. 45, 21."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "70cffe92-aa03-474e-85a1-44f6d6d453b2",
+      "duration_api_ms": 8478,
+      "cost_usd_list": 0.057746,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "3. With pref. מֵאָז and מִן־אָז, pr. from",
+       "reread": "3. With pref. מֵאָז and מִן־אָז, pr. from",
+       "status": "agreed",
+       "text": "3. With pref. מֵאָז and מִן־אָז, pr. from"
+      },
+      {
+       "draft": "that time, from then ; hence a) Adv.",
+       "reread": "that time, from then ; hence  a) Adv.",
+       "status": "agreed",
+       "text": "that time, from then; hence a) Adv."
+      },
+      {
+       "draft": "from ancient times, of old, long since,",
+       "reread": "from ancient times, of old, long since,",
+       "status": "agreed",
+       "text": "from ancient times, of old, long since,"
+      },
+      {
+       "draft": "2 Sam. 15, 34. Is. 16, 13. 44, 8. 45, 21.",
+       "reread": "2 Sam. 15, 34. Is. 16, 13. 44, 8. 45, 21.",
+       "status": "agreed",
+       "text": "2 Sam. 15, 34. Is. 16, 13. 44, 8. 45, 21."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 211,
+      "y": 1459,
+      "width": 865,
+      "height": 185
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r01-b02-865x185+211+1459-x2.png",
+     "image_sha256": "89d3bc94d7424f9cb1294bd8100036c9de46f0fd2390a6d6f12304b90c30a7c7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "48, 3. 5. 7. b) Prep. and Conj. from the",
+       "time, from when, since, Fr. depuis, dès-",
+       "lors, c. inf. Ex. 4, 10 מֵאָז דַּבֶּרְךָ since"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "842266e7-6042-411f-ad0e-26ba58ff6a08",
+      "duration_api_ms": 11417,
+      "cost_usd_list": 0.068471,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 530
+     },
+     "lines": [
+      {
+       "draft": "48, 3. 5. 7. b) Prep. and Conj. from the",
+       "reread": "48, 3. 5. 7. b) Prep. and Conj. from the",
+       "status": "agreed",
+       "text": "48, 3. 5. 7. b) Prep. and Conj. from the"
+      },
+      {
+       "draft": "time, from when, since, Fr. depuis, dès-",
+       "reread": "time, from when, since, Fr. depuis, dès-",
+       "status": "agreed",
+       "text": "time, from when, since, Fr. depuis, dès-"
+      },
+      {
+       "draft": "lors, c. inf. Ex. 4, 10 מֵאָז דַּבֶּרְךָ since",
+       "reread": "lors, c. inf. Ex. 4, 10 מֵאָז דַּבֶּרְךָ since",
+       "status": "agreed",
+       "text": "lors, c. inf. Ex. 4, 10 מֵאָז דַּבֶּרְךָ since"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 211,
+      "y": 1628,
+      "width": 865,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r01-b03-865x241+211+1628-x2.png",
+     "image_sha256": "f6f07efea8dc9168b7aec9409699dc8b4084973b4c8da75251e0ffa26b636711",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "thou hast spoken. Josh. 14, 10. With",
+       "subst. Ruth 2, 7 מֵאָז הַבֹּקֶר from the time",
+       "of morning, since morning. Ps. 76, 8",
+       "מֵאָז אַפֶּךָ from the time of thy anger, i. e."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2460e7db-c2d4-419f-9324-7e4356ec299a",
+      "duration_api_ms": 11813,
+      "cost_usd_list": 0.069721,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 493
+     },
+     "lines": [
+      {
+       "draft": "thou hast spoken. Josh. 14, 10. With",
+       "reread": "thou hast spoken. Josh. 14, 10. With",
+       "status": "agreed",
+       "text": "thou hast spoken. Josh. 14, 10. With"
+      },
+      {
+       "draft": "subst. Ruth 2, 7 מֵאָז הַבֹּקֶר from the time",
+       "reread": "subst. Ruth 2, 7 מֵאָז הַבֹּקֶר from the time",
+       "status": "agreed",
+       "text": "subst. Ruth 2, 7 מֵאָז הַבֹּקֶר from the time"
+      },
+      {
+       "draft": "of morning, since morning. Ps. 76, 8",
+       "reread": "of morning, since morning. Ps. 76, 8",
+       "status": "agreed",
+       "text": "of morning, since morning. Ps. 76, 8"
+      },
+      {
+       "draft": "מֵאָז אַפֶּךָ from the time of thy anger, i. e.",
+       "reread": "מֵאָז אַפֶּךָ from the time of thy anger, i. e.",
+       "status": "agreed",
+       "text": "מֵאָז אַפֶּךָ from the time of thy anger, i. e."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 211,
+    "y": 1849,
+    "width": 865,
+    "height": 782
+   },
+   "draft_lines": [
+    "when once thou art angry. As Conj.",
+    "with a finite verb, pr. for מֵאָז אֲשֶׁר, from",
+    "the time that, since, Ex. 5, 23 מֵאָז בָּאתִי",
+    "אֶל פַּרְעֹה since I came unto Pharaoh.",
+    "Gen. 39, 5.",
+    "Note. Fuller forms from אָז are אֲזַי",
+    "q. v. and Chald. אֱדַיִן. The latter seems",
+    "to have come (by softening the letters)",
+    "from הֵידֵין, הָדֵין, here, also there; so",
+    "that its ending appears to be plural,",
+    "while in fact it is not so; comp. עֲדַיִן for",
+    "עַד־הֵן. See, for these particles and their",
+    "etymology, Hupfeld in Zeitschr. f. d.",
+    "Kunde des Morgenl. II. p. 434."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 211,
+      "y": 1841,
+      "width": 865,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r02-b00-865x230+211+1841-x2.png",
+     "image_sha256": "b4440a45e7bc4f0d22815db3494b99e59c0e351cee3e7e975c036b2617d3af8e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "when once thou art angry. As Conj.",
+       "with a finite verb, pr. for מֵאָז אֲשֶׁר, from",
+       "the time that, since, Ex. 5, 23 מֵאָז בָּאתִי",
+       "אֶל פַּרְעֹה since I came unto Pharaoh."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1cc08549-9a7c-47d6-9c8d-3563ea3f6abd",
+      "duration_api_ms": 11179,
+      "cost_usd_list": 0.066996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 454
+     },
+     "lines": [
+      {
+       "draft": "when once thou art angry. As Conj.",
+       "reread": "when once thou art angry. As Conj.",
+       "status": "agreed",
+       "text": "when once thou art angry. As Conj."
+      },
+      {
+       "draft": "with a finite verb, pr. for מֵאָז אֲשֶׁר, from",
+       "reread": "with a finite verb, pr. for מֵאָז אֲשֶׁר, from",
+       "status": "agreed",
+       "text": "with a finite verb, pr. for מֵאָז אֲשֶׁר, from"
+      },
+      {
+       "draft": "the time that, since, Ex. 5, 23 מֵאָז בָּאתִי",
+       "reread": "the time that, since, Ex. 5, 23 מֵאָז בָּאתִי",
+       "status": "agreed",
+       "text": "the time that, since, Ex. 5, 23 מֵאָז בָּאתִי"
+      },
+      {
+       "draft": "אֶל פַּרְעֹה since I came unto Pharaoh.",
+       "reread": "אֶל פַּרְעֹה since I came unto Pharaoh.",
+       "status": "agreed",
+       "text": "אֶל פַּרְעֹה since I came unto Pharaoh."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 211,
+      "y": 2055,
+      "width": 865,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r02-b01-865x242+211+2055-x2.png",
+     "image_sha256": "0fbcc0facf9ae9bd2079a4b551344ccb64118fa32193bd05be23a66959a1a3b8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Gen. 39, 5.",
+       "Note. Fuller forms from אָז are אֲזַי",
+       "q. v. and Chald. אֱדַיִן. The latter seems",
+       "to have come (by softening the letters)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "158417f8-44d6-481c-b5a5-df4521639b13",
+      "duration_api_ms": 10690,
+      "cost_usd_list": 0.067771,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 454
+     },
+     "lines": [
+      {
+       "draft": "Gen. 39, 5.",
+       "reread": "Gen. 39, 5.",
+       "status": "agreed",
+       "text": "Gen. 39, 5."
+      },
+      {
+       "draft": "Note. Fuller forms from אָז are אֲזַי",
+       "reread": "Note. Fuller forms from אָז are אֲזַי",
+       "status": "agreed",
+       "text": "Note. Fuller forms from אָז are אֲזַי"
+      },
+      {
+       "draft": "q. v. and Chald. אֱדַיִן. The latter seems",
+       "reread": "q. v. and Chald. אֱדַיִן. The latter seems",
+       "status": "agreed",
+       "text": "q. v. and Chald. אֱדַיִן. The latter seems"
+      },
+      {
+       "draft": "to have come (by softening the letters)",
+       "reread": "to have come (by softening the letters)",
+       "status": "agreed",
+       "text": "to have come (by softening the letters)"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 211,
+      "y": 2281,
+      "width": 865,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r02-b02-865x231+211+2281-x2.png",
+     "image_sha256": "835938a4e6ecce54715e0565db25fa19426d2559d79ce67f328c1dce5eeab477",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "from הָדֵין, הֵידֵין, here, also there ; so",
+       "that its ending appears to be plural,",
+       "while in fact it is not so ; comp. עֲדֵין for",
+       "עַד־הֵן. See, for these particles and their"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "675a14d6-9fd7-44ce-943b-fdfe68982464",
+      "duration_api_ms": 15274,
+      "cost_usd_list": 0.077346,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 661
+     },
+     "lines": [
+      {
+       "draft": "from הֵידֵין, הָדֵין, here, also there; so",
+       "reread": "from הָדֵין, הֵידֵין, here, also there ; so",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "from הָדֵין, הֵידֵין, here, also there ; so",
+        "verdict": "b",
+        "note": "The first Aramaic word after \"from\" is the defective הָדֵין (qamets under he, no yod); the plene הֵידֵין (tsere + yod) comes second. A reverses their order. A space is also printed before the semicolon.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9acad3ef-75da-4720-b0ce-8189bd4814ae",
+        "duration_api_ms": 10132,
+        "cost_usd_list": 0.06375600000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2539,
+        "output_tokens": 418
+       },
+       "text": "from הָדֵין, הֵידֵין, here, also there; so"
+      },
+      {
+       "draft": "that its ending appears to be plural,",
+       "reread": "that its ending appears to be plural,",
+       "status": "agreed",
+       "text": "that its ending appears to be plural,"
+      },
+      {
+       "draft": "while in fact it is not so; comp. עֲדַיִן for",
+       "reread": "while in fact it is not so ; comp. עֲדֵין for",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "while in fact it is not so ; comp. עֲדַיִן for",
+        "verdict": "neither",
+        "note": "The print has עֲדַיִן with patah under dalet and hiriq under yod (as in A), and a visible space before the semicolon \"so ;\" (as in B); neither reading has both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ff81c157-2ea5-4a88-91b1-a5d7643514c0",
+        "duration_api_ms": 11660,
+        "cost_usd_list": 0.06709525,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3571,
+        "cache_creation_input_tokens": 2536,
+        "output_tokens": 486
+       },
+       "text": "while in fact it is not so; comp. עֲדַיִן for"
+      },
+      {
+       "draft": "עַד־הֵן. See, for these particles and their",
+       "reread": "עַד־הֵן. See, for these particles and their",
+       "status": "agreed",
+       "text": "עַד־הֵן. See, for these particles and their"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 211,
+      "y": 2496,
+      "width": 865,
+      "height": 126
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r02-b03-865x126+211+2496-x2.png",
+     "image_sha256": "8002c8f0c76ddce6d9afd3152dd2ed2b3511b271a1d1e3c120ad930637d9bd02",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "etymology, Hupfeld in Zeitschr. f. d.",
+       "Kunde des Morgenl. II. p. 434."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d41684b1-5d33-47fb-a9c0-b8507e42601c",
+      "duration_api_ms": 10107,
+      "cost_usd_list": 0.04904599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2115,
+      "output_tokens": 219
+     },
+     "lines": [
+      {
+       "draft": "etymology, Hupfeld in Zeitschr. f. d.",
+       "reread": "etymology, Hupfeld in Zeitschr. f. d.",
+       "status": "agreed",
+       "text": "etymology, Hupfeld in Zeitschr. f. d."
+      },
+      {
+       "draft": "Kunde des Morgenl. II. p. 434.",
+       "reread": "Kunde des Morgenl. II. p. 434.",
+       "status": "agreed",
+       "text": "Kunde des Morgenl. II. p. 434."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 211,
+    "y": 2619,
+    "width": 865,
+    "height": 644
+   },
+   "draft_lines": [
+    "* אֲזָא and אֲזָה Chald. to light, to",
+    "kindle; comp. Arab. أَزَّ to be hot, to light",
+    "a fire. Part. pass. אֵזֵה by Syriasm for",
+    "אֲזֵה Dan. 3, 22; inf. מֵזֵא for מֵאזֵא, c.",
+    "suff. מֵזְיֵהּ 3, 19.",
+    "* אָזַב obsol. root, whence אֵזוֹב q. v.",
+    "אֶזְבַּי pr. n. m. Ezbai, 1 Chr. 11, 37.",
+    "* אֲזַד Chald. i. q. אֲזַל to go away, to",
+    "depart. For the interchange of d and"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 211,
+      "y": 2629,
+      "width": 865,
+      "height": 278
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r03-b00-865x278+211+2629-x2.png",
+     "image_sha256": "4e80ff1f30aa51d0fb3e29418c713fa1365ba66d8c06b4356f09d28ab884f4cf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אֲזָא and אֲזָה Chald. to light, to",
+       "kindle ; comp. Arab. أزَّ to be hot, to light",
+       "a fire. Part. pass. אֵזֵה by Syriasm for",
+       "אֲזֶה Dan. 3, 22 ; inf. מֵזֵא for מֵאזֵא, c."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7a7d2f7c-6470-494e-8da8-12445a59018f",
+      "duration_api_ms": 15663,
+      "cost_usd_list": 0.081421,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 696
+     },
+     "lines": [
+      {
+       "draft": "* אֲזָא and אֲזָה Chald. to light, to",
+       "reread": "* אֲזָא and אֲזָה Chald. to light, to",
+       "status": "agreed",
+       "text": "* אֲזָא and אֲזָה Chald. to light, to"
+      },
+      {
+       "draft": "kindle; comp. Arab. أَزَّ to be hot, to light",
+       "reread": "kindle ; comp. Arab. أزَّ to be hot, to light",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "kindle ; comp. Arab. أزَّ to be hot, to light",
+        "verdict": "b",
+        "note": "Arabic word is printed as hamza-alif + zay with shadda only; no fatha on the alif as in Reading A. Printed space before the semicolon is also present.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "796aa7c9-a463-48a1-b90b-4262eb9bb653",
+        "duration_api_ms": 17838,
+        "cost_usd_list": 0.09164175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3577,
+        "cache_creation_input_tokens": 2728,
+        "output_tokens": 928
+       },
+       "text": "kindle; comp. Arab. أزَّ to be hot, to light"
+      },
+      {
+       "draft": "a fire. Part. pass. אֵזֵה by Syriasm for",
+       "reread": "a fire. Part. pass. אֵזֵה by Syriasm for",
+       "status": "agreed",
+       "text": "a fire. Part. pass. אֵזֵה by Syriasm for"
+      },
+      {
+       "draft": "אֲזֵה Dan. 3, 22; inf. מֵזֵא for מֵאזֵא, c.",
+       "reread": "אֲזֶה Dan. 3, 22 ; inf. מֵזֵא for מֵאזֵא, c.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "אֲזֵה Dan. 3, 22 ; inf. מֵזֵא for מֵאזֵא, c.",
+        "verdict": "neither",
+        "note": "Under the zayin of the first word only two dots (tsere) are printed — this is the regular Chaldee form contrasted with the segol-pointed Syriasm אֲזֶה on line 3 — so B's segol is wrong; but the print has a clear space before the semicolon (\"22 ;\"), which A omits. Rest of the line (מֵזֵא, מֵאזֵא, \", c.\") matches both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "632a4239-c316-443b-9f41-53474eae1047",
+        "duration_api_ms": 27538,
+        "cost_usd_list": 0.12048975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3609,
+        "cache_creation_input_tokens": 2760,
+        "output_tokens": 1492
+       },
+       "text": "אֲזֵה Dan. 3, 22; inf. מֵזֵא for מֵאזֵא, c."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 211,
+      "y": 2891,
+      "width": 865,
+      "height": 321
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r03-b01-865x321+211+2891-x2.png",
+     "image_sha256": "d148cae4d02e46c6508891bd5ed910284f5a60fad2a8b17cadef24d569d80692",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "suff. מִזְרֶהָ 3, 19.",
+       "* אָזַב obsol. root, whence אֵזוֹב q. v.",
+       "אֶזְבַּי pr. n. m. Ezbai, 1 Chr. 11, 37.",
+       "* אֲזַד Chald. i. q. אֲזַל to go away, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "160df967-5e47-4c0e-95ad-c5e675a100dd",
+      "duration_api_ms": 16445,
+      "cost_usd_list": 0.087096,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2983,
+      "output_tokens": 763
+     },
+     "lines": [
+      {
+       "draft": "suff. מֵזְיֵהּ 3, 19.",
+       "reread": "suff. מִזְרֶהָ 3, 19.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "suff. מֵזְיֵהּ 3, 19.",
+        "verdict": "a",
+        "note": "The third letter is a short yod, not a resh, and the final he carries a mappiq dot; the vowels are tsere–shva–tsere (Dan 3:19 לְמֵזְיֵהּ). Reading B's resh, segol and qamats are not printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "11db42e5-e657-427d-a479-d7ca98602fd7",
+        "duration_api_ms": 17193,
+        "cost_usd_list": 0.0851845,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2905,
+        "output_tokens": 756
+       },
+       "text": "suff. מֵזְיֵהּ 3, 19."
+      },
+      {
+       "draft": "* אָזַב obsol. root, whence אֵזוֹב q. v.",
+       "reread": "* אָזַב obsol. root, whence אֵזוֹב q. v.",
+       "status": "agreed",
+       "text": "* אָזַב obsol. root, whence אֵזוֹב q. v."
+      },
+      {
+       "draft": "אֶזְבַּי pr. n. m. Ezbai, 1 Chr. 11, 37.",
+       "reread": "אֶזְבַּי pr. n. m. Ezbai, 1 Chr. 11, 37.",
+       "status": "agreed",
+       "text": "אֶזְבַּי pr. n. m. Ezbai, 1 Chr. 11, 37."
+      },
+      {
+       "draft": "* אֲזַד Chald. i. q. אֲזַל to go away, to",
+       "reread": "* אֲזַד Chald. i. q. אֲזַל to go away, to",
+       "status": "agreed",
+       "text": "* אֲזַד Chald. i. q. אֲזַל to go away, to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 211,
+      "y": 3196,
+      "width": 865,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c0-r03-b02-865x69+211+3196-x2.png",
+     "image_sha256": "6e2855a1147406ab99c66227e7b9f158d15157d4aeac238e856bfd31ad104558",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "depart. For the interchange of d and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1267477c-71a6-4450-b255-ffa5f2b54ba1",
+      "duration_api_ms": 9072,
+      "cost_usd_list": 0.046096,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1867,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "depart. For the interchange of d and",
+       "reread": "depart. For the interchange of d and",
+       "status": "agreed",
+       "text": "depart. For the interchange of d and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1097,
+    "y": 183,
+    "width": 873,
+    "height": 736
+   },
+   "draft_lines": [
+    "l, comp. δάκρυον, lacryma, and see under",
+    "lett. ל no. 2.  Hence Dan. 2, 5. 8 מִלְּתָא",
+    "מִנִּי אַזְדָּא the word has gone out from me,",
+    "i. e. what I have said is ratified and can-",
+    "not be recalled ; comp. 9, 23. Is. 45, 23.",
+    "The Heb. intpp. as Saadias and Tanchum",
+    "of Jerus. have long ago well compared",
+    "the Talmudic phrase אזדא לטעמיה abiit",
+    "in sententiam suam, i. e. to follow one's",
+    "opinion.  As to the grammatical form,",
+    "אַזְדָּא is part. fem. from masc. אָזֵד, after",
+    "the form קָטֵל, אָזֵל."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1097,
+      "y": 175,
+      "width": 873,
+      "height": 286
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r00-b00-873x286+1097+175-x2.png",
+     "image_sha256": "565b8cc3b30884090f85adeae98a9d8b09056dfec49bc7a06ba6b39cb1fbbd69",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "l, comp. δάκρυον, lacryma, and see under",
+       "lett. ל no. 2. Hence Dan. 2, 5. 8 מִלְּתָא",
+       "מִנִּי אַזְדָּא the word has gone out from me,",
+       "i. e. what I have said is ratified and can-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "928611a8-756a-4888-9cfa-77657274c909",
+      "duration_api_ms": 12744,
+      "cost_usd_list": 0.07465849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 540
+     },
+     "lines": [
+      {
+       "draft": "l, comp. δάκρυον, lacryma, and see under",
+       "reread": "l, comp. δάκρυον, lacryma, and see under",
+       "status": "agreed",
+       "text": "l, comp. δάκρυον, lacryma, and see under"
+      },
+      {
+       "draft": "lett. ל no. 2.  Hence Dan. 2, 5. 8 מִלְּתָא",
+       "reread": "lett. ל no. 2. Hence Dan. 2, 5. 8 מִלְּתָא",
+       "status": "agreed",
+       "text": "lett. ל no. 2. Hence Dan. 2, 5. 8 מִלְּתָא"
+      },
+      {
+       "draft": "מִנִּי אַזְדָּא the word has gone out from me,",
+       "reread": "מִנִּי אַזְדָּא the word has gone out from me,",
+       "status": "agreed",
+       "text": "מִנִּי אַזְדָּא the word has gone out from me,"
+      },
+      {
+       "draft": "i. e. what I have said is ratified and can-",
+       "reread": "i. e. what I have said is ratified and can-",
+       "status": "agreed",
+       "text": "i. e. what I have said is ratified and can-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1097,
+      "y": 445,
+      "width": 873,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r00-b01-873x245+1097+445-x2.png",
+     "image_sha256": "4a3e70ddb39e82cb65d349b59240c4a22cc8ee1bddcc156f9a9d857d46e5c259",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "not be recalled ; comp. 9, 23. Is. 45, 23.",
+       "The Heb. intpp. as Saadias and Tanchum",
+       "of Jerus. have long ago well compared",
+       "the Talmudic phrase אזדא לטעמיה abiit"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "22d27185-6529-48d7-9ba5-e5a09cd9b3cc",
+      "duration_api_ms": 9450,
+      "cost_usd_list": 0.060995999999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 314
+     },
+     "lines": [
+      {
+       "draft": "not be recalled ; comp. 9, 23. Is. 45, 23.",
+       "reread": "not be recalled ; comp. 9, 23. Is. 45, 23.",
+       "status": "agreed",
+       "text": "not be recalled; comp. 9, 23. Is. 45, 23."
+      },
+      {
+       "draft": "The Heb. intpp. as Saadias and Tanchum",
+       "reread": "The Heb. intpp. as Saadias and Tanchum",
+       "status": "agreed",
+       "text": "The Heb. intpp. as Saadias and Tanchum"
+      },
+      {
+       "draft": "of Jerus. have long ago well compared",
+       "reread": "of Jerus. have long ago well compared",
+       "status": "agreed",
+       "text": "of Jerus. have long ago well compared"
+      },
+      {
+       "draft": "the Talmudic phrase אזדא לטעמיה abiit",
+       "reread": "the Talmudic phrase אזדא לטעמיה abiit",
+       "status": "agreed",
+       "text": "the Talmudic phrase אזדא לטעמיה abiit"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1097,
+      "y": 674,
+      "width": 873,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r00-b02-873x241+1097+674-x2.png",
+     "image_sha256": "e736e05c3d8d014c9949178480f42297f56a72be546b75ad16576bef149d228f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in sententiam suam, i. e. to follow one's",
+       "opinion. As to the grammatical form,",
+       "אַזְדָּא is part. fem. from masc. אָזֵד, after",
+       "the form אָזֵל, קָטֵל."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b2172837-df58-47d4-a114-ea3b47550e58",
+      "duration_api_ms": 12511,
+      "cost_usd_list": 0.072746,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 549
+     },
+     "lines": [
+      {
+       "draft": "in sententiam suam, i. e. to follow one's",
+       "reread": "in sententiam suam, i. e. to follow one's",
+       "status": "agreed",
+       "text": "in sententiam suam, i. e. to follow one's"
+      },
+      {
+       "draft": "opinion.  As to the grammatical form,",
+       "reread": "opinion. As to the grammatical form,",
+       "status": "agreed",
+       "text": "opinion. As to the grammatical form,"
+      },
+      {
+       "draft": "אַזְדָּא is part. fem. from masc. אָזֵד, after",
+       "reread": "אַזְדָּא is part. fem. from masc. אָזֵד, after",
+       "status": "agreed",
+       "text": "אַזְדָּא is part. fem. from masc. אָזֵד, after"
+      },
+      {
+       "draft": "the form קָטֵל, אָזֵל.",
+       "reread": "the form אָזֵל, קָטֵל.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "the form אָזֵל, קָטֵל.",
+        "verdict": "b",
+        "note": "Printed left-to-right order: אָזֵל stands immediately after \"form\", then the comma, then קָטֵל before the full stop. Reading A reverses the two items. Vowels (qamets, tsere on each) match in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fbacd269-c57a-4b41-a7a6-7f21a268fe40",
+        "duration_api_ms": 10606,
+        "cost_usd_list": 0.06539275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3561,
+        "cache_creation_input_tokens": 2606,
+        "output_tokens": 436
+       },
+       "text": "the form אָזֵל, קָטֵל."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1097,
+    "y": 907,
+    "width": 873,
+    "height": 753
+   },
+   "draft_lines": [
+    "אֵזוֹב m. (by Syriasm for אֱזוֹב ,) ὕσσω-",
+    "πος, hyssop, much used by the Hebrews",
+    "in their sacred purifications and sprink-",
+    "lings, Ex. 12, 22. Lev. 14, 4. 6. 21. 49.",
+    "Ps. 51, 9. 1 K. 5, 13.—Like the names",
+    "of many other oriental plants, that of",
+    "hyssop also seems to have come to the",
+    "Greeks from the oriental languages.",
+    "Under this name the Hebrews appear to",
+    "have comprised not only the common",
+    "hyssop of the shops, but also other aro-",
+    "matic plants, espec. mint, wild marjoram,",
+    "etc.—Some derive it from אָזַב, which"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1097,
+      "y": 911,
+      "width": 873,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r01-b00-873x242+1097+911-x2.png",
+     "image_sha256": "0a59b7f5bed2e5edca975024a9486c3d9fb784707148c9c265b6af35ac806ee9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵזוֹב m. (by Syriasm for אֱזוֹב ,) ὕσσω-",
+       "πος, hyssop, much used by the Hebrews",
+       "in their sacred purifications and sprink-",
+       "lings, Ex. 12, 22. Lev. 14, 4. 6. 21. 49."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43d31fee-193f-41cf-8844-7d553a5c5fb7",
+      "duration_api_ms": 10417,
+      "cost_usd_list": 0.06509599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 396
+     },
+     "lines": [
+      {
+       "draft": "אֵזוֹב m. (by Syriasm for אֱזוֹב ,) ὕσσω-",
+       "reread": "אֵזוֹב m. (by Syriasm for אֱזוֹב ,) ὕσσω-",
+       "status": "agreed",
+       "text": "אֵזוֹב m. (by Syriasm for אֱזוֹב,) ὕσσω-"
+      },
+      {
+       "draft": "πος, hyssop, much used by the Hebrews",
+       "reread": "πος, hyssop, much used by the Hebrews",
+       "status": "agreed",
+       "text": "πος, hyssop, much used by the Hebrews"
+      },
+      {
+       "draft": "in their sacred purifications and sprink-",
+       "reread": "in their sacred purifications and sprink-",
+       "status": "agreed",
+       "text": "in their sacred purifications and sprink-"
+      },
+      {
+       "draft": "lings, Ex. 12, 22. Lev. 14, 4. 6. 21. 49.",
+       "reread": "lings, Ex. 12, 22. Lev. 14, 4. 6. 21. 49.",
+       "status": "agreed",
+       "text": "lings, Ex. 12, 22. Lev. 14, 4. 6. 21. 49."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1097,
+      "y": 1137,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r01-b01-873x237+1097+1137-x2.png",
+     "image_sha256": "df58582b2a2fb8b05e6d6b746f919a57bd8781f1e7b7c3306907beebe608f94d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ps. 51, 9. 1 K. 5, 13.—Like the names",
+       "of many other oriental plants, that of",
+       "hyssop also seems to have come to the",
+       "Greeks from the oriental languages."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "552b6be9-cbc4-47fa-b16d-9e8df82e7f42",
+      "duration_api_ms": 7438,
+      "cost_usd_list": 0.05679125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "Ps. 51, 9. 1 K. 5, 13.—Like the names",
+       "reread": "Ps. 51, 9. 1 K. 5, 13.—Like the names",
+       "status": "agreed",
+       "text": "Ps. 51, 9. 1 K. 5, 13.—Like the names"
+      },
+      {
+       "draft": "of many other oriental plants, that of",
+       "reread": "of many other oriental plants, that of",
+       "status": "agreed",
+       "text": "of many other oriental plants, that of"
+      },
+      {
+       "draft": "hyssop also seems to have come to the",
+       "reread": "hyssop also seems to have come to the",
+       "status": "agreed",
+       "text": "hyssop also seems to have come to the"
+      },
+      {
+       "draft": "Greeks from the oriental languages.",
+       "reread": "Greeks from the oriental languages.",
+       "status": "agreed",
+       "text": "Greeks from the oriental languages."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1097,
+      "y": 1358,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r01-b02-873x237+1097+1358-x2.png",
+     "image_sha256": "326cb921a3c47edde07af2062b944db90770c30e73e1553f34a59e02c49ada5c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Under this name the Hebrews appear to",
+       "have comprised not only the common",
+       "hyssop of the shops, but also other aro-",
+       "matic plants, espec. mint, wild marjoram,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "69b07d17-a097-4f22-9964-0e3fdc7a7c19",
+      "duration_api_ms": 9004,
+      "cost_usd_list": 0.05649125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 239
+     },
+     "lines": [
+      {
+       "draft": "Under this name the Hebrews appear to",
+       "reread": "Under this name the Hebrews appear to",
+       "status": "agreed",
+       "text": "Under this name the Hebrews appear to"
+      },
+      {
+       "draft": "have comprised not only the common",
+       "reread": "have comprised not only the common",
+       "status": "agreed",
+       "text": "have comprised not only the common"
+      },
+      {
+       "draft": "hyssop of the shops, but also other aro-",
+       "reread": "hyssop of the shops, but also other aro-",
+       "status": "agreed",
+       "text": "hyssop of the shops, but also other aro-"
+      },
+      {
+       "draft": "matic plants, espec. mint, wild marjoram,",
+       "reread": "matic plants, espec. mint, wild marjoram,",
+       "status": "agreed",
+       "text": "matic plants, espec. mint, wild marjoram,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1097,
+      "y": 1579,
+      "width": 873,
+      "height": 74
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r01-b03-873x74+1097+1579-x2.png",
+     "image_sha256": "34b9a11ccb48042c3df0b90c47dd5ea37a1ffedcce24ef10ca86c2ce800ceac5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "etc.—Some derive it from אָזַב, which"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e18699f4-2e91-4626-9f9d-f462953307d0",
+      "duration_api_ms": 9306,
+      "cost_usd_list": 0.052278750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 328
+     },
+     "lines": [
+      {
+       "draft": "etc.—Some derive it from אָזַב, which",
+       "reread": "etc.—Some derive it from אָזַב, which",
+       "status": "agreed",
+       "text": "etc.—Some derive it from אָזַב, which"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1097,
+    "y": 1648,
+    "width": 873,
+    "height": 695
+   },
+   "draft_lines": [
+    "they regard as i. q. زَبَّ to be hairy,",
+    "shaggy ; but the plants above named",
+    "hardly admit this epithet.",
+    "אֵזוֹר m. by Syriasm for אֵזוֹר. R.",
+    "אָזַר.",
+    "1. a girdle, belt, Is. 5, 27. Jer. 13, 1 sq.",
+    "2. a band, bond, chain, Job 12, 18.",
+    "Vulg. funis.",
+    "אֲזַי i. q. אָז, adv. at that time, then,",
+    "thereupon, Ps. 124, 3. 4. 5. Similar is",
+    "Chald. אֱדַיִן. See in אָז, note."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1097,
+      "y": 1656,
+      "width": 873,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r02-b00-873x273+1097+1656-x2.png",
+     "image_sha256": "0b9cffcb99d4337aac8a1dea9c28be718728d2625eb0ce308575bb5a17bc8431",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "they regard as i. q. زَبَّ to be hairy,",
+       "shaggy ; but the plants above named",
+       "hardly admit this epithet.",
+       "אֵזוֹר m. by Syriasm for אֱזוֹר. R."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b89e1f54-5dc4-4a67-9d98-80d9ae44e7f2",
+      "duration_api_ms": 10575,
+      "cost_usd_list": 0.07805375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 623
+     },
+     "lines": [
+      {
+       "draft": "they regard as i. q. زَبَّ to be hairy,",
+       "reread": "they regard as i. q. زَبَّ to be hairy,",
+       "status": "agreed",
+       "text": "they regard as i. q. زَبَّ to be hairy,"
+      },
+      {
+       "draft": "shaggy ; but the plants above named",
+       "reread": "shaggy ; but the plants above named",
+       "status": "agreed",
+       "text": "shaggy; but the plants above named"
+      },
+      {
+       "draft": "hardly admit this epithet.",
+       "reread": "hardly admit this epithet.",
+       "status": "agreed",
+       "text": "hardly admit this epithet."
+      },
+      {
+       "draft": "אֵזוֹר m. by Syriasm for אֵזוֹר. R.",
+       "reread": "אֵזוֹר m. by Syriasm for אֱזוֹר. R.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אֵזוֹר m. by Syriasm for אֱזוֹר. R.",
+        "verdict": "b",
+        "note": "Decisive difference is the vowel under the aleph of the second Hebrew word: the print shows a composite hataf segol (three dots plus shva), not tsere. The headword has tsere (two dots). Reading B matches; this also fits the sense (Syriac form with full vowel for the Hebrew hataf form).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0b75c782-0283-42a8-b158-a9ac7106ac4e",
+        "duration_api_ms": 15607,
+        "cost_usd_list": 0.0958365,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2758,
+        "output_tokens": 1003
+       },
+       "text": "אֵזוֹר m. by Syriasm for אֱזוֹר. R."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1097,
+      "y": 1913,
+      "width": 873,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r02-b01-873x233+1097+1913-x2.png",
+     "image_sha256": "21f1dfc6d3b1b5a4cb6010fc2f1856e498239c7e78495e453d24474913d2b3cc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָזַר.",
+       "1. a girdle, belt, Is. 5, 27. Jer. 13, 1 sq.",
+       "2. a band, bond, chain, Job 12, 18.",
+       "Vulg. funis."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7ca193b1-16b6-4023-817b-2d4c3407f334",
+      "duration_api_ms": 7838,
+      "cost_usd_list": 0.05699125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "אָזַר.",
+       "reread": "אָזַר.",
+       "status": "agreed",
+       "text": "אָזַר."
+      },
+      {
+       "draft": "1. a girdle, belt, Is. 5, 27. Jer. 13, 1 sq.",
+       "reread": "1. a girdle, belt, Is. 5, 27. Jer. 13, 1 sq.",
+       "status": "agreed",
+       "text": "1. a girdle, belt, Is. 5, 27. Jer. 13, 1 sq."
+      },
+      {
+       "draft": "2. a band, bond, chain, Job 12, 18.",
+       "reread": "2. a band, bond, chain, Job 12, 18.",
+       "status": "agreed",
+       "text": "2. a band, bond, chain, Job 12, 18."
+      },
+      {
+       "draft": "Vulg. funis.",
+       "reread": "Vulg. funis.",
+       "status": "agreed",
+       "text": "Vulg. funis."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1097,
+      "y": 2130,
+      "width": 873,
+      "height": 205
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r02-b02-873x205+1097+2130-x2.png",
+     "image_sha256": "bc83bbba61fbe9b105333d75a55b7401aa61d360d0b6bd2935e191d0ac73bc8f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲזַי i. q. אָז, adv. at that time, then,",
+       "thereupon, Ps. 124, 3. 4. 5. Similar is",
+       "Chald. אֱדַיִן. See in אָז, note."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3e5543ce-b8ac-4353-86cc-625b433d6181",
+      "duration_api_ms": 6943,
+      "cost_usd_list": 0.059966250000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2504,
+      "output_tokens": 340
+     },
+     "lines": [
+      {
+       "draft": "אֲזַי i. q. אָז, adv. at that time, then,",
+       "reread": "אֲזַי i. q. אָז, adv. at that time, then,",
+       "status": "agreed",
+       "text": "אֲזַי i. q. אָז, adv. at that time, then,"
+      },
+      {
+       "draft": "thereupon, Ps. 124, 3. 4. 5. Similar is",
+       "reread": "thereupon, Ps. 124, 3. 4. 5. Similar is",
+       "status": "agreed",
+       "text": "thereupon, Ps. 124, 3. 4. 5. Similar is"
+      },
+      {
+       "draft": "Chald. אֱדַיִן. See in אָז, note.",
+       "reread": "Chald. אֱדַיִן. See in אָז, note.",
+       "status": "agreed",
+       "text": "Chald. אֱדַיִן. See in אָז, note."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1097,
+    "y": 2331,
+    "width": 873,
+    "height": 946
+   },
+   "draft_lines": [
+    "אַזְכָּרָה f. (verbal of Hiph. from r. זָכַר",
+    "in the sense of sacrificing Is. 66, 3 ; comp.",
+    "Hiph. no. 1. b,) a memorial, a remem-",
+    "brance-offering, Sept. μνημόσυνον, Vulg.",
+    "memoriale. This name was given to",
+    "that portion of the vegetable oblation",
+    "(מִנְחָה) which was burnt with frankin-",
+    "cense upon the altar; the sweet odour",
+    "of which ascending to heaven, was sup-",
+    "posed to commend the person sacrificing",
+    "to the remembrance and favour of God.",
+    "Lev. 2, 2. 9. 16. 5, 12. Num. 5, 26.—In",
+    "Lev. 24, 7 the frankincense sprinkled",
+    "upon the shew-bread, is also called",
+    "אַזְכָּרָה.",
+    "* אָזַל fut. יֵאזַל, whence תֵּזְלִי for"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1097,
+      "y": 2339,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r03-b00-873x237+1097+2339-x2.png",
+     "image_sha256": "2ccea0c8e06e95b43d9fe24e2c252831543765a2f9bc2ef1259067ab1e5ce542",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַזְכָּרָה f. (verbal of Hiph. from r. זָכַר",
+       "in the sense of sacrificing Is. 66, 3 ; comp.",
+       "Hiph. no. 1. b,) a memorial, a remem-",
+       "brance-offering, Sept. μνημόσυνον, Vulg."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7f4f92a6-46ea-4589-97bd-cee5aca126b4",
+      "duration_api_ms": 9010,
+      "cost_usd_list": 0.05874125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 284
+     },
+     "lines": [
+      {
+       "draft": "אַזְכָּרָה f. (verbal of Hiph. from r. זָכַר",
+       "reread": "אַזְכָּרָה f. (verbal of Hiph. from r. זָכַר",
+       "status": "agreed",
+       "text": "אַזְכָּרָה f. (verbal of Hiph. from r. זָכַר"
+      },
+      {
+       "draft": "in the sense of sacrificing Is. 66, 3 ; comp.",
+       "reread": "in the sense of sacrificing Is. 66, 3 ; comp.",
+       "status": "agreed",
+       "text": "in the sense of sacrificing Is. 66, 3; comp."
+      },
+      {
+       "draft": "Hiph. no. 1. b,) a memorial, a remem-",
+       "reread": "Hiph. no. 1. b,) a memorial, a remem-",
+       "status": "agreed",
+       "text": "Hiph. no. 1. b,) a memorial, a remem-"
+      },
+      {
+       "draft": "brance-offering, Sept. μνημόσυνον, Vulg.",
+       "reread": "brance-offering, Sept. μνημόσυνον, Vulg.",
+       "status": "agreed",
+       "text": "brance-offering, Sept. μνημόσυνον, Vulg."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1097,
+      "y": 2560,
+      "width": 873,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r03-b01-873x229+1097+2560-x2.png",
+     "image_sha256": "f9c2dec1ea720b664b203a97d96bd70ba96e190e08992a3b2c77f1d17755dc33",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "memoriale. This name was given to",
+       "that portion of the vegetable oblation",
+       "(מִנְחָה) which was burnt with frankin-",
+       "cense upon the altar; the sweet odour"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e92fcb89-e4f6-4be3-a5a9-eac3c7be31aa",
+      "duration_api_ms": 7630,
+      "cost_usd_list": 0.05654125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 240
+     },
+     "lines": [
+      {
+       "draft": "memoriale. This name was given to",
+       "reread": "memoriale. This name was given to",
+       "status": "agreed",
+       "text": "memoriale. This name was given to"
+      },
+      {
+       "draft": "that portion of the vegetable oblation",
+       "reread": "that portion of the vegetable oblation",
+       "status": "agreed",
+       "text": "that portion of the vegetable oblation"
+      },
+      {
+       "draft": "(מִנְחָה) which was burnt with frankin-",
+       "reread": "(מִנְחָה) which was burnt with frankin-",
+       "status": "agreed",
+       "text": "(מִנְחָה) which was burnt with frankin-"
+      },
+      {
+       "draft": "cense upon the altar; the sweet odour",
+       "reread": "cense upon the altar; the sweet odour",
+       "status": "agreed",
+       "text": "cense upon the altar; the sweet odour"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1097,
+      "y": 2773,
+      "width": 873,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r03-b02-873x238+1097+2773-x2.png",
+     "image_sha256": "4e0061051be114e2d68df4cf0272fe634e213d9bf1ddca16dab37b4cfacfa27b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of which ascending to heaven, was sup-",
+       "posed to commend the person sacrificing",
+       "to the remembrance and favour of God.",
+       "Lev. 2, 2. 9. 16. 5, 12. Num. 5, 26.—In"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fabd9536-f458-450e-b84d-25fd0e053bfc",
+      "duration_api_ms": 7850,
+      "cost_usd_list": 0.05734125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "of which ascending to heaven, was sup-",
+       "reread": "of which ascending to heaven, was sup-",
+       "status": "agreed",
+       "text": "of which ascending to heaven, was sup-"
+      },
+      {
+       "draft": "posed to commend the person sacrificing",
+       "reread": "posed to commend the person sacrificing",
+       "status": "agreed",
+       "text": "posed to commend the person sacrificing"
+      },
+      {
+       "draft": "to the remembrance and favour of God.",
+       "reread": "to the remembrance and favour of God.",
+       "status": "agreed",
+       "text": "to the remembrance and favour of God."
+      },
+      {
+       "draft": "Lev. 2, 2. 9. 16. 5, 12. Num. 5, 26.—In",
+       "reread": "Lev. 2, 2. 9. 16. 5, 12. Num. 5, 26.—In",
+       "status": "agreed",
+       "text": "Lev. 2, 2. 9. 16. 5, 12. Num. 5, 26.—In"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1097,
+      "y": 2995,
+      "width": 873,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0044/pass2/c1-r03-b03-873x284+1097+2995-x2.png",
+     "image_sha256": "a63d190324eaead8c99627149f2c76e3c3b6419b3e61823d77a13ae5a253659c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Lev. 24, 7 the frankincense sprinkled",
+       "upon the shew-bread, is also called",
+       "אַזְכָּרָה.",
+       "* אָזַל fut. יֵאזַל, whence הַזְלִי for"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "589c3f4e-94c3-4cea-a964-ebaf8fb9e7e5",
+      "duration_api_ms": 14586,
+      "cost_usd_list": 0.08204125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2882,
+      "output_tokens": 687
+     },
+     "lines": [
+      {
+       "draft": "Lev. 24, 7 the frankincense sprinkled",
+       "reread": "Lev. 24, 7 the frankincense sprinkled",
+       "status": "agreed",
+       "text": "Lev. 24, 7 the frankincense sprinkled"
+      },
+      {
+       "draft": "upon the shew-bread, is also called",
+       "reread": "upon the shew-bread, is also called",
+       "status": "agreed",
+       "text": "upon the shew-bread, is also called"
+      },
+      {
+       "draft": "אַזְכָּרָה.",
+       "reread": "אַזְכָּרָה.",
+       "status": "agreed",
+       "text": "אַזְכָּרָה."
+      },
+      {
+       "draft": "* אָזַל fut. יֵאזַל, whence תֵּזְלִי for",
+       "reread": "* אָזַל fut. יֵאזַל, whence הַזְלִי for",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b03",
+       "judgement": {
+        "text": "* אָזַל fut. יֵאזַל, whence תֵּזְלִי for",
+        "verdict": "a",
+        "note": "The last Hebrew word's first letter has the tav's left foot, a dagesh inside, and tsere (two dots) beneath — תֵּ, not הַ. Reading A matches the print; B misread the letter and vowel.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1dd3a9fb-f180-46ff-aa78-5d243098bfb0",
+        "duration_api_ms": 13438,
+        "cost_usd_list": 0.073074,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2821,
+        "output_tokens": 532
+       },
+       "text": "* אָזַל fut. יֵאזַל, whence תֵּזְלִי for"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אדא 28 אדל",
+   "status": "adjudicated",
+   "draft": "אזא 28 אזל",
+   "reread": "אדא 28 אדל",
+   "verdict": "b",
+   "note": "Middle letter in both header words is dalet (wide flat top bar, leg set back from the right corner), not zayin; matches the lexicon's page-28 range אדא–אדל.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "in that place, there, kindred with זֶה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Arab. إِنْ ecce! Then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. Part. demonstr. of time, at that time,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "then, Chald. אֱדַיִן. Spoken: a) Of time",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "past, Arab. إِذْ, Gen. 12, 6. Josh. 10, 12.",
+   "status": "adjudicated",
+   "draft": "past, Arab. إِنْ, Gen. 12, 6. Josh. 10, 12.",
+   "reread": "past, Arab. إِذَنْ, Gen. 12, 6. Josh. 10, 12.",
+   "verdict": "neither",
+   "note": "The Arabic word is two letters only: alif with kasra, then a shallow-bowled dhāl (dot above) with sukūn — إِذْ, the expected cognate of אָז. Reading A misreads the dhāl as a final nūn (إِنْ); Reading B inserts an extra fatḥa and nūn (إِذَنْ) that are not printed. The faint marks below the word are bleed-through, not points.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "14, 11. With præt. 1 K. 8, 12. 2 Chr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "6, 1. 8, 12. 17; also with fut. in præter",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "sense, Josh. l. c. Ex. 15, 1. Deut. 4, 41.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Comp. Lehrg. p. 773. b) Of a future",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "time, then, thereupon, after that; with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "fut. in fut. sense, Ps. 96, 12 אָז יְרַנְּנוּ then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "shall they rejoice. Sometimes also with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "præt. in a future sense, where a future",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "precedes, Judg. 5, 11. Ex. 15, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. Part. illat. then, for thence, there-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "fore, on that account, Jer. 22, 15. Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "40, 8. 69, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. With pref. מֵאָז and מִן־אָז, pr. from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "that time, from then; hence a) Adv.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "from ancient times, of old, long since,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2 Sam. 15, 34. Is. 16, 13. 44, 8. 45, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "48, 3. 5. 7. b) Prep. and Conj. from the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "time, from when, since, Fr. depuis, dès-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "lors, c. inf. Ex. 4, 10 מֵאָז דַּבֶּרְךָ since",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thou hast spoken. Josh. 14, 10. With",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "subst. Ruth 2, 7 מֵאָז הַבֹּקֶר from the time",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of morning, since morning. Ps. 76, 8",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מֵאָז אַפֶּךָ from the time of thy anger, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "when once thou art angry. As Conj.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with a finite verb, pr. for מֵאָז אֲשֶׁר, from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the time that, since, Ex. 5, 23 מֵאָז בָּאתִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֶל פַּרְעֹה since I came unto Pharaoh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gen. 39, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Note. Fuller forms from אָז are אֲזַי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "q. v. and Chald. אֱדַיִן. The latter seems",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to have come (by softening the letters)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "from הָדֵין, הֵידֵין, here, also there; so",
+   "status": "adjudicated",
+   "draft": "from הֵידֵין, הָדֵין, here, also there; so",
+   "reread": "from הָדֵין, הֵידֵין, here, also there ; so",
+   "verdict": "b",
+   "note": "The first Aramaic word after \"from\" is the defective הָדֵין (qamets under he, no yod); the plene הֵידֵין (tsere + yod) comes second. A reverses their order. A space is also printed before the semicolon.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "that its ending appears to be plural,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "while in fact it is not so; comp. עֲדַיִן for",
+   "status": "adjudicated",
+   "draft": "while in fact it is not so; comp. עֲדַיִן for",
+   "reread": "while in fact it is not so ; comp. עֲדֵין for",
+   "verdict": "neither",
+   "note": "The print has עֲדַיִן with patah under dalet and hiriq under yod (as in A), and a visible space before the semicolon \"so ;\" (as in B); neither reading has both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "עַד־הֵן. See, for these particles and their",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "etymology, Hupfeld in Zeitschr. f. d.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Kunde des Morgenl. II. p. 434.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אֲזָא and אֲזָה Chald. to light, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "kindle; comp. Arab. أزَّ to be hot, to light",
+   "status": "adjudicated",
+   "draft": "kindle; comp. Arab. أَزَّ to be hot, to light",
+   "reread": "kindle ; comp. Arab. أزَّ to be hot, to light",
+   "verdict": "b",
+   "note": "Arabic word is printed as hamza-alif + zay with shadda only; no fatha on the alif as in Reading A. Printed space before the semicolon is also present.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "a fire. Part. pass. אֵזֵה by Syriasm for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲזֵה Dan. 3, 22; inf. מֵזֵא for מֵאזֵא, c.",
+   "status": "adjudicated",
+   "draft": "אֲזֵה Dan. 3, 22; inf. מֵזֵא for מֵאזֵא, c.",
+   "reread": "אֲזֶה Dan. 3, 22 ; inf. מֵזֵא for מֵאזֵא, c.",
+   "verdict": "neither",
+   "note": "Under the zayin of the first word only two dots (tsere) are printed — this is the regular Chaldee form contrasted with the segol-pointed Syriasm אֲזֶה on line 3 — so B's segol is wrong; but the print has a clear space before the semicolon (\"22 ;\"), which A omits. Rest of the line (מֵזֵא, מֵאזֵא, \", c.\") matches both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "suff. מֵזְיֵהּ 3, 19.",
+   "status": "adjudicated",
+   "draft": "suff. מֵזְיֵהּ 3, 19.",
+   "reread": "suff. מִזְרֶהָ 3, 19.",
+   "verdict": "a",
+   "note": "The third letter is a short yod, not a resh, and the final he carries a mappiq dot; the vowels are tsere–shva–tsere (Dan 3:19 לְמֵזְיֵהּ). Reading B's resh, segol and qamats are not printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אָזַב obsol. root, whence אֵזוֹב q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֶזְבַּי pr. n. m. Ezbai, 1 Chr. 11, 37.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אֲזַד Chald. i. q. אֲזַל to go away, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "depart. For the interchange of d and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "l, comp. δάκρυον, lacryma, and see under",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lett. ל no. 2. Hence Dan. 2, 5. 8 מִלְּתָא",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "מִנִּי אַזְדָּא the word has gone out from me,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. what I have said is ratified and can-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "not be recalled; comp. 9, 23. Is. 45, 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "The Heb. intpp. as Saadias and Tanchum",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of Jerus. have long ago well compared",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the Talmudic phrase אזדא לטעמיה abiit",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "in sententiam suam, i. e. to follow one's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "opinion. As to the grammatical form,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַזְדָּא is part. fem. from masc. אָזֵד, after",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the form אָזֵל, קָטֵל.",
+   "status": "adjudicated",
+   "draft": "the form קָטֵל, אָזֵל.",
+   "reread": "the form אָזֵל, קָטֵל.",
+   "verdict": "b",
+   "note": "Printed left-to-right order: אָזֵל stands immediately after \"form\", then the comma, then קָטֵל before the full stop. Reading A reverses the two items. Vowels (qamets, tsere on each) match in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֵזוֹב m. (by Syriasm for אֱזוֹב,) ὕσσω-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "πος, hyssop, much used by the Hebrews",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "in their sacred purifications and sprink-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "lings, Ex. 12, 22. Lev. 14, 4. 6. 21. 49.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ps. 51, 9. 1 K. 5, 13.—Like the names",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of many other oriental plants, that of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hyssop also seems to have come to the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Greeks from the oriental languages.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Under this name the Hebrews appear to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "have comprised not only the common",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hyssop of the shops, but also other aro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "matic plants, espec. mint, wild marjoram,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "etc.—Some derive it from אָזַב, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "they regard as i. q. زَبَّ to be hairy,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "shaggy; but the plants above named",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "hardly admit this epithet.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֵזוֹר m. by Syriasm for אֱזוֹר. R.",
+   "status": "adjudicated",
+   "draft": "אֵזוֹר m. by Syriasm for אֵזוֹר. R.",
+   "reread": "אֵזוֹר m. by Syriasm for אֱזוֹר. R.",
+   "verdict": "b",
+   "note": "Decisive difference is the vowel under the aleph of the second Hebrew word: the print shows a composite hataf segol (three dots plus shva), not tsere. The headword has tsere (two dots). Reading B matches; this also fits the sense (Syriac form with full vowel for the Hebrew hataf form).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָזַר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1. a girdle, belt, Is. 5, 27. Jer. 13, 1 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. a band, bond, chain, Job 12, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Vulg. funis.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲזַי i. q. אָז, adv. at that time, then,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "thereupon, Ps. 124, 3. 4. 5. Similar is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Chald. אֱדַיִן. See in אָז, note.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַזְכָּרָה f. (verbal of Hiph. from r. זָכַר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in the sense of sacrificing Is. 66, 3; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Hiph. no. 1. b,) a memorial, a remem-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "brance-offering, Sept. μνημόσυνον, Vulg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "memoriale. This name was given to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "that portion of the vegetable oblation",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "(מִנְחָה) which was burnt with frankin-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "cense upon the altar; the sweet odour",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of which ascending to heaven, was sup-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "posed to commend the person sacrificing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "to the remembrance and favour of God.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Lev. 2, 2. 9. 16. 5, 12. Num. 5, 26.—In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Lev. 24, 7 the frankincense sprinkled",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "upon the shew-bread, is also called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַזְכָּרָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אָזַל fut. יֵאזַל, whence תֵּזְלִי for",
+   "status": "adjudicated",
+   "draft": "* אָזַל fut. יֵאזַל, whence תֵּזְלִי for",
+   "reread": "* אָזַל fut. יֵאזַל, whence הַזְלִי for",
+   "verdict": "a",
+   "note": "The last Hebrew word's first letter has the tav's left foot, a dagesh inside, and tsere (two dots) beneath — תֵּ, not הַ. Reading A matches the print; B misread the letter and vowel.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 94,
+  "adjudicated": 10,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 4
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.7143
+}

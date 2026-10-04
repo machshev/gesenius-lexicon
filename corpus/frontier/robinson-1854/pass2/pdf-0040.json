@@ -1,0 +1,2613 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 40,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0040.png",
+ "raster_sha256": "458408edb7b99f71dcdab0a83ef9f0c6d53080c59f8672e99abf3e2f319db489",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0040.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:27:57+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 232,
+    "y": 79,
+    "width": 1756,
+    "height": 91
+   },
+   "draft_lines": [
+    "און 24 אופ"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 232,
+      "y": 77,
+      "width": 1756,
+      "height": 96
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/header-b00-1756x96+232+77-x2.png",
+     "image_sha256": "0d7e0388d74db031e12ca53283d128ac038cf8cc6c264e8fbac8d5eaad3ccbdd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "און 24 אוב"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e44a506a-5efd-44c8-974a-9c3a2aae3caf",
+      "duration_api_ms": 7755,
+      "cost_usd_list": 0.0450025,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 203
+     },
+     "lines": [
+      {
+       "draft": "און 24 אופ",
+       "reread": "און 24 אוב",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "און 24 אוב",
+        "verdict": "b",
+        "note": "The third letter of the right-hand word has a flat base that projects to the right beyond the upright stroke, and no inner curled lip — a bet, not a pe. Page 24 of Robinson's Gesenius begins with אוֹב and ends with אוֹן, matching the header. No vowel points are legible in the header at this enlargement.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eeb685c9-5b5c-4b1e-8347-5626181be4b7",
+        "duration_api_ms": 17002,
+        "cost_usd_list": 0.07308475,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3539,
+        "cache_creation_input_tokens": 1779,
+        "output_tokens": 806
+       },
+       "text": "און 24 אוב"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 232,
+    "y": 127,
+    "width": 863,
+    "height": 833
+   },
+   "draft_lines": [
+    "2. wealth, substance, Hos. 12, 9. Job",
+    "20, 10.",
+    "3. On, pr. n. m. Num. 16, 1.",
+    "III. אוֹן Gen. 41, 50 and אֹן 41, 45. 46,",
+    "20, On, the domestic pr. n. of an ancient",
+    "Egyptian city, in Ez. 30, 17 written אָוֶן",
+    "q. v. no. 1. b. Called also by the He-",
+    "brews, prob. as a translation of the",
+    "Egyptian name, בֵּית שֶׁמֶשׁ Beth-shemesh,",
+    "i. e. house of the sun, Jer. 43, 13; by",
+    "the Greeks Heliopolis, city of the sun;",
+    "by the Arabs عين شمس 'Ain Shems,",
+    "i. e. fountain of the sun. Coptic Ⲱⲛ,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 232,
+      "y": 119,
+      "width": 863,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r00-b00-863x247+232+119-x2.png",
+     "image_sha256": "75eb266d01097bb03f867c9237517f1cd469a3569be289ba4c08291605eb2a55",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. wealth, substance, Hos. 12, 9. Job",
+       "20, 10.",
+       "3. On, pr. n. m. Num. 16, 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1aa5266d-e6c1-4342-9040-b61e77ce856c",
+      "duration_api_ms": 8526,
+      "cost_usd_list": 0.058138249999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 262
+     },
+     "lines": [
+      {
+       "draft": "2. wealth, substance, Hos. 12, 9. Job",
+       "reread": "2. wealth, substance, Hos. 12, 9. Job",
+       "status": "agreed",
+       "text": "2. wealth, substance, Hos. 12, 9. Job"
+      },
+      {
+       "draft": "20, 10.",
+       "reread": "20, 10.",
+       "status": "agreed",
+       "text": "20, 10."
+      },
+      {
+       "draft": "3. On, pr. n. m. Num. 16, 1.",
+       "reread": "3. On, pr. n. m. Num. 16, 1.",
+       "status": "agreed",
+       "text": "3. On, pr. n. m. Num. 16, 1."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 232,
+      "y": 350,
+      "width": 863,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r00-b01-863x262+232+350-x2.png",
+     "image_sha256": "05aa50bee56a76cf62c8ccee92e5d6c91c55c83aaeb4901f31eb7da71a97c6aa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "III. אוֹן Gen. 41, 50 and אֹן 41, 45. 46,",
+       "20, On, the domestic pr. n. of an ancient",
+       "Egyptian city, in Ez. 30, 17 written אָוֶן",
+       "q. v. no. 1. b.  Called also by the He-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3c2a8b31-a1c8-4aea-b3c3-30a09a85e1f6",
+      "duration_api_ms": 10299,
+      "cost_usd_list": 0.06531324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2733,
+      "output_tokens": 390
+     },
+     "lines": [
+      {
+       "draft": "III. אוֹן Gen. 41, 50 and אֹן 41, 45. 46,",
+       "reread": "III. אוֹן Gen. 41, 50 and אֹן 41, 45. 46,",
+       "status": "agreed",
+       "text": "III. אוֹן Gen. 41, 50 and אֹן 41, 45. 46,"
+      },
+      {
+       "draft": "20, On, the domestic pr. n. of an ancient",
+       "reread": "20, On, the domestic pr. n. of an ancient",
+       "status": "agreed",
+       "text": "20, On, the domestic pr. n. of an ancient"
+      },
+      {
+       "draft": "Egyptian city, in Ez. 30, 17 written אָוֶן",
+       "reread": "Egyptian city, in Ez. 30, 17 written אָוֶן",
+       "status": "agreed",
+       "text": "Egyptian city, in Ez. 30, 17 written אָוֶן"
+      },
+      {
+       "draft": "q. v. no. 1. b. Called also by the He-",
+       "reread": "q. v. no. 1. b.  Called also by the He-",
+       "status": "agreed",
+       "text": "q. v. no. 1. b. Called also by the He-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 232,
+      "y": 596,
+      "width": 863,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r00-b02-863x233+232+596-x2.png",
+     "image_sha256": "8b59cfec5560f5d88f03cbe2ceb9b6b160c39f20a373a34d846fbddee4c61231",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "brews, prob. as a translation of the",
+       "Egyptian name, בֵּית שֶׁמֶשׁ Beth-shemesh,",
+       "i. e. house of the sun, Jer. 43, 13; by",
+       "the Greeks Heliopolis, city of the sun;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e9d7739a-50bd-4c99-8e8e-1c26344a7faa",
+      "duration_api_ms": 8313,
+      "cost_usd_list": 0.05761325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 267
+     },
+     "lines": [
+      {
+       "draft": "brews, prob. as a translation of the",
+       "reread": "brews, prob. as a translation of the",
+       "status": "agreed",
+       "text": "brews, prob. as a translation of the"
+      },
+      {
+       "draft": "Egyptian name, בֵּית שֶׁמֶשׁ Beth-shemesh,",
+       "reread": "Egyptian name, בֵּית שֶׁמֶשׁ Beth-shemesh,",
+       "status": "agreed",
+       "text": "Egyptian name, בֵּית שֶׁמֶשׁ Beth-shemesh,"
+      },
+      {
+       "draft": "i. e. house of the sun, Jer. 43, 13; by",
+       "reread": "i. e. house of the sun, Jer. 43, 13; by",
+       "status": "agreed",
+       "text": "i. e. house of the sun, Jer. 43, 13; by"
+      },
+      {
+       "draft": "the Greeks Heliopolis, city of the sun;",
+       "reread": "the Greeks Heliopolis, city of the sun;",
+       "status": "agreed",
+       "text": "the Greeks Heliopolis, city of the sun;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 232,
+      "y": 813,
+      "width": 863,
+      "height": 140
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r00-b03-863x140+232+813-x2.png",
+     "image_sha256": "baa0ffdc90665407c491c8944e0487ec4dfd0e5301893a6aa7f76eaaa7066ed8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "by the Arabs عين شمس ’Ain Shems,",
+       "i. e. fountain of the sun. Coptic ⲰⲚ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e40834f7-f782-417b-b05e-a3c6c0989076",
+      "duration_api_ms": 10926,
+      "cost_usd_list": 0.05773825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2175,
+      "output_tokens": 378
+     },
+     "lines": [
+      {
+       "draft": "by the Arabs عين شمس 'Ain Shems,",
+       "reread": "by the Arabs عين شمس ’Ain Shems,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "by the Arabs عين شمس ’Ain Shems,",
+        "verdict": "b",
+        "note": "The only difference is the mark before \"Ain\": the print shows a curved raised comma (’, the usual 19th-century rendering of ʿayin), not a straight typewriter apostrophe, so Reading B is correct. Arabic عين شمس (with shin dots) and the italic \"Ain Shems,\" match in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "24a02b9d-39a8-425a-9ad1-b08989c5db44",
+        "duration_api_ms": 12169,
+        "cost_usd_list": 0.064797,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2098,
+        "output_tokens": 550
+       },
+       "text": "by the Arabs عين شمس ’Ain Shems,"
+      },
+      {
+       "draft": "i. e. fountain of the sun. Coptic Ⲱⲛ,",
+       "reread": "i. e. fountain of the sun. Coptic ⲰⲚ,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "i. e. fountain of the sun. Coptic Ⲱⲛ,",
+        "verdict": "a",
+        "note": "The second Coptic letter is printed at x-height, clearly shorter than the capital Ⲱ before it, so it is lowercase ⲛ (Reading A), not capital Ⲛ (Reading B).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "87a2663a-9efd-4b53-b2f9-41e0748f79f9",
+        "duration_api_ms": 10632,
+        "cost_usd_list": 0.06001975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2109,
+        "output_tokens": 450
+       },
+       "text": "i. e. fountain of the sun. Coptic Ⲱⲛ,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 232,
+    "y": 948,
+    "width": 863,
+    "height": 868
+   },
+   "draft_lines": [
+    "which signified light, and spec. the sun,",
+    "as there seems hardly a doubt; comp.",
+    "ⲟⲩⲉⲓⲛ, ⲟⲉⲓⲛ, ⲟⲩⲱⲓⲛⲓ, light, lumi-",
+    "nary; see Peyron Lex. p. 273. The city",
+    "stood on the eastern side of the Nile, a",
+    "few miles north of Memphis; and was",
+    "celebrated for the worship and temple",
+    "of the sun, and for its obelisks, one of",
+    "which remains to the present day;",
+    "Diod. Sic. I. 85. Hdot. 2. 59. Near the",
+    "ruins of the ancient city is a fountain",
+    "still called 'Ain Shems, in the adjacent",
+    "modern village of Matarîyeh. Comp.",
+    "Descr. de l'Egypte, Antiq. V. Pl. 26, 27.",
+    "Bibl. Res. in Pal. I. p. 36, 37."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 232,
+      "y": 955,
+      "width": 863,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r01-b00-863x248+232+955-x2.png",
+     "image_sha256": "c4e8038dd3784c79d35e5b2e5d4265cc43520f4c988a7f5747de6c5ce72bff46",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which signified light, and spec. the sun,",
+       "as there seems hardly a doubt; comp.",
+       "ⲟⲩⲉⲓⲛ, ⲟⲉⲓⲛ, ⲟⲩⲱⲓⲛⲓ, light, lumi-",
+       "nary; see Peyron Lex. p. 273. The city"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9c76129c-cf48-41bb-b26c-10996daf9b59",
+      "duration_api_ms": 11766,
+      "cost_usd_list": 0.07043825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 508
+     },
+     "lines": [
+      {
+       "draft": "which signified light, and spec. the sun,",
+       "reread": "which signified light, and spec. the sun,",
+       "status": "agreed",
+       "text": "which signified light, and spec. the sun,"
+      },
+      {
+       "draft": "as there seems hardly a doubt; comp.",
+       "reread": "as there seems hardly a doubt; comp.",
+       "status": "agreed",
+       "text": "as there seems hardly a doubt; comp."
+      },
+      {
+       "draft": "ⲟⲩⲉⲓⲛ, ⲟⲉⲓⲛ, ⲟⲩⲱⲓⲛⲓ, light, lumi-",
+       "reread": "ⲟⲩⲉⲓⲛ, ⲟⲉⲓⲛ, ⲟⲩⲱⲓⲛⲓ, light, lumi-",
+       "status": "agreed",
+       "text": "ⲟⲩⲉⲓⲛ, ⲟⲉⲓⲛ, ⲟⲩⲱⲓⲛⲓ, light, lumi-"
+      },
+      {
+       "draft": "nary; see Peyron Lex. p. 273. The city",
+       "reread": "nary; see Peyron Lex. p. 273. The city",
+       "status": "agreed",
+       "text": "nary; see Peyron Lex. p. 273. The city"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 232,
+      "y": 1187,
+      "width": 863,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r01-b01-863x234+232+1187-x2.png",
+     "image_sha256": "8eb014f6502e4630b784e19574f9a25cdcdd2917f9e901255e78da9b505159cb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "stood on the eastern side of the Nile, a",
+       "few miles north of Memphis ; and was",
+       "celebrated for the worship and temple",
+       "of the sun, and for its obelisks, one of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a88eb5e-e957-46fd-bfaf-b5593ae1a16b",
+      "duration_api_ms": 7762,
+      "cost_usd_list": 0.056195999999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "stood on the eastern side of the Nile, a",
+       "reread": "stood on the eastern side of the Nile, a",
+       "status": "agreed",
+       "text": "stood on the eastern side of the Nile, a"
+      },
+      {
+       "draft": "few miles north of Memphis; and was",
+       "reread": "few miles north of Memphis ; and was",
+       "status": "agreed",
+       "text": "few miles north of Memphis; and was"
+      },
+      {
+       "draft": "celebrated for the worship and temple",
+       "reread": "celebrated for the worship and temple",
+       "status": "agreed",
+       "text": "celebrated for the worship and temple"
+      },
+      {
+       "draft": "of the sun, and for its obelisks, one of",
+       "reread": "of the sun, and for its obelisks, one of",
+       "status": "agreed",
+       "text": "of the sun, and for its obelisks, one of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 232,
+      "y": 1405,
+      "width": 863,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r01-b02-863x239+232+1405-x2.png",
+     "image_sha256": "a7aad73445898ad21d633cf769c772544614e13b74b0c6335ec2a893c68ca8bb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which remains to the present day;",
+       "Diod. Sic. I. 85. Hdot. 2. 59. Near the",
+       "ruins of the ancient city is a fountain",
+       "still called 'Ain Shems, in the adjacent"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bcb6310e-eb9a-4cc1-9a00-ac46350a2ba0",
+      "duration_api_ms": 7668,
+      "cost_usd_list": 0.057571,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "which remains to the present day;",
+       "reread": "which remains to the present day;",
+       "status": "agreed",
+       "text": "which remains to the present day;"
+      },
+      {
+       "draft": "Diod. Sic. I. 85. Hdot. 2. 59. Near the",
+       "reread": "Diod. Sic. I. 85. Hdot. 2. 59. Near the",
+       "status": "agreed",
+       "text": "Diod. Sic. I. 85. Hdot. 2. 59. Near the"
+      },
+      {
+       "draft": "ruins of the ancient city is a fountain",
+       "reread": "ruins of the ancient city is a fountain",
+       "status": "agreed",
+       "text": "ruins of the ancient city is a fountain"
+      },
+      {
+       "draft": "still called 'Ain Shems, in the adjacent",
+       "reread": "still called 'Ain Shems, in the adjacent",
+       "status": "agreed",
+       "text": "still called 'Ain Shems, in the adjacent"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 232,
+      "y": 1628,
+      "width": 863,
+      "height": 180
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r01-b03-863x180+232+1628-x2.png",
+     "image_sha256": "73415a3b2d3bf3e38a9e8f14fa18b7eb0181cd17abb3ce62c17cc4cfd1dd4cbb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "modern village of Matarîyeh. Comp.",
+       "Descr. de l'Egypte, Antiq. V. Pl. 26, 27.",
+       "Bibl. Res. in Pal. I. p. 36, 37."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "64536271-496c-45f6-bb41-5ffeca402f41",
+      "duration_api_ms": 7427,
+      "cost_usd_list": 0.053646,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2363,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "modern village of Matarîyeh. Comp.",
+       "reread": "modern village of Matarîyeh. Comp.",
+       "status": "agreed",
+       "text": "modern village of Matarîyeh. Comp."
+      },
+      {
+       "draft": "Descr. de l'Egypte, Antiq. V. Pl. 26, 27.",
+       "reread": "Descr. de l'Egypte, Antiq. V. Pl. 26, 27.",
+       "status": "agreed",
+       "text": "Descr. de l'Egypte, Antiq. V. Pl. 26, 27."
+      },
+      {
+       "draft": "Bibl. Res. in Pal. I. p. 36, 37.",
+       "reread": "Bibl. Res. in Pal. I. p. 36, 37.",
+       "status": "agreed",
+       "text": "Bibl. Res. in Pal. I. p. 36, 37."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 232,
+    "y": 1804,
+    "width": 863,
+    "height": 710
+   },
+   "draft_lines": [
+    "אוֹנוֹ (strong, for אוֹנוֹן) Ono, pr. n. of",
+    "a city in Benjamin, Ezra 2, 33. Neh. 7,",
+    "37. 11, 35. 1 Chr. 8, 12; with a valley",
+    "or plain of like name, Neh. 6, 2.",
+    "אוֹנִיּוֹת f. plur. 2 Chr. 8, 18 Cheth. for",
+    "אֳנִיּוֹת ships, with Vav as mater lectionis",
+    "redundant.",
+    "אוֹנָם (strong, stout) Onam, pr. n. m.",
+    "a) Gen. 36, 23.   b) 1 Chr. 2, 26.",
+    "אוֹנָן (id.) Onan, pr. n. of a son of",
+    "Judah, Gen. 38, 9. 46, 12. Num. 26, 19."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 232,
+      "y": 1813,
+      "width": 863,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r02-b00-863x242+232+1813-x2.png",
+     "image_sha256": "851269178c5463da40b686b25464eb8e1d22816ebc73d45b9a25ffa5bdd8f499",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹנוֹ (strong, for אוֹנוֹן) Ono, pr. n. of",
+       "a city in Benjamin, Ezra 2, 33. Neh. 7,",
+       "37. 11, 35. 1 Chr. 8, 12; with a valley",
+       "or plain of like name, Neh. 6, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eabde8ec-af40-48d3-b6ec-59bd03491512",
+      "duration_api_ms": 7328,
+      "cost_usd_list": 0.06467099999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 392
+     },
+     "lines": [
+      {
+       "draft": "אוֹנוֹ (strong, for אוֹנוֹן) Ono, pr. n. of",
+       "reread": "אוֹנוֹ (strong, for אוֹנוֹן) Ono, pr. n. of",
+       "status": "agreed",
+       "text": "אוֹנוֹ (strong, for אוֹנוֹן) Ono, pr. n. of"
+      },
+      {
+       "draft": "a city in Benjamin, Ezra 2, 33. Neh. 7,",
+       "reread": "a city in Benjamin, Ezra 2, 33. Neh. 7,",
+       "status": "agreed",
+       "text": "a city in Benjamin, Ezra 2, 33. Neh. 7,"
+      },
+      {
+       "draft": "37. 11, 35. 1 Chr. 8, 12; with a valley",
+       "reread": "37. 11, 35. 1 Chr. 8, 12; with a valley",
+       "status": "agreed",
+       "text": "37. 11, 35. 1 Chr. 8, 12; with a valley"
+      },
+      {
+       "draft": "or plain of like name, Neh. 6, 2.",
+       "reread": "or plain of like name, Neh. 6, 2.",
+       "status": "agreed",
+       "text": "or plain of like name, Neh. 6, 2."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 232,
+      "y": 2039,
+      "width": 863,
+      "height": 279
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r02-b01-863x279+232+2039-x2.png",
+     "image_sha256": "0bdc797da33ed50ed6c868932154ef12997bf406571ca6a47525669535128024",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹנִיּוֹת f. plur. 2 Chr. 8, 18 Cheth. for",
+       "אֳנִיּוֹת ships, with Vav as mater lectionis",
+       "redundant.",
+       "אוֹנָם (strong, stout) Onam, pr. n. m."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d9349a2c-7f9d-4898-a30a-30755df3ff47",
+      "duration_api_ms": 9798,
+      "cost_usd_list": 0.07902100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 648
+     },
+     "lines": [
+      {
+       "draft": "אוֹנִיּוֹת f. plur. 2 Chr. 8, 18 Cheth. for",
+       "reread": "אוֹנִיּוֹת f. plur. 2 Chr. 8, 18 Cheth. for",
+       "status": "agreed",
+       "text": "אוֹנִיּוֹת f. plur. 2 Chr. 8, 18 Cheth. for"
+      },
+      {
+       "draft": "אֳנִיּוֹת ships, with Vav as mater lectionis",
+       "reread": "אֳנִיּוֹת ships, with Vav as mater lectionis",
+       "status": "agreed",
+       "text": "אֳנִיּוֹת ships, with Vav as mater lectionis"
+      },
+      {
+       "draft": "redundant.",
+       "reread": "redundant.",
+       "status": "agreed",
+       "text": "redundant."
+      },
+      {
+       "draft": "אוֹנָם (strong, stout) Onam, pr. n. m.",
+       "reread": "אוֹנָם (strong, stout) Onam, pr. n. m.",
+       "status": "agreed",
+       "text": "אוֹנָם (strong, stout) Onam, pr. n. m."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 232,
+      "y": 2302,
+      "width": 863,
+      "height": 204
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r02-b02-863x204+232+2302-x2.png",
+     "image_sha256": "bf4bdc6cc2c6547e040c88db75127c4832b36e38648876dfe756fe0b6dd90495",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a) Gen. 36, 23.   b) 1 Chr. 2, 26.",
+       "אוֹנָן (id.) Onan, pr. n. of a son of",
+       "Judah, Gen. 38, 9. 46, 12. Num. 26, 19."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c9f03c1b-22c5-4091-b51a-b8bba0aff99b",
+      "duration_api_ms": 9300,
+      "cost_usd_list": 0.057296,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2487,
+      "output_tokens": 291
+     },
+     "lines": [
+      {
+       "draft": "a) Gen. 36, 23.   b) 1 Chr. 2, 26.",
+       "reread": "a) Gen. 36, 23.   b) 1 Chr. 2, 26.",
+       "status": "agreed",
+       "text": "a) Gen. 36, 23. b) 1 Chr. 2, 26."
+      },
+      {
+       "draft": "אוֹנָן (id.) Onan, pr. n. of a son of",
+       "reread": "אוֹנָן (id.) Onan, pr. n. of a son of",
+       "status": "agreed",
+       "text": "אוֹנָן (id.) Onan, pr. n. of a son of"
+      },
+      {
+       "draft": "Judah, Gen. 38, 9. 46, 12. Num. 26, 19.",
+       "reread": "Judah, Gen. 38, 9. 46, 12. Num. 26, 19.",
+       "status": "agreed",
+       "text": "Judah, Gen. 38, 9. 46, 12. Num. 26, 19."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 232,
+    "y": 2502,
+    "width": 863,
+    "height": 731
+   },
+   "draft_lines": [
+    "אוּפָז Uphaz, pr. n. of a gold country,",
+    "Jer. 10, 9. Dan. 10, 5. It seems to be",
+    "corrupted out of אוֹפִיר ; since the letters",
+    "ר and ז are also elsewhere interchanged,",
+    "comp. בָּזָק and בָּרָק lightning, فخر and",
+    "فخز to boast.",
+    "אֹפִיר , אוֹפִר , אוֹפִיר , pr. n. Ophir,",
+    "a celebrated region, abounding in gold,",
+    "which the seamen of Solomon in com-",
+    "pany with the Phenicians were accus-",
+    "tomed to visit, taking their departure",
+    "from the ports of the Elanitic gulf, and"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 232,
+      "y": 2511,
+      "width": 863,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r03-b00-863x237+232+2511-x2.png",
+     "image_sha256": "34535a8a8a96815c68698f061fa2c604864f61c612edeb299bd9fdf026ab1e93",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹפָּז Uphaz, pr. n. of a gold country,",
+       "Jer. 10, 9. Dan. 10, 5. It seems to be",
+       "corrupted out of אוֹפִּיר ; since the letters",
+       "ר and ז are also elsewhere interchanged,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5c857e87-a131-415a-9641-aaa8cefb3719",
+      "duration_api_ms": 8212,
+      "cost_usd_list": 0.06834599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 481
+     },
+     "lines": [
+      {
+       "draft": "אוּפָז Uphaz, pr. n. of a gold country,",
+       "reread": "אוֹפָּז Uphaz, pr. n. of a gold country,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "אוּפָז Uphaz, pr. n. of a gold country,",
+        "verdict": "a",
+        "note": "The vav dot is at mid-height inside the letter (shureq, אוּ), not above it as a holem — contrast the clearly raised holem on אוֹפִיר in line 3. The pe shows only qamets beneath, no dagesh. Reading A matches.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f7c25376-10c6-4a1f-ac2a-7fe3eafddfb2",
+        "duration_api_ms": 16740,
+        "cost_usd_list": 0.08311675000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3577,
+        "cache_creation_input_tokens": 2542,
+        "output_tokens": 804
+       },
+       "text": "אוּפָז Uphaz, pr. n. of a gold country,"
+      },
+      {
+       "draft": "Jer. 10, 9. Dan. 10, 5. It seems to be",
+       "reread": "Jer. 10, 9. Dan. 10, 5. It seems to be",
+       "status": "agreed",
+       "text": "Jer. 10, 9. Dan. 10, 5. It seems to be"
+      },
+      {
+       "draft": "corrupted out of אוֹפִיר ; since the letters",
+       "reread": "corrupted out of אוֹפִּיר ; since the letters",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "corrupted out of אוֹפִּיר ; since the letters",
+        "verdict": "b",
+        "note": "The pe in אוֹפִּיר shows a printed dot inside the letter (dagesh), in addition to the hireq beneath; the vav carries holem and the yod is plene. Reading A omits the dagesh.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c48802d4-544d-4b1f-bb2f-b01cb9fd5122",
+        "duration_api_ms": 13791,
+        "cost_usd_list": 0.074075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2535,
+        "output_tokens": 626
+       },
+       "text": "corrupted out of אוֹפִּיר; since the letters"
+      },
+      {
+       "draft": "ר and ז are also elsewhere interchanged,",
+       "reread": "ר and ז are also elsewhere interchanged,",
+       "status": "agreed",
+       "text": "ר and ז are also elsewhere interchanged,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 232,
+      "y": 2732,
+      "width": 863,
+      "height": 282
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r03-b01-863x282+232+2732-x2.png",
+     "image_sha256": "16daa5ca96b4d513abf8c17002d093460e1404ece62f9d49ba266146ad9edec7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "comp. בָּזָק and בָּרָק lightning, فخر and",
+       "فخز to boast.",
+       "אוֹפִיר, אוֹפִר, אֹפִיר, pr. n. Ophir,",
+       "a celebrated region, abounding in gold,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a10ab29a-04d8-48f3-9a9a-7d57e6a62278",
+      "duration_api_ms": 9949,
+      "cost_usd_list": 0.06919600000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2859,
+      "output_tokens": 436
+     },
+     "lines": [
+      {
+       "draft": "comp. בָּזָק and בָּרָק lightning, فخر and",
+       "reread": "comp. בָּזָק and בָּרָק lightning, فخر and",
+       "status": "agreed",
+       "text": "comp. בָּזָק and בָּרָק lightning, فخر and"
+      },
+      {
+       "draft": "فخز to boast.",
+       "reread": "فخز to boast.",
+       "status": "agreed",
+       "text": "فخز to boast."
+      },
+      {
+       "draft": "אֹפִיר , אוֹפִר , אוֹפִיר , pr. n. Ophir,",
+       "reread": "אוֹפִיר, אוֹפִר, אֹפִיר, pr. n. Ophir,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "אוֹפִיר , אוֹפִר , אֹפִיר , pr. n. Ophir,",
+        "verdict": "b",
+        "note": "Decisive difference is the left-to-right order of the three forms: printed leftmost is the fully plene אוֹפִיר, middle is אוֹפִר (no yod), rightmost is אֹפִיר (holem on alef, no vav) — Reading B's order; Reading A reversed it. Vowel points agree with both readings. The print has a visible space before each comma after the Hebrew, which only A reproduced.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0805a9f4-e38f-4785-9f31-b856db963e51",
+        "duration_api_ms": 16966,
+        "cost_usd_list": 0.09353724999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3599,
+        "cache_creation_input_tokens": 2834,
+        "output_tokens": 936
+       },
+       "text": "אוֹפִיר, אוֹפִר, אֹפִיר, pr. n. Ophir,"
+      },
+      {
+       "draft": "a celebrated region, abounding in gold,",
+       "reread": "a celebrated region, abounding in gold,",
+       "status": "agreed",
+       "text": "a celebrated region, abounding in gold,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 232,
+      "y": 2998,
+      "width": 863,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c0-r03-b02-863x237+232+2998-x2.png",
+     "image_sha256": "0e1415d426c9099f1d151793402d439f74a2b98f4fcfe38d8d962f5f36d83f5c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which the seamen of Solomon in com-",
+       "pany with the Phenicians were accus-",
+       "tomed to visit, taking their departure",
+       "from the ports of the Elanitic gulf, and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02589635-0f85-4cd1-9962-ebe150369fbc",
+      "duration_api_ms": 4866,
+      "cost_usd_list": 0.056195999999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "which the seamen of Solomon in com-",
+       "reread": "which the seamen of Solomon in com-",
+       "status": "agreed",
+       "text": "which the seamen of Solomon in com-"
+      },
+      {
+       "draft": "pany with the Phenicians were accus-",
+       "reread": "pany with the Phenicians were accus-",
+       "status": "agreed",
+       "text": "pany with the Phenicians were accus-"
+      },
+      {
+       "draft": "tomed to visit, taking their departure",
+       "reread": "tomed to visit, taking their departure",
+       "status": "agreed",
+       "text": "tomed to visit, taking their departure"
+      },
+      {
+       "draft": "from the ports of the Elanitic gulf, and",
+       "reread": "from the ports of the Elanitic gulf, and",
+       "status": "agreed",
+       "text": "from the ports of the Elanitic gulf, and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1116,
+    "y": 127,
+    "width": 872,
+    "height": 843
+   },
+   "draft_lines": [
+    "bringing back every three years gold,",
+    "precious stones, and sandal-wood, also",
+    "silver, ivory, apes, and peacocks; 1 K. 9,",
+    "28. 10, 11. 2 Chr. 8, 18. 9, 10; espec. 1 K.",
+    "10, 22, where Ophir is to be understood,",
+    "although not expressly mentioned. The",
+    "gold of Ophir is frequently mentioned",
+    "in the O. T. as Job 28, 16. Ps. 45, 10. Is.",
+    "13, 12. 1 Chr. 29, 4; once also אוֹפִיר",
+    "itself is put for gold of Ophir Job 22, 24.",
+    "As to the geographical situation of",
+    "Ophir, there is the greatest diversity",
+    "of opinion among commentators. Yet",
+    "among modern interpreters, the best"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1116,
+      "y": 119,
+      "width": 872,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r00-b00-872x297+1116+119-x2.png",
+     "image_sha256": "8eec60e47651ed62e43c96c3e4da2a6bbe212806306bae20b6f94956406b13a9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "bringing back every three years gold,",
+       "precious stones, and sandal-wood, also",
+       "silver, ivory, apes, and peacocks; 1 K. 9,",
+       "28. 10, 11. 2 Chr. 8, 18. 9, 10; espec. 1 K."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "da574a12-dabb-4bec-b4af-2617988bc981",
+      "duration_api_ms": 8619,
+      "cost_usd_list": 0.06304599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "bringing back every three years gold,",
+       "reread": "bringing back every three years gold,",
+       "status": "agreed",
+       "text": "bringing back every three years gold,"
+      },
+      {
+       "draft": "precious stones, and sandal-wood, also",
+       "reread": "precious stones, and sandal-wood, also",
+       "status": "agreed",
+       "text": "precious stones, and sandal-wood, also"
+      },
+      {
+       "draft": "silver, ivory, apes, and peacocks; 1 K. 9,",
+       "reread": "silver, ivory, apes, and peacocks; 1 K. 9,",
+       "status": "agreed",
+       "text": "silver, ivory, apes, and peacocks; 1 K. 9,"
+      },
+      {
+       "draft": "28. 10, 11. 2 Chr. 8, 18. 9, 10; espec. 1 K.",
+       "reread": "28. 10, 11. 2 Chr. 8, 18. 9, 10; espec. 1 K.",
+       "status": "agreed",
+       "text": "28. 10, 11. 2 Chr. 8, 18. 9, 10; espec. 1 K."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1116,
+      "y": 400,
+      "width": 872,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r00-b01-872x234+1116+400-x2.png",
+     "image_sha256": "05a459aba79311b0f5188c9b9086fbbbf66f6697b35c07da8f32caed164041a5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "10, 22, where Ophir is to be understood,",
+       "although not expressly mentioned. The",
+       "gold of Ophir is frequently mentioned",
+       "in the O. T. as Job 28, 16. Ps. 45, 10. Is."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "150ab68a-6376-4d6b-a045-bf010ae26393",
+      "duration_api_ms": 8409,
+      "cost_usd_list": 0.057158499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "10, 22, where Ophir is to be understood,",
+       "reread": "10, 22, where Ophir is to be understood,",
+       "status": "agreed",
+       "text": "10, 22, where Ophir is to be understood,"
+      },
+      {
+       "draft": "although not expressly mentioned. The",
+       "reread": "although not expressly mentioned. The",
+       "status": "agreed",
+       "text": "although not expressly mentioned. The"
+      },
+      {
+       "draft": "gold of Ophir is frequently mentioned",
+       "reread": "gold of Ophir is frequently mentioned",
+       "status": "agreed",
+       "text": "gold of Ophir is frequently mentioned"
+      },
+      {
+       "draft": "in the O. T. as Job 28, 16. Ps. 45, 10. Is.",
+       "reread": "in the O. T. as Job 28, 16. Ps. 45, 10. Is.",
+       "status": "agreed",
+       "text": "in the O. T. as Job 28, 16. Ps. 45, 10. Is."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1116,
+      "y": 618,
+      "width": 872,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r00-b02-872x239+1116+618-x2.png",
+     "image_sha256": "3e3b485b2d7f82ac3cfb5a634dff6c947837492adfdfe3b64be793f323fcafec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "13, 12. 1 Chr. 29, 4; once also אוֹפִיר",
+       "itself is put for gold of Ophir Job 22, 24.",
+       "As to the geographical situation of",
+       "Ophir, there is the greatest diversity"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c3ec91b0-54db-4f51-a65f-2fa409c7e863",
+      "duration_api_ms": 8530,
+      "cost_usd_list": 0.058046,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 255
+     },
+     "lines": [
+      {
+       "draft": "13, 12. 1 Chr. 29, 4; once also אוֹפִיר",
+       "reread": "13, 12. 1 Chr. 29, 4; once also אוֹפִיר",
+       "status": "agreed",
+       "text": "13, 12. 1 Chr. 29, 4; once also אוֹפִיר"
+      },
+      {
+       "draft": "itself is put for gold of Ophir Job 22, 24.",
+       "reread": "itself is put for gold of Ophir Job 22, 24.",
+       "status": "agreed",
+       "text": "itself is put for gold of Ophir Job 22, 24."
+      },
+      {
+       "draft": "As to the geographical situation of",
+       "reread": "As to the geographical situation of",
+       "status": "agreed",
+       "text": "As to the geographical situation of"
+      },
+      {
+       "draft": "Ophir, there is the greatest diversity",
+       "reread": "Ophir, there is the greatest diversity",
+       "status": "agreed",
+       "text": "Ophir, there is the greatest diversity"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1116,
+      "y": 841,
+      "width": 872,
+      "height": 137
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r00-b03-872x137+1116+841-x2.png",
+     "image_sha256": "80cf546ef6c12e2d7d5971e48a3aaaa0fd16494876a076095578b62cc09f70b8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of opinion among commentators. Yet",
+       "among modern interpreters, the best"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43799ecf-4152-40c7-ab21-c39b742be751",
+      "duration_api_ms": 16653,
+      "cost_usd_list": 0.049095999999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 202
+     },
+     "lines": [
+      {
+       "draft": "of opinion among commentators. Yet",
+       "reread": "of opinion among commentators. Yet",
+       "status": "agreed",
+       "text": "of opinion among commentators. Yet"
+      },
+      {
+       "draft": "among modern interpreters, the best",
+       "reread": "among modern interpreters, the best",
+       "status": "agreed",
+       "text": "among modern interpreters, the best"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1116,
+    "y": 958,
+    "width": 872,
+    "height": 732
+   },
+   "draft_lines": [
+    "hesitate only between two regions, viz.",
+    "India, and some part of Arabia.—That",
+    "Ophir is to be sought in India, was the",
+    "opinion of Josephus (Ant. 8. 6. 4), and",
+    "among the moderns, of Vitringa, Reland,",
+    "and others; and this view is supported",
+    "by the following arguments: a) The",
+    "countries of India abound in the arti-",
+    "cles of traffic above mentioned; and se-",
+    "veral of these, as ivory and sandal-wood,",
+    "are found only in India; also the words",
+    "for apes and peacocks correspond en-",
+    "tirely with the Indian words for the same"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1116,
+      "y": 950,
+      "width": 872,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r01-b00-872x241+1116+950-x2.png",
+     "image_sha256": "14b0bedd5d6ec5ac6cee021a7a96757fa777acf776be510b9400a0d42668315a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hesitate only between two regions, viz.",
+       "India, and some part of Arabia.—That",
+       "Ophir is to be sought in India, was the",
+       "opinion of Josephus (Ant. 8. 6. 4), and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1502fbd1-51e4-4173-98d0-7767d3549fc1",
+      "duration_api_ms": 4256,
+      "cost_usd_list": 0.057645999999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 247
+     },
+     "lines": [
+      {
+       "draft": "hesitate only between two regions, viz.",
+       "reread": "hesitate only between two regions, viz.",
+       "status": "agreed",
+       "text": "hesitate only between two regions, viz."
+      },
+      {
+       "draft": "India, and some part of Arabia.—That",
+       "reread": "India, and some part of Arabia.—That",
+       "status": "agreed",
+       "text": "India, and some part of Arabia.—That"
+      },
+      {
+       "draft": "Ophir is to be sought in India, was the",
+       "reread": "Ophir is to be sought in India, was the",
+       "status": "agreed",
+       "text": "Ophir is to be sought in India, was the"
+      },
+      {
+       "draft": "opinion of Josephus (Ant. 8. 6. 4), and",
+       "reread": "opinion of Josephus (Ant. 8. 6. 4), and",
+       "status": "agreed",
+       "text": "opinion of Josephus (Ant. 8. 6. 4), and"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1116,
+      "y": 1175,
+      "width": 872,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r01-b01-872x226+1116+1175-x2.png",
+     "image_sha256": "b5e5236e4d23956efd7be3a93096d6ed4e285461399a98621189893332c98582",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "among the moderns, of Vitringa, Reland,",
+       "and others; and this view is supported",
+       "by the following arguments: a) The",
+       "countries of India abound in the arti-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13041e3b-ac05-485e-ad67-ce46968014a4",
+      "duration_api_ms": 8271,
+      "cost_usd_list": 0.05734125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "among the moderns, of Vitringa, Reland,",
+       "reread": "among the moderns, of Vitringa, Reland,",
+       "status": "agreed",
+       "text": "among the moderns, of Vitringa, Reland,"
+      },
+      {
+       "draft": "and others; and this view is supported",
+       "reread": "and others; and this view is supported",
+       "status": "agreed",
+       "text": "and others; and this view is supported"
+      },
+      {
+       "draft": "by the following arguments: a) The",
+       "reread": "by the following arguments: a) The",
+       "status": "agreed",
+       "text": "by the following arguments: a) The"
+      },
+      {
+       "draft": "countries of India abound in the arti-",
+       "reread": "countries of India abound in the arti-",
+       "status": "agreed",
+       "text": "countries of India abound in the arti-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1116,
+      "y": 1385,
+      "width": 872,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r01-b02-872x248+1116+1385-x2.png",
+     "image_sha256": "315751a480265707c2e518068eee6a176701cf7af76dfcc8026c0367ce8b8aa5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cles of traffic above mentioned; and se-",
+       "veral of these, as ivory and sandal-wood,",
+       "are found only in India; also the words",
+       "for apes and peacocks correspond en-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0953140a-7ff6-4833-a4aa-59cd267c8b15",
+      "duration_api_ms": 4901,
+      "cost_usd_list": 0.05727875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 239
+     },
+     "lines": [
+      {
+       "draft": "cles of traffic above mentioned; and se-",
+       "reread": "cles of traffic above mentioned; and se-",
+       "status": "agreed",
+       "text": "cles of traffic above mentioned; and se-"
+      },
+      {
+       "draft": "veral of these, as ivory and sandal-wood,",
+       "reread": "veral of these, as ivory and sandal-wood,",
+       "status": "agreed",
+       "text": "veral of these, as ivory and sandal-wood,"
+      },
+      {
+       "draft": "are found only in India; also the words",
+       "reread": "are found only in India; also the words",
+       "status": "agreed",
+       "text": "are found only in India; also the words"
+      },
+      {
+       "draft": "for apes and peacocks correspond en-",
+       "reread": "for apes and peacocks correspond en-",
+       "status": "agreed",
+       "text": "for apes and peacocks correspond en-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1116,
+      "y": 1617,
+      "width": 872,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r01-b03-872x71+1116+1617-x2.png",
+     "image_sha256": "bed5d723811030d950a1e98a0d1eeea70230647345859a917a7b6cb61fdfa6a3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tirely with the Indian words for the same"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e263b2ec-2a77-4848-a244-5ac83e3a7a4a",
+      "duration_api_ms": 6724,
+      "cost_usd_list": 0.045428750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 191
+     },
+     "lines": [
+      {
+       "draft": "tirely with the Indian words for the same",
+       "reread": "tirely with the Indian words for the same",
+       "status": "agreed",
+       "text": "tirely with the Indian words for the same"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1116,
+    "y": 1678,
+    "width": 872,
+    "height": 867
+   },
+   "draft_lines": [
+    "on the coast of Malabar, and are doubt-",
+    "less derived from these latter; see קוֹף,",
+    "תֻּכִּיִּים. b) The LXX have everywhere",
+    "(except once in Gen. 10, 29) for אוֹפִיר",
+    "put Σουφίρ, Σουφείρ, Σωφίρ, Σωφείρ, Σω-",
+    "φαρά, Σωφηρά. But ⲥⲟϥⲓⲣ, according",
+    "to the ancient Coptic lexicographers,",
+    "(whose authority, however, is not very",
+    "great,) is the name for India. c) There",
+    "exists in India a district from the name",
+    "of which both the names Ophir and So-",
+    "phir may be readily explained, viz. Σου-",
+    "πάρα, the Οὔππαρα of Arrian, (Sanscr.",
+    "Uppara upper,) situated in the hither",
+    "Chersonesus where is now the celebrated"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1116,
+      "y": 1670,
+      "width": 872,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r02-b00-872x241+1116+1670-x2.png",
+     "image_sha256": "b7af1816dd6226b6d182396a2daf0a9d13979bf43612c41e5a7e711b7434c227",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "on the coast of Malabar, and are doubt-",
+       "less derived from these latter ; see קוֹף,",
+       "תֻּכִּיִּים.  b) The LXX have everywhere",
+       "(except once in Gen. 10, 29) for אוֹפִיר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "625a1950-d208-435e-8ef6-f72d294c34f6",
+      "duration_api_ms": 11545,
+      "cost_usd_list": 0.06297875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 353
+     },
+     "lines": [
+      {
+       "draft": "on the coast of Malabar, and are doubt-",
+       "reread": "on the coast of Malabar, and are doubt-",
+       "status": "agreed",
+       "text": "on the coast of Malabar, and are doubt-"
+      },
+      {
+       "draft": "less derived from these latter; see קוֹף,",
+       "reread": "less derived from these latter ; see קוֹף,",
+       "status": "agreed",
+       "text": "less derived from these latter; see קוֹף,"
+      },
+      {
+       "draft": "תֻּכִּיִּים. b) The LXX have everywhere",
+       "reread": "תֻּכִּיִּים.  b) The LXX have everywhere",
+       "status": "agreed",
+       "text": "תֻּכִּיִּים. b) The LXX have everywhere"
+      },
+      {
+       "draft": "(except once in Gen. 10, 29) for אוֹפִיר",
+       "reread": "(except once in Gen. 10, 29) for אוֹפִיר",
+       "status": "agreed",
+       "text": "(except once in Gen. 10, 29) for אוֹפִיר"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1116,
+      "y": 1895,
+      "width": 872,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r02-b01-872x259+1116+1895-x2.png",
+     "image_sha256": "314b1f304153774be92ba66c2784309d33e8aeb7e697716db3cd7fe3b7e0f2ad",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "put Σουφίρ, Σουφείρ, Σωφίρ, Σωφείρ, Σω-",
+       "φαρά, Σωφηρά. But ⲥⲟϥⲓⲣ, according",
+       "to the ancient Coptic lexicographers,",
+       "(whose authority, however, is not very"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "686fd415-6902-49fe-9ad3-a798ba1b7952",
+      "duration_api_ms": 10522,
+      "cost_usd_list": 0.06591625000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 396
+     },
+     "lines": [
+      {
+       "draft": "put Σουφίρ, Σουφείρ, Σωφίρ, Σωφείρ, Σω-",
+       "reread": "put Σουφίρ, Σουφείρ, Σωφίρ, Σωφείρ, Σω-",
+       "status": "agreed",
+       "text": "put Σουφίρ, Σουφείρ, Σωφίρ, Σωφείρ, Σω-"
+      },
+      {
+       "draft": "φαρά, Σωφηρά. But ⲥⲟϥⲓⲣ, according",
+       "reread": "φαρά, Σωφηρά. But ⲥⲟϥⲓⲣ, according",
+       "status": "agreed",
+       "text": "φαρά, Σωφηρά. But ⲥⲟϥⲓⲣ, according"
+      },
+      {
+       "draft": "to the ancient Coptic lexicographers,",
+       "reread": "to the ancient Coptic lexicographers,",
+       "status": "agreed",
+       "text": "to the ancient Coptic lexicographers,"
+      },
+      {
+       "draft": "(whose authority, however, is not very",
+       "reread": "(whose authority, however, is not very",
+       "status": "agreed",
+       "text": "(whose authority, however, is not very"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1116,
+      "y": 2138,
+      "width": 872,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r02-b02-872x237+1116+2138-x2.png",
+     "image_sha256": "4ad0b8824bd77a1721b2674d62517fdea12423c879696125e6bfa7124dbc47ec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "great,) is the name for India. c) There",
+       "exists in India a district from the name",
+       "of which both the names Ophir and So-",
+       "phir may be readily explained, viz. Σου-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "153a8b9f-7cd0-4ac5-97b0-fdaebb017d42",
+      "duration_api_ms": 7938,
+      "cost_usd_list": 0.056241250000000007,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 234
+     },
+     "lines": [
+      {
+       "draft": "great,) is the name for India. c) There",
+       "reread": "great,) is the name for India. c) There",
+       "status": "agreed",
+       "text": "great,) is the name for India. c) There"
+      },
+      {
+       "draft": "exists in India a district from the name",
+       "reread": "exists in India a district from the name",
+       "status": "agreed",
+       "text": "exists in India a district from the name"
+      },
+      {
+       "draft": "of which both the names Ophir and So-",
+       "reread": "of which both the names Ophir and So-",
+       "status": "agreed",
+       "text": "of which both the names Ophir and So-"
+      },
+      {
+       "draft": "phir may be readily explained, viz. Σου-",
+       "reread": "phir may be readily explained, viz. Σου-",
+       "status": "agreed",
+       "text": "phir may be readily explained, viz. Σου-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1116,
+      "y": 2359,
+      "width": 872,
+      "height": 180
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r02-b03-872x180+1116+2359-x2.png",
+     "image_sha256": "4afc0c30e43dcb0c843f9b62c187cd03982d87d4aa268c45828bea9748b8b95a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "πάρα, the Οὔππαρα of Arrian, (Sanscr.",
+       "Uppara upper,) situated in the hither",
+       "Chersonesus where is now the celebrated"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2c3ca9dd-b6f0-4cc8-9199-585747f82498",
+      "duration_api_ms": 21824,
+      "cost_usd_list": 0.06044125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2378,
+      "output_tokens": 381
+     },
+     "lines": [
+      {
+       "draft": "πάρα, the Οὔππαρα of Arrian, (Sanscr.",
+       "reread": "πάρα, the Οὔππαρα of Arrian, (Sanscr.",
+       "status": "agreed",
+       "text": "πάρα, the Οὔππαρα of Arrian, (Sanscr."
+      },
+      {
+       "draft": "Uppara upper,) situated in the hither",
+       "reread": "Uppara upper,) situated in the hither",
+       "status": "agreed",
+       "text": "Uppara upper,) situated in the hither"
+      },
+      {
+       "draft": "Chersonesus where is now the celebrated",
+       "reread": "Chersonesus where is now the celebrated",
+       "status": "agreed",
+       "text": "Chersonesus where is now the celebrated"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1116,
+    "y": 2533,
+    "width": 872,
+    "height": 704
+   },
+   "draft_lines": [
+    "emporium of Goa, and mentioned by",
+    "Ptolemy, Ammianus, and Abulfeda.—",
+    "Of not less weight are the arguments",
+    "brought in favour of Arabia; which",
+    "view is supported among the moderns",
+    "by Michaelis (Spicil. II. p. 184 sq.) Gos-",
+    "selin, Vincent, Bredow (Histor. Unters.",
+    "II. p. 253), T. C. Tychsen, Seetzen in",
+    "Zach's Monatl. Corresp. XIX. p. 331 sq.",
+    "and others. It is said: a) That Ophir,",
+    "in Gen. 10, 29, is enumerated among",
+    "other regions inhabited by the descend-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1116,
+      "y": 2539,
+      "width": 872,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r03-b00-872x237+1116+2539-x2.png",
+     "image_sha256": "33da6e8cc9fdffa29eda94529566e4e1fbe1d10af0d6aba71d8179e326b34513",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "emporium of Goa, and mentioned by",
+       "Ptolemy, Ammianus, and Abulfeda.—",
+       "Of not less weight are the arguments",
+       "brought in favour of Arabia; which"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8ebc7408-7ebc-4163-add1-1d3bfd96afb1",
+      "duration_api_ms": 8249,
+      "cost_usd_list": 0.05674125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 244
+     },
+     "lines": [
+      {
+       "draft": "emporium of Goa, and mentioned by",
+       "reread": "emporium of Goa, and mentioned by",
+       "status": "agreed",
+       "text": "emporium of Goa, and mentioned by"
+      },
+      {
+       "draft": "Ptolemy, Ammianus, and Abulfeda.—",
+       "reread": "Ptolemy, Ammianus, and Abulfeda.—",
+       "status": "agreed",
+       "text": "Ptolemy, Ammianus, and Abulfeda.—"
+      },
+      {
+       "draft": "Of not less weight are the arguments",
+       "reread": "Of not less weight are the arguments",
+       "status": "agreed",
+       "text": "Of not less weight are the arguments"
+      },
+      {
+       "draft": "brought in favour of Arabia; which",
+       "reread": "brought in favour of Arabia; which",
+       "status": "agreed",
+       "text": "brought in favour of Arabia; which"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1116,
+      "y": 2760,
+      "width": 872,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r03-b01-872x244+1116+2760-x2.png",
+     "image_sha256": "da2d0084e7212f8927dc27adc771a2b3696e25c52ed7d3c9ddeab64797561e76",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "view is supported among the moderns",
+       "by Michaelis (Spicil. II. p. 184 sq.) Gos-",
+       "selin, Vincent, Bredow (Histor. Unters.",
+       "II. p. 253), T. C. Tychsen, Seetzen in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "52a0ae17-9f58-4518-b012-426440b8eec9",
+      "duration_api_ms": 5024,
+      "cost_usd_list": 0.058578750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 265
+     },
+     "lines": [
+      {
+       "draft": "view is supported among the moderns",
+       "reread": "view is supported among the moderns",
+       "status": "agreed",
+       "text": "view is supported among the moderns"
+      },
+      {
+       "draft": "by Michaelis (Spicil. II. p. 184 sq.) Gos-",
+       "reread": "by Michaelis (Spicil. II. p. 184 sq.) Gos-",
+       "status": "agreed",
+       "text": "by Michaelis (Spicil. II. p. 184 sq.) Gos-"
+      },
+      {
+       "draft": "selin, Vincent, Bredow (Histor. Unters.",
+       "reread": "selin, Vincent, Bredow (Histor. Unters.",
+       "status": "agreed",
+       "text": "selin, Vincent, Bredow (Histor. Unters."
+      },
+      {
+       "draft": "II. p. 253), T. C. Tychsen, Seetzen in",
+       "reread": "II. p. 253), T. C. Tychsen, Seetzen in",
+       "status": "agreed",
+       "text": "II. p. 253), T. C. Tychsen, Seetzen in"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1116,
+      "y": 2988,
+      "width": 872,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0040/pass2/c1-r03-b02-872x251+1116+2988-x2.png",
+     "image_sha256": "c10943017109925fdf70726ea56b016334b4f39d808b08c58f574c073e617662",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Zach's Monatl. Corresp. XIX. p. 331 sq.",
+       "and others. It is said: a) That Ophir,",
+       "in Gen. 10, 29, is enumerated among",
+       "other regions inhabited by the descend-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f835151c-fcd9-417e-bcf6-cf355ac2ace0",
+      "duration_api_ms": 11654,
+      "cost_usd_list": 0.059078750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 275
+     },
+     "lines": [
+      {
+       "draft": "Zach's Monatl. Corresp. XIX. p. 331 sq.",
+       "reread": "Zach's Monatl. Corresp. XIX. p. 331 sq.",
+       "status": "agreed",
+       "text": "Zach's Monatl. Corresp. XIX. p. 331 sq."
+      },
+      {
+       "draft": "and others. It is said: a) That Ophir,",
+       "reread": "and others. It is said: a) That Ophir,",
+       "status": "agreed",
+       "text": "and others. It is said: a) That Ophir,"
+      },
+      {
+       "draft": "in Gen. 10, 29, is enumerated among",
+       "reread": "in Gen. 10, 29, is enumerated among",
+       "status": "agreed",
+       "text": "in Gen. 10, 29, is enumerated among"
+      },
+      {
+       "draft": "other regions inhabited by the descend-",
+       "reread": "other regions inhabited by the descend-",
+       "status": "agreed",
+       "text": "other regions inhabited by the descend-"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "און 24 אוב",
+   "status": "adjudicated",
+   "draft": "און 24 אופ",
+   "reread": "און 24 אוב",
+   "verdict": "b",
+   "note": "The third letter of the right-hand word has a flat base that projects to the right beyond the upright stroke, and no inner curled lip — a bet, not a pe. Page 24 of Robinson's Gesenius begins with אוֹב and ends with אוֹן, matching the header. No vowel points are legible in the header at this enlargement.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. wealth, substance, Hos. 12, 9. Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "20, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. On, pr. n. m. Num. 16, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "III. אוֹן Gen. 41, 50 and אֹן 41, 45. 46,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "20, On, the domestic pr. n. of an ancient",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Egyptian city, in Ez. 30, 17 written אָוֶן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "q. v. no. 1. b. Called also by the He-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "brews, prob. as a translation of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Egyptian name, בֵּית שֶׁמֶשׁ Beth-shemesh,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "i. e. house of the sun, Jer. 43, 13; by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the Greeks Heliopolis, city of the sun;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "by the Arabs عين شمس ’Ain Shems,",
+   "status": "adjudicated",
+   "draft": "by the Arabs عين شمس 'Ain Shems,",
+   "reread": "by the Arabs عين شمس ’Ain Shems,",
+   "verdict": "b",
+   "note": "The only difference is the mark before \"Ain\": the print shows a curved raised comma (’, the usual 19th-century rendering of ʿayin), not a straight typewriter apostrophe, so Reading B is correct. Arabic عين شمس (with shin dots) and the italic \"Ain Shems,\" match in both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "i. e. fountain of the sun. Coptic Ⲱⲛ,",
+   "status": "adjudicated",
+   "draft": "i. e. fountain of the sun. Coptic Ⲱⲛ,",
+   "reread": "i. e. fountain of the sun. Coptic ⲰⲚ,",
+   "verdict": "a",
+   "note": "The second Coptic letter is printed at x-height, clearly shorter than the capital Ⲱ before it, so it is lowercase ⲛ (Reading A), not capital Ⲛ (Reading B).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "which signified light, and spec. the sun,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "as there seems hardly a doubt; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ⲟⲩⲉⲓⲛ, ⲟⲉⲓⲛ, ⲟⲩⲱⲓⲛⲓ, light, lumi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "nary; see Peyron Lex. p. 273. The city",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "stood on the eastern side of the Nile, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "few miles north of Memphis; and was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "celebrated for the worship and temple",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of the sun, and for its obelisks, one of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "which remains to the present day;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Diod. Sic. I. 85. Hdot. 2. 59. Near the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ruins of the ancient city is a fountain",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "still called 'Ain Shems, in the adjacent",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "modern village of Matarîyeh. Comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Descr. de l'Egypte, Antiq. V. Pl. 26, 27.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Bibl. Res. in Pal. I. p. 36, 37.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹנוֹ (strong, for אוֹנוֹן) Ono, pr. n. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "a city in Benjamin, Ezra 2, 33. Neh. 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "37. 11, 35. 1 Chr. 8, 12; with a valley",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "or plain of like name, Neh. 6, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹנִיּוֹת f. plur. 2 Chr. 8, 18 Cheth. for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֳנִיּוֹת ships, with Vav as mater lectionis",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "redundant.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹנָם (strong, stout) Onam, pr. n. m.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "a) Gen. 36, 23. b) 1 Chr. 2, 26.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹנָן (id.) Onan, pr. n. of a son of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Judah, Gen. 38, 9. 46, 12. Num. 26, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אוּפָז Uphaz, pr. n. of a gold country,",
+   "status": "adjudicated",
+   "draft": "אוּפָז Uphaz, pr. n. of a gold country,",
+   "reread": "אוֹפָּז Uphaz, pr. n. of a gold country,",
+   "verdict": "a",
+   "note": "The vav dot is at mid-height inside the letter (shureq, אוּ), not above it as a holem — contrast the clearly raised holem on אוֹפִיר in line 3. The pe shows only qamets beneath, no dagesh. Reading A matches.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Jer. 10, 9. Dan. 10, 5. It seems to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "corrupted out of אוֹפִּיר; since the letters",
+   "status": "adjudicated",
+   "draft": "corrupted out of אוֹפִיר ; since the letters",
+   "reread": "corrupted out of אוֹפִּיר ; since the letters",
+   "verdict": "b",
+   "note": "The pe in אוֹפִּיר shows a printed dot inside the letter (dagesh), in addition to the hireq beneath; the vav carries holem and the yod is plene. Reading A omits the dagesh.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ר and ז are also elsewhere interchanged,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "comp. בָּזָק and בָּרָק lightning, فخر and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "فخز to boast.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אוֹפִיר, אוֹפִר, אֹפִיר, pr. n. Ophir,",
+   "status": "adjudicated",
+   "draft": "אֹפִיר , אוֹפִר , אוֹפִיר , pr. n. Ophir,",
+   "reread": "אוֹפִיר, אוֹפִר, אֹפִיר, pr. n. Ophir,",
+   "verdict": "b",
+   "note": "Decisive difference is the left-to-right order of the three forms: printed leftmost is the fully plene אוֹפִיר, middle is אוֹפִר (no yod), rightmost is אֹפִיר (holem on alef, no vav) — Reading B's order; Reading A reversed it. Vowel points agree with both readings. The print has a visible space before each comma after the Hebrew, which only A reproduced.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "a celebrated region, abounding in gold,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "which the seamen of Solomon in com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pany with the Phenicians were accus-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tomed to visit, taking their departure",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "from the ports of the Elanitic gulf, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "bringing back every three years gold,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "precious stones, and sandal-wood, also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "silver, ivory, apes, and peacocks; 1 K. 9,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "28. 10, 11. 2 Chr. 8, 18. 9, 10; espec. 1 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "10, 22, where Ophir is to be understood,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "although not expressly mentioned. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "gold of Ophir is frequently mentioned",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "in the O. T. as Job 28, 16. Ps. 45, 10. Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "13, 12. 1 Chr. 29, 4; once also אוֹפִיר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "itself is put for gold of Ophir Job 22, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "As to the geographical situation of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Ophir, there is the greatest diversity",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of opinion among commentators. Yet",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "among modern interpreters, the best",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hesitate only between two regions, viz.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "India, and some part of Arabia.—That",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ophir is to be sought in India, was the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "opinion of Josephus (Ant. 8. 6. 4), and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "among the moderns, of Vitringa, Reland,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and others; and this view is supported",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "by the following arguments: a) The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "countries of India abound in the arti-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "cles of traffic above mentioned; and se-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "veral of these, as ivory and sandal-wood,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "are found only in India; also the words",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "for apes and peacocks correspond en-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "tirely with the Indian words for the same",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "on the coast of Malabar, and are doubt-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "less derived from these latter; see קוֹף,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "תֻּכִּיִּים. b) The LXX have everywhere",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(except once in Gen. 10, 29) for אוֹפִיר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "put Σουφίρ, Σουφείρ, Σωφίρ, Σωφείρ, Σω-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "φαρά, Σωφηρά. But ⲥⲟϥⲓⲣ, according",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to the ancient Coptic lexicographers,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(whose authority, however, is not very",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "great,) is the name for India. c) There",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "exists in India a district from the name",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of which both the names Ophir and So-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "phir may be readily explained, viz. Σου-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "πάρα, the Οὔππαρα of Arrian, (Sanscr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Uppara upper,) situated in the hither",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Chersonesus where is now the celebrated",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "emporium of Goa, and mentioned by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Ptolemy, Ammianus, and Abulfeda.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Of not less weight are the arguments",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "brought in favour of Arabia; which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "view is supported among the moderns",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "by Michaelis (Spicil. II. p. 184 sq.) Gos-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "selin, Vincent, Bredow (Histor. Unters.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "II. p. 253), T. C. Tychsen, Seetzen in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Zach's Monatl. Corresp. XIX. p. 331 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "and others. It is said: a) That Ophir,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "in Gen. 10, 29, is enumerated among",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "other regions inhabited by the descend-",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 100,
+  "adjudicated": 6,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.23
+}

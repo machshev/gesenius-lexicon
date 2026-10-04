@@ -1,0 +1,2767 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 43,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0043.png",
+ "raster_sha256": "ef9c3627b3be4c242bb2ab2d777d28cc04248003ed4c64f0aeb56b7b623f406b",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0043.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:35:44+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 75,
+    "y": 115,
+    "width": 1766,
+    "height": 65
+   },
+   "draft_lines": [
+    "אור",
+    "27",
+    "אז"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 75,
+      "y": 113,
+      "width": 1766,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/header-b00-1766x69+75+113-x2.png",
+     "image_sha256": "9e63e8998dabcd99e6312a87474c53a5143b2f6bf277506852503274f493cddf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אור 27 אז"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eaae3ce7-1566-4705-9bb5-056bb9a49bc6",
+      "duration_api_ms": 6531,
+      "cost_usd_list": 0.0430025,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "אור 27 אז",
+       "reread": "אור 27 אז",
+       "status": "agreed",
+       "text": "אור 27 אז"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 75,
+    "y": 161,
+    "width": 874,
+    "height": 653
+   },
+   "draft_lines": [
+    "Zend and Sanscr. vara, fortification,",
+    "comp. Sanscr. pura a fortified city, after",
+    "the analogy of punar, Pracrit. unar, etc.",
+    "See F. Benary in the Berliner Jahrbb.",
+    "1841. p. 146 sq.   b) m. 1 Chr. 11, 35.",
+    "אוֹרָה f. 1. light, Ps. 139, 12; metaph.",
+    "of welfare, happiness, Esth. 8, 16.",
+    "2. Plur. אוֹרוֹת greens, green herbs, 2 K.",
+    "4, 39. The idea of brightness, splendour,",
+    "is often transferred in the Semitic"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 75,
+      "y": 153,
+      "width": 874,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r00-b00-874x247+75+153-x2.png",
+     "image_sha256": "132596e7b14f0258332d739db7471d576dfcfc194d00021bf5ee4f1cf72a29f3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Zend and Sanscr. vara, fortification,",
+       "comp. Sanscr. pura a fortified city, after",
+       "the analogy of punar, Pracrit. unar, etc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f137ac3e-12f4-498c-bccd-433bbd313347",
+      "duration_api_ms": 5313,
+      "cost_usd_list": 0.05701325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "Zend and Sanscr. vara, fortification,",
+       "reread": "Zend and Sanscr. vara, fortification,",
+       "status": "agreed",
+       "text": "Zend and Sanscr. vara, fortification,"
+      },
+      {
+       "draft": "comp. Sanscr. pura a fortified city, after",
+       "reread": "comp. Sanscr. pura a fortified city, after",
+       "status": "agreed",
+       "text": "comp. Sanscr. pura a fortified city, after"
+      },
+      {
+       "draft": "the analogy of punar, Pracrit. unar, etc.",
+       "reread": "the analogy of punar, Pracrit. unar, etc.",
+       "status": "agreed",
+       "text": "the analogy of punar, Pracrit. unar, etc."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 75,
+      "y": 384,
+      "width": 874,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r00-b01-874x267+75+384-x2.png",
+     "image_sha256": "c88839be5215097727903f1860230a17ef005c407aab171f8cfa7c00f2220db7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "See F. Benary in the Berliner Jahrbb.",
+       "1841. p. 146 sq. b) m. 1 Chr. 11, 35.",
+       "אוֹרָה f. 1. light, Ps. 139, 12; metaph.",
+       "of welfare, happiness, Esth. 8, 16."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "814a6dee-992a-4dda-b3cc-85a4ce51df0d",
+      "duration_api_ms": 10546,
+      "cost_usd_list": 0.06678825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2815,
+      "output_tokens": 399
+     },
+     "lines": [
+      {
+       "draft": "See F. Benary in the Berliner Jahrbb.",
+       "reread": "See F. Benary in the Berliner Jahrbb.",
+       "status": "agreed",
+       "text": "See F. Benary in the Berliner Jahrbb."
+      },
+      {
+       "draft": "1841. p. 146 sq.   b) m. 1 Chr. 11, 35.",
+       "reread": "1841. p. 146 sq. b) m. 1 Chr. 11, 35.",
+       "status": "agreed",
+       "text": "1841. p. 146 sq. b) m. 1 Chr. 11, 35."
+      },
+      {
+       "draft": "אוֹרָה f. 1. light, Ps. 139, 12; metaph.",
+       "reread": "אוֹרָה f. 1. light, Ps. 139, 12; metaph.",
+       "status": "agreed",
+       "text": "אוֹרָה f. 1. light, Ps. 139, 12; metaph."
+      },
+      {
+       "draft": "of welfare, happiness, Esth. 8, 16.",
+       "reread": "of welfare, happiness, Esth. 8, 16.",
+       "status": "agreed",
+       "text": "of welfare, happiness, Esth. 8, 16."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 75,
+      "y": 635,
+      "width": 874,
+      "height": 173
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r00-b02-874x173+75+635-x2.png",
+     "image_sha256": "aee2bcafb93d9fdaca3c7a1098222da64526bfd06f0134dd25ff175ebc8e51ff",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Plur. אֹרוֹת greens, green herbs, 2 K.",
+       "4, 39. The idea of brightness, splendour,",
+       "is often transferred in the Semitic"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "986d258d-f0aa-4a48-bad4-d288eb09a7a9",
+      "duration_api_ms": 9371,
+      "cost_usd_list": 0.05792575,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2374,
+      "output_tokens": 332
+     },
+     "lines": [
+      {
+       "draft": "2. Plur. אוֹרוֹת greens, green herbs, 2 K.",
+       "reread": "2. Plur. אֹרוֹת greens, green herbs, 2 K.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "2. Plur. אוֹרוֹת greens, green herbs, 2 K.",
+        "verdict": "a",
+        "note": "The printed word has five letters אורות with a vav (bearing a holem dot) between alef and resh — plene אוֹרוֹת, not defective אֹרוֹת as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2206f376-eed3-4fc9-9654-3b7f58a346b8",
+        "duration_api_ms": 13330,
+        "cost_usd_list": 0.06812875000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2314,
+        "output_tokens": 560
+       },
+       "text": "2. Plur. אוֹרוֹת greens, green herbs, 2 K."
+      },
+      {
+       "draft": "4, 39. The idea of brightness, splendour,",
+       "reread": "4, 39. The idea of brightness, splendour,",
+       "status": "agreed",
+       "text": "4, 39. The idea of brightness, splendour,"
+      },
+      {
+       "draft": "is often transferred in the Semitic",
+       "reread": "is often transferred in the Semitic",
+       "status": "agreed",
+       "text": "is often transferred in the Semitic"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 75,
+    "y": 802,
+    "width": 874,
+    "height": 729
+   },
+   "draft_lines": [
+    "tongues to verdure and flowers ; comp.",
+    "נִצִּץ, Arab. أنوار lights and flowers.",
+    "Comp. also Samarit. יאר Gen. 1, 11. 12,",
+    "for דֶּשֶׁא herb.—So Is. 26, 19 כִּי טַל אוֹרוֹת",
+    "טַלֶּךָ for as the dew of herbs is thy dew,",
+    "i. e. God's quickening influence will raise",
+    "the dead to life, as the dew of heaven",
+    "refreshes plants. Comp. Ecclus. 46, 12.",
+    "49, 10. Others render dew of light, i. e.",
+    "of life, the vivifying dew, comp. אוֹר d.",
+    "אֻרָוֹת by transp. for אֲרָיוֹת q. v. stalls,",
+    "cribs, 2 Chr. 32, 28."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 75,
+      "y": 808,
+      "width": 874,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r01-b00-874x245+75+808-x2.png",
+     "image_sha256": "9d25feed73666aaa20b78c6a9997c05c6f05f261113078a36fb2521a159bf2cc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tongues to verdure and flowers; comp.",
+       "נִצָּץ, Arab. أنوار lights and flowers.",
+       "Comp. also Samarit. יאר Gen. 1, 11. 12,",
+       "for דֶּשֶׁא herb.—So Is. 26, 19 כִּי טַל אוֹרוֹת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d20ad5cf-e0e6-4ef2-8bc3-072ed4153485",
+      "duration_api_ms": 22537,
+      "cost_usd_list": 0.10356325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 1166
+     },
+     "lines": [
+      {
+       "draft": "tongues to verdure and flowers ; comp.",
+       "reread": "tongues to verdure and flowers; comp.",
+       "status": "agreed",
+       "text": "tongues to verdure and flowers; comp."
+      },
+      {
+       "draft": "נִצִּץ, Arab. أنوار lights and flowers.",
+       "reread": "נִצָּץ, Arab. أنوار lights and flowers.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "נִצִּץ, Arab. انوار lights and flowers.",
+        "verdict": "neither",
+        "note": "Under the tsade a single dot (hiriq) is printed, not a qamets, so A's נִצִּץ is right; but the Arabic is printed with a bare alif (انوار), without the hamza both readings supply.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1efbdbb2-98c4-4a90-988f-804f99912629",
+        "duration_api_ms": 16323,
+        "cost_usd_list": 0.07934350000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2618,
+        "output_tokens": 710
+       },
+       "text": "נִצִּץ, Arab. انوار lights and flowers."
+      },
+      {
+       "draft": "Comp. also Samarit. יאר Gen. 1, 11. 12,",
+       "reread": "Comp. also Samarit. יאר Gen. 1, 11. 12,",
+       "status": "agreed",
+       "text": "Comp. also Samarit. יאר Gen. 1, 11. 12,"
+      },
+      {
+       "draft": "for דֶּשֶׁא herb.—So Is. 26, 19 כִּי טַל אוֹרוֹת",
+       "reread": "for דֶּשֶׁא herb.—So Is. 26, 19 כִּי טַל אוֹרוֹת",
+       "status": "agreed",
+       "text": "for דֶּשֶׁא herb.—So Is. 26, 19 כִּי טַל אוֹרוֹת"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 75,
+      "y": 1037,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r01-b01-874x240+75+1037-x2.png",
+     "image_sha256": "3848ab3f3ed4c8370acb78cf8ad33840f24f40d7c6b530da8e79892abb6eec71",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "טַלֶּךָ for as the dew of herbs is thy dew,",
+       "i. e. God's quickening influence will raise",
+       "the dead to life, as the dew of heaven",
+       "refreshes plants. Comp. Ecclus. 46, 12."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5e48bcb-141b-4c45-8158-18ec3bc09301",
+      "duration_api_ms": 9830,
+      "cost_usd_list": 0.06229599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 340
+     },
+     "lines": [
+      {
+       "draft": "טַלֶּךָ for as the dew of herbs is thy dew,",
+       "reread": "טַלֶּךָ for as the dew of herbs is thy dew,",
+       "status": "agreed",
+       "text": "טַלֶּךָ for as the dew of herbs is thy dew,"
+      },
+      {
+       "draft": "i. e. God's quickening influence will raise",
+       "reread": "i. e. God's quickening influence will raise",
+       "status": "agreed",
+       "text": "i. e. God's quickening influence will raise"
+      },
+      {
+       "draft": "the dead to life, as the dew of heaven",
+       "reread": "the dead to life, as the dew of heaven",
+       "status": "agreed",
+       "text": "the dead to life, as the dew of heaven"
+      },
+      {
+       "draft": "refreshes plants. Comp. Ecclus. 46, 12.",
+       "reread": "refreshes plants. Comp. Ecclus. 46, 12.",
+       "status": "agreed",
+       "text": "refreshes plants. Comp. Ecclus. 46, 12."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 75,
+      "y": 1261,
+      "width": 874,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r01-b02-874x261+75+1261-x2.png",
+     "image_sha256": "9e043f1b82f477028401fa4d3ad87f00ba6c4f954523627e1240e35230b7aa46",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "49, 10.  Others render dew of light, i. e.",
+       "of life, the vivifying dew, comp. אוֹר d.",
+       "אֲוֵרוֹת by transp. for אֻרָיוֹת q. v. stalls,",
+       "cribs, 2 Chr. 32, 28."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "87244697-1887-4663-91b5-938e82eeab64",
+      "duration_api_ms": 16044,
+      "cost_usd_list": 0.08448349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 768
+     },
+     "lines": [
+      {
+       "draft": "49, 10. Others render dew of light, i. e.",
+       "reread": "49, 10.  Others render dew of light, i. e.",
+       "status": "agreed",
+       "text": "49, 10. Others render dew of light, i. e."
+      },
+      {
+       "draft": "of life, the vivifying dew, comp. אוֹר d.",
+       "reread": "of life, the vivifying dew, comp. אוֹר d.",
+       "status": "agreed",
+       "text": "of life, the vivifying dew, comp. אוֹר d."
+      },
+      {
+       "draft": "אֻרָוֹת by transp. for אֲרָיוֹת q. v. stalls,",
+       "reread": "אֲוֵרוֹת by transp. for אֻרָיוֹת q. v. stalls,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "אֲוֵרוֹת by transp. for אֻרָיוֹת q. v. stalls,",
+        "verdict": "b",
+        "note": "First word has hataf-patah under aleph and a vav with tsere before resh (אֲוֵרוֹת, the transposed form); second word has qubuts (three diagonal dots) under aleph and qamets under resh (אֻרָיוֹת). Reading A swapped the pointing and dropped the first vav.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a40600b0-07bb-46d8-927b-2ace3abd6db3",
+        "duration_api_ms": 15579,
+        "cost_usd_list": 0.08496875000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3595,
+        "cache_creation_input_tokens": 2703,
+        "output_tokens": 798
+       },
+       "text": "אֲוֵרוֹת by transp. for אֻרָיוֹת q. v. stalls,"
+      },
+      {
+       "draft": "cribs, 2 Chr. 32, 28.",
+       "reread": "cribs, 2 Chr. 32, 28.",
+       "status": "agreed",
+       "text": "cribs, 2 Chr. 32, 28."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 75,
+    "y": 1519,
+    "width": 874,
+    "height": 954
+   },
+   "draft_lines": [
+    "אוּרִי (fiery, or perh. an abridged form",
+    "for אוּרִיָּה) Uri, pr. n. m.   a) Ex. 31, 2.",
+    "b) Ezra 10, 24.   c) 1 K. 4, 19.",
+    "אוּרִיאֵל (flame of God) Uriel, pr. n. m.",
+    "a) 1 Chr. 6, 9. 15, 5. 21.   b) 2 Chr. 13, 2.",
+    "אוּרִיָּה (flame of Jehovah) Uriah, pr.",
+    "n. m.   a) A Hittite, the husband of Bath-",
+    "sheba, treacherously slain by order of",
+    "David, 2 Sam. 11, 3.   b) A priest in the",
+    "time of Ahaz and Isaiah, Is. 8, 2. 2 K.",
+    "16, 10.",
+    "אוּרִיָּהוּ (id.) Urijah, pr. n. of a prophet",
+    "slain by order of Jehoiakim, Jer. 26, 20 sq.",
+    "אוּשׁ see הִתְאוֹשָׁשׁ under אִישׁ.",
+    "* אוֹת or אוּת a root not used in Kal."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 75,
+      "y": 1528,
+      "width": 874,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r02-b00-874x255+75+1528-x2.png",
+     "image_sha256": "4f426d749bee047c94828b329116c0a902992cae1fe4c7159333d7c80647030e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּרִי (fiery, or perh. an abridged form",
+       "for אוּרִיָּה) Uri, pr. n. m. a) Ex. 31, 2.",
+       "b) Ezra 10, 24. c) 1 K. 4, 19.",
+       "אוּרִיאֵל (flame of God) Uriel, pr. n. m."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "be2366df-65da-4318-a593-b9bb3e0198c0",
+      "duration_api_ms": 11139,
+      "cost_usd_list": 0.0729835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 538
+     },
+     "lines": [
+      {
+       "draft": "אוּרִי (fiery, or perh. an abridged form",
+       "reread": "אוּרִי (fiery, or perh. an abridged form",
+       "status": "agreed",
+       "text": "אוּרִי (fiery, or perh. an abridged form"
+      },
+      {
+       "draft": "for אוּרִיָּה) Uri, pr. n. m.   a) Ex. 31, 2.",
+       "reread": "for אוּרִיָּה) Uri, pr. n. m. a) Ex. 31, 2.",
+       "status": "agreed",
+       "text": "for אוּרִיָּה) Uri, pr. n. m. a) Ex. 31, 2."
+      },
+      {
+       "draft": "b) Ezra 10, 24.   c) 1 K. 4, 19.",
+       "reread": "b) Ezra 10, 24. c) 1 K. 4, 19.",
+       "status": "agreed",
+       "text": "b) Ezra 10, 24. c) 1 K. 4, 19."
+      },
+      {
+       "draft": "אוּרִיאֵל (flame of God) Uriel, pr. n. m.",
+       "reread": "אוּרִיאֵל (flame of God) Uriel, pr. n. m.",
+       "status": "agreed",
+       "text": "אוּרִיאֵל (flame of God) Uriel, pr. n. m."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 75,
+      "y": 1767,
+      "width": 874,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r02-b01-874x259+75+1767-x2.png",
+     "image_sha256": "9ccf942c75d152ae62c04f37fb749e09801d2ff2de61204400006e0aab0a146a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a) 1 Chr. 6, 9. 15, 5. 21.   b) 2 Chr. 13, 2.",
+       "אוּרִיָּה (flame of Jehovah) Uriah, pr.",
+       "n. m.   a) A Hittite, the husband of Bath-",
+       "sheba, treacherously slain by order of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5075a1f-defc-4036-8bdc-de2646b79e50",
+      "duration_api_ms": 7394,
+      "cost_usd_list": 0.0666835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 412
+     },
+     "lines": [
+      {
+       "draft": "a) 1 Chr. 6, 9. 15, 5. 21.   b) 2 Chr. 13, 2.",
+       "reread": "a) 1 Chr. 6, 9. 15, 5. 21.   b) 2 Chr. 13, 2.",
+       "status": "agreed",
+       "text": "a) 1 Chr. 6, 9. 15, 5. 21. b) 2 Chr. 13, 2."
+      },
+      {
+       "draft": "אוּרִיָּה (flame of Jehovah) Uriah, pr.",
+       "reread": "אוּרִיָּה (flame of Jehovah) Uriah, pr.",
+       "status": "agreed",
+       "text": "אוּרִיָּה (flame of Jehovah) Uriah, pr."
+      },
+      {
+       "draft": "n. m.   a) A Hittite, the husband of Bath-",
+       "reread": "n. m.   a) A Hittite, the husband of Bath-",
+       "status": "agreed",
+       "text": "n. m. a) A Hittite, the husband of Bath-"
+      },
+      {
+       "draft": "sheba, treacherously slain by order of",
+       "reread": "sheba, treacherously slain by order of",
+       "status": "agreed",
+       "text": "sheba, treacherously slain by order of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 75,
+      "y": 2010,
+      "width": 874,
+      "height": 255
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r02-b02-874x255+75+2010-x2.png",
+     "image_sha256": "428596be2079e2dcba9f17d23c3daeaee3736e6337a830a65635071e0afd4a30",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "David, 2 Sam. 11, 3.  b) A priest in the",
+       "time of Ahaz and Isaiah, Is. 8, 2. 2 K.",
+       "16, 10.",
+       "אוּרִיָּהוּ (id.) Urijah, pr. n. of a prophet"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a861185-619b-4f75-988e-7371ff953f45",
+      "duration_api_ms": 10359,
+      "cost_usd_list": 0.0665335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 409
+     },
+     "lines": [
+      {
+       "draft": "David, 2 Sam. 11, 3.   b) A priest in the",
+       "reread": "David, 2 Sam. 11, 3.  b) A priest in the",
+       "status": "agreed",
+       "text": "David, 2 Sam. 11, 3. b) A priest in the"
+      },
+      {
+       "draft": "time of Ahaz and Isaiah, Is. 8, 2. 2 K.",
+       "reread": "time of Ahaz and Isaiah, Is. 8, 2. 2 K.",
+       "status": "agreed",
+       "text": "time of Ahaz and Isaiah, Is. 8, 2. 2 K."
+      },
+      {
+       "draft": "16, 10.",
+       "reread": "16, 10.",
+       "status": "agreed",
+       "text": "16, 10."
+      },
+      {
+       "draft": "אוּרִיָּהוּ (id.) Urijah, pr. n. of a prophet",
+       "reread": "אוּרִיָּהוּ (id.) Urijah, pr. n. of a prophet",
+       "status": "agreed",
+       "text": "אוּרִיָּהוּ (id.) Urijah, pr. n. of a prophet"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 75,
+      "y": 2249,
+      "width": 874,
+      "height": 213
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r02-b03-874x213+75+2249-x2.png",
+     "image_sha256": "da3dd35d800a53819ab0dfd70f9e72219a4f302602c0923a2ef88a640ac8b1cc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "slain by order of Jehoiakim, Jer. 26, 20 sq.",
+       "אוּשׁ see הִתְאוֹשֵׁשׁ under אִישׁ.",
+       "* אוּת or אוֹת a root not used in Kal."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "00c08619-e0b3-42c7-970b-23a4c2d3a4d5",
+      "duration_api_ms": 19355,
+      "cost_usd_list": 0.099271,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 1111
+     },
+     "lines": [
+      {
+       "draft": "slain by order of Jehoiakim, Jer. 26, 20 sq.",
+       "reread": "slain by order of Jehoiakim, Jer. 26, 20 sq.",
+       "status": "agreed",
+       "text": "slain by order of Jehoiakim, Jer. 26, 20 sq."
+      },
+      {
+       "draft": "אוּשׁ see הִתְאוֹשָׁשׁ under אִישׁ.",
+       "reread": "אוּשׁ see הִתְאוֹשֵׁשׁ under אִישׁ.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "אוּשׁ see הִתְאוֹשֵׁשׁ under אִישׁ.",
+        "verdict": "b",
+        "note": "Under the first shin of הִתְאוֹשֵׁשׁ the print shows two dots side by side (tsere), not a qamets; Reading B matches. All other characters agree.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0a5510b2-a95c-4a27-8a94-739c1c79f334",
+        "duration_api_ms": 7842,
+        "cost_usd_list": 0.06368599999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2513,
+        "output_tokens": 420
+       },
+       "text": "אוּשׁ see הִתְאוֹשֵׁשׁ under אִישׁ."
+      },
+      {
+       "draft": "* אוֹת or אוּת a root not used in Kal.",
+       "reread": "* אוּת or אוֹת a root not used in Kal.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "* אוֹת or אוּת a root not used in Kal.",
+        "verdict": "a",
+        "note": "Decisive difference is the order of the two forms: the first (leftmost printed) word has its dot above the vav (ḥolem, אוֹת), the word after \"or\" has the dot mid-height inside the vav (shureq, אוּת). Reading B swaps them.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bb285930-b551-4586-aeb4-d114d0f6e06d",
+        "duration_api_ms": 11261,
+        "cost_usd_list": 0.06822975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3569,
+        "cache_creation_input_tokens": 2488,
+        "output_tokens": 521
+       },
+       "text": "* אוֹת or אוּת a root not used in Kal."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 75,
+    "y": 2461,
+    "width": 874,
+    "height": 808
+   },
+   "draft_lines": [
+    "Niph. נֵאוֹת, fut. 1 plur. נֵאוֹת, 3 plur.",
+    "יֵאֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+    "pers. to consent unto any one, to gratify",
+    "him, Gen. 34, 15. 22. 23. In Arabic this",
+    "sense is found under the form أَتَى i. q.",
+    "אָתָה to come, Conj. III آتَى, Heb. אוֹתָה,",
+    "whence seems to have arisen the new",
+    "root אוּת; unless by changing the points,",
+    "instead of נֵאוֹת, יֵאֹתוּ, we prefer to read",
+    "נֵאוֹת, יֵאוֹתוּ, which forms may then be",
+    "referred to Poel of r. אָתָה.",
+    "I. אוֹת, plur. אֹתוֹת, comm. gend. comp.",
+    "sing. Gen. 9, 12. Ex. 4, 8; plur. Ex. 4, 9."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 75,
+      "y": 2472,
+      "width": 874,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r03-b00-874x230+75+2472-x2.png",
+     "image_sha256": "7cf0ae6cff10df45863281990c0d345fd376a02a157bfbc020dbd778cc21058e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Niph. נֵאוֹת, fut. 1 plur. נֵאוֹת, 3 plur.",
+       "יֵאוֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+       "pers. to consent unto any one, to gratify",
+       "him, Gen. 34, 15. 22. 23. In Arabic this"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dfb562f2-07f1-4de2-9f9b-819306ab632d",
+      "duration_api_ms": 16570,
+      "cost_usd_list": 0.09005850000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 911
+     },
+     "lines": [
+      {
+       "draft": "Niph. נֵאוֹת, fut. 1 plur. נֵאוֹת, 3 plur.",
+       "reread": "Niph. נֵאוֹת, fut. 1 plur. נֵאוֹת, 3 plur.",
+       "status": "agreed",
+       "text": "Niph. נֵאוֹת, fut. 1 plur. נֵאוֹת, 3 plur."
+      },
+      {
+       "draft": "יֵאֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+       "reread": "יֵאוֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "יֵאוֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+        "verdict": "b",
+        "note": "Between aleph and tav the print has a full vertical vav stroke carrying the holem dot (same plene אוֹ as נֵאוֹת in line 1), not a bare holem over the aleph; so plene יֵאוֹתוּ (B), not defective יֵאֹתוּ (A).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "416c5321-1816-44b4-9c23-f7776ed766ec",
+        "duration_api_ms": 17646,
+        "cost_usd_list": 0.086883,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3592,
+        "cache_creation_input_tokens": 2574,
+        "output_tokens": 869
+       },
+       "text": "יֵאוֹתוּ, to consent, 2 K. 12, 9; with dat. of"
+      },
+      {
+       "draft": "pers. to consent unto any one, to gratify",
+       "reread": "pers. to consent unto any one, to gratify",
+       "status": "agreed",
+       "text": "pers. to consent unto any one, to gratify"
+      },
+      {
+       "draft": "him, Gen. 34, 15. 22. 23. In Arabic this",
+       "reread": "him, Gen. 34, 15. 22. 23. In Arabic this",
+       "status": "agreed",
+       "text": "him, Gen. 34, 15. 22. 23. In Arabic this"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 75,
+      "y": 2686,
+      "width": 874,
+      "height": 289
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r03-b01-874x289+75+2686-x2.png",
+     "image_sha256": "edbd4b4d7b439186e1d13bd0797783045cc99eee79a85a71cc668fba8321607a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sense is found under the form أَتَى i. q.",
+       "אָתָה to come, Conj. III أَاتَى , Heb. אוֹתָה,",
+       "whence seems to have arisen the new",
+       "root אוֹה ; unless by changing the points,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "00abb84d-f011-469a-96e6-113327d672de",
+      "duration_api_ms": 19773,
+      "cost_usd_list": 0.09515850000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 950
+     },
+     "lines": [
+      {
+       "draft": "sense is found under the form أَتَى i. q.",
+       "reread": "sense is found under the form أَتَى i. q.",
+       "status": "agreed",
+       "text": "sense is found under the form أَتَى i. q."
+      },
+      {
+       "draft": "אָתָה to come, Conj. III آتَى, Heb. אוֹתָה,",
+       "reread": "אָתָה to come, Conj. III أَاتَى , Heb. אוֹתָה,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "אָתָה to come, Conj. III اأَتَى, Heb. אוֹתָה,",
+        "verdict": "neither",
+        "note": "The Conj. III form is printed with two separate alifs (old-style madda), not a single alif-madda as in A; but the hamza+fatha sit on the second alif (the one adjacent to the ta), not on the first as in B, and the comma follows the Arabic directly with no space before it. Hebrew אָתָה and אוֹתָה match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e06cc3f6-b17b-4b94-a57d-3fa9d402bf05",
+        "duration_api_ms": 22504,
+        "cost_usd_list": 0.10426275000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3591,
+        "cache_creation_input_tokens": 2825,
+        "output_tokens": 1154
+       },
+       "text": "אָתָה to come, Conj. III اأَتَى, Heb. אוֹתָה,"
+      },
+      {
+       "draft": "whence seems to have arisen the new",
+       "reread": "whence seems to have arisen the new",
+       "status": "agreed",
+       "text": "whence seems to have arisen the new"
+      },
+      {
+       "draft": "root אוּת; unless by changing the points,",
+       "reread": "root אוֹה ; unless by changing the points,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "root אוֹה ; unless by changing the points,",
+        "verdict": "b",
+        "note": "Printed is אוֹה: the vowel dot sits above the vav (holem, not shureq) and the final letter is he, not tav; Reading A's אוּת is wrong on both. The space before the semicolon is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7a8de982-75b6-4407-83a4-a01a7621e03e",
+        "duration_api_ms": 12366,
+        "cost_usd_list": 0.07281475000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3559,
+        "cache_creation_input_tokens": 2793,
+        "output_tokens": 538
+       },
+       "text": "root אוֹה; unless by changing the points,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 75,
+      "y": 2959,
+      "width": 874,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r03-b02-874x257+75+2959-x2.png",
+     "image_sha256": "a264fc661a96c421f1e79ed4dc0cf7fb3ffd0997262a818a6d040dbdb3d50e42",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "instead of נָאוֹת, רָאוֹתוּ, we prefer to read",
+       "נָּאוֹת, רֳאוֹתוּ, which forms may then be",
+       "referred to Poel of r. אָוָה.",
+       "I. אוֹת, plur. אֹתוֹת, comm. gend. comp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e3940cd9-088e-4034-b82b-0bd7d77701c5",
+      "duration_api_ms": 51287,
+      "cost_usd_list": 0.18743349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 2827
+     },
+     "lines": [
+      {
+       "draft": "instead of נֵאוֹת, יֵאֹתוּ, we prefer to read",
+       "reread": "instead of נָאוֹת, רָאוֹתוּ, we prefer to read",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "instead of נֵאוֹת, יֵאֹתוּ, we prefer to read",
+        "verdict": "a",
+        "note": "The nun carries tsere (two horizontal dots), not qamets; the second word begins with a short yod with tsere, not resh, and its holem sits directly over the alef with no vav printed (defective יֵאֹתוּ, contrasting with the plene form on line 2). Reading A is exact.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6ea94c1d-d1b6-4139-b485-9a13b50beceb",
+        "duration_api_ms": 22539,
+        "cost_usd_list": 0.1065365,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2694,
+        "output_tokens": 1233
+       },
+       "text": "instead of נֵאוֹת, יֵאֹתוּ, we prefer to read"
+      },
+      {
+       "draft": "נֵאוֹת, יֵאוֹתוּ, which forms may then be",
+       "reread": "נָּאוֹת, רֳאוֹתוּ, which forms may then be",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "נֵאוֹת, יֵאוֹתוּ, which forms may then be",
+        "verdict": "a",
+        "note": "Under the nun are two horizontal dots (tsere), not qamets, and there is no dagesh in the nun; the second word begins with a short yod pointed tsere (contrast line 1's taller resh/dalet), not resh with hataf qamats. Reading A matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ee477624-423a-4e9c-8d2f-a2ae3f70dc2c",
+        "duration_api_ms": 18557,
+        "cost_usd_list": 0.09142575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3583,
+        "cache_creation_input_tokens": 2691,
+        "output_tokens": 932
+       },
+       "text": "נֵאוֹת, יֵאוֹתוּ, which forms may then be"
+      },
+      {
+       "draft": "referred to Poel of r. אָתָה.",
+       "reread": "referred to Poel of r. אָוָה.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "referred to Poel of r. אָתָה.",
+        "verdict": "a",
+        "note": "The middle letter is a broad ת with a top bar and left foot, equal in width to the final ה — not a narrow ו. Context confirms: the defective forms נֵאֹת/יֵאֹתוּ just proposed are being assigned to a root ending in tav (אתה), consistent with the entry preceding \"I. אוֹת\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d08cc8d9-d508-4112-823e-d3dbb94e65d7",
+        "duration_api_ms": 31670,
+        "cost_usd_list": 0.14143975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3559,
+        "cache_creation_input_tokens": 2667,
+        "output_tokens": 1942
+       },
+       "text": "referred to Poel of r. אָתָה."
+      },
+      {
+       "draft": "I. אוֹת, plur. אֹתוֹת, comm. gend. comp.",
+       "reread": "I. אוֹת, plur. אֹתוֹת, comm. gend. comp.",
+       "status": "agreed",
+       "text": "I. אוֹת, plur. אֹתוֹת, comm. gend. comp."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 75,
+      "y": 3200,
+      "width": 874,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c0-r03-b03-874x71+75+3200-x2.png",
+     "image_sha256": "ea0d15b31e9dc3a6d743f7e9a5b4971aee384177617f6e8de83afa22f108b5bf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sing. Gen. 9, 12. Ex. 4, 8 ; plur. Ex. 4, 9."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7ffc7d68-ba52-4ca3-97d8-b308a8890de8",
+      "duration_api_ms": 8593,
+      "cost_usd_list": 0.050095999999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 285
+     },
+     "lines": [
+      {
+       "draft": "sing. Gen. 9, 12. Ex. 4, 8; plur. Ex. 4, 9.",
+       "reread": "sing. Gen. 9, 12. Ex. 4, 8 ; plur. Ex. 4, 9.",
+       "status": "agreed",
+       "text": "sing. Gen. 9, 12. Ex. 4, 8; plur. Ex. 4, 9."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 966,
+    "y": 161,
+    "width": 875,
+    "height": 855
+   },
+   "draft_lines": [
+    "Josh. 24, 17. Contr. for אָוֶת from אָוָה III,",
+    "comp. أَيَة or آيَة sign, for أَوِيَة from",
+    "اوى.",
+    "1. a sign, Chald. אָת, Syr. ܐܳܬܳܐ, plur.",
+    "ܐܳܬܘܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+    "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים and they shall be",
+    "for signs and for seasons, i. e. by Hen-",
+    "diadys, for signs of seasons.—Then",
+    "2. an ensign, flag, military standard,",
+    "espec. of each single tribe, Num. 2, 2 sq.",
+    "different from דֶּגֶל the banner of three",
+    "tribes together.",
+    "3. a sign of something past, a token,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 966,
+      "y": 153,
+      "width": 875,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r00-b00-875x295+966+153-x2.png",
+     "image_sha256": "11180f47bb144e0ed59477313adbfd9860f89c9bffc2324227c019e375244875",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Josh. 24, 17.  Contr. for אֹוֶת from אָוָה III,",
+       "comp. أَيَةٌ or آيَةٌ sign, for أَوِيَةٌ from",
+       "اوى."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "73e1f8e0-2510-4d14-9c94-b290541de8ee",
+      "duration_api_ms": 18370,
+      "cost_usd_list": 0.09266325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 885
+     },
+     "lines": [
+      {
+       "draft": "Josh. 24, 17. Contr. for אָוֶת from אָוָה III,",
+       "reread": "Josh. 24, 17.  Contr. for אֹוֶת from אָוָה III,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "Josh. 24, 17. Contr. for אֹוֶת from אָוָה III,",
+        "verdict": "b",
+        "note": "The print shows a holem dot above between א and ו with segol under the ו (אֹוֶת); no qamets is printed under the א, so Reading A's אָוֶת is wrong. Rest of the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5c191310-1153-4be6-a3e3-955009bbf121",
+        "duration_api_ms": 24378,
+        "cost_usd_list": 0.11207700000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3588,
+        "cache_creation_input_tokens": 2884,
+        "output_tokens": 1296
+       },
+       "text": "Josh. 24, 17. Contr. for אֹוֶת from אָוָה III,"
+      },
+      {
+       "draft": "comp. أَيَة or آيَة sign, for أَوِيَة from",
+       "reread": "comp. أَيَةٌ or آيَةٌ sign, for أَوِيَةٌ from",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "comp. أَيَةٌ or آيَةٌ sign, for أَوِيَةٌ from",
+        "verdict": "b",
+        "note": "All three Arabic words carry a clear tanwīn (dammatan, the \"G\"-shaped mark) above the tāʾ marbūṭa; Reading A omits it. Other points (hamza+fatha on the first, madda on the second) agree with both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "07faed4a-9950-42d7-82ab-06d9ee5c5bb4",
+        "duration_api_ms": 21828,
+        "cost_usd_list": 0.10070674999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3587,
+        "cache_creation_input_tokens": 2883,
+        "output_tokens": 1069
+       },
+       "text": "comp. أَيَةٌ or آيَةٌ sign, for أَوِيَةٌ from"
+      },
+      {
+       "draft": "اوى.",
+       "reread": "اوى.",
+       "status": "agreed",
+       "text": "اوى."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 966,
+      "y": 432,
+      "width": 875,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r00-b01-875x250+966+432-x2.png",
+     "image_sha256": "b4cf0acd55979b4f4669f5e9d42895072d0a3d06501cab1e449d44737b23ff25",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1. a sign, Chald. אָת; Syr. ܐܳܬܳܐ, plur.",
+       "ܐܳܬ̈ܘܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+       "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים and they shall be",
+       "for signs and for seasons, i. e. by Hen-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "95a2714f-07bf-42b4-a16c-5ce339650e5a",
+      "duration_api_ms": 16166,
+      "cost_usd_list": 0.08036325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 702
+     },
+     "lines": [
+      {
+       "draft": "1. a sign, Chald. אָת, Syr. ܐܳܬܳܐ, plur.",
+       "reread": "1. a sign, Chald. אָת; Syr. ܐܳܬܳܐ, plur.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "1. a sign, Chald. אָת; Syr. ܐܳܬܳܐ, plur.",
+        "verdict": "b",
+        "note": "After Chald. אָת the printed mark has a dot above a comma tail — a semicolon, not a comma; the rest of the line (qamets under alef, Syriac ܐܳܬܳܐ with zqapha points) is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "251aea14-8e02-4dff-b133-8b2ee3cc4777",
+        "duration_api_ms": 12586,
+        "cost_usd_list": 0.0699795,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3598,
+        "cache_creation_input_tokens": 2642,
+        "output_tokens": 513
+       },
+       "text": "1. a sign, Chald. אָת; Syr. ܐܳܬܳܐ, plur."
+      },
+      {
+       "draft": "ܐܳܬܘܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+       "reread": "ܐܳܬ̈ܘܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "ܐܳܬܘ̈ܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+        "verdict": "neither",
+        "note": "Seyame (two dots) is clearly printed, so A is wrong to omit it; but in the image the two dots sit over the waw (the small circle in the middle), not over the first taw as B has it. Zqapha marks on first alaph, waw, and second taw; plain Latin references follow as both readings have.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eaf9e465-3e90-4388-afbe-5a8187c42a19",
+        "duration_api_ms": 31676,
+        "cost_usd_list": 0.132912,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3628,
+        "cache_creation_input_tokens": 2682,
+        "output_tokens": 1757
+       },
+       "text": "ܐܳܬܘ̈ܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14"
+      },
+      {
+       "draft": "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים and they shall be",
+       "reread": "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים and they shall be",
+       "status": "agreed",
+       "text": "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים and they shall be"
+      },
+      {
+       "draft": "for signs and for seasons, i. e. by Hen-",
+       "reread": "for signs and for seasons, i. e. by Hen-",
+       "status": "agreed",
+       "text": "for signs and for seasons, i. e. by Hen-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 966,
+      "y": 666,
+      "width": 875,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r00-b02-875x227+966+666-x2.png",
+     "image_sha256": "b4fdab71f02abffdc7d5360dcb88eb9af608e7c084ebaacbff150ffeaa82c558",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "diadys, for signs of seasons.—Then",
+       "2. an ensign, flag, military standard,",
+       "espec. of each single tribe, Num. 2, 2 sq.",
+       "different from דֶּגֶל the banner of three"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1513e4ad-725a-4660-9654-c22e4b8ee986",
+      "duration_api_ms": 10989,
+      "cost_usd_list": 0.06662575,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 443
+     },
+     "lines": [
+      {
+       "draft": "diadys, for signs of seasons.—Then",
+       "reread": "diadys, for signs of seasons.—Then",
+       "status": "agreed",
+       "text": "diadys, for signs of seasons.—Then"
+      },
+      {
+       "draft": "2. an ensign, flag, military standard,",
+       "reread": "2. an ensign, flag, military standard,",
+       "status": "agreed",
+       "text": "2. an ensign, flag, military standard,"
+      },
+      {
+       "draft": "espec. of each single tribe, Num. 2, 2 sq.",
+       "reread": "espec. of each single tribe, Num. 2, 2 sq.",
+       "status": "agreed",
+       "text": "espec. of each single tribe, Num. 2, 2 sq."
+      },
+      {
+       "draft": "different from דֶּגֶל the banner of three",
+       "reread": "different from דֶּגֶל the banner of three",
+       "status": "agreed",
+       "text": "different from דֶּגֶל the banner of three"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 966,
+      "y": 877,
+      "width": 875,
+      "height": 136
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r00-b03-875x136+966+877-x2.png",
+     "image_sha256": "ddaa5f18ba7b744f7ea3d5fe9ecdc13a38d5977f6eec9f1f2f478bd8126194b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tribes together.",
+       "3. a sign of something past, a token,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "532b9fc9-dcbb-419c-ab4d-54951c35cc6a",
+      "duration_api_ms": 7133,
+      "cost_usd_list": 0.048763249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2185,
+      "output_tokens": 196
+     },
+     "lines": [
+      {
+       "draft": "tribes together.",
+       "reread": "tribes together.",
+       "status": "agreed",
+       "text": "tribes together."
+      },
+      {
+       "draft": "3. a sign of something past, a token,",
+       "reread": "3. a sign of something past, a token,",
+       "status": "agreed",
+       "text": "3. a sign of something past, a token,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 966,
+    "y": 1004,
+    "width": 875,
+    "height": 788
+   },
+   "draft_lines": [
+    "memorial, Ex. 13, 9. 16. Deut. 6, 8.",
+    "Hence a memorial, monument, Is. 55, 13.",
+    "Ez. 14, 8.",
+    "4. a sign of something future, a por-",
+    "tent, omen, τύπος τοῦ μέλλοντος Rom. 5,",
+    "14, i. q. מוֹפֵת. Is. 8, 18 lo ! I and the",
+    "children whom Jehovah hath given me",
+    "are signs and portents in Israel from the",
+    "Lord of hosts, i. e. through the names",
+    "divinely given us, which are all of good",
+    "omen, (viz. יְשַׁעְיָה salvation of Jehovah ;",
+    "עִמָּנוּאֵל God with us, 7, 14. 8, 8 ; Shear-",
+    "Jashub 7, 3,) God has made us types of",
+    "future things to prefigure future deliver-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 966,
+      "y": 996,
+      "width": 875,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r01-b00-875x242+966+996-x2.png",
+     "image_sha256": "29d272643aad602c4476f629e1d0d5c46a2256b3a8a214eff22a8d7f774c0355",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "memorial, Ex. 13, 9. 16. Deut. 6, 8.",
+       "Hence a memorial, monument, Is. 55, 13.",
+       "Ez. 14, 8.",
+       "4. a sign of something future, a por-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "512a0d11-6fc0-4ed9-b531-9ec322fbdaf4",
+      "duration_api_ms": 4654,
+      "cost_usd_list": 0.05786325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 252
+     },
+     "lines": [
+      {
+       "draft": "memorial, Ex. 13, 9. 16. Deut. 6, 8.",
+       "reread": "memorial, Ex. 13, 9. 16. Deut. 6, 8.",
+       "status": "agreed",
+       "text": "memorial, Ex. 13, 9. 16. Deut. 6, 8."
+      },
+      {
+       "draft": "Hence a memorial, monument, Is. 55, 13.",
+       "reread": "Hence a memorial, monument, Is. 55, 13.",
+       "status": "agreed",
+       "text": "Hence a memorial, monument, Is. 55, 13."
+      },
+      {
+       "draft": "Ez. 14, 8.",
+       "reread": "Ez. 14, 8.",
+       "status": "agreed",
+       "text": "Ez. 14, 8."
+      },
+      {
+       "draft": "4. a sign of something future, a por-",
+       "reread": "4. a sign of something future, a por-",
+       "status": "agreed",
+       "text": "4. a sign of something future, a por-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 966,
+      "y": 1222,
+      "width": 875,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r01-b01-875x235+966+1222-x2.png",
+     "image_sha256": "7514a783913bbf17d52041025b5d720865fe5ba407e3fc029a6a10835c689063",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tent, omen, τύπος τοῦ μέλλοντος Rom. 5,",
+       "14, i. q. מוֹפֵת. Is. 8, 18 lo! I and the",
+       "children whom Jehovah hath given me",
+       "are signs and portents in Israel from the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f901551c-14cb-4fd7-9814-c9437069602f",
+      "duration_api_ms": 8159,
+      "cost_usd_list": 0.05785849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 267
+     },
+     "lines": [
+      {
+       "draft": "tent, omen, τύπος τοῦ μέλλοντος Rom. 5,",
+       "reread": "tent, omen, τύπος τοῦ μέλλοντος Rom. 5,",
+       "status": "agreed",
+       "text": "tent, omen, τύπος τοῦ μέλλοντος Rom. 5,"
+      },
+      {
+       "draft": "14, i. q. מוֹפֵת. Is. 8, 18 lo ! I and the",
+       "reread": "14, i. q. מוֹפֵת. Is. 8, 18 lo! I and the",
+       "status": "agreed",
+       "text": "14, i. q. מוֹפֵת. Is. 8, 18 lo! I and the"
+      },
+      {
+       "draft": "children whom Jehovah hath given me",
+       "reread": "children whom Jehovah hath given me",
+       "status": "agreed",
+       "text": "children whom Jehovah hath given me"
+      },
+      {
+       "draft": "are signs and portents in Israel from the",
+       "reread": "are signs and portents in Israel from the",
+       "status": "agreed",
+       "text": "are signs and portents in Israel from the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 966,
+      "y": 1441,
+      "width": 875,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r01-b02-875x240+966+1441-x2.png",
+     "image_sha256": "934cfb60e675cb79fcbd7c25ed48ee18ff014ae5fd21d0bbe938a2cd0183bb13",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Lord of hosts, i. e. through the names",
+       "divinely given us, which are all of good",
+       "omen, (viz. יְשַׁעְיָה salvation of Jehovah ;",
+       "עִמָּנוּאֵל God with us, 7, 14. 8, 8 ; Shear-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "534695b0-24ae-4ca4-8422-2f0a8e203a24",
+      "duration_api_ms": 9302,
+      "cost_usd_list": 0.058946,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 273
+     },
+     "lines": [
+      {
+       "draft": "Lord of hosts, i. e. through the names",
+       "reread": "Lord of hosts, i. e. through the names",
+       "status": "agreed",
+       "text": "Lord of hosts, i. e. through the names"
+      },
+      {
+       "draft": "divinely given us, which are all of good",
+       "reread": "divinely given us, which are all of good",
+       "status": "agreed",
+       "text": "divinely given us, which are all of good"
+      },
+      {
+       "draft": "omen, (viz. יְשַׁעְיָה salvation of Jehovah ;",
+       "reread": "omen, (viz. יְשַׁעְיָה salvation of Jehovah ;",
+       "status": "agreed",
+       "text": "omen, (viz. יְשַׁעְיָה salvation of Jehovah;"
+      },
+      {
+       "draft": "עִמָּנוּאֵל God with us, 7, 14. 8, 8 ; Shear-",
+       "reread": "עִמָּנוּאֵל God with us, 7, 14. 8, 8 ; Shear-",
+       "status": "agreed",
+       "text": "עִמָּנוּאֵל God with us, 7, 14. 8, 8; Shear-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 966,
+      "y": 1665,
+      "width": 875,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r01-b03-875x135+966+1665-x2.png",
+     "image_sha256": "9a6b8245061ced7bbaf44e3f2da1e8d749e011cedb2fe9705e6748eeaf4b6d65",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Jashub 7, 3,) God has made us types of",
+       "future things to prefigure future deliver-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "356b1c9e-abb7-4a93-8990-a1ff19b2f2c3",
+      "duration_api_ms": 7443,
+      "cost_usd_list": 0.049446,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 209
+     },
+     "lines": [
+      {
+       "draft": "Jashub 7, 3,) God has made us types of",
+       "reread": "Jashub 7, 3,) God has made us types of",
+       "status": "agreed",
+       "text": "Jashub 7, 3,) God has made us types of"
+      },
+      {
+       "draft": "future things to prefigure future deliver-",
+       "reread": "future things to prefigure future deliver-",
+       "status": "agreed",
+       "text": "future things to prefigure future deliver-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 966,
+    "y": 1780,
+    "width": 875,
+    "height": 843
+   },
+   "draft_lines": [
+    "ance and prosperity. Comp. 20, 3. Ez.",
+    "4, 3.",
+    "5. a sign or token of any thing in itself",
+    "not visible or discernible ; e. g. the token",
+    "of a covenant, as circumcision, Gen. 17,",
+    "11 ; the sabbath, Ex. 31, 13. Hence",
+    "a token, argument, proof, Job 21, 29 ;",
+    "comp. Lat. signum Cic. de Invent. 1. 34,",
+    "Gr. τεκμήριον, σημεῖον, Sept. Job 21, 29.",
+    "So of the prophetic sign or token of the",
+    "truth of a prophecy, viz. when God or",
+    "the prophet as his interpreter foretells",
+    "some minor event, the fulfilment of which",
+    "serves as a sign or proof of the future",
+    "fulfilment of the whole prophecy ; Ex."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 966,
+      "y": 1772,
+      "width": 875,
+      "height": 294
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r02-b00-875x294+966+1772-x2.png",
+     "image_sha256": "e31926028ec62195e2abd34068a40d88264cd12582f7130551cf1635ee319546",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ance and prosperity. Comp. 20, 3. Ez.",
+       "4, 3.",
+       "5. a sign or token of any thing in itself",
+       "not visible or discernible ; e. g. the token",
+       "of a covenant, as circumcision, Gen. 17,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "50b8a080-808b-4320-b578-8ca82d7ba2f4",
+      "duration_api_ms": 8024,
+      "cost_usd_list": 0.0607085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 261
+     },
+     "lines": [
+      {
+       "draft": "ance and prosperity. Comp. 20, 3. Ez.",
+       "reread": "ance and prosperity. Comp. 20, 3. Ez.",
+       "status": "agreed",
+       "text": "ance and prosperity. Comp. 20, 3. Ez."
+      },
+      {
+       "draft": "4, 3.",
+       "reread": "4, 3.",
+       "status": "agreed",
+       "text": "4, 3."
+      },
+      {
+       "draft": "5. a sign or token of any thing in itself",
+       "reread": "5. a sign or token of any thing in itself",
+       "status": "agreed",
+       "text": "5. a sign or token of any thing in itself"
+      },
+      {
+       "draft": "not visible or discernible ; e. g. the token",
+       "reread": "not visible or discernible ; e. g. the token",
+       "status": "agreed",
+       "text": "not visible or discernible; e. g. the token"
+      },
+      {
+       "draft": "of a covenant, as circumcision, Gen. 17,",
+       "reread": "of a covenant, as circumcision, Gen. 17,",
+       "status": "agreed",
+       "text": "of a covenant, as circumcision, Gen. 17,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 966,
+      "y": 2050,
+      "width": 875,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r02-b01-875x239+966+2050-x2.png",
+     "image_sha256": "186c2510e44d250daf6e5aa9bd9d013925ccff5efb2690410bf281906f044da5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "11; the sabbath, Ex. 31, 13. Hence",
+       "a token, argument, proof, Job 21, 29;",
+       "comp. Lat. signum Cic. de Invent. 1. 34,",
+       "Gr. τεκμήριον, σημεῖον, Sept. Job 21, 29."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fb62dc19-8037-4cc0-a1e4-381059a6f4e4",
+      "duration_api_ms": 8308,
+      "cost_usd_list": 0.059095999999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 276
+     },
+     "lines": [
+      {
+       "draft": "11 ; the sabbath, Ex. 31, 13. Hence",
+       "reread": "11; the sabbath, Ex. 31, 13. Hence",
+       "status": "agreed",
+       "text": "11; the sabbath, Ex. 31, 13. Hence"
+      },
+      {
+       "draft": "a token, argument, proof, Job 21, 29 ;",
+       "reread": "a token, argument, proof, Job 21, 29;",
+       "status": "agreed",
+       "text": "a token, argument, proof, Job 21, 29;"
+      },
+      {
+       "draft": "comp. Lat. signum Cic. de Invent. 1. 34,",
+       "reread": "comp. Lat. signum Cic. de Invent. 1. 34,",
+       "status": "agreed",
+       "text": "comp. Lat. signum Cic. de Invent. 1. 34,"
+      },
+      {
+       "draft": "Gr. τεκμήριον, σημεῖον, Sept. Job 21, 29.",
+       "reread": "Gr. τεκμήριον, σημεῖον, Sept. Job 21, 29.",
+       "status": "agreed",
+       "text": "Gr. τεκμήριον, σημεῖον, Sept. Job 21, 29."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 966,
+      "y": 2273,
+      "width": 875,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r02-b02-875x237+966+2273-x2.png",
+     "image_sha256": "e52213cb7d072dd7caf2ffe03caf15538062abc488e46a92cf7f8d3c655abee2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "So of the prophetic sign or token of the",
+       "truth of a prophecy, viz. when God or",
+       "the prophet as his interpreter foretells",
+       "some minor event, the fulfilment of which"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "96e4ad87-1698-470c-8b8e-f0d66769b7eb",
+      "duration_api_ms": 8131,
+      "cost_usd_list": 0.0564085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "So of the prophetic sign or token of the",
+       "reread": "So of the prophetic sign or token of the",
+       "status": "agreed",
+       "text": "So of the prophetic sign or token of the"
+      },
+      {
+       "draft": "truth of a prophecy, viz. when God or",
+       "reread": "truth of a prophecy, viz. when God or",
+       "status": "agreed",
+       "text": "truth of a prophecy, viz. when God or"
+      },
+      {
+       "draft": "the prophet as his interpreter foretells",
+       "reread": "the prophet as his interpreter foretells",
+       "status": "agreed",
+       "text": "the prophet as his interpreter foretells"
+      },
+      {
+       "draft": "some minor event, the fulfilment of which",
+       "reread": "some minor event, the fulfilment of which",
+       "status": "agreed",
+       "text": "some minor event, the fulfilment of which"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 966,
+      "y": 2494,
+      "width": 875,
+      "height": 137
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r02-b03-875x137+966+2494-x2.png",
+     "image_sha256": "90dfe97c45dfe2629922f3c817f034bc08d6607836370b7e310324772b215ba3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "serves as a sign or proof of the future",
+       "fulfilment of the whole prophecy; Ex."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fc3b4473-8d9d-4ca5-92b3-ab2949e4634d",
+      "duration_api_ms": 6853,
+      "cost_usd_list": 0.049446,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 209
+     },
+     "lines": [
+      {
+       "draft": "serves as a sign or proof of the future",
+       "reread": "serves as a sign or proof of the future",
+       "status": "agreed",
+       "text": "serves as a sign or proof of the future"
+      },
+      {
+       "draft": "fulfilment of the whole prophecy ; Ex.",
+       "reread": "fulfilment of the whole prophecy; Ex.",
+       "status": "agreed",
+       "text": "fulfilment of the whole prophecy; Ex."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 966,
+    "y": 2611,
+    "width": 875,
+    "height": 656
+   },
+   "draft_lines": [
+    "3, 12. Deut. 13, 2. 3. 1 Sam. 2, 27–34. 10,",
+    "7–9. 2 K. 19, 29. 20, 8. 9. Is. 7, 11–14. 38,",
+    "7. 22. Jer. 44, 29. 30 ; comp. Mark 13, 4.",
+    "Luke 1, 18. 2, 12. Comm. on Is. 7, 10. 11.",
+    "—Finally, a wonder, prodigy, miracle,",
+    "as a sign of the divine power, i. q. מוֹפֵת,",
+    "Deut. 4, 34. 6, 22. 7, 19. 29, 2. 34, 11.",
+    "II. אוֹת or אֹת only c. suff. אוֹתִי, אֹתְךָ,",
+    "etc. i. q. אֵת I, pron. demonstr. commonly",
+    "as sign of the accus.",
+    "אָז demonstr. part. originally of place"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 966,
+      "y": 2603,
+      "width": 875,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r03-b00-875x238+966+2603-x2.png",
+     "image_sha256": "62c59d9d1e18405f014d4598814b3bf86b3e3563264ea0ace86f80fcb1f7df86",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3, 12. Deut. 13, 2. 3. 1 Sam. 2, 27–34. 10,",
+       "7–9. 2 K. 19, 29. 20, 8. 9. Is. 7, 11–14. 38,",
+       "7. 22. Jer. 44, 29. 30 ; comp. Mark 13, 4.",
+       "Luke 1, 18. 2, 12. Comm. on Is. 7, 10. 11."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "649ee990-6017-4e7e-ba00-9fed7fb5299d",
+      "duration_api_ms": 8907,
+      "cost_usd_list": 0.0618585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 347
+     },
+     "lines": [
+      {
+       "draft": "3, 12. Deut. 13, 2. 3. 1 Sam. 2, 27–34. 10,",
+       "reread": "3, 12. Deut. 13, 2. 3. 1 Sam. 2, 27–34. 10,",
+       "status": "agreed",
+       "text": "3, 12. Deut. 13, 2. 3. 1 Sam. 2, 27–34. 10,"
+      },
+      {
+       "draft": "7–9. 2 K. 19, 29. 20, 8. 9. Is. 7, 11–14. 38,",
+       "reread": "7–9. 2 K. 19, 29. 20, 8. 9. Is. 7, 11–14. 38,",
+       "status": "agreed",
+       "text": "7–9. 2 K. 19, 29. 20, 8. 9. Is. 7, 11–14. 38,"
+      },
+      {
+       "draft": "7. 22. Jer. 44, 29. 30 ; comp. Mark 13, 4.",
+       "reread": "7. 22. Jer. 44, 29. 30 ; comp. Mark 13, 4.",
+       "status": "agreed",
+       "text": "7. 22. Jer. 44, 29. 30; comp. Mark 13, 4."
+      },
+      {
+       "draft": "Luke 1, 18. 2, 12. Comm. on Is. 7, 10. 11.",
+       "reread": "Luke 1, 18. 2, 12. Comm. on Is. 7, 10. 11.",
+       "status": "agreed",
+       "text": "Luke 1, 18. 2, 12. Comm. on Is. 7, 10. 11."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 966,
+      "y": 2825,
+      "width": 875,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r03-b01-875x258+966+2825-x2.png",
+     "image_sha256": "194ea59e42d18c353fefc95c1328ddd8bbf89b818bbc3387dc210be9b58584dc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "—Finally, a wonder, prodigy, miracle,",
+       "as a sign of the divine power, i. q. מוֹפֵת,",
+       "Deut. 4, 34. 6, 22. 7, 19. 29, 2. 34, 11.",
+       "II. אוֹת or אֹת only c. suff. אוֹתִי, אֹתְךָ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eb854ac6-4a75-4507-a016-d4bc9bb17aaf",
+      "duration_api_ms": 12792,
+      "cost_usd_list": 0.0782835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 644
+     },
+     "lines": [
+      {
+       "draft": "—Finally, a wonder, prodigy, miracle,",
+       "reread": "—Finally, a wonder, prodigy, miracle,",
+       "status": "agreed",
+       "text": "—Finally, a wonder, prodigy, miracle,"
+      },
+      {
+       "draft": "as a sign of the divine power, i. q. מוֹפֵת,",
+       "reread": "as a sign of the divine power, i. q. מוֹפֵת,",
+       "status": "agreed",
+       "text": "as a sign of the divine power, i. q. מוֹפֵת,"
+      },
+      {
+       "draft": "Deut. 4, 34. 6, 22. 7, 19. 29, 2. 34, 11.",
+       "reread": "Deut. 4, 34. 6, 22. 7, 19. 29, 2. 34, 11.",
+       "status": "agreed",
+       "text": "Deut. 4, 34. 6, 22. 7, 19. 29, 2. 34, 11."
+      },
+      {
+       "draft": "II. אוֹת or אֹת only c. suff. אוֹתִי, אֹתְךָ,",
+       "reread": "II. אוֹת or אֹת only c. suff. אוֹתִי, אֹתְךָ,",
+       "status": "agreed",
+       "text": "II. אוֹת or אֹת only c. suff. אוֹתִי, אֹתְךָ,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 966,
+      "y": 3067,
+      "width": 875,
+      "height": 207
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0043/pass2/c1-r03-b02-875x207+966+3067-x2.png",
+     "image_sha256": "55fe157c471287142b5f087d16b9928f507cfcef859b30e34ae16de2edd29fa6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "etc. i. q. אֵת I, pron. demonstr. commonly",
+       "as sign of the accus.",
+       "אָז demonstr. part. originally of place"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "320317a2-b3be-4847-9d05-e99be3e81870",
+      "duration_api_ms": 9007,
+      "cost_usd_list": 0.058033499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 302
+     },
+     "lines": [
+      {
+       "draft": "etc. i. q. אֵת I, pron. demonstr. commonly",
+       "reread": "etc. i. q. אֵת I, pron. demonstr. commonly",
+       "status": "agreed",
+       "text": "etc. i. q. אֵת I, pron. demonstr. commonly"
+      },
+      {
+       "draft": "as sign of the accus.",
+       "reread": "as sign of the accus.",
+       "status": "agreed",
+       "text": "as sign of the accus."
+      },
+      {
+       "draft": "אָז demonstr. part. originally of place",
+       "reread": "אָז demonstr. part. originally of place",
+       "status": "agreed",
+       "text": "אָז demonstr. part. originally of place"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אור 27 אז",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Zend and Sanscr. vara, fortification,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "comp. Sanscr. pura a fortified city, after",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the analogy of punar, Pracrit. unar, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "See F. Benary in the Berliner Jahrbb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1841. p. 146 sq. b) m. 1 Chr. 11, 35.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אוֹרָה f. 1. light, Ps. 139, 12; metaph.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of welfare, happiness, Esth. 8, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Plur. אוֹרוֹת greens, green herbs, 2 K.",
+   "status": "adjudicated",
+   "draft": "2. Plur. אוֹרוֹת greens, green herbs, 2 K.",
+   "reread": "2. Plur. אֹרוֹת greens, green herbs, 2 K.",
+   "verdict": "a",
+   "note": "The printed word has five letters אורות with a vav (bearing a holem dot) between alef and resh — plene אוֹרוֹת, not defective אֹרוֹת as in Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "4, 39. The idea of brightness, splendour,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "is often transferred in the Semitic",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "tongues to verdure and flowers; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "נִצִּץ, Arab. انوار lights and flowers.",
+   "status": "adjudicated",
+   "draft": "נִצִּץ, Arab. أنوار lights and flowers.",
+   "reread": "נִצָּץ, Arab. أنوار lights and flowers.",
+   "verdict": "neither",
+   "note": "Under the tsade a single dot (hiriq) is printed, not a qamets, so A's נִצִּץ is right; but the Arabic is printed with a bare alif (انوار), without the hamza both readings supply.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Comp. also Samarit. יאר Gen. 1, 11. 12,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "for דֶּשֶׁא herb.—So Is. 26, 19 כִּי טַל אוֹרוֹת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "טַלֶּךָ for as the dew of herbs is thy dew,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "i. e. God's quickening influence will raise",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the dead to life, as the dew of heaven",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "refreshes plants. Comp. Ecclus. 46, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "49, 10. Others render dew of light, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of life, the vivifying dew, comp. אוֹר d.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲוֵרוֹת by transp. for אֻרָיוֹת q. v. stalls,",
+   "status": "adjudicated",
+   "draft": "אֻרָוֹת by transp. for אֲרָיוֹת q. v. stalls,",
+   "reread": "אֲוֵרוֹת by transp. for אֻרָיוֹת q. v. stalls,",
+   "verdict": "b",
+   "note": "First word has hataf-patah under aleph and a vav with tsere before resh (אֲוֵרוֹת, the transposed form); second word has qubuts (three diagonal dots) under aleph and qamets under resh (אֻרָיוֹת). Reading A swapped the pointing and dropped the first vav.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "cribs, 2 Chr. 32, 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוּרִי (fiery, or perh. an abridged form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "for אוּרִיָּה) Uri, pr. n. m. a) Ex. 31, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "b) Ezra 10, 24. c) 1 K. 4, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוּרִיאֵל (flame of God) Uriel, pr. n. m.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "a) 1 Chr. 6, 9. 15, 5. 21. b) 2 Chr. 13, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוּרִיָּה (flame of Jehovah) Uriah, pr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "n. m. a) A Hittite, the husband of Bath-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "sheba, treacherously slain by order of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "David, 2 Sam. 11, 3. b) A priest in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "time of Ahaz and Isaiah, Is. 8, 2. 2 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "16, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוּרִיָּהוּ (id.) Urijah, pr. n. of a prophet",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "slain by order of Jehoiakim, Jer. 26, 20 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוּשׁ see הִתְאוֹשֵׁשׁ under אִישׁ.",
+   "status": "adjudicated",
+   "draft": "אוּשׁ see הִתְאוֹשָׁשׁ under אִישׁ.",
+   "reread": "אוּשׁ see הִתְאוֹשֵׁשׁ under אִישׁ.",
+   "verdict": "b",
+   "note": "Under the first shin of הִתְאוֹשֵׁשׁ the print shows two dots side by side (tsere), not a qamets; Reading B matches. All other characters agree.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אוֹת or אוּת a root not used in Kal.",
+   "status": "adjudicated",
+   "draft": "* אוֹת or אוּת a root not used in Kal.",
+   "reread": "* אוּת or אוֹת a root not used in Kal.",
+   "verdict": "a",
+   "note": "Decisive difference is the order of the two forms: the first (leftmost printed) word has its dot above the vav (ḥolem, אוֹת), the word after \"or\" has the dot mid-height inside the vav (shureq, אוּת). Reading B swaps them.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Niph. נֵאוֹת, fut. 1 plur. נֵאוֹת, 3 plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "יֵאוֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+   "status": "adjudicated",
+   "draft": "יֵאֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+   "reread": "יֵאוֹתוּ, to consent, 2 K. 12, 9; with dat. of",
+   "verdict": "b",
+   "note": "Between aleph and tav the print has a full vertical vav stroke carrying the holem dot (same plene אוֹ as נֵאוֹת in line 1), not a bare holem over the aleph; so plene יֵאוֹתוּ (B), not defective יֵאֹתוּ (A).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pers. to consent unto any one, to gratify",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "him, Gen. 34, 15. 22. 23. In Arabic this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sense is found under the form أَتَى i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אָתָה to come, Conj. III اأَتَى, Heb. אוֹתָה,",
+   "status": "adjudicated",
+   "draft": "אָתָה to come, Conj. III آتَى, Heb. אוֹתָה,",
+   "reread": "אָתָה to come, Conj. III أَاتَى , Heb. אוֹתָה,",
+   "verdict": "neither",
+   "note": "The Conj. III form is printed with two separate alifs (old-style madda), not a single alif-madda as in A; but the hamza+fatha sit on the second alif (the one adjacent to the ta), not on the first as in B, and the comma follows the Arabic directly with no space before it. Hebrew אָתָה and אוֹתָה match both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "whence seems to have arisen the new",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "root אוֹה; unless by changing the points,",
+   "status": "adjudicated",
+   "draft": "root אוּת; unless by changing the points,",
+   "reread": "root אוֹה ; unless by changing the points,",
+   "verdict": "b",
+   "note": "Printed is אוֹה: the vowel dot sits above the vav (holem, not shureq) and the final letter is he, not tav; Reading A's אוּת is wrong on both. The space before the semicolon is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "instead of נֵאוֹת, יֵאֹתוּ, we prefer to read",
+   "status": "adjudicated",
+   "draft": "instead of נֵאוֹת, יֵאֹתוּ, we prefer to read",
+   "reread": "instead of נָאוֹת, רָאוֹתוּ, we prefer to read",
+   "verdict": "a",
+   "note": "The nun carries tsere (two horizontal dots), not qamets; the second word begins with a short yod with tsere, not resh, and its holem sits directly over the alef with no vav printed (defective יֵאֹתוּ, contrasting with the plene form on line 2). Reading A is exact.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "נֵאוֹת, יֵאוֹתוּ, which forms may then be",
+   "status": "adjudicated",
+   "draft": "נֵאוֹת, יֵאוֹתוּ, which forms may then be",
+   "reread": "נָּאוֹת, רֳאוֹתוּ, which forms may then be",
+   "verdict": "a",
+   "note": "Under the nun are two horizontal dots (tsere), not qamets, and there is no dagesh in the nun; the second word begins with a short yod pointed tsere (contrast line 1's taller resh/dalet), not resh with hataf qamats. Reading A matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "referred to Poel of r. אָתָה.",
+   "status": "adjudicated",
+   "draft": "referred to Poel of r. אָתָה.",
+   "reread": "referred to Poel of r. אָוָה.",
+   "verdict": "a",
+   "note": "The middle letter is a broad ת with a top bar and left foot, equal in width to the final ה — not a narrow ו. Context confirms: the defective forms נֵאֹת/יֵאֹתוּ just proposed are being assigned to a root ending in tav (אתה), consistent with the entry preceding \"I. אוֹת\".",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "I. אוֹת, plur. אֹתוֹת, comm. gend. comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sing. Gen. 9, 12. Ex. 4, 8; plur. Ex. 4, 9.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Josh. 24, 17. Contr. for אֹוֶת from אָוָה III,",
+   "status": "adjudicated",
+   "draft": "Josh. 24, 17. Contr. for אָוֶת from אָוָה III,",
+   "reread": "Josh. 24, 17.  Contr. for אֹוֶת from אָוָה III,",
+   "verdict": "b",
+   "note": "The print shows a holem dot above between א and ו with segol under the ו (אֹוֶת); no qamets is printed under the א, so Reading A's אָוֶת is wrong. Rest of the line is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "comp. أَيَةٌ or آيَةٌ sign, for أَوِيَةٌ from",
+   "status": "adjudicated",
+   "draft": "comp. أَيَة or آيَة sign, for أَوِيَة from",
+   "reread": "comp. أَيَةٌ or آيَةٌ sign, for أَوِيَةٌ from",
+   "verdict": "b",
+   "note": "All three Arabic words carry a clear tanwīn (dammatan, the \"G\"-shaped mark) above the tāʾ marbūṭa; Reading A omits it. Other points (hamza+fatha on the first, madda on the second) agree with both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "اوى.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. a sign, Chald. אָת; Syr. ܐܳܬܳܐ, plur.",
+   "status": "adjudicated",
+   "draft": "1. a sign, Chald. אָת, Syr. ܐܳܬܳܐ, plur.",
+   "reread": "1. a sign, Chald. אָת; Syr. ܐܳܬܳܐ, plur.",
+   "verdict": "b",
+   "note": "After Chald. אָת the printed mark has a dot above a comma tail — a semicolon, not a comma; the rest of the line (qamets under alef, Syriac ܐܳܬܳܐ with zqapha points) is identical in both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ܐܳܬܘ̈ܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+   "status": "adjudicated",
+   "draft": "ܐܳܬܘܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+   "reread": "ܐܳܬ̈ܘܳܬܳܐ. Ex. 12, 13. Josh. 2, 12. Gen. 1, 14",
+   "verdict": "neither",
+   "note": "Seyame (two dots) is clearly printed, so A is wrong to omit it; but in the image the two dots sit over the waw (the small circle in the middle), not over the first taw as B has it. Zqapha marks on first alaph, waw, and second taw; plain Latin references follow as both readings have.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "וְהָיוּ לְאֹתֹת וּלְמוֹעֲדִים and they shall be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "for signs and for seasons, i. e. by Hen-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "diadys, for signs of seasons.—Then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. an ensign, flag, military standard,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "espec. of each single tribe, Num. 2, 2 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "different from דֶּגֶל the banner of three",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tribes together.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "3. a sign of something past, a token,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "memorial, Ex. 13, 9. 16. Deut. 6, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Hence a memorial, monument, Is. 55, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ez. 14, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4. a sign of something future, a por-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "tent, omen, τύπος τοῦ μέλλοντος Rom. 5,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "14, i. q. מוֹפֵת. Is. 8, 18 lo! I and the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "children whom Jehovah hath given me",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "are signs and portents in Israel from the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Lord of hosts, i. e. through the names",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "divinely given us, which are all of good",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "omen, (viz. יְשַׁעְיָה salvation of Jehovah;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "עִמָּנוּאֵל God with us, 7, 14. 8, 8; Shear-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Jashub 7, 3,) God has made us types of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "future things to prefigure future deliver-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ance and prosperity. Comp. 20, 3. Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "5. a sign or token of any thing in itself",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "not visible or discernible; e. g. the token",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of a covenant, as circumcision, Gen. 17,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "11; the sabbath, Ex. 31, 13. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a token, argument, proof, Job 21, 29;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "comp. Lat. signum Cic. de Invent. 1. 34,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Gr. τεκμήριον, σημεῖον, Sept. Job 21, 29.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "So of the prophetic sign or token of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "truth of a prophecy, viz. when God or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the prophet as his interpreter foretells",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "some minor event, the fulfilment of which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "serves as a sign or proof of the future",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "fulfilment of the whole prophecy; Ex.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "3, 12. Deut. 13, 2. 3. 1 Sam. 2, 27–34. 10,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "7–9. 2 K. 19, 29. 20, 8. 9. Is. 7, 11–14. 38,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "7. 22. Jer. 44, 29. 30; comp. Mark 13, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Luke 1, 18. 2, 12. Comm. on Is. 7, 10. 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "—Finally, a wonder, prodigy, miracle,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "as a sign of the divine power, i. q. מוֹפֵת,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Deut. 4, 34. 6, 22. 7, 19. 29, 2. 34, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "II. אוֹת or אֹת only c. suff. אוֹתִי, אֹתְךָ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "etc. i. q. אֵת I, pron. demonstr. commonly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "as sign of the accus.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָז demonstr. part. originally of place",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 89,
+  "adjudicated": 15,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 5
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.523
+}

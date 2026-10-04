@@ -1,0 +1,2705 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 27,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0027.png",
+ "raster_sha256": "6c1644efd00d3fb53b5e7877ac4df6cad3865adceb0f57cd9c95a0f360058905",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0027.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T08:55:09+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 84,
+    "y": 107,
+    "width": 1772,
+    "height": 86
+   },
+   "draft_lines": [
+    "אגר 11 אגן"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 84,
+      "y": 105,
+      "width": 1772,
+      "height": 90
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/header-b00-1772x90+84+105-x2.png",
+     "image_sha256": "2a99d8625152a190a704796d0edcdc557d45bb88f1f93b92ace4f620dbc03a41",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אגד 11 אגן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3de0c7a7-e957-4a17-9c7f-7d409b41a396",
+      "duration_api_ms": 7120,
+      "cost_usd_list": 0.0487225,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 203
+     },
+     "lines": [
+      {
+       "draft": "אגר 11 אגן",
+       "reread": "אגד 11 אגן",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אגר 11 אגן",
+        "verdict": "a",
+        "note": "The left header word's final letter has a rounded shoulder with no right-side tittle projecting past the leg, so it is resh (אגר), not dalet (אגד). Page number 11 and right header אגן agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "122a89ea-e089-45ea-825a-6d91226f4ad4",
+        "duration_api_ms": 18293,
+        "cost_usd_list": 0.09233575,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1783,
+        "output_tokens": 1115
+       },
+       "text": "אגר 11 אגן"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 84,
+    "y": 153,
+    "width": 873,
+    "height": 725
+   },
+   "draft_lines": [
+    "* אָגַד obsol. root, Chald. to bind, to tie,",
+    "comp. עָקַד, אָבַד, and the remark under",
+    "r. גִּיד. In Arabic some of its derivatives",
+    "are used trop. of arched work, edifices",
+    "of arched and firmly compacted struc-",
+    "ture, in reference to the firm coherence",
+    "of all their parts; comp. אָחַז and אֲגֻדָּה",
+    "no. 4.—Hence",
+    "אֲגֻדָּה f. 1. a band, knot. אֲגֻדּוֹת מוֹטָה",
+    "bands of the yoke, Is. 58, 6.",
+    "2. a bundle, bunch, tied together, e. g."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 84,
+      "y": 145,
+      "width": 873,
+      "height": 266
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r00-b00-873x266+84+145-x2.png",
+     "image_sha256": "f736af056ca1065205d95c5942c13b32e01a00d148db554fc2a0288d046581fa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "† אָגַד obsol. root, Chald. to bind, to tie,",
+       "comp. אָכַד, עָקַד, and the remark under",
+       "r. גִּיד. In Arabic some of its derivatives"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "19947a85-6552-41e4-bb31-84a055be5d0d",
+      "duration_api_ms": 16386,
+      "cost_usd_list": 0.09357325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 746
+     },
+     "lines": [
+      {
+       "draft": "* אָגַד obsol. root, Chald. to bind, to tie,",
+       "reread": "† אָגַד obsol. root, Chald. to bind, to tie,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "* אָגַד obsol. root, Chald. to bind, to tie,",
+        "verdict": "a",
+        "note": "The prefixed mark is a radiating star-shaped asterisk (several short strokes/dots around a centre), not a dagger with a vertical stem and crossbar; Robinson's edition uses * for obsolete roots. Headword אָגַד (qamets, pathach, no plene letters) and the English text agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a0708c2f-6c5c-4343-869b-211539991711",
+        "duration_api_ms": 14778,
+        "cost_usd_list": 0.09124399999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3576,
+        "cache_creation_input_tokens": 2683,
+        "output_tokens": 727
+       },
+       "text": "* אָגַד obsol. root, Chald. to bind, to tie,"
+      },
+      {
+       "draft": "comp. עָקַד, אָבַד, and the remark under",
+       "reread": "comp. אָכַד, עָקַד, and the remark under",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "comp. אָכַד, עָקַד, and the remark under",
+        "verdict": "b",
+        "note": "Printed left-to-right order is אָכַד first, then עָקַד (Reading A reverses them). The second letter of the first word is kaf (rounded, no lower-right protrusion), not bet — so אָכַד as in B; vowels qamets + patach on both words match.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4d6fd274-425d-49df-b567-4b0fe7539973",
+        "duration_api_ms": 14667,
+        "cost_usd_list": 0.088482,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2675,
+        "output_tokens": 675
+       },
+       "text": "comp. אָכַד, עָקַד, and the remark under"
+      },
+      {
+       "draft": "r. גִּיד. In Arabic some of its derivatives",
+       "reread": "r. גִּיד. In Arabic some of its derivatives",
+       "status": "agreed",
+       "text": "r. גִּיד. In Arabic some of its derivatives"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 84,
+      "y": 395,
+      "width": 873,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r00-b01-873x243+84+395-x2.png",
+     "image_sha256": "f0ed6f6e02034c5f2c756fcb6b6205df9856373da3dac5285426e12019214428",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "are used trop. of arched work, edifices",
+       "of arched and firmly compacted struc-",
+       "ture, in reference to the firm coherence",
+       "of all their parts ; comp. אָחַז and אֲגֻדָּה"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b54082fa-8644-4110-8681-38fcda22003c",
+      "duration_api_ms": 10704,
+      "cost_usd_list": 0.07456325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 391
+     },
+     "lines": [
+      {
+       "draft": "are used trop. of arched work, edifices",
+       "reread": "are used trop. of arched work, edifices",
+       "status": "agreed",
+       "text": "are used trop. of arched work, edifices"
+      },
+      {
+       "draft": "of arched and firmly compacted struc-",
+       "reread": "of arched and firmly compacted struc-",
+       "status": "agreed",
+       "text": "of arched and firmly compacted struc-"
+      },
+      {
+       "draft": "ture, in reference to the firm coherence",
+       "reread": "ture, in reference to the firm coherence",
+       "status": "agreed",
+       "text": "ture, in reference to the firm coherence"
+      },
+      {
+       "draft": "of all their parts; comp. אָחַז and אֲגֻדָּה",
+       "reread": "of all their parts ; comp. אָחַז and אֲגֻדָּה",
+       "status": "agreed",
+       "text": "of all their parts; comp. אָחַז and אֲגֻדָּה"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 84,
+      "y": 622,
+      "width": 873,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r00-b02-873x264+84+622-x2.png",
+     "image_sha256": "691db3061f29e3f4ba87de001c84ceb861fde46968be1244f7b14dd2b79c4ad2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "no. 4.—Hence",
+       "אֲגֻדָּה f. 1. a band, knot. אֲגֻדּוֹת מוֹטָה",
+       "bands of the yoke, Is. 58, 6.",
+       "2. a bundle, bunch, tied together, e. g."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "79fdc26f-9693-471f-a059-a5b33f350aaf",
+      "duration_api_ms": 12360,
+      "cost_usd_list": 0.08572325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 589
+     },
+     "lines": [
+      {
+       "draft": "no. 4.—Hence",
+       "reread": "no. 4.—Hence",
+       "status": "agreed",
+       "text": "no. 4.—Hence"
+      },
+      {
+       "draft": "אֲגֻדָּה f. 1. a band, knot. אֲגֻדּוֹת מוֹטָה",
+       "reread": "אֲגֻדָּה f. 1. a band, knot. אֲגֻדּוֹת מוֹטָה",
+       "status": "agreed",
+       "text": "אֲגֻדָּה f. 1. a band, knot. אֲגֻדּוֹת מוֹטָה"
+      },
+      {
+       "draft": "bands of the yoke, Is. 58, 6.",
+       "reread": "bands of the yoke, Is. 58, 6.",
+       "status": "agreed",
+       "text": "bands of the yoke, Is. 58, 6."
+      },
+      {
+       "draft": "2. a bundle, bunch, tied together, e. g.",
+       "reread": "2. a bundle, bunch, tied together, e. g.",
+       "status": "agreed",
+       "text": "2. a bundle, bunch, tied together, e. g."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 84,
+    "y": 866,
+    "width": 873,
+    "height": 817
+   },
+   "draft_lines": [
+    "of hyssop, Ex. 12, 22.",
+    "3. a band of men, troop, 2 Sam. 2, 25.",
+    "Comp. חֶבֶל.",
+    "4. an arch, vault, e. g. of the heavens,",
+    "Am. 9, 6. Comp. Germ. Gat, Gaden,",
+    "story of a building, from the verb gaden,",
+    "gatten, which implies a binding; see",
+    "Adelung Lex. h. vv.",
+    "אֱגוֹז m. a nut, Cant. 6, 11. Syr. and",
+    "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گَوز. The",
+    "Heb. word seems derived from the Per-",
+    "sian, prefixing א prosthetic. Comp. in",
+    "lett. א."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 84,
+      "y": 858,
+      "width": 873,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r01-b00-873x239+84+858-x2.png",
+     "image_sha256": "cd24752ddf121145fd0fa5a372a878bc883e784fbc3b8831ab792706666bdb19",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of hyssop, Ex. 12, 22.",
+       "3. a band of men, troop, 2 Sam. 2, 25.",
+       "Comp. חֶבֶל.",
+       "4. an arch, vault, e. g. of the heavens,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a422aea5-5234-4f29-88cb-68012f132b0a",
+      "duration_api_ms": 9495,
+      "cost_usd_list": 0.06766325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "of hyssop, Ex. 12, 22.",
+       "reread": "of hyssop, Ex. 12, 22.",
+       "status": "agreed",
+       "text": "of hyssop, Ex. 12, 22."
+      },
+      {
+       "draft": "3. a band of men, troop, 2 Sam. 2, 25.",
+       "reread": "3. a band of men, troop, 2 Sam. 2, 25.",
+       "status": "agreed",
+       "text": "3. a band of men, troop, 2 Sam. 2, 25."
+      },
+      {
+       "draft": "Comp. חֶבֶל.",
+       "reread": "Comp. חֶבֶל.",
+       "status": "agreed",
+       "text": "Comp. חֶבֶל."
+      },
+      {
+       "draft": "4. an arch, vault, e. g. of the heavens,",
+       "reread": "4. an arch, vault, e. g. of the heavens,",
+       "status": "agreed",
+       "text": "4. an arch, vault, e. g. of the heavens,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 84,
+      "y": 1081,
+      "width": 873,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r01-b01-873x239+84+1081-x2.png",
+     "image_sha256": "e5e39c38d53c787ce1b11248a2eba15bcb8f021d45ad0b336b3955e9d017a239",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Am. 9, 6. Comp. Germ. Gat, Gaden,",
+       "story of a building, from the verb gaden,",
+       "gatten, which implies a binding; see",
+       "Adelung Lex. h. vv."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ec122134-c04c-4270-90c8-3658f587a0ad",
+      "duration_api_ms": 7804,
+      "cost_usd_list": 0.0674035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 247
+     },
+     "lines": [
+      {
+       "draft": "Am. 9, 6. Comp. Germ. Gat, Gaden,",
+       "reread": "Am. 9, 6. Comp. Germ. Gat, Gaden,",
+       "status": "agreed",
+       "text": "Am. 9, 6. Comp. Germ. Gat, Gaden,"
+      },
+      {
+       "draft": "story of a building, from the verb gaden,",
+       "reread": "story of a building, from the verb gaden,",
+       "status": "agreed",
+       "text": "story of a building, from the verb gaden,"
+      },
+      {
+       "draft": "gatten, which implies a binding; see",
+       "reread": "gatten, which implies a binding; see",
+       "status": "agreed",
+       "text": "gatten, which implies a binding; see"
+      },
+      {
+       "draft": "Adelung Lex. h. vv.",
+       "reread": "Adelung Lex. h. vv.",
+       "status": "agreed",
+       "text": "Adelung Lex. h. vv."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 84,
+      "y": 1304,
+      "width": 873,
+      "height": 314
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r01-b02-873x314+84+1304-x2.png",
+     "image_sha256": "3cf59840397547ea65dab15cf3420ba37f11cc5a289bbb6a0cec491ee23ec12f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱגוֹז m. a nut, Cant. 6, 11. Syr. and",
+       "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گوز. The",
+       "Heb. word seems derived from the Per-",
+       "sian, prefixing א prosthetic. Comp. in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aefa1c8d-61c3-4684-b717-c496c5a790ad",
+      "duration_api_ms": 11961,
+      "cost_usd_list": 0.0818535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3006,
+      "output_tokens": 410
+     },
+     "lines": [
+      {
+       "draft": "אֱגוֹז m. a nut, Cant. 6, 11. Syr. and",
+       "reread": "אֱגוֹז m. a nut, Cant. 6, 11. Syr. and",
+       "status": "agreed",
+       "text": "אֱגוֹז m. a nut, Cant. 6, 11. Syr. and"
+      },
+      {
+       "draft": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گَوز. The",
+       "reread": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گوز. The",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گوز. The",
+        "verdict": "b",
+        "note": "The Persian word carries only the three dots marking gāf above the kāf, no fatḥa; Reading A's گَوز adds a vowel that is not printed. Arabic and Syriac items match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "20c81786-f85e-40e7-961d-721787316a31",
+        "duration_api_ms": 15834,
+        "cost_usd_list": 0.0950995,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3598,
+        "cache_creation_input_tokens": 2958,
+        "output_tokens": 694
+       },
+       "text": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گوز. The"
+      },
+      {
+       "draft": "Heb. word seems derived from the Per-",
+       "reread": "Heb. word seems derived from the Per-",
+       "status": "agreed",
+       "text": "Heb. word seems derived from the Per-"
+      },
+      {
+       "draft": "sian, prefixing א prosthetic. Comp. in",
+       "reread": "sian, prefixing א prosthetic. Comp. in",
+       "status": "agreed",
+       "text": "sian, prefixing א prosthetic. Comp. in"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 84,
+      "y": 1602,
+      "width": 873,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r01-b03-873x71+84+1602-x2.png",
+     "image_sha256": "7181f3ba295eb96bd14e8e15d48d4d785592e9e3f5b20cef1a5b4d912a17977f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lett. א."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a2d29e0a-c27f-4c9d-a773-f9da3c67ae30",
+      "duration_api_ms": 3857,
+      "cost_usd_list": 0.0508835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 219
+     },
+     "lines": [
+      {
+       "draft": "lett. א.",
+       "reread": "lett. א.",
+       "status": "agreed",
+       "text": "lett. א."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 84,
+    "y": 1671,
+    "width": 873,
+    "height": 718
+   },
+   "draft_lines": [
+    "אָגוּר Agur, pr. n. of a wise man, the",
+    "son of Jakeh, יָקֶה, to whom the 30th",
+    "chapter of Proverbs is ascribed, v. 1. If",
+    "the name be symbolical, like Koheleth,",
+    "it may denote an assembler, one of the",
+    "assembly, sc. of wise men, i. q. בַּעַל אֲסֻפָּה",
+    "Ecc. 12, 11. R. אָגַר.",
+    "אֲגוֹרָה f. a small coin, piece of money,",
+    "penny, so called from the idea of collect-",
+    "ing, from r. אָגַר; as Lat. stips in the",
+    "phrase stipem colligere. 1 Sam. 2, 36.",
+    "In the Maltese idiom, agar denotes the"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 84,
+      "y": 1681,
+      "width": 873,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r02-b00-873x236+84+1681-x2.png",
+     "image_sha256": "c1b0d575c12ffb543d37f3e017bc8dc7402e6836b3286fdf6c77f79dcef02663",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָגוּר Agur, pr. n. of a wise man, the",
+       "son of Jakeh, יָקֶה, to whom the 30th",
+       "chapter of Proverbs is ascribed, v. 1. If",
+       "the name be symbolical, like Koheleth,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2026117e-400e-4c2a-b467-638788076855",
+      "duration_api_ms": 9568,
+      "cost_usd_list": 0.0714435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 353
+     },
+     "lines": [
+      {
+       "draft": "אָגוּר Agur, pr. n. of a wise man, the",
+       "reread": "אָגוּר Agur, pr. n. of a wise man, the",
+       "status": "agreed",
+       "text": "אָגוּר Agur, pr. n. of a wise man, the"
+      },
+      {
+       "draft": "son of Jakeh, יָקֶה, to whom the 30th",
+       "reread": "son of Jakeh, יָקֶה, to whom the 30th",
+       "status": "agreed",
+       "text": "son of Jakeh, יָקֶה, to whom the 30th"
+      },
+      {
+       "draft": "chapter of Proverbs is ascribed, v. 1. If",
+       "reread": "chapter of Proverbs is ascribed, v. 1. If",
+       "status": "agreed",
+       "text": "chapter of Proverbs is ascribed, v. 1. If"
+      },
+      {
+       "draft": "the name be symbolical, like Koheleth,",
+       "reread": "the name be symbolical, like Koheleth,",
+       "status": "agreed",
+       "text": "the name be symbolical, like Koheleth,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 84,
+      "y": 1901,
+      "width": 873,
+      "height": 185
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r02-b01-873x185+84+1901-x2.png",
+     "image_sha256": "b0fa73a93256a72c8dc66f8cf3fd46f9f2597e45e4a14085ed1877f2ea3125df",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "it may denote an assembler, one of the",
+       "assembly, sc. of wise men, i. q. בַּעַל אֲסֻפָּה",
+       "Ecc. 12, 11. R. אָגַר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "00cddb8b-189a-4548-9b04-6d81e9aeae94",
+      "duration_api_ms": 8796,
+      "cost_usd_list": 0.0622135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 244
+     },
+     "lines": [
+      {
+       "draft": "it may denote an assembler, one of the",
+       "reread": "it may denote an assembler, one of the",
+       "status": "agreed",
+       "text": "it may denote an assembler, one of the"
+      },
+      {
+       "draft": "assembly, sc. of wise men, i. q. בַּעַל אֲסֻפָּה",
+       "reread": "assembly, sc. of wise men, i. q. בַּעַל אֲסֻפָּה",
+       "status": "agreed",
+       "text": "assembly, sc. of wise men, i. q. בַּעַל אֲסֻפָּה"
+      },
+      {
+       "draft": "Ecc. 12, 11. R. אָגַר.",
+       "reread": "Ecc. 12, 11. R. אָגַר.",
+       "status": "agreed",
+       "text": "Ecc. 12, 11. R. אָגַר."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 84,
+      "y": 2070,
+      "width": 873,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r02-b02-873x263+84+2070-x2.png",
+     "image_sha256": "4d6f2b4b4cb9348f8977cf8305b541482c75484f17ea0c4301f62793687d9d5d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲגוֹרָה f. a small coin, piece of money,",
+       "penny, so called from the idea of collect-",
+       "ing, from r. אָגַר ; as Lat. stips in the",
+       "phrase stipem colligere. 1 Sam. 2, 36."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "35e7784f-879c-4fb3-9147-05d8ea4ea73f",
+      "duration_api_ms": 10025,
+      "cost_usd_list": 0.0737635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 349
+     },
+     "lines": [
+      {
+       "draft": "אֲגוֹרָה f. a small coin, piece of money,",
+       "reread": "אֲגוֹרָה f. a small coin, piece of money,",
+       "status": "agreed",
+       "text": "אֲגוֹרָה f. a small coin, piece of money,"
+      },
+      {
+       "draft": "penny, so called from the idea of collect-",
+       "reread": "penny, so called from the idea of collect-",
+       "status": "agreed",
+       "text": "penny, so called from the idea of collect-"
+      },
+      {
+       "draft": "ing, from r. אָגַר; as Lat. stips in the",
+       "reread": "ing, from r. אָגַר ; as Lat. stips in the",
+       "status": "agreed",
+       "text": "ing, from r. אָגַר; as Lat. stips in the"
+      },
+      {
+       "draft": "phrase stipem colligere. 1 Sam. 2, 36.",
+       "reread": "phrase stipem colligere. 1 Sam. 2, 36.",
+       "status": "agreed",
+       "text": "phrase stipem colligere. 1 Sam. 2, 36."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 84,
+      "y": 2317,
+      "width": 873,
+      "height": 80
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r02-b03-873x80+84+2317-x2.png",
+     "image_sha256": "0c50c216b28c2bb532d30e1c780932f8a710833cd99286b55d81454ef9476891",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "In the Maltese idiom, agar denotes the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "064404a9-8fbd-4bf7-88f6-6abfd452ba09",
+      "duration_api_ms": 7494,
+      "cost_usd_list": 0.05118349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 225
+     },
+     "lines": [
+      {
+       "draft": "In the Maltese idiom, agar denotes the",
+       "reread": "In the Maltese idiom, agar denotes the",
+       "status": "agreed",
+       "text": "In the Maltese idiom, agar denotes the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 84,
+    "y": 2377,
+    "width": 873,
+    "height": 1010
+   },
+   "draft_lines": [
+    "same. [Or perh. pr. hire, wages, from r.",
+    "אָגַר no. 2, comp. Syr. ܐܰܓܪܬܳܐ Is. 23, 18 ;",
+    "then money, 1 Sam. 2, 36, where too Syr.",
+    "ܐܰܓܪܬܳܐ.—T.] Sept. Vulg. ὀβολός, num-",
+    "mus. Rabb. גֵּרָה q. v.",
+    "* אָגַל obsol. root, pr. to flow together,",
+    "to be collected, as water, kindr. with r.",
+    "גָּלַל, which is also used of the rolling",
+    "waves; comp. in אָגַר. Arab. أَجَلَ Conj.",
+    "II. to make flow together, hence to collect",
+    "water ; مَأْجَل standing water, a pond,",
+    "reservoir ; comp. also אָגַר.—Hence",
+    "אֵגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 84,
+      "y": 2369,
+      "width": 873,
+      "height": 282
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r03-b00-873x282+84+2369-x2.png",
+     "image_sha256": "74ee98027b807afc713105ceed04d92b46fb0ee59ead909e4df479d29065e11b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "same.  [Or perh. pr. hire, wages, from r.",
+       "אָגַר no. 2,  comp. Syr. ܐܰܓܽܘܪܬܳܐ Is. 23, 18 ;",
+       "then money, 1 Sam. 2, 36, where too Syr.",
+       "ܐܰܓܽܘܪܬܳܐ.—T.]   Sept. Vulg. ὀβολός, num-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4369faea-df6f-4b9f-ab70-47dce4419d61",
+      "duration_api_ms": 25666,
+      "cost_usd_list": 0.11903349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 1204
+     },
+     "lines": [
+      {
+       "draft": "same. [Or perh. pr. hire, wages, from r.",
+       "reread": "same.  [Or perh. pr. hire, wages, from r.",
+       "status": "agreed",
+       "text": "same. [Or perh. pr. hire, wages, from r."
+      },
+      {
+       "draft": "אָגַר no. 2, comp. Syr. ܐܰܓܪܬܳܐ Is. 23, 18 ;",
+       "reread": "אָגַר no. 2,  comp. Syr. ܐܰܓܽܘܪܬܳܐ Is. 23, 18 ;",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "אָגַר no. 2, comp. Syr. ܐܰܓܽܘܪܬܳܐ Is. 23, 18 ;",
+        "verdict": "b",
+        "note": "The Syriac word is printed plene with vav: an x-shaped esoso (ܽ) is clearly visible over the gamal/vav in the middle of the word, and the vav loop is present between gamal's tail and resh; Reading A omits both. Ptoho over alaph and zqofo over taw are printed as in B. Single space after \"2,\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f17a65d4-a347-4acc-89fe-075886d6fd3a",
+        "duration_api_ms": 36907,
+        "cost_usd_list": 0.14686549999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3622,
+        "cache_creation_input_tokens": 2856,
+        "output_tokens": 1770
+       },
+       "text": "אָגַר no. 2, comp. Syr. ܐܰܓܽܘܪܬܳܐ Is. 23, 18;"
+      },
+      {
+       "draft": "then money, 1 Sam. 2, 36, where too Syr.",
+       "reread": "then money, 1 Sam. 2, 36, where too Syr.",
+       "status": "agreed",
+       "text": "then money, 1 Sam. 2, 36, where too Syr."
+      },
+      {
+       "draft": "ܐܰܓܪܬܳܐ.—T.] Sept. Vulg. ὀβολός, num-",
+       "reread": "ܐܰܓܽܘܪܬܳܐ.—T.]   Sept. Vulg. ὀβολός, num-",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "ܐܰܓܽܘܪܬܳܐ.—T.] Sept. Vulg. ὀβολός, num-",
+        "verdict": "b",
+        "note": "The Syriac word is printed plene with waw: a loop glyph with the esasa (u) vowel sits between gamal and resh, giving ܐܰܓܽܘܪܬܳܐ (agurto), not the defective ܐܓܪܬܐ of Reading A. The remainder of the line is identical in both readings; the gap after \"T.]\" is just a wide space, written here as a single space.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3c8682b6-e79b-421d-b739-3b39c6ce5a6b",
+        "duration_api_ms": 43388,
+        "cost_usd_list": 0.17951299999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3612,
+        "cache_creation_input_tokens": 2846,
+        "output_tokens": 2427
+       },
+       "text": "ܐܰܓܽܘܪܬܳܐ.—T.] Sept. Vulg. ὀβολός, num-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 84,
+      "y": 2635,
+      "width": 873,
+      "height": 275
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r03-b01-873x275+84+2635-x2.png",
+     "image_sha256": "251347b8b15dc0b36c64890709352d2f7ebc0203bcc199fc667dd8329f907851",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mus. Rabb. גֵּרָה q. v.",
+       "* אָגַל obsol. root, pr. to flow together,",
+       "to be collected, as water, kindr. with r.",
+       "גָּלַל, which is also used of the rolling"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "503a521d-b962-4c60-b485-267310e955e5",
+      "duration_api_ms": 7462,
+      "cost_usd_list": 0.08032349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 455
+     },
+     "lines": [
+      {
+       "draft": "mus. Rabb. גֵּרָה q. v.",
+       "reread": "mus. Rabb. גֵּרָה q. v.",
+       "status": "agreed",
+       "text": "mus. Rabb. גֵּרָה q. v."
+      },
+      {
+       "draft": "* אָגַל obsol. root, pr. to flow together,",
+       "reread": "* אָגַל obsol. root, pr. to flow together,",
+       "status": "agreed",
+       "text": "* אָגַל obsol. root, pr. to flow together,"
+      },
+      {
+       "draft": "to be collected, as water, kindr. with r.",
+       "reread": "to be collected, as water, kindr. with r.",
+       "status": "agreed",
+       "text": "to be collected, as water, kindr. with r."
+      },
+      {
+       "draft": "גָּלַל, which is also used of the rolling",
+       "reread": "גָּלַל, which is also used of the rolling",
+       "status": "agreed",
+       "text": "גָּלַל, which is also used of the rolling"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 84,
+      "y": 2894,
+      "width": 873,
+      "height": 303
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r03-b02-873x303+84+2894-x2.png",
+     "image_sha256": "1242cd8355597f92c2ab78e58aae7026759f146a21b5007200cd3295b575cdbe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "waves; comp. in אָגַר. Arab. أَجَّلَ Conj.",
+       "II. to make flow together, hence to collect",
+       "water; مَأْجَلٌ standing water, a pond,",
+       "reservoir; comp. also אָגַר.—Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f9ec0dc7-2fc9-4aff-85f0-cdfbff578fa5",
+      "duration_api_ms": 11587,
+      "cost_usd_list": 0.0834935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 468
+     },
+     "lines": [
+      {
+       "draft": "waves; comp. in אָגַר. Arab. أَجَلَ Conj.",
+       "reread": "waves; comp. in אָגַר. Arab. أَجَّلَ Conj.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "waves; comp. in אָגַר. Arab. أَجَّلَ Conj.",
+        "verdict": "b",
+        "note": "The jim is printed with a shadda (plus fatha) above it, as expected for the Conj. II form; Reading A omits the shadda. Hebrew אָגַר and the rest of the line are identical in both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2c9d9fff-903d-430e-a91f-5d131020049c",
+        "duration_api_ms": 15418,
+        "cost_usd_list": 0.09679649999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2883,
+        "output_tokens": 758
+       },
+       "text": "waves; comp. in אָגַר. Arab. أَجَّلَ Conj."
+      },
+      {
+       "draft": "II. to make flow together, hence to collect",
+       "reread": "II. to make flow together, hence to collect",
+       "status": "agreed",
+       "text": "II. to make flow together, hence to collect"
+      },
+      {
+       "draft": "water ; مَأْجَل standing water, a pond,",
+       "reread": "water; مَأْجَلٌ standing water, a pond,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "water ; مَأْجَلٌ standing water, a pond,",
+        "verdict": "neither",
+        "note": "The lām clearly carries a tanwīn (ٌ, the \"9\"-shaped mark above it), so Reading A's مَأْجَل is defective; but the print also has a space before the semicolon (\"water ;\"), which Reading B drops. Correct line combines A's spacing with B's Arabic.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fa3625eb-f9dd-4fe6-973f-2bd604f52fc2",
+        "duration_api_ms": 12801,
+        "cost_usd_list": 0.08486175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3567,
+        "cache_creation_input_tokens": 2864,
+        "output_tokens": 527
+       },
+       "text": "water; مَأْجَلٌ standing water, a pond,"
+      },
+      {
+       "draft": "reservoir ; comp. also אָגַר.—Hence",
+       "reread": "reservoir; comp. also אָגַר.—Hence",
+       "status": "agreed",
+       "text": "reservoir; comp. also אָגַר.—Hence"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 84,
+      "y": 3181,
+      "width": 873,
+      "height": 208
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c0-r03-b03-873x208+84+3181-x2.png",
+     "image_sha256": "4a5be1db50f25cab9e6b0e0ed4aebd22e1f50ebddd0e8f4ea9e9e40adb4964b4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "05a031e3-b4ff-45e1-8302-710144733a95",
+      "duration_api_ms": 13069,
+      "cost_usd_list": 0.08012349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 577
+     },
+     "lines": [
+      {
+       "draft": "אֵגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs",
+       "reread": "אֶגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b03",
+       "judgement": {
+        "text": "אֶגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs",
+        "verdict": "b",
+        "note": "Under the aleph of the headword the print shows three dots in a triangle (segol), matching the segol under the gimel, not the two horizontal dots of tsere; the rest of the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8afe73dc-e46d-4fbc-939f-05605b5933c6",
+        "duration_api_ms": 17266,
+        "cost_usd_list": 0.09554925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3597,
+        "cache_creation_input_tokens": 2453,
+        "output_tokens": 905
+       },
+       "text": "אֶגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 980,
+    "y": 153,
+    "width": 876,
+    "height": 614
+   },
+   "draft_lines": [
+    "of the dew, i. e. in the heavens; comp. in",
+    "v. 22 the storehouses of the snow and",
+    "hail.—Vulg. Chald. Syr. give it by drops",
+    "of the dew, q. d. globules, comp. גָּלַל ; but",
+    "the former is better.",
+    "אֶגְלַיִם (two ponds) Is. 15, 8 Eglaim,",
+    "pr. n. of a village in the territory of Moab,",
+    "the Ἀγαλλείμ of Eusebius, called by Jo-",
+    "sephus Ἄγαλλα, Ant. 14. 1. 4."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 980,
+      "y": 145,
+      "width": 876,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r00-b00-876x244+980+145-x2.png",
+     "image_sha256": "bcc929b63322a4ee284c2c2eb1655707a9ba106a30d58065650c99da6800f8a6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of the dew, i. e. in the heavens ; comp. in",
+       "v. 22 the storehouses of the snow and",
+       "hail.—Vulg. Chald. Syr. give it by drops"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28bdac73-f04d-4aa5-a701-155e8bbbcfc1",
+      "duration_api_ms": 8342,
+      "cost_usd_list": 0.06926325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 285
+     },
+     "lines": [
+      {
+       "draft": "of the dew, i. e. in the heavens; comp. in",
+       "reread": "of the dew, i. e. in the heavens ; comp. in",
+       "status": "agreed",
+       "text": "of the dew, i. e. in the heavens; comp. in"
+      },
+      {
+       "draft": "v. 22 the storehouses of the snow and",
+       "reread": "v. 22 the storehouses of the snow and",
+       "status": "agreed",
+       "text": "v. 22 the storehouses of the snow and"
+      },
+      {
+       "draft": "hail.—Vulg. Chald. Syr. give it by drops",
+       "reread": "hail.—Vulg. Chald. Syr. give it by drops",
+       "status": "agreed",
+       "text": "hail.—Vulg. Chald. Syr. give it by drops"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 980,
+      "y": 373,
+      "width": 876,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r00-b01-876x264+980+373-x2.png",
+     "image_sha256": "721fc87680167c82e62e1ae8becf70ffe210f4df0ebd850c3f3f3170e62d0544",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of the dew, q. d. globules, comp. גְּלַל ; but",
+       "the former is better.",
+       "אֶגְלַיִם (two ponds) Is. 15, 8 Eglaim,",
+       "pr. n. of a village in the territory of Moab,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a9be5fa1-be1f-45b7-9843-765786eab7a2",
+      "duration_api_ms": 12372,
+      "cost_usd_list": 0.08622325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 599
+     },
+     "lines": [
+      {
+       "draft": "of the dew, q. d. globules, comp. גָּלַל ; but",
+       "reread": "of the dew, q. d. globules, comp. גְּלַל ; but",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "of the dew, q. d. globules, comp. גְּלַל ; but",
+        "verdict": "b",
+        "note": "The point under the gimel is a narrow vertical mark (two stacked dots = shewa), not the wide T-shaped qamets of Reading A; dagesh in gimel and patah under the first lamed as in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e1cdb2f8-56b5-4a6a-b324-f3f786822bd3",
+        "duration_api_ms": 26247,
+        "cost_usd_list": 0.13139399999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3576,
+        "cache_creation_input_tokens": 2683,
+        "output_tokens": 1530
+       },
+       "text": "of the dew, q. d. globules, comp. גְּלַל; but"
+      },
+      {
+       "draft": "the former is better.",
+       "reread": "the former is better.",
+       "status": "agreed",
+       "text": "the former is better."
+      },
+      {
+       "draft": "אֶגְלַיִם (two ponds) Is. 15, 8 Eglaim,",
+       "reread": "אֶגְלַיִם (two ponds) Is. 15, 8 Eglaim,",
+       "status": "agreed",
+       "text": "אֶגְלַיִם (two ponds) Is. 15, 8 Eglaim,"
+      },
+      {
+       "draft": "pr. n. of a village in the territory of Moab,",
+       "reread": "pr. n. of a village in the territory of Moab,",
+       "status": "agreed",
+       "text": "pr. n. of a village in the territory of Moab,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 980,
+      "y": 621,
+      "width": 876,
+      "height": 124
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r00-b02-876x124+980+621-x2.png",
+     "image_sha256": "4a22dc52c5c12bafd45bf6fa99f7ff021afc1745b5d79a384b3414ba980e0ade",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the Ἀγαλλείμ of Eusebius, called by Jo-",
+       "sephus Ἄγαλλα, Ant. 14. 1. 4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "625bf913-f9c5-4691-9ad6-d0a2e78cd9d9",
+      "duration_api_ms": 9093,
+      "cost_usd_list": 0.05512325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2122,
+      "output_tokens": 229
+     },
+     "lines": [
+      {
+       "draft": "the Ἀγαλλείμ of Eusebius, called by Jo-",
+       "reread": "the Ἀγαλλείμ of Eusebius, called by Jo-",
+       "status": "agreed",
+       "text": "the Ἀγαλλείμ of Eusebius, called by Jo-"
+      },
+      {
+       "draft": "sephus Ἄγαλλα, Ant. 14. 1. 4.",
+       "reread": "sephus Ἄγαλλα, Ant. 14. 1. 4.",
+       "status": "agreed",
+       "text": "sephus Ἄγαλλα, Ant. 14. 1. 4."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 980,
+    "y": 755,
+    "width": 876,
+    "height": 885
+   },
+   "draft_lines": [
+    "* אָגַם obsol. root; in Arabic:",
+    "1. Mid. A, to burn, to be hot, comp.",
+    "חָמַם, יָחַם. Hence אַגְמוֹן no. 1.",
+    "2. Mid. E, to be warm, spoiled, dead,",
+    "as water; hence אֲגַם and אַגְמוֹן no. 2.",
+    "3. Mid. E, to loathe, to abhor, and",
+    "Chald. אֲגַם to be pained, sad, to grieve;",
+    "hence אָגֵם.",
+    "אֲגַם m. (r. אָגַם no. 2) absol. Is. 35, 7;",
+    "constr. 41, 18. Ps. 107, 35; plur. אֲגַמִּים,",
+    "constr. אַגְמֵי.",
+    "1. stagnant water, a pool, marsh, Is.",
+    "35, 7. 41, 18. 42, 15. Ps. 114, 8. Spec. of",
+    "the pools of stagnant water left by the",
+    "Nile after its inundation, Ex. 7, 19."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 980,
+      "y": 760,
+      "width": 876,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r01-b00-876x246+980+760-x2.png",
+     "image_sha256": "0194decc5e6f1b0bd6ba207a6da29138869376fc611c8aa0cdd1187593f9cc79",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָגַם obsol. root ; in Arabic :",
+       "1. Mid. A, to burn, to be hot, comp.",
+       "חָמַם, יָחַם. Hence אַגְמוֹן no. 1.",
+       "2. Mid. E, to be warm, spoiled, dead,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "988fe337-8fc5-46ee-a649-1ca1b0dea095",
+      "duration_api_ms": 11868,
+      "cost_usd_list": 0.08291325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 558
+     },
+     "lines": [
+      {
+       "draft": "* אָגַם obsol. root; in Arabic:",
+       "reread": "* אָגַם obsol. root ; in Arabic :",
+       "status": "agreed",
+       "text": "* אָגַם obsol. root; in Arabic:"
+      },
+      {
+       "draft": "1. Mid. A, to burn, to be hot, comp.",
+       "reread": "1. Mid. A, to burn, to be hot, comp.",
+       "status": "agreed",
+       "text": "1. Mid. A, to burn, to be hot, comp."
+      },
+      {
+       "draft": "חָמַם, יָחַם. Hence אַגְמוֹן no. 1.",
+       "reread": "חָמַם, יָחַם. Hence אַגְמוֹן no. 1.",
+       "status": "agreed",
+       "text": "חָמַם, יָחַם. Hence אַגְמוֹן no. 1."
+      },
+      {
+       "draft": "2. Mid. E, to be warm, spoiled, dead,",
+       "reread": "2. Mid. E, to be warm, spoiled, dead,",
+       "status": "agreed",
+       "text": "2. Mid. E, to be warm, spoiled, dead,"
+      },
+      {
+       "draft": "hence אָגֵם.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "hence אָגֵם."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 980,
+      "y": 990,
+      "width": 876,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r01-b01-876x226+980+990-x2.png",
+     "image_sha256": "ea6b5a3d6acf1438c12e5f8dff4f5af1c39de1f617169f203b0d52a0a9deaec7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "as water ; hence אֲגַם and אַגְמוֹן no. 2.",
+       "3. Mid. E, to loathe, to abhor, and",
+       "Chald. אֲגַם to be pained, sad, to grieve ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3c3b597a-b4bd-41ca-a54b-02e4c39c08a9",
+      "duration_api_ms": 12690,
+      "cost_usd_list": 0.08360324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 597
+     },
+     "lines": [
+      {
+       "draft": "as water; hence אֲגַם and אַגְמוֹן no. 2.",
+       "reread": "as water ; hence אֲגַם and אַגְמוֹן no. 2.",
+       "status": "agreed",
+       "text": "as water; hence אֲגַם and אַגְמוֹן no. 2."
+      },
+      {
+       "draft": "3. Mid. E, to loathe, to abhor, and",
+       "reread": "3. Mid. E, to loathe, to abhor, and",
+       "status": "agreed",
+       "text": "3. Mid. E, to loathe, to abhor, and"
+      },
+      {
+       "draft": "Chald. אֲגַם to be pained, sad, to grieve;",
+       "reread": "Chald. אֲגַם to be pained, sad, to grieve ;",
+       "status": "agreed",
+       "text": "Chald. אֲגַם to be pained, sad, to grieve;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 980,
+      "y": 1200,
+      "width": 876,
+      "height": 272
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r01-b02-876x272+980+1200-x2.png",
+     "image_sha256": "86c5a2ac590a8e4243ac88f06e80a4fe769727974bf40172c52013747c37b1d7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲגַם m. (r. אָגַם no. 2) absol. Is. 35, 7 ;",
+       "constr. 41, 18. Ps. 107, 35 ; plur. אֲגַמִּים,",
+       "constr. אַגְמֵי.",
+       "1. stagnant water, a pool, marsh, Is."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "49a42b51-cb3e-4e43-8062-5f0d16cbf8e8",
+      "duration_api_ms": 11383,
+      "cost_usd_list": 0.0808735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 466
+     },
+     "lines": [
+      {
+       "draft": "אֲגַם m. (r. אָגַם no. 2) absol. Is. 35, 7;",
+       "reread": "אֲגַם m. (r. אָגַם no. 2) absol. Is. 35, 7 ;",
+       "status": "agreed",
+       "text": "אֲגַם m. (r. אָגַם no. 2) absol. Is. 35, 7;"
+      },
+      {
+       "draft": "constr. 41, 18. Ps. 107, 35; plur. אֲגַמִּים,",
+       "reread": "constr. 41, 18. Ps. 107, 35 ; plur. אֲגַמִּים,",
+       "status": "agreed",
+       "text": "constr. 41, 18. Ps. 107, 35; plur. אֲגַמִּים,"
+      },
+      {
+       "draft": "constr. אַגְמֵי.",
+       "reread": "constr. אַגְמֵי.",
+       "status": "agreed",
+       "text": "constr. אַגְמֵי."
+      },
+      {
+       "draft": "1. stagnant water, a pool, marsh, Is.",
+       "reread": "1. stagnant water, a pool, marsh, Is.",
+       "status": "agreed",
+       "text": "1. stagnant water, a pool, marsh, Is."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 980,
+      "y": 1456,
+      "width": 876,
+      "height": 181
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r01-b03-876x181+980+1456-x2.png",
+     "image_sha256": "7ef0505745176d26c038b2e255645ebb068ef9a9c4ff9fa4ffb6674f2290ad2f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "35, 7. 41, 18. 42, 15. Ps. 114, 8. Spec. of",
+       "the pools of stagnant water left by the",
+       "Nile after its inundation, Ex. 7, 19."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e9ccf4b6-cdb0-4d48-978c-ca41922f5517",
+      "duration_api_ms": 7462,
+      "cost_usd_list": 0.060953499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 244
+     },
+     "lines": [
+      {
+       "draft": "35, 7. 41, 18. 42, 15. Ps. 114, 8. Spec. of",
+       "reread": "35, 7. 41, 18. 42, 15. Ps. 114, 8. Spec. of",
+       "status": "agreed",
+       "text": "35, 7. 41, 18. 42, 15. Ps. 114, 8. Spec. of"
+      },
+      {
+       "draft": "the pools of stagnant water left by the",
+       "reread": "the pools of stagnant water left by the",
+       "status": "agreed",
+       "text": "the pools of stagnant water left by the"
+      },
+      {
+       "draft": "Nile after its inundation, Ex. 7, 19.",
+       "reread": "Nile after its inundation, Ex. 7, 19.",
+       "status": "agreed",
+       "text": "Nile after its inundation, Ex. 7, 19."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 980,
+    "y": 1628,
+    "width": 876,
+    "height": 923
+   },
+   "draft_lines": [
+    "8, 1.",
+    "2. i. q. אַגְמוֹן, a reed, cane, Jer. 51, 32,",
+    "with which fortifications (stockades, pa-",
+    "lisades) were constructed. Hence R.",
+    "Jonah explains it strong-holds; comp.",
+    "أَجَمَةٌ the marshy lair of the lion. then",
+    "a refuge, strong-hold.",
+    "אָגֵם adj. once in plur. constr. אַגְמֵי־נֶפֶשׁ",
+    "sad, sorrowful in mind, Is. 19, 10. R.",
+    "אָגַם no. 3.",
+    "אַגְמֹן, אַגְמוֹן, m. (r. אָגַם) 1. a caldron,",
+    "heated kettle, Job. 41, 12 [20]. Others",
+    "translate the words כְּדוּד נָפוּחַ וְאַגְמוֹן",
+    "as a boiling pot and a (burning) reed.",
+    "See the root no. 1."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 980,
+      "y": 1620,
+      "width": 876,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r02-b00-876x295+980+1620-x2.png",
+     "image_sha256": "e953f98be7aaa275f83090d0d0d646708c24718631ca073f1d1fa7e696c4661b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "8, 1.",
+       "2. i. q. אַגְמוֹן, a reed, cane, Jer. 51, 32,",
+       "with which fortifications (stockades, pa-",
+       "lisades) were constructed. Hence R.",
+       "Jonah explains it strong-holds; comp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "38a02171-e353-4a72-9c17-f450f129c5f8",
+      "duration_api_ms": 11384,
+      "cost_usd_list": 0.0734435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 267
+     },
+     "lines": [
+      {
+       "draft": "8, 1.",
+       "reread": "8, 1.",
+       "status": "agreed",
+       "text": "8, 1."
+      },
+      {
+       "draft": "2. i. q. אַגְמוֹן, a reed, cane, Jer. 51, 32,",
+       "reread": "2. i. q. אַגְמוֹן, a reed, cane, Jer. 51, 32,",
+       "status": "agreed",
+       "text": "2. i. q. אַגְמוֹן, a reed, cane, Jer. 51, 32,"
+      },
+      {
+       "draft": "with which fortifications (stockades, pa-",
+       "reread": "with which fortifications (stockades, pa-",
+       "status": "agreed",
+       "text": "with which fortifications (stockades, pa-"
+      },
+      {
+       "draft": "lisades) were constructed. Hence R.",
+       "reread": "lisades) were constructed. Hence R.",
+       "status": "agreed",
+       "text": "lisades) were constructed. Hence R."
+      },
+      {
+       "draft": "Jonah explains it strong-holds; comp.",
+       "reread": "Jonah explains it strong-holds; comp.",
+       "status": "agreed",
+       "text": "Jonah explains it strong-holds; comp."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 980,
+      "y": 1899,
+      "width": 876,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r02-b01-876x244+980+1899-x2.png",
+     "image_sha256": "1434e2868230c6e16b2548060d40f827c082c890bdb05ecd2434f02ca8a2fd0a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "أَجَمَةٌ the marshy lair of the lion. then",
+       "a refuge, strong-hold.",
+       "אָגֵם adj. once in plur. constr. אַגְמֵי נֶפֶשׁ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6934500f-34cc-4d6c-b09e-2e2f269159af",
+      "duration_api_ms": 16351,
+      "cost_usd_list": 0.0902535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 704
+     },
+     "lines": [
+      {
+       "draft": "أَجَمَةٌ the marshy lair of the lion. then",
+       "reread": "أَجَمَةٌ the marshy lair of the lion. then",
+       "status": "agreed",
+       "text": "أَجَمَةٌ the marshy lair of the lion. then"
+      },
+      {
+       "draft": "a refuge, strong-hold.",
+       "reread": "a refuge, strong-hold.",
+       "status": "agreed",
+       "text": "a refuge, strong-hold."
+      },
+      {
+       "draft": "אָגֵם adj. once in plur. constr. אַגְמֵי־נֶפֶשׁ",
+       "reread": "אָגֵם adj. once in plur. constr. אַגְמֵי נֶפֶשׁ",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "אָגֵם adj. once in plur. constr. אַגְמֵי נֶפֶשׁ",
+        "verdict": "b",
+        "note": "No maqqef is printed between אַגְמֵי and נֶפֶשׁ — the two words are separated by a plain space with no horizontal stroke at the top of the gap, so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8ad84446-0cf4-438d-93c3-5479c10d90a2",
+        "duration_api_ms": 16409,
+        "cost_usd_list": 0.08469,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2645,
+        "output_tokens": 611
+       },
+       "text": "אָגֵם adj. once in plur. constr. אַגְמֵי נֶפֶשׁ"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 980,
+      "y": 2127,
+      "width": 876,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r02-b02-876x263+980+2127-x2.png",
+     "image_sha256": "f8aaa64d70a056dc26f32a1010f06040f086aa06885aa68baa7ffcc3ad4723d5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sad, sorrowful in mind, Is. 19, 10. R.",
+       "אָגַם no. 3.",
+       "אַגְמוֹן, אַגְמֹן, m. (r. אָגַם) 1. a caldron,",
+       "heated kettle, Job. 41, 12 [20]. Others"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "46425424-668e-41df-ae75-b7a294510ba9",
+      "duration_api_ms": 10387,
+      "cost_usd_list": 0.08806349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 635
+     },
+     "lines": [
+      {
+       "draft": "sad, sorrowful in mind, Is. 19, 10. R.",
+       "reread": "sad, sorrowful in mind, Is. 19, 10. R.",
+       "status": "agreed",
+       "text": "sad, sorrowful in mind, Is. 19, 10. R."
+      },
+      {
+       "draft": "אָגַם no. 3.",
+       "reread": "אָגַם no. 3.",
+       "status": "agreed",
+       "text": "אָגַם no. 3."
+      },
+      {
+       "draft": "אַגְמֹן, אַגְמוֹן, m. (r. אָגַם) 1. a caldron,",
+       "reread": "אַגְמוֹן, אַגְמֹן, m. (r. אָגַם) 1. a caldron,",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "אַגְמוֹן, אַגְמֹן, m. (r. אָגַם) 1. a caldron,",
+        "verdict": "b",
+        "note": "The leftmost (first) Hebrew item in the printed line is the plene form with vav (אַגְמוֹן, five letters), and the second is defective אַגְמֹן (four letters, holem alone over mem); Reading A reverses this order. Root אָגַם and the rest agree with both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "379ad442-32c0-4fa7-bd26-c1d823e07a14",
+        "duration_api_ms": 14686,
+        "cost_usd_list": 0.08920125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3605,
+        "cache_creation_input_tokens": 2713,
+        "output_tokens": 674
+       },
+       "text": "אַגְמוֹן, אַגְמֹן, m. (r. אָגַם) 1. a caldron,"
+      },
+      {
+       "draft": "heated kettle, Job. 41, 12 [20]. Others",
+       "reread": "heated kettle, Job. 41, 12 [20]. Others",
+       "status": "agreed",
+       "text": "heated kettle, Job. 41, 12 [20]. Others"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 980,
+      "y": 2374,
+      "width": 876,
+      "height": 170
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r02-b03-876x170+980+2374-x2.png",
+     "image_sha256": "0f280c749e7c2dac2eacf381b51d2dc770bb9d56a5a189a2517fb3e3810e9e23",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "translate the words כְּדוּד נָפוּחַ וְאַגְמוֹן",
+       "as a boiling pot and a (burning) reed.",
+       "See the root no. 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0857557c-6f7d-48da-90fe-c092a6fc6e3a",
+      "duration_api_ms": 9901,
+      "cost_usd_list": 0.06955349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 416
+     },
+     "lines": [
+      {
+       "draft": "translate the words כְּדוּד נָפוּחַ וְאַגְמוֹן",
+       "reread": "translate the words כְּדוּד נָפוּחַ וְאַגְמוֹן",
+       "status": "agreed",
+       "text": "translate the words כְּדוּד נָפוּחַ וְאַגְמוֹן"
+      },
+      {
+       "draft": "as a boiling pot and a (burning) reed.",
+       "reread": "as a boiling pot and a (burning) reed.",
+       "status": "agreed",
+       "text": "as a boiling pot and a (burning) reed."
+      },
+      {
+       "draft": "See the root no. 1.",
+       "reread": "See the root no. 1.",
+       "status": "agreed",
+       "text": "See the root no. 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 980,
+    "y": 2539,
+    "width": 876,
+    "height": 735
+   },
+   "draft_lines": [
+    "2. a reed, bulrush, growing in marsh",
+    "es, from אֲגַם marsh, and the ending וֹן,",
+    "Is. 58, 5. For Is. 9, 13. 19, 15, comp.",
+    "כִּפָּה.—Hence",
+    "3. a rope made of reeds, a rush-cord,",
+    "like Gr. σχοῖνος, Job 40, 26 [41, 2].",
+    "Comp. Plin. H. N. 19. 2.",
+    "* אָגַן obsol. root; Arab. أَجَنَ i. q.",
+    "وجن (see רָגַן) to tread with the feet,",
+    "to stamp, to beat; then to wash clothes, to",
+    "full, as a washer or fuller by treading",
+    "them in a trough.—Hence"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 980,
+      "y": 2547,
+      "width": 876,
+      "height": 220
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r03-b00-876x220+980+2547-x2.png",
+     "image_sha256": "352e8b2f8db2f56235c7ce5323bd0ff1875e69b0d2469eb0cf5649466d564452",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. a reed, bulrush, growing in marsh",
+       "es, from אֲגַם marsh, and the ending וֹן,",
+       "Is. 58, 5. For Is. 9, 13. 19, 15, comp.",
+       "כִּפָּה.—Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92c76eda-bf23-4966-bbe8-c4b9892baa81",
+      "duration_api_ms": 12054,
+      "cost_usd_list": 0.0795835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 541
+     },
+     "lines": [
+      {
+       "draft": "2. a reed, bulrush, growing in marsh",
+       "reread": "2. a reed, bulrush, growing in marsh",
+       "status": "agreed",
+       "text": "2. a reed, bulrush, growing in marsh"
+      },
+      {
+       "draft": "es, from אֲגַם marsh, and the ending וֹן,",
+       "reread": "es, from אֲגַם marsh, and the ending וֹן,",
+       "status": "agreed",
+       "text": "es, from אֲגַם marsh, and the ending וֹן,"
+      },
+      {
+       "draft": "Is. 58, 5. For Is. 9, 13. 19, 15, comp.",
+       "reread": "Is. 58, 5. For Is. 9, 13. 19, 15, comp.",
+       "status": "agreed",
+       "text": "Is. 58, 5. For Is. 9, 13. 19, 15, comp."
+      },
+      {
+       "draft": "כִּפָּה.—Hence",
+       "reread": "כִּפָּה.—Hence",
+       "status": "agreed",
+       "text": "כִּפָּה.—Hence"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 980,
+      "y": 2751,
+      "width": 876,
+      "height": 304
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r03-b01-876x304+980+2751-x2.png",
+     "image_sha256": "bf6417291b6ab1f73c6def204a6e4411c743ace58f49f71966cdcd5ef4422bb1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. a rope made of reeds; a rush-cord,",
+       "like Gr. σχοῖνος, Job 40, 26 [41, 2].",
+       "Comp. Plin. H. N. 19. 2.",
+       "* אָגַן obsol. root; Arab. أَجَنَ i. q."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1b954471-6343-49a1-83d0-3f9ed525b9cb",
+      "duration_api_ms": 10767,
+      "cost_usd_list": 0.0854935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 508
+     },
+     "lines": [
+      {
+       "draft": "3. a rope made of reeds, a rush-cord,",
+       "reread": "3. a rope made of reeds; a rush-cord,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "3. a rope made of reeds; a rush-cord,",
+        "verdict": "b",
+        "note": "After \"reeds\" the mark has a distinct dot above the comma-shaped tail, so it is a semicolon, not a comma; Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "55117d60-d0c9-4273-b6cf-896386289720",
+        "duration_api_ms": 9442,
+        "cost_usd_list": 0.07826174999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3567,
+        "cache_creation_input_tokens": 2864,
+        "output_tokens": 395
+       },
+       "text": "3. a rope made of reeds; a rush-cord,"
+      },
+      {
+       "draft": "like Gr. σχοῖνος, Job 40, 26 [41, 2].",
+       "reread": "like Gr. σχοῖνος, Job 40, 26 [41, 2].",
+       "status": "agreed",
+       "text": "like Gr. σχοῖνος, Job 40, 26 [41, 2]."
+      },
+      {
+       "draft": "Comp. Plin. H. N. 19. 2.",
+       "reread": "Comp. Plin. H. N. 19. 2.",
+       "status": "agreed",
+       "text": "Comp. Plin. H. N. 19. 2."
+      },
+      {
+       "draft": "* אָגַן obsol. root; Arab. أَجَنَ i. q.",
+       "reread": "* אָגַן obsol. root; Arab. أَجَنَ i. q.",
+       "status": "agreed",
+       "text": "* אָגַן obsol. root; Arab. أَجَنَ i. q."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 980,
+      "y": 3039,
+      "width": 876,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0027/pass2/c1-r03-b02-876x237+980+3039-x2.png",
+     "image_sha256": "620e41a6d13e2daaf0e5376f94574ab9a1e4386643ab5692bed4ed7e165a6a24",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "وجن (see יָגַן) to tread with the feet,",
+       "to stamp, to beat; then to wash clothes, to",
+       "full, as a washer or fuller by treading",
+       "them in a trough.—Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bda10d71-a914-4778-8622-9b1b8af9ded3",
+      "duration_api_ms": 15749,
+      "cost_usd_list": 0.0922435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 769
+     },
+     "lines": [
+      {
+       "draft": "وجن (see רָגַן) to tread with the feet,",
+       "reread": "وجن (see יָגַן) to tread with the feet,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "وجن (see יָגַן) to tread with the feet,",
+        "verdict": "b",
+        "note": "The rightmost Hebrew letter in the parenthesis is a short glyph that stops well above the baseline (a yod), not a full-height resh; the qamets sits clearly below it with a gap. Everything else (Arabic وجن, patach on gimel, final nun, English) matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "648e9df9-cbdb-41bc-a1ff-22c897af9794",
+        "duration_api_ms": 32103,
+        "cost_usd_list": 0.14626175000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3567,
+        "cache_creation_input_tokens": 2549,
+        "output_tokens": 1881
+       },
+       "text": "وجن (see יָגַן) to tread with the feet,"
+      },
+      {
+       "draft": "to stamp, to beat; then to wash clothes, to",
+       "reread": "to stamp, to beat; then to wash clothes, to",
+       "status": "agreed",
+       "text": "to stamp, to beat; then to wash clothes, to"
+      },
+      {
+       "draft": "full, as a washer or fuller by treading",
+       "reread": "full, as a washer or fuller by treading",
+       "status": "agreed",
+       "text": "full, as a washer or fuller by treading"
+      },
+      {
+       "draft": "them in a trough.—Hence",
+       "reread": "them in a trough.—Hence",
+       "status": "agreed",
+       "text": "them in a trough.—Hence"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אגר 11 אגן",
+   "status": "adjudicated",
+   "draft": "אגר 11 אגן",
+   "reread": "אגד 11 אגן",
+   "verdict": "a",
+   "note": "The left header word's final letter has a rounded shoulder with no right-side tittle projecting past the leg, so it is resh (אגר), not dalet (אגד). Page number 11 and right header אגן agree in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* אָגַד obsol. root, Chald. to bind, to tie,",
+   "status": "adjudicated",
+   "draft": "* אָגַד obsol. root, Chald. to bind, to tie,",
+   "reread": "† אָגַד obsol. root, Chald. to bind, to tie,",
+   "verdict": "a",
+   "note": "The prefixed mark is a radiating star-shaped asterisk (several short strokes/dots around a centre), not a dagger with a vertical stem and crossbar; Robinson's edition uses * for obsolete roots. Headword אָגַד (qamets, pathach, no plene letters) and the English text agree in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "comp. אָכַד, עָקַד, and the remark under",
+   "status": "adjudicated",
+   "draft": "comp. עָקַד, אָבַד, and the remark under",
+   "reread": "comp. אָכַד, עָקַד, and the remark under",
+   "verdict": "b",
+   "note": "Printed left-to-right order is אָכַד first, then עָקַד (Reading A reverses them). The second letter of the first word is kaf (rounded, no lower-right protrusion), not bet — so אָכַד as in B; vowels qamets + patach on both words match.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "r. גִּיד. In Arabic some of its derivatives",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "are used trop. of arched work, edifices",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of arched and firmly compacted struc-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ture, in reference to the firm coherence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of all their parts; comp. אָחַז and אֲגֻדָּה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "no. 4.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲגֻדָּה f. 1. a band, knot. אֲגֻדּוֹת מוֹטָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "bands of the yoke, Is. 58, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. a bundle, bunch, tied together, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of hyssop, Ex. 12, 22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3. a band of men, troop, 2 Sam. 2, 25.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Comp. חֶבֶל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4. an arch, vault, e. g. of the heavens,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Am. 9, 6. Comp. Germ. Gat, Gaden,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "story of a building, from the verb gaden,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "gatten, which implies a binding; see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Adelung Lex. h. vv.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֱגוֹז m. a nut, Cant. 6, 11. Syr. and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گوز. The",
+   "status": "adjudicated",
+   "draft": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گَوز. The",
+   "reread": "Arab. جَوْز, ܓܰܘܙܳܐ, Pers. گوز. The",
+   "verdict": "b",
+   "note": "The Persian word carries only the three dots marking gāf above the kāf, no fatḥa; Reading A's گَوز adds a vowel that is not printed. Arabic and Syriac items match both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Heb. word seems derived from the Per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "sian, prefixing א prosthetic. Comp. in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "lett. א.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָגוּר Agur, pr. n. of a wise man, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "son of Jakeh, יָקֶה, to whom the 30th",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "chapter of Proverbs is ascribed, v. 1. If",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the name be symbolical, like Koheleth,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "it may denote an assembler, one of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "assembly, sc. of wise men, i. q. בַּעַל אֲסֻפָּה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ecc. 12, 11. R. אָגַר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲגוֹרָה f. a small coin, piece of money,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "penny, so called from the idea of collect-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ing, from r. אָגַר; as Lat. stips in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "phrase stipem colligere. 1 Sam. 2, 36.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "In the Maltese idiom, agar denotes the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "same. [Or perh. pr. hire, wages, from r.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אָגַר no. 2, comp. Syr. ܐܰܓܽܘܪܬܳܐ Is. 23, 18;",
+   "status": "adjudicated",
+   "draft": "אָגַר no. 2, comp. Syr. ܐܰܓܪܬܳܐ Is. 23, 18 ;",
+   "reread": "אָגַר no. 2,  comp. Syr. ܐܰܓܽܘܪܬܳܐ Is. 23, 18 ;",
+   "verdict": "b",
+   "note": "The Syriac word is printed plene with vav: an x-shaped esoso (ܽ) is clearly visible over the gamal/vav in the middle of the word, and the vav loop is present between gamal's tail and resh; Reading A omits both. Ptoho over alaph and zqofo over taw are printed as in B. Single space after \"2,\".",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "then money, 1 Sam. 2, 36, where too Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ܐܰܓܽܘܪܬܳܐ.—T.] Sept. Vulg. ὀβολός, num-",
+   "status": "adjudicated",
+   "draft": "ܐܰܓܪܬܳܐ.—T.] Sept. Vulg. ὀβολός, num-",
+   "reread": "ܐܰܓܽܘܪܬܳܐ.—T.]   Sept. Vulg. ὀβολός, num-",
+   "verdict": "b",
+   "note": "The Syriac word is printed plene with waw: a loop glyph with the esasa (u) vowel sits between gamal and resh, giving ܐܰܓܽܘܪܬܳܐ (agurto), not the defective ܐܓܪܬܐ of Reading A. The remainder of the line is identical in both readings; the gap after \"T.]\" is just a wide space, written here as a single space.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mus. Rabb. גֵּרָה q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אָגַל obsol. root, pr. to flow together,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to be collected, as water, kindr. with r.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "גָּלַל, which is also used of the rolling",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "waves; comp. in אָגַר. Arab. أَجَّلَ Conj.",
+   "status": "adjudicated",
+   "draft": "waves; comp. in אָגַר. Arab. أَجَلَ Conj.",
+   "reread": "waves; comp. in אָגַר. Arab. أَجَّلَ Conj.",
+   "verdict": "b",
+   "note": "The jim is printed with a shadda (plus fatha) above it, as expected for the Conj. II form; Reading A omits the shadda. Hebrew אָגַר and the rest of the line are identical in both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "II. to make flow together, hence to collect",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "water; مَأْجَلٌ standing water, a pond,",
+   "status": "adjudicated",
+   "draft": "water ; مَأْجَل standing water, a pond,",
+   "reread": "water; مَأْجَلٌ standing water, a pond,",
+   "verdict": "neither",
+   "note": "The lām clearly carries a tanwīn (ٌ, the \"9\"-shaped mark above it), so Reading A's مَأْجَل is defective; but the print also has a space before the semicolon (\"water ;\"), which Reading B drops. Correct line combines A's spacing with B's Arabic.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "reservoir; comp. also אָגַר.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֶגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs",
+   "status": "adjudicated",
+   "draft": "אֵגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs",
+   "reread": "אֶגֶל, Job 38, 28 אֶגְלֵי טַל the reservoirs",
+   "verdict": "b",
+   "note": "Under the aleph of the headword the print shows three dots in a triangle (segol), matching the segol under the gimel, not the two horizontal dots of tsere; the rest of the line is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of the dew, i. e. in the heavens; comp. in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "v. 22 the storehouses of the snow and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "hail.—Vulg. Chald. Syr. give it by drops",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of the dew, q. d. globules, comp. גְּלַל; but",
+   "status": "adjudicated",
+   "draft": "of the dew, q. d. globules, comp. גָּלַל ; but",
+   "reread": "of the dew, q. d. globules, comp. גְּלַל ; but",
+   "verdict": "b",
+   "note": "The point under the gimel is a narrow vertical mark (two stacked dots = shewa), not the wide T-shaped qamets of Reading A; dagesh in gimel and patah under the first lamed as in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the former is better.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֶגְלַיִם (two ponds) Is. 15, 8 Eglaim,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pr. n. of a village in the territory of Moab,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the Ἀγαλλείμ of Eusebius, called by Jo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "sephus Ἄγαλλα, Ant. 14. 1. 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "* אָגַם obsol. root; in Arabic:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1. Mid. A, to burn, to be hot, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "חָמַם, יָחַם. Hence אַגְמוֹן no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. Mid. E, to be warm, spoiled, dead,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hence אָגֵם.",
+   "status": "draft_only",
+   "draft": "hence אָגֵם.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as water; hence אֲגַם and אַגְמוֹן no. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. Mid. E, to loathe, to abhor, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Chald. אֲגַם to be pained, sad, to grieve;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲגַם m. (r. אָגַם no. 2) absol. Is. 35, 7;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "constr. 41, 18. Ps. 107, 35; plur. אֲגַמִּים,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "constr. אַגְמֵי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1. stagnant water, a pool, marsh, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "35, 7. 41, 18. 42, 15. Ps. 114, 8. Spec. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the pools of stagnant water left by the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Nile after its inundation, Ex. 7, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. i. q. אַגְמוֹן, a reed, cane, Jer. 51, 32,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "with which fortifications (stockades, pa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "lisades) were constructed. Hence R.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Jonah explains it strong-holds; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "أَجَمَةٌ the marshy lair of the lion. then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a refuge, strong-hold.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָגֵם adj. once in plur. constr. אַגְמֵי נֶפֶשׁ",
+   "status": "adjudicated",
+   "draft": "אָגֵם adj. once in plur. constr. אַגְמֵי־נֶפֶשׁ",
+   "reread": "אָגֵם adj. once in plur. constr. אַגְמֵי נֶפֶשׁ",
+   "verdict": "b",
+   "note": "No maqqef is printed between אַגְמֵי and נֶפֶשׁ — the two words are separated by a plain space with no horizontal stroke at the top of the gap, so Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "sad, sorrowful in mind, Is. 19, 10. R.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָגַם no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַגְמוֹן, אַגְמֹן, m. (r. אָגַם) 1. a caldron,",
+   "status": "adjudicated",
+   "draft": "אַגְמֹן, אַגְמוֹן, m. (r. אָגַם) 1. a caldron,",
+   "reread": "אַגְמוֹן, אַגְמֹן, m. (r. אָגַם) 1. a caldron,",
+   "verdict": "b",
+   "note": "The leftmost (first) Hebrew item in the printed line is the plene form with vav (אַגְמוֹן, five letters), and the second is defective אַגְמֹן (four letters, holem alone over mem); Reading A reverses this order. Root אָגַם and the rest agree with both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "heated kettle, Job. 41, 12 [20]. Others",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "translate the words כְּדוּד נָפוּחַ וְאַגְמוֹן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "as a boiling pot and a (burning) reed.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "See the root no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. a reed, bulrush, growing in marsh",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "es, from אֲגַם marsh, and the ending וֹן,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Is. 58, 5. For Is. 9, 13. 19, 15, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "כִּפָּה.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "3. a rope made of reeds; a rush-cord,",
+   "status": "adjudicated",
+   "draft": "3. a rope made of reeds, a rush-cord,",
+   "reread": "3. a rope made of reeds; a rush-cord,",
+   "verdict": "b",
+   "note": "After \"reeds\" the mark has a distinct dot above the comma-shaped tail, so it is a semicolon, not a comma; Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "like Gr. σχοῖνος, Job 40, 26 [41, 2].",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Comp. Plin. H. N. 19. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אָגַן obsol. root; Arab. أَجَنَ i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "وجن (see יָגַן) to tread with the feet,",
+   "status": "adjudicated",
+   "draft": "وجن (see רָגַן) to tread with the feet,",
+   "reread": "وجن (see יָגַן) to tread with the feet,",
+   "verdict": "b",
+   "note": "The rightmost Hebrew letter in the parenthesis is a short glyph that stops well above the baseline (a yod), not a full-height resh; the qamets sits clearly below it with a gap. Everything else (Arabic وجن, patach on gimel, final nun, English) matches both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "to stamp, to beat; then to wash clothes, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "full, as a washer or fuller by treading",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "them in a trough.—Hence",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 86,
+  "adjudicated": 14,
+  "draft_only": 1,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 7
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.7901
+}

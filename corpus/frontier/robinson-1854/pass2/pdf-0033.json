@@ -1,0 +1,2212 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 33,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0033.png",
+ "raster_sha256": "c78f984786ef2dd1549c4f10027c92f9b72606e15bba3370caf3c96bc994a82b",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0033.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:08:14+00:00",
+ "chunks": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 60,
+    "y": 103,
+    "width": 1780,
+    "height": 889
+   },
+   "draft_lines": [
+    "אדר",
+    "17",
+    "אהה",
+    "parenes brought from Mesopotamia to",
+    "Samaria, 2 K. 17, 31. b) A son of Sen-",
+    "nacherib king of Assyria, who aided in",
+    "slaying his father, Is. 37, 38. 2 K. 19, 37.",
+    "אֶדְרָע Chald. i. q. דְּרָע , the arm, with",
+    "א prosthetic, Ezra 4, 23. Hebr. זְרוֹעַ .",
+    "In the Targums with Patah אַדְרַע .",
+    "Hence",
+    "אֶדְרֶעִי (strong, mighty) Edrei, pr. n.",
+    "a) The former metropolis of Bashan,",
+    "situated in the territory of Manasseh,",
+    "Num. 21, 33. Deut. 1, 4. Josh. 12, 4.",
+    "Called by Eusebius Ἀδραά, by Ptolemy",
+    "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+    "3. 4. Deut. 4, 37 ; rarely c. לְ Lev. 19, 18.",
+    "34. 1 K. 5, 15 ; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+    "17 אַהֲבַת נַפְשׁוֹ אֲהֵבוֹ he loved him as he",
+    "loved his own soul. Part. אֹהֵב a friend,",
+    "loving and beloved, intimate, different",
+    "from רֵעַ a companion, Prov. 18, 24. Esth.",
+    "5, 10. 14. Is. 41, 8 זֶרַע אַבְרָהָם אֹהֲבִי the",
+    "seed of Abraham my friend.",
+    "3. to love to do any thing, to delight",
+    "in doing, seq. infin. c. לְ , Hos. 12, 8 לַעֲשֹׁק",
+    "אָהֵב he loveth to oppress. Is. 56, 10. Jer.",
+    "14, 10.",
+    "Niph. part. נֶאֱהָב lovely, amiable, wor-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 60,
+      "y": 101,
+      "width": 1780,
+      "height": 285
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r00-b00-1780x285+60+101-x2.png",
+     "image_sha256": "7e319fb1d10f040a15f9db02548c2051d5bd1e7b0a67b4c91a7ac6b01cdfb13e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אדר 17 אהה",
+       "parenes brought from Mesopotamia to",
+       "Samaria, 2 K. 17, 31. b) A son of Sen-",
+       "nacherib king of Assyria, who aided in",
+       "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+       "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18.",
+       "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "729f7d3b-035a-440a-8317-1935698d0011",
+      "duration_api_ms": 14025,
+      "cost_usd_list": 0.0826035,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2466,
+      "output_tokens": 647
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+       "status": "reread_only",
+       "band_id": "c0-r00-b00",
+       "text": "with עָגַב, ἀγαπάω. With acc. Gen. 37,"
+      },
+      {
+       "draft": null,
+       "reread": "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18.",
+       "status": "reread_only",
+       "band_id": "c0-r00-b00",
+       "text": "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18."
+      },
+      {
+       "draft": null,
+       "reread": "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+       "status": "reread_only",
+       "band_id": "c0-r00-b00",
+       "text": "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,"
+      },
+      {
+       "draft": "אדר 17 אהה",
+       "reread": "אדר 17 אהה",
+       "status": "agreed",
+       "text": "אדר 17 אהה"
+      },
+      {
+       "draft": "parenes brought from Mesopotamia to",
+       "reread": "parenes brought from Mesopotamia to",
+       "status": "agreed",
+       "text": "parenes brought from Mesopotamia to"
+      },
+      {
+       "draft": "Samaria, 2 K. 17, 31. b) A son of Sen-",
+       "reread": "Samaria, 2 K. 17, 31. b) A son of Sen-",
+       "status": "agreed",
+       "text": "Samaria, 2 K. 17, 31. b) A son of Sen-"
+      },
+      {
+       "draft": "nacherib king of Assyria, who aided in",
+       "reread": "nacherib king of Assyria, who aided in",
+       "status": "agreed",
+       "text": "nacherib king of Assyria, who aided in"
+      },
+      {
+       "draft": "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "with עָגַב, ἀγαπάω. With acc. Gen. 37,"
+      },
+      {
+       "draft": "3. 4. Deut. 4, 37 ; rarely c. לְ Lev. 19, 18.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18."
+      },
+      {
+       "draft": "34. 1 K. 5, 15 ; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,"
+      },
+      {
+       "draft": "17 אַהֲבַת נַפְשׁוֹ אֲהֵבוֹ he loved him as he",
+       "reread": null,
+       "status": "draft_only",
+       "text": "17 אַהֲבַת נַפְשׁוֹ אֲהֵבוֹ he loved him as he"
+      },
+      {
+       "draft": "loved his own soul. Part. אֹהֵב a friend,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "loved his own soul. Part. אֹהֵב a friend,"
+      },
+      {
+       "draft": "loving and beloved, intimate, different",
+       "reread": null,
+       "status": "draft_only",
+       "text": "loving and beloved, intimate, different"
+      },
+      {
+       "draft": "from רֵעַ a companion, Prov. 18, 24. Esth.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "from רֵעַ a companion, Prov. 18, 24. Esth."
+      },
+      {
+       "draft": "5, 10. 14. Is. 41, 8 זֶרַע אַבְרָהָם אֹהֲבִי the",
+       "reread": null,
+       "status": "draft_only",
+       "text": "5, 10. 14. Is. 41, 8 זֶרַע אַבְרָהָם אֹהֲבִי the"
+      },
+      {
+       "draft": "seed of Abraham my friend.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "seed of Abraham my friend."
+      },
+      {
+       "draft": "3. to love to do any thing, to delight",
+       "reread": null,
+       "status": "draft_only",
+       "text": "3. to love to do any thing, to delight"
+      },
+      {
+       "draft": "in doing, seq. infin. c. לְ , Hos. 12, 8 לַעֲשֹׁק",
+       "reread": null,
+       "status": "draft_only",
+       "text": "in doing, seq. infin. c. לְ, Hos. 12, 8 לַעֲשֹׁק"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 60,
+      "y": 370,
+      "width": 1780,
+      "height": 455
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r00-b01-1780x455+60+370-x2.png",
+     "image_sha256": "c50797797e9f79c89c527b619a28d267411cbb55b8d263976464cfaabeb62166",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "slaying his father, Is. 37, 38. 2 K. 19, 37.",
+       "אֶדְרָע Chald. i. q. דְּרָע , the arm, with",
+       "א prosthetic, Ezra 4, 23. Hebr. זְרוֹעַ .",
+       "In the Targums with Patah אַדְרַע .",
+       "Hence",
+       "אֶדְרֶעִי (strong, mighty) Edrei, pr. n.",
+       "a) The former metropolis of Bashan,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02fa6751-e6af-4b96-bf81-168a061a3141",
+      "duration_api_ms": 18383,
+      "cost_usd_list": 0.1105335,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2970,
+      "output_tokens": 1004
+     },
+     "lines": [
+      {
+       "draft": "slaying his father, Is. 37, 38. 2 K. 19, 37.",
+       "reread": "slaying his father, Is. 37, 38. 2 K. 19, 37.",
+       "status": "agreed",
+       "text": "slaying his father, Is. 37, 38. 2 K. 19, 37."
+      },
+      {
+       "draft": "אֶדְרָע Chald. i. q. דְּרָע , the arm, with",
+       "reread": "אֶדְרָע Chald. i. q. דְּרָע , the arm, with",
+       "status": "agreed",
+       "text": "אֶדְרָע Chald. i. q. דְּרָע, the arm, with"
+      },
+      {
+       "draft": "א prosthetic, Ezra 4, 23. Hebr. זְרוֹעַ .",
+       "reread": "א prosthetic, Ezra 4, 23. Hebr. זְרוֹעַ .",
+       "status": "agreed",
+       "text": "א prosthetic, Ezra 4, 23. Hebr. זְרוֹעַ."
+      },
+      {
+       "draft": "In the Targums with Patah אַדְרַע .",
+       "reread": "In the Targums with Patah אַדְרַע .",
+       "status": "agreed",
+       "text": "In the Targums with Patah אַדְרַע."
+      },
+      {
+       "draft": "Hence",
+       "reread": "Hence",
+       "status": "agreed",
+       "text": "Hence"
+      },
+      {
+       "draft": "אֶדְרֶעִי (strong, mighty) Edrei, pr. n.",
+       "reread": "אֶדְרֶעִי (strong, mighty) Edrei, pr. n.",
+       "status": "agreed",
+       "text": "אֶדְרֶעִי (strong, mighty) Edrei, pr. n."
+      },
+      {
+       "draft": "a) The former metropolis of Bashan,",
+       "reread": "a) The former metropolis of Bashan,",
+       "status": "agreed",
+       "text": "a) The former metropolis of Bashan,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 60,
+      "y": 809,
+      "width": 1780,
+      "height": 191
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r00-b02-1780x191+60+809-x2.png",
+     "image_sha256": "bcc15bf62cd9fc9ee94a7eb46da14b12cbdc634a7b04bd95a43cac2ae3d2e915",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "situated in the territory of Manasseh,",
+       "Num. 21, 33. Deut. 1, 4. Josh. 12, 4.",
+       "Called by Eusebius Ἀδραά, by Ptolemy",
+       "אָהֵב he loveth to oppress. Is. 56, 10. Jer.",
+       "14, 10.",
+       "Niph. part. נֶאֱהָב lovely, amiable, wor-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "891e4236-7e94-4ac2-b2be-d6d6dda6451c",
+      "duration_api_ms": 13361,
+      "cost_usd_list": 0.0787435,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2178,
+      "output_tokens": 685
+     },
+     "lines": [
+      {
+       "draft": "situated in the territory of Manasseh,",
+       "reread": "situated in the territory of Manasseh,",
+       "status": "agreed",
+       "text": "situated in the territory of Manasseh,"
+      },
+      {
+       "draft": "Num. 21, 33. Deut. 1, 4. Josh. 12, 4.",
+       "reread": "Num. 21, 33. Deut. 1, 4. Josh. 12, 4.",
+       "status": "agreed",
+       "text": "Num. 21, 33. Deut. 1, 4. Josh. 12, 4."
+      },
+      {
+       "draft": "Called by Eusebius Ἀδραά, by Ptolemy",
+       "reread": "Called by Eusebius Ἀδραά, by Ptolemy",
+       "status": "agreed",
+       "text": "Called by Eusebius Ἀδραά, by Ptolemy"
+      },
+      {
+       "draft": "אָהֵב he loveth to oppress. Is. 56, 10. Jer.",
+       "reread": "אָהֵב he loveth to oppress. Is. 56, 10. Jer.",
+       "status": "agreed",
+       "text": "אָהֵב he loveth to oppress. Is. 56, 10. Jer."
+      },
+      {
+       "draft": "14, 10.",
+       "reread": "14, 10.",
+       "status": "agreed",
+       "text": "14, 10."
+      },
+      {
+       "draft": "Niph. part. נֶאֱהָב lovely, amiable, wor-",
+       "reread": "Niph. part. נֶאֱהָב lovely, amiable, wor-",
+       "status": "agreed",
+       "text": "Niph. part. נֶאֱהָב lovely, amiable, wor-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 60,
+    "y": 980,
+    "width": 1780,
+    "height": 772
+   },
+   "draft_lines": [
+    "Ἄδρα, by Arabian geographers زرع",
+    "Zer'a, now درعا Der'â. [According to",
+    "Euseb. and the Peut. Tables, it lay 24",
+    "Rom. miles from Bozrah on the way to",
+    "Capitolias and Gadara. See Reland",
+    "Palæstina p. 547. Bibl. Res. in Pal. III.",
+    "App. p. 152.—R.] b) A city in Naph-",
+    "tali, Josh. 19, 37.",
+    "אַדֶּרֶת 1. Fem. of adj. אַדִּיר, large,",
+    "great, mighty, (comp. שַׁלִּיט, f. שַׁלֶּטֶת,)",
+    "Ez. 17, 8 גֶּפֶן אַדֶּרֶת a large vine, i. e. full",
+    "of branches and leaves. Comp. אַדִּיר",
+    "no. 1.",
+    "thy of love, 2 Sam. 1, 23.",
+    "Piel part. מְאַהֵב 1. a friend, Zech.",
+    "13, 6.",
+    "2. a lover, but only in a bad sense, a",
+    "paramour, debauchee, Ez. 16, 33 sq. 23,",
+    "5 sq. i. e. metaph. for an idolater.",
+    "Deriv. the three following.",
+    "אֹהַב, only in plur. אֳהָבִים 1. loves,",
+    "spec. in a bad sense, amours, trop. of",
+    "intercourse and alliances with foreign",
+    "nations, Hos. 8, 9.",
+    "2. delight, loveliness. Prov. 5, 19 אַיֶּלֶת",
+    "אֲהָבִים a lovely hind."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 60,
+      "y": 972,
+      "width": 1780,
+      "height": 748
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r01-b00-1780x748+60+972-x2.png",
+     "image_sha256": "beb050e3d4318656c74aee8b1073a112b07464fdd29ffedf68c0aa117d2fd921",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ἄδρα, by Arabian geographers زرع",
+       "Zer'a, now درعا Der'â. [According to",
+       "Euseb. and the Peut. Tables, it lay 24",
+       "Rom. miles from Bozrah on the way to",
+       "Capitolias and Gadara. See Reland",
+       "Palæstina p. 547. Bibl. Res. in Pal. III.",
+       "App. p. 152.—R.] b) A city in Naph-",
+       "tali, Josh. 19, 37.",
+       "אַדֶּרֶת 1. Fem. of adj. אַדִּיר, large,",
+       "great, mighty, (comp. שַׁלִּיט, f. שַׁלֶּטֶת,)",
+       "Ez. 17, 8 גֶּפֶן אַדֶּרֶת a large vine, i. e. full",
+       "of branches and leaves. Comp. אַדִּיר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1507a151-9d37-4a48-acb9-723e1fc5d9e0",
+      "duration_api_ms": 17481,
+      "cost_usd_list": 0.13554349999999998,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3763,
+      "output_tokens": 1187
+     },
+     "lines": [
+      {
+       "draft": "Ἄδρα, by Arabian geographers زرع",
+       "reread": "Ἄδρα, by Arabian geographers زرع",
+       "status": "agreed",
+       "text": "Ἄδρα, by Arabian geographers زرع"
+      },
+      {
+       "draft": "Zer'a, now درعا Der'â. [According to",
+       "reread": "Zer'a, now درعا Der'â. [According to",
+       "status": "agreed",
+       "text": "Zer'a, now درعا Der'â. [According to"
+      },
+      {
+       "draft": "Euseb. and the Peut. Tables, it lay 24",
+       "reread": "Euseb. and the Peut. Tables, it lay 24",
+       "status": "agreed",
+       "text": "Euseb. and the Peut. Tables, it lay 24"
+      },
+      {
+       "draft": "Rom. miles from Bozrah on the way to",
+       "reread": "Rom. miles from Bozrah on the way to",
+       "status": "agreed",
+       "text": "Rom. miles from Bozrah on the way to"
+      },
+      {
+       "draft": "Capitolias and Gadara. See Reland",
+       "reread": "Capitolias and Gadara. See Reland",
+       "status": "agreed",
+       "text": "Capitolias and Gadara. See Reland"
+      },
+      {
+       "draft": "Palæstina p. 547. Bibl. Res. in Pal. III.",
+       "reread": "Palæstina p. 547. Bibl. Res. in Pal. III.",
+       "status": "agreed",
+       "text": "Palæstina p. 547. Bibl. Res. in Pal. III."
+      },
+      {
+       "draft": "App. p. 152.—R.] b) A city in Naph-",
+       "reread": "App. p. 152.—R.] b) A city in Naph-",
+       "status": "agreed",
+       "text": "App. p. 152.—R.] b) A city in Naph-"
+      },
+      {
+       "draft": "tali, Josh. 19, 37.",
+       "reread": "tali, Josh. 19, 37.",
+       "status": "agreed",
+       "text": "tali, Josh. 19, 37."
+      },
+      {
+       "draft": "אַדֶּרֶת 1. Fem. of adj. אַדִּיר, large,",
+       "reread": "אַדֶּרֶת 1. Fem. of adj. אַדִּיר, large,",
+       "status": "agreed",
+       "text": "אַדֶּרֶת 1. Fem. of adj. אַדִּיר, large,"
+      },
+      {
+       "draft": "great, mighty, (comp. שַׁלִּיט, f. שַׁלֶּטֶת,)",
+       "reread": "great, mighty, (comp. שַׁלִּיט, f. שַׁלֶּטֶת,)",
+       "status": "agreed",
+       "text": "great, mighty, (comp. שַׁלִּיט, f. שַׁלֶּטֶת,)"
+      },
+      {
+       "draft": "Ez. 17, 8 גֶּפֶן אַדֶּרֶת a large vine, i. e. full",
+       "reread": "Ez. 17, 8 גֶּפֶן אַדֶּרֶת a large vine, i. e. full",
+       "status": "agreed",
+       "text": "Ez. 17, 8 גֶּפֶן אַדֶּרֶת a large vine, i. e. full"
+      },
+      {
+       "draft": "of branches and leaves. Comp. אַדִּיר",
+       "reread": "of branches and leaves. Comp. אַדִּיר",
+       "status": "agreed",
+       "text": "of branches and leaves. Comp. אַדִּיר"
+      },
+      {
+       "draft": "thy of love, 2 Sam. 1, 23.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "thy of love, 2 Sam. 1, 23."
+      },
+      {
+       "draft": "Piel part. מְאַהֵב 1. a friend, Zech.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Piel part. מְאַהֵב 1. a friend, Zech."
+      },
+      {
+       "draft": "13, 6.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "13, 6."
+      },
+      {
+       "draft": "2. a lover, but only in a bad sense, a",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. a lover, but only in a bad sense, a"
+      },
+      {
+       "draft": "paramour, debauchee, Ez. 16, 33 sq. 23,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "paramour, debauchee, Ez. 16, 33 sq. 23,"
+      },
+      {
+       "draft": "5 sq. i. e. metaph. for an idolater.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "5 sq. i. e. metaph. for an idolater."
+      },
+      {
+       "draft": "Deriv. the three following.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Deriv. the three following."
+      },
+      {
+       "draft": "אֹהַב, only in plur. אֳהָבִים 1. loves,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "אֹהַב, only in plur. אֳהָבִים 1. loves,"
+      },
+      {
+       "draft": "spec. in a bad sense, amours, trop. of",
+       "reread": null,
+       "status": "draft_only",
+       "text": "spec. in a bad sense, amours, trop. of"
+      },
+      {
+       "draft": "intercourse and alliances with foreign",
+       "reread": null,
+       "status": "draft_only",
+       "text": "intercourse and alliances with foreign"
+      },
+      {
+       "draft": "nations, Hos. 8, 9.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "nations, Hos. 8, 9."
+      },
+      {
+       "draft": "2. delight, loveliness. Prov. 5, 19 אַיֶּלֶת",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. delight, loveliness. Prov. 5, 19 אַיֶּלֶת"
+      },
+      {
+       "draft": "אֲהָבִים a lovely hind.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "אֲהָבִים a lovely hind."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 60,
+      "y": 1704,
+      "width": 1780,
+      "height": 56
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r01-b01-1780x56+60+1704-x2.png",
+     "image_sha256": "0f8c9df9484f33fdaf122ee92247a2113c5073b6f3c58ebb38f1d02984b44ca5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "no. 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7d6ef9e2-4aa2-4bb1-b80e-708b735109ed",
+      "duration_api_ms": 7818,
+      "cost_usd_list": 0.04863375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1820,
+      "output_tokens": 226
+     },
+     "lines": [
+      {
+       "draft": "no. 1.",
+       "reread": "no. 1.",
+       "status": "agreed",
+       "text": "no. 1."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 60,
+    "y": 1740,
+    "width": 1780,
+    "height": 867
+   },
+   "draft_lines": [
+    "2. Subst. a wide cloak, mantle, pallium,",
+    "1 K. 19, 13. 19. 2 K. 2, 13. 14. Jon. 3, 6.",
+    "אַדֶּרֶת שִׁנְעָר a Babylonish mantle Josh. 7,",
+    "21, i. e. variegated with figures, having",
+    "the figures of men and animals interwo-",
+    "ven in colours; comp. Plin. H. N. 8. 48.",
+    "So אַדֶּרֶת שֵׂעָר a hairy mantle, shaggy",
+    "with hair, or (according to some) of fur,",
+    "Gen. 25, 25. Zech. 13, 4.",
+    "3. splendour, glory, Zech. 11, 3.",
+    "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+    "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+    "he threshes it.",
+    "* אָהֵב and אָהַב fut. יֶאֱהַב and יֶאֱהָב,",
+    "אֹהַב m. love, in sing. once meton. for",
+    "lovers, paramours, Hos. 9, 10. Sept.",
+    "οἱ ἠγαπημένοι. Plur. אֳהָבִים loves, spec.",
+    "amours, Prov. 7, 18.",
+    "אַהֲבָה f. 1. Inf. fem. of the verb אָהַב,",
+    "with לְ pref. Is. 56, 6 לְאַהֲבָה אֶת־שֵׁם יְהוָֹה",
+    "to love the name of Jehovah. Deut. 10,",
+    "15. 11, 13. 22. Josh. 22, 5. 23, 11. With",
+    "בְּ 1 K. 10, 9 בְּאַהֲבַת יְהוָֹה אֶת־יִשְׂרָאֵל in",
+    "Jehovah's loving Israel, i. e. because he",
+    "loved Israel. In the same sense with",
+    "pref. כְּ Hos. 3, 1, and מִן Deut. 7, 8 מֵאַהֲבַת",
+    "יְהוָֹה אֶתְכֶם because Jehovah loved you.",
+    "2. love, espec. between the sexes, Cant.",
+    "2, 4. 5, 8. 8, 6. 7; of God towards men"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 60,
+      "y": 1732,
+      "width": 1780,
+      "height": 249
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r02-b00-1780x249+60+1732-x2.png",
+     "image_sha256": "d12a721202158951254d82f0a256bbc8f259465f9d9582d905fc2e484aafb526",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Subst. a wide cloak, mantle, pallium,",
+       "1 K. 19, 13. 19. 2 K. 2, 13. 14. Jon. 3, 6.",
+       "אַדֶּרֶת שִׁנְעָר a Babylonish mantle Josh. 7,",
+       "21, i. e. variegated with figures, having",
+       "אֹהַב m. love, in sing. once meton. for",
+       "lovers, paramours, Hos. 9, 10. Sept.",
+       "οἱ ἠγαπημένοι. Plur. אֲהָבִים loves, spec.",
+       "amours, Prov. 7, 18."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "672378b0-f24c-42c7-9734-a10c19b0b87e",
+      "duration_api_ms": 14671,
+      "cost_usd_list": 0.08551375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2324,
+      "output_tokens": 762
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "אֹהַב m. love, in sing. once meton. for",
+       "status": "reread_only",
+       "band_id": "c0-r02-b00",
+       "text": "אֹהַב m. love, in sing. once meton. for"
+      },
+      {
+       "draft": null,
+       "reread": "lovers, paramours, Hos. 9, 10. Sept.",
+       "status": "reread_only",
+       "band_id": "c0-r02-b00",
+       "text": "lovers, paramours, Hos. 9, 10. Sept."
+      },
+      {
+       "draft": null,
+       "reread": "οἱ ἠγαπημένοι. Plur. אֲהָבִים loves, spec.",
+       "status": "reread_only",
+       "band_id": "c0-r02-b00",
+       "text": "οἱ ἠγαπημένοι. Plur. אֲהָבִים loves, spec."
+      },
+      {
+       "draft": null,
+       "reread": "amours, Prov. 7, 18.",
+       "status": "reread_only",
+       "band_id": "c0-r02-b00",
+       "text": "amours, Prov. 7, 18."
+      },
+      {
+       "draft": "2. Subst. a wide cloak, mantle, pallium,",
+       "reread": "2. Subst. a wide cloak, mantle, pallium,",
+       "status": "agreed",
+       "text": "2. Subst. a wide cloak, mantle, pallium,"
+      },
+      {
+       "draft": "1 K. 19, 13. 19. 2 K. 2, 13. 14. Jon. 3, 6.",
+       "reread": "1 K. 19, 13. 19. 2 K. 2, 13. 14. Jon. 3, 6.",
+       "status": "agreed",
+       "text": "1 K. 19, 13. 19. 2 K. 2, 13. 14. Jon. 3, 6."
+      },
+      {
+       "draft": "אַדֶּרֶת שִׁנְעָר a Babylonish mantle Josh. 7,",
+       "reread": "אַדֶּרֶת שִׁנְעָר a Babylonish mantle Josh. 7,",
+       "status": "agreed",
+       "text": "אַדֶּרֶת שִׁנְעָר a Babylonish mantle Josh. 7,"
+      },
+      {
+       "draft": "21, i. e. variegated with figures, having",
+       "reread": "21, i. e. variegated with figures, having",
+       "status": "agreed",
+       "text": "21, i. e. variegated with figures, having"
+      },
+      {
+       "draft": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf."
+      },
+      {
+       "draft": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+       "reread": null,
+       "status": "draft_only",
+       "text": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing"
+      },
+      {
+       "draft": "he threshes it.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "he threshes it."
+      },
+      {
+       "draft": "* אָהֵב and אָהַב fut. יֶאֱהַב and יֶאֱהָב,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* אָהֵב and אָהַב fut. יֶאֱהַב and יֶאֱהָב,"
+      },
+      {
+       "draft": "אֹהַב m. love, in sing. once meton. for",
+       "reread": null,
+       "status": "draft_only",
+       "text": "אֹהַב m. love, in sing. once meton. for"
+      },
+      {
+       "draft": "lovers, paramours, Hos. 9, 10. Sept.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "lovers, paramours, Hos. 9, 10. Sept."
+      },
+      {
+       "draft": "οἱ ἠγαπημένοι. Plur. אֳהָבִים loves, spec.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "οἱ ἠγαπημένοι. Plur. אֳהָבִים loves, spec."
+      },
+      {
+       "draft": "amours, Prov. 7, 18.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "amours, Prov. 7, 18."
+      },
+      {
+       "draft": "loved Israel. In the same sense with",
+       "reread": null,
+       "status": "draft_only",
+       "text": "loved Israel. In the same sense with"
+      },
+      {
+       "draft": "pref. כְּ Hos. 3, 1, and מִן Deut. 7, 8 מֵאַהֲבַת",
+       "reread": null,
+       "status": "draft_only",
+       "text": "pref. כְּ Hos. 3, 1, and מִן Deut. 7, 8 מֵאַהֲבַת"
+      },
+      {
+       "draft": "יְהוָֹה אֶתְכֶם because Jehovah loved you.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "יְהוָֹה אֶתְכֶם because Jehovah loved you."
+      },
+      {
+       "draft": "2. love, espec. between the sexes, Cant.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2. love, espec. between the sexes, Cant."
+      },
+      {
+       "draft": "2, 4. 5, 8. 8, 6. 7; of God towards men",
+       "reread": null,
+       "status": "draft_only",
+       "text": "2, 4. 5, 8. 8, 6. 7; of God towards men"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 60,
+      "y": 1965,
+      "width": 1780,
+      "height": 364
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r02-b01-1780x364+60+1965-x2.png",
+     "image_sha256": "cc65e76788cbb95a5592bf8ea7855cec7648cc6bb94d0642c58437b1f263ea7a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the figures of men and animals interwo-",
+       "ven in colours; comp. Plin. H. N. 8. 48.",
+       "So אַדֶּרֶת שֵׂעָר a hairy mantle, shaggy",
+       "with hair, or (according to some) of fur,",
+       "Gen. 25, 25. Zech. 13, 4.",
+       "3. splendour, glory, Zech. 11, 3.",
+       "אַהֲבָה f. 1. Inf. fem. of the verb אָהַב,",
+       "with לְ pref. Is. 56, 6 לְאַהֲבָה אֶת־שֵׁם יְהוָֹה",
+       "to love the name of Jehovah. Deut. 10,",
+       "15. 11, 13. 22. Josh. 22, 5. 23, 11. With",
+       "בְּ 1 K. 10, 9 בְּאַהֲבַת יְהוָֹה אֶת־יִשְׂרָאֵל in",
+       "Jehovah's loving Israel, i. e. because he"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "61206f58-a7a4-4aaf-8b10-01228ef43e7c",
+      "duration_api_ms": 17399,
+      "cost_usd_list": 0.11221375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2684,
+      "output_tokens": 1152
+     },
+     "lines": [
+      {
+       "draft": "the figures of men and animals interwo-",
+       "reread": "the figures of men and animals interwo-",
+       "status": "agreed",
+       "text": "the figures of men and animals interwo-"
+      },
+      {
+       "draft": "ven in colours; comp. Plin. H. N. 8. 48.",
+       "reread": "ven in colours; comp. Plin. H. N. 8. 48.",
+       "status": "agreed",
+       "text": "ven in colours; comp. Plin. H. N. 8. 48."
+      },
+      {
+       "draft": "So אַדֶּרֶת שֵׂעָר a hairy mantle, shaggy",
+       "reread": "So אַדֶּרֶת שֵׂעָר a hairy mantle, shaggy",
+       "status": "agreed",
+       "text": "So אַדֶּרֶת שֵׂעָר a hairy mantle, shaggy"
+      },
+      {
+       "draft": "with hair, or (according to some) of fur,",
+       "reread": "with hair, or (according to some) of fur,",
+       "status": "agreed",
+       "text": "with hair, or (according to some) of fur,"
+      },
+      {
+       "draft": "Gen. 25, 25. Zech. 13, 4.",
+       "reread": "Gen. 25, 25. Zech. 13, 4.",
+       "status": "agreed",
+       "text": "Gen. 25, 25. Zech. 13, 4."
+      },
+      {
+       "draft": "3. splendour, glory, Zech. 11, 3.",
+       "reread": "3. splendour, glory, Zech. 11, 3.",
+       "status": "agreed",
+       "text": "3. splendour, glory, Zech. 11, 3."
+      },
+      {
+       "draft": "אַהֲבָה f. 1. Inf. fem. of the verb אָהַב,",
+       "reread": "אַהֲבָה f. 1. Inf. fem. of the verb אָהַב,",
+       "status": "agreed",
+       "text": "אַהֲבָה f. 1. Inf. fem. of the verb אָהַב,"
+      },
+      {
+       "draft": "with לְ pref. Is. 56, 6 לְאַהֲבָה אֶת־שֵׁם יְהוָֹה",
+       "reread": "with לְ pref. Is. 56, 6 לְאַהֲבָה אֶת־שֵׁם יְהוָֹה",
+       "status": "agreed",
+       "text": "with לְ pref. Is. 56, 6 לְאַהֲבָה אֶת־שֵׁם יְהוָֹה"
+      },
+      {
+       "draft": "to love the name of Jehovah. Deut. 10,",
+       "reread": "to love the name of Jehovah. Deut. 10,",
+       "status": "agreed",
+       "text": "to love the name of Jehovah. Deut. 10,"
+      },
+      {
+       "draft": "15. 11, 13. 22. Josh. 22, 5. 23, 11. With",
+       "reread": "15. 11, 13. 22. Josh. 22, 5. 23, 11. With",
+       "status": "agreed",
+       "text": "15. 11, 13. 22. Josh. 22, 5. 23, 11. With"
+      },
+      {
+       "draft": "בְּ 1 K. 10, 9 בְּאַהֲבַת יְהוָֹה אֶת־יִשְׂרָאֵל in",
+       "reread": "בְּ 1 K. 10, 9 בְּאַהֲבַת יְהוָֹה אֶת־יִשְׂרָאֵל in",
+       "status": "agreed",
+       "text": "בְּ 1 K. 10, 9 בְּאַהֲבַת יְהוָֹה אֶת־יִשְׂרָאֵל in"
+      },
+      {
+       "draft": "Jehovah's loving Israel, i. e. because he",
+       "reread": "Jehovah's loving Israel, i. e. because he",
+       "status": "agreed",
+       "text": "Jehovah's loving Israel, i. e. because he"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 60,
+      "y": 2313,
+      "width": 1780,
+      "height": 302
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r02-b02-1780x302+60+2313-x2.png",
+     "image_sha256": "587d9b785613623159362eeaea30cab6cc15a7ca721a5223b24cdd81d419194e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+       "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+       "he threshes it.",
+       "* אָהַב and אָהֵב fut. יֶאֱהַב and יֶאֱהָב,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "005328d3-63ee-4a72-9a08-7e3663dc7860",
+      "duration_api_ms": 18640,
+      "cost_usd_list": 0.10123375000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2540,
+      "output_tokens": 990
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+       "status": "reread_only",
+       "band_id": "c0-r02-b02",
+       "text": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf."
+      },
+      {
+       "draft": null,
+       "reread": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+       "status": "reread_only",
+       "band_id": "c0-r02-b02",
+       "text": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing"
+      },
+      {
+       "draft": null,
+       "reread": "he threshes it.",
+       "status": "reread_only",
+       "band_id": "c0-r02-b02",
+       "text": "he threshes it."
+      },
+      {
+       "draft": null,
+       "reread": "* אָהַב and אָהֵב fut. יֶאֱהַב and יֶאֱהָב,",
+       "status": "reread_only",
+       "band_id": "c0-r02-b02",
+       "text": "* אָהַב and אָהֵב fut. יֶאֱהַב and יֶאֱהָב,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 60,
+    "y": 2595,
+    "width": 1780,
+    "height": 872
+   },
+   "draft_lines": [
+    "1 pers. אֵהָב Prov. 8, 17 and אֹהַב Hos. 14,",
+    "5 ; inf. אֱהֹב Ecc. 3, 8, also אַהֲבָה q. v.",
+    "1. to breathe after, to long for, to de-",
+    "sire, c. acc. Ps. 4, 4. 40, 17. 70, 5 ; seq.",
+    "כִּי Ps. 116, 1.—This sense of breathing",
+    "after belongs to the syllables הב, חב,",
+    "and with the letters softened אב, או ;",
+    "comp. the roots חָבַל ; חָבַב, حَبَّ to de-",
+    "sire, to love ; אָוָה and אָבָה to desire, to",
+    "be willing.",
+    "2. to love, in which signif. it is kindr.",
+    "2*",
+    "Hos. 3, 1 ; of friends towards each other,",
+    "1 Sam. 18, 3.",
+    "3. love, delight, concr. one beloved,",
+    "fem. Cant. 2, 7. 3, 5. So perh. v. 10,",
+    "where others as adv. lovely.",
+    "* אָהַד obsol. root, i. q. אָחַד to be one,",
+    "united. Hence אֵהוּד and",
+    "אֹהַד Ohad, pr. n. of a son of Simeon,",
+    "Gen. 46, 10.",
+    "* אֲהָהּ interj. expressing grief, sor-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 60,
+      "y": 2587,
+      "width": 1780,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r03-b00-1780x240+60+2587-x2.png",
+     "image_sha256": "1067c6d343d52f571f8b6a2a31c955efd947d303123aa21ce6e7b1021b937f02",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1 pers. אֱהַב Prov. 8, 17 and אֹהֵב Hos. 14,",
+       "5 ; inf. אֱהֹב Ecc. 3, 8, also אַהֲבָה q. v.",
+       "1. to breathe after, to long for, to de-",
+       "sire, c. acc. Ps. 4, 4. 40, 17. 70, 5 ; seq."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fbd6ee38-bef0-401c-983e-2fc602a16096",
+      "duration_api_ms": 14733,
+      "cost_usd_list": 0.08086375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2324,
+      "output_tokens": 669
+     },
+     "lines": [
+      {
+       "draft": "1 pers. אֵהָב Prov. 8, 17 and אֹהַב Hos. 14,",
+       "reread": "1 pers. אֱהַב Prov. 8, 17 and אֹהֵב Hos. 14,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "1 pers. אֵהָב Prov. 8, 17 and אֹהַב Hos. 14,",
+        "verdict": "a",
+        "note": "Under the first aleph the print shows two side-by-side dots (tsere), not three (segol); under the second word's he the mark is a horizontal patach stroke, not two dots — so Reading A matches the print (and the MT/Thesaurus forms אֵהָב, אֹהַב).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a2683842-5ba3-4e59-b4c5-39023c6a6558",
+        "duration_api_ms": 21049,
+        "cost_usd_list": 0.10254075000000001,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3603,
+        "cache_creation_input_tokens": 2280,
+        "output_tokens": 1120
+       },
+       "text": "1 pers. אֵהָב Prov. 8, 17 and אֹהַב Hos. 14,"
+      },
+      {
+       "draft": "5 ; inf. אֱהֹב Ecc. 3, 8, also אַהֲבָה q. v.",
+       "reread": "5 ; inf. אֱהֹב Ecc. 3, 8, also אַהֲבָה q. v.",
+       "status": "agreed",
+       "text": "5; inf. אֱהֹב Ecc. 3, 8, also אַהֲבָה q. v."
+      },
+      {
+       "draft": "1. to breathe after, to long for, to de-",
+       "reread": "1. to breathe after, to long for, to de-",
+       "status": "agreed",
+       "text": "1. to breathe after, to long for, to de-"
+      },
+      {
+       "draft": "sire, c. acc. Ps. 4, 4. 40, 17. 70, 5 ; seq.",
+       "reread": "sire, c. acc. Ps. 4, 4. 40, 17. 70, 5 ; seq.",
+       "status": "agreed",
+       "text": "sire, c. acc. Ps. 4, 4. 40, 17. 70, 5; seq."
+      },
+      {
+       "draft": "Hos. 3, 1 ; of friends towards each other,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Hos. 3, 1; of friends towards each other,"
+      },
+      {
+       "draft": "1 Sam. 18, 3.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "1 Sam. 18, 3."
+      },
+      {
+       "draft": "3. love, delight, concr. one beloved,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "3. love, delight, concr. one beloved,"
+      },
+      {
+       "draft": "fem. Cant. 2, 7. 3, 5. So perh. v. 10,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "fem. Cant. 2, 7. 3, 5. So perh. v. 10,"
+      },
+      {
+       "draft": "where others as adv. lovely.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "where others as adv. lovely."
+      },
+      {
+       "draft": "* אָהַד obsol. root, i. q. אָחַד to be one,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* אָהַד obsol. root, i. q. אָחַד to be one,"
+      },
+      {
+       "draft": "united. Hence אֵהוּד and",
+       "reread": null,
+       "status": "draft_only",
+       "text": "united. Hence אֵהוּד and"
+      },
+      {
+       "draft": "אֹהַד Ohad, pr. n. of a son of Simeon,",
+       "reread": null,
+       "status": "draft_only",
+       "text": "אֹהַד Ohad, pr. n. of a son of Simeon,"
+      },
+      {
+       "draft": "Gen. 46, 10.",
+       "reread": null,
+       "status": "draft_only",
+       "text": "Gen. 46, 10."
+      },
+      {
+       "draft": "* אֲהָהּ interj. expressing grief, sor-",
+       "reread": null,
+       "status": "draft_only",
+       "text": "* אֲהָהּ interj. expressing grief, sor-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 60,
+      "y": 2811,
+      "width": 1780,
+      "height": 376
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r03-b01-1780x376+60+2811-x2.png",
+     "image_sha256": "09541114cb8d59b5c219b9a74fe71647d9773c4e6a54f5e3d18a9a0dded91c48",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "כִּי Ps. 116, 1.—This sense of breathing",
+       "after belongs to the syllables הב, חב,",
+       "and with the letters softened אב, או;",
+       "comp. the roots הָבַל; חָבַב, حَبَّ to de-",
+       "sire, to love; אָוָה and אָבָה to desire, to",
+       "be willing."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "09afa4b9-f504-4398-a967-5106161297f0",
+      "duration_api_ms": 16655,
+      "cost_usd_list": 0.09315375000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 742
+     },
+     "lines": [
+      {
+       "draft": "כִּי Ps. 116, 1.—This sense of breathing",
+       "reread": "כִּי Ps. 116, 1.—This sense of breathing",
+       "status": "agreed",
+       "text": "כִּי Ps. 116, 1.—This sense of breathing"
+      },
+      {
+       "draft": "after belongs to the syllables הב, חב,",
+       "reread": "after belongs to the syllables הב, חב,",
+       "status": "agreed",
+       "text": "after belongs to the syllables הב, חב,"
+      },
+      {
+       "draft": "and with the letters softened אב, או ;",
+       "reread": "and with the letters softened אב, או;",
+       "status": "agreed",
+       "text": "and with the letters softened אב, או;"
+      },
+      {
+       "draft": "comp. the roots חָבַל ; חָבַב, حَبَّ to de-",
+       "reread": "comp. the roots הָבַל; חָבַב, حَبَّ to de-",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "comp. the roots הָבַל; חָבַב, حَبَّ to de-",
+        "verdict": "b",
+        "note": "The first root's initial letter is printed as he (ה, open at the top-left), not chet — consistent with the preceding line's \"letters softened\" (הב, אב) and Gesenius's comparison of הבל 'to breathe'. Reading B is correct; Reading A's חָבַל is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d958df36-b979-42d4-9afd-ed580396f3ec",
+        "duration_api_ms": 15331,
+        "cost_usd_list": 0.09031625,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2694,
+        "output_tokens": 710
+       },
+       "text": "comp. the roots הָבַל; חָבַב, حَبَّ to de-"
+      },
+      {
+       "draft": "sire, to love ; אָוָה and אָבָה to desire, to",
+       "reread": "sire, to love; אָוָה and אָבָה to desire, to",
+       "status": "agreed",
+       "text": "sire, to love; אָוָה and אָבָה to desire, to"
+      },
+      {
+       "draft": "be willing.",
+       "reread": "be willing.",
+       "status": "agreed",
+       "text": "be willing."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 60,
+      "y": 3171,
+      "width": 1780,
+      "height": 296
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0033/pass2/c0-r03-b02-1780x296+60+3171-x2.png",
+     "image_sha256": "b9f6e085c7e294575b65e94a7c43e3896780ac8d85a90ad2234465cedf3151ec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. to love, in which signif. it is kindr.",
+       "* אֲהָהּ interj. expressing grief, sor-",
+       "2*"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ceeb9680-caa4-4e15-8a67-bca96dd6d909",
+      "duration_api_ms": 11528,
+      "cost_usd_list": 0.07329375,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2468,
+      "output_tokens": 460
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "* אֲהָהּ interj. expressing grief, sor-",
+       "status": "reread_only",
+       "band_id": "c0-r03-b02",
+       "text": "* אֲהָהּ interj. expressing grief, sor-"
+      },
+      {
+       "draft": "2. to love, in which signif. it is kindr.",
+       "reread": "2. to love, in which signif. it is kindr.",
+       "status": "agreed",
+       "text": "2. to love, in which signif. it is kindr."
+      },
+      {
+       "draft": "2*",
+       "reread": "2*",
+       "status": "agreed",
+       "text": "2*"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18.",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אדר 17 אהה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "parenes brought from Mesopotamia to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Samaria, 2 K. 17, 31. b) A son of Sen-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "nacherib king of Assyria, who aided in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+   "status": "draft_only",
+   "draft": "with עָגַב, ἀγαπάω. With acc. Gen. 37,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. 4. Deut. 4, 37; rarely c. לְ Lev. 19, 18.",
+   "status": "draft_only",
+   "draft": "3. 4. Deut. 4, 37 ; rarely c. לְ Lev. 19, 18.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "34. 1 K. 5, 15; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+   "status": "draft_only",
+   "draft": "34. 1 K. 5, 15 ; c. בְּ Ecc. 5, 9. 1 Sam. 20,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "17 אַהֲבַת נַפְשׁוֹ אֲהֵבוֹ he loved him as he",
+   "status": "draft_only",
+   "draft": "17 אַהֲבַת נַפְשׁוֹ אֲהֵבוֹ he loved him as he",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "loved his own soul. Part. אֹהֵב a friend,",
+   "status": "draft_only",
+   "draft": "loved his own soul. Part. אֹהֵב a friend,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "loving and beloved, intimate, different",
+   "status": "draft_only",
+   "draft": "loving and beloved, intimate, different",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "from רֵעַ a companion, Prov. 18, 24. Esth.",
+   "status": "draft_only",
+   "draft": "from רֵעַ a companion, Prov. 18, 24. Esth.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "5, 10. 14. Is. 41, 8 זֶרַע אַבְרָהָם אֹהֲבִי the",
+   "status": "draft_only",
+   "draft": "5, 10. 14. Is. 41, 8 זֶרַע אַבְרָהָם אֹהֲבִי the",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "seed of Abraham my friend.",
+   "status": "draft_only",
+   "draft": "seed of Abraham my friend.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. to love to do any thing, to delight",
+   "status": "draft_only",
+   "draft": "3. to love to do any thing, to delight",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "in doing, seq. infin. c. לְ, Hos. 12, 8 לַעֲשֹׁק",
+   "status": "draft_only",
+   "draft": "in doing, seq. infin. c. לְ , Hos. 12, 8 לַעֲשֹׁק",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "slaying his father, Is. 37, 38. 2 K. 19, 37.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֶדְרָע Chald. i. q. דְּרָע, the arm, with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "א prosthetic, Ezra 4, 23. Hebr. זְרוֹעַ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "In the Targums with Patah אַדְרַע.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֶדְרֶעִי (strong, mighty) Edrei, pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a) The former metropolis of Bashan,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "situated in the territory of Manasseh,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Num. 21, 33. Deut. 1, 4. Josh. 12, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Called by Eusebius Ἀδραά, by Ptolemy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אָהֵב he loveth to oppress. Is. 56, 10. Jer.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "14, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Niph. part. נֶאֱהָב lovely, amiable, wor-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ἄδρα, by Arabian geographers زرع",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Zer'a, now درعا Der'â. [According to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Euseb. and the Peut. Tables, it lay 24",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Rom. miles from Bozrah on the way to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Capitolias and Gadara. See Reland",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Palæstina p. 547. Bibl. Res. in Pal. III.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "App. p. 152.—R.] b) A city in Naph-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "tali, Josh. 19, 37.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַדֶּרֶת 1. Fem. of adj. אַדִּיר, large,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "great, mighty, (comp. שַׁלִּיט, f. שַׁלֶּטֶת,)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ez. 17, 8 גֶּפֶן אַדֶּרֶת a large vine, i. e. full",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of branches and leaves. Comp. אַדִּיר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thy of love, 2 Sam. 1, 23.",
+   "status": "draft_only",
+   "draft": "thy of love, 2 Sam. 1, 23.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Piel part. מְאַהֵב 1. a friend, Zech.",
+   "status": "draft_only",
+   "draft": "Piel part. מְאַהֵב 1. a friend, Zech.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "13, 6.",
+   "status": "draft_only",
+   "draft": "13, 6.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. a lover, but only in a bad sense, a",
+   "status": "draft_only",
+   "draft": "2. a lover, but only in a bad sense, a",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "paramour, debauchee, Ez. 16, 33 sq. 23,",
+   "status": "draft_only",
+   "draft": "paramour, debauchee, Ez. 16, 33 sq. 23,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "5 sq. i. e. metaph. for an idolater.",
+   "status": "draft_only",
+   "draft": "5 sq. i. e. metaph. for an idolater.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Deriv. the three following.",
+   "status": "draft_only",
+   "draft": "Deriv. the three following.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֹהַב, only in plur. אֳהָבִים 1. loves,",
+   "status": "draft_only",
+   "draft": "אֹהַב, only in plur. אֳהָבִים 1. loves,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "spec. in a bad sense, amours, trop. of",
+   "status": "draft_only",
+   "draft": "spec. in a bad sense, amours, trop. of",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "intercourse and alliances with foreign",
+   "status": "draft_only",
+   "draft": "intercourse and alliances with foreign",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "nations, Hos. 8, 9.",
+   "status": "draft_only",
+   "draft": "nations, Hos. 8, 9.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. delight, loveliness. Prov. 5, 19 אַיֶּלֶת",
+   "status": "draft_only",
+   "draft": "2. delight, loveliness. Prov. 5, 19 אַיֶּלֶת",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲהָבִים a lovely hind.",
+   "status": "draft_only",
+   "draft": "אֲהָבִים a lovely hind.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֹהַב m. love, in sing. once meton. for",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "אֹהַב m. love, in sing. once meton. for",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lovers, paramours, Hos. 9, 10. Sept.",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "lovers, paramours, Hos. 9, 10. Sept.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "οἱ ἠγαπημένοι. Plur. אֲהָבִים loves, spec.",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "οἱ ἠγαπημένοι. Plur. אֲהָבִים loves, spec.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "amours, Prov. 7, 18.",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "amours, Prov. 7, 18.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. Subst. a wide cloak, mantle, pallium,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1 K. 19, 13. 19. 2 K. 2, 13. 14. Jon. 3, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַדֶּרֶת שִׁנְעָר a Babylonish mantle Josh. 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "21, i. e. variegated with figures, having",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+   "status": "draft_only",
+   "draft": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+   "status": "draft_only",
+   "draft": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "he threshes it.",
+   "status": "draft_only",
+   "draft": "he threshes it.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָהֵב and אָהַב fut. יֶאֱהַב and יֶאֱהָב,",
+   "status": "draft_only",
+   "draft": "* אָהֵב and אָהַב fut. יֶאֱהַב and יֶאֱהָב,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֹהַב m. love, in sing. once meton. for",
+   "status": "draft_only",
+   "draft": "אֹהַב m. love, in sing. once meton. for",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lovers, paramours, Hos. 9, 10. Sept.",
+   "status": "draft_only",
+   "draft": "lovers, paramours, Hos. 9, 10. Sept.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "οἱ ἠγαπημένοι. Plur. אֳהָבִים loves, spec.",
+   "status": "draft_only",
+   "draft": "οἱ ἠγαπημένοι. Plur. אֳהָבִים loves, spec.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "amours, Prov. 7, 18.",
+   "status": "draft_only",
+   "draft": "amours, Prov. 7, 18.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "loved Israel. In the same sense with",
+   "status": "draft_only",
+   "draft": "loved Israel. In the same sense with",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pref. כְּ Hos. 3, 1, and מִן Deut. 7, 8 מֵאַהֲבַת",
+   "status": "draft_only",
+   "draft": "pref. כְּ Hos. 3, 1, and מִן Deut. 7, 8 מֵאַהֲבַת",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "יְהוָֹה אֶתְכֶם because Jehovah loved you.",
+   "status": "draft_only",
+   "draft": "יְהוָֹה אֶתְכֶם because Jehovah loved you.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. love, espec. between the sexes, Cant.",
+   "status": "draft_only",
+   "draft": "2. love, espec. between the sexes, Cant.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2, 4. 5, 8. 8, 6. 7; of God towards men",
+   "status": "draft_only",
+   "draft": "2, 4. 5, 8. 8, 6. 7; of God towards men",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the figures of men and animals interwo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ven in colours; comp. Plin. H. N. 8. 48.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "So אַדֶּרֶת שֵׂעָר a hairy mantle, shaggy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with hair, or (according to some) of fur,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Gen. 25, 25. Zech. 13, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "3. splendour, glory, Zech. 11, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַהֲבָה f. 1. Inf. fem. of the verb אָהַב,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "with לְ pref. Is. 56, 6 לְאַהֲבָה אֶת־שֵׁם יְהוָֹה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to love the name of Jehovah. Deut. 10,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "15. 11, 13. 22. Josh. 22, 5. 23, 11. With",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "בְּ 1 K. 10, 9 בְּאַהֲבַת יְהוָֹה אֶת־יִשְׂרָאֵל in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Jehovah's loving Israel, i. e. because he",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "* אָדַשׁ i. q. דּוּשׁ, to thresh, once inf.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "absol. Is. 28, 28 אָדוֹשׁ יְדוּשֶׁנּוּ threshing",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "he threshes it.",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "he threshes it.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָהַב and אָהֵב fut. יֶאֱהַב and יֶאֱהָב,",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "* אָהַב and אָהֵב fut. יֶאֱהַב and יֶאֱהָב,",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 pers. אֵהָב Prov. 8, 17 and אֹהַב Hos. 14,",
+   "status": "adjudicated",
+   "draft": "1 pers. אֵהָב Prov. 8, 17 and אֹהַב Hos. 14,",
+   "reread": "1 pers. אֱהַב Prov. 8, 17 and אֹהֵב Hos. 14,",
+   "verdict": "a",
+   "note": "Under the first aleph the print shows two side-by-side dots (tsere), not three (segol); under the second word's he the mark is a horizontal patach stroke, not two dots — so Reading A matches the print (and the MT/Thesaurus forms אֵהָב, אֹהַב).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5; inf. אֱהֹב Ecc. 3, 8, also אַהֲבָה q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1. to breathe after, to long for, to de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sire, c. acc. Ps. 4, 4. 40, 17. 70, 5; seq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Hos. 3, 1; of friends towards each other,",
+   "status": "draft_only",
+   "draft": "Hos. 3, 1 ; of friends towards each other,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 Sam. 18, 3.",
+   "status": "draft_only",
+   "draft": "1 Sam. 18, 3.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "3. love, delight, concr. one beloved,",
+   "status": "draft_only",
+   "draft": "3. love, delight, concr. one beloved,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "fem. Cant. 2, 7. 3, 5. So perh. v. 10,",
+   "status": "draft_only",
+   "draft": "fem. Cant. 2, 7. 3, 5. So perh. v. 10,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "where others as adv. lovely.",
+   "status": "draft_only",
+   "draft": "where others as adv. lovely.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אָהַד obsol. root, i. q. אָחַד to be one,",
+   "status": "draft_only",
+   "draft": "* אָהַד obsol. root, i. q. אָחַד to be one,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "united. Hence אֵהוּד and",
+   "status": "draft_only",
+   "draft": "united. Hence אֵהוּד and",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֹהַד Ohad, pr. n. of a son of Simeon,",
+   "status": "draft_only",
+   "draft": "אֹהַד Ohad, pr. n. of a son of Simeon,",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Gen. 46, 10.",
+   "status": "draft_only",
+   "draft": "Gen. 46, 10.",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אֲהָהּ interj. expressing grief, sor-",
+   "status": "draft_only",
+   "draft": "* אֲהָהּ interj. expressing grief, sor-",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "כִּי Ps. 116, 1.—This sense of breathing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "after belongs to the syllables הב, חב,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and with the letters softened אב, או;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "comp. the roots הָבַל; חָבַב, حَبَّ to de-",
+   "status": "adjudicated",
+   "draft": "comp. the roots חָבַל ; חָבַב, حَبَّ to de-",
+   "reread": "comp. the roots הָבַל; חָבַב, حَبَّ to de-",
+   "verdict": "b",
+   "note": "The first root's initial letter is printed as he (ה, open at the top-left), not chet — consistent with the preceding line's \"letters softened\" (הב, אב) and Gesenius's comparison of הבל 'to breathe'. Reading B is correct; Reading A's חָבַל is wrong.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sire, to love; אָוָה and אָבָה to desire, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "be willing.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אֲהָהּ interj. expressing grief, sor-",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "* אֲהָהּ interj. expressing grief, sor-",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. to love, in which signif. it is kindr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2*",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 56,
+  "adjudicated": 2,
+  "draft_only": 47,
+  "reread_only": 12,
+  "unresolved": 0,
+  "needs_review": 60
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 1.1952
+}

@@ -1,0 +1,2646 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 25,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0025.png",
+ "raster_sha256": "1706032c8d739fb3ecb794635d3a6101586a52187543eac6266f99dd40dd15a9",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0025.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T08:49:19+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 71,
+    "y": 90,
+    "width": 1770,
+    "height": 88
+   },
+   "draft_lines": [
+    "אבן",
+    "9",
+    "אבק"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 71,
+      "y": 88,
+      "width": 1770,
+      "height": 92
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/header-b00-1770x92+71+88-x2.png",
+     "image_sha256": "686b03c20c46e342b0e0f72de3bd935d79137fe091ab93f92f8f54663dbcaa47",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אבן 9 אבק"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "12bd779f-1555-4de4-9c7f-7dff81485884",
+      "duration_api_ms": 7139,
+      "cost_usd_list": 0.0477225,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 183
+     },
+     "lines": [
+      {
+       "draft": "אבן 9 אבק",
+       "reread": "אבן 9 אבק",
+       "status": "agreed",
+       "text": "אבן 9 אבק"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 71,
+    "y": 134,
+    "width": 871,
+    "height": 806
+   },
+   "draft_lines": [
+    "16, 11.—Zech. 5, 8 אֶבֶן הָעוֹפֶרֶת the leaden",
+    "weight. 4, 10 אֶבֶן הַבְּדִיל.—Also a plum-",
+    "met, Is. 34, 11 he shall stretch out upon it",
+    "the line of wasteness וְאַבְנֵי בֹהוּ and the",
+    "plummet of desolation, i. e. as if all things",
+    "are to be destroyed by line and rule ; as",
+    "to the sense, comp. Am. 7, 8.",
+    "6. Sometimes a stone serves as a de-",
+    "signation in geographical names, e. g.",
+    "a) אֶבֶן עֵזֶר (stone of help) Eben-ezer, set",
+    "up by Samuel at Mizpeh, 1 Sam. 4, 1.",
+    "5, 1. 7, 12. b) אֶבֶן הָאָזֶל (stone of de-",
+    "parture) 1 Sam. 20, 19 ; comp. זֹחֶלֶת."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 71,
+      "y": 126,
+      "width": 871,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r00-b00-871x247+71+126-x2.png",
+     "image_sha256": "3ba7db8f5ae2e0c3d10a7084c417e2a18f48533eccacccb467905be5fca0af33",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "16, 11.—Zech. 5, 8 אֶבֶן הָעוֹפֶרֶת the leaden",
+       "weight. 4, 10 אֶבֶן הַבְּדִיל.—Also a plum-",
+       "met, Is. 34, 11 he shall stretch out upon it"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba7d3864-d1a2-45af-bfe8-3aa2a0bc3e65",
+      "duration_api_ms": 6918,
+      "cost_usd_list": 0.07731325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 446
+     },
+     "lines": [
+      {
+       "draft": "16, 11.—Zech. 5, 8 אֶבֶן הָעוֹפֶרֶת the leaden",
+       "reread": "16, 11.—Zech. 5, 8 אֶבֶן הָעוֹפֶרֶת the leaden",
+       "status": "agreed",
+       "text": "16, 11.—Zech. 5, 8 אֶבֶן הָעוֹפֶרֶת the leaden"
+      },
+      {
+       "draft": "weight. 4, 10 אֶבֶן הַבְּדִיל.—Also a plum-",
+       "reread": "weight. 4, 10 אֶבֶן הַבְּדִיל.—Also a plum-",
+       "status": "agreed",
+       "text": "weight. 4, 10 אֶבֶן הַבְּדִיל.—Also a plum-"
+      },
+      {
+       "draft": "met, Is. 34, 11 he shall stretch out upon it",
+       "reread": "met, Is. 34, 11 he shall stretch out upon it",
+       "status": "agreed",
+       "text": "met, Is. 34, 11 he shall stretch out upon it"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 71,
+      "y": 357,
+      "width": 871,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r00-b01-871x235+71+357-x2.png",
+     "image_sha256": "7af2eafb5f878af688ccfa770719aaa0e9337c70274f8df4b7091a5a3155ddf7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the line of wasteness וְאַבְנֵי בֹהוּ and the",
+       "plummet of desolation, i. e. as if all things",
+       "are to be destroyed by line and rule ; as",
+       "to the sense, comp. Am. 7, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3e24a2f0-3a5b-4c0f-801e-06d550791c7c",
+      "duration_api_ms": 8316,
+      "cost_usd_list": 0.06655325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "the line of wasteness וְאַבְנֵי בֹהוּ and the",
+       "reread": "the line of wasteness וְאַבְנֵי בֹהוּ and the",
+       "status": "agreed",
+       "text": "the line of wasteness וְאַבְנֵי בֹהוּ and the"
+      },
+      {
+       "draft": "plummet of desolation, i. e. as if all things",
+       "reread": "plummet of desolation, i. e. as if all things",
+       "status": "agreed",
+       "text": "plummet of desolation, i. e. as if all things"
+      },
+      {
+       "draft": "are to be destroyed by line and rule ; as",
+       "reread": "are to be destroyed by line and rule ; as",
+       "status": "agreed",
+       "text": "are to be destroyed by line and rule; as"
+      },
+      {
+       "draft": "to the sense, comp. Am. 7, 8.",
+       "reread": "to the sense, comp. Am. 7, 8.",
+       "status": "agreed",
+       "text": "to the sense, comp. Am. 7, 8."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 71,
+      "y": 576,
+      "width": 871,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r00-b02-871x239+71+576-x2.png",
+     "image_sha256": "6b35bb195bf9b274c993d1df7b04e92414a2d7d796ec51344a3da3a13f6759af",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "6. Sometimes a stone serves as a de-",
+       "signation in geographical names, e. g.",
+       "a) אֶבֶן עֵזֶר (stone of help) Eben-ezer, set",
+       "up by Samuel at Mizpeh, 1 Sam. 4, 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b2d1d5f9-2406-46ed-93af-992d3a4d5c83",
+      "duration_api_ms": 9438,
+      "cost_usd_list": 0.07296325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 359
+     },
+     "lines": [
+      {
+       "draft": "6. Sometimes a stone serves as a de-",
+       "reread": "6. Sometimes a stone serves as a de-",
+       "status": "agreed",
+       "text": "6. Sometimes a stone serves as a de-"
+      },
+      {
+       "draft": "signation in geographical names, e. g.",
+       "reread": "signation in geographical names, e. g.",
+       "status": "agreed",
+       "text": "signation in geographical names, e. g."
+      },
+      {
+       "draft": "a) אֶבֶן עֵזֶר (stone of help) Eben-ezer, set",
+       "reread": "a) אֶבֶן עֵזֶר (stone of help) Eben-ezer, set",
+       "status": "agreed",
+       "text": "a) אֶבֶן עֵזֶר (stone of help) Eben-ezer, set"
+      },
+      {
+       "draft": "up by Samuel at Mizpeh, 1 Sam. 4, 1.",
+       "reread": "up by Samuel at Mizpeh, 1 Sam. 4, 1.",
+       "status": "agreed",
+       "text": "up by Samuel at Mizpeh, 1 Sam. 4, 1."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 71,
+      "y": 799,
+      "width": 871,
+      "height": 127
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r00-b03-871x127+71+799-x2.png",
+     "image_sha256": "1707e4b43790586d62afbc97cb085e2bd50e86ea7a3481b07451d48c11c69aad",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5, 1. 7, 12.  b) אֶבֶן הָאֶזֶל (stone of de-",
+       "parture) 1 Sam. 20, 19; comp. זוֹחֶלֶת."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aa233206-d41f-4c5f-8e95-d722d2242062",
+      "duration_api_ms": 10123,
+      "cost_usd_list": 0.06778324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2185,
+      "output_tokens": 457
+     },
+     "lines": [
+      {
+       "draft": "5, 1. 7, 12. b) אֶבֶן הָאָזֶל (stone of de-",
+       "reread": "5, 1. 7, 12.  b) אֶבֶן הָאֶזֶל (stone of de-",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "5, 1. 7, 12. b) אֶבֶן הָאָזֶל (stone of de-",
+        "verdict": "a",
+        "note": "Under the aleph of הָאָזֶל the printed point is a qamets (T-shaped stroke), not a segol; Reading A is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "be20ad37-efc4-43e8-988a-bdb71dcb0d29",
+        "duration_api_ms": 15383,
+        "cost_usd_list": 0.06949,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2140,
+        "output_tokens": 509
+       },
+       "text": "5, 1. 7, 12. b) אֶבֶן הָאָזֶל (stone of de-"
+      },
+      {
+       "draft": "parture) 1 Sam. 20, 19 ; comp. זֹחֶלֶת.",
+       "reread": "parture) 1 Sam. 20, 19; comp. זוֹחֶלֶת.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "parture) 1 Sam. 20, 19 ; comp. זוֹחֶלֶת.",
+        "verdict": "neither",
+        "note": "The Hebrew is printed plene with a vav (holem dot over the vav: זוֹחֶלֶת), so B is right on the spelling, but the print has a visible thin space before the semicolon (\"19 ;\") as in A. Neither reading matches exactly.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "dfb7957d-9f58-4b8c-9f2a-829015160bf8",
+        "duration_api_ms": 13016,
+        "cost_usd_list": 0.07230775,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3591,
+        "cache_creation_input_tokens": 2131,
+        "output_tokens": 569
+       },
+       "text": "parture) 1 Sam. 20, 19; comp. זוֹחֶלֶת."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 71,
+    "y": 928,
+    "width": 871,
+    "height": 888
+   },
+   "draft_lines": [
+    "אֶבֶן Chald. st. emphat. אַבְנָא, id. Dan.",
+    "2, 34. 35.",
+    "אֲבָנָה 2 K. 5, 12 in Chethibh for אֲמָנָה",
+    "q. v. Comp. in lett. ב.",
+    "אֹבֶן i. q. אֶבֶן, a stone, only in Dual",
+    "אָבְנַיִם pr. pair of stones, and spoken",
+    "1. Of a potter's wheel. Jer. 18, 3",
+    "הִנֵּהוּ עֹשֶׂה מְלָאכָה עַל־הָאָבְנָיִם behold he",
+    "(the potter) wrought a work upon the",
+    "wheel. It appears to have consisted of",
+    "two stones, one above and the other",
+    "below, and is so depicted on Egyptian",
+    "monuments: See Rosellini"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 71,
+      "y": 942,
+      "width": 871,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r01-b00-871x257+71+942-x2.png",
+     "image_sha256": "3661fd93eaed3c1a5bc291b7aea66e114168c4298d02a6cf4eb84f211e04ab59",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶבֶן Chald. st. emphat. אַבְנָא, id. Dan.",
+       "2, 34. 35.",
+       "אֲבָנָה 2 K. 5, 12 in Chethibh for אֲמָנָה",
+       "q. v. Comp. in lett. ב."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3230ee23-fae1-4031-aa6e-9c3a5c2d9206",
+      "duration_api_ms": 8955,
+      "cost_usd_list": 0.06977325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "אֶבֶן Chald. st. emphat. אַבְנָא, id. Dan.",
+       "reread": "אֶבֶן Chald. st. emphat. אַבְנָא, id. Dan.",
+       "status": "agreed",
+       "text": "אֶבֶן Chald. st. emphat. אַבְנָא, id. Dan."
+      },
+      {
+       "draft": "2, 34. 35.",
+       "reread": "2, 34. 35.",
+       "status": "agreed",
+       "text": "2, 34. 35."
+      },
+      {
+       "draft": "אֲבָנָה 2 K. 5, 12 in Chethibh for אֲמָנָה",
+       "reread": "אֲבָנָה 2 K. 5, 12 in Chethibh for אֲמָנָה",
+       "status": "agreed",
+       "text": "אֲבָנָה 2 K. 5, 12 in Chethibh for אֲמָנָה"
+      },
+      {
+       "draft": "q. v. Comp. in lett. ב.",
+       "reread": "q. v. Comp. in lett. ב.",
+       "status": "agreed",
+       "text": "q. v. Comp. in lett. ב."
+      },
+      {
+       "draft": "הִנֵּהוּ עֹשֶׂה מְלָאכָה עַל־הָאָבְנָיִם behold he",
+       "reread": null,
+       "status": "draft_only",
+       "text": "הִנֵּהוּ עֹשֶׂה מְלָאכָה עַל־הָאָבְנָיִם behold he"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 71,
+      "y": 1183,
+      "width": 871,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r01-b01-871x254+71+1183-x2.png",
+     "image_sha256": "8fc718f825d7ff8c5b05144a75bf310efe2a05e54371e67b1723b25bd28b314b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֹבֶן i. q. אֶבֶן, a stone, only in Dual",
+       "אָבְנַיִם pr. pair of stones, and spoken",
+       "1. Of a potter's wheel. Jer. 18, 3"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "05d3167e-b6bd-4219-87aa-3c291b99b4a6",
+      "duration_api_ms": 12096,
+      "cost_usd_list": 0.08256349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 525
+     },
+     "lines": [
+      {
+       "draft": "אֹבֶן i. q. אֶבֶן, a stone, only in Dual",
+       "reread": "אֹבֶן i. q. אֶבֶן, a stone, only in Dual",
+       "status": "agreed",
+       "text": "אֹבֶן i. q. אֶבֶן, a stone, only in Dual"
+      },
+      {
+       "draft": "אָבְנַיִם pr. pair of stones, and spoken",
+       "reread": "אָבְנַיִם pr. pair of stones, and spoken",
+       "status": "agreed",
+       "text": "אָבְנַיִם pr. pair of stones, and spoken"
+      },
+      {
+       "draft": "1. Of a potter's wheel. Jer. 18, 3",
+       "reread": "1. Of a potter's wheel. Jer. 18, 3",
+       "status": "agreed",
+       "text": "1. Of a potter's wheel. Jer. 18, 3"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 71,
+      "y": 1421,
+      "width": 871,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r01-b02-871x193+71+1421-x2.png",
+     "image_sha256": "3cc1ca02257be90dd0790a798281fa83f99837bc3e7910fb09adc8440b423fa4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(the potter) wrought a work upon the",
+       "wheel. It appears to have consisted of",
+       "two stones, one above and the other"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88ab1a4b-ff25-41e3-a804-984416e3b722",
+      "duration_api_ms": 8115,
+      "cost_usd_list": 0.0624135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 248
+     },
+     "lines": [
+      {
+       "draft": "(the potter) wrought a work upon the",
+       "reread": "(the potter) wrought a work upon the",
+       "status": "agreed",
+       "text": "(the potter) wrought a work upon the"
+      },
+      {
+       "draft": "wheel. It appears to have consisted of",
+       "reread": "wheel. It appears to have consisted of",
+       "status": "agreed",
+       "text": "wheel. It appears to have consisted of"
+      },
+      {
+       "draft": "two stones, one above and the other",
+       "reread": "two stones, one above and the other",
+       "status": "agreed",
+       "text": "two stones, one above and the other"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 71,
+      "y": 1598,
+      "width": 871,
+      "height": 213
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r01-b03-871x213+71+1598-x2.png",
+     "image_sha256": "33f58004aad0ea1aa4af6321fbe0819972f063f2917ac631cf3ef92e60aa6e39",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "below, and is so depicted on Egyptian",
+       "monuments: See Rosellini"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c7323ba6-ff31-4219-9571-91783b5fc2a3",
+      "duration_api_ms": 9735,
+      "cost_usd_list": 0.0720335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 390
+     },
+     "lines": [
+      {
+       "draft": "below, and is so depicted on Egyptian",
+       "reread": "below, and is so depicted on Egyptian",
+       "status": "agreed",
+       "text": "below, and is so depicted on Egyptian"
+      },
+      {
+       "draft": "monuments: See Rosellini",
+       "reread": "monuments: See Rosellini",
+       "status": "agreed",
+       "text": "monuments: See Rosellini"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 71,
+    "y": 1804,
+    "width": 871,
+    "height": 680
+   },
+   "draft_lines": [
+    "Monum. Civil. Tab. L. Wilkinson's",
+    "Manners and Cust. of the Anc. Egypt. III.",
+    "p. 164. Originally, and also for potters",
+    "working in the open air, it seems to have",
+    "been made of stone ; afterwards of wood.",
+    "A wooden wheel of this kind is called in",
+    "the Talmud סֶדָן, pr. trunk, stem, then",
+    "cippus, then a potter's wheel made of a",
+    "trunk, and also a cart-wheel made in like",
+    "manner.—Hence, from the resemblance,",
+    "it comes to signify",
+    "2. a low seat, stool, on which the work-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 71,
+      "y": 1810,
+      "width": 871,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r02-b00-871x230+71+1810-x2.png",
+     "image_sha256": "a763a22ad592a234cd3c2dacbbbe81fcce2847b938161f8828d6c8dd89b0b8da",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Monum. Civil. Tab. L. Wilkinson's",
+       "Manners and Cust. of the Anc. Egypt. III.",
+       "p. 164. Originally, and also for potters",
+       "working in the open air, it seems to have"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88cb13a9-f16f-45cb-a3f8-f95131d435ce",
+      "duration_api_ms": 7680,
+      "cost_usd_list": 0.0663435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 251
+     },
+     "lines": [
+      {
+       "draft": "Monum. Civil. Tab. L. Wilkinson's",
+       "reread": "Monum. Civil. Tab. L. Wilkinson's",
+       "status": "agreed",
+       "text": "Monum. Civil. Tab. L. Wilkinson's"
+      },
+      {
+       "draft": "Manners and Cust. of the Anc. Egypt. III.",
+       "reread": "Manners and Cust. of the Anc. Egypt. III.",
+       "status": "agreed",
+       "text": "Manners and Cust. of the Anc. Egypt. III."
+      },
+      {
+       "draft": "p. 164. Originally, and also for potters",
+       "reread": "p. 164. Originally, and also for potters",
+       "status": "agreed",
+       "text": "p. 164. Originally, and also for potters"
+      },
+      {
+       "draft": "working in the open air, it seems to have",
+       "reread": "working in the open air, it seems to have",
+       "status": "agreed",
+       "text": "working in the open air, it seems to have"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 71,
+      "y": 2024,
+      "width": 871,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r02-b01-871x238+71+2024-x2.png",
+     "image_sha256": "1e58e6cba6d56493b32cf95238931d4b8a5076da2f8c422fad959622eeb8bf92",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "been made of stone ; afterwards of wood.",
+       "A wooden wheel of this kind is called in",
+       "the Talmud סֶדָן, pr. trunk, stem, then",
+       "cippus, then a potter's wheel made of a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4d7552b7-3855-47a9-a47d-ab0105803d24",
+      "duration_api_ms": 9785,
+      "cost_usd_list": 0.07079349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 340
+     },
+     "lines": [
+      {
+       "draft": "been made of stone ; afterwards of wood.",
+       "reread": "been made of stone ; afterwards of wood.",
+       "status": "agreed",
+       "text": "been made of stone; afterwards of wood."
+      },
+      {
+       "draft": "A wooden wheel of this kind is called in",
+       "reread": "A wooden wheel of this kind is called in",
+       "status": "agreed",
+       "text": "A wooden wheel of this kind is called in"
+      },
+      {
+       "draft": "the Talmud סֶדָן, pr. trunk, stem, then",
+       "reread": "the Talmud סֶדָן, pr. trunk, stem, then",
+       "status": "agreed",
+       "text": "the Talmud סֶדָן, pr. trunk, stem, then"
+      },
+      {
+       "draft": "cippus, then a potter's wheel made of a",
+       "reread": "cippus, then a potter's wheel made of a",
+       "status": "agreed",
+       "text": "cippus, then a potter's wheel made of a"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 71,
+      "y": 2246,
+      "width": 871,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r02-b02-871x246+71+2246-x2.png",
+     "image_sha256": "70701cd0cdcb5d76f893af63ca0a48d92ebb6677865b051b2e1f2051981e6c0b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "trunk, and also a cart-wheel made in like",
+       "manner.—Hence, from the resemblance,",
+       "it comes to signify",
+       "2. a low seat, stool, on which the work-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e8eced2e-ada7-463f-ad45-9fe8cb70f005",
+      "duration_api_ms": 7533,
+      "cost_usd_list": 0.0668535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 236
+     },
+     "lines": [
+      {
+       "draft": "trunk, and also a cart-wheel made in like",
+       "reread": "trunk, and also a cart-wheel made in like",
+       "status": "agreed",
+       "text": "trunk, and also a cart-wheel made in like"
+      },
+      {
+       "draft": "manner.—Hence, from the resemblance,",
+       "reread": "manner.—Hence, from the resemblance,",
+       "status": "agreed",
+       "text": "manner.—Hence, from the resemblance,"
+      },
+      {
+       "draft": "it comes to signify",
+       "reread": "it comes to signify",
+       "status": "agreed",
+       "text": "it comes to signify"
+      },
+      {
+       "draft": "2. a low seat, stool, on which the work-",
+       "reread": "2. a low seat, stool, on which the work-",
+       "status": "agreed",
+       "text": "2. a low seat, stool, on which the work-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 71,
+    "y": 2472,
+    "width": 871,
+    "height": 873
+   },
+   "draft_lines": [
+    "man sat; made, it would seem, of a block",
+    "of wood, and frequently represented on",
+    "Egyptian monuments. A seat of this",
+    "kind was doubtless used by the midwife",
+    "while assisting a woman in labour lying",
+    "on a bed. So Ex. 1, 16 when ye do the",
+    "office of a midwife to the Hebrew women",
+    "וּרְאִיתֶן עַל־הָאָבְנָיִם אִם־בֵּן הוּא then shall",
+    "ye see (while yet) upon the stool, whether",
+    "it be a boy, etc. The midwife is di-",
+    "rected, at the very moment of birth,",
+    "while she yet sits on her stool and no",
+    "one else has seen or touched the infant,",
+    "to ascertain its sex by the sight or ra-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 71,
+      "y": 2464,
+      "width": 871,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r03-b00-871x241+71+2464-x2.png",
+     "image_sha256": "8a68363ee7f6c1af5e4e289c136e5224c5cf2a7b03f82101b5f1b04439b2d67d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "man sat ; made, it would seem, of a block",
+       "of wood, and frequently represented on",
+       "Egyptian monuments. A seat of this",
+       "kind was doubtless used by the midwife"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "55b35d76-d474-4315-8392-a588b798bc74",
+      "duration_api_ms": 7834,
+      "cost_usd_list": 0.0669035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 237
+     },
+     "lines": [
+      {
+       "draft": "man sat; made, it would seem, of a block",
+       "reread": "man sat ; made, it would seem, of a block",
+       "status": "agreed",
+       "text": "man sat; made, it would seem, of a block"
+      },
+      {
+       "draft": "of wood, and frequently represented on",
+       "reread": "of wood, and frequently represented on",
+       "status": "agreed",
+       "text": "of wood, and frequently represented on"
+      },
+      {
+       "draft": "Egyptian monuments. A seat of this",
+       "reread": "Egyptian monuments. A seat of this",
+       "status": "agreed",
+       "text": "Egyptian monuments. A seat of this"
+      },
+      {
+       "draft": "kind was doubtless used by the midwife",
+       "reread": "kind was doubtless used by the midwife",
+       "status": "agreed",
+       "text": "kind was doubtless used by the midwife"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 71,
+      "y": 2689,
+      "width": 871,
+      "height": 225
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r03-b01-871x225+71+2689-x2.png",
+     "image_sha256": "2239d7d178a337df5939e187023326bb6d36090d3421df764c59242275d22f0f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "while assisting a woman in labour lying",
+       "on a bed. So Ex. 1, 16 when ye do the",
+       "office of a midwife to the Hebrew women",
+       "וּרְאִיתֶן עַל־הָאָבְנָיִם אִם־בֵּן הוּא then shall"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3e1893de-8263-4463-ae98-64c632f37e32",
+      "duration_api_ms": 11025,
+      "cost_usd_list": 0.0749435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "while assisting a woman in labour lying",
+       "reread": "while assisting a woman in labour lying",
+       "status": "agreed",
+       "text": "while assisting a woman in labour lying"
+      },
+      {
+       "draft": "on a bed. So Ex. 1, 16 when ye do the",
+       "reread": "on a bed. So Ex. 1, 16 when ye do the",
+       "status": "agreed",
+       "text": "on a bed. So Ex. 1, 16 when ye do the"
+      },
+      {
+       "draft": "office of a midwife to the Hebrew women",
+       "reread": "office of a midwife to the Hebrew women",
+       "status": "agreed",
+       "text": "office of a midwife to the Hebrew women"
+      },
+      {
+       "draft": "וּרְאִיתֶן עַל־הָאָבְנָיִם אִם־בֵּן הוּא then shall",
+       "reread": "וּרְאִיתֶן עַל־הָאָבְנָיִם אִם־בֵּן הוּא then shall",
+       "status": "agreed",
+       "text": "וּרְאִיתֶן עַל־הָאָבְנָיִם אִם־בֵּן הוּא then shall"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 71,
+      "y": 2898,
+      "width": 871,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r03-b02-871x193+71+2898-x2.png",
+     "image_sha256": "bea4578fba37b3cef05ef2af934211fabcba3b91a573a75ac928f4de7f8de2ad",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ye see (while yet) upon the stool, whether",
+       "it be a boy, etc. The midwife is di-",
+       "rected, at the very moment of birth,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d19ea6b4-ff0b-4a27-b111-f18742eb8336",
+      "duration_api_ms": 7671,
+      "cost_usd_list": 0.06131349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 226
+     },
+     "lines": [
+      {
+       "draft": "ye see (while yet) upon the stool, whether",
+       "reread": "ye see (while yet) upon the stool, whether",
+       "status": "agreed",
+       "text": "ye see (while yet) upon the stool, whether"
+      },
+      {
+       "draft": "it be a boy, etc. The midwife is di-",
+       "reread": "it be a boy, etc. The midwife is di-",
+       "status": "agreed",
+       "text": "it be a boy, etc. The midwife is di-"
+      },
+      {
+       "draft": "rected, at the very moment of birth,",
+       "reread": "rected, at the very moment of birth,",
+       "status": "agreed",
+       "text": "rected, at the very moment of birth,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 71,
+      "y": 3075,
+      "width": 871,
+      "height": 272
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c0-r03-b03-871x272+71+3075-x2.png",
+     "image_sha256": "6e7ce81dd2311a35c6722a1e256f0b7abfc3d816fb44bd1af86068a77e8b2246",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "while she yet sits on her stool and no",
+       "one else has seen or touched the infant,",
+       "to ascertain its sex by the sight or ra-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9f340144-6056-44cd-acf2-1a62a73924f7",
+      "duration_api_ms": 7582,
+      "cost_usd_list": 0.0686735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "while she yet sits on her stool and no",
+       "reread": "while she yet sits on her stool and no",
+       "status": "agreed",
+       "text": "while she yet sits on her stool and no"
+      },
+      {
+       "draft": "one else has seen or touched the infant,",
+       "reread": "one else has seen or touched the infant,",
+       "status": "agreed",
+       "text": "one else has seen or touched the infant,"
+      },
+      {
+       "draft": "to ascertain its sex by the sight or ra-",
+       "reread": "to ascertain its sex by the sight or ra-",
+       "status": "agreed",
+       "text": "to ascertain its sex by the sight or ra-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 965,
+    "y": 134,
+    "width": 876,
+    "height": 877
+   },
+   "draft_lines": [
+    "ther touch, and, if it be a male, to kill it ;",
+    "as she could easily do by the pressure",
+    "of her hand or finger, unknown to the",
+    "parents.",
+    "אַבְנֵט m. (for בְּנֵט, Aleph prosthet.) c.",
+    "suff. אַבְנֵטְךָ ; plur. אַבְנֵטִים ; a belt, gir-",
+    "dle, worn by the priests, Ex. 28, 4. 39. 40.",
+    "Lev. 16, 4 ; also by other persons of rank,",
+    "Is. 22, 21. Comp. Jos. Ant. 3. 7. 2.",
+    "Chald. פֶּנֶד, פּוּנְדָא, אֲפוּנְדָא, a belt. This",
+    "word both in Heb. and Chald. is derived",
+    "from the Persian, where بند (Sanscr.",
+    "bandha, Germ. and Engl. band) denotes",
+    "any thing that binds, and also a girdle."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 965,
+      "y": 126,
+      "width": 876,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r00-b00-876x245+965+126-x2.png",
+     "image_sha256": "59b678f4a690783997d31a33452b214a7a4a3d48e42e9fea0012051889ff7bb6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אבן",
+       "ther touch, and, if it be a male, to kill it ;",
+       "as she could easily do by the pressure",
+       "of her hand or finger, unknown to the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f17bd7e0-1431-4a2f-ba71-55fdd336676c",
+      "duration_api_ms": 9475,
+      "cost_usd_list": 0.07191324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 338
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "אבן",
+       "status": "reread_only",
+       "band_id": "c1-r00-b00",
+       "text": "אבן"
+      },
+      {
+       "draft": "ther touch, and, if it be a male, to kill it ;",
+       "reread": "ther touch, and, if it be a male, to kill it ;",
+       "status": "agreed",
+       "text": "ther touch, and, if it be a male, to kill it;"
+      },
+      {
+       "draft": "as she could easily do by the pressure",
+       "reread": "as she could easily do by the pressure",
+       "status": "agreed",
+       "text": "as she could easily do by the pressure"
+      },
+      {
+       "draft": "of her hand or finger, unknown to the",
+       "reread": "of her hand or finger, unknown to the",
+       "status": "agreed",
+       "text": "of her hand or finger, unknown to the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 965,
+      "y": 355,
+      "width": 876,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r00-b01-876x252+965+355-x2.png",
+     "image_sha256": "53ac765775edc04acfe9aac1ca1d6e6bde420994446b3bafcdad9546fd7b2844",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "parents.",
+       "אַבְנֵט m. (for בְּנֵט, Aleph prosthet.) c.",
+       "suff. אַבְנֵטְךָ ; plur. אַבְנֵטִים ; a belt, gir-",
+       "dle, worn by the priests, Ex. 28, 4. 39. 40."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "979680c0-1571-4b60-a307-9751442db582",
+      "duration_api_ms": 11926,
+      "cost_usd_list": 0.08241325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 548
+     },
+     "lines": [
+      {
+       "draft": "parents.",
+       "reread": "parents.",
+       "status": "agreed",
+       "text": "parents."
+      },
+      {
+       "draft": "אַבְנֵט m. (for בְּנֵט, Aleph prosthet.) c.",
+       "reread": "אַבְנֵט m. (for בְּנֵט, Aleph prosthet.) c.",
+       "status": "agreed",
+       "text": "אַבְנֵט m. (for בְּנֵט, Aleph prosthet.) c."
+      },
+      {
+       "draft": "suff. אַבְנֵטְךָ ; plur. אַבְנֵטִים ; a belt, gir-",
+       "reread": "suff. אַבְנֵטְךָ ; plur. אַבְנֵטִים ; a belt, gir-",
+       "status": "agreed",
+       "text": "suff. אַבְנֵטְךָ; plur. אַבְנֵטִים; a belt, gir-"
+      },
+      {
+       "draft": "dle, worn by the priests, Ex. 28, 4. 39. 40.",
+       "reread": "dle, worn by the priests, Ex. 28, 4. 39. 40.",
+       "status": "agreed",
+       "text": "dle, worn by the priests, Ex. 28, 4. 39. 40."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 965,
+      "y": 591,
+      "width": 876,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r00-b02-876x228+965+591-x2.png",
+     "image_sha256": "695694fcada4ace77b962cb8ca53f159c0cbaa191bcefe1341d5ab4aef22afe5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Lev. 16, 4 ; also by other persons of rank,",
+       "Is. 22, 21. Comp. Jos. Ant. 3. 7. 2.",
+       "Chald. פֻּנְדָּ, פּוּנְדָּא, אֲפוּנְדָּא, a belt. This",
+       "word both in Heb. and Chald. is derived"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3febc894-1a7e-404a-b826-304427ff4040",
+      "duration_api_ms": 10778,
+      "cost_usd_list": 0.08465325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 618
+     },
+     "lines": [
+      {
+       "draft": "Lev. 16, 4 ; also by other persons of rank,",
+       "reread": "Lev. 16, 4 ; also by other persons of rank,",
+       "status": "agreed",
+       "text": "Lev. 16, 4; also by other persons of rank,"
+      },
+      {
+       "draft": "Is. 22, 21. Comp. Jos. Ant. 3. 7. 2.",
+       "reread": "Is. 22, 21. Comp. Jos. Ant. 3. 7. 2.",
+       "status": "agreed",
+       "text": "Is. 22, 21. Comp. Jos. Ant. 3. 7. 2."
+      },
+      {
+       "draft": "Chald. פֶּנֶד, פּוּנְדָא, אֲפוּנְדָא, a belt. This",
+       "reread": "Chald. פֻּנְדָּ, פּוּנְדָּא, אֲפוּנְדָּא, a belt. This",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "Chald. פֻּנְדָּ, פּוּנְדָּא, אֲפוּנְדָּא, a belt. This",
+        "verdict": "b",
+        "note": "Under the first pe the print shows a cluster of three dots (qibbuts), not a single segol, and the dalet carries a qamets with a dagesh, not a bare segol-dalet; the 2nd and 3rd words also show the dagesh in dalet. Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ce91eb53-9a36-4cd0-99da-bd5d6f13b95a",
+        "duration_api_ms": 22368,
+        "cost_usd_list": 0.11075299999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3612,
+        "cache_creation_input_tokens": 2593,
+        "output_tokens": 1153
+       },
+       "text": "Chald. פֻּנְדָּ, פּוּנְדָּא, אֲפוּנְדָּא, a belt. This"
+      },
+      {
+       "draft": "word both in Heb. and Chald. is derived",
+       "reread": "word both in Heb. and Chald. is derived",
+       "status": "agreed",
+       "text": "word both in Heb. and Chald. is derived"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 965,
+      "y": 803,
+      "width": 876,
+      "height": 198
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r00-b03-876x198+965+803-x2.png",
+     "image_sha256": "130cec743f99e65c208c4979581b6dd17cb9cbe4f26ecd5c500694bf9d6c8178",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "from the Persian, where بند (Sanscr.",
+       "bandha, Germ. and Engl. band) denotes",
+       "any thing that binds, and also a girdle."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ba42b6c3-854b-485d-aea2-d71c5280b6e8",
+      "duration_api_ms": 7488,
+      "cost_usd_list": 0.06263325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2500,
+      "output_tokens": 228
+     },
+     "lines": [
+      {
+       "draft": "from the Persian, where بند (Sanscr.",
+       "reread": "from the Persian, where بند (Sanscr.",
+       "status": "agreed",
+       "text": "from the Persian, where بند (Sanscr."
+      },
+      {
+       "draft": "bandha, Germ. and Engl. band) denotes",
+       "reread": "bandha, Germ. and Engl. band) denotes",
+       "status": "agreed",
+       "text": "bandha, Germ. and Engl. band) denotes"
+      },
+      {
+       "draft": "any thing that binds, and also a girdle.",
+       "reread": "any thing that binds, and also a girdle.",
+       "status": "agreed",
+       "text": "any thing that binds, and also a girdle."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 965,
+    "y": 999,
+    "width": 876,
+    "height": 985
+   },
+   "draft_lines": [
+    "אַבְנֵר pr. n. m. (father of a light) Abner,",
+    "Saul's commander in chief, 1 Sam. 14, 51.",
+    "17, 55. 57. 20, 25. Sometimes called",
+    "אֲבִינֵר q. v. 1 Sam. 14, 50. Sept. Ἀβέννηρ.",
+    "* אָבַס as in Chald. and Talmud. to",
+    "fodder, to feed largely, to fatten; pr.",
+    "prob. to stamp in, comp. kindr. בּוּס, and",
+    "hence to stuff, to cram; comp. Gr. τρέ-",
+    "φω, pr. i. q. πήγνυμι. Only in Part. pass.",
+    "Prov. 15, 17; of geese, 1 K. 5, 3 [4, 23].",
+    "Deriv. מַאֲבוּס, אֵבוּס.",
+    "אֲבַעְבֻּעֹת plur. fem. blains, pustules,",
+    "rising in the skin, Ex. 9, 9. 10. It is a",
+    "verbal from Chald. r. בּוּעַ, Pilp. בַּעְבַּע,",
+    "to boil up, to swell up; hence Syr.",
+    "ܐܒܥܒ̈ܥܬܐ pustules. The Heb. pre-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 965,
+      "y": 1009,
+      "width": 876,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r01-b00-876x238+965+1009-x2.png",
+     "image_sha256": "3ec53a83ab6fd2ed7b57c4c27ac9b5e30bea823bb049c990f23f0b1cb3efc22c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַבְנֵר pr. n. m. (father of a light) Abner,",
+       "Saul's commander in chief, 1 Sam. 14, 51.",
+       "17, 55. 57. 20, 25. Sometimes called",
+       "אֲבִינֵר q. v. 1 Sam. 14, 50. Sept. Ἀβέννηρ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1a956ae4-9f6e-4f12-8bfb-428ddf4dc5b2",
+      "duration_api_ms": 9321,
+      "cost_usd_list": 0.0683935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 292
+     },
+     "lines": [
+      {
+       "draft": "אַבְנֵר pr. n. m. (father of a light) Abner,",
+       "reread": "אַבְנֵר pr. n. m. (father of a light) Abner,",
+       "status": "agreed",
+       "text": "אַבְנֵר pr. n. m. (father of a light) Abner,"
+      },
+      {
+       "draft": "Saul's commander in chief, 1 Sam. 14, 51.",
+       "reread": "Saul's commander in chief, 1 Sam. 14, 51.",
+       "status": "agreed",
+       "text": "Saul's commander in chief, 1 Sam. 14, 51."
+      },
+      {
+       "draft": "17, 55. 57. 20, 25. Sometimes called",
+       "reread": "17, 55. 57. 20, 25. Sometimes called",
+       "status": "agreed",
+       "text": "17, 55. 57. 20, 25. Sometimes called"
+      },
+      {
+       "draft": "אֲבִינֵר q. v. 1 Sam. 14, 50. Sept. Ἀβέννηρ.",
+       "reread": "אֲבִינֵר q. v. 1 Sam. 14, 50. Sept. Ἀβέννηρ.",
+       "status": "agreed",
+       "text": "אֲבִינֵר q. v. 1 Sam. 14, 50. Sept. Ἀβέννηρ."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 965,
+      "y": 1231,
+      "width": 876,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r01-b01-876x270+965+1231-x2.png",
+     "image_sha256": "f43821c1185ff5e18e3c80601a89cc51efd409d6e673edf84bd4bbddd033051d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָבַס as in Chald. and Talmud. to",
+       "fodder, to feed largely, to fatten ; pr.",
+       "prob. to stamp in, comp. kindr. בּוּס, and",
+       "hence to stuff, to cram ; comp. Gr. τρέ-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c4909921-0eda-41d3-a0e3-4b2fd0b605f9",
+      "duration_api_ms": 8430,
+      "cost_usd_list": 0.07102349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "* אָבַס as in Chald. and Talmud. to",
+       "reread": "* אָבַס as in Chald. and Talmud. to",
+       "status": "agreed",
+       "text": "* אָבַס as in Chald. and Talmud. to"
+      },
+      {
+       "draft": "fodder, to feed largely, to fatten; pr.",
+       "reread": "fodder, to feed largely, to fatten ; pr.",
+       "status": "agreed",
+       "text": "fodder, to feed largely, to fatten; pr."
+      },
+      {
+       "draft": "prob. to stamp in, comp. kindr. בּוּס, and",
+       "reread": "prob. to stamp in, comp. kindr. בּוּס, and",
+       "status": "agreed",
+       "text": "prob. to stamp in, comp. kindr. בּוּס, and"
+      },
+      {
+       "draft": "hence to stuff, to cram; comp. Gr. τρέ-",
+       "reread": "hence to stuff, to cram ; comp. Gr. τρέ-",
+       "status": "agreed",
+       "text": "hence to stuff, to cram; comp. Gr. τρέ-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 965,
+      "y": 1485,
+      "width": 876,
+      "height": 265
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r01-b02-876x265+965+1485-x2.png",
+     "image_sha256": "1498887579275eed75394c708fd8e9ccf649d9f7fa2c50d98043f470f736dbbd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "φω, pr. i. q. πήγνυμι. Only in Part. pass.",
+       "Prov. 15, 17 ; of geese, 1 K. 5, 3 [4, 23].",
+       "Deriv. אֵבוּס , מַאֲבוּס.",
+       "אֲבַעְבֻּעֹת plur. fem. blains, pustules,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ee010a89-561a-4578-addd-05417419112c",
+      "duration_api_ms": 13936,
+      "cost_usd_list": 0.09006349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 675
+     },
+     "lines": [
+      {
+       "draft": "φω, pr. i. q. πήγνυμι. Only in Part. pass.",
+       "reread": "φω, pr. i. q. πήγνυμι. Only in Part. pass.",
+       "status": "agreed",
+       "text": "φω, pr. i. q. πήγνυμι. Only in Part. pass."
+      },
+      {
+       "draft": "Prov. 15, 17; of geese, 1 K. 5, 3 [4, 23].",
+       "reread": "Prov. 15, 17 ; of geese, 1 K. 5, 3 [4, 23].",
+       "status": "agreed",
+       "text": "Prov. 15, 17; of geese, 1 K. 5, 3 [4, 23]."
+      },
+      {
+       "draft": "Deriv. מַאֲבוּס, אֵבוּס.",
+       "reread": "Deriv. אֵבוּס , מַאֲבוּס.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "Deriv. אֵבוּס , מַאֲבוּס.",
+        "verdict": "b",
+        "note": "Printed left-to-right order: אֵבוּס stands first (immediately after \"Deriv.\"), then a spaced comma, then מַאֲבוּס before the period — Reading A reverses the two items. Points as printed: tsere under aleph in אֵבוּס; patach under mem and hateph-patach under aleph in מַאֲבוּס; both plene with shureq.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5c4a7def-780b-4fd9-a054-2c1e0379ac22",
+        "duration_api_ms": 12087,
+        "cost_usd_list": 0.08274375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3575,
+        "cache_creation_input_tokens": 2683,
+        "output_tokens": 557
+       },
+       "text": "Deriv. אֵבוּס, מַאֲבוּס."
+      },
+      {
+       "draft": "אֲבַעְבֻּעֹת plur. fem. blains, pustules,",
+       "reread": "אֲבַעְבֻּעֹת plur. fem. blains, pustules,",
+       "status": "agreed",
+       "text": "אֲבַעְבֻּעֹת plur. fem. blains, pustules,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 965,
+      "y": 1734,
+      "width": 876,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r01-b03-876x244+965+1734-x2.png",
+     "image_sha256": "d3132b1fab1866df5d990f3474af6f6dc8f9342fd8a601637a418fc093192d47",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "rising in the skin, Ex. 9, 9. 10. It is a",
+       "verbal from Chald. r. בּוּעַ, Pilp. בַּעְבַּע,",
+       "to boil up, to swell up; hence Syr.",
+       "ܡܰܒ̈ܥܒܳܥܳܬܳܐ pustules. The Heb. pre-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2c146386-af03-4851-9916-930267d0c387",
+      "duration_api_ms": 19915,
+      "cost_usd_list": 0.0950035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 799
+     },
+     "lines": [
+      {
+       "draft": "rising in the skin, Ex. 9, 9. 10. It is a",
+       "reread": "rising in the skin, Ex. 9, 9. 10. It is a",
+       "status": "agreed",
+       "text": "rising in the skin, Ex. 9, 9. 10. It is a"
+      },
+      {
+       "draft": "verbal from Chald. r. בּוּעַ, Pilp. בַּעְבַּע,",
+       "reread": "verbal from Chald. r. בּוּעַ, Pilp. בַּעְבַּע,",
+       "status": "agreed",
+       "text": "verbal from Chald. r. בּוּעַ, Pilp. בַּעְבַּע,"
+      },
+      {
+       "draft": "to boil up, to swell up; hence Syr.",
+       "reread": "to boil up, to swell up; hence Syr.",
+       "status": "agreed",
+       "text": "to boil up, to swell up; hence Syr."
+      },
+      {
+       "draft": "ܐܒܥܒ̈ܥܬܐ pustules. The Heb. pre-",
+       "reread": "ܡܰܒ̈ܥܒܳܥܳܬܳܐ pustules. The Heb. pre-",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "ܡܰܒ̈ܥܒܰܥܳܬܳܐ pustules. The Heb. pre-",
+        "verdict": "neither",
+        "note": "First letter is clearly mim (B right, A wrong), with pthaha, syame on the first beth, and zqapha on the second ayin and taw — but the mark over the second beth is a triangular pthaha (∆), not the round zqapha B prints; so the vowelling is ܡܰܒ̈ܥܒܰܥܳܬܳܐ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3277c1f8-72a1-45fe-be65-6604e9a8248f",
+        "duration_api_ms": 35836,
+        "cost_usd_list": 0.16446024999999997,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3601,
+        "cache_creation_input_tokens": 2646,
+        "output_tokens": 2206
+       },
+       "text": "ܡܰܒ̈ܥܒܰܥܳܬܳܐ pustules. The Heb. pre-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 965,
+    "y": 1972,
+    "width": 876,
+    "height": 733
+   },
+   "draft_lines": [
+    "fixes א prosthetic. Comp. נָבַע, בּוּעַ.",
+    "* אָבַץ obsol. root, perh. i. q. בּוּץ, to",
+    "be white; whence Chald. אַבְצָא tin.",
+    "Hence the two following:",
+    "אֶבֶץ Abez, pr. n. of a city in the tribe",
+    "of Issachar, perh. so called from tin, Josh.",
+    "19, 20.",
+    "אִבְצָן (perh. of tin) Ibzan, pr. n. of a",
+    "judge of Israel, Judg. 12, 8. 10. R. אָבַץ.",
+    "* אָבַק not used in Kal, prob. to pound,",
+    "to beat small, to bray, from the force of"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 965,
+      "y": 1979,
+      "width": 876,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r02-b00-876x262+965+1979-x2.png",
+     "image_sha256": "5493b604c1ae34b9ab16c8cdc67ce209566e4dfdf0b905d5883946a91f66c30c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "fixes א prosthetic. Comp. בּוּעַ, נָבַע.",
+       "* אָבַץ obsol. root, perh. i. q. בּוּץ, to",
+       "be white; whence Chald. אֲבָצָא tin.",
+       "Hence the two following:"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4f8a9a75-4b6a-4e51-9a3a-cad740a573fa",
+      "duration_api_ms": 13299,
+      "cost_usd_list": 0.08506349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 575
+     },
+     "lines": [
+      {
+       "draft": "fixes א prosthetic. Comp. נָבַע, בּוּעַ.",
+       "reread": "fixes א prosthetic. Comp. בּוּעַ, נָבַע.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "fixes א prosthetic. Comp. בּוּעַ, נָבַע.",
+        "verdict": "b",
+        "note": "Printed left-to-right order after \"Comp.\" is בּוּעַ first (with dagesh in bet, shureq, patah under ayin), then comma, then נָבַע — matching Reading B; Reading A swaps the two items.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ceef1df1-1f16-4fba-bdff-3ad9bd54a07e",
+        "duration_api_ms": 9984,
+        "cost_usd_list": 0.07484625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2693,
+        "output_tokens": 395
+       },
+       "text": "fixes א prosthetic. Comp. בּוּעַ, נָבַע."
+      },
+      {
+       "draft": "* אָבַץ obsol. root, perh. i. q. בּוּץ, to",
+       "reread": "* אָבַץ obsol. root, perh. i. q. בּוּץ, to",
+       "status": "agreed",
+       "text": "* אָבַץ obsol. root, perh. i. q. בּוּץ, to"
+      },
+      {
+       "draft": "be white; whence Chald. אַבְצָא tin.",
+       "reread": "be white; whence Chald. אֲבָצָא tin.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "be white; whence Chald. אֲבְצָא tin.",
+        "verdict": "neither",
+        "note": "Print shows ḥaṭef pataḥ under א (B right, A wrong) but a plain shva, not qamets, under ב (A right, B wrong); qamets under צ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "395a8c02-0738-492b-ad81-737bc324c368",
+        "duration_api_ms": 17673,
+        "cost_usd_list": 0.109402,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2676,
+        "output_tokens": 1093
+       },
+       "text": "be white; whence Chald. אֲבְצָא tin."
+      },
+      {
+       "draft": "Hence the two following:",
+       "reread": "Hence the two following:",
+       "status": "agreed",
+       "text": "Hence the two following:"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 965,
+      "y": 2225,
+      "width": 876,
+      "height": 282
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r02-b01-876x282+965+2225-x2.png",
+     "image_sha256": "f54cbbe6411a03d2b7c6534cddacc680eab1a3865d5b8414ab10f56b92809fd6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶבֶץ Abez, pr. n. of a city in the tribe",
+       "of Issachar, perh. so called from tin, Josh.",
+       "19, 20.",
+       "אִבְצָן (perh. of tin) Ibzan, pr. n. of a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "512ddfd8-fb72-48e6-915a-ba805873db44",
+      "duration_api_ms": 9991,
+      "cost_usd_list": 0.0816335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 456
+     },
+     "lines": [
+      {
+       "draft": "אֶבֶץ Abez, pr. n. of a city in the tribe",
+       "reread": "אֶבֶץ Abez, pr. n. of a city in the tribe",
+       "status": "agreed",
+       "text": "אֶבֶץ Abez, pr. n. of a city in the tribe"
+      },
+      {
+       "draft": "of Issachar, perh. so called from tin, Josh.",
+       "reread": "of Issachar, perh. so called from tin, Josh.",
+       "status": "agreed",
+       "text": "of Issachar, perh. so called from tin, Josh."
+      },
+      {
+       "draft": "19, 20.",
+       "reread": "19, 20.",
+       "status": "agreed",
+       "text": "19, 20."
+      },
+      {
+       "draft": "אִבְצָן (perh. of tin) Ibzan, pr. n. of a",
+       "reread": "אִבְצָן (perh. of tin) Ibzan, pr. n. of a",
+       "status": "agreed",
+       "text": "אִבְצָן (perh. of tin) Ibzan, pr. n. of a"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 965,
+      "y": 2491,
+      "width": 876,
+      "height": 222
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r02-b02-876x222+965+2491-x2.png",
+     "image_sha256": "bad19db3a40eaae9d2ea2f21ba0cd61887a6c11a065e23953c8ddf5c2acb16c2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "judge of Israel, Judg. 12, 8. 10.   R. אָבַץ.",
+       "* אָבַק not used in Kal, prob. to pound,",
+       "to beat small, to bray, from the force of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe8c3256-70cc-4e95-a11b-fdb94e904f34",
+      "duration_api_ms": 11435,
+      "cost_usd_list": 0.0647835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "judge of Israel, Judg. 12, 8. 10. R. אָבַץ.",
+       "reread": "judge of Israel, Judg. 12, 8. 10.   R. אָבַץ.",
+       "status": "agreed",
+       "text": "judge of Israel, Judg. 12, 8. 10. R. אָבַץ."
+      },
+      {
+       "draft": "* אָבַק not used in Kal, prob. to pound,",
+       "reread": "* אָבַק not used in Kal, prob. to pound,",
+       "status": "agreed",
+       "text": "* אָבַק not used in Kal, prob. to pound,"
+      },
+      {
+       "draft": "to beat small, to bray, from the force of",
+       "reread": "to beat small, to bray, from the force of",
+       "status": "agreed",
+       "text": "to beat small, to bray, from the force of"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 965,
+    "y": 2693,
+    "width": 876,
+    "height": 561
+   },
+   "draft_lines": [
+    "the onomatopoetic syllables בק, בך, פג,",
+    "פק, which like דק, דך, (see דָּקַק, דָּכַךְ,)",
+    "express the idea of pounding, beating",
+    "small ; comp. בָּכָה to distil, דפק, פגע,",
+    "פגש, also πηγή, πηγνύω, Germ. pochen,",
+    "boken, espec. Erz pochen. Hence אָבָק",
+    "dust, אֲבָקָה.",
+    "Niph. נֶאֱבַק Gen. 32, 25. 26 ; denom.",
+    "from אָבָק dust, recipr. pr. to dust each",
+    "other sc. by wrestling, and hence to wres-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 965,
+      "y": 2685,
+      "width": 876,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r03-b00-876x242+965+2685-x2.png",
+     "image_sha256": "20df3458257e5a1e8f6c6c0f6a4a11364f6324e45697e29557a0df449e9c1217",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the onomatopoetic syllables בק, בך, פג,",
+       "פק, which like דק, דך, (see דָּקַק, דָּכַךְ,)",
+       "express the idea of pounding, beating",
+       "small ; comp. בָּכָה to distil, דפק, פגע,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8a9303ce-47bb-496c-bdd0-1278971f1b6a",
+      "duration_api_ms": 16517,
+      "cost_usd_list": 0.09510350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 801
+     },
+     "lines": [
+      {
+       "draft": "the onomatopoetic syllables בק, בך, פג,",
+       "reread": "the onomatopoetic syllables בק, בך, פג,",
+       "status": "agreed",
+       "text": "the onomatopoetic syllables בק, בך, פג,"
+      },
+      {
+       "draft": "פק, which like דק, דך, (see דָּקַק, דָּכַךְ,)",
+       "reread": "פק, which like דק, דך, (see דָּקַק, דָּכַךְ,)",
+       "status": "agreed",
+       "text": "פק, which like דק, דך, (see דָּקַק, דָּכַךְ,)"
+      },
+      {
+       "draft": "express the idea of pounding, beating",
+       "reread": "express the idea of pounding, beating",
+       "status": "agreed",
+       "text": "express the idea of pounding, beating"
+      },
+      {
+       "draft": "small ; comp. בָּכָה to distil, דפק, פגע,",
+       "reread": "small ; comp. בָּכָה to distil, דפק, פגע,",
+       "status": "agreed",
+       "text": "small; comp. בָּכָה to distil, דפק, פגע,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 965,
+      "y": 2911,
+      "width": 876,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r03-b01-876x232+965+2911-x2.png",
+     "image_sha256": "37098684e25b18bd9c2465ed4483ad53f9068715574e77c4021c33618ee88fbd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "פגש, also πηγή, πηγνύω, Germ. pochen,",
+       "boken, espec. Erz pochen. Hence אָבָק",
+       "dust, אַבְקָה.",
+       "Niph. נֶאֱבַק Gen. 32, 25. 26; denom."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bc9d2dc1-59c9-40ae-8345-bcdf36defd31",
+      "duration_api_ms": 11017,
+      "cost_usd_list": 0.07654349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 455
+     },
+     "lines": [
+      {
+       "draft": "פגש, also πηγή, πηγνύω, Germ. pochen,",
+       "reread": "פגש, also πηγή, πηγνύω, Germ. pochen,",
+       "status": "agreed",
+       "text": "פגש, also πηγή, πηγνύω, Germ. pochen,"
+      },
+      {
+       "draft": "boken, espec. Erz pochen. Hence אָבָק",
+       "reread": "boken, espec. Erz pochen. Hence אָבָק",
+       "status": "agreed",
+       "text": "boken, espec. Erz pochen. Hence אָבָק"
+      },
+      {
+       "draft": "dust, אֲבָקָה.",
+       "reread": "dust, אַבְקָה.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "dust, אֲבָקָה.",
+        "verdict": "a",
+        "note": "Under the aleph the print shows a composite hataf-patah (shva dots plus patah stroke), not a plain patah, and under the bet a T-shaped qamats, not a shva; the qof also carries qamats. So אֲבָקָה (Reading A) is printed, not אַבְקָה.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5d33beac-8c86-48a1-9b86-262092eeb35b",
+        "duration_api_ms": 12486,
+        "cost_usd_list": 0.07760800000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3552,
+        "cache_creation_input_tokens": 2534,
+        "output_tokens": 514
+       },
+       "text": "dust, אֲבָקָה."
+      },
+      {
+       "draft": "Niph. נֶאֱבַק Gen. 32, 25. 26 ; denom.",
+       "reread": "Niph. נֶאֱבַק Gen. 32, 25. 26; denom.",
+       "status": "agreed",
+       "text": "Niph. נֶאֱבַק Gen. 32, 25. 26; denom."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 965,
+      "y": 3127,
+      "width": 876,
+      "height": 129
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0025/pass2/c1-r03-b02-876x129+965+3127-x2.png",
+     "image_sha256": "789f56343c2af3762614d6ebd71e626929a10b666e2898fe7c7f2ab7295d10a6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "from אָבָק dust, recipr. pr. to dust each",
+       "other sc. by wrestling, and hence to wres-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "768028c2-9933-4ed1-ae8d-f90b3b27d574",
+      "duration_api_ms": 7623,
+      "cost_usd_list": 0.0558235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "from אָבָק dust, recipr. pr. to dust each",
+       "reread": "from אָבָק dust, recipr. pr. to dust each",
+       "status": "agreed",
+       "text": "from אָבָק dust, recipr. pr. to dust each"
+      },
+      {
+       "draft": "other sc. by wrestling, and hence to wres-",
+       "reread": "other sc. by wrestling, and hence to wres-",
+       "status": "agreed",
+       "text": "other sc. by wrestling, and hence to wres-"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אבן 9 אבק",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "16, 11.—Zech. 5, 8 אֶבֶן הָעוֹפֶרֶת the leaden",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "weight. 4, 10 אֶבֶן הַבְּדִיל.—Also a plum-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "met, Is. 34, 11 he shall stretch out upon it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the line of wasteness וְאַבְנֵי בֹהוּ and the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "plummet of desolation, i. e. as if all things",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "are to be destroyed by line and rule; as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to the sense, comp. Am. 7, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "6. Sometimes a stone serves as a de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "signation in geographical names, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a) אֶבֶן עֵזֶר (stone of help) Eben-ezer, set",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "up by Samuel at Mizpeh, 1 Sam. 4, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "5, 1. 7, 12. b) אֶבֶן הָאָזֶל (stone of de-",
+   "status": "adjudicated",
+   "draft": "5, 1. 7, 12. b) אֶבֶן הָאָזֶל (stone of de-",
+   "reread": "5, 1. 7, 12.  b) אֶבֶן הָאֶזֶל (stone of de-",
+   "verdict": "a",
+   "note": "Under the aleph of הָאָזֶל the printed point is a qamets (T-shaped stroke), not a segol; Reading A is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "parture) 1 Sam. 20, 19; comp. זוֹחֶלֶת.",
+   "status": "adjudicated",
+   "draft": "parture) 1 Sam. 20, 19 ; comp. זֹחֶלֶת.",
+   "reread": "parture) 1 Sam. 20, 19; comp. זוֹחֶלֶת.",
+   "verdict": "neither",
+   "note": "The Hebrew is printed plene with a vav (holem dot over the vav: זוֹחֶלֶת), so B is right on the spelling, but the print has a visible thin space before the semicolon (\"19 ;\") as in A. Neither reading matches exactly.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֶבֶן Chald. st. emphat. אַבְנָא, id. Dan.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2, 34. 35.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲבָנָה 2 K. 5, 12 in Chethibh for אֲמָנָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "q. v. Comp. in lett. ב.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "הִנֵּהוּ עֹשֶׂה מְלָאכָה עַל־הָאָבְנָיִם behold he",
+   "status": "draft_only",
+   "draft": "הִנֵּהוּ עֹשֶׂה מְלָאכָה עַל־הָאָבְנָיִם behold he",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֹבֶן i. q. אֶבֶן, a stone, only in Dual",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אָבְנַיִם pr. pair of stones, and spoken",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1. Of a potter's wheel. Jer. 18, 3",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "(the potter) wrought a work upon the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "wheel. It appears to have consisted of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "two stones, one above and the other",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "below, and is so depicted on Egyptian",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "monuments: See Rosellini",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Monum. Civil. Tab. L. Wilkinson's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Manners and Cust. of the Anc. Egypt. III.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "p. 164. Originally, and also for potters",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "working in the open air, it seems to have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "been made of stone; afterwards of wood.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "A wooden wheel of this kind is called in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the Talmud סֶדָן, pr. trunk, stem, then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cippus, then a potter's wheel made of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "trunk, and also a cart-wheel made in like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "manner.—Hence, from the resemblance,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "it comes to signify",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. a low seat, stool, on which the work-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "man sat; made, it would seem, of a block",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of wood, and frequently represented on",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Egyptian monuments. A seat of this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "kind was doubtless used by the midwife",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "while assisting a woman in labour lying",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "on a bed. So Ex. 1, 16 when ye do the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "office of a midwife to the Hebrew women",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "וּרְאִיתֶן עַל־הָאָבְנָיִם אִם־בֵּן הוּא then shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ye see (while yet) upon the stool, whether",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "it be a boy, etc. The midwife is di-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "rected, at the very moment of birth,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "while she yet sits on her stool and no",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "one else has seen or touched the infant,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to ascertain its sex by the sight or ra-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אבן",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "אבן",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ther touch, and, if it be a male, to kill it;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "as she could easily do by the pressure",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of her hand or finger, unknown to the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "parents.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַבְנֵט m. (for בְּנֵט, Aleph prosthet.) c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "suff. אַבְנֵטְךָ; plur. אַבְנֵטִים; a belt, gir-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "dle, worn by the priests, Ex. 28, 4. 39. 40.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Lev. 16, 4; also by other persons of rank,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Is. 22, 21. Comp. Jos. Ant. 3. 7. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Chald. פֻּנְדָּ, פּוּנְדָּא, אֲפוּנְדָּא, a belt. This",
+   "status": "adjudicated",
+   "draft": "Chald. פֶּנֶד, פּוּנְדָא, אֲפוּנְדָא, a belt. This",
+   "reread": "Chald. פֻּנְדָּ, פּוּנְדָּא, אֲפוּנְדָּא, a belt. This",
+   "verdict": "b",
+   "note": "Under the first pe the print shows a cluster of three dots (qibbuts), not a single segol, and the dalet carries a qamets with a dagesh, not a bare segol-dalet; the 2nd and 3rd words also show the dagesh in dalet. Reading B matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "word both in Heb. and Chald. is derived",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "from the Persian, where بند (Sanscr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "bandha, Germ. and Engl. band) denotes",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "any thing that binds, and also a girdle.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַבְנֵר pr. n. m. (father of a light) Abner,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Saul's commander in chief, 1 Sam. 14, 51.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "17, 55. 57. 20, 25. Sometimes called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲבִינֵר q. v. 1 Sam. 14, 50. Sept. Ἀβέννηρ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "* אָבַס as in Chald. and Talmud. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "fodder, to feed largely, to fatten; pr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "prob. to stamp in, comp. kindr. בּוּס, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hence to stuff, to cram; comp. Gr. τρέ-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "φω, pr. i. q. πήγνυμι. Only in Part. pass.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Prov. 15, 17; of geese, 1 K. 5, 3 [4, 23].",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Deriv. אֵבוּס, מַאֲבוּס.",
+   "status": "adjudicated",
+   "draft": "Deriv. מַאֲבוּס, אֵבוּס.",
+   "reread": "Deriv. אֵבוּס , מַאֲבוּס.",
+   "verdict": "b",
+   "note": "Printed left-to-right order: אֵבוּס stands first (immediately after \"Deriv.\"), then a spaced comma, then מַאֲבוּס before the period — Reading A reverses the two items. Points as printed: tsere under aleph in אֵבוּס; patach under mem and hateph-patach under aleph in מַאֲבוּס; both plene with shureq.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲבַעְבֻּעֹת plur. fem. blains, pustules,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "rising in the skin, Ex. 9, 9. 10. It is a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "verbal from Chald. r. בּוּעַ, Pilp. בַּעְבַּע,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "to boil up, to swell up; hence Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ܡܰܒ̈ܥܒܰܥܳܬܳܐ pustules. The Heb. pre-",
+   "status": "adjudicated",
+   "draft": "ܐܒܥܒ̈ܥܬܐ pustules. The Heb. pre-",
+   "reread": "ܡܰܒ̈ܥܒܳܥܳܬܳܐ pustules. The Heb. pre-",
+   "verdict": "neither",
+   "note": "First letter is clearly mim (B right, A wrong), with pthaha, syame on the first beth, and zqapha on the second ayin and taw — but the mark over the second beth is a triangular pthaha (∆), not the round zqapha B prints; so the vowelling is ܡܰܒ̈ܥܒܰܥܳܬܳܐ.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "fixes א prosthetic. Comp. בּוּעַ, נָבַע.",
+   "status": "adjudicated",
+   "draft": "fixes א prosthetic. Comp. נָבַע, בּוּעַ.",
+   "reread": "fixes א prosthetic. Comp. בּוּעַ, נָבַע.",
+   "verdict": "b",
+   "note": "Printed left-to-right order after \"Comp.\" is בּוּעַ first (with dagesh in bet, shureq, patah under ayin), then comma, then נָבַע — matching Reading B; Reading A swaps the two items.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָבַץ obsol. root, perh. i. q. בּוּץ, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "be white; whence Chald. אֲבְצָא tin.",
+   "status": "adjudicated",
+   "draft": "be white; whence Chald. אַבְצָא tin.",
+   "reread": "be white; whence Chald. אֲבָצָא tin.",
+   "verdict": "neither",
+   "note": "Print shows ḥaṭef pataḥ under א (B right, A wrong) but a plain shva, not qamets, under ב (A right, B wrong); qamets under צ.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Hence the two following:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֶבֶץ Abez, pr. n. of a city in the tribe",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of Issachar, perh. so called from tin, Josh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "19, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אִבְצָן (perh. of tin) Ibzan, pr. n. of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "judge of Israel, Judg. 12, 8. 10. R. אָבַץ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָבַק not used in Kal, prob. to pound,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to beat small, to bray, from the force of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the onomatopoetic syllables בק, בך, פג,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "פק, which like דק, דך, (see דָּקַק, דָּכַךְ,)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "express the idea of pounding, beating",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "small; comp. בָּכָה to distil, דפק, פגע,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "פגש, also πηγή, πηγνύω, Germ. pochen,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "boken, espec. Erz pochen. Hence אָבָק",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "dust, אֲבָקָה.",
+   "status": "adjudicated",
+   "draft": "dust, אֲבָקָה.",
+   "reread": "dust, אַבְקָה.",
+   "verdict": "a",
+   "note": "Under the aleph the print shows a composite hataf-patah (shva dots plus patah stroke), not a plain patah, and under the bet a T-shaped qamats, not a shva; the qof also carries qamats. So אֲבָקָה (Reading A) is printed, not אַבְקָה.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Niph. נֶאֱבַק Gen. 32, 25. 26; denom.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "from אָבָק dust, recipr. pr. to dust each",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "other sc. by wrestling, and hence to wres-",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 95,
+  "adjudicated": 8,
+  "draft_only": 1,
+  "reread_only": 1,
+  "unresolved": 0,
+  "needs_review": 5
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.9416
+}

@@ -1,0 +1,2545 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 26,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0026.png",
+ "raster_sha256": "7b921ee4a74e2cc2ade517759f9e5d4eb1afa56e4fb99825c08426f3d074dffe",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0026.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T08:51:36+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 190,
+    "y": 106,
+    "width": 1770,
+    "height": 81
+   },
+   "draft_lines": [
+    "אבק",
+    "10",
+    "אגג"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 190,
+      "y": 104,
+      "width": 1770,
+      "height": 85
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/header-b00-1770x85+190+104-x2.png",
+     "image_sha256": "2ed3e90c2900bdaaaa5f6696dd13e23ecd644e1cd599f243fe3ca701d52e323b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אבק 10 אגג"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5e13d676-766d-41bf-828e-2517a403f6cd",
+      "duration_api_ms": 3998,
+      "cost_usd_list": 0.0477225,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 183
+     },
+     "lines": [
+      {
+       "draft": "אבק 10 אגג",
+       "reread": "אבק 10 אגג",
+       "status": "agreed",
+       "text": "אבק 10 אגג"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 190,
+    "y": 152,
+    "width": 873,
+    "height": 873
+   },
+   "draft_lines": [
+    "tle, seq. עִם. So in Greek, παλαίειν,",
+    "συμπαλαίειν, συγκονιοῦσθαι, from πάλη,",
+    "κόνις. This rather unusual word seems",
+    "to have been chosen by the writer here,",
+    "by way of allusion to the torrent יַבֹּק v.",
+    "23.",
+    "אָבָק m. dust, spec. such as is fine and",
+    "light, comp. in r. אָבַק ; easily driven by",
+    "the wind, Is. 5, 24 ; or raised by horses",
+    "in running, Ez. 26, 10. Hence distin-",
+    "guished from עָפָר thick and heavy dust,",
+    "Deut. 28, 24. Poet. the dust of God's",
+    "feet, for the clouds, as if trodden of God,",
+    "Nah. 1, 3. Comp. שַׁחַק."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 190,
+      "y": 144,
+      "width": 873,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r00-b00-873x239+190+144-x2.png",
+     "image_sha256": "e31719b594d2dc6b933f0b45b442eaddfbc363986d428a1909e82317a620508a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tle, seq. עִם. So in Greek, παλαίειν,",
+       "συμπαλαίειν, συγκονιοῦσϑαι, from πάλη,",
+       "κόνις. This rather unusual word seems"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7970f66b-527d-4c76-a5eb-3b57c1a84d8f",
+      "duration_api_ms": 11868,
+      "cost_usd_list": 0.08086325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 517
+     },
+     "lines": [
+      {
+       "draft": "tle, seq. עִם. So in Greek, παλαίειν,",
+       "reread": "tle, seq. עִם. So in Greek, παλαίειν,",
+       "status": "agreed",
+       "text": "tle, seq. עִם. So in Greek, παλαίειν,"
+      },
+      {
+       "draft": "συμπαλαίειν, συγκονιοῦσθαι, from πάλη,",
+       "reread": "συμπαλαίειν, συγκονιοῦσϑαι, from πάλη,",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "συμπαλαίειν, συγκονιοῦσθαι, from πάλη,",
+        "verdict": "a",
+        "note": "The only disagreement is θ vs ϑ in συγκονιοῦσθαι. The typeface's theta is the open, cursive-tailed form (as this 1854 Greek face prints all its thetas), but that is the font's ordinary glyph for the letter theta, not a distinct character; it should be encoded as standard θ (U+03B8), not the compatibility symbol ϑ (U+03D1). Everything else—accents, breathing on παλαίειν, circumflex on οῦ, commas—matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "66777440-83c3-4911-a0a9-c8929a76326b",
+        "duration_api_ms": 14648,
+        "cost_usd_list": 0.08900675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3587,
+        "cache_creation_input_tokens": 2631,
+        "output_tokens": 703
+       },
+       "text": "συμπαλαίειν, συγκονιοῦσθαι, from πάλη,"
+      },
+      {
+       "draft": "κόνις. This rather unusual word seems",
+       "reread": "κόνις. This rather unusual word seems",
+       "status": "agreed",
+       "text": "κόνις. This rather unusual word seems"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 190,
+      "y": 367,
+      "width": 873,
+      "height": 321
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r00-b01-873x321+190+367-x2.png",
+     "image_sha256": "0f5388e0be129b3516ba24f43223baae3e73e56c0420183852d7d5fc57ddd249",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to have been chosen by the writer here,",
+       "by way of allusion to the torrent יַבֹּק v.",
+       "23.",
+       "אָבָק m. dust, spec. such as is fine and",
+       "light, comp. in r. אָבַק ; easily driven by"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9f40b984-9657-491b-920a-761c6c69b793",
+      "duration_api_ms": 12040,
+      "cost_usd_list": 0.08601324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3004,
+      "output_tokens": 494
+     },
+     "lines": [
+      {
+       "draft": "to have been chosen by the writer here,",
+       "reread": "to have been chosen by the writer here,",
+       "status": "agreed",
+       "text": "to have been chosen by the writer here,"
+      },
+      {
+       "draft": "by way of allusion to the torrent יַבֹּק v.",
+       "reread": "by way of allusion to the torrent יַבֹּק v.",
+       "status": "agreed",
+       "text": "by way of allusion to the torrent יַבֹּק v."
+      },
+      {
+       "draft": "23.",
+       "reread": "23.",
+       "status": "agreed",
+       "text": "23."
+      },
+      {
+       "draft": "אָבָק m. dust, spec. such as is fine and",
+       "reread": "אָבָק m. dust, spec. such as is fine and",
+       "status": "agreed",
+       "text": "אָבָק m. dust, spec. such as is fine and"
+      },
+      {
+       "draft": "light, comp. in r. אָבַק ; easily driven by",
+       "reread": "light, comp. in r. אָבַק ; easily driven by",
+       "status": "agreed",
+       "text": "light, comp. in r. אָבַק; easily driven by"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 190,
+      "y": 672,
+      "width": 873,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r00-b02-873x233+190+672-x2.png",
+     "image_sha256": "1138fb38d7a955cfbb347d7f0eab199065ff866c1980291674a484c76e2feeb8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the wind, Is. 5, 24; or raised by horses",
+       "in running, Ez. 26, 10. Hence distin-",
+       "guished from עָפָר thick and heavy dust,",
+       "Deut. 28, 24. Poet. the dust of God's"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "25804e33-e33b-4c0e-9755-0af8fe052332",
+      "duration_api_ms": 11147,
+      "cost_usd_list": 0.06665325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "the wind, Is. 5, 24 ; or raised by horses",
+       "reread": "the wind, Is. 5, 24; or raised by horses",
+       "status": "agreed",
+       "text": "the wind, Is. 5, 24; or raised by horses"
+      },
+      {
+       "draft": "in running, Ez. 26, 10. Hence distin-",
+       "reread": "in running, Ez. 26, 10. Hence distin-",
+       "status": "agreed",
+       "text": "in running, Ez. 26, 10. Hence distin-"
+      },
+      {
+       "draft": "guished from עָפָר thick and heavy dust,",
+       "reread": "guished from עָפָר thick and heavy dust,",
+       "status": "agreed",
+       "text": "guished from עָפָר thick and heavy dust,"
+      },
+      {
+       "draft": "Deut. 28, 24. Poet. the dust of God's",
+       "reread": "Deut. 28, 24. Poet. the dust of God's",
+       "status": "agreed",
+       "text": "Deut. 28, 24. Poet. the dust of God's"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 190,
+      "y": 889,
+      "width": 873,
+      "height": 126
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r00-b03-873x126+190+889-x2.png",
+     "image_sha256": "b915f6743a8cd60b27cea29c6d0a677de1caffe2b4860830e6f9570ce91d50a0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "feet, for the clouds, as if trodden of God,",
+       "Nah. 1, 3. Comp. שַׁחַק."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eb68323e-5d6f-423f-8d2b-911b0cd23410",
+      "duration_api_ms": 7491,
+      "cost_usd_list": 0.054523249999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2122,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "feet, for the clouds, as if trodden of God,",
+       "reread": "feet, for the clouds, as if trodden of God,",
+       "status": "agreed",
+       "text": "feet, for the clouds, as if trodden of God,"
+      },
+      {
+       "draft": "Nah. 1, 3. Comp. שַׁחַק.",
+       "reread": "Nah. 1, 3. Comp. שַׁחַק.",
+       "status": "agreed",
+       "text": "Nah. 1, 3. Comp. שַׁחַק."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 190,
+    "y": 1013,
+    "width": 873,
+    "height": 799
+   },
+   "draft_lines": [
+    "אַבְקָה f. id. whence אַבְקַת רוֹכֵל powder",
+    "of the merchant, i. e. aromatic, Cant. 3, 6.",
+    "* אָבַר 1. pr. to strive upwards, to",
+    "mount, to soar, see Hiph. and the deriv.",
+    "אֵבֶר and אֶבְרָה. Perhaps kindr. with עָבַר,",
+    "עָבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+    "which express the idea of above, over,",
+    "passing over, transcending ; see in עָבַר.",
+    "2. Trop. of any force or ἐνέργεια, to be",
+    "strong, mighty, see deriv. אַבִּיר, אָבִיר.",
+    "Hiph. to mount upwards in flight, to",
+    "soar, as the hawk, Job 39, 26.",
+    "Deriv. see in Kal no. 1, 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 190,
+      "y": 1024,
+      "width": 873,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r01-b00-873x263+190+1024-x2.png",
+     "image_sha256": "19ebffaba371f81e530310af13485711ecb1544a43ea25ab1dccf944557c3da6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבָקָה f. id. whence אַבְקַת רוֹכֵל powder",
+       "of the merchant, i. e. aromatic, Cant. 3, 6.",
+       "* אָבַר 1. pr. to strive upwards, to",
+       "mount, to soar, see Hiph. and the deriv."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bc2f92dc-560a-4d59-a2b0-6cae68515d1d",
+      "duration_api_ms": 14625,
+      "cost_usd_list": 0.0932135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 738
+     },
+     "lines": [
+      {
+       "draft": "אַבְקָה f. id. whence אַבְקַת רוֹכֵל powder",
+       "reread": "אֲבָקָה f. id. whence אַבְקַת רוֹכֵל powder",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "אֲבָקָה f. id. whence אַבְקַת רוֹכֵל powder",
+        "verdict": "b",
+        "note": "Headword vowels: the aleph carries a hataf-patah (two dots plus patah) and the bet a qamets, not patah + shva as in Reading A; the construct אַבְקַת רוֹכֵל is identical in both and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fc534ebe-c859-4c7c-a17d-aca9d2e2f31c",
+        "duration_api_ms": 13605,
+        "cost_usd_list": 0.08494750000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2698,
+        "output_tokens": 595
+       },
+       "text": "אֲבָקָה f. id. whence אַבְקַת רוֹכֵל powder"
+      },
+      {
+       "draft": "of the merchant, i. e. aromatic, Cant. 3, 6.",
+       "reread": "of the merchant, i. e. aromatic, Cant. 3, 6.",
+       "status": "agreed",
+       "text": "of the merchant, i. e. aromatic, Cant. 3, 6."
+      },
+      {
+       "draft": "* אָבַר 1. pr. to strive upwards, to",
+       "reread": "* אָבַר 1. pr. to strive upwards, to",
+       "status": "agreed",
+       "text": "* אָבַר 1. pr. to strive upwards, to"
+      },
+      {
+       "draft": "mount, to soar, see Hiph. and the deriv.",
+       "reread": "mount, to soar, see Hiph. and the deriv.",
+       "status": "agreed",
+       "text": "mount, to soar, see Hiph. and the deriv."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 190,
+      "y": 1271,
+      "width": 873,
+      "height": 198
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r01-b01-873x198+190+1271-x2.png",
+     "image_sha256": "1d3276ecf7c8b067e5718dfc35ee2a9d4191921cd44a2caab912a7017c6db89c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵבֶר and אֶבְרָה. Perhaps kindr. with עָבַר,",
+       "עֲבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+       "which express the idea of above, over,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "132ab84f-fdce-4d12-b6be-703c3915a3f1",
+      "duration_api_ms": 12966,
+      "cost_usd_list": 0.08237349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 622
+     },
+     "lines": [
+      {
+       "draft": "אֵבֶר and אֶבְרָה. Perhaps kindr. with עָבַר,",
+       "reread": "אֵבֶר and אֶבְרָה. Perhaps kindr. with עָבַר,",
+       "status": "agreed",
+       "text": "אֵבֶר and אֶבְרָה. Perhaps kindr. with עָבַר,"
+      },
+      {
+       "draft": "עָבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+       "reread": "עֲבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "עֲבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+        "verdict": "b",
+        "note": "Under the ayin the print shows two vertical dots plus a short horizontal stroke — a hatef patah (עֲ), not the T‑shaped qamets of Reading A. This fits the context: line 1 ends with Hebrew עֵבֶר and line 2 opens with the Aramaic/Chaldee עֲבַר. The rest of the line (Persian ابر unpointed, eber, ὑπέρ with rough breathing and acute, italic super, all) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "ad7f4422-861d-452e-b74b-2a3a0e5202e6",
+        "duration_api_ms": 22637,
+        "cost_usd_list": 0.12560749999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2446,
+        "output_tokens": 1509
+       },
+       "text": "עֲבַר, comp. Pers. ابر eber, ὑπέρ, super, all"
+      },
+      {
+       "draft": "which express the idea of above, over,",
+       "reread": "which express the idea of above, over,",
+       "status": "agreed",
+       "text": "which express the idea of above, over,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 190,
+      "y": 1453,
+      "width": 873,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r01-b02-873x236+190+1453-x2.png",
+     "image_sha256": "75e14f127188529c9570d13fb5207cd87be4f54748c43454de146527511a5a44",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "passing over, transcending ; see in עָבַר.",
+       "2. Trop. of any force or ἐνέργεια, to be",
+       "strong, mighty, see deriv. אָבִיר, אַבִּיר.",
+       "Hiph. to mount upwards in flight, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "375f6905-4b88-4d61-bbc3-a96648572a01",
+      "duration_api_ms": 8436,
+      "cost_usd_list": 0.07579349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 440
+     },
+     "lines": [
+      {
+       "draft": "passing over, transcending ; see in עָבַר.",
+       "reread": "passing over, transcending ; see in עָבַר.",
+       "status": "agreed",
+       "text": "passing over, transcending; see in עָבַר."
+      },
+      {
+       "draft": "2. Trop. of any force or ἐνέργεια, to be",
+       "reread": "2. Trop. of any force or ἐνέργεια, to be",
+       "status": "agreed",
+       "text": "2. Trop. of any force or ἐνέργεια, to be"
+      },
+      {
+       "draft": "strong, mighty, see deriv. אַבִּיר, אָבִיר.",
+       "reread": "strong, mighty, see deriv. אָבִיר, אַבִּיר.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "strong, mighty, see deriv. אָבִיר, אַבִּיר.",
+        "verdict": "b",
+        "note": "Printed left-to-right the first item (right after \"deriv.\") is אָבִיר (qamets, no dagesh) and the second, before the period, is אַבִּיר (patach + dagesh); Reading A reverses them.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c74ea9d5-3286-4192-b3ea-711b904db907",
+        "duration_api_ms": 22365,
+        "cost_usd_list": 0.12963575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3583,
+        "cache_creation_input_tokens": 2565,
+        "output_tokens": 1542
+       },
+       "text": "strong, mighty, see deriv. אָבִיר, אַבִּיר."
+      },
+      {
+       "draft": "Hiph. to mount upwards in flight, to",
+       "reread": "Hiph. to mount upwards in flight, to",
+       "status": "agreed",
+       "text": "Hiph. to mount upwards in flight, to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 190,
+      "y": 1673,
+      "width": 873,
+      "height": 125
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r01-b03-873x125+190+1673-x2.png",
+     "image_sha256": "a38440757578543ed7af613a2b999774874c26e4379f9842b81abd0a2d78319b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "soar, as the hawk, Job 39, 26.",
+       "Deriv. see in Kal no. 1, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aa17b1e8-1368-45a4-919d-d1fc2b797fed",
+      "duration_api_ms": 7334,
+      "cost_usd_list": 0.0544135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 214
+     },
+     "lines": [
+      {
+       "draft": "soar, as the hawk, Job 39, 26.",
+       "reread": "soar, as the hawk, Job 39, 26.",
+       "status": "agreed",
+       "text": "soar, as the hawk, Job 39, 26."
+      },
+      {
+       "draft": "Deriv. see in Kal no. 1, 2.",
+       "reread": "Deriv. see in Kal no. 1, 2.",
+       "status": "agreed",
+       "text": "Deriv. see in Kal no. 1, 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 190,
+    "y": 1800,
+    "width": 873,
+    "height": 803
+   },
+   "draft_lines": [
+    "אֵבֶר m. a wing-feather, pinion, as the",
+    "instrument of flying, soaring, e. g. of the",
+    "eagle, Is. 40, 21; the dove, Ps. 55, 7. Dis-",
+    "tinguished from the wing itself, Ez. 17, 3.",
+    "אֶבְרָה f. id. Job 39, 16 [13]. Ps. 68, 14.",
+    "Poet. ascribed to God, Deut. 32, 11. Ps.",
+    "91, 4.",
+    "אַבְרָהָם pr. n. Abraham, the founder",
+    "of the Jewish nation, son of Terah, born",
+    "in Mesopotamia, which he left to wander",
+    "through the land of Canaan with his",
+    "flocks in the nomadic manner; see Gen.",
+    "c. 12–25. In the book of Genesis as far"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 190,
+      "y": 1814,
+      "width": 873,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r02-b00-873x235+190+1814-x2.png",
+     "image_sha256": "658d73b26d94f4353ae1c99c6e1bf3cb5b797a4a86c89c0a62dc9a8484f9f928",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵבֶר m. a wing-feather, pinion, as the",
+       "instrument of flying, soaring, e. g. of the",
+       "eagle, Is. 40, 21; the dove, Ps. 55, 7. Dis-",
+       "tinguished from the wing itself, Ez. 17, 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "db51d7fb-221a-4f94-ba1d-55da4ce98e9b",
+      "duration_api_ms": 7785,
+      "cost_usd_list": 0.06749349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "אֵבֶר m. a wing-feather, pinion, as the",
+       "reread": "אֵבֶר m. a wing-feather, pinion, as the",
+       "status": "agreed",
+       "text": "אֵבֶר m. a wing-feather, pinion, as the"
+      },
+      {
+       "draft": "instrument of flying, soaring, e. g. of the",
+       "reread": "instrument of flying, soaring, e. g. of the",
+       "status": "agreed",
+       "text": "instrument of flying, soaring, e. g. of the"
+      },
+      {
+       "draft": "eagle, Is. 40, 21; the dove, Ps. 55, 7. Dis-",
+       "reread": "eagle, Is. 40, 21; the dove, Ps. 55, 7. Dis-",
+       "status": "agreed",
+       "text": "eagle, Is. 40, 21; the dove, Ps. 55, 7. Dis-"
+      },
+      {
+       "draft": "tinguished from the wing itself, Ez. 17, 3.",
+       "reread": "tinguished from the wing itself, Ez. 17, 3.",
+       "status": "agreed",
+       "text": "tinguished from the wing itself, Ez. 17, 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 190,
+      "y": 2033,
+      "width": 873,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r02-b01-873x297+190+2033-x2.png",
+     "image_sha256": "3d51a315522b70eb534f5d3042260f32926c3ac0fe9cc6db2bafd65898ab28d1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶבְרָה f. id. Job 39, 16 [13]. Ps. 68, 14.",
+       "Poet. ascribed to God, Deut. 32, 11. Ps.",
+       "91, 4.",
+       "אַבְרָהָם pr. n. Abraham, the founder"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "58af9c69-cb63-48ce-bca5-f2d69f0d43f9",
+      "duration_api_ms": 10233,
+      "cost_usd_list": 0.08229349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 444
+     },
+     "lines": [
+      {
+       "draft": "אֶבְרָה f. id. Job 39, 16 [13]. Ps. 68, 14.",
+       "reread": "אֶבְרָה f. id. Job 39, 16 [13]. Ps. 68, 14.",
+       "status": "agreed",
+       "text": "אֶבְרָה f. id. Job 39, 16 [13]. Ps. 68, 14."
+      },
+      {
+       "draft": "Poet. ascribed to God, Deut. 32, 11. Ps.",
+       "reread": "Poet. ascribed to God, Deut. 32, 11. Ps.",
+       "status": "agreed",
+       "text": "Poet. ascribed to God, Deut. 32, 11. Ps."
+      },
+      {
+       "draft": "91, 4.",
+       "reread": "91, 4.",
+       "status": "agreed",
+       "text": "91, 4."
+      },
+      {
+       "draft": "אַבְרָהָם pr. n. Abraham, the founder",
+       "reread": "אַבְרָהָם pr. n. Abraham, the founder",
+       "status": "agreed",
+       "text": "אַבְרָהָם pr. n. Abraham, the founder"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 190,
+      "y": 2314,
+      "width": 873,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r02-b02-873x234+190+2314-x2.png",
+     "image_sha256": "e0fd928395deeec8b53a55f18dd385d3bb11b3c90b915490bd07513c1331d1af",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of the Jewish nation, son of Terah, born",
+       "in Mesopotamia, which he left to wander",
+       "through the land of Canaan with his",
+       "flocks in the nomadic manner ; see Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6d6a47a7-a47b-4b9c-ad2a-95c054b493c8",
+      "duration_api_ms": 7265,
+      "cost_usd_list": 0.0658935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "of the Jewish nation, son of Terah, born",
+       "reread": "of the Jewish nation, son of Terah, born",
+       "status": "agreed",
+       "text": "of the Jewish nation, son of Terah, born"
+      },
+      {
+       "draft": "in Mesopotamia, which he left to wander",
+       "reread": "in Mesopotamia, which he left to wander",
+       "status": "agreed",
+       "text": "in Mesopotamia, which he left to wander"
+      },
+      {
+       "draft": "through the land of Canaan with his",
+       "reread": "through the land of Canaan with his",
+       "status": "agreed",
+       "text": "through the land of Canaan with his"
+      },
+      {
+       "draft": "flocks in the nomadic manner; see Gen.",
+       "reread": "flocks in the nomadic manner ; see Gen.",
+       "status": "agreed",
+       "text": "flocks in the nomadic manner; see Gen."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 190,
+      "y": 2532,
+      "width": 873,
+      "height": 63
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r02-b03-873x63+190+2532-x2.png",
+     "image_sha256": "f81e1d350c3d6d47a11ba61962fac7ef9a2d99dc6aa085a933a5aa2ca1215962",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "c. 12–25. In the book of Genesis as far"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "069323e4-e17c-4397-ba28-f07c78ec847b",
+      "duration_api_ms": 7296,
+      "cost_usd_list": 0.0500235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 227
+     },
+     "lines": [
+      {
+       "draft": "c. 12–25. In the book of Genesis as far",
+       "reread": "c. 12–25. In the book of Genesis as far",
+       "status": "agreed",
+       "text": "c. 12–25. In the book of Genesis as far"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 190,
+    "y": 2591,
+    "width": 873,
+    "height": 662
+   },
+   "draft_lines": [
+    "as to c. 17, 5. he is called אַבְרָם ‘father",
+    "of altitude,’ Abram. But in that place,",
+    "where a numerous posterity is promised",
+    "him, by a slight change of name he is",
+    "called אַבְרָהָם ‘father of a multitude,’",
+    "(comp. Arab. رُهَامٌ a great number,",
+    "multitude,) or as the context explains it",
+    "אַב הֲמוֹן גּוֹיִם.—So אֱלֹהֵי אַבְרָהָם the God",
+    "of Abraham, i. e. Jehovah, 2 Chr. 30, 6.",
+    "Ps. 47, 10. זֶרַע אַבְרָהָם the seed of Abra-",
+    "ham, i. e. the Israelites, Ps. 105, 6. Is."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 190,
+      "y": 2599,
+      "width": 873,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r03-b00-873x226+190+2599-x2.png",
+     "image_sha256": "4d46cbc6f19146f63cd91c3a6ef9a5ef50788cef632264ded037c54c548a0b05",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "as to c. 17, 5. he is called אַבְרָם ‘father",
+       "of altitude,’ Abram. But in that place,",
+       "where a numerous posterity is promised",
+       "him, by a slight change of name he is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "033c79d2-8a55-4ab9-9394-fb10ccc62a04",
+      "duration_api_ms": 8438,
+      "cost_usd_list": 0.06824349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 289
+     },
+     "lines": [
+      {
+       "draft": "as to c. 17, 5. he is called אַבְרָם ‘father",
+       "reread": "as to c. 17, 5. he is called אַבְרָם ‘father",
+       "status": "agreed",
+       "text": "as to c. 17, 5. he is called אַבְרָם ‘father"
+      },
+      {
+       "draft": "of altitude,’ Abram. But in that place,",
+       "reread": "of altitude,’ Abram. But in that place,",
+       "status": "agreed",
+       "text": "of altitude,’ Abram. But in that place,"
+      },
+      {
+       "draft": "where a numerous posterity is promised",
+       "reread": "where a numerous posterity is promised",
+       "status": "agreed",
+       "text": "where a numerous posterity is promised"
+      },
+      {
+       "draft": "him, by a slight change of name he is",
+       "reread": "him, by a slight change of name he is",
+       "status": "agreed",
+       "text": "him, by a slight change of name he is"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 190,
+      "y": 2809,
+      "width": 873,
+      "height": 285
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r03-b01-873x285+190+2809-x2.png",
+     "image_sha256": "1dfd1a4d62c80206254210f65d4541f8b311e4df4edb5540f64d42e3cbb6b87b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "called אַבְרָהָם ‘father of a multitude,’",
+       "(comp. Arab. رُهَامٌ a great number,",
+       "multitude,) or as the context explains it",
+       "אַב הֲמוֹן גּוֹיִם.—So אֱלֹהֵי אַבְרָהָם the God"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "226481c1-3efa-4115-96ff-653a66131ac5",
+      "duration_api_ms": 14293,
+      "cost_usd_list": 0.0896835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 617
+     },
+     "lines": [
+      {
+       "draft": "called אַבְרָהָם ‘father of a multitude,’",
+       "reread": "called אַבְרָהָם ‘father of a multitude,’",
+       "status": "agreed",
+       "text": "called אַבְרָהָם ‘father of a multitude,’"
+      },
+      {
+       "draft": "(comp. Arab. رُهَامٌ a great number,",
+       "reread": "(comp. Arab. رُهَامٌ a great number,",
+       "status": "agreed",
+       "text": "(comp. Arab. رُهَامٌ a great number,"
+      },
+      {
+       "draft": "multitude,) or as the context explains it",
+       "reread": "multitude,) or as the context explains it",
+       "status": "agreed",
+       "text": "multitude,) or as the context explains it"
+      },
+      {
+       "draft": "אַב הֲמוֹן גּוֹיִם.—So אֱלֹהֵי אַבְרָהָם the God",
+       "reread": "אַב הֲמוֹן גּוֹיִם.—So אֱלֹהֵי אַבְרָהָם the God",
+       "status": "agreed",
+       "text": "אַב הֲמוֹן גּוֹיִם.—So אֱלֹהֵי אַבְרָהָם the God"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 190,
+      "y": 3078,
+      "width": 873,
+      "height": 176
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c0-r03-b02-873x176+190+3078-x2.png",
+     "image_sha256": "a06777ec09098703b0951d9b1b5968785766194055660dae52754f08035b93f1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of Abraham, i. e. Jehovah, 2 Chr. 30, 6.",
+       "Ps. 47, 10. זֶרַע אַבְרָהָם the seed of Abra-",
+       "ham, i. e. the Israelites, Ps. 105, 6. Is."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c3f162d1-6e13-497d-8bc5-bd95283f1daf",
+      "duration_api_ms": 8253,
+      "cost_usd_list": 0.062203499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "of Abraham, i. e. Jehovah, 2 Chr. 30, 6.",
+       "reread": "of Abraham, i. e. Jehovah, 2 Chr. 30, 6.",
+       "status": "agreed",
+       "text": "of Abraham, i. e. Jehovah, 2 Chr. 30, 6."
+      },
+      {
+       "draft": "Ps. 47, 10. זֶרַע אַבְרָהָם the seed of Abra-",
+       "reread": "Ps. 47, 10. זֶרַע אַבְרָהָם the seed of Abra-",
+       "status": "agreed",
+       "text": "Ps. 47, 10. זֶרַע אַבְרָהָם the seed of Abra-"
+      },
+      {
+       "draft": "ham, i. e. the Israelites, Ps. 105, 6. Is.",
+       "reread": "ham, i. e. the Israelites, Ps. 105, 6. Is.",
+       "status": "agreed",
+       "text": "ham, i. e. the Israelites, Ps. 105, 6. Is."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1083,
+    "y": 152,
+    "width": 877,
+    "height": 819
+   },
+   "draft_lines": [
+    "41, 8. In the same sense simpl. אַבְרָהָם",
+    "Mic. 7, 20.",
+    "אַבְרֵךְ a word cried by the heralds",
+    "before the chariot of Joseph, Gen. 41, 43.",
+    "Were it a Hebrew word, it might be",
+    "infin. absol. Hiph. from r. בָּרַךְ, for the",
+    "regular הַבְרֵךְ, (comp. אַשְׁכֵּים for הַשְׁכֵּים",
+    "Jer. 25, 3,) here supplying the place of",
+    "the imperat. i. q. bow the knee ; Vulg.",
+    "clamante præcone, ut omnes coram eo",
+    "genua flecterent ; and so Abulwalid and",
+    "Kimchi ; comp. Lehrg. p. 319.—More",
+    "prob. the word is of Egyptian origin, but"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1083,
+      "y": 144,
+      "width": 877,
+      "height": 326
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r00-b00-877x326+1083+144-x2.png",
+     "image_sha256": "04084d6ef71e011e9c494eb523fec8bc4ec32af445b0f73d7eeaab3eebb5b785",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "41, 8. In the same sense simpl. אַבְרָהָם",
+       "Mic. 7, 20.",
+       "אַבְרֵךְ a word cried by the heralds",
+       "before the chariot of Joseph, Gen. 41, 43."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "24a55b57-5b1c-4190-810e-c89a191eae06",
+      "duration_api_ms": 10529,
+      "cost_usd_list": 0.08536350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3069,
+      "output_tokens": 455
+     },
+     "lines": [
+      {
+       "draft": "41, 8. In the same sense simpl. אַבְרָהָם",
+       "reread": "41, 8. In the same sense simpl. אַבְרָהָם",
+       "status": "agreed",
+       "text": "41, 8. In the same sense simpl. אַבְרָהָם"
+      },
+      {
+       "draft": "Mic. 7, 20.",
+       "reread": "Mic. 7, 20.",
+       "status": "agreed",
+       "text": "Mic. 7, 20."
+      },
+      {
+       "draft": "אַבְרֵךְ a word cried by the heralds",
+       "reread": "אַבְרֵךְ a word cried by the heralds",
+       "status": "agreed",
+       "text": "אַבְרֵךְ a word cried by the heralds"
+      },
+      {
+       "draft": "before the chariot of Joseph, Gen. 41, 43.",
+       "reread": "before the chariot of Joseph, Gen. 41, 43.",
+       "status": "agreed",
+       "text": "before the chariot of Joseph, Gen. 41, 43."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1083,
+      "y": 454,
+      "width": 877,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r00-b01-877x238+1083+454-x2.png",
+     "image_sha256": "f371923a65f1e032f760d18ae8e657591a4e5025582764bb4c5494500b0beb2d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Were it a Hebrew word, it might be",
+       "infin. absol. Hiph. from r. בָּרַךְ, for the",
+       "regular הַבְרֵךְ, (comp. אַשְׁכֵּים for הַשְׁכֵּים",
+       "Jer. 25, 3,) here supplying the place of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3fa06db3-9a1b-4c64-9f08-25c7761a651c",
+      "duration_api_ms": 11166,
+      "cost_usd_list": 0.0765935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 456
+     },
+     "lines": [
+      {
+       "draft": "Were it a Hebrew word, it might be",
+       "reread": "Were it a Hebrew word, it might be",
+       "status": "agreed",
+       "text": "Were it a Hebrew word, it might be"
+      },
+      {
+       "draft": "infin. absol. Hiph. from r. בָּרַךְ, for the",
+       "reread": "infin. absol. Hiph. from r. בָּרַךְ, for the",
+       "status": "agreed",
+       "text": "infin. absol. Hiph. from r. בָּרַךְ, for the"
+      },
+      {
+       "draft": "regular הַבְרֵךְ, (comp. אַשְׁכֵּים for הַשְׁכֵּים",
+       "reread": "regular הַבְרֵךְ, (comp. אַשְׁכֵּים for הַשְׁכֵּים",
+       "status": "agreed",
+       "text": "regular הַבְרֵךְ, (comp. אַשְׁכֵּים for הַשְׁכֵּים"
+      },
+      {
+       "draft": "Jer. 25, 3,) here supplying the place of",
+       "reread": "Jer. 25, 3,) here supplying the place of",
+       "status": "agreed",
+       "text": "Jer. 25, 3,) here supplying the place of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1083,
+      "y": 676,
+      "width": 877,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r00-b02-877x238+1083+676-x2.png",
+     "image_sha256": "c5481351c1d5ffdea710190f753bdf78cb3f144bd4305e197b68f8aca7946d37",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the imperat. i. q. bow the knee; Vulg.",
+       "clamante præcone, ut omnes coram eo",
+       "genua flecterent; and so Abulwalid and",
+       "Kimchi; comp. Lehrg. p. 319.—More"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d11ef863-37e4-42a2-a23e-a9731fcf27a3",
+      "duration_api_ms": 8317,
+      "cost_usd_list": 0.06669349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "the imperat. i. q. bow the knee ; Vulg.",
+       "reread": "the imperat. i. q. bow the knee; Vulg.",
+       "status": "agreed",
+       "text": "the imperat. i. q. bow the knee; Vulg."
+      },
+      {
+       "draft": "clamante præcone, ut omnes coram eo",
+       "reread": "clamante præcone, ut omnes coram eo",
+       "status": "agreed",
+       "text": "clamante præcone, ut omnes coram eo"
+      },
+      {
+       "draft": "genua flecterent ; and so Abulwalid and",
+       "reread": "genua flecterent; and so Abulwalid and",
+       "status": "agreed",
+       "text": "genua flecterent; and so Abulwalid and"
+      },
+      {
+       "draft": "Kimchi ; comp. Lehrg. p. 319.—More",
+       "reread": "Kimchi; comp. Lehrg. p. 319.—More",
+       "status": "agreed",
+       "text": "Kimchi; comp. Lehrg. p. 319.—More"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1083,
+      "y": 898,
+      "width": 877,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r00-b03-877x81+1083+898-x2.png",
+     "image_sha256": "d21378399ae4c8a286298425ea5c18a1308d8a8a187d4c1376fce6ba68a2e4ba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "prob. the word is of Egyptian origin, but"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b0b29afa-9487-4268-b9fe-31f34ddd50cf",
+      "duration_api_ms": 4271,
+      "cost_usd_list": 0.0513335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 228
+     },
+     "lines": [
+      {
+       "draft": "prob. the word is of Egyptian origin, but",
+       "reread": "prob. the word is of Egyptian origin, but",
+       "status": "agreed",
+       "text": "prob. the word is of Egyptian origin, but"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1083,
+    "y": 959,
+    "width": 877,
+    "height": 794
+   },
+   "draft_lines": [
+    "changed and inflected by the Heb. writer",
+    "so that, although foreign, it might yet",
+    "have a Heb. sound, and be referred to a",
+    "Heb. etymology; comp. חָם, מֹשֶׁה, פַּרְעֹה.",
+    "The true form of the Egyptian word",
+    "which lies hid in אַבְרֵךְ, is prob. either",
+    "ⲁϥⲣⲉⲕ afrek, i. e. let every one bow",
+    "himself, in an opt. sense; so Jablonsky",
+    "Opusc. ed. te Water Tom. I. p. 4. Copt.",
+    "Vers. John 8, 8; or better ⲁⲡⲉⲣⲉⲕ or",
+    "ⲁⲡⲣⲉⲕ, aperek, aprek, i. e. bow the",
+    "head, Rossii Etymologiæ Ægypt. s. v.—",
+    "See also in אָב no. 7."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1083,
+      "y": 951,
+      "width": 877,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r01-b00-877x244+1083+951-x2.png",
+     "image_sha256": "9095f0405f28803ce29397b5a5fb1c4169889fe729f85986804a6a1753d29333",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "changed and inflected by the Heb. writer",
+       "so that, although foreign, it might yet",
+       "have a Heb. sound, and be referred to a",
+       "Heb. etymology ; comp. חָם, מֹשֶׁה, פַּרְעֹה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "841694c4-d4ab-4418-b490-56380d30081f",
+      "duration_api_ms": 10103,
+      "cost_usd_list": 0.07560349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 411
+     },
+     "lines": [
+      {
+       "draft": "changed and inflected by the Heb. writer",
+       "reread": "changed and inflected by the Heb. writer",
+       "status": "agreed",
+       "text": "changed and inflected by the Heb. writer"
+      },
+      {
+       "draft": "so that, although foreign, it might yet",
+       "reread": "so that, although foreign, it might yet",
+       "status": "agreed",
+       "text": "so that, although foreign, it might yet"
+      },
+      {
+       "draft": "have a Heb. sound, and be referred to a",
+       "reread": "have a Heb. sound, and be referred to a",
+       "status": "agreed",
+       "text": "have a Heb. sound, and be referred to a"
+      },
+      {
+       "draft": "Heb. etymology; comp. חָם, מֹשֶׁה, פַּרְעֹה.",
+       "reread": "Heb. etymology ; comp. חָם, מֹשֶׁה, פַּרְעֹה.",
+       "status": "agreed",
+       "text": "Heb. etymology; comp. חָם, מֹשֶׁה, פַּרְעֹה."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1083,
+      "y": 1179,
+      "width": 877,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r01-b01-877x254+1083+1179-x2.png",
+     "image_sha256": "4b3336dfc660daeafe549cab5b07baec2d589f1276d5ac64bfafac4daabd18bd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "The true form of the Egyptian word",
+       "which lies hid in אַבְרֵךְ, is prob. either",
+       "ⲁϥⲣⲉⲕ afrek, i. e. let every one bow",
+       "himself, in an opt. sense ; so Jablonsky"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eb9cf0c3-0ce4-48e3-8388-c9d52c7a0b1c",
+      "duration_api_ms": 6841,
+      "cost_usd_list": 0.07435375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 360
+     },
+     "lines": [
+      {
+       "draft": "The true form of the Egyptian word",
+       "reread": "The true form of the Egyptian word",
+       "status": "agreed",
+       "text": "The true form of the Egyptian word"
+      },
+      {
+       "draft": "which lies hid in אַבְרֵךְ, is prob. either",
+       "reread": "which lies hid in אַבְרֵךְ, is prob. either",
+       "status": "agreed",
+       "text": "which lies hid in אַבְרֵךְ, is prob. either"
+      },
+      {
+       "draft": "ⲁϥⲣⲉⲕ afrek, i. e. let every one bow",
+       "reread": "ⲁϥⲣⲉⲕ afrek, i. e. let every one bow",
+       "status": "agreed",
+       "text": "ⲁϥⲣⲉⲕ afrek, i. e. let every one bow"
+      },
+      {
+       "draft": "himself, in an opt. sense; so Jablonsky",
+       "reread": "himself, in an opt. sense ; so Jablonsky",
+       "status": "agreed",
+       "text": "himself, in an opt. sense; so Jablonsky"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1083,
+      "y": 1417,
+      "width": 877,
+      "height": 276
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r01-b02-877x276+1083+1417-x2.png",
+     "image_sha256": "0f8dbbde97ff14d6b2456855db317c491c95c4d2c771d8ad6956698884cc34fc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Opusc. ed. te Water Tom. I. p. 4. Copt.",
+       "Vers. John 8, 8 ; or better ⲁⲡⲉⲣⲉⲕ or",
+       "ⲁⲡⲣⲉⲕ, aperek, aprek, i. e. bow the",
+       "head, Rossii Etymologiæ Ægypt. s. v.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d964aab-6081-4db3-90df-bda15a160be3",
+      "duration_api_ms": 10492,
+      "cost_usd_list": 0.07881375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 424
+     },
+     "lines": [
+      {
+       "draft": "Opusc. ed. te Water Tom. I. p. 4. Copt.",
+       "reread": "Opusc. ed. te Water Tom. I. p. 4. Copt.",
+       "status": "agreed",
+       "text": "Opusc. ed. te Water Tom. I. p. 4. Copt."
+      },
+      {
+       "draft": "Vers. John 8, 8; or better ⲁⲡⲉⲣⲉⲕ or",
+       "reread": "Vers. John 8, 8 ; or better ⲁⲡⲉⲣⲉⲕ or",
+       "status": "agreed",
+       "text": "Vers. John 8, 8; or better ⲁⲡⲉⲣⲉⲕ or"
+      },
+      {
+       "draft": "ⲁⲡⲣⲉⲕ, aperek, aprek, i. e. bow the",
+       "reread": "ⲁⲡⲣⲉⲕ, aperek, aprek, i. e. bow the",
+       "status": "agreed",
+       "text": "ⲁⲡⲣⲉⲕ, aperek, aprek, i. e. bow the"
+      },
+      {
+       "draft": "head, Rossii Etymologiæ Ægypt. s. v.—",
+       "reread": "head, Rossii Etymologiæ Ægypt. s. v.—",
+       "status": "agreed",
+       "text": "head, Rossii Etymologiæ Ægypt. s. v.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1083,
+      "y": 1677,
+      "width": 877,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r01-b03-877x72+1083+1677-x2.png",
+     "image_sha256": "ac8280691b82352f0e921fdecda9828955b28268de7205d6533242cb9f201df5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "See also in אָב no. 7."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a699cb12-2770-4a29-9b66-c9fbf6e268ec",
+      "duration_api_ms": 7077,
+      "cost_usd_list": 0.04942375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 189
+     },
+     "lines": [
+      {
+       "draft": "See also in אָב no. 7.",
+       "reread": "See also in אָב no. 7.",
+       "status": "agreed",
+       "text": "See also in אָב no. 7."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1083,
+    "y": 1741,
+    "width": 877,
+    "height": 760
+   },
+   "draft_lines": [
+    "אַבְשַׁי see אֲבִישַׁי.",
+    "אַבְשָׁלוֹם (father of peace, i. e. pacific)",
+    "Absalom, pr. n. a) The third son of Da-",
+    "vid, by Maacah, 2 Sam. 3, 3, celebrated",
+    "for his rebellion against his father ; for",
+    "an account of his life and death, see 2",
+    "Sam. c. 13–18. As to the sepulchre near",
+    "Jerusalem which in modern times has",
+    "borne his name, see Bibl. Res. in Palest.",
+    "I. p. 519, 520. b) i. q. אֲבִישָׁלוֹם q. v.",
+    "* אָגָא obsol. root, Arab. اَجَأَ to flee.",
+    "—Hence"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1083,
+      "y": 1745,
+      "width": 877,
+      "height": 266
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r02-b00-877x266+1083+1745-x2.png",
+     "image_sha256": "1f0f27d5a520fd9204e1ca76c7f31eb554de1849d9ed2ca6b79665e10d75fbb8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַבְשַׁי see אֲבִישַׁי.",
+       "אַבְשָׁלֹם (father of peace, i. e. pacific)",
+       "Absalom, pr. n.  a) The third son of Da-",
+       "vid, by Maacah, 2 Sam. 3, 3, celebrated"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d15378e-495d-4b71-b86f-81dd05dd70c9",
+      "duration_api_ms": 14168,
+      "cost_usd_list": 0.10125375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 898
+     },
+     "lines": [
+      {
+       "draft": "אַבְשַׁי see אֲבִישַׁי.",
+       "reread": "אַבְשַׁי see אֲבִישַׁי.",
+       "status": "agreed",
+       "text": "אַבְשַׁי see אֲבִישַׁי."
+      },
+      {
+       "draft": "אַבְשָׁלוֹם (father of peace, i. e. pacific)",
+       "reread": "אַבְשָׁלֹם (father of peace, i. e. pacific)",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b00",
+       "judgement": {
+        "text": "אַבְשָׁלוֹם (father of peace, i. e. pacific)",
+        "verdict": "a",
+        "note": "Plene spelling: a vav is clearly printed between ל and ם, carrying the holem (לוֹם), not a bare holem on lamed as Reading B has.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b730b5d8-9724-41b8-a9fc-3a4bbde86f28",
+        "duration_api_ms": 8423,
+        "cost_usd_list": 0.07797575000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3583,
+        "cache_creation_input_tokens": 2692,
+        "output_tokens": 458
+       },
+       "text": "אַבְשָׁלוֹם (father of peace, i. e. pacific)"
+      },
+      {
+       "draft": "Absalom, pr. n. a) The third son of Da-",
+       "reread": "Absalom, pr. n.  a) The third son of Da-",
+       "status": "agreed",
+       "text": "Absalom, pr. n. a) The third son of Da-"
+      },
+      {
+       "draft": "vid, by Maacah, 2 Sam. 3, 3, celebrated",
+       "reread": "vid, by Maacah, 2 Sam. 3, 3, celebrated",
+       "status": "agreed",
+       "text": "vid, by Maacah, 2 Sam. 3, 3, celebrated"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1083,
+      "y": 1995,
+      "width": 877,
+      "height": 224
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r02-b01-877x224+1083+1995-x2.png",
+     "image_sha256": "e840118bb78695dd23d72c944704dec724b304cf9fae6f6ebea2f7f703431ac3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for his rebellion against his father ; for",
+       "an account of his life and death, see 2",
+       "Sam. c. 13–18.  As to the sepulchre near",
+       "Jerusalem which in modern times has"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b7058f35-547b-44bd-9288-ac392fe23af9",
+      "duration_api_ms": 7702,
+      "cost_usd_list": 0.06462375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2567,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "for his rebellion against his father ; for",
+       "reread": "for his rebellion against his father ; for",
+       "status": "agreed",
+       "text": "for his rebellion against his father; for"
+      },
+      {
+       "draft": "an account of his life and death, see 2",
+       "reread": "an account of his life and death, see 2",
+       "status": "agreed",
+       "text": "an account of his life and death, see 2"
+      },
+      {
+       "draft": "Sam. c. 13–18. As to the sepulchre near",
+       "reread": "Sam. c. 13–18.  As to the sepulchre near",
+       "status": "agreed",
+       "text": "Sam. c. 13–18. As to the sepulchre near"
+      },
+      {
+       "draft": "Jerusalem which in modern times has",
+       "reread": "Jerusalem which in modern times has",
+       "status": "agreed",
+       "text": "Jerusalem which in modern times has"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1083,
+      "y": 2203,
+      "width": 877,
+      "height": 280
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r02-b02-877x280+1083+2203-x2.png",
+     "image_sha256": "283ea34c2b8ee779c659b34b18deadfdd12876ea15e0422e0c1f801b1abdfaf1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "borne his name, see Bibl. Res. in Palest.",
+       "I. p. 519, 520.    b) i. q. אֲבִישָׁלוֹם q. v.",
+       "* אָגָא obsol. root, Arab. اَجَأَ to flee.",
+       "—Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f39e052f-645c-48cc-bd1a-cd30617f6b3b",
+      "duration_api_ms": 12594,
+      "cost_usd_list": 0.08746375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 597
+     },
+     "lines": [
+      {
+       "draft": "borne his name, see Bibl. Res. in Palest.",
+       "reread": "borne his name, see Bibl. Res. in Palest.",
+       "status": "agreed",
+       "text": "borne his name, see Bibl. Res. in Palest."
+      },
+      {
+       "draft": "I. p. 519, 520. b) i. q. אֲבִישָׁלוֹם q. v.",
+       "reread": "I. p. 519, 520.    b) i. q. אֲבִישָׁלוֹם q. v.",
+       "status": "agreed",
+       "text": "I. p. 519, 520. b) i. q. אֲבִישָׁלוֹם q. v."
+      },
+      {
+       "draft": "* אָגָא obsol. root, Arab. اَجَأَ to flee.",
+       "reread": "* אָגָא obsol. root, Arab. اَجَأَ to flee.",
+       "status": "agreed",
+       "text": "* אָגָא obsol. root, Arab. اَجَأَ to flee."
+      },
+      {
+       "draft": "—Hence",
+       "reread": "—Hence",
+       "status": "agreed",
+       "text": "—Hence"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1083,
+    "y": 2489,
+    "width": 877,
+    "height": 769
+   },
+   "draft_lines": [
+    "אָגֵא (fugitive) Agee, pr. n. m. 2 Sam.",
+    "23, 11.",
+    "* אָגַג obsol. root, Arab. أَجَّ to burn,",
+    "to flame, as fire. Hence the two foll.",
+    "pr. names.",
+    "אֲגַג and אֲגָג (Num. 24, 7) Agag, pr. n.",
+    "of Amalekitish kings, Num. 24, 7. 1 Sam.",
+    "15, 8. 9. 20. 32.",
+    "אֲגָגִי Agagite, gentile n. of Haman,",
+    "Esth. 3, 1. 10, 8, 3. 5. Josephus explains",
+    "it by Ἀμαληκίτης. Ant. 11. 6. 5."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1083,
+      "y": 2508,
+      "width": 877,
+      "height": 305
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r03-b00-877x305+1083+2508-x2.png",
+     "image_sha256": "66db7f545458c675579c72237cbe642bcf6c00b269c0dd50cd89f2d1d5aae9c1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָגֵא (fugitive) Agee, pr. n. m. 2 Sam.",
+       "23, 11.",
+       "* אָגַג obsol. root, Arab. أَجَّ to burn,",
+       "to flame, as fire. Hence the two foll."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f7226fc0-eba4-46b3-8ceb-4b9efbd59ab5",
+      "duration_api_ms": 12474,
+      "cost_usd_list": 0.08398375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2945,
+      "output_tokens": 477
+     },
+     "lines": [
+      {
+       "draft": "אָגֵא (fugitive) Agee, pr. n. m. 2 Sam.",
+       "reread": "אָגֵא (fugitive) Agee, pr. n. m. 2 Sam.",
+       "status": "agreed",
+       "text": "אָגֵא (fugitive) Agee, pr. n. m. 2 Sam."
+      },
+      {
+       "draft": "23, 11.",
+       "reread": "23, 11.",
+       "status": "agreed",
+       "text": "23, 11."
+      },
+      {
+       "draft": "* אָגַג obsol. root, Arab. أَجَّ to burn,",
+       "reread": "* אָגַג obsol. root, Arab. أَجَّ to burn,",
+       "status": "agreed",
+       "text": "* אָגַג obsol. root, Arab. أَجَّ to burn,"
+      },
+      {
+       "draft": "to flame, as fire. Hence the two foll.",
+       "reread": "to flame, as fire. Hence the two foll.",
+       "status": "agreed",
+       "text": "to flame, as fire. Hence the two foll."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1083,
+      "y": 2797,
+      "width": 877,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r03-b01-877x264+1083+2797-x2.png",
+     "image_sha256": "c893e483313ff88e9d7f57e85e29d61d1b3cb0073f95822eb13126c95c1c2d2d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pr. names.",
+       "אֲגַג and אֲגָג (Num. 24, 7) Agag, pr. n.",
+       "of Amalekitish kings, Num. 24, 7. 1 Sam.",
+       "15, 8. 9. 20. 32."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8fbb806f-3929-4f98-846d-935b08c180b5",
+      "duration_api_ms": 14777,
+      "cost_usd_list": 0.09320375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 737
+     },
+     "lines": [
+      {
+       "draft": "pr. names.",
+       "reread": "pr. names.",
+       "status": "agreed",
+       "text": "pr. names."
+      },
+      {
+       "draft": "אֲגַג and אֲגָג (Num. 24, 7) Agag, pr. n.",
+       "reread": "אֲגַג and אֲגָג (Num. 24, 7) Agag, pr. n.",
+       "status": "agreed",
+       "text": "אֲגַג and אֲגָג (Num. 24, 7) Agag, pr. n."
+      },
+      {
+       "draft": "of Amalekitish kings, Num. 24, 7. 1 Sam.",
+       "reread": "of Amalekitish kings, Num. 24, 7. 1 Sam.",
+       "status": "agreed",
+       "text": "of Amalekitish kings, Num. 24, 7. 1 Sam."
+      },
+      {
+       "draft": "15, 8. 9. 20. 32.",
+       "reread": "15, 8. 9. 20. 32.",
+       "status": "agreed",
+       "text": "15, 8. 9. 20. 32."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1083,
+      "y": 3045,
+      "width": 877,
+      "height": 210
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0026/pass2/c1-r03-b02-877x210+1083+3045-x2.png",
+     "image_sha256": "b0f7e2f59e0dc0805009a2067ccd7229a1145a10a23a461d9e3e2be7f38dbee4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲגָגִי Agagite, gentile n. of Haman,",
+       "Esth. 3, 1. 10. 8, 3. 5. Josephus explains",
+       "it by Ἀμαληκίτης. Ant. 11. 6. 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4375141d-4d4b-415a-b6cb-6eaa44118f1f",
+      "duration_api_ms": 10380,
+      "cost_usd_list": 0.07246375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2504,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "אֲגָגִי Agagite, gentile n. of Haman,",
+       "reread": "אֲגָגִי Agagite, gentile n. of Haman,",
+       "status": "agreed",
+       "text": "אֲגָגִי Agagite, gentile n. of Haman,"
+      },
+      {
+       "draft": "Esth. 3, 1. 10, 8, 3. 5. Josephus explains",
+       "reread": "Esth. 3, 1. 10. 8, 3. 5. Josephus explains",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "Esth. 3, 1. 10. 8, 3. 5. Josephus explains",
+        "verdict": "b",
+        "note": "After \"10\" the printed mark is a full stop on the baseline (no descending tail), not a comma — \"3, 1. 10.\" then \"8, 3. 5.\" (Esth. 3:1,10; 8:3,5), matching Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5c7466c3-bdc9-494d-b95c-9890713f92eb",
+        "duration_api_ms": 11665,
+        "cost_usd_list": 0.0761465,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2443,
+        "output_tokens": 521
+       },
+       "text": "Esth. 3, 1. 10. 8, 3. 5. Josephus explains"
+      },
+      {
+       "draft": "it by Ἀμαληκίτης. Ant. 11. 6. 5.",
+       "reread": "it by Ἀμαληκίτης. Ant. 11. 6. 5.",
+       "status": "agreed",
+       "text": "it by Ἀμαληκίτης. Ant. 11. 6. 5."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אבק 10 אגג",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "tle, seq. עִם. So in Greek, παλαίειν,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "συμπαλαίειν, συγκονιοῦσθαι, from πάλη,",
+   "status": "adjudicated",
+   "draft": "συμπαλαίειν, συγκονιοῦσθαι, from πάλη,",
+   "reread": "συμπαλαίειν, συγκονιοῦσϑαι, from πάλη,",
+   "verdict": "a",
+   "note": "The only disagreement is θ vs ϑ in συγκονιοῦσθαι. The typeface's theta is the open, cursive-tailed form (as this 1854 Greek face prints all its thetas), but that is the font's ordinary glyph for the letter theta, not a distinct character; it should be encoded as standard θ (U+03B8), not the compatibility symbol ϑ (U+03D1). Everything else—accents, breathing on παλαίειν, circumflex on οῦ, commas—matches both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "κόνις. This rather unusual word seems",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to have been chosen by the writer here,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "by way of allusion to the torrent יַבֹּק v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אָבָק m. dust, spec. such as is fine and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "light, comp. in r. אָבַק; easily driven by",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the wind, Is. 5, 24; or raised by horses",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "in running, Ez. 26, 10. Hence distin-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "guished from עָפָר thick and heavy dust,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deut. 28, 24. Poet. the dust of God's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "feet, for the clouds, as if trodden of God,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Nah. 1, 3. Comp. שַׁחַק.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲבָקָה f. id. whence אַבְקַת רוֹכֵל powder",
+   "status": "adjudicated",
+   "draft": "אַבְקָה f. id. whence אַבְקַת רוֹכֵל powder",
+   "reread": "אֲבָקָה f. id. whence אַבְקַת רוֹכֵל powder",
+   "verdict": "b",
+   "note": "Headword vowels: the aleph carries a hataf-patah (two dots plus patah) and the bet a qamets, not patah + shva as in Reading A; the construct אַבְקַת רוֹכֵל is identical in both and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of the merchant, i. e. aromatic, Cant. 3, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אָבַר 1. pr. to strive upwards, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "mount, to soar, see Hiph. and the deriv.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵבֶר and אֶבְרָה. Perhaps kindr. with עָבַר,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "עֲבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+   "status": "adjudicated",
+   "draft": "עָבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+   "reread": "עֲבַר, comp. Pers. ابر eber, ὑπέρ, super, all",
+   "verdict": "b",
+   "note": "Under the ayin the print shows two vertical dots plus a short horizontal stroke — a hatef patah (עֲ), not the T‑shaped qamets of Reading A. This fits the context: line 1 ends with Hebrew עֵבֶר and line 2 opens with the Aramaic/Chaldee עֲבַר. The rest of the line (Persian ابر unpointed, eber, ὑπέρ with rough breathing and acute, italic super, all) is identical in both readings and matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "which express the idea of above, over,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "passing over, transcending; see in עָבַר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. Trop. of any force or ἐνέργεια, to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "strong, mighty, see deriv. אָבִיר, אַבִּיר.",
+   "status": "adjudicated",
+   "draft": "strong, mighty, see deriv. אַבִּיר, אָבִיר.",
+   "reread": "strong, mighty, see deriv. אָבִיר, אַבִּיר.",
+   "verdict": "b",
+   "note": "Printed left-to-right the first item (right after \"deriv.\") is אָבִיר (qamets, no dagesh) and the second, before the period, is אַבִּיר (patach + dagesh); Reading A reverses them.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Hiph. to mount upwards in flight, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "soar, as the hawk, Job 39, 26.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Deriv. see in Kal no. 1, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֵבֶר m. a wing-feather, pinion, as the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "instrument of flying, soaring, e. g. of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "eagle, Is. 40, 21; the dove, Ps. 55, 7. Dis-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tinguished from the wing itself, Ez. 17, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֶבְרָה f. id. Job 39, 16 [13]. Ps. 68, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Poet. ascribed to God, Deut. 32, 11. Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "91, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַבְרָהָם pr. n. Abraham, the founder",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of the Jewish nation, son of Terah, born",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "in Mesopotamia, which he left to wander",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "through the land of Canaan with his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "flocks in the nomadic manner; see Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "c. 12–25. In the book of Genesis as far",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "as to c. 17, 5. he is called אַבְרָם ‘father",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of altitude,’ Abram. But in that place,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "where a numerous posterity is promised",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "him, by a slight change of name he is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "called אַבְרָהָם ‘father of a multitude,’",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "(comp. Arab. رُهَامٌ a great number,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "multitude,) or as the context explains it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אַב הֲמוֹן גּוֹיִם.—So אֱלֹהֵי אַבְרָהָם the God",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of Abraham, i. e. Jehovah, 2 Chr. 30, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ps. 47, 10. זֶרַע אַבְרָהָם the seed of Abra-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ham, i. e. the Israelites, Ps. 105, 6. Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "41, 8. In the same sense simpl. אַבְרָהָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Mic. 7, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַבְרֵךְ a word cried by the heralds",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "before the chariot of Joseph, Gen. 41, 43.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Were it a Hebrew word, it might be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "infin. absol. Hiph. from r. בָּרַךְ, for the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "regular הַבְרֵךְ, (comp. אַשְׁכֵּים for הַשְׁכֵּים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Jer. 25, 3,) here supplying the place of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the imperat. i. q. bow the knee; Vulg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "clamante præcone, ut omnes coram eo",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "genua flecterent; and so Abulwalid and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Kimchi; comp. Lehrg. p. 319.—More",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "prob. the word is of Egyptian origin, but",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "changed and inflected by the Heb. writer",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "so that, although foreign, it might yet",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "have a Heb. sound, and be referred to a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Heb. etymology; comp. חָם, מֹשֶׁה, פַּרְעֹה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "The true form of the Egyptian word",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "which lies hid in אַבְרֵךְ, is prob. either",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ⲁϥⲣⲉⲕ afrek, i. e. let every one bow",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "himself, in an opt. sense; so Jablonsky",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Opusc. ed. te Water Tom. I. p. 4. Copt.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Vers. John 8, 8; or better ⲁⲡⲉⲣⲉⲕ or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ⲁⲡⲣⲉⲕ, aperek, aprek, i. e. bow the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "head, Rossii Etymologiæ Ægypt. s. v.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "See also in אָב no. 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַבְשַׁי see אֲבִישַׁי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַבְשָׁלוֹם (father of peace, i. e. pacific)",
+   "status": "adjudicated",
+   "draft": "אַבְשָׁלוֹם (father of peace, i. e. pacific)",
+   "reread": "אַבְשָׁלֹם (father of peace, i. e. pacific)",
+   "verdict": "a",
+   "note": "Plene spelling: a vav is clearly printed between ל and ם, carrying the holem (לוֹם), not a bare holem on lamed as Reading B has.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Absalom, pr. n. a) The third son of Da-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "vid, by Maacah, 2 Sam. 3, 3, celebrated",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "for his rebellion against his father; for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "an account of his life and death, see 2",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Sam. c. 13–18. As to the sepulchre near",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Jerusalem which in modern times has",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "borne his name, see Bibl. Res. in Palest.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "I. p. 519, 520. b) i. q. אֲבִישָׁלוֹם q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אָגָא obsol. root, Arab. اَجَأَ to flee.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָגֵא (fugitive) Agee, pr. n. m. 2 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "23, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אָגַג obsol. root, Arab. أَجَّ to burn,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "to flame, as fire. Hence the two foll.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "pr. names.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲגַג and אֲגָג (Num. 24, 7) Agag, pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of Amalekitish kings, Num. 24, 7. 1 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "15, 8. 9. 20. 32.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲגָגִי Agagite, gentile n. of Haman,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Esth. 3, 1. 10. 8, 3. 5. Josephus explains",
+   "status": "adjudicated",
+   "draft": "Esth. 3, 1. 10, 8, 3. 5. Josephus explains",
+   "reread": "Esth. 3, 1. 10. 8, 3. 5. Josephus explains",
+   "verdict": "b",
+   "note": "After \"10\" the printed mark is a full stop on the baseline (no descending tail), not a comma — \"3, 1. 10.\" then \"8, 3. 5.\" (Esth. 3:1,10; 8:3,5), matching Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "it by Ἀμαληκίτης. Ant. 11. 6. 5.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 95,
+  "adjudicated": 6,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.7719
+}

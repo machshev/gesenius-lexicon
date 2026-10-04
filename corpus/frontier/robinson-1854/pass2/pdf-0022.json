@@ -1,0 +1,2567 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 22,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0022.png",
+ "raster_sha256": "45f92ec163be04f4aaf70ac3cb0ae4f22bddc94b36e80a62d1a64b67ded7ac9f",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0022.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T08:41:01+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 211,
+    "y": 134,
+    "width": 1751,
+    "height": 67
+   },
+   "draft_lines": [
+    "אֲבִי",
+    "6",
+    "אֲבִי"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 211,
+      "y": 132,
+      "width": 1751,
+      "height": 71
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/header-b00-1751x71+211+132-x2.png",
+     "image_sha256": "1f18240fbd518a375576ad548040c32fed74bfbe9a52209797924693f97155e6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אבי 6 אבי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d37080a5-14ba-4696-8056-d25f1175aa1d",
+      "duration_api_ms": 7355,
+      "cost_usd_list": 0.047232500000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 202
+     },
+     "lines": [
+      {
+       "draft": "אֲבִי 6 אֲבִי",
+       "reread": "אבי 6 אבי",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אבי 6 אבי",
+        "verdict": "b",
+        "note": "Running header: the catchwords are printed unpointed (no hataf-patah or hiriq), so Reading A's vowel points are not on the page; Reading B is exact.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0e9dd8fe-596b-41a5-89a9-6558c28cbc35",
+        "duration_api_ms": 21128,
+        "cost_usd_list": 0.053117250000000005,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3549,
+        "cache_creation_input_tokens": 1717,
+        "output_tokens": 357
+       },
+       "text": "אבי 6 אבי"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 211,
+    "y": 179,
+    "width": 861,
+    "height": 629
+   },
+   "draft_lines": [
+    "אֲבִיהוּא (to whom He, i. e. God, is",
+    "father) pr. n. Abihu, a son of Aaron,",
+    "slain by fire from God for offering un-",
+    "lawful sacrifice, Lev. 10, 1 sq.",
+    "אֲבִיהוּד (whose father is Judah, i. q.",
+    "אֲבִי יְהוּדָה) Abihud, pr. n. m. 1 Chr. 8, 3.",
+    "אֲבִיהַיִל (perh. for אֲבִיחַיִל) Abihail,",
+    "pr. n. f. a) The wife of Rehoboam, 2",
+    "Chr. 11, 18. b) 1 Chr. 2, 29."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 211,
+      "y": 171,
+      "width": 861,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r00-b00-861x258+211+171-x2.png",
+     "image_sha256": "d7d93a621a41ddfd979c05497b69439f522102d2a4093be4f401d23e783bc7f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבִיהוּא (to whom He, i. e. God, is",
+       "father) pr. n. Abihu, a son of Aaron,",
+       "slain by fire from God for offering un-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "97474192-5442-41a7-9f8d-fece888ae6eb",
+      "duration_api_ms": 10274,
+      "cost_usd_list": 0.07259325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2733,
+      "output_tokens": 334
+     },
+     "lines": [
+      {
+       "draft": "אֲבִיהוּא (to whom He, i. e. God, is",
+       "reread": "אֲבִיהוּא (to whom He, i. e. God, is",
+       "status": "agreed",
+       "text": "אֲבִיהוּא (to whom He, i. e. God, is"
+      },
+      {
+       "draft": "father) pr. n. Abihu, a son of Aaron,",
+       "reread": "father) pr. n. Abihu, a son of Aaron,",
+       "status": "agreed",
+       "text": "father) pr. n. Abihu, a son of Aaron,"
+      },
+      {
+       "draft": "slain by fire from God for offering un-",
+       "reread": "slain by fire from God for offering un-",
+       "status": "agreed",
+       "text": "slain by fire from God for offering un-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 211,
+      "y": 413,
+      "width": 861,
+      "height": 280
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r00-b01-861x280+211+413-x2.png",
+     "image_sha256": "07a6bb7f57d17418897e6b8f4571141eb04f5faed07eeba22c56937db65323e9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lawful sacrifice, Lev. 10, 1 sq.",
+       "אֲבִיהוּד (whose father is Judah, i. q.",
+       "אֲבִי יְהוּדָה) Abihud, pr. n. m. 1 Chr. 8, 3.",
+       "אֲבִיהַיִל (perh. for אֲבִיחַיִל) Abihail,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0791b453-94ae-480c-97fe-9ab75c13869c",
+      "duration_api_ms": 8932,
+      "cost_usd_list": 0.07218325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2795,
+      "output_tokens": 301
+     },
+     "lines": [
+      {
+       "draft": "lawful sacrifice, Lev. 10, 1 sq.",
+       "reread": "lawful sacrifice, Lev. 10, 1 sq.",
+       "status": "agreed",
+       "text": "lawful sacrifice, Lev. 10, 1 sq."
+      },
+      {
+       "draft": "אֲבִיהוּד (whose father is Judah, i. q.",
+       "reread": "אֲבִיהוּד (whose father is Judah, i. q.",
+       "status": "agreed",
+       "text": "אֲבִיהוּד (whose father is Judah, i. q."
+      },
+      {
+       "draft": "אֲבִי יְהוּדָה) Abihud, pr. n. m. 1 Chr. 8, 3.",
+       "reread": "אֲבִי יְהוּדָה) Abihud, pr. n. m. 1 Chr. 8, 3.",
+       "status": "agreed",
+       "text": "אֲבִי יְהוּדָה) Abihud, pr. n. m. 1 Chr. 8, 3."
+      },
+      {
+       "draft": "אֲבִיהַיִל (perh. for אֲבִיחַיִל) Abihail,",
+       "reread": "אֲבִיהַיִל (perh. for אֲבִיחַיִל) Abihail,",
+       "status": "agreed",
+       "text": "אֲבִיהַיִל (perh. for אֲבִיחַיִל) Abihail,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 211,
+      "y": 677,
+      "width": 861,
+      "height": 125
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r00-b02-861x125+211+677-x2.png",
+     "image_sha256": "4137afa9bc5ad7fec3a99bf3d1bb2771ba79d1a8f18189fdda5cdd90110d41e0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pr. n. f.  a) The wife of Rehoboam, 2",
+       "Chr. 11, 18.  b) 1 Chr. 2, 29."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0f79b062-db9e-4460-96ba-448fe6f82139",
+      "duration_api_ms": 4801,
+      "cost_usd_list": 0.05594325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2113,
+      "output_tokens": 249
+     },
+     "lines": [
+      {
+       "draft": "pr. n. f. a) The wife of Rehoboam, 2",
+       "reread": "pr. n. f.  a) The wife of Rehoboam, 2",
+       "status": "agreed",
+       "text": "pr. n. f. a) The wife of Rehoboam, 2"
+      },
+      {
+       "draft": "Chr. 11, 18. b) 1 Chr. 2, 29.",
+       "reread": "Chr. 11, 18.  b) 1 Chr. 2, 29.",
+       "status": "agreed",
+       "text": "Chr. 11, 18. b) 1 Chr. 2, 29."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 211,
+    "y": 796,
+    "width": 861,
+    "height": 743
+   },
+   "draft_lines": [
+    "אֶבְיוֹן adj. (r. אָבָה no. 2) 1. needy,",
+    "poor, Deut. 15, 4. 7. 11. Sons of the",
+    "needy, i. e. the needy, the poor, Ps. 72,",
+    "4 ; see בֵּן no. 8.",
+    "2. poor, i. e. afflicted, distressed,",
+    "wretched, often coupled with synon. עָנִי .",
+    "Ps. 40, 18 וַאֲנִי עָנִי וְאֶבְיוֹן and I am poor",
+    "and afflicted. 70, 6. 81, 1. 109, 22.—Spec.",
+    "like עָנִי , spoken of one who suffers un-",
+    "justly, with the accessory idea of humble",
+    "and pious feeling ; whence in Am. 2, 6",
+    "צַדִּיק and אֶבְיוֹן are joined. Also of a",
+    "whole people subjected to suffering and"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 211,
+      "y": 802,
+      "width": 861,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r01-b00-861x240+211+802-x2.png",
+     "image_sha256": "5a0e346b286fc4700c51c3ffddcdb76ab999e35c733d140c9050a7ae7634589d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶבְיוֹן adj. (r. אָבָה no. 2) 1. needy,",
+       "poor, Deut. 15, 4. 7. 11. Sons of the",
+       "needy, i. e. the needy, the poor, Ps. 72,",
+       "4; see בֵּן no. 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a9e54154-77ea-43ab-b9ce-184ce72aa488",
+      "duration_api_ms": 8325,
+      "cost_usd_list": 0.06830325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 273
+     },
+     "lines": [
+      {
+       "draft": "אֶבְיוֹן adj. (r. אָבָה no. 2) 1. needy,",
+       "reread": "אֶבְיוֹן adj. (r. אָבָה no. 2) 1. needy,",
+       "status": "agreed",
+       "text": "אֶבְיוֹן adj. (r. אָבָה no. 2) 1. needy,"
+      },
+      {
+       "draft": "poor, Deut. 15, 4. 7. 11. Sons of the",
+       "reread": "poor, Deut. 15, 4. 7. 11. Sons of the",
+       "status": "agreed",
+       "text": "poor, Deut. 15, 4. 7. 11. Sons of the"
+      },
+      {
+       "draft": "needy, i. e. the needy, the poor, Ps. 72,",
+       "reread": "needy, i. e. the needy, the poor, Ps. 72,",
+       "status": "agreed",
+       "text": "needy, i. e. the needy, the poor, Ps. 72,"
+      },
+      {
+       "draft": "4 ; see בֵּן no. 8.",
+       "reread": "4; see בֵּן no. 8.",
+       "status": "agreed",
+       "text": "4; see בֵּן no. 8."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 211,
+      "y": 1026,
+      "width": 861,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r01-b01-861x187+211+1026-x2.png",
+     "image_sha256": "21b5899cc5143f0f64a1932dfa6d1b8161efe6d9d79ff1b96c3bfa8217a3b045",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. poor, i. e. afflicted, distressed,",
+       "wretched, often coupled with synon. עָנִי .",
+       "Ps. 40, 18 וַאֲנִי עָנִי וְאֶבְיוֹן and I am poor"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "334b580a-c7ab-4fd0-a9f0-aad453bae049",
+      "duration_api_ms": 8831,
+      "cost_usd_list": 0.0760835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 527
+     },
+     "lines": [
+      {
+       "draft": "2. poor, i. e. afflicted, distressed,",
+       "reread": "2. poor, i. e. afflicted, distressed,",
+       "status": "agreed",
+       "text": "2. poor, i. e. afflicted, distressed,"
+      },
+      {
+       "draft": "wretched, often coupled with synon. עָנִי .",
+       "reread": "wretched, often coupled with synon. עָנִי .",
+       "status": "agreed",
+       "text": "wretched, often coupled with synon. עָנִי."
+      },
+      {
+       "draft": "Ps. 40, 18 וַאֲנִי עָנִי וְאֶבְיוֹן and I am poor",
+       "reread": "Ps. 40, 18 וַאֲנִי עָנִי וְאֶבְיוֹן and I am poor",
+       "status": "agreed",
+       "text": "Ps. 40, 18 וַאֲנִי עָנִי וְאֶבְיוֹן and I am poor"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 211,
+      "y": 1197,
+      "width": 861,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r01-b02-861x230+211+1197-x2.png",
+     "image_sha256": "10ee2b9539b4b2d4be6ed8b55ba25af50d43d46233e6dbaccecc93ad5189c12a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and afflicted. 70, 6. 81, 1. 109, 22.—Spec.",
+       "like עָנִי , spoken of one who suffers un-",
+       "justly, with the accessory idea of humble",
+       "and pious feeling; whence in Am. 2, 6"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "361f7d49-ab8e-4755-8e1a-504044140a9d",
+      "duration_api_ms": 8310,
+      "cost_usd_list": 0.06655349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 262
+     },
+     "lines": [
+      {
+       "draft": "and afflicted. 70, 6. 81, 1. 109, 22.—Spec.",
+       "reread": "and afflicted. 70, 6. 81, 1. 109, 22.—Spec.",
+       "status": "agreed",
+       "text": "and afflicted. 70, 6. 81, 1. 109, 22.—Spec."
+      },
+      {
+       "draft": "like עָנִי , spoken of one who suffers un-",
+       "reread": "like עָנִי , spoken of one who suffers un-",
+       "status": "agreed",
+       "text": "like עָנִי, spoken of one who suffers un-"
+      },
+      {
+       "draft": "justly, with the accessory idea of humble",
+       "reread": "justly, with the accessory idea of humble",
+       "status": "agreed",
+       "text": "justly, with the accessory idea of humble"
+      },
+      {
+       "draft": "and pious feeling ; whence in Am. 2, 6",
+       "reread": "and pious feeling; whence in Am. 2, 6",
+       "status": "agreed",
+       "text": "and pious feeling; whence in Am. 2, 6"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 211,
+      "y": 1411,
+      "width": 861,
+      "height": 136
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r01-b03-861x136+211+1411-x2.png",
+     "image_sha256": "7c943579ca929419921e78f7c86c3f95c2da13dd66e9617809ea5bcbaa991c12",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "צַדִּיק and אֶבְיוֹן are joined. Also of a",
+       "whole people subjected to suffering and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bd11483a-4210-46fa-bfd4-3fc79df80773",
+      "duration_api_ms": 7205,
+      "cost_usd_list": 0.0556235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2177,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "צַדִּיק and אֶבְיוֹן are joined. Also of a",
+       "reread": "צַדִּיק and אֶבְיוֹן are joined. Also of a",
+       "status": "agreed",
+       "text": "צַדִּיק and אֶבְיוֹן are joined. Also of a"
+      },
+      {
+       "draft": "whole people subjected to suffering and",
+       "reread": "whole people subjected to suffering and",
+       "status": "agreed",
+       "text": "whole people subjected to suffering and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 211,
+    "y": 1527,
+    "width": 861,
+    "height": 811
+   },
+   "draft_lines": [
+    "calamity, e. g. the Israelites in exile, Is.",
+    "41, 17 ; comp. 25, 4. In the same sense",
+    "the sect of the Ebionites adopted this",
+    "name, as being οἱ πτωχοὶ τῷ πνεύματι, ὧν",
+    "ἐστιν ἡ βασιλεία τῶν οὐρανῶν Matt. 5, 3.",
+    "אֲבִיּוֹנָה f. pr. desire, appetite, lust, from",
+    "r. אָבָה no. 1 ; then the caper-berry, which",
+    "is said to be a provocative of appetite and",
+    "lust, Plut. Quæst. Symp. 6. 2. Plin. H.",
+    "N. 13. 23. ib. 20. 15. Once Ecc. 12, 5.",
+    "So Sept. Vulg. Syr. The Rabbins use",
+    "the plur. אֲבִיּוֹנִין not only for caper-ber-",
+    "ries, but also for the small fruits or berries",
+    "of other trees, as the myrtle, olive, etc."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 211,
+      "y": 1519,
+      "width": 861,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r02-b00-861x237+211+1519-x2.png",
+     "image_sha256": "d4656f609f15ff97a04ab94eb710a02f974a8daf0225238a4b4d6f2e7197f224",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "calamity, e. g. the Israelites in exile, Is.",
+       "41, 17 ; comp. 25, 4.   In the same sense",
+       "the sect of the Ebionites adopted this",
+       "name, as being οἱ πτωχοὶ τῷ πνεύματι, ὧν"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "25d12cbb-d5d5-4ed1-852c-8279954b2c8c",
+      "duration_api_ms": 8551,
+      "cost_usd_list": 0.0670035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "calamity, e. g. the Israelites in exile, Is.",
+       "reread": "calamity, e. g. the Israelites in exile, Is.",
+       "status": "agreed",
+       "text": "calamity, e. g. the Israelites in exile, Is."
+      },
+      {
+       "draft": "41, 17 ; comp. 25, 4. In the same sense",
+       "reread": "41, 17 ; comp. 25, 4.   In the same sense",
+       "status": "agreed",
+       "text": "41, 17; comp. 25, 4. In the same sense"
+      },
+      {
+       "draft": "the sect of the Ebionites adopted this",
+       "reread": "the sect of the Ebionites adopted this",
+       "status": "agreed",
+       "text": "the sect of the Ebionites adopted this"
+      },
+      {
+       "draft": "name, as being οἱ πτωχοὶ τῷ πνεύματι, ὧν",
+       "reread": "name, as being οἱ πτωχοὶ τῷ πνεύματι, ὧν",
+       "status": "agreed",
+       "text": "name, as being οἱ πτωχοὶ τῷ πνεύματι, ὧν"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 211,
+      "y": 1740,
+      "width": 861,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r02-b01-861x262+211+1740-x2.png",
+     "image_sha256": "69bc136d47a9911ec86cd89e5ef19e8fb08aa1ba51dca6f0f71b51a7c763a77c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ἐστιν ἡ βασιλεία τῶν οὐρανῶν Matt. 5, 3.",
+       "אֲבִיּוֹנָה f. pr. desire, appetite, lust, from",
+       "r. אָבָה no. 1 ; then the caper-berry, which",
+       "is said to be a provocative of appetite and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "690d29b0-40a8-4b51-98ee-5a011839df8e",
+      "duration_api_ms": 11644,
+      "cost_usd_list": 0.0815835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 513
+     },
+     "lines": [
+      {
+       "draft": "ἐστιν ἡ βασιλεία τῶν οὐρανῶν Matt. 5, 3.",
+       "reread": "ἐστιν ἡ βασιλεία τῶν οὐρανῶν Matt. 5, 3.",
+       "status": "agreed",
+       "text": "ἐστιν ἡ βασιλεία τῶν οὐρανῶν Matt. 5, 3."
+      },
+      {
+       "draft": "אֲבִיּוֹנָה f. pr. desire, appetite, lust, from",
+       "reread": "אֲבִיּוֹנָה f. pr. desire, appetite, lust, from",
+       "status": "agreed",
+       "text": "אֲבִיּוֹנָה f. pr. desire, appetite, lust, from"
+      },
+      {
+       "draft": "r. אָבָה no. 1 ; then the caper-berry, which",
+       "reread": "r. אָבָה no. 1 ; then the caper-berry, which",
+       "status": "agreed",
+       "text": "r. אָבָה no. 1; then the caper-berry, which"
+      },
+      {
+       "draft": "is said to be a provocative of appetite and",
+       "reread": "is said to be a provocative of appetite and",
+       "status": "agreed",
+       "text": "is said to be a provocative of appetite and"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 211,
+      "y": 1986,
+      "width": 861,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r02-b02-861x240+211+1986-x2.png",
+     "image_sha256": "b2d8358d4daedc9abda49a00e764318cc6c1773df92785eb33bc07313f56cfb2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lust, Plut. Quæst. Symp. 6. 2. Plin. H.",
+       "N. 13. 23. ib. 20. 15. Once Ecc. 12, 5.",
+       "So Sept. Vulg. Syr. The Rabbins use",
+       "the plur. אַבְיוֹנִין not only for caper-ber-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13a25597-f26f-4203-bc8b-ff9acf016f79",
+      "duration_api_ms": 7115,
+      "cost_usd_list": 0.0746935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 400
+     },
+     "lines": [
+      {
+       "draft": "lust, Plut. Quæst. Symp. 6. 2. Plin. H.",
+       "reread": "lust, Plut. Quæst. Symp. 6. 2. Plin. H.",
+       "status": "agreed",
+       "text": "lust, Plut. Quæst. Symp. 6. 2. Plin. H."
+      },
+      {
+       "draft": "N. 13. 23. ib. 20. 15. Once Ecc. 12, 5.",
+       "reread": "N. 13. 23. ib. 20. 15. Once Ecc. 12, 5.",
+       "status": "agreed",
+       "text": "N. 13. 23. ib. 20. 15. Once Ecc. 12, 5."
+      },
+      {
+       "draft": "So Sept. Vulg. Syr. The Rabbins use",
+       "reread": "So Sept. Vulg. Syr. The Rabbins use",
+       "status": "agreed",
+       "text": "So Sept. Vulg. Syr. The Rabbins use"
+      },
+      {
+       "draft": "the plur. אֲבִיּוֹנִין not only for caper-ber-",
+       "reread": "the plur. אַבְיוֹנִין not only for caper-ber-",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "the plur. אֲבִיּוֹנִין not only for caper-ber-",
+        "verdict": "a",
+        "note": "Under the aleph the print shows a compound mark (two stacked dots plus a short stroke), i.e. hataf-patah, not a plain patah; the bet carries a single dot (hiriq), not a shva. Yod has dagesh, vav has holem, nun hiriq, then yod and final nun — matching Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "61f8f3c8-ae98-4280-b693-7c08334ee7aa",
+        "duration_api_ms": 20680,
+        "cost_usd_list": 0.10990475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2606,
+        "output_tokens": 1131
+       },
+       "text": "the plur. אֲבִיּוֹנִין not only for caper-ber-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 211,
+      "y": 2210,
+      "width": 861,
+      "height": 121
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r02-b03-861x121+211+2210-x2.png",
+     "image_sha256": "2c30a6c34b669a9b9bab6ff16f88e0cd28f85fca81dc629ce81e0f3f82039c4d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ries, but also for the small fruits or berries",
+       "of other trees, as the myrtle, olive, etc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8fa20b2f-332b-4b04-a4ed-620443d711db",
+      "duration_api_ms": 7804,
+      "cost_usd_list": 0.05408349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2115,
+      "output_tokens": 211
+     },
+     "lines": [
+      {
+       "draft": "ries, but also for the small fruits or berries",
+       "reread": "ries, but also for the small fruits or berries",
+       "status": "agreed",
+       "text": "ries, but also for the small fruits or berries"
+      },
+      {
+       "draft": "of other trees, as the myrtle, olive, etc.",
+       "reread": "of other trees, as the myrtle, olive, etc.",
+       "status": "agreed",
+       "text": "of other trees, as the myrtle, olive, etc."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 211,
+    "y": 2326,
+    "width": 861,
+    "height": 943
+   },
+   "draft_lines": [
+    "אֲבִיחַיִל (father of might, i. q. mighty)",
+    "Abihail, pr. n. m. a) Num. 3, 35. b)",
+    "1 Chr. 5, 14. c) The father of Esther,",
+    "Esth. 2, 15. 9, 29.",
+    "אֲבִיטוּב (father of goodness) Abitub,",
+    "pr. n. m. 1 Chr. 8, 21.",
+    "אֲבִיטַל (whose father is the dew) Abi-",
+    "tal, pr. n. of one of David's wives, 2 Sam.",
+    "3, 4.",
+    "אֲבִיָּם see אֲבִיָּהוּ .",
+    "אֲבִימָאֵל m. Gen. 10, 28. 1 Chr. 1, 22,",
+    "Abimael, pr. n. of one of the descendants",
+    "of Joktan in Arabia, prob. the father or",
+    "founder of an Arabian tribe called מָאֵל,",
+    "a trace of which Bochart (Phaleg 2. 24)"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 211,
+      "y": 2334,
+      "width": 861,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r03-b00-861x244+211+2334-x2.png",
+     "image_sha256": "d67877dff9c2a1c0689f98afb872a82330cc3f66759708fa8dcf635d49082036",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבִיחַיִל (father of might, i. q. mighty)",
+       "Abihail, pr. n. m. a) Num. 3, 35. b)",
+       "1 Chr. 5, 14. c) The father of Esther,",
+       "Esth. 2, 15. 9, 29."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "534b0b4a-0d03-49e3-b038-77182be28e9f",
+      "duration_api_ms": 9899,
+      "cost_usd_list": 0.0728935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 364
+     },
+     "lines": [
+      {
+       "draft": "אֲבִיחַיִל (father of might, i. q. mighty)",
+       "reread": "אֲבִיחַיִל (father of might, i. q. mighty)",
+       "status": "agreed",
+       "text": "אֲבִיחַיִל (father of might, i. q. mighty)"
+      },
+      {
+       "draft": "Abihail, pr. n. m. a) Num. 3, 35. b)",
+       "reread": "Abihail, pr. n. m. a) Num. 3, 35. b)",
+       "status": "agreed",
+       "text": "Abihail, pr. n. m. a) Num. 3, 35. b)"
+      },
+      {
+       "draft": "1 Chr. 5, 14. c) The father of Esther,",
+       "reread": "1 Chr. 5, 14. c) The father of Esther,",
+       "status": "agreed",
+       "text": "1 Chr. 5, 14. c) The father of Esther,"
+      },
+      {
+       "draft": "Esth. 2, 15. 9, 29.",
+       "reread": "Esth. 2, 15. 9, 29.",
+       "status": "agreed",
+       "text": "Esth. 2, 15. 9, 29."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 211,
+      "y": 2562,
+      "width": 861,
+      "height": 281
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r03-b01-861x281+211+2562-x2.png",
+     "image_sha256": "debccb6731fbe0c32228e14694ad5a57ffaf643ed96db1a0a8aee3e75ffbc47a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבִיטוּב (father of goodness) Abitub,",
+       "pr. n. m. 1 Chr. 8, 21.",
+       "אֲבִיטַל (whose father is the dew) Abi-",
+       "tal, pr. n. of one of David's wives, 2 Sam."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a51393e7-03a5-4088-b0dd-9f10d2629706",
+      "duration_api_ms": 10924,
+      "cost_usd_list": 0.08276349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2859,
+      "output_tokens": 487
+     },
+     "lines": [
+      {
+       "draft": "אֲבִיטוּב (father of goodness) Abitub,",
+       "reread": "אֲבִיטוּב (father of goodness) Abitub,",
+       "status": "agreed",
+       "text": "אֲבִיטוּב (father of goodness) Abitub,"
+      },
+      {
+       "draft": "pr. n. m. 1 Chr. 8, 21.",
+       "reread": "pr. n. m. 1 Chr. 8, 21.",
+       "status": "agreed",
+       "text": "pr. n. m. 1 Chr. 8, 21."
+      },
+      {
+       "draft": "אֲבִיטַל (whose father is the dew) Abi-",
+       "reread": "אֲבִיטַל (whose father is the dew) Abi-",
+       "status": "agreed",
+       "text": "אֲבִיטַל (whose father is the dew) Abi-"
+      },
+      {
+       "draft": "tal, pr. n. of one of David's wives, 2 Sam.",
+       "reread": "tal, pr. n. of one of David's wives, 2 Sam.",
+       "status": "agreed",
+       "text": "tal, pr. n. of one of David's wives, 2 Sam."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 211,
+      "y": 2827,
+      "width": 861,
+      "height": 280
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r03-b02-861x280+211+2827-x2.png",
+     "image_sha256": "9bd4571714f0cf5be7ddea4f66002d9a7e8107ba3236775b722c98ea64b95397",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3, 4.",
+       "אֲבִיָּם see אֲבִיָּהוּ.",
+       "אֲבִימָאֵל m. Gen. 10, 28. 1 Chr. 1, 22,",
+       "Abimael, pr. n. of one of the descendants"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "70df444f-70ad-4c59-b43f-116f182f0aed",
+      "duration_api_ms": 14700,
+      "cost_usd_list": 0.0905235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 667
+     },
+     "lines": [
+      {
+       "draft": "3, 4.",
+       "reread": "3, 4.",
+       "status": "agreed",
+       "text": "3, 4."
+      },
+      {
+       "draft": "אֲבִיָּם see אֲבִיָּהוּ .",
+       "reread": "אֲבִיָּם see אֲבִיָּהוּ.",
+       "status": "agreed",
+       "text": "אֲבִיָּם see אֲבִיָּהוּ."
+      },
+      {
+       "draft": "אֲבִימָאֵל m. Gen. 10, 28. 1 Chr. 1, 22,",
+       "reread": "אֲבִימָאֵל m. Gen. 10, 28. 1 Chr. 1, 22,",
+       "status": "agreed",
+       "text": "אֲבִימָאֵל m. Gen. 10, 28. 1 Chr. 1, 22,"
+      },
+      {
+       "draft": "Abimael, pr. n. of one of the descendants",
+       "reread": "Abimael, pr. n. of one of the descendants",
+       "status": "agreed",
+       "text": "Abimael, pr. n. of one of the descendants"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 211,
+      "y": 3091,
+      "width": 861,
+      "height": 180
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c0-r03-b03-861x180+211+3091-x2.png",
+     "image_sha256": "52b61597bda4c0e57b1d715b477a5e3147dc6f51d3d77fc62795e4fb2ef37950",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of Joktan in Arabia, prob. the father or",
+       "founder of an Arabian tribe called מָאֵל,",
+       "a trace of which Bochart (Phaleg 2. 24)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "83cb1b36-9245-4af7-8523-3bacf5b13004",
+      "duration_api_ms": 9308,
+      "cost_usd_list": 0.0649935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2363,
+      "output_tokens": 330
+     },
+     "lines": [
+      {
+       "draft": "of Joktan in Arabia, prob. the father or",
+       "reread": "of Joktan in Arabia, prob. the father or",
+       "status": "agreed",
+       "text": "of Joktan in Arabia, prob. the father or"
+      },
+      {
+       "draft": "founder of an Arabian tribe called מָאֵל,",
+       "reread": "founder of an Arabian tribe called מָאֵל,",
+       "status": "agreed",
+       "text": "founder of an Arabian tribe called מָאֵל,"
+      },
+      {
+       "draft": "a trace of which Bochart (Phaleg 2. 24)",
+       "reread": "a trace of which Bochart (Phaleg 2. 24)",
+       "status": "agreed",
+       "text": "a trace of which Bochart (Phaleg 2. 24)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1094,
+    "y": 179,
+    "width": 868,
+    "height": 699
+   },
+   "draft_lines": [
+    "finds in Theophrast. Hist. Plant. 9. 4;",
+    "where the name Μάλι prob. refers to",
+    "the same wandering tribe in the vicinity",
+    "of the modern Mecca, which Strabo calls",
+    "Μειναῖοι, Minæi.",
+    "אֲבִימֶ֫לֶךְ (father of the king, or father",
+    "king) in pause אֲבִימָ֫לֶךְ, Abimelech, pr. n.",
+    "a) Of several kings in the land of the Phi-",
+    "listines at different periods of time, Gen.",
+    "20, 2 sq. 21, 22 sq. 26, 1 sq. Ps. 34, 1. The",
+    "same king who in Ps. l. c. is called Abi-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1094,
+      "y": 171,
+      "width": 868,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r00-b00-868x297+1094+171-x2.png",
+     "image_sha256": "c712ce8ed456acecb045f72399aad8a7dd4062ff578bd75b965600a3424e1a99",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "finds in Theophrast. Hist. Plant. 9. 4 ;",
+       "where the name Μάλι prob. refers to",
+       "the same wandering tribe in the vicinity",
+       "of the modern Mecca, which Strabo calls"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a197c972-798b-49a6-8412-56857fd71fc8",
+      "duration_api_ms": 8268,
+      "cost_usd_list": 0.07230349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2921,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "finds in Theophrast. Hist. Plant. 9. 4;",
+       "reread": "finds in Theophrast. Hist. Plant. 9. 4 ;",
+       "status": "agreed",
+       "text": "finds in Theophrast. Hist. Plant. 9. 4;"
+      },
+      {
+       "draft": "where the name Μάλι prob. refers to",
+       "reread": "where the name Μάλι prob. refers to",
+       "status": "agreed",
+       "text": "where the name Μάλι prob. refers to"
+      },
+      {
+       "draft": "the same wandering tribe in the vicinity",
+       "reread": "the same wandering tribe in the vicinity",
+       "status": "agreed",
+       "text": "the same wandering tribe in the vicinity"
+      },
+      {
+       "draft": "of the modern Mecca, which Strabo calls",
+       "reread": "of the modern Mecca, which Strabo calls",
+       "status": "agreed",
+       "text": "of the modern Mecca, which Strabo calls"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1094,
+      "y": 452,
+      "width": 868,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r00-b01-868x258+1094+452-x2.png",
+     "image_sha256": "534aff9c5ea14bb84347f2bdd48f52b2a0669b7e146a67e42e59de601c4d8723",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Μειναῖοι, Minæi.",
+       "אֲבִימֶלֶךְ (father of the king, or father",
+       "king) in pause אֲבִימָלֶךְ, Abimelech, pr. n.",
+       "a) Of several kings in the land of the Phi-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "23bae2eb-582b-4c7e-bff6-eb663e4cb77d",
+      "duration_api_ms": 10906,
+      "cost_usd_list": 0.0805835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 493
+     },
+     "lines": [
+      {
+       "draft": "Μειναῖοι, Minæi.",
+       "reread": "Μειναῖοι, Minæi.",
+       "status": "agreed",
+       "text": "Μειναῖοι, Minæi."
+      },
+      {
+       "draft": "אֲבִימֶ֫לֶךְ (father of the king, or father",
+       "reread": "אֲבִימֶלֶךְ (father of the king, or father",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "אֲבִימֶ֫לֶךְ (father of the king, or father",
+        "verdict": "a",
+        "note": "A short diagonal accent stroke is printed above the מ (between מ and ל) in the headword, marking penultimate stress; Reading B omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bc0f5cb4-0941-4954-949c-e88090d98a9c",
+        "duration_api_ms": 17730,
+        "cost_usd_list": 0.093534,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3576,
+        "cache_creation_input_tokens": 2665,
+        "output_tokens": 780
+       },
+       "text": "אֲבִימֶ֫לֶךְ (father of the king, or father"
+      },
+      {
+       "draft": "king) in pause אֲבִימָ֫לֶךְ, Abimelech, pr. n.",
+       "reread": "king) in pause אֲבִימָלֶךְ, Abimelech, pr. n.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "king) in pause אֲבִימָ֫לֶךְ, Abimelech, pr. n.",
+        "verdict": "a",
+        "note": "A small accent stroke is printed above the mem of the pausal form (marking the penultimate tone, as also on the headword in line 2); Reading B omits it. All other letters and points agree: qamets under mem, segol under lamed, final kaf with sheva, no plene vav.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "618ad45f-8683-408f-9a4d-105a5d92fbdf",
+        "duration_api_ms": 21839,
+        "cost_usd_list": 0.112258,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3592,
+        "cache_creation_input_tokens": 2681,
+        "output_tokens": 1148
+       },
+       "text": "king) in pause אֲבִימָ֫לֶךְ, Abimelech, pr. n."
+      },
+      {
+       "draft": "a) Of several kings in the land of the Phi-",
+       "reread": "a) Of several kings in the land of the Phi-",
+       "status": "agreed",
+       "text": "a) Of several kings in the land of the Phi-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1094,
+      "y": 694,
+      "width": 868,
+      "height": 192
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r00-b02-868x192+1094+694-x2.png",
+     "image_sha256": "fc4945ebe4982bdd1bf0326bf30f02e25c2e11e3bda8e5605410a978ad48ec46",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "listines at different periods of time, Gen.",
+       "20, 2 sq. 21, 22 sq. 26, 1 sq. Ps. 34, 1. The",
+       "same king who in Ps. l. c. is called Abi-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "55616d9b-5681-4ee6-921f-cae6c57a0916",
+      "duration_api_ms": 7410,
+      "cost_usd_list": 0.0622335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "listines at different periods of time, Gen.",
+       "reread": "listines at different periods of time, Gen.",
+       "status": "agreed",
+       "text": "listines at different periods of time, Gen."
+      },
+      {
+       "draft": "20, 2 sq. 21, 22 sq. 26, 1 sq. Ps. 34, 1. The",
+       "reread": "20, 2 sq. 21, 22 sq. 26, 1 sq. Ps. 34, 1. The",
+       "status": "agreed",
+       "text": "20, 2 sq. 21, 22 sq. 26, 1 sq. Ps. 34, 1. The"
+      },
+      {
+       "draft": "same king who in Ps. l. c. is called Abi-",
+       "reread": "same king who in Ps. l. c. is called Abi-",
+       "status": "agreed",
+       "text": "same king who in Ps. l. c. is called Abi-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1094,
+    "y": 866,
+    "width": 868,
+    "height": 875
+   },
+   "draft_lines": [
+    "melech, in 1 Sam. 21, 11 bears the name",
+    "of אָכִישׁ Achish ; and hence the former",
+    "might seem to be a common title of these",
+    "kings, like the پاد شاه Padishah (Pater",
+    "Rex) of the Persian kings, and اتاليق",
+    "Atâlîk (father, pr. paternity) of the",
+    "Khans of Bucharia. b) A son of Gideon,",
+    "Judg. 8, 31 sq. 9, 1 sq. 2 Sam. 11, 21.",
+    "c) 1 Chr. 18, 16, where the true reading",
+    "is prob. אֲחִימֶלֶךְ , as in 2 Sam. 8, 17.",
+    "אֲבִינָדָב (father of nobleness, or noble",
+    "father) Abinadab, pr. n. m. a) A son",
+    "of Jesse, 1 Sam. 16, 8. 17, 13. b) A son",
+    "of Saul, 1 Sam. 31, 2. c) 1 Sam. 7, 1.",
+    "d) 1 K. 4, 11."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1094,
+      "y": 858,
+      "width": 868,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r01-b00-868x248+1094+858-x2.png",
+     "image_sha256": "173e88a62b9e569bc46d5d37018540318e602707014932dcf21a7f88902b6d78",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "melech, in 1 Sam. 21, 11 bears the name",
+       "of אָכִישׁ Achish ; and hence the former",
+       "might seem to be a common title of these",
+       "kings, like the پاد شاه Padishah (Pater"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fa18e125-c31a-4920-8d36-bf51838ce0f2",
+      "duration_api_ms": 10104,
+      "cost_usd_list": 0.0741935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 390
+     },
+     "lines": [
+      {
+       "draft": "melech, in 1 Sam. 21, 11 bears the name",
+       "reread": "melech, in 1 Sam. 21, 11 bears the name",
+       "status": "agreed",
+       "text": "melech, in 1 Sam. 21, 11 bears the name"
+      },
+      {
+       "draft": "of אָכִישׁ Achish ; and hence the former",
+       "reread": "of אָכִישׁ Achish ; and hence the former",
+       "status": "agreed",
+       "text": "of אָכִישׁ Achish; and hence the former"
+      },
+      {
+       "draft": "might seem to be a common title of these",
+       "reread": "might seem to be a common title of these",
+       "status": "agreed",
+       "text": "might seem to be a common title of these"
+      },
+      {
+       "draft": "kings, like the پاد شاه Padishah (Pater",
+       "reread": "kings, like the پاد شاه Padishah (Pater",
+       "status": "agreed",
+       "text": "kings, like the پاد شاه Padishah (Pater"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1094,
+      "y": 1090,
+      "width": 868,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r01-b01-868x297+1094+1090-x2.png",
+     "image_sha256": "f57c7910f720689b8ff743fbf29d1ed67fae207a6bdde09ff111f1cc4e9e31c9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Rex) of the Persian kings, and اتاليق",
+       "Atâlîk (father, pr. paternity) of the",
+       "Khans of Bucharia. b) A son of Gideon,",
+       "Judg. 8, 31 sq. 9, 1 sq. 2 Sam. 11, 21.",
+       "c) 1 Chr. 18, 16, where the true reading"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6580cbf-87ac-41fa-a0b7-bbe8db4d5d40",
+      "duration_api_ms": 9775,
+      "cost_usd_list": 0.07934375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2923,
+      "output_tokens": 393
+     },
+     "lines": [
+      {
+       "draft": "Rex) of the Persian kings, and اتاليق",
+       "reread": "Rex) of the Persian kings, and اتاليق",
+       "status": "agreed",
+       "text": "Rex) of the Persian kings, and اتاليق"
+      },
+      {
+       "draft": "Atâlîk (father, pr. paternity) of the",
+       "reread": "Atâlîk (father, pr. paternity) of the",
+       "status": "agreed",
+       "text": "Atâlîk (father, pr. paternity) of the"
+      },
+      {
+       "draft": "Khans of Bucharia. b) A son of Gideon,",
+       "reread": "Khans of Bucharia. b) A son of Gideon,",
+       "status": "agreed",
+       "text": "Khans of Bucharia. b) A son of Gideon,"
+      },
+      {
+       "draft": "Judg. 8, 31 sq. 9, 1 sq. 2 Sam. 11, 21.",
+       "reread": "Judg. 8, 31 sq. 9, 1 sq. 2 Sam. 11, 21.",
+       "status": "agreed",
+       "text": "Judg. 8, 31 sq. 9, 1 sq. 2 Sam. 11, 21."
+      },
+      {
+       "draft": "c) 1 Chr. 18, 16, where the true reading",
+       "reread": "c) 1 Chr. 18, 16, where the true reading",
+       "status": "agreed",
+       "text": "c) 1 Chr. 18, 16, where the true reading"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1094,
+      "y": 1371,
+      "width": 868,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r01-b02-868x258+1094+1371-x2.png",
+     "image_sha256": "4c79dccb95aa71f62a825c79e93ee10520d9bc15e99965818f8480b215fc3d59",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is prob. אֲחִימֶלֶךְ, as in 2 Sam. 8, 17.",
+       "אֲבִינָדָב (father of nobleness, or noble",
+       "father) Abinadab, pr. n. m. a) A son",
+       "of Jesse, 1 Sam. 16, 8. 17, 13. b) A son"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3576beef-a442-419e-92f8-9e333c377a72",
+      "duration_api_ms": 12308,
+      "cost_usd_list": 0.08607375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2737,
+      "output_tokens": 602
+     },
+     "lines": [
+      {
+       "draft": "is prob. אֲחִימֶלֶךְ , as in 2 Sam. 8, 17.",
+       "reread": "is prob. אֲחִימֶלֶךְ, as in 2 Sam. 8, 17.",
+       "status": "agreed",
+       "text": "is prob. אֲחִימֶלֶךְ, as in 2 Sam. 8, 17."
+      },
+      {
+       "draft": "אֲבִינָדָב (father of nobleness, or noble",
+       "reread": "אֲבִינָדָב (father of nobleness, or noble",
+       "status": "agreed",
+       "text": "אֲבִינָדָב (father of nobleness, or noble"
+      },
+      {
+       "draft": "father) Abinadab, pr. n. m. a) A son",
+       "reread": "father) Abinadab, pr. n. m. a) A son",
+       "status": "agreed",
+       "text": "father) Abinadab, pr. n. m. a) A son"
+      },
+      {
+       "draft": "of Jesse, 1 Sam. 16, 8. 17, 13. b) A son",
+       "reread": "of Jesse, 1 Sam. 16, 8. 17, 13. b) A son",
+       "status": "agreed",
+       "text": "of Jesse, 1 Sam. 16, 8. 17, 13. b) A son"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1094,
+      "y": 1613,
+      "width": 868,
+      "height": 122
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r01-b03-868x122+1094+1613-x2.png",
+     "image_sha256": "491899df218341f82fa5a54c2c35f1d019df91b9afc2fbae5ed54ce378ef8eaa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of Saul, 1 Sam. 31, 2.   c) 1 Sam. 7, 1.",
+       "d) 1 K. 4, 11."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "99caee4f-075e-45dc-82a7-2a5a725bc5bd",
+      "duration_api_ms": 7305,
+      "cost_usd_list": 0.05492375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2117,
+      "output_tokens": 227
+     },
+     "lines": [
+      {
+       "draft": "of Saul, 1 Sam. 31, 2. c) 1 Sam. 7, 1.",
+       "reread": "of Saul, 1 Sam. 31, 2.   c) 1 Sam. 7, 1.",
+       "status": "agreed",
+       "text": "of Saul, 1 Sam. 31, 2. c) 1 Sam. 7, 1."
+      },
+      {
+       "draft": "d) 1 K. 4, 11.",
+       "reread": "d) 1 K. 4, 11.",
+       "status": "agreed",
+       "text": "d) 1 K. 4, 11."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1094,
+    "y": 1729,
+    "width": 868,
+    "height": 962
+   },
+   "draft_lines": [
+    "אֲבִינֹעַם (father of pleasantness or",
+    "grace) Abinoam, pr. n. of the father of",
+    "Barak, Judg. 4, 6. 5, 1.",
+    "אֲבִינֵר (father of a light) Abiner, pr.",
+    "n. m. 1 Sam. 14, 50. Elsewhere אַבְנֵר",
+    "Abner, q. v.",
+    "אֲבִיעֶזֶר (father of help, like Germ.",
+    "Adolf, from Atta father and Holf help)",
+    "Abiezer, pr. n. m. a) A son of Gilead,",
+    "Josh. 17, 2 ; also meton. of his descend-",
+    "ants, Judg. 6, 34. 8, 2. Patronym. is",
+    "אֲבִי הָעֶזְרִי the Abi-ezrite Judg. 6, 11. 24.",
+    "8, 32.—An abridged form is אִיעֶזֶר Iezer,",
+    "Num. 26, 30 ; and the patronym. אִיעֶזְרִי",
+    "ib. b) One of David's warriors, 2 Sam.",
+    "23, 27. 1 Chr. 11, 28. 27, 12."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1094,
+      "y": 1735,
+      "width": 868,
+      "height": 268
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r02-b00-868x268+1094+1735-x2.png",
+     "image_sha256": "1cfdb6cecfc647784f312d0d02ee8abdeed8153a20a712514985d9b2edaa046a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבִינֹעַם (father of pleasantness or",
+       "grace) Abinoam, pr. n. of the father of",
+       "Barak, Judg. 4, 6. 5, 1.",
+       "אֲבִינֵר (father of a light) Abiner, pr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b4ec034b-e0df-421a-a1e8-9fdc756daca0",
+      "duration_api_ms": 10988,
+      "cost_usd_list": 0.08336375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 523
+     },
+     "lines": [
+      {
+       "draft": "אֲבִינֹעַם (father of pleasantness or",
+       "reread": "אֲבִינֹעַם (father of pleasantness or",
+       "status": "agreed",
+       "text": "אֲבִינֹעַם (father of pleasantness or"
+      },
+      {
+       "draft": "grace) Abinoam, pr. n. of the father of",
+       "reread": "grace) Abinoam, pr. n. of the father of",
+       "status": "agreed",
+       "text": "grace) Abinoam, pr. n. of the father of"
+      },
+      {
+       "draft": "Barak, Judg. 4, 6. 5, 1.",
+       "reread": "Barak, Judg. 4, 6. 5, 1.",
+       "status": "agreed",
+       "text": "Barak, Judg. 4, 6. 5, 1."
+      },
+      {
+       "draft": "אֲבִינֵר (father of a light) Abiner, pr.",
+       "reread": "אֲבִינֵר (father of a light) Abiner, pr.",
+       "status": "agreed",
+       "text": "אֲבִינֵר (father of a light) Abiner, pr."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1094,
+      "y": 1987,
+      "width": 868,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r02-b01-868x259+1094+1987-x2.png",
+     "image_sha256": "34453ccc1458bcf2709f10d3d01f013a65abae4f1042d76a149df6074f67731d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "n. m. 1 Sam. 14, 50. Elsewhere אַבְנֵר",
+       "Abner, q. v.",
+       "אֲבִיעֶזֶר (father of help, like Germ.",
+       "Adolf, from Atta father and Holf help)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "32e1a668-fd0e-47c3-8d4e-11ede024441e",
+      "duration_api_ms": 11709,
+      "cost_usd_list": 0.08277375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2737,
+      "output_tokens": 536
+     },
+     "lines": [
+      {
+       "draft": "n. m. 1 Sam. 14, 50. Elsewhere אַבְנֵר",
+       "reread": "n. m. 1 Sam. 14, 50. Elsewhere אַבְנֵר",
+       "status": "agreed",
+       "text": "n. m. 1 Sam. 14, 50. Elsewhere אַבְנֵר"
+      },
+      {
+       "draft": "Abner, q. v.",
+       "reread": "Abner, q. v.",
+       "status": "agreed",
+       "text": "Abner, q. v."
+      },
+      {
+       "draft": "אֲבִיעֶזֶר (father of help, like Germ.",
+       "reread": "אֲבִיעֶזֶר (father of help, like Germ.",
+       "status": "agreed",
+       "text": "אֲבִיעֶזֶר (father of help, like Germ."
+      },
+      {
+       "draft": "Adolf, from Atta father and Holf help)",
+       "reread": "Adolf, from Atta father and Holf help)",
+       "status": "agreed",
+       "text": "Adolf, from Atta father and Holf help)"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1094,
+      "y": 2230,
+      "width": 868,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r02-b02-868x234+1094+2230-x2.png",
+     "image_sha256": "fb1dc52c728d6592ede3176f2dcf5306c2e1efc55c501ef2b5d449b333423e17",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Abiezer, pr. n. m.   a) A son of Gilead,",
+       "Josh. 17, 2 ; also meton. of his descend-",
+       "ants, Judg. 6, 34. 8, 2.  Patronym. is",
+       "אֲבִי הָעֶזְרִי the Abi-ezrite Judg. 6, 11. 24."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "059d6c5c-3e02-4d1e-95e4-1bd08b155e6a",
+      "duration_api_ms": 9635,
+      "cost_usd_list": 0.07144375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 359
+     },
+     "lines": [
+      {
+       "draft": "Abiezer, pr. n. m. a) A son of Gilead,",
+       "reread": "Abiezer, pr. n. m.   a) A son of Gilead,",
+       "status": "agreed",
+       "text": "Abiezer, pr. n. m. a) A son of Gilead,"
+      },
+      {
+       "draft": "Josh. 17, 2 ; also meton. of his descend-",
+       "reread": "Josh. 17, 2 ; also meton. of his descend-",
+       "status": "agreed",
+       "text": "Josh. 17, 2; also meton. of his descend-"
+      },
+      {
+       "draft": "ants, Judg. 6, 34. 8, 2. Patronym. is",
+       "reread": "ants, Judg. 6, 34. 8, 2.  Patronym. is",
+       "status": "agreed",
+       "text": "ants, Judg. 6, 34. 8, 2. Patronym. is"
+      },
+      {
+       "draft": "אֲבִי הָעֶזְרִי the Abi-ezrite Judg. 6, 11. 24.",
+       "reread": "אֲבִי הָעֶזְרִי the Abi-ezrite Judg. 6, 11. 24.",
+       "status": "agreed",
+       "text": "אֲבִי הָעֶזְרִי the Abi-ezrite Judg. 6, 11. 24."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1094,
+      "y": 2448,
+      "width": 868,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r02-b03-868x235+1094+2448-x2.png",
+     "image_sha256": "2e293dc622c8b16bbd4bbdeed047545dfb07160144747864ca6a0c999e176b0e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "8, 32.—An abridged form is אִיעֶזֶר Iezer,",
+       "Num. 26, 30 ; and the patronym. אִיעֶזְרִי",
+       "ib. b) One of David's warriors, 2 Sam.",
+       "23, 27. 1 Chr. 11, 28. 27, 12."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e18bde1f-32fc-43b7-9b2f-5a2d3a2e427f",
+      "duration_api_ms": 11511,
+      "cost_usd_list": 0.07954375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 521
+     },
+     "lines": [
+      {
+       "draft": "8, 32.—An abridged form is אִיעֶזֶר Iezer,",
+       "reread": "8, 32.—An abridged form is אִיעֶזֶר Iezer,",
+       "status": "agreed",
+       "text": "8, 32.—An abridged form is אִיעֶזֶר Iezer,"
+      },
+      {
+       "draft": "Num. 26, 30 ; and the patronym. אִיעֶזְרִי",
+       "reread": "Num. 26, 30 ; and the patronym. אִיעֶזְרִי",
+       "status": "agreed",
+       "text": "Num. 26, 30; and the patronym. אִיעֶזְרִי"
+      },
+      {
+       "draft": "ib. b) One of David's warriors, 2 Sam.",
+       "reread": "ib. b) One of David's warriors, 2 Sam.",
+       "status": "agreed",
+       "text": "ib. b) One of David's warriors, 2 Sam."
+      },
+      {
+       "draft": "23, 27. 1 Chr. 11, 28. 27, 12.",
+       "reread": "23, 27. 1 Chr. 11, 28. 27, 12.",
+       "status": "agreed",
+       "text": "23, 27. 1 Chr. 11, 28. 27, 12."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1094,
+    "y": 2679,
+    "width": 868,
+    "height": 595
+   },
+   "draft_lines": [
+    "אָבִיר m. subst. (r. אָבַר) one strong,",
+    "mighty, only in the formula אֲבִיר יַעֲקֹב,",
+    "אֲבִיר יִשְׂרָאֵל, the mighty One of Jacob, of",
+    "Israel, spoken of God, Gen. 49, 24. Is. 1, 24.",
+    "אַבִּיר adj. (r. אָבַר) 1. strong, mighty,",
+    "spoken of persons, and often as subst.",
+    "one strong, a mighty one, Judg. 5,",
+    "22. Lam. 1, 15. Jer. 46, 15. Ps. 76, 6",
+    "אַבִּירֵי לֵב the strong of heart, stout-",
+    "hearted.—Poetically κατ᾽ ἐξοχήν put: a)"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1094,
+      "y": 2688,
+      "width": 868,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r03-b00-868x238+1094+2688-x2.png",
+     "image_sha256": "a143f0becb59da4413b36495d8974fa138d79d4229e01806196cdffca9b0d463",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָבִיר m. subst. (r. אָבַר) one strong,",
+       "mighty, only in the formula אֲבִיר יַעֲקֹב,",
+       "אֲבִיר יִשְׂרָאֵל, the mighty One of Jacob, of",
+       "Israel, spoken of God, Gen. 49, 24. Is. 1, 24."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ab488aae-c84c-479a-9dcc-da017f8d3137",
+      "duration_api_ms": 9220,
+      "cost_usd_list": 0.06824375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 295
+     },
+     "lines": [
+      {
+       "draft": "אָבִיר m. subst. (r. אָבַר) one strong,",
+       "reread": "אָבִיר m. subst. (r. אָבַר) one strong,",
+       "status": "agreed",
+       "text": "אָבִיר m. subst. (r. אָבַר) one strong,"
+      },
+      {
+       "draft": "mighty, only in the formula אֲבִיר יַעֲקֹב,",
+       "reread": "mighty, only in the formula אֲבִיר יַעֲקֹב,",
+       "status": "agreed",
+       "text": "mighty, only in the formula אֲבִיר יַעֲקֹב,"
+      },
+      {
+       "draft": "אֲבִיר יִשְׂרָאֵל, the mighty One of Jacob, of",
+       "reread": "אֲבִיר יִשְׂרָאֵל, the mighty One of Jacob, of",
+       "status": "agreed",
+       "text": "אֲבִיר יִשְׂרָאֵל, the mighty One of Jacob, of"
+      },
+      {
+       "draft": "Israel, spoken of God, Gen. 49, 24. Is. 1, 24.",
+       "reread": "Israel, spoken of God, Gen. 49, 24. Is. 1, 24.",
+       "status": "agreed",
+       "text": "Israel, spoken of God, Gen. 49, 24. Is. 1, 24."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1094,
+      "y": 2910,
+      "width": 868,
+      "height": 253
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r03-b01-868x253+1094+2910-x2.png",
+     "image_sha256": "818844b0dc6bf6ee1cc516468765926ee55382eb7b18cfe2f4c4bcb165c08485",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַבִּיר adj. (r. אָבַר) 1. strong, mighty,",
+       "spoken of persons, and often as subst.",
+       "one strong, a mighty one, Judg. 5,",
+       "22. Lam. 1, 15. Jer. 46, 15. Ps. 76, 6"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4110019b-6198-4782-9c97-7583c9998e2e",
+      "duration_api_ms": 9547,
+      "cost_usd_list": 0.07607375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2737,
+      "output_tokens": 402
+     },
+     "lines": [
+      {
+       "draft": "אַבִּיר adj. (r. אָבַר) 1. strong, mighty,",
+       "reread": "אַבִּיר adj. (r. אָבַר) 1. strong, mighty,",
+       "status": "agreed",
+       "text": "אַבִּיר adj. (r. אָבַר) 1. strong, mighty,"
+      },
+      {
+       "draft": "spoken of persons, and often as subst.",
+       "reread": "spoken of persons, and often as subst.",
+       "status": "agreed",
+       "text": "spoken of persons, and often as subst."
+      },
+      {
+       "draft": "one strong, a mighty one, Judg. 5,",
+       "reread": "one strong, a mighty one, Judg. 5,",
+       "status": "agreed",
+       "text": "one strong, a mighty one, Judg. 5,"
+      },
+      {
+       "draft": "22. Lam. 1, 15. Jer. 46, 15. Ps. 76, 6",
+       "reread": "22. Lam. 1, 15. Jer. 46, 15. Ps. 76, 6",
+       "status": "agreed",
+       "text": "22. Lam. 1, 15. Jer. 46, 15. Ps. 76, 6"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1094,
+      "y": 3147,
+      "width": 868,
+      "height": 129
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0022/pass2/c1-r03-b02-868x129+1094+3147-x2.png",
+     "image_sha256": "e7b3f71ae1f5c07eada20b37574f3db1f6c5e5ace546837a5423f66767eb338c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַבִּירֵי לֵב the strong of heart, stout-",
+       "hearted.—Poetically κατ' ἐξοχήν put: a)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4201f691-5154-49bb-b587-13be17f162ef",
+      "duration_api_ms": 8949,
+      "cost_usd_list": 0.05946375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2179,
+      "output_tokens": 293
+     },
+     "lines": [
+      {
+       "draft": "אַבִּירֵי לֵב the strong of heart, stout-",
+       "reread": "אַבִּירֵי לֵב the strong of heart, stout-",
+       "status": "agreed",
+       "text": "אַבִּירֵי לֵב the strong of heart, stout-"
+      },
+      {
+       "draft": "hearted.—Poetically κατ᾽ ἐξοχήν put: a)",
+       "reread": "hearted.—Poetically κατ' ἐξοχήν put: a)",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "hearted.—Poetically κατ᾽ ἐξοχήν put: a)",
+        "verdict": "a",
+        "note": "The elision mark after κατ is printed as a raised curved Greek koronis-style apostrophe in the Greek font, matching Reading A's U+1FBD rather than Reading B's plain ASCII apostrophe; all other characters (ἐξοχήν with acute on η, colon, \"a)\") are identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "22a2cf80-993c-4c1e-9985-9defc429c188",
+        "duration_api_ms": 12834,
+        "cost_usd_list": 0.06968575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3583,
+        "cache_creation_input_tokens": 2115,
+        "output_tokens": 523
+       },
+       "text": "hearted.—Poetically κατ᾽ ἐξοχήν put: a)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אבי 6 אבי",
+   "status": "adjudicated",
+   "draft": "אֲבִי 6 אֲבִי",
+   "reread": "אבי 6 אבי",
+   "verdict": "b",
+   "note": "Running header: the catchwords are printed unpointed (no hataf-patah or hiriq), so Reading A's vowel points are not on the page; Reading B is exact.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲבִיהוּא (to whom He, i. e. God, is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "father) pr. n. Abihu, a son of Aaron,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "slain by fire from God for offering un-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "lawful sacrifice, Lev. 10, 1 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲבִיהוּד (whose father is Judah, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲבִי יְהוּדָה) Abihud, pr. n. m. 1 Chr. 8, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲבִיהַיִל (perh. for אֲבִיחַיִל) Abihail,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "pr. n. f. a) The wife of Rehoboam, 2",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Chr. 11, 18. b) 1 Chr. 2, 29.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֶבְיוֹן adj. (r. אָבָה no. 2) 1. needy,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "poor, Deut. 15, 4. 7. 11. Sons of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "needy, i. e. the needy, the poor, Ps. 72,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4; see בֵּן no. 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. poor, i. e. afflicted, distressed,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "wretched, often coupled with synon. עָנִי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ps. 40, 18 וַאֲנִי עָנִי וְאֶבְיוֹן and I am poor",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and afflicted. 70, 6. 81, 1. 109, 22.—Spec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "like עָנִי, spoken of one who suffers un-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "justly, with the accessory idea of humble",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and pious feeling; whence in Am. 2, 6",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "צַדִּיק and אֶבְיוֹן are joined. Also of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "whole people subjected to suffering and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "calamity, e. g. the Israelites in exile, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "41, 17; comp. 25, 4. In the same sense",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the sect of the Ebionites adopted this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "name, as being οἱ πτωχοὶ τῷ πνεύματι, ὧν",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ἐστιν ἡ βασιλεία τῶν οὐρανῶν Matt. 5, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲבִיּוֹנָה f. pr. desire, appetite, lust, from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "r. אָבָה no. 1; then the caper-berry, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "is said to be a provocative of appetite and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lust, Plut. Quæst. Symp. 6. 2. Plin. H.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "N. 13. 23. ib. 20. 15. Once Ecc. 12, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "So Sept. Vulg. Syr. The Rabbins use",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the plur. אֲבִיּוֹנִין not only for caper-ber-",
+   "status": "adjudicated",
+   "draft": "the plur. אֲבִיּוֹנִין not only for caper-ber-",
+   "reread": "the plur. אַבְיוֹנִין not only for caper-ber-",
+   "verdict": "a",
+   "note": "Under the aleph the print shows a compound mark (two stacked dots plus a short stroke), i.e. hataf-patah, not a plain patah; the bet carries a single dot (hiriq), not a shva. Yod has dagesh, vav has holem, nun hiriq, then yod and final nun — matching Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ries, but also for the small fruits or berries",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of other trees, as the myrtle, olive, etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲבִיחַיִל (father of might, i. q. mighty)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Abihail, pr. n. m. a) Num. 3, 35. b)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 Chr. 5, 14. c) The father of Esther,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Esth. 2, 15. 9, 29.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲבִיטוּב (father of goodness) Abitub,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "pr. n. m. 1 Chr. 8, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲבִיטַל (whose father is the dew) Abi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tal, pr. n. of one of David's wives, 2 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "3, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲבִיָּם see אֲבִיָּהוּ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲבִימָאֵל m. Gen. 10, 28. 1 Chr. 1, 22,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Abimael, pr. n. of one of the descendants",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of Joktan in Arabia, prob. the father or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "founder of an Arabian tribe called מָאֵל,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "a trace of which Bochart (Phaleg 2. 24)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "finds in Theophrast. Hist. Plant. 9. 4;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "where the name Μάλι prob. refers to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the same wandering tribe in the vicinity",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of the modern Mecca, which Strabo calls",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Μειναῖοι, Minæi.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲבִימֶ֫לֶךְ (father of the king, or father",
+   "status": "adjudicated",
+   "draft": "אֲבִימֶ֫לֶךְ (father of the king, or father",
+   "reread": "אֲבִימֶלֶךְ (father of the king, or father",
+   "verdict": "a",
+   "note": "A short diagonal accent stroke is printed above the מ (between מ and ל) in the headword, marking penultimate stress; Reading B omits it.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "king) in pause אֲבִימָ֫לֶךְ, Abimelech, pr. n.",
+   "status": "adjudicated",
+   "draft": "king) in pause אֲבִימָ֫לֶךְ, Abimelech, pr. n.",
+   "reread": "king) in pause אֲבִימָלֶךְ, Abimelech, pr. n.",
+   "verdict": "a",
+   "note": "A small accent stroke is printed above the mem of the pausal form (marking the penultimate tone, as also on the headword in line 2); Reading B omits it. All other letters and points agree: qamets under mem, segol under lamed, final kaf with sheva, no plene vav.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "a) Of several kings in the land of the Phi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "listines at different periods of time, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "20, 2 sq. 21, 22 sq. 26, 1 sq. Ps. 34, 1. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "same king who in Ps. l. c. is called Abi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "melech, in 1 Sam. 21, 11 bears the name",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of אָכִישׁ Achish; and hence the former",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "might seem to be a common title of these",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "kings, like the پاد شاه Padishah (Pater",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Rex) of the Persian kings, and اتاليق",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Atâlîk (father, pr. paternity) of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Khans of Bucharia. b) A son of Gideon,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Judg. 8, 31 sq. 9, 1 sq. 2 Sam. 11, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "c) 1 Chr. 18, 16, where the true reading",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "is prob. אֲחִימֶלֶךְ, as in 2 Sam. 8, 17.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲבִינָדָב (father of nobleness, or noble",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "father) Abinadab, pr. n. m. a) A son",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of Jesse, 1 Sam. 16, 8. 17, 13. b) A son",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of Saul, 1 Sam. 31, 2. c) 1 Sam. 7, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "d) 1 K. 4, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲבִינֹעַם (father of pleasantness or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "grace) Abinoam, pr. n. of the father of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Barak, Judg. 4, 6. 5, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲבִינֵר (father of a light) Abiner, pr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "n. m. 1 Sam. 14, 50. Elsewhere אַבְנֵר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Abner, q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲבִיעֶזֶר (father of help, like Germ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Adolf, from Atta father and Holf help)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Abiezer, pr. n. m. a) A son of Gilead,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Josh. 17, 2; also meton. of his descend-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ants, Judg. 6, 34. 8, 2. Patronym. is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲבִי הָעֶזְרִי the Abi-ezrite Judg. 6, 11. 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8, 32.—An abridged form is אִיעֶזֶר Iezer,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Num. 26, 30; and the patronym. אִיעֶזְרִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ib. b) One of David's warriors, 2 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "23, 27. 1 Chr. 11, 28. 27, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָבִיר m. subst. (r. אָבַר) one strong,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "mighty, only in the formula אֲבִיר יַעֲקֹב,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲבִיר יִשְׂרָאֵל, the mighty One of Jacob, of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Israel, spoken of God, Gen. 49, 24. Is. 1, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַבִּיר adj. (r. אָבַר) 1. strong, mighty,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "spoken of persons, and often as subst.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "one strong, a mighty one, Judg. 5,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "22. Lam. 1, 15. Jer. 46, 15. Ps. 76, 6",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַבִּירֵי לֵב the strong of heart, stout-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "hearted.—Poetically κατ᾽ ἐξοχήν put: a)",
+   "status": "adjudicated",
+   "draft": "hearted.—Poetically κατ᾽ ἐξοχήν put: a)",
+   "reread": "hearted.—Poetically κατ' ἐξοχήν put: a)",
+   "verdict": "a",
+   "note": "The elision mark after κατ is printed as a raised curved Greek koronis-style apostrophe in the Greek font, matching Reading A's U+1FBD rather than Reading B's plain ASCII apostrophe; all other characters (ἐξοχήν with acute on η, colon, \"a)\") are identical in both readings and match the print.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 99,
+  "adjudicated": 5,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 0
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.5721
+}

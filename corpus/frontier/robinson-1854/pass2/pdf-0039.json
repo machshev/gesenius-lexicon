@@ -1,0 +1,2700 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 39,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0039.png",
+ "raster_sha256": "ac4cff116a16f502e861cb70181de09e0e25422b20e9fc064374e86188f7477f",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0039.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:25:45+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 77,
+    "y": 98,
+    "width": 1767,
+    "height": 89
+   },
+   "draft_lines": [
+    "אול",
+    "23",
+    "און"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 77,
+      "y": 90,
+      "width": 1767,
+      "height": 99
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/header-b00-1767x99+77+90-x2.png",
+     "image_sha256": "a6aea2833e7fe675907b33e1c49cd50a86cc20d3aae3fa3b51f97d6911662258",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אול 23 אוך"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c4ba6a45-bec4-4902-86f5-201a18dc6a30",
+      "duration_api_ms": 4821,
+      "cost_usd_list": 0.0464525,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 232
+     },
+     "lines": [
+      {
+       "draft": "אול 23 און",
+       "reread": "אול 23 אוך",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אול 23 און",
+        "verdict": "a",
+        "note": "The decisive letter is the final glyph of the right-hand word: it is a narrow-headed stroke with a straight descender (final nun ן), not the wide-barred final kaf ך; אוך is also no Hebrew lemma, while און is the last headword on p. 23 (אול … און). No vowel points, dagesh or accents are printed on either header word.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "71d7fbf7-1f0a-48f0-ad5e-38a6a13cedda",
+        "duration_api_ms": 18374,
+        "cost_usd_list": 0.08198475,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3539,
+        "cache_creation_input_tokens": 1779,
+        "output_tokens": 984
+       },
+       "text": "אול 23 און"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 77,
+    "y": 145,
+    "width": 868,
+    "height": 867
+   },
+   "draft_lines": [
+    "which according to the ancient Syrian",
+    "lexicographers signifies ‘annon, fortasse.’",
+    "3. Ulam, pr. n. m. a) 1 Chr. 7, 16.",
+    "b) 8, 39. 40.",
+    "אִוֶּלֶת f. (r. אָוַל) 1. folly, very often",
+    "in Proverbs, as 5, 23. 12, 23. 13, 16. 14,",
+    "17. 18. 29. 15, 2. 14. 21.",
+    "2. Impl. impiety, wickedness, comp.",
+    "נְבָלָה. Ps. 38, 6. 69, 6.",
+    "3. Perh. the first place, high rank,",
+    "power, from r. אול no. 3. Prov. 14, 24",
+    "אִוֶּלֶת כְּסִילִים אִוֶּלֶת the precedence of fools",
+    "is folly, i. e. high honour is to them only",
+    "a source of foolish actions. There would"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 77,
+      "y": 137,
+      "width": 868,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r00-b00-868x247+77+137-x2.png",
+     "image_sha256": "f0aba3b66383efa2fc3c7c19cdcd0f06fdd56a50aa8e86f8f15f83fdab7d4c8a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which according to the ancient Syrian",
+       "lexicographers signifies ‘annon, fortasse.’",
+       "3. Ulam, pr. n. m. a) 1 Chr. 7, 16."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "960c4758-9d57-4625-8293-fa6867db43df",
+      "duration_api_ms": 8089,
+      "cost_usd_list": 0.05873824999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "which according to the ancient Syrian",
+       "reread": "which according to the ancient Syrian",
+       "status": "agreed",
+       "text": "which according to the ancient Syrian"
+      },
+      {
+       "draft": "lexicographers signifies ‘annon, fortasse.’",
+       "reread": "lexicographers signifies ‘annon, fortasse.’",
+       "status": "agreed",
+       "text": "lexicographers signifies ‘annon, fortasse.’"
+      },
+      {
+       "draft": "3. Ulam, pr. n. m. a) 1 Chr. 7, 16.",
+       "reread": "3. Ulam, pr. n. m. a) 1 Chr. 7, 16.",
+       "status": "agreed",
+       "text": "3. Ulam, pr. n. m. a) 1 Chr. 7, 16."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 77,
+      "y": 368,
+      "width": 868,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r00-b01-868x252+77+368-x2.png",
+     "image_sha256": "d921d92c3e6954cd5afd55801760a659a59d5bf9362a4c140970b887e85b61e3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "b) 8, 39. 40.",
+       "אִוֶּלֶת f. (r. אָוַל) 1. folly, very often",
+       "in Proverbs, as 5, 23. 12, 23. 13, 16. 14,",
+       "17. 18. 29. 15, 2. 14. 21."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8a62353d-175e-475d-8541-dbd2fe8ae700",
+      "duration_api_ms": 10555,
+      "cost_usd_list": 0.06848825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 469
+     },
+     "lines": [
+      {
+       "draft": "b) 8, 39. 40.",
+       "reread": "b) 8, 39. 40.",
+       "status": "agreed",
+       "text": "b) 8, 39. 40."
+      },
+      {
+       "draft": "אִוֶּלֶת f. (r. אָוַל) 1. folly, very often",
+       "reread": "אִוֶּלֶת f. (r. אָוַל) 1. folly, very often",
+       "status": "agreed",
+       "text": "אִוֶּלֶת f. (r. אָוַל) 1. folly, very often"
+      },
+      {
+       "draft": "in Proverbs, as 5, 23. 12, 23. 13, 16. 14,",
+       "reread": "in Proverbs, as 5, 23. 12, 23. 13, 16. 14,",
+       "status": "agreed",
+       "text": "in Proverbs, as 5, 23. 12, 23. 13, 16. 14,"
+      },
+      {
+       "draft": "17. 18. 29. 15, 2. 14. 21.",
+       "reread": "17. 18. 29. 15, 2. 14. 21.",
+       "status": "agreed",
+       "text": "17. 18. 29. 15, 2. 14. 21."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 77,
+      "y": 604,
+      "width": 868,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r00-b02-868x240+77+604-x2.png",
+     "image_sha256": "0aab64a2f02f4e74b232b480590853a5e4c9ff6d164d4313a53cc3c06da0b96b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Impl. impiety, wickedness, comp.",
+       "נְבָלָה. Ps. 38, 6. 69, 6.",
+       "3. Perh. the first place, high rank,",
+       "power, from r. אוּל no. 3. Prov. 14, 24"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "985d7e20-7d4a-4aeb-8091-6706bff8d434",
+      "duration_api_ms": 11792,
+      "cost_usd_list": 0.06778825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 455
+     },
+     "lines": [
+      {
+       "draft": "2. Impl. impiety, wickedness, comp.",
+       "reread": "2. Impl. impiety, wickedness, comp.",
+       "status": "agreed",
+       "text": "2. Impl. impiety, wickedness, comp."
+      },
+      {
+       "draft": "נְבָלָה. Ps. 38, 6. 69, 6.",
+       "reread": "נְבָלָה. Ps. 38, 6. 69, 6.",
+       "status": "agreed",
+       "text": "נְבָלָה. Ps. 38, 6. 69, 6."
+      },
+      {
+       "draft": "3. Perh. the first place, high rank,",
+       "reread": "3. Perh. the first place, high rank,",
+       "status": "agreed",
+       "text": "3. Perh. the first place, high rank,"
+      },
+      {
+       "draft": "power, from r. אול no. 3. Prov. 14, 24",
+       "reread": "power, from r. אוּל no. 3. Prov. 14, 24",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "power, from r. אוּל no. 3. Prov. 14, 24",
+        "verdict": "b",
+        "note": "The vav in the root is printed with a shureq dot (אוּל); Reading A omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3a30375b-3690-44df-bd06-c219555df5ed",
+        "duration_api_ms": 9938,
+        "cost_usd_list": 0.060927999999999996,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2598,
+        "output_tokens": 347
+       },
+       "text": "power, from r. אוּל no. 3. Prov. 14, 24"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 77,
+      "y": 828,
+      "width": 868,
+      "height": 178
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r00-b03-868x178+77+828-x2.png",
+     "image_sha256": "b1d44269607d2c3d88428ad05f920b87beead48bbb98875de494d2e9e8b9bb19",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִוֶּלֶת כְּסִילִים אִוֶּלֶת the precedence of fools",
+       "is folly, i. e. high honour is to them only",
+       "a source of foolish actions.  There would"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d2e6269a-2709-413d-b150-e5cd868622c7",
+      "duration_api_ms": 10668,
+      "cost_usd_list": 0.06101325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2361,
+      "output_tokens": 397
+     },
+     "lines": [
+      {
+       "draft": "אִוֶּלֶת כְּסִילִים אִוֶּלֶת the precedence of fools",
+       "reread": "אִוֶּלֶת כְּסִילִים אִוֶּלֶת the precedence of fools",
+       "status": "agreed",
+       "text": "אִוֶּלֶת כְּסִילִים אִוֶּלֶת the precedence of fools"
+      },
+      {
+       "draft": "is folly, i. e. high honour is to them only",
+       "reread": "is folly, i. e. high honour is to them only",
+       "status": "agreed",
+       "text": "is folly, i. e. high honour is to them only"
+      },
+      {
+       "draft": "a source of foolish actions. There would",
+       "reread": "a source of foolish actions.  There would",
+       "status": "agreed",
+       "text": "a source of foolish actions. There would"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 77,
+    "y": 1000,
+    "width": 868,
+    "height": 912
+   },
+   "draft_lines": [
+    "seem to be here a paronomasia or play",
+    "upon the twofold signification of אִוֶּלֶת.",
+    "אוֹמָר (perh. eloquent, talkative, Syr.",
+    "ܐܳܡܽܘܪܳܐ, r. אָמַר) Omar, pr. n. m. Gen.",
+    "36, 11.",
+    "* אין obsol. root. 1. Pr. to be no-",
+    "thing, not to be, i. e. having a negative",
+    "power, like נוא and kindred forms, as",
+    "نَأْنَأَ, نهنه, to hinder, מָנַע, מָאֵן; the",
+    "same power which in most languages",
+    "is expressed by the letter n; comp.",
+    "Sanscr. na, no, an and α privative;",
+    "Pers. نه, نا; Zend. and Copt. an; Gr.",
+    "νη in νήπιος, νημερτής, and ἄνευ; Lat. ne,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 77,
+      "y": 1006,
+      "width": 868,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r01-b00-868x267+77+1006-x2.png",
+     "image_sha256": "bead53d26eb9a339fce5b9949ba865857e839d6e38d9fdb24b7cd1f369c1c1d8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "seem to be here a paronomasia or play",
+       "upon the twofold signification of אִוֶּלֶת.",
+       "אוֹמָר (perh. eloquent, talkative, Syr.",
+       "ܐܳܡܽܘܪܳܐ, r. אָמַר) Omar, pr. n. m. Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5cfb9fe1-a667-4285-a02a-df294f830a86",
+      "duration_api_ms": 16718,
+      "cost_usd_list": 0.079521,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 658
+     },
+     "lines": [
+      {
+       "draft": "seem to be here a paronomasia or play",
+       "reread": "seem to be here a paronomasia or play",
+       "status": "agreed",
+       "text": "seem to be here a paronomasia or play"
+      },
+      {
+       "draft": "upon the twofold signification of אִוֶּלֶת.",
+       "reread": "upon the twofold signification of אִוֶּלֶת.",
+       "status": "agreed",
+       "text": "upon the twofold signification of אִוֶּלֶת."
+      },
+      {
+       "draft": "אוֹמָר (perh. eloquent, talkative, Syr.",
+       "reread": "אוֹמָר (perh. eloquent, talkative, Syr.",
+       "status": "agreed",
+       "text": "אוֹמָר (perh. eloquent, talkative, Syr."
+      },
+      {
+       "draft": "ܐܳܡܽܘܪܳܐ, r. אָמַר) Omar, pr. n. m. Gen.",
+       "reread": "ܐܳܡܽܘܪܳܐ, r. אָמַר) Omar, pr. n. m. Gen.",
+       "status": "agreed",
+       "text": "ܐܳܡܽܘܪܳܐ, r. אָמַר) Omar, pr. n. m. Gen."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 77,
+      "y": 1257,
+      "width": 868,
+      "height": 278
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r01-b01-868x278+77+1257-x2.png",
+     "image_sha256": "b64df3e6375b21ae81dc4bf5186fe515ee5c7dfc059fe931d9f852a173573ff3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "36, 11.",
+       "* אוּן obsol. root. 1. Pr. to be no-",
+       "thing, not to be, i. e. having a negative",
+       "power, like נוּא and kindred forms, as"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "955b8063-137f-4dbe-971f-b77540f58836",
+      "duration_api_ms": 10288,
+      "cost_usd_list": 0.066421,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 396
+     },
+     "lines": [
+      {
+       "draft": "36, 11.",
+       "reread": "36, 11.",
+       "status": "agreed",
+       "text": "36, 11."
+      },
+      {
+       "draft": "* אין obsol. root. 1. Pr. to be no-",
+       "reread": "* אוּן obsol. root. 1. Pr. to be no-",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "* אוּן obsol. root. 1. Pr. to be no-",
+        "verdict": "b",
+        "note": "The middle letter of the headword carries a dot in its centre (shureq vav, אוּן), not a bare yod; this is the obsolete root of אָוֶן \"nothingness\", matching the gloss \"to be nothing\". The stray mark above \"obsol.\" is a print speck, not a character.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "12bf7765-50f6-4be0-ac8e-20b893fd2ba5",
+        "duration_api_ms": 12956,
+        "cost_usd_list": 0.07147025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3571,
+        "cache_creation_input_tokens": 2722,
+        "output_tokens": 527
+       },
+       "text": "* אוּן obsol. root. 1. Pr. to be no-"
+      },
+      {
+       "draft": "thing, not to be, i. e. having a negative",
+       "reread": "thing, not to be, i. e. having a negative",
+       "status": "agreed",
+       "text": "thing, not to be, i. e. having a negative"
+      },
+      {
+       "draft": "power, like נוא and kindred forms, as",
+       "reread": "power, like נוּא and kindred forms, as",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "power, like נוּא and kindred forms, as",
+        "verdict": "b",
+        "note": "The vav in נוּא carries a printed dot in its stem (shureq), so Reading B is correct; Reading A omits the point.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c2b6d966-442c-4852-afee-0cfd7967e793",
+        "duration_api_ms": 11839,
+        "cost_usd_list": 0.066807,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3558,
+        "cache_creation_input_tokens": 2709,
+        "output_tokens": 439
+       },
+       "text": "power, like נוּא and kindred forms, as"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 77,
+      "y": 1519,
+      "width": 868,
+      "height": 274
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r01-b02-868x274+77+1519-x2.png",
+     "image_sha256": "264de3008e1361c6166539b9ccc29129f4f46e54e9070f8d0259bee72830fe98",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "نَأْنَأ, ܢܗܢܐ, to hinder, מָנַע, מֵאֵן; the",
+       "same power which in most languages",
+       "is expressed by the letter n; comp.",
+       "Sanscr. na, no, an and α privative;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b2ced1e7-41d3-4629-aae8-1a3c17cbb4aa",
+      "duration_api_ms": 17052,
+      "cost_usd_list": 0.08052100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 678
+     },
+     "lines": [
+      {
+       "draft": "نَأْنَأَ, نهنه, to hinder, מָנַע, מָאֵן; the",
+       "reread": "نَأْنَأ, ܢܗܢܐ, to hinder, מָנַע, מֵאֵן; the",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "نَأْنَأَ, ܢܗܢܐ, to hinder, מָנַע, מֵאֵן; the",
+        "verdict": "neither",
+        "note": "Second item is Syriac ܢܗܢܐ (Serto he and x-shaped final alaph), unpointed, not Arabic نهنه; final Hebrew word has tsere under mem (מֵאֵן), not qamets. B is right on both, but the Arabic shows a final fatha (نَأْنَأَ) as in A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0fe17580-50ce-4bfb-b69b-7473748865eb",
+        "duration_api_ms": 36764,
+        "cost_usd_list": 0.15051825000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3603,
+        "cache_creation_input_tokens": 2766,
+        "output_tokens": 2092
+       },
+       "text": "نَأْنَأَ, ܢܗܢܐ, to hinder, מָנַע, מֵאֵן; the"
+      },
+      {
+       "draft": "same power which in most languages",
+       "reread": "same power which in most languages",
+       "status": "agreed",
+       "text": "same power which in most languages"
+      },
+      {
+       "draft": "is expressed by the letter n; comp.",
+       "reread": "is expressed by the letter n; comp.",
+       "status": "agreed",
+       "text": "is expressed by the letter n; comp."
+      },
+      {
+       "draft": "Sanscr. na, no, an and α privative;",
+       "reread": "Sanscr. na, no, an and α privative;",
+       "status": "agreed",
+       "text": "Sanscr. na, no, an and α privative;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 77,
+      "y": 1777,
+      "width": 868,
+      "height": 143
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r01-b03-868x143+77+1777-x2.png",
+     "image_sha256": "36d8a563e95b14fa50631859cbb8007fbe3fa91db4a67ac50b42b302524a7134",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Pers. نه, نا ; Zend. and Copt. an ; Gr.",
+       "νη in νήπιος, νημερτής, and ἄνευ ; Lat. ne,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ce4d661d-5a2f-4cb6-8610-68760f5a4509",
+      "duration_api_ms": 8523,
+      "cost_usd_list": 0.06639600000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2239,
+      "output_tokens": 535
+     },
+     "lines": [
+      {
+       "draft": "Pers. نه, نا; Zend. and Copt. an; Gr.",
+       "reread": "Pers. نه, نا ; Zend. and Copt. an ; Gr.",
+       "status": "agreed",
+       "text": "Pers. نه, نا; Zend. and Copt. an; Gr."
+      },
+      {
+       "draft": "νη in νήπιος, νημερτής, and ἄνευ; Lat. ne,",
+       "reread": "νη in νήπιος, νημερτής, and ἄνευ ; Lat. ne,",
+       "status": "agreed",
+       "text": "νη in νήπιος, νημερτής, and ἄνευ; Lat. ne,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 77,
+    "y": 1900,
+    "width": 868,
+    "height": 963
+   },
+   "draft_lines": [
+    "nemo, non, also in priv. prefixed to ad-",
+    "jectives; Germ. nie, nein, and vulgar",
+    "nè, also ohne and un prefixed to adjec-",
+    "tives; Engl. no, nay, not, and un, in",
+    "privative; also Greek ἀναίνομαι. Less",
+    "frequently the negative power is ex-",
+    "pressed by the kindred letters m, comp.",
+    "Sanscr. ma, Gr. μή; and l, comp. לֹא,",
+    "לָא, לֻא, לִי, לֵי, אַל, אָבַל. Hence אַיִן,",
+    "אֵין nothing, not, אָוֶן nothingness.",
+    "From the idea of nothing come the",
+    "following tropical senses:",
+    "2. to be vain, empty, fruitless; and",
+    "hence to be false, worthless, wicked, see",
+    "אָוֶן no. 1, 2, 3. Comp. in Engl. ‘to be",
+    "nothing worth,’ ‘there is nothing in",
+    "him;’ Lat. ‘homo nequam.’"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 77,
+      "y": 1892,
+      "width": 868,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r02-b00-868x240+77+1892-x2.png",
+     "image_sha256": "8005ecda6330f312e3ae0060f7f01fe60449164e7771692b0a993919944fd96c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "nemo, non, also in priv. prefixed to ad-",
+       "jectives; Germ. nie, nein, and vulgar",
+       "nè, also ohne and un prefixed to adjec-",
+       "tives; Engl. no, nay, not, and un, in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6d489692-f2aa-4b24-8476-e796c31a7ee7",
+      "duration_api_ms": 7964,
+      "cost_usd_list": 0.057970999999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "nemo, non, also in priv. prefixed to ad-",
+       "reread": "nemo, non, also in priv. prefixed to ad-",
+       "status": "agreed",
+       "text": "nemo, non, also in priv. prefixed to ad-"
+      },
+      {
+       "draft": "jectives; Germ. nie, nein, and vulgar",
+       "reread": "jectives; Germ. nie, nein, and vulgar",
+       "status": "agreed",
+       "text": "jectives; Germ. nie, nein, and vulgar"
+      },
+      {
+       "draft": "nè, also ohne and un prefixed to adjec-",
+       "reread": "nè, also ohne and un prefixed to adjec-",
+       "status": "agreed",
+       "text": "nè, also ohne and un prefixed to adjec-"
+      },
+      {
+       "draft": "tives; Engl. no, nay, not, and un, in",
+       "reread": "tives; Engl. no, nay, not, and un, in",
+       "status": "agreed",
+       "text": "tives; Engl. no, nay, not, and un, in"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 77,
+      "y": 2116,
+      "width": 868,
+      "height": 299
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r02-b01-868x299+77+2116-x2.png",
+     "image_sha256": "98ef7038b4827affff08a1c3d0039cc5fa3e113e7da97d1a1910f97014ea30e2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "privative ; also Greek ἀναίνομαι. Less",
+       "frequently the negative power is ex-",
+       "pressed by the kindred letters m, comp.",
+       "Sanscr. ma, Gr. μή ; and l, comp. לֹא,",
+       "לָא, לֻא, לֵי, לַי, אַל, אֻלַל. Hence אַיִן,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "20b02a0f-7b47-4374-ad8e-b5ccb7783978",
+      "duration_api_ms": 21876,
+      "cost_usd_list": 0.10537099999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2921,
+      "output_tokens": 1144
+     },
+     "lines": [
+      {
+       "draft": "privative; also Greek ἀναίνομαι. Less",
+       "reread": "privative ; also Greek ἀναίνομαι. Less",
+       "status": "agreed",
+       "text": "privative; also Greek ἀναίνομαι. Less"
+      },
+      {
+       "draft": "frequently the negative power is ex-",
+       "reread": "frequently the negative power is ex-",
+       "status": "agreed",
+       "text": "frequently the negative power is ex-"
+      },
+      {
+       "draft": "pressed by the kindred letters m, comp.",
+       "reread": "pressed by the kindred letters m, comp.",
+       "status": "agreed",
+       "text": "pressed by the kindred letters m, comp."
+      },
+      {
+       "draft": "Sanscr. ma, Gr. μή; and l, comp. לֹא,",
+       "reread": "Sanscr. ma, Gr. μή ; and l, comp. לֹא,",
+       "status": "agreed",
+       "text": "Sanscr. ma, Gr. μή; and l, comp. לֹא,"
+      },
+      {
+       "draft": "לָא, לֻא, לִי, לֵי, אַל, אָבַל. Hence אַיִן,",
+       "reread": "לָא, לֻא, לֵי, לַי, אַל, אֻלַל. Hence אַיִן,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "לָא, לֻא, לֵי, לַי, אַל, אֻלַל. Hence אַיִן,",
+        "verdict": "b",
+        "note": "Final word is printed אֻלַל (aleph + two tall lameds, qibbuts under aleph), not אָבַל; the yod pair reads לֵי, לַי (tsere then patah), matching B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a5e7ef2b-0b5f-4cc8-97f3-d639035d6cbf",
+        "duration_api_ms": 29486,
+        "cost_usd_list": 0.1396385,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3604,
+        "cache_creation_input_tokens": 2879,
+        "output_tokens": 1846
+       },
+       "text": "לָא, לֻא, לֵי, לַי, אַל, אֻלַל. Hence אַיִן,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 77,
+      "y": 2399,
+      "width": 868,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r02-b02-868x236+77+2399-x2.png",
+     "image_sha256": "4e7ecde88980a63b87c62528c4596321ba1e8dd2ba3c635e83c273d5a7dcf330",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַיִן nothing, not, אָוֶן nothingness.",
+       "From the idea of nothing come the",
+       "following tropical senses:",
+       "2. to be vain, empty, fruitless; and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fc95bc57-e8ea-4f0f-b00b-d405e070f0a2",
+      "duration_api_ms": 7613,
+      "cost_usd_list": 0.056246,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 239
+     },
+     "lines": [
+      {
+       "draft": "אֵין nothing, not, אָוֶן nothingness.",
+       "reread": "אַיִן nothing, not, אָוֶן nothingness.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "אַיִן nothing, not, אָוֶן nothingness.",
+        "verdict": "b",
+        "note": "The first word has a horizontal patach under the aleph and a single hireq dot under the yod (אַיִן, the absolute form), not the two-dot tsere of אֵין; the second word אָוֶן matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "366f063f-19c6-42f2-a647-b6ab1f0b34f6",
+        "duration_api_ms": 11688,
+        "cost_usd_list": 0.06766549999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2537,
+        "output_tokens": 497
+       },
+       "text": "אַיִן nothing, not, אָוֶן nothingness."
+      },
+      {
+       "draft": "From the idea of nothing come the",
+       "reread": "From the idea of nothing come the",
+       "status": "agreed",
+       "text": "From the idea of nothing come the"
+      },
+      {
+       "draft": "following tropical senses:",
+       "reread": "following tropical senses:",
+       "status": "agreed",
+       "text": "following tropical senses:"
+      },
+      {
+       "draft": "2. to be vain, empty, fruitless; and",
+       "reread": "2. to be vain, empty, fruitless; and",
+       "status": "agreed",
+       "text": "2. to be vain, empty, fruitless; and"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 77,
+      "y": 2619,
+      "width": 868,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r02-b03-868x236+77+2619-x2.png",
+     "image_sha256": "e5346119630f43cc52e104a0380881e659a7c9ec130cf3ef67aaac0b8eb058b7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hence to be false, worthless, wicked, see",
+       "אָוֶן no. 1, 2, 3. Comp. in Engl. ‘to be",
+       "nothing worth,’ ‘there is nothing in",
+       "him;’ Lat. ‘homo nequam.’"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "81879c87-69c1-403d-afce-3a0a7645ec35",
+      "duration_api_ms": 9085,
+      "cost_usd_list": 0.060745999999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 329
+     },
+     "lines": [
+      {
+       "draft": "hence to be false, worthless, wicked, see",
+       "reread": "hence to be false, worthless, wicked, see",
+       "status": "agreed",
+       "text": "hence to be false, worthless, wicked, see"
+      },
+      {
+       "draft": "אָוֶן no. 1, 2, 3. Comp. in Engl. ‘to be",
+       "reread": "אָוֶן no. 1, 2, 3. Comp. in Engl. ‘to be",
+       "status": "agreed",
+       "text": "אָוֶן no. 1, 2, 3. Comp. in Engl. ‘to be"
+      },
+      {
+       "draft": "nothing worth,’ ‘there is nothing in",
+       "reread": "nothing worth,’ ‘there is nothing in",
+       "status": "agreed",
+       "text": "nothing worth,’ ‘there is nothing in"
+      },
+      {
+       "draft": "him;’ Lat. ‘homo nequam.’",
+       "reread": "him;’ Lat. ‘homo nequam.’",
+       "status": "agreed",
+       "text": "him;’ Lat. ‘homo nequam.’"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 77,
+    "y": 2851,
+    "width": 868,
+    "height": 421
+   },
+   "draft_lines": [
+    "3. to be deficient in strength, debilitat-",
+    "ed, exhausted. Arab. آنَ mid. Ye, to be",
+    "weak, exhausted; أَيْنٌ weariness, trou-",
+    "ble, sorrow.—Hence אָוֶן no. 4, תְּאֻנִים",
+    "labours.",
+    "4. to be light, easy, facile; since"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 77,
+      "y": 2859,
+      "width": 868,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r03-b00-868x189+77+2859-x2.png",
+     "image_sha256": "3ac82fadf8b486a5fd60dc22b89a0f10d411172b86003ea8317ed622a1a00532",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. to be deficient in strength, debilitat-",
+       "ed, exhausted. Arab. آنَ mid. Ye, to be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d7d3bb4f-5dd1-4a57-9ca4-43323a29e221",
+      "duration_api_ms": 9142,
+      "cost_usd_list": 0.05692099999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 299
+     },
+     "lines": [
+      {
+       "draft": "3. to be deficient in strength, debilitat-",
+       "reread": "3. to be deficient in strength, debilitat-",
+       "status": "agreed",
+       "text": "3. to be deficient in strength, debilitat-"
+      },
+      {
+       "draft": "ed, exhausted. Arab. آنَ mid. Ye, to be",
+       "reread": "ed, exhausted. Arab. آنَ mid. Ye, to be",
+       "status": "agreed",
+       "text": "ed, exhausted. Arab. آنَ mid. Ye, to be"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 77,
+      "y": 3032,
+      "width": 868,
+      "height": 167
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r03-b01-868x167+77+3032-x2.png",
+     "image_sha256": "618e6bf85d1ef9e329721f365ba7fb0742ad4cff965c2f64abd0f4dc1e4959e9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "weak, exhausted; أَيْنٌ weariness, trou-",
+       "ble, sorrow.—Hence אָוֶן no. 4, תְּאֻנִים",
+       "labours."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "87dd32d5-b72d-4451-8718-35c6974285ec",
+      "duration_api_ms": 12990,
+      "cost_usd_list": 0.066621,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2301,
+      "output_tokens": 524
+     },
+     "lines": [
+      {
+       "draft": "weak, exhausted; أَيْنٌ weariness, trou-",
+       "reread": "weak, exhausted; أَيْنٌ weariness, trou-",
+       "status": "agreed",
+       "text": "weak, exhausted; أَيْنٌ weariness, trou-"
+      },
+      {
+       "draft": "ble, sorrow.—Hence אָוֶן no. 4, תְּאֻנִים",
+       "reread": "ble, sorrow.—Hence אָוֶן no. 4, תְּאֻנִים",
+       "status": "agreed",
+       "text": "ble, sorrow.—Hence אָוֶן no. 4, תְּאֻנִים"
+      },
+      {
+       "draft": "labours.",
+       "reread": "labours.",
+       "status": "agreed",
+       "text": "labours."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 77,
+      "y": 3183,
+      "width": 868,
+      "height": 91
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c0-r03-b02-868x91+77+3183-x2.png",
+     "image_sha256": "dee9f21a61c94c28aed5ebbaa5b911192146794a0dfca44320342bcca88e84c9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "4. to be light, easy, facile; since"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aeabdc03-0813-493f-9772-84d6dcbd3469",
+      "duration_api_ms": 7286,
+      "cost_usd_list": 0.046096,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1991,
+      "output_tokens": 191
+     },
+     "lines": [
+      {
+       "draft": "4. to be light, easy, facile; since",
+       "reread": "4. to be light, easy, facile; since",
+       "status": "agreed",
+       "text": "4. to be light, easy, facile; since"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 971,
+    "y": 145,
+    "width": 873,
+    "height": 647
+   },
+   "draft_lines": [
+    "things light and easy are to us כְּאַיִן,",
+    "Engl. as nothing. Comp. הוּן to be light,",
+    "easy.—Hence אוֹן I, faculty (facility) of",
+    "doing any thing, ability, power.",
+    "אָוֶן m. (r. אוּן no. 1) c. suff. אוֹנְךָ,",
+    "אוֹנָם Jer. 4, 14. Ps. 94, 23. Plur. אוֹנִים",
+    "Prov. 11, 7.",
+    "1. nothingness, vanity, also a vain and",
+    "empty thing, Is. 41, 29. Zech. 10, 2.",
+    "Spec. of the nothingness of idols and of"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 971,
+      "y": 137,
+      "width": 873,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r00-b00-873x247+971+137-x2.png",
+     "image_sha256": "a9b8c76ac27a9165de7602874d9058309998ef42f78744994411f46fdac4bf09",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹן",
+       "things light and easy are to us כְּאַיִן,",
+       "Engl. as nothing. Comp. הוּן to be light,",
+       "easy.—Hence אוֹן I, faculty (facility) of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "633f600b-c886-4931-9f50-840e2a89063b",
+      "duration_api_ms": 11072,
+      "cost_usd_list": 0.06771325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 449
+     },
+     "lines": [
+      {
+       "draft": null,
+       "reread": "אוֹן",
+       "status": "reread_only",
+       "band_id": "c1-r00-b00",
+       "text": "אוֹן"
+      },
+      {
+       "draft": "things light and easy are to us כְּאַיִן,",
+       "reread": "things light and easy are to us כְּאַיִן,",
+       "status": "agreed",
+       "text": "things light and easy are to us כְּאַיִן,"
+      },
+      {
+       "draft": "Engl. as nothing. Comp. הוּן to be light,",
+       "reread": "Engl. as nothing. Comp. הוּן to be light,",
+       "status": "agreed",
+       "text": "Engl. as nothing. Comp. הוּן to be light,"
+      },
+      {
+       "draft": "easy.—Hence אוֹן I, faculty (facility) of",
+       "reread": "easy.—Hence אוֹן I, faculty (facility) of",
+       "status": "agreed",
+       "text": "easy.—Hence אוֹן I, faculty (facility) of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 971,
+      "y": 368,
+      "width": 873,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r00-b01-873x254+971+368-x2.png",
+     "image_sha256": "d7b4a232292661f394c9a8e345055135632f298b4c67c474b6b7d329c0270e90",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "doing any thing, ability, power.",
+       "אָוֶן m. (r. אוּן no. 1) c. suff. אוֹנְךָ,",
+       "אוֹנָם Jer. 4, 14. Ps. 94, 23. Plur. אוֹנִים",
+       "Prov. 11, 7."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c5a4c413-7fd4-4460-a915-7c21097d75de",
+      "duration_api_ms": 11836,
+      "cost_usd_list": 0.07320075000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 543
+     },
+     "lines": [
+      {
+       "draft": "doing any thing, ability, power.",
+       "reread": "doing any thing, ability, power.",
+       "status": "agreed",
+       "text": "doing any thing, ability, power."
+      },
+      {
+       "draft": "אָוֶן m. (r. אוּן no. 1) c. suff. אוֹנְךָ,",
+       "reread": "אָוֶן m. (r. אוּן no. 1) c. suff. אוֹנְךָ,",
+       "status": "agreed",
+       "text": "אָוֶן m. (r. אוּן no. 1) c. suff. אוֹנְךָ,"
+      },
+      {
+       "draft": "אוֹנָם Jer. 4, 14. Ps. 94, 23. Plur. אוֹנִים",
+       "reread": "אוֹנָם Jer. 4, 14. Ps. 94, 23. Plur. אוֹנִים",
+       "status": "agreed",
+       "text": "אוֹנָם Jer. 4, 14. Ps. 94, 23. Plur. אוֹנִים"
+      },
+      {
+       "draft": "Prov. 11, 7.",
+       "reread": "Prov. 11, 7.",
+       "status": "agreed",
+       "text": "Prov. 11, 7."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 971,
+      "y": 606,
+      "width": 873,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r00-b02-873x194+971+606-x2.png",
+     "image_sha256": "e89005ec65756e832f85dc56cf82797a2e7f2f0f2b28d52ba9223879f21c51f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1. nothingness, vanity, also a vain and",
+       "empty thing, Is. 41, 29. Zech. 10, 2.",
+       "Spec. of the nothingness of idols and of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "25e5ff5e-58e6-4f63-b27f-662ed0e68e60",
+      "duration_api_ms": 7996,
+      "cost_usd_list": 0.053913249999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2437,
+      "output_tokens": 236
+     },
+     "lines": [
+      {
+       "draft": "1. nothingness, vanity, also a vain and",
+       "reread": "1. nothingness, vanity, also a vain and",
+       "status": "agreed",
+       "text": "1. nothingness, vanity, also a vain and"
+      },
+      {
+       "draft": "empty thing, Is. 41, 29. Zech. 10, 2.",
+       "reread": "empty thing, Is. 41, 29. Zech. 10, 2.",
+       "status": "agreed",
+       "text": "empty thing, Is. 41, 29. Zech. 10, 2."
+      },
+      {
+       "draft": "Spec. of the nothingness of idols and of",
+       "reread": "Spec. of the nothingness of idols and of",
+       "status": "agreed",
+       "text": "Spec. of the nothingness of idols and of"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 971,
+    "y": 780,
+    "width": 873,
+    "height": 907
+   },
+   "draft_lines": [
+    "every thing pertaining to idolatry (comp.",
+    "הֶבֶל) 1 Sam. 15, 23; and so put for an",
+    "idol, idols, Is. 66, 3. Hence in Hosea",
+    "the city בֵּית־אֵל house of God, as being",
+    "given to idolatry, is scornfully called",
+    "בֵּית־אָוֶן house of idols, Hos. 4, 15. 10, 5.",
+    "Here too are to be referred: a) בִּקְעַת",
+    "אָוֶן plain of Aven (idols), Amos 1, 5, i. e. a",
+    "certain valley in the vicinity of Damas-",
+    "cus, perh. Heliopolis of Syria. b) אָוֶן",
+    "Aven for אוֹן i. e. Heliopolis of Egypt",
+    "Ez. 30, 17; but with the notion of an",
+    "idolatrous city.—Spec.",
+    "2. nothingness of words, i. e. false-",
+    "hood, deceit, Ps. 36, 4. Prov. 17, 4.",
+    "3. nothingness as to worth, naughti-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 971,
+      "y": 772,
+      "width": 873,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r01-b00-873x243+971+772-x2.png",
+     "image_sha256": "a16c9f5f87c103f4de0a3dea2f626c35e7f7ae872df795adb67898b099c82d15",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "every thing pertaining to idolatry (comp.",
+       "הֶבֶל) 1 Sam. 15, 23; and so put for an",
+       "idol, idols, Is. 66, 3. Hence in Hosea",
+       "the city בֵּית־אֵל house of God, as being"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0a55d4e9-15bd-437a-ae05-2f048fdbd220",
+      "duration_api_ms": 9921,
+      "cost_usd_list": 0.05856325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "every thing pertaining to idolatry (comp.",
+       "reread": "every thing pertaining to idolatry (comp.",
+       "status": "agreed",
+       "text": "every thing pertaining to idolatry (comp."
+      },
+      {
+       "draft": "הֶבֶל) 1 Sam. 15, 23; and so put for an",
+       "reread": "הֶבֶל) 1 Sam. 15, 23; and so put for an",
+       "status": "agreed",
+       "text": "הֶבֶל) 1 Sam. 15, 23; and so put for an"
+      },
+      {
+       "draft": "idol, idols, Is. 66, 3. Hence in Hosea",
+       "reread": "idol, idols, Is. 66, 3. Hence in Hosea",
+       "status": "agreed",
+       "text": "idol, idols, Is. 66, 3. Hence in Hosea"
+      },
+      {
+       "draft": "the city בֵּית־אֵל house of God, as being",
+       "reread": "the city בֵּית־אֵל house of God, as being",
+       "status": "agreed",
+       "text": "the city בֵּית־אֵל house of God, as being"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 971,
+      "y": 999,
+      "width": 873,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r01-b01-873x241+971+999-x2.png",
+     "image_sha256": "bfd64e445f14bdb87cedf00d4db5405625d282e50adcadac6ff9fbfb65aa9618",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "given to idolatry, is scornfully called",
+       "בֵּית־אָוֶן house of idols, Hos. 4, 15. 10, 5.",
+       "Here too are to be referred: a) בִּקְעַת",
+       "אָוֶן plain of Aven (idols), Amos 1, 5, i. e. a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0b842b5e-21bc-47df-a703-4dfb8afa04d4",
+      "duration_api_ms": 8955,
+      "cost_usd_list": 0.05916325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 278
+     },
+     "lines": [
+      {
+       "draft": "given to idolatry, is scornfully called",
+       "reread": "given to idolatry, is scornfully called",
+       "status": "agreed",
+       "text": "given to idolatry, is scornfully called"
+      },
+      {
+       "draft": "בֵּית־אָוֶן house of idols, Hos. 4, 15. 10, 5.",
+       "reread": "בֵּית־אָוֶן house of idols, Hos. 4, 15. 10, 5.",
+       "status": "agreed",
+       "text": "בֵּית־אָוֶן house of idols, Hos. 4, 15. 10, 5."
+      },
+      {
+       "draft": "Here too are to be referred: a) בִּקְעַת",
+       "reread": "Here too are to be referred: a) בִּקְעַת",
+       "status": "agreed",
+       "text": "Here too are to be referred: a) בִּקְעַת"
+      },
+      {
+       "draft": "אָוֶן plain of Aven (idols), Amos 1, 5, i. e. a",
+       "reread": "אָוֶן plain of Aven (idols), Amos 1, 5, i. e. a",
+       "status": "agreed",
+       "text": "אָוֶן plain of Aven (idols), Amos 1, 5, i. e. a"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 971,
+      "y": 1224,
+      "width": 873,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r01-b02-873x235+971+1224-x2.png",
+     "image_sha256": "48fd0a2168950bc111db68375a3cef880114e30791d9a54cab435c91f9fe83a8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "certain valley in the vicinity of Damas-",
+       "cus, perh. Heliopolis of Syria.   b) אָוֶן",
+       "Aven for אוֹן i. e. Heliopolis of Egypt",
+       "Ez. 30, 17; but with the notion of an"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ec5def15-c453-49fc-9cbd-ab2b52575010",
+      "duration_api_ms": 7796,
+      "cost_usd_list": 0.0578085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "certain valley in the vicinity of Damas-",
+       "reread": "certain valley in the vicinity of Damas-",
+       "status": "agreed",
+       "text": "certain valley in the vicinity of Damas-"
+      },
+      {
+       "draft": "cus, perh. Heliopolis of Syria. b) אָוֶן",
+       "reread": "cus, perh. Heliopolis of Syria.   b) אָוֶן",
+       "status": "agreed",
+       "text": "cus, perh. Heliopolis of Syria. b) אָוֶן"
+      },
+      {
+       "draft": "Aven for אוֹן i. e. Heliopolis of Egypt",
+       "reread": "Aven for אוֹן i. e. Heliopolis of Egypt",
+       "status": "agreed",
+       "text": "Aven for אוֹן i. e. Heliopolis of Egypt"
+      },
+      {
+       "draft": "Ez. 30, 17; but with the notion of an",
+       "reread": "Ez. 30, 17; but with the notion of an",
+       "status": "agreed",
+       "text": "Ez. 30, 17; but with the notion of an"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 971,
+      "y": 1443,
+      "width": 873,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r01-b03-873x252+971+1443-x2.png",
+     "image_sha256": "dda6697d3749eb38741239d5ae5ddea6a4f1866098e96b3368789092c927ffe6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "idolatrous city.—Spec.",
+       "2. nothingness of words, i. e. false-",
+       "hood, deceit, Ps. 36, 4. Prov. 17, 4.",
+       "3. nothingness as to worth, naughti-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8d2a88eb-f028-45b2-b1a1-92b0d08a9a0c",
+      "duration_api_ms": 7593,
+      "cost_usd_list": 0.057946,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "idolatrous city.—Spec.",
+       "reread": "idolatrous city.—Spec.",
+       "status": "agreed",
+       "text": "idolatrous city.—Spec."
+      },
+      {
+       "draft": "2. nothingness of words, i. e. false-",
+       "reread": "2. nothingness of words, i. e. false-",
+       "status": "agreed",
+       "text": "2. nothingness of words, i. e. false-"
+      },
+      {
+       "draft": "hood, deceit, Ps. 36, 4. Prov. 17, 4.",
+       "reread": "hood, deceit, Ps. 36, 4. Prov. 17, 4.",
+       "status": "agreed",
+       "text": "hood, deceit, Ps. 36, 4. Prov. 17, 4."
+      },
+      {
+       "draft": "3. nothingness as to worth, naughti-",
+       "reread": "3. nothingness as to worth, naughti-",
+       "status": "agreed",
+       "text": "3. nothingness as to worth, naughti-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 971,
+    "y": 1675,
+    "width": 873,
+    "height": 960
+   },
+   "draft_lines": [
+    "ness, wickedness, iniquity, comp. r. אוּן",
+    "no. 2. Num. 23, 21. Job 36, 21. Is. 1, 13.",
+    "אַנְשֵׁי אָוֶן, מְתֵי אָוֶן, wicked men, Job 22,",
+    "15. 34, 36. פֹּעֲלֵי אָוֶן workers of iniquity,",
+    "evil doers, 31, 3. 34, 8. 22. Plur. אוֹנִים",
+    "Prov. 11, 7, prob. for אַנְשֵׁי אָוֶן, as in",
+    "Sept. Chald. Syr. Arab.",
+    "4. toil, trouble, evil, calamity, i. q. עָמָל.",
+    "Ps. 55, 4 they cast calamity upon me.",
+    "Prov. 22, 8 he that soweth iniquity shall",
+    "reap evil, calamity. Ps. 90, 10. Job 15,",
+    "35. Hab. 3, 7.—Spec. sorrow, pain, Gen.",
+    "35, 18 בֶּן־אוֹנִי Ben-oni, i. e. son of my",
+    "sorrow. לֶחֶם אוֹנִים bread of sorrows",
+    "i. e. the food of mourners, which was",
+    "reckoned unclean, Hos. 9, 4; comp.",
+    "Deut. 26, 14."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 971,
+      "y": 1667,
+      "width": 873,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r02-b00-873x244+971+1667-x2.png",
+     "image_sha256": "e7e7ba6a129a0d1ef39adbf00b01edb95b4998b0a7c3cf6326e0555b706c57ed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ness, wickedness, iniquity, comp. r. אוּן",
+       "no. 2. Num. 23, 21. Job 36, 21. Is. 1, 13.",
+       "אַנְשֵׁי אָוֶן, מְתֵי אָוֶן, wicked men, Job 22,",
+       "15. 34, 36. פֹּעֲלֵי אָוֶן workers of iniquity,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "880be3f1-4d3f-4b7d-a87a-c9b56560e8ed",
+      "duration_api_ms": 46334,
+      "cost_usd_list": 0.197796,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 3050
+     },
+     "lines": [
+      {
+       "draft": "ness, wickedness, iniquity, comp. r. אוּן",
+       "reread": "ness, wickedness, iniquity, comp. r. אוּן",
+       "status": "agreed",
+       "text": "ness, wickedness, iniquity, comp. r. אוּן"
+      },
+      {
+       "draft": "no. 2. Num. 23, 21. Job 36, 21. Is. 1, 13.",
+       "reread": "no. 2. Num. 23, 21. Job 36, 21. Is. 1, 13.",
+       "status": "agreed",
+       "text": "no. 2. Num. 23, 21. Job 36, 21. Is. 1, 13."
+      },
+      {
+       "draft": "אַנְשֵׁי אָוֶן, מְתֵי אָוֶן, wicked men, Job 22,",
+       "reread": "אַנְשֵׁי אָוֶן, מְתֵי אָוֶן, wicked men, Job 22,",
+       "status": "agreed",
+       "text": "אַנְשֵׁי אָוֶן, מְתֵי אָוֶן, wicked men, Job 22,"
+      },
+      {
+       "draft": "15. 34, 36. פֹּעֲלֵי אָוֶן workers of iniquity,",
+       "reread": "15. 34, 36. פֹּעֲלֵי אָוֶן workers of iniquity,",
+       "status": "agreed",
+       "text": "15. 34, 36. פֹּעֲלֵי אָוֶן workers of iniquity,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 971,
+      "y": 1895,
+      "width": 873,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r02-b01-873x240+971+1895-x2.png",
+     "image_sha256": "ea5fa7b8e8735fa397666c8c1c936fee843872dfb3abd33c602efb276a973b7f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "evil doers, 31, 3. 34, 8. 22. Plur. אוֹנִים",
+       "Prov. 11, 7, prob. for אַנְשֵׁי אָוֶן, as in",
+       "Sept. Chald. Syr. Arab.",
+       "4. toil, trouble, evil, calamity, i. q. עָמָל."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2e4283ef-db8b-4d3b-a81a-9a8bf9332320",
+      "duration_api_ms": 11981,
+      "cost_usd_list": 0.07469599999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 588
+     },
+     "lines": [
+      {
+       "draft": "evil doers, 31, 3. 34, 8. 22. Plur. אוֹנִים",
+       "reread": "evil doers, 31, 3. 34, 8. 22. Plur. אוֹנִים",
+       "status": "agreed",
+       "text": "evil doers, 31, 3. 34, 8. 22. Plur. אוֹנִים"
+      },
+      {
+       "draft": "Prov. 11, 7, prob. for אַנְשֵׁי אָוֶן, as in",
+       "reread": "Prov. 11, 7, prob. for אַנְשֵׁי אָוֶן, as in",
+       "status": "agreed",
+       "text": "Prov. 11, 7, prob. for אַנְשֵׁי אָוֶן, as in"
+      },
+      {
+       "draft": "Sept. Chald. Syr. Arab.",
+       "reread": "Sept. Chald. Syr. Arab.",
+       "status": "agreed",
+       "text": "Sept. Chald. Syr. Arab."
+      },
+      {
+       "draft": "4. toil, trouble, evil, calamity, i. q. עָמָל.",
+       "reread": "4. toil, trouble, evil, calamity, i. q. עָמָל.",
+       "status": "agreed",
+       "text": "4. toil, trouble, evil, calamity, i. q. עָמָל."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 971,
+      "y": 2119,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r02-b02-873x237+971+2119-x2.png",
+     "image_sha256": "4a4b125884c7abd92872ee76cba431a5ea3a0d64699298d3af50add60d363a17",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ps. 55, 4 they cast calamity upon me.",
+       "Prov. 22, 8 he that soweth iniquity shall",
+       "reap evil, calamity. Ps. 90, 10. Job 15,",
+       "35. Hab. 3, 7.—Spec. sorrow, pain, Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "afadcb44-91d6-4789-9b7b-02a00d743b92",
+      "duration_api_ms": 13616,
+      "cost_usd_list": 0.058358499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 277
+     },
+     "lines": [
+      {
+       "draft": "Ps. 55, 4 they cast calamity upon me.",
+       "reread": "Ps. 55, 4 they cast calamity upon me.",
+       "status": "agreed",
+       "text": "Ps. 55, 4 they cast calamity upon me."
+      },
+      {
+       "draft": "Prov. 22, 8 he that soweth iniquity shall",
+       "reread": "Prov. 22, 8 he that soweth iniquity shall",
+       "status": "agreed",
+       "text": "Prov. 22, 8 he that soweth iniquity shall"
+      },
+      {
+       "draft": "reap evil, calamity. Ps. 90, 10. Job 15,",
+       "reread": "reap evil, calamity. Ps. 90, 10. Job 15,",
+       "status": "agreed",
+       "text": "reap evil, calamity. Ps. 90, 10. Job 15,"
+      },
+      {
+       "draft": "35. Hab. 3, 7.—Spec. sorrow, pain, Gen.",
+       "reread": "35. Hab. 3, 7.—Spec. sorrow, pain, Gen.",
+       "status": "agreed",
+       "text": "35. Hab. 3, 7.—Spec. sorrow, pain, Gen."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 971,
+      "y": 2340,
+      "width": 873,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r02-b03-873x238+971+2340-x2.png",
+     "image_sha256": "868b984b55e9de6fc483a9311eed7e8333d0a36d3558684ea25889d7525f618c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "35, 18 בֶּן־אוֹנִי Ben-oni, i. e. son of my",
+       "sorrow. לֶחֶם אוֹנִים bread of sorrows",
+       "i. e. the food of mourners, which was",
+       "reckoned unclean, Hos. 9, 4; comp."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "49c26db4-3dfd-41c6-ab49-9dc2b26dddb6",
+      "duration_api_ms": 10911,
+      "cost_usd_list": 0.0672085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 454
+     },
+     "lines": [
+      {
+       "draft": "35, 18 בֶּן־אוֹנִי Ben-oni, i. e. son of my",
+       "reread": "35, 18 בֶּן־אוֹנִי Ben-oni, i. e. son of my",
+       "status": "agreed",
+       "text": "35, 18 בֶּן־אוֹנִי Ben-oni, i. e. son of my"
+      },
+      {
+       "draft": "sorrow. לֶחֶם אוֹנִים bread of sorrows",
+       "reread": "sorrow. לֶחֶם אוֹנִים bread of sorrows",
+       "status": "agreed",
+       "text": "sorrow. לֶחֶם אוֹנִים bread of sorrows"
+      },
+      {
+       "draft": "i. e. the food of mourners, which was",
+       "reread": "i. e. the food of mourners, which was",
+       "status": "agreed",
+       "text": "i. e. the food of mourners, which was"
+      },
+      {
+       "draft": "reckoned unclean, Hos. 9, 4; comp.",
+       "reread": "reckoned unclean, Hos. 9, 4; comp.",
+       "status": "agreed",
+       "text": "reckoned unclean, Hos. 9, 4; comp."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b04",
+     "bounds": {
+      "x": 971,
+      "y": 2562,
+      "width": 873,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r02-b04-873x81+971+2562-x2.png",
+     "image_sha256": "e2d6027192005bcf56ead9a300dd9f35fa1225554e09c846eff8babe582082e9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Deut. 26, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f6b7f4a2-e2a9-400c-a410-5361c3b15bb5",
+      "duration_api_ms": 7375,
+      "cost_usd_list": 0.046296,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 209
+     },
+     "lines": [
+      {
+       "draft": "Deut. 26, 14.",
+       "reread": "Deut. 26, 14.",
+       "status": "agreed",
+       "text": "Deut. 26, 14."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 971,
+    "y": 2623,
+    "width": 873,
+    "height": 648
+   },
+   "draft_lines": [
+    "Note. As אָוֶן with suffixes coincides",
+    "as to form with אוֹן, care must be taken",
+    "not to confound the two words.",
+    "I. אוֹן m. (r. און no. 4) faculty, ability;",
+    "hence",
+    "1. strength, power, Job 18, 7. 12. 40, 16.",
+    "Spec. of manly vigour, power of procrea-",
+    "tion, רֵאשִׁית הָאוֹן the first-fruits or first-",
+    "ling of one's strength, the first-born, Gen.",
+    "49, 3. Deut. 21, 17. Ps. 105, 36. Plur",
+    "אוֹנִים Is. 40, 26. 29. Ps. 78, 51."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 971,
+      "y": 2615,
+      "width": 873,
+      "height": 272
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r03-b00-873x272+971+2615-x2.png",
+     "image_sha256": "ac70157f58c1b1ac1fcedd86341e697d01a358193d018b64cf12619be6913774",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Note. As אָוֶן with suffixes coincides",
+       "as to form with אוֹן, care must be taken",
+       "not to confound the two words.",
+       "I. אוֹן m. (r. אוּן no. 4) faculty, ability;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4ade7439-57e6-4b5e-997b-70d0825c0ec4",
+      "duration_api_ms": 11164,
+      "cost_usd_list": 0.067271,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 408
+     },
+     "lines": [
+      {
+       "draft": "Note. As אָוֶן with suffixes coincides",
+       "reread": "Note. As אָוֶן with suffixes coincides",
+       "status": "agreed",
+       "text": "Note. As אָוֶן with suffixes coincides"
+      },
+      {
+       "draft": "as to form with אוֹן, care must be taken",
+       "reread": "as to form with אוֹן, care must be taken",
+       "status": "agreed",
+       "text": "as to form with אוֹן, care must be taken"
+      },
+      {
+       "draft": "not to confound the two words.",
+       "reread": "not to confound the two words.",
+       "status": "agreed",
+       "text": "not to confound the two words."
+      },
+      {
+       "draft": "I. אוֹן m. (r. און no. 4) faculty, ability;",
+       "reread": "I. אוֹן m. (r. אוּן no. 4) faculty, ability;",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "I. אוֹן m. (r. אוּן no. 4) faculty, ability;",
+        "verdict": "b",
+        "note": "The root after \"r.\" is printed with a dot inside the vav (shureq, אוּן), not an unpointed vav as in Reading A; the headword has holem (אוֹן).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "131fd13b-6e6f-4d45-9150-3c3de6f02061",
+        "duration_api_ms": 10779,
+        "cost_usd_list": 0.066493,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3582,
+        "cache_creation_input_tokens": 2753,
+        "output_tokens": 418
+       },
+       "text": "I. אוֹן m. (r. אוּן no. 4) faculty, ability;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 971,
+      "y": 2871,
+      "width": 873,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r03-b01-873x239+971+2871-x2.png",
+     "image_sha256": "bcb651bad5e544958ac6601bc60b58588a14ae567f18ca7d17d01d1c266b2502",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hence",
+       "1. strength, power, Job 18, 7. 12. 40, 16.",
+       "Spec. of manly vigour, power of procrea-",
+       "tion, רֵאשִׁית הָאוֹן the first-fruits or first-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c05ab350-36f2-4605-aaa8-0796d3db1424",
+      "duration_api_ms": 8191,
+      "cost_usd_list": 0.058046,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 255
+     },
+     "lines": [
+      {
+       "draft": "hence",
+       "reread": "hence",
+       "status": "agreed",
+       "text": "hence"
+      },
+      {
+       "draft": "1. strength, power, Job 18, 7. 12. 40, 16.",
+       "reread": "1. strength, power, Job 18, 7. 12. 40, 16.",
+       "status": "agreed",
+       "text": "1. strength, power, Job 18, 7. 12. 40, 16."
+      },
+      {
+       "draft": "Spec. of manly vigour, power of procrea-",
+       "reread": "Spec. of manly vigour, power of procrea-",
+       "status": "agreed",
+       "text": "Spec. of manly vigour, power of procrea-"
+      },
+      {
+       "draft": "tion, רֵאשִׁית הָאוֹן the first-fruits or first-",
+       "reread": "tion, רֵאשִׁית הָאוֹן the first-fruits or first-",
+       "status": "agreed",
+       "text": "tion, רֵאשִׁית הָאוֹן the first-fruits or first-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 971,
+      "y": 3094,
+      "width": 873,
+      "height": 179
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0039/pass2/c1-r03-b02-873x179+971+3094-x2.png",
+     "image_sha256": "74fa69fddb12de3a5331580c663b6f8a8c908183273670d9768b7e96f67bd97e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ling of one's strength, the first-born, Gen.",
+       "49, 3. Deut. 21, 17. Ps. 105, 36. Plur",
+       "אוֹנִים Is. 40, 26. 29. Ps. 78, 51."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c243c956-a71c-4297-805a-e283187aa854",
+      "duration_api_ms": 6305,
+      "cost_usd_list": 0.058208499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 337
+     },
+     "lines": [
+      {
+       "draft": "ling of one's strength, the first-born, Gen.",
+       "reread": "ling of one's strength, the first-born, Gen.",
+       "status": "agreed",
+       "text": "ling of one's strength, the first-born, Gen."
+      },
+      {
+       "draft": "49, 3. Deut. 21, 17. Ps. 105, 36. Plur",
+       "reread": "49, 3. Deut. 21, 17. Ps. 105, 36. Plur",
+       "status": "agreed",
+       "text": "49, 3. Deut. 21, 17. Ps. 105, 36. Plur"
+      },
+      {
+       "draft": "אוֹנִים Is. 40, 26. 29. Ps. 78, 51.",
+       "reread": "אוֹנִים Is. 40, 26. 29. Ps. 78, 51.",
+       "status": "agreed",
+       "text": "אוֹנִים Is. 40, 26. 29. Ps. 78, 51."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אול 23 און",
+   "status": "adjudicated",
+   "draft": "אול 23 און",
+   "reread": "אול 23 אוך",
+   "verdict": "a",
+   "note": "The decisive letter is the final glyph of the right-hand word: it is a narrow-headed stroke with a straight descender (final nun ן), not the wide-barred final kaf ך; אוך is also no Hebrew lemma, while און is the last headword on p. 23 (אול … און). No vowel points, dagesh or accents are printed on either header word.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "which according to the ancient Syrian",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "lexicographers signifies ‘annon, fortasse.’",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. Ulam, pr. n. m. a) 1 Chr. 7, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "b) 8, 39. 40.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִוֶּלֶת f. (r. אָוַל) 1. folly, very often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "in Proverbs, as 5, 23. 12, 23. 13, 16. 14,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "17. 18. 29. 15, 2. 14. 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Impl. impiety, wickedness, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "נְבָלָה. Ps. 38, 6. 69, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. Perh. the first place, high rank,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "power, from r. אוּל no. 3. Prov. 14, 24",
+   "status": "adjudicated",
+   "draft": "power, from r. אול no. 3. Prov. 14, 24",
+   "reread": "power, from r. אוּל no. 3. Prov. 14, 24",
+   "verdict": "b",
+   "note": "The vav in the root is printed with a shureq dot (אוּל); Reading A omits it.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִוֶּלֶת כְּסִילִים אִוֶּלֶת the precedence of fools",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "is folly, i. e. high honour is to them only",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a source of foolish actions. There would",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "seem to be here a paronomasia or play",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "upon the twofold signification of אִוֶּלֶת.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אוֹמָר (perh. eloquent, talkative, Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ܐܳܡܽܘܪܳܐ, r. אָמַר) Omar, pr. n. m. Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "36, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אוּן obsol. root. 1. Pr. to be no-",
+   "status": "adjudicated",
+   "draft": "* אין obsol. root. 1. Pr. to be no-",
+   "reread": "* אוּן obsol. root. 1. Pr. to be no-",
+   "verdict": "b",
+   "note": "The middle letter of the headword carries a dot in its centre (shureq vav, אוּן), not a bare yod; this is the obsolete root of אָוֶן \"nothingness\", matching the gloss \"to be nothing\". The stray mark above \"obsol.\" is a print speck, not a character.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thing, not to be, i. e. having a negative",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "power, like נוּא and kindred forms, as",
+   "status": "adjudicated",
+   "draft": "power, like נוא and kindred forms, as",
+   "reread": "power, like נוּא and kindred forms, as",
+   "verdict": "b",
+   "note": "The vav in נוּא carries a printed dot in its stem (shureq), so Reading B is correct; Reading A omits the point.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "نَأْنَأَ, ܢܗܢܐ, to hinder, מָנַע, מֵאֵן; the",
+   "status": "adjudicated",
+   "draft": "نَأْنَأَ, نهنه, to hinder, מָנַע, מָאֵן; the",
+   "reread": "نَأْنَأ, ܢܗܢܐ, to hinder, מָנַע, מֵאֵן; the",
+   "verdict": "neither",
+   "note": "Second item is Syriac ܢܗܢܐ (Serto he and x-shaped final alaph), unpointed, not Arabic نهنه; final Hebrew word has tsere under mem (מֵאֵן), not qamets. B is right on both, but the Arabic shows a final fatha (نَأْنَأَ) as in A.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "same power which in most languages",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "is expressed by the letter n; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Sanscr. na, no, an and α privative;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Pers. نه, نا; Zend. and Copt. an; Gr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "νη in νήπιος, νημερτής, and ἄνευ; Lat. ne,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nemo, non, also in priv. prefixed to ad-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "jectives; Germ. nie, nein, and vulgar",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nè, also ohne and un prefixed to adjec-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tives; Engl. no, nay, not, and un, in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "privative; also Greek ἀναίνομαι. Less",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "frequently the negative power is ex-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pressed by the kindred letters m, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Sanscr. ma, Gr. μή; and l, comp. לֹא,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "לָא, לֻא, לֵי, לַי, אַל, אֻלַל. Hence אַיִן,",
+   "status": "adjudicated",
+   "draft": "לָא, לֻא, לִי, לֵי, אַל, אָבַל. Hence אַיִן,",
+   "reread": "לָא, לֻא, לֵי, לַי, אַל, אֻלַל. Hence אַיִן,",
+   "verdict": "b",
+   "note": "Final word is printed אֻלַל (aleph + two tall lameds, qibbuts under aleph), not אָבַל; the yod pair reads לֵי, לַי (tsere then patah), matching B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַיִן nothing, not, אָוֶן nothingness.",
+   "status": "adjudicated",
+   "draft": "אֵין nothing, not, אָוֶן nothingness.",
+   "reread": "אַיִן nothing, not, אָוֶן nothingness.",
+   "verdict": "b",
+   "note": "The first word has a horizontal patach under the aleph and a single hireq dot under the yod (אַיִן, the absolute form), not the two-dot tsere of אֵין; the second word אָוֶן matches both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "From the idea of nothing come the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "following tropical senses:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. to be vain, empty, fruitless; and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "hence to be false, worthless, wicked, see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָוֶן no. 1, 2, 3. Comp. in Engl. ‘to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nothing worth,’ ‘there is nothing in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "him;’ Lat. ‘homo nequam.’",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "3. to be deficient in strength, debilitat-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ed, exhausted. Arab. آنَ mid. Ye, to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "weak, exhausted; أَيْنٌ weariness, trou-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ble, sorrow.—Hence אָוֶן no. 4, תְּאֻנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "labours.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "4. to be light, easy, facile; since",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אוֹן",
+   "status": "reread_only",
+   "draft": null,
+   "reread": "אוֹן",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "things light and easy are to us כְּאַיִן,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Engl. as nothing. Comp. הוּן to be light,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "easy.—Hence אוֹן I, faculty (facility) of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "doing any thing, ability, power.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אָוֶן m. (r. אוּן no. 1) c. suff. אוֹנְךָ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אוֹנָם Jer. 4, 14. Ps. 94, 23. Plur. אוֹנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Prov. 11, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. nothingness, vanity, also a vain and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "empty thing, Is. 41, 29. Zech. 10, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Spec. of the nothingness of idols and of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "every thing pertaining to idolatry (comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "הֶבֶל) 1 Sam. 15, 23; and so put for an",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "idol, idols, Is. 66, 3. Hence in Hosea",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the city בֵּית־אֵל house of God, as being",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "given to idolatry, is scornfully called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "בֵּית־אָוֶן house of idols, Hos. 4, 15. 10, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Here too are to be referred: a) בִּקְעַת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אָוֶן plain of Aven (idols), Amos 1, 5, i. e. a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "certain valley in the vicinity of Damas-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "cus, perh. Heliopolis of Syria. b) אָוֶן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Aven for אוֹן i. e. Heliopolis of Egypt",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ez. 30, 17; but with the notion of an",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "idolatrous city.—Spec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. nothingness of words, i. e. false-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hood, deceit, Ps. 36, 4. Prov. 17, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. nothingness as to worth, naughti-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ness, wickedness, iniquity, comp. r. אוּן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "no. 2. Num. 23, 21. Job 36, 21. Is. 1, 13.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַנְשֵׁי אָוֶן, מְתֵי אָוֶן, wicked men, Job 22,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "15. 34, 36. פֹּעֲלֵי אָוֶן workers of iniquity,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "evil doers, 31, 3. 34, 8. 22. Plur. אוֹנִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Prov. 11, 7, prob. for אַנְשֵׁי אָוֶן, as in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Sept. Chald. Syr. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4. toil, trouble, evil, calamity, i. q. עָמָל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Ps. 55, 4 they cast calamity upon me.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Prov. 22, 8 he that soweth iniquity shall",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "reap evil, calamity. Ps. 90, 10. Job 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "35. Hab. 3, 7.—Spec. sorrow, pain, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "35, 18 בֶּן־אוֹנִי Ben-oni, i. e. son of my",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "sorrow. לֶחֶם אוֹנִים bread of sorrows",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "i. e. the food of mourners, which was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "reckoned unclean, Hos. 9, 4; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Deut. 26, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Note. As אָוֶן with suffixes coincides",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "as to form with אוֹן, care must be taken",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "not to confound the two words.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "I. אוֹן m. (r. אוּן no. 4) faculty, ability;",
+   "status": "adjudicated",
+   "draft": "I. אוֹן m. (r. און no. 4) faculty, ability;",
+   "reread": "I. אוֹן m. (r. אוּן no. 4) faculty, ability;",
+   "verdict": "b",
+   "note": "The root after \"r.\" is printed with a dot inside the vav (shureq, אוּן), not an unpointed vav as in Reading A; the headword has holem (אוֹן).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1. strength, power, Job 18, 7. 12. 40, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Spec. of manly vigour, power of procrea-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "tion, רֵאשִׁית הָאוֹן the first-fruits or first-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ling of one's strength, the first-born, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "49, 3. Deut. 21, 17. Ps. 105, 36. Plur",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אוֹנִים Is. 40, 26. 29. Ps. 78, 51.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 98,
+  "adjudicated": 8,
+  "draft_only": 0,
+  "reread_only": 1,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.807
+}

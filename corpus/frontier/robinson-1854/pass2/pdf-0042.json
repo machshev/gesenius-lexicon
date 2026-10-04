@@ -1,0 +1,2653 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 42,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0042.png",
+ "raster_sha256": "cbbfc8499893d4732ccf1593c83de84479e151833fdfefb5d1e6e86e0f4d2d92",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0042.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:32:20+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 223,
+    "y": 122,
+    "width": 1838,
+    "height": 68
+   },
+   "draft_lines": [
+    "אור",
+    "26",
+    "אור"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 223,
+      "y": 120,
+      "width": 1838,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/header-b00-1838x72+223+120-x2.png",
+     "image_sha256": "58ed3686bf15f122b8e4e54cee53710759364c1a01848f0be19ad959beb7a2cb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אור 26 אור"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "400af457-aff0-48db-9273-1deb8f95b2bf",
+      "duration_api_ms": 7285,
+      "cost_usd_list": 0.0430025,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "אור 26 אור",
+       "reread": "אור 26 אור",
+       "status": "agreed",
+       "text": "אור 26 אור"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 223,
+    "y": 169,
+    "width": 856,
+    "height": 748
+   },
+   "draft_lines": [
+    "135; לְ 118, 27; אֵת Ps. 67, 2. Once omit-",
+    "ting פָּנִים Ps. 118, 27. c) Trop. to en-",
+    "lighten, i. e. to impart knowledge and",
+    "wisdom, Ps. 119, 130.",
+    "2. to give light, to shine, absol. Gen. 1,",
+    "15; c. dat. Ex. 13, 21. Is. 60, 19.",
+    "3. to light, i. e. to kindle, to set on fire,",
+    "Mal. 1, 10. Is. 27, 11. Comp. אוּר fire.",
+    "Arab. أَوَّرَ to kindle.",
+    "Deriv. אוֹר, אוּר, אוֹרָה, pr. names אוּרִי",
+    "—אוּרִיָּהוּ, also יָאִיר, מָאוֹר, מְאוּרָה."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 223,
+      "y": 161,
+      "width": 856,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r00-b00-856x246+223+161-x2.png",
+     "image_sha256": "676554c971a5f29325571975d0ed45e13792fa642f78d9a13e4e70deae8f9dfe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "135; לְ 118, 27; אֵת Ps. 67, 2. Once omit-",
+       "ting פָּנִים Ps. 118, 27. c) Trop. to en-",
+       "lighten, i. e. to impart knowledge and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0f562e43-e258-447d-a0d8-af67d03b4b85",
+      "duration_api_ms": 7373,
+      "cost_usd_list": 0.06408824999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 381
+     },
+     "lines": [
+      {
+       "draft": "135; לְ 118, 27; אֵת Ps. 67, 2. Once omit-",
+       "reread": "135; לְ 118, 27; אֵת Ps. 67, 2. Once omit-",
+       "status": "agreed",
+       "text": "135; לְ 118, 27; אֵת Ps. 67, 2. Once omit-"
+      },
+      {
+       "draft": "ting פָּנִים Ps. 118, 27. c) Trop. to en-",
+       "reread": "ting פָּנִים Ps. 118, 27. c) Trop. to en-",
+       "status": "agreed",
+       "text": "ting פָּנִים Ps. 118, 27. c) Trop. to en-"
+      },
+      {
+       "draft": "lighten, i. e. to impart knowledge and",
+       "reread": "lighten, i. e. to impart knowledge and",
+       "status": "agreed",
+       "text": "lighten, i. e. to impart knowledge and"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 223,
+      "y": 391,
+      "width": 856,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r00-b01-856x233+223+391-x2.png",
+     "image_sha256": "b721652434a142d31316ab9aa7f00ae9f2c35a9c5d27c7cb6674a9390ecdd2d7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "wisdom, Ps. 119, 130.",
+       "2. to give light, to shine, absol. Gen. 1,",
+       "15; c. dat. Ex. 13, 21. Is. 60, 19.",
+       "3. to light, i. e. to kindle, to set on fire,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bea4ed83-24d5-4e26-ba13-45f8f104c700",
+      "duration_api_ms": 8004,
+      "cost_usd_list": 0.057463249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "wisdom, Ps. 119, 130.",
+       "reread": "wisdom, Ps. 119, 130.",
+       "status": "agreed",
+       "text": "wisdom, Ps. 119, 130."
+      },
+      {
+       "draft": "2. to give light, to shine, absol. Gen. 1,",
+       "reread": "2. to give light, to shine, absol. Gen. 1,",
+       "status": "agreed",
+       "text": "2. to give light, to shine, absol. Gen. 1,"
+      },
+      {
+       "draft": "15; c. dat. Ex. 13, 21. Is. 60, 19.",
+       "reread": "15; c. dat. Ex. 13, 21. Is. 60, 19.",
+       "status": "agreed",
+       "text": "15; c. dat. Ex. 13, 21. Is. 60, 19."
+      },
+      {
+       "draft": "3. to light, i. e. to kindle, to set on fire,",
+       "reread": "3. to light, i. e. to kindle, to set on fire,",
+       "status": "agreed",
+       "text": "3. to light, i. e. to kindle, to set on fire,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 223,
+      "y": 608,
+      "width": 856,
+      "height": 281
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r00-b02-856x281+223+608-x2.png",
+     "image_sha256": "9594c4527bfb4d44ba58ff30869ad4e00027f75ec88413c598fcb4e607dd907b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Mal. 1, 10. Is. 27, 11. Comp. אוּר fire.",
+       "Arab. أَوَّرَ to kindle.",
+       "Deriv. אוֹר, אוּר, אוֹרָה, pr. names אוּרִי",
+       "—אוּרִיָּהוּ, also מָאוֹר, מְאוּרָה, יְאֹר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "890a0296-5ea2-4c91-86bc-f8ec96fdc4cb",
+      "duration_api_ms": 13722,
+      "cost_usd_list": 0.08176324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2857,
+      "output_tokens": 688
+     },
+     "lines": [
+      {
+       "draft": "Mal. 1, 10. Is. 27, 11. Comp. אוּר fire.",
+       "reread": "Mal. 1, 10. Is. 27, 11. Comp. אוּר fire.",
+       "status": "agreed",
+       "text": "Mal. 1, 10. Is. 27, 11. Comp. אוּר fire."
+      },
+      {
+       "draft": "Arab. أَوَّرَ to kindle.",
+       "reread": "Arab. أَوَّرَ to kindle.",
+       "status": "agreed",
+       "text": "Arab. أَوَّرَ to kindle."
+      },
+      {
+       "draft": "Deriv. אוֹר, אוּר, אוֹרָה, pr. names אוּרִי",
+       "reread": "Deriv. אוֹר, אוּר, אוֹרָה, pr. names אוּרִי",
+       "status": "agreed",
+       "text": "Deriv. אוֹר, אוּר, אוֹרָה, pr. names אוּרִי"
+      },
+      {
+       "draft": "—אוּרִיָּהוּ, also יָאִיר, מָאוֹר, מְאוּרָה.",
+       "reread": "—אוּרִיָּהוּ, also מָאוֹר, מְאוּרָה, יְאֹר.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "—אוּרִיָּהוּ, also מָאוֹר, מְאוּרָה, יְאֹר.",
+        "verdict": "b",
+        "note": "The list order printed is מָאוֹר, מְאוּרָה, then a final three-letter word יְאֹר (defective, holem over aleph, no second yod), matching B; A's יָאִיר placed first is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "430cbbe6-6a2e-4a42-8055-c0d4db324602",
+        "duration_api_ms": 17543,
+        "cost_usd_list": 0.0932415,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3606,
+        "cache_creation_input_tokens": 2818,
+        "output_tokens": 933
+       },
+       "text": "—אוּרִיָּהוּ, also מָאוֹר, מְאוּרָה, יְאֹר."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 223,
+      "y": 873,
+      "width": 856,
+      "height": 31
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r00-b03-856x31+223+873-x2.png",
+     "image_sha256": "48ef6b7eab4414186ac1893ff0365bf429dd8d44f8a8458f94157e7ac95d9243",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "90323810-027a-446a-87b5-01a2ce9e4941",
+      "duration_api_ms": 8667,
+      "cost_usd_list": 0.04886325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1741,
+      "output_tokens": 309
+     }
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 223,
+    "y": 905,
+    "width": 856,
+    "height": 855
+   },
+   "draft_lines": [
+    "אוֹר m. (once f. Job 36, 32; see Lehrg.",
+    "p. 546) light, Gen. 1, 3. 4. 5. Job 3, 9.",
+    "12, 25. The diff. between it and מָאוֹר",
+    "is apparent from Gen. 1, 3 comp. v. 14. 16,",
+    "i. e. אוֹר is light as universally diffused,",
+    "e. g. the light of day and of the sun, while",
+    "מָאוֹר is pr. a light, luminary, which gives",
+    "light, and therefore admits the plural,",
+    "which אוֹר does not, except in one exam-",
+    "ple Ps. 136, 7. where אוֹרִים is poetically",
+    "put for מְאֹרִים.—Spec. a) day-light,",
+    "morning-light, dawn, Neh. 8, 3 מִן־הָאוֹר",
+    "עַד מַחֲצִית הַיּוֹם from day-light until noon.",
+    "Job 24, 14 לָאוֹר with the light, at dawn.",
+    "b) light of the sun, also the sun itself, Job"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 223,
+      "y": 918,
+      "width": 856,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r01-b00-856x239+223+918-x2.png",
+     "image_sha256": "89bf4cd3947853ba8fb4bf8c37577573405abac468d0ce9e2aa7855cadb2fbb1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹר m. (once f. Job 36, 32; see Lehrg.",
+       "p. 546) light, Gen. 1, 3. 4. 5. Job 3, 9.",
+       "12, 25. The diff. between it and מָאוֹר",
+       "is apparent from Gen. 1, 3 comp. v. 14. 16,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "aa42f77f-5fe7-4e7a-a536-8b74060e41c2",
+      "duration_api_ms": 8785,
+      "cost_usd_list": 0.059288249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2671,
+      "output_tokens": 285
+     },
+     "lines": [
+      {
+       "draft": "אוֹר m. (once f. Job 36, 32; see Lehrg.",
+       "reread": "אוֹר m. (once f. Job 36, 32; see Lehrg.",
+       "status": "agreed",
+       "text": "אוֹר m. (once f. Job 36, 32; see Lehrg."
+      },
+      {
+       "draft": "p. 546) light, Gen. 1, 3. 4. 5. Job 3, 9.",
+       "reread": "p. 546) light, Gen. 1, 3. 4. 5. Job 3, 9.",
+       "status": "agreed",
+       "text": "p. 546) light, Gen. 1, 3. 4. 5. Job 3, 9."
+      },
+      {
+       "draft": "12, 25. The diff. between it and מָאוֹר",
+       "reread": "12, 25. The diff. between it and מָאוֹר",
+       "status": "agreed",
+       "text": "12, 25. The diff. between it and מָאוֹר"
+      },
+      {
+       "draft": "is apparent from Gen. 1, 3 comp. v. 14. 16,",
+       "reread": "is apparent from Gen. 1, 3 comp. v. 14. 16,",
+       "status": "agreed",
+       "text": "is apparent from Gen. 1, 3 comp. v. 14. 16,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 223,
+      "y": 1141,
+      "width": 856,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r01-b01-856x235+223+1141-x2.png",
+     "image_sha256": "de2c2280107bedde1489dc2e91b569c1c0490f5d1d60e17b90d41246ac44870b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. אוֹר is light as universally diffused,",
+       "e. g. the light of day and of the sun, while",
+       "מָאוֹר is pr. a light, luminary, which gives",
+       "light, and therefore admits the plural,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3f893fe9-6d03-4fc3-a0ea-60a5d2c82256",
+      "duration_api_ms": 5874,
+      "cost_usd_list": 0.061346,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 341
+     },
+     "lines": [
+      {
+       "draft": "i. e. אוֹר is light as universally diffused,",
+       "reread": "i. e. אוֹר is light as universally diffused,",
+       "status": "agreed",
+       "text": "i. e. אוֹר is light as universally diffused,"
+      },
+      {
+       "draft": "e. g. the light of day and of the sun, while",
+       "reread": "e. g. the light of day and of the sun, while",
+       "status": "agreed",
+       "text": "e. g. the light of day and of the sun, while"
+      },
+      {
+       "draft": "מָאוֹר is pr. a light, luminary, which gives",
+       "reread": "מָאוֹר is pr. a light, luminary, which gives",
+       "status": "agreed",
+       "text": "מָאוֹר is pr. a light, luminary, which gives"
+      },
+      {
+       "draft": "light, and therefore admits the plural,",
+       "reread": "light, and therefore admits the plural,",
+       "status": "agreed",
+       "text": "light, and therefore admits the plural,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 223,
+      "y": 1360,
+      "width": 856,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r01-b02-856x237+223+1360-x2.png",
+     "image_sha256": "ff20acf22e1c8554ac51e747360dbc4a9fd57dfba47f6836f8e2b6c66b6cacd4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which אוֹר does not, except in one exam-",
+       "ple Ps. 136, 7. where אוֹרִים is poetically",
+       "put for מְאֹרִים.—Spec. a) day-light,",
+       "morning-light, dawn, Neh. 8, 3 מִן־הָאוֹר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8f77a10f-3c44-4dac-b58c-3afb04e9f8c1",
+      "duration_api_ms": 10700,
+      "cost_usd_list": 0.065996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 434
+     },
+     "lines": [
+      {
+       "draft": "which אוֹר does not, except in one exam-",
+       "reread": "which אוֹר does not, except in one exam-",
+       "status": "agreed",
+       "text": "which אוֹר does not, except in one exam-"
+      },
+      {
+       "draft": "ple Ps. 136, 7. where אוֹרִים is poetically",
+       "reread": "ple Ps. 136, 7. where אוֹרִים is poetically",
+       "status": "agreed",
+       "text": "ple Ps. 136, 7. where אוֹרִים is poetically"
+      },
+      {
+       "draft": "put for מְאֹרִים.—Spec. a) day-light,",
+       "reread": "put for מְאֹרִים.—Spec. a) day-light,",
+       "status": "agreed",
+       "text": "put for מְאֹרִים.—Spec. a) day-light,"
+      },
+      {
+       "draft": "morning-light, dawn, Neh. 8, 3 מִן־הָאוֹר",
+       "reread": "morning-light, dawn, Neh. 8, 3 מִן־הָאוֹר",
+       "status": "agreed",
+       "text": "morning-light, dawn, Neh. 8, 3 מִן־הָאוֹר"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 223,
+      "y": 1581,
+      "width": 856,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r01-b03-856x187+223+1581-x2.png",
+     "image_sha256": "78297c7e4d4990c9b8f22ccde29bf4f3c56f018303c842e52c557d3fdcdcfb38",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "עַד מַחֲצִית הַיּוֹם from day-light until noon.",
+       "Job 24, 14 לָאוֹר with the light, at dawn.",
+       "b) light of the sun, also the sun itself, Job"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eaace15a-209f-4bbf-9f11-d83a93d7583d",
+      "duration_api_ms": 11497,
+      "cost_usd_list": 0.065271,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 466
+     },
+     "lines": [
+      {
+       "draft": "עַד מַחֲצִית הַיּוֹם from day-light until noon.",
+       "reread": "עַד מַחֲצִית הַיּוֹם from day-light until noon.",
+       "status": "agreed",
+       "text": "עַד מַחֲצִית הַיּוֹם from day-light until noon."
+      },
+      {
+       "draft": "Job 24, 14 לָאוֹר with the light, at dawn.",
+       "reread": "Job 24, 14 לָאוֹר with the light, at dawn.",
+       "status": "agreed",
+       "text": "Job 24, 14 לָאוֹר with the light, at dawn."
+      },
+      {
+       "draft": "b) light of the sun, also the sun itself, Job",
+       "reread": "b) light of the sun, also the sun itself, Job",
+       "status": "agreed",
+       "text": "b) light of the sun, also the sun itself, Job"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 223,
+    "y": 1748,
+    "width": 856,
+    "height": 939
+   },
+   "draft_lines": [
+    "31, 26. 37, 21. Hab. 3, 4. Is. 18, 4 ; comp.",
+    "φάος for the sun Odyss. 3. 335. Also light",
+    "of day, the day, Ecc. 12, 2. אוֹר רְשָׁעִים",
+    "light of the wicked, i. e. their day-time,",
+    "put for the night, Job 38. 15. c) i. q.",
+    "lightning, Job 36, 32 עַל־כַּפַּיִם כִּסָּה אוֹר",
+    "he covereth his hands with light, i. e.",
+    "lightning, q. d. his hands are red with",
+    "lightning. Job 37, 3. 11. 15. d) the light",
+    "of life, life, Job 3, 16. 20 ; more fully אוֹר",
+    "חַיִּים Ps. 56, 14. e) Metaph. light as",
+    "the emblem of welfare, prosperity, hap-",
+    "piness ; either so that the proper sense",
+    "of light is retained, Job 22, 28. Is. 9, 1 ;",
+    "or trop. for prosperity itself, Job 30, 26.",
+    "Ps. 97, 11. In Is. 10, 17 Jehovah is called",
+    "the light of Israel, as the author and"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 223,
+      "y": 1740,
+      "width": 856,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r02-b00-856x238+223+1740-x2.png",
+     "image_sha256": "1dda0dfa37059dc3b9197436f9d151a96974af7a9d350ad74bb0736b4d097717",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "31, 26. 37, 21. Hab. 3, 4. Is. 18, 4 ; comp.",
+       "φάος for the sun Odyss. 3. 335. Also light",
+       "of day, the day, Ecc. 12, 2. אוֹר רְשָׁעִים",
+       "light of the wicked, i. e. their day-time,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "78bb4210-f998-47cd-88e0-eadff4a4176b",
+      "duration_api_ms": 10962,
+      "cost_usd_list": 0.063096,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 376
+     },
+     "lines": [
+      {
+       "draft": "31, 26. 37, 21. Hab. 3, 4. Is. 18, 4 ; comp.",
+       "reread": "31, 26. 37, 21. Hab. 3, 4. Is. 18, 4 ; comp.",
+       "status": "agreed",
+       "text": "31, 26. 37, 21. Hab. 3, 4. Is. 18, 4; comp."
+      },
+      {
+       "draft": "φάος for the sun Odyss. 3. 335. Also light",
+       "reread": "φάος for the sun Odyss. 3. 335. Also light",
+       "status": "agreed",
+       "text": "φάος for the sun Odyss. 3. 335. Also light"
+      },
+      {
+       "draft": "of day, the day, Ecc. 12, 2. אוֹר רְשָׁעִים",
+       "reread": "of day, the day, Ecc. 12, 2. אוֹר רְשָׁעִים",
+       "status": "agreed",
+       "text": "of day, the day, Ecc. 12, 2. אוֹר רְשָׁעִים"
+      },
+      {
+       "draft": "light of the wicked, i. e. their day-time,",
+       "reread": "light of the wicked, i. e. their day-time,",
+       "status": "agreed",
+       "text": "light of the wicked, i. e. their day-time,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 223,
+      "y": 1962,
+      "width": 856,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r02-b01-856x230+223+1962-x2.png",
+     "image_sha256": "93fa782f9e26279b746c540d23253149b10f0d3fe8f127c5180d96fccea4035e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "put for the night, Job 38. 15.   c) i. q.",
+       "lightning, Job 36, 32 עַל־כַּפַּיִם כִּסָּה אוֹר",
+       "he covereth his hands with light, i. e.",
+       "lightning, q. d. his hands are red with"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "610c6192-762d-4e86-9cd6-051a2d720b6b",
+      "duration_api_ms": 8076,
+      "cost_usd_list": 0.066796,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 450
+     },
+     "lines": [
+      {
+       "draft": "put for the night, Job 38. 15. c) i. q.",
+       "reread": "put for the night, Job 38. 15.   c) i. q.",
+       "status": "agreed",
+       "text": "put for the night, Job 38. 15. c) i. q."
+      },
+      {
+       "draft": "lightning, Job 36, 32 עַל־כַּפַּיִם כִּסָּה אוֹר",
+       "reread": "lightning, Job 36, 32 עַל־כַּפַּיִם כִּסָּה אוֹר",
+       "status": "agreed",
+       "text": "lightning, Job 36, 32 עַל־כַּפַּיִם כִּסָּה אוֹר"
+      },
+      {
+       "draft": "he covereth his hands with light, i. e.",
+       "reread": "he covereth his hands with light, i. e.",
+       "status": "agreed",
+       "text": "he covereth his hands with light, i. e."
+      },
+      {
+       "draft": "lightning, q. d. his hands are red with",
+       "reread": "lightning, q. d. his hands are red with",
+       "status": "agreed",
+       "text": "lightning, q. d. his hands are red with"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 223,
+      "y": 2176,
+      "width": 856,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r02-b02-856x240+223+2176-x2.png",
+     "image_sha256": "0cf067dc470f58b707ba5a83ed7bd889b78507bd820bd544b5ea85f0097eae00",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lightning. Job 37, 3. 11. 15.   d) the light",
+       "of life, life, Job 3, 16. 20 ; more fully אוֹר",
+       "חַיִּים Ps. 56, 14.   e) Metaph. light as",
+       "the emblem of welfare, prosperity, hap-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43ed2b1f-4370-4977-9ef3-dabdc1b6e636",
+      "duration_api_ms": 8605,
+      "cost_usd_list": 0.068221,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 463
+     },
+     "lines": [
+      {
+       "draft": "lightning. Job 37, 3. 11. 15. d) the light",
+       "reread": "lightning. Job 37, 3. 11. 15.   d) the light",
+       "status": "agreed",
+       "text": "lightning. Job 37, 3. 11. 15. d) the light"
+      },
+      {
+       "draft": "of life, life, Job 3, 16. 20 ; more fully אוֹר",
+       "reread": "of life, life, Job 3, 16. 20 ; more fully אוֹר",
+       "status": "agreed",
+       "text": "of life, life, Job 3, 16. 20; more fully אוֹר"
+      },
+      {
+       "draft": "חַיִּים Ps. 56, 14. e) Metaph. light as",
+       "reread": "חַיִּים Ps. 56, 14.   e) Metaph. light as",
+       "status": "agreed",
+       "text": "חַיִּים Ps. 56, 14. e) Metaph. light as"
+      },
+      {
+       "draft": "the emblem of welfare, prosperity, hap-",
+       "reread": "the emblem of welfare, prosperity, hap-",
+       "status": "agreed",
+       "text": "the emblem of welfare, prosperity, hap-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 223,
+      "y": 2400,
+      "width": 856,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r02-b03-856x229+223+2400-x2.png",
+     "image_sha256": "ecf52201fc771e5113a91ac8569127311889da3789b51e96400db41020c0f285",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "piness ; either so that the proper sense",
+       "of light is retained, Job 22, 28. Is. 9, 1 ;",
+       "or trop. for prosperity itself, Job 30, 26.",
+       "Ps. 97, 11.  In Is. 10, 17 Jehovah is called"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92ff91fd-2155-48d4-b69d-ba860ef7fe2f",
+      "duration_api_ms": 8634,
+      "cost_usd_list": 0.057746,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "piness ; either so that the proper sense",
+       "reread": "piness ; either so that the proper sense",
+       "status": "agreed",
+       "text": "piness; either so that the proper sense"
+      },
+      {
+       "draft": "of light is retained, Job 22, 28. Is. 9, 1 ;",
+       "reread": "of light is retained, Job 22, 28. Is. 9, 1 ;",
+       "status": "agreed",
+       "text": "of light is retained, Job 22, 28. Is. 9, 1;"
+      },
+      {
+       "draft": "or trop. for prosperity itself, Job 30, 26.",
+       "reread": "or trop. for prosperity itself, Job 30, 26.",
+       "status": "agreed",
+       "text": "or trop. for prosperity itself, Job 30, 26."
+      },
+      {
+       "draft": "Ps. 97, 11. In Is. 10, 17 Jehovah is called",
+       "reread": "Ps. 97, 11.  In Is. 10, 17 Jehovah is called",
+       "status": "agreed",
+       "text": "Ps. 97, 11. In Is. 10, 17 Jehovah is called"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b04",
+     "bounds": {
+      "x": 223,
+      "y": 2613,
+      "width": 856,
+      "height": 82
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r02-b04-856x82+223+2613-x2.png",
+     "image_sha256": "8dd429ed0f35fe3e7856326199c5c8354efdbe7c46d3ab02a308aed5a9e677cd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the light of Israel, as the author and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "abd343bf-d9da-4df9-8b05-4e08d62abff6",
+      "duration_api_ms": 7418,
+      "cost_usd_list": 0.046671,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1929,
+      "output_tokens": 218
+     },
+     "lines": [
+      {
+       "draft": "the light of Israel, as the author and",
+       "reread": "the light of Israel, as the author and",
+       "status": "agreed",
+       "text": "the light of Israel, as the author and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 223,
+    "y": 2675,
+    "width": 856,
+    "height": 569
+   },
+   "draft_lines": [
+    "source of prosperity and happiness to",
+    "them; comp. 60, 1. 3.   f) light for know-",
+    "ledge, instruction, doctrine, Is. 49, 6 אוֹר",
+    "גּוֹיִם a light of the Gentiles, i. e. an en-",
+    "lightener, teacher. 51, 4. 2, 5 let us walk",
+    "in the light of Jehovah, see v. 3. Comp.",
+    "Prov. 6, 23 for the commandment (of God)",
+    "is a lamp, and the law is light.   g) אוֹר",
+    "פָּנִים light of the countenance, i. e. a serene",
+    "and cheerful countenance, Job 29, 24"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 223,
+      "y": 2667,
+      "width": 856,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r03-b00-856x236+223+2667-x2.png",
+     "image_sha256": "aa484cffd2eeb42e42ef93cfff1a7777ba806fdd8b37269b5e42d297f74be64a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "source of prosperity and happiness to",
+       "them; comp. 60, 1. 3.  f) light for know-",
+       "ledge, instruction, doctrine, Is. 49, 6 אוֹר",
+       "גּוֹיִם a light of the Gentiles, i. e. an en-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "48b043d5-f371-4165-b59a-9fce755c4add",
+      "duration_api_ms": 10954,
+      "cost_usd_list": 0.06314600000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 377
+     },
+     "lines": [
+      {
+       "draft": "source of prosperity and happiness to",
+       "reread": "source of prosperity and happiness to",
+       "status": "agreed",
+       "text": "source of prosperity and happiness to"
+      },
+      {
+       "draft": "them; comp. 60, 1. 3.   f) light for know-",
+       "reread": "them; comp. 60, 1. 3.  f) light for know-",
+       "status": "agreed",
+       "text": "them; comp. 60, 1. 3. f) light for know-"
+      },
+      {
+       "draft": "ledge, instruction, doctrine, Is. 49, 6 אוֹר",
+       "reread": "ledge, instruction, doctrine, Is. 49, 6 אוֹר",
+       "status": "agreed",
+       "text": "ledge, instruction, doctrine, Is. 49, 6 אוֹר"
+      },
+      {
+       "draft": "גּוֹיִם a light of the Gentiles, i. e. an en-",
+       "reread": "גּוֹיִם a light of the Gentiles, i. e. an en-",
+       "status": "agreed",
+       "text": "גּוֹיִם a light of the Gentiles, i. e. an en-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 223,
+      "y": 2887,
+      "width": 856,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r03-b01-856x242+223+2887-x2.png",
+     "image_sha256": "3906299532bafe1577da2ed66380b3c5667db6aa51729cc4149e70c736191aed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lightener, teacher. 51, 4. 2, 5 let us walk",
+       "in the light of Jehovah, see v. 3. Comp.",
+       "Prov. 6, 23 for the commandment (of God)",
+       "is a lamp, and the law is light. g) אוֹר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "06a4c7c3-1cc0-4ecc-ad0a-3f9653176532",
+      "duration_api_ms": 8047,
+      "cost_usd_list": 0.058371,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "lightener, teacher. 51, 4. 2, 5 let us walk",
+       "reread": "lightener, teacher. 51, 4. 2, 5 let us walk",
+       "status": "agreed",
+       "text": "lightener, teacher. 51, 4. 2, 5 let us walk"
+      },
+      {
+       "draft": "in the light of Jehovah, see v. 3. Comp.",
+       "reread": "in the light of Jehovah, see v. 3. Comp.",
+       "status": "agreed",
+       "text": "in the light of Jehovah, see v. 3. Comp."
+      },
+      {
+       "draft": "Prov. 6, 23 for the commandment (of God)",
+       "reread": "Prov. 6, 23 for the commandment (of God)",
+       "status": "agreed",
+       "text": "Prov. 6, 23 for the commandment (of God)"
+      },
+      {
+       "draft": "is a lamp, and the law is light.   g) אוֹר",
+       "reread": "is a lamp, and the law is light. g) אוֹר",
+       "status": "agreed",
+       "text": "is a lamp, and the law is light. g) אוֹר"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 223,
+      "y": 3113,
+      "width": 856,
+      "height": 133
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c0-r03-b02-856x133+223+3113-x2.png",
+     "image_sha256": "3cd5d097f6c67a367b2ddaef920f20d9987e1da18660e683d09f70c81095245d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "פָּנִים light of the countenance, i. e. a serene",
+       "and cheerful countenance, Job 29, 24"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "75e4c8c4-9ff5-4f12-a8b8-e57d424866f7",
+      "duration_api_ms": 7370,
+      "cost_usd_list": 0.049671,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2177,
+      "output_tokens": 216
+     },
+     "lines": [
+      {
+       "draft": "פָּנִים light of the countenance, i. e. a serene",
+       "reread": "פָּנִים light of the countenance, i. e. a serene",
+       "status": "agreed",
+       "text": "פָּנִים light of the countenance, i. e. a serene"
+      },
+      {
+       "draft": "and cheerful countenance, Job 29, 24",
+       "reread": "and cheerful countenance, Job 29, 24",
+       "status": "agreed",
+       "text": "and cheerful countenance, Job 29, 24"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1101,
+    "y": 169,
+    "width": 960,
+    "height": 976
+   },
+   "draft_lines": [
+    "(comp. Ps. 104, 15). Prov. 16, 15 בְּאוֹר פְּנֵי",
+    "מֶלֶךְ in the light of the king's countenance,",
+    "i. e. when his countenance is cheerful and",
+    "pleasant. Ps. 4, 7. 44, 4.",
+    "אוּר m. 1. i. q. אוֹר, light, and hence in",
+    "Plur. אוּרִים a) lights, i. e. region of light,",
+    "the East, Orient, Is. 24, 15. Comp. Hom.",
+    "πρὸς ἠῶ ἠέλιόν τε,-Il. 12. 239. Od. 9. 26.",
+    "b) lights, metaph. for revelations, revela-",
+    "tion, spoken of the sacred lot of the He-",
+    "brews, Urim, Num. 27, 21. 1 Sam. 28, 6;",
+    "oftener more fully הָאֻרִים וְהַתֻּמִּים Urim",
+    "and Thummim, light and truth, i.e. reve-",
+    "lation and truth, Ex. 28, 30. Lev. 8, 8;",
+    "once תֻּמִּים וְאֻרִים Deut. 33, 8. Sept. well,",
+    "δήλωσις καὶ ἀλήθεια, Luth. Licht und"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1101,
+      "y": 161,
+      "width": 960,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r00-b00-960x295+1101+161-x2.png",
+     "image_sha256": "647559b43e057dbc655fb0692052180e613f44331091b1bffb0996550b4ec998",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(comp. Ps. 104, 15). Prov. 16, 15 בְּאוֹר פְּנֵי",
+       "מֶלֶךְ in the light of the king’s countenance,",
+       "i. e. when his countenance is cheerful and",
+       "pleasant. Ps. 4, 7. 44, 4."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0b082f9c-39ec-4a4c-8a7c-2fbd04e48493",
+      "duration_api_ms": 10567,
+      "cost_usd_list": 0.07114599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3075,
+      "output_tokens": 421
+     },
+     "lines": [
+      {
+       "draft": "(comp. Ps. 104, 15). Prov. 16, 15 בְּאוֹר פְּנֵי",
+       "reread": "(comp. Ps. 104, 15). Prov. 16, 15 בְּאוֹר פְּנֵי",
+       "status": "agreed",
+       "text": "(comp. Ps. 104, 15). Prov. 16, 15 בְּאוֹר פְּנֵי"
+      },
+      {
+       "draft": "מֶלֶךְ in the light of the king's countenance,",
+       "reread": "מֶלֶךְ in the light of the king’s countenance,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "מֶלֶךְ in the light of the king’s countenance,",
+        "verdict": "b",
+        "note": "Hebrew and wording agree in both; the only difference is the apostrophe in \"king's\". The printed glyph is a raised comma-shaped typographic apostrophe (’), which Reading B gives; Reading A's straight ASCII ' is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d75388f0-6fcb-4fca-bb0c-bd085a100546",
+        "duration_api_ms": 11628,
+        "cost_usd_list": 0.07372500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2999,
+        "output_tokens": 503
+       },
+       "text": "מֶלֶךְ in the light of the king’s countenance,"
+      },
+      {
+       "draft": "i. e. when his countenance is cheerful and",
+       "reread": "i. e. when his countenance is cheerful and",
+       "status": "agreed",
+       "text": "i. e. when his countenance is cheerful and"
+      },
+      {
+       "draft": "pleasant. Ps. 4, 7. 44, 4.",
+       "reread": "pleasant. Ps. 4, 7. 44, 4.",
+       "status": "agreed",
+       "text": "pleasant. Ps. 4, 7. 44, 4."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1101,
+      "y": 440,
+      "width": 960,
+      "height": 265
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r00-b01-960x265+1101+440-x2.png",
+     "image_sha256": "7615e0f0f38df0764c714761ea745c5f8724e6879b1b55917d06b2051c3045b2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּר m. 1. i. q. אוֹר, light, and hence in",
+       "Plur. אוּרִים a) lights, i. e. region of light,",
+       "the East, Orient, Is. 24, 15. Comp. Hom.",
+       "πρὸς ἠῶ ἠέλιόν τε,-Il. 12. 239. Od. 9. 26."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d0a90536-9336-4864-941b-8f6d897cdc70",
+      "duration_api_ms": 13467,
+      "cost_usd_list": 0.0800085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2868,
+      "output_tokens": 650
+     },
+     "lines": [
+      {
+       "draft": "אוּר m. 1. i. q. אוֹר, light, and hence in",
+       "reread": "אוּר m. 1. i. q. אוֹר, light, and hence in",
+       "status": "agreed",
+       "text": "אוּר m. 1. i. q. אוֹר, light, and hence in"
+      },
+      {
+       "draft": "Plur. אוּרִים a) lights, i. e. region of light,",
+       "reread": "Plur. אוּרִים a) lights, i. e. region of light,",
+       "status": "agreed",
+       "text": "Plur. אוּרִים a) lights, i. e. region of light,"
+      },
+      {
+       "draft": "the East, Orient, Is. 24, 15. Comp. Hom.",
+       "reread": "the East, Orient, Is. 24, 15. Comp. Hom.",
+       "status": "agreed",
+       "text": "the East, Orient, Is. 24, 15. Comp. Hom."
+      },
+      {
+       "draft": "πρὸς ἠῶ ἠέλιόν τε,-Il. 12. 239. Od. 9. 26.",
+       "reread": "πρὸς ἠῶ ἠέλιόν τε,-Il. 12. 239. Od. 9. 26.",
+       "status": "agreed",
+       "text": "πρὸς ἠῶ ἠέλιόν τε,-Il. 12. 239. Od. 9. 26."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1101,
+      "y": 689,
+      "width": 960,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r00-b02-960x242+1101+689-x2.png",
+     "image_sha256": "20ef1d491bcf2d82407ac518fb9c0d444416b118fb64aeff2dad9acc22d6de7a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "b) lights, metaph. for revelations, revela-",
+       "tion, spoken of the sacred lot of the He-",
+       "brews, Urim, Num. 27, 21. 1 Sam. 28, 6;",
+       "oftener more fully הָאֻרִים וְהַתֻּמִּים Urim"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "493fe61b-faf9-4974-8c35-5984b775dc7c",
+      "duration_api_ms": 13400,
+      "cost_usd_list": 0.077296,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 613
+     },
+     "lines": [
+      {
+       "draft": "b) lights, metaph. for revelations, revela-",
+       "reread": "b) lights, metaph. for revelations, revela-",
+       "status": "agreed",
+       "text": "b) lights, metaph. for revelations, revela-"
+      },
+      {
+       "draft": "tion, spoken of the sacred lot of the He-",
+       "reread": "tion, spoken of the sacred lot of the He-",
+       "status": "agreed",
+       "text": "tion, spoken of the sacred lot of the He-"
+      },
+      {
+       "draft": "brews, Urim, Num. 27, 21. 1 Sam. 28, 6;",
+       "reread": "brews, Urim, Num. 27, 21. 1 Sam. 28, 6;",
+       "status": "agreed",
+       "text": "brews, Urim, Num. 27, 21. 1 Sam. 28, 6;"
+      },
+      {
+       "draft": "oftener more fully הָאֻרִים וְהַתֻּמִּים Urim",
+       "reread": "oftener more fully הָאֻרִים וְהַתֻּמִּים Urim",
+       "status": "agreed",
+       "text": "oftener more fully הָאֻרִים וְהַתֻּמִּים Urim"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1101,
+      "y": 915,
+      "width": 960,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r00-b03-960x227+1101+915-x2.png",
+     "image_sha256": "32d223570e8e8710e7eda149079a4805e94bf4224eff9e48a5ceca44b741a7df",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and Thummim, light and truth, i.e. reve-",
+       "lation and truth, Ex. 28, 30. Lev. 8, 8 ;",
+       "once תֻּמִּים וְאֻרִים Deut. 33, 8.  Sept. well,",
+       "δήλωσις καὶ ἀλήθεια, Luth. Licht und"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5fa62e50-3acb-4a20-bb54-1341b075ff11",
+      "duration_api_ms": 11927,
+      "cost_usd_list": 0.07093350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2730,
+      "output_tokens": 503
+     },
+     "lines": [
+      {
+       "draft": "and Thummim, light and truth, i.e. reve-",
+       "reread": "and Thummim, light and truth, i.e. reve-",
+       "status": "agreed",
+       "text": "and Thummim, light and truth, i.e. reve-"
+      },
+      {
+       "draft": "lation and truth, Ex. 28, 30. Lev. 8, 8;",
+       "reread": "lation and truth, Ex. 28, 30. Lev. 8, 8 ;",
+       "status": "agreed",
+       "text": "lation and truth, Ex. 28, 30. Lev. 8, 8;"
+      },
+      {
+       "draft": "once תֻּמִּים וְאֻרִים Deut. 33, 8. Sept. well,",
+       "reread": "once תֻּמִּים וְאֻרִים Deut. 33, 8.  Sept. well,",
+       "status": "agreed",
+       "text": "once תֻּמִּים וְאֻרִים Deut. 33, 8. Sept. well,"
+      },
+      {
+       "draft": "δήλωσις καὶ ἀλήθεια, Luth. Licht und",
+       "reread": "δήλωσις καὶ ἀλήθεια, Luth. Licht und",
+       "status": "agreed",
+       "text": "δήλωσις καὶ ἀλήθεια, Luth. Licht und"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1101,
+    "y": 1133,
+    "width": 960,
+    "height": 895
+   },
+   "draft_lines": [
+    "Recht. These sacred lots, which the",
+    "high-priest alone might consult in mat-",
+    "ters of great moment, were worn in his",
+    "breast-plate, as appears from Ex. 28, 30,",
+    "where נָתַן אֶל is to put into ; comp. Deut.",
+    "23, 25. Num. 4, 10. Ex. 25, 21. What",
+    "they were, was already matter of dispute",
+    "in the time of Philo and Josephus. The",
+    "latter supposed that the augury was",
+    "taken from the twelve gems which deco-",
+    "rated the exterior of the breast-plate,",
+    "and from their degree of splendour; Jos.",
+    "Ant. 3. 8. 9. But Philo teaches that the",
+    "Urim and Thummim were two small",
+    "images inserted between the double",
+    "folds of the breast-plate, one of which"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1101,
+      "y": 1125,
+      "width": 960,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r01-b00-960x240+1101+1125-x2.png",
+     "image_sha256": "c59f6c33dc15c854cbe2449f7fc2065276750fe09c342e2a227fb05114c94012",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Recht. These sacred lots, which the",
+       "high-priest alone might consult in mat-",
+       "ters of great moment, were worn in his",
+       "breast-plate, as appears from Ex. 28, 30,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6ed72b60-25c4-43f9-9a7a-c6b0ea3dbe9d",
+      "duration_api_ms": 8005,
+      "cost_usd_list": 0.058828750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 243
+     },
+     "lines": [
+      {
+       "draft": "Recht. These sacred lots, which the",
+       "reread": "Recht. These sacred lots, which the",
+       "status": "agreed",
+       "text": "Recht. These sacred lots, which the"
+      },
+      {
+       "draft": "high-priest alone might consult in mat-",
+       "reread": "high-priest alone might consult in mat-",
+       "status": "agreed",
+       "text": "high-priest alone might consult in mat-"
+      },
+      {
+       "draft": "ters of great moment, were worn in his",
+       "reread": "ters of great moment, were worn in his",
+       "status": "agreed",
+       "text": "ters of great moment, were worn in his"
+      },
+      {
+       "draft": "breast-plate, as appears from Ex. 28, 30,",
+       "reread": "breast-plate, as appears from Ex. 28, 30,",
+       "status": "agreed",
+       "text": "breast-plate, as appears from Ex. 28, 30,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1101,
+      "y": 1349,
+      "width": 960,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r01-b01-960x244+1101+1349-x2.png",
+     "image_sha256": "d6aab98cd59bd36c66560efddb73c5f7c4aee47bc78fc118a7c54221f604525c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "where נָתַן אֶל is to put into ; comp. Deut.",
+       "23, 25. Num. 4, 10. Ex. 25, 21.   What",
+       "they were, was already matter of dispute",
+       "in the time of Philo and Josephus.  The"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "283d1cd0-ba6e-4da5-902e-5ed382deedf7",
+      "duration_api_ms": 10770,
+      "cost_usd_list": 0.06602875000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 387
+     },
+     "lines": [
+      {
+       "draft": "where נָתַן אֶל is to put into ; comp. Deut.",
+       "reread": "where נָתַן אֶל is to put into ; comp. Deut.",
+       "status": "agreed",
+       "text": "where נָתַן אֶל is to put into; comp. Deut."
+      },
+      {
+       "draft": "23, 25. Num. 4, 10. Ex. 25, 21. What",
+       "reread": "23, 25. Num. 4, 10. Ex. 25, 21.   What",
+       "status": "agreed",
+       "text": "23, 25. Num. 4, 10. Ex. 25, 21. What"
+      },
+      {
+       "draft": "they were, was already matter of dispute",
+       "reread": "they were, was already matter of dispute",
+       "status": "agreed",
+       "text": "they were, was already matter of dispute"
+      },
+      {
+       "draft": "in the time of Philo and Josephus. The",
+       "reread": "in the time of Philo and Josephus.  The",
+       "status": "agreed",
+       "text": "in the time of Philo and Josephus. The"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1101,
+      "y": 1577,
+      "width": 960,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r01-b02-960x229+1101+1577-x2.png",
+     "image_sha256": "f7dfe027a36cbc8bf6ab129ad675048909cd8a2614fa80cf3518792ce1cd855a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "latter supposed that the augury was",
+       "taken from the twelve gems which deco-",
+       "rated the exterior of the breast-plate,",
+       "and from their degree of splendour; Jos."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4d1a2a14-9e3f-40cf-bb6c-8b21910d4f84",
+      "duration_api_ms": 7145,
+      "cost_usd_list": 0.057566250000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "latter supposed that the augury was",
+       "reread": "latter supposed that the augury was",
+       "status": "agreed",
+       "text": "latter supposed that the augury was"
+      },
+      {
+       "draft": "taken from the twelve gems which deco-",
+       "reread": "taken from the twelve gems which deco-",
+       "status": "agreed",
+       "text": "taken from the twelve gems which deco-"
+      },
+      {
+       "draft": "rated the exterior of the breast-plate,",
+       "reread": "rated the exterior of the breast-plate,",
+       "status": "agreed",
+       "text": "rated the exterior of the breast-plate,"
+      },
+      {
+       "draft": "and from their degree of splendour; Jos.",
+       "reread": "and from their degree of splendour; Jos.",
+       "status": "agreed",
+       "text": "and from their degree of splendour; Jos."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1101,
+      "y": 1790,
+      "width": 960,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r01-b03-960x246+1101+1790-x2.png",
+     "image_sha256": "8a270414df842a56a03b772690920fae9e2804aa4698c59c758554b4f7e869bc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ant. 3. 8. 9. But Philo teaches that the",
+       "Urim and Thummim were two small",
+       "images inserted between the double",
+       "folds of the breast-plate, one of which"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dba39663-16d7-41be-b0b7-bd167b11d29a",
+      "duration_api_ms": 7824,
+      "cost_usd_list": 0.058578750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 238
+     },
+     "lines": [
+      {
+       "draft": "Ant. 3. 8. 9. But Philo teaches that the",
+       "reread": "Ant. 3. 8. 9. But Philo teaches that the",
+       "status": "agreed",
+       "text": "Ant. 3. 8. 9. But Philo teaches that the"
+      },
+      {
+       "draft": "Urim and Thummim were two small",
+       "reread": "Urim and Thummim were two small",
+       "status": "agreed",
+       "text": "Urim and Thummim were two small"
+      },
+      {
+       "draft": "images inserted between the double",
+       "reread": "images inserted between the double",
+       "status": "agreed",
+       "text": "images inserted between the double"
+      },
+      {
+       "draft": "folds of the breast-plate, one of which",
+       "reread": "folds of the breast-plate, one of which",
+       "status": "agreed",
+       "text": "folds of the breast-plate, one of which"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1101,
+    "y": 2016,
+    "width": 960,
+    "height": 775
+   },
+   "draft_lines": [
+    "symbolically represented revelation, and",
+    "the other truth ; Tom. II. p. 152. ed.",
+    "Mangey. In this case, the Hebrews",
+    "perhaps imitated a similar custom of the",
+    "Egyptians, among whom the supreme",
+    "judge wore suspended from his neck a",
+    "small image of sapphire, as the symbol",
+    "of truth ; see Diod. Sic. 1. 48, 75. Ælian.",
+    "V. H. 14. 34.",
+    "2. light of fire, Is. 50, 11 בְּאוּר אֵשׁ.",
+    "Hence for fire itself, i. e. flame, blaze, Is.",
+    "44, 16. 47, 14. Ez. 5, 2. Comp. אוּר",
+    "Hiph. no. 3.",
+    "3. Ur, pr. n. a) Of Abraham's native"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1101,
+      "y": 2008,
+      "width": 960,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r02-b00-960x235+1101+2008-x2.png",
+     "image_sha256": "64247a91d048cf187ae3ef418b4973caeae1a41984a3c5174a129155236990b5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "symbolically represented revelation, and",
+       "the other truth ; Tom. II. p. 152. ed.",
+       "Mangey. In this case, the Hebrews",
+       "perhaps imitated a similar custom of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1afc3f43-868a-48fc-9ab3-daff75968206",
+      "duration_api_ms": 7372,
+      "cost_usd_list": 0.05806625,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "symbolically represented revelation, and",
+       "reread": "symbolically represented revelation, and",
+       "status": "agreed",
+       "text": "symbolically represented revelation, and"
+      },
+      {
+       "draft": "the other truth ; Tom. II. p. 152. ed.",
+       "reread": "the other truth ; Tom. II. p. 152. ed.",
+       "status": "agreed",
+       "text": "the other truth; Tom. II. p. 152. ed."
+      },
+      {
+       "draft": "Mangey. In this case, the Hebrews",
+       "reread": "Mangey. In this case, the Hebrews",
+       "status": "agreed",
+       "text": "Mangey. In this case, the Hebrews"
+      },
+      {
+       "draft": "perhaps imitated a similar custom of the",
+       "reread": "perhaps imitated a similar custom of the",
+       "status": "agreed",
+       "text": "perhaps imitated a similar custom of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1101,
+      "y": 2227,
+      "width": 960,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r02-b01-960x239+1101+2227-x2.png",
+     "image_sha256": "9f7eca48397e0f3d1f3c14ef087f3d3df075b918a716db81de2bff5f2fec6a31",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Egyptians, among whom the supreme",
+       "judge wore suspended from his neck a",
+       "small image of sapphire, as the symbol",
+       "of truth ; see Diod. Sic. 1. 48, 75. Ælian."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "99ededb2-f00c-428d-a4de-0ba135d8751e",
+      "duration_api_ms": 7913,
+      "cost_usd_list": 0.05917875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 250
+     },
+     "lines": [
+      {
+       "draft": "Egyptians, among whom the supreme",
+       "reread": "Egyptians, among whom the supreme",
+       "status": "agreed",
+       "text": "Egyptians, among whom the supreme"
+      },
+      {
+       "draft": "judge wore suspended from his neck a",
+       "reread": "judge wore suspended from his neck a",
+       "status": "agreed",
+       "text": "judge wore suspended from his neck a"
+      },
+      {
+       "draft": "small image of sapphire, as the symbol",
+       "reread": "small image of sapphire, as the symbol",
+       "status": "agreed",
+       "text": "small image of sapphire, as the symbol"
+      },
+      {
+       "draft": "of truth ; see Diod. Sic. 1. 48, 75. Ælian.",
+       "reread": "of truth ; see Diod. Sic. 1. 48, 75. Ælian.",
+       "status": "agreed",
+       "text": "of truth; see Diod. Sic. 1. 48, 75. Ælian."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1101,
+      "y": 2450,
+      "width": 960,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r02-b02-960x237+1101+2450-x2.png",
+     "image_sha256": "e47abd71e6c4452c5deaee5779fa5d3da74cdd8a497094e9481613874abe9a34",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "V. H. 14. 34.",
+       "2. light of fire, Is. 50, 11 בְּאוּר אֵשׁ.",
+       "Hence for fire itself, i. e. flame, blaze, Is.",
+       "44, 16. 47, 14. Ez. 5, 2. Comp. אוֹר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "17065c67-b1ad-403e-9763-9e72476a1051",
+      "duration_api_ms": 11766,
+      "cost_usd_list": 0.07436625000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 571
+     },
+     "lines": [
+      {
+       "draft": "V. H. 14. 34.",
+       "reread": "V. H. 14. 34.",
+       "status": "agreed",
+       "text": "V. H. 14. 34."
+      },
+      {
+       "draft": "2. light of fire, Is. 50, 11 בְּאוּר אֵשׁ.",
+       "reread": "2. light of fire, Is. 50, 11 בְּאוּר אֵשׁ.",
+       "status": "agreed",
+       "text": "2. light of fire, Is. 50, 11 בְּאוּר אֵשׁ."
+      },
+      {
+       "draft": "Hence for fire itself, i. e. flame, blaze, Is.",
+       "reread": "Hence for fire itself, i. e. flame, blaze, Is.",
+       "status": "agreed",
+       "text": "Hence for fire itself, i. e. flame, blaze, Is."
+      },
+      {
+       "draft": "44, 16. 47, 14. Ez. 5, 2. Comp. אוּר",
+       "reread": "44, 16. 47, 14. Ez. 5, 2. Comp. אוֹר",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "44, 16. 47, 14. Ez. 5, 2. Comp. אוֹר",
+        "verdict": "b",
+        "note": "The final word is printed with a holem dot above the vav (אוֹר), not a shureq dot inside it; Reading B is correct, Reading A's אוּר is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "587d4170-6a4d-4dc7-98f5-8ad7c960d2b9",
+        "duration_api_ms": 8698,
+        "cost_usd_list": 0.07010025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3591,
+        "cache_creation_input_tokens": 2676,
+        "output_tokens": 508
+       },
+       "text": "44, 16. 47, 14. Ez. 5, 2. Comp. אוֹר"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1101,
+      "y": 2671,
+      "width": 960,
+      "height": 128
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r02-b03-960x128+1101+2671-x2.png",
+     "image_sha256": "0e35de1abcf6079641915f687f0505a548d19a29579527c057418270e85f5873",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Hiph. no. 3.",
+       "3. Ur, pr. n. a) Of Abraham's native"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a6e4368a-f547-4311-80c9-5108b47009da",
+      "duration_api_ms": 7017,
+      "cost_usd_list": 0.05037875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2249,
+      "output_tokens": 212
+     },
+     "lines": [
+      {
+       "draft": "Hiph. no. 3.",
+       "reread": "Hiph. no. 3.",
+       "status": "agreed",
+       "text": "Hiph. no. 3."
+      },
+      {
+       "draft": "3. Ur, pr. n. a) Of Abraham's native",
+       "reread": "3. Ur, pr. n. a) Of Abraham's native",
+       "status": "agreed",
+       "text": "3. Ur, pr. n. a) Of Abraham's native"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1101,
+    "y": 2779,
+    "width": 960,
+    "height": 709
+   },
+   "draft_lines": [
+    "city, more fully אוּר כַּשְׂדִּים Ur of the",
+    "Chaldees, Gen. 11, 28. 31. 15, 7. Neh. 9, 8.",
+    "A trace of it seems to have remained in",
+    "the Persian fortress Ur, situated between",
+    "Nesibis and the Tigris according to Am-",
+    "mian. 25. 8. But ûr as an appellative",
+    "may perhaps have signified a fortress,",
+    "castle; so at least Pers. اورا castle"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1101,
+      "y": 2771,
+      "width": 960,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r03-b00-960x248+1101+2771-x2.png",
+     "image_sha256": "17a555f19093329ec3b2733318f91a7f1349554f9dd3ae61225cbbd95d803fa3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "city, more fully אוּר כַּשְׂדִּים Ur of the",
+       "Chaldees, Gen. 11, 28. 31. 15, 7. Neh. 9, 8.",
+       "A trace of it seems to have remained in",
+       "the Persian fortress Ur, situated between"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d0de2c0e-c92e-456e-bf73-dffe5f7fc10e",
+      "duration_api_ms": 8944,
+      "cost_usd_list": 0.06232875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 313
+     },
+     "lines": [
+      {
+       "draft": "city, more fully אוּר כַּשְׂדִּים Ur of the",
+       "reread": "city, more fully אוּר כַּשְׂדִּים Ur of the",
+       "status": "agreed",
+       "text": "city, more fully אוּר כַּשְׂדִּים Ur of the"
+      },
+      {
+       "draft": "Chaldees, Gen. 11, 28. 31. 15, 7. Neh. 9, 8.",
+       "reread": "Chaldees, Gen. 11, 28. 31. 15, 7. Neh. 9, 8.",
+       "status": "agreed",
+       "text": "Chaldees, Gen. 11, 28. 31. 15, 7. Neh. 9, 8."
+      },
+      {
+       "draft": "A trace of it seems to have remained in",
+       "reread": "A trace of it seems to have remained in",
+       "status": "agreed",
+       "text": "A trace of it seems to have remained in"
+      },
+      {
+       "draft": "the Persian fortress Ur, situated between",
+       "reread": "the Persian fortress Ur, situated between",
+       "status": "agreed",
+       "text": "the Persian fortress Ur, situated between"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1101,
+      "y": 3003,
+      "width": 960,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r03-b01-960x248+1101+3003-x2.png",
+     "image_sha256": "bd640086fed8ad4a3e18f2fda21f5af9f1f0ccd6b971c5095d7112d86fd37612",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Nesibis and the Tigris according to Am-",
+       "mian. 25. 8.  But ûr as an appellative",
+       "may perhaps have signified a fortress,",
+       "castle; so at least Pers. اووا castle"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8a110f42-f34a-44c2-86d4-6c467252b84f",
+      "duration_api_ms": 9326,
+      "cost_usd_list": 0.06812875000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 429
+     },
+     "lines": [
+      {
+       "draft": "Nesibis and the Tigris according to Am-",
+       "reread": "Nesibis and the Tigris according to Am-",
+       "status": "agreed",
+       "text": "Nesibis and the Tigris according to Am-"
+      },
+      {
+       "draft": "mian. 25. 8. But ûr as an appellative",
+       "reread": "mian. 25. 8.  But ûr as an appellative",
+       "status": "agreed",
+       "text": "mian. 25. 8. But ûr as an appellative"
+      },
+      {
+       "draft": "may perhaps have signified a fortress,",
+       "reread": "may perhaps have signified a fortress,",
+       "status": "agreed",
+       "text": "may perhaps have signified a fortress,"
+      },
+      {
+       "draft": "castle; so at least Pers. اورا castle",
+       "reread": "castle; so at least Pers. اووا castle",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "castle; so at least Pers. اووا castle",
+        "verdict": "b",
+        "note": "The two medial Arabic-script letters are both printed with the closed round head of و (wāw) resting on the baseline; neither has the open descending hook of ر, so the word is اووا, not اورا.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "07973998-3cce-4928-a005-a36448715cf5",
+        "duration_api_ms": 15415,
+        "cost_usd_list": 0.07888500000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2714,
+        "output_tokens": 679
+       },
+       "text": "castle; so at least Pers. اووا castle"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1101,
+      "y": 3235,
+      "width": 960,
+      "height": 253
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0042/pass2/c1-r03-b02-960x253+1101+3235-x2.png",
+     "image_sha256": "8bdd2a2ac9669662551b651fee48afe3fc3d40f25e3a41bc11a30762fc96319e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c00f1148-4d9e-44d7-898e-4f265ebeaf9b",
+      "duration_api_ms": 7832,
+      "cost_usd_list": 0.058591250000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2870,
+      "output_tokens": 221
+     }
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אור 26 אור",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "135; לְ 118, 27; אֵת Ps. 67, 2. Once omit-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ting פָּנִים Ps. 118, 27. c) Trop. to en-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "lighten, i. e. to impart knowledge and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "wisdom, Ps. 119, 130.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. to give light, to shine, absol. Gen. 1,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "15; c. dat. Ex. 13, 21. Is. 60, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. to light, i. e. to kindle, to set on fire,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Mal. 1, 10. Is. 27, 11. Comp. אוּר fire.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Arab. أَوَّرَ to kindle.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Deriv. אוֹר, אוּר, אוֹרָה, pr. names אוּרִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "—אוּרִיָּהוּ, also מָאוֹר, מְאוּרָה, יְאֹר.",
+   "status": "adjudicated",
+   "draft": "—אוּרִיָּהוּ, also יָאִיר, מָאוֹר, מְאוּרָה.",
+   "reread": "—אוּרִיָּהוּ, also מָאוֹר, מְאוּרָה, יְאֹר.",
+   "verdict": "b",
+   "note": "The list order printed is מָאוֹר, מְאוּרָה, then a final three-letter word יְאֹר (defective, holem over aleph, no second yod), matching B; A's יָאִיר placed first is not what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אוֹר m. (once f. Job 36, 32; see Lehrg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "p. 546) light, Gen. 1, 3. 4. 5. Job 3, 9.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "12, 25. The diff. between it and מָאוֹר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "is apparent from Gen. 1, 3 comp. v. 14. 16,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "i. e. אוֹר is light as universally diffused,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "e. g. the light of day and of the sun, while",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מָאוֹר is pr. a light, luminary, which gives",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "light, and therefore admits the plural,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "which אוֹר does not, except in one exam-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ple Ps. 136, 7. where אוֹרִים is poetically",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "put for מְאֹרִים.—Spec. a) day-light,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "morning-light, dawn, Neh. 8, 3 מִן־הָאוֹר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "עַד מַחֲצִית הַיּוֹם from day-light until noon.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Job 24, 14 לָאוֹר with the light, at dawn.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "b) light of the sun, also the sun itself, Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "31, 26. 37, 21. Hab. 3, 4. Is. 18, 4; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "φάος for the sun Odyss. 3. 335. Also light",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of day, the day, Ecc. 12, 2. אוֹר רְשָׁעִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "light of the wicked, i. e. their day-time,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "put for the night, Job 38. 15. c) i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lightning, Job 36, 32 עַל־כַּפַּיִם כִּסָּה אוֹר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "he covereth his hands with light, i. e.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lightning, q. d. his hands are red with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lightning. Job 37, 3. 11. 15. d) the light",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of life, life, Job 3, 16. 20; more fully אוֹר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "חַיִּים Ps. 56, 14. e) Metaph. light as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the emblem of welfare, prosperity, hap-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "piness; either so that the proper sense",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of light is retained, Job 22, 28. Is. 9, 1;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "or trop. for prosperity itself, Job 30, 26.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ps. 97, 11. In Is. 10, 17 Jehovah is called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the light of Israel, as the author and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "source of prosperity and happiness to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "them; comp. 60, 1. 3. f) light for know-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ledge, instruction, doctrine, Is. 49, 6 אוֹר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "גּוֹיִם a light of the Gentiles, i. e. an en-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "lightener, teacher. 51, 4. 2, 5 let us walk",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "in the light of Jehovah, see v. 3. Comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Prov. 6, 23 for the commandment (of God)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "is a lamp, and the law is light. g) אוֹר",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "פָּנִים light of the countenance, i. e. a serene",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and cheerful countenance, Job 29, 24",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "(comp. Ps. 104, 15). Prov. 16, 15 בְּאוֹר פְּנֵי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "מֶלֶךְ in the light of the king’s countenance,",
+   "status": "adjudicated",
+   "draft": "מֶלֶךְ in the light of the king's countenance,",
+   "reread": "מֶלֶךְ in the light of the king’s countenance,",
+   "verdict": "b",
+   "note": "Hebrew and wording agree in both; the only difference is the apostrophe in \"king's\". The printed glyph is a raised comma-shaped typographic apostrophe (’), which Reading B gives; Reading A's straight ASCII ' is not what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. when his countenance is cheerful and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pleasant. Ps. 4, 7. 44, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אוּר m. 1. i. q. אוֹר, light, and hence in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Plur. אוּרִים a) lights, i. e. region of light,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the East, Orient, Is. 24, 15. Comp. Hom.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "πρὸς ἠῶ ἠέλιόν τε,-Il. 12. 239. Od. 9. 26.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "b) lights, metaph. for revelations, revela-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "tion, spoken of the sacred lot of the He-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "brews, Urim, Num. 27, 21. 1 Sam. 28, 6;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "oftener more fully הָאֻרִים וְהַתֻּמִּים Urim",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and Thummim, light and truth, i.e. reve-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lation and truth, Ex. 28, 30. Lev. 8, 8;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "once תֻּמִּים וְאֻרִים Deut. 33, 8. Sept. well,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "δήλωσις καὶ ἀλήθεια, Luth. Licht und",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Recht. These sacred lots, which the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "high-priest alone might consult in mat-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ters of great moment, were worn in his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "breast-plate, as appears from Ex. 28, 30,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "where נָתַן אֶל is to put into; comp. Deut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "23, 25. Num. 4, 10. Ex. 25, 21. What",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "they were, was already matter of dispute",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "in the time of Philo and Josephus. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "latter supposed that the augury was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "taken from the twelve gems which deco-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "rated the exterior of the breast-plate,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and from their degree of splendour; Jos.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ant. 3. 8. 9. But Philo teaches that the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Urim and Thummim were two small",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "images inserted between the double",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "folds of the breast-plate, one of which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "symbolically represented revelation, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the other truth; Tom. II. p. 152. ed.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Mangey. In this case, the Hebrews",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "perhaps imitated a similar custom of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Egyptians, among whom the supreme",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "judge wore suspended from his neck a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "small image of sapphire, as the symbol",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of truth; see Diod. Sic. 1. 48, 75. Ælian.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "V. H. 14. 34.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. light of fire, Is. 50, 11 בְּאוּר אֵשׁ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Hence for fire itself, i. e. flame, blaze, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "44, 16. 47, 14. Ez. 5, 2. Comp. אוֹר",
+   "status": "adjudicated",
+   "draft": "44, 16. 47, 14. Ez. 5, 2. Comp. אוּר",
+   "reread": "44, 16. 47, 14. Ez. 5, 2. Comp. אוֹר",
+   "verdict": "b",
+   "note": "The final word is printed with a holem dot above the vav (אוֹר), not a shureq dot inside it; Reading B is correct, Reading A's אוּר is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Hiph. no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "3. Ur, pr. n. a) Of Abraham's native",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "city, more fully אוּר כַּשְׂדִּים Ur of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Chaldees, Gen. 11, 28. 31. 15, 7. Neh. 9, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "A trace of it seems to have remained in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "the Persian fortress Ur, situated between",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Nesibis and the Tigris according to Am-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "mian. 25. 8. But ûr as an appellative",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "may perhaps have signified a fortress,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "castle; so at least Pers. اووا castle",
+   "status": "adjudicated",
+   "draft": "castle; so at least Pers. اورا castle",
+   "reread": "castle; so at least Pers. اووا castle",
+   "verdict": "b",
+   "note": "The two medial Arabic-script letters are both printed with the closed round head of و (wāw) resting on the baseline; neither has the open descending hook of ر, so the word is اووا, not اورا.",
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 104,
+  "adjudicated": 4,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.3082
+}

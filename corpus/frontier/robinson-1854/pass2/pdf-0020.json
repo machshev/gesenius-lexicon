@@ -1,0 +1,2769 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 20,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0020.png",
+ "raster_sha256": "7d6d27d19312a48badcd4287c00e5180dbcb243d7d79dbdbe4de78d18f4da6f3",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0020.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T08:36:19+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 174,
+    "y": 113,
+    "width": 1764,
+    "height": 65
+   },
+   "draft_lines": [
+    "אבד",
+    "4",
+    "אבו"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 174,
+      "y": 111,
+      "width": 1764,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/header-b00-1764x69+174+111-x2.png",
+     "image_sha256": "e317f51ac7b8ea4086f699d6a4479d344fec4d6f4c5e409d9a8ccc2d770aaeee",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אבל 4 אבו"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "71daab91-c66f-4576-b31c-363935768688",
+      "duration_api_ms": 8556,
+      "cost_usd_list": 0.0478325,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 214
+     },
+     "lines": [
+      {
+       "draft": "אבד 4 אבו",
+       "reread": "אבל 4 אבו",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אבד 4 אבו",
+        "verdict": "a",
+        "note": "The last letter of the left-hand catchword has a flat top bar protruding right of the vertical stroke and no ascender above the line — a dalet (אבד), not a lamed; this also fits page 4 running from אבד to אבו.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "15650538-c116-46ad-a9cb-54ce77d29edf",
+        "duration_api_ms": 11296,
+        "cost_usd_list": 0.05879575,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1711,
+        "output_tokens": 473
+       },
+       "text": "אבד 4 אבו"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 174,
+    "y": 159,
+    "width": 867,
+    "height": 673
+   },
+   "draft_lines": [
+    "אֲבַד Chald. fut. יֵאבַד, to perish, Jer.",
+    "10, 11.",
+    "Aph. הוֹבַד, fut. יְהוֹבַד, inf. הוֹבָדָה, to",
+    "destroy, to cut off, Dan. 2, 12. 18, 24.—",
+    "Hoph. הוּבַד, after the Heb. manner,",
+    "Dan. 7, 11.",
+    "אֹבֵד m. 1. one wretched, unfortu-",
+    "nate ; see r. אָבַד no. 3.",
+    "2. Participial noun, destruction, Num.",
+    "24, 20. 24. See Lehrg. p. 488."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 174,
+      "y": 151,
+      "width": 867,
+      "height": 259
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r00-b00-867x259+174+151-x2.png",
+     "image_sha256": "d2d51ef4d3e46df2475a55973184ed64f6213b87df0a28d2f933ae4b21176535",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבַד Chald. fut. יֵאבַד, to perish, Jer.",
+       "10, 11.",
+       "Aph. הוֹבַד, fut. יְהוֹבֵד, inf. הוֹבָדָה, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "40d64e2c-cec3-4039-8214-585a0447225a",
+      "duration_api_ms": 11565,
+      "cost_usd_list": 0.08089325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2733,
+      "output_tokens": 500
+     },
+     "lines": [
+      {
+       "draft": "אֲבַד Chald. fut. יֵאבַד, to perish, Jer.",
+       "reread": "אֲבַד Chald. fut. יֵאבַד, to perish, Jer.",
+       "status": "agreed",
+       "text": "אֲבַד Chald. fut. יֵאבַד, to perish, Jer."
+      },
+      {
+       "draft": "10, 11.",
+       "reread": "10, 11.",
+       "status": "agreed",
+       "text": "10, 11."
+      },
+      {
+       "draft": "Aph. הוֹבַד, fut. יְהוֹבַד, inf. הוֹבָדָה, to",
+       "reread": "Aph. הוֹבַד, fut. יְהוֹבֵד, inf. הוֹבָדָה, to",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "Aph. הוֹבַד, fut. יְהוֹבֵד, inf. הוֹבָדָה, to",
+        "verdict": "b",
+        "note": "The decisive difference is the vowel under the bet of the future form: the print shows two horizontal dots (tsere, יְהוֹבֵד), not a single patach stroke as in Reading A. The perfect הוֹבַד does have patach, and the infinitive הוֹבָדָה and the rest of the line are identical in both readings and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2832439f-0e3c-4b3d-917b-50d4eed15600",
+        "duration_api_ms": 13402,
+        "cost_usd_list": 0.08544175,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3607,
+        "cache_creation_input_tokens": 2695,
+        "output_tokens": 606
+       },
+       "text": "Aph. הוֹבַד, fut. יְהוֹבֵד, inf. הוֹבָדָה, to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 174,
+      "y": 394,
+      "width": 867,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r00-b01-867x260+174+394-x2.png",
+     "image_sha256": "3a091bb7ee2c65a934b565f48499b64a475e1032cbe3f698ce2a71378423c114",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "destroy, to cut off, Dan. 2, 12. 18, 24.—",
+       "Hoph. הוּבַד, after the Heb. manner,",
+       "Dan. 7, 11.",
+       "אֹבֵד m. 1. one wretched, unfortu-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d377bffc-df04-49cb-955e-d005fc230192",
+      "duration_api_ms": 9601,
+      "cost_usd_list": 0.07419324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2733,
+      "output_tokens": 366
+     },
+     "lines": [
+      {
+       "draft": "destroy, to cut off, Dan. 2, 12. 18, 24.—",
+       "reread": "destroy, to cut off, Dan. 2, 12. 18, 24.—",
+       "status": "agreed",
+       "text": "destroy, to cut off, Dan. 2, 12. 18, 24.—"
+      },
+      {
+       "draft": "Hoph. הוּבַד, after the Heb. manner,",
+       "reread": "Hoph. הוּבַד, after the Heb. manner,",
+       "status": "agreed",
+       "text": "Hoph. הוּבַד, after the Heb. manner,"
+      },
+      {
+       "draft": "Dan. 7, 11.",
+       "reread": "Dan. 7, 11.",
+       "status": "agreed",
+       "text": "Dan. 7, 11."
+      },
+      {
+       "draft": "אֹבֵד m. 1. one wretched, unfortu-",
+       "reread": "אֹבֵד m. 1. one wretched, unfortu-",
+       "status": "agreed",
+       "text": "אֹבֵד m. 1. one wretched, unfortu-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 174,
+      "y": 638,
+      "width": 867,
+      "height": 181
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r00-b02-867x181+174+638-x2.png",
+     "image_sha256": "4b2f2bca960d75cb1e38c7a15f43ae072ab29d0072f5827c92dc555011852614",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "nate ; see r. אָבַד no. 3.",
+       "2. Participial noun, destruction, Num.",
+       "24, 20. 24. See Lehrg. p. 488."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "79cad9aa-bc50-4845-9ef3-8338ca740de7",
+      "duration_api_ms": 8989,
+      "cost_usd_list": 0.06380324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2361,
+      "output_tokens": 307
+     },
+     "lines": [
+      {
+       "draft": "nate ; see r. אָבַד no. 3.",
+       "reread": "nate ; see r. אָבַד no. 3.",
+       "status": "agreed",
+       "text": "nate; see r. אָבַד no. 3."
+      },
+      {
+       "draft": "2. Participial noun, destruction, Num.",
+       "reread": "2. Participial noun, destruction, Num.",
+       "status": "agreed",
+       "text": "2. Participial noun, destruction, Num."
+      },
+      {
+       "draft": "24, 20. 24. See Lehrg. p. 488.",
+       "reread": "24, 20. 24. See Lehrg. p. 488.",
+       "status": "agreed",
+       "text": "24, 20. 24. See Lehrg. p. 488."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 174,
+    "y": 820,
+    "width": 867,
+    "height": 795
+   },
+   "draft_lines": [
+    "אֲבֵדָה f. (Tseri impure) 1. a thing",
+    "lost, something missing, Ex. 22, 8. Lev.",
+    "5, 22. 23.",
+    "2. i. q. אֲבַדּוֹן place of destruction,",
+    "abyss, i. e. Sheol, Hades, Prov. 27, 20",
+    "Chethibh.",
+    "אֲבַדּוֹן m. 1. destruction, Job 31, 12.",
+    "2. place of destruction, abyss, nearly",
+    "synon. with שְׁאוֹל, Job 26, 6. 28, 22. Prov.",
+    "15, 11.",
+    "אָבְדָן m. verbal of Piel for אַבְּדָן, hence",
+    "without Dag. lene in ד, destruction,",
+    "slaughter, Esth. 9, 5."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 174,
+      "y": 833,
+      "width": 867,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r01-b00-867x236+174+833-x2.png",
+     "image_sha256": "eddf62e3f54ac8d5d308b0731275bf03375abec500a9b83d7fe7245bd6f13091",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבֵדָה f. (Tseri impure) 1. a thing",
+       "lost, something missing, Ex. 22, 8. Lev.",
+       "5, 22. 23.",
+       "2. i. q. אֲבַדּוֹן place of destruction,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bf6ded99-2495-457d-9e37-efb8fab3cae2",
+      "duration_api_ms": 10827,
+      "cost_usd_list": 0.07316324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 395
+     },
+     "lines": [
+      {
+       "draft": "אֲבֵדָה f. (Tseri impure) 1. a thing",
+       "reread": "אֲבֵדָה f. (Tseri impure) 1. a thing",
+       "status": "agreed",
+       "text": "אֲבֵדָה f. (Tseri impure) 1. a thing"
+      },
+      {
+       "draft": "lost, something missing, Ex. 22, 8. Lev.",
+       "reread": "lost, something missing, Ex. 22, 8. Lev.",
+       "status": "agreed",
+       "text": "lost, something missing, Ex. 22, 8. Lev."
+      },
+      {
+       "draft": "5, 22. 23.",
+       "reread": "5, 22. 23.",
+       "status": "agreed",
+       "text": "5, 22. 23."
+      },
+      {
+       "draft": "2. i. q. אֲבַדּוֹן place of destruction,",
+       "reread": "2. i. q. אֲבַדּוֹן place of destruction,",
+       "status": "agreed",
+       "text": "2. i. q. אֲבַדּוֹן place of destruction,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 174,
+      "y": 1053,
+      "width": 867,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r01-b01-867x256+174+1053-x2.png",
+     "image_sha256": "d9ae352dcdf4dfd1fd80fe1b834869aed35fbab478ed66011e2efa21c3496a98",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "abyss, i. e. Sheol, Hades, Prov. 27, 20",
+       "Chethibh.",
+       "אֲבַדּוֹן m. 1. destruction, Job 31, 12.",
+       "2. place of destruction, abyss, nearly"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b5d6ce2-2b2f-4bc5-8ca4-e5e1c76e2be6",
+      "duration_api_ms": 8412,
+      "cost_usd_list": 0.06888349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "abyss, i. e. Sheol, Hades, Prov. 27, 20",
+       "reread": "abyss, i. e. Sheol, Hades, Prov. 27, 20",
+       "status": "agreed",
+       "text": "abyss, i. e. Sheol, Hades, Prov. 27, 20"
+      },
+      {
+       "draft": "Chethibh.",
+       "reread": "Chethibh.",
+       "status": "agreed",
+       "text": "Chethibh."
+      },
+      {
+       "draft": "אֲבַדּוֹן m. 1. destruction, Job 31, 12.",
+       "reread": "אֲבַדּוֹן m. 1. destruction, Job 31, 12.",
+       "status": "agreed",
+       "text": "אֲבַדּוֹן m. 1. destruction, Job 31, 12."
+      },
+      {
+       "draft": "2. place of destruction, abyss, nearly",
+       "reread": "2. place of destruction, abyss, nearly",
+       "status": "agreed",
+       "text": "2. place of destruction, abyss, nearly"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 174,
+      "y": 1293,
+      "width": 867,
+      "height": 254
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r01-b02-867x254+174+1293-x2.png",
+     "image_sha256": "1534821bd8af722490af04a8c08d1fc75c57c1c34b6dbf208cc88213b24821ef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "synon. with שְׁאוֹל, Job 26, 6. 28, 22. Prov.",
+       "15, 11.",
+       "אַבְדָן m. verbal of Piel for אִבְּדָן, hence",
+       "without Dag. lene in ד, destruction,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2055e2e8-3917-4163-a210-57a7e8b46a6d",
+      "duration_api_ms": 13196,
+      "cost_usd_list": 0.08103350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 502
+     },
+     "lines": [
+      {
+       "draft": "synon. with שְׁאוֹל, Job 26, 6. 28, 22. Prov.",
+       "reread": "synon. with שְׁאוֹל, Job 26, 6. 28, 22. Prov.",
+       "status": "agreed",
+       "text": "synon. with שְׁאוֹל, Job 26, 6. 28, 22. Prov."
+      },
+      {
+       "draft": "15, 11.",
+       "reread": "15, 11.",
+       "status": "agreed",
+       "text": "15, 11."
+      },
+      {
+       "draft": "אָבְדָן m. verbal of Piel for אַבְּדָן, hence",
+       "reread": "אַבְדָן m. verbal of Piel for אִבְּדָן, hence",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "אַבְדָן m. verbal of Piel for אַבְּדָן, hence",
+        "verdict": "neither",
+        "note": "Both alephs carry a patah (horizontal stroke) — the first word is not qamets (A) and the second is not hiriq (B); the dot near each aleph is the adjacent shewa under bet. Second word has dagesh in bet.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "19bb5960-9a7e-4d3c-81c5-fa60ad1df206",
+        "duration_api_ms": 30447,
+        "cost_usd_list": 0.14436625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2674,
+        "output_tokens": 1793
+       },
+       "text": "אַבְדָן m. verbal of Piel for אַבְּדָן, hence"
+      },
+      {
+       "draft": "without Dag. lene in ד, destruction,",
+       "reread": "without Dag. lene in ד, destruction,",
+       "status": "agreed",
+       "text": "without Dag. lene in ד, destruction,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 174,
+      "y": 1531,
+      "width": 867,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r01-b03-867x72+174+1531-x2.png",
+     "image_sha256": "e0b45af92b5859806763ec1a950ea39df999b0a03bbe9d2a34037092514659ff",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "slaughter, Esth. 9, 5."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c553e03b-a5cb-4db6-98c4-25aa9f096040",
+      "duration_api_ms": 7736,
+      "cost_usd_list": 0.0508635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1929,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "slaughter, Esth. 9, 5.",
+       "reread": "slaughter, Esth. 9, 5.",
+       "status": "agreed",
+       "text": "slaughter, Esth. 9, 5."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 174,
+    "y": 1603,
+    "width": 867,
+    "height": 827
+   },
+   "draft_lines": [
+    "אָבְדָן constr. אָבְדַן id. destruction",
+    "death, Esth. 8, 6.",
+    "* אָבָה fut. יֹאבֶה, pr. to breathe after,",
+    "to desire ; comp. the kindred roots אָוָה,",
+    "יָאַב, תָּאַב, also אָחַב, חָבַב, Lat. aveo.—",
+    "Hence",
+    "1. to be willing, inclined, disposed ; to",
+    "will, always with a negative partic. ex-",
+    "cept Is. 1, 19. Job 39, 9. Constr. c. infin.",
+    "either simpl. Deut. 2, 30. 10, 10. 25, 7. Is.",
+    "30, 9 ; or with לְ, which however be-",
+    "longs rather to prose, Lev. 26, 21. 2 Sam.",
+    "13, 14. 16. Exod. 10, 27 לֹא אָבָה לְשַׁלְּחָם",
+    "he would not let them go. Job 39, 9"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 174,
+      "y": 1615,
+      "width": 867,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r02-b00-867x270+174+1615-x2.png",
+     "image_sha256": "9072001e77316b63da0c6fb578e777fab5ac0b584508cfd4245812b7de04c9ad",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָבְדָן constr. אָבְדַן id. destruction",
+       "death, Esth. 8, 6.",
+       "* אָבָה fut. יֹאבֶה, pr. to breathe after,",
+       "to desire ; comp. the kindred roots אָוָה,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2e47d93f-28d2-4b9c-9eb6-c3b0d14ada2c",
+      "duration_api_ms": 11908,
+      "cost_usd_list": 0.0819735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 496
+     },
+     "lines": [
+      {
+       "draft": "אָבְדָן constr. אָבְדַן id. destruction",
+       "reread": "אָבְדָן constr. אָבְדַן id. destruction",
+       "status": "agreed",
+       "text": "אָבְדָן constr. אָבְדַן id. destruction"
+      },
+      {
+       "draft": "death, Esth. 8, 6.",
+       "reread": "death, Esth. 8, 6.",
+       "status": "agreed",
+       "text": "death, Esth. 8, 6."
+      },
+      {
+       "draft": "* אָבָה fut. יֹאבֶה, pr. to breathe after,",
+       "reread": "* אָבָה fut. יֹאבֶה, pr. to breathe after,",
+       "status": "agreed",
+       "text": "* אָבָה fut. יֹאבֶה, pr. to breathe after,"
+      },
+      {
+       "draft": "to desire ; comp. the kindred roots אָוָה,",
+       "reread": "to desire ; comp. the kindred roots אָוָה,",
+       "status": "agreed",
+       "text": "to desire; comp. the kindred roots אָוָה,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 174,
+      "y": 1869,
+      "width": 867,
+      "height": 177
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r02-b01-867x177+174+1869-x2.png",
+     "image_sha256": "ca86d59aa6b2cca51fc3502e5489efe524cca3d2b141cf78ce4e1ff802cb25ef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "יָאַב, תָּאַב, also אָהַב, חָבַב, Lat. aveo.—",
+       "Hence",
+       "1. to be willing, inclined, disposed ; to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3f2ad321-b8ff-4ac1-9363-d1e1e359e2f8",
+      "duration_api_ms": 9729,
+      "cost_usd_list": 0.0670935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2363,
+      "output_tokens": 372
+     },
+     "lines": [
+      {
+       "draft": "יָאַב, תָּאַב, also אָחַב, חָבַב, Lat. aveo.—",
+       "reread": "יָאַב, תָּאַב, also אָהַב, חָבַב, Lat. aveo.—",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "יָאַב, תָּאַב, also אָהַב, חָבַב, Lat. aveo.—",
+        "verdict": "b",
+        "note": "Third word is אָהַב with he: the middle letter has a clear gap at the upper left between roofbar and left leg, unlike the closed ḥeth of the following חָבַב. Reading A's אָחַב is wrong; all other characters agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8e53bc1a-20e3-4abf-8eae-051aaa1385b4",
+        "duration_api_ms": 15196,
+        "cost_usd_list": 0.08005975000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3599,
+        "cache_creation_input_tokens": 2316,
+        "output_tokens": 650
+       },
+       "text": "יָאַב, תָּאַב, also אָהַב, חָבַב, Lat. aveo.—"
+      },
+      {
+       "draft": "Hence",
+       "reread": "Hence",
+       "status": "agreed",
+       "text": "Hence"
+      },
+      {
+       "draft": "1. to be willing, inclined, disposed ; to",
+       "reread": "1. to be willing, inclined, disposed ; to",
+       "status": "agreed",
+       "text": "1. to be willing, inclined, disposed; to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 174,
+      "y": 2030,
+      "width": 867,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r02-b02-867x240+174+2030-x2.png",
+     "image_sha256": "993e3ac50b9c6e8e04fa699685358ccd41a407448bba524cc980041ca4a0b41e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "will, always with a negative partic. ex-",
+       "cept Is. 1, 19. Job 39, 9. Constr. c. infin.",
+       "either simpl. Deut. 2, 30. 10, 10. 25, 7. Is.",
+       "30, 9; or with לְ, which however be-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b139f088-1c25-42e0-913d-b07bb8fdbfba",
+      "duration_api_ms": 8738,
+      "cost_usd_list": 0.06819349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "will, always with a negative partic. ex-",
+       "reread": "will, always with a negative partic. ex-",
+       "status": "agreed",
+       "text": "will, always with a negative partic. ex-"
+      },
+      {
+       "draft": "cept Is. 1, 19. Job 39, 9. Constr. c. infin.",
+       "reread": "cept Is. 1, 19. Job 39, 9. Constr. c. infin.",
+       "status": "agreed",
+       "text": "cept Is. 1, 19. Job 39, 9. Constr. c. infin."
+      },
+      {
+       "draft": "either simpl. Deut. 2, 30. 10, 10. 25, 7. Is.",
+       "reread": "either simpl. Deut. 2, 30. 10, 10. 25, 7. Is.",
+       "status": "agreed",
+       "text": "either simpl. Deut. 2, 30. 10, 10. 25, 7. Is."
+      },
+      {
+       "draft": "30, 9 ; or with לְ, which however be-",
+       "reread": "30, 9; or with לְ, which however be-",
+       "status": "agreed",
+       "text": "30, 9; or with לְ, which however be-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 174,
+      "y": 2254,
+      "width": 867,
+      "height": 184
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r02-b03-867x184+174+2254-x2.png",
+     "image_sha256": "fede271ddbf2daa186f2b764162ecdb0e325d2b88d910d828f6c05df4084f0aa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "longs rather to prose, Lev. 26, 21. 2 Sam.",
+       "13, 14. 16. Exod. 10, 27 לֹא אָבָה לְשַׁלְּחָם",
+       "he would not let them go. Job 39, 9"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "79c3ef4a-f8c4-46d2-b7ec-c4f9e101ecee",
+      "duration_api_ms": 8367,
+      "cost_usd_list": 0.0627335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "longs rather to prose, Lev. 26, 21. 2 Sam.",
+       "reread": "longs rather to prose, Lev. 26, 21. 2 Sam.",
+       "status": "agreed",
+       "text": "longs rather to prose, Lev. 26, 21. 2 Sam."
+      },
+      {
+       "draft": "13, 14. 16. Exod. 10, 27 לֹא אָבָה לְשַׁלְּחָם",
+       "reread": "13, 14. 16. Exod. 10, 27 לֹא אָבָה לְשַׁלְּחָם",
+       "status": "agreed",
+       "text": "13, 14. 16. Exod. 10, 27 לֹא אָבָה לְשַׁלְּחָם"
+      },
+      {
+       "draft": "he would not let them go. Job 39, 9",
+       "reread": "he would not let them go. Job 39, 9",
+       "status": "agreed",
+       "text": "he would not let them go. Job 39, 9"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 174,
+    "y": 2418,
+    "width": 867,
+    "height": 835
+   },
+   "draft_lines": [
+    "הֲיֹאבֶה רֵּים עָבְדֶךָ will the buffalo be will-",
+    "ing to serve thee ?   Also c. acc. Prov. 1,",
+    "25 ; absol. Is. 1, 19 אִם תֹּאבוּ וּשְׁמַעְתֶּם if",
+    "ye be willing and obedient, lit. if ye con-",
+    "sent and obey ; see in יָאַל Hiph. no. 2.",
+    "Prov. 1, 10.   With dat. of pers. to be",
+    "willing towards any one, willing-mind-",
+    "ed, to obey (often with synon. שָׁמַע לְ),",
+    "Ps. 81, 12. Deut. 13, 9. Prov. 1, 30.",
+    "2. to desire, i. e. to want, to need, a",
+    "signif. found in the derivatives אֲבוֹי,",
+    "אֲבִיּוֹנָה, אֶבְיוֹן.",
+    "Note. In Arabic this verb has the",
+    "sense to be unwilling, to refuse, to loathe,",
+    "corresponding to Heb. לֹא אָבָה. But this"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 174,
+      "y": 2410,
+      "width": 867,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r03-b00-867x188+174+2410-x2.png",
+     "image_sha256": "debb24518638338d140b7b1d281ba94127a5a12fbd8324dba2865dfb9fb5536c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "הֲיֹאבֶה רֵים עָבְדֶךָ will the buffalo be will-",
+       "ing to serve thee ? Also c. acc. Prov. 1,",
+       "25 ; absol. Is. 1, 19 אִם תֹּאבוּ וּשְׁמַעְתֶּם if"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "58ad7778-53ae-49b6-acf4-1b7501d95012",
+      "duration_api_ms": 14781,
+      "cost_usd_list": 0.0868335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 742
+     },
+     "lines": [
+      {
+       "draft": "הֲיֹאבֶה רֵּים עָבְדֶךָ will the buffalo be will-",
+       "reread": "הֲיֹאבֶה רֵים עָבְדֶךָ will the buffalo be will-",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "הֲיֹאבֶה רֵּים עָבְדֶךָ will the buffalo be will-",
+        "verdict": "a",
+        "note": "The resh of רֵּים is printed with a dagesh (the rare dagesh in resh of Job 39:9, which Gesenius reproduces); Reading B omits it. All other points and the English match.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "59dd9fab-f087-45dc-9a1f-24ef4b47e02f",
+        "duration_api_ms": 14772,
+        "cost_usd_list": 0.08447950000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3598,
+        "cache_creation_input_tokens": 2377,
+        "output_tokens": 714
+       },
+       "text": "הֲיֹאבֶה רֵּים עָבְדֶךָ will the buffalo be will-"
+      },
+      {
+       "draft": "ing to serve thee ?   Also c. acc. Prov. 1,",
+       "reread": "ing to serve thee ? Also c. acc. Prov. 1,",
+       "status": "agreed",
+       "text": "ing to serve thee? Also c. acc. Prov. 1,"
+      },
+      {
+       "draft": "25 ; absol. Is. 1, 19 אִם תֹּאבוּ וּשְׁמַעְתֶּם if",
+       "reread": "25 ; absol. Is. 1, 19 אִם תֹּאבוּ וּשְׁמַעְתֶּם if",
+       "status": "agreed",
+       "text": "25; absol. Is. 1, 19 אִם תֹּאבוּ וּשְׁמַעְתֶּם if"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 174,
+      "y": 2582,
+      "width": 867,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r03-b01-867x230+174+2582-x2.png",
+     "image_sha256": "32f23fa296fb16b0c1305b169dab237d73be7b85bc65640710d2b75ed0c5b365",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ye be willing and obedient, lit. if ye con-",
+       "sent and obey ; see in יָאַל Hiph. no. 2.",
+       "Prov. 1, 10. With dat. of pers. to be",
+       "willing towards any one, willing-mind-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28fee13e-d304-4708-9e7b-49f38506485e",
+      "duration_api_ms": 8708,
+      "cost_usd_list": 0.0688535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 308
+     },
+     "lines": [
+      {
+       "draft": "ye be willing and obedient, lit. if ye con-",
+       "reread": "ye be willing and obedient, lit. if ye con-",
+       "status": "agreed",
+       "text": "ye be willing and obedient, lit. if ye con-"
+      },
+      {
+       "draft": "sent and obey ; see in יָאַל Hiph. no. 2.",
+       "reread": "sent and obey ; see in יָאַל Hiph. no. 2.",
+       "status": "agreed",
+       "text": "sent and obey; see in יָאַל Hiph. no. 2."
+      },
+      {
+       "draft": "Prov. 1, 10.   With dat. of pers. to be",
+       "reread": "Prov. 1, 10. With dat. of pers. to be",
+       "status": "agreed",
+       "text": "Prov. 1, 10. With dat. of pers. to be"
+      },
+      {
+       "draft": "willing towards any one, willing-mind-",
+       "reread": "willing towards any one, willing-mind-",
+       "status": "agreed",
+       "text": "willing towards any one, willing-mind-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 174,
+      "y": 2796,
+      "width": 867,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r03-b02-867x240+174+2796-x2.png",
+     "image_sha256": "63583876d6e7bdf62887210654d13a700f2cd26a49f6594b95909bc54711bf2d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ed, to obey (often with synon. שָׁמַע לְ),",
+       "Ps. 81, 12. Deut. 13, 9. Prov. 1, 30.",
+       "2. to desire, i. e. to want, to need, a",
+       "signif. found in the derivatives אֶבְיוֹן,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "41d8a778-67ad-45fc-bee5-7cc999f97e35",
+      "duration_api_ms": 8538,
+      "cost_usd_list": 0.06844349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 275
+     },
+     "lines": [
+      {
+       "draft": "ed, to obey (often with synon. שָׁמַע לְ),",
+       "reread": "ed, to obey (often with synon. שָׁמַע לְ),",
+       "status": "agreed",
+       "text": "ed, to obey (often with synon. שָׁמַע לְ),"
+      },
+      {
+       "draft": "Ps. 81, 12. Deut. 13, 9. Prov. 1, 30.",
+       "reread": "Ps. 81, 12. Deut. 13, 9. Prov. 1, 30.",
+       "status": "agreed",
+       "text": "Ps. 81, 12. Deut. 13, 9. Prov. 1, 30."
+      },
+      {
+       "draft": "2. to desire, i. e. to want, to need, a",
+       "reread": "2. to desire, i. e. to want, to need, a",
+       "status": "agreed",
+       "text": "2. to desire, i. e. to want, to need, a"
+      },
+      {
+       "draft": "signif. found in the derivatives אֲבוֹי,",
+       "reread": "signif. found in the derivatives אֶבְיוֹן,",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b02",
+       "judgement": {
+        "text": "signif. found in the derivatives אֲבוֹי,",
+        "verdict": "a",
+        "note": "The printed word has only four letters א־ב־ו־י with ḥolem on the vav and no final nun: it is אֲבוֹי, not אֶבְיוֹן (which is a separate derivative on the following line).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "63e8d008-47b5-41e3-b178-0aa8658ef2c6",
+        "duration_api_ms": 11552,
+        "cost_usd_list": 0.08830225,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3569,
+        "cache_creation_input_tokens": 2596,
+        "output_tokens": 703
+       },
+       "text": "signif. found in the derivatives אֲבוֹי,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 174,
+      "y": 3020,
+      "width": 867,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c0-r03-b03-867x235+174+3020-x2.png",
+     "image_sha256": "da5822b8535d0343bb710502bfc7b868c8f25e7379d72832fd542923ce866af8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֶבְיוֹן, אֲבִיּוֹנָה.",
+       "Note. In Arabic this verb has the",
+       "sense to be unwilling, to refuse, to loathe,",
+       "corresponding to Heb. לֹא אָבָה. But this"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b01b0295-54fd-4d48-ad1c-9c28c1f9726d",
+      "duration_api_ms": 17376,
+      "cost_usd_list": 0.10285349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 988
+     },
+     "lines": [
+      {
+       "draft": "אֲבִיּוֹנָה, אֶבְיוֹן.",
+       "reread": "אֶבְיוֹן, אֲבִיּוֹנָה.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b03",
+       "judgement": {
+        "text": "אֶבְיוֹן, אֲבִיּוֹנָה.",
+        "verdict": "b",
+        "note": "Printed left-to-right in the English flow: אֶבְיוֹן (final nun at far left of the line), comma, then אֲבִיּוֹנָה followed by the full stop — so אֶבְיוֹן is the first item and אֲבִיּוֹנָה the second, as in Reading B; Reading A reverses them. Pointing in both words matches (segol/sheva/holam-vav; hataf-patah/hiriq/dagesh-yod/holam-vav/qamats).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "3f2e68a7-729e-4c45-a9d8-c44afe82989f",
+        "duration_api_ms": 30702,
+        "cost_usd_list": 0.14946474999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2544,
+        "output_tokens": 1947
+       },
+       "text": "אֶבְיוֹן, אֲבִיּוֹנָה."
+      },
+      {
+       "draft": "Note. In Arabic this verb has the",
+       "reread": "Note. In Arabic this verb has the",
+       "status": "agreed",
+       "text": "Note. In Arabic this verb has the"
+      },
+      {
+       "draft": "sense to be unwilling, to refuse, to loathe,",
+       "reread": "sense to be unwilling, to refuse, to loathe,",
+       "status": "agreed",
+       "text": "sense to be unwilling, to refuse, to loathe,"
+      },
+      {
+       "draft": "corresponding to Heb. לֹא אָבָה. But this",
+       "reread": "corresponding to Heb. לֹא אָבָה. But this",
+       "status": "agreed",
+       "text": "corresponding to Heb. לֹא אָבָה. But this"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1064,
+    "y": 159,
+    "width": 874,
+    "height": 809
+   },
+   "draft_lines": [
+    "must not be regarded as a contrary sig-",
+    "nification ; since the idea of inclining,",
+    "which in Heb. implies towards any one,",
+    "expressing good will, Germ. Zuneigung,",
+    "is in Arabic merely referred to the oppo-",
+    "site direction, i. e. from or against any",
+    "one, expressing ill will, Germ. Abneigung,",
+    "i. e. aversion, loathing ; whence مَأْبِىٌّ",
+    "stinking swamp-water, pr. loathsome,",
+    "أَبَاءَةٌ a reed growing in marshes, bul-",
+    "rush ; comp. אֲגַם, אַגְמוֹן .",
+    "Deriv. אֵבֶה, and those under no. 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1064,
+      "y": 151,
+      "width": 874,
+      "height": 298
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r00-b00-874x298+1064+151-x2.png",
+     "image_sha256": "05ceaae4ff377b62f11629b99a8d3f46c457fe10b29c5893ece9591763f2ff09",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "must not be regarded as a contrary sig-",
+       "nification ; since the idea of inclining,",
+       "which in Heb. implies towards any one,",
+       "expressing good will, Germ. Zuneigung,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "286f3834-bd69-4a55-a782-ab70019750f7",
+      "duration_api_ms": 7722,
+      "cost_usd_list": 0.0721435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "must not be regarded as a contrary sig-",
+       "reread": "must not be regarded as a contrary sig-",
+       "status": "agreed",
+       "text": "must not be regarded as a contrary sig-"
+      },
+      {
+       "draft": "nification ; since the idea of inclining,",
+       "reread": "nification ; since the idea of inclining,",
+       "status": "agreed",
+       "text": "nification; since the idea of inclining,"
+      },
+      {
+       "draft": "which in Heb. implies towards any one,",
+       "reread": "which in Heb. implies towards any one,",
+       "status": "agreed",
+       "text": "which in Heb. implies towards any one,"
+      },
+      {
+       "draft": "expressing good will, Germ. Zuneigung,",
+       "reread": "expressing good will, Germ. Zuneigung,",
+       "status": "agreed",
+       "text": "expressing good will, Germ. Zuneigung,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1064,
+      "y": 433,
+      "width": 874,
+      "height": 220
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r00-b01-874x220+1064+433-x2.png",
+     "image_sha256": "a90ac1b2d0f839799081b9c3f493fc0014dfc557ddcd0766826d5535d5c63bc7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "is in Arabic merely referred to the oppo-",
+       "site direction, i. e. from or against any",
+       "one, expressing ill will, Germ. Abneigung,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d8efa31b-d09d-4a3e-941f-97ec8ca98189",
+      "duration_api_ms": 7654,
+      "cost_usd_list": 0.0639835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 229
+     },
+     "lines": [
+      {
+       "draft": "is in Arabic merely referred to the oppo-",
+       "reread": "is in Arabic merely referred to the oppo-",
+       "status": "agreed",
+       "text": "is in Arabic merely referred to the oppo-"
+      },
+      {
+       "draft": "site direction, i. e. from or against any",
+       "reread": "site direction, i. e. from or against any",
+       "status": "agreed",
+       "text": "site direction, i. e. from or against any"
+      },
+      {
+       "draft": "one, expressing ill will, Germ. Abneigung,",
+       "reread": "one, expressing ill will, Germ. Abneigung,",
+       "status": "agreed",
+       "text": "one, expressing ill will, Germ. Abneigung,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1064,
+      "y": 637,
+      "width": 874,
+      "height": 210
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r00-b02-874x210+1064+637-x2.png",
+     "image_sha256": "d292f6ea048226ac9ca3ebbca38c9b90441aeb18214c48cba48a45bb6cf87cde",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. aversion, loathing; whence مَابِي",
+       "stinking swamp-water, pr. loathsome,",
+       "أَبَاءَةٌ a reed growing in marshes, bul-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "203e52b5-fc43-4f97-a760-325b335da493",
+      "duration_api_ms": 9371,
+      "cost_usd_list": 0.0741735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 458
+     },
+     "lines": [
+      {
+       "draft": "i. e. aversion, loathing ; whence مَأْبِىٌّ",
+       "reread": "i. e. aversion, loathing; whence مَابِي",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "i. e. aversion, loathing; whence مَأبِي",
+        "verdict": "neither",
+        "note": "The Arabic carries fatha on mim, a hamza on the alif, and kasra under ba, but no sukun, and no shadda or tanwin on the final ya (Reading A over-points; Reading B drops the hamza). No space before the semicolon.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7686fb35-1ae4-4eec-babf-2193203bb5d9",
+        "duration_api_ms": 19754,
+        "cost_usd_list": 0.09993350000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2430,
+        "output_tokens": 1002
+       },
+       "text": "i. e. aversion, loathing; whence مَأبِي"
+      },
+      {
+       "draft": "stinking swamp-water, pr. loathsome,",
+       "reread": "stinking swamp-water, pr. loathsome,",
+       "status": "agreed",
+       "text": "stinking swamp-water, pr. loathsome,"
+      },
+      {
+       "draft": "أَبَاءَةٌ a reed growing in marshes, bul-",
+       "reread": "أَبَاءَةٌ a reed growing in marshes, bul-",
+       "status": "agreed",
+       "text": "أَبَاءَةٌ a reed growing in marshes, bul-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1064,
+      "y": 831,
+      "width": 874,
+      "height": 129
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r00-b03-874x129+1064+831-x2.png",
+     "image_sha256": "83bba8d37ff9064719122316d7871ca7bec402b149145e792ec4f5e3fd27d576",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "rush ; comp. אֲגַם, אַגְמוֹן .",
+       "Deriv. אֵבֶה, and those under no. 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9eb81772-3e9e-4907-a02c-f102fed88986",
+      "duration_api_ms": 14306,
+      "cost_usd_list": 0.07787349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 658
+     },
+     "lines": [
+      {
+       "draft": "rush ; comp. אֲגַם, אַגְמוֹן .",
+       "reread": "rush ; comp. אֲגַם, אַגְמוֹן .",
+       "status": "agreed",
+       "text": "rush; comp. אֲגַם, אַגְמוֹן."
+      },
+      {
+       "draft": "Deriv. אֵבֶה, and those under no. 2.",
+       "reread": "Deriv. אֵבֶה, and those under no. 2.",
+       "status": "agreed",
+       "text": "Deriv. אֵבֶה, and those under no. 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1064,
+    "y": 956,
+    "width": 874,
+    "height": 880
+   },
+   "draft_lines": [
+    "אֵבֶה m. reed, bulrush, papyrus, i. q.",
+    "Arab. أَبَاءَةٌ, collect. أَبَاءٌ, see r. אָבָה",
+    "note ; although the Heb. word might",
+    "come from the notion of a reed with its",
+    "top inclined, bowed down, comp. Is.",
+    "58, 5.—Once Job 9, 26 אֳנִיּוֹת אֵבֶה skiffs",
+    "of reed, i. e. boats or skiffs made of the",
+    "papyrus of the Nile, in common use",
+    "among the Egyptians and Ethiopians,",
+    "and famous for their lightness and swift-",
+    "ness ; see Comment. on Is. 18, 2. Others",
+    "translate ships of desire, i. e. hasting",
+    "with eager desire to the haven, Symm.",
+    "ναυσὶ σπευδούσαις. The reading איבה,",
+    "which is exhibited in 44 Mss. is doubt-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1064,
+      "y": 964,
+      "width": 874,
+      "height": 214
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r01-b00-874x214+1064+964-x2.png",
+     "image_sha256": "8b5761ec22ba08b7b2cf41d155b1de150c71432ceb99188d61f5ada05d918750",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵבֶה m. reed, bulrush, papyrus, i. q.",
+       "Arab. أَبَاءَة, collect. أَبَاء, see r. אָבָה",
+       "note ; although the Heb. word might"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ee50295e-b006-4f49-9d56-0ac8d2e3821d",
+      "duration_api_ms": 13252,
+      "cost_usd_list": 0.07943349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 538
+     },
+     "lines": [
+      {
+       "draft": "אֵבֶה m. reed, bulrush, papyrus, i. q.",
+       "reread": "אֵבֶה m. reed, bulrush, papyrus, i. q.",
+       "status": "agreed",
+       "text": "אֵבֶה m. reed, bulrush, papyrus, i. q."
+      },
+      {
+       "draft": "Arab. أَبَاءَةٌ, collect. أَبَاءٌ, see r. אָבָה",
+       "reread": "Arab. أَبَاءَة, collect. أَبَاء, see r. אָבָה",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "Arab. أَبَاءَةٌ, collect. أَبَاءٌ, see r. אָבָה",
+        "verdict": "a",
+        "note": "Both Arabic words carry a printed tanwīn ḍamma (ٌ) on the final letter — visible as the raised squiggle above the tā' marbūṭa and above the final hamza; Reading B omits these case endings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1cd9dc2f-b836-4f11-813a-2b47b9e95c27",
+        "duration_api_ms": 16750,
+        "cost_usd_list": 0.09535925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3597,
+        "cache_creation_input_tokens": 2516,
+        "output_tokens": 876
+       },
+       "text": "Arab. أَبَاءَةٌ, collect. أَبَاءٌ, see r. אָבָה"
+      },
+      {
+       "draft": "note ; although the Heb. word might",
+       "reread": "note ; although the Heb. word might",
+       "status": "agreed",
+       "text": "note; although the Heb. word might"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1064,
+      "y": 1162,
+      "width": 874,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r01-b01-874x235+1064+1162-x2.png",
+     "image_sha256": "60c0a7f23ed6fd4596ffc6b045dc5ac5589b252efcea382386ddbe39497ac439",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "come from the notion of a reed with its",
+       "top inclined, bowed down, comp. Is.",
+       "58, 5.—Once Job 9, 26 אֳנִיּוֹת אֵבֶה skiffs",
+       "of reed, i. e. boats or skiffs made of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "08210c62-803f-4eb6-bb1f-89b7c37d1e5e",
+      "duration_api_ms": 9265,
+      "cost_usd_list": 0.07128375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 349
+     },
+     "lines": [
+      {
+       "draft": "come from the notion of a reed with its",
+       "reread": "come from the notion of a reed with its",
+       "status": "agreed",
+       "text": "come from the notion of a reed with its"
+      },
+      {
+       "draft": "top inclined, bowed down, comp. Is.",
+       "reread": "top inclined, bowed down, comp. Is.",
+       "status": "agreed",
+       "text": "top inclined, bowed down, comp. Is."
+      },
+      {
+       "draft": "58, 5.—Once Job 9, 26 אֳנִיּוֹת אֵבֶה skiffs",
+       "reread": "58, 5.—Once Job 9, 26 אֳנִיּוֹת אֵבֶה skiffs",
+       "status": "agreed",
+       "text": "58, 5.—Once Job 9, 26 אֳנִיּוֹת אֵבֶה skiffs"
+      },
+      {
+       "draft": "of reed, i. e. boats or skiffs made of the",
+       "reread": "of reed, i. e. boats or skiffs made of the",
+       "status": "agreed",
+       "text": "of reed, i. e. boats or skiffs made of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1064,
+      "y": 1381,
+      "width": 874,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r01-b02-874x237+1064+1381-x2.png",
+     "image_sha256": "eb960c1558fb6ed9ef21ed75584661faad8369b37dd607db5a5d0b981bf5f575",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "papyrus of the Nile, in common use",
+       "among the Egyptians and Ethiopians,",
+       "and famous for their lightness and swift-",
+       "ness; see Comment. on Is. 18, 2. Others"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8dbe45ae-7fb4-4c4e-a1ae-b9ba385e3690",
+      "duration_api_ms": 7546,
+      "cost_usd_list": 0.06608375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "papyrus of the Nile, in common use",
+       "reread": "papyrus of the Nile, in common use",
+       "status": "agreed",
+       "text": "papyrus of the Nile, in common use"
+      },
+      {
+       "draft": "among the Egyptians and Ethiopians,",
+       "reread": "among the Egyptians and Ethiopians,",
+       "status": "agreed",
+       "text": "among the Egyptians and Ethiopians,"
+      },
+      {
+       "draft": "and famous for their lightness and swift-",
+       "reread": "and famous for their lightness and swift-",
+       "status": "agreed",
+       "text": "and famous for their lightness and swift-"
+      },
+      {
+       "draft": "ness ; see Comment. on Is. 18, 2. Others",
+       "reread": "ness; see Comment. on Is. 18, 2. Others",
+       "status": "agreed",
+       "text": "ness; see Comment. on Is. 18, 2. Others"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1064,
+      "y": 1602,
+      "width": 874,
+      "height": 228
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r01-b03-874x228+1064+1602-x2.png",
+     "image_sha256": "d500e34aa9f00b92e59c42f8f2db7d03fb107b3c75dd504dbf404a06d4d746ee",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "translate ships of desire, i. e. hasting",
+       "with eager desire to the haven, Symm.",
+       "ναυσὶ σπευδούσαις. The reading אֵיבָה,",
+       "which is exhibited in 44 Mss. is doubt-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fd4911f2-2692-4feb-9b3c-e29bc73d75f4",
+      "duration_api_ms": 8632,
+      "cost_usd_list": 0.06683375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "translate ships of desire, i. e. hasting",
+       "reread": "translate ships of desire, i. e. hasting",
+       "status": "agreed",
+       "text": "translate ships of desire, i. e. hasting"
+      },
+      {
+       "draft": "with eager desire to the haven, Symm.",
+       "reread": "with eager desire to the haven, Symm.",
+       "status": "agreed",
+       "text": "with eager desire to the haven, Symm."
+      },
+      {
+       "draft": "ναυσὶ σπευδούσαις. The reading איבה,",
+       "reread": "ναυσὶ σπευδούσαις. The reading אֵיבָה,",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "ναυσὶ σπευδούσαις. The reading איבה,",
+        "verdict": "a",
+        "note": "The Hebrew איבה is printed unpointed — no tsere under the aleph and no qamets under the bet are visible; Reading B supplies vowels that are not on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8e307611-4b74-4323-aa28-146b6a45b793",
+        "duration_api_ms": 9988,
+        "cost_usd_list": 0.07009500000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2563,
+        "output_tokens": 352
+       },
+       "text": "ναυσὶ σπευδούσαις. The reading איבה,"
+      },
+      {
+       "draft": "which is exhibited in 44 Mss. is doubt-",
+       "reread": "which is exhibited in 44 Mss. is doubt-",
+       "status": "agreed",
+       "text": "which is exhibited in 44 Mss. is doubt-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1064,
+    "y": 1824,
+    "width": 874,
+    "height": 809
+   },
+   "draft_lines": [
+    "less to be pronounced אֵיבָה, and to be",
+    "explained of hostile or robber-ships,",
+    "which likewise sail swiftly ; this gives a",
+    "very good parallelism to the eagle in the",
+    "other hemistich pouncing upon his prey.",
+    "So the Syr. The same sense would also",
+    "be expressed by the common reading, if",
+    "for אֲבָה it were written אָבָה.",
+    "אֲבוֹי m. (r. אָבָה no. 2) want, poverty,",
+    "wretchedness, once Prov. 23, 29 ; after the",
+    "form קָטוֹל, prob. for the sake of paro-",
+    "nomasia with the words אוֹי and הוֹי,",
+    "comp. Lehrg. p. 374 note r, and Is. 15,",
+    "4. 17, 1. 59, 13. So Abulwalid, whom"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1064,
+      "y": 1831,
+      "width": 874,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r02-b00-874x230+1064+1831-x2.png",
+     "image_sha256": "4a3432790ca25d5a41114948d8075f0043e315e4fe0243142f71af58ec944fb9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "less to be pronounced אֵיבָה, and to be",
+       "explained of hostile or robber-ships,",
+       "which likewise sail swiftly ; this gives a",
+       "very good parallelism to the eagle in the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "93b36642-4676-44cf-bad8-dbf0e8245cd3",
+      "duration_api_ms": 8482,
+      "cost_usd_list": 0.06878375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 299
+     },
+     "lines": [
+      {
+       "draft": "less to be pronounced אֵיבָה, and to be",
+       "reread": "less to be pronounced אֵיבָה, and to be",
+       "status": "agreed",
+       "text": "less to be pronounced אֵיבָה, and to be"
+      },
+      {
+       "draft": "explained of hostile or robber-ships,",
+       "reread": "explained of hostile or robber-ships,",
+       "status": "agreed",
+       "text": "explained of hostile or robber-ships,"
+      },
+      {
+       "draft": "which likewise sail swiftly ; this gives a",
+       "reread": "which likewise sail swiftly ; this gives a",
+       "status": "agreed",
+       "text": "which likewise sail swiftly; this gives a"
+      },
+      {
+       "draft": "very good parallelism to the eagle in the",
+       "reread": "very good parallelism to the eagle in the",
+       "status": "agreed",
+       "text": "very good parallelism to the eagle in the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1064,
+      "y": 2045,
+      "width": 874,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r02-b01-874x238+1064+2045-x2.png",
+     "image_sha256": "0c06bc782a89266e7cd686bd63a7a4f9d79fe6f9468af6e0e1c89af1e4e2eaf7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "other hemistich pouncing upon his prey.",
+       "So the Syr. The same sense would also",
+       "be expressed by the common reading, if",
+       "for אֵבֶה it were written אָבֶה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c96c9d97-a030-49c0-b7a3-108d7f178412",
+      "duration_api_ms": 23165,
+      "cost_usd_list": 0.11833375000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 1290
+     },
+     "lines": [
+      {
+       "draft": "other hemistich pouncing upon his prey.",
+       "reread": "other hemistich pouncing upon his prey.",
+       "status": "agreed",
+       "text": "other hemistich pouncing upon his prey."
+      },
+      {
+       "draft": "So the Syr. The same sense would also",
+       "reread": "So the Syr. The same sense would also",
+       "status": "agreed",
+       "text": "So the Syr. The same sense would also"
+      },
+      {
+       "draft": "be expressed by the common reading, if",
+       "reread": "be expressed by the common reading, if",
+       "status": "agreed",
+       "text": "be expressed by the common reading, if"
+      },
+      {
+       "draft": "for אֲבָה it were written אָבָה.",
+       "reread": "for אֵבֶה it were written אָבֶה.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "for אֵבָה it were written אֶבָה.",
+        "verdict": "neither",
+        "note": "Both words carry qamets under the bet; the first word has tsere (two dots) under the aleph, the second has segol (three dots) under the aleph — neither hateph-pathach (A) nor qamets/segol as placed in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "16e56148-27a1-49a7-80ec-454b1415152f",
+        "duration_api_ms": 30308,
+        "cost_usd_list": 0.142021,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3564,
+        "cache_creation_input_tokens": 2547,
+        "output_tokens": 1797
+       },
+       "text": "for אֵבָה it were written אֶבָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1064,
+      "y": 2267,
+      "width": 874,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r02-b02-874x256+1064+2267-x2.png",
+     "image_sha256": "90109c114c23532cb0ff2dd4b58b242958f09c3b0049bc153923ce9199c0099d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבוֹי m. (r. אָבָה no. 2) want, poverty,",
+       "wretchedness, once Prov. 23, 29; after the",
+       "form קָטוֹל, prob. for the sake of paro-",
+       "nomasia with the words אוֹי and הוֹי,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "535dd94a-8340-4663-bbc9-03146f3c4329",
+      "duration_api_ms": 11512,
+      "cost_usd_list": 0.07940375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 461
+     },
+     "lines": [
+      {
+       "draft": "אֲבוֹי m. (r. אָבָה no. 2) want, poverty,",
+       "reread": "אֲבוֹי m. (r. אָבָה no. 2) want, poverty,",
+       "status": "agreed",
+       "text": "אֲבוֹי m. (r. אָבָה no. 2) want, poverty,"
+      },
+      {
+       "draft": "wretchedness, once Prov. 23, 29 ; after the",
+       "reread": "wretchedness, once Prov. 23, 29; after the",
+       "status": "agreed",
+       "text": "wretchedness, once Prov. 23, 29; after the"
+      },
+      {
+       "draft": "form קָטוֹל, prob. for the sake of paro-",
+       "reread": "form קָטוֹל, prob. for the sake of paro-",
+       "status": "agreed",
+       "text": "form קָטוֹל, prob. for the sake of paro-"
+      },
+      {
+       "draft": "nomasia with the words אוֹי and הוֹי,",
+       "reread": "nomasia with the words אוֹי and הוֹי,",
+       "status": "agreed",
+       "text": "nomasia with the words אוֹי and הוֹי,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1064,
+      "y": 2507,
+      "width": 874,
+      "height": 134
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r02-b03-874x134+1064+2507-x2.png",
+     "image_sha256": "7542542a60810c9598770c372d3f069b1d58e1ea16355748ea6f4e74eeb7676f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "comp. Lehrg. p. 374 note r, and Is. 15,",
+       "4. 17, 1. 59, 13. So Abulwalid, whom"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9dfb985b-ce43-488a-9088-288c6590f10d",
+      "duration_api_ms": 7091,
+      "cost_usd_list": 0.05646375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2189,
+      "output_tokens": 229
+     },
+     "lines": [
+      {
+       "draft": "comp. Lehrg. p. 374 note r, and Is. 15,",
+       "reread": "comp. Lehrg. p. 374 note r, and Is. 15,",
+       "status": "agreed",
+       "text": "comp. Lehrg. p. 374 note r, and Is. 15,"
+      },
+      {
+       "draft": "4. 17, 1. 59, 13. So Abulwalid, whom",
+       "reread": "4. 17, 1. 59, 13. So Abulwalid, whom",
+       "status": "agreed",
+       "text": "4. 17, 1. 59, 13. So Abulwalid, whom"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1064,
+    "y": 2621,
+    "width": 874,
+    "height": 629
+   },
+   "draft_lines": [
+    "we do not hesitate to follow.—Kimchi,",
+    "who is followed by most interpreters,",
+    "makes it an exclamation of pain, O ! wo !",
+    "like אוֹי and הוֹי. Comp. Gr. αἰβοῖ,",
+    "Arist. Pac. 1066.",
+    "אֵבוּס m. (r. אָבַס) by Syriasm for",
+    "אָבוּס, whence constr. אֵבוּס Is. 1, 3 ; plur.",
+    "אֵבוּסִים ; a stall, stable, barn, where cat-",
+    "tle are fed Job 39, 9 ; and fodder stored",
+    "Prov. 14, 4. The signif. stall is also ap-",
+    "propriate in Is. 1, 3 ; where however Sept."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1064,
+      "y": 2613,
+      "width": 874,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r03-b00-874x238+1064+2613-x2.png",
+     "image_sha256": "c763876856a85c12c64fde53e19d09864123540bd3b4773f5ea7da8175372c89",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "we do not hesitate to follow.—Kimchi,",
+       "who is followed by most interpreters,",
+       "makes it an exclamation of pain, O ! wo !",
+       "like אוֹי and הוֹי. Comp. Gr. αἰβοῖ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f48bbcf1-03ef-4c66-ae2a-d6ad934f7500",
+      "duration_api_ms": 8439,
+      "cost_usd_list": 0.06953375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 314
+     },
+     "lines": [
+      {
+       "draft": "we do not hesitate to follow.—Kimchi,",
+       "reread": "we do not hesitate to follow.—Kimchi,",
+       "status": "agreed",
+       "text": "we do not hesitate to follow.—Kimchi,"
+      },
+      {
+       "draft": "who is followed by most interpreters,",
+       "reread": "who is followed by most interpreters,",
+       "status": "agreed",
+       "text": "who is followed by most interpreters,"
+      },
+      {
+       "draft": "makes it an exclamation of pain, O ! wo !",
+       "reread": "makes it an exclamation of pain, O ! wo !",
+       "status": "agreed",
+       "text": "makes it an exclamation of pain, O! wo!"
+      },
+      {
+       "draft": "like אוֹי and הוֹי. Comp. Gr. αἰβοῖ,",
+       "reread": "like אוֹי and הוֹי. Comp. Gr. αἰβοῖ,",
+       "status": "agreed",
+       "text": "like אוֹי and הוֹי. Comp. Gr. αἰβοῖ,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1064,
+      "y": 2835,
+      "width": 874,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r03-b01-874x251+1064+2835-x2.png",
+     "image_sha256": "8de35e67b7b0c2766397612ca3a99fef197c726c20a5e328a820eb2efa991b37",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Arist. Pac. 1066.",
+       "אֵבוּס m. (r. אָבַס) by Syriasm for",
+       "אֲבוּס, whence constr. אֵבוּס Is. 1, 3; plur.",
+       "אֲבוּסִים; a stall, stable, barn, where cat-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c7c8b055-3621-4903-9f95-d34d862492e2",
+      "duration_api_ms": 13492,
+      "cost_usd_list": 0.09204375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 739
+     },
+     "lines": [
+      {
+       "draft": "Arist. Pac. 1066.",
+       "reread": "Arist. Pac. 1066.",
+       "status": "agreed",
+       "text": "Arist. Pac. 1066."
+      },
+      {
+       "draft": "אֵבוּס m. (r. אָבַס) by Syriasm for",
+       "reread": "אֵבוּס m. (r. אָבַס) by Syriasm for",
+       "status": "agreed",
+       "text": "אֵבוּס m. (r. אָבַס) by Syriasm for"
+      },
+      {
+       "draft": "אָבוּס, whence constr. אֵבוּס Is. 1, 3 ; plur.",
+       "reread": "אֲבוּס, whence constr. אֵבוּס Is. 1, 3; plur.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "אָבוּס, whence constr. אֵבוּס Is. 1, 3 ; plur.",
+        "verdict": "a",
+        "note": "The point under the first aleph is a qamets (bar with stem), not hateph-pataḥ; consistent with the headword אֵבוּס being 'by Syriasm for אָבוּס'. A also preserves the printed space before the semicolon in '3 ;'. (Print also has a small gap before the comma after אָבוּס — spacing only.)",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "34cf1363-f624-4e4a-87c4-15588b34a2c2",
+        "duration_api_ms": 22452,
+        "cost_usd_list": 0.11820875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3595,
+        "cache_creation_input_tokens": 2641,
+        "output_tokens": 1283
+       },
+       "text": "אָבוּס, whence constr. אֵבוּס Is. 1, 3; plur."
+      },
+      {
+       "draft": "אֵבוּסִים ; a stall, stable, barn, where cat-",
+       "reread": "אֲבוּסִים; a stall, stable, barn, where cat-",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "אֲבוּסִים; a stall, stable, barn, where cat-",
+        "verdict": "b",
+        "note": "The aleph carries a ḥaṭef pataḥ (shva + short horizontal stroke), not a tsere (two horizontal dots), so Reading B is correct; no space is printed before the semicolon.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eb8c152a-8efe-4b0a-8c82-87186c548295",
+        "duration_api_ms": 24736,
+        "cost_usd_list": 0.09568475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2625,
+        "output_tokens": 839
+       },
+       "text": "אֲבוּסִים; a stall, stable, barn, where cat-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1064,
+      "y": 3070,
+      "width": 874,
+      "height": 182
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0020/pass2/c1-r03-b02-874x182+1064+3070-x2.png",
+     "image_sha256": "09c3954e954a9b9aed1ec40034c9ffe83370f6d41ee98d01f8b059e3ffe096cb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tle are fed Job 39, 9; and fodder stored",
+       "Prov. 14, 4. The signif. stall is also ap-",
+       "propriate in Is. 1, 3; where however Sept."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "318dd31a-8e56-480c-9b33-5d5a31ce484e",
+      "duration_api_ms": 7953,
+      "cost_usd_list": 0.06084375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2378,
+      "output_tokens": 241
+     },
+     "lines": [
+      {
+       "draft": "tle are fed Job 39, 9 ; and fodder stored",
+       "reread": "tle are fed Job 39, 9; and fodder stored",
+       "status": "agreed",
+       "text": "tle are fed Job 39, 9; and fodder stored"
+      },
+      {
+       "draft": "Prov. 14, 4. The signif. stall is also ap-",
+       "reread": "Prov. 14, 4. The signif. stall is also ap-",
+       "status": "agreed",
+       "text": "Prov. 14, 4. The signif. stall is also ap-"
+      },
+      {
+       "draft": "propriate in Is. 1, 3 ; where however Sept.",
+       "reread": "propriate in Is. 1, 3; where however Sept.",
+       "status": "agreed",
+       "text": "propriate in Is. 1, 3; where however Sept."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אבד 4 אבו",
+   "status": "adjudicated",
+   "draft": "אבד 4 אבו",
+   "reread": "אבל 4 אבו",
+   "verdict": "a",
+   "note": "The last letter of the left-hand catchword has a flat top bar protruding right of the vertical stroke and no ascender above the line — a dalet (אבד), not a lamed; this also fits page 4 running from אבד to אבו.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲבַד Chald. fut. יֵאבַד, to perish, Jer.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "10, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Aph. הוֹבַד, fut. יְהוֹבֵד, inf. הוֹבָדָה, to",
+   "status": "adjudicated",
+   "draft": "Aph. הוֹבַד, fut. יְהוֹבַד, inf. הוֹבָדָה, to",
+   "reread": "Aph. הוֹבַד, fut. יְהוֹבֵד, inf. הוֹבָדָה, to",
+   "verdict": "b",
+   "note": "The decisive difference is the vowel under the bet of the future form: the print shows two horizontal dots (tsere, יְהוֹבֵד), not a single patach stroke as in Reading A. The perfect הוֹבַד does have patach, and the infinitive הוֹבָדָה and the rest of the line are identical in both readings and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "destroy, to cut off, Dan. 2, 12. 18, 24.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hoph. הוּבַד, after the Heb. manner,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Dan. 7, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֹבֵד m. 1. one wretched, unfortu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "nate; see r. אָבַד no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Participial noun, destruction, Num.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "24, 20. 24. See Lehrg. p. 488.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲבֵדָה f. (Tseri impure) 1. a thing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "lost, something missing, Ex. 22, 8. Lev.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "5, 22. 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. i. q. אֲבַדּוֹן place of destruction,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "abyss, i. e. Sheol, Hades, Prov. 27, 20",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Chethibh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲבַדּוֹן m. 1. destruction, Job 31, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. place of destruction, abyss, nearly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "synon. with שְׁאוֹל, Job 26, 6. 28, 22. Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "15, 11.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַבְדָן m. verbal of Piel for אַבְּדָן, hence",
+   "status": "adjudicated",
+   "draft": "אָבְדָן m. verbal of Piel for אַבְּדָן, hence",
+   "reread": "אַבְדָן m. verbal of Piel for אִבְּדָן, hence",
+   "verdict": "neither",
+   "note": "Both alephs carry a patah (horizontal stroke) — the first word is not qamets (A) and the second is not hiriq (B); the dot near each aleph is the adjacent shewa under bet. Second word has dagesh in bet.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "without Dag. lene in ד, destruction,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "slaughter, Esth. 9, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָבְדָן constr. אָבְדַן id. destruction",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "death, Esth. 8, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָבָה fut. יֹאבֶה, pr. to breathe after,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to desire; comp. the kindred roots אָוָה,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "יָאַב, תָּאַב, also אָהַב, חָבַב, Lat. aveo.—",
+   "status": "adjudicated",
+   "draft": "יָאַב, תָּאַב, also אָחַב, חָבַב, Lat. aveo.—",
+   "reread": "יָאַב, תָּאַב, also אָהַב, חָבַב, Lat. aveo.—",
+   "verdict": "b",
+   "note": "Third word is אָהַב with he: the middle letter has a clear gap at the upper left between roofbar and left leg, unlike the closed ḥeth of the following חָבַב. Reading A's אָחַב is wrong; all other characters agree in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. to be willing, inclined, disposed; to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "will, always with a negative partic. ex-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cept Is. 1, 19. Job 39, 9. Constr. c. infin.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "either simpl. Deut. 2, 30. 10, 10. 25, 7. Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "30, 9; or with לְ, which however be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "longs rather to prose, Lev. 26, 21. 2 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "13, 14. 16. Exod. 10, 27 לֹא אָבָה לְשַׁלְּחָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "he would not let them go. Job 39, 9",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "הֲיֹאבֶה רֵּים עָבְדֶךָ will the buffalo be will-",
+   "status": "adjudicated",
+   "draft": "הֲיֹאבֶה רֵּים עָבְדֶךָ will the buffalo be will-",
+   "reread": "הֲיֹאבֶה רֵים עָבְדֶךָ will the buffalo be will-",
+   "verdict": "a",
+   "note": "The resh of רֵּים is printed with a dagesh (the rare dagesh in resh of Job 39:9, which Gesenius reproduces); Reading B omits it. All other points and the English match.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ing to serve thee? Also c. acc. Prov. 1,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "25; absol. Is. 1, 19 אִם תֹּאבוּ וּשְׁמַעְתֶּם if",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ye be willing and obedient, lit. if ye con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sent and obey; see in יָאַל Hiph. no. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Prov. 1, 10. With dat. of pers. to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "willing towards any one, willing-mind-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ed, to obey (often with synon. שָׁמַע לְ),",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Ps. 81, 12. Deut. 13, 9. Prov. 1, 30.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. to desire, i. e. to want, to need, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "signif. found in the derivatives אֲבוֹי,",
+   "status": "adjudicated",
+   "draft": "signif. found in the derivatives אֲבוֹי,",
+   "reread": "signif. found in the derivatives אֶבְיוֹן,",
+   "verdict": "a",
+   "note": "The printed word has only four letters א־ב־ו־י with ḥolem on the vav and no final nun: it is אֲבוֹי, not אֶבְיוֹן (which is a separate derivative on the following line).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֶבְיוֹן, אֲבִיּוֹנָה.",
+   "status": "adjudicated",
+   "draft": "אֲבִיּוֹנָה, אֶבְיוֹן.",
+   "reread": "אֶבְיוֹן, אֲבִיּוֹנָה.",
+   "verdict": "b",
+   "note": "Printed left-to-right in the English flow: אֶבְיוֹן (final nun at far left of the line), comma, then אֲבִיּוֹנָה followed by the full stop — so אֶבְיוֹן is the first item and אֲבִיּוֹנָה the second, as in Reading B; Reading A reverses them. Pointing in both words matches (segol/sheva/holam-vav; hataf-patah/hiriq/dagesh-yod/holam-vav/qamats).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Note. In Arabic this verb has the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sense to be unwilling, to refuse, to loathe,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "corresponding to Heb. לֹא אָבָה. But this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "must not be regarded as a contrary sig-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "nification; since the idea of inclining,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "which in Heb. implies towards any one,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "expressing good will, Germ. Zuneigung,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "is in Arabic merely referred to the oppo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "site direction, i. e. from or against any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "one, expressing ill will, Germ. Abneigung,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. aversion, loathing; whence مَأبِي",
+   "status": "adjudicated",
+   "draft": "i. e. aversion, loathing ; whence مَأْبِىٌّ",
+   "reread": "i. e. aversion, loathing; whence مَابِي",
+   "verdict": "neither",
+   "note": "The Arabic carries fatha on mim, a hamza on the alif, and kasra under ba, but no sukun, and no shadda or tanwin on the final ya (Reading A over-points; Reading B drops the hamza). No space before the semicolon.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "stinking swamp-water, pr. loathsome,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "أَبَاءَةٌ a reed growing in marshes, bul-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "rush; comp. אֲגַם, אַגְמוֹן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Deriv. אֵבֶה, and those under no. 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֵבֶה m. reed, bulrush, papyrus, i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Arab. أَبَاءَةٌ, collect. أَبَاءٌ, see r. אָבָה",
+   "status": "adjudicated",
+   "draft": "Arab. أَبَاءَةٌ, collect. أَبَاءٌ, see r. אָבָה",
+   "reread": "Arab. أَبَاءَة, collect. أَبَاء, see r. אָבָה",
+   "verdict": "a",
+   "note": "Both Arabic words carry a printed tanwīn ḍamma (ٌ) on the final letter — visible as the raised squiggle above the tā' marbūṭa and above the final hamza; Reading B omits these case endings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "note; although the Heb. word might",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "come from the notion of a reed with its",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "top inclined, bowed down, comp. Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "58, 5.—Once Job 9, 26 אֳנִיּוֹת אֵבֶה skiffs",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of reed, i. e. boats or skiffs made of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "papyrus of the Nile, in common use",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "among the Egyptians and Ethiopians,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and famous for their lightness and swift-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ness; see Comment. on Is. 18, 2. Others",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "translate ships of desire, i. e. hasting",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "with eager desire to the haven, Symm.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ναυσὶ σπευδούσαις. The reading איבה,",
+   "status": "adjudicated",
+   "draft": "ναυσὶ σπευδούσαις. The reading איבה,",
+   "reread": "ναυσὶ σπευδούσαις. The reading אֵיבָה,",
+   "verdict": "a",
+   "note": "The Hebrew איבה is printed unpointed — no tsere under the aleph and no qamets under the bet are visible; Reading B supplies vowels that are not on the page.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "which is exhibited in 44 Mss. is doubt-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "less to be pronounced אֵיבָה, and to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "explained of hostile or robber-ships,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "which likewise sail swiftly; this gives a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "very good parallelism to the eagle in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "other hemistich pouncing upon his prey.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "So the Syr. The same sense would also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "be expressed by the common reading, if",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "for אֵבָה it were written אֶבָה.",
+   "status": "adjudicated",
+   "draft": "for אֲבָה it were written אָבָה.",
+   "reread": "for אֵבֶה it were written אָבֶה.",
+   "verdict": "neither",
+   "note": "Both words carry qamets under the bet; the first word has tsere (two dots) under the aleph, the second has segol (three dots) under the aleph — neither hateph-pathach (A) nor qamets/segol as placed in B.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲבוֹי m. (r. אָבָה no. 2) want, poverty,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "wretchedness, once Prov. 23, 29; after the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "form קָטוֹל, prob. for the sake of paro-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "nomasia with the words אוֹי and הוֹי,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "comp. Lehrg. p. 374 note r, and Is. 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4. 17, 1. 59, 13. So Abulwalid, whom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "we do not hesitate to follow.—Kimchi,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "who is followed by most interpreters,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "makes it an exclamation of pain, O! wo!",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "like אוֹי and הוֹי. Comp. Gr. αἰβοῖ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Arist. Pac. 1066.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֵבוּס m. (r. אָבַס) by Syriasm for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָבוּס, whence constr. אֵבוּס Is. 1, 3; plur.",
+   "status": "adjudicated",
+   "draft": "אָבוּס, whence constr. אֵבוּס Is. 1, 3 ; plur.",
+   "reread": "אֲבוּס, whence constr. אֵבוּס Is. 1, 3; plur.",
+   "verdict": "a",
+   "note": "The point under the first aleph is a qamets (bar with stem), not hateph-pataḥ; consistent with the headword אֵבוּס being 'by Syriasm for אָבוּס'. A also preserves the printed space before the semicolon in '3 ;'. (Print also has a small gap before the comma after אָבוּס — spacing only.)",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲבוּסִים; a stall, stable, barn, where cat-",
+   "status": "adjudicated",
+   "draft": "אֵבוּסִים ; a stall, stable, barn, where cat-",
+   "reread": "אֲבוּסִים; a stall, stable, barn, where cat-",
+   "verdict": "b",
+   "note": "The aleph carries a ḥaṭef pataḥ (shva + short horizontal stroke), not a tsere (two horizontal dots), so Reading B is correct; no space is printed before the semicolon.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "tle are fed Job 39, 9; and fodder stored",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Prov. 14, 4. The signif. stall is also ap-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "propriate in Is. 1, 3; where however Sept.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 92,
+  "adjudicated": 13,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 4
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.5771
+}

@@ -1,0 +1,2769 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 19,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0019.png",
+ "raster_sha256": "3be16bbad770421854c44f81f28c7c4465b4205eb0c003d6cbda7f73da2010c9",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0019.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T08:33:06+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 128,
+    "y": 101,
+    "width": 1764,
+    "height": 65
+   },
+   "draft_lines": [
+    "אב",
+    "3",
+    "אבד"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 128,
+      "y": 99,
+      "width": 1764,
+      "height": 69
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/header-b00-1764x69+128+99-x2.png",
+     "image_sha256": "c5604eb663f30f70c6128caa2310b1092681b8486ecbf21c4de88d9e181b04d1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אב 3 אבל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dad7cc3e-b6f6-4050-bf2c-afe8503f2474",
+      "duration_api_ms": 7257,
+      "cost_usd_list": 0.0475825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 209
+     },
+     "lines": [
+      {
+       "draft": "אב 3 אבד",
+       "reread": "אב 3 אבל",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אב 3 אבל",
+        "verdict": "b",
+        "note": "The third letter of the right-hand catchword has an ascender rising above the x-height of א and ב — a lamed, not a dalet (which would be flush with the top line). Running head reads אב 3 אבל.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4f47699a-665c-42f0-acac-fef7758cdbc9",
+        "duration_api_ms": 10237,
+        "cost_usd_list": 0.06300525,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3541,
+        "cache_creation_input_tokens": 1709,
+        "output_tokens": 558
+       },
+       "text": "אב 3 אבל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 128,
+    "y": 145,
+    "width": 871,
+    "height": 1005
+   },
+   "draft_lines": [
+    "Once in Gen. 17, 4. 5, the form אַב stands",
+    "alone, in order to render the etymology",
+    "of אַבְרָהָם more distinct and obvious.",
+    "אַב Chald. m. c. suff. 1 pers. אַבִי ; אֲבוּךְ,",
+    "אֲבוּהִי ; plur. אֲבָהָן, the letter ה being",
+    "inserted (comp. אָמָה), father, i. q. Heb.",
+    "אָב, Dan. 2, 23. Ezra 4, 15. 5, 12. Perh.",
+    "for grandfather, Dan. 5, 2.",
+    "אֵב m. (r. אָבַב) greenness, green, ver-",
+    "dure, of a plant. Job 8, 12 עֹדֶנּוּ בְאִבּוֹ",
+    "while yet in its greenness, i. e. yet green",
+    "and flourishing. Cant. 6, 11 אִבֵּי הַנַּחַל",
+    "the greens (green things) of the valley ;",
+    "Vulg. poma, after the Chaldee usage.",
+    "Arab. أَبّ green fodder."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 128,
+      "y": 137,
+      "width": 871,
+      "height": 329
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r00-b00-871x329+128+137-x2.png",
+     "image_sha256": "e0f3761fd907d2ef69c53b839b01e9f03135e2154c693b0f036e6f4950ab13af",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Once in Gen. 17, 4. 5, the form אַב stands",
+       "alone, in order to render the etymology",
+       "of אַבְרָהָם more distinct and obvious.",
+       "אַב Chald. m. c. suff. 1 pers. אַבִי ; אֲבוּךְ ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "32339aa8-1c39-4320-9ef4-01a273bdafff",
+      "duration_api_ms": 12266,
+      "cost_usd_list": 0.09177325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3067,
+      "output_tokens": 584
+     },
+     "lines": [
+      {
+       "draft": "Once in Gen. 17, 4. 5, the form אַב stands",
+       "reread": "Once in Gen. 17, 4. 5, the form אַב stands",
+       "status": "agreed",
+       "text": "Once in Gen. 17, 4. 5, the form אַב stands"
+      },
+      {
+       "draft": "alone, in order to render the etymology",
+       "reread": "alone, in order to render the etymology",
+       "status": "agreed",
+       "text": "alone, in order to render the etymology"
+      },
+      {
+       "draft": "of אַבְרָהָם more distinct and obvious.",
+       "reread": "of אַבְרָהָם more distinct and obvious.",
+       "status": "agreed",
+       "text": "of אַבְרָהָם more distinct and obvious."
+      },
+      {
+       "draft": "אַב Chald. m. c. suff. 1 pers. אַבִי ; אֲבוּךְ,",
+       "reread": "אַב Chald. m. c. suff. 1 pers. אַבִי ; אֲבוּךְ ,",
+       "status": "agreed",
+       "text": "אַב Chald. m. c. suff. 1 pers. אַבִי; אֲבוּךְ,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 128,
+      "y": 450,
+      "width": 871,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r00-b01-871x240+128+450-x2.png",
+     "image_sha256": "ec9f4acb25906f5455e094c5e2f1bfe4c4c536a5073ced94539d8e32720255b8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבוּהִי ; plur. אֲבָהָן, the letter ה being",
+       "inserted (comp. אֲמָה), father, i. q. Heb.",
+       "אָב, Dan. 2, 23. Ezra 4, 15. 5, 12. Perh.",
+       "for grandfather, Dan. 5, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7abda37c-90e4-4725-bde4-44b525dcb6d8",
+      "duration_api_ms": 11638,
+      "cost_usd_list": 0.08006325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 501
+     },
+     "lines": [
+      {
+       "draft": "אֲבוּהִי ; plur. אֲבָהָן, the letter ה being",
+       "reread": "אֲבוּהִי ; plur. אֲבָהָן, the letter ה being",
+       "status": "agreed",
+       "text": "אֲבוּהִי; plur. אֲבָהָן, the letter ה being"
+      },
+      {
+       "draft": "inserted (comp. אָמָה), father, i. q. Heb.",
+       "reread": "inserted (comp. אֲמָה), father, i. q. Heb.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "inserted (comp. אֲמָה), father, i. q. Heb.",
+        "verdict": "b",
+        "note": "Under the aleph of אֲמָה the print shows a composite hataf-patah (shewa dots plus a short horizontal stroke, matching the hataf under the aleph of אֲבָהָן on the line above), not a T-shaped qamets; so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "29a88148-b0eb-446b-accd-5b200a8c94a0",
+        "duration_api_ms": 18687,
+        "cost_usd_list": 0.10311375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3575,
+        "cache_creation_input_tokens": 2619,
+        "output_tokens": 990
+       },
+       "text": "inserted (comp. אֲמָה), father, i. q. Heb."
+      },
+      {
+       "draft": "אָב, Dan. 2, 23. Ezra 4, 15. 5, 12. Perh.",
+       "reread": "אָב, Dan. 2, 23. Ezra 4, 15. 5, 12. Perh.",
+       "status": "agreed",
+       "text": "אָב, Dan. 2, 23. Ezra 4, 15. 5, 12. Perh."
+      },
+      {
+       "draft": "for grandfather, Dan. 5, 2.",
+       "reread": "for grandfather, Dan. 5, 2.",
+       "status": "agreed",
+       "text": "for grandfather, Dan. 5, 2."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 128,
+      "y": 674,
+      "width": 871,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r00-b02-871x261+128+674-x2.png",
+     "image_sha256": "cf6305717469dd9b7c369db589d49d69b015bfd7ee71357bb32a444f4701b47d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵב m. (r. אָבַב) greenness, green, ver-",
+       "dure, of a plant. Job 8, 12 עֹדֶנּוּ בְאִבּוֹ",
+       "while yet in its greenness, i. e. yet green",
+       "and flourishing. Cant. 6, 11 אִבֵּי הַנַּחַל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7fc2303b-c3e8-4776-9c88-743634e6bb65",
+      "duration_api_ms": 10616,
+      "cost_usd_list": 0.08887324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 652
+     },
+     "lines": [
+      {
+       "draft": "אֵב m. (r. אָבַב) greenness, green, ver-",
+       "reread": "אֵב m. (r. אָבַב) greenness, green, ver-",
+       "status": "agreed",
+       "text": "אֵב m. (r. אָבַב) greenness, green, ver-"
+      },
+      {
+       "draft": "dure, of a plant. Job 8, 12 עֹדֶנּוּ בְאִבּוֹ",
+       "reread": "dure, of a plant. Job 8, 12 עֹדֶנּוּ בְאִבּוֹ",
+       "status": "agreed",
+       "text": "dure, of a plant. Job 8, 12 עֹדֶנּוּ בְאִבּוֹ"
+      },
+      {
+       "draft": "while yet in its greenness, i. e. yet green",
+       "reread": "while yet in its greenness, i. e. yet green",
+       "status": "agreed",
+       "text": "while yet in its greenness, i. e. yet green"
+      },
+      {
+       "draft": "and flourishing. Cant. 6, 11 אִבֵּי הַנַּחַל",
+       "reread": "and flourishing. Cant. 6, 11 אִבֵּי הַנַּחַל",
+       "status": "agreed",
+       "text": "and flourishing. Cant. 6, 11 אִבֵּי הַנַּחַל"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 128,
+      "y": 919,
+      "width": 871,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r00-b03-871x226+128+919-x2.png",
+     "image_sha256": "01408d4a27393644c8254bece12dbfef8658fa8db05f2a51a5ff797dbed01caa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the greens (green things) of the valley ;",
+       "Vulg. poma, after the Chaldee usage.",
+       "Arab. أبٌّ green fodder."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "119cfcd4-5f53-4e08-8a70-dccec0cde1a5",
+      "duration_api_ms": 11107,
+      "cost_usd_list": 0.07420325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 409
+     },
+     "lines": [
+      {
+       "draft": "the greens (green things) of the valley ;",
+       "reread": "the greens (green things) of the valley ;",
+       "status": "agreed",
+       "text": "the greens (green things) of the valley;"
+      },
+      {
+       "draft": "Vulg. poma, after the Chaldee usage.",
+       "reread": "Vulg. poma, after the Chaldee usage.",
+       "status": "agreed",
+       "text": "Vulg. poma, after the Chaldee usage."
+      },
+      {
+       "draft": "Arab. أَبّ green fodder.",
+       "reread": "Arab. أبٌّ green fodder.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b03",
+       "judgement": {
+        "text": "Arab. أبٌّ green fodder.",
+        "verdict": "b",
+        "note": "Over the bāʾ the print stacks a shadda with a dammatan (nominative indefinite ending, \"abbun\"), not a bare shadda; over the alif only the hamza is printed, no fatḥa. That matches Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "55c09b8e-69d3-4bce-9e8e-bc6c5e1361da",
+        "duration_api_ms": 15148,
+        "cost_usd_list": 0.08763925,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3557,
+        "cache_creation_input_tokens": 2538,
+        "output_tokens": 713
+       },
+       "text": "Arab. أبٌّ green fodder."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 128,
+    "y": 1138,
+    "width": 871,
+    "height": 982
+   },
+   "draft_lines": [
+    "אֵב Chald. (r. אֲבַב) fruit, c. suff. אִנְבֵּהּ,",
+    "the Dag. forte being resolved into Nun,",
+    "Dan. 4, 9. 11. 18. In Targg. often for פְּרִי.",
+    "* אָבַב in Heb. not used; Chald. Pa.",
+    "אַבֵּב to bear fruit, espec. early ripe, pre-",
+    "cocious fruit. Syr. ܗܰܒܶܒ to blossom. In",
+    "Arab. and Heb. it seems to have signifi-",
+    "ed to be green, verdant, to sprout, etc. see",
+    "the deriv. אֵב greenness, אָבִיב green ear.",
+    "The primary idea would seem to be that",
+    "of protruding, sprouting with impetus,",
+    "comp. Engl. to burst forth, to shoot,",
+    "Germ. treiben, whence אֵב pr. young",
+    "shoots; so as to have affinity with the",
+    "roots אָבָה, יָאַב, אָהַב, which express de-",
+    "sire, eager impulse; see אָהַב."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 128,
+      "y": 1154,
+      "width": 871,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r01-b00-871x269+128+1154-x2.png",
+     "image_sha256": "e6962b955a10ae814802e61cc46298bb1f1cc879678ad40d928e0d1c3bb68dec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵב Chald. (r. אֲבַב) fruit, c. suff. אִנְבֵּהּ,",
+       "the Dag. forte being resolved into Nun,",
+       "Dan. 4, 9. 11. 18. In Targg. often for פֵּרִי.",
+       "* אֲבַב in Heb. not used; Chald. Pa."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e37835c0-4b13-4530-a66e-401b4eab9d4f",
+      "duration_api_ms": 12877,
+      "cost_usd_list": 0.0870735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 590
+     },
+     "lines": [
+      {
+       "draft": "אֵב Chald. (r. אֲבַב) fruit, c. suff. אִנְבֵּהּ,",
+       "reread": "אֵב Chald. (r. אֲבַב) fruit, c. suff. אִנְבֵּהּ,",
+       "status": "agreed",
+       "text": "אֵב Chald. (r. אֲבַב) fruit, c. suff. אִנְבֵּהּ,"
+      },
+      {
+       "draft": "the Dag. forte being resolved into Nun,",
+       "reread": "the Dag. forte being resolved into Nun,",
+       "status": "agreed",
+       "text": "the Dag. forte being resolved into Nun,"
+      },
+      {
+       "draft": "Dan. 4, 9. 11. 18. In Targg. often for פְּרִי.",
+       "reread": "Dan. 4, 9. 11. 18. In Targg. often for פֵּרִי.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "Dan. 4, 9. 11. 18. In Targg. often for פֵּרִי.",
+        "verdict": "b",
+        "note": "The two dots under the dageshed pe are printed side by side (tsere), not stacked vertically (shewa); the Targumic form is פֵּרִי. Everything else on the line is the same in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "883355f3-6002-438c-b7ef-64168dcff6a3",
+        "duration_api_ms": 14940,
+        "cost_usd_list": 0.0910075,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3590,
+        "cache_creation_input_tokens": 2761,
+        "output_tokens": 691
+       },
+       "text": "Dan. 4, 9. 11. 18. In Targg. often for פֵּרִי."
+      },
+      {
+       "draft": "* אָבַב in Heb. not used; Chald. Pa.",
+       "reread": "* אֲבַב in Heb. not used; Chald. Pa.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "* אֲבַב in Heb. not used; Chald. Pa.",
+        "verdict": "b",
+        "note": "Under the aleph the print shows two vertical dots plus a short horizontal stroke — a hataf patah (אֲ), not a qamets; matches the root as printed in line 1 \"(r. אֲבַב)\". Bet carries patah; final bet unpointed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1892a2ae-493e-422b-989d-f97179bd4fe3",
+        "duration_api_ms": 8740,
+        "cost_usd_list": 0.08198350000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2745,
+        "output_tokens": 517
+       },
+       "text": "* אֲבַב in Heb. not used; Chald. Pa."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 128,
+      "y": 1407,
+      "width": 871,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r01-b01-871x258+128+1407-x2.png",
+     "image_sha256": "55087dea7b6ede04977596d295dfe2a7143b38bb35b611beec958259c728a0ed",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִבֵּב to bear fruit, espec. early ripe, pre-",
+       "cocious fruit. Syr. ܗܰܒܶܒ to blossom. In",
+       "Arab. and Heb. it seems to have signifi-",
+       "ed to be green, verdant, to sprout, etc. see"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1176c0bf-deac-4dfe-9305-5415640e210b",
+      "duration_api_ms": 16139,
+      "cost_usd_list": 0.09211349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 716
+     },
+     "lines": [
+      {
+       "draft": "אַבֵּב to bear fruit, espec. early ripe, pre-",
+       "reread": "אִבֵּב to bear fruit, espec. early ripe, pre-",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "אַבֵּב to bear fruit, espec. early ripe, pre-",
+        "verdict": "a",
+        "note": "The vowel under the aleph is a horizontal bar, not a single dot, so it is pataḥ (Chaldee Pael אַבֵּב), not ḥireq as in B. There is a faint speck beneath the bar that could hint at a qameṣ stem, but it is far fainter than the bar and reads as ink noise; the bet has dagesh and ṣere, final bet plain, as both readings agree.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "05642e42-ec58-4adc-b1d0-e0e8c891de06",
+        "duration_api_ms": 32518,
+        "cost_usd_list": 0.14942475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2687,
+        "output_tokens": 1889
+       },
+       "text": "אַבֵּב to bear fruit, espec. early ripe, pre-"
+      },
+      {
+       "draft": "cocious fruit. Syr. ܗܰܒܶܒ to blossom. In",
+       "reread": "cocious fruit. Syr. ܗܰܒܶܒ to blossom. In",
+       "status": "agreed",
+       "text": "cocious fruit. Syr. ܗܰܒܶܒ to blossom. In"
+      },
+      {
+       "draft": "Arab. and Heb. it seems to have signifi-",
+       "reread": "Arab. and Heb. it seems to have signifi-",
+       "status": "agreed",
+       "text": "Arab. and Heb. it seems to have signifi-"
+      },
+      {
+       "draft": "ed to be green, verdant, to sprout, etc. see",
+       "reread": "ed to be green, verdant, to sprout, etc. see",
+       "status": "agreed",
+       "text": "ed to be green, verdant, to sprout, etc. see"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 128,
+      "y": 1649,
+      "width": 871,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r01-b02-871x236+128+1649-x2.png",
+     "image_sha256": "d42b6d6f18578ffbba00a99696802315c7af90e47e8fbc865292a6b2069a0c06",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the deriv. אֵב greenness, אָבִיב green ear.",
+       "The primary idea would seem to be that",
+       "of protruding, sprouting with impetus,",
+       "comp. Engl. to burst forth, to shoot,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e22f76ea-7819-4e06-b80b-6bf98a8a4793",
+      "duration_api_ms": 8613,
+      "cost_usd_list": 0.0695935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 316
+     },
+     "lines": [
+      {
+       "draft": "the deriv. אֵב greenness, אָבִיב green ear.",
+       "reread": "the deriv. אֵב greenness, אָבִיב green ear.",
+       "status": "agreed",
+       "text": "the deriv. אֵב greenness, אָבִיב green ear."
+      },
+      {
+       "draft": "The primary idea would seem to be that",
+       "reread": "The primary idea would seem to be that",
+       "status": "agreed",
+       "text": "The primary idea would seem to be that"
+      },
+      {
+       "draft": "of protruding, sprouting with impetus,",
+       "reread": "of protruding, sprouting with impetus,",
+       "status": "agreed",
+       "text": "of protruding, sprouting with impetus,"
+      },
+      {
+       "draft": "comp. Engl. to burst forth, to shoot,",
+       "reread": "comp. Engl. to burst forth, to shoot,",
+       "status": "agreed",
+       "text": "comp. Engl. to burst forth, to shoot,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 128,
+      "y": 1869,
+      "width": 871,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r01-b03-871x239+128+1869-x2.png",
+     "image_sha256": "b443bb8b3ddf01ec65331b05224c738a5658d312db9d27e344408c98ec7a5eb4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Germ. treiben, whence אֵב pr. young",
+       "shoots ; so as to have affinity with the",
+       "roots אָבָה, יָאַב, אָהַב, which express de-",
+       "sire, eager impulse ; see אָהַב."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "afdb6d90-ba0e-479e-8e2c-bfd8032135ec",
+      "duration_api_ms": 9614,
+      "cost_usd_list": 0.07410349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 381
+     },
+     "lines": [
+      {
+       "draft": "Germ. treiben, whence אֵב pr. young",
+       "reread": "Germ. treiben, whence אֵב pr. young",
+       "status": "agreed",
+       "text": "Germ. treiben, whence אֵב pr. young"
+      },
+      {
+       "draft": "shoots; so as to have affinity with the",
+       "reread": "shoots ; so as to have affinity with the",
+       "status": "agreed",
+       "text": "shoots; so as to have affinity with the"
+      },
+      {
+       "draft": "roots אָבָה, יָאַב, אָהַב, which express de-",
+       "reread": "roots אָבָה, יָאַב, אָהַב, which express de-",
+       "status": "agreed",
+       "text": "roots אָבָה, יָאַב, אָהַב, which express de-"
+      },
+      {
+       "draft": "sire, eager impulse; see אָהַב.",
+       "reread": "sire, eager impulse ; see אָהַב.",
+       "status": "agreed",
+       "text": "sire, eager impulse; see אָהַב."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 128,
+    "y": 2108,
+    "width": 871,
+    "height": 872
+   },
+   "draft_lines": [
+    "אֲבַגְתָא Abagtha, Pers. pr. n. of a eu-",
+    "nuch of Xerxes, Esth. 1, 10.—It seems to",
+    "be i. q. בִּגְתָא, and may be explained from",
+    "the Sanscr. bagadâta ‘ a fortuna datus’ ;",
+    "from baga fortune, the sun. (Bohlen.)",
+    "* אָבַד fut. יֹאבַד, and at the end of a",
+    "clause יֹאבֵד.",
+    "1. Prop. to lose oneself, to be lost, to",
+    "wander about, espec. of a sheep wander-",
+    "ing from the flock and lost ; Arab. أَبَدَ to",
+    "flee away wild into the desert, to lose",
+    "oneself in the waste. So שֶׂה אֹבֵד a sheep",
+    "lost and wandering, Ps. 119, 176 ; comp.",
+    "Jer. 50, 6. Ez. 34, 4. 16.  Of men, Is."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 128,
+      "y": 2120,
+      "width": 871,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r02-b00-871x234+128+2120-x2.png",
+     "image_sha256": "ca7ddc7cb3ceedbcc7bb73f3e8e9b0f07a239246714d546732a29001dd7375f5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲבַגְתָא Abagtha, Pers. pr. n. of a eu-",
+       "nuch of Xerxes, Esth. 1, 10.—It seems to",
+       "be i. q. בִּגְתָא, and may be explained from",
+       "the Sanscr. bagadâta ‘ a fortuna datus’ ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b9e39595-1660-40b5-843a-1a79aceabaed",
+      "duration_api_ms": 10846,
+      "cost_usd_list": 0.0726435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 377
+     },
+     "lines": [
+      {
+       "draft": "אֲבַגְתָא Abagtha, Pers. pr. n. of a eu-",
+       "reread": "אֲבַגְתָא Abagtha, Pers. pr. n. of a eu-",
+       "status": "agreed",
+       "text": "אֲבַגְתָא Abagtha, Pers. pr. n. of a eu-"
+      },
+      {
+       "draft": "nuch of Xerxes, Esth. 1, 10.—It seems to",
+       "reread": "nuch of Xerxes, Esth. 1, 10.—It seems to",
+       "status": "agreed",
+       "text": "nuch of Xerxes, Esth. 1, 10.—It seems to"
+      },
+      {
+       "draft": "be i. q. בִּגְתָא, and may be explained from",
+       "reread": "be i. q. בִּגְתָא, and may be explained from",
+       "status": "agreed",
+       "text": "be i. q. בִּגְתָא, and may be explained from"
+      },
+      {
+       "draft": "the Sanscr. bagadâta ‘ a fortuna datus’ ;",
+       "reread": "the Sanscr. bagadâta ‘ a fortuna datus’ ;",
+       "status": "agreed",
+       "text": "the Sanscr. bagadâta ‘ a fortuna datus’;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 128,
+      "y": 2338,
+      "width": 871,
+      "height": 277
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r02-b01-871x277+128+2338-x2.png",
+     "image_sha256": "3feca6816a4325cb51ef62fa8719027e825f044e3f3b764a6d94cce183335bb1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "from baga fortune, the sun. (Bohlen.)",
+       "* אָבַד fut. יֹאבַד, and at the end of a",
+       "clause יֹאבֵד.",
+       "1. Prop. to lose oneself, to be lost, to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26c1bb85-f798-48a6-8c57-2153edf6e0dc",
+      "duration_api_ms": 10947,
+      "cost_usd_list": 0.08132349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 475
+     },
+     "lines": [
+      {
+       "draft": "from baga fortune, the sun. (Bohlen.)",
+       "reread": "from baga fortune, the sun. (Bohlen.)",
+       "status": "agreed",
+       "text": "from baga fortune, the sun. (Bohlen.)"
+      },
+      {
+       "draft": "* אָבַד fut. יֹאבַד, and at the end of a",
+       "reread": "* אָבַד fut. יֹאבַד, and at the end of a",
+       "status": "agreed",
+       "text": "* אָבַד fut. יֹאבַד, and at the end of a"
+      },
+      {
+       "draft": "clause יֹאבֵד.",
+       "reread": "clause יֹאבֵד.",
+       "status": "agreed",
+       "text": "clause יֹאבֵד."
+      },
+      {
+       "draft": "1. Prop. to lose oneself, to be lost, to",
+       "reread": "1. Prop. to lose oneself, to be lost, to",
+       "status": "agreed",
+       "text": "1. Prop. to lose oneself, to be lost, to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 128,
+      "y": 2599,
+      "width": 871,
+      "height": 274
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r02-b02-871x274+128+2599-x2.png",
+     "image_sha256": "31831ea09af2055a38ab2858918cd682341d9ff377ba8f81cad6b0ca13abe8ca",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "wander about, espec. of a sheep wander-",
+       "ing from the flock and lost ; Arab. أَبَلَ to",
+       "flee away wild into the desert, to lose",
+       "oneself in the waste. So שֶׂה אֹבֵד a sheep"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4c61d4bc-0acf-4e88-adda-4d50c36f84b2",
+      "duration_api_ms": 24588,
+      "cost_usd_list": 0.11947350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 1238
+     },
+     "lines": [
+      {
+       "draft": "wander about, espec. of a sheep wander-",
+       "reread": "wander about, espec. of a sheep wander-",
+       "status": "agreed",
+       "text": "wander about, espec. of a sheep wander-"
+      },
+      {
+       "draft": "ing from the flock and lost ; Arab. أَبَدَ to",
+       "reread": "ing from the flock and lost ; Arab. أَبَلَ to",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "ing from the flock and lost ; Arab. أَبَدَ to",
+        "verdict": "a",
+        "note": "Final Arabic letter is a baseline dāl with fatha (no descending lām bowl): أَبَدَ, the expected cognate of אָבַד. Reading A is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "47fa00ba-484f-4b55-9c5a-110e968faa13",
+        "duration_api_ms": 14976,
+        "cost_usd_list": 0.08935375000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3575,
+        "cache_creation_input_tokens": 2746,
+        "output_tokens": 664
+       },
+       "text": "ing from the flock and lost; Arab. أَبَدَ to"
+      },
+      {
+       "draft": "flee away wild into the desert, to lose",
+       "reread": "flee away wild into the desert, to lose",
+       "status": "agreed",
+       "text": "flee away wild into the desert, to lose"
+      },
+      {
+       "draft": "oneself in the waste. So שֶׂה אֹבֵד a sheep",
+       "reread": "oneself in the waste. So שֶׂה אֹבֵד a sheep",
+       "status": "agreed",
+       "text": "oneself in the waste. So שֶׂה אֹבֵד a sheep"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 128,
+      "y": 2857,
+      "width": 871,
+      "height": 131
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r02-b03-871x131+128+2857-x2.png",
+     "image_sha256": "3b8540497f564f1497ba0978918e9c7f356a4f036b964afcc39107d1b678a84a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "lost and wandering, Ps. 119, 176 ; comp.",
+       "Jer. 50, 6. Ez. 34, 4. 16. Of men, Is."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8764212c-4b98-40ee-96f1-d23aa6bd43a4",
+      "duration_api_ms": 3760,
+      "cost_usd_list": 0.0565235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 231
+     },
+     "lines": [
+      {
+       "draft": "lost and wandering, Ps. 119, 176 ; comp.",
+       "reread": "lost and wandering, Ps. 119, 176 ; comp.",
+       "status": "agreed",
+       "text": "lost and wandering, Ps. 119, 176; comp."
+      },
+      {
+       "draft": "Jer. 50, 6. Ez. 34, 4. 16.  Of men, Is.",
+       "reread": "Jer. 50, 6. Ez. 34, 4. 16. Of men, Is.",
+       "status": "agreed",
+       "text": "Jer. 50, 6. Ez. 34, 4. 16. Of men, Is."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 128,
+    "y": 2968,
+    "width": 871,
+    "height": 276
+   },
+   "draft_lines": [
+    "27, 13 הָאֹבְדִים בְּאֶרֶץ אַשּׁוּר who are lost",
+    "in the land of Assyria, i. e. wander as",
+    "exiles. Deut. 26, 5 אֲרַמִּי אֹבֵד a wander-",
+    "ing Syrian. Also of things, e. g. of",
+    "streams which lose themselves in the"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 128,
+      "y": 2970,
+      "width": 871,
+      "height": 224
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r03-b00-871x224+128+2970-x2.png",
+     "image_sha256": "accaf546f5f0eb5f69fa7c0bb5e7879ce01068d3275e02a2aed8892195bb8633",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "27, 13 הָאֹבְדִים בְּאֶרֶץ אַשּׁוּר who are lost",
+       "in the land of Assyria, i. e. wander as",
+       "exiles. Deut. 26, 5 אֲרַמִּי אֹבֵד a wander-",
+       "ing Syrian. Also of things, e. g. of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "338dc9cd-b12a-476c-aba7-920faf2fc5cf",
+      "duration_api_ms": 8622,
+      "cost_usd_list": 0.0670335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 290
+     },
+     "lines": [
+      {
+       "draft": "27, 13 הָאֹבְדִים בְּאֶרֶץ אַשּׁוּר who are lost",
+       "reread": "27, 13 הָאֹבְדִים בְּאֶרֶץ אַשּׁוּר who are lost",
+       "status": "agreed",
+       "text": "27, 13 הָאֹבְדִים בְּאֶרֶץ אַשּׁוּר who are lost"
+      },
+      {
+       "draft": "in the land of Assyria, i. e. wander as",
+       "reread": "in the land of Assyria, i. e. wander as",
+       "status": "agreed",
+       "text": "in the land of Assyria, i. e. wander as"
+      },
+      {
+       "draft": "exiles. Deut. 26, 5 אֲרַמִּי אֹבֵד a wander-",
+       "reread": "exiles. Deut. 26, 5 אֲרַמִּי אֹבֵד a wander-",
+       "status": "agreed",
+       "text": "exiles. Deut. 26, 5 אֲרַמִּי אֹבֵד a wander-"
+      },
+      {
+       "draft": "ing Syrian. Also of things, e. g. of",
+       "reread": "ing Syrian. Also of things, e. g. of",
+       "status": "agreed",
+       "text": "ing Syrian. Also of things, e. g. of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 128,
+      "y": 3178,
+      "width": 871,
+      "height": 68
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c0-r03-b01-871x68+128+3178-x2.png",
+     "image_sha256": "55599c417e91c1c38d3c907157a250656db1f063f8a61eb554207560907e04a6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "streams which lose themselves in the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "620efbae-5797-49f4-acfb-8803555bad5b",
+      "duration_api_ms": 7639,
+      "cost_usd_list": 0.0495235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "streams which lose themselves in the",
+       "reread": "streams which lose themselves in the",
+       "status": "agreed",
+       "text": "streams which lose themselves in the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1020,
+    "y": 145,
+    "width": 872,
+    "height": 664
+   },
+   "draft_lines": [
+    "desert, Job 6, 18. Metaph. of wisdom",
+    "become extinct, Is. 29, 14.—Hence",
+    "2. to perish, to be destroyed; Syr.",
+    "Samar. id. The Arabic in this sense",
+    "has the kindr. بَادَ. Spoken of persons",
+    "and other living things as perishing, Ps.",
+    "37, 20. Job 4, 11; sometimes with מֵעַל",
+    "הָאָרֶץ Deut. 4, 26. 11, 17. Josh. 23, 13. 16.",
+    "Also of a land or houses which are laid",
+    "waste, Jer. 9, 11. Am. 3, 15. Metaph. of"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1020,
+      "y": 137,
+      "width": 872,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r00-b00-872x252+1020+137-x2.png",
+     "image_sha256": "2fe1a52bb57b8167695f4487310996d8137d4eb0277c90c5a7094f6a8453bad4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "desert, Job 6, 18. Metaph. of wisdom",
+       "become extinct, Is. 29, 14.—Hence",
+       "2. to perish, to be destroyed; Syr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "21d15a39-03de-42e5-a60e-3014c243bb16",
+      "duration_api_ms": 8439,
+      "cost_usd_list": 0.0682535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "desert, Job 6, 18. Metaph. of wisdom",
+       "reread": "desert, Job 6, 18. Metaph. of wisdom",
+       "status": "agreed",
+       "text": "desert, Job 6, 18. Metaph. of wisdom"
+      },
+      {
+       "draft": "become extinct, Is. 29, 14.—Hence",
+       "reread": "become extinct, Is. 29, 14.—Hence",
+       "status": "agreed",
+       "text": "become extinct, Is. 29, 14.—Hence"
+      },
+      {
+       "draft": "2. to perish, to be destroyed; Syr.",
+       "reread": "2. to perish, to be destroyed; Syr.",
+       "status": "agreed",
+       "text": "2. to perish, to be destroyed; Syr."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1020,
+      "y": 373,
+      "width": 872,
+      "height": 269
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r00-b01-872x269+1020+373-x2.png",
+     "image_sha256": "fe43d16fecf7b9019e270e9d386288562d41e00470ce2aa0a6cdab53848ba4d7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Samar. id. The Arabic in this sense",
+       "has the kindr. بَاكَ. Spoken of persons",
+       "and other living things as perishing, Ps.",
+       "37, 20. Job 4, 11 ; sometimes with מֵעַל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7abd3ab3-fcab-4fee-9394-8fcfc7647622",
+      "duration_api_ms": 5920,
+      "cost_usd_list": 0.07452349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 339
+     },
+     "lines": [
+      {
+       "draft": "Samar. id. The Arabic in this sense",
+       "reread": "Samar. id. The Arabic in this sense",
+       "status": "agreed",
+       "text": "Samar. id. The Arabic in this sense"
+      },
+      {
+       "draft": "has the kindr. بَادَ. Spoken of persons",
+       "reread": "has the kindr. بَاكَ. Spoken of persons",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "has the kindr. بَادَ. Spoken of persons",
+        "verdict": "a",
+        "note": "The final Arabic letter is a dāl (د) with fatḥa, not kāf — there is no inner hamza-like stroke that a final kāf (ك) carries, and the shape is the short angular hook of dāl. بَادَ \"to perish\" is also the expected cognate of אָבַד. Reading A is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8a3230ca-f688-4d1a-8aea-4a7c176be437",
+        "duration_api_ms": 14464,
+        "cost_usd_list": 0.08646200000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2739,
+        "output_tokens": 609
+       },
+       "text": "has the kindr. بَادَ. Spoken of persons"
+      },
+      {
+       "draft": "and other living things as perishing, Ps.",
+       "reread": "and other living things as perishing, Ps.",
+       "status": "agreed",
+       "text": "and other living things as perishing, Ps."
+      },
+      {
+       "draft": "37, 20. Job 4, 11; sometimes with מֵעַל",
+       "reread": "37, 20. Job 4, 11 ; sometimes with מֵעַל",
+       "status": "agreed",
+       "text": "37, 20. Job 4, 11; sometimes with מֵעַל"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1020,
+      "y": 626,
+      "width": 872,
+      "height": 191
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r00-b02-872x191+1020+626-x2.png",
+     "image_sha256": "4c4bde8a5d54db73c5ac88c5fab88e524394b09211d94611bca0c45fc3e7fd32",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "הָאָרֶץ Deut. 4, 26. 11, 17. Josh. 23, 13. 16.",
+       "Also of a land or houses which are laid",
+       "waste, Jer. 9, 11. Am. 3, 15. Metaph. of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "df47471f-e588-490a-ac7d-818688f750fc",
+      "duration_api_ms": 7814,
+      "cost_usd_list": 0.0630135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "הָאָרֶץ Deut. 4, 26. 11, 17. Josh. 23, 13. 16.",
+       "reread": "הָאָרֶץ Deut. 4, 26. 11, 17. Josh. 23, 13. 16.",
+       "status": "agreed",
+       "text": "הָאָרֶץ Deut. 4, 26. 11, 17. Josh. 23, 13. 16."
+      },
+      {
+       "draft": "Also of a land or houses which are laid",
+       "reread": "Also of a land or houses which are laid",
+       "status": "agreed",
+       "text": "Also of a land or houses which are laid"
+      },
+      {
+       "draft": "waste, Jer. 9, 11. Am. 3, 15. Metaph. of",
+       "reread": "waste, Jer. 9, 11. Am. 3, 15. Metaph. of",
+       "status": "agreed",
+       "text": "waste, Jer. 9, 11. Am. 3, 15. Metaph. of"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1020,
+    "y": 797,
+    "width": 872,
+    "height": 957
+   },
+   "draft_lines": [
+    "hope, desires, vows, as failing, being dis-",
+    "appointed, Ps. 9, 19. 112, 10. Prov. 10, 28.",
+    "11, 7. Ez..12, 22.—Constr. with לְ of pers.",
+    "1 Sam. 9, 3. 20 ; seq. מִן Deut. 22, 3. Job",
+    "11, 20 מָנוֹס אָבַד מִנְהֶם their refuge per-",
+    "isheth. Jer. 25, 35. Ps. 142, 5. Ez. 7, 26",
+    "תּוֹרָה תֹאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+    "shall perish from the priest and counsel",
+    "from the aged, i. e. shall forsake them,",
+    "comp. Jer. 18, 18. 49, 7. Hence Deut.",
+    "32, 28 גּוֹי אֹבַד עֵצוֹת a nation whose",
+    "counsel is perished, void of counsel, Vulg.",
+    "consilii expers. Jer. 4, 9 יֹאבַד לֵב הַמֶּלֶךְ",
+    "the heart of the king shall perish, i. e. for",
+    "fear and terror. Job 8, 13 וְתִקְוַת חָנֵף",
+    "תֹּאבֵד and [so] shall the hope of the im-",
+    "pious man perish. Ps. 9, 19. 112, 10."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1020,
+      "y": 789,
+      "width": 872,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r01-b00-872x241+1020+789-x2.png",
+     "image_sha256": "14aabaf049702cf25f577a0e0c6368792f9c22e7dea5cab603dd7e0190fa73e6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hope, desires, vows, as failing, being dis-",
+       "appointed, Ps. 9, 19. 112, 10. Prov. 10, 28.",
+       "11, 7. Ez. 12, 22.—Constr. with לְ of pers.",
+       "1 Sam. 9, 3. 20 ; seq. מִן Deut. 22, 3. Job"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "467b8338-1f27-4c34-b68a-86986eab53ee",
+      "duration_api_ms": 8616,
+      "cost_usd_list": 0.0697535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 294
+     },
+     "lines": [
+      {
+       "draft": "hope, desires, vows, as failing, being dis-",
+       "reread": "hope, desires, vows, as failing, being dis-",
+       "status": "agreed",
+       "text": "hope, desires, vows, as failing, being dis-"
+      },
+      {
+       "draft": "appointed, Ps. 9, 19. 112, 10. Prov. 10, 28.",
+       "reread": "appointed, Ps. 9, 19. 112, 10. Prov. 10, 28.",
+       "status": "agreed",
+       "text": "appointed, Ps. 9, 19. 112, 10. Prov. 10, 28."
+      },
+      {
+       "draft": "11, 7. Ez..12, 22.—Constr. with לְ of pers.",
+       "reread": "11, 7. Ez. 12, 22.—Constr. with לְ of pers.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "11, 7. Ez..12, 22.—Constr. with לְ of pers.",
+        "verdict": "a",
+        "note": "After \"Ez\" the print shows two baseline dots running straight into \"12\" with no space (\"Ez..12\"), as in Reading A; Reading B normalises this to a single period plus space. The Hebrew is לְ (lamed + shewa) in both, which matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f898ffa5-b9e8-466b-be3e-6b58a41e984f",
+        "duration_api_ms": 12398,
+        "cost_usd_list": 0.0818065,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2631,
+        "output_tokens": 559
+       },
+       "text": "11, 7. Ez..12, 22.—Constr. with לְ of pers."
+      },
+      {
+       "draft": "1 Sam. 9, 3. 20 ; seq. מִן Deut. 22, 3. Job",
+       "reread": "1 Sam. 9, 3. 20 ; seq. מִן Deut. 22, 3. Job",
+       "status": "agreed",
+       "text": "1 Sam. 9, 3. 20; seq. מִן Deut. 22, 3. Job"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1020,
+      "y": 1014,
+      "width": 872,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r01-b01-872x239+1020+1014-x2.png",
+     "image_sha256": "27f5ce5747abbc3b29d0263f2d91cb8acea8cdd03ff23a6b4ffc4a0b1e2671c0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "11, 20 מָנוֹס אָבַד מִנְהֶם their refuge per-",
+       "isheth. Jer. 25, 35. Ps. 142, 5. Ez. 7, 26",
+       "תּוֹרָה תֹּאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+       "shall perish from the priest and counsel"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "92ab903e-5570-4c3b-920a-8bdc69613aa8",
+      "duration_api_ms": 14423,
+      "cost_usd_list": 0.08764375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 651
+     },
+     "lines": [
+      {
+       "draft": "11, 20 מָנוֹס אָבַד מִנְהֶם their refuge per-",
+       "reread": "11, 20 מָנוֹס אָבַד מִנְהֶם their refuge per-",
+       "status": "agreed",
+       "text": "11, 20 מָנוֹס אָבַד מִנְהֶם their refuge per-"
+      },
+      {
+       "draft": "isheth. Jer. 25, 35. Ps. 142, 5. Ez. 7, 26",
+       "reread": "isheth. Jer. 25, 35. Ps. 142, 5. Ez. 7, 26",
+       "status": "agreed",
+       "text": "isheth. Jer. 25, 35. Ps. 142, 5. Ez. 7, 26"
+      },
+      {
+       "draft": "תּוֹרָה תֹאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+       "reread": "תּוֹרָה תֹּאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "תּוֹרָה תֹּאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+        "verdict": "b",
+        "note": "The only difference is the dagesh in the tav of תֹּאבַד; the printed tav shows a dot inside it (as in תּוֹרָה beside it), so the dagesh is printed — Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b3caea46-698a-4790-8d68-ba278faf4a6d",
+        "duration_api_ms": 16945,
+        "cost_usd_list": 0.09487575000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3623,
+        "cache_creation_input_tokens": 2669,
+        "output_tokens": 805
+       },
+       "text": "תּוֹרָה תֹּאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law"
+      },
+      {
+       "draft": "shall perish from the priest and counsel",
+       "reread": "shall perish from the priest and counsel",
+       "status": "agreed",
+       "text": "shall perish from the priest and counsel"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1020,
+      "y": 1237,
+      "width": 872,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r01-b02-872x237+1020+1237-x2.png",
+     "image_sha256": "489049d6b7c72aeecc9b4de1778a4afe00b1465c5ec5dd7fdae3146faa9fa3c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "from the aged, i. e. shall forsake them,",
+       "comp. Jer. 18, 18. 49, 7. Hence Deut.",
+       "32, 28 גּוֹי אֹבַד עֵצוֹת a nation whose",
+       "counsel is perished, void of counsel, Vulg."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b068043-0cd8-4f18-93bf-2340963c91fe",
+      "duration_api_ms": 8297,
+      "cost_usd_list": 0.06753375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "from the aged, i. e. shall forsake them,",
+       "reread": "from the aged, i. e. shall forsake them,",
+       "status": "agreed",
+       "text": "from the aged, i. e. shall forsake them,"
+      },
+      {
+       "draft": "comp. Jer. 18, 18. 49, 7. Hence Deut.",
+       "reread": "comp. Jer. 18, 18. 49, 7. Hence Deut.",
+       "status": "agreed",
+       "text": "comp. Jer. 18, 18. 49, 7. Hence Deut."
+      },
+      {
+       "draft": "32, 28 גּוֹי אֹבַד עֵצוֹת a nation whose",
+       "reread": "32, 28 גּוֹי אֹבַד עֵצוֹת a nation whose",
+       "status": "agreed",
+       "text": "32, 28 גּוֹי אֹבַד עֵצוֹת a nation whose"
+      },
+      {
+       "draft": "counsel is perished, void of counsel, Vulg.",
+       "reread": "counsel is perished, void of counsel, Vulg.",
+       "status": "agreed",
+       "text": "counsel is perished, void of counsel, Vulg."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1020,
+      "y": 1458,
+      "width": 872,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r01-b03-872x239+1020+1458-x2.png",
+     "image_sha256": "19faeb13440e2b05cb489370bfc7a3861dcf2fc5615fc9f917bb77feb8cd1277",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "consilii expers. Jer. 4, 9 יֹאבַד לֵב הַמֶּלֶךְ",
+       "the heart of the king shall perish, i. e. for",
+       "fear and terror. Job 8, 13 וְתִקְוַת חָנֵף",
+       "תֹּאבֵד and [so] shall the hope of the im-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8625ee97-fa88-4b8f-be83-f80ef4633129",
+      "duration_api_ms": 10352,
+      "cost_usd_list": 0.08269375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 552
+     },
+     "lines": [
+      {
+       "draft": "consilii expers. Jer. 4, 9 יֹאבַד לֵב הַמֶּלֶךְ",
+       "reread": "consilii expers. Jer. 4, 9 יֹאבַד לֵב הַמֶּלֶךְ",
+       "status": "agreed",
+       "text": "consilii expers. Jer. 4, 9 יֹאבַד לֵב הַמֶּלֶךְ"
+      },
+      {
+       "draft": "the heart of the king shall perish, i. e. for",
+       "reread": "the heart of the king shall perish, i. e. for",
+       "status": "agreed",
+       "text": "the heart of the king shall perish, i. e. for"
+      },
+      {
+       "draft": "fear and terror. Job 8, 13 וְתִקְוַת חָנֵף",
+       "reread": "fear and terror. Job 8, 13 וְתִקְוַת חָנֵף",
+       "status": "agreed",
+       "text": "fear and terror. Job 8, 13 וְתִקְוַת חָנֵף"
+      },
+      {
+       "draft": "תֹּאבֵד and [so] shall the hope of the im-",
+       "reread": "תֹּאבֵד and [so] shall the hope of the im-",
+       "status": "agreed",
+       "text": "תֹּאבֵד and [so] shall the hope of the im-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 1020,
+      "y": 1681,
+      "width": 872,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r01-b04-872x81+1020+1681-x2.png",
+     "image_sha256": "b62a9e94215ee4b90a2bfdc79339eb183ed69fb8112109d72d4b1acb489b7ffc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pious man perish. Ps. 9, 19. 112, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5a5aa4c0-9e6a-440e-9907-33865d9696ca",
+      "duration_api_ms": 6812,
+      "cost_usd_list": 0.049973750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 200
+     },
+     "lines": [
+      {
+       "draft": "pious man perish. Ps. 9, 19. 112, 10.",
+       "reread": "pious man perish. Ps. 9, 19. 112, 10.",
+       "status": "agreed",
+       "text": "pious man perish. Ps. 9, 19. 112, 10."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1020,
+    "y": 1742,
+    "width": 872,
+    "height": 903
+   },
+   "draft_lines": [
+    "Prov. 10, 28.",
+    "3. to be ready to perish, i. e. to be",
+    "wretched, miserable. Part. אֹבֵד one",
+    "wretched, miserable, unfortunate, Job",
+    "29, 13. 31, 19. Prov. 31, 6.",
+    "Piel אִבַּד 1. to lose, pr. to let be lost,",
+    "to give up as lost, Ecc. 3, 6.",
+    "2. to make wander, to scatter a flock,",
+    "Jer. 23, 1.",
+    "3. to cause to perish, to destroy ; Ecc.",
+    "7, 7 וִיאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+    "i. e. corrupteth the mind. Seq. מִן, to de-",
+    "stroy out of any thing, Jer. 51, 55.—Spec.",
+    "a) Of things, to destroy, to lay waste, 2 K.",
+    "19, 18. Num. 33, 52. Deut. 12, 2. אִבַּד הוֹן",
+    "to waste one's substance, Prov. 29, 3. b)"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1020,
+      "y": 1734,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r02-b00-872x238+1020+1734-x2.png",
+     "image_sha256": "495f38e3b49e89af539dbdaca16309216b04e79e62d52635f04281e610ec9988",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Prov. 10, 28.",
+       "3. to be ready to perish, i. e. to be",
+       "wretched, miserable. Part. אֹבֵד one",
+       "wretched, miserable, unfortunate, Job"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8d0253cb-7d96-42ac-a3db-e6e2e9620cb4",
+      "duration_api_ms": 10028,
+      "cost_usd_list": 0.07528375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 429
+     },
+     "lines": [
+      {
+       "draft": "Prov. 10, 28.",
+       "reread": "Prov. 10, 28.",
+       "status": "agreed",
+       "text": "Prov. 10, 28."
+      },
+      {
+       "draft": "3. to be ready to perish, i. e. to be",
+       "reread": "3. to be ready to perish, i. e. to be",
+       "status": "agreed",
+       "text": "3. to be ready to perish, i. e. to be"
+      },
+      {
+       "draft": "wretched, miserable. Part. אֹבֵד one",
+       "reread": "wretched, miserable. Part. אֹבֵד one",
+       "status": "agreed",
+       "text": "wretched, miserable. Part. אֹבֵד one"
+      },
+      {
+       "draft": "wretched, miserable, unfortunate, Job",
+       "reread": "wretched, miserable, unfortunate, Job",
+       "status": "agreed",
+       "text": "wretched, miserable, unfortunate, Job"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1020,
+      "y": 1956,
+      "width": 872,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r02-b01-872x243+1020+1956-x2.png",
+     "image_sha256": "dc05958da9e8ec6a53c27848d7966587964ddc32ea9b33625cbed32b3cbb90fc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "29, 13. 31, 19. Prov. 31, 6.",
+       "Piel אִבַּד 1. to lose, pr. to let be lost,",
+       "to give up as lost, Ecc. 3, 6.",
+       "2. to make wander, to scatter a flock,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "94080507-484b-4b7b-9f0c-939d0e81dacd",
+      "duration_api_ms": 8338,
+      "cost_usd_list": 0.06829375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "29, 13. 31, 19. Prov. 31, 6.",
+       "reread": "29, 13. 31, 19. Prov. 31, 6.",
+       "status": "agreed",
+       "text": "29, 13. 31, 19. Prov. 31, 6."
+      },
+      {
+       "draft": "Piel אִבַּד 1. to lose, pr. to let be lost,",
+       "reread": "Piel אִבַּד 1. to lose, pr. to let be lost,",
+       "status": "agreed",
+       "text": "Piel אִבַּד 1. to lose, pr. to let be lost,"
+      },
+      {
+       "draft": "to give up as lost, Ecc. 3, 6.",
+       "reread": "to give up as lost, Ecc. 3, 6.",
+       "status": "agreed",
+       "text": "to give up as lost, Ecc. 3, 6."
+      },
+      {
+       "draft": "2. to make wander, to scatter a flock,",
+       "reread": "2. to make wander, to scatter a flock,",
+       "status": "agreed",
+       "text": "2. to make wander, to scatter a flock,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1020,
+      "y": 2183,
+      "width": 872,
+      "height": 187
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r02-b02-872x187+1020+2183-x2.png",
+     "image_sha256": "ec6a500e5aeddc2a85d319337199242e90a70998c2cc0080b8e93f1498eeb813",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Jer. 23, 1.",
+       "3. to cause to perish, to destroy ; Ecc.",
+       "7, 7 יְאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "165d9517-9494-4078-8a3e-651aa447abff",
+      "duration_api_ms": 11927,
+      "cost_usd_list": 0.07725375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 544
+     },
+     "lines": [
+      {
+       "draft": "Jer. 23, 1.",
+       "reread": "Jer. 23, 1.",
+       "status": "agreed",
+       "text": "Jer. 23, 1."
+      },
+      {
+       "draft": "3. to cause to perish, to destroy ; Ecc.",
+       "reread": "3. to cause to perish, to destroy ; Ecc.",
+       "status": "agreed",
+       "text": "3. to cause to perish, to destroy; Ecc."
+      },
+      {
+       "draft": "7, 7 וִיאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+       "reread": "7, 7 יְאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "7, 7 יְאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+        "verdict": "b",
+        "note": "The verb begins with a single yod carrying sheva (יְאַבֵּד); there is no preceding vav as in Reading A.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "41c0b5b3-5ae2-4163-8a01-04f93836fb02",
+        "duration_api_ms": 9835,
+        "cost_usd_list": 0.06624275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3611,
+        "cache_creation_input_tokens": 2405,
+        "output_tokens": 338
+       },
+       "text": "7, 7 יְאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1020,
+      "y": 2354,
+      "width": 872,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r02-b03-872x232+1020+2354-x2.png",
+     "image_sha256": "96931faa99c76779001bbb6258adf90a949d6c114516959cd6c7818473261148",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. corrupteth the mind. Seq. מִן, to de-",
+       "stroy out of any thing, Jer. 51, 55.—Spec.",
+       "a) Of things, to destroy, to lay waste, 2 K.",
+       "19, 18. Num. 33, 52. Deut. 12, 2. אִבַּד הוֹן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5ff653a1-7001-4fc9-8275-5e08a7dcf28f",
+      "duration_api_ms": 5209,
+      "cost_usd_list": 0.06833375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 290
+     },
+     "lines": [
+      {
+       "draft": "i. e. corrupteth the mind. Seq. מִן, to de-",
+       "reread": "i. e. corrupteth the mind. Seq. מִן, to de-",
+       "status": "agreed",
+       "text": "i. e. corrupteth the mind. Seq. מִן, to de-"
+      },
+      {
+       "draft": "stroy out of any thing, Jer. 51, 55.—Spec.",
+       "reread": "stroy out of any thing, Jer. 51, 55.—Spec.",
+       "status": "agreed",
+       "text": "stroy out of any thing, Jer. 51, 55.—Spec."
+      },
+      {
+       "draft": "a) Of things, to destroy, to lay waste, 2 K.",
+       "reread": "a) Of things, to destroy, to lay waste, 2 K.",
+       "status": "agreed",
+       "text": "a) Of things, to destroy, to lay waste, 2 K."
+      },
+      {
+       "draft": "19, 18. Num. 33, 52. Deut. 12, 2. אִבַּד הוֹן",
+       "reread": "19, 18. Num. 33, 52. Deut. 12, 2. אִבַּד הוֹן",
+       "status": "agreed",
+       "text": "19, 18. Num. 33, 52. Deut. 12, 2. אִבַּד הוֹן"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b04",
+     "bounds": {
+      "x": 1020,
+      "y": 2570,
+      "width": 872,
+      "height": 83
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r02-b04-872x83+1020+2570-x2.png",
+     "image_sha256": "8b9a10790105e9ee2f022b39424f164f587423f700d89cfeedcdfd831763d9bb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to waste one's substance, Prov. 29, 3.  b)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "01918833-1cd2-48b5-b9f2-26a56145edcc",
+      "duration_api_ms": 7241,
+      "cost_usd_list": 0.049973750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 200
+     },
+     "lines": [
+      {
+       "draft": "to waste one's substance, Prov. 29, 3. b)",
+       "reread": "to waste one's substance, Prov. 29, 3.  b)",
+       "status": "agreed",
+       "text": "to waste one's substance, Prov. 29, 3. b)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1020,
+    "y": 2633,
+    "width": 872,
+    "height": 624
+   },
+   "draft_lines": [
+    "Of men, to destroy, to kill, to put to death,",
+    "Esth. 3, 9. 13. 2 K. 11, 1. 13, 7.",
+    "Hiph. הֶאֱבִיד i. q. Pi. to destroy, to cut",
+    "off, as men and nations, Deut. 7, 10. 8, 20 ;",
+    "sometimes with the addition of מִקֶּרֶב הָעָם",
+    "Lev. 23, 30 ; מִתַּחַת הַשָּׁמַיִם Deut. 7, 24 ;",
+    "also of a land, to lay waste, Zeph. 2, 5 ;",
+    "of hope, Job 14, 19.—Very rarely the",
+    "quiescent א in 1 pers. fut. is dropped, as",
+    "אֹבִידָה for אַאֲבִידָה Jer. 46, 8.",
+    "Deriv. אֹבֵד—אָבְדָן."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1020,
+      "y": 2625,
+      "width": 872,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r03-b00-872x245+1020+2625-x2.png",
+     "image_sha256": "2b5a67a584678bbc4df49ac87ef6fe2b49828e1f423045ea33e044b55cbe0506",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Of men, to destroy, to kill, to put to death,",
+       "Esth. 3, 9. 13. 2 K. 11, 1. 13, 7.",
+       "Hiph. הֶאֱבִיד i. q. Pi. to destroy, to cut",
+       "off, as men and nations; Deut. 7, 10. 8, 20 ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "97070ba8-f8e1-46c0-8433-c470f912b1d3",
+      "duration_api_ms": 8629,
+      "cost_usd_list": 0.06959375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 290
+     },
+     "lines": [
+      {
+       "draft": "Of men, to destroy, to kill, to put to death,",
+       "reread": "Of men, to destroy, to kill, to put to death,",
+       "status": "agreed",
+       "text": "Of men, to destroy, to kill, to put to death,"
+      },
+      {
+       "draft": "Esth. 3, 9. 13. 2 K. 11, 1. 13, 7.",
+       "reread": "Esth. 3, 9. 13. 2 K. 11, 1. 13, 7.",
+       "status": "agreed",
+       "text": "Esth. 3, 9. 13. 2 K. 11, 1. 13, 7."
+      },
+      {
+       "draft": "Hiph. הֶאֱבִיד i. q. Pi. to destroy, to cut",
+       "reread": "Hiph. הֶאֱבִיד i. q. Pi. to destroy, to cut",
+       "status": "agreed",
+       "text": "Hiph. הֶאֱבִיד i. q. Pi. to destroy, to cut"
+      },
+      {
+       "draft": "off, as men and nations, Deut. 7, 10. 8, 20 ;",
+       "reread": "off, as men and nations; Deut. 7, 10. 8, 20 ;",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "off, as men and nations; Deut. 7, 10. 8, 20 ;",
+        "verdict": "b",
+        "note": "After \"nations\" the print shows a semicolon (dot visible above the comma), not a comma; Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0c83de95-fcb3-48ce-9ac0-1a5df1e38751",
+        "duration_api_ms": 10127,
+        "cost_usd_list": 0.07334550000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3582,
+        "cache_creation_input_tokens": 2628,
+        "output_tokens": 391
+       },
+       "text": "off, as men and nations; Deut. 7, 10. 8, 20;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1020,
+      "y": 2854,
+      "width": 872,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r03-b01-872x236+1020+2854-x2.png",
+     "image_sha256": "4a9e089d31f2669787772ab30136303869ae58801ec88e33bd4e675faeb447f7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sometimes with the addition of מִקֶּרֶב הָעָם",
+       "Lev. 23, 30 ; מִתַּחַת הַשָּׁמַיִם Deut. 7, 24 ;",
+       "also of a land, to lay waste, Zeph. 2, 5 ;",
+       "of hope, Job 14, 19.—Very rarely the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c0eff6ed-4f0e-4701-9640-e6859a9547e8",
+      "duration_api_ms": 9113,
+      "cost_usd_list": 0.06863375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 296
+     },
+     "lines": [
+      {
+       "draft": "sometimes with the addition of מִקֶּרֶב הָעָם",
+       "reread": "sometimes with the addition of מִקֶּרֶב הָעָם",
+       "status": "agreed",
+       "text": "sometimes with the addition of מִקֶּרֶב הָעָם"
+      },
+      {
+       "draft": "Lev. 23, 30 ; מִתַּחַת הַשָּׁמַיִם Deut. 7, 24 ;",
+       "reread": "Lev. 23, 30 ; מִתַּחַת הַשָּׁמַיִם Deut. 7, 24 ;",
+       "status": "agreed",
+       "text": "Lev. 23, 30; מִתַּחַת הַשָּׁמַיִם Deut. 7, 24;"
+      },
+      {
+       "draft": "also of a land, to lay waste, Zeph. 2, 5 ;",
+       "reread": "also of a land, to lay waste, Zeph. 2, 5 ;",
+       "status": "agreed",
+       "text": "also of a land, to lay waste, Zeph. 2, 5;"
+      },
+      {
+       "draft": "of hope, Job 14, 19.—Very rarely the",
+       "reread": "of hope, Job 14, 19.—Very rarely the",
+       "status": "agreed",
+       "text": "of hope, Job 14, 19.—Very rarely the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1020,
+      "y": 3074,
+      "width": 872,
+      "height": 185
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0019/pass2/c1-r03-b02-872x185+1020+3074-x2.png",
+     "image_sha256": "201214d30545cfeb5a4055a94739157677db423592f09ce95df789611367b1b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "quiescent א in 1 pers. fut. is dropped, as",
+       "אֹבִידָה for אַאֲבִידָה Jer. 46, 8.",
+       "Deriv. אֲבֵד—אָבְדָן."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8b15ed49-895b-4371-83c1-0efbd4637c2d",
+      "duration_api_ms": 16375,
+      "cost_usd_list": 0.09240375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2441,
+      "output_tokens": 847
+     },
+     "lines": [
+      {
+       "draft": "quiescent א in 1 pers. fut. is dropped, as",
+       "reread": "quiescent א in 1 pers. fut. is dropped, as",
+       "status": "agreed",
+       "text": "quiescent א in 1 pers. fut. is dropped, as"
+      },
+      {
+       "draft": "אֹבִידָה for אַאֲבִידָה Jer. 46, 8.",
+       "reread": "אֹבִידָה for אַאֲבִידָה Jer. 46, 8.",
+       "status": "agreed",
+       "text": "אֹבִידָה for אַאֲבִידָה Jer. 46, 8."
+      },
+      {
+       "draft": "Deriv. אֹבֵד—אָבְדָן.",
+       "reread": "Deriv. אֲבֵד—אָבְדָן.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "Deriv. אֲבֵד—אָבְדָן.",
+        "verdict": "b",
+        "note": "Under the aleph of the first (rightmost) word the print shows a hataf-pathah (two dots plus a stroke) and there is no holem dot above the aleph, so אֲבֵד (Reading B), not אֹבֵד. Order (אֲבֵד first, then אָבְדָן) and the remaining points agree in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "829c4542-348b-4f4d-abb7-58ffc1954d57",
+        "duration_api_ms": 25989,
+        "cost_usd_list": 0.13065300000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2366,
+        "output_tokens": 1642
+       },
+       "text": "Deriv. אֲבֵד—אָבְדָן."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אב 3 אבל",
+   "status": "adjudicated",
+   "draft": "אב 3 אבד",
+   "reread": "אב 3 אבל",
+   "verdict": "b",
+   "note": "The third letter of the right-hand catchword has an ascender rising above the x-height of א and ב — a lamed, not a dalet (which would be flush with the top line). Running head reads אב 3 אבל.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Once in Gen. 17, 4. 5, the form אַב stands",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "alone, in order to render the etymology",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of אַבְרָהָם more distinct and obvious.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אַב Chald. m. c. suff. 1 pers. אַבִי; אֲבוּךְ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲבוּהִי; plur. אֲבָהָן, the letter ה being",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "inserted (comp. אֲמָה), father, i. q. Heb.",
+   "status": "adjudicated",
+   "draft": "inserted (comp. אָמָה), father, i. q. Heb.",
+   "reread": "inserted (comp. אֲמָה), father, i. q. Heb.",
+   "verdict": "b",
+   "note": "Under the aleph of אֲמָה the print shows a composite hataf-patah (shewa dots plus a short horizontal stroke, matching the hataf under the aleph of אֲבָהָן on the line above), not a T-shaped qamets; so Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אָב, Dan. 2, 23. Ezra 4, 15. 5, 12. Perh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "for grandfather, Dan. 5, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֵב m. (r. אָבַב) greenness, green, ver-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "dure, of a plant. Job 8, 12 עֹדֶנּוּ בְאִבּוֹ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "while yet in its greenness, i. e. yet green",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "and flourishing. Cant. 6, 11 אִבֵּי הַנַּחַל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the greens (green things) of the valley;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Vulg. poma, after the Chaldee usage.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Arab. أبٌّ green fodder.",
+   "status": "adjudicated",
+   "draft": "Arab. أَبّ green fodder.",
+   "reread": "Arab. أبٌّ green fodder.",
+   "verdict": "b",
+   "note": "Over the bāʾ the print stacks a shadda with a dammatan (nominative indefinite ending, \"abbun\"), not a bare shadda; over the alif only the hamza is printed, no fatḥa. That matches Reading B.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵב Chald. (r. אֲבַב) fruit, c. suff. אִנְבֵּהּ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the Dag. forte being resolved into Nun,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Dan. 4, 9. 11. 18. In Targg. often for פֵּרִי.",
+   "status": "adjudicated",
+   "draft": "Dan. 4, 9. 11. 18. In Targg. often for פְּרִי.",
+   "reread": "Dan. 4, 9. 11. 18. In Targg. often for פֵּרִי.",
+   "verdict": "b",
+   "note": "The two dots under the dageshed pe are printed side by side (tsere), not stacked vertically (shewa); the Targumic form is פֵּרִי. Everything else on the line is the same in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אֲבַב in Heb. not used; Chald. Pa.",
+   "status": "adjudicated",
+   "draft": "* אָבַב in Heb. not used; Chald. Pa.",
+   "reread": "* אֲבַב in Heb. not used; Chald. Pa.",
+   "verdict": "b",
+   "note": "Under the aleph the print shows two vertical dots plus a short horizontal stroke — a hataf patah (אֲ), not a qamets; matches the root as printed in line 1 \"(r. אֲבַב)\". Bet carries patah; final bet unpointed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַבֵּב to bear fruit, espec. early ripe, pre-",
+   "status": "adjudicated",
+   "draft": "אַבֵּב to bear fruit, espec. early ripe, pre-",
+   "reread": "אִבֵּב to bear fruit, espec. early ripe, pre-",
+   "verdict": "a",
+   "note": "The vowel under the aleph is a horizontal bar, not a single dot, so it is pataḥ (Chaldee Pael אַבֵּב), not ḥireq as in B. There is a faint speck beneath the bar that could hint at a qameṣ stem, but it is far fainter than the bar and reads as ink noise; the bet has dagesh and ṣere, final bet plain, as both readings agree.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "cocious fruit. Syr. ܗܰܒܶܒ to blossom. In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Arab. and Heb. it seems to have signifi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ed to be green, verdant, to sprout, etc. see",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the deriv. אֵב greenness, אָבִיב green ear.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "The primary idea would seem to be that",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of protruding, sprouting with impetus,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "comp. Engl. to burst forth, to shoot,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Germ. treiben, whence אֵב pr. young",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "shoots; so as to have affinity with the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "roots אָבָה, יָאַב, אָהַב, which express de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "sire, eager impulse; see אָהַב.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲבַגְתָא Abagtha, Pers. pr. n. of a eu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nuch of Xerxes, Esth. 1, 10.—It seems to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "be i. q. בִּגְתָא, and may be explained from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "the Sanscr. bagadâta ‘ a fortuna datus’;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "from baga fortune, the sun. (Bohlen.)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* אָבַד fut. יֹאבַד, and at the end of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "clause יֹאבֵד.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. Prop. to lose oneself, to be lost, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "wander about, espec. of a sheep wander-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ing from the flock and lost; Arab. أَبَدَ to",
+   "status": "adjudicated",
+   "draft": "ing from the flock and lost ; Arab. أَبَدَ to",
+   "reread": "ing from the flock and lost ; Arab. أَبَلَ to",
+   "verdict": "a",
+   "note": "Final Arabic letter is a baseline dāl with fatha (no descending lām bowl): أَبَدَ, the expected cognate of אָבַד. Reading A is correct.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "flee away wild into the desert, to lose",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "oneself in the waste. So שֶׂה אֹבֵד a sheep",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lost and wandering, Ps. 119, 176; comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Jer. 50, 6. Ez. 34, 4. 16. Of men, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "27, 13 הָאֹבְדִים בְּאֶרֶץ אַשּׁוּר who are lost",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "in the land of Assyria, i. e. wander as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "exiles. Deut. 26, 5 אֲרַמִּי אֹבֵד a wander-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ing Syrian. Also of things, e. g. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "streams which lose themselves in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "desert, Job 6, 18. Metaph. of wisdom",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "become extinct, Is. 29, 14.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. to perish, to be destroyed; Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Samar. id. The Arabic in this sense",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "has the kindr. بَادَ. Spoken of persons",
+   "status": "adjudicated",
+   "draft": "has the kindr. بَادَ. Spoken of persons",
+   "reread": "has the kindr. بَاكَ. Spoken of persons",
+   "verdict": "a",
+   "note": "The final Arabic letter is a dāl (د) with fatḥa, not kāf — there is no inner hamza-like stroke that a final kāf (ك) carries, and the shape is the short angular hook of dāl. بَادَ \"to perish\" is also the expected cognate of אָבַד. Reading A is correct.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "and other living things as perishing, Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "37, 20. Job 4, 11; sometimes with מֵעַל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "הָאָרֶץ Deut. 4, 26. 11, 17. Josh. 23, 13. 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Also of a land or houses which are laid",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "waste, Jer. 9, 11. Am. 3, 15. Metaph. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "hope, desires, vows, as failing, being dis-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "appointed, Ps. 9, 19. 112, 10. Prov. 10, 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "11, 7. Ez..12, 22.—Constr. with לְ of pers.",
+   "status": "adjudicated",
+   "draft": "11, 7. Ez..12, 22.—Constr. with לְ of pers.",
+   "reread": "11, 7. Ez. 12, 22.—Constr. with לְ of pers.",
+   "verdict": "a",
+   "note": "After \"Ez\" the print shows two baseline dots running straight into \"12\" with no space (\"Ez..12\"), as in Reading A; Reading B normalises this to a single period plus space. The Hebrew is לְ (lamed + shewa) in both, which matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1 Sam. 9, 3. 20; seq. מִן Deut. 22, 3. Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "11, 20 מָנוֹס אָבַד מִנְהֶם their refuge per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "isheth. Jer. 25, 35. Ps. 142, 5. Ez. 7, 26",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תּוֹרָה תֹּאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+   "status": "adjudicated",
+   "draft": "תּוֹרָה תֹאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+   "reread": "תּוֹרָה תֹּאבַד מִכֹּהֵן וְעֵצָה מִזְּקֵנִים the law",
+   "verdict": "b",
+   "note": "The only difference is the dagesh in the tav of תֹּאבַד; the printed tav shows a dot inside it (as in תּוֹרָה beside it), so the dagesh is printed — Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "shall perish from the priest and counsel",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "from the aged, i. e. shall forsake them,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "comp. Jer. 18, 18. 49, 7. Hence Deut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "32, 28 גּוֹי אֹבַד עֵצוֹת a nation whose",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "counsel is perished, void of counsel, Vulg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "consilii expers. Jer. 4, 9 יֹאבַד לֵב הַמֶּלֶךְ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the heart of the king shall perish, i. e. for",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "fear and terror. Job 8, 13 וְתִקְוַת חָנֵף",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "תֹּאבֵד and [so] shall the hope of the im-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "pious man perish. Ps. 9, 19. 112, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Prov. 10, 28.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "3. to be ready to perish, i. e. to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "wretched, miserable. Part. אֹבֵד one",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "wretched, miserable, unfortunate, Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "29, 13. 31, 19. Prov. 31, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Piel אִבַּד 1. to lose, pr. to let be lost,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to give up as lost, Ecc. 3, 6.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. to make wander, to scatter a flock,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Jer. 23, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "3. to cause to perish, to destroy; Ecc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "7, 7 יְאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+   "status": "adjudicated",
+   "draft": "7, 7 וִיאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+   "reread": "7, 7 יְאַבֵּד אֶת־לֵב מַתָּנָה a gift destroyeth",
+   "verdict": "b",
+   "note": "The verb begins with a single yod carrying sheva (יְאַבֵּד); there is no preceding vav as in Reading A.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "i. e. corrupteth the mind. Seq. מִן, to de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "stroy out of any thing, Jer. 51, 55.—Spec.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a) Of things, to destroy, to lay waste, 2 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "19, 18. Num. 33, 52. Deut. 12, 2. אִבַּד הוֹן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "to waste one's substance, Prov. 29, 3. b)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Of men, to destroy, to kill, to put to death,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Esth. 3, 9. 13. 2 K. 11, 1. 13, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Hiph. הֶאֱבִיד i. q. Pi. to destroy, to cut",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "off, as men and nations; Deut. 7, 10. 8, 20;",
+   "status": "adjudicated",
+   "draft": "off, as men and nations, Deut. 7, 10. 8, 20 ;",
+   "reread": "off, as men and nations; Deut. 7, 10. 8, 20 ;",
+   "verdict": "b",
+   "note": "After \"nations\" the print shows a semicolon (dot visible above the comma), not a comma; Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "sometimes with the addition of מִקֶּרֶב הָעָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Lev. 23, 30; מִתַּחַת הַשָּׁמַיִם Deut. 7, 24;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "also of a land, to lay waste, Zeph. 2, 5;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of hope, Job 14, 19.—Very rarely the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "quiescent א in 1 pers. fut. is dropped, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֹבִידָה for אַאֲבִידָה Jer. 46, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Deriv. אֲבֵד—אָבְדָן.",
+   "status": "adjudicated",
+   "draft": "Deriv. אֹבֵד—אָבְדָן.",
+   "reread": "Deriv. אֲבֵד—אָבְדָן.",
+   "verdict": "b",
+   "note": "Under the aleph of the first (rightmost) word the print shows a hataf-pathah (two dots plus a stroke) and there is no holem dot above the aleph, so אֲבֵד (Reading B), not אֹבֵד. Order (אֲבֵד first, then אָבְדָן) and the remaining points agree in both readings.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 92,
+  "adjudicated": 13,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 3
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.484
+}

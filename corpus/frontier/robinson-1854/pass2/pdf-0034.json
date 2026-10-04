@@ -1,0 +1,2607 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 34,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0034.png",
+ "raster_sha256": "05649a35da1465a27b82e3a3d3cf2b6404e08ae29da694a2bed99cdf1f3e1271",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0034.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:10:56+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 233,
+    "y": 132,
+    "width": 1755,
+    "height": 75
+   },
+   "draft_lines": [
+    "אהר",
+    "18",
+    "אהל"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 233,
+      "y": 130,
+      "width": 1755,
+      "height": 79
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/header-b00-1755x79+233+130-x2.png",
+     "image_sha256": "ee7dc48db954a75781ac0a282117e9a3d82c3eaac0fac8197a03f41aee65179d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אהו 18 אהל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ed5f7ae1-f9f1-4d45-8a73-813674c29433",
+      "duration_api_ms": 7878,
+      "cost_usd_list": 0.0492225,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 213
+     },
+     "lines": [
+      {
+       "draft": "אהר 18 אהל",
+       "reread": "אהו 18 אהל",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אהו 18 אהל",
+        "verdict": "b",
+        "note": "The decisive letter is the last glyph of the left-hand word: it is a narrow vertical stroke with only a small head, about a third the width of the preceding he, i.e. a vav; a resh in this typeface would have a broad flat head nearly as wide as the he. Read as אהו, matching Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7a95a74c-3434-4222-aed3-6e3876287c3b",
+        "duration_api_ms": 29247,
+        "cost_usd_list": 0.12798575,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1783,
+        "output_tokens": 1828
+       },
+       "text": "אהו 18 אהל"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 233,
+    "y": 186,
+    "width": 863,
+    "height": 786
+   },
+   "draft_lines": [
+    "row, and imitating the sound or cry, ah !",
+    "alas ! comp. Arab. آهٌ, أَوَّهْ, whence the",
+    "verbs أَهَّ and آهَ to grieve, lament, like",
+    "Germ. ach, ächzen. Mostly in the con-",
+    "nection אֲהָהּ אֲדֹנָי יְהוִה ah ! Lord God,",
+    "Josh. 7, 7. Judg. 6, 22 ; or אֲהָהּ אֲדֹנָי 2 K.",
+    "6, 5. 15. Alone, 2 K. 3, 10 ; c. dat. Joel",
+    "1, 15.",
+    "אֵהוּד (union, r. אָחַד) Ehud, pr. n. m.",
+    "a) A judge of Israel, Judg. 3, 15 sq. 4, 1.",
+    "Sept. Ἀώδ. b) 1 Chr. 7, 10."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 233,
+      "y": 178,
+      "width": 863,
+      "height": 310
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r00-b00-863x310+233+178-x2.png",
+     "image_sha256": "79c4a13933bee9e3498ef9265e976d283d5fd5715025f36d007e924c773db56e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "row, and imitating the sound or cry, ah !",
+       "alas ! comp. Arab. آهْ, أَوَّاهِ, whence the",
+       "verbs أَهَّ and آهَ to grieve, lament, like"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cb60be9d-465d-40ad-8812-2eb4cc6ecf66",
+      "duration_api_ms": 23200,
+      "cost_usd_list": 0.11290325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2981,
+      "output_tokens": 1041
+     },
+     "lines": [
+      {
+       "draft": "row, and imitating the sound or cry, ah !",
+       "reread": "row, and imitating the sound or cry, ah !",
+       "status": "agreed",
+       "text": "row, and imitating the sound or cry, ah!"
+      },
+      {
+       "draft": "alas ! comp. Arab. آهٌ, أَوَّهْ, whence the",
+       "reread": "alas ! comp. Arab. آهْ, أَوَّاهِ, whence the",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "alas ! comp. Arab. آهْ, أَوَّاهِ, whence the",
+        "verdict": "b",
+        "note": "First Arabic word carries a small circle (sukun) over the ha, not tanwin; second word shows a tall alif before the final ha with a kasra printed beneath it, matching أَوَّاهِ rather than A's أَوَّهْ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bbd32693-8d22-484d-8f22-d811da449d15",
+        "duration_api_ms": 19291,
+        "cost_usd_list": 0.1164265,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2922,
+        "output_tokens": 1135
+       },
+       "text": "alas! comp. Arab. آهْ, أَوَّاهِ, whence the"
+      },
+      {
+       "draft": "verbs أَهَّ and آهَ to grieve, lament, like",
+       "reread": "verbs أَهَّ and آهَ to grieve, lament, like",
+       "status": "agreed",
+       "text": "verbs أَهَّ and آهَ to grieve, lament, like"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 233,
+      "y": 472,
+      "width": 863,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r00-b01-863x237+233+472-x2.png",
+     "image_sha256": "cac2f28a95ec16543cffc6938e55aa91469c0a78627cd245b19a8cd12b73a376",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Germ. ach, ächzen. Mostly in the con-",
+       "nection אֲהָהּ אֲדֹנָי יְהוִה ah ! Lord God,",
+       "Josh. 7, 7. Judg. 6, 22 ; or אֲהָהּ אֲדֹנָי 2 K.",
+       "6, 5. 15. Alone, 2 K. 3, 10 ; c. dat. Joel"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7bd0583f-feb8-4f25-a20a-1a04fde76684",
+      "duration_api_ms": 10458,
+      "cost_usd_list": 0.08326324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 597
+     },
+     "lines": [
+      {
+       "draft": "Germ. ach, ächzen. Mostly in the con-",
+       "reread": "Germ. ach, ächzen. Mostly in the con-",
+       "status": "agreed",
+       "text": "Germ. ach, ächzen. Mostly in the con-"
+      },
+      {
+       "draft": "nection אֲהָהּ אֲדֹנָי יְהוִה ah ! Lord God,",
+       "reread": "nection אֲהָהּ אֲדֹנָי יְהוִה ah ! Lord God,",
+       "status": "agreed",
+       "text": "nection אֲהָהּ אֲדֹנָי יְהוִה ah! Lord God,"
+      },
+      {
+       "draft": "Josh. 7, 7. Judg. 6, 22 ; or אֲהָהּ אֲדֹנָי 2 K.",
+       "reread": "Josh. 7, 7. Judg. 6, 22 ; or אֲהָהּ אֲדֹנָי 2 K.",
+       "status": "agreed",
+       "text": "Josh. 7, 7. Judg. 6, 22; or אֲהָהּ אֲדֹנָי 2 K."
+      },
+      {
+       "draft": "6, 5. 15. Alone, 2 K. 3, 10 ; c. dat. Joel",
+       "reread": "6, 5. 15. Alone, 2 K. 3, 10 ; c. dat. Joel",
+       "status": "agreed",
+       "text": "6, 5. 15. Alone, 2 K. 3, 10; c. dat. Joel"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 233,
+      "y": 693,
+      "width": 863,
+      "height": 207
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r00-b02-863x207+233+693-x2.png",
+     "image_sha256": "090d6da543b7857fb0418c538ee0b7802e107fef684becfb4762a731fad56a62",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1, 15.",
+       "אֵהוּד (union, r. אָחַד) Ehud, pr. n. m.",
+       "a) A judge of Israel, Judg. 3, 15 sq. 4, 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ac547aa4-dcfb-459e-8efd-f36bf8806c71",
+      "duration_api_ms": 16878,
+      "cost_usd_list": 0.09043324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2485,
+      "output_tokens": 790
+     },
+     "lines": [
+      {
+       "draft": "1, 15.",
+       "reread": "1, 15.",
+       "status": "agreed",
+       "text": "1, 15."
+      },
+      {
+       "draft": "אֵהוּד (union, r. אָחַד) Ehud, pr. n. m.",
+       "reread": "אֵהוּד (union, r. אָחַד) Ehud, pr. n. m.",
+       "status": "agreed",
+       "text": "אֵהוּד (union, r. אָחַד) Ehud, pr. n. m."
+      },
+      {
+       "draft": "a) A judge of Israel, Judg. 3, 15 sq. 4, 1.",
+       "reread": "a) A judge of Israel, Judg. 3, 15 sq. 4, 1.",
+       "status": "agreed",
+       "text": "a) A judge of Israel, Judg. 3, 15 sq. 4, 1."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 233,
+      "y": 884,
+      "width": 863,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r00-b03-863x72+233+884-x2.png",
+     "image_sha256": "d645492180c1c10981d7210c6a7d7d443d5bb69b84452ad0e583871b88e69860",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Sept. Ἀώδ. b) 1 Chr. 7, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1256e103-4dcc-4e50-861d-dd4ed3d58075",
+      "duration_api_ms": 7476,
+      "cost_usd_list": 0.051073249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1927,
+      "output_tokens": 226
+     },
+     "lines": [
+      {
+       "draft": "Sept. Ἀώδ. b) 1 Chr. 7, 10.",
+       "reread": "Sept. Ἀώδ. b) 1 Chr. 7, 10.",
+       "status": "agreed",
+       "text": "Sept. Ἀώδ. b) 1 Chr. 7, 10."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 233,
+    "y": 960,
+    "width": 863,
+    "height": 647
+   },
+   "draft_lines": [
+    "אַהֲוָא Ahava, pr. n. of a river between",
+    "Babylon and Jerusalem, Ezra 8, 21. 31.",
+    "The same is probably meant in v. 15,",
+    "where we may render: the river that",
+    "runneth to the Ahava. It is hardly",
+    "doubtful, that the word signifies pr. wa-",
+    "ter, aqua; comp. Sanscr. ap, Pers. ab,",
+    "Goth. ahva, Lat. aqua. It is hard to",
+    "say what river is meant; possibly the",
+    "Euphrates, which was called κατ᾽ ἐξοχήν",
+    "the river; comp. הַנָּהָר."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 233,
+      "y": 977,
+      "width": 863,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r01-b00-863x230+233+977-x2.png",
+     "image_sha256": "f860063131f51d8037f29a62c3c06c12d398a9046a9cef3ae18d08d165ee4700",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַהֲוָא Ahava, pr. n. of a river between",
+       "Babylon and Jerusalem, Ezra 8, 21. 31.",
+       "The same is probably meant in v. 15,",
+       "where we may render: the river that"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "207b59c4-1177-4b15-8813-39368b3597c2",
+      "duration_api_ms": 8940,
+      "cost_usd_list": 0.06921325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 316
+     },
+     "lines": [
+      {
+       "draft": "אַהֲוָא Ahava, pr. n. of a river between",
+       "reread": "אַהֲוָא Ahava, pr. n. of a river between",
+       "status": "agreed",
+       "text": "אַהֲוָא Ahava, pr. n. of a river between"
+      },
+      {
+       "draft": "Babylon and Jerusalem, Ezra 8, 21. 31.",
+       "reread": "Babylon and Jerusalem, Ezra 8, 21. 31.",
+       "status": "agreed",
+       "text": "Babylon and Jerusalem, Ezra 8, 21. 31."
+      },
+      {
+       "draft": "The same is probably meant in v. 15,",
+       "reread": "The same is probably meant in v. 15,",
+       "status": "agreed",
+       "text": "The same is probably meant in v. 15,"
+      },
+      {
+       "draft": "where we may render: the river that",
+       "reread": "where we may render: the river that",
+       "status": "agreed",
+       "text": "where we may render: the river that"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 233,
+      "y": 1191,
+      "width": 863,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r01-b01-863x234+233+1191-x2.png",
+     "image_sha256": "a35cfba4e36c856cd28800c1369ff06cbfe4b71f31a06f3c63ff2859364c8944",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "runneth to the Ahava. It is hardly",
+       "doubtful, that the word signifies pr. wa-",
+       "ter, aqua ; comp. Sanscr. ap, Pers. ab,",
+       "Goth. ahva, Lat. aqua. It is hard to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6ab46076-8320-486f-88c5-4785f0df5ab6",
+      "duration_api_ms": 7831,
+      "cost_usd_list": 0.0666535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "runneth to the Ahava. It is hardly",
+       "reread": "runneth to the Ahava. It is hardly",
+       "status": "agreed",
+       "text": "runneth to the Ahava. It is hardly"
+      },
+      {
+       "draft": "doubtful, that the word signifies pr. wa-",
+       "reread": "doubtful, that the word signifies pr. wa-",
+       "status": "agreed",
+       "text": "doubtful, that the word signifies pr. wa-"
+      },
+      {
+       "draft": "ter, aqua; comp. Sanscr. ap, Pers. ab,",
+       "reread": "ter, aqua ; comp. Sanscr. ap, Pers. ab,",
+       "status": "agreed",
+       "text": "ter, aqua; comp. Sanscr. ap, Pers. ab,"
+      },
+      {
+       "draft": "Goth. ahva, Lat. aqua. It is hard to",
+       "reread": "Goth. ahva, Lat. aqua. It is hard to",
+       "status": "agreed",
+       "text": "Goth. ahva, Lat. aqua. It is hard to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 233,
+      "y": 1409,
+      "width": 863,
+      "height": 184
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r01-b02-863x184+233+1409-x2.png",
+     "image_sha256": "cbef823b51b4f1ed0b99ae0bfa74fb67b254ade60d9ef16b3de9455246c7c900",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "say what river is meant; possibly the",
+       "Euphrates, which was called κατ᾽ ἐξοχήν",
+       "the river; comp. הַנָּהָר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6e59098-88c3-4881-8dd3-fd82ef8fa8dd",
+      "duration_api_ms": 7892,
+      "cost_usd_list": 0.06128349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 231
+     },
+     "lines": [
+      {
+       "draft": "say what river is meant; possibly the",
+       "reread": "say what river is meant; possibly the",
+       "status": "agreed",
+       "text": "say what river is meant; possibly the"
+      },
+      {
+       "draft": "Euphrates, which was called κατ᾽ ἐξοχήν",
+       "reread": "Euphrates, which was called κατ᾽ ἐξοχήν",
+       "status": "agreed",
+       "text": "Euphrates, which was called κατ᾽ ἐξοχήν"
+      },
+      {
+       "draft": "the river; comp. הַנָּהָר.",
+       "reread": "the river; comp. הַנָּהָר.",
+       "status": "agreed",
+       "text": "the river; comp. הַנָּהָר."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 233,
+    "y": 1595,
+    "width": 863,
+    "height": 708
+   },
+   "draft_lines": [
+    "אֱהִי Hos. 13, 10, i. q. אַיֵּה, אֵי, where?",
+    "Elsewhere אֱהִי is always 1 pers. fut.",
+    "apoc. from r. הָיָה to be ; and not improb.",
+    "it is here an error of transcription arising",
+    "out of v. 7. 14, instead of אַיֵּה. The",
+    "words are אֱהִי מַלְכְּךָ אֵפוֹא where then is",
+    "thy king ? the two words אֱהִי אֵפוֹא be-",
+    "ing closely joined, as elsewhere אֵי אֵפוֹא.",
+    "—Ewald regards this word (Gr. § 444) as",
+    "compounded from אֱ (i. q. הֲ) and הִי i. e.",
+    "hic, here; comp. Ethiop. ህየ ibi, ዝየ",
+    "hic, huc. So too Hupfeld."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 233,
+      "y": 1610,
+      "width": 863,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r02-b00-863x231+233+1610-x2.png",
+     "image_sha256": "16485bf5cca92e005c1ff701978dae9d40c153b2dfd85eae9a8bf2d4b58cde73",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱהִי Hos. 13, 10, i. q. אַיֵּה, אֵי, where?",
+       "Elsewhere אֱהִי is always 1 pers. fut.",
+       "apoc. from r. הָיָה to be ; and not improb.",
+       "it is here an error of transcription arising"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "25b66df2-088b-4582-8246-51ad804c4637",
+      "duration_api_ms": 12034,
+      "cost_usd_list": 0.0808035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 547
+     },
+     "lines": [
+      {
+       "draft": "אֱהִי Hos. 13, 10, i. q. אַיֵּה, אֵי, where?",
+       "reread": "אֱהִי Hos. 13, 10, i. q. אַיֵּה, אֵי, where?",
+       "status": "agreed",
+       "text": "אֱהִי Hos. 13, 10, i. q. אַיֵּה, אֵי, where?"
+      },
+      {
+       "draft": "Elsewhere אֱהִי is always 1 pers. fut.",
+       "reread": "Elsewhere אֱהִי is always 1 pers. fut.",
+       "status": "agreed",
+       "text": "Elsewhere אֱהִי is always 1 pers. fut."
+      },
+      {
+       "draft": "apoc. from r. הָיָה to be ; and not improb.",
+       "reread": "apoc. from r. הָיָה to be ; and not improb.",
+       "status": "agreed",
+       "text": "apoc. from r. הָיָה to be; and not improb."
+      },
+      {
+       "draft": "it is here an error of transcription arising",
+       "reread": "it is here an error of transcription arising",
+       "status": "agreed",
+       "text": "it is here an error of transcription arising"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 233,
+      "y": 1825,
+      "width": 863,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r02-b01-863x234+233+1825-x2.png",
+     "image_sha256": "5a70aa4de13fe0ea9033fc4b8151c0b058786ab9958e2e940c266d7b20e16151",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "out of v. 7. 14, instead of אַיֵּה. The",
+       "words are אֱהִי מַלְכְּךָ אֵפוֹא where then is",
+       "thy king? the two words אֱהִי אֵפוֹא be-",
+       "ing closely joined, as elsewhere אֵי אֵפוֹא."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "44f81f3d-5b3c-4f4e-987d-1d642a3f1039",
+      "duration_api_ms": 16504,
+      "cost_usd_list": 0.09600349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 851
+     },
+     "lines": [
+      {
+       "draft": "out of v. 7. 14, instead of אַיֵּה. The",
+       "reread": "out of v. 7. 14, instead of אַיֵּה. The",
+       "status": "agreed",
+       "text": "out of v. 7. 14, instead of אַיֵּה. The"
+      },
+      {
+       "draft": "words are אֱהִי מַלְכְּךָ אֵפוֹא where then is",
+       "reread": "words are אֱהִי מַלְכְּךָ אֵפוֹא where then is",
+       "status": "agreed",
+       "text": "words are אֱהִי מַלְכְּךָ אֵפוֹא where then is"
+      },
+      {
+       "draft": "thy king ? the two words אֱהִי אֵפוֹא be-",
+       "reread": "thy king? the two words אֱהִי אֵפוֹא be-",
+       "status": "agreed",
+       "text": "thy king? the two words אֱהִי אֵפוֹא be-"
+      },
+      {
+       "draft": "ing closely joined, as elsewhere אֵי אֵפוֹא.",
+       "reread": "ing closely joined, as elsewhere אֵי אֵפוֹא.",
+       "status": "agreed",
+       "text": "ing closely joined, as elsewhere אֵי אֵפוֹא."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 233,
+      "y": 2043,
+      "width": 863,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r02-b02-863x247+233+2043-x2.png",
+     "image_sha256": "9b05b06771ae24a47cdada5422d3f48cddff53f48897e29a57d90cf1f6316153",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "—Ewald regards this word (Gr. § 444) as",
+       "compounded from אֱ (i. q. הָ) and הִי i. e.",
+       "hic, here; comp. Ethiop. ህየ ibi, ዝየ",
+       "hic, huc. So too Hupfeld."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a58b66c3-c763-44fc-8fdd-b1e996397bcd",
+      "duration_api_ms": 12680,
+      "cost_usd_list": 0.07809350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 468
+     },
+     "lines": [
+      {
+       "draft": "—Ewald regards this word (Gr. § 444) as",
+       "reread": "—Ewald regards this word (Gr. § 444) as",
+       "status": "agreed",
+       "text": "—Ewald regards this word (Gr. § 444) as"
+      },
+      {
+       "draft": "compounded from אֱ (i. q. הֲ) and הִי i. e.",
+       "reread": "compounded from אֱ (i. q. הָ) and הִי i. e.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "compounded from אֱ (i. q. הֲ) and הִי i. e.",
+        "verdict": "a",
+        "note": "The he in the parenthesis carries a hataf patah (short horizontal stroke plus two dots beneath), not a qamats; this is the interrogative הֲ, paralleling the hataf segol under the preceding alef.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "46c9f8c2-cd0a-4e66-83ae-42178aefffad",
+        "duration_api_ms": 15029,
+        "cost_usd_list": 0.086275,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2607,
+        "output_tokens": 658
+       },
+       "text": "compounded from אֱ (i. q. הֲ) and הִי i. e."
+      },
+      {
+       "draft": "hic, here; comp. Ethiop. ህየ ibi, ዝየ",
+       "reread": "hic, here; comp. Ethiop. ህየ ibi, ዝየ",
+       "status": "agreed",
+       "text": "hic, here; comp. Ethiop. ህየ ibi, ዝየ"
+      },
+      {
+       "draft": "hic, huc. So too Hupfeld.",
+       "reread": "hic, huc. So too Hupfeld.",
+       "status": "agreed",
+       "text": "hic, huc. So too Hupfeld."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 233,
+    "y": 2291,
+    "width": 863,
+    "height": 986
+   },
+   "draft_lines": [
+    "* אָהַל perh. i. q. הָלַל, هَلَّ 1. to shine,",
+    "to glitter, from the mutual relation of",
+    "verbs פ״א and ע״ע; see Hiph.—Hence",
+    "אֹהֶל tent, from the shining, glittering",
+    "appearance.",
+    "2. Denom. from אֹהֶל tent, to tent, to",
+    "move one's tent, in the manner of no-",
+    "mades, now pitching their tents in one",
+    "place and then removing to another.",
+    "Gen. 13, 12. 18 וַיֶּאֱהַל אַבְרָם, Sept. ἀπο-",
+    "σκηνώσας Ἀβράμ, Vulg. movens taberna-",
+    "culum suum.",
+    "Piel, fut. יְאַהֵל contr. יַהֵל, i. q. Kal no.",
+    "2, to pitch one's tent, in the nomadic man-",
+    "ner, Is. 13, 20. Comp. מַלֵּף for מְאַלֵּף.",
+    "Hiph. i. q. Kal no. 1, to shine, pr. to",
+    "give light. Job 25, 5 הֵן עַד־יָרֵחַ וְלֹא־"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 233,
+      "y": 2305,
+      "width": 863,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r03-b00-863x250+233+2305-x2.png",
+     "image_sha256": "10851ef88573b39b049cbb3d92fc683f56a077753c81d2659c6bdf5858960b49",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָהַל perh. i. q. הָלַל, هَلَّ 1. to shine,",
+       "to glitter, from the mutual relation of",
+       "verbs פ״א and ע״ע; see Hiph.—Hence",
+       "אֹהֶל tent, from the shining, glittering"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ad008f41-3597-4bed-bb88-204f721cbc74",
+      "duration_api_ms": 10214,
+      "cost_usd_list": 0.0741435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 389
+     },
+     "lines": [
+      {
+       "draft": "* אָהַל perh. i. q. הָלַל, هَلَّ 1. to shine,",
+       "reread": "* אָהַל perh. i. q. הָלַל, هَلَّ 1. to shine,",
+       "status": "agreed",
+       "text": "* אָהַל perh. i. q. הָלַל, هَلَّ 1. to shine,"
+      },
+      {
+       "draft": "to glitter, from the mutual relation of",
+       "reread": "to glitter, from the mutual relation of",
+       "status": "agreed",
+       "text": "to glitter, from the mutual relation of"
+      },
+      {
+       "draft": "verbs פ״א and ע״ע; see Hiph.—Hence",
+       "reread": "verbs פ״א and ע״ע; see Hiph.—Hence",
+       "status": "agreed",
+       "text": "verbs פ״א and ע״ע; see Hiph.—Hence"
+      },
+      {
+       "draft": "אֹהֶל tent, from the shining, glittering",
+       "reread": "אֹהֶל tent, from the shining, glittering",
+       "status": "agreed",
+       "text": "אֹהֶל tent, from the shining, glittering"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 233,
+      "y": 2539,
+      "width": 863,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r03-b01-863x236+233+2539-x2.png",
+     "image_sha256": "97f845a00efcefc83be63919d8ed1b5f3f82b612af1b43fa90276938a6cdc89e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "appearance.",
+       "2. Denom. from אֹהֶל tent, to tent, to",
+       "move one's tent, in the manner of no-",
+       "mades, now pitching their tents in one"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5bf5b9e0-9d6c-4786-91fc-0ea507f35fbb",
+      "duration_api_ms": 4689,
+      "cost_usd_list": 0.0652035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "appearance.",
+       "reread": "appearance.",
+       "status": "agreed",
+       "text": "appearance."
+      },
+      {
+       "draft": "2. Denom. from אֹהֶל tent, to tent, to",
+       "reread": "2. Denom. from אֹהֶל tent, to tent, to",
+       "status": "agreed",
+       "text": "2. Denom. from אֹהֶל tent, to tent, to"
+      },
+      {
+       "draft": "move one's tent, in the manner of no-",
+       "reread": "move one's tent, in the manner of no-",
+       "status": "agreed",
+       "text": "move one's tent, in the manner of no-"
+      },
+      {
+       "draft": "mades, now pitching their tents in one",
+       "reread": "mades, now pitching their tents in one",
+       "status": "agreed",
+       "text": "mades, now pitching their tents in one"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 233,
+      "y": 2759,
+      "width": 863,
+      "height": 225
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r03-b02-863x225+233+2759-x2.png",
+     "image_sha256": "381322ea6482f263d12e9e5514870d2bff2f8e26fa92829e2b9842e1092c55b5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "place and then removing to another.",
+       "Gen. 13, 12. 18 וַיֶּאֱהַל אַבְרָם, Sept. ἀπο-",
+       "σκηνώσας Ἀβράμ, Vulg. movens taberna-",
+       "culum suum."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7ab4b25f-a133-4032-9ef3-021bf1e9f36e",
+      "duration_api_ms": 10081,
+      "cost_usd_list": 0.07255349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 382
+     },
+     "lines": [
+      {
+       "draft": "place and then removing to another.",
+       "reread": "place and then removing to another.",
+       "status": "agreed",
+       "text": "place and then removing to another."
+      },
+      {
+       "draft": "Gen. 13, 12. 18 וַיֶּאֱהַל אַבְרָם, Sept. ἀπο-",
+       "reread": "Gen. 13, 12. 18 וַיֶּאֱהַל אַבְרָם, Sept. ἀπο-",
+       "status": "agreed",
+       "text": "Gen. 13, 12. 18 וַיֶּאֱהַל אַבְרָם, Sept. ἀπο-"
+      },
+      {
+       "draft": "σκηνώσας Ἀβράμ, Vulg. movens taberna-",
+       "reread": "σκηνώσας Ἀβράμ, Vulg. movens taberna-",
+       "status": "agreed",
+       "text": "σκηνώσας Ἀβράμ, Vulg. movens taberna-"
+      },
+      {
+       "draft": "culum suum.",
+       "reread": "culum suum.",
+       "status": "agreed",
+       "text": "culum suum."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 233,
+      "y": 2968,
+      "width": 863,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r03-b03-863x252+233+2968-x2.png",
+     "image_sha256": "09e5b7d6f70c7125762def0f28b74070d95669e74c77d63d2d26f0f55ee4adc4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Piel, fut. יְאַהֵל contr. יַהֵל, i. q. Kal no.",
+       "2, to pitch one's tent, in the nomadic man-",
+       "ner, Is. 13, 20. Comp. מַלֵּף for מְאַלֵּף.",
+       "Hiph. i. q. Kal no. 1, to shine, pr. to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88aa9e22-30e4-4ec3-8bd9-b89aca28b7d6",
+      "duration_api_ms": 12172,
+      "cost_usd_list": 0.08214350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 549
+     },
+     "lines": [
+      {
+       "draft": "Piel, fut. יְאַהֵל contr. יַהֵל, i. q. Kal no.",
+       "reread": "Piel, fut. יְאַהֵל contr. יַהֵל, i. q. Kal no.",
+       "status": "agreed",
+       "text": "Piel, fut. יְאַהֵל contr. יַהֵל, i. q. Kal no."
+      },
+      {
+       "draft": "2, to pitch one's tent, in the nomadic man-",
+       "reread": "2, to pitch one's tent, in the nomadic man-",
+       "status": "agreed",
+       "text": "2, to pitch one's tent, in the nomadic man-"
+      },
+      {
+       "draft": "ner, Is. 13, 20. Comp. מַלֵּף for מְאַלֵּף.",
+       "reread": "ner, Is. 13, 20. Comp. מַלֵּף for מְאַלֵּף.",
+       "status": "agreed",
+       "text": "ner, Is. 13, 20. Comp. מַלֵּף for מְאַלֵּף."
+      },
+      {
+       "draft": "Hiph. i. q. Kal no. 1, to shine, pr. to",
+       "reread": "Hiph. i. q. Kal no. 1, to shine, pr. to",
+       "status": "agreed",
+       "text": "Hiph. i. q. Kal no. 1, to shine, pr. to"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b04",
+     "bounds": {
+      "x": 233,
+      "y": 3204,
+      "width": 863,
+      "height": 75
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c0-r03-b04-863x75+233+3204-x2.png",
+     "image_sha256": "2db3bbcfc36c4852c9cc2af4ff0fc5411b28cf2c593b5f3b9094d66eff6ff44b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "give light. Job 25, 5 הֵן עַד־יָרֵחַ וְלֹא־"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b1d391c7-7398-4c5f-97d7-7e004a291ce8",
+      "duration_api_ms": 10211,
+      "cost_usd_list": 0.058463499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1929,
+      "output_tokens": 373
+     },
+     "lines": [
+      {
+       "draft": "give light. Job 25, 5 הֵן עַד־יָרֵחַ וְלֹא־",
+       "reread": "give light. Job 25, 5 הֵן עַד־יָרֵחַ וְלֹא־",
+       "status": "agreed",
+       "text": "give light. Job 25, 5 הֵן עַד־יָרֵחַ וְלֹא־"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1114,
+    "y": 186,
+    "width": 874,
+    "height": 913
+   },
+   "draft_lines": [
+    "יַאֲהִיל lo ! even the moon, it shineth not,",
+    "i. e. is not bright, pure, in the sight of",
+    "God. Jerome : ecce ! luna etiam non",
+    "splendet. Sept. οὐκ ἐπιφαύσκει.",
+    "The deriv. follow.",
+    "אֹהֶל c. suff. אָהֳלִי, אָהָלְךָ (ŏhŏlka),",
+    "with He parag. אֹהֱלָה; Plur. אֹהָלִים",
+    "Syriasm for אֳהָלִים Lehrg. p. 152, 572 ;",
+    "with pref. בָּאֳהָלִים Judg. 8, 11. Jer. 35, 7.",
+    "10 ; constr. אָהֳלֵי, c. suff. אֹהָלָיו, אֹהָלֶיךָ,",
+    "אָהֳלֵיכֶם.",
+    "1. a tent, tabernacle, Gen. 9, 27. al.",
+    "אֹהֶל מוֹעֵד tabernacle of the congregation",
+    "or of assembly, comm. tabernacle of the",
+    "covenant, i. e. the movable and portable"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1114,
+      "y": 178,
+      "width": 874,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r00-b00-874x297+1114+178-x2.png",
+     "image_sha256": "9577675626a2f898fc8f84f01722976b165447c146d5c51b84ec7e34d879dc3b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "יַאֲהִיל lo! even the moon, it shineth not,",
+       "i. e. is not bright, pure, in the sight of",
+       "God. Jerome: ecce! luna etiam non",
+       "splendet. Sept. οὐκ ἐπιφαύσκει."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d72950b8-6767-46d4-a23d-73043af77e06",
+      "duration_api_ms": 12010,
+      "cost_usd_list": 0.08359349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 470
+     },
+     "lines": [
+      {
+       "draft": "יַאֲהִיל lo ! even the moon, it shineth not,",
+       "reread": "יַאֲהִיל lo! even the moon, it shineth not,",
+       "status": "agreed",
+       "text": "יַאֲהִיל lo! even the moon, it shineth not,"
+      },
+      {
+       "draft": "i. e. is not bright, pure, in the sight of",
+       "reread": "i. e. is not bright, pure, in the sight of",
+       "status": "agreed",
+       "text": "i. e. is not bright, pure, in the sight of"
+      },
+      {
+       "draft": "God. Jerome : ecce ! luna etiam non",
+       "reread": "God. Jerome: ecce! luna etiam non",
+       "status": "agreed",
+       "text": "God. Jerome: ecce! luna etiam non"
+      },
+      {
+       "draft": "splendet. Sept. οὐκ ἐπιφαύσκει.",
+       "reread": "splendet. Sept. οὐκ ἐπιφαύσκει.",
+       "status": "agreed",
+       "text": "splendet. Sept. οὐκ ἐπιφαύσκει."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1114,
+      "y": 459,
+      "width": 874,
+      "height": 367
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r00-b01-874x367+1114+459-x2.png",
+     "image_sha256": "74b5a46e8437233a85585e7b3420cf5627922b1d87b80bed2c8e187ed6cc60d5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "The deriv. follow.",
+       "אֹהֶל c. suff. אָהֳלִי, אָהֳלְךָ (ŏhŏlka),",
+       "with He parag. אֹהֱלָה; Plur. אֹהָלִים",
+       "Syriasm for אֳהָלִים Lehrg. p. 152, 572 ;",
+       "with pref. בָּאֳהָלִים Judg. 8, 11. Jer. 35, 7.",
+       "10; constr. אָהֳלֵי, c. suff. אֹהָלַיו, אֹהָלֶיךָ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8fefa90f-3b13-429f-a298-284c2a6908de",
+      "duration_api_ms": 19788,
+      "cost_usd_list": 0.1239935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3258,
+      "output_tokens": 1152
+     },
+     "lines": [
+      {
+       "draft": "The deriv. follow.",
+       "reread": "The deriv. follow.",
+       "status": "agreed",
+       "text": "The deriv. follow."
+      },
+      {
+       "draft": "אֹהֶל c. suff. אָהֳלִי, אָהָלְךָ (ŏhŏlka),",
+       "reread": "אֹהֶל c. suff. אָהֳלִי, אָהֳלְךָ (ŏhŏlka),",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "אֹהֶל c. suff. אָהֳלִי, אָהֳלְךָ (ŏhŏlka),",
+        "verdict": "b",
+        "note": "Under the ה of אהלך the print shows ḥaṭeph qamats (ֳ), matching the first word אָהֳלִי and the transliteration ŏhŏlka; Reading A's plain qamats is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7711146d-64c1-4b29-953f-a6b2d6f6b73b",
+        "duration_api_ms": 19001,
+        "cost_usd_list": 0.1119325,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3610,
+        "cache_creation_input_tokens": 3222,
+        "output_tokens": 925
+       },
+       "text": "אֹהֶל c. suff. אָהֳלִי, אָהֳלְךָ (ŏhŏlka),"
+      },
+      {
+       "draft": "with He parag. אֹהֱלָה; Plur. אֹהָלִים",
+       "reread": "with He parag. אֹהֱלָה; Plur. אֹהָלִים",
+       "status": "agreed",
+       "text": "with He parag. אֹהֱלָה; Plur. אֹהָלִים"
+      },
+      {
+       "draft": "Syriasm for אֳהָלִים Lehrg. p. 152, 572 ;",
+       "reread": "Syriasm for אֳהָלִים Lehrg. p. 152, 572 ;",
+       "status": "agreed",
+       "text": "Syriasm for אֳהָלִים Lehrg. p. 152, 572;"
+      },
+      {
+       "draft": "with pref. בָּאֳהָלִים Judg. 8, 11. Jer. 35, 7.",
+       "reread": "with pref. בָּאֳהָלִים Judg. 8, 11. Jer. 35, 7.",
+       "status": "agreed",
+       "text": "with pref. בָּאֳהָלִים Judg. 8, 11. Jer. 35, 7."
+      },
+      {
+       "draft": "10 ; constr. אָהֳלֵי, c. suff. אֹהָלָיו, אֹהָלֶיךָ,",
+       "reread": "10; constr. אָהֳלֵי, c. suff. אֹהָלַיו, אֹהָלֶיךָ,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "10 ; constr. אָהֳלֵי, c. suff. אֹהָלָיו, אֹהָלֶיךָ,",
+        "verdict": "a",
+        "note": "Under the lamed of אֹהָלָיו the print shows a qamets (T-shaped), not a patah — matching the normal 3 m. sg. suffix form; the typographic space before the semicolon (\"10 ;\") is also printed, as in \"572 ;\" on the line above.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2950aca4-731e-4bf1-a869-ef08c2728b09",
+        "duration_api_ms": 17761,
+        "cost_usd_list": 0.10866475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3619,
+        "cache_creation_input_tokens": 3231,
+        "output_tokens": 856
+       },
+       "text": "10; constr. אָהֳלֵי, c. suff. אֹהָלָיו, אֹהָלֶיךָ,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1114,
+      "y": 810,
+      "width": 874,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r00-b02-874x234+1114+810-x2.png",
+     "image_sha256": "5859c65770ae246de0bb496c68232ad889138158d066a357bcf372de4b796789",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָהֳלֵיכֶם.",
+       "1. a tent, tabernacle, Gen. 9, 27. al.",
+       "אֹהֶל מוֹעֵד tabernacle of the congregation",
+       "or of assembly, comm. tabernacle of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "921ecebb-fb20-43a9-b42b-9a896ff22b0c",
+      "duration_api_ms": 21221,
+      "cost_usd_list": 0.11079349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 1140
+     },
+     "lines": [
+      {
+       "draft": "אָהֳלֵיכֶם.",
+       "reread": "אָהֳלֵיכֶם.",
+       "status": "agreed",
+       "text": "אָהֳלֵיכֶם."
+      },
+      {
+       "draft": "1. a tent, tabernacle, Gen. 9, 27. al.",
+       "reread": "1. a tent, tabernacle, Gen. 9, 27. al.",
+       "status": "agreed",
+       "text": "1. a tent, tabernacle, Gen. 9, 27. al."
+      },
+      {
+       "draft": "אֹהֶל מוֹעֵד tabernacle of the congregation",
+       "reread": "אֹהֶל מוֹעֵד tabernacle of the congregation",
+       "status": "agreed",
+       "text": "אֹהֶל מוֹעֵד tabernacle of the congregation"
+      },
+      {
+       "draft": "or of assembly, comm. tabernacle of the",
+       "reread": "or of assembly, comm. tabernacle of the",
+       "status": "agreed",
+       "text": "or of assembly, comm. tabernacle of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1114,
+      "y": 1028,
+      "width": 874,
+      "height": 79
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r00-b03-874x79+1114+1028-x2.png",
+     "image_sha256": "a00e4506775c25f4b0aff6bfb6725232ead98ce184bbf6d305b5b01c700a3ee8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "covenant, i. e. the movable and portable"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5bbf336-0978-41d9-9bf4-f883fe796b0e",
+      "duration_api_ms": 7059,
+      "cost_usd_list": 0.04962375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 193
+     },
+     "lines": [
+      {
+       "draft": "covenant, i. e. the movable and portable",
+       "reread": "covenant, i. e. the movable and portable",
+       "status": "agreed",
+       "text": "covenant, i. e. the movable and portable"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1114,
+    "y": 1087,
+    "width": 874,
+    "height": 1002
+   },
+   "draft_lines": [
+    "sanctuary of the Israelites in the desert,",
+    "described Ex. c. 26, comp. c. 36; also",
+    "called simply הָאֹהֶל 1. K. 1, 39. As to",
+    "the distinction in the tabernacle, between",
+    "אֹהֶל and מִשְׁכָּן, the former (אֹהֶל) denoted",
+    "the exterior covering, consisting of",
+    "twelve curtains of goats' hair, which was",
+    "placed over the proper dwelling (מִשְׁכָּן)",
+    "i. e. the twelve interior curtains or hang-",
+    "ings which lay upon the frame-work;",
+    "see Ex. 26, 1. 7. 36, 8. 14. 19.",
+    "2. a dwelling, habitation, house, Is.",
+    "16, 5 אֹהֶל דָּוִד the habitation of David.",
+    "1 K. 8, 66. Jer. 4, 20. Lam. 2, 4. Poet.",
+    "Ps. 132, 3 אִם אָבֹא בְּאֹהֶל בֵּיתִי I will not",
+    "enter the dwelling of my house.",
+    "3. Spec. the temple, Ez. 41, 1.",
+    "4. Ohel, pr. n. of a son of Zerubbabel,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1114,
+      "y": 1081,
+      "width": 874,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r01-b00-874x235+1114+1081-x2.png",
+     "image_sha256": "208e91c20a1dc59f9e9ff026c84ad572a970467827f8db5124263e2086e6cc43",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sanctuary of the Israelites in the desert,",
+       "described Ex. c. 26, comp. c. 36; also",
+       "called simply הָאֹהֶל 1. K. 1, 39. As to",
+       "the distinction in the tabernacle, between"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c0a8401c-8d69-4d73-bd81-848737b5c12c",
+      "duration_api_ms": 9001,
+      "cost_usd_list": 0.06948375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 313
+     },
+     "lines": [
+      {
+       "draft": "sanctuary of the Israelites in the desert,",
+       "reread": "sanctuary of the Israelites in the desert,",
+       "status": "agreed",
+       "text": "sanctuary of the Israelites in the desert,"
+      },
+      {
+       "draft": "described Ex. c. 26, comp. c. 36; also",
+       "reread": "described Ex. c. 26, comp. c. 36; also",
+       "status": "agreed",
+       "text": "described Ex. c. 26, comp. c. 36; also"
+      },
+      {
+       "draft": "called simply הָאֹהֶל 1. K. 1, 39. As to",
+       "reread": "called simply הָאֹהֶל 1. K. 1, 39. As to",
+       "status": "agreed",
+       "text": "called simply הָאֹהֶל 1. K. 1, 39. As to"
+      },
+      {
+       "draft": "the distinction in the tabernacle, between",
+       "reread": "the distinction in the tabernacle, between",
+       "status": "agreed",
+       "text": "the distinction in the tabernacle, between"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1114,
+      "y": 1300,
+      "width": 874,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r01-b01-874x240+1114+1300-x2.png",
+     "image_sha256": "448c4263626947f9a39b51f8f229cd6dba0b228e61f56aaf94f743748e67f950",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֹהֶל and מִשְׁכָּן, the former (אֹהֶל) denoted",
+       "the exterior covering, consisting of",
+       "twelve curtains of goats' hair, which was",
+       "placed over the proper dwelling (מִשְׁכָּן)"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "50016823-0b55-4931-990c-51b6ffbf95ba",
+      "duration_api_ms": 4566,
+      "cost_usd_list": 0.06839375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "אֹהֶל and מִשְׁכָּן, the former (אֹהֶל) denoted",
+       "reread": "אֹהֶל and מִשְׁכָּן, the former (אֹהֶל) denoted",
+       "status": "agreed",
+       "text": "אֹהֶל and מִשְׁכָּן, the former (אֹהֶל) denoted"
+      },
+      {
+       "draft": "the exterior covering, consisting of",
+       "reread": "the exterior covering, consisting of",
+       "status": "agreed",
+       "text": "the exterior covering, consisting of"
+      },
+      {
+       "draft": "twelve curtains of goats' hair, which was",
+       "reread": "twelve curtains of goats' hair, which was",
+       "status": "agreed",
+       "text": "twelve curtains of goats' hair, which was"
+      },
+      {
+       "draft": "placed over the proper dwelling (מִשְׁכָּן)",
+       "reread": "placed over the proper dwelling (מִשְׁכָּן)",
+       "status": "agreed",
+       "text": "placed over the proper dwelling (מִשְׁכָּן)"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1114,
+      "y": 1524,
+      "width": 874,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r01-b02-874x234+1114+1524-x2.png",
+     "image_sha256": "045de922389ff15347b8bda05eb2d4f108b12f29ccbbcee2d219f9380918dc9d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "i. e. the twelve interior curtains or hang-",
+       "ings which lay upon the frame-work ;",
+       "see Ex. 26, 1. 7. 36, 8. 14. 19.",
+       "2. a dwelling, habitation, house, Is."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "959e9c96-6750-43b0-acff-70b68c3fa655",
+      "duration_api_ms": 7268,
+      "cost_usd_list": 0.06673375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "i. e. the twelve interior curtains or hang-",
+       "reread": "i. e. the twelve interior curtains or hang-",
+       "status": "agreed",
+       "text": "i. e. the twelve interior curtains or hang-"
+      },
+      {
+       "draft": "ings which lay upon the frame-work;",
+       "reread": "ings which lay upon the frame-work ;",
+       "status": "agreed",
+       "text": "ings which lay upon the frame-work;"
+      },
+      {
+       "draft": "see Ex. 26, 1. 7. 36, 8. 14. 19.",
+       "reread": "see Ex. 26, 1. 7. 36, 8. 14. 19.",
+       "status": "agreed",
+       "text": "see Ex. 26, 1. 7. 36, 8. 14. 19."
+      },
+      {
+       "draft": "2. a dwelling, habitation, house, Is.",
+       "reread": "2. a dwelling, habitation, house, Is.",
+       "status": "agreed",
+       "text": "2. a dwelling, habitation, house, Is."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1114,
+      "y": 1742,
+      "width": 874,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r01-b03-874x236+1114+1742-x2.png",
+     "image_sha256": "44f04e7c8aeb0c6f578c80d689fb5f20a522b9ee3882cc5e3f381733e825df1f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "16, 5 אֹהֶל דָּוִד the habitation of David.",
+       "1 K. 8, 66. Jer. 4, 20. Lam. 2, 4.   Poet.",
+       "Ps. 132, 3 אִם אָבֹא בְּאֹהֶל בֵּיתִי I will not",
+       "enter the dwelling of my house."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4155891c-a5b6-4091-a12c-7607351f3367",
+      "duration_api_ms": 12596,
+      "cost_usd_list": 0.08023375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 528
+     },
+     "lines": [
+      {
+       "draft": "16, 5 אֹהֶל דָּוִד the habitation of David.",
+       "reread": "16, 5 אֹהֶל דָּוִד the habitation of David.",
+       "status": "agreed",
+       "text": "16, 5 אֹהֶל דָּוִד the habitation of David."
+      },
+      {
+       "draft": "1 K. 8, 66. Jer. 4, 20. Lam. 2, 4. Poet.",
+       "reread": "1 K. 8, 66. Jer. 4, 20. Lam. 2, 4.   Poet.",
+       "status": "agreed",
+       "text": "1 K. 8, 66. Jer. 4, 20. Lam. 2, 4. Poet."
+      },
+      {
+       "draft": "Ps. 132, 3 אִם אָבֹא בְּאֹהֶל בֵּיתִי I will not",
+       "reread": "Ps. 132, 3 אִם אָבֹא בְּאֹהֶל בֵּיתִי I will not",
+       "status": "agreed",
+       "text": "Ps. 132, 3 אִם אָבֹא בְּאֹהֶל בֵּיתִי I will not"
+      },
+      {
+       "draft": "enter the dwelling of my house.",
+       "reread": "enter the dwelling of my house.",
+       "status": "agreed",
+       "text": "enter the dwelling of my house."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 1114,
+      "y": 1962,
+      "width": 874,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r01-b04-874x135+1114+1962-x2.png",
+     "image_sha256": "8a4197cd6795265e82fd765a37466b99b23d1562ec534fad507abcd0c6810750",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. Spec. the temple, Ez. 41, 1.",
+       "4. Ohel, pr. n. of a son of Zerubbabel,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "994c0fca-53be-4105-bd49-aa6475eb6d2a",
+      "duration_api_ms": 7166,
+      "cost_usd_list": 0.05626375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2189,
+      "output_tokens": 225
+     },
+     "lines": [
+      {
+       "draft": "3. Spec. the temple, Ez. 41, 1.",
+       "reread": "3. Spec. the temple, Ez. 41, 1.",
+       "status": "agreed",
+       "text": "3. Spec. the temple, Ez. 41, 1."
+      },
+      {
+       "draft": "4. Ohel, pr. n. of a son of Zerubbabel,",
+       "reread": "4. Ohel, pr. n. of a son of Zerubbabel,",
+       "status": "agreed",
+       "text": "4. Ohel, pr. n. of a son of Zerubbabel,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1114,
+    "y": 2077,
+    "width": 874,
+    "height": 756
+   },
+   "draft_lines": [
+    "1 Chr. 3, 20.",
+    "אָהֳלָה Oholah, Aholah, pr. n. of a",
+    "harlot, used by Ezekiel as the symbol",
+    "of Samaria, Ez. 23, 4 sq. Put for אָהֳלָהּ",
+    "(Mappik) i. e. she has her tent, her own",
+    "tabernacle, temple.",
+    "אֳהָלוֹת see in אֹהָלִים.",
+    "אָהֳלִיאָב (tent of his father) Aholiab,",
+    "pr. n. of an artificer, Ex. 31, 6. 35, 34.",
+    "אָהֳלִיבָה Oholibah, Aholibah, pr. n. of",
+    "a harlot, used by Ezekiel as the symbol",
+    "of the idolatrous kingdom of Judah, Ez."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1114,
+      "y": 2069,
+      "width": 874,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r02-b00-874x262+1114+2069-x2.png",
+     "image_sha256": "5845175481449220b06f578ae86ce8b1907ff1b87a8974eec484033d67ca3da0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1 Chr. 3, 20.",
+       "אָהֳלָה Oholah, Aholah, pr. n. of a",
+       "harlot, used by Ezekiel as the symbol",
+       "of Samaria, Ez. 23, 4 sq. Put for אָהֳלָהּ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ea6c4648-1130-46fc-935a-7f518dd3b26c",
+      "duration_api_ms": 8026,
+      "cost_usd_list": 0.06990375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 271
+     },
+     "lines": [
+      {
+       "draft": "1 Chr. 3, 20.",
+       "reread": "1 Chr. 3, 20.",
+       "status": "agreed",
+       "text": "1 Chr. 3, 20."
+      },
+      {
+       "draft": "אָהֳלָה Oholah, Aholah, pr. n. of a",
+       "reread": "אָהֳלָה Oholah, Aholah, pr. n. of a",
+       "status": "agreed",
+       "text": "אָהֳלָה Oholah, Aholah, pr. n. of a"
+      },
+      {
+       "draft": "harlot, used by Ezekiel as the symbol",
+       "reread": "harlot, used by Ezekiel as the symbol",
+       "status": "agreed",
+       "text": "harlot, used by Ezekiel as the symbol"
+      },
+      {
+       "draft": "of Samaria, Ez. 23, 4 sq. Put for אָהֳלָהּ",
+       "reread": "of Samaria, Ez. 23, 4 sq. Put for אָהֳלָהּ",
+       "status": "agreed",
+       "text": "of Samaria, Ez. 23, 4 sq. Put for אָהֳלָהּ"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1114,
+      "y": 2315,
+      "width": 874,
+      "height": 280
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r02-b01-874x280+1114+2315-x2.png",
+     "image_sha256": "d32334dc07a561aa84b12336e98beb8cf1cf0c92f56e35e134e44d49587aba1d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "(Mappik) i. e. she has her tent, her own",
+       "tabernacle, temple.",
+       "אֲהָלוֹת see in אֲהָלִים .",
+       "אָהֳלִיאָב (tent of his father) Aholiab,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d407688a-1abe-49e2-b5fe-3c9f60f13834",
+      "duration_api_ms": 15525,
+      "cost_usd_list": 0.09406375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 729
+     },
+     "lines": [
+      {
+       "draft": "(Mappik) i. e. she has her tent, her own",
+       "reread": "(Mappik) i. e. she has her tent, her own",
+       "status": "agreed",
+       "text": "(Mappik) i. e. she has her tent, her own"
+      },
+      {
+       "draft": "tabernacle, temple.",
+       "reread": "tabernacle, temple.",
+       "status": "agreed",
+       "text": "tabernacle, temple."
+      },
+      {
+       "draft": "אֳהָלוֹת see in אֹהָלִים.",
+       "reread": "אֲהָלוֹת see in אֲהָלִים .",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "אֲהָלוֹת see in אֲהָלִים.",
+        "verdict": "b",
+        "note": "Under the aleph in both Hebrew words the printed compound sheva has a flat dash (hataf patah ֲ), not the T-shaped qamets of hataf qamets (contrast the clear hataf qamets under the he of אָהֳלִיאָב on the next line). Reading A's ֳ is wrong; B's vowels are right. The period follows the last word directly (B's extra space is just type spacing).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0a27468d-090a-4a40-b07b-c51599766e6d",
+        "duration_api_ms": 16298,
+        "cost_usd_list": 0.094413,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2744,
+        "output_tokens": 766
+       },
+       "text": "אֲהָלוֹת see in אֲהָלִים."
+      },
+      {
+       "draft": "אָהֳלִיאָב (tent of his father) Aholiab,",
+       "reread": "אָהֳלִיאָב (tent of his father) Aholiab,",
+       "status": "agreed",
+       "text": "אָהֳלִיאָב (tent of his father) Aholiab,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1114,
+      "y": 2579,
+      "width": 874,
+      "height": 262
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r02-b02-874x262+1114+2579-x2.png",
+     "image_sha256": "88e811a7025d6ebba50e3a5978c7d7c11cb4f10bc878706fd2671c78b0565740",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pr. n. of an artificer, Ex. 31, 6. 35, 34.",
+       "אָהֳלִיבָה Oholibah, Aholibah, pr. n. of",
+       "a harlot, used by Ezekiel as the symbol",
+       "of the idolatrous kingdom of Judah, Ez."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9ff38e78-ae91-4ee9-aab2-38516a6141dd",
+      "duration_api_ms": 10047,
+      "cost_usd_list": 0.07655375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2756,
+      "output_tokens": 404
+     },
+     "lines": [
+      {
+       "draft": "pr. n. of an artificer, Ex. 31, 6. 35, 34.",
+       "reread": "pr. n. of an artificer, Ex. 31, 6. 35, 34.",
+       "status": "agreed",
+       "text": "pr. n. of an artificer, Ex. 31, 6. 35, 34."
+      },
+      {
+       "draft": "אָהֳלִיבָה Oholibah, Aholibah, pr. n. of",
+       "reread": "אָהֳלִיבָה Oholibah, Aholibah, pr. n. of",
+       "status": "agreed",
+       "text": "אָהֳלִיבָה Oholibah, Aholibah, pr. n. of"
+      },
+      {
+       "draft": "a harlot, used by Ezekiel as the symbol",
+       "reread": "a harlot, used by Ezekiel as the symbol",
+       "status": "agreed",
+       "text": "a harlot, used by Ezekiel as the symbol"
+      },
+      {
+       "draft": "of the idolatrous kingdom of Judah, Ez.",
+       "reread": "of the idolatrous kingdom of Judah, Ez.",
+       "status": "agreed",
+       "text": "of the idolatrous kingdom of Judah, Ez."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1114,
+    "y": 2821,
+    "width": 874,
+    "height": 447
+   },
+   "draft_lines": [
+    "23, 4 sq. lit. my tabernacle is in her, בָה",
+    "for בָּהּ. Comp. אָהֳלָה.",
+    "אָהֳלִיבָמָה (tent of the height) Aholi-",
+    "bamah, pr. n. of a wife of Esau, Gen. 36,",
+    "2. 14; also of an Edomitish tribe, v. 14.",
+    "אֲהָלִים Num. 24, 6. Prov. 7, 17, and",
+    "אֲהָלוֹת Ps. 45, 9. Cant. 4, 14, Plur. a spe-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1114,
+      "y": 2813,
+      "width": 874,
+      "height": 206
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r03-b00-874x206+1114+2813-x2.png",
+     "image_sha256": "37410d2658244256d10eaf58501afa78fb311ca260a3d4446efa4dd32ed327a0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "23, 4 sq. lit. my tabernacle is in her, בָהּ",
+       "for בָּהּ.  Comp. אָהֳלָה.",
+       "אָהֳלִיבָמָה (tent of the height) Aholi-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "df798b9a-8cf4-408a-adcf-68f49c1f7dca",
+      "duration_api_ms": 20102,
+      "cost_usd_list": 0.10671375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2504,
+      "output_tokens": 1108
+     },
+     "lines": [
+      {
+       "draft": "23, 4 sq. lit. my tabernacle is in her, בָה",
+       "reread": "23, 4 sq. lit. my tabernacle is in her, בָהּ",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b00",
+       "judgement": {
+        "text": "23, 4 sq. lit. my tabernacle is in her, בָה",
+        "verdict": "a",
+        "note": "The final he on line 1 has no mappiq dot; the next line's \"for בָּהּ\" shows the pointed form with mappiq and dagesh as the contrast, so line 1 is the unpointed בָה.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bd4d12dc-bae2-46aa-ba4f-02da1c447020",
+        "duration_api_ms": 10039,
+        "cost_usd_list": 0.0792155,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3582,
+        "cache_creation_input_tokens": 2439,
+        "output_tokens": 584
+       },
+       "text": "23, 4 sq. lit. my tabernacle is in her, בָה"
+      },
+      {
+       "draft": "for בָּהּ. Comp. אָהֳלָה.",
+       "reread": "for בָּהּ.  Comp. אָהֳלָה.",
+       "status": "agreed",
+       "text": "for בָּהּ. Comp. אָהֳלָה."
+      },
+      {
+       "draft": "אָהֳלִיבָמָה (tent of the height) Aholi-",
+       "reread": "אָהֳלִיבָמָה (tent of the height) Aholi-",
+       "status": "agreed",
+       "text": "אָהֳלִיבָמָה (tent of the height) Aholi-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1114,
+      "y": 3003,
+      "width": 874,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0034/pass2/c1-r03-b01-874x273+1114+3003-x2.png",
+     "image_sha256": "e9b82539b80ed14b18eedbf12d8fdba78971216b95ab58985eeb6a167611521d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "bamah, pr. n. of a wife of Esau, Gen. 36,",
+       "2. 14 ; also of an Edomitish tribe, v. 14.",
+       "אֲהָלִים Num. 24, 6. Prov. 7, 17, and",
+       "אֲהָלוֹת Ps. 45, 9. Cant. 4, 14, Plur. a spe-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b5825f96-3188-4456-b835-5c9414f1ed5f",
+      "duration_api_ms": 12447,
+      "cost_usd_list": 0.08796375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2819,
+      "output_tokens": 607
+     },
+     "lines": [
+      {
+       "draft": "bamah, pr. n. of a wife of Esau, Gen. 36,",
+       "reread": "bamah, pr. n. of a wife of Esau, Gen. 36,",
+       "status": "agreed",
+       "text": "bamah, pr. n. of a wife of Esau, Gen. 36,"
+      },
+      {
+       "draft": "2. 14; also of an Edomitish tribe, v. 14.",
+       "reread": "2. 14 ; also of an Edomitish tribe, v. 14.",
+       "status": "agreed",
+       "text": "2. 14; also of an Edomitish tribe, v. 14."
+      },
+      {
+       "draft": "אֲהָלִים Num. 24, 6. Prov. 7, 17, and",
+       "reread": "אֲהָלִים Num. 24, 6. Prov. 7, 17, and",
+       "status": "agreed",
+       "text": "אֲהָלִים Num. 24, 6. Prov. 7, 17, and"
+      },
+      {
+       "draft": "אֲהָלוֹת Ps. 45, 9. Cant. 4, 14, Plur. a spe-",
+       "reread": "אֲהָלוֹת Ps. 45, 9. Cant. 4, 14, Plur. a spe-",
+       "status": "agreed",
+       "text": "אֲהָלוֹת Ps. 45, 9. Cant. 4, 14, Plur. a spe-"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אהו 18 אהל",
+   "status": "adjudicated",
+   "draft": "אהר 18 אהל",
+   "reread": "אהו 18 אהל",
+   "verdict": "b",
+   "note": "The decisive letter is the last glyph of the left-hand word: it is a narrow vertical stroke with only a small head, about a third the width of the preceding he, i.e. a vav; a resh in this typeface would have a broad flat head nearly as wide as the he. Read as אהו, matching Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "row, and imitating the sound or cry, ah!",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "alas! comp. Arab. آهْ, أَوَّاهِ, whence the",
+   "status": "adjudicated",
+   "draft": "alas ! comp. Arab. آهٌ, أَوَّهْ, whence the",
+   "reread": "alas ! comp. Arab. آهْ, أَوَّاهِ, whence the",
+   "verdict": "b",
+   "note": "First Arabic word carries a small circle (sukun) over the ha, not tanwin; second word shows a tall alif before the final ha with a kasra printed beneath it, matching أَوَّاهِ rather than A's أَوَّهْ.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "verbs أَهَّ and آهَ to grieve, lament, like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Germ. ach, ächzen. Mostly in the con-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "nection אֲהָהּ אֲדֹנָי יְהוִה ah! Lord God,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Josh. 7, 7. Judg. 6, 22; or אֲהָהּ אֲדֹנָי 2 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "6, 5. 15. Alone, 2 K. 3, 10; c. dat. Joel",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֵהוּד (union, r. אָחַד) Ehud, pr. n. m.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a) A judge of Israel, Judg. 3, 15 sq. 4, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Sept. Ἀώδ. b) 1 Chr. 7, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַהֲוָא Ahava, pr. n. of a river between",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Babylon and Jerusalem, Ezra 8, 21. 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "The same is probably meant in v. 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "where we may render: the river that",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "runneth to the Ahava. It is hardly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "doubtful, that the word signifies pr. wa-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ter, aqua; comp. Sanscr. ap, Pers. ab,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Goth. ahva, Lat. aqua. It is hard to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "say what river is meant; possibly the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Euphrates, which was called κατ᾽ ἐξοχήν",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the river; comp. הַנָּהָר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֱהִי Hos. 13, 10, i. q. אַיֵּה, אֵי, where?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Elsewhere אֱהִי is always 1 pers. fut.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "apoc. from r. הָיָה to be; and not improb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "it is here an error of transcription arising",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "out of v. 7. 14, instead of אַיֵּה. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "words are אֱהִי מַלְכְּךָ אֵפוֹא where then is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "thy king? the two words אֱהִי אֵפוֹא be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ing closely joined, as elsewhere אֵי אֵפוֹא.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "—Ewald regards this word (Gr. § 444) as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "compounded from אֱ (i. q. הֲ) and הִי i. e.",
+   "status": "adjudicated",
+   "draft": "compounded from אֱ (i. q. הֲ) and הִי i. e.",
+   "reread": "compounded from אֱ (i. q. הָ) and הִי i. e.",
+   "verdict": "a",
+   "note": "The he in the parenthesis carries a hataf patah (short horizontal stroke plus two dots beneath), not a qamats; this is the interrogative הֲ, paralleling the hataf segol under the preceding alef.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "hic, here; comp. Ethiop. ህየ ibi, ዝየ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "hic, huc. So too Hupfeld.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אָהַל perh. i. q. הָלַל, هَلَّ 1. to shine,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to glitter, from the mutual relation of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "verbs פ״א and ע״ע; see Hiph.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֹהֶל tent, from the shining, glittering",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "appearance.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. Denom. from אֹהֶל tent, to tent, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "move one's tent, in the manner of no-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "mades, now pitching their tents in one",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "place and then removing to another.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Gen. 13, 12. 18 וַיֶּאֱהַל אַבְרָם, Sept. ἀπο-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "σκηνώσας Ἀβράμ, Vulg. movens taberna-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "culum suum.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Piel, fut. יְאַהֵל contr. יַהֵל, i. q. Kal no.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2, to pitch one's tent, in the nomadic man-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ner, Is. 13, 20. Comp. מַלֵּף for מְאַלֵּף.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Hiph. i. q. Kal no. 1, to shine, pr. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "give light. Job 25, 5 הֵן עַד־יָרֵחַ וְלֹא־",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "יַאֲהִיל lo! even the moon, it shineth not,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. is not bright, pure, in the sight of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "God. Jerome: ecce! luna etiam non",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "splendet. Sept. οὐκ ἐπιφαύσκει.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "The deriv. follow.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֹהֶל c. suff. אָהֳלִי, אָהֳלְךָ (ŏhŏlka),",
+   "status": "adjudicated",
+   "draft": "אֹהֶל c. suff. אָהֳלִי, אָהָלְךָ (ŏhŏlka),",
+   "reread": "אֹהֶל c. suff. אָהֳלִי, אָהֳלְךָ (ŏhŏlka),",
+   "verdict": "b",
+   "note": "Under the ה of אהלך the print shows ḥaṭeph qamats (ֳ), matching the first word אָהֳלִי and the transliteration ŏhŏlka; Reading A's plain qamats is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "with He parag. אֹהֱלָה; Plur. אֹהָלִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Syriasm for אֳהָלִים Lehrg. p. 152, 572;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "with pref. בָּאֳהָלִים Judg. 8, 11. Jer. 35, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "10; constr. אָהֳלֵי, c. suff. אֹהָלָיו, אֹהָלֶיךָ,",
+   "status": "adjudicated",
+   "draft": "10 ; constr. אָהֳלֵי, c. suff. אֹהָלָיו, אֹהָלֶיךָ,",
+   "reread": "10; constr. אָהֳלֵי, c. suff. אֹהָלַיו, אֹהָלֶיךָ,",
+   "verdict": "a",
+   "note": "Under the lamed of אֹהָלָיו the print shows a qamets (T-shaped), not a patah — matching the normal 3 m. sg. suffix form; the typographic space before the semicolon (\"10 ;\") is also printed, as in \"572 ;\" on the line above.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אָהֳלֵיכֶם.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. a tent, tabernacle, Gen. 9, 27. al.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֹהֶל מוֹעֵד tabernacle of the congregation",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "or of assembly, comm. tabernacle of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "covenant, i. e. the movable and portable",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sanctuary of the Israelites in the desert,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "described Ex. c. 26, comp. c. 36; also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "called simply הָאֹהֶל 1. K. 1, 39. As to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the distinction in the tabernacle, between",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֹהֶל and מִשְׁכָּן, the former (אֹהֶל) denoted",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the exterior covering, consisting of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "twelve curtains of goats' hair, which was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "placed over the proper dwelling (מִשְׁכָּן)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "i. e. the twelve interior curtains or hang-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ings which lay upon the frame-work;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "see Ex. 26, 1. 7. 36, 8. 14. 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. a dwelling, habitation, house, Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "16, 5 אֹהֶל דָּוִד the habitation of David.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1 K. 8, 66. Jer. 4, 20. Lam. 2, 4. Poet.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ps. 132, 3 אִם אָבֹא בְּאֹהֶל בֵּיתִי I will not",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "enter the dwelling of my house.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. Spec. the temple, Ez. 41, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "4. Ohel, pr. n. of a son of Zerubbabel,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1 Chr. 3, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָהֳלָה Oholah, Aholah, pr. n. of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "harlot, used by Ezekiel as the symbol",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of Samaria, Ez. 23, 4 sq. Put for אָהֳלָהּ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(Mappik) i. e. she has her tent, her own",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "tabernacle, temple.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֲהָלוֹת see in אֲהָלִים.",
+   "status": "adjudicated",
+   "draft": "אֳהָלוֹת see in אֹהָלִים.",
+   "reread": "אֲהָלוֹת see in אֲהָלִים .",
+   "verdict": "b",
+   "note": "Under the aleph in both Hebrew words the printed compound sheva has a flat dash (hataf patah ֲ), not the T-shaped qamets of hataf qamets (contrast the clear hataf qamets under the he of אָהֳלִיאָב on the next line). Reading A's ֳ is wrong; B's vowels are right. The period follows the last word directly (B's extra space is just type spacing).",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָהֳלִיאָב (tent of his father) Aholiab,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "pr. n. of an artificer, Ex. 31, 6. 35, 34.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אָהֳלִיבָה Oholibah, Aholibah, pr. n. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a harlot, used by Ezekiel as the symbol",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of the idolatrous kingdom of Judah, Ez.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "23, 4 sq. lit. my tabernacle is in her, בָה",
+   "status": "adjudicated",
+   "draft": "23, 4 sq. lit. my tabernacle is in her, בָה",
+   "reread": "23, 4 sq. lit. my tabernacle is in her, בָהּ",
+   "verdict": "a",
+   "note": "The final he on line 1 has no mappiq dot; the next line's \"for בָּהּ\" shows the pointed form with mappiq and dagesh as the contrast, so line 1 is the unpointed בָה.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "for בָּהּ. Comp. אָהֳלָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָהֳלִיבָמָה (tent of the height) Aholi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "bamah, pr. n. of a wife of Esau, Gen. 36,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. 14; also of an Edomitish tribe, v. 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲהָלִים Num. 24, 6. Prov. 7, 17, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲהָלוֹת Ps. 45, 9. Cant. 4, 14, Plur. a spe-",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 97,
+  "adjudicated": 7,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.0607
+}

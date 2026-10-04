@@ -1,0 +1,2539 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 35,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0035.png",
+ "raster_sha256": "80fc7efd6100230488117110db029625a30c33ff6ed978f45ed5613d3aeb5d64",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0035.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:13:13+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 77,
+    "y": 95,
+    "width": 1763,
+    "height": 68
+   },
+   "draft_lines": [
+    "אהר",
+    "19",
+    "אוב"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 77,
+      "y": 87,
+      "width": 1763,
+      "height": 78
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/header-b00-1763x78+77+87-x2.png",
+     "image_sha256": "155ac4a202f2e16ed4dd6fb75484589d05c10de8fa916e7661d5ba07ae4df498",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אהר 19 אוב"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1bb4e689-ea35-4cf3-9141-8b7ce5aa134a",
+      "duration_api_ms": 7324,
+      "cost_usd_list": 0.0489725,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 208
+     },
+     "lines": [
+      {
+       "draft": "אהר 19 אוב",
+       "reread": "אהר 19 אוב",
+       "status": "agreed",
+       "text": "אהר 19 אוב"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 77,
+    "y": 127,
+    "width": 873,
+    "height": 932
+   },
+   "draft_lines": [
+    "cies of odoriferous tree growing in India,",
+    "called by the Greeks ἀγάλλοχον, later",
+    "ξυλαλόη, in modern times lignum aloës,",
+    "also lignum paradisi, and lignum aquilæ,",
+    "Excæcaria Agallocha Linn. See Diosc.",
+    "lib. I. 21. The Heb. as well as the Greek",
+    "name is derived from the Indian name",
+    "of the tree, Sanscr. agaru and aguru (the",
+    "r being softened into l), also agarukam.",
+    "See Celsius in Hierobot. T. I. p. 135–",
+    "170. Gildemeister de rebus Indicis, Fasc.",
+    "I. p. 65, 66. The Portuguese also would",
+    "seem to have heard the name under the",
+    "form agulu or the like; since they call",
+    "this wood aquilæ lignum."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 77,
+      "y": 119,
+      "width": 873,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r00-b00-873x258+77+119-x2.png",
+     "image_sha256": "e6ae9335f864a0c64d0e5de1115bc07ff7aa0c37e3ef705f3d07113c9e1d3968",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cies of odoriferous tree growing in India,",
+       "called by the Greeks ἀγάλλοχον, later",
+       "ξυλαλόη, in modern times lignum aloës,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "960f5b9d-b878-4d0d-99cc-df664a68930b",
+      "duration_api_ms": 11681,
+      "cost_usd_list": 0.07972325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 469
+     },
+     "lines": [
+      {
+       "draft": "cies of odoriferous tree growing in India,",
+       "reread": "cies of odoriferous tree growing in India,",
+       "status": "agreed",
+       "text": "cies of odoriferous tree growing in India,"
+      },
+      {
+       "draft": "called by the Greeks ἀγάλλοχον, later",
+       "reread": "called by the Greeks ἀγάλλοχον, later",
+       "status": "agreed",
+       "text": "called by the Greeks ἀγάλλοχον, later"
+      },
+      {
+       "draft": "ξυλαλόη, in modern times lignum aloës,",
+       "reread": "ξυλαλόη, in modern times lignum aloës,",
+       "status": "agreed",
+       "text": "ξυλαλόη, in modern times lignum aloës,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 77,
+      "y": 361,
+      "width": 873,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r00-b01-873x230+77+361-x2.png",
+     "image_sha256": "310b680e6d3512e687ff3ed54d6b5922c0de707e501263d0578aaffbf496c738",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "also lignum paradisi, and lignum aquilæ,",
+       "Excæcaria Agallocha Linn. See Diosc.",
+       "lib. I. 21. The Heb. as well as the Greek",
+       "name is derived from the Indian name"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "68ddf3b7-6f02-4956-b932-dc2439ea87ce",
+      "duration_api_ms": 4104,
+      "cost_usd_list": 0.06640325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "also lignum paradisi, and lignum aquilæ,",
+       "reread": "also lignum paradisi, and lignum aquilæ,",
+       "status": "agreed",
+       "text": "also lignum paradisi, and lignum aquilæ,"
+      },
+      {
+       "draft": "Excæcaria Agallocha Linn. See Diosc.",
+       "reread": "Excæcaria Agallocha Linn. See Diosc.",
+       "status": "agreed",
+       "text": "Excæcaria Agallocha Linn. See Diosc."
+      },
+      {
+       "draft": "lib. I. 21. The Heb. as well as the Greek",
+       "reread": "lib. I. 21. The Heb. as well as the Greek",
+       "status": "agreed",
+       "text": "lib. I. 21. The Heb. as well as the Greek"
+      },
+      {
+       "draft": "name is derived from the Indian name",
+       "reread": "name is derived from the Indian name",
+       "status": "agreed",
+       "text": "name is derived from the Indian name"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 77,
+      "y": 575,
+      "width": 873,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r00-b02-873x238+77+575-x2.png",
+     "image_sha256": "9b0cf4807f4e6c19dfd5ce12c7502b2b3786cf41815f20d5232f7e05039aef6d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of the tree, Sanscr. agaru and aguru (the",
+       "r being softened into l), also agarukam.",
+       "See Celsius in Hierobot. T. I. p. 135–",
+       "170. Gildemeister de rebus Indicis, Fasc."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5daa7667-3e9b-4b21-82c2-82b894c21b55",
+      "duration_api_ms": 7986,
+      "cost_usd_list": 0.06665325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "of the tree, Sanscr. agaru and aguru (the",
+       "reread": "of the tree, Sanscr. agaru and aguru (the",
+       "status": "agreed",
+       "text": "of the tree, Sanscr. agaru and aguru (the"
+      },
+      {
+       "draft": "r being softened into l), also agarukam.",
+       "reread": "r being softened into l), also agarukam.",
+       "status": "agreed",
+       "text": "r being softened into l), also agarukam."
+      },
+      {
+       "draft": "See Celsius in Hierobot. T. I. p. 135–",
+       "reread": "See Celsius in Hierobot. T. I. p. 135–",
+       "status": "agreed",
+       "text": "See Celsius in Hierobot. T. I. p. 135–"
+      },
+      {
+       "draft": "170. Gildemeister de rebus Indicis, Fasc.",
+       "reread": "170. Gildemeister de rebus Indicis, Fasc.",
+       "status": "agreed",
+       "text": "170. Gildemeister de rebus Indicis, Fasc."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 77,
+      "y": 797,
+      "width": 873,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r00-b03-873x252+77+797-x2.png",
+     "image_sha256": "bc7c86cc16d8022d57f60e098fe27421b80a08ceecc6fb7cfa0d53cf81c7a0e3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "I. p. 65, 66. The Portuguese also would",
+       "seem to have heard the name under the",
+       "form agulu or the like ; since they call",
+       "this wood aquilæ lignum."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9f825830-8b25-4e85-a4fc-49f954eab331",
+      "duration_api_ms": 8268,
+      "cost_usd_list": 0.06671325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 234
+     },
+     "lines": [
+      {
+       "draft": "I. p. 65, 66. The Portuguese also would",
+       "reread": "I. p. 65, 66. The Portuguese also would",
+       "status": "agreed",
+       "text": "I. p. 65, 66. The Portuguese also would"
+      },
+      {
+       "draft": "seem to have heard the name under the",
+       "reread": "seem to have heard the name under the",
+       "status": "agreed",
+       "text": "seem to have heard the name under the"
+      },
+      {
+       "draft": "form agulu or the like; since they call",
+       "reread": "form agulu or the like ; since they call",
+       "status": "agreed",
+       "text": "form agulu or the like; since they call"
+      },
+      {
+       "draft": "this wood aquilæ lignum.",
+       "reread": "this wood aquilæ lignum.",
+       "status": "agreed",
+       "text": "this wood aquilæ lignum."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 77,
+    "y": 1047,
+    "width": 873,
+    "height": 653
+   },
+   "draft_lines": [
+    "* אָהַר a doubtful root; hence perhaps",
+    "אַהֲרוֹן pr. n. m. (perh. i. q. הָרוֹן moun-",
+    "taineer, comp. Arab. هارون) Aaron, the",
+    "elder brother of Moses, Ex. 6, 20. 7, 7;",
+    "and the first high-priest, Ex. c. 29. Lev.",
+    "c. 8.—בְּנֵי אַהֲרוֹן sons of Aaron Josh. 21,",
+    "4. 10. 13; poet. בֵּית אַהֲרוֹן house of",
+    "Aaron Ps. 115, 10. 12. 118, 3, put for the",
+    "priests in general. So Aaron for any",
+    "high-priest Ps. 133, 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 77,
+      "y": 1058,
+      "width": 873,
+      "height": 293
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r01-b00-873x293+77+1058-x2.png",
+     "image_sha256": "fff7e4e584737dafd214957ba7ae3aaef9a0bb89e1a48f2738e73b38de0b3267",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָהַר a doubtful root ; hence perhaps",
+       "אַהֲרוֹן pr. n. m. (perh. i. q. הָרוֹן moun-",
+       "taineer, comp. Arab. هارون) Aaron, the",
+       "elder brother of Moses, Ex. 6, 20. 7, 7 ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "acdb11a4-8e7a-4e8f-9824-e6eaf88f426c",
+      "duration_api_ms": 12685,
+      "cost_usd_list": 0.08723349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 568
+     },
+     "lines": [
+      {
+       "draft": "* אָהַר a doubtful root; hence perhaps",
+       "reread": "* אָהַר a doubtful root ; hence perhaps",
+       "status": "agreed",
+       "text": "* אָהַר a doubtful root; hence perhaps"
+      },
+      {
+       "draft": "אַהֲרוֹן pr. n. m. (perh. i. q. הָרוֹן moun-",
+       "reread": "אַהֲרוֹן pr. n. m. (perh. i. q. הָרוֹן moun-",
+       "status": "agreed",
+       "text": "אַהֲרוֹן pr. n. m. (perh. i. q. הָרוֹן moun-"
+      },
+      {
+       "draft": "taineer, comp. Arab. هارون) Aaron, the",
+       "reread": "taineer, comp. Arab. هارون) Aaron, the",
+       "status": "agreed",
+       "text": "taineer, comp. Arab. هارون) Aaron, the"
+      },
+      {
+       "draft": "elder brother of Moses, Ex. 6, 20. 7, 7;",
+       "reread": "elder brother of Moses, Ex. 6, 20. 7, 7 ;",
+       "status": "agreed",
+       "text": "elder brother of Moses, Ex. 6, 20. 7, 7;"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 77,
+      "y": 1335,
+      "width": 873,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r01-b01-873x239+77+1335-x2.png",
+     "image_sha256": "2ece843039350b97730d63b7f298efc8701f65b23d96f8c783a23a1c5573ced7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and the first high-priest, Ex. c. 29. Lev.",
+       "c. 8.—בְּנֵי אַהֲרוֹן sons of Aaron Josh. 21,",
+       "4. 10. 13 ; poet. בֵּית אַהֲרוֹן house of",
+       "Aaron Ps. 115, 10. 12. 118, 3, put for the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "50c7b003-c32a-4dc7-a29c-cdd48f8c7ffa",
+      "duration_api_ms": 12133,
+      "cost_usd_list": 0.0785535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 470
+     },
+     "lines": [
+      {
+       "draft": "and the first high-priest, Ex. c. 29. Lev.",
+       "reread": "and the first high-priest, Ex. c. 29. Lev.",
+       "status": "agreed",
+       "text": "and the first high-priest, Ex. c. 29. Lev."
+      },
+      {
+       "draft": "c. 8.—בְּנֵי אַהֲרוֹן sons of Aaron Josh. 21,",
+       "reread": "c. 8.—בְּנֵי אַהֲרוֹן sons of Aaron Josh. 21,",
+       "status": "agreed",
+       "text": "c. 8.—בְּנֵי אַהֲרוֹן sons of Aaron Josh. 21,"
+      },
+      {
+       "draft": "4. 10. 13; poet. בֵּית אַהֲרוֹן house of",
+       "reread": "4. 10. 13 ; poet. בֵּית אַהֲרוֹן house of",
+       "status": "agreed",
+       "text": "4. 10. 13; poet. בֵּית אַהֲרוֹן house of"
+      },
+      {
+       "draft": "Aaron Ps. 115, 10. 12. 118, 3, put for the",
+       "reread": "Aaron Ps. 115, 10. 12. 118, 3, put for the",
+       "status": "agreed",
+       "text": "Aaron Ps. 115, 10. 12. 118, 3, put for the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 77,
+      "y": 1558,
+      "width": 873,
+      "height": 127
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r01-b02-873x127+77+1558-x2.png",
+     "image_sha256": "6d965f2d33c8042a36bea1eaffe40655475957d1d4571e99929eee550a1b847a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "priests in general. So Aaron for any",
+       "high-priest Ps. 133, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cf50feb3-2226-4f22-add4-65f76d15e27a",
+      "duration_api_ms": 7676,
+      "cost_usd_list": 0.0560735,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2187,
+      "output_tokens": 222
+     },
+     "lines": [
+      {
+       "draft": "priests in general. So Aaron for any",
+       "reread": "priests in general. So Aaron for any",
+       "status": "agreed",
+       "text": "priests in general. So Aaron for any"
+      },
+      {
+       "draft": "high-priest Ps. 133, 2.",
+       "reread": "high-priest Ps. 133, 2.",
+       "status": "agreed",
+       "text": "high-priest Ps. 133, 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 77,
+    "y": 1688,
+    "width": 873,
+    "height": 904
+   },
+   "draft_lines": [
+    "אַו, constr. אוֹ, a noun after the form",
+    "צַו, קַו, from r. אָוָה to will, to desire.",
+    "1. Subst. will, desire, appetite, once",
+    "Prov. 31, 4 Cheth. וּלְרֹזְנִים אוֹ שֵׁכָר nor",
+    "for princes the desire of strong drink.",
+    "Keri אֵי שֵׁכָר (to say) where is strong",
+    "drink ?",
+    "2. free-will, choice, and hence constr.",
+    "אוֹ as a Conjunction, implying the power",
+    "of freely choosing this or that, or, either ;",
+    "comp. Lat. vel, apoc. ve, from velle.",
+    "Arab. أَوْ. Deut. 13, 2 אוֹת אוֹ מוֹפֵת the",
+    "sign or the wonder. Job 3, 15. 2. K. 2,",
+    "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאָוֹת upon",
+    "some mountain or into some valley. Re-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 77,
+      "y": 1704,
+      "width": 873,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r02-b00-873x240+77+1704-x2.png",
+     "image_sha256": "ff95bb7b3b67cf217bcabd67797744cb882da818757cd676dc1beaf6be33fc2a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַו, constr. אוֹ, a noun after the form",
+       "צַו, קַו, from r. אָוָה to will, to desire.",
+       "1. Subst. will, desire, appetite, once",
+       "Prov. 31, 4 Cheth. וּלְרֹזְנִים אוֹ שֵׁכָר nor"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4e382040-2a22-4a29-a4be-bbdb3eeb209e",
+      "duration_api_ms": 14538,
+      "cost_usd_list": 0.0891535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 682
+     },
+     "lines": [
+      {
+       "draft": "אַו, constr. אוֹ, a noun after the form",
+       "reread": "אַו, constr. אוֹ, a noun after the form",
+       "status": "agreed",
+       "text": "אַו, constr. אוֹ, a noun after the form"
+      },
+      {
+       "draft": "צַו, קַו, from r. אָוָה to will, to desire.",
+       "reread": "צַו, קַו, from r. אָוָה to will, to desire.",
+       "status": "agreed",
+       "text": "צַו, קַו, from r. אָוָה to will, to desire."
+      },
+      {
+       "draft": "1. Subst. will, desire, appetite, once",
+       "reread": "1. Subst. will, desire, appetite, once",
+       "status": "agreed",
+       "text": "1. Subst. will, desire, appetite, once"
+      },
+      {
+       "draft": "Prov. 31, 4 Cheth. וּלְרֹזְנִים אוֹ שֵׁכָר nor",
+       "reread": "Prov. 31, 4 Cheth. וּלְרֹזְנִים אוֹ שֵׁכָר nor",
+       "status": "agreed",
+       "text": "Prov. 31, 4 Cheth. וּלְרֹזְנִים אוֹ שֵׁכָר nor"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 77,
+      "y": 1928,
+      "width": 873,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r02-b01-873x230+77+1928-x2.png",
+     "image_sha256": "62c429ef20fb51ff41441c81eef85320826b351882cf375f3fb310893e4d5437",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for princes the desire of strong drink.",
+       "Keri אֵי שֵׁכָר (to say) where is strong",
+       "drink ?",
+       "2. free-will, choice, and hence constr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3abb2112-6a62-4679-9850-08550ca5cf49",
+      "duration_api_ms": 8310,
+      "cost_usd_list": 0.0656435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 237
+     },
+     "lines": [
+      {
+       "draft": "for princes the desire of strong drink.",
+       "reread": "for princes the desire of strong drink.",
+       "status": "agreed",
+       "text": "for princes the desire of strong drink."
+      },
+      {
+       "draft": "Keri אֵי שֵׁכָר (to say) where is strong",
+       "reread": "Keri אֵי שֵׁכָר (to say) where is strong",
+       "status": "agreed",
+       "text": "Keri אֵי שֵׁכָר (to say) where is strong"
+      },
+      {
+       "draft": "drink ?",
+       "reread": "drink ?",
+       "status": "agreed",
+       "text": "drink?"
+      },
+      {
+       "draft": "2. free-will, choice, and hence constr.",
+       "reread": "2. free-will, choice, and hence constr.",
+       "status": "agreed",
+       "text": "2. free-will, choice, and hence constr."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 77,
+      "y": 2142,
+      "width": 873,
+      "height": 285
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r02-b02-873x285+77+2142-x2.png",
+     "image_sha256": "4d3c9f933ce5ed7a39c208399ec3ebea27503f6d15f5e96fe3fbc6deb542954d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹ as a Conjunction, implying the power",
+       "of freely choosing this or that, or, either ;",
+       "comp. Lat. vel, apoc. ve, from velle.",
+       "Arab. أَوْ. Deut. 13, 2 אוֹת אוֹ מוֹפֵת the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "45d9e98f-aba8-46e3-aed4-f79bc3260f6b",
+      "duration_api_ms": 10642,
+      "cost_usd_list": 0.0792835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 409
+     },
+     "lines": [
+      {
+       "draft": "אוֹ as a Conjunction, implying the power",
+       "reread": "אוֹ as a Conjunction, implying the power",
+       "status": "agreed",
+       "text": "אוֹ as a Conjunction, implying the power"
+      },
+      {
+       "draft": "of freely choosing this or that, or, either ;",
+       "reread": "of freely choosing this or that, or, either ;",
+       "status": "agreed",
+       "text": "of freely choosing this or that, or, either;"
+      },
+      {
+       "draft": "comp. Lat. vel, apoc. ve, from velle.",
+       "reread": "comp. Lat. vel, apoc. ve, from velle.",
+       "status": "agreed",
+       "text": "comp. Lat. vel, apoc. ve, from velle."
+      },
+      {
+       "draft": "Arab. أَوْ. Deut. 13, 2 אוֹת אוֹ מוֹפֵת the",
+       "reread": "Arab. أَوْ. Deut. 13, 2 אוֹת אוֹ מוֹפֵת the",
+       "status": "agreed",
+       "text": "Arab. أَوْ. Deut. 13, 2 אוֹת אוֹ מוֹפֵת the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 77,
+      "y": 2411,
+      "width": 873,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r02-b03-873x189+77+2411-x2.png",
+     "image_sha256": "6507353c63b9d862c37664370a456aa6c8b93885caacff8c9fcacc92ea245530",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sign or the wonder. Job 3, 15. 2. K. 2,",
+       "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאוֹת upon",
+       "some mountain or into some valley. Re-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "62d6f949-a9e8-459c-b461-32ef7c5512c8",
+      "duration_api_ms": 12282,
+      "cost_usd_list": 0.07776349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 555
+     },
+     "lines": [
+      {
+       "draft": "sign or the wonder. Job 3, 15. 2. K. 2,",
+       "reread": "sign or the wonder. Job 3, 15. 2. K. 2,",
+       "status": "agreed",
+       "text": "sign or the wonder. Job 3, 15. 2. K. 2,"
+      },
+      {
+       "draft": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאָוֹת upon",
+       "reread": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאוֹת upon",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאָוֹת upon",
+        "verdict": "a",
+        "note": "The last word carries a qamets printed under the aleph (הַגֵּיאָוֹת); Reading B omits it. Everything else is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "20314672-c040-4e87-bea3-c0c2a60511a9",
+        "duration_api_ms": 14747,
+        "cost_usd_list": 0.0800955,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3622,
+        "cache_creation_input_tokens": 2415,
+        "output_tokens": 611
+       },
+       "text": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאָוֹת upon"
+      },
+      {
+       "draft": "some mountain or into some valley. Re-",
+       "reread": "some mountain or into some valley. Re-",
+       "status": "agreed",
+       "text": "some mountain or into some valley. Re-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 77,
+    "y": 2580,
+    "width": 873,
+    "height": 658
+   },
+   "draft_lines": [
+    "peated i. q. sive—sive, whether—or, Lev.",
+    "5, 1 אוֹ רָאָה אוֹ יָדַע whether he hath seen",
+    "or known. Ex. 21, 31. Sometimes it is",
+    "intensive, i. q. or rather, 1 Sam. 29, 3",
+    "who hath been with me now these many",
+    "days, אוֹ זֶה שָׁנִים or rather these years.",
+    "So Arab. أَوْ, which they explain by بَلْ.",
+    "—Sometimes also ellipt. for אוֹ כִּי or (be",
+    "it) that, or (it must be) that, with fut. sub-",
+    "junct. where we may properly render",
+    "or else, unless perhaps. (Comp. Arab."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 77,
+      "y": 2572,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r03-b00-873x237+77+2572-x2.png",
+     "image_sha256": "282eb6852b6465d4e1f245b117101911db6017eba0ce117483517389849f213d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "peated i. q. sive—sive, whether—or, Lev.",
+       "5, 1 אוֹ רָאָה אוֹ יָדָע whether he hath seen",
+       "or known. Ex. 21, 31. Sometimes it is",
+       "intensive, i. q. or rather, 1 Sam. 29, 3"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "adc6c5e4-5660-4e0d-97e6-c5e41e2fc7ec",
+      "duration_api_ms": 12734,
+      "cost_usd_list": 0.08379349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 600
+     },
+     "lines": [
+      {
+       "draft": "peated i. q. sive—sive, whether—or, Lev.",
+       "reread": "peated i. q. sive—sive, whether—or, Lev.",
+       "status": "agreed",
+       "text": "peated i. q. sive—sive, whether—or, Lev."
+      },
+      {
+       "draft": "5, 1 אוֹ רָאָה אוֹ יָדַע whether he hath seen",
+       "reread": "5, 1 אוֹ רָאָה אוֹ יָדָע whether he hath seen",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "5, 1 אוֹ רָאָה אוֹ יָדַע whether he hath seen",
+        "verdict": "a",
+        "note": "Under the dalet of ידע the print shows a flat horizontal stroke (patah) with no vertical stem, unlike the clearly T-shaped qamets marks under the yod and under the resh/aleph of רָאָה; so יָדַע (A), not יָדָע (B). All other characters agree.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7259b61b-79ef-4c92-a046-e5f583b45dbf",
+        "duration_api_ms": 11228,
+        "cost_usd_list": 0.09052874999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3595,
+        "cache_creation_input_tokens": 2577,
+        "output_tokens": 755
+       },
+       "text": "5, 1 אוֹ רָאָה אוֹ יָדַע whether he hath seen"
+      },
+      {
+       "draft": "or known. Ex. 21, 31. Sometimes it is",
+       "reread": "or known. Ex. 21, 31. Sometimes it is",
+       "status": "agreed",
+       "text": "or known. Ex. 21, 31. Sometimes it is"
+      },
+      {
+       "draft": "intensive, i. q. or rather, 1 Sam. 29, 3",
+       "reread": "intensive, i. q. or rather, 1 Sam. 29, 3",
+       "status": "agreed",
+       "text": "intensive, i. q. or rather, 1 Sam. 29, 3"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 77,
+      "y": 2793,
+      "width": 873,
+      "height": 282
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r03-b01-873x282+77+2793-x2.png",
+     "image_sha256": "8271f788b1130a044104d391ce77b574a1f3edf5003700c80b60fb7e70735902",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "who hath been with me now these many",
+       "days, אוֹ זֶה שָׁנִים or rather these years.",
+       "So Arab. أَوْ, which they explain by بَلْ.",
+       "—Sometimes also ellipt. for אוֹ כִי or (be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a3284448-71b3-48e9-93b8-c6c485ac0725",
+      "duration_api_ms": 12089,
+      "cost_usd_list": 0.0844335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 512
+     },
+     "lines": [
+      {
+       "draft": "who hath been with me now these many",
+       "reread": "who hath been with me now these many",
+       "status": "agreed",
+       "text": "who hath been with me now these many"
+      },
+      {
+       "draft": "days, אוֹ זֶה שָׁנִים or rather these years.",
+       "reread": "days, אוֹ זֶה שָׁנִים or rather these years.",
+       "status": "agreed",
+       "text": "days, אוֹ זֶה שָׁנִים or rather these years."
+      },
+      {
+       "draft": "So Arab. أَوْ, which they explain by بَلْ.",
+       "reread": "So Arab. أَوْ, which they explain by بَلْ.",
+       "status": "agreed",
+       "text": "So Arab. أَوْ, which they explain by بَلْ."
+      },
+      {
+       "draft": "—Sometimes also ellipt. for אוֹ כִּי or (be",
+       "reread": "—Sometimes also ellipt. for אוֹ כִי or (be",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "—Sometimes also ellipt. for אוֹ כִי or (be",
+        "verdict": "b",
+        "note": "The kaph in כי carries only a hiriq beneath; no dagesh dot is printed inside the letter, so Reading B's defective-pointed כִי matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "53bac1ec-14aa-4dd6-bc95-7877c92d1146",
+        "duration_api_ms": 13237,
+        "cost_usd_list": 0.0856745,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3578,
+        "cache_creation_input_tokens": 2812,
+        "output_tokens": 564
+       },
+       "text": "—Sometimes also ellipt. for אוֹ כִי or (be"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 77,
+      "y": 3059,
+      "width": 873,
+      "height": 181
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c0-r03-b02-873x181+77+3059-x2.png",
+     "image_sha256": "d33c2eeabf4fea5e7127fb2dcaa534dc716211328f72710d314b62ba00cd307f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "it) that, or (it must be) that, with fut. sub-",
+       "junct. where we may properly render",
+       "or else, unless perhaps. (Comp. Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "91d5b867-408c-4a67-845e-79ccbfa3877c",
+      "duration_api_ms": 7342,
+      "cost_usd_list": 0.0601535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 228
+     },
+     "lines": [
+      {
+       "draft": "it) that, or (it must be) that, with fut. sub-",
+       "reread": "it) that, or (it must be) that, with fut. sub-",
+       "status": "agreed",
+       "text": "it) that, or (it must be) that, with fut. sub-"
+      },
+      {
+       "draft": "junct. where we may properly render",
+       "reread": "junct. where we may properly render",
+       "status": "agreed",
+       "text": "junct. where we may properly render"
+      },
+      {
+       "draft": "or else, unless perhaps. (Comp. Arab.",
+       "reread": "or else, unless perhaps. (Comp. Arab.",
+       "status": "agreed",
+       "text": "or else, unless perhaps. (Comp. Arab."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 965,
+    "y": 127,
+    "width": 875,
+    "height": 867
+   },
+   "draft_lines": [
+    "אוב",
+    "أَوْ c. fut. nasb. ellipt. for أَوْ أَنْ, which",
+    "is explained by إِلَّا أَنْ unless.) Is. 27, 5",
+    "I would burn them all together, אוֹ יַחֲזֵק",
+    "בְּמָעוּזִּי or else let them lay hold of my",
+    "refuge, i. e. unless they take hold etc.",
+    "Lev. 26, 41. Ez. 21, 15 [10].—Hence",
+    "3. As a conditional particle, pr. if one",
+    "choose, i. q. if, if perhaps, but if, Sept.",
+    "ἐάν, comp. Lat. sive, in which lies also",
+    "the si conditional. So Arab. أَوْ is often",
+    "explained by the Grammarians by إِنْ.—",
+    "With fut. 1 Sam. 20, 10 who shall tell me"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 965,
+      "y": 119,
+      "width": 875,
+      "height": 334
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r00-b00-875x334+965+119-x2.png",
+     "image_sha256": "c318d9992fae4cbba8afa429d4510d6a3eb25252f8c9c2ff2977bb1f435d22e9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹב",
+       "أَوْ c. fut. nasb. ellipt. for أَوْ أَنْ, which",
+       "is explained by إِلَّا أَنْ unless.) Is. 27, 5",
+       "I would burn them all together, אוֹ יַחֲזֵק"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fc12d846-79ec-40e1-be5e-1007dfb33fd7",
+      "duration_api_ms": 12322,
+      "cost_usd_list": 0.09117325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3067,
+      "output_tokens": 572
+     },
+     "lines": [
+      {
+       "draft": "אוב",
+       "reread": "אוֹב",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "אוֹב",
+        "verdict": "b",
+        "note": "The running-head אוב clearly shows a holem dot printed above the vav; Reading A omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "bfa24dc4-5005-40f1-a8a5-037f775bcb1d",
+        "duration_api_ms": 12527,
+        "cost_usd_list": 0.087584,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3536,
+        "cache_creation_input_tokens": 2958,
+        "output_tokens": 544
+       },
+       "text": "אוֹב"
+      },
+      {
+       "draft": "أَوْ c. fut. nasb. ellipt. for أَوْ أَنْ, which",
+       "reread": "أَوْ c. fut. nasb. ellipt. for أَوْ أَنْ, which",
+       "status": "agreed",
+       "text": "أَوْ c. fut. nasb. ellipt. for أَوْ أَنْ, which"
+      },
+      {
+       "draft": "is explained by إِلَّا أَنْ unless.) Is. 27, 5",
+       "reread": "is explained by إِلَّا أَنْ unless.) Is. 27, 5",
+       "status": "agreed",
+       "text": "is explained by إِلَّا أَنْ unless.) Is. 27, 5"
+      },
+      {
+       "draft": "I would burn them all together, אוֹ יַחֲזֵק",
+       "reread": "I would burn them all together, אוֹ יַחֲזֵק",
+       "status": "agreed",
+       "text": "I would burn them all together, אוֹ יַחֲזֵק"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 965,
+      "y": 437,
+      "width": 875,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r00-b01-875x232+965+437-x2.png",
+     "image_sha256": "a66b66f990e01dd833bee20821a4e2724bd05b778e8d22c9b075aab89542f6b9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "בְּמָעֻזִּי or else let them lay hold of my",
+       "refuge, i. e. unless they take hold etc.",
+       "Lev. 26, 41. Ez. 21, 15 [10].—Hence",
+       "3. As a conditional particle, pr. if one"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dc1f572c-c809-4244-a526-c4496c165baf",
+      "duration_api_ms": 11431,
+      "cost_usd_list": 0.07575325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 440
+     },
+     "lines": [
+      {
+       "draft": "בְּמָעוּזִּי or else let them lay hold of my",
+       "reread": "בְּמָעֻזִּי or else let them lay hold of my",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "בְּמָעֻזִּי or else let them lay hold of my",
+        "verdict": "b",
+        "note": "The printed word has only five letters (ב מ ע ז י) with a qibbuts (three diagonal dots) under the ayin; no vav/shureq is printed, so the spelling is defective בְּמָעֻזִּי, not plene בְּמָעוּזִּי.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "72d327c9-8134-4d37-857a-0de5cbc53b74",
+        "duration_api_ms": 14320,
+        "cost_usd_list": 0.080443,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2553,
+        "output_tokens": 563
+       },
+       "text": "בְּמָעֻזִּי or else let them lay hold of my"
+      },
+      {
+       "draft": "refuge, i. e. unless they take hold etc.",
+       "reread": "refuge, i. e. unless they take hold etc.",
+       "status": "agreed",
+       "text": "refuge, i. e. unless they take hold etc."
+      },
+      {
+       "draft": "Lev. 26, 41. Ez. 21, 15 [10].—Hence",
+       "reread": "Lev. 26, 41. Ez. 21, 15 [10].—Hence",
+       "status": "agreed",
+       "text": "Lev. 26, 41. Ez. 21, 15 [10].—Hence"
+      },
+      {
+       "draft": "3. As a conditional particle, pr. if one",
+       "reread": "3. As a conditional particle, pr. if one",
+       "status": "agreed",
+       "text": "3. As a conditional particle, pr. if one"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 965,
+      "y": 653,
+      "width": 875,
+      "height": 295
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r00-b02-875x295+965+653-x2.png",
+     "image_sha256": "baa64b30fc7111c4e4bfb7414cdb8d7740a6e1bd54d2256f829d407b52ad8f15",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "choose, i. q. if, if perhaps, but if, Sept.",
+       "ἐάν, comp. Lat. sive, in which lies also",
+       "the si conditional. So Arab. أَوْ is often",
+       "explained by the Grammarians by إِنْ.—"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "055eb1af-3c85-4cca-8369-b07ac37987a8",
+      "duration_api_ms": 7174,
+      "cost_usd_list": 0.07805324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 360
+     },
+     "lines": [
+      {
+       "draft": "choose, i. q. if, if perhaps, but if, Sept.",
+       "reread": "choose, i. q. if, if perhaps, but if, Sept.",
+       "status": "agreed",
+       "text": "choose, i. q. if, if perhaps, but if, Sept."
+      },
+      {
+       "draft": "ἐάν, comp. Lat. sive, in which lies also",
+       "reread": "ἐάν, comp. Lat. sive, in which lies also",
+       "status": "agreed",
+       "text": "ἐάν, comp. Lat. sive, in which lies also"
+      },
+      {
+       "draft": "the si conditional. So Arab. أَوْ is often",
+       "reread": "the si conditional. So Arab. أَوْ is often",
+       "status": "agreed",
+       "text": "the si conditional. So Arab. أَوْ is often"
+      },
+      {
+       "draft": "explained by the Grammarians by إِنْ.—",
+       "reread": "explained by the Grammarians by إِنْ.—",
+       "status": "agreed",
+       "text": "explained by the Grammarians by إِنْ.—"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 965,
+      "y": 932,
+      "width": 875,
+      "height": 58
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r00-b03-875x58+965+932-x2.png",
+     "image_sha256": "d3b6dcfa27af09e07d97c8795c6f85c9a720d46d62cda028e37fb2aa90761d6b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "With fut. 1 Sam. 20, 10 who shall tell me"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7d06dc4a-00ec-4dd2-9891-b3c2b203d2dd",
+      "duration_api_ms": 7017,
+      "cost_usd_list": 0.048633249999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1870,
+      "output_tokens": 200
+     },
+     "lines": [
+      {
+       "draft": "With fut. 1 Sam. 20, 10 who shall tell me",
+       "reread": "With fut. 1 Sam. 20, 10 who shall tell me",
+       "status": "agreed",
+       "text": "With fut. 1 Sam. 20, 10 who shall tell me"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 965,
+    "y": 982,
+    "width": 875,
+    "height": 963
+   },
+   "draft_lines": [
+    "אוֹ מַה־יַּעַנְךָ אָבִיךָ קָשָׁה if thy father an-",
+    "swer thee any thing harshly? Sept. ἐάν,",
+    "Vulg. si forte. (Winer attributes to this",
+    "passage more than the context will bear,",
+    "in endeavouring to make out a disjunc-",
+    "tive sense, ad Sim. Lex. p. 26.) Ex. 21,",
+    "36 אוֹ נוֹדַע כִּי שׁוֹר נַגָּח הוּא but if it be",
+    "known, that the ox was wont to push,",
+    "Sept. ἐὰν δέ, Vulg. sin autem. Lev. 4,",
+    "23. 28. 2 Sam. 18, 13.—Without a verb,",
+    "Gen. 24, 55 let the maiden abide with us",
+    "יָמִים אוֹ עָשׂוֹר some days, if perhaps ten,",
+    "q. d. ten days if she choose; Sept. ἡμέρας",
+    "ὡσεὶ δέκα, Vulg. dies saltem decem. In",
+    "this example the primary sense of choice",
+    "remains; nor can it be well explained:",
+    "multos dies, aut saltem decem."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 965,
+      "y": 987,
+      "width": 875,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r01-b00-875x232+965+987-x2.png",
+     "image_sha256": "79e042e3744137c9b3e34518def53a61b1504f609bb405c4db52a8afe5f49dd4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹ מַה־יַּעַנְךָ אָבִיךָ קָשָׁה if thy father an-",
+       "swer thee any thing harshly? Sept. ἐάν,",
+       "Vulg. si forte. (Winer attributes to this",
+       "passage more than the context will bear,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "209a6b12-716f-40ac-9f03-f899eb576cf7",
+      "duration_api_ms": 11385,
+      "cost_usd_list": 0.07585325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 442
+     },
+     "lines": [
+      {
+       "draft": "אוֹ מַה־יַּעַנְךָ אָבִיךָ קָשָׁה if thy father an-",
+       "reread": "אוֹ מַה־יַּעַנְךָ אָבִיךָ קָשָׁה if thy father an-",
+       "status": "agreed",
+       "text": "אוֹ מַה־יַּעַנְךָ אָבִיךָ קָשָׁה if thy father an-"
+      },
+      {
+       "draft": "swer thee any thing harshly? Sept. ἐάν,",
+       "reread": "swer thee any thing harshly? Sept. ἐάν,",
+       "status": "agreed",
+       "text": "swer thee any thing harshly? Sept. ἐάν,"
+      },
+      {
+       "draft": "Vulg. si forte. (Winer attributes to this",
+       "reread": "Vulg. si forte. (Winer attributes to this",
+       "status": "agreed",
+       "text": "Vulg. si forte. (Winer attributes to this"
+      },
+      {
+       "draft": "passage more than the context will bear,",
+       "reread": "passage more than the context will bear,",
+       "status": "agreed",
+       "text": "passage more than the context will bear,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 965,
+      "y": 1203,
+      "width": 875,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r01-b01-875x237+965+1203-x2.png",
+     "image_sha256": "4203885810da71adbfeb02d703129ef56dbca515d31503f58a9fc0b87eb42b5f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "in endeavouring to make out a disjunc-",
+       "tive sense, ad Sim. Lex. p. 26.)  Ex. 21,",
+       "36 אוֹ נוֹדַע כִּי שׁוֹר נַגָּח הוּא but if it be",
+       "known, that the ox was wont to push,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e4f3cfb0-9db8-4af3-a327-80ac0f937b89",
+      "duration_api_ms": 12117,
+      "cost_usd_list": 0.0782435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 489
+     },
+     "lines": [
+      {
+       "draft": "in endeavouring to make out a disjunc-",
+       "reread": "in endeavouring to make out a disjunc-",
+       "status": "agreed",
+       "text": "in endeavouring to make out a disjunc-"
+      },
+      {
+       "draft": "tive sense, ad Sim. Lex. p. 26.) Ex. 21,",
+       "reread": "tive sense, ad Sim. Lex. p. 26.)  Ex. 21,",
+       "status": "agreed",
+       "text": "tive sense, ad Sim. Lex. p. 26.) Ex. 21,"
+      },
+      {
+       "draft": "36 אוֹ נוֹדַע כִּי שׁוֹר נַגָּח הוּא but if it be",
+       "reread": "36 אוֹ נוֹדַע כִּי שׁוֹר נַגָּח הוּא but if it be",
+       "status": "agreed",
+       "text": "36 אוֹ נוֹדַע כִּי שׁוֹר נַגָּח הוּא but if it be"
+      },
+      {
+       "draft": "known, that the ox was wont to push,",
+       "reread": "known, that the ox was wont to push,",
+       "status": "agreed",
+       "text": "known, that the ox was wont to push,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 965,
+      "y": 1424,
+      "width": 875,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r01-b02-875x239+965+1424-x2.png",
+     "image_sha256": "a5617639c7437eed100f790c6d74b87b43cec71a0ddfbfa5a1ab9a3ba5619b48",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Sept. ἐὰν δέ, Vulg. sin autem. Lev. 4,",
+       "23. 28. 2 Sam. 18, 13.—Without a verb,",
+       "Gen. 24, 55 let the maiden abide with us",
+       "יָמִים אוֹ עָשׂוֹר some days, if perhaps ten,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0c62ea0e-471c-4285-8e92-aff07d74e519",
+      "duration_api_ms": 10904,
+      "cost_usd_list": 0.0765035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 429
+     },
+     "lines": [
+      {
+       "draft": "Sept. ἐὰν δέ, Vulg. sin autem. Lev. 4,",
+       "reread": "Sept. ἐὰν δέ, Vulg. sin autem. Lev. 4,",
+       "status": "agreed",
+       "text": "Sept. ἐὰν δέ, Vulg. sin autem. Lev. 4,"
+      },
+      {
+       "draft": "23. 28. 2 Sam. 18, 13.—Without a verb,",
+       "reread": "23. 28. 2 Sam. 18, 13.—Without a verb,",
+       "status": "agreed",
+       "text": "23. 28. 2 Sam. 18, 13.—Without a verb,"
+      },
+      {
+       "draft": "Gen. 24, 55 let the maiden abide with us",
+       "reread": "Gen. 24, 55 let the maiden abide with us",
+       "status": "agreed",
+       "text": "Gen. 24, 55 let the maiden abide with us"
+      },
+      {
+       "draft": "יָמִים אוֹ עָשׂוֹר some days, if perhaps ten,",
+       "reread": "יָמִים אוֹ עָשׂוֹר some days, if perhaps ten,",
+       "status": "agreed",
+       "text": "יָמִים אוֹ עָשׂוֹר some days, if perhaps ten,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 965,
+      "y": 1647,
+      "width": 875,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r01-b03-875x235+965+1647-x2.png",
+     "image_sha256": "e98cc3e9dc30268da540908ff3794fd0e91bb10cd149e69d9da36d895a04ce31",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "q. d. ten days if she choose; Sept. ἡμέρας",
+       "ὡσεὶ δέκα, Vulg. dies saltem decem. In",
+       "this example the primary sense of choice",
+       "remains; nor can it be well explained:"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "96f46954-b270-4998-a21b-d080cc647fae",
+      "duration_api_ms": 8565,
+      "cost_usd_list": 0.0665935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 256
+     },
+     "lines": [
+      {
+       "draft": "q. d. ten days if she choose; Sept. ἡμέρας",
+       "reread": "q. d. ten days if she choose; Sept. ἡμέρας",
+       "status": "agreed",
+       "text": "q. d. ten days if she choose; Sept. ἡμέρας"
+      },
+      {
+       "draft": "ὡσεὶ δέκα, Vulg. dies saltem decem. In",
+       "reread": "ὡσεὶ δέκα, Vulg. dies saltem decem. In",
+       "status": "agreed",
+       "text": "ὡσεὶ δέκα, Vulg. dies saltem decem. In"
+      },
+      {
+       "draft": "this example the primary sense of choice",
+       "reread": "this example the primary sense of choice",
+       "status": "agreed",
+       "text": "this example the primary sense of choice"
+      },
+      {
+       "draft": "remains; nor can it be well explained:",
+       "reread": "remains; nor can it be well explained:",
+       "status": "agreed",
+       "text": "remains; nor can it be well explained:"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 965,
+      "y": 1866,
+      "width": 875,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r01-b04-875x72+965+1866-x2.png",
+     "image_sha256": "c7f366a9ddb0d24c60d74924d20de4e2a0a80d1a3fb6c4216be827ef093517c6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "multos dies, aut saltem decem."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2fcc6f6b-bbf2-4e37-ad12-86f149157448",
+      "duration_api_ms": 7230,
+      "cost_usd_list": 0.0494335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 190
+     },
+     "lines": [
+      {
+       "draft": "multos dies, aut saltem decem.",
+       "reread": "multos dies, aut saltem decem.",
+       "status": "agreed",
+       "text": "multos dies, aut saltem decem."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 965,
+    "y": 1933,
+    "width": 875,
+    "height": 847
+   },
+   "draft_lines": [
+    "אוּאֵל (prob. will of God, from אַו, אוֹ,",
+    "r. אָוָה) Uel, pr. n. Ezra 10, 34.",
+    "* אוֹב or אוּב obsol. root, i. q. Arab.",
+    "آبَ for أَوَبَ.",
+    "1. to come back, to return; also to",
+    "come to one’s senses, resipiscere, whence",
+    "أَوَّابٌ resipiscens.",
+    "2. to go down, to set, e. g. the sun.",
+    "3. to come by night, espec. in order to",
+    "get water. Conj. V, VIII, id. أَيَّابٌ a",
+    "water-carrier, aquarius. Hence in He-",
+    "brew:"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 965,
+      "y": 1940,
+      "width": 875,
+      "height": 326
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r02-b00-875x326+965+1940-x2.png",
+     "image_sha256": "a025c1d810e9303044e03987a2bcebc88b79b6debfe3aacb69f3425f362b3282",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּאֵל (prob. will of God, from אַו, אוֹ,",
+       "r. אָוָה) Uel, pr. n. Ezra 10, 34.",
+       "* אוֹב or אוּב obsol. root, i. q. Arab.",
+       "آبَ for أَوَبَ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c2f2a916-ccf4-46de-b050-37ee07cfc926",
+      "duration_api_ms": 16301,
+      "cost_usd_list": 0.09816349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3069,
+      "output_tokens": 711
+     },
+     "lines": [
+      {
+       "draft": "אוּאֵל (prob. will of God, from אַו, אוֹ,",
+       "reread": "אוּאֵל (prob. will of God, from אַו, אוֹ,",
+       "status": "agreed",
+       "text": "אוּאֵל (prob. will of God, from אַו, אוֹ,"
+      },
+      {
+       "draft": "r. אָוָה) Uel, pr. n. Ezra 10, 34.",
+       "reread": "r. אָוָה) Uel, pr. n. Ezra 10, 34.",
+       "status": "agreed",
+       "text": "r. אָוָה) Uel, pr. n. Ezra 10, 34."
+      },
+      {
+       "draft": "* אוֹב or אוּב obsol. root, i. q. Arab.",
+       "reread": "* אוֹב or אוּב obsol. root, i. q. Arab.",
+       "status": "agreed",
+       "text": "* אוֹב or אוּב obsol. root, i. q. Arab."
+      },
+      {
+       "draft": "آبَ for أَوَبَ.",
+       "reread": "آبَ for أَوَبَ.",
+       "status": "agreed",
+       "text": "آبَ for أَوَبَ."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 965,
+      "y": 2250,
+      "width": 875,
+      "height": 225
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r02-b01-875x225+965+2250-x2.png",
+     "image_sha256": "351b53e5112ffe6d257dd3b8a4c02d0b18495b85cade94e746c1e0f6226abc34",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1. to come back, to return ; also to",
+       "come to one’s senses, resipiscere, whence",
+       "أَوَّابٌ resipiscens."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c8adee75-9764-42aa-89ae-69bcfc0166bd",
+      "duration_api_ms": 9279,
+      "cost_usd_list": 0.06899349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 304
+     },
+     "lines": [
+      {
+       "draft": "1. to come back, to return; also to",
+       "reread": "1. to come back, to return ; also to",
+       "status": "agreed",
+       "text": "1. to come back, to return; also to"
+      },
+      {
+       "draft": "come to one’s senses, resipiscere, whence",
+       "reread": "come to one’s senses, resipiscere, whence",
+       "status": "agreed",
+       "text": "come to one’s senses, resipiscere, whence"
+      },
+      {
+       "draft": "أَوَّابٌ resipiscens.",
+       "reread": "أَوَّابٌ resipiscens.",
+       "status": "agreed",
+       "text": "أَوَّابٌ resipiscens."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 965,
+      "y": 2459,
+      "width": 875,
+      "height": 216
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r02-b02-875x216+965+2459-x2.png",
+     "image_sha256": "a783b31daaf61c011749bf5e75f5d8f49826c50b287ab64b210ef74a766af269",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. to go down, to set, e. g. the sun.",
+       "3. to come by night, espec. in order to",
+       "get water. Conj. V, VIII, id. أَيَّابٌ a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3132ca63-d082-455e-b3be-caff100a550d",
+      "duration_api_ms": 9373,
+      "cost_usd_list": 0.0689835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 329
+     },
+     "lines": [
+      {
+       "draft": "2. to go down, to set, e. g. the sun.",
+       "reread": "2. to go down, to set, e. g. the sun.",
+       "status": "agreed",
+       "text": "2. to go down, to set, e. g. the sun."
+      },
+      {
+       "draft": "3. to come by night, espec. in order to",
+       "reread": "3. to come by night, espec. in order to",
+       "status": "agreed",
+       "text": "3. to come by night, espec. in order to"
+      },
+      {
+       "draft": "get water. Conj. V, VIII, id. أَيَّابٌ a",
+       "reread": "get water. Conj. V, VIII, id. أَيَّابٌ a",
+       "status": "agreed",
+       "text": "get water. Conj. V, VIII, id. أَيَّابٌ a"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 965,
+      "y": 2659,
+      "width": 875,
+      "height": 111
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r02-b03-875x111+965+2659-x2.png",
+     "image_sha256": "e2642f8d0135b9229cd4e06eb5b8d4cc4cc36837b8ec651a4cd1da7ece1dce16",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "water-carrier, aquarius. Hence in He-",
+       "brew :"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "de329863-4c67-4b55-bd96-9258a8b43e28",
+      "duration_api_ms": 7003,
+      "cost_usd_list": 0.0524535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2061,
+      "output_tokens": 200
+     },
+     "lines": [
+      {
+       "draft": "water-carrier, aquarius. Hence in He-",
+       "reread": "water-carrier, aquarius. Hence in He-",
+       "status": "agreed",
+       "text": "water-carrier, aquarius. Hence in He-"
+      },
+      {
+       "draft": "brew:",
+       "reread": "brew :",
+       "status": "agreed",
+       "text": "brew:"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 965,
+    "y": 2768,
+    "width": 875,
+    "height": 470
+   },
+   "draft_lines": [
+    "אוֹב, plur. אוֹבוֹת masc. comp. for the",
+    "gender of the plur. Job 32, 19.",
+    "1. a leathern bottle, pr. a water-skin,",
+    "for carrying water, see r. אוּב no. 3.",
+    "Spoken of skins for wine, Job l. c. כְּאֹבוֹת",
+    "חֲדָשִׁים יִבָּקֵעַ like new bottles which burst,",
+    "i. e. like skins full of new wine.",
+    "2. νεκρόμαντις or νεκυόμαντις, i. e. a"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 965,
+      "y": 2779,
+      "width": 875,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r03-b00-875x243+965+2779-x2.png",
+     "image_sha256": "9298bedd04cba35ce523402e5768ec683ba264664b0ed365a84580b6e9f4479a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹב, plur. אוֹבוֹת masc. comp. for the",
+       "gender of the plur. Job 32, 19.",
+       "1. a leathern bottle, pr. a water-skin,",
+       "for carrying water, see r. אוּב no. 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6ec66115-b1e6-46dc-98cd-afa27789b087",
+      "duration_api_ms": 13369,
+      "cost_usd_list": 0.0681035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 261
+     },
+     "lines": [
+      {
+       "draft": "אוֹב, plur. אוֹבוֹת masc. comp. for the",
+       "reread": "אוֹב, plur. אוֹבוֹת masc. comp. for the",
+       "status": "agreed",
+       "text": "אוֹב, plur. אוֹבוֹת masc. comp. for the"
+      },
+      {
+       "draft": "gender of the plur. Job 32, 19.",
+       "reread": "gender of the plur. Job 32, 19.",
+       "status": "agreed",
+       "text": "gender of the plur. Job 32, 19."
+      },
+      {
+       "draft": "1. a leathern bottle, pr. a water-skin,",
+       "reread": "1. a leathern bottle, pr. a water-skin,",
+       "status": "agreed",
+       "text": "1. a leathern bottle, pr. a water-skin,"
+      },
+      {
+       "draft": "for carrying water, see r. אוּב no. 3.",
+       "reread": "for carrying water, see r. אוּב no. 3.",
+       "status": "agreed",
+       "text": "for carrying water, see r. אוּב no. 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 965,
+      "y": 3006,
+      "width": 875,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0035/pass2/c1-r03-b01-875x240+965+3006-x2.png",
+     "image_sha256": "21da91578e64f6a2c7afd364c09a46de79977f3ee1c6163530630977886976a4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Spoken of skins for wine, Job l. c. כְּאֹבוֹת",
+       "חֲדָשִׁים יִבָּקֵעַ like new bottles which burst,",
+       "i. e. like skins full of new wine.",
+       "2. νεκρόμαντις or νεκυόμαντις, i. e. a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a8a82579-6e52-483b-89ce-5271076451ac",
+      "duration_api_ms": 11167,
+      "cost_usd_list": 0.0793035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 485
+     },
+     "lines": [
+      {
+       "draft": "Spoken of skins for wine, Job l. c. כְּאֹבוֹת",
+       "reread": "Spoken of skins for wine, Job l. c. כְּאֹבוֹת",
+       "status": "agreed",
+       "text": "Spoken of skins for wine, Job l. c. כְּאֹבוֹת"
+      },
+      {
+       "draft": "חֲדָשִׁים יִבָּקֵעַ like new bottles which burst,",
+       "reread": "חֲדָשִׁים יִבָּקֵעַ like new bottles which burst,",
+       "status": "agreed",
+       "text": "חֲדָשִׁים יִבָּקֵעַ like new bottles which burst,"
+      },
+      {
+       "draft": "i. e. like skins full of new wine.",
+       "reread": "i. e. like skins full of new wine.",
+       "status": "agreed",
+       "text": "i. e. like skins full of new wine."
+      },
+      {
+       "draft": "2. νεκρόμαντις or νεκυόμαντις, i. e. a",
+       "reread": "2. νεκρόμαντις or νεκυόμαντις, i. e. a",
+       "status": "agreed",
+       "text": "2. νεκρόμαντις or νεκυόμαντις, i. e. a"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אהר 19 אוב",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "cies of odoriferous tree growing in India,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "called by the Greeks ἀγάλλοχον, later",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ξυλαλόη, in modern times lignum aloës,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "also lignum paradisi, and lignum aquilæ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Excæcaria Agallocha Linn. See Diosc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "lib. I. 21. The Heb. as well as the Greek",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "name is derived from the Indian name",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of the tree, Sanscr. agaru and aguru (the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "r being softened into l), also agarukam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "See Celsius in Hierobot. T. I. p. 135–",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "170. Gildemeister de rebus Indicis, Fasc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "I. p. 65, 66. The Portuguese also would",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "seem to have heard the name under the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "form agulu or the like; since they call",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "this wood aquilæ lignum.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אָהַר a doubtful root; hence perhaps",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַהֲרוֹן pr. n. m. (perh. i. q. הָרוֹן moun-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "taineer, comp. Arab. هارون) Aaron, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "elder brother of Moses, Ex. 6, 20. 7, 7;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and the first high-priest, Ex. c. 29. Lev.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "c. 8.—בְּנֵי אַהֲרוֹן sons of Aaron Josh. 21,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "4. 10. 13; poet. בֵּית אַהֲרוֹן house of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Aaron Ps. 115, 10. 12. 118, 3, put for the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "priests in general. So Aaron for any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "high-priest Ps. 133, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַו, constr. אוֹ, a noun after the form",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "צַו, קַו, from r. אָוָה to will, to desire.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. Subst. will, desire, appetite, once",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Prov. 31, 4 Cheth. וּלְרֹזְנִים אוֹ שֵׁכָר nor",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "for princes the desire of strong drink.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Keri אֵי שֵׁכָר (to say) where is strong",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "drink?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. free-will, choice, and hence constr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹ as a Conjunction, implying the power",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of freely choosing this or that, or, either;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "comp. Lat. vel, apoc. ve, from velle.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Arab. أَوْ. Deut. 13, 2 אוֹת אוֹ מוֹפֵת the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "sign or the wonder. Job 3, 15. 2. K. 2,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאָוֹת upon",
+   "status": "adjudicated",
+   "draft": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאָוֹת upon",
+   "reread": "16 בְּאַחַד הֶהָרִים אוֹ בְּאַחַד הַגֵּיאוֹת upon",
+   "verdict": "a",
+   "note": "The last word carries a qamets printed under the aleph (הַגֵּיאָוֹת); Reading B omits it. Everything else is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "some mountain or into some valley. Re-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "peated i. q. sive—sive, whether—or, Lev.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5, 1 אוֹ רָאָה אוֹ יָדַע whether he hath seen",
+   "status": "adjudicated",
+   "draft": "5, 1 אוֹ רָאָה אוֹ יָדַע whether he hath seen",
+   "reread": "5, 1 אוֹ רָאָה אוֹ יָדָע whether he hath seen",
+   "verdict": "a",
+   "note": "Under the dalet of ידע the print shows a flat horizontal stroke (patah) with no vertical stem, unlike the clearly T-shaped qamets marks under the yod and under the resh/aleph of רָאָה; so יָדַע (A), not יָדָע (B). All other characters agree.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "or known. Ex. 21, 31. Sometimes it is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "intensive, i. q. or rather, 1 Sam. 29, 3",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "who hath been with me now these many",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "days, אוֹ זֶה שָׁנִים or rather these years.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "So Arab. أَوْ, which they explain by بَلْ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "—Sometimes also ellipt. for אוֹ כִי or (be",
+   "status": "adjudicated",
+   "draft": "—Sometimes also ellipt. for אוֹ כִּי or (be",
+   "reread": "—Sometimes also ellipt. for אוֹ כִי or (be",
+   "verdict": "b",
+   "note": "The kaph in כי carries only a hiriq beneath; no dagesh dot is printed inside the letter, so Reading B's defective-pointed כִי matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "it) that, or (it must be) that, with fut. sub-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "junct. where we may properly render",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "or else, unless perhaps. (Comp. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אוֹב",
+   "status": "adjudicated",
+   "draft": "אוב",
+   "reread": "אוֹב",
+   "verdict": "b",
+   "note": "The running-head אוב clearly shows a holem dot printed above the vav; Reading A omits it.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "أَوْ c. fut. nasb. ellipt. for أَوْ أَنْ, which",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "is explained by إِلَّا أَنْ unless.) Is. 27, 5",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "I would burn them all together, אוֹ יַחֲזֵק",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "בְּמָעֻזִּי or else let them lay hold of my",
+   "status": "adjudicated",
+   "draft": "בְּמָעוּזִּי or else let them lay hold of my",
+   "reread": "בְּמָעֻזִּי or else let them lay hold of my",
+   "verdict": "b",
+   "note": "The printed word has only five letters (ב מ ע ז י) with a qibbuts (three diagonal dots) under the ayin; no vav/shureq is printed, so the spelling is defective בְּמָעֻזִּי, not plene בְּמָעוּזִּי.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "refuge, i. e. unless they take hold etc.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Lev. 26, 41. Ez. 21, 15 [10].—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "3. As a conditional particle, pr. if one",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "choose, i. q. if, if perhaps, but if, Sept.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ἐάν, comp. Lat. sive, in which lies also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the si conditional. So Arab. أَوْ is often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "explained by the Grammarians by إِنْ.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "With fut. 1 Sam. 20, 10 who shall tell me",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אוֹ מַה־יַּעַנְךָ אָבִיךָ קָשָׁה if thy father an-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "swer thee any thing harshly? Sept. ἐάν,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Vulg. si forte. (Winer attributes to this",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "passage more than the context will bear,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "in endeavouring to make out a disjunc-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "tive sense, ad Sim. Lex. p. 26.) Ex. 21,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "36 אוֹ נוֹדַע כִּי שׁוֹר נַגָּח הוּא but if it be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "known, that the ox was wont to push,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Sept. ἐὰν δέ, Vulg. sin autem. Lev. 4,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "23. 28. 2 Sam. 18, 13.—Without a verb,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Gen. 24, 55 let the maiden abide with us",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "יָמִים אוֹ עָשׂוֹר some days, if perhaps ten,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "q. d. ten days if she choose; Sept. ἡμέρας",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ὡσεὶ δέκα, Vulg. dies saltem decem. In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "this example the primary sense of choice",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "remains; nor can it be well explained:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "multos dies, aut saltem decem.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אוּאֵל (prob. will of God, from אַו, אוֹ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "r. אָוָה) Uel, pr. n. Ezra 10, 34.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "* אוֹב or אוּב obsol. root, i. q. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "آبَ for أَوَبَ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1. to come back, to return; also to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "come to one’s senses, resipiscere, whence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "أَوَّابٌ resipiscens.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. to go down, to set, e. g. the sun.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "3. to come by night, espec. in order to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "get water. Conj. V, VIII, id. أَيَّابٌ a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "water-carrier, aquarius. Hence in He-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "brew:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אוֹב, plur. אוֹבוֹת masc. comp. for the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "gender of the plur. Job 32, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "1. a leathern bottle, pr. a water-skin,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "for carrying water, see r. אוּב no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Spoken of skins for wine, Job l. c. כְּאֹבוֹת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "חֲדָשִׁים יִבָּקֵעַ like new bottles which burst,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "i. e. like skins full of new wine.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. νεκρόμαντις or νεκυόμαντις, i. e. a",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 97,
+  "adjudicated": 5,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 0
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.5911
+}

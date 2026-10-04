@@ -1,0 +1,2582 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 30,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0030.png",
+ "raster_sha256": "046ca9a06eb30437e8d5af8dd48a60e0048ef76eb06a7f286082843d77774377",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0030.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:03:38+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 214,
+    "y": 132,
+    "width": 1847,
+    "height": 68
+   },
+   "draft_lines": [
+    "אדר",
+    "14",
+    "אדם"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 214,
+      "y": 130,
+      "width": 1847,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/header-b00-1847x72+214+130-x2.png",
+     "image_sha256": "469bceacba5f2f68546b565542fd2d8bffd294bf6f9a5ba39b165883605fc627",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אדר 14 אדם"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9a951039-683f-4b20-a04b-927c1a8984f1",
+      "duration_api_ms": 7570,
+      "cost_usd_list": 0.0479825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 217
+     },
+     "lines": [
+      {
+       "draft": "אדר 14 אדם",
+       "reread": "אדר 14 אדם",
+       "status": "agreed",
+       "text": "אדר 14 אדם"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 214,
+    "y": 167,
+    "width": 873,
+    "height": 928
+   },
+   "draft_lines": [
+    "this arose from the superstitious practice",
+    "of the Jews, who never pronounce יְהֹוָה",
+    "in the sacred text, but always substitute",
+    "for it אֲדֹנָי in reading; whence in writers",
+    "of a later age this latter word was some-",
+    "times received into the text itself; Dan.",
+    "9, 3. 7. 8. 9. 15. 16. 19. See in יְהֹוָה.",
+    "אֲדוֹרַיִם (two mounds or tumuli) Ado-",
+    "raim, pr. n. of a city of Judah, 2 Chr. 11,",
+    "9. Comp. Ἄδωρα, Δῶρα, Jos. Ant. 8. 10.",
+    "1. ib. 14. 5. 3. Now دورا Dûra, a village",
+    "W. of Hebron; see Bibl. Res. in Palest.",
+    "III. p. 2 sq.",
+    "אֲדוֹרָם see אֲדֹנִירָם."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 214,
+      "y": 159,
+      "width": 873,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r00-b00-873x257+214+159-x2.png",
+     "image_sha256": "60d901e0ab91c0c19ff96e73b3b85bef3957c9f823d9107717434b1566b371f8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "this arose from the superstitious practice",
+       "of the Jews, who never pronounce יְהֹוָה",
+       "in the sacred text, but always substitute"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6b16ed0a-4a52-49ab-b9fc-46729c229a80",
+      "duration_api_ms": 9819,
+      "cost_usd_list": 0.07437325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 362
+     },
+     "lines": [
+      {
+       "draft": "this arose from the superstitious practice",
+       "reread": "this arose from the superstitious practice",
+       "status": "agreed",
+       "text": "this arose from the superstitious practice"
+      },
+      {
+       "draft": "of the Jews, who never pronounce יְהֹוָה",
+       "reread": "of the Jews, who never pronounce יְהֹוָה",
+       "status": "agreed",
+       "text": "of the Jews, who never pronounce יְהֹוָה"
+      },
+      {
+       "draft": "in the sacred text, but always substitute",
+       "reread": "in the sacred text, but always substitute",
+       "status": "agreed",
+       "text": "in the sacred text, but always substitute"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 214,
+      "y": 400,
+      "width": 873,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r00-b01-873x260+214+400-x2.png",
+     "image_sha256": "7e3c691196470af85d2ca2078c29eed5acb2f350cd216c3121fbe84c2816c1fc",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "for it אֲדֹנָי in reading ; whence in writers",
+       "of a later age this latter word was some-",
+       "times received into the text itself; Dan.",
+       "9, 3. 7. 8. 9. 15. 16. 19. See in יְהֹוָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "abc7eeee-9a2a-44ab-bf5a-2f023f7027e3",
+      "duration_api_ms": 10735,
+      "cost_usd_list": 0.07907325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 456
+     },
+     "lines": [
+      {
+       "draft": "for it אֲדֹנָי in reading; whence in writers",
+       "reread": "for it אֲדֹנָי in reading ; whence in writers",
+       "status": "agreed",
+       "text": "for it אֲדֹנָי in reading; whence in writers"
+      },
+      {
+       "draft": "of a later age this latter word was some-",
+       "reread": "of a later age this latter word was some-",
+       "status": "agreed",
+       "text": "of a later age this latter word was some-"
+      },
+      {
+       "draft": "times received into the text itself; Dan.",
+       "reread": "times received into the text itself; Dan.",
+       "status": "agreed",
+       "text": "times received into the text itself; Dan."
+      },
+      {
+       "draft": "9, 3. 7. 8. 9. 15. 16. 19. See in יְהֹוָה.",
+       "reread": "9, 3. 7. 8. 9. 15. 16. 19. See in יְהֹוָה.",
+       "status": "agreed",
+       "text": "9, 3. 7. 8. 9. 15. 16. 19. See in יְהֹוָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 214,
+      "y": 644,
+      "width": 873,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r00-b02-873x237+214+644-x2.png",
+     "image_sha256": "8be041f83e9aeda457d3bf301f96048d9e044845a03950b0fcadc15cc1cf4751",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדוֹרַיִם (two mounds or tumuli) Ado-",
+       "raim, pr. n. of a city of Judah, 2 Chr. 11,",
+       "9. Comp. Ἄδωρα, Δῶρα, Jos. Ant. 8. 10.",
+       "1. ib. 14. 5. 3. Now دورا Dûra, a village"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "52c6f06d-6a71-4dda-a0ae-0fa6e305e44a",
+      "duration_api_ms": 10845,
+      "cost_usd_list": 0.07665325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 458
+     },
+     "lines": [
+      {
+       "draft": "אֲדוֹרַיִם (two mounds or tumuli) Ado-",
+       "reread": "אֲדוֹרַיִם (two mounds or tumuli) Ado-",
+       "status": "agreed",
+       "text": "אֲדוֹרַיִם (two mounds or tumuli) Ado-"
+      },
+      {
+       "draft": "raim, pr. n. of a city of Judah, 2 Chr. 11,",
+       "reread": "raim, pr. n. of a city of Judah, 2 Chr. 11,",
+       "status": "agreed",
+       "text": "raim, pr. n. of a city of Judah, 2 Chr. 11,"
+      },
+      {
+       "draft": "9. Comp. Ἄδωρα, Δῶρα, Jos. Ant. 8. 10.",
+       "reread": "9. Comp. Ἄδωρα, Δῶρα, Jos. Ant. 8. 10.",
+       "status": "agreed",
+       "text": "9. Comp. Ἄδωρα, Δῶρα, Jos. Ant. 8. 10."
+      },
+      {
+       "draft": "1. ib. 14. 5. 3. Now دورا Dûra, a village",
+       "reread": "1. ib. 14. 5. 3. Now دورا Dûra, a village",
+       "status": "agreed",
+       "text": "1. ib. 14. 5. 3. Now دورا Dûra, a village"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 214,
+      "y": 865,
+      "width": 873,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r00-b03-873x238+214+865-x2.png",
+     "image_sha256": "261a2a15ad8239cb6a282a369ffd0b407c6a2a586b6e5ac02b2df7258a6ae472",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "W. of Hebron; see Bibl. Res. in Palest.",
+       "III. p. 2 sq.",
+       "אֲדוֹרָם see אֲדֹנִירָם."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c14cafa6-674d-4c49-80c8-6917a342235d",
+      "duration_api_ms": 10214,
+      "cost_usd_list": 0.07610325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 447
+     },
+     "lines": [
+      {
+       "draft": "W. of Hebron; see Bibl. Res. in Palest.",
+       "reread": "W. of Hebron; see Bibl. Res. in Palest.",
+       "status": "agreed",
+       "text": "W. of Hebron; see Bibl. Res. in Palest."
+      },
+      {
+       "draft": "III. p. 2 sq.",
+       "reread": "III. p. 2 sq.",
+       "status": "agreed",
+       "text": "III. p. 2 sq."
+      },
+      {
+       "draft": "אֲדוֹרָם see אֲדֹנִירָם.",
+       "reread": "אֲדוֹרָם see אֲדֹנִירָם.",
+       "status": "agreed",
+       "text": "אֲדוֹרָם see אֲדֹנִירָם."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 214,
+    "y": 1083,
+    "width": 873,
+    "height": 702
+   },
+   "draft_lines": [
+    "אֱדַיִן Chald. adv. of time, at that time,",
+    "thereupon, then, i. q. Heb. אָז, אֲזַי; q. v.",
+    "Dan. 2, 15. 17. 19.—בֵּאדַיִן pr. in that",
+    "time, thereupon, immediately, Dan. 2, 14.",
+    "35. 3, 13. 19. 21. 26. מִן אֱדַיִן from then,",
+    "since that time, Ezra 5, 16, i. q. Hebr.",
+    "מֵאָז.",
+    "אַדִּיר adj. (r. אָדַר) 1. large, great,",
+    "mighty, e. g. mighty waves Ps. 93, 4; of",
+    "a large ship Is. 33, 21.",
+    "2. mighty, powerful, of kings Ps. 136, 18;",
+    "of nations Ez. 32, 18; of gods 1 Sam. 4, 8."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 214,
+      "y": 1075,
+      "width": 873,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r01-b00-873x250+214+1075-x2.png",
+     "image_sha256": "75f689756e3c9a0e226c5911f832549ad264bbe746df06888a48c550c7bd4300",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱדַיִן Chald. adv. of time, at that time,",
+       "thereupon, then, i. q. Heb. אָז, אֲזַי; q. v.",
+       "Dan. 2, 15. 17. 19.—בֵּאדַיִן pr. in that",
+       "time, thereupon, immediately, Dan. 2, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2be7fd83-5259-42a8-a24c-90f4088e2117",
+      "duration_api_ms": 11672,
+      "cost_usd_list": 0.0810535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 520
+     },
+     "lines": [
+      {
+       "draft": "אֱדַיִן Chald. adv. of time, at that time,",
+       "reread": "אֱדַיִן Chald. adv. of time, at that time,",
+       "status": "agreed",
+       "text": "אֱדַיִן Chald. adv. of time, at that time,"
+      },
+      {
+       "draft": "thereupon, then, i. q. Heb. אָז, אֲזַי; q. v.",
+       "reread": "thereupon, then, i. q. Heb. אָז, אֲזַי; q. v.",
+       "status": "agreed",
+       "text": "thereupon, then, i. q. Heb. אָז, אֲזַי; q. v."
+      },
+      {
+       "draft": "Dan. 2, 15. 17. 19.—בֵּאדַיִן pr. in that",
+       "reread": "Dan. 2, 15. 17. 19.—בֵּאדַיִן pr. in that",
+       "status": "agreed",
+       "text": "Dan. 2, 15. 17. 19.—בֵּאדַיִן pr. in that"
+      },
+      {
+       "draft": "time, thereupon, immediately, Dan. 2, 14.",
+       "reread": "time, thereupon, immediately, Dan. 2, 14.",
+       "status": "agreed",
+       "text": "time, thereupon, immediately, Dan. 2, 14."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 214,
+      "y": 1309,
+      "width": 873,
+      "height": 312
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r01-b01-873x312+214+1309-x2.png",
+     "image_sha256": "c5a0a3f13a8c47b05545fea9b5a19bdd3de9a384142d511f7ac4b8e0007fca9d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "35. 3, 13. 19. 21. 26. מִן אֱדַיִן from then,",
+       "since that time, Ezra 5, 16, i. q. Hebr.",
+       "מֵאָז.",
+       "אַדִּיר adj. (r. אָדַר) 1. large, great,",
+       "mighty, e. g. mighty waves Ps. 93, 4 ; of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "72f05f13-599f-4650-ba3f-448cc375597f",
+      "duration_api_ms": 11988,
+      "cost_usd_list": 0.0871035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3006,
+      "output_tokens": 515
+     },
+     "lines": [
+      {
+       "draft": "35. 3, 13. 19. 21. 26. מִן אֱדַיִן from then,",
+       "reread": "35. 3, 13. 19. 21. 26. מִן אֱדַיִן from then,",
+       "status": "agreed",
+       "text": "35. 3, 13. 19. 21. 26. מִן אֱדַיִן from then,"
+      },
+      {
+       "draft": "since that time, Ezra 5, 16, i. q. Hebr.",
+       "reread": "since that time, Ezra 5, 16, i. q. Hebr.",
+       "status": "agreed",
+       "text": "since that time, Ezra 5, 16, i. q. Hebr."
+      },
+      {
+       "draft": "מֵאָז.",
+       "reread": "מֵאָז.",
+       "status": "agreed",
+       "text": "מֵאָז."
+      },
+      {
+       "draft": "אַדִּיר adj. (r. אָדַר) 1. large, great,",
+       "reread": "אַדִּיר adj. (r. אָדַר) 1. large, great,",
+       "status": "agreed",
+       "text": "אַדִּיר adj. (r. אָדַר) 1. large, great,"
+      },
+      {
+       "draft": "mighty, e. g. mighty waves Ps. 93, 4; of",
+       "reread": "mighty, e. g. mighty waves Ps. 93, 4 ; of",
+       "status": "agreed",
+       "text": "mighty, e. g. mighty waves Ps. 93, 4; of"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 214,
+      "y": 1605,
+      "width": 873,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r01-b02-873x188+214+1605-x2.png",
+     "image_sha256": "8bc149bf715ee92cb4fa0020e25f0b9159be75527f986b06bd0f636108dac3ae",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a large ship Is. 33, 21.",
+       "2. mighty, powerful, of kings Ps. 136, 18;",
+       "of nations Ez. 32, 18; of gods 1 Sam. 4, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d537030c-4619-4cc0-8a42-409885aee537",
+      "duration_api_ms": 8323,
+      "cost_usd_list": 0.062313499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 246
+     },
+     "lines": [
+      {
+       "draft": "a large ship Is. 33, 21.",
+       "reread": "a large ship Is. 33, 21.",
+       "status": "agreed",
+       "text": "a large ship Is. 33, 21."
+      },
+      {
+       "draft": "2. mighty, powerful, of kings Ps. 136, 18;",
+       "reread": "2. mighty, powerful, of kings Ps. 136, 18;",
+       "status": "agreed",
+       "text": "2. mighty, powerful, of kings Ps. 136, 18;"
+      },
+      {
+       "draft": "of nations Ez. 32, 18; of gods 1 Sam. 4, 8.",
+       "reread": "of nations Ez. 32, 18; of gods 1 Sam. 4, 8.",
+       "status": "agreed",
+       "text": "of nations Ez. 32, 18; of gods 1 Sam. 4, 8."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 214,
+    "y": 1773,
+    "width": 873,
+    "height": 812
+   },
+   "draft_lines": [
+    "3. a chief, a prince, plur. chiefs, nobles,",
+    "princes, 2 Chr. 23, 20. Neh. 10, 30. סֵפֶל",
+    "אַדִּירִים a princely bowl i. e. precious,",
+    "Judg. 5, 25. אַדִּירֵי הַצֹּאן chiefs of the",
+    "flock i. q. shepherds, רֹעִים, Jer. 25, 34 sq.",
+    "4. splendid, glorious, Ps. 8, 2.",
+    "5. Trop. of moral qualities, noble, ex-",
+    "cellent, excelling in piety and virtue.",
+    "Ps. 16, 3 the saints who are in the earth,",
+    "וְאַדִּירֵי כָּל־חֶפְצִי בָם and the excellent",
+    "[of the earth] all my delight is in them,",
+    "i. e. I delight in them alone.",
+    "אֲדַלְיָה Persian, Adaliah, pr. n. of a",
+    "son of Haman, Esth. 9, 8."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 214,
+      "y": 1765,
+      "width": 873,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r02-b00-873x240+214+1765-x2.png",
+     "image_sha256": "8a0fc146e30fd92b5dbc594d07570dfbaae6b05a3a62ac19ac309f71d4a84903",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3. a chief, a prince, plur. chiefs, nobles,",
+       "princes, 2 Chr. 23, 20. Neh. 10, 30. סֵפֶל",
+       "אַדִּירִים a princely bowl i. e. precious,",
+       "Judg. 5, 25. אַדִּירֵי הַצֹּאן chiefs of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "303f6d0a-fba1-4b9f-ab11-a0ed81cbb6de",
+      "duration_api_ms": 14661,
+      "cost_usd_list": 0.09095349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 718
+     },
+     "lines": [
+      {
+       "draft": "3. a chief, a prince, plur. chiefs, nobles,",
+       "reread": "3. a chief, a prince, plur. chiefs, nobles,",
+       "status": "agreed",
+       "text": "3. a chief, a prince, plur. chiefs, nobles,"
+      },
+      {
+       "draft": "princes, 2 Chr. 23, 20. Neh. 10, 30. סֵפֶל",
+       "reread": "princes, 2 Chr. 23, 20. Neh. 10, 30. סֵפֶל",
+       "status": "agreed",
+       "text": "princes, 2 Chr. 23, 20. Neh. 10, 30. סֵפֶל"
+      },
+      {
+       "draft": "אַדִּירִים a princely bowl i. e. precious,",
+       "reread": "אַדִּירִים a princely bowl i. e. precious,",
+       "status": "agreed",
+       "text": "אַדִּירִים a princely bowl i. e. precious,"
+      },
+      {
+       "draft": "Judg. 5, 25. אַדִּירֵי הַצֹּאן chiefs of the",
+       "reread": "Judg. 5, 25. אַדִּירֵי הַצֹּאן chiefs of the",
+       "status": "agreed",
+       "text": "Judg. 5, 25. אַדִּירֵי הַצֹּאן chiefs of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 214,
+      "y": 1989,
+      "width": 873,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r02-b01-873x234+214+1989-x2.png",
+     "image_sha256": "4eb057366c2ba8ceda0e8974ce61251518bae4c1b4e05c19021bd2f0abd77e3d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "flock i. q. shepherds, רֹעִים, Jer. 25, 34 sq.",
+       "4. splendid, glorious, Ps. 8, 2.",
+       "5. Trop. of moral qualities, noble, ex-",
+       "cellent, excelling in piety and virtue."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d39d3e53-8501-41ca-a4d1-c7337c9e549f",
+      "duration_api_ms": 7831,
+      "cost_usd_list": 0.06719349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 268
+     },
+     "lines": [
+      {
+       "draft": "flock i. q. shepherds, רֹעִים, Jer. 25, 34 sq.",
+       "reread": "flock i. q. shepherds, רֹעִים, Jer. 25, 34 sq.",
+       "status": "agreed",
+       "text": "flock i. q. shepherds, רֹעִים, Jer. 25, 34 sq."
+      },
+      {
+       "draft": "4. splendid, glorious, Ps. 8, 2.",
+       "reread": "4. splendid, glorious, Ps. 8, 2.",
+       "status": "agreed",
+       "text": "4. splendid, glorious, Ps. 8, 2."
+      },
+      {
+       "draft": "5. Trop. of moral qualities, noble, ex-",
+       "reread": "5. Trop. of moral qualities, noble, ex-",
+       "status": "agreed",
+       "text": "5. Trop. of moral qualities, noble, ex-"
+      },
+      {
+       "draft": "cellent, excelling in piety and virtue.",
+       "reread": "cellent, excelling in piety and virtue.",
+       "status": "agreed",
+       "text": "cellent, excelling in piety and virtue."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 214,
+      "y": 2207,
+      "width": 873,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r02-b02-873x236+214+2207-x2.png",
+     "image_sha256": "93a3cdb253d845fd5f2070eb4693e4fa2cbc5d643bb5c5101ac1a5ba5345063c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ps. 16, 3 the saints who are in the earth,",
+       "וְאַדִּירֵי כָּל־חֶפְצִי בָם and the excellent",
+       "[of the earth] all my delight is in them,",
+       "i. e. I delight in them alone."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0d042597-dcb8-4cdf-a2d6-ad290d36c766",
+      "duration_api_ms": 10637,
+      "cost_usd_list": 0.07154349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 355
+     },
+     "lines": [
+      {
+       "draft": "Ps. 16, 3 the saints who are in the earth,",
+       "reread": "Ps. 16, 3 the saints who are in the earth,",
+       "status": "agreed",
+       "text": "Ps. 16, 3 the saints who are in the earth,"
+      },
+      {
+       "draft": "וְאַדִּירֵי כָּל־חֶפְצִי בָם and the excellent",
+       "reread": "וְאַדִּירֵי כָּל־חֶפְצִי בָם and the excellent",
+       "status": "agreed",
+       "text": "וְאַדִּירֵי כָּל־חֶפְצִי בָם and the excellent"
+      },
+      {
+       "draft": "[of the earth] all my delight is in them,",
+       "reread": "[of the earth] all my delight is in them,",
+       "status": "agreed",
+       "text": "[of the earth] all my delight is in them,"
+      },
+      {
+       "draft": "i. e. I delight in them alone.",
+       "reread": "i. e. I delight in them alone.",
+       "status": "agreed",
+       "text": "i. e. I delight in them alone."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 214,
+      "y": 2427,
+      "width": 873,
+      "height": 147
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r02-b03-873x147+214+2427-x2.png",
+     "image_sha256": "2ffa84027d5114c47044046c77b3d884d202063b241b32d005ffc74b2305c0b8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדַלְיָה Persian, Adaliah, pr. n. of a",
+       "son of Haman, Esth. 9, 8."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1d560524-afb9-42db-9e4c-8b7746f0d8f4",
+      "duration_api_ms": 10263,
+      "cost_usd_list": 0.0651335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2250,
+      "output_tokens": 378
+     },
+     "lines": [
+      {
+       "draft": "אֲדַלְיָה Persian, Adaliah, pr. n. of a",
+       "reread": "אֲדַלְיָה Persian, Adaliah, pr. n. of a",
+       "status": "agreed",
+       "text": "אֲדַלְיָה Persian, Adaliah, pr. n. of a"
+      },
+      {
+       "draft": "son of Haman, Esth. 9, 8.",
+       "reread": "son of Haman, Esth. 9, 8.",
+       "status": "agreed",
+       "text": "son of Haman, Esth. 9, 8."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 214,
+    "y": 2573,
+    "width": 873,
+    "height": 691
+   },
+   "draft_lines": [
+    "* אָדַם to be red, ruddy; Arab. mid.",
+    "E and O, and Ethiop. id. also to be beau-",
+    "tiful. Once in Kal, Lam. 4, 7 their prin-",
+    "ces . . . are whiter than milk, אָדְמוּ עֶצֶם",
+    "מִפְּנִינִים they are more ruddy in body than",
+    "corals. Whiteness and ruddiness belong",
+    "to the description of youthful beauty ;",
+    "hence it is not correct to refer אָדְמוּ in",
+    "this passage to the idea of dazzling",
+    "whiteness, as Bochart has done in Hie-",
+    "roz. II. p. 688, and Ludolf in Comm.",
+    "ad Hist. Æthiop. p. 206 ; although the"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 214,
+      "y": 2584,
+      "width": 873,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r03-b00-873x246+214+2584-x2.png",
+     "image_sha256": "0f0c03be86b15718824d5532fa1ee5ec7567fca722370dcd91027f62a25617de",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָדַם to be red, ruddy; Arab. mid.",
+       "E and O, and Ethiop. id. also to be beau-",
+       "tiful. Once in Kal, Lam. 4, 7 their prin-",
+       "ces . . . are whiter than milk, אָדְמוּ עֶצֶם"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0f59eaab-79e3-412f-8cae-0a86afd81994",
+      "duration_api_ms": 10795,
+      "cost_usd_list": 0.0753035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 405
+     },
+     "lines": [
+      {
+       "draft": "* אָדַם to be red, ruddy; Arab. mid.",
+       "reread": "* אָדַם to be red, ruddy; Arab. mid.",
+       "status": "agreed",
+       "text": "* אָדַם to be red, ruddy; Arab. mid."
+      },
+      {
+       "draft": "E and O, and Ethiop. id. also to be beau-",
+       "reread": "E and O, and Ethiop. id. also to be beau-",
+       "status": "agreed",
+       "text": "E and O, and Ethiop. id. also to be beau-"
+      },
+      {
+       "draft": "tiful. Once in Kal, Lam. 4, 7 their prin-",
+       "reread": "tiful. Once in Kal, Lam. 4, 7 their prin-",
+       "status": "agreed",
+       "text": "tiful. Once in Kal, Lam. 4, 7 their prin-"
+      },
+      {
+       "draft": "ces . . . are whiter than milk, אָדְמוּ עֶצֶם",
+       "reread": "ces . . . are whiter than milk, אָדְמוּ עֶצֶם",
+       "status": "agreed",
+       "text": "ces... are whiter than milk, אָדְמוּ עֶצֶם"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 214,
+      "y": 2814,
+      "width": 873,
+      "height": 221
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r03-b01-873x221+214+2814-x2.png",
+     "image_sha256": "7b0336ba9f701622a55945e3ffcf51b3d44468c72d25c8f2eda5f34c17e59f20",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "מִפְּנִינִים they are more ruddy in body than",
+       "corals. Whiteness and ruddiness belong",
+       "to the description of youthful beauty ;",
+       "hence it is not correct to refer אָדְמוּ in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "40dd1341-394f-48f9-9ee9-a29abee520d2",
+      "duration_api_ms": 13221,
+      "cost_usd_list": 0.0828835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 607
+     },
+     "lines": [
+      {
+       "draft": "מִפְּנִינִים they are more ruddy in body than",
+       "reread": "מִפְּנִינִים they are more ruddy in body than",
+       "status": "agreed",
+       "text": "מִפְּנִינִים they are more ruddy in body than"
+      },
+      {
+       "draft": "corals. Whiteness and ruddiness belong",
+       "reread": "corals. Whiteness and ruddiness belong",
+       "status": "agreed",
+       "text": "corals. Whiteness and ruddiness belong"
+      },
+      {
+       "draft": "to the description of youthful beauty ;",
+       "reread": "to the description of youthful beauty ;",
+       "status": "agreed",
+       "text": "to the description of youthful beauty;"
+      },
+      {
+       "draft": "hence it is not correct to refer אָדְמוּ in",
+       "reread": "hence it is not correct to refer אָדְמוּ in",
+       "status": "agreed",
+       "text": "hence it is not correct to refer אָדְמוּ in"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 214,
+      "y": 3019,
+      "width": 873,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c0-r03-b02-873x247+214+3019-x2.png",
+     "image_sha256": "ea12ba3dc2263cfe7fb5b31f848621795cc1d0bc9183c4ab1609acecfd4c4c8b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "this passage to the idea of dazzling",
+       "whiteness, as Bochart has done in Hie-",
+       "roz. II. p. 688, and Ludolf in Comm.",
+       "ad Hist. Æthiop. p. 206 ; although the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7eae0622-25fd-4af6-8153-e91d66381360",
+      "duration_api_ms": 8022,
+      "cost_usd_list": 0.0685035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "this passage to the idea of dazzling",
+       "reread": "this passage to the idea of dazzling",
+       "status": "agreed",
+       "text": "this passage to the idea of dazzling"
+      },
+      {
+       "draft": "whiteness, as Bochart has done in Hie-",
+       "reread": "whiteness, as Bochart has done in Hie-",
+       "status": "agreed",
+       "text": "whiteness, as Bochart has done in Hie-"
+      },
+      {
+       "draft": "roz. II. p. 688, and Ludolf in Comm.",
+       "reread": "roz. II. p. 688, and Ludolf in Comm.",
+       "status": "agreed",
+       "text": "roz. II. p. 688, and Ludolf in Comm."
+      },
+      {
+       "draft": "ad Hist. Æthiop. p. 206 ; although the",
+       "reread": "ad Hist. Æthiop. p. 206 ; although the",
+       "status": "agreed",
+       "text": "ad Hist. Æthiop. p. 206; although the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1100,
+    "y": 167,
+    "width": 961,
+    "height": 878
+   },
+   "draft_lines": [
+    "Romans do indeed use purpureus of any",
+    "shining whiteness, Hor. Od. 4. 1. 10;",
+    "comp. Voss ad Virg. Georg. p. 750. But",
+    "these writers would hardly have fallen",
+    "into this opinion, had they not been",
+    "anxious to make out for פְּנִינִים the signi-",
+    "fication of pearls.",
+    "Pual Part. מְאָדָּם made red, dyed red,",
+    "Nah. 2, 4. Ex. 25, 5. 35, 7. 23.",
+    "Hiph. to be red, pr. to make oneself",
+    "red, to redden, Is. 1, 18.",
+    "Hithpa. to be red, e. g. wine in a cup,",
+    "to blush, to sparkle, Prov. 23, 31.",
+    "Deriv. אָדָם—אֲדַמְדָּם ; comp. also דָּם."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1100,
+      "y": 159,
+      "width": 961,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r00-b00-961x251+1100+159-x2.png",
+     "image_sha256": "d964239e105c41a4d0f2ee2cfa7af383aa4bb0462b6d7c12457517c330fb40b9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Romans do indeed use purpureus of any",
+       "shining whiteness, Hor. Od. 4. 1. 10 ;",
+       "comp. Voss ad Virg. Georg. p. 750. But"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3cf31471-6c2d-4a4a-8a3e-a18c891323d1",
+      "duration_api_ms": 5382,
+      "cost_usd_list": 0.0707135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "Romans do indeed use purpureus of any",
+       "reread": "Romans do indeed use purpureus of any",
+       "status": "agreed",
+       "text": "Romans do indeed use purpureus of any"
+      },
+      {
+       "draft": "shining whiteness, Hor. Od. 4. 1. 10;",
+       "reread": "shining whiteness, Hor. Od. 4. 1. 10 ;",
+       "status": "agreed",
+       "text": "shining whiteness, Hor. Od. 4. 1. 10;"
+      },
+      {
+       "draft": "comp. Voss ad Virg. Georg. p. 750. But",
+       "reread": "comp. Voss ad Virg. Georg. p. 750. But",
+       "status": "agreed",
+       "text": "comp. Voss ad Virg. Georg. p. 750. But"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1100,
+      "y": 394,
+      "width": 961,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r00-b01-961x234+1100+394-x2.png",
+     "image_sha256": "63a5b6a40adbc0420dc7c430208a4db079d29758941074937250a8933ab90afa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "these writers would hardly have fallen",
+       "into this opinion, had they not been",
+       "anxious to make out for פְּנִינִים the signi-",
+       "fication of pearls."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "665d1bdf-3221-4708-a1b9-144f14b0371c",
+      "duration_api_ms": 6769,
+      "cost_usd_list": 0.0725835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2730,
+      "output_tokens": 335
+     },
+     "lines": [
+      {
+       "draft": "these writers would hardly have fallen",
+       "reread": "these writers would hardly have fallen",
+       "status": "agreed",
+       "text": "these writers would hardly have fallen"
+      },
+      {
+       "draft": "into this opinion, had they not been",
+       "reread": "into this opinion, had they not been",
+       "status": "agreed",
+       "text": "into this opinion, had they not been"
+      },
+      {
+       "draft": "anxious to make out for פְּנִינִים the signi-",
+       "reread": "anxious to make out for פְּנִינִים the signi-",
+       "status": "agreed",
+       "text": "anxious to make out for פְּנִינִים the signi-"
+      },
+      {
+       "draft": "fication of pearls.",
+       "reread": "fication of pearls.",
+       "status": "agreed",
+       "text": "fication of pearls."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1100,
+      "y": 612,
+      "width": 961,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r00-b02-961x241+1100+612-x2.png",
+     "image_sha256": "0704d6fd93716fd48bedbd72046ff77f64cbf5c18e4551f902063d20ad70bf16",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Pual Part. מְאָדָּם made red, dyed red,",
+       "Nah. 2, 4. Ex. 25, 5. 35, 7. 23.",
+       "Hiph. to be red, pr. to make oneself",
+       "red, to redden, Is. 1, 18."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fb25675a-eb74-4613-8db7-968459b242b7",
+      "duration_api_ms": 8985,
+      "cost_usd_list": 0.0739635,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2799,
+      "output_tokens": 335
+     },
+     "lines": [
+      {
+       "draft": "Pual Part. מְאָדָּם made red, dyed red,",
+       "reread": "Pual Part. מְאָדָּם made red, dyed red,",
+       "status": "agreed",
+       "text": "Pual Part. מְאָדָּם made red, dyed red,"
+      },
+      {
+       "draft": "Nah. 2, 4. Ex. 25, 5. 35, 7. 23.",
+       "reread": "Nah. 2, 4. Ex. 25, 5. 35, 7. 23.",
+       "status": "agreed",
+       "text": "Nah. 2, 4. Ex. 25, 5. 35, 7. 23."
+      },
+      {
+       "draft": "Hiph. to be red, pr. to make oneself",
+       "reread": "Hiph. to be red, pr. to make oneself",
+       "status": "agreed",
+       "text": "Hiph. to be red, pr. to make oneself"
+      },
+      {
+       "draft": "red, to redden, Is. 1, 18.",
+       "reread": "red, to redden, Is. 1, 18.",
+       "status": "agreed",
+       "text": "red, to redden, Is. 1, 18."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1100,
+      "y": 837,
+      "width": 961,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r00-b03-961x193+1100+837-x2.png",
+     "image_sha256": "527c647c72de2fd4d49ebfee05801f49e994ed462d7c6952adff099def9f6752",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Hithpa. to be red, e. g. wine in a cup,",
+       "to blush, to sparkle, Prov. 23, 31.",
+       "Deriv. אָדָם—אַדְמֹנִי ; comp. also דָּם."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1b997ad0-1dc2-46e7-9da8-5c3ee97df5a3",
+      "duration_api_ms": 18485,
+      "cost_usd_list": 0.09844349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2523,
+      "output_tokens": 935
+     },
+     "lines": [
+      {
+       "draft": "Hithpa. to be red, e. g. wine in a cup,",
+       "reread": "Hithpa. to be red, e. g. wine in a cup,",
+       "status": "agreed",
+       "text": "Hithpa. to be red, e. g. wine in a cup,"
+      },
+      {
+       "draft": "to blush, to sparkle, Prov. 23, 31.",
+       "reread": "to blush, to sparkle, Prov. 23, 31.",
+       "status": "agreed",
+       "text": "to blush, to sparkle, Prov. 23, 31."
+      },
+      {
+       "draft": "Deriv. אָדָם—אֲדַמְדָּם ; comp. also דָּם.",
+       "reread": "Deriv. אָדָם—אַדְמֹנִי ; comp. also דָּם.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b03",
+       "judgement": {
+        "text": "Deriv. אָדָם—אֲדָמִי ; comp. also דָּם.",
+        "verdict": "neither",
+        "note": "The word after the dash is printed אֲדָמִי (alef with hataf-patah, dalet with qamets, mem with hiriq, yod) — four letters, no second dalet or nun, no holem. Neither אֲדַמְדָּם (A) nor אַדְמֹנִי (B) matches; the line gives an alphabetical range אָדָם—אֲדָמִי. Order (אָדָם left of the dash) and דָּם with dagesh agree with both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a19f4cfd-0c9c-49ab-b31a-14c0ff3b654a",
+        "duration_api_ms": 27470,
+        "cost_usd_list": 0.13190849999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2471,
+        "output_tokens": 1625
+       },
+       "text": "Deriv. אָדָם—אֲדָמִי; comp. also דָּם."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1100,
+    "y": 1033,
+    "width": 961,
+    "height": 695
+   },
+   "draft_lines": [
+    "אָדָם m. 1. a man, a human being, male",
+    "or female, pr. one red, ruddy, as it would",
+    "seem. The Arabs distinguish two races of",
+    "men; the one red, ruddy, or perh. copper-",
+    "coloured, which we call white; the other",
+    "black. This word has neither construct",
+    "nor plural form, but is very often collect.",
+    "for men, mankind, the human race, Gen.",
+    "1, 26. 27. 6, 1. Ps. 68, 19. 76, 11. Job 20,",
+    "29; כָּל־אָדָם all men Job 21, 33. Some-",
+    "times put in the gen. after adjectives,",
+    "as אֶבְיוֹנֵי אָדָם the poor of men, among"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1100,
+      "y": 1049,
+      "width": 961,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r01-b00-961x237+1100+1049-x2.png",
+     "image_sha256": "0903e3f1fc2f372101916fed64f8c6457650f07ec1331ab0e70cff01fe973ac1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָדָם m. 1. a man, a human being, male",
+       "or female, pr. one red, ruddy, as it would",
+       "seem. The Arabs distinguish two races of",
+       "men; the one red, ruddy, or perh. copper-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3217c426-4153-4270-8f17-81cbfdfac193",
+      "duration_api_ms": 7476,
+      "cost_usd_list": 0.06852375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "אָדָם m. 1. a man, a human being, male",
+       "reread": "אָדָם m. 1. a man, a human being, male",
+       "status": "agreed",
+       "text": "אָדָם m. 1. a man, a human being, male"
+      },
+      {
+       "draft": "or female, pr. one red, ruddy, as it would",
+       "reread": "or female, pr. one red, ruddy, as it would",
+       "status": "agreed",
+       "text": "or female, pr. one red, ruddy, as it would"
+      },
+      {
+       "draft": "seem. The Arabs distinguish two races of",
+       "reread": "seem. The Arabs distinguish two races of",
+       "status": "agreed",
+       "text": "seem. The Arabs distinguish two races of"
+      },
+      {
+       "draft": "men; the one red, ruddy, or perh. copper-",
+       "reread": "men; the one red, ruddy, or perh. copper-",
+       "status": "agreed",
+       "text": "men; the one red, ruddy, or perh. copper-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1100,
+      "y": 1270,
+      "width": 961,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r01-b01-961x235+1100+1270-x2.png",
+     "image_sha256": "73ecf1174c5a5304b31d7ba5ab50303449ba5ee5d184c973495579659868f8b2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "coloured, which we call white; the other",
+       "black. This word has neither construct",
+       "nor plural form, but is very often collect.",
+       "for men, mankind, the human race, Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "412e9c4c-06e8-4f4b-86a5-58ceba3104ef",
+      "duration_api_ms": 7912,
+      "cost_usd_list": 0.06747375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 232
+     },
+     "lines": [
+      {
+       "draft": "coloured, which we call white; the other",
+       "reread": "coloured, which we call white; the other",
+       "status": "agreed",
+       "text": "coloured, which we call white; the other"
+      },
+      {
+       "draft": "black. This word has neither construct",
+       "reread": "black. This word has neither construct",
+       "status": "agreed",
+       "text": "black. This word has neither construct"
+      },
+      {
+       "draft": "nor plural form, but is very often collect.",
+       "reread": "nor plural form, but is very often collect.",
+       "status": "agreed",
+       "text": "nor plural form, but is very often collect."
+      },
+      {
+       "draft": "for men, mankind, the human race, Gen.",
+       "reread": "for men, mankind, the human race, Gen.",
+       "status": "agreed",
+       "text": "for men, mankind, the human race, Gen."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1100,
+      "y": 1489,
+      "width": 961,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r01-b02-961x247+1100+1489-x2.png",
+     "image_sha256": "5578d304bc343a104f18bdded4b1f52f8dbc0e1f8d972bf3be9f9f0b84e624fa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1, 26. 27. 6, 1. Ps. 68, 19. 76, 11. Job 20,",
+       "29 ; כָּל־אָדָם all men Job 21, 33. Some-",
+       "times put in the gen. after adjectives,",
+       "as אֶבְיוֹנֵי אָדָם the poor of men, among"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3c1a720b-d4a2-4d16-869e-4c71239bcef0",
+      "duration_api_ms": 11095,
+      "cost_usd_list": 0.08200375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 495
+     },
+     "lines": [
+      {
+       "draft": "1, 26. 27. 6, 1. Ps. 68, 19. 76, 11. Job 20,",
+       "reread": "1, 26. 27. 6, 1. Ps. 68, 19. 76, 11. Job 20,",
+       "status": "agreed",
+       "text": "1, 26. 27. 6, 1. Ps. 68, 19. 76, 11. Job 20,"
+      },
+      {
+       "draft": "29; כָּל־אָדָם all men Job 21, 33. Some-",
+       "reread": "29 ; כָּל־אָדָם all men Job 21, 33. Some-",
+       "status": "agreed",
+       "text": "29; כָּל־אָדָם all men Job 21, 33. Some-"
+      },
+      {
+       "draft": "times put in the gen. after adjectives,",
+       "reread": "times put in the gen. after adjectives,",
+       "status": "agreed",
+       "text": "times put in the gen. after adjectives,"
+      },
+      {
+       "draft": "as אֶבְיוֹנֵי אָדָם the poor of men, among",
+       "reread": "as אֶבְיוֹנֵי אָדָם the poor of men, among",
+       "status": "agreed",
+       "text": "as אֶבְיוֹנֵי אָדָם the poor of men, among"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1100,
+    "y": 1716,
+    "width": 961,
+    "height": 619
+   },
+   "draft_lines": [
+    "men, i. e. poor men, Is. 29, 19, comp.",
+    "Hos. 13, 2; so with בְּ intervening, as",
+    "בֹּגְדִים בְּאָדָם Prov. 23, 28.—Spec. a) For",
+    "other men, the rest of mankind, opp. to",
+    "those in question, Jer. 32, 20 בְּיִשְׂרָאֵל",
+    "וּבָאָדָם in Israel and among other men.",
+    "Judg. 16, 7. 18, 28. Ps. 73, 5. Is. 43, 4.",
+    "b) Of common men, men of low degree,",
+    "opp. to those of higher rank and better",
+    "character; so כְּאָדָם like (common) men,",
+    "Job 31, 33. Hos. 6, 7. Ps. 82, 7. So in"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1100,
+      "y": 1708,
+      "width": 961,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r02-b00-961x241+1100+1708-x2.png",
+     "image_sha256": "f5c54561ddc63ba080aa3d2553149887ad7b308aebaf346b07344b44b04bfca8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "men, i. e. poor men, Is. 29, 19, comp.",
+       "Hos. 13, 2; so with בְּ intervening, as",
+       "בֹּגְדִים בְּאָדָם Prov. 23, 28.—Spec. a) For",
+       "other men, the rest of mankind, opp. to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1116a616-98e2-44e3-bd53-d7ee165214e2",
+      "duration_api_ms": 11231,
+      "cost_usd_list": 0.08045375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 464
+     },
+     "lines": [
+      {
+       "draft": "men, i. e. poor men, Is. 29, 19, comp.",
+       "reread": "men, i. e. poor men, Is. 29, 19, comp.",
+       "status": "agreed",
+       "text": "men, i. e. poor men, Is. 29, 19, comp."
+      },
+      {
+       "draft": "Hos. 13, 2; so with בְּ intervening, as",
+       "reread": "Hos. 13, 2; so with בְּ intervening, as",
+       "status": "agreed",
+       "text": "Hos. 13, 2; so with בְּ intervening, as"
+      },
+      {
+       "draft": "בֹּגְדִים בְּאָדָם Prov. 23, 28.—Spec. a) For",
+       "reread": "בֹּגְדִים בְּאָדָם Prov. 23, 28.—Spec. a) For",
+       "status": "agreed",
+       "text": "בֹּגְדִים בְּאָדָם Prov. 23, 28.—Spec. a) For"
+      },
+      {
+       "draft": "other men, the rest of mankind, opp. to",
+       "reread": "other men, the rest of mankind, opp. to",
+       "status": "agreed",
+       "text": "other men, the rest of mankind, opp. to"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1100,
+      "y": 1933,
+      "width": 961,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r02-b01-961x237+1100+1933-x2.png",
+     "image_sha256": "c45b24d68263331cefaa44798122715e1eeea726ab32fa8b4efa97a01cb71fa7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "those in question, Jer. 32, 20 בְּיִשְׂרָאֵל",
+       "וּבְאָדָם in Israel and among other men.",
+       "Judg. 16, 7. 18, 28. Ps. 73, 5. Is. 43, 4.",
+       "b) Of common men, men of low degree,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28be230f-6704-4c22-bca2-064ccad0bda1",
+      "duration_api_ms": 10176,
+      "cost_usd_list": 0.07712375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 425
+     },
+     "lines": [
+      {
+       "draft": "those in question, Jer. 32, 20 בְּיִשְׂרָאֵל",
+       "reread": "those in question, Jer. 32, 20 בְּיִשְׂרָאֵל",
+       "status": "agreed",
+       "text": "those in question, Jer. 32, 20 בְּיִשְׂרָאֵל"
+      },
+      {
+       "draft": "וּבָאָדָם in Israel and among other men.",
+       "reread": "וּבְאָדָם in Israel and among other men.",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "וּבְאָדָם in Israel and among other men.",
+        "verdict": "b",
+        "note": "Under the bet the print shows two vertically stacked dots (shva), not a qamets; qamets appears only under aleph and dalet. Reading B matches.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "8deb1e13-66cc-4e64-888a-d596002a382b",
+        "duration_api_ms": 10919,
+        "cost_usd_list": 0.0752015,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2651,
+        "output_tokens": 419
+       },
+       "text": "וּבְאָדָם in Israel and among other men."
+      },
+      {
+       "draft": "Judg. 16, 7. 18, 28. Ps. 73, 5. Is. 43, 4.",
+       "reread": "Judg. 16, 7. 18, 28. Ps. 73, 5. Is. 43, 4.",
+       "status": "agreed",
+       "text": "Judg. 16, 7. 18, 28. Ps. 73, 5. Is. 43, 4."
+      },
+      {
+       "draft": "b) Of common men, men of low degree,",
+       "reread": "b) Of common men, men of low degree,",
+       "status": "agreed",
+       "text": "b) Of common men, men of low degree,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1100,
+      "y": 2154,
+      "width": 961,
+      "height": 189
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r02-b02-961x189+1100+2154-x2.png",
+     "image_sha256": "0a198567a32a4ae6299178eba62b2f171958b03224b273b334f0b4d9adba0182",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "opp. to those of higher rank and better",
+       "character; so כְּאָדָם like (common) men,",
+       "Job 31, 33. Hos. 6, 7. Ps. 82, 7. So in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "43f1b344-1279-495a-b5de-5d4d7387d4ef",
+      "duration_api_ms": 7956,
+      "cost_usd_list": 0.06383375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2525,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "opp. to those of higher rank and better",
+       "reread": "opp. to those of higher rank and better",
+       "status": "agreed",
+       "text": "opp. to those of higher rank and better"
+      },
+      {
+       "draft": "character; so כְּאָדָם like (common) men,",
+       "reread": "character; so כְּאָדָם like (common) men,",
+       "status": "agreed",
+       "text": "character; so כְּאָדָם like (common) men,"
+      },
+      {
+       "draft": "Job 31, 33. Hos. 6, 7. Ps. 82, 7. So in",
+       "reread": "Job 31, 33. Hos. 6, 7. Ps. 82, 7. So in",
+       "status": "agreed",
+       "text": "Job 31, 33. Hos. 6, 7. Ps. 82, 7. So in"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1100,
+    "y": 2323,
+    "width": 961,
+    "height": 982
+   },
+   "draft_lines": [
+    "antith. with אִישׁ men of high degree,",
+    "nobles, Is. 2, 9. 5, 15; שָׂרִים Ps. 82, 7,",
+    "comp. Is. 29, 21 ; and in Plur. בְּנֵי אִישׁ",
+    "Ps. 49, 3. Prov. 8, 4.   c) Of slaves, like",
+    "נֶפֶשׁ, Num. 16, 32.   d) Of soldiers, like",
+    "Engl. men, Is. 22, 6.   Comp. אִישׁ no. 1. l.",
+    "2. a man, not a woman, i. q. אִישׁ.",
+    "Ecc. 7, 28 one man [worthy of the name]",
+    "among a thousand have I found, but a",
+    "woman among them all have I not found.",
+    "3. any man, any one, Lev. 1, 2.   With",
+    "a negative, no man, no one, Job 32, 21.",
+    "Comp. אִישׁ no. 3.",
+    "4. Adam, pr. n.   a) Of the first man,",
+    "Gen. 2, 7 sq.   At least in these passages",
+    "אָדָם assumes the nature of a proper",
+    "name in a certain degree, designating"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1100,
+      "y": 2315,
+      "width": 961,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r03-b00-961x239+1100+2315-x2.png",
+     "image_sha256": "045676798893696c7e0e02c8d47c904cd450648e7d219090bb69cdf20395a832",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "antith. with אִישׁ men of high degree,",
+       "nobles, Is. 2, 9. 5, 15; שָׂרִים Ps. 82, 7,",
+       "comp. Is. 29, 21; and in Plur. בְּנֵי אִישׁ",
+       "Ps. 49, 3. Prov. 8, 4.   c) Of slaves, like"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "133bb63e-296b-48b7-b261-8e55572c7af2",
+      "duration_api_ms": 8749,
+      "cost_usd_list": 0.07215375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 298
+     },
+     "lines": [
+      {
+       "draft": "antith. with אִישׁ men of high degree,",
+       "reread": "antith. with אִישׁ men of high degree,",
+       "status": "agreed",
+       "text": "antith. with אִישׁ men of high degree,"
+      },
+      {
+       "draft": "nobles, Is. 2, 9. 5, 15; שָׂרִים Ps. 82, 7,",
+       "reread": "nobles, Is. 2, 9. 5, 15; שָׂרִים Ps. 82, 7,",
+       "status": "agreed",
+       "text": "nobles, Is. 2, 9. 5, 15; שָׂרִים Ps. 82, 7,"
+      },
+      {
+       "draft": "comp. Is. 29, 21 ; and in Plur. בְּנֵי אִישׁ",
+       "reread": "comp. Is. 29, 21; and in Plur. בְּנֵי אִישׁ",
+       "status": "agreed",
+       "text": "comp. Is. 29, 21; and in Plur. בְּנֵי אִישׁ"
+      },
+      {
+       "draft": "Ps. 49, 3. Prov. 8, 4.   c) Of slaves, like",
+       "reread": "Ps. 49, 3. Prov. 8, 4.   c) Of slaves, like",
+       "status": "agreed",
+       "text": "Ps. 49, 3. Prov. 8, 4. c) Of slaves, like"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1100,
+      "y": 2538,
+      "width": 961,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r03-b01-961x242+1100+2538-x2.png",
+     "image_sha256": "3816ea8924f1e76762735b3dfb74039c499edc7b163f6648f18e41a42676fbd0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "נֶפֶּשׁ, Num. 16, 32. d) Of soldiers, like",
+       "Engl. men, Is. 22, 6. Comp. אִישׁ no. 1. l.",
+       "2. a man, not a woman, i. q. אִישׁ.",
+       "Ecc. 7, 28 one man [worthy of the name]"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7499fdb6-0e09-4553-9e8e-e37c12ecbd80",
+      "duration_api_ms": 13049,
+      "cost_usd_list": 0.08780375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2801,
+      "output_tokens": 611
+     },
+     "lines": [
+      {
+       "draft": "נֶפֶשׁ, Num. 16, 32.   d) Of soldiers, like",
+       "reread": "נֶפֶּשׁ, Num. 16, 32. d) Of soldiers, like",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "נֶפֶשׁ, Num. 16, 32.   d) Of soldiers, like",
+        "verdict": "a",
+        "note": "The pe in נֶפֶשׁ is printed without a dagesh (its bowl is empty); Reading B's נֶפֶּשׁ adds a dagesh that is not on the page. Everything else is identical.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6eac1b26-787c-4809-9990-f6de1d91eac1",
+        "duration_api_ms": 7588,
+        "cost_usd_list": 0.076208,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3592,
+        "cache_creation_input_tokens": 2746,
+        "output_tokens": 401
+       },
+       "text": "נֶפֶשׁ, Num. 16, 32. d) Of soldiers, like"
+      },
+      {
+       "draft": "Engl. men, Is. 22, 6.   Comp. אִישׁ no. 1. l.",
+       "reread": "Engl. men, Is. 22, 6. Comp. אִישׁ no. 1. l.",
+       "status": "agreed",
+       "text": "Engl. men, Is. 22, 6. Comp. אִישׁ no. 1. l."
+      },
+      {
+       "draft": "2. a man, not a woman, i. q. אִישׁ.",
+       "reread": "2. a man, not a woman, i. q. אִישׁ.",
+       "status": "agreed",
+       "text": "2. a man, not a woman, i. q. אִישׁ."
+      },
+      {
+       "draft": "Ecc. 7, 28 one man [worthy of the name]",
+       "reread": "Ecc. 7, 28 one man [worthy of the name]",
+       "status": "agreed",
+       "text": "Ecc. 7, 28 one man [worthy of the name]"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1100,
+      "y": 2764,
+      "width": 961,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r03-b02-961x232+1100+2764-x2.png",
+     "image_sha256": "1bab2689df0f13391ad81a6dd3a7bf1693f25c9b33777d25bb9113b7a2bcbdbe",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "among a thousand have I found, but a",
+       "woman among them all have I not found.",
+       "3. any man, any one, Lev. 1, 2. With",
+       "a negative, no man, no one, Job 32, 21."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d073728b-b9f1-44c6-a320-50ceba15e802",
+      "duration_api_ms": 7416,
+      "cost_usd_list": 0.06797375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "among a thousand have I found, but a",
+       "reread": "among a thousand have I found, but a",
+       "status": "agreed",
+       "text": "among a thousand have I found, but a"
+      },
+      {
+       "draft": "woman among them all have I not found.",
+       "reread": "woman among them all have I not found.",
+       "status": "agreed",
+       "text": "woman among them all have I not found."
+      },
+      {
+       "draft": "3. any man, any one, Lev. 1, 2.   With",
+       "reread": "3. any man, any one, Lev. 1, 2. With",
+       "status": "agreed",
+       "text": "3. any man, any one, Lev. 1, 2. With"
+      },
+      {
+       "draft": "a negative, no man, no one, Job 32, 21.",
+       "reread": "a negative, no man, no one, Job 32, 21.",
+       "status": "agreed",
+       "text": "a negative, no man, no one, Job 32, 21."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b03",
+     "bounds": {
+      "x": 1100,
+      "y": 2980,
+      "width": 961,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r03-b03-961x238+1100+2980-x2.png",
+     "image_sha256": "87c84571c9ae2b77bccd54bb504e1c007a8210e0afefc8a2f448e14dfa5c9990",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Comp. אִישׁ no. 3.",
+       "4. Adam, pr. n.  a) Of the first man,",
+       "Gen. 2, 7 sq.  At least in these passages",
+       "אָדָם assumes the nature of a proper"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ec4eb50a-2550-4bfa-a4c0-a128bee11bcb",
+      "duration_api_ms": 10447,
+      "cost_usd_list": 0.07727375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2732,
+      "output_tokens": 428
+     },
+     "lines": [
+      {
+       "draft": "Comp. אִישׁ no. 3.",
+       "reread": "Comp. אִישׁ no. 3.",
+       "status": "agreed",
+       "text": "Comp. אִישׁ no. 3."
+      },
+      {
+       "draft": "4. Adam, pr. n.   a) Of the first man,",
+       "reread": "4. Adam, pr. n.  a) Of the first man,",
+       "status": "agreed",
+       "text": "4. Adam, pr. n. a) Of the first man,"
+      },
+      {
+       "draft": "Gen. 2, 7 sq.   At least in these passages",
+       "reread": "Gen. 2, 7 sq.  At least in these passages",
+       "status": "agreed",
+       "text": "Gen. 2, 7 sq. At least in these passages"
+      },
+      {
+       "draft": "אָדָם assumes the nature of a proper",
+       "reread": "אָדָם assumes the nature of a proper",
+       "status": "agreed",
+       "text": "אָדָם assumes the nature of a proper"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b04",
+     "bounds": {
+      "x": 1100,
+      "y": 3202,
+      "width": 961,
+      "height": 111
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0030/pass2/c1-r03-b04-961x111+1100+3202-x2.png",
+     "image_sha256": "a809fe8c81170bd1478020b21146314b73a5bfee918a4c8a33b4995acec83f94",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "name in a certain degree, designating"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4c3b7587-32c2-40ba-83bc-c94c7f115f9c",
+      "duration_api_ms": 7281,
+      "cost_usd_list": 0.05445375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2111,
+      "output_tokens": 220
+     },
+     "lines": [
+      {
+       "draft": "name in a certain degree, designating",
+       "reread": "name in a certain degree, designating",
+       "status": "agreed",
+       "text": "name in a certain degree, designating"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "row": 4,
+   "bounds": {
+    "x": 1100,
+    "y": 3293,
+    "width": 961,
+    "height": 195
+   },
+   "draft_lines": [],
+   "bands": []
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אדר 14 אדם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "this arose from the superstitious practice",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of the Jews, who never pronounce יְהֹוָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "in the sacred text, but always substitute",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "for it אֲדֹנָי in reading; whence in writers",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of a later age this latter word was some-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "times received into the text itself; Dan.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "9, 3. 7. 8. 9. 15. 16. 19. See in יְהֹוָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדוֹרַיִם (two mounds or tumuli) Ado-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "raim, pr. n. of a city of Judah, 2 Chr. 11,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "9. Comp. Ἄδωρα, Δῶρα, Jos. Ant. 8. 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. ib. 14. 5. 3. Now دورا Dûra, a village",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "W. of Hebron; see Bibl. Res. in Palest.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "III. p. 2 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדוֹרָם see אֲדֹנִירָם.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֱדַיִן Chald. adv. of time, at that time,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thereupon, then, i. q. Heb. אָז, אֲזַי; q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Dan. 2, 15. 17. 19.—בֵּאדַיִן pr. in that",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "time, thereupon, immediately, Dan. 2, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "35. 3, 13. 19. 21. 26. מִן אֱדַיִן from then,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "since that time, Ezra 5, 16, i. q. Hebr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "מֵאָז.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אַדִּיר adj. (r. אָדַר) 1. large, great,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "mighty, e. g. mighty waves Ps. 93, 4; of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "a large ship Is. 33, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. mighty, powerful, of kings Ps. 136, 18;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of nations Ez. 32, 18; of gods 1 Sam. 4, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "3. a chief, a prince, plur. chiefs, nobles,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "princes, 2 Chr. 23, 20. Neh. 10, 30. סֵפֶל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַדִּירִים a princely bowl i. e. precious,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Judg. 5, 25. אַדִּירֵי הַצֹּאן chiefs of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "flock i. q. shepherds, רֹעִים, Jer. 25, 34 sq.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "4. splendid, glorious, Ps. 8, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "5. Trop. of moral qualities, noble, ex-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "cellent, excelling in piety and virtue.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ps. 16, 3 the saints who are in the earth,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "וְאַדִּירֵי כָּל־חֶפְצִי בָם and the excellent",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "[of the earth] all my delight is in them,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "i. e. I delight in them alone.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲדַלְיָה Persian, Adaliah, pr. n. of a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "son of Haman, Esth. 9, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "* אָדַם to be red, ruddy; Arab. mid.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "E and O, and Ethiop. id. also to be beau-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "tiful. Once in Kal, Lam. 4, 7 their prin-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ces... are whiter than milk, אָדְמוּ עֶצֶם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "מִפְּנִינִים they are more ruddy in body than",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "corals. Whiteness and ruddiness belong",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to the description of youthful beauty;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "hence it is not correct to refer אָדְמוּ in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "this passage to the idea of dazzling",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "whiteness, as Bochart has done in Hie-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "roz. II. p. 688, and Ludolf in Comm.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ad Hist. Æthiop. p. 206; although the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Romans do indeed use purpureus of any",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "shining whiteness, Hor. Od. 4. 1. 10;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "comp. Voss ad Virg. Georg. p. 750. But",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "these writers would hardly have fallen",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "into this opinion, had they not been",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "anxious to make out for פְּנִינִים the signi-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "fication of pearls.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Pual Part. מְאָדָּם made red, dyed red,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Nah. 2, 4. Ex. 25, 5. 35, 7. 23.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Hiph. to be red, pr. to make oneself",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "red, to redden, Is. 1, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Hithpa. to be red, e. g. wine in a cup,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "to blush, to sparkle, Prov. 23, 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Deriv. אָדָם—אֲדָמִי; comp. also דָּם.",
+   "status": "adjudicated",
+   "draft": "Deriv. אָדָם—אֲדַמְדָּם ; comp. also דָּם.",
+   "reread": "Deriv. אָדָם—אַדְמֹנִי ; comp. also דָּם.",
+   "verdict": "neither",
+   "note": "The word after the dash is printed אֲדָמִי (alef with hataf-patah, dalet with qamets, mem with hiriq, yod) — four letters, no second dalet or nun, no holem. Neither אֲדַמְדָּם (A) nor אַדְמֹנִי (B) matches; the line gives an alphabetical range אָדָם—אֲדָמִי. Order (אָדָם left of the dash) and דָּם with dagesh agree with both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אָדָם m. 1. a man, a human being, male",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "or female, pr. one red, ruddy, as it would",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "seem. The Arabs distinguish two races of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "men; the one red, ruddy, or perh. copper-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "coloured, which we call white; the other",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "black. This word has neither construct",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "nor plural form, but is very often collect.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "for men, mankind, the human race, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1, 26. 27. 6, 1. Ps. 68, 19. 76, 11. Job 20,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "29; כָּל־אָדָם all men Job 21, 33. Some-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "times put in the gen. after adjectives,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as אֶבְיוֹנֵי אָדָם the poor of men, among",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "men, i. e. poor men, Is. 29, 19, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Hos. 13, 2; so with בְּ intervening, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "בֹּגְדִים בְּאָדָם Prov. 23, 28.—Spec. a) For",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "other men, the rest of mankind, opp. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "those in question, Jer. 32, 20 בְּיִשְׂרָאֵל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "וּבְאָדָם in Israel and among other men.",
+   "status": "adjudicated",
+   "draft": "וּבָאָדָם in Israel and among other men.",
+   "reread": "וּבְאָדָם in Israel and among other men.",
+   "verdict": "b",
+   "note": "Under the bet the print shows two vertically stacked dots (shva), not a qamets; qamets appears only under aleph and dalet. Reading B matches.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Judg. 16, 7. 18, 28. Ps. 73, 5. Is. 43, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "b) Of common men, men of low degree,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "opp. to those of higher rank and better",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "character; so כְּאָדָם like (common) men,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Job 31, 33. Hos. 6, 7. Ps. 82, 7. So in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "antith. with אִישׁ men of high degree,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "nobles, Is. 2, 9. 5, 15; שָׂרִים Ps. 82, 7,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "comp. Is. 29, 21; and in Plur. בְּנֵי אִישׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Ps. 49, 3. Prov. 8, 4. c) Of slaves, like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "נֶפֶשׁ, Num. 16, 32. d) Of soldiers, like",
+   "status": "adjudicated",
+   "draft": "נֶפֶשׁ, Num. 16, 32.   d) Of soldiers, like",
+   "reread": "נֶפֶּשׁ, Num. 16, 32. d) Of soldiers, like",
+   "verdict": "a",
+   "note": "The pe in נֶפֶשׁ is printed without a dagesh (its bowl is empty); Reading B's נֶפֶּשׁ adds a dagesh that is not on the page. Everything else is identical.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Engl. men, Is. 22, 6. Comp. אִישׁ no. 1. l.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "2. a man, not a woman, i. q. אִישׁ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Ecc. 7, 28 one man [worthy of the name]",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "among a thousand have I found, but a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "woman among them all have I not found.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "3. any man, any one, Lev. 1, 2. With",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "a negative, no man, no one, Job 32, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Comp. אִישׁ no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "4. Adam, pr. n. a) Of the first man,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Gen. 2, 7 sq. At least in these passages",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָדָם assumes the nature of a proper",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "name in a certain degree, designating",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 104,
+  "adjudicated": 3,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.5043
+}

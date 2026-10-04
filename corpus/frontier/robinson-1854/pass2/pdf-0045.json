@@ -1,0 +1,2595 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 45,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0045.png",
+ "raster_sha256": "d4aa0d281f33d2151c83a0c92c38d035b5a81ff234d20214127c82fcaa63982b",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0045.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:41:29+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 75,
+    "y": 118,
+    "width": 1769,
+    "height": 86
+   },
+   "draft_lines": [
+    "אזל",
+    "29",
+    "אזק"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 75,
+      "y": 116,
+      "width": 1769,
+      "height": 90
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/header-b00-1769x90+75+116-x2.png",
+     "image_sha256": "e45f69243a73c6aca4153e461936c7861602663c66f37fe0f23fbc26b2d771a3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אזל 29 אזק"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ed9e2692-1f39-4bb3-8e4e-59794892dfa8",
+      "duration_api_ms": 6827,
+      "cost_usd_list": 0.0440025,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 183
+     },
+     "lines": [
+      {
+       "draft": "אזל 29 אזק",
+       "reread": "אזל 29 אזק",
+       "status": "agreed",
+       "text": "אזל 29 אזק"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 75,
+    "y": 170,
+    "width": 871,
+    "height": 643
+   },
+   "draft_lines": [
+    "הֵאָזְלִי Jer. 2, 36; prob. to roll, to roll",
+    "together; hence",
+    "1. to spin, from the rolling or twist-",
+    "ing of the thread. So Talmud. אָזַל,",
+    "whence אַזְלָאָה weaver, Arab. غزل Conj.",
+    "I, IV, غَزْل something spun, Syr. and",
+    "Chald. ܥܙܰܠ, עֲזַל, id. comp. kindr. נָזַל to",
+    "spin, to flow, both from the idea of rolling.",
+    "See Pual."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 75,
+      "y": 162,
+      "width": 871,
+      "height": 300
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r00-b00-871x300+75+162-x2.png",
+     "image_sha256": "fbad0e66765bdc9fe2389a5598b1d3d813ed5f6ca6d161fc105a09ba983fcd88",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "תֵּאזְלִי Jer. 2, 36; prob. to roll, to roll",
+       "together ; hence",
+       "1. to spin, from the rolling or twist-",
+       "ing of the thread. So Talmud. אָזַל,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "358dc40e-3633-4467-9b89-050898e54932",
+      "duration_api_ms": 13728,
+      "cost_usd_list": 0.07286324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 489
+     },
+     "lines": [
+      {
+       "draft": "הֵאָזְלִי Jer. 2, 36; prob. to roll, to roll",
+       "reread": "תֵּאזְלִי Jer. 2, 36; prob. to roll, to roll",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "תֵּאזְלִי Jer. 2, 36; prob. to roll, to roll",
+        "verdict": "b",
+        "note": "The first letter is a tav with a dagesh dot inside and tsere beneath (the Kethib תֵּאזְלִי of Jer. 2:36), not a he; the alef carries no qamets, and the shewa sits under the zayin. Reading B matches the print exactly.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5df70561-2851-400f-ab76-37b27c498f40",
+        "duration_api_ms": 15560,
+        "cost_usd_list": 0.081677,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3588,
+        "cache_creation_input_tokens": 2884,
+        "output_tokens": 688
+       },
+       "text": "תֵּאזְלִי Jer. 2, 36; prob. to roll, to roll"
+      },
+      {
+       "draft": "together; hence",
+       "reread": "together ; hence",
+       "status": "agreed",
+       "text": "together; hence"
+      },
+      {
+       "draft": "1. to spin, from the rolling or twist-",
+       "reread": "1. to spin, from the rolling or twist-",
+       "status": "agreed",
+       "text": "1. to spin, from the rolling or twist-"
+      },
+      {
+       "draft": "ing of the thread. So Talmud. אָזַל,",
+       "reread": "ing of the thread. So Talmud. אָזַל,",
+       "status": "agreed",
+       "text": "ing of the thread. So Talmud. אָזַל,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 75,
+      "y": 446,
+      "width": 871,
+      "height": 317
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r00-b01-871x317+75+446-x2.png",
+     "image_sha256": "b756b9822419176a156c26699fbffacfacdd37e0936cfc60ef27b3acd5274a01",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "whence אַזְלָאָה weaver, Arab. غزل Conj.",
+       "I, IV, غَزْلٌ something spun, Syr. and",
+       "Chald. ܓܙܠ, עֲזַל, id. comp. kindr. נָזַל to",
+       "spin, to flow, both from the idea of rolling."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0014ad2a-cf47-48d9-9967-576f8ce2c42c",
+      "duration_api_ms": 18913,
+      "cost_usd_list": 0.09525075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 3004,
+      "output_tokens": 921
+     },
+     "lines": [
+      {
+       "draft": "whence אַזְלָאָה weaver, Arab. غزل Conj.",
+       "reread": "whence אַזְלָאָה weaver, Arab. غزل Conj.",
+       "status": "agreed",
+       "text": "whence אַזְלָאָה weaver, Arab. غزل Conj."
+      },
+      {
+       "draft": "I, IV, غَزْل something spun, Syr. and",
+       "reread": "I, IV, غَزْلٌ something spun, Syr. and",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "I, IV, غَزْلٌ something spun, Syr. and",
+        "verdict": "b",
+        "note": "The Arabic word carries a visible nominative tanwīn (ٌ) above the lām in addition to fatḥa on ghayn and sukūn on zāy; Reading A omits it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b139ce45-47fd-41bc-aa81-859d356f5d9b",
+        "duration_api_ms": 11120,
+        "cost_usd_list": 0.06942974999999998,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3569,
+        "cache_creation_input_tokens": 2928,
+        "output_tokens": 435
+       },
+       "text": "I, IV, غَزْلٌ something spun, Syr. and"
+      },
+      {
+       "draft": "Chald. ܥܙܰܠ, עֲזַל, id. comp. kindr. נָזַל to",
+       "reread": "Chald. ܓܙܠ, עֲזַל, id. comp. kindr. נָזַל to",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "Chald. ܥܙܰܠ, עֲזַל, id. comp. kindr. נָזַל to",
+        "verdict": "a",
+        "note": "The Syriac word's first (rightmost) letter is Serto ʿe (ܥ), not gamal, matching the Hebrew cognate עזל; and a vowel point (pthaha) is clearly printed above the word, which Reading B omits. Reading A is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "661c5807-a66e-46c4-b7b7-e19c0e7f664e",
+        "duration_api_ms": 20516,
+        "cost_usd_list": 0.091645,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2978,
+        "output_tokens": 862
+       },
+       "text": "Chald. ܥܙܰܠ, עֲזַל, id. comp. kindr. נָזַל to"
+      },
+      {
+       "draft": "spin, to flow, both from the idea of rolling.",
+       "reread": "spin, to flow, both from the idea of rolling.",
+       "status": "agreed",
+       "text": "spin, to flow, both from the idea of rolling."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 75,
+      "y": 747,
+      "width": 871,
+      "height": 60
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r00-b02-871x60+75+747-x2.png",
+     "image_sha256": "1da4a0830540aa916154c36c02ff85f0778afaf1e87b5e0d34bbb43781aedef7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "See Pual."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ad2c7131-cece-4cf4-ac4b-5e1a3052c5a1",
+      "duration_api_ms": 7365,
+      "cost_usd_list": 0.045975749999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 1870,
+      "output_tokens": 219
+     },
+     "lines": [
+      {
+       "draft": "See Pual.",
+       "reread": "See Pual.",
+       "status": "agreed",
+       "text": "See Pual."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 75,
+    "y": 801,
+    "width": 871,
+    "height": 769
+   },
+   "draft_lines": [
+    "2. Intrans. to roll off, i. e. to go away,",
+    "to depart, espec. quickly, suddenly;",
+    "comp. Germ. sich trollen, Engl. to troll,",
+    "Gr. νέω to spin, and Mid. νέομαι to go",
+    "away, to flee. So in Chald. and Syr.",
+    "Comp. Arab. عزل to put away, to re-",
+    "move.—Prov. 20, 14 where c. dat. pleon.",
+    "לוֹ, like הָלַךְ לוֹ. Jer. 2, 36. Metaph.",
+    "to be gone, to fail, as water Job 14, 11;",
+    "food 1 Sam. 9, 7; power Deut. 32, 36.",
+    "Pual Part. מְאוּזָל something spun,",
+    "thread, yarn, Ez. 27, 19.",
+    "Deriv. אָזַל."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 75,
+      "y": 807,
+      "width": 871,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r01-b00-871x232+75+807-x2.png",
+     "image_sha256": "abb00e2bffad801a33243bb993f279f3c2379c9e0a05b6d42e37e5be109a9080",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Intrans. to roll off, i. e. to go away,",
+       "to depart, espec. quickly, suddenly;",
+       "comp. Germ. sich trollen, Engl. to troll,",
+       "Gr. νέω to spin, and Mid. νέομαι to go"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "77732bdd-1882-40b7-b726-018bdbea5059",
+      "duration_api_ms": 8148,
+      "cost_usd_list": 0.057625749999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 263
+     },
+     "lines": [
+      {
+       "draft": "2. Intrans. to roll off, i. e. to go away,",
+       "reread": "2. Intrans. to roll off, i. e. to go away,",
+       "status": "agreed",
+       "text": "2. Intrans. to roll off, i. e. to go away,"
+      },
+      {
+       "draft": "to depart, espec. quickly, suddenly;",
+       "reread": "to depart, espec. quickly, suddenly;",
+       "status": "agreed",
+       "text": "to depart, espec. quickly, suddenly;"
+      },
+      {
+       "draft": "comp. Germ. sich trollen, Engl. to troll,",
+       "reread": "comp. Germ. sich trollen, Engl. to troll,",
+       "status": "agreed",
+       "text": "comp. Germ. sich trollen, Engl. to troll,"
+      },
+      {
+       "draft": "Gr. νέω to spin, and Mid. νέομαι to go",
+       "reread": "Gr. νέω to spin, and Mid. νέομαι to go",
+       "status": "agreed",
+       "text": "Gr. νέω to spin, and Mid. νέομαι to go"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 75,
+      "y": 1023,
+      "width": 871,
+      "height": 257
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r01-b01-871x257+75+1023-x2.png",
+     "image_sha256": "15ca7e8062cb2f6d188f7f2796828514b2fcfa050214eaccc8437911eaa3916a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "away, to flee. So in Chald. and Syr.",
+       "Comp. Arab. عزل to put away, to re-",
+       "move.—Prov. 20, 14 where c. dat. pleon.",
+       "לוֹ, like הָלַךְ לוֹ. Jer. 2, 36. Metaph."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2cb55d59-f992-4a02-9f12-f72884bfc173",
+      "duration_api_ms": 6360,
+      "cost_usd_list": 0.06383349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 355
+     },
+     "lines": [
+      {
+       "draft": "away, to flee. So in Chald. and Syr.",
+       "reread": "away, to flee. So in Chald. and Syr.",
+       "status": "agreed",
+       "text": "away, to flee. So in Chald. and Syr."
+      },
+      {
+       "draft": "Comp. Arab. عزل to put away, to re-",
+       "reread": "Comp. Arab. عزل to put away, to re-",
+       "status": "agreed",
+       "text": "Comp. Arab. عزل to put away, to re-"
+      },
+      {
+       "draft": "move.—Prov. 20, 14 where c. dat. pleon.",
+       "reread": "move.—Prov. 20, 14 where c. dat. pleon.",
+       "status": "agreed",
+       "text": "move.—Prov. 20, 14 where c. dat. pleon."
+      },
+      {
+       "draft": "לוֹ, like הָלַךְ לוֹ. Jer. 2, 36. Metaph.",
+       "reread": "לוֹ, like הָלַךְ לוֹ. Jer. 2, 36. Metaph.",
+       "status": "agreed",
+       "text": "לוֹ, like הָלַךְ לוֹ. Jer. 2, 36. Metaph."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 75,
+      "y": 1264,
+      "width": 871,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r01-b02-871x236+75+1264-x2.png",
+     "image_sha256": "73e2f1780b8f39e5ba4664bab33a513bd749d869b74c63d4ba37853c53497857",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to be gone, to fail, as water Job 14, 11 ;",
+       "food 1 Sam. 9, 7 ; power Deut. 32, 36.",
+       "Pual Part. מְאוּזָּל something spun,",
+       "thread, yarn, Ez. 27, 19."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e3f587a9-6348-4df2-8f08-74465686bdba",
+      "duration_api_ms": 9848,
+      "cost_usd_list": 0.0639585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 389
+     },
+     "lines": [
+      {
+       "draft": "to be gone, to fail, as water Job 14, 11;",
+       "reread": "to be gone, to fail, as water Job 14, 11 ;",
+       "status": "agreed",
+       "text": "to be gone, to fail, as water Job 14, 11;"
+      },
+      {
+       "draft": "food 1 Sam. 9, 7; power Deut. 32, 36.",
+       "reread": "food 1 Sam. 9, 7 ; power Deut. 32, 36.",
+       "status": "agreed",
+       "text": "food 1 Sam. 9, 7; power Deut. 32, 36."
+      },
+      {
+       "draft": "Pual Part. מְאוּזָל something spun,",
+       "reread": "Pual Part. מְאוּזָּל something spun,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "Pual Part. מְאוּזָל something spun,",
+        "verdict": "a",
+        "note": "Only one interior dot is printed in the middle of the word — the shureq in the vav; the zayin shows no dagesh, so Reading B's מְאוּזָּל adds a dot that isn't on the page.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5abc2daa-4430-4c7e-938c-0f10bbb56a90",
+        "duration_api_ms": 15895,
+        "cost_usd_list": 0.0801065,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3566,
+        "cache_creation_input_tokens": 2548,
+        "output_tokens": 744
+       },
+       "text": "Pual Part. מְאוּזָל something spun,"
+      },
+      {
+       "draft": "thread, yarn, Ez. 27, 19.",
+       "reread": "thread, yarn, Ez. 27, 19.",
+       "status": "agreed",
+       "text": "thread, yarn, Ez. 27, 19."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 75,
+      "y": 1484,
+      "width": 871,
+      "height": 81
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r01-b03-871x81+75+1484-x2.png",
+     "image_sha256": "3ef987184a11654990003bff20fe4230143842778761be67274e8254f3abc67a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Deriv. אָזֵל ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "360f6d65-0d07-49a5-a069-00dc5d34c61d",
+      "duration_api_ms": 9142,
+      "cost_usd_list": 0.050595999999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 295
+     },
+     "lines": [
+      {
+       "draft": "Deriv. אָזַל.",
+       "reread": "Deriv. אָזֵל .",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b03",
+       "judgement": {
+        "text": "Deriv. אָזֵל .",
+        "verdict": "b",
+        "note": "Under the zayin the print shows two horizontal dots (tsere), not a single bar (patah); the aleph carries qamets, and the closing period is spaced off from the word, exactly as in Reading B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2da2ad51-2179-4c02-8b50-8121ecc68200",
+        "duration_api_ms": 16344,
+        "cost_usd_list": 0.0717605,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3552,
+        "cache_creation_input_tokens": 1841,
+        "output_tokens": 756
+       },
+       "text": "Deriv. אָזֵל."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 75,
+    "y": 1558,
+    "width": 871,
+    "height": 815
+   },
+   "draft_lines": [
+    "אֲזַל Chald. i. q. Heb. no. 2. 1. to go",
+    "away, to depart, Dan. 6, 19. So also in",
+    "Syr. and Samar.",
+    "2. to go any where, to take a journey,",
+    "Ezra 4, 23. 5, 8. 15.",
+    "אֲזַל departure, see in אֶבֶן no. 6. b.",
+    "* I. אָזַן in Kal not used, pr. accord-",
+    "ing to the probable conjecture of Simo-",
+    "nis, to be sharp, acute, pointed ; whence",
+    "אֹזֶן the ear, (which espec. in animals",
+    "might be so called from its pointed",
+    "shape,) and אָזֵן, אֲזֵנִים arms, pointed",
+    "weapons. Comp. ἀκοή, ἀκούω, and ἀκή,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 75,
+      "y": 1563,
+      "width": 871,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r02-b00-871x248+75+1563-x2.png",
+     "image_sha256": "2065363dc6837a40749ee6e04b1b826a9855b640bf979a8bb7334dc167edfbf3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲזַל Chald. i. q. Heb. no. 2. 1. to go",
+       "away, to depart, Dan. 6, 19. So also in",
+       "Syr. and Samar.",
+       "2. to go any where, to take a journey,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "30b982fd-e227-44f9-8739-2df9b011a258",
+      "duration_api_ms": 8036,
+      "cost_usd_list": 0.057946,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "אֲזַל Chald. i. q. Heb. no. 2. 1. to go",
+       "reread": "אֲזַל Chald. i. q. Heb. no. 2. 1. to go",
+       "status": "agreed",
+       "text": "אֲזַל Chald. i. q. Heb. no. 2. 1. to go"
+      },
+      {
+       "draft": "away, to depart, Dan. 6, 19. So also in",
+       "reread": "away, to depart, Dan. 6, 19. So also in",
+       "status": "agreed",
+       "text": "away, to depart, Dan. 6, 19. So also in"
+      },
+      {
+       "draft": "Syr. and Samar.",
+       "reread": "Syr. and Samar.",
+       "status": "agreed",
+       "text": "Syr. and Samar."
+      },
+      {
+       "draft": "2. to go any where, to take a journey,",
+       "reread": "2. to go any where, to take a journey,",
+       "status": "agreed",
+       "text": "2. to go any where, to take a journey,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 75,
+      "y": 1795,
+      "width": 871,
+      "height": 299
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r02-b01-871x299+75+1795-x2.png",
+     "image_sha256": "9f9c22c1553b7f64c18b0b562efa2040c4bf2976f54c4d1cbc59fbf8b7eddb13",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Ezra 4, 23. 5, 8. 15.",
+       "אֶזֶל departure, see in אֶבֶן no. 6. b.",
+       "* I. אָזַן in Kal not used, pr. accord-",
+       "ing to the probable conjecture of Simo-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e5e501ac-0106-400a-b53b-a27d4868d3e6",
+      "duration_api_ms": 12654,
+      "cost_usd_list": 0.07674600000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 566
+     },
+     "lines": [
+      {
+       "draft": "Ezra 4, 23. 5, 8. 15.",
+       "reread": "Ezra 4, 23. 5, 8. 15.",
+       "status": "agreed",
+       "text": "Ezra 4, 23. 5, 8. 15."
+      },
+      {
+       "draft": "אֲזַל departure, see in אֶבֶן no. 6. b.",
+       "reread": "אֶזֶל departure, see in אֶבֶן no. 6. b.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "אֶזֶל departure, see in אֶבֶן no. 6. b.",
+        "verdict": "b",
+        "note": "Under the aleph the print shows three dots in a triangle (segol), not the two dots plus patah of hateph-patah; zayin likewise carries segol. So אֶזֶל, matching the lexical form (1 Sam 20:19, אֶבֶן הָאֶזֶל). Rest of the line identical in both readings and confirmed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "38602172-eb7f-46e5-8ab9-56269b41e773",
+        "duration_api_ms": 12306,
+        "cost_usd_list": 0.07262750000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2877,
+        "output_tokens": 510
+       },
+       "text": "אֶזֶל departure, see in אֶבֶן no. 6. b."
+      },
+      {
+       "draft": "* I. אָזַן in Kal not used, pr. accord-",
+       "reread": "* I. אָזַן in Kal not used, pr. accord-",
+       "status": "agreed",
+       "text": "* I. אָזַן in Kal not used, pr. accord-"
+      },
+      {
+       "draft": "ing to the probable conjecture of Simo-",
+       "reread": "ing to the probable conjecture of Simo-",
+       "status": "agreed",
+       "text": "ing to the probable conjecture of Simo-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 75,
+      "y": 2078,
+      "width": 871,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r02-b02-871x241+75+2078-x2.png",
+     "image_sha256": "4e38d4eb0e442c852657371181269e72983253739dd7c6c416e5b5c764204f35",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "nis, to be sharp, acute, pointed; whence",
+       "אֹזֶן the ear, (which espec. in animals",
+       "might be so called from its pointed",
+       "shape,) and אָזֵן, אֲזֵנִים arms, pointed"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5e8e021c-f74c-480d-9378-5740dd2446bf",
+      "duration_api_ms": 10603,
+      "cost_usd_list": 0.064346,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 381
+     },
+     "lines": [
+      {
+       "draft": "nis, to be sharp, acute, pointed ; whence",
+       "reread": "nis, to be sharp, acute, pointed; whence",
+       "status": "agreed",
+       "text": "nis, to be sharp, acute, pointed; whence"
+      },
+      {
+       "draft": "אֹזֶן the ear, (which espec. in animals",
+       "reread": "אֹזֶן the ear, (which espec. in animals",
+       "status": "agreed",
+       "text": "אֹזֶן the ear, (which espec. in animals"
+      },
+      {
+       "draft": "might be so called from its pointed",
+       "reread": "might be so called from its pointed",
+       "status": "agreed",
+       "text": "might be so called from its pointed"
+      },
+      {
+       "draft": "shape,) and אָזֵן, אֲזֵנִים arms, pointed",
+       "reread": "shape,) and אָזֵן, אֲזֵנִים arms, pointed",
+       "status": "agreed",
+       "text": "shape,) and אָזֵן, אֲזֵנִים arms, pointed"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 75,
+      "y": 2303,
+      "width": 871,
+      "height": 78
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r02-b03-871x78+75+2303-x2.png",
+     "image_sha256": "2f457e5a51a9fe1cbeaefef330423c02aa9ff9eea1cba28a41910ae30f0106b7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "weapons. Comp. ἀκοή, ἀκούω, and ἀκή,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a4297f7d-e0dc-4000-8189-72aa4b04e6da",
+      "duration_api_ms": 9228,
+      "cost_usd_list": 0.046196,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 207
+     },
+     "lines": [
+      {
+       "draft": "weapons. Comp. ἀκοή, ἀκούω, and ἀκή,",
+       "reread": "weapons. Comp. ἀκοή, ἀκούω, and ἀκή,",
+       "status": "agreed",
+       "text": "weapons. Comp. ἀκοή, ἀκούω, and ἀκή,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 75,
+    "y": 2361,
+    "width": 871,
+    "height": 979
+   },
+   "draft_lines": [
+    "acies, acuo. Kindr. is perh. עָצַן q. v.",
+    "Hiph. הֶאֱזִין denom. from אֹזֶן, q. d. to",
+    "make ears, i. e. to point or prick up the",
+    "ears, ἐνωτίζεσθαι, a Greek word peculiar",
+    "to the Sept. version, Arab. أَذَّنَ id.",
+    "Hence, to give ear, to hear, to listen, ab-",
+    "sol. Is. 1, 2; c. accus. Gen. 4, 23. Job 33,",
+    "1; לְ Job 34, 2; אֶל Ps. 77, 2; עַל Prov.",
+    "17, 4; עַד Num. 23, 18, both of person",
+    "and thing. Spec. of God, to hear and",
+    "answer, Ps. 5, 2. 17, 1. 39, 13. 54, 4. Job",
+    "9, 16; of men, to hear and obey, c. dat.",
+    "Neh. 9, 30. Ex. 15, 26.—Fut. 1 pers. אָזִין",
+    "for אַאֲזִין Job 32, 11; Part. מֵזִין for מַאֲזִין",
+    "Prov. 17, 4.",
+    "Deriv. see in Kal, and the four after אֹזֶן.",
+    "3*"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 75,
+      "y": 2353,
+      "width": 871,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r03-b00-871x242+75+2353-x2.png",
+     "image_sha256": "29875f8342a517a524ed197e7abebba19beaa765f7ad21a60d01472b6de1d60f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "acies, acuo. Kindr. is perh. עָצַן q. v.",
+       "Hiph. הֶאֱזִין denom. from אֹזֶן, q. d. to",
+       "make ears, i. e. to point or prick up the",
+       "ears, ἐνωτίζεσθαι, a Greek word peculiar"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c2503e61-731d-4ef0-bd37-894333fdd95f",
+      "duration_api_ms": 13138,
+      "cost_usd_list": 0.073446,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 563
+     },
+     "lines": [
+      {
+       "draft": "acies, acuo. Kindr. is perh. עָצַן q. v.",
+       "reread": "acies, acuo. Kindr. is perh. עָצַן q. v.",
+       "status": "agreed",
+       "text": "acies, acuo. Kindr. is perh. עָצַן q. v."
+      },
+      {
+       "draft": "Hiph. הֶאֱזִין denom. from אֹזֶן, q. d. to",
+       "reread": "Hiph. הֶאֱזִין denom. from אֹזֶן, q. d. to",
+       "status": "agreed",
+       "text": "Hiph. הֶאֱזִין denom. from אֹזֶן, q. d. to"
+      },
+      {
+       "draft": "make ears, i. e. to point or prick up the",
+       "reread": "make ears, i. e. to point or prick up the",
+       "status": "agreed",
+       "text": "make ears, i. e. to point or prick up the"
+      },
+      {
+       "draft": "ears, ἐνωτίζεσθαι, a Greek word peculiar",
+       "reread": "ears, ἐνωτίζεσθαι, a Greek word peculiar",
+       "status": "agreed",
+       "text": "ears, ἐνωτίζεσθαι, a Greek word peculiar"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 75,
+      "y": 2579,
+      "width": 871,
+      "height": 275
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r03-b01-871x275+75+2579-x2.png",
+     "image_sha256": "fd25b06f3ab37828045dcbed326339bd0199532ebd4b354db0c4ed8070774065",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "to the Sept. version, Arab. أَذَّنَ id.",
+       "Hence, to give ear, to hear, to listen, ab-",
+       "sol. Is. 1, 2 ; c. accus. Gen. 4, 23. Job 33,",
+       "1 ; לְ Job 34, 2 ; אֶל Ps. 77, 2 ; עַל Prov."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "658eb44b-b509-47a9-8688-f0a8ee0a605c",
+      "duration_api_ms": 11310,
+      "cost_usd_list": 0.076271,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 588
+     },
+     "lines": [
+      {
+       "draft": "to the Sept. version, Arab. أَذَّنَ id.",
+       "reread": "to the Sept. version, Arab. أَذَّنَ id.",
+       "status": "agreed",
+       "text": "to the Sept. version, Arab. أَذَّنَ id."
+      },
+      {
+       "draft": "Hence, to give ear, to hear, to listen, ab-",
+       "reread": "Hence, to give ear, to hear, to listen, ab-",
+       "status": "agreed",
+       "text": "Hence, to give ear, to hear, to listen, ab-"
+      },
+      {
+       "draft": "sol. Is. 1, 2; c. accus. Gen. 4, 23. Job 33,",
+       "reread": "sol. Is. 1, 2 ; c. accus. Gen. 4, 23. Job 33,",
+       "status": "agreed",
+       "text": "sol. Is. 1, 2; c. accus. Gen. 4, 23. Job 33,"
+      },
+      {
+       "draft": "1; לְ Job 34, 2; אֶל Ps. 77, 2; עַל Prov.",
+       "reread": "1 ; לְ Job 34, 2 ; אֶל Ps. 77, 2 ; עַל Prov.",
+       "status": "agreed",
+       "text": "1; לְ Job 34, 2; אֶל Ps. 77, 2; עַל Prov."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 75,
+      "y": 2838,
+      "width": 871,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r03-b02-871x233+75+2838-x2.png",
+     "image_sha256": "8562d308867834a25fcbb68d5431957906fc70ecb08b3a1770b26b74b4de8914",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "17, 4; עַד Num. 23, 18, both of person",
+       "and thing. Spec. of God, to hear and",
+       "answer, Ps. 5, 2. 17, 1. 39, 13. 54, 4. Job",
+       "9, 16; of men, to hear and obey, c. dat."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fcbec093-4312-4cf3-908d-6eed7257f693",
+      "duration_api_ms": 10445,
+      "cost_usd_list": 0.0630085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 370
+     },
+     "lines": [
+      {
+       "draft": "17, 4; עַד Num. 23, 18, both of person",
+       "reread": "17, 4; עַד Num. 23, 18, both of person",
+       "status": "agreed",
+       "text": "17, 4; עַד Num. 23, 18, both of person"
+      },
+      {
+       "draft": "and thing. Spec. of God, to hear and",
+       "reread": "and thing. Spec. of God, to hear and",
+       "status": "agreed",
+       "text": "and thing. Spec. of God, to hear and"
+      },
+      {
+       "draft": "answer, Ps. 5, 2. 17, 1. 39, 13. 54, 4. Job",
+       "reread": "answer, Ps. 5, 2. 17, 1. 39, 13. 54, 4. Job",
+       "status": "agreed",
+       "text": "answer, Ps. 5, 2. 17, 1. 39, 13. 54, 4. Job"
+      },
+      {
+       "draft": "9, 16; of men, to hear and obey, c. dat.",
+       "reread": "9, 16; of men, to hear and obey, c. dat.",
+       "status": "agreed",
+       "text": "9, 16; of men, to hear and obey, c. dat."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 75,
+      "y": 3055,
+      "width": 871,
+      "height": 287
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c0-r03-b03-871x287+75+3055-x2.png",
+     "image_sha256": "4e8c1fa190a2c98701b1a209712c7f0ba8bf51135b6452b5b14da11415fdd839",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Neh. 9, 30. Ex. 15, 26.—Fut. 1 pers. אָזִין",
+       "for אַאֲזִין Job 32, 11; Part. מֵזִין for מַאֲזִין",
+       "Prov. 17, 4.",
+       "Deriv. see in Kal, and the four after אֹזֶן.",
+       "3*"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4481057d-86c5-4ced-b0b8-38e0762ced67",
+      "duration_api_ms": 11120,
+      "cost_usd_list": 0.0746085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 539
+     },
+     "lines": [
+      {
+       "draft": "Neh. 9, 30. Ex. 15, 26.—Fut. 1 pers. אָזִין",
+       "reread": "Neh. 9, 30. Ex. 15, 26.—Fut. 1 pers. אָזִין",
+       "status": "agreed",
+       "text": "Neh. 9, 30. Ex. 15, 26.—Fut. 1 pers. אָזִין"
+      },
+      {
+       "draft": "for אַאֲזִין Job 32, 11; Part. מֵזִין for מַאֲזִין",
+       "reread": "for אַאֲזִין Job 32, 11; Part. מֵזִין for מַאֲזִין",
+       "status": "agreed",
+       "text": "for אַאֲזִין Job 32, 11; Part. מֵזִין for מַאֲזִין"
+      },
+      {
+       "draft": "Prov. 17, 4.",
+       "reread": "Prov. 17, 4.",
+       "status": "agreed",
+       "text": "Prov. 17, 4."
+      },
+      {
+       "draft": "Deriv. see in Kal, and the four after אֹזֶן.",
+       "reread": "Deriv. see in Kal, and the four after אֹזֶן.",
+       "status": "agreed",
+       "text": "Deriv. see in Kal, and the four after אֹזֶן."
+      },
+      {
+       "draft": "3*",
+       "reread": "3*",
+       "status": "agreed",
+       "text": "3*"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 968,
+    "y": 170,
+    "width": 876,
+    "height": 923
+   },
+   "draft_lines": [
+    "* II. אָזַן, i. q. Arab. وَزَنَ, to weigh,",
+    "to poise; whence מֹאזְנַיִם balances.—",
+    "Found only in",
+    "Piel. אִזֵּן to weigh, trop. to ponder, to",
+    "consider, Ecc. 12, 9, where it is fol-",
+    "lowed by synon. חִקֵּר. Rabbin. אִזֵּן to",
+    "be weighed, proved.",
+    "אָזֵן m. (r. אָזַן I) furniture, implement,",
+    "pr. weapon, arms, comp. Chald. אֲזֵנִין",
+    "arms, and see r. אָזַן I. Deut. 23, 14 and",
+    "thou shalt have a little spade עַל אֲזֵנֶךָ",
+    "among thy furniture; where many Mss.",
+    "read עַל אֲזֵנֶיךָ among thy implements,",
+    "which is preferable.—The same sense"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 968,
+      "y": 162,
+      "width": 876,
+      "height": 289
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r00-b00-876x289+968+162-x2.png",
+     "image_sha256": "96abc193254ae3185973a5218ce6c29c34ed96402c7813dce6724cdc856bae01",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* II. אָזַן, i. q. Arab. وَزَنَ, to weigh,",
+       "to poise; whence מֹאזְנַיִם balances.—",
+       "Found only in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f2cf6778-f5a9-4c39-8f5e-510a197726ca",
+      "duration_api_ms": 11905,
+      "cost_usd_list": 0.07312574999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 510
+     },
+     "lines": [
+      {
+       "draft": "* II. אָזַן, i. q. Arab. وَزَنَ, to weigh,",
+       "reread": "* II. אָזַן, i. q. Arab. وَزَنَ, to weigh,",
+       "status": "agreed",
+       "text": "* II. אָזַן, i. q. Arab. وَزَنَ, to weigh,"
+      },
+      {
+       "draft": "to poise; whence מֹאזְנַיִם balances.—",
+       "reread": "to poise; whence מֹאזְנַיִם balances.—",
+       "status": "agreed",
+       "text": "to poise; whence מֹאזְנַיִם balances.—"
+      },
+      {
+       "draft": "Found only in",
+       "reread": "Found only in",
+       "status": "agreed",
+       "text": "Found only in"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 968,
+      "y": 435,
+      "width": 876,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r00-b01-876x239+968+435-x2.png",
+     "image_sha256": "f65b4350b7121ac062a1448981b54903dfa40dbdaa6c9bb5b39aa2fded80b3b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Piel. אִזֵּן to weigh, trop. to ponder, to",
+       "consider, Ecc. 12, 9, where it is fol-",
+       "lowed by synon. חִקֵּר. Rabbin. אִזֵּן to",
+       "be weighed, proved."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b5baa49d-29e0-4fe7-8df4-342da7420032",
+      "duration_api_ms": 12809,
+      "cost_usd_list": 0.07096325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 514
+     },
+     "lines": [
+      {
+       "draft": "Piel. אִזֵּן to weigh, trop. to ponder, to",
+       "reread": "Piel. אִזֵּן to weigh, trop. to ponder, to",
+       "status": "agreed",
+       "text": "Piel. אִזֵּן to weigh, trop. to ponder, to"
+      },
+      {
+       "draft": "consider, Ecc. 12, 9, where it is fol-",
+       "reread": "consider, Ecc. 12, 9, where it is fol-",
+       "status": "agreed",
+       "text": "consider, Ecc. 12, 9, where it is fol-"
+      },
+      {
+       "draft": "lowed by synon. חִקֵּר. Rabbin. אִזֵּן to",
+       "reread": "lowed by synon. חִקֵּר. Rabbin. אִזֵּן to",
+       "status": "agreed",
+       "text": "lowed by synon. חִקֵּר. Rabbin. אִזֵּן to"
+      },
+      {
+       "draft": "be weighed, proved.",
+       "reread": "be weighed, proved.",
+       "status": "agreed",
+       "text": "be weighed, proved."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 968,
+      "y": 658,
+      "width": 876,
+      "height": 271
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r00-b02-876x271+968+658-x2.png",
+     "image_sha256": "d29f95140a5155977bf7b074868d0a8a518c3f4ae266062af136324936c4dd8e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָזֵן m. (r. אָזַן I) furniture, implement,",
+       "pr. weapon, arms, comp. Chald. אֲזַנִין",
+       "arms, and see r. אָזַן I. Deut. 23, 14 and",
+       "thou shalt have a little spade עַל אֲזֵנֶךָ"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0e7a538f-d432-4ea7-8dce-0b45c544e825",
+      "duration_api_ms": 13550,
+      "cost_usd_list": 0.07508825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2815,
+      "output_tokens": 565
+     },
+     "lines": [
+      {
+       "draft": "אָזֵן m. (r. אָזַן I) furniture, implement,",
+       "reread": "אָזֵן m. (r. אָזַן I) furniture, implement,",
+       "status": "agreed",
+       "text": "אָזֵן m. (r. אָזַן I) furniture, implement,"
+      },
+      {
+       "draft": "pr. weapon, arms, comp. Chald. אֲזֵנִין",
+       "reread": "pr. weapon, arms, comp. Chald. אֲזַנִין",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "pr. weapon, arms, comp. Chald. אֲזַנִין",
+        "verdict": "b",
+        "note": "Under the zayin the print shows a single horizontal bar (patach), not the two side-by-side dots of tsere; Reading B matches.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "89bad31d-9c81-44b9-89e9-0ab16e35770d",
+        "duration_api_ms": 15177,
+        "cost_usd_list": 0.07846975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2749,
+        "output_tokens": 659
+       },
+       "text": "pr. weapon, arms, comp. Chald. אֲזַנִין"
+      },
+      {
+       "draft": "arms, and see r. אָזַן I. Deut. 23, 14 and",
+       "reread": "arms, and see r. אָזַן I. Deut. 23, 14 and",
+       "status": "agreed",
+       "text": "arms, and see r. אָזַן I. Deut. 23, 14 and"
+      },
+      {
+       "draft": "thou shalt have a little spade עַל אֲזֵנֶךָ",
+       "reread": "thou shalt have a little spade עַל אֲזֵנֶךָ",
+       "status": "agreed",
+       "text": "thou shalt have a little spade עַל אֲזֵנֶךָ"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 968,
+      "y": 913,
+      "width": 876,
+      "height": 188
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r00-b03-876x188+968+913-x2.png",
+     "image_sha256": "22df25bd8f08deb017359859d1311f284646efd157fe00441775f000b1ed631f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "among thy furniture; where many Mss.",
+       "read עַל אֲזֵנֶיךָ among thy implements,",
+       "which is preferable.—The same sense"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "88c97327-4cd3-4ddb-8f8a-ad137fd2e1aa",
+      "duration_api_ms": 10743,
+      "cost_usd_list": 0.06261325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2437,
+      "output_tokens": 410
+     },
+     "lines": [
+      {
+       "draft": "among thy furniture; where many Mss.",
+       "reread": "among thy furniture; where many Mss.",
+       "status": "agreed",
+       "text": "among thy furniture; where many Mss."
+      },
+      {
+       "draft": "read עַל אֲזֵנֶיךָ among thy implements,",
+       "reread": "read עַל אֲזֵנֶיךָ among thy implements,",
+       "status": "agreed",
+       "text": "read עַל אֲזֵנֶיךָ among thy implements,"
+      },
+      {
+       "draft": "which is preferable.—The same sense",
+       "reread": "which is preferable.—The same sense",
+       "status": "agreed",
+       "text": "which is preferable.—The same sense"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 968,
+    "y": 1081,
+    "width": 876,
+    "height": 819
+   },
+   "draft_lines": [
+    "of both utensil and weapon exists in",
+    "the word כְּלִי.",
+    "אֹזֶן f. dual אָזְנַיִם (used also for plur.)",
+    "constr. אָזְנֵי, the ear, from r. אָזַן I.",
+    "Arab. أُذْنٌ, أُذُنٌ, Ethiop. እዝን,",
+    "Chald. אוּדֶן, אוּדְנָא, contr. אוּנָא; Syr.",
+    "ܐܶܕܢܳܐ, ܐܽܘܕܢܳܐ. Comp. Gr. οὖς, Lat. audio.—",
+    "Ex. 29, 20. Lev. 8, 23. al. Phrases of",
+    "which this word makes part, see under",
+    "the verbs גִּלָּה, נָטָה Hiph. פָּתַח, כָּרָה.",
+    "So דִּבֶּר בְּאָזְנֵי פְּלֹנִי to speak in the ears",
+    "of any one, i. e. before any one, in his",
+    "presence and hearing, Gen. 20, 8. 23,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 968,
+      "y": 1073,
+      "width": 876,
+      "height": 273
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r01-b00-876x273+968+1073-x2.png",
+     "image_sha256": "2a69712d4ff8c92849e156b8cdfb4dfa58ca071b03b155f4b9fa45c2747488dd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of both utensil and weapon exists in",
+       "the word כְּלִי.",
+       "אֹזֶן f. dual אָזְנַיִם (used also for plur.)",
+       "constr. אָזְנֵי, the ear, from r. אָזַן I."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "004bcf26-1cac-4a60-bebe-57dc010d4e93",
+      "duration_api_ms": 11116,
+      "cost_usd_list": 0.06807099999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 424
+     },
+     "lines": [
+      {
+       "draft": "of both utensil and weapon exists in",
+       "reread": "of both utensil and weapon exists in",
+       "status": "agreed",
+       "text": "of both utensil and weapon exists in"
+      },
+      {
+       "draft": "the word כְּלִי.",
+       "reread": "the word כְּלִי.",
+       "status": "agreed",
+       "text": "the word כְּלִי."
+      },
+      {
+       "draft": "אֹזֶן f. dual אָזְנַיִם (used also for plur.)",
+       "reread": "אֹזֶן f. dual אָזְנַיִם (used also for plur.)",
+       "status": "agreed",
+       "text": "אֹזֶן f. dual אָזְנַיִם (used also for plur.)"
+      },
+      {
+       "draft": "constr. אָזְנֵי, the ear, from r. אָזַן I.",
+       "reread": "constr. אָזְנֵי, the ear, from r. אָזַן I.",
+       "status": "agreed",
+       "text": "constr. אָזְנֵי, the ear, from r. אָזַן I."
+      },
+      {
+       "draft": "So דִּבֶּר בְּאָזְנֵי פְּלֹנִי to speak in the ears",
+       "reread": null,
+       "status": "draft_only",
+       "text": "So דִּבֶּר בְּאָזְנֵי פְּלֹנִי to speak in the ears"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 968,
+      "y": 1330,
+      "width": 876,
+      "height": 288
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r01-b01-876x288+968+1330-x2.png",
+     "image_sha256": "45852325b0c3dc4fad821a706712b3c7098ff99d384f5c5f8ad37738bec8dd88",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Arab. أُذْنٌ, أُذُنٌ, Ethiop. እዝን,",
+       "Chald. אוּדֶן, אוּדְנָא, contr. אוּנָא; Syr.",
+       "ܐܶܕܢܳܐ, ܐܽܘܕܢܳܐ. Comp. Gr. οὖς, Lat. audio.—",
+       "Ex. 29, 20. Lev. 8, 23. al. Phrases of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2978b4cf-3394-40df-a82e-38d45dcca55a",
+      "duration_api_ms": 19701,
+      "cost_usd_list": 0.09155849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 878
+     },
+     "lines": [
+      {
+       "draft": "Arab. أُذْنٌ, أُذُنٌ, Ethiop. እዝን,",
+       "reread": "Arab. أُذْنٌ, أُذُنٌ, Ethiop. እዝን,",
+       "status": "agreed",
+       "text": "Arab. أُذْنٌ, أُذُنٌ, Ethiop. እዝን,"
+      },
+      {
+       "draft": "Chald. אוּדֶן, אוּדְנָא, contr. אוּנָא; Syr.",
+       "reread": "Chald. אוּדֶן, אוּדְנָא, contr. אוּנָא; Syr.",
+       "status": "agreed",
+       "text": "Chald. אוּדֶן, אוּדְנָא, contr. אוּנָא; Syr."
+      },
+      {
+       "draft": "ܐܶܕܢܳܐ, ܐܽܘܕܢܳܐ. Comp. Gr. οὖς, Lat. audio.—",
+       "reread": "ܐܶܕܢܳܐ, ܐܽܘܕܢܳܐ. Comp. Gr. οὖς, Lat. audio.—",
+       "status": "agreed",
+       "text": "ܐܶܕܢܳܐ, ܐܽܘܕܢܳܐ. Comp. Gr. οὖς, Lat. audio.—"
+      },
+      {
+       "draft": "Ex. 29, 20. Lev. 8, 23. al. Phrases of",
+       "reread": "Ex. 29, 20. Lev. 8, 23. al. Phrases of",
+       "status": "agreed",
+       "text": "Ex. 29, 20. Lev. 8, 23. al. Phrases of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 968,
+      "y": 1602,
+      "width": 876,
+      "height": 173
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r01-b02-876x173+968+1602-x2.png",
+     "image_sha256": "3c9bc10ab92f2f1e685de53456884d39bb3409d9935087743585bfc08c9c84eb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "which this word makes part, see under",
+       "the verbs גִּלָּה, נָטָה Hiph. פָּתַח, כָּרָה."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bfb49c01-ce16-47de-9e55-f5dad168d882",
+      "duration_api_ms": 18988,
+      "cost_usd_list": 0.0871085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 915
+     },
+     "lines": [
+      {
+       "draft": "which this word makes part, see under",
+       "reread": "which this word makes part, see under",
+       "status": "agreed",
+       "text": "which this word makes part, see under"
+      },
+      {
+       "draft": "the verbs גִּלָּה, נָטָה Hiph. פָּתַח, כָּרָה.",
+       "reread": "the verbs גִּלָּה, נָטָה Hiph. פָּתַח, כָּרָה.",
+       "status": "agreed",
+       "text": "the verbs גִּלָּה, נָטָה Hiph. פָּתַח, כָּרָה."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 968,
+      "y": 1759,
+      "width": 876,
+      "height": 149
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r01-b03-876x149+968+1759-x2.png",
+     "image_sha256": "7e7c0950f8e1707fa73c6a9ae5bb0dca3a1d228f82f109cd8f56a6332a36a5cb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of any one, i. e. before any one, in his",
+       "presence and hearing, Gen. 20, 8. 23,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1b58f2bf-444a-450f-b76a-931e0e5c57ac",
+      "duration_api_ms": 7547,
+      "cost_usd_list": 0.0504835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2250,
+      "output_tokens": 214
+     },
+     "lines": [
+      {
+       "draft": "of any one, i. e. before any one, in his",
+       "reread": "of any one, i. e. before any one, in his",
+       "status": "agreed",
+       "text": "of any one, i. e. before any one, in his"
+      },
+      {
+       "draft": "presence and hearing, Gen. 20, 8. 23,",
+       "reread": "presence and hearing, Gen. 20, 8. 23,",
+       "status": "agreed",
+       "text": "presence and hearing, Gen. 20, 8. 23,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 968,
+    "y": 1888,
+    "width": 876,
+    "height": 914
+   },
+   "draft_lines": [
+    "16. 44, 18. Ex. 10, 2. So Is. 5, 9 בְּאָזְנָי",
+    "יְהוָֹה in mine ears (said) Jehovah, comp.",
+    "22, 14. שׂוּם בְּאָזְנֵי פ׳ to put or lay up in",
+    "the ears of any one, i. e. to rehearse so",
+    "that one may hear with the ear and",
+    "lay up in his mind, Ex. 17, 14. שָׁמַע",
+    "בְּאָזְנָיו to hear with one's ears, emphat.",
+    "Ps. 44, 2. Job 28, 22.",
+    "אֻזֵּן שֶׁאֱרָה (ear of Sherah, or She-",
+    "rah's corner) Uzzen-Sherah, pr. n. of",
+    "a small city founded by Sherah the",
+    "daughter of Ephraim, 1 Chr. 7, 24.",
+    "אַזְנוֹת־תָּבוֹר (pr. ears i. e. summits of",
+    "Tabor) Aznoth-Tabor, pr. n. of a city in",
+    "Naphtali, Josh. 19, 34."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 968,
+      "y": 1880,
+      "width": 876,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r02-b00-876x241+968+1880-x2.png",
+     "image_sha256": "f3adec6918897e1d07c39e9a3d4bb51ad222dd970b208ffb64caab6a1a5a6ef9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "16. 44, 18. Ex. 10, 2. So Is. 5, 9 בְּאָזְנָי",
+       "יְהוָֹה in mine ears (said) Jehovah, comp.",
+       "22, 14. שׂוּם בְּאָזְנֵי פ׳ to put or lay up in",
+       "the ears of any one, i. e. to rehearse so"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d378ddcd-6667-4b83-b270-5ba164d3dc5c",
+      "duration_api_ms": 6003,
+      "cost_usd_list": 0.060196,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 298
+     },
+     "lines": [
+      {
+       "draft": "16. 44, 18. Ex. 10, 2. So Is. 5, 9 בְּאָזְנָי",
+       "reread": "16. 44, 18. Ex. 10, 2. So Is. 5, 9 בְּאָזְנָי",
+       "status": "agreed",
+       "text": "16. 44, 18. Ex. 10, 2. So Is. 5, 9 בְּאָזְנָי"
+      },
+      {
+       "draft": "יְהוָֹה in mine ears (said) Jehovah, comp.",
+       "reread": "יְהוָֹה in mine ears (said) Jehovah, comp.",
+       "status": "agreed",
+       "text": "יְהוָֹה in mine ears (said) Jehovah, comp."
+      },
+      {
+       "draft": "22, 14. שׂוּם בְּאָזְנֵי פ׳ to put or lay up in",
+       "reread": "22, 14. שׂוּם בְּאָזְנֵי פ׳ to put or lay up in",
+       "status": "agreed",
+       "text": "22, 14. שׂוּם בְּאָזְנֵי פ׳ to put or lay up in"
+      },
+      {
+       "draft": "the ears of any one, i. e. to rehearse so",
+       "reread": "the ears of any one, i. e. to rehearse so",
+       "status": "agreed",
+       "text": "the ears of any one, i. e. to rehearse so"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 968,
+      "y": 2105,
+      "width": 876,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r02-b01-876x238+968+2105-x2.png",
+     "image_sha256": "f94f3faf5676ce84512627d8d97ebaef5b1d513ea02574caf811104e5e5360cb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "that one may hear with the ear and",
+       "lay up in his mind, Ex. 17, 14. שָׁמַע",
+       "בְּאָזְנָיו to hear with one's ears, emphat.",
+       "Ps. 44, 2. Job 28, 22."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "948730de-2f80-4ebe-adc0-9d4319c96f82",
+      "duration_api_ms": 10465,
+      "cost_usd_list": 0.0674085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 458
+     },
+     "lines": [
+      {
+       "draft": "that one may hear with the ear and",
+       "reread": "that one may hear with the ear and",
+       "status": "agreed",
+       "text": "that one may hear with the ear and"
+      },
+      {
+       "draft": "lay up in his mind, Ex. 17, 14. שָׁמַע",
+       "reread": "lay up in his mind, Ex. 17, 14. שָׁמַע",
+       "status": "agreed",
+       "text": "lay up in his mind, Ex. 17, 14. שָׁמַע"
+      },
+      {
+       "draft": "בְּאָזְנָיו to hear with one's ears, emphat.",
+       "reread": "בְּאָזְנָיו to hear with one's ears, emphat.",
+       "status": "agreed",
+       "text": "בְּאָזְנָיו to hear with one's ears, emphat."
+      },
+      {
+       "draft": "Ps. 44, 2. Job 28, 22.",
+       "reread": "Ps. 44, 2. Job 28, 22.",
+       "status": "agreed",
+       "text": "Ps. 44, 2. Job 28, 22."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 968,
+      "y": 2327,
+      "width": 876,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r02-b02-876x267+968+2327-x2.png",
+     "image_sha256": "b6edb469cf9f403f8f8b6fd2c9d18b576599e6fe00fd9563b51d08973ecdf814",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֻזֵּן שֶׁאֱרָה (ear of Sherah, or She-",
+       "rah's corner) Uzzen-Sherah, pr. n. of",
+       "a small city founded by Sherah the",
+       "daughter of Ephraim, 1 Chr. 7, 24."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4b1e8db3-acfe-4974-ab79-e323317fc8e2",
+      "duration_api_ms": 6475,
+      "cost_usd_list": 0.067471,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 412
+     },
+     "lines": [
+      {
+       "draft": "אֻזֵּן שֶׁאֱרָה (ear of Sherah, or She-",
+       "reread": "אֻזֵּן שֶׁאֱרָה (ear of Sherah, or She-",
+       "status": "agreed",
+       "text": "אֻזֵּן שֶׁאֱרָה (ear of Sherah, or She-"
+      },
+      {
+       "draft": "rah's corner) Uzzen-Sherah, pr. n. of",
+       "reread": "rah's corner) Uzzen-Sherah, pr. n. of",
+       "status": "agreed",
+       "text": "rah's corner) Uzzen-Sherah, pr. n. of"
+      },
+      {
+       "draft": "a small city founded by Sherah the",
+       "reread": "a small city founded by Sherah the",
+       "status": "agreed",
+       "text": "a small city founded by Sherah the"
+      },
+      {
+       "draft": "daughter of Ephraim, 1 Chr. 7, 24.",
+       "reread": "daughter of Ephraim, 1 Chr. 7, 24.",
+       "status": "agreed",
+       "text": "daughter of Ephraim, 1 Chr. 7, 24."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 968,
+      "y": 2578,
+      "width": 876,
+      "height": 212
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r02-b03-876x212+968+2578-x2.png",
+     "image_sha256": "ee0da18703e80e366a3583e8ce8f9e8d7c35fc90995ac4cf8f9c03069446e309",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַזְנוֹת־תָּבוֹר (pr. ears i. e. summits of",
+       "Tabor) Aznoth-Tabor, pr. n. of a city in",
+       "Naphtali, Josh. 19, 34."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "df9ef4ed-f4f6-46cc-ad46-dce40e36b0ac",
+      "duration_api_ms": 10547,
+      "cost_usd_list": 0.063921,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 404
+     },
+     "lines": [
+      {
+       "draft": "אַזְנוֹת־תָּבוֹר (pr. ears i. e. summits of",
+       "reread": "אַזְנוֹת־תָּבוֹר (pr. ears i. e. summits of",
+       "status": "agreed",
+       "text": "אַזְנוֹת־תָּבוֹר (pr. ears i. e. summits of"
+      },
+      {
+       "draft": "Tabor) Aznoth-Tabor, pr. n. of a city in",
+       "reread": "Tabor) Aznoth-Tabor, pr. n. of a city in",
+       "status": "agreed",
+       "text": "Tabor) Aznoth-Tabor, pr. n. of a city in"
+      },
+      {
+       "draft": "Naphtali, Josh. 19, 34.",
+       "reread": "Naphtali, Josh. 19, 34.",
+       "status": "agreed",
+       "text": "Naphtali, Josh. 19, 34."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 968,
+    "y": 2790,
+    "width": 876,
+    "height": 499
+   },
+   "draft_lines": [
+    "אָזְנִי (auritus) Ozni, pr. n. m. of a son",
+    "of the patriarch Gad, Num. 26, 16.",
+    "אֲזַנְיָה (whom Jehovah hears) pr. n.",
+    "m. Azaniah, Neh. 10, 10.",
+    "אֲזִקִּים m. plur. (r. זָנַק) manacles,",
+    "chains for the hands, Jer. 40, 1. 4; i. q.",
+    "זִקִּים with Aleph prosthetic, which some",
+    "Mss. omit in v. 1."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 968,
+      "y": 2803,
+      "width": 876,
+      "height": 256
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r03-b00-876x256+968+2803-x2.png",
+     "image_sha256": "4b9424f497549d9d978f7678d0e873eea97f8873d1f683f82a6402d6c70672cd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָזְנִי (auritus) Ozni, pr. n. m. of a son",
+       "of the patriarch Gad, Num. 26, 16.",
+       "אֲזַנְיָה (whom Jehovah hears) pr. n.",
+       "m. Azaniah, Neh. 10, 10."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c44e509d-82b5-42f7-bbbd-d39167f79747",
+      "duration_api_ms": 7871,
+      "cost_usd_list": 0.059733499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 273
+     },
+     "lines": [
+      {
+       "draft": "אָזְנִי (auritus) Ozni, pr. n. m. of a son",
+       "reread": "אָזְנִי (auritus) Ozni, pr. n. m. of a son",
+       "status": "agreed",
+       "text": "אָזְנִי (auritus) Ozni, pr. n. m. of a son"
+      },
+      {
+       "draft": "of the patriarch Gad, Num. 26, 16.",
+       "reread": "of the patriarch Gad, Num. 26, 16.",
+       "status": "agreed",
+       "text": "of the patriarch Gad, Num. 26, 16."
+      },
+      {
+       "draft": "אֲזַנְיָה (whom Jehovah hears) pr. n.",
+       "reread": "אֲזַנְיָה (whom Jehovah hears) pr. n.",
+       "status": "agreed",
+       "text": "אֲזַנְיָה (whom Jehovah hears) pr. n."
+      },
+      {
+       "draft": "m. Azaniah, Neh. 10, 10.",
+       "reread": "m. Azaniah, Neh. 10, 10.",
+       "status": "agreed",
+       "text": "m. Azaniah, Neh. 10, 10."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 968,
+      "y": 3043,
+      "width": 876,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0045/pass2/c1-r03-b01-876x248+968+3043-x2.png",
+     "image_sha256": "7e4116311f934cef08a5924c9bfdc9259f33225c55e18e93afdf95cc9fdcddfa",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲזִקִּים m. plur. (r. זָנַק) manacles,",
+       "chains for the hands, Jer. 40, 1. 4; i. q.",
+       "זִקִּים with Aleph prosthetic, which some",
+       "Mss. omit in v. 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8980a0b6-17b7-4b3e-aa63-45870b86ec4b",
+      "duration_api_ms": 9601,
+      "cost_usd_list": 0.061596,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 326
+     },
+     "lines": [
+      {
+       "draft": "אֲזִקִּים m. plur. (r. זָנַק) manacles,",
+       "reread": "אֲזִקִּים m. plur. (r. זָנַק) manacles,",
+       "status": "agreed",
+       "text": "אֲזִקִּים m. plur. (r. זָנַק) manacles,"
+      },
+      {
+       "draft": "chains for the hands, Jer. 40, 1. 4; i. q.",
+       "reread": "chains for the hands, Jer. 40, 1. 4; i. q.",
+       "status": "agreed",
+       "text": "chains for the hands, Jer. 40, 1. 4; i. q."
+      },
+      {
+       "draft": "זִקִּים with Aleph prosthetic, which some",
+       "reread": "זִקִּים with Aleph prosthetic, which some",
+       "status": "agreed",
+       "text": "זִקִּים with Aleph prosthetic, which some"
+      },
+      {
+       "draft": "Mss. omit in v. 1.",
+       "reread": "Mss. omit in v. 1.",
+       "status": "agreed",
+       "text": "Mss. omit in v. 1."
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אזל 29 אזק",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "תֵּאזְלִי Jer. 2, 36; prob. to roll, to roll",
+   "status": "adjudicated",
+   "draft": "הֵאָזְלִי Jer. 2, 36; prob. to roll, to roll",
+   "reread": "תֵּאזְלִי Jer. 2, 36; prob. to roll, to roll",
+   "verdict": "b",
+   "note": "The first letter is a tav with a dagesh dot inside and tsere beneath (the Kethib תֵּאזְלִי of Jer. 2:36), not a he; the alef carries no qamets, and the shewa sits under the zayin. Reading B matches the print exactly.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "together; hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. to spin, from the rolling or twist-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ing of the thread. So Talmud. אָזַל,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "whence אַזְלָאָה weaver, Arab. غزل Conj.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "I, IV, غَزْلٌ something spun, Syr. and",
+   "status": "adjudicated",
+   "draft": "I, IV, غَزْل something spun, Syr. and",
+   "reread": "I, IV, غَزْلٌ something spun, Syr. and",
+   "verdict": "b",
+   "note": "The Arabic word carries a visible nominative tanwīn (ٌ) above the lām in addition to fatḥa on ghayn and sukūn on zāy; Reading A omits it.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Chald. ܥܙܰܠ, עֲזַל, id. comp. kindr. נָזַל to",
+   "status": "adjudicated",
+   "draft": "Chald. ܥܙܰܠ, עֲזַל, id. comp. kindr. נָזַל to",
+   "reread": "Chald. ܓܙܠ, עֲזַל, id. comp. kindr. נָזַל to",
+   "verdict": "a",
+   "note": "The Syriac word's first (rightmost) letter is Serto ʿe (ܥ), not gamal, matching the Hebrew cognate עזל; and a vowel point (pthaha) is clearly printed above the word, which Reading B omits. Reading A is correct.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "spin, to flow, both from the idea of rolling.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "See Pual.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. Intrans. to roll off, i. e. to go away,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to depart, espec. quickly, suddenly;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "comp. Germ. sich trollen, Engl. to troll,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gr. νέω to spin, and Mid. νέομαι to go",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "away, to flee. So in Chald. and Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Comp. Arab. عزل to put away, to re-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "move.—Prov. 20, 14 where c. dat. pleon.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "לוֹ, like הָלַךְ לוֹ. Jer. 2, 36. Metaph.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to be gone, to fail, as water Job 14, 11;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "food 1 Sam. 9, 7; power Deut. 32, 36.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Pual Part. מְאוּזָל something spun,",
+   "status": "adjudicated",
+   "draft": "Pual Part. מְאוּזָל something spun,",
+   "reread": "Pual Part. מְאוּזָּל something spun,",
+   "verdict": "a",
+   "note": "Only one interior dot is printed in the middle of the word — the shureq in the vav; the zayin shows no dagesh, so Reading B's מְאוּזָּל adds a dot that isn't on the page.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "thread, yarn, Ez. 27, 19.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Deriv. אָזֵל.",
+   "status": "adjudicated",
+   "draft": "Deriv. אָזַל.",
+   "reread": "Deriv. אָזֵל .",
+   "verdict": "b",
+   "note": "Under the zayin the print shows two horizontal dots (tsere), not a single bar (patah); the aleph carries qamets, and the closing period is spaced off from the word, exactly as in Reading B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲזַל Chald. i. q. Heb. no. 2. 1. to go",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "away, to depart, Dan. 6, 19. So also in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Syr. and Samar.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. to go any where, to take a journey,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ezra 4, 23. 5, 8. 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֶזֶל departure, see in אֶבֶן no. 6. b.",
+   "status": "adjudicated",
+   "draft": "אֲזַל departure, see in אֶבֶן no. 6. b.",
+   "reread": "אֶזֶל departure, see in אֶבֶן no. 6. b.",
+   "verdict": "b",
+   "note": "Under the aleph the print shows three dots in a triangle (segol), not the two dots plus patah of hateph-patah; zayin likewise carries segol. So אֶזֶל, matching the lexical form (1 Sam 20:19, אֶבֶן הָאֶזֶל). Rest of the line identical in both readings and confirmed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* I. אָזַן in Kal not used, pr. accord-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ing to the probable conjecture of Simo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "nis, to be sharp, acute, pointed; whence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֹזֶן the ear, (which espec. in animals",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "might be so called from its pointed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "shape,) and אָזֵן, אֲזֵנִים arms, pointed",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "weapons. Comp. ἀκοή, ἀκούω, and ἀκή,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "acies, acuo. Kindr. is perh. עָצַן q. v.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Hiph. הֶאֱזִין denom. from אֹזֶן, q. d. to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "make ears, i. e. to point or prick up the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ears, ἐνωτίζεσθαι, a Greek word peculiar",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "to the Sept. version, Arab. أَذَّنَ id.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Hence, to give ear, to hear, to listen, ab-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sol. Is. 1, 2; c. accus. Gen. 4, 23. Job 33,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1; לְ Job 34, 2; אֶל Ps. 77, 2; עַל Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "17, 4; עַד Num. 23, 18, both of person",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and thing. Spec. of God, to hear and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "answer, Ps. 5, 2. 17, 1. 39, 13. 54, 4. Job",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "9, 16; of men, to hear and obey, c. dat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Neh. 9, 30. Ex. 15, 26.—Fut. 1 pers. אָזִין",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "for אַאֲזִין Job 32, 11; Part. מֵזִין for מַאֲזִין",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Prov. 17, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Deriv. see in Kal, and the four after אֹזֶן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "3*",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "* II. אָזַן, i. q. Arab. وَزَنَ, to weigh,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "to poise; whence מֹאזְנַיִם balances.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Found only in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Piel. אִזֵּן to weigh, trop. to ponder, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "consider, Ecc. 12, 9, where it is fol-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lowed by synon. חִקֵּר. Rabbin. אִזֵּן to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "be weighed, proved.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אָזֵן m. (r. אָזַן I) furniture, implement,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pr. weapon, arms, comp. Chald. אֲזַנִין",
+   "status": "adjudicated",
+   "draft": "pr. weapon, arms, comp. Chald. אֲזֵנִין",
+   "reread": "pr. weapon, arms, comp. Chald. אֲזַנִין",
+   "verdict": "b",
+   "note": "Under the zayin the print shows a single horizontal bar (patach), not the two side-by-side dots of tsere; Reading B matches.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "arms, and see r. אָזַן I. Deut. 23, 14 and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "thou shalt have a little spade עַל אֲזֵנֶךָ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "among thy furniture; where many Mss.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "read עַל אֲזֵנֶיךָ among thy implements,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "which is preferable.—The same sense",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of both utensil and weapon exists in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the word כְּלִי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֹזֶן f. dual אָזְנַיִם (used also for plur.)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "constr. אָזְנֵי, the ear, from r. אָזַן I.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "So דִּבֶּר בְּאָזְנֵי פְּלֹנִי to speak in the ears",
+   "status": "draft_only",
+   "draft": "So דִּבֶּר בְּאָזְנֵי פְּלֹנִי to speak in the ears",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Arab. أُذْنٌ, أُذُنٌ, Ethiop. እዝን,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Chald. אוּדֶן, אוּדְנָא, contr. אוּנָא; Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ܐܶܕܢܳܐ, ܐܽܘܕܢܳܐ. Comp. Gr. οὖς, Lat. audio.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Ex. 29, 20. Lev. 8, 23. al. Phrases of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "which this word makes part, see under",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the verbs גִּלָּה, נָטָה Hiph. פָּתַח, כָּרָה.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of any one, i. e. before any one, in his",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "presence and hearing, Gen. 20, 8. 23,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "16. 44, 18. Ex. 10, 2. So Is. 5, 9 בְּאָזְנָי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "יְהוָֹה in mine ears (said) Jehovah, comp.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "22, 14. שׂוּם בְּאָזְנֵי פ׳ to put or lay up in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the ears of any one, i. e. to rehearse so",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "that one may hear with the ear and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "lay up in his mind, Ex. 17, 14. שָׁמַע",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "בְּאָזְנָיו to hear with one's ears, emphat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Ps. 44, 2. Job 28, 22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֻזֵּן שֶׁאֱרָה (ear of Sherah, or She-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "rah's corner) Uzzen-Sherah, pr. n. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a small city founded by Sherah the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "daughter of Ephraim, 1 Chr. 7, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אַזְנוֹת־תָּבוֹר (pr. ears i. e. summits of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Tabor) Aznoth-Tabor, pr. n. of a city in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Naphtali, Josh. 19, 34.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אָזְנִי (auritus) Ozni, pr. n. m. of a son",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "of the patriarch Gad, Num. 26, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲזַנְיָה (whom Jehovah hears) pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "m. Azaniah, Neh. 10, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אֲזִקִּים m. plur. (r. זָנַק) manacles,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "chains for the hands, Jer. 40, 1. 4; i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "זִקִּים with Aleph prosthetic, which some",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Mss. omit in v. 1.",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 95,
+  "adjudicated": 7,
+  "draft_only": 1,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 3
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.5317
+}

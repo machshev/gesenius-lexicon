@@ -1,0 +1,2880 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 29,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0029.png",
+ "raster_sha256": "935e8d4e621802fc0c20223d558b714037bd4ad1c953f9a8745728f6e3b9901c",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0029.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:01:12+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 80,
+    "y": 91,
+    "width": 1761,
+    "height": 69
+   },
+   "draft_lines": [
+    "אדה",
+    "13",
+    "אדר"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 80,
+      "y": 89,
+      "width": 1761,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/header-b00-1761x73+80+89-x2.png",
+     "image_sha256": "1d7244ca50faed7c410031fa10dac5774b770a38606e1ed1dce77c0f35c869b4",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אדה 13 אדן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "38066eed-4997-4670-a0a2-ead58b3e7153",
+      "duration_api_ms": 7069,
+      "cost_usd_list": 0.0476325,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 210
+     },
+     "lines": [
+      {
+       "draft": "אדה 13 אדר",
+       "reread": "אדה 13 אדן",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אדה 13 אדן",
+        "verdict": "b",
+        "note": "The left-hand letter of the right-column word is a narrow vertical stroke descending below the baseline of the dalet (final nun ן), not the wide rounded-shoulder resh ר of this font; so the header reads אדן, as in Reading B. No vowel points are printed in the header.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fc28c159-8666-4060-9b13-750620255654",
+        "duration_api_ms": 20399,
+        "cost_usd_list": 0.08804575,
+        "input_tokens": 4,
+        "cache_read_input_tokens": 3543,
+        "cache_creation_input_tokens": 1711,
+        "output_tokens": 1058
+       },
+       "text": "אדה 13 אדן"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 80,
+    "y": 138,
+    "width": 866,
+    "height": 727
+   },
+   "draft_lines": [
+    "* אָדָה obsol. root, prob. i. q. אָוָה and",
+    "עָדָה to pass.—Hence אִדּוֹ.",
+    "אִדּוֹ pr. n. Iddo, Ezra 8, 17. R. אָדָה.",
+    "אֱדוֹם see אֱדֹם.",
+    "אָדוֹן m. (r. אָדַן q. v.) with suff. and in",
+    "plur. defect. אֲדֹנִי, אֲדֹנִים; with pref.",
+    "לַאדֹנִי, וַאדֹנִי, בַּאדֹנִי; master, lord, do-",
+    "minus. Spoken a) Of an owner, pos-",
+    "sessor, 1 K. 16, 21 owner of mount Shom-",
+    "ron, i. e. Samaria. Hence of the owner"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 80,
+      "y": 130,
+      "width": 866,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r00-b00-866x297+80+130-x2.png",
+     "image_sha256": "319f4495afe910409c67aa92982abcc1d5ec42e991d8dcf2143c15fafe4379d6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָדָה obsol. root, prob. i. q. אָזָה and",
+       "עָדָה to pass.—Hence אֲדִין.",
+       "אִדּוֹ pr. n. Iddo, Ezra 8, 17.  R. אָדַר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "02aaaf96-a4dd-45d5-bcd4-719ec442b1b4",
+      "duration_api_ms": 20920,
+      "cost_usd_list": 0.11241324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2919,
+      "output_tokens": 1056
+     },
+     "lines": [
+      {
+       "draft": "* אָדָה obsol. root, prob. i. q. אָוָה and",
+       "reread": "* אָדָה obsol. root, prob. i. q. אָזָה and",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "* אָדָה obsol. root, prob. i. q. אָזָה and",
+        "verdict": "b",
+        "note": "The middle letter of the second Hebrew word has a wide flat head overhanging the stem on both sides — a zayin (ז), not a vav; contrast the narrow hooked ו in the running head אוה above. Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "6544a941-350a-45c0-8841-0635d69e70ab",
+        "duration_api_ms": 18712,
+        "cost_usd_list": 0.1032745,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3578,
+        "cache_creation_input_tokens": 2852,
+        "output_tokens": 900
+       },
+       "text": "* אָדָה obsol. root, prob. i. q. אָזָה and"
+      },
+      {
+       "draft": "עָדָה to pass.—Hence אִדּוֹ.",
+       "reread": "עָדָה to pass.—Hence אֲדִין.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "עָדָה to pass.—Hence אֲדִין.",
+        "verdict": "b",
+        "note": "The last word on the printed line ends in a final nun with hireq under the dalet (אֲדִין), not the Iddo form אִדּוֹ, which belongs to the start of line 3.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2cd18e7b-a698-4dfe-b8d0-bb0f4c63a8a8",
+        "duration_api_ms": 12856,
+        "cost_usd_list": 0.0834625,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2844,
+        "output_tokens": 507
+       },
+       "text": "עָדָה to pass.—Hence אֲדִין."
+      },
+      {
+       "draft": "אִדּוֹ pr. n. Iddo, Ezra 8, 17. R. אָדָה.",
+       "reread": "אִדּוֹ pr. n. Iddo, Ezra 8, 17.  R. אָדַר.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "אִדּוֹ pr. n. Iddo, Ezra 8, 17.  R. אָדַר.",
+        "verdict": "b",
+        "note": "Final root letter is ר (no left leg, unlike the ה in אָדָה above) with patach under the dalet: אָדַר, as in B; A's אָדָה is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d61bdfe0-0c35-437a-b188-5fb0fde647df",
+        "duration_api_ms": 13308,
+        "cost_usd_list": 0.08659025000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3601,
+        "cache_creation_input_tokens": 2875,
+        "output_tokens": 557
+       },
+       "text": "אִדּוֹ pr. n. Iddo, Ezra 8, 17. R. אָדַר."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 80,
+      "y": 411,
+      "width": 866,
+      "height": 293
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r00-b01-866x293+80+411-x2.png",
+     "image_sha256": "54804b9b222391b649222cc647a6d16017b8536b2aaa3592bf4a62e620f72ba8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱדוֹם see אָדֹם.",
+       "אָדוֹן m. (r. אָדַן q. v.) with suff. and in",
+       "plur. defect. אֲדֹנֵי, אֲדֹנִים; with pref.",
+       "בַּאדֹנִי, וַאדֹנִי, לַאדֹנֵי; master, lord, do-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7cef8474-0014-4283-979a-e2a350019ffe",
+      "duration_api_ms": 17529,
+      "cost_usd_list": 0.10687325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2857,
+      "output_tokens": 970
+     },
+     "lines": [
+      {
+       "draft": "אֱדוֹם see אֱדֹם.",
+       "reread": "אֱדוֹם see אָדֹם.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "אֱדוֹם see אֱדֹם.",
+        "verdict": "a",
+        "note": "The vowel under the aleph of the second (defective) word is a hataf segol (two vertical dots plus segol cluster), matching the first word, not a qamets; both words point to the entry אֱדֹם Edom.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b016e7ad-c9c6-4fb3-974a-47b9efc196c7",
+        "duration_api_ms": 16291,
+        "cost_usd_list": 0.09704025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3561,
+        "cache_creation_input_tokens": 2773,
+        "output_tokens": 807
+       },
+       "text": "אֱדוֹם see אֱדֹם."
+      },
+      {
+       "draft": "אָדוֹן m. (r. אָדַן q. v.) with suff. and in",
+       "reread": "אָדוֹן m. (r. אָדַן q. v.) with suff. and in",
+       "status": "agreed",
+       "text": "אָדוֹן m. (r. אָדַן q. v.) with suff. and in"
+      },
+      {
+       "draft": "plur. defect. אֲדֹנִי, אֲדֹנִים; with pref.",
+       "reread": "plur. defect. אֲדֹנֵי, אֲדֹנִים; with pref.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "plur. defect. אֲדֹנֵי, אֲדֹנִים; with pref.",
+        "verdict": "b",
+        "note": "Under the nun of the first Hebrew word (אֲדֹנֵי) the print has two dots side by side — tsere, the construct plural — not a single hiriq dot; the second word אֲדֹנִים has hiriq. Order and all other points match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eed434ae-f4ac-41df-ab6f-7e75b1d4ce41",
+        "duration_api_ms": 17333,
+        "cost_usd_list": 0.10320725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3589,
+        "cache_creation_input_tokens": 2801,
+        "output_tokens": 919
+       },
+       "text": "plur. defect. אֲדֹנֵי, אֲדֹנִים; with pref."
+      },
+      {
+       "draft": "לַאדֹנִי, וַאדֹנִי, בַּאדֹנִי; master, lord, do-",
+       "reread": "בַּאדֹנִי, וַאדֹנִי, לַאדֹנֵי; master, lord, do-",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b01",
+       "judgement": {
+        "text": "בַּאדֹנִי, וַאדֹנִי, לַאדֹנִי; master, lord, do-",
+        "verdict": "neither",
+        "note": "Printed left-to-right order is בַּאדֹנִי first, then וַאדֹנִי, then לַאדֹנִי next to the semicolon (B's order, not A's); but the last word carries a single dot (hiriq) under the nun, not tsere as B has. A's vowels are right, B's order is right, so neither is fully correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4c1d13c4-61e6-4ac6-bf6e-9b4b60e55486",
+        "duration_api_ms": 14902,
+        "cost_usd_list": 0.09488125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3605,
+        "cache_creation_input_tokens": 2817,
+        "output_tokens": 746
+       },
+       "text": "בַּאדֹנִי, וַאדֹנִי, לַאדֹנִי; master, lord, do-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 80,
+      "y": 688,
+      "width": 866,
+      "height": 185
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r00-b02-866x185+80+688-x2.png",
+     "image_sha256": "fe3b3395a4a7619bea8f01990de93043b5dd8006bc1c4763d4bd9dc98b1e4c3d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "minus. Spoken a) Of an owner, pos-",
+       "sessor, 1 K. 16, 21 owner of mount Shom-",
+       "ron, i. e. Samaria. Hence of the owner"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0408b088-f25e-44f2-a987-dbf2b4928391",
+      "duration_api_ms": 7807,
+      "cost_usd_list": 0.061793249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2423,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "minus. Spoken a) Of an owner, pos-",
+       "reread": "minus. Spoken a) Of an owner, pos-",
+       "status": "agreed",
+       "text": "minus. Spoken a) Of an owner, pos-"
+      },
+      {
+       "draft": "sessor, 1 K. 16, 21 owner of mount Shom-",
+       "reread": "sessor, 1 K. 16, 21 owner of mount Shom-",
+       "status": "agreed",
+       "text": "sessor, 1 K. 16, 21 owner of mount Shom-"
+      },
+      {
+       "draft": "ron, i. e. Samaria. Hence of the owner",
+       "reread": "ron, i. e. Samaria. Hence of the owner",
+       "status": "agreed",
+       "text": "ron, i. e. Samaria. Hence of the owner"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 80,
+    "y": 853,
+    "width": 866,
+    "height": 788
+   },
+   "draft_lines": [
+    "and master of slaves, Gen. 24, 14. 27. 39,",
+    "2. 7 ; of kings as the lords of their sub-",
+    "jects, Is. 26, 13 ; of a husband as lord of",
+    "the wife, Gen. 18, 12, comp. בַּעַל and Gr.",
+    "κύριος γυναικός, Germ. Eheherr. Also",
+    "of God as the owner and governor of",
+    "the world, Josh. 3, 13 אֲדוֹן כָּל־הָאָרֶץ,",
+    "Lord of the whole earth ; hence called",
+    "κατ᾽ ἐξοχήν הָאָדוֹן Ex. 23, 17, and with-",
+    "out art. אָדוֹן Ps. 114, 7 ; comp. אֲדֹנָי",
+    "in next art. b) Of a ruler, governor,",
+    "Gen. 45, 8. So אֲדֹנִי my lord ! an honor-",
+    "ary title of address to nobles and others",
+    "to whom honour and reverence are due ;"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 80,
+      "y": 855,
+      "width": 866,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r01-b00-866x234+80+855-x2.png",
+     "image_sha256": "93e28a71f6784ee61627278033fe0aa999eb8988dc787c4fc812911cd2c11753",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and master of slaves, Gen. 24, 14. 27. 39,",
+       "2. 7 ; of kings as the lords of their sub-",
+       "jects, Is. 26, 13 ; of a husband as lord of",
+       "the wife, Gen. 18, 12, comp. בַּעַל and Gr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9c56acd4-272f-455f-9ce4-d28490598e3b",
+      "duration_api_ms": 8863,
+      "cost_usd_list": 0.06711324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 274
+     },
+     "lines": [
+      {
+       "draft": "and master of slaves, Gen. 24, 14. 27. 39,",
+       "reread": "and master of slaves, Gen. 24, 14. 27. 39,",
+       "status": "agreed",
+       "text": "and master of slaves, Gen. 24, 14. 27. 39,"
+      },
+      {
+       "draft": "2. 7 ; of kings as the lords of their sub-",
+       "reread": "2. 7 ; of kings as the lords of their sub-",
+       "status": "agreed",
+       "text": "2. 7; of kings as the lords of their sub-"
+      },
+      {
+       "draft": "jects, Is. 26, 13 ; of a husband as lord of",
+       "reread": "jects, Is. 26, 13 ; of a husband as lord of",
+       "status": "agreed",
+       "text": "jects, Is. 26, 13; of a husband as lord of"
+      },
+      {
+       "draft": "the wife, Gen. 18, 12, comp. בַּעַל and Gr.",
+       "reread": "the wife, Gen. 18, 12, comp. בַּעַל and Gr.",
+       "status": "agreed",
+       "text": "the wife, Gen. 18, 12, comp. בַּעַל and Gr."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 80,
+      "y": 1073,
+      "width": 866,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r01-b01-866x239+80+1073-x2.png",
+     "image_sha256": "6b700d76b62e061720ab21ed5309287808ef6e8380f3559da45ebd516d569545",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "κύριος γυναικός, Germ. Eheherr. Also",
+       "of God as the owner and governor of",
+       "the world, Josh. 3, 13 אֲדוֹן כָּל־הָאָרֶץ,",
+       "Lord of the whole earth ; hence called"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d1a1043a-5447-41a3-b600-f826c76287e8",
+      "duration_api_ms": 8558,
+      "cost_usd_list": 0.0679935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "κύριος γυναικός, Germ. Eheherr. Also",
+       "reread": "κύριος γυναικός, Germ. Eheherr. Also",
+       "status": "agreed",
+       "text": "κύριος γυναικός, Germ. Eheherr. Also"
+      },
+      {
+       "draft": "of God as the owner and governor of",
+       "reread": "of God as the owner and governor of",
+       "status": "agreed",
+       "text": "of God as the owner and governor of"
+      },
+      {
+       "draft": "the world, Josh. 3, 13 אֲדוֹן כָּל־הָאָרֶץ,",
+       "reread": "the world, Josh. 3, 13 אֲדוֹן כָּל־הָאָרֶץ,",
+       "status": "agreed",
+       "text": "the world, Josh. 3, 13 אֲדוֹן כָּל־הָאָרֶץ,"
+      },
+      {
+       "draft": "Lord of the whole earth ; hence called",
+       "reread": "Lord of the whole earth ; hence called",
+       "status": "agreed",
+       "text": "Lord of the whole earth; hence called"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 80,
+      "y": 1296,
+      "width": 866,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r01-b02-866x239+80+1296-x2.png",
+     "image_sha256": "7360756713b8366b0b7d23c98cedab4b2d1dc4a6de12502d707e1d7176f30c66",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "κατ᾽ ἐξοχήν הָאָדוֹן Ex. 23, 17, and with-",
+       "out art. אָדוֹן Ps. 114, 7 ; comp. אֲדֹנָי",
+       "in next art. b) Of a ruler, governor,",
+       "Gen. 45, 8. So אֲדֹנִי my lord ! an honor-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "060eb01b-d61c-403d-a56d-f132e8ec7722",
+      "duration_api_ms": 12335,
+      "cost_usd_list": 0.08179349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 542
+     },
+     "lines": [
+      {
+       "draft": "κατ᾽ ἐξοχήν הָאָדוֹן Ex. 23, 17, and with-",
+       "reread": "κατ᾽ ἐξοχήν הָאָדוֹן Ex. 23, 17, and with-",
+       "status": "agreed",
+       "text": "κατ᾽ ἐξοχήν הָאָדוֹן Ex. 23, 17, and with-"
+      },
+      {
+       "draft": "out art. אָדוֹן Ps. 114, 7 ; comp. אֲדֹנָי",
+       "reread": "out art. אָדוֹן Ps. 114, 7 ; comp. אֲדֹנָי",
+       "status": "agreed",
+       "text": "out art. אָדוֹן Ps. 114, 7; comp. אֲדֹנָי"
+      },
+      {
+       "draft": "in next art. b) Of a ruler, governor,",
+       "reread": "in next art. b) Of a ruler, governor,",
+       "status": "agreed",
+       "text": "in next art. b) Of a ruler, governor,"
+      },
+      {
+       "draft": "Gen. 45, 8. So אֲדֹנִי my lord ! an honor-",
+       "reread": "Gen. 45, 8. So אֲדֹנִי my lord ! an honor-",
+       "status": "agreed",
+       "text": "Gen. 45, 8. So אֲדֹנִי my lord! an honor-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 80,
+      "y": 1519,
+      "width": 866,
+      "height": 118
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r01-b03-866x118+80+1519-x2.png",
+     "image_sha256": "448db80cc5f37e148963a6d9e43c46b560c07972a876d46b338e4a4816575e49",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ary title of address to nobles and others",
+       "to whom honour and reverence are due ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d80621c8-65a1-44aa-b1e1-e07582097fe7",
+      "duration_api_ms": 7323,
+      "cost_usd_list": 0.0537335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2115,
+      "output_tokens": 204
+     },
+     "lines": [
+      {
+       "draft": "ary title of address to nobles and others",
+       "reread": "ary title of address to nobles and others",
+       "status": "agreed",
+       "text": "ary title of address to nobles and others"
+      },
+      {
+       "draft": "to whom honour and reverence are due ;",
+       "reread": "to whom honour and reverence are due ;",
+       "status": "agreed",
+       "text": "to whom honour and reverence are due;"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 80,
+    "y": 1629,
+    "width": 866,
+    "height": 793
+   },
+   "draft_lines": [
+    "e. g. to a father Gen. 31, 35, a brother",
+    "Num. 12, 11, to a royal consort 1 K. 1,",
+    "17. 18 ; espec. to kings and princes, as",
+    "אֲדֹנִי הַמֶּלֶךְ 2 Sam. 14, 9. 1 K. 3, 17. In",
+    "respectfully addressing a person, the",
+    "Hebrews, instead of the second personal",
+    "pron. thou, were accustomed to say my",
+    "lord, and instead of the first person, thy",
+    "servant, thy handmaid, Gen. 33, 8. 13, 14.",
+    "15. 44, 7. 9. 19 אֲדֹנִי שָׁאַל אֶת־עֲבָדָיו my",
+    "lord asked his servants, i. e. thou didst",
+    "ask us. In a style of still stronger adu-",
+    "lation, this mode of speaking is also used",
+    "in the case of an absent person, as Gen."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 80,
+      "y": 1634,
+      "width": 866,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r02-b00-866x236+80+1634-x2.png",
+     "image_sha256": "9578fe0708d49cd66e177a372751720e68b438f5c48f03fae1eee5027cf7978f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "e. g. to a father Gen. 31, 35, a brother",
+       "Num. 12, 11, to a royal consort 1 K. 1,",
+       "17. 18 ; espec. to kings and princes, as",
+       "אֲדֹנִי הַמֶּלֶךְ 2 Sam. 14, 9. 1 K. 3, 17. In"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5cbb4885-ce5a-486e-aefc-bbf886844d48",
+      "duration_api_ms": 9482,
+      "cost_usd_list": 0.0725035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 381
+     },
+     "lines": [
+      {
+       "draft": "e. g. to a father Gen. 31, 35, a brother",
+       "reread": "e. g. to a father Gen. 31, 35, a brother",
+       "status": "agreed",
+       "text": "e. g. to a father Gen. 31, 35, a brother"
+      },
+      {
+       "draft": "Num. 12, 11, to a royal consort 1 K. 1,",
+       "reread": "Num. 12, 11, to a royal consort 1 K. 1,",
+       "status": "agreed",
+       "text": "Num. 12, 11, to a royal consort 1 K. 1,"
+      },
+      {
+       "draft": "17. 18 ; espec. to kings and princes, as",
+       "reread": "17. 18 ; espec. to kings and princes, as",
+       "status": "agreed",
+       "text": "17. 18; espec. to kings and princes, as"
+      },
+      {
+       "draft": "אֲדֹנִי הַמֶּלֶךְ 2 Sam. 14, 9. 1 K. 3, 17. In",
+       "reread": "אֲדֹנִי הַמֶּלֶךְ 2 Sam. 14, 9. 1 K. 3, 17. In",
+       "status": "agreed",
+       "text": "אֲדֹנִי הַמֶּלֶךְ 2 Sam. 14, 9. 1 K. 3, 17. In"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 80,
+      "y": 1854,
+      "width": 866,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r02-b01-866x233+80+1854-x2.png",
+     "image_sha256": "f660a493470c8b813680eac81215ae030b055a6ef7b20517cfdfa5204f0f31d0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "respectfully addressing a person, the",
+       "Hebrews, instead of the second personal",
+       "pron. thou, were accustomed to say my",
+       "lord, and instead of the first person, thy"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a2201617-c88c-45bd-a098-3cc6458842a8",
+      "duration_api_ms": 7738,
+      "cost_usd_list": 0.0652035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 235
+     },
+     "lines": [
+      {
+       "draft": "respectfully addressing a person, the",
+       "reread": "respectfully addressing a person, the",
+       "status": "agreed",
+       "text": "respectfully addressing a person, the"
+      },
+      {
+       "draft": "Hebrews, instead of the second personal",
+       "reread": "Hebrews, instead of the second personal",
+       "status": "agreed",
+       "text": "Hebrews, instead of the second personal"
+      },
+      {
+       "draft": "pron. thou, were accustomed to say my",
+       "reread": "pron. thou, were accustomed to say my",
+       "status": "agreed",
+       "text": "pron. thou, were accustomed to say my"
+      },
+      {
+       "draft": "lord, and instead of the first person, thy",
+       "reread": "lord, and instead of the first person, thy",
+       "status": "agreed",
+       "text": "lord, and instead of the first person, thy"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 80,
+      "y": 2071,
+      "width": 866,
+      "height": 181
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r02-b02-866x181+80+2071-x2.png",
+     "image_sha256": "61b426ddaaffc6a96f44eb3298f3612741b720adf2cd77054055364cf7aeec03",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "servant, thy handmaid, Gen. 33, 8. 13, 14.",
+       "15. 44, 7. 9. 19 אֲדֹנִי שָׁאַל אֶת־עֲבָדָיו my",
+       "lord asked his servants, i. e. thou didst"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f8190691-f620-48e3-9706-eca273fa356b",
+      "duration_api_ms": 10614,
+      "cost_usd_list": 0.07104350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2363,
+      "output_tokens": 451
+     },
+     "lines": [
+      {
+       "draft": "servant, thy handmaid, Gen. 33, 8. 13, 14.",
+       "reread": "servant, thy handmaid, Gen. 33, 8. 13, 14.",
+       "status": "agreed",
+       "text": "servant, thy handmaid, Gen. 33, 8. 13, 14."
+      },
+      {
+       "draft": "15. 44, 7. 9. 19 אֲדֹנִי שָׁאַל אֶת־עֲבָדָיו my",
+       "reread": "15. 44, 7. 9. 19 אֲדֹנִי שָׁאַל אֶת־עֲבָדָיו my",
+       "status": "agreed",
+       "text": "15. 44, 7. 9. 19 אֲדֹנִי שָׁאַל אֶת־עֲבָדָיו my"
+      },
+      {
+       "draft": "lord asked his servants, i. e. thou didst",
+       "reread": "lord asked his servants, i. e. thou didst",
+       "status": "agreed",
+       "text": "lord asked his servants, i. e. thou didst"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 80,
+      "y": 2236,
+      "width": 866,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r02-b03-866x194+80+2236-x2.png",
+     "image_sha256": "5bba3478b3eac2be901021931281d082a526b1c7a0dceb2813f9e0cb3361ad93",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ask us. In a style of still stronger adu-",
+       "lation, this mode of speaking is also used",
+       "in the case of an absent person, as Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "239fc5cb-45d9-47a0-978c-b903eebbc8d4",
+      "duration_api_ms": 7367,
+      "cost_usd_list": 0.06088349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2425,
+      "output_tokens": 223
+     },
+     "lines": [
+      {
+       "draft": "ask us. In a style of still stronger adu-",
+       "reread": "ask us. In a style of still stronger adu-",
+       "status": "agreed",
+       "text": "ask us. In a style of still stronger adu-"
+      },
+      {
+       "draft": "lation, this mode of speaking is also used",
+       "reread": "lation, this mode of speaking is also used",
+       "status": "agreed",
+       "text": "lation, this mode of speaking is also used"
+      },
+      {
+       "draft": "in the case of an absent person, as Gen.",
+       "reread": "in the case of an absent person, as Gen.",
+       "status": "agreed",
+       "text": "in the case of an absent person, as Gen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 80,
+    "y": 2410,
+    "width": 866,
+    "height": 880
+   },
+   "draft_lines": [
+    "32, 4.",
+    "Plur. אֲדֹנִים masters, lords, Is. 26, 13",
+    "with a verb plural; and so c. suff. ־ַי, אֲדֹנַי",
+    "i. e. my lords Gen. 19, 2. 18. Elsewhere",
+    "the plural forms אֲדֹנִים, אֲדֹנֵי, c. suff.",
+    "־ֶיךָ, ־ָיו, ־ֵיכֶם, etc. are always plur.",
+    "excellentiæ, and of the same signif. as",
+    "the sing. Gen. 39, 2 sq. Hence joined",
+    "with an adj. in the sing. number, as Is.",
+    "19, 4 אֲדֹנִים קָשֶׁה a hard master, cruel",
+    "lord. Gen. 42, 30. 33 אֲדֹנֵי הָאָרֶץ lord",
+    "of the land. אֲדֹנֶיךָ thy master 2 K. 2, 3.",
+    "5. 16. Ps. 45, 12 ; אֲדֹנָיו his master Gen.",
+    "24, 9. 39, 2. 3. 40, 7. Job 3, 19. Deut. 10,",
+    "17 אֲדֹנֵי הָאֲדֹנִים Lord of lords, i. e. Je-",
+    "2"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 80,
+      "y": 2402,
+      "width": 866,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r03-b00-866x240+80+2402-x2.png",
+     "image_sha256": "b20a37a32acba213335becf42bd6ef648627ea5d84f26714d869558d980c31ef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "32, 4.",
+       "Plur. אֲדֹנִים masters, lords, Is. 26, 13",
+       "with a verb plural; and so c. suff. ־ַי, אֲדֹנַי",
+       "i. e. my lords Gen. 19, 2. 18.  Elsewhere"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9eabfa00-139b-4012-9807-a9409e237cb2",
+      "duration_api_ms": 12219,
+      "cost_usd_list": 0.0804435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 515
+     },
+     "lines": [
+      {
+       "draft": "32, 4.",
+       "reread": "32, 4.",
+       "status": "agreed",
+       "text": "32, 4."
+      },
+      {
+       "draft": "Plur. אֲדֹנִים masters, lords, Is. 26, 13",
+       "reread": "Plur. אֲדֹנִים masters, lords, Is. 26, 13",
+       "status": "agreed",
+       "text": "Plur. אֲדֹנִים masters, lords, Is. 26, 13"
+      },
+      {
+       "draft": "with a verb plural; and so c. suff. ־ַי, אֲדֹנַי",
+       "reread": "with a verb plural; and so c. suff. ־ַי, אֲדֹנַי",
+       "status": "agreed",
+       "text": "with a verb plural; and so c. suff. ־ַי, אֲדֹנַי"
+      },
+      {
+       "draft": "i. e. my lords Gen. 19, 2. 18. Elsewhere",
+       "reread": "i. e. my lords Gen. 19, 2. 18.  Elsewhere",
+       "status": "agreed",
+       "text": "i. e. my lords Gen. 19, 2. 18. Elsewhere"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 80,
+      "y": 2626,
+      "width": 866,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r03-b01-866x241+80+2626-x2.png",
+     "image_sha256": "cd735fee41eaad770ad47d8069c2a191b53622210634569165a63b4713fab202",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the plural forms אֲדֹנִים, אֲדֹנֵי, c. suff.",
+       "־ֶיךָ, ־ָיו, ־ֵיכֶם, etc. are always plur.",
+       "excellentiæ, and of the same signif. as",
+       "the sing. Gen. 39, 2 sq. Hence joined"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2a89ca45-bb16-4b5c-87bf-aa1e0ef82a0c",
+      "duration_api_ms": 11515,
+      "cost_usd_list": 0.08964349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 699
+     },
+     "lines": [
+      {
+       "draft": "the plural forms אֲדֹנִים, אֲדֹנֵי, c. suff.",
+       "reread": "the plural forms אֲדֹנִים, אֲדֹנֵי, c. suff.",
+       "status": "agreed",
+       "text": "the plural forms אֲדֹנִים, אֲדֹנֵי, c. suff."
+      },
+      {
+       "draft": "־ֶיךָ, ־ָיו, ־ֵיכֶם, etc. are always plur.",
+       "reread": "־ֶיךָ, ־ָיו, ־ֵיכֶם, etc. are always plur.",
+       "status": "agreed",
+       "text": "־ֶיךָ, ־ָיו, ־ֵיכֶם, etc. are always plur."
+      },
+      {
+       "draft": "excellentiæ, and of the same signif. as",
+       "reread": "excellentiæ, and of the same signif. as",
+       "status": "agreed",
+       "text": "excellentiæ, and of the same signif. as"
+      },
+      {
+       "draft": "the sing. Gen. 39, 2 sq. Hence joined",
+       "reread": "the sing. Gen. 39, 2 sq. Hence joined",
+       "status": "agreed",
+       "text": "the sing. Gen. 39, 2 sq. Hence joined"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 80,
+      "y": 2851,
+      "width": 866,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r03-b02-866x232+80+2851-x2.png",
+     "image_sha256": "bb0735f0c3eb7b0c90b83ce011c4505ae3d2b788c1eda54b844e7a2a36a47bcd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "with an adj. in the sing. number, as Is.",
+       "19, 4 אֲדֹנִים קָשֶׁה a hard master, cruel",
+       "lord. Gen. 42, 30. 33 אֲדֹנֵי הָאָרֶץ lord",
+       "of the land. אֲדֹנֶיךָ thy master 2 K. 2, 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26342254-37a3-4fe7-8133-5d3ca067a213",
+      "duration_api_ms": 10775,
+      "cost_usd_list": 0.0735035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 401
+     },
+     "lines": [
+      {
+       "draft": "with an adj. in the sing. number, as Is.",
+       "reread": "with an adj. in the sing. number, as Is.",
+       "status": "agreed",
+       "text": "with an adj. in the sing. number, as Is."
+      },
+      {
+       "draft": "19, 4 אֲדֹנִים קָשֶׁה a hard master, cruel",
+       "reread": "19, 4 אֲדֹנִים קָשֶׁה a hard master, cruel",
+       "status": "agreed",
+       "text": "19, 4 אֲדֹנִים קָשֶׁה a hard master, cruel"
+      },
+      {
+       "draft": "lord. Gen. 42, 30. 33 אֲדֹנֵי הָאָרֶץ lord",
+       "reread": "lord. Gen. 42, 30. 33 אֲדֹנֵי הָאָרֶץ lord",
+       "status": "agreed",
+       "text": "lord. Gen. 42, 30. 33 אֲדֹנֵי הָאָרֶץ lord"
+      },
+      {
+       "draft": "of the land. אֲדֹנֶיךָ thy master 2 K. 2, 3.",
+       "reread": "of the land. אֲדֹנֶיךָ thy master 2 K. 2, 3.",
+       "status": "agreed",
+       "text": "of the land. אֲדֹנֶיךָ thy master 2 K. 2, 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 80,
+      "y": 3067,
+      "width": 866,
+      "height": 225
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c0-r03-b03-866x225+80+3067-x2.png",
+     "image_sha256": "f036909fc88b37c12b73a7c889855e5e8f9535787bf96c932ce3600f8bd6984c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "5. 16. Ps. 45, 12 ; אֲדֹנָיו his master Gen.",
+       "24, 9. 39, 2. 3. 40, 7. Job 3, 19. Deut. 10,",
+       "17 אֲדֹנֵי הָאֲדֹנִים Lord of lords, i. e. Je-",
+       "2"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a995687a-e239-4000-ad23-0e40a898e6b0",
+      "duration_api_ms": 10991,
+      "cost_usd_list": 0.07790349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 489
+     },
+     "lines": [
+      {
+       "draft": "5. 16. Ps. 45, 12 ; אֲדֹנָיו his master Gen.",
+       "reread": "5. 16. Ps. 45, 12 ; אֲדֹנָיו his master Gen.",
+       "status": "agreed",
+       "text": "5. 16. Ps. 45, 12; אֲדֹנָיו his master Gen."
+      },
+      {
+       "draft": "24, 9. 39, 2. 3. 40, 7. Job 3, 19. Deut. 10,",
+       "reread": "24, 9. 39, 2. 3. 40, 7. Job 3, 19. Deut. 10,",
+       "status": "agreed",
+       "text": "24, 9. 39, 2. 3. 40, 7. Job 3, 19. Deut. 10,"
+      },
+      {
+       "draft": "17 אֲדֹנֵי הָאֲדֹנִים Lord of lords, i. e. Je-",
+       "reread": "17 אֲדֹנֵי הָאֲדֹנִים Lord of lords, i. e. Je-",
+       "status": "agreed",
+       "text": "17 אֲדֹנֵי הָאֲדֹנִים Lord of lords, i. e. Je-"
+      },
+      {
+       "draft": "2",
+       "reread": "2",
+       "status": "agreed",
+       "text": "2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 969,
+    "y": 138,
+    "width": 872,
+    "height": 630
+   },
+   "draft_lines": [
+    "hovah. Ps. 136, 3. Spoken of idols,",
+    "Zeph. 1, 9 ; comp. בַּעַל.",
+    "Note. This word is wanting in all",
+    "the kindred dialects, except the Pheni-",
+    "cian, where it is applied to princes,",
+    "kings, and gods, see Monumenta Phœnic.",
+    "p. 346 (comp. Ἄδων, Ἄδωνις, Hesych.",
+    "κύριος) ; and perhaps the Chaldean,",
+    "where a vestige of it seems to be pre-",
+    "served in the pr. n. בַּלְאֲדָן."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 969,
+      "y": 130,
+      "width": 872,
+      "height": 294
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r00-b00-872x294+969+130-x2.png",
+     "image_sha256": "310de18cd8d6c4e04480f136787aa50fe6778fda69a18cf8a73dc43ecb85e46e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "hovah. Ps. 136, 3. Spoken of idols,",
+       "Zeph. 1, 9 ; comp. בַּעַל.",
+       "Note. This word is wanting in all",
+       "the kindred dialects, except the Pheni-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "14aa479d-21e9-4643-a22e-78321aeb01c0",
+      "duration_api_ms": 7859,
+      "cost_usd_list": 0.07149325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 254
+     },
+     "lines": [
+      {
+       "draft": "hovah. Ps. 136, 3. Spoken of idols,",
+       "reread": "hovah. Ps. 136, 3. Spoken of idols,",
+       "status": "agreed",
+       "text": "hovah. Ps. 136, 3. Spoken of idols,"
+      },
+      {
+       "draft": "Zeph. 1, 9 ; comp. בַּעַל.",
+       "reread": "Zeph. 1, 9 ; comp. בַּעַל.",
+       "status": "agreed",
+       "text": "Zeph. 1, 9; comp. בַּעַל."
+      },
+      {
+       "draft": "Note. This word is wanting in all",
+       "reread": "Note. This word is wanting in all",
+       "status": "agreed",
+       "text": "Note. This word is wanting in all"
+      },
+      {
+       "draft": "the kindred dialects, except the Pheni-",
+       "reread": "the kindred dialects, except the Pheni-",
+       "status": "agreed",
+       "text": "the kindred dialects, except the Pheni-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 969,
+      "y": 408,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r00-b01-872x238+969+408-x2.png",
+     "image_sha256": "816e2052c90e485625922b69d10733ae7f66c39ae88a3d1ece001f934da0a0ba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cian, where it is applied to princes,",
+       "kings, and gods, see Monumenta Phœnic.",
+       "p. 346 (comp. Ἄδων, Ἄδωνις, Hesych.",
+       "κύριος); and perhaps the Chaldean,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "67b32330-e772-4dd5-9ed8-0005a42e055c",
+      "duration_api_ms": 7888,
+      "cost_usd_list": 0.06680325000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 261
+     },
+     "lines": [
+      {
+       "draft": "cian, where it is applied to princes,",
+       "reread": "cian, where it is applied to princes,",
+       "status": "agreed",
+       "text": "cian, where it is applied to princes,"
+      },
+      {
+       "draft": "kings, and gods, see Monumenta Phœnic.",
+       "reread": "kings, and gods, see Monumenta Phœnic.",
+       "status": "agreed",
+       "text": "kings, and gods, see Monumenta Phœnic."
+      },
+      {
+       "draft": "p. 346 (comp. Ἄδων, Ἄδωνις, Hesych.",
+       "reread": "p. 346 (comp. Ἄδων, Ἄδωνις, Hesych.",
+       "status": "agreed",
+       "text": "p. 346 (comp. Ἄδων, Ἄδωνις, Hesych."
+      },
+      {
+       "draft": "κύριος) ; and perhaps the Chaldean,",
+       "reread": "κύριος); and perhaps the Chaldean,",
+       "status": "agreed",
+       "text": "κύριος); and perhaps the Chaldean,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 969,
+      "y": 630,
+      "width": 872,
+      "height": 130
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r00-b02-872x130+969+630-x2.png",
+     "image_sha256": "983d5bfd63a135bdecee9a12fb1925809864d6553030e80f545491d28b779e50",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "where a vestige of it seems to be pre-",
+       "served in the pr. n. בִּלְאֲדָן."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d6b75a0f-53e7-464d-a5ec-ac38170917f7",
+      "duration_api_ms": 9573,
+      "cost_usd_list": 0.060483249999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2185,
+      "output_tokens": 311
+     },
+     "lines": [
+      {
+       "draft": "where a vestige of it seems to be pre-",
+       "reread": "where a vestige of it seems to be pre-",
+       "status": "agreed",
+       "text": "where a vestige of it seems to be pre-"
+      },
+      {
+       "draft": "served in the pr. n. בַּלְאֲדָן.",
+       "reread": "served in the pr. n. בִּלְאֲדָן.",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "served in the pr. n. בִּלְאֲדָן.",
+        "verdict": "b",
+        "note": "Under the initial bet (which carries a dagesh) the print shows a single round dot (hiriq), not a horizontal patah bar; the rest (shewa under lamed, hataf-patah under alef, qamets under dalet, final nun) is identical in both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "49e6be0a-052c-449f-ae94-3156d567dc7f",
+        "duration_api_ms": 16605,
+        "cost_usd_list": 0.084942,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3568,
+        "cache_creation_input_tokens": 2108,
+        "output_tokens": 831
+       },
+       "text": "served in the pr. n. בִּלְאֲדָן."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 969,
+    "y": 756,
+    "width": 872,
+    "height": 867
+   },
+   "draft_lines": [
+    "אֲדֹנָי Lord, the Lord, spoken every",
+    "where κατ᾽ ἐξοχήν of God, chiefly (in the",
+    "Pentat. always) where God is submis-",
+    "sively and reverently addressed ; as in",
+    "the formulas בִּי אֲדֹנָי Ex. 4, 10. 13. Josh.",
+    "7, 8 ; אָנָּא אֲדֹנָי Neh. 1, 11, comp. Gen. 15,",
+    "2. 18, 30–32. Ex. 34, 9. etc. Then also",
+    "where God is spoken of, 1 K. 13, 10. 22,",
+    "6. 2 K. 7, 6. 19, 23. Is. 6, 8. 8, 7. Fre-",
+    "quently other divine names are added ;",
+    "as אֲדֹנָי יְהֹוִה (which the Masorites write",
+    "אֲדֹנָי יֱהֹוִה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי",
+    "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ָי",
+    "grammarians differ in opinion. Many",
+    "regard it as a plural form put for the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 969,
+      "y": 765,
+      "width": 872,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r01-b00-872x246+969+765-x2.png",
+     "image_sha256": "ca744ae6461a28100e396f2bef1437c2cafb843ed1684ad558554e32fa13c398",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדֹנָי Lord, the Lord, spoken every",
+       "where κατ’ ἐξοχήν of God, chiefly (in the",
+       "Pentat. always) where God is submis-",
+       "sively and reverently addressed; as in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "9a38493e-f25f-4aa2-90f2-5ae26c0d4d8a",
+      "duration_api_ms": 9390,
+      "cost_usd_list": 0.07141324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 328
+     },
+     "lines": [
+      {
+       "draft": "אֲדֹנָי Lord, the Lord, spoken every",
+       "reread": "אֲדֹנָי Lord, the Lord, spoken every",
+       "status": "agreed",
+       "text": "אֲדֹנָי Lord, the Lord, spoken every"
+      },
+      {
+       "draft": "where κατ᾽ ἐξοχήν of God, chiefly (in the",
+       "reread": "where κατ’ ἐξοχήν of God, chiefly (in the",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "where κατ᾽ ἐξοχήν of God, chiefly (in the",
+        "verdict": "a",
+        "note": "Both readings match the printed letters; the only difference is the encoding of the elision mark after κατ. The print shows a Greek apostrophe (koronis-shaped, set in the Greek font), so A's U+1FBD is the better representation than B's generic U+2019. Hebrew/accents on this line: none to check.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a89bbe26-ee47-48a8-a0f3-e731ff72c4b7",
+        "duration_api_ms": 9789,
+        "cost_usd_list": 0.0815745,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3578,
+        "cache_creation_input_tokens": 2622,
+        "output_tokens": 558
+       },
+       "text": "where κατ᾽ ἐξοχήν of God, chiefly (in the"
+      },
+      {
+       "draft": "Pentat. always) where God is submis-",
+       "reread": "Pentat. always) where God is submis-",
+       "status": "agreed",
+       "text": "Pentat. always) where God is submis-"
+      },
+      {
+       "draft": "sively and reverently addressed ; as in",
+       "reread": "sively and reverently addressed; as in",
+       "status": "agreed",
+       "text": "sively and reverently addressed; as in"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 969,
+      "y": 995,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r01-b01-872x238+969+995-x2.png",
+     "image_sha256": "92eb9df43468a4293d5d0fa5db07708c8953ff4acb97ec47aaa92df459d5d02f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the formulas בִּי אֲדֹנָי Ex. 4, 10. 13. Josh.",
+       "7, 8 ; אָנָּא אֲדֹנָי Neh. 1, 11, comp. Gen. 15,",
+       "2. 18, 30–32. Ex. 34, 9. etc.  Then also",
+       "where God is spoken of, 1 K. 13, 10. 22,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5eda50c4-779b-4c9b-8d4f-637838d0f724",
+      "duration_api_ms": 8799,
+      "cost_usd_list": 0.06915325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 308
+     },
+     "lines": [
+      {
+       "draft": "the formulas בִּי אֲדֹנָי Ex. 4, 10. 13. Josh.",
+       "reread": "the formulas בִּי אֲדֹנָי Ex. 4, 10. 13. Josh.",
+       "status": "agreed",
+       "text": "the formulas בִּי אֲדֹנָי Ex. 4, 10. 13. Josh."
+      },
+      {
+       "draft": "7, 8 ; אָנָּא אֲדֹנָי Neh. 1, 11, comp. Gen. 15,",
+       "reread": "7, 8 ; אָנָּא אֲדֹנָי Neh. 1, 11, comp. Gen. 15,",
+       "status": "agreed",
+       "text": "7, 8; אָנָּא אֲדֹנָי Neh. 1, 11, comp. Gen. 15,"
+      },
+      {
+       "draft": "2. 18, 30–32. Ex. 34, 9. etc. Then also",
+       "reread": "2. 18, 30–32. Ex. 34, 9. etc.  Then also",
+       "status": "agreed",
+       "text": "2. 18, 30–32. Ex. 34, 9. etc. Then also"
+      },
+      {
+       "draft": "where God is spoken of, 1 K. 13, 10. 22,",
+       "reread": "where God is spoken of, 1 K. 13, 10. 22,",
+       "status": "agreed",
+       "text": "where God is spoken of, 1 K. 13, 10. 22,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 969,
+      "y": 1217,
+      "width": 872,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r01-b02-872x246+969+1217-x2.png",
+     "image_sha256": "cc216e04bb196fb7dda169f9e507cbc7b7bc84aa6d5f9fc240fb1b136c9abcba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "6. 2 K. 7, 6. 19, 23. Is. 6, 8. 8, 7. Fre-",
+       "quently other divine names are added ;",
+       "as אֲדֹנָי יְהוִֹה (which the Masorites write",
+       "אֲדֹנָי יֱהוִֹה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "18bfc0d1-7ea3-4702-b5ec-825ed385ccdb",
+      "duration_api_ms": 14932,
+      "cost_usd_list": 0.0905035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 709
+     },
+     "lines": [
+      {
+       "draft": "6. 2 K. 7, 6. 19, 23. Is. 6, 8. 8, 7. Fre-",
+       "reread": "6. 2 K. 7, 6. 19, 23. Is. 6, 8. 8, 7. Fre-",
+       "status": "agreed",
+       "text": "6. 2 K. 7, 6. 19, 23. Is. 6, 8. 8, 7. Fre-"
+      },
+      {
+       "draft": "quently other divine names are added ;",
+       "reread": "quently other divine names are added ;",
+       "status": "agreed",
+       "text": "quently other divine names are added;"
+      },
+      {
+       "draft": "as אֲדֹנָי יְהֹוִה (which the Masorites write",
+       "reread": "as אֲדֹנָי יְהוִֹה (which the Masorites write",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "as אֲדֹנָי יְהוִֹה (which the Masorites write",
+        "verdict": "b",
+        "note": "The holem dot in the Tetragrammaton is printed directly above the vav (which also carries the hiriq beneath it), not above the he; the yod carries a plain sheva. Reading B's point placement matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "f50a126d-cfa8-4b69-be00-0e4bfc108bf3",
+        "duration_api_ms": 15217,
+        "cost_usd_list": 0.09040525,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3581,
+        "cache_creation_input_tokens": 2626,
+        "output_tokens": 733
+       },
+       "text": "as אֲדֹנָי יְהוִֹה (which the Masorites write"
+      },
+      {
+       "draft": "אֲדֹנָי יֱהֹוִה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי",
+       "reread": "אֲדֹנָי יֱהוִֹה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "אֲדֹנָי יֱהוִֹה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי",
+        "verdict": "b",
+        "note": "The only disagreement is the placement of the holem in the Tetragrammaton: the dot is printed above the vav (יֱהוִֹה, holem on vav as in B), not above the preceding he as A encodes; everything else (hateph segol under yod, hiriq under vav, hateph patah/holem/qamets on אֲדֹנָי, the English references and spacing) matches both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4af69931-9f01-4672-889f-4dda69ac3313",
+        "duration_api_ms": 18357,
+        "cost_usd_list": 0.09968675000000002,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3627,
+        "cache_creation_input_tokens": 2672,
+        "output_tokens": 900
+       },
+       "text": "אֲדֹנָי יֱהוִֹה) Is. 40, 10. Jer. 2, 22; אֲדֹנָי"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 969,
+      "y": 1447,
+      "width": 872,
+      "height": 184
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r01-b03-872x184+969+1447-x2.png",
+     "image_sha256": "c81bd504e459b511d616b9b47f745b611b8220fb1be502019c4dbbc0dcff1dac",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ַי",
+       "grammarians differ in opinion.  Many",
+       "regard it as a plural form put for the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "da92c240-dcc9-44b5-b3fa-b2ab3e9075ee",
+      "duration_api_ms": 11717,
+      "cost_usd_list": 0.07266349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 453
+     },
+     "lines": [
+      {
+       "draft": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ָי",
+       "reread": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ַי",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ָי",
+        "verdict": "a",
+        "note": "The vowel under the ending placeholder has a visible vertical tick beneath the horizontal bar, i.e. qamets (ָ) as in Reading A, not patach (ַ) as in Reading B. Everything else in the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2c0eb1fc-537e-4f54-a1c2-dd598da7419a",
+        "duration_api_ms": 10191,
+        "cost_usd_list": 0.06940825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3593,
+        "cache_creation_input_tokens": 2386,
+        "output_tokens": 409
+       },
+       "text": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ָי"
+      },
+      {
+       "draft": "grammarians differ in opinion. Many",
+       "reread": "grammarians differ in opinion.  Many",
+       "status": "agreed",
+       "text": "grammarians differ in opinion. Many"
+      },
+      {
+       "draft": "regard it as a plural form put for the",
+       "reread": "regard it as a plural form put for the",
+       "status": "agreed",
+       "text": "regard it as a plural form put for the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 969,
+    "y": 1611,
+    "width": 872,
+    "height": 639
+   },
+   "draft_lines": [
+    "sing. as spoken of the divine majesty",
+    "(pluralis excellentiæ), i. q. אֲדֹנִים, the",
+    "Kamets being put for Pattah to distin-",
+    "guish it from אֲדֹנַי my lords; see Gram.",
+    "§ 86. 1. c. § 106. 2. b. Others consider",
+    "־ָי i. q. ־ַי, and make it strictly a suffix",
+    "plural; so that אֲדֹנַי is pr. my lords,",
+    "then as plur. excell. my Lord, and at",
+    "last, the force of the suffix being by de-",
+    "grees neglected, Lord, the Lord, ὁ Κύ",
+    "ριος. Comp. Syr. ܡܳܪܝ and Fr. Mon-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 969,
+      "y": 1603,
+      "width": 872,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r02-b00-872x244+969+1603-x2.png",
+     "image_sha256": "9adae70ff6d28357367f63e94a401fae3e9f0abf6806f3d094c8685882bb72e1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sing. as spoken of the divine majesty",
+       "(pluralis excellentiæ), i. q. אֲדֹנִים, the",
+       "Kamets being put for Pattah to distin-",
+       "guish it from אֲדֹנַי my lords; see Gram."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "439c6b75-890e-4494-ab32-08948d264b8b",
+      "duration_api_ms": 10024,
+      "cost_usd_list": 0.0722035,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 343
+     },
+     "lines": [
+      {
+       "draft": "sing. as spoken of the divine majesty",
+       "reread": "sing. as spoken of the divine majesty",
+       "status": "agreed",
+       "text": "sing. as spoken of the divine majesty"
+      },
+      {
+       "draft": "(pluralis excellentiæ), i. q. אֲדֹנִים, the",
+       "reread": "(pluralis excellentiæ), i. q. אֲדֹנִים, the",
+       "status": "agreed",
+       "text": "(pluralis excellentiæ), i. q. אֲדֹנִים, the"
+      },
+      {
+       "draft": "Kamets being put for Pattah to distin-",
+       "reread": "Kamets being put for Pattah to distin-",
+       "status": "agreed",
+       "text": "Kamets being put for Pattah to distin-"
+      },
+      {
+       "draft": "guish it from אֲדֹנַי my lords; see Gram.",
+       "reread": "guish it from אֲדֹנַי my lords; see Gram.",
+       "status": "agreed",
+       "text": "guish it from אֲדֹנַי my lords; see Gram."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 969,
+      "y": 1831,
+      "width": 872,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r02-b01-872x235+969+1831-x2.png",
+     "image_sha256": "28acba6538b50448580cbf6f5d2a8cd73104a3b50b71193bfe1ae6b82ee1e2f2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "§ 86. 1. c. § 106. 2. b.  Others consider",
+       "ָי i. q. ַי, and make it strictly a suffix",
+       "plural ; so that אֲדֹנָי is pr. my lords,",
+       "then as plur. excell. my Lord, and at"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7df4df91-6fe0-43c5-bb95-a68d621cb721",
+      "duration_api_ms": 11797,
+      "cost_usd_list": 0.07474349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 419
+     },
+     "lines": [
+      {
+       "draft": "§ 86. 1. c. § 106. 2. b. Others consider",
+       "reread": "§ 86. 1. c. § 106. 2. b.  Others consider",
+       "status": "agreed",
+       "text": "§ 86. 1. c. § 106. 2. b. Others consider"
+      },
+      {
+       "draft": "־ָי i. q. ־ַי, and make it strictly a suffix",
+       "reread": "ָי i. q. ַי, and make it strictly a suffix",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "־ָי i. q. ־ַי, and make it strictly a suffix",
+        "verdict": "a",
+        "note": "The print has a horizontal carrier stroke under which the qamets and patach sit, before each yod (־ָי and ־ַי); Reading B drops this stroke and leaves the vowels hanging on nothing. No dagesh, shin/sin dot or accent is printed; both are Hebrew, not Arabic/Syriac.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "559ff522-defb-4b60-9abf-a4cc8ec8c78a",
+        "duration_api_ms": 16961,
+        "cost_usd_list": 0.09655375000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3575,
+        "cache_creation_input_tokens": 2576,
+        "output_tokens": 876
+       },
+       "text": "־ָי i. q. ־ַי, and make it strictly a suffix"
+      },
+      {
+       "draft": "plural; so that אֲדֹנַי is pr. my lords,",
+       "reread": "plural ; so that אֲדֹנָי is pr. my lords,",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "plural ; so that אֲדֹנָי is pr. my lords,",
+        "verdict": "b",
+        "note": "Under the nun the print shows a qamets (bar with a descending stem), not a patach — the sense of the passage (\"Others consider ָי i. q. ַי\") also requires qamets here. The printed line also has a visible space before the semicolon (\"plural ;\"), which only Reading B preserves.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5054e479-4d78-4a5c-aeb3-fc27bd6da387",
+        "duration_api_ms": 12987,
+        "cost_usd_list": 0.0800035,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2556,
+        "output_tokens": 553
+       },
+       "text": "plural; so that אֲדֹנָי is pr. my lords,"
+      },
+      {
+       "draft": "then as plur. excell. my Lord, and at",
+       "reread": "then as plur. excell. my Lord, and at",
+       "status": "agreed",
+       "text": "then as plur. excell. my Lord, and at"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 969,
+      "y": 2050,
+      "width": 872,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r02-b02-872x194+969+2050-x2.png",
+     "image_sha256": "ca3aa12cd028132f3155758e654a2e6baa0ecdbd0b90911d8d2fa0fb38da64f1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "last, the force of the suffix being by de-",
+       "grees neglected, Lord, the Lord, ὁ Κύ",
+       "ριος. Comp. Syr. ܡܳܪܝ and Fr. Mon-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "09b19f82-439a-4d11-bfee-b87def58112e",
+      "duration_api_ms": 13123,
+      "cost_usd_list": 0.07546349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 509
+     },
+     "lines": [
+      {
+       "draft": "last, the force of the suffix being by de-",
+       "reread": "last, the force of the suffix being by de-",
+       "status": "agreed",
+       "text": "last, the force of the suffix being by de-"
+      },
+      {
+       "draft": "grees neglected, Lord, the Lord, ὁ Κύ",
+       "reread": "grees neglected, Lord, the Lord, ὁ Κύ",
+       "status": "agreed",
+       "text": "grees neglected, Lord, the Lord, ὁ Κύ"
+      },
+      {
+       "draft": "ριος. Comp. Syr. ܡܳܪܝ and Fr. Mon-",
+       "reread": "ριος. Comp. Syr. ܡܳܪܝ and Fr. Mon-",
+       "status": "agreed",
+       "text": "ριος. Comp. Syr. ܡܳܪܝ and Fr. Mon-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 969,
+    "y": 2238,
+    "width": 872,
+    "height": 627
+   },
+   "draft_lines": [
+    "sieur. This latter view seems prefer-",
+    "able, for the following reasons: a) The",
+    "words of Ps. 35, 23 אֱלֹהַי וַאדֹנָי. 16, 2.",
+    "b) The ancient usage of the Pentat.",
+    "where it is for the Voc. my Lord! c) A",
+    "similar usage in possessive pronouns,",
+    "afterwards neglected, in the Phenician",
+    "names of gods, as אֲדֹנִי Ἄδωνις, בעלתי",
+    "Βαάλτις, for which see Monum. Phœnic.",
+    "p. 400. Heb. Gr. § 119. 6. n. 4. d) אֲדֹנָי",
+    "never has the article, and so nouns with"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 969,
+      "y": 2245,
+      "width": 872,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r03-b00-872x230+969+2245-x2.png",
+     "image_sha256": "44b019fe0545881966f46931a308bdef3895c4076542f8bd7378f53823e81f8b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "sieur. This latter view seems prefer-",
+       "able, for the following reasons: a) The",
+       "words of Ps. 35, 23 אֱלֹהַי וַאדֹנָי. 16, 2.",
+       "b) The ancient usage of the Pentat."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6aabf1eb-bd66-4840-8037-7a61382f309f",
+      "duration_api_ms": 10333,
+      "cost_usd_list": 0.07279349999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 380
+     },
+     "lines": [
+      {
+       "draft": "sieur. This latter view seems prefer-",
+       "reread": "sieur. This latter view seems prefer-",
+       "status": "agreed",
+       "text": "sieur. This latter view seems prefer-"
+      },
+      {
+       "draft": "able, for the following reasons: a) The",
+       "reread": "able, for the following reasons: a) The",
+       "status": "agreed",
+       "text": "able, for the following reasons: a) The"
+      },
+      {
+       "draft": "words of Ps. 35, 23 אֱלֹהַי וַאדֹנָי. 16, 2.",
+       "reread": "words of Ps. 35, 23 אֱלֹהַי וַאדֹנָי. 16, 2.",
+       "status": "agreed",
+       "text": "words of Ps. 35, 23 אֱלֹהַי וַאדֹנָי. 16, 2."
+      },
+      {
+       "draft": "b) The ancient usage of the Pentat.",
+       "reread": "b) The ancient usage of the Pentat.",
+       "status": "agreed",
+       "text": "b) The ancient usage of the Pentat."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 969,
+      "y": 2459,
+      "width": 872,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r03-b01-872x236+969+2459-x2.png",
+     "image_sha256": "68abff2f22844d2ab393ac0faa76fcfd4515f61ff16b17543d86e912851fc7ba",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "where it is for the Voc. my Lord !  c) A",
+       "similar usage in possessive pronouns,",
+       "afterwards neglected, in the Phenician",
+       "names of gods, as אֲדֹנִי Ἄδωνις, בעלתי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7bb5f8b9-917d-4adf-a68a-54a88c57951b",
+      "duration_api_ms": 10774,
+      "cost_usd_list": 0.0751935,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 428
+     },
+     "lines": [
+      {
+       "draft": "where it is for the Voc. my Lord! c) A",
+       "reread": "where it is for the Voc. my Lord !  c) A",
+       "status": "agreed",
+       "text": "where it is for the Voc. my Lord! c) A"
+      },
+      {
+       "draft": "similar usage in possessive pronouns,",
+       "reread": "similar usage in possessive pronouns,",
+       "status": "agreed",
+       "text": "similar usage in possessive pronouns,"
+      },
+      {
+       "draft": "afterwards neglected, in the Phenician",
+       "reread": "afterwards neglected, in the Phenician",
+       "status": "agreed",
+       "text": "afterwards neglected, in the Phenician"
+      },
+      {
+       "draft": "names of gods, as אֲדֹנִי Ἄδωνις, בעלתי",
+       "reread": "names of gods, as אֲדֹנִי Ἄδωνις, בעלתי",
+       "status": "agreed",
+       "text": "names of gods, as אֲדֹנִי Ἄδωνις, בעלתי"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 969,
+      "y": 2679,
+      "width": 872,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r03-b02-872x194+969+2679-x2.png",
+     "image_sha256": "26fc4ee97160ad9a94bf16e77119d07fb49ff357c051ce749abc74b91293c64c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Βααλτις, for which see Monum. Phœnic.",
+       "p. 400. Heb. Gr. § 119. 6. n. 4.  d) אֲדֹנָי",
+       "never has the article, and so nouns with"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3ce185ce-229b-4f39-9ef9-59d183effe43",
+      "duration_api_ms": 10302,
+      "cost_usd_list": 0.0675135,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 350
+     },
+     "lines": [
+      {
+       "draft": "Βαάλτις, for which see Monum. Phœnic.",
+       "reread": "Βααλτις, for which see Monum. Phœnic.",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "Βαάλτις, for which see Monum. Phœnic.",
+        "verdict": "a",
+        "note": "An acute accent is clearly printed over the second alpha (Βαάλτις); Reading B omits it. Rest of the line is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "58dca8ae-ffbf-4068-9126-58e69210a033",
+        "duration_api_ms": 10815,
+        "cost_usd_list": 0.0650425,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3570,
+        "cache_creation_input_tokens": 2363,
+        "output_tokens": 331
+       },
+       "text": "Βαάλτις, for which see Monum. Phœnic."
+      },
+      {
+       "draft": "p. 400. Heb. Gr. § 119. 6. n. 4. d) אֲדֹנָי",
+       "reread": "p. 400. Heb. Gr. § 119. 6. n. 4.  d) אֲדֹנָי",
+       "status": "agreed",
+       "text": "p. 400. Heb. Gr. § 119. 6. n. 4. d) אֲדֹנָי"
+      },
+      {
+       "draft": "never has the article, and so nouns with",
+       "reread": "never has the article, and so nouns with",
+       "status": "agreed",
+       "text": "never has the article, and so nouns with"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "row": 4,
+   "bounds": {
+    "x": 969,
+    "y": 2853,
+    "width": 872,
+    "height": 529
+   },
+   "draft_lines": [
+    "a suffix.—To all this it might be an-",
+    "swered: α) That אֲדֹנָי is plural. But",
+    "in one place only is it coupled with a",
+    "plural, Gen. 19, 2; in the two remaining",
+    "passages it is singular, my Lord ! Gen.",
+    "18, 3. 19, 18. β) That God twice calls",
+    "himself אֲדֹנָי, Is. 8, 7. Job 28, 28. But"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r04-b00",
+     "bounds": {
+      "x": 969,
+      "y": 2845,
+      "width": 872,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r04-b00-872x238+969+2845-x2.png",
+     "image_sha256": "1aa52f6a65991ebef2b8e31a654e43ff6d53f2d7758d2a2a07d0aacc865984a9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a suffix.—To all this it might be an-",
+       "swered: α) That אֲדֹנָי is plural. But",
+       "in one place only is it coupled with a",
+       "plural, Gen. 19, 2; in the two remaining"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6e660e8c-6ce1-49f0-9ce3-886653842614",
+      "duration_api_ms": 8816,
+      "cost_usd_list": 0.06619349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 248
+     },
+     "lines": [
+      {
+       "draft": "a suffix.—To all this it might be an-",
+       "reread": "a suffix.—To all this it might be an-",
+       "status": "agreed",
+       "text": "a suffix.—To all this it might be an-"
+      },
+      {
+       "draft": "swered: α) That אֲדֹנָי is plural. But",
+       "reread": "swered: α) That אֲדֹנָי is plural. But",
+       "status": "agreed",
+       "text": "swered: α) That אֲדֹנָי is plural. But"
+      },
+      {
+       "draft": "in one place only is it coupled with a",
+       "reread": "in one place only is it coupled with a",
+       "status": "agreed",
+       "text": "in one place only is it coupled with a"
+      },
+      {
+       "draft": "plural, Gen. 19, 2; in the two remaining",
+       "reread": "plural, Gen. 19, 2; in the two remaining",
+       "status": "agreed",
+       "text": "plural, Gen. 19, 2; in the two remaining"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r04-b01",
+     "bounds": {
+      "x": 969,
+      "y": 3067,
+      "width": 872,
+      "height": 317
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0029/pass2/c1-r04-b01-872x317+969+3067-x2.png",
+     "image_sha256": "8ac0a852d6a7fd45e6d499aac7c8a204e97d52b9202ad235e10a7cf864a8ba67",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "passages it is singular, my Lord ! Gen.",
+       "18, 3. 19, 18. β) That God twice calls",
+       "himself אֲדֹנָי, Is. 8, 7. Job 28, 28. But"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "de70161b-eea1-444e-a7eb-f9301263456d",
+      "duration_api_ms": 5831,
+      "cost_usd_list": 0.07740349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3006,
+      "output_tokens": 321
+     },
+     "lines": [
+      {
+       "draft": "passages it is singular, my Lord ! Gen.",
+       "reread": "passages it is singular, my Lord ! Gen.",
+       "status": "agreed",
+       "text": "passages it is singular, my Lord! Gen."
+      },
+      {
+       "draft": "18, 3. 19, 18. β) That God twice calls",
+       "reread": "18, 3. 19, 18. β) That God twice calls",
+       "status": "agreed",
+       "text": "18, 3. 19, 18. β) That God twice calls"
+      },
+      {
+       "draft": "himself אֲדֹנָי, Is. 8, 7. Job 28, 28. But",
+       "reread": "himself אֲדֹנָי, Is. 8, 7. Job 28, 28. But",
+       "status": "agreed",
+       "text": "himself אֲדֹנָי, Is. 8, 7. Job 28, 28. But"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אדה 13 אדן",
+   "status": "adjudicated",
+   "draft": "אדה 13 אדר",
+   "reread": "אדה 13 אדן",
+   "verdict": "b",
+   "note": "The left-hand letter of the right-column word is a narrow vertical stroke descending below the baseline of the dalet (final nun ן), not the wide rounded-shoulder resh ר of this font; so the header reads אדן, as in Reading B. No vowel points are printed in the header.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* אָדָה obsol. root, prob. i. q. אָזָה and",
+   "status": "adjudicated",
+   "draft": "* אָדָה obsol. root, prob. i. q. אָוָה and",
+   "reread": "* אָדָה obsol. root, prob. i. q. אָזָה and",
+   "verdict": "b",
+   "note": "The middle letter of the second Hebrew word has a wide flat head overhanging the stem on both sides — a zayin (ז), not a vav; contrast the narrow hooked ו in the running head אוה above. Reading B matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "עָדָה to pass.—Hence אֲדִין.",
+   "status": "adjudicated",
+   "draft": "עָדָה to pass.—Hence אִדּוֹ.",
+   "reread": "עָדָה to pass.—Hence אֲדִין.",
+   "verdict": "b",
+   "note": "The last word on the printed line ends in a final nun with hireq under the dalet (אֲדִין), not the Iddo form אִדּוֹ, which belongs to the start of line 3.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אִדּוֹ pr. n. Iddo, Ezra 8, 17. R. אָדַר.",
+   "status": "adjudicated",
+   "draft": "אִדּוֹ pr. n. Iddo, Ezra 8, 17. R. אָדָה.",
+   "reread": "אִדּוֹ pr. n. Iddo, Ezra 8, 17.  R. אָדַר.",
+   "verdict": "b",
+   "note": "Final root letter is ר (no left leg, unlike the ה in אָדָה above) with patach under the dalet: אָדַר, as in B; A's אָדָה is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֱדוֹם see אֱדֹם.",
+   "status": "adjudicated",
+   "draft": "אֱדוֹם see אֱדֹם.",
+   "reread": "אֱדוֹם see אָדֹם.",
+   "verdict": "a",
+   "note": "The vowel under the aleph of the second (defective) word is a hataf segol (two vertical dots plus segol cluster), matching the first word, not a qamets; both words point to the entry אֱדֹם Edom.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אָדוֹן m. (r. אָדַן q. v.) with suff. and in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "plur. defect. אֲדֹנֵי, אֲדֹנִים; with pref.",
+   "status": "adjudicated",
+   "draft": "plur. defect. אֲדֹנִי, אֲדֹנִים; with pref.",
+   "reread": "plur. defect. אֲדֹנֵי, אֲדֹנִים; with pref.",
+   "verdict": "b",
+   "note": "Under the nun of the first Hebrew word (אֲדֹנֵי) the print has two dots side by side — tsere, the construct plural — not a single hiriq dot; the second word אֲדֹנִים has hiriq. Order and all other points match both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "בַּאדֹנִי, וַאדֹנִי, לַאדֹנִי; master, lord, do-",
+   "status": "adjudicated",
+   "draft": "לַאדֹנִי, וַאדֹנִי, בַּאדֹנִי; master, lord, do-",
+   "reread": "בַּאדֹנִי, וַאדֹנִי, לַאדֹנֵי; master, lord, do-",
+   "verdict": "neither",
+   "note": "Printed left-to-right order is בַּאדֹנִי first, then וַאדֹנִי, then לַאדֹנִי next to the semicolon (B's order, not A's); but the last word carries a single dot (hiriq) under the nun, not tsere as B has. A's vowels are right, B's order is right, so neither is fully correct.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "minus. Spoken a) Of an owner, pos-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "sessor, 1 K. 16, 21 owner of mount Shom-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "ron, i. e. Samaria. Hence of the owner",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "and master of slaves, Gen. 24, 14. 27. 39,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. 7; of kings as the lords of their sub-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "jects, Is. 26, 13; of a husband as lord of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the wife, Gen. 18, 12, comp. בַּעַל and Gr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "κύριος γυναικός, Germ. Eheherr. Also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "of God as the owner and governor of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the world, Josh. 3, 13 אֲדוֹן כָּל־הָאָרֶץ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Lord of the whole earth; hence called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "κατ᾽ ἐξοχήν הָאָדוֹן Ex. 23, 17, and with-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "out art. אָדוֹן Ps. 114, 7; comp. אֲדֹנָי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "in next art. b) Of a ruler, governor,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Gen. 45, 8. So אֲדֹנִי my lord! an honor-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "ary title of address to nobles and others",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to whom honour and reverence are due;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "e. g. to a father Gen. 31, 35, a brother",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Num. 12, 11, to a royal consort 1 K. 1,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "17. 18; espec. to kings and princes, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲדֹנִי הַמֶּלֶךְ 2 Sam. 14, 9. 1 K. 3, 17. In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "respectfully addressing a person, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hebrews, instead of the second personal",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pron. thou, were accustomed to say my",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lord, and instead of the first person, thy",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "servant, thy handmaid, Gen. 33, 8. 13, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "15. 44, 7. 9. 19 אֲדֹנִי שָׁאַל אֶת־עֲבָדָיו my",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lord asked his servants, i. e. thou didst",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ask us. In a style of still stronger adu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "lation, this mode of speaking is also used",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "in the case of an absent person, as Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "32, 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Plur. אֲדֹנִים masters, lords, Is. 26, 13",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "with a verb plural; and so c. suff. ־ַי, אֲדֹנַי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "i. e. my lords Gen. 19, 2. 18. Elsewhere",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the plural forms אֲדֹנִים, אֲדֹנֵי, c. suff.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "־ֶיךָ, ־ָיו, ־ֵיכֶם, etc. are always plur.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "excellentiæ, and of the same signif. as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the sing. Gen. 39, 2 sq. Hence joined",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "with an adj. in the sing. number, as Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "19, 4 אֲדֹנִים קָשֶׁה a hard master, cruel",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "lord. Gen. 42, 30. 33 אֲדֹנֵי הָאָרֶץ lord",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of the land. אֲדֹנֶיךָ thy master 2 K. 2, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "5. 16. Ps. 45, 12; אֲדֹנָיו his master Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "24, 9. 39, 2. 3. 40, 7. Job 3, 19. Deut. 10,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "17 אֲדֹנֵי הָאֲדֹנִים Lord of lords, i. e. Je-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "hovah. Ps. 136, 3. Spoken of idols,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Zeph. 1, 9; comp. בַּעַל.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Note. This word is wanting in all",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "the kindred dialects, except the Pheni-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "cian, where it is applied to princes,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "kings, and gods, see Monumenta Phœnic.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "p. 346 (comp. Ἄδων, Ἄδωνις, Hesych.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "κύριος); and perhaps the Chaldean,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "where a vestige of it seems to be pre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "served in the pr. n. בִּלְאֲדָן.",
+   "status": "adjudicated",
+   "draft": "served in the pr. n. בַּלְאֲדָן.",
+   "reread": "served in the pr. n. בִּלְאֲדָן.",
+   "verdict": "b",
+   "note": "Under the initial bet (which carries a dagesh) the print shows a single round dot (hiriq), not a horizontal patah bar; the rest (shewa under lamed, hataf-patah under alef, qamets under dalet, final nun) is identical in both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲדֹנָי Lord, the Lord, spoken every",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "where κατ᾽ ἐξοχήν of God, chiefly (in the",
+   "status": "adjudicated",
+   "draft": "where κατ᾽ ἐξοχήν of God, chiefly (in the",
+   "reread": "where κατ’ ἐξοχήν of God, chiefly (in the",
+   "verdict": "a",
+   "note": "Both readings match the printed letters; the only difference is the encoding of the elision mark after κατ. The print shows a Greek apostrophe (koronis-shaped, set in the Greek font), so A's U+1FBD is the better representation than B's generic U+2019. Hebrew/accents on this line: none to check.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Pentat. always) where God is submis-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sively and reverently addressed; as in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the formulas בִּי אֲדֹנָי Ex. 4, 10. 13. Josh.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "7, 8; אָנָּא אֲדֹנָי Neh. 1, 11, comp. Gen. 15,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. 18, 30–32. Ex. 34, 9. etc. Then also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "where God is spoken of, 1 K. 13, 10. 22,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "6. 2 K. 7, 6. 19, 23. Is. 6, 8. 8, 7. Fre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "quently other divine names are added;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "as אֲדֹנָי יְהוִֹה (which the Masorites write",
+   "status": "adjudicated",
+   "draft": "as אֲדֹנָי יְהֹוִה (which the Masorites write",
+   "reread": "as אֲדֹנָי יְהוִֹה (which the Masorites write",
+   "verdict": "b",
+   "note": "The holem dot in the Tetragrammaton is printed directly above the vav (which also carries the hiriq beneath it), not above the he; the yod carries a plain sheva. Reading B's point placement matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲדֹנָי יֱהוִֹה) Is. 40, 10. Jer. 2, 22; אֲדֹנָי",
+   "status": "adjudicated",
+   "draft": "אֲדֹנָי יֱהֹוִה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי",
+   "reread": "אֲדֹנָי יֱהוִֹה) Is. 40, 10. Jer. 2, 22 ; אֲדֹנָי",
+   "verdict": "b",
+   "note": "The only disagreement is the placement of the holem in the Tetragrammaton: the dot is printed above the vav (יֱהוִֹה, holem on vav as in B), not above the preceding he as A encodes; everything else (hateph segol under yod, hiriq under vav, hateph patah/holem/qamets on אֲדֹנָי, the English references and spacing) matches both readings.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ָי",
+   "status": "adjudicated",
+   "draft": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ָי",
+   "reread": "הָאֱלֹהִים Dan. 9, 13.—As to the ending ־ַי",
+   "verdict": "a",
+   "note": "The vowel under the ending placeholder has a visible vertical tick beneath the horizontal bar, i.e. qamets (ָ) as in Reading A, not patach (ַ) as in Reading B. Everything else in the line is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "grammarians differ in opinion. Many",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "regard it as a plural form put for the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "sing. as spoken of the divine majesty",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "(pluralis excellentiæ), i. q. אֲדֹנִים, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Kamets being put for Pattah to distin-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "guish it from אֲדֹנַי my lords; see Gram.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "§ 86. 1. c. § 106. 2. b. Others consider",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "־ָי i. q. ־ַי, and make it strictly a suffix",
+   "status": "adjudicated",
+   "draft": "־ָי i. q. ־ַי, and make it strictly a suffix",
+   "reread": "ָי i. q. ַי, and make it strictly a suffix",
+   "verdict": "a",
+   "note": "The print has a horizontal carrier stroke under which the qamets and patach sit, before each yod (־ָי and ־ַי); Reading B drops this stroke and leaves the vowels hanging on nothing. No dagesh, shin/sin dot or accent is printed; both are Hebrew, not Arabic/Syriac.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "plural; so that אֲדֹנָי is pr. my lords,",
+   "status": "adjudicated",
+   "draft": "plural; so that אֲדֹנַי is pr. my lords,",
+   "reread": "plural ; so that אֲדֹנָי is pr. my lords,",
+   "verdict": "b",
+   "note": "Under the nun the print shows a qamets (bar with a descending stem), not a patach — the sense of the passage (\"Others consider ָי i. q. ַי\") also requires qamets here. The printed line also has a visible space before the semicolon (\"plural ;\"), which only Reading B preserves.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "then as plur. excell. my Lord, and at",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "last, the force of the suffix being by de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "grees neglected, Lord, the Lord, ὁ Κύ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ριος. Comp. Syr. ܡܳܪܝ and Fr. Mon-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "sieur. This latter view seems prefer-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "able, for the following reasons: a) The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "words of Ps. 35, 23 אֱלֹהַי וַאדֹנָי. 16, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "b) The ancient usage of the Pentat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "where it is for the Voc. my Lord! c) A",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "similar usage in possessive pronouns,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "afterwards neglected, in the Phenician",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "names of gods, as אֲדֹנִי Ἄδωνις, בעלתי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Βαάλτις, for which see Monum. Phœnic.",
+   "status": "adjudicated",
+   "draft": "Βαάλτις, for which see Monum. Phœnic.",
+   "reread": "Βααλτις, for which see Monum. Phœnic.",
+   "verdict": "a",
+   "note": "An acute accent is clearly printed over the second alpha (Βαάλτις); Reading B omits it. Rest of the line is identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "p. 400. Heb. Gr. § 119. 6. n. 4. d) אֲדֹנָי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "never has the article, and so nouns with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "a suffix.—To all this it might be an-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "swered: α) That אֲדֹנָי is plural. But",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "in one place only is it coupled with a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "plural, Gen. 19, 2; in the two remaining",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "passages it is singular, my Lord! Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "18, 3. 19, 18. β) That God twice calls",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r04",
+   "column": 1,
+   "text": "himself אֲדֹנָי, Is. 8, 7. Job 28, 28. But",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 94,
+  "adjudicated": 15,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 1
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.5986
+}

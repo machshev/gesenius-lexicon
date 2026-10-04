@@ -1,0 +1,2613 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 37,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0037.png",
+ "raster_sha256": "4414f7a7438f777ecd62e2bb22d54d0dc6512b91813cbb1837688b1e78355b3f",
+ "raster_size": {
+  "width": 2041,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0037.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:19:23+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 24,
+    "y": 127,
+    "width": 1776,
+    "height": 75
+   },
+   "draft_lines": [
+    "אוה",
+    "21",
+    "אול"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 24,
+      "y": 125,
+      "width": 1776,
+      "height": 79
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/header-b00-1776x79+24+125-x2.png",
+     "image_sha256": "5b2c17f90c55f0e5c9de9ecfd8c51c0382121673cd83f94d6736b59396ef6866",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוה 21 אול"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f8e800b4-8105-4e12-88ce-7ac0e6783a4f",
+      "duration_api_ms": 6757,
+      "cost_usd_list": 0.043952500000000005,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 182
+     },
+     "lines": [
+      {
+       "draft": "אוה 21 אול",
+       "reread": "אוה 21 אול",
+       "status": "agreed",
+       "text": "אוה 21 אול"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 24,
+    "y": 178,
+    "width": 876,
+    "height": 850
+   },
+   "draft_lines": [
+    "Piel. אִוָּה i. q. Kal no. 2, to desire, to",
+    "long for, ascribed mostly to the soul, נֶפֶשׁ.",
+    "Prov. 21, 10 נֶפֶשׁ רָשָׁע אִוְּתָה רָע the soul",
+    "of the wicked desireth evil. Deut. 12, 20.",
+    "14, 26. Job 23, 13. 33, 20. 1 Sam. 2, 16.",
+    "2 Sam. 3, 21. Mic. 7, 1. Without נֶפֶשׁ",
+    "Ps. 132, 13. 14. Is. 26, 9 נַפְשִׁי אִוִּיתִיךָ",
+    "בַּלַּיְלָה my soul even I desire thee in the",
+    "night; comp. עַבְדְּךָ for I, with 1 pers.",
+    "Gen. 44, 32.",
+    "Hithpa. הִתְאַוָּה, fut. apoc. יִתְאָו Prov.",
+    "23, 3. 6, i. q. Pi. but pr. to desire for one-",
+    "self, to long; absol. 1 Chr. 11, 17; c.",
+    "acc. Deut. 5, 18. Jer. 17, 16; c. dat. Prov."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 24,
+      "y": 170,
+      "width": 876,
+      "height": 299
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r00-b00-876x299+24+170-x2.png",
+     "image_sha256": "a4d176ea0b51af23e8b48dc0acb2e8cb68f89b8164d7d92f72c0661625d067c0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Piel. אִוָּה i. q. Kal no. 2, to desire, to",
+       "long for, ascribed mostly to the soul, נֶפֶשׁ.",
+       "Prov. 21, 10 נֶפֶשׁ רָשָׁע אִוְּתָה רָע the soul",
+       "of the wicked desireth evil. Deut. 12, 20."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "938fdd20-6757-490d-8bd4-4398f360ef81",
+      "duration_api_ms": 12097,
+      "cost_usd_list": 0.07531325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2941,
+      "output_tokens": 538
+     },
+     "lines": [
+      {
+       "draft": "Piel. אִוָּה i. q. Kal no. 2, to desire, to",
+       "reread": "Piel. אִוָּה i. q. Kal no. 2, to desire, to",
+       "status": "agreed",
+       "text": "Piel. אִוָּה i. q. Kal no. 2, to desire, to"
+      },
+      {
+       "draft": "long for, ascribed mostly to the soul, נֶפֶשׁ.",
+       "reread": "long for, ascribed mostly to the soul, נֶפֶשׁ.",
+       "status": "agreed",
+       "text": "long for, ascribed mostly to the soul, נֶפֶשׁ."
+      },
+      {
+       "draft": "Prov. 21, 10 נֶפֶשׁ רָשָׁע אִוְּתָה רָע the soul",
+       "reread": "Prov. 21, 10 נֶפֶשׁ רָשָׁע אִוְּתָה רָע the soul",
+       "status": "agreed",
+       "text": "Prov. 21, 10 נֶפֶשׁ רָשָׁע אִוְּתָה רָע the soul"
+      },
+      {
+       "draft": "of the wicked desireth evil. Deut. 12, 20.",
+       "reread": "of the wicked desireth evil. Deut. 12, 20.",
+       "status": "agreed",
+       "text": "of the wicked desireth evil. Deut. 12, 20."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 24,
+      "y": 453,
+      "width": 876,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r00-b01-876x235+24+453-x2.png",
+     "image_sha256": "4e4baf3ad751a50bcd6c043ee99b190a55c6e1cc4eb36ddf6b5d6208844c7a56",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "14, 26. Job 23, 13. 33, 20. 1 Sam. 2, 16.",
+       "2 Sam. 3, 21. Mic. 7, 1. Without נֶפֶשׁ",
+       "Ps. 132, 13. 14. Is. 26, 9 נַפְשִׁי אִוִּיתִיךָ",
+       "בַּלַּיְלָה my soul even I desire thee in the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "77973d81-6837-474b-92e2-3feac43fd028",
+      "duration_api_ms": 13863,
+      "cost_usd_list": 0.07692574999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 649
+     },
+     "lines": [
+      {
+       "draft": "14, 26. Job 23, 13. 33, 20. 1 Sam. 2, 16.",
+       "reread": "14, 26. Job 23, 13. 33, 20. 1 Sam. 2, 16.",
+       "status": "agreed",
+       "text": "14, 26. Job 23, 13. 33, 20. 1 Sam. 2, 16."
+      },
+      {
+       "draft": "2 Sam. 3, 21. Mic. 7, 1. Without נֶפֶשׁ",
+       "reread": "2 Sam. 3, 21. Mic. 7, 1. Without נֶפֶשׁ",
+       "status": "agreed",
+       "text": "2 Sam. 3, 21. Mic. 7, 1. Without נֶפֶשׁ"
+      },
+      {
+       "draft": "Ps. 132, 13. 14. Is. 26, 9 נַפְשִׁי אִוִּיתִיךָ",
+       "reread": "Ps. 132, 13. 14. Is. 26, 9 נַפְשִׁי אִוִּיתִיךָ",
+       "status": "agreed",
+       "text": "Ps. 132, 13. 14. Is. 26, 9 נַפְשִׁי אִוִּיתִיךָ"
+      },
+      {
+       "draft": "בַּלַּיְלָה my soul even I desire thee in the",
+       "reread": "בַּלַּיְלָה my soul even I desire thee in the",
+       "status": "agreed",
+       "text": "בַּלַּיְלָה my soul even I desire thee in the"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 24,
+      "y": 672,
+      "width": 876,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r00-b02-876x245+24+672-x2.png",
+     "image_sha256": "b4e1ec9330da5671ffea9eb240f1a715e0f9f86bf189e74fbc842816a8205c25",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "night ; comp. עַבְדְּךָ for I, with 1 pers.",
+       "Gen. 44, 32.",
+       "Hithpa. הִתְאַוָּה, fut. apoc. יִתְאָו Prov.",
+       "23, 3. 6, i. q. Pi. but pr. to desire for one-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "00f5bdd8-bf7a-4586-97fb-33c0aa80e582",
+      "duration_api_ms": 12737,
+      "cost_usd_list": 0.07326325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 560
+     },
+     "lines": [
+      {
+       "draft": "night; comp. עַבְדְּךָ for I, with 1 pers.",
+       "reread": "night ; comp. עַבְדְּךָ for I, with 1 pers.",
+       "status": "agreed",
+       "text": "night; comp. עַבְדְּךָ for I, with 1 pers."
+      },
+      {
+       "draft": "Gen. 44, 32.",
+       "reread": "Gen. 44, 32.",
+       "status": "agreed",
+       "text": "Gen. 44, 32."
+      },
+      {
+       "draft": "Hithpa. הִתְאַוָּה, fut. apoc. יִתְאָו Prov.",
+       "reread": "Hithpa. הִתְאַוָּה, fut. apoc. יִתְאָו Prov.",
+       "status": "agreed",
+       "text": "Hithpa. הִתְאַוָּה, fut. apoc. יִתְאָו Prov."
+      },
+      {
+       "draft": "23, 3. 6, i. q. Pi. but pr. to desire for one-",
+       "reread": "23, 3. 6, i. q. Pi. but pr. to desire for one-",
+       "status": "agreed",
+       "text": "23, 3. 6, i. q. Pi. but pr. to desire for one-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 24,
+      "y": 901,
+      "width": 876,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r00-b03-876x135+24+901-x2.png",
+     "image_sha256": "5b1ab261548a773558471cfa8091e8228d4f0b870be459aa9238bde83701a83e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "self, to long; absol. 1 Chr. 11, 17; c.",
+       "acc. Deut. 5, 18. Jer. 17, 16; c. dat. Prov."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f5a79f0e-c010-4e37-90fb-3d4331c61fe4",
+      "duration_api_ms": 7331,
+      "cost_usd_list": 0.05061325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2185,
+      "output_tokens": 233
+     },
+     "lines": [
+      {
+       "draft": "self, to long; absol. 1 Chr. 11, 17; c.",
+       "reread": "self, to long; absol. 1 Chr. 11, 17; c.",
+       "status": "agreed",
+       "text": "self, to long; absol. 1 Chr. 11, 17; c."
+      },
+      {
+       "draft": "acc. Deut. 5, 18. Jer. 17, 16; c. dat. Prov.",
+       "reread": "acc. Deut. 5, 18. Jer. 17, 16; c. dat. Prov.",
+       "status": "agreed",
+       "text": "acc. Deut. 5, 18. Jer. 17, 16; c. dat. Prov."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 24,
+    "y": 1016,
+    "width": 876,
+    "height": 770
+   },
+   "draft_lines": [
+    "23, 3. 6. הִתְאַוָּה תַּאֲוָה to long a longing,",
+    "i. e. to long for with eagerness, to lust",
+    "after, Num. 11, 4. Ps. 106, 14. Hithpael",
+    "differs also from Piel, in that it is never",
+    "joined with נֶפֶשׁ, which is the common",
+    "usage with Piel.",
+    "Deriv. אַו constr. אֹו, אַוָּה, אַוִּי, אִי I,",
+    "תַּאֲוָה, מַאֲוַיִּים.",
+    "* II. אָוָה obsol. root, onomatopoetic,",
+    "to cry, to howl, ululare; so Arab. عَوَى",
+    "to howl, as a dog, wolf, jackal; see the",
+    "deriv. אוֹי, אִי."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 24,
+      "y": 1008,
+      "width": 876,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r01-b00-876x241+24+1008-x2.png",
+     "image_sha256": "7034f4e7df2a994559b63bc5faf6b3adce4700dfba3e234123115835c642d48f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "23, 3. 6. הִתְאַוָּה תַּאֲוָה to long a longing,",
+       "i. e. to long for with eagerness, to lust",
+       "after, Num. 11, 4. Ps. 106, 14. Hithpael",
+       "differs also from Piel, in that it is never"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "eff1e2df-4ba3-48e8-93e8-f1424df2830b",
+      "duration_api_ms": 11029,
+      "cost_usd_list": 0.065796,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 410
+     },
+     "lines": [
+      {
+       "draft": "23, 3. 6. הִתְאַוָּה תַּאֲוָה to long a longing,",
+       "reread": "23, 3. 6. הִתְאַוָּה תַּאֲוָה to long a longing,",
+       "status": "agreed",
+       "text": "23, 3. 6. הִתְאַוָּה תַּאֲוָה to long a longing,"
+      },
+      {
+       "draft": "i. e. to long for with eagerness, to lust",
+       "reread": "i. e. to long for with eagerness, to lust",
+       "status": "agreed",
+       "text": "i. e. to long for with eagerness, to lust"
+      },
+      {
+       "draft": "after, Num. 11, 4. Ps. 106, 14. Hithpael",
+       "reread": "after, Num. 11, 4. Ps. 106, 14. Hithpael",
+       "status": "agreed",
+       "text": "after, Num. 11, 4. Ps. 106, 14. Hithpael"
+      },
+      {
+       "draft": "differs also from Piel, in that it is never",
+       "reread": "differs also from Piel, in that it is never",
+       "status": "agreed",
+       "text": "differs also from Piel, in that it is never"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 24,
+      "y": 1233,
+      "width": 876,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r01-b01-876x229+24+1233-x2.png",
+     "image_sha256": "2277b38054ab080550af75e81222c8068e2eaee7388bcebeda1853009a8ea563",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "joined with נֶפֶשׁ, which is the common",
+       "usage with Piel.",
+       "Deriv. אַו constr. אוֹ, אַוָּה, אֲוִי, אִי I,",
+       "תַּאֲוָה, מַאֲוַיִּים."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "126a0c85-1a6c-46c4-b6d4-078b609e6d28",
+      "duration_api_ms": 16300,
+      "cost_usd_list": 0.0823585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 757
+     },
+     "lines": [
+      {
+       "draft": "joined with נֶפֶשׁ, which is the common",
+       "reread": "joined with נֶפֶשׁ, which is the common",
+       "status": "agreed",
+       "text": "joined with נֶפֶשׁ, which is the common"
+      },
+      {
+       "draft": "usage with Piel.",
+       "reread": "usage with Piel.",
+       "status": "agreed",
+       "text": "usage with Piel."
+      },
+      {
+       "draft": "Deriv. אַו constr. אֹו, אַוָּה, אַוִּי, אִי I,",
+       "reread": "Deriv. אַו constr. אוֹ, אַוָּה, אֲוִי, אִי I,",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "Deriv. אַו constr. אוֹ, אַוָּה, אֲוִי, אִי I,",
+        "verdict": "b",
+        "note": "Holem is printed over the vav (אוֹ), not the aleph; third item has ḥaṭeph-pataḥ under aleph and no dagesh in vav (אֲוִי), as Reading B has it.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "33532b84-37d7-4597-b0b8-2f1317e3f17c",
+        "duration_api_ms": 19241,
+        "cost_usd_list": 0.09329499999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2582,
+        "output_tokens": 994
+       },
+       "text": "Deriv. אַו constr. אוֹ, אַוָּה, אֲוִי, אִי I,"
+      },
+      {
+       "draft": "תַּאֲוָה, מַאֲוַיִּים.",
+       "reread": "תַּאֲוָה, מַאֲוַיִּים.",
+       "status": "agreed",
+       "text": "תַּאֲוָה, מַאֲוַיִּים."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 24,
+      "y": 1446,
+      "width": 876,
+      "height": 327
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r01-b02-876x327+24+1446-x2.png",
+     "image_sha256": "a43fef7ee058bb08787a40553a1bc2600d7a5fb30c1883e41d7a74d711a41af3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* II. אָוָה obsol. root, onomatopoetic,",
+       "to cry, to howl, ululare; so Arab. عَوَى",
+       "to howl, as a dog, wolf, jackal; see the",
+       "deriv. אוֹי, אִי."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "09e7c098-4717-4fa9-b6d8-12ae9d258715",
+      "duration_api_ms": 10071,
+      "cost_usd_list": 0.07212099999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3069,
+      "output_tokens": 442
+     },
+     "lines": [
+      {
+       "draft": "* II. אָוָה obsol. root, onomatopoetic,",
+       "reread": "* II. אָוָה obsol. root, onomatopoetic,",
+       "status": "agreed",
+       "text": "* II. אָוָה obsol. root, onomatopoetic,"
+      },
+      {
+       "draft": "to cry, to howl, ululare; so Arab. عَوَى",
+       "reread": "to cry, to howl, ululare; so Arab. عَوَى",
+       "status": "agreed",
+       "text": "to cry, to howl, ululare; so Arab. عَوَى"
+      },
+      {
+       "draft": "to howl, as a dog, wolf, jackal; see the",
+       "reread": "to howl, as a dog, wolf, jackal; see the",
+       "status": "agreed",
+       "text": "to howl, as a dog, wolf, jackal; see the"
+      },
+      {
+       "draft": "deriv. אוֹי, אִי.",
+       "reread": "deriv. אוֹי, אִי.",
+       "status": "agreed",
+       "text": "deriv. אוֹי, אִי."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 24,
+    "y": 1774,
+    "width": 876,
+    "height": 729
+   },
+   "draft_lines": [
+    "* III. אָוָה, in Kal. not used, prob.",
+    "to sign, to mark, to describe with a mark;",
+    "kindr. with תָּאָה and תָּוָה. Comp. אָבָה,",
+    "אָוָה I, תָּאַב, to desire. Hence",
+    "HITHPA. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+    "ye shall mark out for yourselves a border,",
+    "etc. comp. v. 7. 8, where in the same",
+    "connection is read fut. תְּתָאוּ לָכֶם. Sept.",
+    "and Syr. in all three passages, καταμε-",
+    "τρήσετε, ܬܬܚܡܘܢ, ye shall measure out,",
+    "determine.—Hence also אוֹת for אָוֶת, a",
+    "sign."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 24,
+      "y": 1787,
+      "width": 876,
+      "height": 194
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r02-b00-876x194+24+1787-x2.png",
+     "image_sha256": "0b9d9d03e1b3cccb5116f03c473a177fa6c781eb350ecc607c4f4d668cd52f43",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* III. אָוָה, in Kal. not used, prob.",
+       "to sign, to mark, to describe with a mark;",
+       "kindr. with תָּאָה and הָוָה. Comp. אָבָה,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "141ee8c0-b398-430e-93ce-16f7e0305eb0",
+      "duration_api_ms": 10232,
+      "cost_usd_list": 0.064196,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 441
+     },
+     "lines": [
+      {
+       "draft": "* III. אָוָה, in Kal. not used, prob.",
+       "reread": "* III. אָוָה, in Kal. not used, prob.",
+       "status": "agreed",
+       "text": "* III. אָוָה, in Kal. not used, prob."
+      },
+      {
+       "draft": "to sign, to mark, to describe with a mark;",
+       "reread": "to sign, to mark, to describe with a mark;",
+       "status": "agreed",
+       "text": "to sign, to mark, to describe with a mark;"
+      },
+      {
+       "draft": "kindr. with תָּאָה and תָּוָה. Comp. אָבָה,",
+       "reread": "kindr. with תָּאָה and הָוָה. Comp. אָבָה,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "kindr. with תָּאָה and תָּוָה. Comp. אָבָה,",
+        "verdict": "a",
+        "note": "The second word's first letter has the same form as the first letter of תָּאָה — a tav with a left foot and a dagesh — not a he; so תָּוָה (Reading A) is printed, not הָוָה.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "965d7ca0-1f3d-478c-9121-cffe2540b2c9",
+        "duration_api_ms": 6918,
+        "cost_usd_list": 0.066149,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3586,
+        "cache_creation_input_tokens": 2379,
+        "output_tokens": 504
+       },
+       "text": "kindr. with תָּאָה and תָּוָה. Comp. אָבָה,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 24,
+      "y": 1965,
+      "width": 876,
+      "height": 180
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r02-b01-876x180+24+1965-x2.png",
+     "image_sha256": "fbb174d6ae7210e358864830f6b876e227c010096d69d01d0ad6da894e4b7be2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אָוָה I, תָּאַב, to desire.  Hence",
+       "Hithpa. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+       "ye shall mark out for yourselves a border,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c0c489ff-fa80-4eed-b6cb-0d2e7a95fab3",
+      "duration_api_ms": 15977,
+      "cost_usd_list": 0.07775850000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 728
+     },
+     "lines": [
+      {
+       "draft": "אָוָה I, תָּאַב, to desire. Hence",
+       "reread": "אָוָה I, תָּאַב, to desire.  Hence",
+       "status": "agreed",
+       "text": "אָוָה I, תָּאַב, to desire. Hence"
+      },
+      {
+       "draft": "HITHPA. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+       "reread": "Hithpa. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b01",
+       "judgement": {
+        "text": "Hithpa. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+        "verdict": "b",
+        "note": "The Hebrew is identical in both readings and matches the print (הִתְאַוִּיתֶם with dagesh + hiriq in the vav, plene yod; לָכֶם). The only difference is the stem label: it is printed with a full-size capital H followed by small capitals (\"Hɪᴛʜᴘᴀ.\"), which B's mixed-case \"Hithpa.\" represents; A's all-caps loses the initial-capital/small-cap distinction.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "262a9166-8b4b-431e-a7c8-2f5e2e22dcc4",
+        "duration_api_ms": 17685,
+        "cost_usd_list": 0.08300575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3603,
+        "cache_creation_input_tokens": 2333,
+        "output_tokens": 850
+       },
+       "text": "Hithpa. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם"
+      },
+      {
+       "draft": "ye shall mark out for yourselves a border,",
+       "reread": "ye shall mark out for yourselves a border,",
+       "status": "agreed",
+       "text": "ye shall mark out for yourselves a border,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 24,
+      "y": 2129,
+      "width": 876,
+      "height": 258
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r02-b02-876x258+24+2129-x2.png",
+     "image_sha256": "a087444aecfdff6a8f30d4b8b2419ba67c2e792bb431daec4cd62a2d5048cf49",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "etc. comp. v. 7. 8, where in the same",
+       "connection is read fut. תְּתָאוּ לָכֶם. Sept.",
+       "and Syr. in all three passages, καταμε-",
+       "τρήσετε, ܬܬܡܫܚܘܢ, ye shall measure out,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1694c52d-0e01-46fc-973f-79ec15444382",
+      "duration_api_ms": 13977,
+      "cost_usd_list": 0.0848835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 776
+     },
+     "lines": [
+      {
+       "draft": "etc. comp. v. 7. 8, where in the same",
+       "reread": "etc. comp. v. 7. 8, where in the same",
+       "status": "agreed",
+       "text": "etc. comp. v. 7. 8, where in the same"
+      },
+      {
+       "draft": "connection is read fut. תְּתָאוּ לָכֶם. Sept.",
+       "reread": "connection is read fut. תְּתָאוּ לָכֶם. Sept.",
+       "status": "agreed",
+       "text": "connection is read fut. תְּתָאוּ לָכֶם. Sept."
+      },
+      {
+       "draft": "and Syr. in all three passages, καταμε-",
+       "reread": "and Syr. in all three passages, καταμε-",
+       "status": "agreed",
+       "text": "and Syr. in all three passages, καταμε-"
+      },
+      {
+       "draft": "τρήσετε, ܬܬܚܡܘܢ, ye shall measure out,",
+       "reread": "τρήσετε, ܬܬܡܫܚܘܢ, ye shall measure out,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "τρήσετε, ܬܬܡܫܚܘܢ, ye shall measure out,",
+        "verdict": "b",
+        "note": "The Syriac word after the two taws clearly shows mem, shin, ḥeth, waw, nun (root ܡܫܚ \"measure\", Ethpaal 2mpl ܬܬܡܫܚܘܢ); Reading A's ܬܬܚܡܘܢ drops the mem–shin and reverses the order. No Syriac points are printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c22e7feb-3d92-4e55-b297-ade9a89ba174",
+        "duration_api_ms": 19370,
+        "cost_usd_list": 0.08328775,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3591,
+        "cache_creation_input_tokens": 2699,
+        "output_tokens": 766
+       },
+       "text": "τρήσετε, ܬܬܡܫܚܘܢ, ye shall measure out,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 24,
+      "y": 2371,
+      "width": 876,
+      "height": 122
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r02-b03-876x122+24+2371-x2.png",
+     "image_sha256": "d5c28630538ae420e4a03507284e4928b108f9f6de69625e500791e63dd20f95",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "determine.—Hence also אוֹת for אִוְת, a",
+       "sign."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b4aeccc3-a3fc-46dc-b495-73e7839478de",
+      "duration_api_ms": 12288,
+      "cost_usd_list": 0.06505849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 537
+     },
+     "lines": [
+      {
+       "draft": "determine.—Hence also אוֹת for אָוֶת, a",
+       "reread": "determine.—Hence also אוֹת for אִוְת, a",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b03",
+       "judgement": {
+        "text": "determine.—Hence also אוֹת for אָוֶת, a",
+        "verdict": "a",
+        "note": "Second Hebrew word: under the alef is a qamets (horizontal bar with a stem), not a hiriq dot, and under the vav a cluster of dots (segol), not a simple two-dot sheva — matching Reading A (אָוֶת). A small dot sits above the vav in the print, apparently a stray mark/ink spot rather than a holem, so not transcribed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "706816a1-0a85-4aec-a4f0-0a7f462cf691",
+        "duration_api_ms": 20707,
+        "cost_usd_list": 0.106878,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2050,
+        "output_tokens": 1403
+       },
+       "text": "determine.—Hence also אוֹת for אָוֶת, a"
+      },
+      {
+       "draft": "sign.",
+       "reread": "sign.",
+       "status": "agreed",
+       "text": "sign."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 24,
+    "y": 2491,
+    "width": 876,
+    "height": 801
+   },
+   "draft_lines": [
+    "אַוָּה f. (r. אָוָה I. 2 ) 1. desire, long-",
+    "ing, e. g. after food, with נֶפֶשׁ, Deut. 12,",
+    "15. 20. 21. 18, 6 ; of sexual desire, Jer.",
+    "2, 24. Comp. in אָוָה I. Pi.",
+    "2. desire, pleasure, will, with נֶפֶשׁ,",
+    "1 Sam. 23, 20 ; simpl. Hos. 10, 10.",
+    "אוּזַי (prob. i. q. עֻזִּי, אֻזִּי, strong, ro-",
+    "bust) Uzai, pr. n. m. Neh. 3, 25.",
+    "אוּזָל Gen. 10, 27, pr. n. Uzal, a de-",
+    "scendant of Joktan, here taken in a geo-",
+    "graphical sense for a city and district of",
+    "the Joktanidæ in Arabia, prob. the same",
+    "afterwards called Sanaa, the metropolis"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 24,
+      "y": 2501,
+      "width": 876,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r03-b00-876x242+24+2501-x2.png",
+     "image_sha256": "da3219d55990c2b23e50b6099a1a47c8088fc93bb3b459de8c4ad1f781fbd47d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַוָּה f. (r. אָוָה I. 2) 1. desire, long-",
+       "ing, e. g. after food, with נֶפֶשׁ, Deut. 12,",
+       "15. 20. 21. 18, 6; of sexual desire, Jer.",
+       "2, 24. Comp. in אָוָה I. Pi."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "496ee11d-92a7-4c9a-826c-fee7bcb8784b",
+      "duration_api_ms": 7809,
+      "cost_usd_list": 0.06494599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 393
+     },
+     "lines": [
+      {
+       "draft": "אַוָּה f. (r. אָוָה I. 2 ) 1. desire, long-",
+       "reread": "אַוָּה f. (r. אָוָה I. 2) 1. desire, long-",
+       "status": "agreed",
+       "text": "אַוָּה f. (r. אָוָה I. 2) 1. desire, long-"
+      },
+      {
+       "draft": "ing, e. g. after food, with נֶפֶשׁ, Deut. 12,",
+       "reread": "ing, e. g. after food, with נֶפֶשׁ, Deut. 12,",
+       "status": "agreed",
+       "text": "ing, e. g. after food, with נֶפֶשׁ, Deut. 12,"
+      },
+      {
+       "draft": "15. 20. 21. 18, 6 ; of sexual desire, Jer.",
+       "reread": "15. 20. 21. 18, 6; of sexual desire, Jer.",
+       "status": "agreed",
+       "text": "15. 20. 21. 18, 6; of sexual desire, Jer."
+      },
+      {
+       "draft": "2, 24. Comp. in אָוָה I. Pi.",
+       "reread": "2, 24. Comp. in אָוָה I. Pi.",
+       "status": "agreed",
+       "text": "2, 24. Comp. in אָוָה I. Pi."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 24,
+      "y": 2727,
+      "width": 876,
+      "height": 264
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r03-b01-876x264+24+2727-x2.png",
+     "image_sha256": "877415216160e1980e27105c48750220a78f0226e94df82e07653c255d46a7fd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. desire, pleasure, will, with נֶפֶשׁ,",
+       "1 Sam. 23, 20 ; simpl. Hos. 10, 10.",
+       "אוּזַי (prob. i. q. אֲזַי, עֻזִּי, strong, ro-",
+       "bust) Uzai, pr. n. m. Neh. 3, 25."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "74063463-78d1-4b2c-b634-72217a31c0ce",
+      "duration_api_ms": 16698,
+      "cost_usd_list": 0.09183350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 915
+     },
+     "lines": [
+      {
+       "draft": "2. desire, pleasure, will, with נֶפֶשׁ,",
+       "reread": "2. desire, pleasure, will, with נֶפֶשׁ,",
+       "status": "agreed",
+       "text": "2. desire, pleasure, will, with נֶפֶשׁ,"
+      },
+      {
+       "draft": "1 Sam. 23, 20 ; simpl. Hos. 10, 10.",
+       "reread": "1 Sam. 23, 20 ; simpl. Hos. 10, 10.",
+       "status": "agreed",
+       "text": "1 Sam. 23, 20; simpl. Hos. 10, 10."
+      },
+      {
+       "draft": "אוּזַי (prob. i. q. עֻזִּי, אֻזִּי, strong, ro-",
+       "reread": "אוּזַי (prob. i. q. אֲזַי, עֻזִּי, strong, ro-",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b01",
+       "judgement": {
+        "text": "אוּזַי (prob. i. q. אֻזִּי, עֻזִּי, strong, ro-",
+        "verdict": "neither",
+        "note": "Printed order after \"i. q.\" is aleph-form then ayin-form (B's order, not A's), but the aleph-form is pointed exactly like עֻזִּי — qubuts under aleph, dagesh in zayin, hiriq — not אֲזַי as B gives; so A has the vowels right but the order wrong, B the order right but the vowels wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2ddfab14-5481-4230-bdd9-3c2bf723bb2e",
+        "duration_api_ms": 13103,
+        "cost_usd_list": 0.08992,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2708,
+        "output_tokens": 895
+       },
+       "text": "אוּזַי (prob. i. q. אֻזִּי, עֻזִּי, strong, ro-"
+      },
+      {
+       "draft": "bust) Uzai, pr. n. m. Neh. 3, 25.",
+       "reread": "bust) Uzai, pr. n. m. Neh. 3, 25.",
+       "status": "agreed",
+       "text": "bust) Uzai, pr. n. m. Neh. 3, 25."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 24,
+      "y": 2975,
+      "width": 876,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r03-b02-876x252+24+2975-x2.png",
+     "image_sha256": "5fe19a2c703d5bea8d49a13bece5fe94ad10a34557dc7e0317aebca958b945e1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּזָל Gen. 10, 27, pr. n. Uzal, a de-",
+       "scendant of Joktan, here taken in a geo-",
+       "graphical sense for a city and district of",
+       "the Joktanidæ in Arabia, prob. the same"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2c473065-caaf-4769-a277-ad4c7feb75ad",
+      "duration_api_ms": 9496,
+      "cost_usd_list": 0.061745999999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 329
+     },
+     "lines": [
+      {
+       "draft": "אוּזָל Gen. 10, 27, pr. n. Uzal, a de-",
+       "reread": "אוּזָל Gen. 10, 27, pr. n. Uzal, a de-",
+       "status": "agreed",
+       "text": "אוּזָל Gen. 10, 27, pr. n. Uzal, a de-"
+      },
+      {
+       "draft": "scendant of Joktan, here taken in a geo-",
+       "reread": "scendant of Joktan, here taken in a geo-",
+       "status": "agreed",
+       "text": "scendant of Joktan, here taken in a geo-"
+      },
+      {
+       "draft": "graphical sense for a city and district of",
+       "reread": "graphical sense for a city and district of",
+       "status": "agreed",
+       "text": "graphical sense for a city and district of"
+      },
+      {
+       "draft": "the Joktanidæ in Arabia, prob. the same",
+       "reread": "the Joktanidæ in Arabia, prob. the same",
+       "status": "agreed",
+       "text": "the Joktanidæ in Arabia, prob. the same"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b03",
+     "bounds": {
+      "x": 24,
+      "y": 3211,
+      "width": 876,
+      "height": 83
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c0-r03-b03-876x83+24+3211-x2.png",
+     "image_sha256": "5adce3c0c4a4bded7170ce7bc0b82b72e5167ff8848a88322c68812aafcadcb9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "afterwards called Sanaa, the metropolis"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b19b4e27-37ce-4751-b346-2c3f6c56d93d",
+      "duration_api_ms": 7574,
+      "cost_usd_list": 0.047096,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1935,
+      "output_tokens": 225
+     },
+     "lines": [
+      {
+       "draft": "afterwards called Sanaa, the metropolis",
+       "reread": "afterwards called Sanaa, the metropolis",
+       "status": "agreed",
+       "text": "afterwards called Sanaa, the metropolis"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 918,
+    "y": 178,
+    "width": 882,
+    "height": 954
+   },
+   "draft_lines": [
+    "of the kingdom of Yemen ; see Bochart",
+    "Phaleg. II. 21.   J. D. Michaelis Spicil.",
+    "Geogr. Heb. ext. T. II. p. 164 sq.   Rut-",
+    "ger's Hist. Jemanæ, p. 217.",
+    "אֱוִי (desire or dwelling, i. q. אַו) Evi,",
+    "pr. n. of a king of Midian, Num. 31, 8.",
+    "Josh. 13, 31.",
+    "אוֹי (r. אָוָה II ) 1. Subst. wailing,",
+    "lamentation. Prov. 23, 29 לְמִי אוֹי לְמִי",
+    "אֲבוֹי who hath wailing, who hath want ?",
+    "2. Interj. wo !   a) Of sorrow, grief,",
+    "c. dat. wo to me ! etc. 1 Sam. 4, 8. Is.",
+    "3, 9. 6, 5 ; rarely c. acc. Ez. 24, 6. 8 ;",
+    "absol. Num. 24, 23.   b) Of threatening,",
+    "imprecation, Num. 21, 29.—Kindr. is הוֹי."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 918,
+      "y": 170,
+      "width": 882,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r00-b00-882x245+918+170-x2.png",
+     "image_sha256": "f8c20d96b153bbcdc7422ba01cd421aa45631b7f0d10aba33ef478b6bfef4db3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of the kingdom of Yemen ; see Bochart",
+       "Phaleg. II. 21. J. D. Michaelis Spicil.",
+       "Geogr. Heb. ext. T. II. p. 164 sq. Rut-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a0585ea5-7200-4edc-8240-c1d4a25b8d0e",
+      "duration_api_ms": 8347,
+      "cost_usd_list": 0.059963249999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 294
+     },
+     "lines": [
+      {
+       "draft": "of the kingdom of Yemen ; see Bochart",
+       "reread": "of the kingdom of Yemen ; see Bochart",
+       "status": "agreed",
+       "text": "of the kingdom of Yemen; see Bochart"
+      },
+      {
+       "draft": "Phaleg. II. 21.   J. D. Michaelis Spicil.",
+       "reread": "Phaleg. II. 21. J. D. Michaelis Spicil.",
+       "status": "agreed",
+       "text": "Phaleg. II. 21. J. D. Michaelis Spicil."
+      },
+      {
+       "draft": "Geogr. Heb. ext. T. II. p. 164 sq.   Rut-",
+       "reread": "Geogr. Heb. ext. T. II. p. 164 sq. Rut-",
+       "status": "agreed",
+       "text": "Geogr. Heb. ext. T. II. p. 164 sq. Rut-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 918,
+      "y": 399,
+      "width": 882,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r00-b01-882x261+918+399-x2.png",
+     "image_sha256": "b80d5f6be299ba8e4d6b5964840b40b0a3a70c74e037830de4f1a1c500df0bc7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ger's Hist. Jemanæ, p. 217.",
+       "אֱוִי (desire or dwelling, i. q. אַוִּי) Evi,",
+       "pr. n. of a king of Midian, Num. 31, 8.",
+       "Josh. 13, 31."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ac4e30cc-fd48-4d76-8125-e8cb4f7834fa",
+      "duration_api_ms": 12792,
+      "cost_usd_list": 0.07450075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 569
+     },
+     "lines": [
+      {
+       "draft": "ger's Hist. Jemanæ, p. 217.",
+       "reread": "ger's Hist. Jemanæ, p. 217.",
+       "status": "agreed",
+       "text": "ger's Hist. Jemanæ, p. 217."
+      },
+      {
+       "draft": "אֱוִי (desire or dwelling, i. q. אַו) Evi,",
+       "reread": "אֱוִי (desire or dwelling, i. q. אַוִּי) Evi,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b01",
+       "judgement": {
+        "text": "אֱוִי (desire or dwelling, i. q. אַוִּי) Evi,",
+        "verdict": "b",
+        "note": "The word after \"i. q.\" ends in a yod before the closing parenthesis (not bare אַו), and a dot is printed in the vav (dagesh) with patach under the aleph — matching B's אַוִּי. Reading A drops the final yod.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "fb4f545a-c50d-4be4-b75e-023265bdcc9c",
+        "duration_api_ms": 19668,
+        "cost_usd_list": 0.09045375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2692,
+        "output_tokens": 912
+       },
+       "text": "אֱוִי (desire or dwelling, i. q. אַוִּי) Evi,"
+      },
+      {
+       "draft": "pr. n. of a king of Midian, Num. 31, 8.",
+       "reread": "pr. n. of a king of Midian, Num. 31, 8.",
+       "status": "agreed",
+       "text": "pr. n. of a king of Midian, Num. 31, 8."
+      },
+      {
+       "draft": "Josh. 13, 31.",
+       "reread": "Josh. 13, 31.",
+       "status": "agreed",
+       "text": "Josh. 13, 31."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 918,
+      "y": 644,
+      "width": 882,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r00-b02-882x261+918+644-x2.png",
+     "image_sha256": "888c77c27e76d194c65ee2b9ca3938bea94c5f37cc3cbbe91f6969e8500953e6",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹי (r. אָוָה II) 1. Subst. wailing,",
+       "lamentation. Prov. 23, 29 לְמִי אוֹי לְמִי",
+       "אֲבוֹי who hath wailing, who hath want?",
+       "2. Interj. wo! a) Of sorrow, grief,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "80c51992-cd26-4962-827c-7b0b289ee6c3",
+      "duration_api_ms": 11426,
+      "cost_usd_list": 0.07130075,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2752,
+      "output_tokens": 505
+     },
+     "lines": [
+      {
+       "draft": "אוֹי (r. אָוָה II ) 1. Subst. wailing,",
+       "reread": "אוֹי (r. אָוָה II) 1. Subst. wailing,",
+       "status": "agreed",
+       "text": "אוֹי (r. אָוָה II) 1. Subst. wailing,"
+      },
+      {
+       "draft": "lamentation. Prov. 23, 29 לְמִי אוֹי לְמִי",
+       "reread": "lamentation. Prov. 23, 29 לְמִי אוֹי לְמִי",
+       "status": "agreed",
+       "text": "lamentation. Prov. 23, 29 לְמִי אוֹי לְמִי"
+      },
+      {
+       "draft": "אֲבוֹי who hath wailing, who hath want ?",
+       "reread": "אֲבוֹי who hath wailing, who hath want?",
+       "status": "agreed",
+       "text": "אֲבוֹי who hath wailing, who hath want?"
+      },
+      {
+       "draft": "2. Interj. wo !   a) Of sorrow, grief,",
+       "reread": "2. Interj. wo! a) Of sorrow, grief,",
+       "status": "agreed",
+       "text": "2. Interj. wo! a) Of sorrow, grief,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 918,
+      "y": 889,
+      "width": 882,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r00-b03-882x238+918+889-x2.png",
+     "image_sha256": "564de2d2fa76d940ddf321147bb4afeff4ac59a4843e8ddc91ec746e520c4ee9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "c. dat. wo to me ! etc. 1 Sam. 4, 8. Is.",
+       "3, 9. 6, 5 ; rarely c. acc. Ez. 24, 6. 8 ;",
+       "absol. Num. 24, 23. b) Of threatening,",
+       "imprecation, Num. 21, 29.—Kindr. is הוֹי."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ca9604f2-b982-4064-a76f-9e1906764a1b",
+      "duration_api_ms": 9111,
+      "cost_usd_list": 0.061725749999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 345
+     },
+     "lines": [
+      {
+       "draft": "c. dat. wo to me ! etc. 1 Sam. 4, 8. Is.",
+       "reread": "c. dat. wo to me ! etc. 1 Sam. 4, 8. Is.",
+       "status": "agreed",
+       "text": "c. dat. wo to me! etc. 1 Sam. 4, 8. Is."
+      },
+      {
+       "draft": "3, 9. 6, 5 ; rarely c. acc. Ez. 24, 6. 8 ;",
+       "reread": "3, 9. 6, 5 ; rarely c. acc. Ez. 24, 6. 8 ;",
+       "status": "agreed",
+       "text": "3, 9. 6, 5; rarely c. acc. Ez. 24, 6. 8;"
+      },
+      {
+       "draft": "absol. Num. 24, 23.   b) Of threatening,",
+       "reread": "absol. Num. 24, 23. b) Of threatening,",
+       "status": "agreed",
+       "text": "absol. Num. 24, 23. b) Of threatening,"
+      },
+      {
+       "draft": "imprecation, Num. 21, 29.—Kindr. is הוֹי.",
+       "reread": "imprecation, Num. 21, 29.—Kindr. is הוֹי.",
+       "status": "agreed",
+       "text": "imprecation, Num. 21, 29.—Kindr. is הוֹי."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 918,
+    "y": 1120,
+    "width": 882,
+    "height": 698
+   },
+   "draft_lines": [
+    "אוֹיָה i. q. אוֹי, c. dat. Ps. 120, 5.",
+    "אֱוִיל m. (r. אָוַל) plur. אֱוִילִים 1. fool-",
+    "ish, as adj. אִישׁ אֱוִיל Prov. 29, 9. Hos.",
+    "9, 7. More freq. subst. a foolish man, a",
+    "fool, Job 5, 2. Is. 19, 11. 35, 8. Prov. 7, 22.",
+    "10, 14. 11, 29. 14, 3. 15, 5. Opp. to a",
+    "prudent man (עָרוּם) Prov. 12, 16; to a",
+    "wise man (חָכָם) Prov. 10, 14.",
+    "2. Impl. impious, wicked, Job 5, 3.",
+    "אֱוִילִי id. with adj. ending, foolish,",
+    "Zech. 11, 15."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 918,
+      "y": 1126,
+      "width": 882,
+      "height": 268
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r01-b00-882x268+918+1126-x2.png",
+     "image_sha256": "3e63c33adf31cb63e93f67fa5f6a74b6df79ce9465288dd5cd41c8576b87af7c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוֹיָה i. q. אוֹי, c. dat. Ps. 120, 5.",
+       "אֱוִיל m. (r. אָוַל) plur. אֱוִילִים 1. fool-",
+       "ish, as adj. אִישׁ אֱוִיל Prov. 29, 9. Hos.",
+       "9, 7. More freq. subst. a foolish man, a"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "a2977613-531f-44a4-a965-15ca6c25faaf",
+      "duration_api_ms": 13404,
+      "cost_usd_list": 0.073321,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 529
+     },
+     "lines": [
+      {
+       "draft": "אוֹיָה i. q. אוֹי, c. dat. Ps. 120, 5.",
+       "reread": "אוֹיָה i. q. אוֹי, c. dat. Ps. 120, 5.",
+       "status": "agreed",
+       "text": "אוֹיָה i. q. אוֹי, c. dat. Ps. 120, 5."
+      },
+      {
+       "draft": "אֱוִיל m. (r. אָוַל) plur. אֱוִילִים 1. fool-",
+       "reread": "אֱוִיל m. (r. אָוַל) plur. אֱוִילִים 1. fool-",
+       "status": "agreed",
+       "text": "אֱוִיל m. (r. אָוַל) plur. אֱוִילִים 1. fool-"
+      },
+      {
+       "draft": "ish, as adj. אִישׁ אֱוִיל Prov. 29, 9. Hos.",
+       "reread": "ish, as adj. אִישׁ אֱוִיל Prov. 29, 9. Hos.",
+       "status": "agreed",
+       "text": "ish, as adj. אִישׁ אֱוִיל Prov. 29, 9. Hos."
+      },
+      {
+       "draft": "9, 7. More freq. subst. a foolish man, a",
+       "reread": "9, 7. More freq. subst. a foolish man, a",
+       "status": "agreed",
+       "text": "9, 7. More freq. subst. a foolish man, a"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 918,
+      "y": 1378,
+      "width": 882,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r01-b01-882x241+918+1378-x2.png",
+     "image_sha256": "9a3fd9196ae26c6dda1fdc1302a7c6b5ea3b839a77f1b0aa8818244b943d2575",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "fool, Job 5, 2. Is. 19, 11. 35, 8. Prov. 7, 22.",
+       "10, 14. 11, 29. 14, 3. 15, 5. Opp. to a",
+       "prudent man (עָרוּם) Prov. 12, 16 ; to a",
+       "wise man (חָכָם) Prov. 10, 14."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7f946f6d-9830-4e71-bc50-f292d195093c",
+      "duration_api_ms": 8557,
+      "cost_usd_list": 0.059995999999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 294
+     },
+     "lines": [
+      {
+       "draft": "fool, Job 5, 2. Is. 19, 11. 35, 8. Prov. 7, 22.",
+       "reread": "fool, Job 5, 2. Is. 19, 11. 35, 8. Prov. 7, 22.",
+       "status": "agreed",
+       "text": "fool, Job 5, 2. Is. 19, 11. 35, 8. Prov. 7, 22."
+      },
+      {
+       "draft": "10, 14. 11, 29. 14, 3. 15, 5. Opp. to a",
+       "reread": "10, 14. 11, 29. 14, 3. 15, 5. Opp. to a",
+       "status": "agreed",
+       "text": "10, 14. 11, 29. 14, 3. 15, 5. Opp. to a"
+      },
+      {
+       "draft": "prudent man (עָרוּם) Prov. 12, 16; to a",
+       "reread": "prudent man (עָרוּם) Prov. 12, 16 ; to a",
+       "status": "agreed",
+       "text": "prudent man (עָרוּם) Prov. 12, 16; to a"
+      },
+      {
+       "draft": "wise man (חָכָם) Prov. 10, 14.",
+       "reread": "wise man (חָכָם) Prov. 10, 14.",
+       "status": "agreed",
+       "text": "wise man (חָכָם) Prov. 10, 14."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 918,
+      "y": 1603,
+      "width": 882,
+      "height": 208
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r01-b02-882x208+918+1603-x2.png",
+     "image_sha256": "097a6321664234987973367a5bbe03f22d172712816aa89d0b00cbcf4409baaf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Impl. impious, wicked, Job 5, 3.",
+       "אֱוִילִי id. with adj. ending, foolish,",
+       "Zech. 11, 15."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "40ab4052-596c-4718-8ea6-ff3124ff2791",
+      "duration_api_ms": 10223,
+      "cost_usd_list": 0.061633499999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2502,
+      "output_tokens": 374
+     },
+     "lines": [
+      {
+       "draft": "2. Impl. impious, wicked, Job 5, 3.",
+       "reread": "2. Impl. impious, wicked, Job 5, 3.",
+       "status": "agreed",
+       "text": "2. Impl. impious, wicked, Job 5, 3."
+      },
+      {
+       "draft": "אֱוִילִי id. with adj. ending, foolish,",
+       "reread": "אֱוִילִי id. with adj. ending, foolish,",
+       "status": "agreed",
+       "text": "אֱוִילִי id. with adj. ending, foolish,"
+      },
+      {
+       "draft": "Zech. 11, 15.",
+       "reread": "Zech. 11, 15.",
+       "status": "agreed",
+       "text": "Zech. 11, 15."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 918,
+    "y": 1806,
+    "width": 882,
+    "height": 808
+   },
+   "draft_lines": [
+    "אֱוִיל מְרֹדַךְ Evil-Merodach, pr. n. of",
+    "a king of Babylon, who set at liberty",
+    "Jehoiachin king of Judah after he had",
+    "been long detained in prison by Nebu-",
+    "chadnezzar, 2 K. 25, 27. Jer. 52, 31. He",
+    "succeeded Nebuchadnezzar, and reigned",
+    "two years, according to Berosus in Jos.",
+    "c. Ap. 1. 20.—As to the signification of",
+    "the name, מְרֹדַךְ q. v. is the name of a",
+    "Babylonish idol, and אֱוִיל is in Heb. fool-",
+    "ish. But we may take it for granted",
+    "that some other name of Assyrian or",
+    "Persian origin lies concealed under this,",
+    "which the Jews thus wrested into the"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 918,
+      "y": 1813,
+      "width": 882,
+      "height": 248
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r02-b00-882x248+918+1813-x2.png",
+     "image_sha256": "fe8c95dbeab1f8abb5b7402c60f631147c0aa55fb336e514844560b449171275",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֱוִיל מְרֹדַךְ Evil-Merodach, pr. n. of",
+       "a king of Babylon, who set at liberty",
+       "Jehoiachin king of Judah after he had",
+       "been long detained in prison by Nebu-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "13b1a887-77b5-471b-93ad-65500d96c889",
+      "duration_api_ms": 9981,
+      "cost_usd_list": 0.06379599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 370
+     },
+     "lines": [
+      {
+       "draft": "אֱוִיל מְרֹדַךְ Evil-Merodach, pr. n. of",
+       "reread": "אֱוִיל מְרֹדַךְ Evil-Merodach, pr. n. of",
+       "status": "agreed",
+       "text": "אֱוִיל מְרֹדַךְ Evil-Merodach, pr. n. of"
+      },
+      {
+       "draft": "a king of Babylon, who set at liberty",
+       "reread": "a king of Babylon, who set at liberty",
+       "status": "agreed",
+       "text": "a king of Babylon, who set at liberty"
+      },
+      {
+       "draft": "Jehoiachin king of Judah after he had",
+       "reread": "Jehoiachin king of Judah after he had",
+       "status": "agreed",
+       "text": "Jehoiachin king of Judah after he had"
+      },
+      {
+       "draft": "been long detained in prison by Nebu-",
+       "reread": "been long detained in prison by Nebu-",
+       "status": "agreed",
+       "text": "been long detained in prison by Nebu-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 918,
+      "y": 2045,
+      "width": 882,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r02-b01-882x239+918+2045-x2.png",
+     "image_sha256": "f781c28217b06495004dec06e111f34981ba014d5ef6a865055d8e8e2aecf72b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "chadnezzar, 2 K. 25, 27. Jer. 52, 31. He",
+       "succeeded Nebuchadnezzar, and reigned",
+       "two years, according to Berosus in Jos.",
+       "c. Ap. 1. 20.—As to the signification of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c664a099-819b-4a4f-962d-2f6f38d4a529",
+      "duration_api_ms": 7714,
+      "cost_usd_list": 0.058546,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 265
+     },
+     "lines": [
+      {
+       "draft": "chadnezzar, 2 K. 25, 27. Jer. 52, 31. He",
+       "reread": "chadnezzar, 2 K. 25, 27. Jer. 52, 31. He",
+       "status": "agreed",
+       "text": "chadnezzar, 2 K. 25, 27. Jer. 52, 31. He"
+      },
+      {
+       "draft": "succeeded Nebuchadnezzar, and reigned",
+       "reread": "succeeded Nebuchadnezzar, and reigned",
+       "status": "agreed",
+       "text": "succeeded Nebuchadnezzar, and reigned"
+      },
+      {
+       "draft": "two years, according to Berosus in Jos.",
+       "reread": "two years, according to Berosus in Jos.",
+       "status": "agreed",
+       "text": "two years, according to Berosus in Jos."
+      },
+      {
+       "draft": "c. Ap. 1. 20.—As to the signification of",
+       "reread": "c. Ap. 1. 20.—As to the signification of",
+       "status": "agreed",
+       "text": "c. Ap. 1. 20.—As to the signification of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 918,
+      "y": 2268,
+      "width": 882,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r02-b02-882x238+918+2268-x2.png",
+     "image_sha256": "842981b28e1b968fa79b6164b8f4a232e794c75215c21f7f3e99e6394fade85b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the name, מְרֹדָךְ q. v. is the name of a",
+       "Babylonish idol, and אֱוִיל is in Heb. fool-",
+       "ish. But we may take it for granted",
+       "that some other name of Assyrian or"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c40bcebd-d016-4019-9d76-b8479e0ab00b",
+      "duration_api_ms": 11051,
+      "cost_usd_list": 0.06785849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 467
+     },
+     "lines": [
+      {
+       "draft": "the name, מְרֹדַךְ q. v. is the name of a",
+       "reread": "the name, מְרֹדָךְ q. v. is the name of a",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b02",
+       "judgement": {
+        "text": "the name, מְרֹדַךְ q. v. is the name of a",
+        "verdict": "a",
+        "note": "Under the dalet the print shows a flat horizontal stroke with no descending stem — a patach (דַ), not a qamets (דָ). This matches the standard pointing מְרֹדַךְ (Jer. 50:2). Reading A is correct; Reading B's qamets is not what is printed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b832c195-777c-4e21-9cc2-e270590ce956",
+        "duration_api_ms": 14137,
+        "cost_usd_list": 0.07404825000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2555,
+        "output_tokens": 620
+       },
+       "text": "the name, מְרֹדַךְ q. v. is the name of a"
+      },
+      {
+       "draft": "Babylonish idol, and אֱוִיל is in Heb. fool-",
+       "reread": "Babylonish idol, and אֱוִיל is in Heb. fool-",
+       "status": "agreed",
+       "text": "Babylonish idol, and אֱוִיל is in Heb. fool-"
+      },
+      {
+       "draft": "ish. But we may take it for granted",
+       "reread": "ish. But we may take it for granted",
+       "status": "agreed",
+       "text": "ish. But we may take it for granted"
+      },
+      {
+       "draft": "that some other name of Assyrian or",
+       "reread": "that some other name of Assyrian or",
+       "status": "agreed",
+       "text": "that some other name of Assyrian or"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 918,
+      "y": 2490,
+      "width": 882,
+      "height": 117
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r02-b03-882x117+918+2490-x2.png",
+     "image_sha256": "8063ebf4bb4d289b0aabe010f78f347e4d4c9ce230dac24bb2a2a76013bf08a9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Persian origin lies concealed under this,",
+       "which the Jews thus wrested into the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "808d9b5c-491c-407d-8935-d959ff024ae5",
+      "duration_api_ms": 8063,
+      "cost_usd_list": 0.048458499999999995,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 205
+     },
+     "lines": [
+      {
+       "draft": "Persian origin lies concealed under this,",
+       "reread": "Persian origin lies concealed under this,",
+       "status": "agreed",
+       "text": "Persian origin lies concealed under this,"
+      },
+      {
+       "draft": "which the Jews thus wrested into the",
+       "reread": "which the Jews thus wrested into the",
+       "status": "agreed",
+       "text": "which the Jews thus wrested into the"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 918,
+    "y": 2602,
+    "width": 882,
+    "height": 684
+   },
+   "draft_lines": [
+    "analogy of their own tongue ; pleasing",
+    "themselves perhaps with the idea of",
+    "calling the hostile and gentile king in",
+    "scorn Merodach's fool, i. e. his foolish",
+    "worshipper.",
+    "* אָוַל with Vav movable, obsol. root,",
+    "i. q. יָאַל, יָאַל, to be foolish, pr. to be",
+    "turned away, perverse, comp. kindr. עָוַל,",
+    "and also אוּל. Hence אֱוִיל, אֱוִילִי, fool-",
+    "ish, אִוֶּלֶת folly.",
+    "* אוּל and אִיל a root not used in"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 918,
+      "y": 2609,
+      "width": 882,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r03-b00-882x231+918+2609-x2.png",
+     "image_sha256": "e001e37af5a91d44dc5b165cc82a6f82f2e17f62023185c5947e5f88fed37a4c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "analogy of their own tongue ; pleasing",
+       "themselves perhaps with the idea of",
+       "calling the hostile and gentile king in",
+       "scorn Merodach's fool, i. e. his foolish"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7b6a142f-356e-4509-a00f-dd875e87b88f",
+      "duration_api_ms": 7592,
+      "cost_usd_list": 0.05660849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 242
+     },
+     "lines": [
+      {
+       "draft": "analogy of their own tongue ; pleasing",
+       "reread": "analogy of their own tongue ; pleasing",
+       "status": "agreed",
+       "text": "analogy of their own tongue; pleasing"
+      },
+      {
+       "draft": "themselves perhaps with the idea of",
+       "reread": "themselves perhaps with the idea of",
+       "status": "agreed",
+       "text": "themselves perhaps with the idea of"
+      },
+      {
+       "draft": "calling the hostile and gentile king in",
+       "reread": "calling the hostile and gentile king in",
+       "status": "agreed",
+       "text": "calling the hostile and gentile king in"
+      },
+      {
+       "draft": "scorn Merodach's fool, i. e. his foolish",
+       "reread": "scorn Merodach's fool, i. e. his foolish",
+       "status": "agreed",
+       "text": "scorn Merodach's fool, i. e. his foolish"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 918,
+      "y": 2824,
+      "width": 882,
+      "height": 270
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r03-b01-882x270+918+2824-x2.png",
+     "image_sha256": "514ed160885100ce9f274b5e993cfe8d788d316216c9f23187d8cbca3bf2bf3d",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "worshipper.",
+       "* אָוַל with Vav movable, obsol. root,",
+       "i. q. יָאַל, יָאַל, to be foolish, pr. to be",
+       "turned away, perverse, comp. kindr. עָוַל,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "15ee988e-b009-40e2-a1a6-ca8fc88bc658",
+      "duration_api_ms": 12218,
+      "cost_usd_list": 0.07472100000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 557
+     },
+     "lines": [
+      {
+       "draft": "worshipper.",
+       "reread": "worshipper.",
+       "status": "agreed",
+       "text": "worshipper."
+      },
+      {
+       "draft": "* אָוַל with Vav movable, obsol. root,",
+       "reread": "* אָוַל with Vav movable, obsol. root,",
+       "status": "agreed",
+       "text": "* אָוַל with Vav movable, obsol. root,"
+      },
+      {
+       "draft": "i. q. יָאַל, יָאַל, to be foolish, pr. to be",
+       "reread": "i. q. יָאַל, יָאַל, to be foolish, pr. to be",
+       "status": "agreed",
+       "text": "i. q. יָאַל, יָאַל, to be foolish, pr. to be"
+      },
+      {
+       "draft": "turned away, perverse, comp. kindr. עָוַל,",
+       "reread": "turned away, perverse, comp. kindr. עָוַל,",
+       "status": "agreed",
+       "text": "turned away, perverse, comp. kindr. עָוַל,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 918,
+      "y": 3078,
+      "width": 882,
+      "height": 216
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0037/pass2/c1-r03-b02-882x216+918+3078-x2.png",
+     "image_sha256": "9880b10c9d1d62604963bba661f65ef79cbcf1206bf5ac336985dd2c1849f1d9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and also אוּל. Hence אֱוִיל, אֱוִילִי, fool-",
+       "ish, אִוֶּלֶת folly.",
+       "* אוּל and אִיל a root not used in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3cc4d06b-0bd2-4b6a-8c34-489e6c3e4a9a",
+      "duration_api_ms": 11020,
+      "cost_usd_list": 0.069021,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2565,
+      "output_tokens": 506
+     },
+     "lines": [
+      {
+       "draft": "and also אוּל. Hence אֱוִיל, אֱוִילִי, fool-",
+       "reread": "and also אוּל. Hence אֱוִיל, אֱוִילִי, fool-",
+       "status": "agreed",
+       "text": "and also אוּל. Hence אֱוִיל, אֱוִילִי, fool-"
+      },
+      {
+       "draft": "ish, אִוֶּלֶת folly.",
+       "reread": "ish, אִוֶּלֶת folly.",
+       "status": "agreed",
+       "text": "ish, אִוֶּלֶת folly."
+      },
+      {
+       "draft": "* אוּל and אִיל a root not used in",
+       "reread": "* אוּל and אִיל a root not used in",
+       "status": "agreed",
+       "text": "* אוּל and אִיל a root not used in"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אוה 21 אול",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Piel. אִוָּה i. q. Kal no. 2, to desire, to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "long for, ascribed mostly to the soul, נֶפֶשׁ.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Prov. 21, 10 נֶפֶשׁ רָשָׁע אִוְּתָה רָע the soul",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of the wicked desireth evil. Deut. 12, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "14, 26. Job 23, 13. 33, 20. 1 Sam. 2, 16.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2 Sam. 3, 21. Mic. 7, 1. Without נֶפֶשׁ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Ps. 132, 13. 14. Is. 26, 9 נַפְשִׁי אִוִּיתִיךָ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "בַּלַּיְלָה my soul even I desire thee in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "night; comp. עַבְדְּךָ for I, with 1 pers.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Gen. 44, 32.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hithpa. הִתְאַוָּה, fut. apoc. יִתְאָו Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "23, 3. 6, i. q. Pi. but pr. to desire for one-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "self, to long; absol. 1 Chr. 11, 17; c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "acc. Deut. 5, 18. Jer. 17, 16; c. dat. Prov.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "23, 3. 6. הִתְאַוָּה תַּאֲוָה to long a longing,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "i. e. to long for with eagerness, to lust",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "after, Num. 11, 4. Ps. 106, 14. Hithpael",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "differs also from Piel, in that it is never",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "joined with נֶפֶשׁ, which is the common",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "usage with Piel.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Deriv. אַו constr. אוֹ, אַוָּה, אֲוִי, אִי I,",
+   "status": "adjudicated",
+   "draft": "Deriv. אַו constr. אֹו, אַוָּה, אַוִּי, אִי I,",
+   "reread": "Deriv. אַו constr. אוֹ, אַוָּה, אֲוִי, אִי I,",
+   "verdict": "b",
+   "note": "Holem is printed over the vav (אוֹ), not the aleph; third item has ḥaṭeph-pataḥ under aleph and no dagesh in vav (אֲוִי), as Reading B has it.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "תַּאֲוָה, מַאֲוַיִּים.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* II. אָוָה obsol. root, onomatopoetic,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to cry, to howl, ululare; so Arab. عَوَى",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "to howl, as a dog, wolf, jackal; see the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "deriv. אוֹי, אִי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "* III. אָוָה, in Kal. not used, prob.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "to sign, to mark, to describe with a mark;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "kindr. with תָּאָה and תָּוָה. Comp. אָבָה,",
+   "status": "adjudicated",
+   "draft": "kindr. with תָּאָה and תָּוָה. Comp. אָבָה,",
+   "reread": "kindr. with תָּאָה and הָוָה. Comp. אָבָה,",
+   "verdict": "a",
+   "note": "The second word's first letter has the same form as the first letter of תָּאָה — a tav with a left foot and a dagesh — not a he; so תָּוָה (Reading A) is printed, not הָוָה.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אָוָה I, תָּאַב, to desire. Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hithpa. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+   "status": "adjudicated",
+   "draft": "HITHPA. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+   "reread": "Hithpa. id. Num. 34, 10 הִתְאַוִּיתֶם לָכֶם",
+   "verdict": "b",
+   "note": "The Hebrew is identical in both readings and matches the print (הִתְאַוִּיתֶם with dagesh + hiriq in the vav, plene yod; לָכֶם). The only difference is the stem label: it is printed with a full-size capital H followed by small capitals (\"Hɪᴛʜᴘᴀ.\"), which B's mixed-case \"Hithpa.\" represents; A's all-caps loses the initial-capital/small-cap distinction.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ye shall mark out for yourselves a border,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "etc. comp. v. 7. 8, where in the same",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "connection is read fut. תְּתָאוּ לָכֶם. Sept.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "and Syr. in all three passages, καταμε-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "τρήσετε, ܬܬܡܫܚܘܢ, ye shall measure out,",
+   "status": "adjudicated",
+   "draft": "τρήσετε, ܬܬܚܡܘܢ, ye shall measure out,",
+   "reread": "τρήσετε, ܬܬܡܫܚܘܢ, ye shall measure out,",
+   "verdict": "b",
+   "note": "The Syriac word after the two taws clearly shows mem, shin, ḥeth, waw, nun (root ܡܫܚ \"measure\", Ethpaal 2mpl ܬܬܡܫܚܘܢ); Reading A's ܬܬܚܡܘܢ drops the mem–shin and reverses the order. No Syriac points are printed.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "determine.—Hence also אוֹת for אָוֶת, a",
+   "status": "adjudicated",
+   "draft": "determine.—Hence also אוֹת for אָוֶת, a",
+   "reread": "determine.—Hence also אוֹת for אִוְת, a",
+   "verdict": "a",
+   "note": "Second Hebrew word: under the alef is a qamets (horizontal bar with a stem), not a hiriq dot, and under the vav a cluster of dots (segol), not a simple two-dot sheva — matching Reading A (אָוֶת). A small dot sits above the vav in the print, apparently a stray mark/ink spot rather than a holem, so not transcribed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "sign.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אַוָּה f. (r. אָוָה I. 2) 1. desire, long-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ing, e. g. after food, with נֶפֶשׁ, Deut. 12,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "15. 20. 21. 18, 6; of sexual desire, Jer.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2, 24. Comp. in אָוָה I. Pi.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. desire, pleasure, will, with נֶפֶשׁ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 Sam. 23, 20; simpl. Hos. 10, 10.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אוּזַי (prob. i. q. אֻזִּי, עֻזִּי, strong, ro-",
+   "status": "adjudicated",
+   "draft": "אוּזַי (prob. i. q. עֻזִּי, אֻזִּי, strong, ro-",
+   "reread": "אוּזַי (prob. i. q. אֲזַי, עֻזִּי, strong, ro-",
+   "verdict": "neither",
+   "note": "Printed order after \"i. q.\" is aleph-form then ayin-form (B's order, not A's), but the aleph-form is pointed exactly like עֻזִּי — qubuts under aleph, dagesh in zayin, hiriq — not אֲזַי as B gives; so A has the vowels right but the order wrong, B the order right but the vowels wrong.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "bust) Uzai, pr. n. m. Neh. 3, 25.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אוּזָל Gen. 10, 27, pr. n. Uzal, a de-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "scendant of Joktan, here taken in a geo-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "graphical sense for a city and district of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the Joktanidæ in Arabia, prob. the same",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "afterwards called Sanaa, the metropolis",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "of the kingdom of Yemen; see Bochart",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Phaleg. II. 21. J. D. Michaelis Spicil.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Geogr. Heb. ext. T. II. p. 164 sq. Rut-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "ger's Hist. Jemanæ, p. 217.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֱוִי (desire or dwelling, i. q. אַוִּי) Evi,",
+   "status": "adjudicated",
+   "draft": "אֱוִי (desire or dwelling, i. q. אַו) Evi,",
+   "reread": "אֱוִי (desire or dwelling, i. q. אַוִּי) Evi,",
+   "verdict": "b",
+   "note": "The word after \"i. q.\" ends in a yod before the closing parenthesis (not bare אַו), and a dot is printed in the vav (dagesh) with patach under the aleph — matching B's אַוִּי. Reading A drops the final yod.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "pr. n. of a king of Midian, Num. 31, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Josh. 13, 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אוֹי (r. אָוָה II) 1. Subst. wailing,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "lamentation. Prov. 23, 29 לְמִי אוֹי לְמִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲבוֹי who hath wailing, who hath want?",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. Interj. wo! a) Of sorrow, grief,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "c. dat. wo to me! etc. 1 Sam. 4, 8. Is.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "3, 9. 6, 5; rarely c. acc. Ez. 24, 6. 8;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "absol. Num. 24, 23. b) Of threatening,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "imprecation, Num. 21, 29.—Kindr. is הוֹי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אוֹיָה i. q. אוֹי, c. dat. Ps. 120, 5.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֱוִיל m. (r. אָוַל) plur. אֱוִילִים 1. fool-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ish, as adj. אִישׁ אֱוִיל Prov. 29, 9. Hos.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "9, 7. More freq. subst. a foolish man, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "fool, Job 5, 2. Is. 19, 11. 35, 8. Prov. 7, 22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "10, 14. 11, 29. 14, 3. 15, 5. Opp. to a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "prudent man (עָרוּם) Prov. 12, 16; to a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "wise man (חָכָם) Prov. 10, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. Impl. impious, wicked, Job 5, 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֱוִילִי id. with adj. ending, foolish,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Zech. 11, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "אֱוִיל מְרֹדַךְ Evil-Merodach, pr. n. of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a king of Babylon, who set at liberty",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Jehoiachin king of Judah after he had",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "been long detained in prison by Nebu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "chadnezzar, 2 K. 25, 27. Jer. 52, 31. He",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "succeeded Nebuchadnezzar, and reigned",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "two years, according to Berosus in Jos.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "c. Ap. 1. 20.—As to the signification of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the name, מְרֹדַךְ q. v. is the name of a",
+   "status": "adjudicated",
+   "draft": "the name, מְרֹדַךְ q. v. is the name of a",
+   "reread": "the name, מְרֹדָךְ q. v. is the name of a",
+   "verdict": "a",
+   "note": "Under the dalet the print shows a flat horizontal stroke with no descending stem — a patach (דַ), not a qamets (דָ). This matches the standard pointing מְרֹדַךְ (Jer. 50:2). Reading A is correct; Reading B's qamets is not what is printed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Babylonish idol, and אֱוִיל is in Heb. fool-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ish. But we may take it for granted",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "that some other name of Assyrian or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Persian origin lies concealed under this,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "which the Jews thus wrested into the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "analogy of their own tongue; pleasing",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "themselves perhaps with the idea of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "calling the hostile and gentile king in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "scorn Merodach's fool, i. e. his foolish",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "worshipper.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אָוַל with Vav movable, obsol. root,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "i. q. יָאַל, יָאַל, to be foolish, pr. to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "turned away, perverse, comp. kindr. עָוַל,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "and also אוּל. Hence אֱוִיל, אֱוִילִי, fool-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ish, אִוֶּלֶת folly.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "* אוּל and אִיל a root not used in",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 95,
+  "adjudicated": 8,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.6863
+}

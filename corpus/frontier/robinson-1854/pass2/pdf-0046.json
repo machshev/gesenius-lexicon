@@ -1,0 +1,2633 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 46,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0046.png",
+ "raster_sha256": "3f3ff002a60a36b2dd623541f6699582fbf32a017fcd047006e12c10d7c7083a",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0046.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:43:56+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 198,
+    "y": 125,
+    "width": 1774,
+    "height": 74
+   },
+   "draft_lines": [
+    "אזר",
+    "30",
+    "אח"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 198,
+      "y": 123,
+      "width": 1774,
+      "height": 78
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/header-b00-1774x78+198+123-x2.png",
+     "image_sha256": "82e6af9fc2ed652079fe788beef71322aaaad4d61ad8522c374a9be08e823022",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אזר 30 אח"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0a04f59c-b91e-4b85-bb02-2554ba01b05c",
+      "duration_api_ms": 7515,
+      "cost_usd_list": 0.04545250000000001,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 212
+     },
+     "lines": [
+      {
+       "draft": "אזר 30 אח",
+       "reread": "אזר 30 אח",
+       "status": "agreed",
+       "text": "אזר 30 אח"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 198,
+    "y": 166,
+    "width": 881,
+    "height": 868
+   },
+   "draft_lines": [
+    "אזר",
+    "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאַזְרֵנִי",
+    "Job 30, 18, to gird, to bind around;",
+    "also to gird oneself, to be girded. Arab.",
+    "أَزَرَ to be strong, robust, but doubtful",
+    "whether also pr. to be girded; Conj. II",
+    "to gird, Conj. III to strengthen, to aid.",
+    "Kindred roots, which all have the force",
+    "of binding around or together, girding,",
+    "surrounding, are אָסַר, אָצַר [אָצַל], עָצַר,",
+    "גָּדַר, חָדַר, חָצַר; עָזַר, עָטַר. — Spoken:",
+    "a) Of a garment with which one is",
+    "girded, c. acc. of pers. Job 30, 18. b)",
+    "With acc. of the member girded, Job 38,"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 198,
+      "y": 158,
+      "width": 881,
+      "height": 281
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r00-b00-881x281+198+158-x2.png",
+     "image_sha256": "7c0b888bd5ee33634edc3f6cc20b5a069e9de771135aa4b6d5f2357a2c4d9306",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאְזְרֵנִי",
+       "Job 30, 18, to gird, to bind around ;",
+       "also to gird oneself, to be girded. Arab."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ae9acc00-fe67-4758-ae48-6bab4e5823cd",
+      "duration_api_ms": 13582,
+      "cost_usd_list": 0.07567575,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2878,
+      "output_tokens": 561
+     },
+     "lines": [
+      {
+       "draft": "אזר",
+       "reread": null,
+       "status": "draft_only",
+       "text": "אזר"
+      },
+      {
+       "draft": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאַזְרֵנִי",
+       "reread": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאְזְרֵנִי",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b00",
+       "judgement": {
+        "text": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאְזְרֵנִי",
+        "verdict": "b",
+        "note": "Under the aleph of the last word the print shows two vertically stacked dots (shva), not a horizontal patach stroke, so the form is יַאְזְרֵנִי (patach only under the yod), matching Reading B; all other items in the two readings are identical and match the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "003b7e8e-fb7c-42f7-af23-157255695b68",
+        "duration_api_ms": 22827,
+        "cost_usd_list": 0.106247,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3618,
+        "cache_creation_input_tokens": 2851,
+        "output_tokens": 1183
+       },
+       "text": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאְזְרֵנִי"
+      },
+      {
+       "draft": "Job 30, 18, to gird, to bind around;",
+       "reread": "Job 30, 18, to gird, to bind around ;",
+       "status": "agreed",
+       "text": "Job 30, 18, to gird, to bind around;"
+      },
+      {
+       "draft": "also to gird oneself, to be girded. Arab.",
+       "reread": "also to gird oneself, to be girded. Arab.",
+       "status": "agreed",
+       "text": "also to gird oneself, to be girded. Arab."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 198,
+      "y": 423,
+      "width": 881,
+      "height": 274
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r00-b01-881x274+198+423-x2.png",
+     "image_sha256": "5af4f7f3489ca90acd4f7ca5273cd747f036d8e2a88dda1a822f4103994eca60",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "أَزَرَ to be strong, robust, but doubtful",
+       "whether also pr. to be girded; Conj. II",
+       "to gird, Conj. III to strengthen, to aid.",
+       "Kindred roots, which all have the force"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cb6a6b6f-ba27-4f9d-bf24-2497d0b74ed9",
+      "duration_api_ms": 11400,
+      "cost_usd_list": 0.06868825,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2815,
+      "output_tokens": 437
+     },
+     "lines": [
+      {
+       "draft": "أَزَرَ to be strong, robust, but doubtful",
+       "reread": "أَزَرَ to be strong, robust, but doubtful",
+       "status": "agreed",
+       "text": "أَزَرَ to be strong, robust, but doubtful"
+      },
+      {
+       "draft": "whether also pr. to be girded; Conj. II",
+       "reread": "whether also pr. to be girded; Conj. II",
+       "status": "agreed",
+       "text": "whether also pr. to be girded; Conj. II"
+      },
+      {
+       "draft": "to gird, Conj. III to strengthen, to aid.",
+       "reread": "to gird, Conj. III to strengthen, to aid.",
+       "status": "agreed",
+       "text": "to gird, Conj. III to strengthen, to aid."
+      },
+      {
+       "draft": "Kindred roots, which all have the force",
+       "reread": "Kindred roots, which all have the force",
+       "status": "agreed",
+       "text": "Kindred roots, which all have the force"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 198,
+      "y": 681,
+      "width": 881,
+      "height": 193
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r00-b02-881x193+198+681-x2.png",
+     "image_sha256": "1a8a00632af9868cdab5dbbeaa183fddeb4b7ae401407165fcade0ca68a75d4e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of binding around or together, girding,",
+       "surrounding, are אָסַר, אָצַר [אָצַל], עָצַר,",
+       "עָטַר, עָזַר; חָצַר, חָדַר, גָּדַר. — Spoken :"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "bb8dc965-35d2-4cd9-84b8-c9306368a4eb",
+      "duration_api_ms": 11446,
+      "cost_usd_list": 0.06771325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2437,
+      "output_tokens": 512
+     },
+     "lines": [
+      {
+       "draft": "of binding around or together, girding,",
+       "reread": "of binding around or together, girding,",
+       "status": "agreed",
+       "text": "of binding around or together, girding,"
+      },
+      {
+       "draft": "surrounding, are אָסַר, אָצַר [אָצַל], עָצַר,",
+       "reread": "surrounding, are אָסַר, אָצַר [אָצַל], עָצַר,",
+       "status": "agreed",
+       "text": "surrounding, are אָסַר, אָצַר [אָצַל], עָצַר,"
+      },
+      {
+       "draft": "גָּדַר, חָדַר, חָצַר; עָזַר, עָטַר. — Spoken:",
+       "reread": "עָטַר, עָזַר; חָצַר, חָדַר, גָּדַר. — Spoken :",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "גָּדַר, חָדַר, חָצַר; עָזַר, עָטַר. — Spoken :",
+        "verdict": "neither",
+        "note": "Printed visual order (left→right) is עָטַר, עָזַר; חָצַר, חָדַר, גָּדַר — a single RTL run, so in logical order the first word is גָּדַר (with dagesh in gimel, as printed) and the last is עָטַר, i.e. Reading A's word order; Reading B has simply copied the visual order and would render reversed. But the print has a space before the colon (\"Spoken :\"), as in B. All vowels (qamets + patach in every word) match both readings.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "75a24fd7-2fa1-4b05-b50a-c5faeac21749",
+        "duration_api_ms": 22709,
+        "cost_usd_list": 0.10461050000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3602,
+        "cache_creation_input_tokens": 2394,
+        "output_tokens": 1267
+       },
+       "text": "גָּדַר, חָדַר, חָצַר; עָזַר, עָטַר. — Spoken:"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 198,
+      "y": 858,
+      "width": 881,
+      "height": 184
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r00-b03-881x184+198+858-x2.png",
+     "image_sha256": "ebf9487af71978dc3e8c8ca4fff16a19934a5a55b129a6aab9c22f7f8d4b9f91",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a) Of a garment with which one is",
+       "girded, c. acc. of pers. Job 30, 18. b)",
+       "With acc. of the member girded, Job 38,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "435adbbb-c494-4066-9404-b88f24a56579",
+      "duration_api_ms": 7750,
+      "cost_usd_list": 0.05356324999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2437,
+      "output_tokens": 229
+     },
+     "lines": [
+      {
+       "draft": "a) Of a garment with which one is",
+       "reread": "a) Of a garment with which one is",
+       "status": "agreed",
+       "text": "a) Of a garment with which one is"
+      },
+      {
+       "draft": "girded, c. acc. of pers. Job 30, 18. b)",
+       "reread": "girded, c. acc. of pers. Job 30, 18. b)",
+       "status": "agreed",
+       "text": "girded, c. acc. of pers. Job 30, 18. b)"
+      },
+      {
+       "draft": "With acc. of the member girded, Job 38,",
+       "reread": "With acc. of the member girded, Job 38,",
+       "status": "agreed",
+       "text": "With acc. of the member girded, Job 38,"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 198,
+    "y": 1022,
+    "width": 881,
+    "height": 729
+   },
+   "draft_lines": [
+    "3 אֱזָר־נָא חֲלָצֶיךָ gird up now thy loins.",
+    "40, 2. Jer. 1, 17. c) With acc. of the",
+    "girdle or garment with which one is",
+    "girded, only trop. 1 Sam. 2, 4 אָזְרוּ חָיִל",
+    "they gird on strength.",
+    "Niph. part. נֶאְזָר girded Ps. 65, 7.",
+    "Piel to gird, with acc. of pers. and",
+    "also of the girdle, Ps. 18, 33. 40 וַתְּאַזְּרֵנִי",
+    "חַיִל לַמִּלְחָמָה thou hast girded me with",
+    "strength for the battle. 30, 12 וַתְּאַזְּרֵנִי",
+    "שִׂמְחָה thou hast girded [or surrounded]",
+    "me with gladness. Is. 50, 11 מְאַזְּרֵי זִיקוֹת",
+    "girded i. e. armed with burning wea-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 198,
+      "y": 1014,
+      "width": 881,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r01-b00-881x244+198+1014-x2.png",
+     "image_sha256": "7f11ef13b6ba8bcf75ab83c3f0b08cb5977fe90004cf32ce08b2acae5175c00c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3 אֱזָר־נָא חֲלָצֶיךָ gird up now thy loins.",
+       "40, 2. Jer. 1, 17.   c) With acc. of the",
+       "girdle or garment with which one is",
+       "girded, only trop. 1 Sam. 2, 4 אָזְרוּ חָיִל"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2e468563-34d3-4df1-a505-0e89d09ed2fd",
+      "duration_api_ms": 12322,
+      "cost_usd_list": 0.073496,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 564
+     },
+     "lines": [
+      {
+       "draft": "3 אֱזָר־נָא חֲלָצֶיךָ gird up now thy loins.",
+       "reread": "3 אֱזָר־נָא חֲלָצֶיךָ gird up now thy loins.",
+       "status": "agreed",
+       "text": "3 אֱזָר־נָא חֲלָצֶיךָ gird up now thy loins."
+      },
+      {
+       "draft": "40, 2. Jer. 1, 17. c) With acc. of the",
+       "reread": "40, 2. Jer. 1, 17.   c) With acc. of the",
+       "status": "agreed",
+       "text": "40, 2. Jer. 1, 17. c) With acc. of the"
+      },
+      {
+       "draft": "girdle or garment with which one is",
+       "reread": "girdle or garment with which one is",
+       "status": "agreed",
+       "text": "girdle or garment with which one is"
+      },
+      {
+       "draft": "girded, only trop. 1 Sam. 2, 4 אָזְרוּ חָיִל",
+       "reread": "girded, only trop. 1 Sam. 2, 4 אָזְרוּ חָיִל",
+       "status": "agreed",
+       "text": "girded, only trop. 1 Sam. 2, 4 אָזְרוּ חָיִל"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 198,
+      "y": 1242,
+      "width": 881,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r01-b01-881x235+198+1242-x2.png",
+     "image_sha256": "091e4c485dada7a3ad4f6677941992ca59b6af2f3731c2d8e65ff57ec074ee84",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "they gird on strength.",
+       "Niph. part. נֶאְזָר girded Ps. 65, 7.",
+       "Piel to gird, with acc. of pers. and",
+       "also of the girdle, Ps. 18, 33. 40 וַתְּאַזְּרֵנִי"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "393778d7-a858-4c0f-846a-dd72fdba88a9",
+      "duration_api_ms": 8307,
+      "cost_usd_list": 0.057958499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 269
+     },
+     "lines": [
+      {
+       "draft": "they gird on strength.",
+       "reread": "they gird on strength.",
+       "status": "agreed",
+       "text": "they gird on strength."
+      },
+      {
+       "draft": "Niph. part. נֶאְזָר girded Ps. 65, 7.",
+       "reread": "Niph. part. נֶאְזָר girded Ps. 65, 7.",
+       "status": "agreed",
+       "text": "Niph. part. נֶאְזָר girded Ps. 65, 7."
+      },
+      {
+       "draft": "Piel to gird, with acc. of pers. and",
+       "reread": "Piel to gird, with acc. of pers. and",
+       "status": "agreed",
+       "text": "Piel to gird, with acc. of pers. and"
+      },
+      {
+       "draft": "also of the girdle, Ps. 18, 33. 40 וַתְּאַזְּרֵנִי",
+       "reread": "also of the girdle, Ps. 18, 33. 40 וַתְּאַזְּרֵנִי",
+       "status": "agreed",
+       "text": "also of the girdle, Ps. 18, 33. 40 וַתְּאַזְּרֵנִי"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 198,
+      "y": 1461,
+      "width": 881,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r01-b02-881x238+198+1461-x2.png",
+     "image_sha256": "0ad5e6a090d60137b85e305553ba7d3d513473bc9cb28a3defc9eedcbd7a1025",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "חַיִל לַמִּלְחָמָה thou hast girded me with",
+       "strength for the battle. 30, 12 וַתְּאַזְּרֵנִי",
+       "שִׂמְחָה thou hast girded [or surrounded]",
+       "me with gladness. Is. 50, 11 מְאַזְּרֵי זִיקוֹת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3606da93-e879-44f0-8eae-8efacca2b249",
+      "duration_api_ms": 15922,
+      "cost_usd_list": 0.08850849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 880
+     },
+     "lines": [
+      {
+       "draft": "חַיִל לַמִּלְחָמָה thou hast girded me with",
+       "reread": "חַיִל לַמִּלְחָמָה thou hast girded me with",
+       "status": "agreed",
+       "text": "חַיִל לַמִּלְחָמָה thou hast girded me with"
+      },
+      {
+       "draft": "strength for the battle. 30, 12 וַתְּאַזְּרֵנִי",
+       "reread": "strength for the battle. 30, 12 וַתְּאַזְּרֵנִי",
+       "status": "agreed",
+       "text": "strength for the battle. 30, 12 וַתְּאַזְּרֵנִי"
+      },
+      {
+       "draft": "שִׂמְחָה thou hast girded [or surrounded]",
+       "reread": "שִׂמְחָה thou hast girded [or surrounded]",
+       "status": "agreed",
+       "text": "שִׂמְחָה thou hast girded [or surrounded]"
+      },
+      {
+       "draft": "me with gladness. Is. 50, 11 מְאַזְּרֵי זִיקוֹת",
+       "reread": "me with gladness. Is. 50, 11 מְאַזְּרֵי זִיקוֹת",
+       "status": "agreed",
+       "text": "me with gladness. Is. 50, 11 מְאַזְּרֵי זִיקוֹת"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 198,
+      "y": 1683,
+      "width": 881,
+      "height": 65
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r01-b03-881x65+198+1683-x2.png",
+     "image_sha256": "7f20c09749b3ccfc03886486ab9c58b6bc8f3eb86c8e6c062f5fbd44484341c9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "girded i. e. armed with burning wea-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "14edb9e6-6692-455b-9daa-a81d90258629",
+      "duration_api_ms": 7370,
+      "cost_usd_list": 0.0463585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 1872,
+      "output_tokens": 226
+     },
+     "lines": [
+      {
+       "draft": "girded i. e. armed with burning wea-",
+       "reread": "girded i. e. armed with burning wea-",
+       "status": "agreed",
+       "text": "girded i. e. armed with burning wea-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 198,
+    "y": 1739,
+    "width": 881,
+    "height": 859
+   },
+   "draft_lines": [
+    "pons.—For the construction of such",
+    "verbs with two accusatives, see Lehrg.",
+    "§ 219. 1. Heb. Gr. § 136. 1.",
+    "Hithpa. to gird oneself, e. g. for bat-",
+    "tle, to arm oneself, Is. 8, 9; c. acc. trop.",
+    "Ps. 93, 1.",
+    "Deriv. אֵזוֹר.",
+    "אֶזְרוֹעַ i. q. זְרוֹעַ, the arm, (Aleph",
+    "prosthet. see p. 1,) Jer. 32, 21. Job 31,",
+    "22.",
+    "אֶזְרָח m. for זֶרַח with Aleph pros-",
+    "thetic. R. זָרַח no. 2. c.",
+    "1. a native tree, growing in its own",
+    "soil, not transplanted, Ps. 37, 35.—",
+    "Hence"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 198,
+      "y": 1731,
+      "width": 881,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r02-b00-881x240+198+1731-x2.png",
+     "image_sha256": "c1727bb60503b532bcf99ceec581333aff4fc47a77f7876688435d3e168f4634",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pons.—For the construction of such",
+       "verbs with two accusatives, see Lehrg.",
+       "§ 219. 1. Heb. Gr. § 136. 1.",
+       "Hithpa. to gird oneself, e. g. for bat-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6c38e480-2115-4352-a28d-37e5b7463adf",
+      "duration_api_ms": 8128,
+      "cost_usd_list": 0.058046,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 255
+     },
+     "lines": [
+      {
+       "draft": "pons.—For the construction of such",
+       "reread": "pons.—For the construction of such",
+       "status": "agreed",
+       "text": "pons.—For the construction of such"
+      },
+      {
+       "draft": "verbs with two accusatives, see Lehrg.",
+       "reread": "verbs with two accusatives, see Lehrg.",
+       "status": "agreed",
+       "text": "verbs with two accusatives, see Lehrg."
+      },
+      {
+       "draft": "§ 219. 1. Heb. Gr. § 136. 1.",
+       "reread": "§ 219. 1. Heb. Gr. § 136. 1.",
+       "status": "agreed",
+       "text": "§ 219. 1. Heb. Gr. § 136. 1."
+      },
+      {
+       "draft": "Hithpa. to gird oneself, e. g. for bat-",
+       "reread": "Hithpa. to gird oneself, e. g. for bat-",
+       "status": "agreed",
+       "text": "Hithpa. to gird oneself, e. g. for bat-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 198,
+      "y": 1955,
+      "width": 881,
+      "height": 252
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r02-b01-881x252+198+1955-x2.png",
+     "image_sha256": "cd178f21e3b0ec513bde6e7b720d61b657f8dfc40ac91ceace32e659469a978b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "tle, to arm oneself, Is. 8, 9 ; c. acc. trop.",
+       "Ps. 93, 1.",
+       "Deriv. אֵזוֹר.",
+       "אֶזְרוֹעַ i. q. זְרוֹעַ, the arm, (Aleph"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5b5bc5b7-4c8e-43fd-9048-f04eb8b2949f",
+      "duration_api_ms": 9074,
+      "cost_usd_list": 0.061295999999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 320
+     },
+     "lines": [
+      {
+       "draft": "tle, to arm oneself, Is. 8, 9; c. acc. trop.",
+       "reread": "tle, to arm oneself, Is. 8, 9 ; c. acc. trop.",
+       "status": "agreed",
+       "text": "tle, to arm oneself, Is. 8, 9; c. acc. trop."
+      },
+      {
+       "draft": "Ps. 93, 1.",
+       "reread": "Ps. 93, 1.",
+       "status": "agreed",
+       "text": "Ps. 93, 1."
+      },
+      {
+       "draft": "Deriv. אֵזוֹר.",
+       "reread": "Deriv. אֵזוֹר.",
+       "status": "agreed",
+       "text": "Deriv. אֵזוֹר."
+      },
+      {
+       "draft": "אֶזְרוֹעַ i. q. זְרוֹעַ, the arm, (Aleph",
+       "reread": "אֶזְרוֹעַ i. q. זְרוֹעַ, the arm, (Aleph",
+       "status": "agreed",
+       "text": "אֶזְרוֹעַ i. q. זְרוֹעַ, the arm, (Aleph"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 198,
+      "y": 2191,
+      "width": 881,
+      "height": 300
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r02-b02-881x300+198+2191-x2.png",
+     "image_sha256": "3a7b5d7ff3c138d81688d0dec94c3d53fa267d89a59c53fdca435c74226fbe11",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "prosthet. see p. 1,) Jer. 32, 21. Job 31,",
+       "22.",
+       "אֶזְרָח m. for זֶרַח with Aleph pros-",
+       "thetic. R. זָרַח no. 2. c.",
+       "1. a native tree, growing in its own"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "06759758-a675-40d6-a97e-742cd0bc4d69",
+      "duration_api_ms": 8223,
+      "cost_usd_list": 0.07524600000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 536
+     },
+     "lines": [
+      {
+       "draft": "prosthet. see p. 1,) Jer. 32, 21. Job 31,",
+       "reread": "prosthet. see p. 1,) Jer. 32, 21. Job 31,",
+       "status": "agreed",
+       "text": "prosthet. see p. 1,) Jer. 32, 21. Job 31,"
+      },
+      {
+       "draft": "22.",
+       "reread": "22.",
+       "status": "agreed",
+       "text": "22."
+      },
+      {
+       "draft": "אֶזְרָח m. for זֶרַח with Aleph pros-",
+       "reread": "אֶזְרָח m. for זֶרַח with Aleph pros-",
+       "status": "agreed",
+       "text": "אֶזְרָח m. for זֶרַח with Aleph pros-"
+      },
+      {
+       "draft": "thetic. R. זָרַח no. 2. c.",
+       "reread": "thetic. R. זָרַח no. 2. c.",
+       "status": "agreed",
+       "text": "thetic. R. זָרַח no. 2. c."
+      },
+      {
+       "draft": "1. a native tree, growing in its own",
+       "reread": "1. a native tree, growing in its own",
+       "status": "agreed",
+       "text": "1. a native tree, growing in its own"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 198,
+      "y": 2475,
+      "width": 881,
+      "height": 115
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r02-b03-881x115+198+2475-x2.png",
+     "image_sha256": "86c2ad084f0cd95e03c2b417d9d894eb5f884619195975a2e718cf2eef5c8b17",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "soil, not transplanted, Ps. 37, 35.—",
+       "Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "05cf6750-17f5-407c-9711-fe6bd1984c19",
+      "duration_api_ms": 7001,
+      "cost_usd_list": 0.0483585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2124,
+      "output_tokens": 203
+     },
+     "lines": [
+      {
+       "draft": "soil, not transplanted, Ps. 37, 35.—",
+       "reread": "soil, not transplanted, Ps. 37, 35.—",
+       "status": "agreed",
+       "text": "soil, not transplanted, Ps. 37, 35.—"
+      },
+      {
+       "draft": "Hence",
+       "reread": "Hence",
+       "status": "agreed",
+       "text": "Hence"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 198,
+    "y": 2586,
+    "width": 881,
+    "height": 777
+   },
+   "draft_lines": [
+    "2. Of persons, a native, one born in",
+    "the country, not a foreigner, Lev. 16,",
+    "29. 18, 26. al.",
+    "אֶזְרָחִי patronym. an Ezrahite, one",
+    "of the descendants of Ezrah, אֶזְרָח;",
+    "spoken of Ethan, 1 K. 5, 11 [4, 31]. Ps.",
+    "89, 1; also of Heman Ps. 88, 1. In",
+    "1 Chr. 2, 6 both these are said to be",
+    "descendants of Zerah, זֶרַח, the son of",
+    "Judah; so that we may regard אֶזְרָח as",
+    "another form of the same name, found",
+    "only in the patronymic."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 198,
+      "y": 2594,
+      "width": 881,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r03-b00-881x245+198+2594-x2.png",
+     "image_sha256": "ac0d12c175148339f834008079673e9186b43d1deacd628d6c180207c15e803c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Of persons, a native, one born in",
+       "the country, not a foreigner, Lev. 16,",
+       "29. 18, 26. al.",
+       "אֶזְרָחִי patronym. an Ezrahite, one"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8024d968-62c0-4846-99e1-fea80e527ef8",
+      "duration_api_ms": 9236,
+      "cost_usd_list": 0.06164599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 327
+     },
+     "lines": [
+      {
+       "draft": "2. Of persons, a native, one born in",
+       "reread": "2. Of persons, a native, one born in",
+       "status": "agreed",
+       "text": "2. Of persons, a native, one born in"
+      },
+      {
+       "draft": "the country, not a foreigner, Lev. 16,",
+       "reread": "the country, not a foreigner, Lev. 16,",
+       "status": "agreed",
+       "text": "the country, not a foreigner, Lev. 16,"
+      },
+      {
+       "draft": "29. 18, 26. al.",
+       "reread": "29. 18, 26. al.",
+       "status": "agreed",
+       "text": "29. 18, 26. al."
+      },
+      {
+       "draft": "אֶזְרָחִי patronym. an Ezrahite, one",
+       "reread": "אֶזְרָחִי patronym. an Ezrahite, one",
+       "status": "agreed",
+       "text": "אֶזְרָחִי patronym. an Ezrahite, one"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 198,
+      "y": 2823,
+      "width": 881,
+      "height": 226
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r03-b01-881x226+198+2823-x2.png",
+     "image_sha256": "469e757b4cdc47dd366288fb267e6e2f4073e01ee1bb7e7eb26aebec90777e60",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "of the descendants of Ezrah, אֶזְרָח ;",
+       "spoken of Ethan, 1 K. 5, 11 [4, 31]. Ps.",
+       "89, 1 ; also of Heman Ps. 88, 1.  In",
+       "1 Chr. 2, 6 both these are said to be"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ce27ff28-30fa-4c43-b141-6c4da1e6a604",
+      "duration_api_ms": 9719,
+      "cost_usd_list": 0.0619585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 349
+     },
+     "lines": [
+      {
+       "draft": "of the descendants of Ezrah, אֶזְרָח;",
+       "reread": "of the descendants of Ezrah, אֶזְרָח ;",
+       "status": "agreed",
+       "text": "of the descendants of Ezrah, אֶזְרָח;"
+      },
+      {
+       "draft": "spoken of Ethan, 1 K. 5, 11 [4, 31]. Ps.",
+       "reread": "spoken of Ethan, 1 K. 5, 11 [4, 31]. Ps.",
+       "status": "agreed",
+       "text": "spoken of Ethan, 1 K. 5, 11 [4, 31]. Ps."
+      },
+      {
+       "draft": "89, 1; also of Heman Ps. 88, 1. In",
+       "reread": "89, 1 ; also of Heman Ps. 88, 1.  In",
+       "status": "agreed",
+       "text": "89, 1; also of Heman Ps. 88, 1. In"
+      },
+      {
+       "draft": "1 Chr. 2, 6 both these are said to be",
+       "reread": "1 Chr. 2, 6 both these are said to be",
+       "status": "agreed",
+       "text": "1 Chr. 2, 6 both these are said to be"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b02",
+     "bounds": {
+      "x": 198,
+      "y": 3033,
+      "width": 881,
+      "height": 332
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c0-r03-b02-881x332+198+3033-x2.png",
+     "image_sha256": "306ed1e06e4312152fba0586779a07259a143811bcf2063222bd57826d5b3b3b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "descendants of Zerah, זֶרַח, the son of",
+       "Judah; so that we may regard אֶזְרָח as",
+       "another form of the same name, found",
+       "only in the patronymic."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f36f77a6-83ca-4728-b95b-59f5e48d9a1c",
+      "duration_api_ms": 10878,
+      "cost_usd_list": 0.07117099999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3069,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "descendants of Zerah, זֶרַח, the son of",
+       "reread": "descendants of Zerah, זֶרַח, the son of",
+       "status": "agreed",
+       "text": "descendants of Zerah, זֶרַח, the son of"
+      },
+      {
+       "draft": "Judah; so that we may regard אֶזְרָח as",
+       "reread": "Judah; so that we may regard אֶזְרָח as",
+       "status": "agreed",
+       "text": "Judah; so that we may regard אֶזְרָח as"
+      },
+      {
+       "draft": "another form of the same name, found",
+       "reread": "another form of the same name, found",
+       "status": "agreed",
+       "text": "another form of the same name, found"
+      },
+      {
+       "draft": "only in the patronymic.",
+       "reread": "only in the patronymic.",
+       "status": "agreed",
+       "text": "only in the patronymic."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1088,
+    "y": 166,
+    "width": 884,
+    "height": 962
+   },
+   "draft_lines": [
+    "* I. אָח constr. אֲחִי, c. suff. אָחִי (my",
+    "brother), אָחִיךָ, אֲחִיכֶם; Plur. אַחִים",
+    "(Dag. impl.) constr. אֲחֵי, c. suff. אַחֶיךָ,",
+    "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אַחָיו,",
+    "comp. Lehrg. p. 602.",
+    "1. a brother, undoubtedly a primitive",
+    "word, Arab. أَخٌ, st. constr. أَخُو, أَخِى,",
+    "أَخَا; Syr. ܐܰܚܳܐ, Chald. אַח. It follows",
+    "partly the analogy of verbs ל״ה, and",
+    "partly that of verbs ע״ע; comp. Lehrg.",
+    "§ 118.—Spoken in a less exact sense of",
+    "half-brothers, e. g. those born to the",
+    "same father, but of different mothers,",
+    "Gen. 42, 15. 43, 3. Judg. 9, 21; or vice"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 158,
+      "width": 884,
+      "height": 322
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r00-b00-884x322+1088+158-x2.png",
+     "image_sha256": "55e003d25bc2925a7d0720cbe8143fcd8acea0609858cfb00a3271c6f777a013",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "* I. אָח constr. אֲחִי, c. suff. אָחִי (my",
+       "brother), אָחִיךָ, אֲחִיכֶם; Plur. אַחִים",
+       "(Dag. impl.) constr. אֲחֵי, c. suff. אַחֶיךָ,",
+       "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אֲחָיו,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c7f4369c-a960-4821-81fb-af43f8245650",
+      "duration_api_ms": 12018,
+      "cost_usd_list": 0.08902100000000002,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3029,
+      "output_tokens": 790
+     },
+     "lines": [
+      {
+       "draft": "* I. אָח constr. אֲחִי, c. suff. אָחִי (my",
+       "reread": "* I. אָח constr. אֲחִי, c. suff. אָחִי (my",
+       "status": "agreed",
+       "text": "* I. אָח constr. אֲחִי, c. suff. אָחִי (my"
+      },
+      {
+       "draft": "brother), אָחִיךָ, אֲחִיכֶם; Plur. אַחִים",
+       "reread": "brother), אָחִיךָ, אֲחִיכֶם; Plur. אַחִים",
+       "status": "agreed",
+       "text": "brother), אָחִיךָ, אֲחִיכֶם; Plur. אַחִים"
+      },
+      {
+       "draft": "(Dag. impl.) constr. אֲחֵי, c. suff. אַחֶיךָ,",
+       "reread": "(Dag. impl.) constr. אֲחֵי, c. suff. אַחֶיךָ,",
+       "status": "agreed",
+       "text": "(Dag. impl.) constr. אֲחֵי, c. suff. אַחֶיךָ,"
+      },
+      {
+       "draft": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אַחָיו,",
+       "reread": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אֲחָיו,",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אֲחָיו,",
+        "verdict": "b",
+        "note": "Under the aleph of the final word the print shows a compound point (two shewa dots plus a short bar), i.e. hataf patah אֲ, not a plain patah אַ; so Reading B is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d8d46c86-aa45-4963-bb5a-6157b5a04bc3",
+        "duration_api_ms": 8953,
+        "cost_usd_list": 0.071079,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3606,
+        "cache_creation_input_tokens": 2989,
+        "output_tokens": 447
+       },
+       "text": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אֲחָיו,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 464,
+      "width": 884,
+      "height": 327
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r00-b01-884x327+1088+464-x2.png",
+     "image_sha256": "e2cecb81a906a3aeb025705a5ab99dfcf586ac5fe4a105f871eb89fe3e26164a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "comp. Lehrg. p. 602.",
+       "1. a brother, undoubtedly a primitive",
+       "word, Arab. أَخٌ, st. constr. أَخُو, أَخِى,",
+       "أَخَا; Syr. ܐܰܚܳܐ, Chald. אַח. It follows"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "44cdc9b1-3871-4b11-886e-2dfeb7fd8754",
+      "duration_api_ms": 14944,
+      "cost_usd_list": 0.082421,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3093,
+      "output_tokens": 642
+     },
+     "lines": [
+      {
+       "draft": "comp. Lehrg. p. 602.",
+       "reread": "comp. Lehrg. p. 602.",
+       "status": "agreed",
+       "text": "comp. Lehrg. p. 602."
+      },
+      {
+       "draft": "1. a brother, undoubtedly a primitive",
+       "reread": "1. a brother, undoubtedly a primitive",
+       "status": "agreed",
+       "text": "1. a brother, undoubtedly a primitive"
+      },
+      {
+       "draft": "word, Arab. أَخٌ, st. constr. أَخُو, أَخِى,",
+       "reread": "word, Arab. أَخٌ, st. constr. أَخُو, أَخِى,",
+       "status": "agreed",
+       "text": "word, Arab. أَخٌ, st. constr. أَخُو, أَخِى,"
+      },
+      {
+       "draft": "أَخَا; Syr. ܐܰܚܳܐ, Chald. אַח. It follows",
+       "reread": "أَخَا; Syr. ܐܰܚܳܐ, Chald. אַח. It follows",
+       "status": "agreed",
+       "text": "أَخَا; Syr. ܐܰܚܳܐ, Chald. אַח. It follows"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 775,
+      "width": 884,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r00-b02-884x242+1088+775-x2.png",
+     "image_sha256": "9a9e1790bec3de4a4a58111576476dfd145490d765340ab42d0efad3b18342fb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "partly the analogy of verbs ל״ה, and",
+       "partly that of verbs ע״ע; comp. Lehrg.",
+       "§ 118.—Spoken in a less exact sense of",
+       "half-brothers, e. g. those born to the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "97547fc8-25a1-4dcf-9a62-0572bd94ec9a",
+      "duration_api_ms": 10670,
+      "cost_usd_list": 0.067021,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2709,
+      "output_tokens": 430
+     },
+     "lines": [
+      {
+       "draft": "partly the analogy of verbs ל״ה, and",
+       "reread": "partly the analogy of verbs ל״ה, and",
+       "status": "agreed",
+       "text": "partly the analogy of verbs ל״ה, and"
+      },
+      {
+       "draft": "partly that of verbs ע״ע; comp. Lehrg.",
+       "reread": "partly that of verbs ע״ע; comp. Lehrg.",
+       "status": "agreed",
+       "text": "partly that of verbs ע״ע; comp. Lehrg."
+      },
+      {
+       "draft": "§ 118.—Spoken in a less exact sense of",
+       "reread": "§ 118.—Spoken in a less exact sense of",
+       "status": "agreed",
+       "text": "§ 118.—Spoken in a less exact sense of"
+      },
+      {
+       "draft": "half-brothers, e. g. those born to the",
+       "reread": "half-brothers, e. g. those born to the",
+       "status": "agreed",
+       "text": "half-brothers, e. g. those born to the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1088,
+      "y": 1001,
+      "width": 884,
+      "height": 135
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r00-b03-884x135+1088+1001-x2.png",
+     "image_sha256": "cc5d4e0c504ff48880ead5bb6fd5b6ab3914190818d4db40b9a38b98fa9268cd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "same father, but of different mothers,",
+       "Gen. 42, 15. 43, 3. Judg. 9, 21; or vice"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b46dcbac-6873-4253-92a9-97e5e64f6972",
+      "duration_api_ms": 7372,
+      "cost_usd_list": 0.050153750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2199,
+      "output_tokens": 220
+     },
+     "lines": [
+      {
+       "draft": "same father, but of different mothers,",
+       "reread": "same father, but of different mothers,",
+       "status": "agreed",
+       "text": "same father, but of different mothers,"
+      },
+      {
+       "draft": "Gen. 42, 15. 43, 3. Judg. 9, 21; or vice",
+       "reread": "Gen. 42, 15. 43, 3. Judg. 9, 21; or vice",
+       "status": "agreed",
+       "text": "Gen. 42, 15. 43, 3. Judg. 9, 21; or vice"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1088,
+    "y": 1116,
+    "width": 884,
+    "height": 955
+   },
+   "draft_lines": [
+    "versa those born of the same mother, but",
+    "by different fathers, Judg. 8, 19. These,",
+    "where there is need of greater definite-",
+    "ness, are called בֶּן־אָב, בֶּן־אֵם, Gen.",
+    "49, 8. 43, 29.—Sometimes emphat.",
+    "of full brethren, by both the father's",
+    "and mother's side, Gen. 42, 4. 44, 20.",
+    "Comp. Gen. 49, 5 שִׁמְעוֹן וְלֵוִי אַחִים Simeon",
+    "and Levi are true brethren, i. e. not only",
+    "by birth but also in disposition.—The",
+    "word brother is employed by the He-",
+    "brews in other and wider senses, e. g.",
+    "2. a relative, kinsman, in any degree",
+    "of blood. Gen. 14, 16 Lot his brother, pr.",
+    "his brother's son. 13, 8. 29, 12. 15.",
+    "3. one of the same tribe, contribulis,",
+    "2 Sam. 19, 13; e. g. of the Levites, Num."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 1108,
+      "width": 884,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r01-b00-884x243+1088+1108-x2.png",
+     "image_sha256": "1e6b19ea929e6086876098851a64bef332e9aafa1aae921ecccd1ccad4b7e5de",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "versa those born of the same mother, but",
+       "by different fathers, Judg. 8, 19. These,",
+       "where there is need of greater definite-",
+       "ness, are called בֶּן־אָב, בֶּן־אֵם, Gen."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "caec540c-c92a-4309-8bb2-88a89ce56744",
+      "duration_api_ms": 9226,
+      "cost_usd_list": 0.06305375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 350
+     },
+     "lines": [
+      {
+       "draft": "versa those born of the same mother, but",
+       "reread": "versa those born of the same mother, but",
+       "status": "agreed",
+       "text": "versa those born of the same mother, but"
+      },
+      {
+       "draft": "by different fathers, Judg. 8, 19. These,",
+       "reread": "by different fathers, Judg. 8, 19. These,",
+       "status": "agreed",
+       "text": "by different fathers, Judg. 8, 19. These,"
+      },
+      {
+       "draft": "where there is need of greater definite-",
+       "reread": "where there is need of greater definite-",
+       "status": "agreed",
+       "text": "where there is need of greater definite-"
+      },
+      {
+       "draft": "ness, are called בֶּן־אָב, בֶּן־אֵם, Gen.",
+       "reread": "ness, are called בֶּן־אָב, בֶּן־אֵם, Gen.",
+       "status": "agreed",
+       "text": "ness, are called בֶּן־אָב, בֶּן־אֵם, Gen."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 1335,
+      "width": 884,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r01-b01-884x239+1088+1335-x2.png",
+     "image_sha256": "bb5785523da992bf08390d87663ca5febffba58335c38591af2aa59d0caae9c5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "49, 8. 43, 29.—Sometimes emphat.",
+       "of full brethren, by both the father's",
+       "and mother's side, Gen. 42, 4. 44, 20.",
+       "Comp. Gen. 49, 5 שִׁמְעוֹן וְלֵוִי אַחִים Simeon"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "dfabc5e8-3aa9-4253-847f-7b0f67738c9c",
+      "duration_api_ms": 8160,
+      "cost_usd_list": 0.059603750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 281
+     },
+     "lines": [
+      {
+       "draft": "49, 8. 43, 29.—Sometimes emphat.",
+       "reread": "49, 8. 43, 29.—Sometimes emphat.",
+       "status": "agreed",
+       "text": "49, 8. 43, 29.—Sometimes emphat."
+      },
+      {
+       "draft": "of full brethren, by both the father's",
+       "reread": "of full brethren, by both the father's",
+       "status": "agreed",
+       "text": "of full brethren, by both the father's"
+      },
+      {
+       "draft": "and mother's side, Gen. 42, 4. 44, 20.",
+       "reread": "and mother's side, Gen. 42, 4. 44, 20.",
+       "status": "agreed",
+       "text": "and mother's side, Gen. 42, 4. 44, 20."
+      },
+      {
+       "draft": "Comp. Gen. 49, 5 שִׁמְעוֹן וְלֵוִי אַחִים Simeon",
+       "reread": "Comp. Gen. 49, 5 שִׁמְעוֹן וְלֵוִי אַחִים Simeon",
+       "status": "agreed",
+       "text": "Comp. Gen. 49, 5 שִׁמְעוֹן וְלֵוִי אַחִים Simeon"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 1558,
+      "width": 884,
+      "height": 232
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r01-b02-884x232+1088+1558-x2.png",
+     "image_sha256": "9735bcf4f9441e09389c05524badfb1214da4189e53cb0fa89772eb5a3228160",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "and Levi are true brethren, i. e. not only",
+       "by birth but also in disposition.—The",
+       "word brother is employed by the He-",
+       "brews in other and wider senses, e. g."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "4c57ebe4-053e-4874-9164-5efd0e4ec887",
+      "duration_api_ms": 7806,
+      "cost_usd_list": 0.05655375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 236
+     },
+     "lines": [
+      {
+       "draft": "and Levi are true brethren, i. e. not only",
+       "reread": "and Levi are true brethren, i. e. not only",
+       "status": "agreed",
+       "text": "and Levi are true brethren, i. e. not only"
+      },
+      {
+       "draft": "by birth but also in disposition.—The",
+       "reread": "by birth but also in disposition.—The",
+       "status": "agreed",
+       "text": "by birth but also in disposition.—The"
+      },
+      {
+       "draft": "word brother is employed by the He-",
+       "reread": "word brother is employed by the He-",
+       "status": "agreed",
+       "text": "word brother is employed by the He-"
+      },
+      {
+       "draft": "brews in other and wider senses, e. g.",
+       "reread": "brews in other and wider senses, e. g.",
+       "status": "agreed",
+       "text": "brews in other and wider senses, e. g."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1088,
+      "y": 1774,
+      "width": 884,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r01-b03-884x240+1088+1774-x2.png",
+     "image_sha256": "89467891a534ba56422a9c8fe75ad623c3343342fdef601b4eec4c3728efa709",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. a relative, kinsman, in any degree",
+       "of blood. Gen. 14, 16 Lot his brother, pr.",
+       "his brother's son. 13, 8. 29, 12. 15.",
+       "3. one of the same tribe, contribulis,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "82e248d5-4e57-4687-b3a3-4f1ad7c9082f",
+      "duration_api_ms": 7724,
+      "cost_usd_list": 0.05855375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 260
+     },
+     "lines": [
+      {
+       "draft": "2. a relative, kinsman, in any degree",
+       "reread": "2. a relative, kinsman, in any degree",
+       "status": "agreed",
+       "text": "2. a relative, kinsman, in any degree"
+      },
+      {
+       "draft": "of blood. Gen. 14, 16 Lot his brother, pr.",
+       "reread": "of blood. Gen. 14, 16 Lot his brother, pr.",
+       "status": "agreed",
+       "text": "of blood. Gen. 14, 16 Lot his brother, pr."
+      },
+      {
+       "draft": "his brother's son. 13, 8. 29, 12. 15.",
+       "reread": "his brother's son. 13, 8. 29, 12. 15.",
+       "status": "agreed",
+       "text": "his brother's son. 13, 8. 29, 12. 15."
+      },
+      {
+       "draft": "3. one of the same tribe, contribulis,",
+       "reread": "3. one of the same tribe, contribulis,",
+       "status": "agreed",
+       "text": "3. one of the same tribe, contribulis,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 1088,
+      "y": 1998,
+      "width": 884,
+      "height": 70
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r01-b04-884x70+1088+1998-x2.png",
+     "image_sha256": "a4ed2987b5e6733bbc7108a94dd906c950296f6322da8812e78223e03dbb6410",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2 Sam. 19, 13; e. g. of the Levites, Num."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "75ee84a1-b3da-4375-879d-db5b3b77aa74",
+      "duration_api_ms": 7133,
+      "cost_usd_list": 0.04710375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1879,
+      "output_tokens": 239
+     },
+     "lines": [
+      {
+       "draft": "2 Sam. 19, 13; e. g. of the Levites, Num.",
+       "reread": "2 Sam. 19, 13; e. g. of the Levites, Num.",
+       "status": "agreed",
+       "text": "2 Sam. 19, 13; e. g. of the Levites, Num."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1088,
+    "y": 2059,
+    "width": 884,
+    "height": 891
+   },
+   "draft_lines": [
+    "8, 26. 16, 10. Neh. 3, 1.",
+    "4. a fellow-countryman, popularis,",
+    "Judg. 14, 3. Ex. 2, 11. 4, 18. Spoken also",
+    "even of kindred nations, e. g. of the",
+    "Edomites and Hebrews, Gen. 9, 25. 16,",
+    "12. 25, 18. Num. 20, 14.",
+    "5. an ally, confederate, spoken of allied",
+    "nations, as the Tyrians and Hebrews",
+    "Am. 1, 9; or those of the same religion",
+    "Is. 66, 20.",
+    "6. a friend, associate; so of the friends",
+    "of Job 6, 15, and perh. also 19, 13; of",
+    "Solomon, whom Hiram calls his brother,",
+    "1 K. 19, 13. Comp. Neh. 5, 10. 14.",
+    "7. any one of the same nature, a fel-",
+    "low-man, i. q. רֵעַ, Lev. 19, 17.—Hence"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 2051,
+      "width": 884,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r02-b00-884x239+1088+2051-x2.png",
+     "image_sha256": "31a6e9c1f14c57e198d295b7e6d71cf3353f86430ec26cd83e8c05b55e13cfce",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "8, 26. 16, 10. Neh. 3, 1.",
+       "4. a fellow-countryman, popularis,",
+       "Judg. 14, 3. Ex. 2, 11. 4, 18. Spoken also",
+       "even of kindred nations, e. g. of the"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "efaa8c3a-d1d5-4efe-b5a8-8ad56c2b1a47",
+      "duration_api_ms": 8076,
+      "cost_usd_list": 0.05885375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 266
+     },
+     "lines": [
+      {
+       "draft": "8, 26. 16, 10. Neh. 3, 1.",
+       "reread": "8, 26. 16, 10. Neh. 3, 1.",
+       "status": "agreed",
+       "text": "8, 26. 16, 10. Neh. 3, 1."
+      },
+      {
+       "draft": "4. a fellow-countryman, popularis,",
+       "reread": "4. a fellow-countryman, popularis,",
+       "status": "agreed",
+       "text": "4. a fellow-countryman, popularis,"
+      },
+      {
+       "draft": "Judg. 14, 3. Ex. 2, 11. 4, 18. Spoken also",
+       "reread": "Judg. 14, 3. Ex. 2, 11. 4, 18. Spoken also",
+       "status": "agreed",
+       "text": "Judg. 14, 3. Ex. 2, 11. 4, 18. Spoken also"
+      },
+      {
+       "draft": "even of kindred nations, e. g. of the",
+       "reread": "even of kindred nations, e. g. of the",
+       "status": "agreed",
+       "text": "even of kindred nations, e. g. of the"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 2274,
+      "width": 884,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r02-b01-884x236+1088+2274-x2.png",
+     "image_sha256": "aa128d9b042aebdfe01471b93dca7d6b009fd3272b456584d8234a351cb039a8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Edomites and Hebrews, Gen. 9, 25. 16,",
+       "12. 25, 18. Num. 20, 14.",
+       "5. an ally, confederate, spoken of allied",
+       "nations, as the Tyrians and Hebrews"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d92892ff-9f87-4e98-877e-ce28c1138817",
+      "duration_api_ms": 8130,
+      "cost_usd_list": 0.057653750000000004,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 258
+     },
+     "lines": [
+      {
+       "draft": "Edomites and Hebrews, Gen. 9, 25. 16,",
+       "reread": "Edomites and Hebrews, Gen. 9, 25. 16,",
+       "status": "agreed",
+       "text": "Edomites and Hebrews, Gen. 9, 25. 16,"
+      },
+      {
+       "draft": "12. 25, 18. Num. 20, 14.",
+       "reread": "12. 25, 18. Num. 20, 14.",
+       "status": "agreed",
+       "text": "12. 25, 18. Num. 20, 14."
+      },
+      {
+       "draft": "5. an ally, confederate, spoken of allied",
+       "reread": "5. an ally, confederate, spoken of allied",
+       "status": "agreed",
+       "text": "5. an ally, confederate, spoken of allied"
+      },
+      {
+       "draft": "nations, as the Tyrians and Hebrews",
+       "reread": "nations, as the Tyrians and Hebrews",
+       "status": "agreed",
+       "text": "nations, as the Tyrians and Hebrews"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1088,
+      "y": 2494,
+      "width": 884,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r02-b02-884x237+1088+2494-x2.png",
+     "image_sha256": "19195309e697cba1f3118a83a1ce0ae64783ec019d221938e451a00cc9c736bb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Am. 1, 9; or those of the same religion",
+       "Is. 66, 20.",
+       "6. a friend, associate; so of the friends",
+       "of Job 6, 15, and perh. also 19, 13; of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f9821129-54dd-489e-bdea-71504a83cd1c",
+      "duration_api_ms": 7576,
+      "cost_usd_list": 0.057003750000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2647,
+      "output_tokens": 245
+     },
+     "lines": [
+      {
+       "draft": "Am. 1, 9; or those of the same religion",
+       "reread": "Am. 1, 9; or those of the same religion",
+       "status": "agreed",
+       "text": "Am. 1, 9; or those of the same religion"
+      },
+      {
+       "draft": "Is. 66, 20.",
+       "reread": "Is. 66, 20.",
+       "status": "agreed",
+       "text": "Is. 66, 20."
+      },
+      {
+       "draft": "6. a friend, associate; so of the friends",
+       "reread": "6. a friend, associate; so of the friends",
+       "status": "agreed",
+       "text": "6. a friend, associate; so of the friends"
+      },
+      {
+       "draft": "of Job 6, 15, and perh. also 19, 13; of",
+       "reread": "of Job 6, 15, and perh. also 19, 13; of",
+       "status": "agreed",
+       "text": "of Job 6, 15, and perh. also 19, 13; of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1088,
+      "y": 2715,
+      "width": 884,
+      "height": 243
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r02-b03-884x243+1088+2715-x2.png",
+     "image_sha256": "39df9346d745e13268401dc4db8f1b9960a5769e0233b0fa631ec09581bc1857",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Solomon, whom Hiram calls his brother,",
+       "1 K. 19, 13. Comp. Neh. 5, 10. 14.",
+       "7. any one of the same nature, a fel-",
+       "low-man, i. q. רֵעַ, Lev. 19, 17.—Hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "75bd1702-775c-4861-94c9-35a10abd091d",
+      "duration_api_ms": 8260,
+      "cost_usd_list": 0.059153750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 272
+     },
+     "lines": [
+      {
+       "draft": "Solomon, whom Hiram calls his brother,",
+       "reread": "Solomon, whom Hiram calls his brother,",
+       "status": "agreed",
+       "text": "Solomon, whom Hiram calls his brother,"
+      },
+      {
+       "draft": "1 K. 19, 13. Comp. Neh. 5, 10. 14.",
+       "reread": "1 K. 19, 13. Comp. Neh. 5, 10. 14.",
+       "status": "agreed",
+       "text": "1 K. 19, 13. Comp. Neh. 5, 10. 14."
+      },
+      {
+       "draft": "7. any one of the same nature, a fel-",
+       "reread": "7. any one of the same nature, a fel-",
+       "status": "agreed",
+       "text": "7. any one of the same nature, a fel-"
+      },
+      {
+       "draft": "low-man, i. q. רֵעַ, Lev. 19, 17.—Hence",
+       "reread": "low-man, i. q. רֵעַ, Lev. 19, 17.—Hence",
+       "status": "agreed",
+       "text": "low-man, i. q. רֵעַ, Lev. 19, 17.—Hence"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1088,
+    "y": 2938,
+    "width": 884,
+    "height": 501
+   },
+   "draft_lines": [
+    "preceded by אִישׁ, one—the other; Gen.",
+    "13, 11 וַיִּפָּרְדוּ אִישׁ מֵעַל אָחִיו and they",
+    "separated themselves one from the other.",
+    "26, 31. This formula is applied also to",
+    "inanimate things of the same kind in the",
+    "masculine gender, just as אִשָּׁה—אֲחוֹת"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1088,
+      "y": 2930,
+      "width": 884,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r03-b00-884x240+1088+2930-x2.png",
+     "image_sha256": "c058117367f38a96af8b8a74bfe39d64fcb73623c4c4c525c0fd41cb15ed421b",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "preceded by אִישׁ, one—the other; Gen.",
+       "13, 11 וַיִּפָּרְדוּ אִישׁ מֵעַל אָחִיו and they",
+       "separated themselves one from the other.",
+       "26, 31. This formula is applied also to"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "22bacb48-e625-45bb-b4d5-2025a6bc74d5",
+      "duration_api_ms": 8622,
+      "cost_usd_list": 0.058903750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2711,
+      "output_tokens": 267
+     },
+     "lines": [
+      {
+       "draft": "preceded by אִישׁ, one—the other; Gen.",
+       "reread": "preceded by אִישׁ, one—the other; Gen.",
+       "status": "agreed",
+       "text": "preceded by אִישׁ, one—the other; Gen."
+      },
+      {
+       "draft": "13, 11 וַיִּפָּרְדוּ אִישׁ מֵעַל אָחִיו and they",
+       "reread": "13, 11 וַיִּפָּרְדוּ אִישׁ מֵעַל אָחִיו and they",
+       "status": "agreed",
+       "text": "13, 11 וַיִּפָּרְדוּ אִישׁ מֵעַל אָחִיו and they"
+      },
+      {
+       "draft": "separated themselves one from the other.",
+       "reread": "separated themselves one from the other.",
+       "status": "agreed",
+       "text": "separated themselves one from the other."
+      },
+      {
+       "draft": "26, 31. This formula is applied also to",
+       "reread": "26, 31. This formula is applied also to",
+       "status": "agreed",
+       "text": "26, 31. This formula is applied also to"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1088,
+      "y": 3154,
+      "width": 884,
+      "height": 287
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0046/pass2/c1-r03-b01-884x287+1088+3154-x2.png",
+     "image_sha256": "5085b5cad8c8448050fdbc4ef45dd8938a631bbf6ab18e39e2158457352093eb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "inanimate things of the same kind in the",
+       "masculine gender, just as אִשָּׁה—אָחוֹת"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "900d6261-69ef-4463-8c65-17e18ddd5507",
+      "duration_api_ms": 11597,
+      "cost_usd_list": 0.07590375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2903,
+      "output_tokens": 559
+     },
+     "lines": [
+      {
+       "draft": "inanimate things of the same kind in the",
+       "reread": "inanimate things of the same kind in the",
+       "status": "agreed",
+       "text": "inanimate things of the same kind in the"
+      },
+      {
+       "draft": "masculine gender, just as אִשָּׁה—אֲחוֹת",
+       "reread": "masculine gender, just as אִשָּׁה—אָחוֹת",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "masculine gender, just as אִשָּׁה—אָחוֹת",
+        "verdict": "b",
+        "note": "Under the aleph of אחות the print shows a plain qamets (horizontal bar with single descender), not a hataf patah; there is no shewa pair beside it. Reading B matches.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "38cf3cf3-50a9-4730-b7c1-51042f05137d",
+        "duration_api_ms": 22840,
+        "cost_usd_list": 0.10699475,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3579,
+        "cache_creation_input_tokens": 2835,
+        "output_tokens": 1208
+       },
+       "text": "masculine gender, just as אִשָּׁה—אָחוֹת"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אזר 30 אח",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אזר",
+   "status": "draft_only",
+   "draft": "אזר",
+   "reread": null,
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאְזְרֵנִי",
+   "status": "adjudicated",
+   "draft": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאַזְרֵנִי",
+   "reread": "* אָזַר fut. יֶאְזֹר Jer. 1, 17, c. suff. יַאְזְרֵנִי",
+   "verdict": "b",
+   "note": "Under the aleph of the last word the print shows two vertically stacked dots (shva), not a horizontal patach stroke, so the form is יַאְזְרֵנִי (patach only under the yod), matching Reading B; all other items in the two readings are identical and match the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Job 30, 18, to gird, to bind around;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "also to gird oneself, to be girded. Arab.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "أَزَرَ to be strong, robust, but doubtful",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "whether also pr. to be girded; Conj. II",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "to gird, Conj. III to strengthen, to aid.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Kindred roots, which all have the force",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "of binding around or together, girding,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "surrounding, are אָסַר, אָצַר [אָצַל], עָצַר,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "גָּדַר, חָדַר, חָצַר; עָזַר, עָטַר. — Spoken:",
+   "status": "adjudicated",
+   "draft": "גָּדַר, חָדַר, חָצַר; עָזַר, עָטַר. — Spoken:",
+   "reread": "עָטַר, עָזַר; חָצַר, חָדַר, גָּדַר. — Spoken :",
+   "verdict": "neither",
+   "note": "Printed visual order (left→right) is עָטַר, עָזַר; חָצַר, חָדַר, גָּדַר — a single RTL run, so in logical order the first word is גָּדַר (with dagesh in gimel, as printed) and the last is עָטַר, i.e. Reading A's word order; Reading B has simply copied the visual order and would render reversed. But the print has a space before the colon (\"Spoken :\"), as in B. All vowels (qamets + patach in every word) match both readings.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "a) Of a garment with which one is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "girded, c. acc. of pers. Job 30, 18. b)",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "With acc. of the member girded, Job 38,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "3 אֱזָר־נָא חֲלָצֶיךָ gird up now thy loins.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "40, 2. Jer. 1, 17. c) With acc. of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "girdle or garment with which one is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "girded, only trop. 1 Sam. 2, 4 אָזְרוּ חָיִל",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "they gird on strength.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Niph. part. נֶאְזָר girded Ps. 65, 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Piel to gird, with acc. of pers. and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "also of the girdle, Ps. 18, 33. 40 וַתְּאַזְּרֵנִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "חַיִל לַמִּלְחָמָה thou hast girded me with",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "strength for the battle. 30, 12 וַתְּאַזְּרֵנִי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "שִׂמְחָה thou hast girded [or surrounded]",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "me with gladness. Is. 50, 11 מְאַזְּרֵי זִיקוֹת",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "girded i. e. armed with burning wea-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pons.—For the construction of such",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "verbs with two accusatives, see Lehrg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "§ 219. 1. Heb. Gr. § 136. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hithpa. to gird oneself, e. g. for bat-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "tle, to arm oneself, Is. 8, 9; c. acc. trop.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Ps. 93, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Deriv. אֵזוֹר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֶזְרוֹעַ i. q. זְרוֹעַ, the arm, (Aleph",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "prosthet. see p. 1,) Jer. 32, 21. Job 31,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "22.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֶזְרָח m. for זֶרַח with Aleph pros-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "thetic. R. זָרַח no. 2. c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. a native tree, growing in its own",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "soil, not transplanted, Ps. 37, 35.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "2. Of persons, a native, one born in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "the country, not a foreigner, Lev. 16,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "29. 18, 26. al.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֶזְרָחִי patronym. an Ezrahite, one",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "of the descendants of Ezrah, אֶזְרָח;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "spoken of Ethan, 1 K. 5, 11 [4, 31]. Ps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "89, 1; also of Heman Ps. 88, 1. In",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "1 Chr. 2, 6 both these are said to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "descendants of Zerah, זֶרַח, the son of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Judah; so that we may regard אֶזְרָח as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "another form of the same name, found",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "only in the patronymic.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "* I. אָח constr. אֲחִי, c. suff. אָחִי (my",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "brother), אָחִיךָ, אֲחִיכֶם; Plur. אַחִים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "(Dag. impl.) constr. אֲחֵי, c. suff. אַחֶיךָ,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אֲחָיו,",
+   "status": "adjudicated",
+   "draft": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אַחָיו,",
+   "reread": "אֲחֵיכֶם, c. suff. 3 pers. אֶחָיו for אֲחָיו,",
+   "verdict": "b",
+   "note": "Under the aleph of the final word the print shows a compound point (two shewa dots plus a short bar), i.e. hataf patah אֲ, not a plain patah אַ; so Reading B is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "comp. Lehrg. p. 602.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. a brother, undoubtedly a primitive",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "word, Arab. أَخٌ, st. constr. أَخُو, أَخِى,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "أَخَا; Syr. ܐܰܚܳܐ, Chald. אַח. It follows",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "partly the analogy of verbs ל״ה, and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "partly that of verbs ע״ע; comp. Lehrg.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "§ 118.—Spoken in a less exact sense of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "half-brothers, e. g. those born to the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "same father, but of different mothers,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Gen. 42, 15. 43, 3. Judg. 9, 21; or vice",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "versa those born of the same mother, but",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "by different fathers, Judg. 8, 19. These,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "where there is need of greater definite-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ness, are called בֶּן־אָב, בֶּן־אֵם, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "49, 8. 43, 29.—Sometimes emphat.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of full brethren, by both the father's",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and mother's side, Gen. 42, 4. 44, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Comp. Gen. 49, 5 שִׁמְעוֹן וְלֵוִי אַחִים Simeon",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and Levi are true brethren, i. e. not only",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "by birth but also in disposition.—The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "word brother is employed by the He-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "brews in other and wider senses, e. g.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2. a relative, kinsman, in any degree",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of blood. Gen. 14, 16 Lot his brother, pr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "his brother's son. 13, 8. 29, 12. 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "3. one of the same tribe, contribulis,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "2 Sam. 19, 13; e. g. of the Levites, Num.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "8, 26. 16, 10. Neh. 3, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "4. a fellow-countryman, popularis,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Judg. 14, 3. Ex. 2, 11. 4, 18. Spoken also",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "even of kindred nations, e. g. of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Edomites and Hebrews, Gen. 9, 25. 16,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "12. 25, 18. Num. 20, 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "5. an ally, confederate, spoken of allied",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "nations, as the Tyrians and Hebrews",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Am. 1, 9; or those of the same religion",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Is. 66, 20.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "6. a friend, associate; so of the friends",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "of Job 6, 15, and perh. also 19, 13; of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Solomon, whom Hiram calls his brother,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "1 K. 19, 13. Comp. Neh. 5, 10. 14.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "7. any one of the same nature, a fel-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "low-man, i. q. רֵעַ, Lev. 19, 17.—Hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "preceded by אִישׁ, one—the other; Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "13, 11 וַיִּפָּרְדוּ אִישׁ מֵעַל אָחִיו and they",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "separated themselves one from the other.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "26, 31. This formula is applied also to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "inanimate things of the same kind in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "masculine gender, just as אִשָּׁה—אָחוֹת",
+   "status": "adjudicated",
+   "draft": "masculine gender, just as אִשָּׁה—אֲחוֹת",
+   "reread": "masculine gender, just as אִשָּׁה—אָחוֹת",
+   "verdict": "b",
+   "note": "Under the aleph of אחות the print shows a plain qamets (horizontal bar with single descender), not a hataf patah; there is no shewa pair beside it. Reading B matches.",
+   "needs_review": false
+  }
+ ],
+ "counts": {
+  "agreed": 103,
+  "adjudicated": 4,
+  "draft_only": 1,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 2
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 2.345
+}

@@ -1,0 +1,2753 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 38,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0038.png",
+ "raster_sha256": "5593a78242327f48e0ade1939eb0aa9b944d6b9fd589d961b698c513e8494667",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0038.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:22:40+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 235,
+    "y": 99,
+    "width": 1769,
+    "height": 71
+   },
+   "draft_lines": [
+    "אול",
+    "22",
+    "אול"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 235,
+      "y": 97,
+      "width": 1769,
+      "height": 76
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/header-b00-1769x76+235+97-x2.png",
+     "image_sha256": "3bb81d4a204c3cc0217921f7bc9ee12de765e06ca76de8196a1c98a97eca4cf0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אול 22 אול"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "831da127-04c6-40c9-b895-68313a6370e0",
+      "duration_api_ms": 3051,
+      "cost_usd_list": 0.043902500000000004,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1882,
+      "output_tokens": 181
+     },
+     "lines": [
+      {
+       "draft": "אול 22 אול",
+       "reread": "אול 22 אול",
+       "status": "agreed",
+       "text": "אול 22 אול"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 235,
+    "y": 150,
+    "width": 876,
+    "height": 901
+   },
+   "draft_lines": [
+    "the verb, but of wide extent in the",
+    "derivatives.",
+    "1. Pr. to roll, to twist, to twirl, as in",
+    "kindr. חוּל, חִיל, גִּיל, גָּלַל; comp. εἰλέω,",
+    "εἰλύω, ἴλλω, and see below under r. גָּלַל.—",
+    "Hence אַיִל a ram, from his twisted",
+    "horns ; also אוּל belly.",
+    "2. Trop. to be strong, stout, powerful ;",
+    "for the connection comp. in חוּל and חִיל.",
+    "—Hence אֵל the Strong One, God ; אֵלָה",
+    "terebinth, q. d. the strong tree ; אַלּוֹן",
+    "an oak, Lat. robur ; also אֱיָל, אֱיָלוּת,",
+    "strength, aid.",
+    "3. Trop. to be first, foremost, chief,",
+    "from the notion of strength and power ;"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 235,
+      "y": 142,
+      "width": 876,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r00-b00-876x246+235+142-x2.png",
+     "image_sha256": "ee173a14b1368181c2ef2a96e00ab9b26cfc4bb25ca3fe6f123b9cb5c6e1098c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the verb, but of wide extent in the",
+       "derivatives.",
+       "1. Pr. to roll, to twist, to twirl, as in"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5b1ba9a5-db3f-42a2-abc8-a6004379e6de",
+      "duration_api_ms": 8637,
+      "cost_usd_list": 0.058213249999999994,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "the verb, but of wide extent in the",
+       "reread": "the verb, but of wide extent in the",
+       "status": "agreed",
+       "text": "the verb, but of wide extent in the"
+      },
+      {
+       "draft": "derivatives.",
+       "reread": "derivatives.",
+       "status": "agreed",
+       "text": "derivatives."
+      },
+      {
+       "draft": "1. Pr. to roll, to twist, to twirl, as in",
+       "reread": "1. Pr. to roll, to twist, to twirl, as in",
+       "status": "agreed",
+       "text": "1. Pr. to roll, to twist, to twirl, as in"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 235,
+      "y": 372,
+      "width": 876,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r00-b01-876x236+235+372-x2.png",
+     "image_sha256": "1b49f9dfa0eed9df35810d5fa8dc29823880c58648f1fae716f19cc1260faa36",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "kindr. חוּל, חִיל, גִּיל, גָּלַל; comp. εἰλέω,",
+       "εἰλύω, ἴλλω, and see below under r. גָּלַל.—",
+       "Hence אַיִל a ram, from his twisted",
+       "horns; also אוּל belly."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "6c6ba3d6-5f78-4616-b365-0f675e9fcca9",
+      "duration_api_ms": 12453,
+      "cost_usd_list": 0.07227575,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 556
+     },
+     "lines": [
+      {
+       "draft": "kindr. חוּל, חִיל, גִּיל, גָּלַל; comp. εἰλέω,",
+       "reread": "kindr. חוּל, חִיל, גִּיל, גָּלַל; comp. εἰλέω,",
+       "status": "agreed",
+       "text": "kindr. חוּל, חִיל, גִּיל, גָּלַל; comp. εἰλέω,"
+      },
+      {
+       "draft": "εἰλύω, ἴλλω, and see below under r. גָּלַל.—",
+       "reread": "εἰλύω, ἴλλω, and see below under r. גָּלַל.—",
+       "status": "agreed",
+       "text": "εἰλύω, ἴλλω, and see below under r. גָּלַל.—"
+      },
+      {
+       "draft": "Hence אַיִל a ram, from his twisted",
+       "reread": "Hence אַיִל a ram, from his twisted",
+       "status": "agreed",
+       "text": "Hence אַיִל a ram, from his twisted"
+      },
+      {
+       "draft": "horns ; also אוּל belly.",
+       "reread": "horns; also אוּל belly.",
+       "status": "agreed",
+       "text": "horns; also אוּל belly."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 235,
+      "y": 592,
+      "width": 876,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r00-b02-876x236+235+592-x2.png",
+     "image_sha256": "b3b8ee2d262786b651bec1a64b7dac0c21f1ce1408f227340d69ef23436e741c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Trop. to be strong, stout, powerful ;",
+       "for the connection comp. in חוּל and חַיִל.",
+       "—Hence אֵל the Strong One, God ; אֵלָה",
+       "terebinth, q. d. the strong tree ; אַלּוֹן"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "891af670-dd84-4fc7-b583-93b189f80955",
+      "duration_api_ms": 10885,
+      "cost_usd_list": 0.06667575,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2626,
+      "output_tokens": 444
+     },
+     "lines": [
+      {
+       "draft": "2. Trop. to be strong, stout, powerful ;",
+       "reread": "2. Trop. to be strong, stout, powerful ;",
+       "status": "agreed",
+       "text": "2. Trop. to be strong, stout, powerful;"
+      },
+      {
+       "draft": "for the connection comp. in חוּל and חִיל.",
+       "reread": "for the connection comp. in חוּל and חַיִל.",
+       "status": "adjudicated",
+       "band_id": "c0-r00-b02",
+       "judgement": {
+        "text": "for the connection comp. in חוּל and חַיִל.",
+        "verdict": "b",
+        "note": "The last word carries two points: a patach under the ḥet and a ḥireq dot under the yod — it is חַיִל (ḥayil), not חִיל; the first word is plene חוּל with shureq.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "190fbd3b-150d-41ef-92d4-7b1cbf9a6c52",
+        "duration_api_ms": 9933,
+        "cost_usd_list": 0.06077375,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3565,
+        "cache_creation_input_tokens": 2546,
+        "output_tokens": 358
+       },
+       "text": "for the connection comp. in חוּל and חַיִל."
+      },
+      {
+       "draft": "—Hence אֵל the Strong One, God ; אֵלָה",
+       "reread": "—Hence אֵל the Strong One, God ; אֵלָה",
+       "status": "agreed",
+       "text": "—Hence אֵל the Strong One, God; אֵלָה"
+      },
+      {
+       "draft": "terebinth, q. d. the strong tree ; אַלּוֹן",
+       "reread": "terebinth, q. d. the strong tree ; אַלּוֹן",
+       "status": "agreed",
+       "text": "terebinth, q. d. the strong tree; אַלּוֹן"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 235,
+      "y": 812,
+      "width": 876,
+      "height": 247
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r00-b03-876x247+235+812-x2.png",
+     "image_sha256": "a75007075c088879758966f37ba169292453741deb299aa300f482ee61878e89",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "an oak, Lat. robur ; also אֱיָל, אֱיָלוּת,",
+       "strength, aid.",
+       "3. Trop. to be first, foremost, chief,",
+       "from the notion of strength and power ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8914a071-b71e-4780-8cf2-19e66672019d",
+      "duration_api_ms": 12305,
+      "cost_usd_list": 0.07021325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2689,
+      "output_tokens": 499
+     },
+     "lines": [
+      {
+       "draft": "an oak, Lat. robur ; also אֱיָל, אֱיָלוּת,",
+       "reread": "an oak, Lat. robur ; also אֱיָל, אֱיָלוּת,",
+       "status": "agreed",
+       "text": "an oak, Lat. robur; also אֱיָל, אֱיָלוּת,"
+      },
+      {
+       "draft": "strength, aid.",
+       "reread": "strength, aid.",
+       "status": "agreed",
+       "text": "strength, aid."
+      },
+      {
+       "draft": "3. Trop. to be first, foremost, chief,",
+       "reread": "3. Trop. to be first, foremost, chief,",
+       "status": "agreed",
+       "text": "3. Trop. to be first, foremost, chief,"
+      },
+      {
+       "draft": "from the notion of strength and power ;",
+       "reread": "from the notion of strength and power ;",
+       "status": "agreed",
+       "text": "from the notion of strength and power;"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 235,
+    "y": 1039,
+    "width": 876,
+    "height": 915
+   },
+   "draft_lines": [
+    "so Arab. أَوَّلَ to be foremost, to come out",
+    "first, أَوَّلُ first, primus, (pr. princeps, like",
+    "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלִים",
+    "אֵילִים, the mighty, the chief, אוּלָם the",
+    "front part, q. v. אַיִל no. 2, and אֵילָם, a",
+    "projection on a building ; אַיֶּלֶת no. 3, the",
+    "first place, rank.",
+    "אוּל m. 1. the belly, body, pr. a roll,",
+    "roller, from the round form ; r. אוּל no. 1.",
+    "Ps. 73, 4. Arab. أَأْلٌ, آلٌ.",
+    "2. Plur. the mighty, the powerful, the",
+    "chief. 2 K. 24, 15 Cheth. אוּלֵי הָאָרֶץ",
+    "the chief of the land. The Keri has the",
+    "more usual form אֵילֵי. R. אוּל no. 3."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 235,
+      "y": 1031,
+      "width": 876,
+      "height": 263
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r01-b00-876x263+235+1031-x2.png",
+     "image_sha256": "1b0f7c914c32aaaf4ddc80a76a9dd05407e115ce4e04b37392fa3abeca1d539f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "so Arab. أَوَلَ to be foremost, to come out",
+       "first, أَوَّلُ first, primus, (pr. princeps, like",
+       "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלָם"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "95176b00-365f-4566-a466-be570a619079",
+      "duration_api_ms": 13140,
+      "cost_usd_list": 0.07588349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 596
+     },
+     "lines": [
+      {
+       "draft": "so Arab. أَوَّلَ to be foremost, to come out",
+       "reread": "so Arab. أَوَلَ to be foremost, to come out",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "so Arab. أَوَلَ to be foremost, to come out",
+        "verdict": "b",
+        "note": "Above the waw in line 1 only a single oblique stroke (fatha) is printed, no shadda — contrast line 2, where the waw clearly carries the w-shaped shadda plus fatha. So the printed form is أَوَلَ (Reading B), not أَوَّلَ.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5bcd6b1e-dd43-4206-a64f-d803eaa5ec5d",
+        "duration_api_ms": 14850,
+        "cost_usd_list": 0.078853,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3572,
+        "cache_creation_input_tokens": 2680,
+        "output_tokens": 685
+       },
+       "text": "so Arab. أَوَلَ to be foremost, to come out"
+      },
+      {
+       "draft": "first, أَوَّلُ first, primus, (pr. princeps, like",
+       "reread": "first, أَوَّلُ first, primus, (pr. princeps, like",
+       "status": "agreed",
+       "text": "first, أَوَّلُ first, primus, (pr. princeps, like"
+      },
+      {
+       "draft": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלִים",
+       "reread": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלָם",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b00",
+       "judgement": {
+        "text": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלִים",
+        "verdict": "a",
+        "note": "Final word is printed plene אוּלִים (hireq under lamed, yod, final mem), not אוּלָם; Reading A is correct.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "53c1a7ee-f8ae-4e5d-b21b-9cc9225445af",
+        "duration_api_ms": 11181,
+        "cost_usd_list": 0.06364975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3599,
+        "cache_creation_input_tokens": 2707,
+        "output_tokens": 370
+       },
+       "text": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלִים"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 235,
+      "y": 1278,
+      "width": 876,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r01-b01-876x235+235+1278-x2.png",
+     "image_sha256": "977e9af9b41f6d941748b68420b9482ea180a4c807803bcd9fad460e393af315",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֵילִים, the mighty, the chief, אוּלָם the",
+       "front part, q. v. אַיִל no. 2, and אֵילָם, a",
+       "projection on a building ; אוּלֶּת no. 3, the",
+       "first place, rank."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "96b64a63-7909-4e52-8775-00335fe70674",
+      "duration_api_ms": 16425,
+      "cost_usd_list": 0.08280850000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 766
+     },
+     "lines": [
+      {
+       "draft": "אֵילִים, the mighty, the chief, אוּלָם the",
+       "reread": "אֵילִים, the mighty, the chief, אוּלָם the",
+       "status": "agreed",
+       "text": "אֵילִים, the mighty, the chief, אוּלָם the"
+      },
+      {
+       "draft": "front part, q. v. אַיִל no. 2, and אֵילָם, a",
+       "reread": "front part, q. v. אַיִל no. 2, and אֵילָם, a",
+       "status": "agreed",
+       "text": "front part, q. v. אַיִל no. 2, and אֵילָם, a"
+      },
+      {
+       "draft": "projection on a building ; אַיֶּלֶת no. 3, the",
+       "reread": "projection on a building ; אוּלֶּת no. 3, the",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b01",
+       "judgement": {
+        "text": "projection on a building ; אַוֶּלֶת no. 3, the",
+        "verdict": "neither",
+        "note": "The letter after aleph is a full-height vav with a dot inside it (not a short yod as in A), but it also carries a segol beneath it and the lamed carries a plain segol with no dagesh (unlike B); the aleph has a patah. So neither reading matches: the printed word is אַוֶּלֶת.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "61a6432d-a4f3-429a-b4ce-8d2bab687de9",
+        "duration_api_ms": 52142,
+        "cost_usd_list": 0.20844825,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2555,
+        "output_tokens": 3308
+       },
+       "text": "projection on a building; אַוֶּלֶת no. 3, the"
+      },
+      {
+       "draft": "first place, rank.",
+       "reread": "first place, rank.",
+       "status": "agreed",
+       "text": "first place, rank."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 235,
+      "y": 1497,
+      "width": 876,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r01-b02-876x234+235+1497-x2.png",
+     "image_sha256": "2e18498992ab08299d570ae7d28035a424f722a2fc55e3737c610b4ec88c2182",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּל m. 1. the belly, body, pr. a roll,",
+       "roller, from the round form ; r. אוּל no. 1.",
+       "Ps. 73, 4. Arab. ألٌّ, آلٌ."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "fe729406-685b-4c78-aa88-7989e4fe91b3",
+      "duration_api_ms": 22659,
+      "cost_usd_list": 0.09915850000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 1093
+     },
+     "lines": [
+      {
+       "draft": "אוּל m. 1. the belly, body, pr. a roll,",
+       "reread": "אוּל m. 1. the belly, body, pr. a roll,",
+       "status": "agreed",
+       "text": "אוּל m. 1. the belly, body, pr. a roll,"
+      },
+      {
+       "draft": "roller, from the round form ; r. אוּל no. 1.",
+       "reread": "roller, from the round form ; r. אוּל no. 1.",
+       "status": "agreed",
+       "text": "roller, from the round form; r. אוּל no. 1."
+      },
+      {
+       "draft": "Ps. 73, 4. Arab. أَأْلٌ, آلٌ.",
+       "reread": "Ps. 73, 4. Arab. ألٌّ, آلٌ.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "Ps. 73, 4. Arab. اأْلٌ, آلٌ.",
+        "verdict": "neither",
+        "note": "Two alifs are printed before the lām (B's single-alif ألٌّ with shadda is wrong), but only the second alif carries a hamza/sukūn and the lām a tanwīn ḍamma; no fatḥa or hamza is printed on the first alif, so A over-points it. آلٌ matches both.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "49bece37-8bcf-42e1-9aaf-4a85904bbfba",
+        "duration_api_ms": 27633,
+        "cost_usd_list": 0.11839125,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3585,
+        "cache_creation_input_tokens": 2567,
+        "output_tokens": 1502
+       },
+       "text": "Ps. 73, 4. Arab. اأْلٌ, آلٌ."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 235,
+      "y": 1715,
+      "width": 876,
+      "height": 234
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r01-b03-876x234+235+1715-x2.png",
+     "image_sha256": "81c507979287e8ca535be24e496f04409f21794b9a1127188986263e6f56a9c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "2. Plur. the mighty, the powerful, the",
+       "chief. 2 K. 24, 15 Cheth. אוּלֵי הָאָרֶץ",
+       "the chief of the land. The Keri has the",
+       "more usual form אֵילֵי. R. אוּל no. 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "82d3ef66-e2fb-4aa4-9d3c-9afb9636cf42",
+      "duration_api_ms": 12906,
+      "cost_usd_list": 0.07565849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 623
+     },
+     "lines": [
+      {
+       "draft": "2. Plur. the mighty, the powerful, the",
+       "reread": "2. Plur. the mighty, the powerful, the",
+       "status": "agreed",
+       "text": "2. Plur. the mighty, the powerful, the"
+      },
+      {
+       "draft": "chief. 2 K. 24, 15 Cheth. אוּלֵי הָאָרֶץ",
+       "reread": "chief. 2 K. 24, 15 Cheth. אוּלֵי הָאָרֶץ",
+       "status": "agreed",
+       "text": "chief. 2 K. 24, 15 Cheth. אוּלֵי הָאָרֶץ"
+      },
+      {
+       "draft": "the chief of the land. The Keri has the",
+       "reread": "the chief of the land. The Keri has the",
+       "status": "agreed",
+       "text": "the chief of the land. The Keri has the"
+      },
+      {
+       "draft": "more usual form אֵילֵי. R. אוּל no. 3.",
+       "reread": "more usual form אֵילֵי. R. אוּל no. 3.",
+       "status": "agreed",
+       "text": "more usual form אֵילֵי. R. אוּל no. 3."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 235,
+    "y": 1942,
+    "width": 876,
+    "height": 860
+   },
+   "draft_lines": [
+    "I. אוּלַי compounded from אוֹ constr.",
+    "אוֹ, and לַי i. q. לֵי, לָא, לֹא, not; comp.",
+    "לוּלֵי, אַחֲלַי.",
+    "1. if not, unless, once Num. 22, 33",
+    "אוּלַי נָטְתָה מִפָּנַי וגו׳ unless she had turn-",
+    "ed from me, surely now I had slain thee.",
+    "Sept. εἰ μή. Aben Ezra well לוּלֵי.",
+    "2. whether not, Is. 47, 12; and hence",
+    "ellipt. [who knows] whether not, i. e. per-",
+    "haps, peradventure, expressing doubt,",
+    "fear, Gen. 24, 5. 27, 12. Josh. 9, 7; and",
+    "also hope, Gen. 16, 2. Am. 5, 15.—Hos.",
+    "8, 7 the stalk shall yield no meal, אוּלַי",
+    "יַעֲשֶׂה זָרִים יִבְלָעֻהוּ [or if] perhaps it",
+    "yield, strangers shall devour it. Jer. 21, 2."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 235,
+      "y": 1948,
+      "width": 876,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r02-b00-876x237+235+1948-x2.png",
+     "image_sha256": "68822c589c4b7ecd22a54dd367bb0363c355178f93c07e1b454c427cd3992dfd",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "I. אוּלַי compounded from אַי constr.",
+       "אוֹ, and לַי i. q. לַי, לֵא, לָא, not; comp.",
+       "אַחֲלֵי, לוּלֵי.",
+       "1. if not, unless, once Num. 22, 33"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "50ca21fd-678d-447c-9427-1c1d04839a18",
+      "duration_api_ms": 27970,
+      "cost_usd_list": 0.1311085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 1732
+     },
+     "lines": [
+      {
+       "draft": "I. אוּלַי compounded from אוֹ constr.",
+       "reread": "I. אוּלַי compounded from אַי constr.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "I. אוּלַי compounded from אַי constr.",
+        "verdict": "b",
+        "note": "The word after \"from\" is printed aleph + patach + yod (אַי), not אוֹ; the אוֹ belongs to the start of line 2 (\"constr. אוֹ, and לַי\"). Reading B matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0a087b2c-1e35-4e5d-80c6-24de8d0bee58",
+        "duration_api_ms": 11014,
+        "cost_usd_list": 0.06497675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3567,
+        "cache_creation_input_tokens": 2549,
+        "output_tokens": 441
+       },
+       "text": "I. אוּלַי compounded from אַי constr."
+      },
+      {
+       "draft": "אוֹ, and לַי i. q. לֵי, לָא, לֹא, not; comp.",
+       "reread": "אוֹ, and לַי i. q. לַי, לֵא, לָא, not; comp.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "אוֹ, and לַי i. q. לַי, לֵא, לָא, not; comp.",
+        "verdict": "b",
+        "note": "After \"i. q.\" the three items are printed לַי (patach + yod), לֵא (tsere + aleph), לָא (qamets + aleph); the last has a qamets, not a holem, so Reading A's לֵי / לֹא sequence is wrong.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "b60625e2-7fcc-43da-bef1-828c1de37b45",
+        "duration_api_ms": 12135,
+        "cost_usd_list": 0.0714735,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3594,
+        "cache_creation_input_tokens": 2576,
+        "output_tokens": 560
+       },
+       "text": "אוֹ, and לַי i. q. לַי, לֵא, לָא, not; comp."
+      },
+      {
+       "draft": "לוּלֵי, אַחֲלַי.",
+       "reread": "אַחֲלֵי, לוּלֵי.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b00",
+       "judgement": {
+        "text": "אַחֲלֵי, לוּלֵי.",
+        "verdict": "b",
+        "note": "Printed left-to-right order is אַחֲלֵי first, then לוּלֵי; the lamed in אַחֲלֵי carries tsere (two dots), not patah. Reading A reverses the items and mis-points the lamed.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "0834c47c-3f73-41d9-ade6-7c24f1ff9a35",
+        "duration_api_ms": 12531,
+        "cost_usd_list": 0.06931599999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3564,
+        "cache_creation_input_tokens": 2546,
+        "output_tokens": 529
+       },
+       "text": "אַחֲלֵי, לוּלֵי."
+      },
+      {
+       "draft": "1. if not, unless, once Num. 22, 33",
+       "reread": "1. if not, unless, once Num. 22, 33",
+       "status": "agreed",
+       "text": "1. if not, unless, once Num. 22, 33"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 235,
+      "y": 2169,
+      "width": 876,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r02-b01-876x241+235+2169-x2.png",
+     "image_sha256": "9e3aaa8ca19510957689e6a2517dabb7c6894e1548686c719363be562098de19",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אוּלַי נָטְתָה מִפָּנַי וגו׳ unless she had turn-",
+       "ed from me, surely now I had slain thee.",
+       "Sept. εἰ μή. Aben Ezra well לוּלֵי.",
+       "2. whether not, Is. 47, 12; and hence"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8c00e3aa-0e60-4fc7-90ac-4e0f9b317bf8",
+      "duration_api_ms": 12953,
+      "cost_usd_list": 0.072696,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2691,
+      "output_tokens": 548
+     },
+     "lines": [
+      {
+       "draft": "אוּלַי נָטְתָה מִפָּנַי וגו׳ unless she had turn-",
+       "reread": "אוּלַי נָטְתָה מִפָּנַי וגו׳ unless she had turn-",
+       "status": "agreed",
+       "text": "אוּלַי נָטְתָה מִפָּנַי וגו׳ unless she had turn-"
+      },
+      {
+       "draft": "ed from me, surely now I had slain thee.",
+       "reread": "ed from me, surely now I had slain thee.",
+       "status": "agreed",
+       "text": "ed from me, surely now I had slain thee."
+      },
+      {
+       "draft": "Sept. εἰ μή. Aben Ezra well לוּלֵי.",
+       "reread": "Sept. εἰ μή. Aben Ezra well לוּלֵי.",
+       "status": "agreed",
+       "text": "Sept. εἰ μή. Aben Ezra well לוּלֵי."
+      },
+      {
+       "draft": "2. whether not, Is. 47, 12; and hence",
+       "reread": "2. whether not, Is. 47, 12; and hence",
+       "status": "agreed",
+       "text": "2. whether not, Is. 47, 12; and hence"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 235,
+      "y": 2394,
+      "width": 876,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r02-b02-876x237+235+2394-x2.png",
+     "image_sha256": "3c7fda35d8c793ba62aab16d6e93d884eaaa038d34cb5e01adf7a05437f12c25",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ellipt. [who knows] whether not, i. e. per-",
+       "haps, peradventure, expressing doubt,",
+       "fear, Gen. 24, 5. 27, 12. Josh. 9, 7; and",
+       "also hope, Gen. 16, 2. Am. 5, 15.—Hos."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "36591259-33ac-44a2-9cc6-9e3fe98feb4f",
+      "duration_api_ms": 8495,
+      "cost_usd_list": 0.0583085,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 276
+     },
+     "lines": [
+      {
+       "draft": "ellipt. [who knows] whether not, i. e. per-",
+       "reread": "ellipt. [who knows] whether not, i. e. per-",
+       "status": "agreed",
+       "text": "ellipt. [who knows] whether not, i. e. per-"
+      },
+      {
+       "draft": "haps, peradventure, expressing doubt,",
+       "reread": "haps, peradventure, expressing doubt,",
+       "status": "agreed",
+       "text": "haps, peradventure, expressing doubt,"
+      },
+      {
+       "draft": "fear, Gen. 24, 5. 27, 12. Josh. 9, 7; and",
+       "reread": "fear, Gen. 24, 5. 27, 12. Josh. 9, 7; and",
+       "status": "agreed",
+       "text": "fear, Gen. 24, 5. 27, 12. Josh. 9, 7; and"
+      },
+      {
+       "draft": "also hope, Gen. 16, 2. Am. 5, 15.—Hos.",
+       "reread": "also hope, Gen. 16, 2. Am. 5, 15.—Hos.",
+       "status": "agreed",
+       "text": "also hope, Gen. 16, 2. Am. 5, 15.—Hos."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 235,
+      "y": 2615,
+      "width": 876,
+      "height": 181
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r02-b03-876x181+235+2615-x2.png",
+     "image_sha256": "628b7205d2a5b06d40d71d1dc1a11b784d349326623585cc5e015f5c196d7478",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "8, 7 the stalk shall yield no meal, אוּלַי",
+       "יַעֲשֶׂה זָרִים יִבְלָעֻהוּ [or if] perhaps it",
+       "yield, strangers shall devour it. Jer. 21, 2."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8506adf9-4d1b-4dc9-83a6-1df66840a39d",
+      "duration_api_ms": 9554,
+      "cost_usd_list": 0.0719585,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2376,
+      "output_tokens": 612
+     },
+     "lines": [
+      {
+       "draft": "8, 7 the stalk shall yield no meal, אוּלַי",
+       "reread": "8, 7 the stalk shall yield no meal, אוּלַי",
+       "status": "agreed",
+       "text": "8, 7 the stalk shall yield no meal, אוּלַי"
+      },
+      {
+       "draft": "יַעֲשֶׂה זָרִים יִבְלָעֻהוּ [or if] perhaps it",
+       "reread": "יַעֲשֶׂה זָרִים יִבְלָעֻהוּ [or if] perhaps it",
+       "status": "agreed",
+       "text": "יַעֲשֶׂה זָרִים יִבְלָעֻהוּ [or if] perhaps it"
+      },
+      {
+       "draft": "yield, strangers shall devour it. Jer. 21, 2.",
+       "reread": "yield, strangers shall devour it. Jer. 21, 2.",
+       "status": "agreed",
+       "text": "yield, strangers shall devour it. Jer. 21, 2."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 235,
+    "y": 2790,
+    "width": 876,
+    "height": 460
+   },
+   "draft_lines": [
+    "—In like manner Arab. لَعَلَّ and عَلَّ",
+    "perhaps, is pr. whether not, ellipt. As to",
+    "its origin, for أَنْ, and its various forms",
+    "and use, see De Sacy Gramm. Arabe 1.",
+    "§ 867, and note. More nearly corre-",
+    "sponding are the Talmudic particles שֶׁמָּא",
+    "and דִּילְמָא pr. whether not, annon, then"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 235,
+      "y": 2796,
+      "width": 876,
+      "height": 281
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r03-b00-876x281+235+2796-x2.png",
+     "image_sha256": "782bbd541c57dd41f649686699e65c9b3eb411a7ba854d2dc7f798de68e421f1",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "—In like manner Arab. لَعَلَّ and عَلَّ",
+       "perhaps, is pr. whether not, ellipt. As to",
+       "its origin, for أَنْ, and its various forms",
+       "and use, see De Sacy Gramm. Arabe 1."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "df981f18-e339-49fa-a24b-506d32ee8992",
+      "duration_api_ms": 10398,
+      "cost_usd_list": 0.06760849999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2880,
+      "output_tokens": 399
+     },
+     "lines": [
+      {
+       "draft": "—In like manner Arab. لَعَلَّ and عَلَّ",
+       "reread": "—In like manner Arab. لَعَلَّ and عَلَّ",
+       "status": "agreed",
+       "text": "—In like manner Arab. لَعَلَّ and عَلَّ"
+      },
+      {
+       "draft": "perhaps, is pr. whether not, ellipt. As to",
+       "reread": "perhaps, is pr. whether not, ellipt. As to",
+       "status": "agreed",
+       "text": "perhaps, is pr. whether not, ellipt. As to"
+      },
+      {
+       "draft": "its origin, for أَنْ, and its various forms",
+       "reread": "its origin, for أَنْ, and its various forms",
+       "status": "agreed",
+       "text": "its origin, for أَنْ, and its various forms"
+      },
+      {
+       "draft": "and use, see De Sacy Gramm. Arabe 1.",
+       "reread": "and use, see De Sacy Gramm. Arabe 1.",
+       "status": "agreed",
+       "text": "and use, see De Sacy Gramm. Arabe 1."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r03-b01",
+     "bounds": {
+      "x": 235,
+      "y": 3061,
+      "width": 876,
+      "height": 191
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c0-r03-b01-876x191+235+3061-x2.png",
+     "image_sha256": "9a69897b4f50cc0d965a6f1fe53ec93a7c4eed986978ea54046fec8b48e9c8ea",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "§ 867, and note.  More nearly corre-",
+       "sponding are the Talmudic particles שֶׁמָּא",
+       "and דִּילְמָא pr. whether not, annon, then"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8ca8a731-2855-4215-ab16-bc74df755df6",
+      "duration_api_ms": 11017,
+      "cost_usd_list": 0.06329599999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2439,
+      "output_tokens": 423
+     },
+     "lines": [
+      {
+       "draft": "§ 867, and note. More nearly corre-",
+       "reread": "§ 867, and note.  More nearly corre-",
+       "status": "agreed",
+       "text": "§ 867, and note. More nearly corre-"
+      },
+      {
+       "draft": "sponding are the Talmudic particles שֶׁמָּא",
+       "reread": "sponding are the Talmudic particles שֶׁמָּא",
+       "status": "agreed",
+       "text": "sponding are the Talmudic particles שֶׁמָּא"
+      },
+      {
+       "draft": "and דִּילְמָא pr. whether not, annon, then",
+       "reread": "and דִּילְמָא pr. whether not, annon, then",
+       "status": "agreed",
+       "text": "and דִּילְמָא pr. whether not, annon, then"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1133,
+    "y": 150,
+    "width": 871,
+    "height": 757
+   },
+   "draft_lines": [
+    "whether perhaps, if perhaps, fortasse ;",
+    "e. g. Pirke Aboth 2, 4 ‘ne dicas: cum",
+    "otiosus fuero, discam, fortasse (שמא) non",
+    "eris otiosus.’ Berach 2, 1. 9. Also מאים",
+    "what if? perhaps, which is put for Heb.",
+    "אוּלַי Is. 47, 12.",
+    "II. אוּלַי pr. n. Ulai, Eulæus, a river",
+    "flowing by Susa in Persia, and emptying",
+    "itself into the united stream of the Eu-",
+    "phrates and Tigris, called by the Greeks",
+    "Choaspes, now Kerah. Dan. 8, 2. See",
+    "Hdot. 5. 49. Plin. H. N. 6. 27 or 31."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1133,
+      "y": 142,
+      "width": 871,
+      "height": 297
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r00-b00-871x297+1133+142-x2.png",
+     "image_sha256": "b5e04a87d6866257acfa9b376594273d356d836a0ff02e9d3b342109c0aea606",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "whether perhaps, if perhaps, fortasse ;",
+       "e. g. Pirke Aboth 2, 4 ‘ ne dicas : cum",
+       "otiosus fuero, discam, fortasse (שֶׁמָּא) non",
+       "eris otiosus.’ Berach 2, 1. 9. Also מֵאִים"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "26cd8f11-d3c9-4d7a-8fea-43fa10825fe1",
+      "duration_api_ms": 9275,
+      "cost_usd_list": 0.064096,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2943,
+      "output_tokens": 313
+     },
+     "lines": [
+      {
+       "draft": "whether perhaps, if perhaps, fortasse ;",
+       "reread": "whether perhaps, if perhaps, fortasse ;",
+       "status": "agreed",
+       "text": "whether perhaps, if perhaps, fortasse;"
+      },
+      {
+       "draft": "e. g. Pirke Aboth 2, 4 ‘ne dicas: cum",
+       "reread": "e. g. Pirke Aboth 2, 4 ‘ ne dicas : cum",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "e. g. Pirke Aboth 2, 4 ‘ ne dicas : cum",
+        "verdict": "b",
+        "note": "The print shows a visible space between the opening quote ‘ and \"ne\", and a thin space before the colon after \"dicas\" (period-typical French spacing); Reading B reproduces both, Reading A drops them.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2229619f-3cb2-49da-afe8-79bf3b12bd87",
+        "duration_api_ms": 11923,
+        "cost_usd_list": 0.07288950000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3588,
+        "cache_creation_input_tokens": 2885,
+        "output_tokens": 512
+       },
+       "text": "e. g. Pirke Aboth 2, 4 ‘ ne dicas: cum"
+      },
+      {
+       "draft": "otiosus fuero, discam, fortasse (שמא) non",
+       "reread": "otiosus fuero, discam, fortasse (שֶׁמָּא) non",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "otiosus fuero, discam, fortasse (שׁמא) non",
+        "verdict": "neither",
+        "note": "The Hebrew is printed with a shin dot over the ש but no vowel points below and no dagesh in the mem — so A is wrong to omit the shin dot, and B is wrong to add segol, dagesh and qamets.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "abda1020-cd2e-4964-9118-b8730391a740",
+        "duration_api_ms": 12986,
+        "cost_usd_list": 0.07551675,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3577,
+        "cache_creation_input_tokens": 2874,
+        "output_tokens": 569
+       },
+       "text": "otiosus fuero, discam, fortasse (שׁמא) non"
+      },
+      {
+       "draft": "eris otiosus.’ Berach 2, 1. 9. Also מאים",
+       "reread": "eris otiosus.’ Berach 2, 1. 9. Also מֵאִים",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b00",
+       "judgement": {
+        "text": "eris otiosus.’ Berach 2, 1. 9. Also מאים",
+        "verdict": "a",
+        "note": "The Hebrew word מאים is printed unpointed (like שמא on the line above); there is no tsere under mem or hiriq under alef, so Reading B's vowels are invented.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "04d6ccd7-dd27-4a56-885c-0ad46273106a",
+        "duration_api_ms": 7171,
+        "cost_usd_list": 0.06455849999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3584,
+        "cache_creation_input_tokens": 2881,
+        "output_tokens": 347
+       },
+       "text": "eris otiosus.’ Berach 2, 1. 9. Also מאים"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1133,
+      "y": 423,
+      "width": 871,
+      "height": 267
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r00-b01-871x267+1133+423-x2.png",
+     "image_sha256": "afeee4a7096b908cc9e14688662ea22cca6665d79c2ec15c5445f5c83c5fc2ff",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "what if? perhaps, which is put for Heb.",
+       "אוּלַי Is. 47, 12.",
+       "II. אוּלַי pr. n. Ulai, Eulæus, a river",
+       "flowing by Susa in Persia, and emptying"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "51abe843-41dc-4026-9002-ce54dcf32ed2",
+      "duration_api_ms": 8737,
+      "cost_usd_list": 0.062721,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2817,
+      "output_tokens": 317
+     },
+     "lines": [
+      {
+       "draft": "what if? perhaps, which is put for Heb.",
+       "reread": "what if? perhaps, which is put for Heb.",
+       "status": "agreed",
+       "text": "what if? perhaps, which is put for Heb."
+      },
+      {
+       "draft": "אוּלַי Is. 47, 12.",
+       "reread": "אוּלַי Is. 47, 12.",
+       "status": "agreed",
+       "text": "אוּלַי Is. 47, 12."
+      },
+      {
+       "draft": "II. אוּלַי pr. n. Ulai, Eulæus, a river",
+       "reread": "II. אוּלַי pr. n. Ulai, Eulæus, a river",
+       "status": "agreed",
+       "text": "II. אוּלַי pr. n. Ulai, Eulæus, a river"
+      },
+      {
+       "draft": "flowing by Susa in Persia, and emptying",
+       "reread": "flowing by Susa in Persia, and emptying",
+       "status": "agreed",
+       "text": "flowing by Susa in Persia, and emptying"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1133,
+      "y": 674,
+      "width": 871,
+      "height": 227
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r00-b02-871x227+1133+674-x2.png",
+     "image_sha256": "8b4329f909f9638b6976a39d95ed3c5f0a1b7b1783d8129384d8f514193932cf",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "itself into the united stream of the Eu-",
+       "phrates and Tigris, called by the Greeks",
+       "Choaspes, now Kerah. Dan. 8, 2. See",
+       "Hdot. 5. 49. Plin. H. N. 6. 27 or 31."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "069a3672-46b0-4bfd-b96e-83848c66afb6",
+      "duration_api_ms": 8048,
+      "cost_usd_list": 0.057708499999999996,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2628,
+      "output_tokens": 264
+     },
+     "lines": [
+      {
+       "draft": "itself into the united stream of the Eu-",
+       "reread": "itself into the united stream of the Eu-",
+       "status": "agreed",
+       "text": "itself into the united stream of the Eu-"
+      },
+      {
+       "draft": "phrates and Tigris, called by the Greeks",
+       "reread": "phrates and Tigris, called by the Greeks",
+       "status": "agreed",
+       "text": "phrates and Tigris, called by the Greeks"
+      },
+      {
+       "draft": "Choaspes, now Kerah. Dan. 8, 2. See",
+       "reread": "Choaspes, now Kerah. Dan. 8, 2. See",
+       "status": "agreed",
+       "text": "Choaspes, now Kerah. Dan. 8, 2. See"
+      },
+      {
+       "draft": "Hdot. 5. 49. Plin. H. N. 6. 27 or 31.",
+       "reread": "Hdot. 5. 49. Plin. H. N. 6. 27 or 31.",
+       "status": "agreed",
+       "text": "Hdot. 5. 49. Plin. H. N. 6. 27 or 31."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1133,
+    "y": 895,
+    "width": 871,
+    "height": 974
+   },
+   "draft_lines": [
+    "R. K. Porter's Travels, Vol. II. p. 412,",
+    "and Map.",
+    "אוּלָם, אֻלָם, (Kamets impure,) Plur.",
+    "אֻלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+    "part, front ; hence",
+    "1. vestibule, porch, portico, 1 K. 7, 6",
+    "sq. Ez. 40, 7 sq. Spec. of the vestibule",
+    "or porch erected on the eastern front of",
+    "the temple of Solomon, Gr. ὁ πρόναος,",
+    "1 K. 6, 3. Joel 2, 17 ; more fully אוּלָם",
+    "יְהוָֹה 2 Chr. 15, 8. 29, 17. The altitude",
+    "of this porch is said (2 Chr. 3, 4) to have",
+    "been 120 cubits, while the height of the",
+    "temple itself was only 30 cubits, and its",
+    "length 60 cubits, 1 K. 6, 2. This would",
+    "give to the porch the form of a tower,",
+    "unless there is here an error in the text."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1133,
+      "y": 902,
+      "width": 871,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r01-b00-871x260+1133+902-x2.png",
+     "image_sha256": "7cb9037a9f17d15c6e044007fc4a76c65387d0774b7266186f1b39722b54affb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "R. K. Porter's Travels, Vol. II. p. 412,",
+       "and Map.",
+       "אוּלָם, אֵלָם, (Kamets impure,) Plur.",
+       "אֵלַמִּים, (r. אוּל no. 3,) pr. the anterior"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "5d07a63d-8f87-469c-846c-c6fb58178f6b",
+      "duration_api_ms": 12875,
+      "cost_usd_list": 0.0755335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2754,
+      "output_tokens": 589
+     },
+     "lines": [
+      {
+       "draft": "R. K. Porter's Travels, Vol. II. p. 412,",
+       "reread": "R. K. Porter's Travels, Vol. II. p. 412,",
+       "status": "agreed",
+       "text": "R. K. Porter's Travels, Vol. II. p. 412,"
+      },
+      {
+       "draft": "and Map.",
+       "reread": "and Map.",
+       "status": "agreed",
+       "text": "and Map."
+      },
+      {
+       "draft": "אוּלָם, אֻלָם, (Kamets impure,) Plur.",
+       "reread": "אוּלָם, אֵלָם, (Kamets impure,) Plur.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "אוּלָם, אֻלָם, (Kamets impure,) Plur.",
+        "verdict": "a",
+        "note": "Under the aleph of the second word the print shows three dots in a diagonal row (kibbutz), not two horizontal dots (tsere); אֻלָם is the expected defective counterpart of אוּלָם.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "55d509de-335c-41dd-927a-1229d8ec8275",
+        "duration_api_ms": 10389,
+        "cost_usd_list": 0.06657575,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3583,
+        "cache_creation_input_tokens": 2691,
+        "output_tokens": 435
+       },
+       "text": "אוּלָם, אֻלָם, (Kamets impure,) Plur."
+      },
+      {
+       "draft": "אֻלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+       "reread": "אֵלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "אֵלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+        "verdict": "b",
+        "note": "Under the initial aleph two dots sit side by side horizontally (tsere), not the three diagonal dots of qubbuts; this matches the tsere in אֵלָם on the preceding line. Rest of the line identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "06a018a1-d9a8-4d3b-a2ad-e703548285e3",
+        "duration_api_ms": 13650,
+        "cost_usd_list": 0.07594725,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3589,
+        "cache_creation_input_tokens": 2697,
+        "output_tokens": 620
+       },
+       "text": "אֵלַמִּים, (r. אוּל no. 3,) pr. the anterior"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1133,
+      "y": 1146,
+      "width": 871,
+      "height": 231
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r01-b01-871x231+1133+1146-x2.png",
+     "image_sha256": "f15332131f3b1dad2b586ad4af457843911781a4a3c8de803dd78f2e198ad190",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "part, front ; hence",
+       "1. vestibule, porch, portico, 1 K. 7, 6",
+       "sq. Ez. 40, 7 sq. Spec. of the vestibule",
+       "or porch erected on the eastern front of"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ae46d57f-c57e-4543-bc36-2043c61ba771",
+      "duration_api_ms": 7474,
+      "cost_usd_list": 0.057191250000000006,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 253
+     },
+     "lines": [
+      {
+       "draft": "part, front ; hence",
+       "reread": "part, front ; hence",
+       "status": "agreed",
+       "text": "part, front; hence"
+      },
+      {
+       "draft": "1. vestibule, porch, portico, 1 K. 7, 6",
+       "reread": "1. vestibule, porch, portico, 1 K. 7, 6",
+       "status": "agreed",
+       "text": "1. vestibule, porch, portico, 1 K. 7, 6"
+      },
+      {
+       "draft": "sq. Ez. 40, 7 sq. Spec. of the vestibule",
+       "reread": "sq. Ez. 40, 7 sq. Spec. of the vestibule",
+       "status": "agreed",
+       "text": "sq. Ez. 40, 7 sq. Spec. of the vestibule"
+      },
+      {
+       "draft": "or porch erected on the eastern front of",
+       "reread": "or porch erected on the eastern front of",
+       "status": "agreed",
+       "text": "or porch erected on the eastern front of"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1133,
+      "y": 1361,
+      "width": 871,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r01-b02-871x240+1133+1361-x2.png",
+     "image_sha256": "0c01850b61615ba86af140ce3db797b38f2ca8adb24f6bae6c69a4da734b54b3",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the temple of Solomon, Gr. ὁ πρόναος,",
+       "1 K. 6, 3. Joel 2, 17 ; more fully אוּלָם",
+       "יְהוָֹה 2 Chr. 15, 8. 29, 17. The altitude",
+       "of this porch is said (2 Chr. 3, 4) to have"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6f9f27b-faec-4923-b3e5-cc1030ece010",
+      "duration_api_ms": 13393,
+      "cost_usd_list": 0.07617875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 617
+     },
+     "lines": [
+      {
+       "draft": "the temple of Solomon, Gr. ὁ πρόναος,",
+       "reread": "the temple of Solomon, Gr. ὁ πρόναος,",
+       "status": "agreed",
+       "text": "the temple of Solomon, Gr. ὁ πρόναος,"
+      },
+      {
+       "draft": "1 K. 6, 3. Joel 2, 17 ; more fully אוּלָם",
+       "reread": "1 K. 6, 3. Joel 2, 17 ; more fully אוּלָם",
+       "status": "agreed",
+       "text": "1 K. 6, 3. Joel 2, 17; more fully אוּלָם"
+      },
+      {
+       "draft": "יְהוָֹה 2 Chr. 15, 8. 29, 17. The altitude",
+       "reread": "יְהוָֹה 2 Chr. 15, 8. 29, 17. The altitude",
+       "status": "agreed",
+       "text": "יְהוָֹה 2 Chr. 15, 8. 29, 17. The altitude"
+      },
+      {
+       "draft": "of this porch is said (2 Chr. 3, 4) to have",
+       "reread": "of this porch is said (2 Chr. 3, 4) to have",
+       "status": "agreed",
+       "text": "of this porch is said (2 Chr. 3, 4) to have"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1133,
+      "y": 1585,
+      "width": 871,
+      "height": 236
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r01-b03-871x236+1133+1585-x2.png",
+     "image_sha256": "c9b16c0b71eef4f7f85a87be2405f8357229374cdd40230f09c1d82134589adb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "been 120 cubits, while the height of the",
+       "temple itself was only 30 cubits, and its",
+       "length 60 cubits, 1 K. 6, 2. This would",
+       "give to the porch the form of a tower,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "099a56ad-e758-492d-969c-ee7d2fcc7767",
+      "duration_api_ms": 7414,
+      "cost_usd_list": 0.05684125000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 246
+     },
+     "lines": [
+      {
+       "draft": "been 120 cubits, while the height of the",
+       "reread": "been 120 cubits, while the height of the",
+       "status": "agreed",
+       "text": "been 120 cubits, while the height of the"
+      },
+      {
+       "draft": "temple itself was only 30 cubits, and its",
+       "reread": "temple itself was only 30 cubits, and its",
+       "status": "agreed",
+       "text": "temple itself was only 30 cubits, and its"
+      },
+      {
+       "draft": "length 60 cubits, 1 K. 6, 2. This would",
+       "reread": "length 60 cubits, 1 K. 6, 2. This would",
+       "status": "agreed",
+       "text": "length 60 cubits, 1 K. 6, 2. This would"
+      },
+      {
+       "draft": "give to the porch the form of a tower,",
+       "reread": "give to the porch the form of a tower,",
+       "status": "agreed",
+       "text": "give to the porch the form of a tower,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b04",
+     "bounds": {
+      "x": 1133,
+      "y": 1805,
+      "width": 871,
+      "height": 72
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r01-b04-871x72+1133+1805-x2.png",
+     "image_sha256": "0859f3c244514fed173dc974b72620b7919a09b4bef3ba335c37e21c70aa3f60",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "unless there is here an error in the text."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "07185ad3-e078-4a8a-8934-6da6db8981aa",
+      "duration_api_ms": 7111,
+      "cost_usd_list": 0.04632875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1937,
+      "output_tokens": 209
+     },
+     "lines": [
+      {
+       "draft": "unless there is here an error in the text.",
+       "reread": "unless there is here an error in the text.",
+       "status": "agreed",
+       "text": "unless there is here an error in the text."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1133,
+    "y": 1857,
+    "width": 871,
+    "height": 683
+   },
+   "draft_lines": [
+    "Perhaps for מאה ועשרים we may read",
+    "with Meyer and others אמות עשרים",
+    "twenty cubits.",
+    "2. Adv. pr. in front, and therefore op-",
+    "posite, on the contrary ; hence trop. as a",
+    "strong adversative particle, but, but yet,",
+    "nay but, nevertheless, οὐ μὴν ἀλλά, as",
+    "Sept. well. Job 2, 5. 5, 8. 13, 3. Often",
+    "also וְאוּלָם, Sept. οὐ μὴν δὲ ἀλλά, Gen.",
+    "48, 19. Ex. 9, 16. Job 1, 11. 12, 7. 33, 1.",
+    "Where two adversative propositions",
+    "stand one after the other, the Hebrews"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1133,
+      "y": 1849,
+      "width": 871,
+      "height": 250
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r02-b00-871x250+1133+1849-x2.png",
+     "image_sha256": "c78974e36881d13e780a589b0a234ba8ce7eb5d945ae75810d92775c5a893fe9",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Perhaps for מאה ועשרים we may read",
+       "with Meyer and others אמות עשרים",
+       "twenty cubits.",
+       "2. Adv. pr. in front, and therefore op-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "12810510-1cc2-4b3b-9f8c-7b34d7feb715",
+      "duration_api_ms": 11732,
+      "cost_usd_list": 0.06917875000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 477
+     },
+     "lines": [
+      {
+       "draft": "Perhaps for מאה ועשרים we may read",
+       "reread": "Perhaps for מאה ועשרים we may read",
+       "status": "agreed",
+       "text": "Perhaps for מאה ועשרים we may read"
+      },
+      {
+       "draft": "with Meyer and others אמות עשרים",
+       "reread": "with Meyer and others אמות עשרים",
+       "status": "agreed",
+       "text": "with Meyer and others אמות עשרים"
+      },
+      {
+       "draft": "twenty cubits.",
+       "reread": "twenty cubits.",
+       "status": "agreed",
+       "text": "twenty cubits."
+      },
+      {
+       "draft": "2. Adv. pr. in front, and therefore op-",
+       "reread": "2. Adv. pr. in front, and therefore op-",
+       "status": "agreed",
+       "text": "2. Adv. pr. in front, and therefore op-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1133,
+      "y": 2083,
+      "width": 871,
+      "height": 235
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r02-b01-871x235+1133+2083-x2.png",
+     "image_sha256": "bc528a96d3ec9872b1da2d878804aa6c82efc7d144e2a8b6ae9aac8e42755230",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "posite, on the contrary ; hence trop. as a",
+       "strong adversative particle, but, but yet,",
+       "nay but, nevertheless, οὐ μὴν ἀλλά, as",
+       "Sept. well. Job 2, 5. 5, 8. 13, 3. Often"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "77fdf11b-2a34-4654-868c-2c12cdc31e22",
+      "duration_api_ms": 8320,
+      "cost_usd_list": 0.05804125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2630,
+      "output_tokens": 270
+     },
+     "lines": [
+      {
+       "draft": "posite, on the contrary ; hence trop. as a",
+       "reread": "posite, on the contrary ; hence trop. as a",
+       "status": "agreed",
+       "text": "posite, on the contrary; hence trop. as a"
+      },
+      {
+       "draft": "strong adversative particle, but, but yet,",
+       "reread": "strong adversative particle, but, but yet,",
+       "status": "agreed",
+       "text": "strong adversative particle, but, but yet,"
+      },
+      {
+       "draft": "nay but, nevertheless, οὐ μὴν ἀλλά, as",
+       "reread": "nay but, nevertheless, οὐ μὴν ἀλλά, as",
+       "status": "agreed",
+       "text": "nay but, nevertheless, οὐ μὴν ἀλλά, as"
+      },
+      {
+       "draft": "Sept. well. Job 2, 5. 5, 8. 13, 3. Often",
+       "reread": "Sept. well. Job 2, 5. 5, 8. 13, 3. Often",
+       "status": "agreed",
+       "text": "Sept. well. Job 2, 5. 5, 8. 13, 3. Often"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1133,
+      "y": 2302,
+      "width": 871,
+      "height": 246
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r02-b02-871x246+1133+2302-x2.png",
+     "image_sha256": "0b435cc6f51f4f6d2ca89d5043210c9cf6c709615fbf191c08f8bebdd848e1ad",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "also וְאוּלָם, Sept. οὐ μὴν δὲ ἀλλά, Gen.",
+       "48, 19. Ex. 9, 16. Job 1, 11. 12, 7. 33, 1.",
+       "Where two adversative propositions",
+       "stand one after the other, the Hebrews"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "86cdc386-2709-475b-a611-5b083c90b5d2",
+      "duration_api_ms": 9421,
+      "cost_usd_list": 0.06407875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 375
+     },
+     "lines": [
+      {
+       "draft": "also וְאוּלָם, Sept. οὐ μὴν δὲ ἀλλά, Gen.",
+       "reread": "also וְאוּלָם, Sept. οὐ μὴν δὲ ἀλλά, Gen.",
+       "status": "agreed",
+       "text": "also וְאוּלָם, Sept. οὐ μὴν δὲ ἀλλά, Gen."
+      },
+      {
+       "draft": "48, 19. Ex. 9, 16. Job 1, 11. 12, 7. 33, 1.",
+       "reread": "48, 19. Ex. 9, 16. Job 1, 11. 12, 7. 33, 1.",
+       "status": "agreed",
+       "text": "48, 19. Ex. 9, 16. Job 1, 11. 12, 7. 33, 1."
+      },
+      {
+       "draft": "Where two adversative propositions",
+       "reread": "Where two adversative propositions",
+       "status": "agreed",
+       "text": "Where two adversative propositions"
+      },
+      {
+       "draft": "stand one after the other, the Hebrews",
+       "reread": "stand one after the other, the Hebrews",
+       "status": "agreed",
+       "text": "stand one after the other, the Hebrews"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1133,
+    "y": 2528,
+    "width": 871,
+    "height": 725
+   },
+   "draft_lines": [
+    "repeat the adversative particle, as in",
+    "Engl. e. g. אוּלָם—וְאוּלָם Job 13, 3. 4.",
+    "Comp. כִּי—וְכִי. Once in Job 17, 10",
+    "it is written אֻלָם, where some Mss.",
+    "falsely read אֵלָם.—It may be worth",
+    "inquiry, whether this particle also, as",
+    "well as אוּלַי, may not be compounded",
+    "from אוּ i. q. אוֹ an, whether, and לָם i. q.",
+    "ܠܡܳܐ, لَمْ, not, in the ellipt. sense, [who",
+    "knows] whether not, i. q. but perhaps.",
+    "This conjecture would seem to be",
+    "supported by the Syriac word ܐܰܠܡܳܐ,"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1133,
+      "y": 2520,
+      "width": 871,
+      "height": 239
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r03-b00-871x239+1133+2520-x2.png",
+     "image_sha256": "4e280df6117557f693f16fa238e02f89f27a4be3b1b1521373eaf1b7580284ef",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "repeat the adversative particle, as in",
+       "Engl. e. g. אוּלָם—וְאוּלָם Job 13, 3. 4.",
+       "Comp. כִּי—וְכִי. Once in Job 17, 10",
+       "it is written אֻלָם, where some Mss."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0bb13c87-db28-4b51-b6c6-4f51cd2a6062",
+      "duration_api_ms": 13636,
+      "cost_usd_list": 0.07937875,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 681
+     },
+     "lines": [
+      {
+       "draft": "repeat the adversative particle, as in",
+       "reread": "repeat the adversative particle, as in",
+       "status": "agreed",
+       "text": "repeat the adversative particle, as in"
+      },
+      {
+       "draft": "Engl. e. g. אוּלָם—וְאוּלָם Job 13, 3. 4.",
+       "reread": "Engl. e. g. אוּלָם—וְאוּלָם Job 13, 3. 4.",
+       "status": "agreed",
+       "text": "Engl. e. g. אוּלָם—וְאוּלָם Job 13, 3. 4."
+      },
+      {
+       "draft": "Comp. כִּי—וְכִי. Once in Job 17, 10",
+       "reread": "Comp. כִּי—וְכִי. Once in Job 17, 10",
+       "status": "agreed",
+       "text": "Comp. כִּי—וְכִי. Once in Job 17, 10"
+      },
+      {
+       "draft": "it is written אֻלָם, where some Mss.",
+       "reread": "it is written אֻלָם, where some Mss.",
+       "status": "agreed",
+       "text": "it is written אֻלָם, where some Mss."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1133,
+      "y": 2743,
+      "width": 871,
+      "height": 240
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r03-b01-871x240+1133+2743-x2.png",
+     "image_sha256": "8ce8801fed135f801c18aa6ed6b725041e2908115b6e0cfd39d4da31bceaa04c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "falsely read אֻלָּם.—It may be worth",
+       "inquiry, whether this particle also, as",
+       "well as אוּלַי, may not be compounded",
+       "from אוּ i. q. אוֹ an, whether, and לָם i. q."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3b0ac7cf-e0a8-4408-b5c4-10fcba3d76eb",
+      "duration_api_ms": 11857,
+      "cost_usd_list": 0.06917875000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2693,
+      "output_tokens": 477
+     },
+     "lines": [
+      {
+       "draft": "falsely read אֵלָם.—It may be worth",
+       "reread": "falsely read אֻלָּם.—It may be worth",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b01",
+       "judgement": {
+        "text": "falsely read אֻלָּם.—It may be worth",
+        "verdict": "b",
+        "note": "Under the aleph the print shows three diagonal dots (qibbuts), not the two horizontal dots of tsere, and the lamed carries a dagesh dot inside it with qamets below — matching Reading B אֻלָּם, not A's אֵלָם.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "7a832026-1446-473a-ad57-d363b7ef40bd",
+        "duration_api_ms": 12525,
+        "cost_usd_list": 0.07063625000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3565,
+        "cache_creation_input_tokens": 2611,
+        "output_tokens": 539
+       },
+       "text": "falsely read אֻלָּם.—It may be worth"
+      },
+      {
+       "draft": "inquiry, whether this particle also, as",
+       "reread": "inquiry, whether this particle also, as",
+       "status": "agreed",
+       "text": "inquiry, whether this particle also, as"
+      },
+      {
+       "draft": "well as אוּלַי, may not be compounded",
+       "reread": "well as אוּלַי, may not be compounded",
+       "status": "agreed",
+       "text": "well as אוּלַי, may not be compounded"
+      },
+      {
+       "draft": "from אוּ i. q. אוֹ an, whether, and לָם i. q.",
+       "reread": "from אוּ i. q. אוֹ an, whether, and לָם i. q.",
+       "status": "agreed",
+       "text": "from אוּ i. q. אוֹ an, whether, and לָם i. q."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b02",
+     "bounds": {
+      "x": 1133,
+      "y": 2967,
+      "width": 871,
+      "height": 287
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0038/pass2/c1-r03-b02-871x287+1133+2967-x2.png",
+     "image_sha256": "2ba24fe45912f30c467e96c65c9e3c9453d53d29043eaf4fee5f88a27bc06b5e",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܠܡܳܐ, لَمْ, not, in the ellipt. sense, [who",
+       "knows] whether not, i. q. but perhaps.",
+       "This conjecture would seem to be",
+       "supported by the Syriac word ܐܘܿܠܡܳܐ,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "0b3d7051-03f0-4388-b7ee-147b0b1f8e64",
+      "duration_api_ms": 15438,
+      "cost_usd_list": 0.08354125,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2882,
+      "output_tokens": 717
+     },
+     "lines": [
+      {
+       "draft": "ܠܡܳܐ, لَمْ, not, in the ellipt. sense, [who",
+       "reread": "ܠܡܳܐ, لَمْ, not, in the ellipt. sense, [who",
+       "status": "agreed",
+       "text": "ܠܡܳܐ, لَمْ, not, in the ellipt. sense, [who"
+      },
+      {
+       "draft": "knows] whether not, i. q. but perhaps.",
+       "reread": "knows] whether not, i. q. but perhaps.",
+       "status": "agreed",
+       "text": "knows] whether not, i. q. but perhaps."
+      },
+      {
+       "draft": "This conjecture would seem to be",
+       "reread": "This conjecture would seem to be",
+       "status": "agreed",
+       "text": "This conjecture would seem to be"
+      },
+      {
+       "draft": "supported by the Syriac word ܐܰܠܡܳܐ,",
+       "reread": "supported by the Syriac word ܐܘܿܠܡܳܐ,",
+       "status": "adjudicated",
+       "band_id": "c1-r03-b02",
+       "judgement": {
+        "text": "supported by the Syriac word ܐܘܿܠܡܳܐ,",
+        "verdict": "b",
+        "note": "The Syriac word is printed plene: after the initial alaph there is a clear waw (the round \"o\" form) carrying a dot above, then lamadh, mem with zqapha, final alaph. Reading A omits the waw entirely; Reading B matches the printed letters and points.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "37d612b8-30ca-407a-a024-2d0d6b8d80be",
+        "duration_api_ms": 26154,
+        "cost_usd_list": 0.1109025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3580,
+        "cache_creation_input_tokens": 2815,
+        "output_tokens": 1291
+       },
+       "text": "supported by the Syriac word ܐܘܿܠܡܳܐ,"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אול 22 אול",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "the verb, but of wide extent in the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "derivatives.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1. Pr. to roll, to twist, to twirl, as in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "kindr. חוּל, חִיל, גִּיל, גָּלַל; comp. εἰλέω,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "εἰλύω, ἴλλω, and see below under r. גָּלַל.—",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Hence אַיִל a ram, from his twisted",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "horns; also אוּל belly.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "2. Trop. to be strong, stout, powerful;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "for the connection comp. in חוּל and חַיִל.",
+   "status": "adjudicated",
+   "draft": "for the connection comp. in חוּל and חִיל.",
+   "reread": "for the connection comp. in חוּל and חַיִל.",
+   "verdict": "b",
+   "note": "The last word carries two points: a patach under the ḥet and a ḥireq dot under the yod — it is חַיִל (ḥayil), not חִיל; the first word is plene חוּל with shureq.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "—Hence אֵל the Strong One, God; אֵלָה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "terebinth, q. d. the strong tree; אַלּוֹן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "an oak, Lat. robur; also אֱיָל, אֱיָלוּת,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "strength, aid.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3. Trop. to be first, foremost, chief,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "from the notion of strength and power;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "so Arab. أَوَلَ to be foremost, to come out",
+   "status": "adjudicated",
+   "draft": "so Arab. أَوَّلَ to be foremost, to come out",
+   "reread": "so Arab. أَوَلَ to be foremost, to come out",
+   "verdict": "b",
+   "note": "Above the waw in line 1 only a single oblique stroke (fatha) is printed, no shadda — contrast line 2, where the waw clearly carries the w-shaped shadda plus fatha. So the printed form is أَوَلَ (Reading B), not أَوَّلَ.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "first, أَوَّلُ first, primus, (pr. princeps, like",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלִים",
+   "status": "adjudicated",
+   "draft": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלִים",
+   "reread": "רִאשׁוֹן,) comp. Heb. יָאַל.—Hence אוּלָם",
+   "verdict": "a",
+   "note": "Final word is printed plene אוּלִים (hireq under lamed, yod, final mem), not אוּלָם; Reading A is correct.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֵילִים, the mighty, the chief, אוּלָם the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "front part, q. v. אַיִל no. 2, and אֵילָם, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "projection on a building; אַוֶּלֶת no. 3, the",
+   "status": "adjudicated",
+   "draft": "projection on a building ; אַיֶּלֶת no. 3, the",
+   "reread": "projection on a building ; אוּלֶּת no. 3, the",
+   "verdict": "neither",
+   "note": "The letter after aleph is a full-height vav with a dot inside it (not a short yod as in A), but it also carries a segol beneath it and the lamed carries a plain segol with no dagesh (unlike B); the aleph has a patah. So neither reading matches: the printed word is אַוֶּלֶת.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "first place, rank.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אוּל m. 1. the belly, body, pr. a roll,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "roller, from the round form; r. אוּל no. 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Ps. 73, 4. Arab. اأْلٌ, آلٌ.",
+   "status": "adjudicated",
+   "draft": "Ps. 73, 4. Arab. أَأْلٌ, آلٌ.",
+   "reread": "Ps. 73, 4. Arab. ألٌّ, آلٌ.",
+   "verdict": "neither",
+   "note": "Two alifs are printed before the lām (B's single-alif ألٌّ with shadda is wrong), but only the second alif carries a hamza/sukūn and the lām a tanwīn ḍamma; no fatḥa or hamza is printed on the first alif, so A over-points it. آلٌ matches both.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "2. Plur. the mighty, the powerful, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "chief. 2 K. 24, 15 Cheth. אוּלֵי הָאָרֶץ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the chief of the land. The Keri has the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "more usual form אֵילֵי. R. אוּל no. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "I. אוּלַי compounded from אַי constr.",
+   "status": "adjudicated",
+   "draft": "I. אוּלַי compounded from אוֹ constr.",
+   "reread": "I. אוּלַי compounded from אַי constr.",
+   "verdict": "b",
+   "note": "The word after \"from\" is printed aleph + patach + yod (אַי), not אוֹ; the אוֹ belongs to the start of line 2 (\"constr. אוֹ, and לַי\"). Reading B matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוֹ, and לַי i. q. לַי, לֵא, לָא, not; comp.",
+   "status": "adjudicated",
+   "draft": "אוֹ, and לַי i. q. לֵי, לָא, לֹא, not; comp.",
+   "reread": "אוֹ, and לַי i. q. לַי, לֵא, לָא, not; comp.",
+   "verdict": "b",
+   "note": "After \"i. q.\" the three items are printed לַי (patach + yod), לֵא (tsere + aleph), לָא (qamets + aleph); the last has a qamets, not a holem, so Reading A's לֵי / לֹא sequence is wrong.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אַחֲלֵי, לוּלֵי.",
+   "status": "adjudicated",
+   "draft": "לוּלֵי, אַחֲלַי.",
+   "reread": "אַחֲלֵי, לוּלֵי.",
+   "verdict": "b",
+   "note": "Printed left-to-right order is אַחֲלֵי first, then לוּלֵי; the lamed in אַחֲלֵי carries tsere (two dots), not patah. Reading A reverses the items and mis-points the lamed.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "1. if not, unless, once Num. 22, 33",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אוּלַי נָטְתָה מִפָּנַי וגו׳ unless she had turn-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ed from me, surely now I had slain thee.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Sept. εἰ μή. Aben Ezra well לוּלֵי.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "2. whether not, Is. 47, 12; and hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "ellipt. [who knows] whether not, i. e. per-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "haps, peradventure, expressing doubt,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "fear, Gen. 24, 5. 27, 12. Josh. 9, 7; and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "also hope, Gen. 16, 2. Am. 5, 15.—Hos.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "8, 7 the stalk shall yield no meal, אוּלַי",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "יַעֲשֶׂה זָרִים יִבְלָעֻהוּ [or if] perhaps it",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "yield, strangers shall devour it. Jer. 21, 2.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "—In like manner Arab. لَعَلَّ and عَلَّ",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "perhaps, is pr. whether not, ellipt. As to",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "its origin, for أَنْ, and its various forms",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and use, see De Sacy Gramm. Arabe 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "§ 867, and note. More nearly corre-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sponding are the Talmudic particles שֶׁמָּא",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "and דִּילְמָא pr. whether not, annon, then",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "whether perhaps, if perhaps, fortasse;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "e. g. Pirke Aboth 2, 4 ‘ ne dicas: cum",
+   "status": "adjudicated",
+   "draft": "e. g. Pirke Aboth 2, 4 ‘ne dicas: cum",
+   "reread": "e. g. Pirke Aboth 2, 4 ‘ ne dicas : cum",
+   "verdict": "b",
+   "note": "The print shows a visible space between the opening quote ‘ and \"ne\", and a thin space before the colon after \"dicas\" (period-typical French spacing); Reading B reproduces both, Reading A drops them.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "otiosus fuero, discam, fortasse (שׁמא) non",
+   "status": "adjudicated",
+   "draft": "otiosus fuero, discam, fortasse (שמא) non",
+   "reread": "otiosus fuero, discam, fortasse (שֶׁמָּא) non",
+   "verdict": "neither",
+   "note": "The Hebrew is printed with a shin dot over the ש but no vowel points below and no dagesh in the mem — so A is wrong to omit the shin dot, and B is wrong to add segol, dagesh and qamets.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "eris otiosus.’ Berach 2, 1. 9. Also מאים",
+   "status": "adjudicated",
+   "draft": "eris otiosus.’ Berach 2, 1. 9. Also מאים",
+   "reread": "eris otiosus.’ Berach 2, 1. 9. Also מֵאִים",
+   "verdict": "a",
+   "note": "The Hebrew word מאים is printed unpointed (like שמא on the line above); there is no tsere under mem or hiriq under alef, so Reading B's vowels are invented.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "what if? perhaps, which is put for Heb.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אוּלַי Is. 47, 12.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "II. אוּלַי pr. n. Ulai, Eulæus, a river",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "flowing by Susa in Persia, and emptying",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "itself into the united stream of the Eu-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "phrates and Tigris, called by the Greeks",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Choaspes, now Kerah. Dan. 8, 2. See",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Hdot. 5. 49. Plin. H. N. 6. 27 or 31.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "R. K. Porter's Travels, Vol. II. p. 412,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and Map.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אוּלָם, אֻלָם, (Kamets impure,) Plur.",
+   "status": "adjudicated",
+   "draft": "אוּלָם, אֻלָם, (Kamets impure,) Plur.",
+   "reread": "אוּלָם, אֵלָם, (Kamets impure,) Plur.",
+   "verdict": "a",
+   "note": "Under the aleph of the second word the print shows three dots in a diagonal row (kibbutz), not two horizontal dots (tsere); אֻלָם is the expected defective counterpart of אוּלָם.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֵלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+   "status": "adjudicated",
+   "draft": "אֻלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+   "reread": "אֵלַמִּים, (r. אוּל no. 3,) pr. the anterior",
+   "verdict": "b",
+   "note": "Under the initial aleph two dots sit side by side horizontally (tsere), not the three diagonal dots of qubbuts; this matches the tsere in אֵלָם on the preceding line. Rest of the line identical in both readings and matches the print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "part, front; hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1. vestibule, porch, portico, 1 K. 7, 6",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "sq. Ez. 40, 7 sq. Spec. of the vestibule",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "or porch erected on the eastern front of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "the temple of Solomon, Gr. ὁ πρόναος,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1 K. 6, 3. Joel 2, 17; more fully אוּלָם",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "יְהוָֹה 2 Chr. 15, 8. 29, 17. The altitude",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "of this porch is said (2 Chr. 3, 4) to have",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "been 120 cubits, while the height of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "temple itself was only 30 cubits, and its",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "length 60 cubits, 1 K. 6, 2. This would",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "give to the porch the form of a tower,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "unless there is here an error in the text.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Perhaps for מאה ועשרים we may read",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "with Meyer and others אמות עשרים",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "twenty cubits.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "2. Adv. pr. in front, and therefore op-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "posite, on the contrary; hence trop. as a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "strong adversative particle, but, but yet,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "nay but, nevertheless, οὐ μὴν ἀλλά, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Sept. well. Job 2, 5. 5, 8. 13, 3. Often",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "also וְאוּלָם, Sept. οὐ μὴν δὲ ἀλλά, Gen.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "48, 19. Ex. 9, 16. Job 1, 11. 12, 7. 33, 1.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Where two adversative propositions",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "stand one after the other, the Hebrews",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "repeat the adversative particle, as in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Engl. e. g. אוּלָם—וְאוּלָם Job 13, 3. 4.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Comp. כִּי—וְכִי. Once in Job 17, 10",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "it is written אֻלָם, where some Mss.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "falsely read אֻלָּם.—It may be worth",
+   "status": "adjudicated",
+   "draft": "falsely read אֵלָם.—It may be worth",
+   "reread": "falsely read אֻלָּם.—It may be worth",
+   "verdict": "b",
+   "note": "Under the aleph the print shows three diagonal dots (qibbuts), not the two horizontal dots of tsere, and the lamed carries a dagesh dot inside it with qamets below — matching Reading B אֻלָּם, not A's אֵלָם.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "inquiry, whether this particle also, as",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "well as אוּלַי, may not be compounded",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "from אוּ i. q. אוֹ an, whether, and לָם i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "ܠܡܳܐ, لَمْ, not, in the ellipt. sense, [who",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "knows] whether not, i. q. but perhaps.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "This conjecture would seem to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "supported by the Syriac word ܐܘܿܠܡܳܐ,",
+   "status": "adjudicated",
+   "draft": "supported by the Syriac word ܐܰܠܡܳܐ,",
+   "reread": "supported by the Syriac word ܐܘܿܠܡܳܐ,",
+   "verdict": "b",
+   "note": "The Syriac word is printed plene: after the initial alaph there is a clear waw (the round \"o\" form) carrying a dot above, then lamadh, mem with zqapha, final alaph. Reading A omits the waw entirely; Reading B matches the printed letters and points.",
+   "needs_review": true
+  }
+ ],
+ "counts": {
+  "agreed": 90,
+  "adjudicated": 15,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 5
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.3027
+}

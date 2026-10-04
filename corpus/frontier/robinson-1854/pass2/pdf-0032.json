@@ -1,0 +1,2581 @@
+{
+ "schema": "gesenius-frontier-transcription/1",
+ "edition": "robinson-1854",
+ "pdf_page": 32,
+ "raster": ".cache/gesenius/frontier/robinson-1854/raster/pdf-0032.png",
+ "raster_sha256": "db883dc17e10ecc40738df406a579da0275eaeb034a7028b57e76140f355cab2",
+ "raster_size": {
+  "width": 2061,
+  "height": 3488
+ },
+ "pass": 2,
+ "pass1": "corpus/frontier/robinson-1854/pdf-0032.json",
+ "method": "claude-cli-independent-reread-and-adjudication",
+ "prompt_version": 2,
+ "read_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Transcribe every complete printed text line exactly, one array element per printed line, top to bottom. Preserve spelling, capitalisation, punctuation, printed abbreviations, section marks and end-of-line hyphenation. Hebrew, Aramaic, Arabic, Syriac, Greek and Ethiopic must be Unicode text with every visible vowel point, dagesh, shin or sin dot, accent and diacritic, and with no point that is not printed; write them in logical order with no bidi control characters, keep the words of a right-to-left phrase in the order they are read, and keep the printed left-to-right order of separate items in a list. Transcribe the letters actually printed even when they are not the dictionary spelling: never insert or drop a vav or yod, and never replace a form with a more familiar one. Distinguish Arabic from Syriac by the letter shapes. If a line is only partially visible at the top or bottom edge, omit it entirely rather than guessing. Never add, reorder, translate, normalise or omit anything that is fully visible. If the crop contains no text, return an empty array.",
+ "judge_prompt": "Read the image file {path}. It is an enlarged crop of a few printed lines from one column of an 1854 Hebrew-English lexicon (Gesenius, Robinson translation). Two independent transcriptions of the same printed line disagree. Compare each of them character by character against the printed line in the image and return the exact printed text as a single line. Check in particular: the printed left-to-right order of separate items in a list, whether a vav or yod is actually printed (plene versus defective spelling), every vowel point, dagesh, shin or sin dot and accent, whether a word is Arabic or Syriac, and whether Syriac points are printed at all. Take neither reading on trust; if both are wrong, write what is printed. Use Unicode in logical order with no bidi control characters. Explain the decisive difference in one short note.\nLine {index} of {count} in the crop, counting only complete lines.\nReading A: {a}\nReading B: {b}",
+ "generated_at": "2026-10-04T09:06:28+00:00",
+ "chunks": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "row": 0,
+   "bounds": {
+    "x": 209,
+    "y": 136,
+    "width": 1747,
+    "height": 69
+   },
+   "draft_lines": [
+    "אדנ",
+    "16",
+    "אדר"
+   ],
+   "bands": [
+    {
+     "band_id": "header-b00",
+     "bounds": {
+      "x": 209,
+      "y": 134,
+      "width": 1747,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/header-b00-1747x73+209+134-x2.png",
+     "image_sha256": "9c334d1e4826767b5858cf2bc8660562d95469818ba60e076418318c52a8e1d5",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אדל 16 אדר"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "87e98af9-a919-4085-b67c-cfd8ddc606cc",
+      "duration_api_ms": 7283,
+      "cost_usd_list": 0.0474825,
+      "input_tokens": 4,
+      "cache_read_input_tokens": 3570,
+      "cache_creation_input_tokens": 1810,
+      "output_tokens": 207
+     },
+     "lines": [
+      {
+       "draft": "אדנ 16 אדר",
+       "reread": "אדל 16 אדר",
+       "status": "adjudicated",
+       "band_id": "header-b00",
+       "judgement": {
+        "text": "אדל 16 אדר",
+        "verdict": "b",
+        "note": "Third letter of the left-hand headword has the tall ascender above the line characteristic of lamed, not the flat-topped nun; Reading B (אדל) is correct, A (אדנ) is wrong. Page number 16 and right-hand אדר are as both readings give.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "2a79d3e6-a6dd-4185-9b68-bec5e2c51415",
+        "duration_api_ms": 10233,
+        "cost_usd_list": 0.077176,
+        "input_tokens": 6,
+        "cache_read_input_tokens": 6384,
+        "cache_creation_input_tokens": 2241,
+        "output_tokens": 614
+       },
+       "text": "אדל 16 אדר"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "row": 0,
+   "bounds": {
+    "x": 209,
+    "y": 183,
+    "width": 860,
+    "height": 991
+   },
+   "draft_lines": [
+    "אֲדֹנָי see after אָדוֹן.",
+    "אֲדֹנִי־בֶזֶק (lord of Bezek) Adoni-Be-",
+    "zek, name or title of a king of the Ca-",
+    "naanitish city Bezek, Judg. 1, 5. 6. 7.",
+    "אֲדֹנִי־צֶדֶק (lord of justice) Adoni-",
+    "zedek, pr. n. of a Canaanitish king of",
+    "Jerusalem, Josh. 10, 1. 3.",
+    "אֲדֹנִיָּהוּ (my lord is Jehovah) Adoni-",
+    "jah, pr. n. m. a) A son of David, who",
+    "attempted to usurp the succession, 1 K.",
+    "1, 8 sq. Called also אֲדֹנִיָּה v. 5. 2 Sam.",
+    "3, 4. b) 2 Chr. 17, 8. c) Neh. 10, 17.",
+    "In Ezra 2, 13 the same person is called",
+    "אֲדֹנִיקָם Adonikam, i. e. lord of the ene-",
+    "my. Comp. Ezra 8, 13. Neh. 7, 18."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r00-b00",
+     "bounds": {
+      "x": 209,
+      "y": 175,
+      "width": 860,
+      "height": 284
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r00-b00-860x284+209+175-x2.png",
+     "image_sha256": "07a6f656cfce0c4ca2b3e25e1a31f6d51753cc1fcb78f4992b863145d48c739a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדֹנָי see after אָדוֹן .",
+       "אֲדֹנִי־בֶזֶק (lord of Bezek) Adoni-Be-",
+       "zek, name or title of a king of the Ca-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c2272d38-2077-4695-bdd3-84b989433bb1",
+      "duration_api_ms": 7023,
+      "cost_usd_list": 0.07907324999999998,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2857,
+      "output_tokens": 414
+     },
+     "lines": [
+      {
+       "draft": "אֲדֹנָי see after אָדוֹן.",
+       "reread": "אֲדֹנָי see after אָדוֹן .",
+       "status": "agreed",
+       "text": "אֲדֹנָי see after אָדוֹן."
+      },
+      {
+       "draft": "אֲדֹנִי־בֶזֶק (lord of Bezek) Adoni-Be-",
+       "reread": "אֲדֹנִי־בֶזֶק (lord of Bezek) Adoni-Be-",
+       "status": "agreed",
+       "text": "אֲדֹנִי־בֶזֶק (lord of Bezek) Adoni-Be-"
+      },
+      {
+       "draft": "zek, name or title of a king of the Ca-",
+       "reread": "zek, name or title of a king of the Ca-",
+       "status": "agreed",
+       "text": "zek, name or title of a king of the Ca-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b01",
+     "bounds": {
+      "x": 209,
+      "y": 443,
+      "width": 860,
+      "height": 261
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r00-b01-860x261+209+443-x2.png",
+     "image_sha256": "d04e7df074f3c76cd261a6637c924297155df34106ffc96f3066962c213dde07",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "naanitish city Bezek, Judg. 1, 5. 6. 7.",
+       "אֲדֹנִי־צֶדֶק (lord of justice) Adoni-",
+       "zedek, pr. n. of a Canaanitish king of",
+       "Jerusalem, Josh. 10, 1. 3."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "c865c2b7-a39f-46fe-90bf-db283e8ed720",
+      "duration_api_ms": 9612,
+      "cost_usd_list": 0.07434325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2733,
+      "output_tokens": 369
+     },
+     "lines": [
+      {
+       "draft": "naanitish city Bezek, Judg. 1, 5. 6. 7.",
+       "reread": "naanitish city Bezek, Judg. 1, 5. 6. 7.",
+       "status": "agreed",
+       "text": "naanitish city Bezek, Judg. 1, 5. 6. 7."
+      },
+      {
+       "draft": "אֲדֹנִי־צֶדֶק (lord of justice) Adoni-",
+       "reread": "אֲדֹנִי־צֶדֶק (lord of justice) Adoni-",
+       "status": "agreed",
+       "text": "אֲדֹנִי־צֶדֶק (lord of justice) Adoni-"
+      },
+      {
+       "draft": "zedek, pr. n. of a Canaanitish king of",
+       "reread": "zedek, pr. n. of a Canaanitish king of",
+       "status": "agreed",
+       "text": "zedek, pr. n. of a Canaanitish king of"
+      },
+      {
+       "draft": "Jerusalem, Josh. 10, 1. 3.",
+       "reread": "Jerusalem, Josh. 10, 1. 3.",
+       "status": "agreed",
+       "text": "Jerusalem, Josh. 10, 1. 3."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b02",
+     "bounds": {
+      "x": 209,
+      "y": 688,
+      "width": 860,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r00-b02-860x260+209+688-x2.png",
+     "image_sha256": "fd66233c59b6d5993ad40030e10c9d8f77521a40920887268a275acf3246fc85",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדֹנִיָּהוּ (my lord is Jehovah) Adoni-",
+       "jah, pr. n. m. a) A son of David, who",
+       "attempted to usurp the succession, 1 K.",
+       "1, 8 sq. Called also אֲדֹנִיָּה v. 5. 2 Sam."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "76173b04-e0e9-48ba-b2e4-8b3b7e2f360e",
+      "duration_api_ms": 10577,
+      "cost_usd_list": 0.07854325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2733,
+      "output_tokens": 453
+     },
+     "lines": [
+      {
+       "draft": "אֲדֹנִיָּהוּ (my lord is Jehovah) Adoni-",
+       "reread": "אֲדֹנִיָּהוּ (my lord is Jehovah) Adoni-",
+       "status": "agreed",
+       "text": "אֲדֹנִיָּהוּ (my lord is Jehovah) Adoni-"
+      },
+      {
+       "draft": "jah, pr. n. m. a) A son of David, who",
+       "reread": "jah, pr. n. m. a) A son of David, who",
+       "status": "agreed",
+       "text": "jah, pr. n. m. a) A son of David, who"
+      },
+      {
+       "draft": "attempted to usurp the succession, 1 K.",
+       "reread": "attempted to usurp the succession, 1 K.",
+       "status": "agreed",
+       "text": "attempted to usurp the succession, 1 K."
+      },
+      {
+       "draft": "1, 8 sq. Called also אֲדֹנִיָּה v. 5. 2 Sam.",
+       "reread": "1, 8 sq. Called also אֲדֹנִיָּה v. 5. 2 Sam.",
+       "status": "agreed",
+       "text": "1, 8 sq. Called also אֲדֹנִיָּה v. 5. 2 Sam."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r00-b03",
+     "bounds": {
+      "x": 209,
+      "y": 932,
+      "width": 860,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r00-b03-860x237+209+932-x2.png",
+     "image_sha256": "eed94b82e5e4bca3c72ec8df6ce9fb1d6e30219e00c1abbab5740435db311ec2",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "3, 4.   b) 2 Chr. 17, 8.   c) Neh. 10, 17.",
+       "In Ezra 2, 13 the same person is called",
+       "אֲדֹנִיקָם Adonikam, i. e. lord of the ene-",
+       "my.   Comp. Ezra 8, 13. Neh. 7, 18."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "28d57246-5c55-4f74-ba9a-10d470044a8a",
+      "duration_api_ms": 9532,
+      "cost_usd_list": 0.07131325,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3573,
+      "cache_creation_input_tokens": 2609,
+      "output_tokens": 358
+     },
+     "lines": [
+      {
+       "draft": "3, 4. b) 2 Chr. 17, 8. c) Neh. 10, 17.",
+       "reread": "3, 4.   b) 2 Chr. 17, 8.   c) Neh. 10, 17.",
+       "status": "agreed",
+       "text": "3, 4. b) 2 Chr. 17, 8. c) Neh. 10, 17."
+      },
+      {
+       "draft": "In Ezra 2, 13 the same person is called",
+       "reread": "In Ezra 2, 13 the same person is called",
+       "status": "agreed",
+       "text": "In Ezra 2, 13 the same person is called"
+      },
+      {
+       "draft": "אֲדֹנִיקָם Adonikam, i. e. lord of the ene-",
+       "reread": "אֲדֹנִיקָם Adonikam, i. e. lord of the ene-",
+       "status": "agreed",
+       "text": "אֲדֹנִיקָם Adonikam, i. e. lord of the ene-"
+      },
+      {
+       "draft": "my. Comp. Ezra 8, 13. Neh. 7, 18.",
+       "reread": "my.   Comp. Ezra 8, 13. Neh. 7, 18.",
+       "status": "agreed",
+       "text": "my. Comp. Ezra 8, 13. Neh. 7, 18."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "row": 1,
+   "bounds": {
+    "x": 209,
+    "y": 1162,
+    "width": 860,
+    "height": 930
+   },
+   "draft_lines": [
+    "אֲדֹנִיקָם see אֲדֹנִיָּהוּ c.",
+    "אֲדֹנִירָם (lord of altitude) Adoniram,",
+    "pr. n. of a man who had charge of the",
+    "public works under David and Solomon,",
+    "1 K. 4, 6. By an unusual contraction,",
+    "called אֲדוֹרָם Adoram, 2 Sam. 20, 24.",
+    "1 K. 12, 18; also הֲדוֹרָם 2 Chr. 10, 18.",
+    "* אָדַר in Kal not used, pr. to be large,",
+    "great, ample, see deriv. אֶדֶר, אַדֶּרֶת;",
+    "comp. أَدِرَ to have the hernia, pr. to be",
+    "swollen; آدَرُ swollen, inflated, e. g.",
+    "the belly. Kindr. is הָדַר.—Trop. to be",
+    "great, splendid, powerful; see in אַדִּיר.",
+    "Niph. to be made great, to be magni-"
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r01-b00",
+     "bounds": {
+      "x": 209,
+      "y": 1167,
+      "width": 860,
+      "height": 266
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r01-b00-860x266+209+1167-x2.png",
+     "image_sha256": "d4aaa0e5daf6fca255bc78de06798477f90c516437ecc76dd133beb63e0bf2c8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדֹנִיקָם see אֲדֹנִיָּהוּ c.",
+       "אֲדֹנִירָם (lord of altitude) Adoniram,",
+       "pr. n. of a man who had charge of the",
+       "public works under David and Solomon,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "e465f4f8-4dd6-41fb-b7db-07c16cc3776b",
+      "duration_api_ms": 12129,
+      "cost_usd_list": 0.08173349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 516
+     },
+     "lines": [
+      {
+       "draft": "אֲדֹנִיקָם see אֲדֹנִיָּהוּ c.",
+       "reread": "אֲדֹנִיקָם see אֲדֹנִיָּהוּ c.",
+       "status": "agreed",
+       "text": "אֲדֹנִיקָם see אֲדֹנִיָּהוּ c."
+      },
+      {
+       "draft": "אֲדֹנִירָם (lord of altitude) Adoniram,",
+       "reread": "אֲדֹנִירָם (lord of altitude) Adoniram,",
+       "status": "agreed",
+       "text": "אֲדֹנִירָם (lord of altitude) Adoniram,"
+      },
+      {
+       "draft": "pr. n. of a man who had charge of the",
+       "reread": "pr. n. of a man who had charge of the",
+       "status": "agreed",
+       "text": "pr. n. of a man who had charge of the"
+      },
+      {
+       "draft": "public works under David and Solomon,",
+       "reread": "public works under David and Solomon,",
+       "status": "agreed",
+       "text": "public works under David and Solomon,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b01",
+     "bounds": {
+      "x": 209,
+      "y": 1417,
+      "width": 860,
+      "height": 268
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r01-b01-860x268+209+1417-x2.png",
+     "image_sha256": "b24d8644ed19f06003ceff5f43cec7414268187300dc2619e0e214eeeebabe78",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "1 K. 4, 6.  By an unusual contraction,",
+       "called אֲדוֹרָם Adoram, 2 Sam. 20, 24.",
+       "1 K. 12, 18 ; also הֲדוֹרָם 2 Chr. 10, 18.",
+       "* אָדַר in Kal not used, pr. to be large,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "1f9b5c0a-1606-40cf-9a92-4e2d57436700",
+      "duration_api_ms": 10691,
+      "cost_usd_list": 0.0760235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2797,
+      "output_tokens": 377
+     },
+     "lines": [
+      {
+       "draft": "1 K. 4, 6. By an unusual contraction,",
+       "reread": "1 K. 4, 6.  By an unusual contraction,",
+       "status": "agreed",
+       "text": "1 K. 4, 6. By an unusual contraction,"
+      },
+      {
+       "draft": "called אֲדוֹרָם Adoram, 2 Sam. 20, 24.",
+       "reread": "called אֲדוֹרָם Adoram, 2 Sam. 20, 24.",
+       "status": "agreed",
+       "text": "called אֲדוֹרָם Adoram, 2 Sam. 20, 24."
+      },
+      {
+       "draft": "1 K. 12, 18; also הֲדוֹרָם 2 Chr. 10, 18.",
+       "reread": "1 K. 12, 18 ; also הֲדוֹרָם 2 Chr. 10, 18.",
+       "status": "agreed",
+       "text": "1 K. 12, 18; also הֲדוֹרָם 2 Chr. 10, 18."
+      },
+      {
+       "draft": "* אָדַר in Kal not used, pr. to be large,",
+       "reread": "* אָדַר in Kal not used, pr. to be large,",
+       "status": "agreed",
+       "text": "* אָדַר in Kal not used, pr. to be large,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b02",
+     "bounds": {
+      "x": 209,
+      "y": 1669,
+      "width": 860,
+      "height": 244
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r01-b02-860x244+209+1669-x2.png",
+     "image_sha256": "e26ff0f4476bcf9816e84a29fd925f484cf05ea64a866f378c10fcd838b26b53",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "great, ample, see deriv. אֶדֶר, אַדֶּרֶת;",
+       "comp. أَدِرَ to have the hernia, pr. to be",
+       "swollen; أَدَرُ swollen, inflated, e. g."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f41e9847-fa11-4224-b399-fc8836d89c45",
+      "duration_api_ms": 25417,
+      "cost_usd_list": 0.11844350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 1275
+     },
+     "lines": [
+      {
+       "draft": "great, ample, see deriv. אֶדֶר, אַדֶּרֶת;",
+       "reread": "great, ample, see deriv. אֶדֶר, אַדֶּרֶת;",
+       "status": "agreed",
+       "text": "great, ample, see deriv. אֶדֶר, אַדֶּרֶת;"
+      },
+      {
+       "draft": "comp. أَدِرَ to have the hernia, pr. to be",
+       "reread": "comp. أَدِرَ to have the hernia, pr. to be",
+       "status": "agreed",
+       "text": "comp. أَدِرَ to have the hernia, pr. to be"
+      },
+      {
+       "draft": "swollen; آدَرُ swollen, inflated, e. g.",
+       "reread": "swollen; أَدَرُ swollen, inflated, e. g.",
+       "status": "adjudicated",
+       "band_id": "c0-r01-b02",
+       "judgement": {
+        "text": "swollen; أَءْدَرُ swollen, inflated, e. g.",
+        "verdict": "neither",
+        "note": "The Arabic is printed uncontracted: أَ then a separate hamza with sukūn (ءْ) before دَرُ, not madda (A) and not a bare أَدَرُ (B).",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "9543b744-93bc-410a-a94b-6a6a92531f41",
+        "duration_api_ms": 28379,
+        "cost_usd_list": 0.1260535,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3574,
+        "cache_creation_input_tokens": 2601,
+        "output_tokens": 1456
+       },
+       "text": "swollen; أَءْدَرُ swollen, inflated, e. g."
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r01-b03",
+     "bounds": {
+      "x": 209,
+      "y": 1897,
+      "width": 860,
+      "height": 203
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r01-b03-860x203+209+1897-x2.png",
+     "image_sha256": "01ea86dfefbe9b28a650879e0c41b6223f42b4cdeaa2bdfe638c9b56fe88e238",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the belly. Kindr. is הָדַר.—Trop. to be",
+       "great, splendid, powerful; see in אַדִּיר.",
+       "Niph. to be made great, to be magni-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "f13fc69f-871d-42b4-910b-6d122854df13",
+      "duration_api_ms": 9830,
+      "cost_usd_list": 0.0711235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2487,
+      "output_tokens": 403
+     },
+     "lines": [
+      {
+       "draft": "the belly. Kindr. is הָדַר.—Trop. to be",
+       "reread": "the belly. Kindr. is הָדַר.—Trop. to be",
+       "status": "agreed",
+       "text": "the belly. Kindr. is הָדַר.—Trop. to be"
+      },
+      {
+       "draft": "great, splendid, powerful; see in אַדִּיר.",
+       "reread": "great, splendid, powerful; see in אַדִּיר.",
+       "status": "agreed",
+       "text": "great, splendid, powerful; see in אַדִּיר."
+      },
+      {
+       "draft": "Niph. to be made great, to be magni-",
+       "reread": "Niph. to be made great, to be magni-",
+       "status": "agreed",
+       "text": "Niph. to be made great, to be magni-"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "row": 2,
+   "bounds": {
+    "x": 209,
+    "y": 2080,
+    "width": 860,
+    "height": 867
+   },
+   "draft_lines": [
+    "fied, glorious. Part. Ex. 15, 6 יְמִינְךָ יְהוָֹה",
+    "נֶאְדָּרִי בַּכֹּחַ thy right hand, Jehovah, is",
+    "magnified in might, is made glorious in",
+    "strength. The Yod in נֶאְדָּרִי is para-",
+    "gogic.",
+    "Hiph. to magnify, to make honourable,",
+    "Is. 42, 21.",
+    "Deriv. אֶדֶר, אַדֶּרֶת, אַדִּיר, and the com-",
+    "pounds אַדְרַמֶּלֶךְ, אַדְרַגָּזְרִין.",
+    "אֲדָר Adar, the twelſth Hebrew month,",
+    "from the new moon of March to that of",
+    "April ; or according to the Rabbins,",
+    "from the new moon of February to that",
+    "of March. Esth. 3, 7. 13. 8, 12. 9, 1. 15.",
+    "17. 19. 21. Gr. Ἀδάρ, 1 Macc. 7, 43. Syr."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r02-b00",
+     "bounds": {
+      "x": 209,
+      "y": 2072,
+      "width": 860,
+      "height": 242
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r02-b00-860x242+209+2072-x2.png",
+     "image_sha256": "3536982105f2b0c008a614ee74a2cd79f517a7cb009ad0ae5c48b96c1fb3b3bb",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "fied, glorious. Part. Ex. 15, 6 יְמִינְךָ יְהוָֹה",
+       "נֶאְדָּרִי בַּכֹּחַ thy right hand, Jehovah, is",
+       "magnified in might, is made glorious in",
+       "strength. The Yod in נֶאְדָּרִי is para-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "255a0c0b-3177-46f2-aa04-4f3b2ffba170",
+      "duration_api_ms": 15539,
+      "cost_usd_list": 0.09374350000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2673,
+      "output_tokens": 781
+     },
+     "lines": [
+      {
+       "draft": "fied, glorious. Part. Ex. 15, 6 יְמִינְךָ יְהוָֹה",
+       "reread": "fied, glorious. Part. Ex. 15, 6 יְמִינְךָ יְהוָֹה",
+       "status": "agreed",
+       "text": "fied, glorious. Part. Ex. 15, 6 יְמִינְךָ יְהוָֹה"
+      },
+      {
+       "draft": "נֶאְדָּרִי בַּכֹּחַ thy right hand, Jehovah, is",
+       "reread": "נֶאְדָּרִי בַּכֹּחַ thy right hand, Jehovah, is",
+       "status": "agreed",
+       "text": "נֶאְדָּרִי בַּכֹּחַ thy right hand, Jehovah, is"
+      },
+      {
+       "draft": "magnified in might, is made glorious in",
+       "reread": "magnified in might, is made glorious in",
+       "status": "agreed",
+       "text": "magnified in might, is made glorious in"
+      },
+      {
+       "draft": "strength. The Yod in נֶאְדָּרִי is para-",
+       "reread": "strength. The Yod in נֶאְדָּרִי is para-",
+       "status": "agreed",
+       "text": "strength. The Yod in נֶאְדָּרִי is para-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b01",
+     "bounds": {
+      "x": 209,
+      "y": 2298,
+      "width": 860,
+      "height": 229
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r02-b01-860x229+209+2298-x2.png",
+     "image_sha256": "debff1ebc9412d06633a7d4905bbeca84c1dbf47cb0bcdfd8503badce2dbbf39",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "gogic.",
+       "Hiph. to magnify, to make honourable,",
+       "Is. 42, 21.",
+       "Deriv. אֶדֶר, אַדֶּרֶת, אַדִּיר, and the com-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "d74b5865-e816-41ce-a5d2-e8b2b7efaf24",
+      "duration_api_ms": 12817,
+      "cost_usd_list": 0.08340349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 599
+     },
+     "lines": [
+      {
+       "draft": "gogic.",
+       "reread": "gogic.",
+       "status": "agreed",
+       "text": "gogic."
+      },
+      {
+       "draft": "Hiph. to magnify, to make honourable,",
+       "reread": "Hiph. to magnify, to make honourable,",
+       "status": "agreed",
+       "text": "Hiph. to magnify, to make honourable,"
+      },
+      {
+       "draft": "Is. 42, 21.",
+       "reread": "Is. 42, 21.",
+       "status": "agreed",
+       "text": "Is. 42, 21."
+      },
+      {
+       "draft": "Deriv. אֶדֶר, אַדֶּרֶת, אַדִּיר, and the com-",
+       "reread": "Deriv. אֶדֶר, אַדֶּרֶת, אַדִּיר, and the com-",
+       "status": "agreed",
+       "text": "Deriv. אֶדֶר, אַדֶּרֶת, אַדִּיר, and the com-"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b02",
+     "bounds": {
+      "x": 209,
+      "y": 2511,
+      "width": 860,
+      "height": 266
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r02-b02-860x266+209+2511-x2.png",
+     "image_sha256": "d64060dbd964e7a55b2631e4f1f38b3e0f097703dbb6926eb9952f70e37eb5ec",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "pounds אֲדַרְגָּזְרִין, אַדְרַמֶּלֶךְ.",
+       "אֲדָר Adar, the twelfth Hebrew month,",
+       "from the new moon of March to that of",
+       "April; or according to the Rabbins,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b6290a87-82cc-4aef-a353-ea6eeb57336d",
+      "duration_api_ms": 13504,
+      "cost_usd_list": 0.0871335,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2735,
+      "output_tokens": 624
+     },
+     "lines": [
+      {
+       "draft": "pounds אַדְרַמֶּלֶךְ, אַדְרַגָּזְרִין.",
+       "reread": "pounds אֲדַרְגָּזְרִין, אַדְרַמֶּלֶךְ.",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "pounds אַדְרַמֶּלֶךְ, אֲדַרְגָּזְרִין.",
+        "verdict": "neither",
+        "note": "Order follows A: the word nearest \"pounds\" (leftmost) is אדרגזרין, so אַדְרַמֶּלֶךְ comes first in logical order. But the pointing of the second word follows B: the print shows hataf-patah under alef, patah under dalet, shva under resh (אֲדַרְגָּזְרִין), not A's אַדְרַגָּזְרִין.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "5411b7d9-d41e-4ada-94f9-44b249d9cb4c",
+        "duration_api_ms": 18015,
+        "cost_usd_list": 0.10396999999999999,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3600,
+        "cache_creation_input_tokens": 2689,
+        "output_tokens": 979
+       },
+       "text": "pounds אַדְרַמֶּלֶךְ, אֲדַרְגָּזְרִין."
+      },
+      {
+       "draft": "אֲדָר Adar, the twelſth Hebrew month,",
+       "reread": "אֲדָר Adar, the twelfth Hebrew month,",
+       "status": "adjudicated",
+       "band_id": "c0-r02-b02",
+       "judgement": {
+        "text": "אֲדָר Adar, the twelfth Hebrew month,",
+        "verdict": "b",
+        "note": "The letter in \"twelfth\" is an ordinary f with a full crossbar (same glyph as in \"from\"/\"of\" on the next line), not a long s (ſ), which this 1854 typeface does not use.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "c62d600e-2056-4d99-9d09-3300f3de8d83",
+        "duration_api_ms": 12061,
+        "cost_usd_list": 0.08322325,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2662,
+        "output_tokens": 575
+       },
+       "text": "אֲדָר Adar, the twelfth Hebrew month,"
+      },
+      {
+       "draft": "from the new moon of March to that of",
+       "reread": "from the new moon of March to that of",
+       "status": "agreed",
+       "text": "from the new moon of March to that of"
+      },
+      {
+       "draft": "April ; or according to the Rabbins,",
+       "reread": "April; or according to the Rabbins,",
+       "status": "agreed",
+       "text": "April; or according to the Rabbins,"
+      }
+     ]
+    },
+    {
+     "band_id": "c0-r02-b03",
+     "bounds": {
+      "x": 209,
+      "y": 2761,
+      "width": 860,
+      "height": 179
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r02-b03-860x179+209+2761-x2.png",
+     "image_sha256": "89738fd4f2aad6499a63e301ec0215a151aa9f6260998eaa2c093f8490b8d7e7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "from the new moon of February to that",
+       "of March. Esth. 3, 7. 13. 8, 12. 9, 1. 15.",
+       "17. 19. 21. Gr. Ἀδάρ, 1 Macc. 7, 43. Syr."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "829aa183-077e-42d4-b826-52226270c98e",
+      "duration_api_ms": 8101,
+      "cost_usd_list": 0.0614435,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2363,
+      "output_tokens": 259
+     },
+     "lines": [
+      {
+       "draft": "from the new moon of February to that",
+       "reread": "from the new moon of February to that",
+       "status": "agreed",
+       "text": "from the new moon of February to that"
+      },
+      {
+       "draft": "of March. Esth. 3, 7. 13. 8, 12. 9, 1. 15.",
+       "reread": "of March. Esth. 3, 7. 13. 8, 12. 9, 1. 15.",
+       "status": "agreed",
+       "text": "of March. Esth. 3, 7. 13. 8, 12. 9, 1. 15."
+      },
+      {
+       "draft": "17. 19. 21. Gr. Ἀδάρ, 1 Macc. 7, 43. Syr.",
+       "reread": "17. 19. 21. Gr. Ἀδάρ, 1 Macc. 7, 43. Syr.",
+       "status": "agreed",
+       "text": "17. 19. 21. Gr. Ἀδάρ, 1 Macc. 7, 43. Syr."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "row": 3,
+   "bounds": {
+    "x": 209,
+    "y": 2935,
+    "width": 860,
+    "height": 338
+   },
+   "draft_lines": [
+    "ܐܳܕܳܪ, Arab. آذَارُ, أَذَارُ, and آذَارُ, the",
+    "sixth month of the Syro-Macedonians.",
+    "Perh. from Pers. آذر fire.",
+    "אֲדָר Chald. id. Ezra 6, 15."
+   ],
+   "bands": [
+    {
+     "band_id": "c0-r03-b00",
+     "bounds": {
+      "x": 209,
+      "y": 2942,
+      "width": 860,
+      "height": 333
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c0-r03-b00-860x333+209+2942-x2.png",
+     "image_sha256": "f8cf4dabbd1e1db422af647efd6cbf07144f6babfddd8d1f4102b083f07a2d17",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "ܐܳܕܳܪ, Arab. آذَارُ, أَذَارُ, and آذَارُ, the",
+       "sixth month of the Syro-Macedonians.",
+       "Perh. from Pers. آذَر fire.",
+       "אֲדָר Chald. id. Ezra 6, 15."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "7c51bf49-8729-405c-8553-03759a1068ad",
+      "duration_api_ms": 17487,
+      "cost_usd_list": 0.10088349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3045,
+      "output_tokens": 775
+     },
+     "lines": [
+      {
+       "draft": "ܐܳܕܳܪ, Arab. آذَارُ, أَذَارُ, and آذَارُ, the",
+       "reread": "ܐܳܕܳܪ, Arab. آذَارُ, أَذَارُ, and آذَارُ, the",
+       "status": "agreed",
+       "text": "ܐܳܕܳܪ, Arab. آذَارُ, أَذَارُ, and آذَارُ, the"
+      },
+      {
+       "draft": "sixth month of the Syro-Macedonians.",
+       "reread": "sixth month of the Syro-Macedonians.",
+       "status": "agreed",
+       "text": "sixth month of the Syro-Macedonians."
+      },
+      {
+       "draft": "Perh. from Pers. آذر fire.",
+       "reread": "Perh. from Pers. آذَر fire.",
+       "status": "adjudicated",
+       "band_id": "c0-r03-b00",
+       "judgement": {
+        "text": "Perh. from Pers. آذَر fire.",
+        "verdict": "b",
+        "note": "Above the dhāl there are two marks — its dot plus a short slanted fatḥa stroke (matching the fatḥa on the آذَار forms in line 1) — so the word is printed pointed, آذَر, as in Reading B; Reading A drops the fatḥa.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1611ca21-7497-48dc-a536-b10f398f6e02",
+        "duration_api_ms": 16027,
+        "cost_usd_list": 0.10096,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3560,
+        "cache_creation_input_tokens": 2959,
+        "output_tokens": 811
+       },
+       "text": "Perh. from Pers. آذَر fire."
+      },
+      {
+       "draft": "אֲדָר Chald. id. Ezra 6, 15.",
+       "reread": "אֲדָר Chald. id. Ezra 6, 15.",
+       "status": "agreed",
+       "text": "אֲדָר Chald. id. Ezra 6, 15."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "row": 0,
+   "bounds": {
+    "x": 1092,
+    "y": 183,
+    "width": 864,
+    "height": 959
+   },
+   "draft_lines": [
+    "אַדָּר see חֲצַר־אַדָּר.",
+    "אֶדֶר m. pr. largeness, amplitude;",
+    "hence",
+    "1. a wide cloak, mantle, i. q. אַדֶּרֶת,",
+    "Mic. 2, 8.",
+    "2. greatness, splendour, whence Zech.",
+    "11, 13 אֶדֶר הַיְקָר splendour of the price,",
+    "i. e. the splendid price, ironically.",
+    "אִדַּר Chald. (r. נָדַר II) area, threshing-",
+    "floor, pr. a wide open place, Dan. 2, 35.",
+    "Syr. ܐܶܕܪܳܐ, Arab. أَنْدَرٌ. Hence some",
+    "refer it to Arab. ندر excidit granum;",
+    "but in Arab. اندر the nd seems to be",
+    "for dd."
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r00-b00",
+     "bounds": {
+      "x": 1092,
+      "y": 175,
+      "width": 864,
+      "height": 328
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r00-b00-864x328+1092+175-x2.png",
+     "image_sha256": "808415ea96cdcf3be972303e521d2b7f64e39380fa585824ee2b291ae0f116d7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַדָּר see חֲצַר־אַדָּר.",
+       "אֶדֶר m. pr. largeness, amplitude ;",
+       "hence",
+       "1. a wide cloak, mantle, i. q. אַדֶּרֶת,"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "ad57cda2-6d95-4e62-a191-345d79a74940",
+      "duration_api_ms": 10782,
+      "cost_usd_list": 0.0851835,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 3045,
+      "output_tokens": 461
+     },
+     "lines": [
+      {
+       "draft": "אַדָּר see חֲצַר־אַדָּר.",
+       "reread": "אַדָּר see חֲצַר־אַדָּר.",
+       "status": "agreed",
+       "text": "אַדָּר see חֲצַר־אַדָּר."
+      },
+      {
+       "draft": "אֶדֶר m. pr. largeness, amplitude;",
+       "reread": "אֶדֶר m. pr. largeness, amplitude ;",
+       "status": "agreed",
+       "text": "אֶדֶר m. pr. largeness, amplitude;"
+      },
+      {
+       "draft": "hence",
+       "reread": "hence",
+       "status": "agreed",
+       "text": "hence"
+      },
+      {
+       "draft": "1. a wide cloak, mantle, i. q. אַדֶּרֶת,",
+       "reread": "1. a wide cloak, mantle, i. q. אַדֶּרֶת,",
+       "status": "agreed",
+       "text": "1. a wide cloak, mantle, i. q. אַדֶּרֶת,"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b01",
+     "bounds": {
+      "x": 1092,
+      "y": 487,
+      "width": 864,
+      "height": 237
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r00-b01-864x237+1092+487-x2.png",
+     "image_sha256": "7d6ee7ce04217dd35abed2b426abeb0acbbf7325c0af906b16ed052edbe3658a",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Mic. 2, 8.",
+       "2. greatness, splendour, whence Zech.",
+       "11, 13 אֶדֶר הַיְקָר splendour of the price,",
+       "i. e. the splendid price, ironically."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "22204cb3-1164-4065-bcba-301ec9f69353",
+      "duration_api_ms": 6926,
+      "cost_usd_list": 0.0749535,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2611,
+      "output_tokens": 430
+     },
+     "lines": [
+      {
+       "draft": "Mic. 2, 8.",
+       "reread": "Mic. 2, 8.",
+       "status": "agreed",
+       "text": "Mic. 2, 8."
+      },
+      {
+       "draft": "2. greatness, splendour, whence Zech.",
+       "reread": "2. greatness, splendour, whence Zech.",
+       "status": "agreed",
+       "text": "2. greatness, splendour, whence Zech."
+      },
+      {
+       "draft": "11, 13 אֶדֶר הַיְקָר splendour of the price,",
+       "reread": "11, 13 אֶדֶר הַיְקָר splendour of the price,",
+       "status": "agreed",
+       "text": "11, 13 אֶדֶר הַיְקָר splendour of the price,"
+      },
+      {
+       "draft": "i. e. the splendid price, ironically.",
+       "reread": "i. e. the splendid price, ironically.",
+       "status": "agreed",
+       "text": "i. e. the splendid price, ironically."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b02",
+     "bounds": {
+      "x": 1092,
+      "y": 708,
+      "width": 864,
+      "height": 301
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r00-b02-864x301+1092+708-x2.png",
+     "image_sha256": "3329b33ddedb16bc5432c6e6b988f9f823d9422e12ad1325891641a45397ddb7",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אִדַּר Chald. (r. נְדַר II ) area, threshing-",
+       "floor, pr. a wide open place, Dan. 2, 35.",
+       "Syr. ܐܶܕܪܳܐ, Arab. أَنْدَرٌ. Hence some",
+       "refer it to Arab. ندر excidit granum ;"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "3b5c0814-34fe-4b06-a445-694f7429ebbf",
+      "duration_api_ms": 18889,
+      "cost_usd_list": 0.10380349999999999,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2921,
+      "output_tokens": 883
+     },
+     "lines": [
+      {
+       "draft": "אִדַּר Chald. (r. נָדַר II) area, threshing-",
+       "reread": "אִדַּר Chald. (r. נְדַר II ) area, threshing-",
+       "status": "adjudicated",
+       "band_id": "c1-r00-b02",
+       "judgement": {
+        "text": "אִדַּר Chald. (r. נְדַר II ) area, threshing-",
+        "verdict": "b",
+        "note": "Under the nun the print shows two vertically stacked dots (shewa), not a horizontal qamets stroke, so נְדַר; there is also a visible space before the closing parenthesis after \"II\", as in B.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "e6cdecb8-df40-48a0-872b-f6f1a60a8ba4",
+        "duration_api_ms": 9766,
+        "cost_usd_list": 0.0764255,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3582,
+        "cache_creation_input_tokens": 2857,
+        "output_tokens": 361
+       },
+       "text": "אִדַּר Chald. (r. נְדַר II) area, threshing-"
+      },
+      {
+       "draft": "floor, pr. a wide open place, Dan. 2, 35.",
+       "reread": "floor, pr. a wide open place, Dan. 2, 35.",
+       "status": "agreed",
+       "text": "floor, pr. a wide open place, Dan. 2, 35."
+      },
+      {
+       "draft": "Syr. ܐܶܕܪܳܐ, Arab. أَنْدَرٌ. Hence some",
+       "reread": "Syr. ܐܶܕܪܳܐ, Arab. أَنْدَرٌ. Hence some",
+       "status": "agreed",
+       "text": "Syr. ܐܶܕܪܳܐ, Arab. أَنْدَرٌ. Hence some"
+      },
+      {
+       "draft": "refer it to Arab. ندر excidit granum;",
+       "reread": "refer it to Arab. ندر excidit granum ;",
+       "status": "agreed",
+       "text": "refer it to Arab. ندر excidit granum;"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r00-b03",
+     "bounds": {
+      "x": 1092,
+      "y": 993,
+      "width": 864,
+      "height": 134
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r00-b03-864x134+1092+993-x2.png",
+     "image_sha256": "ce36280404b485e80e369525caf9494270baf96f5b8ba201546ba1665575678f",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "but in Arab. اندر the nd seems to be",
+       "for dd."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "18ab450f-0670-4dff-93a1-a9546dd97b6f",
+      "duration_api_ms": 11053,
+      "cost_usd_list": 0.0650235,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3574,
+      "cache_creation_input_tokens": 2177,
+      "output_tokens": 405
+     },
+     "lines": [
+      {
+       "draft": "but in Arab. اندر the nd seems to be",
+       "reread": "but in Arab. اندر the nd seems to be",
+       "status": "agreed",
+       "text": "but in Arab. اندر the nd seems to be"
+      },
+      {
+       "draft": "for dd.",
+       "reread": "for dd.",
+       "status": "agreed",
+       "text": "for dd."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "row": 1,
+   "bounds": {
+    "x": 1092,
+    "y": 1130,
+    "width": 864,
+    "height": 958
+   },
+   "draft_lines": [
+    "אֲדַרְגָּזְרִין Chald. plur. m. chief-judges,",
+    "Dan. 3, 2. 3. Compounded from אֲדַר i. q.",
+    "אֶדֶר greatness, comp. אַדִּיר no. 3; and",
+    "גָּזְרִין judges, comp. גְּזַר .",
+    "אַדְרַזְדָּא Chald. adv. Ezra 7, 2. 3 right-",
+    "ly, diligently, carefully, Vulg. diligenter.",
+    "Prob. it is a Persian word, perh. i. q. Pers.",
+    "دُرُسْت recte, vere, probe.",
+    "אֲדַרְכּוֹן m. only in Plur. אֲדַרְכֹּנִים",
+    "1 Chr. 29, 7. Ezra 8, 27, i. q. דַּרְכְּמוֹן, a",
+    "daric, a Persian coin of pure gold, com-",
+    "mon also among the Jews while they",
+    "were under the Persian dominion. The",
+    "א is prosthetic; comp. in Mishna דַּרְכּוֹן",
+    "and Syr. ܕܰܪܺܝܟܽܘܢܳܐ. The etymology is"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r01-b00",
+     "bounds": {
+      "x": 1092,
+      "y": 1146,
+      "width": 864,
+      "height": 238
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r01-b00-864x238+1092+1146-x2.png",
+     "image_sha256": "e30a4f0b6440e19e2c453bb7450b955d6b7e477cd0d584ee2bdb6cddb4271908",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אֲדַרְגָּזְרִין Chald. plur. m. chief-judges,",
+       "Dan. 3, 2. 3. Compounded from אֲדַר i. q.",
+       "אֶדֶר greatness, comp. אַדִּיר no. 3; and",
+       "גָּזְרִין judges, comp. גָּזֵר."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "cae4780d-0fa7-4ee4-ba8f-47cb12d4355a",
+      "duration_api_ms": 12787,
+      "cost_usd_list": 0.08164375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 563
+     },
+     "lines": [
+      {
+       "draft": "אֲדַרְגָּזְרִין Chald. plur. m. chief-judges,",
+       "reread": "אֲדַרְגָּזְרִין Chald. plur. m. chief-judges,",
+       "status": "agreed",
+       "text": "אֲדַרְגָּזְרִין Chald. plur. m. chief-judges,"
+      },
+      {
+       "draft": "Dan. 3, 2. 3. Compounded from אֲדַר i. q.",
+       "reread": "Dan. 3, 2. 3. Compounded from אֲדַר i. q.",
+       "status": "agreed",
+       "text": "Dan. 3, 2. 3. Compounded from אֲדַר i. q."
+      },
+      {
+       "draft": "אֶדֶר greatness, comp. אַדִּיר no. 3; and",
+       "reread": "אֶדֶר greatness, comp. אַדִּיר no. 3; and",
+       "status": "agreed",
+       "text": "אֶדֶר greatness, comp. אַדִּיר no. 3; and"
+      },
+      {
+       "draft": "גָּזְרִין judges, comp. גְּזַר .",
+       "reread": "גָּזְרִין judges, comp. גָּזֵר.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b00",
+       "judgement": {
+        "text": "גָּזְרִין judges, comp. גְּזַר .",
+        "verdict": "a",
+        "note": "Final word is printed גְּזַר (sheva under dagesh-gimel, patach under zayin), not גָּזֵר; a visible space precedes the full stop.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "faabb8f2-1e2a-4a52-8b5c-5df6cfd99c9c",
+        "duration_api_ms": 13230,
+        "cost_usd_list": 0.07911325000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3573,
+        "cache_creation_input_tokens": 2539,
+        "output_tokens": 542
+       },
+       "text": "גָּזְרִין judges, comp. גְּזַר."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b01",
+     "bounds": {
+      "x": 1092,
+      "y": 1368,
+      "width": 864,
+      "height": 241
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r01-b01-864x241+1092+1368-x2.png",
+     "image_sha256": "7aa8b52768ac1fc319066e63e2b69d16873a6d882f1440b9d0e1f7bb2905c5c0",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "אַדְרַזְדָּא Chald. adv. Ezra 7, 23 right-",
+       "ly, diligently, carefully, Vulg. diligenter.",
+       "Prob. it is a Persian word, perh. i. q. Pers."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "8e849256-8103-4015-b360-1b91d889ff4f",
+      "duration_api_ms": 11951,
+      "cost_usd_list": 0.08213375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2675,
+      "output_tokens": 548
+     },
+     "lines": [
+      {
+       "draft": "אַדְרַזְדָּא Chald. adv. Ezra 7, 2. 3 right-",
+       "reread": "אַדְרַזְדָּא Chald. adv. Ezra 7, 23 right-",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b01",
+       "judgement": {
+        "text": "אַדְרַזְדָּא Chald. adv. Ezra 7, 2. 3 right-",
+        "verdict": "a",
+        "note": "The print clearly shows \"7, 2. 3\" with a period after the 2 and a space before the 3 (a typographical error for 7, 23), so Reading A matches the printed line; Reading B silently normalised it to \"23\".",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "a251cf86-8c58-48f8-b5db-96e1ca20e580",
+        "duration_api_ms": 13633,
+        "cost_usd_list": 0.08574875,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3595,
+        "cache_creation_input_tokens": 2623,
+        "output_tokens": 641
+       },
+       "text": "אַדְרַזְדָּא Chald. adv. Ezra 7, 2. 3 right-"
+      },
+      {
+       "draft": "ly, diligently, carefully, Vulg. diligenter.",
+       "reread": "ly, diligently, carefully, Vulg. diligenter.",
+       "status": "agreed",
+       "text": "ly, diligently, carefully, Vulg. diligenter."
+      },
+      {
+       "draft": "Prob. it is a Persian word, perh. i. q. Pers.",
+       "reread": "Prob. it is a Persian word, perh. i. q. Pers.",
+       "status": "agreed",
+       "text": "Prob. it is a Persian word, perh. i. q. Pers."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b02",
+     "bounds": {
+      "x": 1092,
+      "y": 1593,
+      "width": 864,
+      "height": 260
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r01-b02-864x260+1092+1593-x2.png",
+     "image_sha256": "de42ea0023b9ecd4ab9878dec1f77407f88873bbf6c3c99f51cacbeee6226117",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "دُرست recte, vere, probe.",
+       "אֲדַרְכֹּן m. only in Plur. אֲדַרְכֹּנִים",
+       "1 Chr. 29, 7. Ezra 8, 27, i. q. דַּרְכְּמוֹן, a",
+       "daric, a Persian coin of pure gold, com-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "2cc80038-c44e-43ed-974f-7d6230a1f6d2",
+      "duration_api_ms": 8897,
+      "cost_usd_list": 0.08202375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2737,
+      "output_tokens": 521
+     },
+     "lines": [
+      {
+       "draft": "دُرُسْت recte, vere, probe.",
+       "reread": "دُرست recte, vere, probe.",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "دُرست recte, vere, probe.",
+        "verdict": "b",
+        "note": "Only one point is printed: a ḍamma over the dāl. Reading A's ḍamma on rā and sukūn on sīn are not in the print — the marks above the word are descenders from the previous line.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "eceeae9f-0166-4468-9cdf-b7f299224af9",
+        "duration_api_ms": 13285,
+        "cost_usd_list": 0.08085975000000001,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3559,
+        "cache_creation_input_tokens": 2649,
+        "output_tokens": 533
+       },
+       "text": "دُرست recte, vere, probe."
+      },
+      {
+       "draft": "אֲדַרְכּוֹן m. only in Plur. אֲדַרְכֹּנִים",
+       "reread": "אֲדַרְכֹּן m. only in Plur. אֲדַרְכֹּנִים",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b02",
+       "judgement": {
+        "text": "אֲדַרְכּוֹן m. only in Plur. אֲדַרְכֹּנִים",
+        "verdict": "a",
+        "note": "The headword is printed plene: a vav with holem stands between the dageshed kaf and the final nun (אֲדַרְכּוֹן), as Reading A has; Reading B's defective אֲדַרְכֹּן drops it. The plural is defective (אֲדַרְכֹּנִים) in both readings and in print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "4ae739c9-8810-4cdc-ba45-89405f094d16",
+        "duration_api_ms": 11189,
+        "cost_usd_list": 0.07861975,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3599,
+        "cache_creation_input_tokens": 2689,
+        "output_tokens": 472
+       },
+       "text": "אֲדַרְכּוֹן m. only in Plur. אֲדַרְכֹּנִים"
+      },
+      {
+       "draft": "1 Chr. 29, 7. Ezra 8, 27, i. q. דַּרְכְּמוֹן, a",
+       "reread": "1 Chr. 29, 7. Ezra 8, 27, i. q. דַּרְכְּמוֹן, a",
+       "status": "agreed",
+       "text": "1 Chr. 29, 7. Ezra 8, 27, i. q. דַּרְכְּמוֹן, a"
+      },
+      {
+       "draft": "daric, a Persian coin of pure gold, com-",
+       "reread": "daric, a Persian coin of pure gold, com-",
+       "status": "agreed",
+       "text": "daric, a Persian coin of pure gold, com-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r01-b03",
+     "bounds": {
+      "x": 1092,
+      "y": 1837,
+      "width": 864,
+      "height": 245
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r01-b03-864x245+1092+1837-x2.png",
+     "image_sha256": "09e22b78dc1e1433ccd6dd8460d98aaa50e87c68331249e650492e1bb844be82",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "mon also among the Jews while they",
+       "were under the Persian dominion. The",
+       "א is prosthetic; comp. in Mishna דַּרְכּוֹן",
+       "and Syr. ܕܰܪܟܽܘܢܳܐ. The etymology is"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "da30a3b7-b634-43db-9c9a-12b22b4af186",
+      "duration_api_ms": 15951,
+      "cost_usd_list": 0.08668375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2675,
+      "output_tokens": 639
+     },
+     "lines": [
+      {
+       "draft": "mon also among the Jews while they",
+       "reread": "mon also among the Jews while they",
+       "status": "agreed",
+       "text": "mon also among the Jews while they"
+      },
+      {
+       "draft": "were under the Persian dominion. The",
+       "reread": "were under the Persian dominion. The",
+       "status": "agreed",
+       "text": "were under the Persian dominion. The"
+      },
+      {
+       "draft": "א is prosthetic; comp. in Mishna דַּרְכּוֹן",
+       "reread": "א is prosthetic; comp. in Mishna דַּרְכּוֹן",
+       "status": "agreed",
+       "text": "א is prosthetic; comp. in Mishna דַּרְכּוֹן"
+      },
+      {
+       "draft": "and Syr. ܕܰܪܺܝܟܽܘܢܳܐ. The etymology is",
+       "reread": "and Syr. ܕܰܪܟܽܘܢܳܐ. The etymology is",
+       "status": "adjudicated",
+       "band_id": "c1-r01-b03",
+       "judgement": {
+        "text": "and Syr. ܕܰܪܟܽܘܢܳܐ. The etymology is",
+        "verdict": "b",
+        "note": "Decisive difference: no yod is printed between rish and kaph — the kaph (with its esasa mark) follows the rish directly, so the word is six letters ܕܪܟܘܢܐ matching Heb. דַּרְכּוֹן; the marks over the first two letters are pthaha plus the rish dot, not a hbasa on a yod. Reading A's ܺܝ is spurious.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "d3743f72-af17-4e49-88c0-5ebcf74026c9",
+        "duration_api_ms": 28006,
+        "cost_usd_list": 0.140909,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3596,
+        "cache_creation_input_tokens": 2636,
+        "output_tokens": 1739
+       },
+       "text": "and Syr. ܕܰܪܟܽܘܢܳܐ. The etymology is"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "row": 2,
+   "bounds": {
+    "x": 1092,
+    "y": 2076,
+    "width": 864,
+    "height": 901
+   },
+   "draft_lines": [
+    "not certain, although we can hardly",
+    "doubt that the word is kindred to the pr.",
+    "n. Darius, דָּרְיָוֶשׁ. Others make it either:",
+    "a) Dimin. from דריך, daric, δαριήκης, if",
+    "the common reading is correct in Strabo",
+    "XVI. p. 5874 ; or   b) A compound from",
+    "دارا king (Darius) and كون appear-",
+    "ance, figure.—The daric was equal in",
+    "value to the Attic χρυσοῦς, which, ac-",
+    "cording to our mode of reckoning, was",
+    "worth nearly 1½ German ducats, or",
+    "about three Spanish dollars ; see Boeckh",
+    "Staatsh. der Ath. I. p. 23. The coin",
+    "usually bears the image of an archer",
+    "with a tiara. Darics of gold and silver",
+    "are extant in the Museums of Paris and"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r02-b00",
+     "bounds": {
+      "x": 1092,
+      "y": 2083,
+      "width": 864,
+      "height": 230
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r02-b00-864x230+1092+2083-x2.png",
+     "image_sha256": "f612a04012b907ab1ef652e89e1b7f06e46d6c468666b23c6406df4b165f888c",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "not certain, although we can hardly",
+       "doubt that the word is kindred to the pr.",
+       "n. Darius, דָּרְיָוֶשׁ. Others make it either:",
+       "a) Dimin. from דריך, daric, δαριήκης, if"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "b4c51273-df9a-4245-b76d-8bd5c4287c9a",
+      "duration_api_ms": 15901,
+      "cost_usd_list": 0.08894375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 709
+     },
+     "lines": [
+      {
+       "draft": "not certain, although we can hardly",
+       "reread": "not certain, although we can hardly",
+       "status": "agreed",
+       "text": "not certain, although we can hardly"
+      },
+      {
+       "draft": "doubt that the word is kindred to the pr.",
+       "reread": "doubt that the word is kindred to the pr.",
+       "status": "agreed",
+       "text": "doubt that the word is kindred to the pr."
+      },
+      {
+       "draft": "n. Darius, דָּרְיָוֶשׁ. Others make it either:",
+       "reread": "n. Darius, דָּרְיָוֶשׁ. Others make it either:",
+       "status": "agreed",
+       "text": "n. Darius, דָּרְיָוֶשׁ. Others make it either:"
+      },
+      {
+       "draft": "a) Dimin. from דריך, daric, δαριήκης, if",
+       "reread": "a) Dimin. from דריך, daric, δαριήκης, if",
+       "status": "agreed",
+       "text": "a) Dimin. from דריך, daric, δαριήκης, if"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b01",
+     "bounds": {
+      "x": 1092,
+      "y": 2297,
+      "width": 864,
+      "height": 301
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r02-b01-864x301+1092+2297-x2.png",
+     "image_sha256": "790d4ea373b6fa099021c1b0391ecb869ed9286af063dca05f28937e34c77778",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "the common reading is correct in Strabo",
+       "XVI. p. 5874 ; or   b) A compound from",
+       "دارا king (Darius) and كُون appear-",
+       "ance, figure.—The daric was equal in",
+       "value to the Attic χρυσοῦς, which, ac-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "edc43922-49d5-4a2a-baed-b20038c22038",
+      "duration_api_ms": 10295,
+      "cost_usd_list": 0.07724375,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2923,
+      "output_tokens": 351
+     },
+     "lines": [
+      {
+       "draft": "the common reading is correct in Strabo",
+       "reread": "the common reading is correct in Strabo",
+       "status": "agreed",
+       "text": "the common reading is correct in Strabo"
+      },
+      {
+       "draft": "XVI. p. 5874 ; or   b) A compound from",
+       "reread": "XVI. p. 5874 ; or   b) A compound from",
+       "status": "agreed",
+       "text": "XVI. p. 5874; or b) A compound from"
+      },
+      {
+       "draft": "دارا king (Darius) and كون appear-",
+       "reread": "دارا king (Darius) and كُون appear-",
+       "status": "adjudicated",
+       "band_id": "c1-r02-b01",
+       "judgement": {
+        "text": "دارا king (Darius) and كُون appear-",
+        "verdict": "b",
+        "note": "The kāf of the second Arabic word carries a printed damma (ُ), visible as a small mark above the letter; Reading A omits it. Everything else (دارا without points, the Roman text) is identical in both readings and matches the print.",
+        "model": "claude-fable-5-1",
+        "cli_mode": "lean-system-prompt-v1",
+        "session_id": "1907f99a-6b9c-48d4-887c-dea59ab97590",
+        "duration_api_ms": 11725,
+        "cost_usd_list": 0.07987025,
+        "input_tokens": 34,
+        "cache_read_input_tokens": 3561,
+        "cache_creation_input_tokens": 2837,
+        "output_tokens": 438
+       },
+       "text": "دارا king (Darius) and كُون appear-"
+      },
+      {
+       "draft": "ance, figure.—The daric was equal in",
+       "reread": "ance, figure.—The daric was equal in",
+       "status": "agreed",
+       "text": "ance, figure.—The daric was equal in"
+      },
+      {
+       "draft": "value to the Attic χρυσοῦς, which, ac-",
+       "reread": "value to the Attic χρυσοῦς, which, ac-",
+       "status": "agreed",
+       "text": "value to the Attic χρυσοῦς, which, ac-"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b02",
+     "bounds": {
+      "x": 1092,
+      "y": 2582,
+      "width": 864,
+      "height": 233
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r02-b02-864x233+1092+2582-x2.png",
+     "image_sha256": "51c094c98f530830e86b92a90bb7af19ae42b1afe3f0aae3796680c92ee47ae8",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "cording to our mode of reckoning, was",
+       "worth nearly 1½ German ducats, or",
+       "about three Spanish dollars ; see Boeckh",
+       "Staatsh. der Ath. I. p. 23. The coin"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "95246763-e92a-47d6-8a65-a12149ee1993",
+      "duration_api_ms": 7907,
+      "cost_usd_list": 0.06604375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2613,
+      "output_tokens": 251
+     },
+     "lines": [
+      {
+       "draft": "cording to our mode of reckoning, was",
+       "reread": "cording to our mode of reckoning, was",
+       "status": "agreed",
+       "text": "cording to our mode of reckoning, was"
+      },
+      {
+       "draft": "worth nearly 1½ German ducats, or",
+       "reread": "worth nearly 1½ German ducats, or",
+       "status": "agreed",
+       "text": "worth nearly 1½ German ducats, or"
+      },
+      {
+       "draft": "about three Spanish dollars ; see Boeckh",
+       "reread": "about three Spanish dollars ; see Boeckh",
+       "status": "agreed",
+       "text": "about three Spanish dollars; see Boeckh"
+      },
+      {
+       "draft": "Staatsh. der Ath. I. p. 23. The coin",
+       "reread": "Staatsh. der Ath. I. p. 23. The coin",
+       "status": "agreed",
+       "text": "Staatsh. der Ath. I. p. 23. The coin"
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r02-b03",
+     "bounds": {
+      "x": 1092,
+      "y": 2799,
+      "width": 864,
+      "height": 172
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r02-b03-864x172+1092+2799-x2.png",
+     "image_sha256": "b01a239fd953da41f8c8479bdcc5f7fda395567512c15f162ab62de8cfe51731",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "usually bears the image of an archer",
+       "with a tiara. Darics of gold and silver",
+       "are extant in the Museums of Paris and"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "71a417a5-07a4-418b-bc68-e26af676beda",
+      "duration_api_ms": 7084,
+      "cost_usd_list": 0.059583750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2365,
+      "output_tokens": 221
+     },
+     "lines": [
+      {
+       "draft": "usually bears the image of an archer",
+       "reread": "usually bears the image of an archer",
+       "status": "agreed",
+       "text": "usually bears the image of an archer"
+      },
+      {
+       "draft": "with a tiara. Darics of gold and silver",
+       "reread": "with a tiara. Darics of gold and silver",
+       "status": "agreed",
+       "text": "with a tiara. Darics of gold and silver"
+      },
+      {
+       "draft": "are extant in the Museums of Paris and",
+       "reread": "are extant in the Museums of Paris and",
+       "status": "agreed",
+       "text": "are extant in the Museums of Paris and"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "row": 3,
+   "bounds": {
+    "x": 1092,
+    "y": 2965,
+    "width": 864,
+    "height": 313
+   },
+   "draft_lines": [
+    "Vienna. See Eckhel Doctr. Num. P. I.",
+    "Vol. III. p. 551.",
+    "אַדְרַמֶּלֶךְ (contr. for אֲדַר הַמֶּלֶךְ splen-",
+    "dour of the king) Adrammelech, pr. n.",
+    "a) An idol of the Sepharvites or Sip-"
+   ],
+   "bands": [
+    {
+     "band_id": "c1-r03-b00",
+     "bounds": {
+      "x": 1092,
+      "y": 2972,
+      "width": 864,
+      "height": 251
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r03-b00-864x251+1092+2972-x2.png",
+     "image_sha256": "71eceb081f44ce180d80bacf272ba9699aaa41dc8673ea796257c70a866c8220",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "Vienna. See Eckhel Doctr. Num. P. I.",
+       "Vol. III. p. 551.",
+       "אַדְרַמֶּלֶךְ (contr. for אֲדַר הַמֶּלֶךְ splen-",
+       "dour of the king) Adrammelech, pr. n."
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "84e78449-47ca-46ec-97ce-e835fbd6a291",
+      "duration_api_ms": 9161,
+      "cost_usd_list": 0.06863375000000001,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 2675,
+      "output_tokens": 278
+     },
+     "lines": [
+      {
+       "draft": "Vienna. See Eckhel Doctr. Num. P. I.",
+       "reread": "Vienna. See Eckhel Doctr. Num. P. I.",
+       "status": "agreed",
+       "text": "Vienna. See Eckhel Doctr. Num. P. I."
+      },
+      {
+       "draft": "Vol. III. p. 551.",
+       "reread": "Vol. III. p. 551.",
+       "status": "agreed",
+       "text": "Vol. III. p. 551."
+      },
+      {
+       "draft": "אַדְרַמֶּלֶךְ (contr. for אֲדַר הַמֶּלֶךְ splen-",
+       "reread": "אַדְרַמֶּלֶךְ (contr. for אֲדַר הַמֶּלֶךְ splen-",
+       "status": "agreed",
+       "text": "אַדְרַמֶּלֶךְ (contr. for אֲדַר הַמֶּלֶךְ splen-"
+      },
+      {
+       "draft": "dour of the king) Adrammelech, pr. n.",
+       "reread": "dour of the king) Adrammelech, pr. n.",
+       "status": "agreed",
+       "text": "dour of the king) Adrammelech, pr. n."
+      }
+     ]
+    },
+    {
+     "band_id": "c1-r03-b01",
+     "bounds": {
+      "x": 1092,
+      "y": 3207,
+      "width": 864,
+      "height": 73
+     },
+     "scale": 2,
+     "image_path": ".cache/gesenius/frontier/robinson-1854/chunks/pdf-0032/pass2/c1-r03-b01-864x73+1092+3207-x2.png",
+     "image_sha256": "3571dd9c05b0ed6291fdc2084010de6c19b2e2fdf76de2e6e65e829bdf0fbb99",
+     "prompt_version": 2,
+     "reread": {
+      "lines": [
+       "a) An idol of the Sepharvites or Sip-"
+      ],
+      "model": "claude-fable-5-1",
+      "cli_mode": "lean-system-prompt-v1",
+      "session_id": "65f29a6d-4b4c-4ac9-a6cc-c73994ef53d9",
+      "duration_api_ms": 6802,
+      "cost_usd_list": 0.049703750000000005,
+      "input_tokens": 34,
+      "cache_read_input_tokens": 3575,
+      "cache_creation_input_tokens": 1931,
+      "output_tokens": 197
+     },
+     "lines": [
+      {
+       "draft": "a) An idol of the Sepharvites or Sip-",
+       "reread": "a) An idol of the Sepharvites or Sip-",
+       "status": "agreed",
+       "text": "a) An idol of the Sepharvites or Sip-"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "chunk_id": "header",
+   "column": -1,
+   "text": "אדל 16 אדר",
+   "status": "adjudicated",
+   "draft": "אדנ 16 אדר",
+   "reread": "אדל 16 אדר",
+   "verdict": "b",
+   "note": "Third letter of the left-hand headword has the tall ascender above the line characteristic of lamed, not the flat-topped nun; Reading B (אדל) is correct, A (אדנ) is wrong. Page number 16 and right-hand אדר are as both readings give.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדֹנָי see after אָדוֹן.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדֹנִי־בֶזֶק (lord of Bezek) Adoni-Be-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "zek, name or title of a king of the Ca-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "naanitish city Bezek, Judg. 1, 5. 6. 7.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדֹנִי־צֶדֶק (lord of justice) Adoni-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "zedek, pr. n. of a Canaanitish king of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "Jerusalem, Josh. 10, 1. 3.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדֹנִיָּהוּ (my lord is Jehovah) Adoni-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "jah, pr. n. m. a) A son of David, who",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "attempted to usurp the succession, 1 K.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "1, 8 sq. Called also אֲדֹנִיָּה v. 5. 2 Sam.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "3, 4. b) 2 Chr. 17, 8. c) Neh. 10, 17.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "In Ezra 2, 13 the same person is called",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "אֲדֹנִיקָם Adonikam, i. e. lord of the ene-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r00",
+   "column": 0,
+   "text": "my. Comp. Ezra 8, 13. Neh. 7, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲדֹנִיקָם see אֲדֹנִיָּהוּ c.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "אֲדֹנִירָם (lord of altitude) Adoniram,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "pr. n. of a man who had charge of the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "public works under David and Solomon,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1 K. 4, 6. By an unusual contraction,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "called אֲדוֹרָם Adoram, 2 Sam. 20, 24.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "1 K. 12, 18; also הֲדוֹרָם 2 Chr. 10, 18.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "* אָדַר in Kal not used, pr. to be large,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "great, ample, see deriv. אֶדֶר, אַדֶּרֶת;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "comp. أَدِرَ to have the hernia, pr. to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "swollen; أَءْدَرُ swollen, inflated, e. g.",
+   "status": "adjudicated",
+   "draft": "swollen; آدَرُ swollen, inflated, e. g.",
+   "reread": "swollen; أَدَرُ swollen, inflated, e. g.",
+   "verdict": "neither",
+   "note": "The Arabic is printed uncontracted: أَ then a separate hamza with sukūn (ءْ) before دَرُ, not madda (A) and not a bare أَدَرُ (B).",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "the belly. Kindr. is הָדַר.—Trop. to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "great, splendid, powerful; see in אַדִּיר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r01",
+   "column": 0,
+   "text": "Niph. to be made great, to be magni-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "fied, glorious. Part. Ex. 15, 6 יְמִינְךָ יְהוָֹה",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "נֶאְדָּרִי בַּכֹּחַ thy right hand, Jehovah, is",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "magnified in might, is made glorious in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "strength. The Yod in נֶאְדָּרִי is para-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "gogic.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Hiph. to magnify, to make honourable,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Is. 42, 21.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "Deriv. אֶדֶר, אַדֶּרֶת, אַדִּיר, and the com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "pounds אַדְרַמֶּלֶךְ, אֲדַרְגָּזְרִין.",
+   "status": "adjudicated",
+   "draft": "pounds אַדְרַמֶּלֶךְ, אַדְרַגָּזְרִין.",
+   "reread": "pounds אֲדַרְגָּזְרִין, אַדְרַמֶּלֶךְ.",
+   "verdict": "neither",
+   "note": "Order follows A: the word nearest \"pounds\" (leftmost) is אדרגזרין, so אַדְרַמֶּלֶךְ comes first in logical order. But the pointing of the second word follows B: the print shows hataf-patah under alef, patah under dalet, shva under resh (אֲדַרְגָּזְרִין), not A's אַדְרַגָּזְרִין.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "אֲדָר Adar, the twelfth Hebrew month,",
+   "status": "adjudicated",
+   "draft": "אֲדָר Adar, the twelſth Hebrew month,",
+   "reread": "אֲדָר Adar, the twelfth Hebrew month,",
+   "verdict": "b",
+   "note": "The letter in \"twelfth\" is an ordinary f with a full crossbar (same glyph as in \"from\"/\"of\" on the next line), not a long s (ſ), which this 1854 typeface does not use.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "from the new moon of March to that of",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "April; or according to the Rabbins,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "from the new moon of February to that",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "of March. Esth. 3, 7. 13. 8, 12. 9, 1. 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r02",
+   "column": 0,
+   "text": "17. 19. 21. Gr. Ἀδάρ, 1 Macc. 7, 43. Syr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "ܐܳܕܳܪ, Arab. آذَارُ, أَذَارُ, and آذَارُ, the",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "sixth month of the Syro-Macedonians.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "Perh. from Pers. آذَر fire.",
+   "status": "adjudicated",
+   "draft": "Perh. from Pers. آذر fire.",
+   "reread": "Perh. from Pers. آذَر fire.",
+   "verdict": "b",
+   "note": "Above the dhāl there are two marks — its dot plus a short slanted fatḥa stroke (matching the fatḥa on the آذَار forms in line 1) — so the word is printed pointed, آذَر, as in Reading B; Reading A drops the fatḥa.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c0-r03",
+   "column": 0,
+   "text": "אֲדָר Chald. id. Ezra 6, 15.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אַדָּר see חֲצַר־אַדָּר.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אֶדֶר m. pr. largeness, amplitude;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "hence",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "1. a wide cloak, mantle, i. q. אַדֶּרֶת,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Mic. 2, 8.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "2. greatness, splendour, whence Zech.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "11, 13 אֶדֶר הַיְקָר splendour of the price,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "i. e. the splendid price, ironically.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "אִדַּר Chald. (r. נְדַר II) area, threshing-",
+   "status": "adjudicated",
+   "draft": "אִדַּר Chald. (r. נָדַר II) area, threshing-",
+   "reread": "אִדַּר Chald. (r. נְדַר II ) area, threshing-",
+   "verdict": "b",
+   "note": "Under the nun the print shows two vertically stacked dots (shewa), not a horizontal qamets stroke, so נְדַר; there is also a visible space before the closing parenthesis after \"II\", as in B.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "floor, pr. a wide open place, Dan. 2, 35.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "Syr. ܐܶܕܪܳܐ, Arab. أَنْدَرٌ. Hence some",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "refer it to Arab. ندر excidit granum;",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "but in Arab. اندر the nd seems to be",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r00",
+   "column": 1,
+   "text": "for dd.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲדַרְגָּזְרִין Chald. plur. m. chief-judges,",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Dan. 3, 2. 3. Compounded from אֲדַר i. q.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֶדֶר greatness, comp. אַדִּיר no. 3; and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "גָּזְרִין judges, comp. גְּזַר.",
+   "status": "adjudicated",
+   "draft": "גָּזְרִין judges, comp. גְּזַר .",
+   "reread": "גָּזְרִין judges, comp. גָּזֵר.",
+   "verdict": "a",
+   "note": "Final word is printed גְּזַר (sheva under dagesh-gimel, patach under zayin), not גָּזֵר; a visible space precedes the full stop.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אַדְרַזְדָּא Chald. adv. Ezra 7, 2. 3 right-",
+   "status": "adjudicated",
+   "draft": "אַדְרַזְדָּא Chald. adv. Ezra 7, 2. 3 right-",
+   "reread": "אַדְרַזְדָּא Chald. adv. Ezra 7, 23 right-",
+   "verdict": "a",
+   "note": "The print clearly shows \"7, 2. 3\" with a period after the 2 and a space before the 3 (a typographical error for 7, 23), so Reading A matches the printed line; Reading B silently normalised it to \"23\".",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "ly, diligently, carefully, Vulg. diligenter.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "Prob. it is a Persian word, perh. i. q. Pers.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "دُرست recte, vere, probe.",
+   "status": "adjudicated",
+   "draft": "دُرُسْت recte, vere, probe.",
+   "reread": "دُرست recte, vere, probe.",
+   "verdict": "b",
+   "note": "Only one point is printed: a ḍamma over the dāl. Reading A's ḍamma on rā and sukūn on sīn are not in the print — the marks above the word are descenders from the previous line.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "אֲדַרְכּוֹן m. only in Plur. אֲדַרְכֹּנִים",
+   "status": "adjudicated",
+   "draft": "אֲדַרְכּוֹן m. only in Plur. אֲדַרְכֹּנִים",
+   "reread": "אֲדַרְכֹּן m. only in Plur. אֲדַרְכֹּנִים",
+   "verdict": "a",
+   "note": "The headword is printed plene: a vav with holem stands between the dageshed kaf and the final nun (אֲדַרְכּוֹן), as Reading A has; Reading B's defective אֲדַרְכֹּן drops it. The plural is defective (אֲדַרְכֹּנִים) in both readings and in print.",
+   "needs_review": false
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "1 Chr. 29, 7. Ezra 8, 27, i. q. דַּרְכְּמוֹן, a",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "daric, a Persian coin of pure gold, com-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "mon also among the Jews while they",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "were under the Persian dominion. The",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "א is prosthetic; comp. in Mishna דַּרְכּוֹן",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r01",
+   "column": 1,
+   "text": "and Syr. ܕܰܪܟܽܘܢܳܐ. The etymology is",
+   "status": "adjudicated",
+   "draft": "and Syr. ܕܰܪܺܝܟܽܘܢܳܐ. The etymology is",
+   "reread": "and Syr. ܕܰܪܟܽܘܢܳܐ. The etymology is",
+   "verdict": "b",
+   "note": "Decisive difference: no yod is printed between rish and kaph — the kaph (with its esasa mark) follows the rish directly, so the word is six letters ܕܪܟܘܢܐ matching Heb. דַּרְכּוֹן; the marks over the first two letters are pthaha plus the rish dot, not a hbasa on a yod. Reading A's ܺܝ is spurious.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "not certain, although we can hardly",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "doubt that the word is kindred to the pr.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "n. Darius, דָּרְיָוֶשׁ. Others make it either:",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "a) Dimin. from דריך, daric, δαριήκης, if",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "the common reading is correct in Strabo",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "XVI. p. 5874; or b) A compound from",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "دارا king (Darius) and كُون appear-",
+   "status": "adjudicated",
+   "draft": "دارا king (Darius) and كون appear-",
+   "reread": "دارا king (Darius) and كُون appear-",
+   "verdict": "b",
+   "note": "The kāf of the second Arabic word carries a printed damma (ُ), visible as a small mark above the letter; Reading A omits it. Everything else (دارا without points, the Roman text) is identical in both readings and matches the print.",
+   "needs_review": true
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "ance, figure.—The daric was equal in",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "value to the Attic χρυσοῦς, which, ac-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "cording to our mode of reckoning, was",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "worth nearly 1½ German ducats, or",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "about three Spanish dollars; see Boeckh",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "Staatsh. der Ath. I. p. 23. The coin",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "usually bears the image of an archer",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "with a tiara. Darics of gold and silver",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r02",
+   "column": 1,
+   "text": "are extant in the Museums of Paris and",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Vienna. See Eckhel Doctr. Num. P. I.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "Vol. III. p. 551.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "אַדְרַמֶּלֶךְ (contr. for אֲדַר הַמֶּלֶךְ splen-",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "dour of the king) Adrammelech, pr. n.",
+   "status": "agreed"
+  },
+  {
+   "chunk_id": "c1-r03",
+   "column": 1,
+   "text": "a) An idol of the Sepharvites or Sip-",
+   "status": "agreed"
+  }
+ ],
+ "counts": {
+  "agreed": 87,
+  "adjudicated": 12,
+  "draft_only": 0,
+  "reread_only": 0,
+  "unresolved": 0,
+  "needs_review": 6
+ },
+ "status": "complete",
+ "errors": 0,
+ "judge_errors": 0,
+ "cost_usd_list_total": 3.3092
+}
